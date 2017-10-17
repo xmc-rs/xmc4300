@@ -1,0 +1,6 @@
+[package]
+name = "xmc4300"
+version = "0.1.0"
+authors = ["Lucas Brendel <lucasbrendel@gmail.com>"]
+
+[dependencies]
