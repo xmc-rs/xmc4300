@@ -9,17 +9,24 @@ matrix:
           packages:
             - dos2unix
 
-    - env: TARGET=thumbv7m-none-eabi
-      rust: beta
-      addons:
-        apt:
-          packages:
-            - gcc-arm-none-eabi
+    # - env: TARGET=thumbv7em-none-eabi
+    #   rust: nightly
+    #   addons:
+    #     apt:
+    #       packages:
+    #         - gcc-arm-none-eabi
+
+    # - env: TARGET=thumbv7em-none-eabihf
+    #   rust: nightly
+    #   addons:
+    #     apt:
+    #       packages:
+    #         - gcc-arm-none-eabi
 
 before_install: set -e
 
 install:
-  - bash ci/install.sh
+  - sh ci/install.sh
 
 script:
   - cargo build
