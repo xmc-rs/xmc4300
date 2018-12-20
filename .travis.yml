@@ -29,7 +29,7 @@ install:
   - sh ci/install.sh
 
 script:
-  - bash ci/script.sh
+  - cargo build
 
 after_script: set +e
 
@@ -38,12 +38,6 @@ before_cache:
   # Travis can't cache files that are not readable by "others"
   - chmod -R a+r $HOME/.cargo
 
-branches:
-  only:
-    # release tags
-    - /^v\d+\.\d+\.\d+.*$/
-    - master
-
 notifications:
   email:
-    on_success: never
+on_success: never
