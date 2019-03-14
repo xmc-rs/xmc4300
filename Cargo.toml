@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["Lucas Brendel <lucasbrendel@gmail.com>"]
 
 [dependencies]
-cortex-m = "0.5.8"
+cortex-m = "0.6.0"
 bare-metal = "0.2.4"
 vcell = "0.1.0"
 
