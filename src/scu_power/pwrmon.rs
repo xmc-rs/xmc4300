@@ -1,203 +1,98 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PWRMON {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PWRMON"]
+pub type R = crate::R<u32, super::PWRMON>;
+#[doc = "Writer for register PWRMON"]
+pub type W = crate::W<u32, super::PWRMON>;
+#[doc = "Register PWRMON `reset()`'s with value 0"]
+impl crate::ResetValue for super::PWRMON {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct THRSR {
-    bits: u8,
-}
-impl THRSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTVR {
-    bits: u8,
-}
-impl INTVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ENBR {
-    bits: bool,
-}
-impl ENBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _THRSW<'a> {
+#[doc = "Reader of field `THRS`"]
+pub type THRS_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `THRS`"]
+pub struct THRS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _THRSW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> THRS_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTVW<'a> {
+#[doc = "Reader of field `INTV`"]
+pub type INTV_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `INTV`"]
+pub struct INTV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTVW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INTV_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ENBW<'a> {
+#[doc = "Reader of field `ENB`"]
+pub type ENB_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ENB`"]
+pub struct ENB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENBW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ENB_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Threshold"]
-    #[inline]
-    pub fn thrs(&self) -> THRSR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        THRSR { bits }
+    #[inline(always)]
+    pub fn thrs(&self) -> THRS_R {
+        THRS_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Interval"]
-    #[inline]
-    pub fn intv(&self) -> INTVR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INTVR { bits }
+    #[inline(always)]
+    pub fn intv(&self) -> INTV_R {
+        INTV_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bit 16 - Enable"]
-    #[inline]
-    pub fn enb(&self) -> ENBR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ENBR { bits }
+    #[inline(always)]
+    pub fn enb(&self) -> ENB_R {
+        ENB_R::new(((self.bits >> 16) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Threshold"]
-    #[inline]
-    pub fn thrs(&mut self) -> _THRSW {
-        _THRSW { w: self }
+    #[inline(always)]
+    pub fn thrs(&mut self) -> THRS_W {
+        THRS_W { w: self }
     }
     #[doc = "Bits 8:15 - Interval"]
-    #[inline]
-    pub fn intv(&mut self) -> _INTVW {
-        _INTVW { w: self }
+    #[inline(always)]
+    pub fn intv(&mut self) -> INTV_W {
+        INTV_W { w: self }
     }
     #[doc = "Bit 16 - Enable"]
-    #[inline]
-    pub fn enb(&mut self) -> _ENBW {
-        _ENBW { w: self }
+    #[inline(always)]
+    pub fn enb(&mut self) -> ENB_W {
+        ENB_W { w: self }
     }
 }

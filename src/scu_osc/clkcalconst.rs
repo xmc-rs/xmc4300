@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::CLKCALCONST {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CALIBCONSTR {
-    bits: u8,
-}
-impl CALIBCONSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register CLKCALCONST"]
+pub type R = crate::R<u32, super::CLKCALCONST>;
+#[doc = "Reader of field `CALIBCONST`"]
+pub type CALIBCONST_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Clock Calibration Constant Value"]
-    #[inline]
-    pub fn calibconst(&self) -> CALIBCONSTR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CALIBCONSTR { bits }
+    #[inline(always)]
+    pub fn calibconst(&self) -> CALIBCONST_R {
+        CALIBCONST_R::new((self.bits & 0x0f) as u8)
     }
 }

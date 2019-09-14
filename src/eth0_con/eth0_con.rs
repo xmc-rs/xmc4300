@@ -1,1677 +1,1281 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ETH0_CON {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ETH0_CON"]
+pub type R = crate::R<u32, super::ETH0_CON>;
+#[doc = "Writer for register ETH0_CON"]
+pub type W = crate::W<u32, super::ETH0_CON>;
+#[doc = "Register ETH0_CON `reset()`'s with value 0"]
+impl crate::ResetValue for super::ETH0_CON {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `RXD0`"]
+#[doc = "MAC Receive Input 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXD0R {
-    #[doc = "Data input RXD0A is selected"]
+pub enum RXD0_A {
+    #[doc = "0: Data input RXD0A is selected"]
     VALUE1,
-    #[doc = "Data input RXD0B is selected"]
+    #[doc = "1: Data input RXD0B is selected"]
     VALUE2,
-    #[doc = "Data input RXD0C is selected"]
+    #[doc = "2: Data input RXD0C is selected"]
     VALUE3,
-    #[doc = "Data input RXD0D is selected"]
+    #[doc = "3: Data input RXD0D is selected"]
     VALUE4,
 }
-impl RXD0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            RXD0R::VALUE1 => 0,
-            RXD0R::VALUE2 => 1,
-            RXD0R::VALUE3 => 2,
-            RXD0R::VALUE4 => 3,
+impl From<RXD0_A> for u8 {
+    #[inline(always)]
+    fn from(variant: RXD0_A) -> Self {
+        match variant {
+            RXD0_A::VALUE1 => 0,
+            RXD0_A::VALUE2 => 1,
+            RXD0_A::VALUE3 => 2,
+            RXD0_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RXD0R {
-        match value {
-            0 => RXD0R::VALUE1,
-            1 => RXD0R::VALUE2,
-            2 => RXD0R::VALUE3,
-            3 => RXD0R::VALUE4,
+}
+#[doc = "Reader of field `RXD0`"]
+pub type RXD0_R = crate::R<u8, RXD0_A>;
+impl RXD0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXD0_A {
+        match self.bits {
+            0 => RXD0_A::VALUE1,
+            1 => RXD0_A::VALUE2,
+            2 => RXD0_A::VALUE3,
+            3 => RXD0_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RXD0R::VALUE1
+        *self == RXD0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RXD0R::VALUE2
+        *self == RXD0_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == RXD0R::VALUE3
+        *self == RXD0_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == RXD0R::VALUE4
+        *self == RXD0_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `RXD1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXD1R {
-    #[doc = "Data input RXD1A is selected"]
-    VALUE1,
-    #[doc = "Data input RXD1B is selected"]
-    VALUE2,
-    #[doc = "Data input RXD1C is selected"]
-    VALUE3,
-    #[doc = "Data input RXD1D is selected"]
-    VALUE4,
-}
-impl RXD1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            RXD1R::VALUE1 => 0,
-            RXD1R::VALUE2 => 1,
-            RXD1R::VALUE3 => 2,
-            RXD1R::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RXD1R {
-        match value {
-            0 => RXD1R::VALUE1,
-            1 => RXD1R::VALUE2,
-            2 => RXD1R::VALUE3,
-            3 => RXD1R::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == RXD1R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == RXD1R::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == RXD1R::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == RXD1R::VALUE4
-    }
-}
-#[doc = "Possible values of the field `RXD2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXD2R {
-    #[doc = "Data input RXD2A is selected"]
-    VALUE1,
-    #[doc = "Data input RXD2B is selected"]
-    VALUE2,
-    #[doc = "Data input RXD2C is selected"]
-    VALUE3,
-    #[doc = "Data input RXD2D is selected"]
-    VALUE4,
-}
-impl RXD2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            RXD2R::VALUE1 => 0,
-            RXD2R::VALUE2 => 1,
-            RXD2R::VALUE3 => 2,
-            RXD2R::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RXD2R {
-        match value {
-            0 => RXD2R::VALUE1,
-            1 => RXD2R::VALUE2,
-            2 => RXD2R::VALUE3,
-            3 => RXD2R::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == RXD2R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == RXD2R::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == RXD2R::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == RXD2R::VALUE4
-    }
-}
-#[doc = "Possible values of the field `RXD3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXD3R {
-    #[doc = "Data input RXD3A is selected"]
-    VALUE1,
-    #[doc = "Data input RXD3B is selected"]
-    VALUE2,
-    #[doc = "Data input RXD3C is selected"]
-    VALUE3,
-    #[doc = "Data input RXD3D is selected"]
-    VALUE4,
-}
-impl RXD3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            RXD3R::VALUE1 => 0,
-            RXD3R::VALUE2 => 1,
-            RXD3R::VALUE3 => 2,
-            RXD3R::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RXD3R {
-        match value {
-            0 => RXD3R::VALUE1,
-            1 => RXD3R::VALUE2,
-            2 => RXD3R::VALUE3,
-            3 => RXD3R::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == RXD3R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == RXD3R::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == RXD3R::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == RXD3R::VALUE4
-    }
-}
-#[doc = "Possible values of the field `CLK_RMII`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLK_RMIIR {
-    #[doc = "Data input RMIIA is selected"]
-    VALUE1,
-    #[doc = "Data input RMIIB is selected"]
-    VALUE2,
-    #[doc = "Data input RMIIC is selected"]
-    VALUE3,
-    #[doc = "Data input RMIID is selected"]
-    VALUE4,
-}
-impl CLK_RMIIR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CLK_RMIIR::VALUE1 => 0,
-            CLK_RMIIR::VALUE2 => 1,
-            CLK_RMIIR::VALUE3 => 2,
-            CLK_RMIIR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CLK_RMIIR {
-        match value {
-            0 => CLK_RMIIR::VALUE1,
-            1 => CLK_RMIIR::VALUE2,
-            2 => CLK_RMIIR::VALUE3,
-            3 => CLK_RMIIR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CLK_RMIIR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CLK_RMIIR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == CLK_RMIIR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == CLK_RMIIR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `CRS_DV`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CRS_DVR {
-    #[doc = "Data input CRS_DVA is selected"]
-    VALUE1,
-    #[doc = "Data input CRS_DVB is selected"]
-    VALUE2,
-    #[doc = "Data input CRS_DVC is selected"]
-    VALUE3,
-    #[doc = "Data input CRS_DVD is selected"]
-    VALUE4,
-}
-impl CRS_DVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CRS_DVR::VALUE1 => 0,
-            CRS_DVR::VALUE2 => 1,
-            CRS_DVR::VALUE3 => 2,
-            CRS_DVR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CRS_DVR {
-        match value {
-            0 => CRS_DVR::VALUE1,
-            1 => CRS_DVR::VALUE2,
-            2 => CRS_DVR::VALUE3,
-            3 => CRS_DVR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CRS_DVR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CRS_DVR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == CRS_DVR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == CRS_DVR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `CRS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CRSR {
-    #[doc = "Data input CRSA"]
-    VALUE1,
-    #[doc = "Data input CRSB"]
-    VALUE2,
-    #[doc = "Data input CRSC"]
-    VALUE3,
-    #[doc = "Data input CRSD"]
-    VALUE4,
-}
-impl CRSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CRSR::VALUE1 => 0,
-            CRSR::VALUE2 => 1,
-            CRSR::VALUE3 => 2,
-            CRSR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CRSR {
-        match value {
-            0 => CRSR::VALUE1,
-            1 => CRSR::VALUE2,
-            2 => CRSR::VALUE3,
-            3 => CRSR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CRSR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CRSR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == CRSR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == CRSR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `RXER`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXERR {
-    #[doc = "Data input RXERA is selected"]
-    VALUE1,
-    #[doc = "Data input RXERB is selected"]
-    VALUE2,
-    #[doc = "Data input RXERC is selected"]
-    VALUE3,
-    #[doc = "Data input RXERD is selected"]
-    VALUE4,
-}
-impl RXERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            RXERR::VALUE1 => 0,
-            RXERR::VALUE2 => 1,
-            RXERR::VALUE3 => 2,
-            RXERR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RXERR {
-        match value {
-            0 => RXERR::VALUE1,
-            1 => RXERR::VALUE2,
-            2 => RXERR::VALUE3,
-            3 => RXERR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == RXERR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == RXERR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == RXERR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == RXERR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `COL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COLR {
-    #[doc = "Data input COLA is selected"]
-    VALUE1,
-    #[doc = "Data input COLB is selected"]
-    VALUE2,
-    #[doc = "Data input COLC is selected"]
-    VALUE3,
-    #[doc = "Data input COLD is selected"]
-    VALUE4,
-}
-impl COLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            COLR::VALUE1 => 0,
-            COLR::VALUE2 => 1,
-            COLR::VALUE3 => 2,
-            COLR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> COLR {
-        match value {
-            0 => COLR::VALUE1,
-            1 => COLR::VALUE2,
-            2 => COLR::VALUE3,
-            3 => COLR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == COLR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == COLR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == COLR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == COLR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `CLK_TX`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLK_TXR {
-    #[doc = "Data input CLK_TXA is selected"]
-    VALUE1,
-    #[doc = "Data input CLK_TXB is selected"]
-    VALUE2,
-    #[doc = "Data input CLK_TXC is selected"]
-    VALUE3,
-    #[doc = "Data input CLK_TXD is selected"]
-    VALUE4,
-}
-impl CLK_TXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CLK_TXR::VALUE1 => 0,
-            CLK_TXR::VALUE2 => 1,
-            CLK_TXR::VALUE3 => 2,
-            CLK_TXR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CLK_TXR {
-        match value {
-            0 => CLK_TXR::VALUE1,
-            1 => CLK_TXR::VALUE2,
-            2 => CLK_TXR::VALUE3,
-            3 => CLK_TXR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CLK_TXR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CLK_TXR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == CLK_TXR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == CLK_TXR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `MDIO`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MDIOR {
-    #[doc = "Data input MDIA is selected"]
-    VALUE1,
-    #[doc = "Data input MDIB is selected"]
-    VALUE2,
-    #[doc = "Data input MDIC is selected"]
-    VALUE3,
-    #[doc = "Data input MDID is selected"]
-    VALUE4,
-}
-impl MDIOR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MDIOR::VALUE1 => 0,
-            MDIOR::VALUE2 => 1,
-            MDIOR::VALUE3 => 2,
-            MDIOR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MDIOR {
-        match value {
-            0 => MDIOR::VALUE1,
-            1 => MDIOR::VALUE2,
-            2 => MDIOR::VALUE3,
-            3 => MDIOR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MDIOR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MDIOR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == MDIOR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == MDIOR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `INFSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INFSELR {
-    #[doc = "MII"]
-    VALUE1,
-    #[doc = "RMII"]
-    VALUE2,
-}
-impl INFSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INFSELR::VALUE1 => false,
-            INFSELR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INFSELR {
-        match value {
-            false => INFSELR::VALUE1,
-            true => INFSELR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == INFSELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == INFSELR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `RXD0`"]
-pub enum RXD0W {
-    #[doc = "Data input RXD0A is selected"]
-    VALUE1,
-    #[doc = "Data input RXD0B is selected"]
-    VALUE2,
-    #[doc = "Data input RXD0C is selected"]
-    VALUE3,
-    #[doc = "Data input RXD0D is selected"]
-    VALUE4,
-}
-impl RXD0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RXD0W::VALUE1 => 0,
-            RXD0W::VALUE2 => 1,
-            RXD0W::VALUE3 => 2,
-            RXD0W::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RXD0W<'a> {
+#[doc = "Write proxy for field `RXD0`"]
+pub struct RXD0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RXD0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RXD0W) -> &'a mut W {
+impl<'a> RXD0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RXD0_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Data input RXD0A is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(RXD0W::VALUE1)
+        self.variant(RXD0_A::VALUE1)
     }
     #[doc = "Data input RXD0B is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(RXD0W::VALUE2)
+        self.variant(RXD0_A::VALUE2)
     }
     #[doc = "Data input RXD0C is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(RXD0W::VALUE3)
+        self.variant(RXD0_A::VALUE3)
     }
     #[doc = "Data input RXD0D is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(RXD0W::VALUE4)
+        self.variant(RXD0_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RXD1`"]
-pub enum RXD1W {
+#[doc = "MAC Receive Input 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RXD1_A {
+    #[doc = "0: Data input RXD1A is selected"]
+    VALUE1,
+    #[doc = "1: Data input RXD1B is selected"]
+    VALUE2,
+    #[doc = "2: Data input RXD1C is selected"]
+    VALUE3,
+    #[doc = "3: Data input RXD1D is selected"]
+    VALUE4,
+}
+impl From<RXD1_A> for u8 {
+    #[inline(always)]
+    fn from(variant: RXD1_A) -> Self {
+        match variant {
+            RXD1_A::VALUE1 => 0,
+            RXD1_A::VALUE2 => 1,
+            RXD1_A::VALUE3 => 2,
+            RXD1_A::VALUE4 => 3,
+        }
+    }
+}
+#[doc = "Reader of field `RXD1`"]
+pub type RXD1_R = crate::R<u8, RXD1_A>;
+impl RXD1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXD1_A {
+        match self.bits {
+            0 => RXD1_A::VALUE1,
+            1 => RXD1_A::VALUE2,
+            2 => RXD1_A::VALUE3,
+            3 => RXD1_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == RXD1_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == RXD1_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == RXD1_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == RXD1_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `RXD1`"]
+pub struct RXD1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RXD1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RXD1_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
+        }
+    }
     #[doc = "Data input RXD1A is selected"]
-    VALUE1,
-    #[doc = "Data input RXD1B is selected"]
-    VALUE2,
-    #[doc = "Data input RXD1C is selected"]
-    VALUE3,
-    #[doc = "Data input RXD1D is selected"]
-    VALUE4,
-}
-impl RXD1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RXD1W::VALUE1 => 0,
-            RXD1W::VALUE2 => 1,
-            RXD1W::VALUE3 => 2,
-            RXD1W::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RXD1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RXD1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RXD1W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Data input RXD1A is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(RXD1W::VALUE1)
+        self.variant(RXD1_A::VALUE1)
     }
     #[doc = "Data input RXD1B is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(RXD1W::VALUE2)
+        self.variant(RXD1_A::VALUE2)
     }
     #[doc = "Data input RXD1C is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(RXD1W::VALUE3)
+        self.variant(RXD1_A::VALUE3)
     }
     #[doc = "Data input RXD1D is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(RXD1W::VALUE4)
+        self.variant(RXD1_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RXD2`"]
-pub enum RXD2W {
-    #[doc = "Data input RXD2A is selected"]
+#[doc = "MAC Receive Input 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RXD2_A {
+    #[doc = "0: Data input RXD2A is selected"]
     VALUE1,
-    #[doc = "Data input RXD2B is selected"]
+    #[doc = "1: Data input RXD2B is selected"]
     VALUE2,
-    #[doc = "Data input RXD2C is selected"]
+    #[doc = "2: Data input RXD2C is selected"]
     VALUE3,
-    #[doc = "Data input RXD2D is selected"]
+    #[doc = "3: Data input RXD2D is selected"]
     VALUE4,
 }
-impl RXD2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RXD2W::VALUE1 => 0,
-            RXD2W::VALUE2 => 1,
-            RXD2W::VALUE3 => 2,
-            RXD2W::VALUE4 => 3,
+impl From<RXD2_A> for u8 {
+    #[inline(always)]
+    fn from(variant: RXD2_A) -> Self {
+        match variant {
+            RXD2_A::VALUE1 => 0,
+            RXD2_A::VALUE2 => 1,
+            RXD2_A::VALUE3 => 2,
+            RXD2_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RXD2W<'a> {
+#[doc = "Reader of field `RXD2`"]
+pub type RXD2_R = crate::R<u8, RXD2_A>;
+impl RXD2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXD2_A {
+        match self.bits {
+            0 => RXD2_A::VALUE1,
+            1 => RXD2_A::VALUE2,
+            2 => RXD2_A::VALUE3,
+            3 => RXD2_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == RXD2_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == RXD2_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == RXD2_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == RXD2_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `RXD2`"]
+pub struct RXD2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RXD2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RXD2W) -> &'a mut W {
+impl<'a> RXD2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RXD2_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Data input RXD2A is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(RXD2W::VALUE1)
+        self.variant(RXD2_A::VALUE1)
     }
     #[doc = "Data input RXD2B is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(RXD2W::VALUE2)
+        self.variant(RXD2_A::VALUE2)
     }
     #[doc = "Data input RXD2C is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(RXD2W::VALUE3)
+        self.variant(RXD2_A::VALUE3)
     }
     #[doc = "Data input RXD2D is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(RXD2W::VALUE4)
+        self.variant(RXD2_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RXD3`"]
-pub enum RXD3W {
+#[doc = "MAC Receive Input 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RXD3_A {
+    #[doc = "0: Data input RXD3A is selected"]
+    VALUE1,
+    #[doc = "1: Data input RXD3B is selected"]
+    VALUE2,
+    #[doc = "2: Data input RXD3C is selected"]
+    VALUE3,
+    #[doc = "3: Data input RXD3D is selected"]
+    VALUE4,
+}
+impl From<RXD3_A> for u8 {
+    #[inline(always)]
+    fn from(variant: RXD3_A) -> Self {
+        match variant {
+            RXD3_A::VALUE1 => 0,
+            RXD3_A::VALUE2 => 1,
+            RXD3_A::VALUE3 => 2,
+            RXD3_A::VALUE4 => 3,
+        }
+    }
+}
+#[doc = "Reader of field `RXD3`"]
+pub type RXD3_R = crate::R<u8, RXD3_A>;
+impl RXD3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXD3_A {
+        match self.bits {
+            0 => RXD3_A::VALUE1,
+            1 => RXD3_A::VALUE2,
+            2 => RXD3_A::VALUE3,
+            3 => RXD3_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == RXD3_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == RXD3_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == RXD3_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == RXD3_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `RXD3`"]
+pub struct RXD3_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RXD3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RXD3_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
+        }
+    }
     #[doc = "Data input RXD3A is selected"]
-    VALUE1,
-    #[doc = "Data input RXD3B is selected"]
-    VALUE2,
-    #[doc = "Data input RXD3C is selected"]
-    VALUE3,
-    #[doc = "Data input RXD3D is selected"]
-    VALUE4,
-}
-impl RXD3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RXD3W::VALUE1 => 0,
-            RXD3W::VALUE2 => 1,
-            RXD3W::VALUE3 => 2,
-            RXD3W::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RXD3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RXD3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RXD3W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Data input RXD3A is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(RXD3W::VALUE1)
+        self.variant(RXD3_A::VALUE1)
     }
     #[doc = "Data input RXD3B is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(RXD3W::VALUE2)
+        self.variant(RXD3_A::VALUE2)
     }
     #[doc = "Data input RXD3C is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(RXD3W::VALUE3)
+        self.variant(RXD3_A::VALUE3)
     }
     #[doc = "Data input RXD3D is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(RXD3W::VALUE4)
+        self.variant(RXD3_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CLK_RMII`"]
-pub enum CLK_RMIIW {
-    #[doc = "Data input RMIIA is selected"]
+#[doc = "RMII clock input\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CLK_RMII_A {
+    #[doc = "0: Data input RMIIA is selected"]
     VALUE1,
-    #[doc = "Data input RMIIB is selected"]
+    #[doc = "1: Data input RMIIB is selected"]
     VALUE2,
-    #[doc = "Data input RMIIC is selected"]
+    #[doc = "2: Data input RMIIC is selected"]
     VALUE3,
-    #[doc = "Data input RMIID is selected"]
+    #[doc = "3: Data input RMIID is selected"]
     VALUE4,
 }
-impl CLK_RMIIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CLK_RMIIW::VALUE1 => 0,
-            CLK_RMIIW::VALUE2 => 1,
-            CLK_RMIIW::VALUE3 => 2,
-            CLK_RMIIW::VALUE4 => 3,
+impl From<CLK_RMII_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CLK_RMII_A) -> Self {
+        match variant {
+            CLK_RMII_A::VALUE1 => 0,
+            CLK_RMII_A::VALUE2 => 1,
+            CLK_RMII_A::VALUE3 => 2,
+            CLK_RMII_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CLK_RMIIW<'a> {
+#[doc = "Reader of field `CLK_RMII`"]
+pub type CLK_RMII_R = crate::R<u8, CLK_RMII_A>;
+impl CLK_RMII_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CLK_RMII_A {
+        match self.bits {
+            0 => CLK_RMII_A::VALUE1,
+            1 => CLK_RMII_A::VALUE2,
+            2 => CLK_RMII_A::VALUE3,
+            3 => CLK_RMII_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CLK_RMII_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CLK_RMII_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == CLK_RMII_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == CLK_RMII_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `CLK_RMII`"]
+pub struct CLK_RMII_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLK_RMIIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CLK_RMIIW) -> &'a mut W {
+impl<'a> CLK_RMII_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CLK_RMII_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Data input RMIIA is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CLK_RMIIW::VALUE1)
+        self.variant(CLK_RMII_A::VALUE1)
     }
     #[doc = "Data input RMIIB is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CLK_RMIIW::VALUE2)
+        self.variant(CLK_RMII_A::VALUE2)
     }
     #[doc = "Data input RMIIC is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(CLK_RMIIW::VALUE3)
+        self.variant(CLK_RMII_A::VALUE3)
     }
     #[doc = "Data input RMIID is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(CLK_RMIIW::VALUE4)
+        self.variant(CLK_RMII_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CRS_DV`"]
-pub enum CRS_DVW {
+#[doc = "CRS_DV input\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CRS_DV_A {
+    #[doc = "0: Data input CRS_DVA is selected"]
+    VALUE1,
+    #[doc = "1: Data input CRS_DVB is selected"]
+    VALUE2,
+    #[doc = "2: Data input CRS_DVC is selected"]
+    VALUE3,
+    #[doc = "3: Data input CRS_DVD is selected"]
+    VALUE4,
+}
+impl From<CRS_DV_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CRS_DV_A) -> Self {
+        match variant {
+            CRS_DV_A::VALUE1 => 0,
+            CRS_DV_A::VALUE2 => 1,
+            CRS_DV_A::VALUE3 => 2,
+            CRS_DV_A::VALUE4 => 3,
+        }
+    }
+}
+#[doc = "Reader of field `CRS_DV`"]
+pub type CRS_DV_R = crate::R<u8, CRS_DV_A>;
+impl CRS_DV_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CRS_DV_A {
+        match self.bits {
+            0 => CRS_DV_A::VALUE1,
+            1 => CRS_DV_A::VALUE2,
+            2 => CRS_DV_A::VALUE3,
+            3 => CRS_DV_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CRS_DV_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CRS_DV_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == CRS_DV_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == CRS_DV_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `CRS_DV`"]
+pub struct CRS_DV_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CRS_DV_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CRS_DV_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
+        }
+    }
     #[doc = "Data input CRS_DVA is selected"]
-    VALUE1,
-    #[doc = "Data input CRS_DVB is selected"]
-    VALUE2,
-    #[doc = "Data input CRS_DVC is selected"]
-    VALUE3,
-    #[doc = "Data input CRS_DVD is selected"]
-    VALUE4,
-}
-impl CRS_DVW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CRS_DVW::VALUE1 => 0,
-            CRS_DVW::VALUE2 => 1,
-            CRS_DVW::VALUE3 => 2,
-            CRS_DVW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CRS_DVW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CRS_DVW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CRS_DVW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Data input CRS_DVA is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CRS_DVW::VALUE1)
+        self.variant(CRS_DV_A::VALUE1)
     }
     #[doc = "Data input CRS_DVB is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CRS_DVW::VALUE2)
+        self.variant(CRS_DV_A::VALUE2)
     }
     #[doc = "Data input CRS_DVC is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(CRS_DVW::VALUE3)
+        self.variant(CRS_DV_A::VALUE3)
     }
     #[doc = "Data input CRS_DVD is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(CRS_DVW::VALUE4)
+        self.variant(CRS_DV_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CRS`"]
-pub enum CRSW {
-    #[doc = "Data input CRSA"]
+#[doc = "CRS input\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CRS_A {
+    #[doc = "0: Data input CRSA"]
     VALUE1,
-    #[doc = "Data input CRSB"]
+    #[doc = "1: Data input CRSB"]
     VALUE2,
-    #[doc = "Data input CRSC"]
+    #[doc = "2: Data input CRSC"]
     VALUE3,
-    #[doc = "Data input CRSD"]
+    #[doc = "3: Data input CRSD"]
     VALUE4,
 }
-impl CRSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CRSW::VALUE1 => 0,
-            CRSW::VALUE2 => 1,
-            CRSW::VALUE3 => 2,
-            CRSW::VALUE4 => 3,
+impl From<CRS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CRS_A) -> Self {
+        match variant {
+            CRS_A::VALUE1 => 0,
+            CRS_A::VALUE2 => 1,
+            CRS_A::VALUE3 => 2,
+            CRS_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CRSW<'a> {
+#[doc = "Reader of field `CRS`"]
+pub type CRS_R = crate::R<u8, CRS_A>;
+impl CRS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CRS_A {
+        match self.bits {
+            0 => CRS_A::VALUE1,
+            1 => CRS_A::VALUE2,
+            2 => CRS_A::VALUE3,
+            3 => CRS_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CRS_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CRS_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == CRS_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == CRS_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `CRS`"]
+pub struct CRS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CRSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CRSW) -> &'a mut W {
+impl<'a> CRS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CRS_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Data input CRSA"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CRSW::VALUE1)
+        self.variant(CRS_A::VALUE1)
     }
     #[doc = "Data input CRSB"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CRSW::VALUE2)
+        self.variant(CRS_A::VALUE2)
     }
     #[doc = "Data input CRSC"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(CRSW::VALUE3)
+        self.variant(CRS_A::VALUE3)
     }
     #[doc = "Data input CRSD"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(CRSW::VALUE4)
+        self.variant(CRS_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RXER`"]
-pub enum RXERW {
+#[doc = "RXER Input\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RXER_A {
+    #[doc = "0: Data input RXERA is selected"]
+    VALUE1,
+    #[doc = "1: Data input RXERB is selected"]
+    VALUE2,
+    #[doc = "2: Data input RXERC is selected"]
+    VALUE3,
+    #[doc = "3: Data input RXERD is selected"]
+    VALUE4,
+}
+impl From<RXER_A> for u8 {
+    #[inline(always)]
+    fn from(variant: RXER_A) -> Self {
+        match variant {
+            RXER_A::VALUE1 => 0,
+            RXER_A::VALUE2 => 1,
+            RXER_A::VALUE3 => 2,
+            RXER_A::VALUE4 => 3,
+        }
+    }
+}
+#[doc = "Reader of field `RXER`"]
+pub type RXER_R = crate::R<u8, RXER_A>;
+impl RXER_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXER_A {
+        match self.bits {
+            0 => RXER_A::VALUE1,
+            1 => RXER_A::VALUE2,
+            2 => RXER_A::VALUE3,
+            3 => RXER_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == RXER_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == RXER_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == RXER_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == RXER_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `RXER`"]
+pub struct RXER_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RXER_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RXER_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
+        }
+    }
     #[doc = "Data input RXERA is selected"]
-    VALUE1,
-    #[doc = "Data input RXERB is selected"]
-    VALUE2,
-    #[doc = "Data input RXERC is selected"]
-    VALUE3,
-    #[doc = "Data input RXERD is selected"]
-    VALUE4,
-}
-impl RXERW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RXERW::VALUE1 => 0,
-            RXERW::VALUE2 => 1,
-            RXERW::VALUE3 => 2,
-            RXERW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RXERW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RXERW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RXERW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Data input RXERA is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(RXERW::VALUE1)
+        self.variant(RXER_A::VALUE1)
     }
     #[doc = "Data input RXERB is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(RXERW::VALUE2)
+        self.variant(RXER_A::VALUE2)
     }
     #[doc = "Data input RXERC is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(RXERW::VALUE3)
+        self.variant(RXER_A::VALUE3)
     }
     #[doc = "Data input RXERD is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(RXERW::VALUE4)
+        self.variant(RXER_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `COL`"]
-pub enum COLW {
-    #[doc = "Data input COLA is selected"]
+#[doc = "COL input\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COL_A {
+    #[doc = "0: Data input COLA is selected"]
     VALUE1,
-    #[doc = "Data input COLB is selected"]
+    #[doc = "1: Data input COLB is selected"]
     VALUE2,
-    #[doc = "Data input COLC is selected"]
+    #[doc = "2: Data input COLC is selected"]
     VALUE3,
-    #[doc = "Data input COLD is selected"]
+    #[doc = "3: Data input COLD is selected"]
     VALUE4,
 }
-impl COLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            COLW::VALUE1 => 0,
-            COLW::VALUE2 => 1,
-            COLW::VALUE3 => 2,
-            COLW::VALUE4 => 3,
+impl From<COL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: COL_A) -> Self {
+        match variant {
+            COL_A::VALUE1 => 0,
+            COL_A::VALUE2 => 1,
+            COL_A::VALUE3 => 2,
+            COL_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _COLW<'a> {
+#[doc = "Reader of field `COL`"]
+pub type COL_R = crate::R<u8, COL_A>;
+impl COL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> COL_A {
+        match self.bits {
+            0 => COL_A::VALUE1,
+            1 => COL_A::VALUE2,
+            2 => COL_A::VALUE3,
+            3 => COL_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == COL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == COL_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == COL_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == COL_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `COL`"]
+pub struct COL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: COLW) -> &'a mut W {
+impl<'a> COL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: COL_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Data input COLA is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(COLW::VALUE1)
+        self.variant(COL_A::VALUE1)
     }
     #[doc = "Data input COLB is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(COLW::VALUE2)
+        self.variant(COL_A::VALUE2)
     }
     #[doc = "Data input COLC is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(COLW::VALUE3)
+        self.variant(COL_A::VALUE3)
     }
     #[doc = "Data input COLD is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(COLW::VALUE4)
+        self.variant(COL_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CLK_TX`"]
-pub enum CLK_TXW {
-    #[doc = "Data input CLK_TXA is selected"]
+#[doc = "CLK_TX input\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CLK_TX_A {
+    #[doc = "0: Data input CLK_TXA is selected"]
     VALUE1,
-    #[doc = "Data input CLK_TXB is selected"]
+    #[doc = "1: Data input CLK_TXB is selected"]
     VALUE2,
-    #[doc = "Data input CLK_TXC is selected"]
+    #[doc = "2: Data input CLK_TXC is selected"]
     VALUE3,
-    #[doc = "Data input CLK_TXD is selected"]
+    #[doc = "3: Data input CLK_TXD is selected"]
     VALUE4,
 }
-impl CLK_TXW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CLK_TXW::VALUE1 => 0,
-            CLK_TXW::VALUE2 => 1,
-            CLK_TXW::VALUE3 => 2,
-            CLK_TXW::VALUE4 => 3,
+impl From<CLK_TX_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CLK_TX_A) -> Self {
+        match variant {
+            CLK_TX_A::VALUE1 => 0,
+            CLK_TX_A::VALUE2 => 1,
+            CLK_TX_A::VALUE3 => 2,
+            CLK_TX_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CLK_TXW<'a> {
+#[doc = "Reader of field `CLK_TX`"]
+pub type CLK_TX_R = crate::R<u8, CLK_TX_A>;
+impl CLK_TX_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CLK_TX_A {
+        match self.bits {
+            0 => CLK_TX_A::VALUE1,
+            1 => CLK_TX_A::VALUE2,
+            2 => CLK_TX_A::VALUE3,
+            3 => CLK_TX_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CLK_TX_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CLK_TX_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == CLK_TX_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == CLK_TX_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `CLK_TX`"]
+pub struct CLK_TX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLK_TXW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CLK_TXW) -> &'a mut W {
+impl<'a> CLK_TX_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CLK_TX_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Data input CLK_TXA is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CLK_TXW::VALUE1)
+        self.variant(CLK_TX_A::VALUE1)
     }
     #[doc = "Data input CLK_TXB is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CLK_TXW::VALUE2)
+        self.variant(CLK_TX_A::VALUE2)
     }
     #[doc = "Data input CLK_TXC is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(CLK_TXW::VALUE3)
+        self.variant(CLK_TX_A::VALUE3)
     }
     #[doc = "Data input CLK_TXD is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(CLK_TXW::VALUE4)
+        self.variant(CLK_TX_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 18)) | (((value as u32) & 0x03) << 18);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MDIO`"]
-pub enum MDIOW {
-    #[doc = "Data input MDIA is selected"]
+#[doc = "MDIO Input Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MDIO_A {
+    #[doc = "0: Data input MDIA is selected"]
     VALUE1,
-    #[doc = "Data input MDIB is selected"]
+    #[doc = "1: Data input MDIB is selected"]
     VALUE2,
-    #[doc = "Data input MDIC is selected"]
+    #[doc = "2: Data input MDIC is selected"]
     VALUE3,
-    #[doc = "Data input MDID is selected"]
+    #[doc = "3: Data input MDID is selected"]
     VALUE4,
 }
-impl MDIOW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MDIOW::VALUE1 => 0,
-            MDIOW::VALUE2 => 1,
-            MDIOW::VALUE3 => 2,
-            MDIOW::VALUE4 => 3,
+impl From<MDIO_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MDIO_A) -> Self {
+        match variant {
+            MDIO_A::VALUE1 => 0,
+            MDIO_A::VALUE2 => 1,
+            MDIO_A::VALUE3 => 2,
+            MDIO_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MDIOW<'a> {
+#[doc = "Reader of field `MDIO`"]
+pub type MDIO_R = crate::R<u8, MDIO_A>;
+impl MDIO_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MDIO_A {
+        match self.bits {
+            0 => MDIO_A::VALUE1,
+            1 => MDIO_A::VALUE2,
+            2 => MDIO_A::VALUE3,
+            3 => MDIO_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MDIO_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MDIO_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == MDIO_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == MDIO_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `MDIO`"]
+pub struct MDIO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MDIOW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MDIOW) -> &'a mut W {
+impl<'a> MDIO_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MDIO_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Data input MDIA is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MDIOW::VALUE1)
+        self.variant(MDIO_A::VALUE1)
     }
     #[doc = "Data input MDIB is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MDIOW::VALUE2)
+        self.variant(MDIO_A::VALUE2)
     }
     #[doc = "Data input MDIC is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(MDIOW::VALUE3)
+        self.variant(MDIO_A::VALUE3)
     }
     #[doc = "Data input MDID is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(MDIOW::VALUE4)
+        self.variant(MDIO_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `INFSEL`"]
-pub enum INFSELW {
-    #[doc = "MII"]
+#[doc = "Ethernet MAC Interface Selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum INFSEL_A {
+    #[doc = "0: MII"]
     VALUE1,
-    #[doc = "RMII"]
+    #[doc = "1: RMII"]
     VALUE2,
 }
-impl INFSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INFSELW::VALUE1 => false,
-            INFSELW::VALUE2 => true,
+impl From<INFSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: INFSEL_A) -> Self {
+        match variant {
+            INFSEL_A::VALUE1 => false,
+            INFSEL_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _INFSELW<'a> {
+#[doc = "Reader of field `INFSEL`"]
+pub type INFSEL_R = crate::R<bool, INFSEL_A>;
+impl INFSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INFSEL_A {
+        match self.bits {
+            false => INFSEL_A::VALUE1,
+            true => INFSEL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == INFSEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == INFSEL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `INFSEL`"]
+pub struct INFSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INFSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INFSELW) -> &'a mut W {
+impl<'a> INFSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INFSEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "MII"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(INFSELW::VALUE1)
+        self.variant(INFSEL_A::VALUE1)
     }
     #[doc = "RMII"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(INFSELW::VALUE2)
+        self.variant(INFSEL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - MAC Receive Input 0"]
-    #[inline]
-    pub fn rxd0(&self) -> RXD0R {
-        RXD0R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn rxd0(&self) -> RXD0_R {
+        RXD0_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - MAC Receive Input 1"]
-    #[inline]
-    pub fn rxd1(&self) -> RXD1R {
-        RXD1R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn rxd1(&self) -> RXD1_R {
+        RXD1_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - MAC Receive Input 2"]
-    #[inline]
-    pub fn rxd2(&self) -> RXD2R {
-        RXD2R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn rxd2(&self) -> RXD2_R {
+        RXD2_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 6:7 - MAC Receive Input 3"]
-    #[inline]
-    pub fn rxd3(&self) -> RXD3R {
-        RXD3R::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn rxd3(&self) -> RXD3_R {
+        RXD3_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bits 8:9 - RMII clock input"]
-    #[inline]
-    pub fn clk_rmii(&self) -> CLK_RMIIR {
-        CLK_RMIIR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn clk_rmii(&self) -> CLK_RMII_R {
+        CLK_RMII_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 10:11 - CRS_DV input"]
-    #[inline]
-    pub fn crs_dv(&self) -> CRS_DVR {
-        CRS_DVR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn crs_dv(&self) -> CRS_DV_R {
+        CRS_DV_R::new(((self.bits >> 10) & 0x03) as u8)
     }
     #[doc = "Bits 12:13 - CRS input"]
-    #[inline]
-    pub fn crs(&self) -> CRSR {
-        CRSR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn crs(&self) -> CRS_R {
+        CRS_R::new(((self.bits >> 12) & 0x03) as u8)
     }
     #[doc = "Bits 14:15 - RXER Input"]
-    #[inline]
-    pub fn rxer(&self) -> RXERR {
-        RXERR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn rxer(&self) -> RXER_R {
+        RXER_R::new(((self.bits >> 14) & 0x03) as u8)
     }
     #[doc = "Bits 16:17 - COL input"]
-    #[inline]
-    pub fn col(&self) -> COLR {
-        COLR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn col(&self) -> COL_R {
+        COL_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bits 18:19 - CLK_TX input"]
-    #[inline]
-    pub fn clk_tx(&self) -> CLK_TXR {
-        CLK_TXR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn clk_tx(&self) -> CLK_TX_R {
+        CLK_TX_R::new(((self.bits >> 18) & 0x03) as u8)
     }
     #[doc = "Bits 22:23 - MDIO Input Select"]
-    #[inline]
-    pub fn mdio(&self) -> MDIOR {
-        MDIOR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mdio(&self) -> MDIO_R {
+        MDIO_R::new(((self.bits >> 22) & 0x03) as u8)
     }
     #[doc = "Bit 26 - Ethernet MAC Interface Selection"]
-    #[inline]
-    pub fn infsel(&self) -> INFSELR {
-        INFSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn infsel(&self) -> INFSEL_R {
+        INFSEL_R::new(((self.bits >> 26) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - MAC Receive Input 0"]
-    #[inline]
-    pub fn rxd0(&mut self) -> _RXD0W {
-        _RXD0W { w: self }
+    #[inline(always)]
+    pub fn rxd0(&mut self) -> RXD0_W {
+        RXD0_W { w: self }
     }
     #[doc = "Bits 2:3 - MAC Receive Input 1"]
-    #[inline]
-    pub fn rxd1(&mut self) -> _RXD1W {
-        _RXD1W { w: self }
+    #[inline(always)]
+    pub fn rxd1(&mut self) -> RXD1_W {
+        RXD1_W { w: self }
     }
     #[doc = "Bits 4:5 - MAC Receive Input 2"]
-    #[inline]
-    pub fn rxd2(&mut self) -> _RXD2W {
-        _RXD2W { w: self }
+    #[inline(always)]
+    pub fn rxd2(&mut self) -> RXD2_W {
+        RXD2_W { w: self }
     }
     #[doc = "Bits 6:7 - MAC Receive Input 3"]
-    #[inline]
-    pub fn rxd3(&mut self) -> _RXD3W {
-        _RXD3W { w: self }
+    #[inline(always)]
+    pub fn rxd3(&mut self) -> RXD3_W {
+        RXD3_W { w: self }
     }
     #[doc = "Bits 8:9 - RMII clock input"]
-    #[inline]
-    pub fn clk_rmii(&mut self) -> _CLK_RMIIW {
-        _CLK_RMIIW { w: self }
+    #[inline(always)]
+    pub fn clk_rmii(&mut self) -> CLK_RMII_W {
+        CLK_RMII_W { w: self }
     }
     #[doc = "Bits 10:11 - CRS_DV input"]
-    #[inline]
-    pub fn crs_dv(&mut self) -> _CRS_DVW {
-        _CRS_DVW { w: self }
+    #[inline(always)]
+    pub fn crs_dv(&mut self) -> CRS_DV_W {
+        CRS_DV_W { w: self }
     }
     #[doc = "Bits 12:13 - CRS input"]
-    #[inline]
-    pub fn crs(&mut self) -> _CRSW {
-        _CRSW { w: self }
+    #[inline(always)]
+    pub fn crs(&mut self) -> CRS_W {
+        CRS_W { w: self }
     }
     #[doc = "Bits 14:15 - RXER Input"]
-    #[inline]
-    pub fn rxer(&mut self) -> _RXERW {
-        _RXERW { w: self }
+    #[inline(always)]
+    pub fn rxer(&mut self) -> RXER_W {
+        RXER_W { w: self }
     }
     #[doc = "Bits 16:17 - COL input"]
-    #[inline]
-    pub fn col(&mut self) -> _COLW {
-        _COLW { w: self }
+    #[inline(always)]
+    pub fn col(&mut self) -> COL_W {
+        COL_W { w: self }
     }
     #[doc = "Bits 18:19 - CLK_TX input"]
-    #[inline]
-    pub fn clk_tx(&mut self) -> _CLK_TXW {
-        _CLK_TXW { w: self }
+    #[inline(always)]
+    pub fn clk_tx(&mut self) -> CLK_TX_W {
+        CLK_TX_W { w: self }
     }
     #[doc = "Bits 22:23 - MDIO Input Select"]
-    #[inline]
-    pub fn mdio(&mut self) -> _MDIOW {
-        _MDIOW { w: self }
+    #[inline(always)]
+    pub fn mdio(&mut self) -> MDIO_W {
+        MDIO_W { w: self }
     }
     #[doc = "Bit 26 - Ethernet MAC Interface Selection"]
-    #[inline]
-    pub fn infsel(&mut self) -> _INFSELW {
-        _INFSELW { w: self }
+    #[inline(always)]
+    pub fn infsel(&mut self) -> INFSEL_W {
+        INFSEL_W { w: self }
     }
 }

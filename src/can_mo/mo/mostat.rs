@@ -1,753 +1,553 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::MOSTAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `RXPND`"]
+#[doc = "Reader of register MOSTAT"]
+pub type R = crate::R<u32, super::MOSTAT>;
+#[doc = "Receive Pending\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXPNDR {
-    #[doc = "No CAN message has been received."]
+pub enum RXPND_A {
+    #[doc = "0: No CAN message has been received."]
     VALUE1,
-    #[doc = "A CAN message has been received by the message object n, either directly or via gateway copy action."]
+    #[doc = "1: A CAN message has been received by the message object n, either directly or via gateway copy action."]
     VALUE2,
 }
-impl RXPNDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RXPNDR::VALUE1 => false,
-            RXPNDR::VALUE2 => true,
+impl From<RXPND_A> for bool {
+    #[inline(always)]
+    fn from(variant: RXPND_A) -> Self {
+        match variant {
+            RXPND_A::VALUE1 => false,
+            RXPND_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RXPNDR {
-        match value {
-            false => RXPNDR::VALUE1,
-            true => RXPNDR::VALUE2,
+}
+#[doc = "Reader of field `RXPND`"]
+pub type RXPND_R = crate::R<bool, RXPND_A>;
+impl RXPND_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXPND_A {
+        match self.bits {
+            false => RXPND_A::VALUE1,
+            true => RXPND_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RXPNDR::VALUE1
+        *self == RXPND_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RXPNDR::VALUE2
+        *self == RXPND_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `TXPND`"]
+#[doc = "Transmit Pending\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXPNDR {
-    #[doc = "No CAN message has been transmitted."]
+pub enum TXPND_A {
+    #[doc = "0: No CAN message has been transmitted."]
     VALUE1,
-    #[doc = "A CAN message from message object n has been transmitted successfully over the CAN bus."]
+    #[doc = "1: A CAN message from message object n has been transmitted successfully over the CAN bus."]
     VALUE2,
 }
-impl TXPNDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TXPNDR::VALUE1 => false,
-            TXPNDR::VALUE2 => true,
+impl From<TXPND_A> for bool {
+    #[inline(always)]
+    fn from(variant: TXPND_A) -> Self {
+        match variant {
+            TXPND_A::VALUE1 => false,
+            TXPND_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TXPNDR {
-        match value {
-            false => TXPNDR::VALUE1,
-            true => TXPNDR::VALUE2,
+}
+#[doc = "Reader of field `TXPND`"]
+pub type TXPND_R = crate::R<bool, TXPND_A>;
+impl TXPND_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TXPND_A {
+        match self.bits {
+            false => TXPND_A::VALUE1,
+            true => TXPND_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TXPNDR::VALUE1
+        *self == TXPND_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TXPNDR::VALUE2
+        *self == TXPND_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `RXUPD`"]
+#[doc = "Receive Updating\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXUPDR {
-    #[doc = "No receive update ongoing."]
+pub enum RXUPD_A {
+    #[doc = "0: No receive update ongoing."]
     VALUE1,
-    #[doc = "Message identifier, DLC, and data of the message object are currently updated."]
+    #[doc = "1: Message identifier, DLC, and data of the message object are currently updated."]
     VALUE2,
 }
-impl RXUPDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RXUPDR::VALUE1 => false,
-            RXUPDR::VALUE2 => true,
+impl From<RXUPD_A> for bool {
+    #[inline(always)]
+    fn from(variant: RXUPD_A) -> Self {
+        match variant {
+            RXUPD_A::VALUE1 => false,
+            RXUPD_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RXUPDR {
-        match value {
-            false => RXUPDR::VALUE1,
-            true => RXUPDR::VALUE2,
+}
+#[doc = "Reader of field `RXUPD`"]
+pub type RXUPD_R = crate::R<bool, RXUPD_A>;
+impl RXUPD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXUPD_A {
+        match self.bits {
+            false => RXUPD_A::VALUE1,
+            true => RXUPD_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RXUPDR::VALUE1
+        *self == RXUPD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RXUPDR::VALUE2
+        *self == RXUPD_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `NEWDAT`"]
+#[doc = "New Data\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NEWDATR {
-    #[doc = "No update of the message object n since last flag reset."]
+pub enum NEWDAT_A {
+    #[doc = "0: No update of the message object n since last flag reset."]
     VALUE1,
-    #[doc = "Message object n has been updated."]
+    #[doc = "1: Message object n has been updated."]
     VALUE2,
 }
-impl NEWDATR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            NEWDATR::VALUE1 => false,
-            NEWDATR::VALUE2 => true,
+impl From<NEWDAT_A> for bool {
+    #[inline(always)]
+    fn from(variant: NEWDAT_A) -> Self {
+        match variant {
+            NEWDAT_A::VALUE1 => false,
+            NEWDAT_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> NEWDATR {
-        match value {
-            false => NEWDATR::VALUE1,
-            true => NEWDATR::VALUE2,
+}
+#[doc = "Reader of field `NEWDAT`"]
+pub type NEWDAT_R = crate::R<bool, NEWDAT_A>;
+impl NEWDAT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> NEWDAT_A {
+        match self.bits {
+            false => NEWDAT_A::VALUE1,
+            true => NEWDAT_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == NEWDATR::VALUE1
+        *self == NEWDAT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == NEWDATR::VALUE2
+        *self == NEWDAT_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `MSGLST`"]
+#[doc = "Message Lost\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSGLSTR {
-    #[doc = "No CAN message is lost."]
+pub enum MSGLST_A {
+    #[doc = "0: No CAN message is lost."]
     VALUE1,
-    #[doc = "A CAN message is lost because NEWDAT has become set again when it has already been set."]
+    #[doc = "1: A CAN message is lost because NEWDAT has become set again when it has already been set."]
     VALUE2,
 }
-impl MSGLSTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MSGLSTR::VALUE1 => false,
-            MSGLSTR::VALUE2 => true,
+impl From<MSGLST_A> for bool {
+    #[inline(always)]
+    fn from(variant: MSGLST_A) -> Self {
+        match variant {
+            MSGLST_A::VALUE1 => false,
+            MSGLST_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MSGLSTR {
-        match value {
-            false => MSGLSTR::VALUE1,
-            true => MSGLSTR::VALUE2,
+}
+#[doc = "Reader of field `MSGLST`"]
+pub type MSGLST_R = crate::R<bool, MSGLST_A>;
+impl MSGLST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MSGLST_A {
+        match self.bits {
+            false => MSGLST_A::VALUE1,
+            true => MSGLST_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MSGLSTR::VALUE1
+        *self == MSGLST_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MSGLSTR::VALUE2
+        *self == MSGLST_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `MSGVAL`"]
+#[doc = "Message Valid\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSGVALR {
-    #[doc = "Message object n is not valid."]
+pub enum MSGVAL_A {
+    #[doc = "0: Message object n is not valid."]
     VALUE1,
-    #[doc = "Message object n is valid."]
+    #[doc = "1: Message object n is valid."]
     VALUE2,
 }
-impl MSGVALR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MSGVALR::VALUE1 => false,
-            MSGVALR::VALUE2 => true,
+impl From<MSGVAL_A> for bool {
+    #[inline(always)]
+    fn from(variant: MSGVAL_A) -> Self {
+        match variant {
+            MSGVAL_A::VALUE1 => false,
+            MSGVAL_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MSGVALR {
-        match value {
-            false => MSGVALR::VALUE1,
-            true => MSGVALR::VALUE2,
+}
+#[doc = "Reader of field `MSGVAL`"]
+pub type MSGVAL_R = crate::R<bool, MSGVAL_A>;
+impl MSGVAL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MSGVAL_A {
+        match self.bits {
+            false => MSGVAL_A::VALUE1,
+            true => MSGVAL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MSGVALR::VALUE1
+        *self == MSGVAL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MSGVALR::VALUE2
+        *self == MSGVAL_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `RTSEL`"]
+#[doc = "Receive/Transmit Selected\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RTSELR {
-    #[doc = "Message object n is not selected for receive or transmit operation."]
+pub enum RTSEL_A {
+    #[doc = "0: Message object n is not selected for receive or transmit operation."]
     VALUE1,
-    #[doc = "Message object n is selected for receive or transmit operation."]
+    #[doc = "1: Message object n is selected for receive or transmit operation."]
     VALUE2,
 }
-impl RTSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RTSELR::VALUE1 => false,
-            RTSELR::VALUE2 => true,
+impl From<RTSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: RTSEL_A) -> Self {
+        match variant {
+            RTSEL_A::VALUE1 => false,
+            RTSEL_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RTSELR {
-        match value {
-            false => RTSELR::VALUE1,
-            true => RTSELR::VALUE2,
+}
+#[doc = "Reader of field `RTSEL`"]
+pub type RTSEL_R = crate::R<bool, RTSEL_A>;
+impl RTSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RTSEL_A {
+        match self.bits {
+            false => RTSEL_A::VALUE1,
+            true => RTSEL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RTSELR::VALUE1
+        *self == RTSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RTSELR::VALUE2
+        *self == RTSEL_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `RXEN`"]
+#[doc = "Receive Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXENR {
-    #[doc = "Message object n is not enabled for frame reception."]
+pub enum RXEN_A {
+    #[doc = "0: Message object n is not enabled for frame reception."]
     VALUE1,
-    #[doc = "Message object n is enabled for frame reception."]
+    #[doc = "1: Message object n is enabled for frame reception."]
     VALUE2,
 }
-impl RXENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RXENR::VALUE1 => false,
-            RXENR::VALUE2 => true,
+impl From<RXEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: RXEN_A) -> Self {
+        match variant {
+            RXEN_A::VALUE1 => false,
+            RXEN_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RXENR {
-        match value {
-            false => RXENR::VALUE1,
-            true => RXENR::VALUE2,
+}
+#[doc = "Reader of field `RXEN`"]
+pub type RXEN_R = crate::R<bool, RXEN_A>;
+impl RXEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXEN_A {
+        match self.bits {
+            false => RXEN_A::VALUE1,
+            true => RXEN_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RXENR::VALUE1
+        *self == RXEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RXENR::VALUE2
+        *self == RXEN_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `TXRQ`"]
+#[doc = "Transmit Request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXRQR {
-    #[doc = "No transmission of message object n is requested."]
+pub enum TXRQ_A {
+    #[doc = "0: No transmission of message object n is requested."]
     VALUE1,
-    #[doc = "Transmission of message object n on the CAN bus is requested."]
+    #[doc = "1: Transmission of message object n on the CAN bus is requested."]
     VALUE2,
 }
-impl TXRQR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TXRQR::VALUE1 => false,
-            TXRQR::VALUE2 => true,
+impl From<TXRQ_A> for bool {
+    #[inline(always)]
+    fn from(variant: TXRQ_A) -> Self {
+        match variant {
+            TXRQ_A::VALUE1 => false,
+            TXRQ_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TXRQR {
-        match value {
-            false => TXRQR::VALUE1,
-            true => TXRQR::VALUE2,
+}
+#[doc = "Reader of field `TXRQ`"]
+pub type TXRQ_R = crate::R<bool, TXRQ_A>;
+impl TXRQ_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TXRQ_A {
+        match self.bits {
+            false => TXRQ_A::VALUE1,
+            true => TXRQ_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TXRQR::VALUE1
+        *self == TXRQ_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TXRQR::VALUE2
+        *self == TXRQ_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `TXEN0`"]
+#[doc = "Transmit Enable 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXEN0R {
-    #[doc = "Message object n is not enabled for frame transmission."]
+pub enum TXEN0_A {
+    #[doc = "0: Message object n is not enabled for frame transmission."]
     VALUE1,
-    #[doc = "Message object n is enabled for frame transmission."]
+    #[doc = "1: Message object n is enabled for frame transmission."]
     VALUE2,
 }
-impl TXEN0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TXEN0R::VALUE1 => false,
-            TXEN0R::VALUE2 => true,
+impl From<TXEN0_A> for bool {
+    #[inline(always)]
+    fn from(variant: TXEN0_A) -> Self {
+        match variant {
+            TXEN0_A::VALUE1 => false,
+            TXEN0_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TXEN0R {
-        match value {
-            false => TXEN0R::VALUE1,
-            true => TXEN0R::VALUE2,
+}
+#[doc = "Reader of field `TXEN0`"]
+pub type TXEN0_R = crate::R<bool, TXEN0_A>;
+impl TXEN0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TXEN0_A {
+        match self.bits {
+            false => TXEN0_A::VALUE1,
+            true => TXEN0_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TXEN0R::VALUE1
+        *self == TXEN0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TXEN0R::VALUE2
+        *self == TXEN0_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `TXEN1`"]
+#[doc = "Transmit Enable 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXEN1R {
-    #[doc = "Message object n is not enabled for frame transmission."]
+pub enum TXEN1_A {
+    #[doc = "0: Message object n is not enabled for frame transmission."]
     VALUE1,
-    #[doc = "Message object n is enabled for frame transmission."]
+    #[doc = "1: Message object n is enabled for frame transmission."]
     VALUE2,
 }
-impl TXEN1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TXEN1R::VALUE1 => false,
-            TXEN1R::VALUE2 => true,
+impl From<TXEN1_A> for bool {
+    #[inline(always)]
+    fn from(variant: TXEN1_A) -> Self {
+        match variant {
+            TXEN1_A::VALUE1 => false,
+            TXEN1_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TXEN1R {
-        match value {
-            false => TXEN1R::VALUE1,
-            true => TXEN1R::VALUE2,
+}
+#[doc = "Reader of field `TXEN1`"]
+pub type TXEN1_R = crate::R<bool, TXEN1_A>;
+impl TXEN1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TXEN1_A {
+        match self.bits {
+            false => TXEN1_A::VALUE1,
+            true => TXEN1_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TXEN1R::VALUE1
+        *self == TXEN1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TXEN1R::VALUE2
+        *self == TXEN1_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `DIR`"]
+#[doc = "Message Direction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIRR {
-    #[doc = "Receive Object selected: With TXRQ = 1, a Remote Frame with the identifier of message object n is scheduled for transmission. On reception of a Data Frame with matching identifier, the message is stored in message object n."]
+pub enum DIR_A {
+    #[doc = "0: Receive Object selected: With TXRQ = 1, a Remote Frame with the identifier of message object n is scheduled for transmission. On reception of a Data Frame with matching identifier, the message is stored in message object n."]
     VALUE1,
-    #[doc = "Transmit Object selected: If TXRQ = 1, message object n is scheduled for transmission of a Data Frame. On reception of a Remote Frame with matching identifier, bit TXRQ is set."]
+    #[doc = "1: Transmit Object selected: If TXRQ = 1, message object n is scheduled for transmission of a Data Frame. On reception of a Remote Frame with matching identifier, bit TXRQ is set."]
     VALUE2,
 }
-impl DIRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DIRR::VALUE1 => false,
-            DIRR::VALUE2 => true,
+impl From<DIR_A> for bool {
+    #[inline(always)]
+    fn from(variant: DIR_A) -> Self {
+        match variant {
+            DIR_A::VALUE1 => false,
+            DIR_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DIRR {
-        match value {
-            false => DIRR::VALUE1,
-            true => DIRR::VALUE2,
+}
+#[doc = "Reader of field `DIR`"]
+pub type DIR_R = crate::R<bool, DIR_A>;
+impl DIR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DIR_A {
+        match self.bits {
+            false => DIR_A::VALUE1,
+            true => DIR_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DIRR::VALUE1
+        *self == DIR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DIRR::VALUE2
+        *self == DIR_A::VALUE2
     }
 }
-#[doc = r" Value of the field"]
-pub struct LISTR {
-    bits: u8,
-}
-impl LISTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PPREVR {
-    bits: u8,
-}
-impl PPREVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PNEXTR {
-    bits: u8,
-}
-impl PNEXTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of field `LIST`"]
+pub type LIST_R = crate::R<u8, u8>;
+#[doc = "Reader of field `PPREV`"]
+pub type PPREV_R = crate::R<u8, u8>;
+#[doc = "Reader of field `PNEXT`"]
+pub type PNEXT_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Receive Pending"]
-    #[inline]
-    pub fn rxpnd(&self) -> RXPNDR {
-        RXPNDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rxpnd(&self) -> RXPND_R {
+        RXPND_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Transmit Pending"]
-    #[inline]
-    pub fn txpnd(&self) -> TXPNDR {
-        TXPNDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn txpnd(&self) -> TXPND_R {
+        TXPND_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Receive Updating"]
-    #[inline]
-    pub fn rxupd(&self) -> RXUPDR {
-        RXUPDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rxupd(&self) -> RXUPD_R {
+        RXUPD_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - New Data"]
-    #[inline]
-    pub fn newdat(&self) -> NEWDATR {
-        NEWDATR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn newdat(&self) -> NEWDAT_R {
+        NEWDAT_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Message Lost"]
-    #[inline]
-    pub fn msglst(&self) -> MSGLSTR {
-        MSGLSTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn msglst(&self) -> MSGLST_R {
+        MSGLST_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Message Valid"]
-    #[inline]
-    pub fn msgval(&self) -> MSGVALR {
-        MSGVALR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn msgval(&self) -> MSGVAL_R {
+        MSGVAL_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Receive/Transmit Selected"]
-    #[inline]
-    pub fn rtsel(&self) -> RTSELR {
-        RTSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rtsel(&self) -> RTSEL_R {
+        RTSEL_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Receive Enable"]
-    #[inline]
-    pub fn rxen(&self) -> RXENR {
-        RXENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rxen(&self) -> RXEN_R {
+        RXEN_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Transmit Request"]
-    #[inline]
-    pub fn txrq(&self) -> TXRQR {
-        TXRQR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn txrq(&self) -> TXRQ_R {
+        TXRQ_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Transmit Enable 0"]
-    #[inline]
-    pub fn txen0(&self) -> TXEN0R {
-        TXEN0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn txen0(&self) -> TXEN0_R {
+        TXEN0_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Transmit Enable 1"]
-    #[inline]
-    pub fn txen1(&self) -> TXEN1R {
-        TXEN1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn txen1(&self) -> TXEN1_R {
+        TXEN1_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Message Direction"]
-    #[inline]
-    pub fn dir(&self) -> DIRR {
-        DIRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dir(&self) -> DIR_R {
+        DIR_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bits 12:15 - List Allocation"]
-    #[inline]
-    pub fn list(&self) -> LISTR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        LISTR { bits }
+    #[inline(always)]
+    pub fn list(&self) -> LIST_R {
+        LIST_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 16:23 - Pointer to Previous Message Object"]
-    #[inline]
-    pub fn pprev(&self) -> PPREVR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PPREVR { bits }
+    #[inline(always)]
+    pub fn pprev(&self) -> PPREV_R {
+        PPREV_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Pointer to Next Message Object"]
-    #[inline]
-    pub fn pnext(&self) -> PNEXTR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PNEXTR { bits }
+    #[inline(always)]
+    pub fn pnext(&self) -> PNEXT_R {
+        PNEXT_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }

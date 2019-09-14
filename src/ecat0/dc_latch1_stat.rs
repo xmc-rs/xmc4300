@@ -1,161 +1,99 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-impl super::DC_LATCH1_STAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `EV_L1_POS`"]
+#[doc = "Reader of register DC_LATCH1_STAT"]
+pub type R = crate::R<u8, super::DC_LATCH1_STAT>;
+#[doc = "Event Latch1 positive edge\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EV_L1_POSR {
-    #[doc = "Positive edge not detected or continuous mode"]
+pub enum EV_L1_POS_A {
+    #[doc = "0: Positive edge not detected or continuous mode"]
     VALUE1,
-    #[doc = "Positive edge detected in single event mode only"]
+    #[doc = "1: Positive edge detected in single event mode only"]
     VALUE2,
 }
-impl EV_L1_POSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EV_L1_POSR::VALUE1 => false,
-            EV_L1_POSR::VALUE2 => true,
+impl From<EV_L1_POS_A> for bool {
+    #[inline(always)]
+    fn from(variant: EV_L1_POS_A) -> Self {
+        match variant {
+            EV_L1_POS_A::VALUE1 => false,
+            EV_L1_POS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EV_L1_POSR {
-        match value {
-            false => EV_L1_POSR::VALUE1,
-            true => EV_L1_POSR::VALUE2,
+}
+#[doc = "Reader of field `EV_L1_POS`"]
+pub type EV_L1_POS_R = crate::R<bool, EV_L1_POS_A>;
+impl EV_L1_POS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EV_L1_POS_A {
+        match self.bits {
+            false => EV_L1_POS_A::VALUE1,
+            true => EV_L1_POS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EV_L1_POSR::VALUE1
+        *self == EV_L1_POS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EV_L1_POSR::VALUE2
+        *self == EV_L1_POS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `EV_L1_NEG`"]
+#[doc = "Event Latch1 negative edge\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EV_L1_NEGR {
-    #[doc = "Negative edge not detected or continuous mode"]
+pub enum EV_L1_NEG_A {
+    #[doc = "0: Negative edge not detected or continuous mode"]
     VALUE1,
-    #[doc = "Negative edge detected in single event mode only"]
+    #[doc = "1: Negative edge detected in single event mode only"]
     VALUE2,
 }
-impl EV_L1_NEGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EV_L1_NEGR::VALUE1 => false,
-            EV_L1_NEGR::VALUE2 => true,
+impl From<EV_L1_NEG_A> for bool {
+    #[inline(always)]
+    fn from(variant: EV_L1_NEG_A) -> Self {
+        match variant {
+            EV_L1_NEG_A::VALUE1 => false,
+            EV_L1_NEG_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EV_L1_NEGR {
-        match value {
-            false => EV_L1_NEGR::VALUE1,
-            true => EV_L1_NEGR::VALUE2,
+}
+#[doc = "Reader of field `EV_L1_NEG`"]
+pub type EV_L1_NEG_R = crate::R<bool, EV_L1_NEG_A>;
+impl EV_L1_NEG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EV_L1_NEG_A {
+        match self.bits {
+            false => EV_L1_NEG_A::VALUE1,
+            true => EV_L1_NEG_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EV_L1_NEGR::VALUE1
+        *self == EV_L1_NEG_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EV_L1_NEGR::VALUE2
+        *self == EV_L1_NEG_A::VALUE2
     }
 }
-#[doc = r" Value of the field"]
-pub struct L1_PINR {
-    bits: bool,
-}
-impl L1_PINR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of field `L1_PIN`"]
+pub type L1_PIN_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 0 - Event Latch1 positive edge"]
-    #[inline]
-    pub fn ev_l1_pos(&self) -> EV_L1_POSR {
-        EV_L1_POSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn ev_l1_pos(&self) -> EV_L1_POS_R {
+        EV_L1_POS_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Event Latch1 negative edge"]
-    #[inline]
-    pub fn ev_l1_neg(&self) -> EV_L1_NEGR {
-        EV_L1_NEGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn ev_l1_neg(&self) -> EV_L1_NEG_R {
+        EV_L1_NEG_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Latch1 pin state"]
-    #[inline]
-    pub fn l1_pin(&self) -> L1_PINR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        };
-        L1_PINR { bits }
+    #[inline(always)]
+    pub fn l1_pin(&self) -> L1_PIN_R {
+        L1_PIN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
 }

@@ -1,181 +1,104 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u8,
-}
-impl super::EEP_STATE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register EEP_STATE"]
+pub type R = crate::R<u8, super::EEP_STATE>;
+#[doc = "Writer for register EEP_STATE"]
+pub type W = crate::W<u8, super::EEP_STATE>;
+#[doc = "Register EEP_STATE `reset()`'s with value 0"]
+impl crate::ResetValue for super::EEP_STATE {
+    type Type = u8;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ACCESS`"]
+#[doc = "Access to EEPROM\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ACCESSR {
-    #[doc = "PDI releases EEPROM access"]
+pub enum ACCESS_A {
+    #[doc = "0: PDI releases EEPROM access"]
     VALUE1,
-    #[doc = "PDI takes EEPROM access (PDI has EEPROM control)"]
+    #[doc = "1: PDI takes EEPROM access (PDI has EEPROM control)"]
     VALUE2,
 }
-impl ACCESSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ACCESSR::VALUE1 => false,
-            ACCESSR::VALUE2 => true,
+impl From<ACCESS_A> for bool {
+    #[inline(always)]
+    fn from(variant: ACCESS_A) -> Self {
+        match variant {
+            ACCESS_A::VALUE1 => false,
+            ACCESS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ACCESSR {
-        match value {
-            false => ACCESSR::VALUE1,
-            true => ACCESSR::VALUE2,
+}
+#[doc = "Reader of field `ACCESS`"]
+pub type ACCESS_R = crate::R<bool, ACCESS_A>;
+impl ACCESS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ACCESS_A {
+        match self.bits {
+            false => ACCESS_A::VALUE1,
+            true => ACCESS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ACCESSR::VALUE1
+        *self == ACCESS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ACCESSR::VALUE2
+        *self == ACCESS_A::VALUE2
     }
 }
-#[doc = "Values that can be written to the field `ACCESS`"]
-pub enum ACCESSW {
-    #[doc = "PDI releases EEPROM access"]
-    VALUE1,
-    #[doc = "PDI takes EEPROM access (PDI has EEPROM control)"]
-    VALUE2,
-}
-impl ACCESSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ACCESSW::VALUE1 => false,
-            ACCESSW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ACCESSW<'a> {
+#[doc = "Write proxy for field `ACCESS`"]
+pub struct ACCESS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ACCESSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ACCESSW) -> &'a mut W {
+impl<'a> ACCESS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ACCESS_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "PDI releases EEPROM access"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ACCESSW::VALUE1)
+        self.variant(ACCESS_A::VALUE1)
     }
     #[doc = "PDI takes EEPROM access (PDI has EEPROM control)"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ACCESSW::VALUE2)
+        self.variant(ACCESS_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u8) & 0x01);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 0 - Access to EEPROM"]
-    #[inline]
-    pub fn access(&self) -> ACCESSR {
-        ACCESSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn access(&self) -> ACCESS_R {
+        ACCESS_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Access to EEPROM"]
-    #[inline]
-    pub fn access(&mut self) -> _ACCESSW {
-        _ACCESSW { w: self }
+    #[inline(always)]
+    pub fn access(&mut self) -> ACCESS_W {
+        ACCESS_W { w: self }
     }
 }

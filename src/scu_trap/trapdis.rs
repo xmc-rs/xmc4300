@@ -1,1133 +1,808 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::TRAPDIS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register TRAPDIS"]
+pub type R = crate::R<u32, super::TRAPDIS>;
+#[doc = "Writer for register TRAPDIS"]
+pub type W = crate::W<u32, super::TRAPDIS>;
+#[doc = "Register TRAPDIS `reset()`'s with value 0x0001_01fd"]
+impl crate::ResetValue for super::TRAPDIS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0001_01fd
     }
 }
-#[doc = "Possible values of the field `SOSCWDGT`"]
+#[doc = "OSC_HP Oscillator Watchdog Trap Disable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SOSCWDGTR {
-    #[doc = "Trap request enabled"]
+pub enum SOSCWDGT_A {
+    #[doc = "0: Trap request enabled"]
     CONST_0,
-    #[doc = "Trap request disabled"]
+    #[doc = "1: Trap request disabled"]
     CONST_1,
 }
-impl SOSCWDGTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SOSCWDGTR::CONST_0 => false,
-            SOSCWDGTR::CONST_1 => true,
+impl From<SOSCWDGT_A> for bool {
+    #[inline(always)]
+    fn from(variant: SOSCWDGT_A) -> Self {
+        match variant {
+            SOSCWDGT_A::CONST_0 => false,
+            SOSCWDGT_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SOSCWDGTR {
-        match value {
-            false => SOSCWDGTR::CONST_0,
-            true => SOSCWDGTR::CONST_1,
+}
+#[doc = "Reader of field `SOSCWDGT`"]
+pub type SOSCWDGT_R = crate::R<bool, SOSCWDGT_A>;
+impl SOSCWDGT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SOSCWDGT_A {
+        match self.bits {
+            false => SOSCWDGT_A::CONST_0,
+            true => SOSCWDGT_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == SOSCWDGTR::CONST_0
+        *self == SOSCWDGT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == SOSCWDGTR::CONST_1
+        *self == SOSCWDGT_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `SVCOLCKT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SVCOLCKTR {
-    #[doc = "Trap request enabled"]
-    CONST_0,
-    #[doc = "Trap request disabled"]
-    CONST_1,
-}
-impl SVCOLCKTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SVCOLCKTR::CONST_0 => false,
-            SVCOLCKTR::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SVCOLCKTR {
-        match value {
-            false => SVCOLCKTR::CONST_0,
-            true => SVCOLCKTR::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == SVCOLCKTR::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == SVCOLCKTR::CONST_1
-    }
-}
-#[doc = "Possible values of the field `UVCOLCKT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UVCOLCKTR {
-    #[doc = "Trap request enabled"]
-    CONST_0,
-    #[doc = "Trap request disabled"]
-    CONST_1,
-}
-impl UVCOLCKTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            UVCOLCKTR::CONST_0 => false,
-            UVCOLCKTR::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> UVCOLCKTR {
-        match value {
-            false => UVCOLCKTR::CONST_0,
-            true => UVCOLCKTR::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == UVCOLCKTR::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == UVCOLCKTR::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PET`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PETR {
-    #[doc = "Trap request enabled"]
-    CONST_0,
-    #[doc = "Trap request disabled"]
-    CONST_1,
-}
-impl PETR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PETR::CONST_0 => false,
-            PETR::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PETR {
-        match value {
-            false => PETR::CONST_0,
-            true => PETR::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PETR::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PETR::CONST_1
-    }
-}
-#[doc = "Possible values of the field `BRWNT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BRWNTR {
-    #[doc = "Trap request enabled"]
-    CONST_0,
-    #[doc = "Trap request disabled"]
-    CONST_1,
-}
-impl BRWNTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BRWNTR::CONST_0 => false,
-            BRWNTR::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BRWNTR {
-        match value {
-            false => BRWNTR::CONST_0,
-            true => BRWNTR::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == BRWNTR::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == BRWNTR::CONST_1
-    }
-}
-#[doc = "Possible values of the field `ULPWDGT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ULPWDGTR {
-    #[doc = "Trap request enabled"]
-    CONST_0,
-    #[doc = "Trap request disabled"]
-    CONST_1,
-}
-impl ULPWDGTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ULPWDGTR::CONST_0 => false,
-            ULPWDGTR::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ULPWDGTR {
-        match value {
-            false => ULPWDGTR::CONST_0,
-            true => ULPWDGTR::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == ULPWDGTR::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == ULPWDGTR::CONST_1
-    }
-}
-#[doc = "Possible values of the field `BWERR0T`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BWERR0TR {
-    #[doc = "Trap request enabled"]
-    CONST_0,
-    #[doc = "Trap request disabled"]
-    CONST_1,
-}
-impl BWERR0TR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BWERR0TR::CONST_0 => false,
-            BWERR0TR::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BWERR0TR {
-        match value {
-            false => BWERR0TR::CONST_0,
-            true => BWERR0TR::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == BWERR0TR::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == BWERR0TR::CONST_1
-    }
-}
-#[doc = "Possible values of the field `BWERR1T`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BWERR1TR {
-    #[doc = "Trap request enabled"]
-    CONST_0,
-    #[doc = "Trap request disabled"]
-    CONST_1,
-}
-impl BWERR1TR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BWERR1TR::CONST_0 => false,
-            BWERR1TR::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BWERR1TR {
-        match value {
-            false => BWERR1TR::CONST_0,
-            true => BWERR1TR::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == BWERR1TR::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == BWERR1TR::CONST_1
-    }
-}
-#[doc = "Possible values of the field `ECAT0RST`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ECAT0RSTR {
-    #[doc = "Trap request enabled"]
-    CONST_0,
-    #[doc = "Trap request disabled"]
-    CONST_1,
-}
-impl ECAT0RSTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ECAT0RSTR::CONST_0 => false,
-            ECAT0RSTR::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ECAT0RSTR {
-        match value {
-            false => ECAT0RSTR::CONST_0,
-            true => ECAT0RSTR::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == ECAT0RSTR::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == ECAT0RSTR::CONST_1
-    }
-}
-#[doc = "Values that can be written to the field `SOSCWDGT`"]
-pub enum SOSCWDGTW {
-    #[doc = "Trap request enabled"]
-    CONST_0,
-    #[doc = "Trap request disabled"]
-    CONST_1,
-}
-impl SOSCWDGTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SOSCWDGTW::CONST_0 => false,
-            SOSCWDGTW::CONST_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SOSCWDGTW<'a> {
+#[doc = "Write proxy for field `SOSCWDGT`"]
+pub struct SOSCWDGT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SOSCWDGTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SOSCWDGTW) -> &'a mut W {
+impl<'a> SOSCWDGT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SOSCWDGT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Trap request enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(SOSCWDGTW::CONST_0)
+        self.variant(SOSCWDGT_A::CONST_0)
     }
     #[doc = "Trap request disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(SOSCWDGTW::CONST_1)
+        self.variant(SOSCWDGT_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SVCOLCKT`"]
-pub enum SVCOLCKTW {
-    #[doc = "Trap request enabled"]
+#[doc = "System VCO Lock Trap Disable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SVCOLCKT_A {
+    #[doc = "0: Trap request enabled"]
     CONST_0,
-    #[doc = "Trap request disabled"]
+    #[doc = "1: Trap request disabled"]
     CONST_1,
 }
-impl SVCOLCKTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SVCOLCKTW::CONST_0 => false,
-            SVCOLCKTW::CONST_1 => true,
+impl From<SVCOLCKT_A> for bool {
+    #[inline(always)]
+    fn from(variant: SVCOLCKT_A) -> Self {
+        match variant {
+            SVCOLCKT_A::CONST_0 => false,
+            SVCOLCKT_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SVCOLCKTW<'a> {
+#[doc = "Reader of field `SVCOLCKT`"]
+pub type SVCOLCKT_R = crate::R<bool, SVCOLCKT_A>;
+impl SVCOLCKT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SVCOLCKT_A {
+        match self.bits {
+            false => SVCOLCKT_A::CONST_0,
+            true => SVCOLCKT_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == SVCOLCKT_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == SVCOLCKT_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `SVCOLCKT`"]
+pub struct SVCOLCKT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SVCOLCKTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SVCOLCKTW) -> &'a mut W {
+impl<'a> SVCOLCKT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SVCOLCKT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Trap request enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(SVCOLCKTW::CONST_0)
+        self.variant(SVCOLCKT_A::CONST_0)
     }
     #[doc = "Trap request disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(SVCOLCKTW::CONST_1)
+        self.variant(SVCOLCKT_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `UVCOLCKT`"]
-pub enum UVCOLCKTW {
-    #[doc = "Trap request enabled"]
+#[doc = "USB VCO Lock Trap Disable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum UVCOLCKT_A {
+    #[doc = "0: Trap request enabled"]
     CONST_0,
-    #[doc = "Trap request disabled"]
+    #[doc = "1: Trap request disabled"]
     CONST_1,
 }
-impl UVCOLCKTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            UVCOLCKTW::CONST_0 => false,
-            UVCOLCKTW::CONST_1 => true,
+impl From<UVCOLCKT_A> for bool {
+    #[inline(always)]
+    fn from(variant: UVCOLCKT_A) -> Self {
+        match variant {
+            UVCOLCKT_A::CONST_0 => false,
+            UVCOLCKT_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _UVCOLCKTW<'a> {
+#[doc = "Reader of field `UVCOLCKT`"]
+pub type UVCOLCKT_R = crate::R<bool, UVCOLCKT_A>;
+impl UVCOLCKT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> UVCOLCKT_A {
+        match self.bits {
+            false => UVCOLCKT_A::CONST_0,
+            true => UVCOLCKT_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == UVCOLCKT_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == UVCOLCKT_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `UVCOLCKT`"]
+pub struct UVCOLCKT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _UVCOLCKTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: UVCOLCKTW) -> &'a mut W {
+impl<'a> UVCOLCKT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: UVCOLCKT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Trap request enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(UVCOLCKTW::CONST_0)
+        self.variant(UVCOLCKT_A::CONST_0)
     }
     #[doc = "Trap request disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(UVCOLCKTW::CONST_1)
+        self.variant(UVCOLCKT_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PET`"]
-pub enum PETW {
-    #[doc = "Trap request enabled"]
+#[doc = "Parity Error Trap Disable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PET_A {
+    #[doc = "0: Trap request enabled"]
     CONST_0,
-    #[doc = "Trap request disabled"]
+    #[doc = "1: Trap request disabled"]
     CONST_1,
 }
-impl PETW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PETW::CONST_0 => false,
-            PETW::CONST_1 => true,
+impl From<PET_A> for bool {
+    #[inline(always)]
+    fn from(variant: PET_A) -> Self {
+        match variant {
+            PET_A::CONST_0 => false,
+            PET_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PETW<'a> {
+#[doc = "Reader of field `PET`"]
+pub type PET_R = crate::R<bool, PET_A>;
+impl PET_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PET_A {
+        match self.bits {
+            false => PET_A::CONST_0,
+            true => PET_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PET_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PET_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PET`"]
+pub struct PET_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PETW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PETW) -> &'a mut W {
+impl<'a> PET_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PET_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Trap request enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PETW::CONST_0)
+        self.variant(PET_A::CONST_0)
     }
     #[doc = "Trap request disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PETW::CONST_1)
+        self.variant(PET_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BRWNT`"]
-pub enum BRWNTW {
-    #[doc = "Trap request enabled"]
+#[doc = "Brown Out Trap Disable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BRWNT_A {
+    #[doc = "0: Trap request enabled"]
     CONST_0,
-    #[doc = "Trap request disabled"]
+    #[doc = "1: Trap request disabled"]
     CONST_1,
 }
-impl BRWNTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BRWNTW::CONST_0 => false,
-            BRWNTW::CONST_1 => true,
+impl From<BRWNT_A> for bool {
+    #[inline(always)]
+    fn from(variant: BRWNT_A) -> Self {
+        match variant {
+            BRWNT_A::CONST_0 => false,
+            BRWNT_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BRWNTW<'a> {
+#[doc = "Reader of field `BRWNT`"]
+pub type BRWNT_R = crate::R<bool, BRWNT_A>;
+impl BRWNT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BRWNT_A {
+        match self.bits {
+            false => BRWNT_A::CONST_0,
+            true => BRWNT_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == BRWNT_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == BRWNT_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `BRWNT`"]
+pub struct BRWNT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BRWNTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BRWNTW) -> &'a mut W {
+impl<'a> BRWNT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BRWNT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Trap request enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(BRWNTW::CONST_0)
+        self.variant(BRWNT_A::CONST_0)
     }
     #[doc = "Trap request disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(BRWNTW::CONST_1)
+        self.variant(BRWNT_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ULPWDGT`"]
-pub enum ULPWDGTW {
-    #[doc = "Trap request enabled"]
+#[doc = "OSC_ULP Oscillator Watchdog Trap Disable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ULPWDGT_A {
+    #[doc = "0: Trap request enabled"]
     CONST_0,
-    #[doc = "Trap request disabled"]
+    #[doc = "1: Trap request disabled"]
     CONST_1,
 }
-impl ULPWDGTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ULPWDGTW::CONST_0 => false,
-            ULPWDGTW::CONST_1 => true,
+impl From<ULPWDGT_A> for bool {
+    #[inline(always)]
+    fn from(variant: ULPWDGT_A) -> Self {
+        match variant {
+            ULPWDGT_A::CONST_0 => false,
+            ULPWDGT_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ULPWDGTW<'a> {
+#[doc = "Reader of field `ULPWDGT`"]
+pub type ULPWDGT_R = crate::R<bool, ULPWDGT_A>;
+impl ULPWDGT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ULPWDGT_A {
+        match self.bits {
+            false => ULPWDGT_A::CONST_0,
+            true => ULPWDGT_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == ULPWDGT_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == ULPWDGT_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `ULPWDGT`"]
+pub struct ULPWDGT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ULPWDGTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ULPWDGTW) -> &'a mut W {
+impl<'a> ULPWDGT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ULPWDGT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Trap request enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(ULPWDGTW::CONST_0)
+        self.variant(ULPWDGT_A::CONST_0)
     }
     #[doc = "Trap request disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(ULPWDGTW::CONST_1)
+        self.variant(ULPWDGT_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BWERR0T`"]
-pub enum BWERR0TW {
-    #[doc = "Trap request enabled"]
+#[doc = "Peripheral Bridge 0 Trap Disable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BWERR0T_A {
+    #[doc = "0: Trap request enabled"]
     CONST_0,
-    #[doc = "Trap request disabled"]
+    #[doc = "1: Trap request disabled"]
     CONST_1,
 }
-impl BWERR0TW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BWERR0TW::CONST_0 => false,
-            BWERR0TW::CONST_1 => true,
+impl From<BWERR0T_A> for bool {
+    #[inline(always)]
+    fn from(variant: BWERR0T_A) -> Self {
+        match variant {
+            BWERR0T_A::CONST_0 => false,
+            BWERR0T_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BWERR0TW<'a> {
+#[doc = "Reader of field `BWERR0T`"]
+pub type BWERR0T_R = crate::R<bool, BWERR0T_A>;
+impl BWERR0T_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BWERR0T_A {
+        match self.bits {
+            false => BWERR0T_A::CONST_0,
+            true => BWERR0T_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == BWERR0T_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == BWERR0T_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `BWERR0T`"]
+pub struct BWERR0T_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BWERR0TW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BWERR0TW) -> &'a mut W {
+impl<'a> BWERR0T_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BWERR0T_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Trap request enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(BWERR0TW::CONST_0)
+        self.variant(BWERR0T_A::CONST_0)
     }
     #[doc = "Trap request disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(BWERR0TW::CONST_1)
+        self.variant(BWERR0T_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BWERR1T`"]
-pub enum BWERR1TW {
-    #[doc = "Trap request enabled"]
+#[doc = "Peripheral Bridge 1 Trap Disable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BWERR1T_A {
+    #[doc = "0: Trap request enabled"]
     CONST_0,
-    #[doc = "Trap request disabled"]
+    #[doc = "1: Trap request disabled"]
     CONST_1,
 }
-impl BWERR1TW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BWERR1TW::CONST_0 => false,
-            BWERR1TW::CONST_1 => true,
+impl From<BWERR1T_A> for bool {
+    #[inline(always)]
+    fn from(variant: BWERR1T_A) -> Self {
+        match variant {
+            BWERR1T_A::CONST_0 => false,
+            BWERR1T_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BWERR1TW<'a> {
+#[doc = "Reader of field `BWERR1T`"]
+pub type BWERR1T_R = crate::R<bool, BWERR1T_A>;
+impl BWERR1T_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BWERR1T_A {
+        match self.bits {
+            false => BWERR1T_A::CONST_0,
+            true => BWERR1T_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == BWERR1T_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == BWERR1T_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `BWERR1T`"]
+pub struct BWERR1T_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BWERR1TW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BWERR1TW) -> &'a mut W {
+impl<'a> BWERR1T_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BWERR1T_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Trap request enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(BWERR1TW::CONST_0)
+        self.variant(BWERR1T_A::CONST_0)
     }
     #[doc = "Trap request disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(BWERR1TW::CONST_1)
+        self.variant(BWERR1T_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ECAT0RST`"]
-pub enum ECAT0RSTW {
-    #[doc = "Trap request enabled"]
+#[doc = "EtherCat Reset 0 Trap Disable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ECAT0RST_A {
+    #[doc = "0: Trap request enabled"]
     CONST_0,
-    #[doc = "Trap request disabled"]
+    #[doc = "1: Trap request disabled"]
     CONST_1,
 }
-impl ECAT0RSTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ECAT0RSTW::CONST_0 => false,
-            ECAT0RSTW::CONST_1 => true,
+impl From<ECAT0RST_A> for bool {
+    #[inline(always)]
+    fn from(variant: ECAT0RST_A) -> Self {
+        match variant {
+            ECAT0RST_A::CONST_0 => false,
+            ECAT0RST_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ECAT0RSTW<'a> {
+#[doc = "Reader of field `ECAT0RST`"]
+pub type ECAT0RST_R = crate::R<bool, ECAT0RST_A>;
+impl ECAT0RST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ECAT0RST_A {
+        match self.bits {
+            false => ECAT0RST_A::CONST_0,
+            true => ECAT0RST_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == ECAT0RST_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == ECAT0RST_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `ECAT0RST`"]
+pub struct ECAT0RST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ECAT0RSTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ECAT0RSTW) -> &'a mut W {
+impl<'a> ECAT0RST_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ECAT0RST_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Trap request enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(ECAT0RSTW::CONST_0)
+        self.variant(ECAT0RST_A::CONST_0)
     }
     #[doc = "Trap request disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(ECAT0RSTW::CONST_1)
+        self.variant(ECAT0RST_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - OSC_HP Oscillator Watchdog Trap Disable"]
-    #[inline]
-    pub fn soscwdgt(&self) -> SOSCWDGTR {
-        SOSCWDGTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn soscwdgt(&self) -> SOSCWDGT_R {
+        SOSCWDGT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 2 - System VCO Lock Trap Disable"]
-    #[inline]
-    pub fn svcolckt(&self) -> SVCOLCKTR {
-        SVCOLCKTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn svcolckt(&self) -> SVCOLCKT_R {
+        SVCOLCKT_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - USB VCO Lock Trap Disable"]
-    #[inline]
-    pub fn uvcolckt(&self) -> UVCOLCKTR {
-        UVCOLCKTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn uvcolckt(&self) -> UVCOLCKT_R {
+        UVCOLCKT_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Parity Error Trap Disable"]
-    #[inline]
-    pub fn pet(&self) -> PETR {
-        PETR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pet(&self) -> PET_R {
+        PET_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Brown Out Trap Disable"]
-    #[inline]
-    pub fn brwnt(&self) -> BRWNTR {
-        BRWNTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn brwnt(&self) -> BRWNT_R {
+        BRWNT_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - OSC_ULP Oscillator Watchdog Trap Disable"]
-    #[inline]
-    pub fn ulpwdgt(&self) -> ULPWDGTR {
-        ULPWDGTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ulpwdgt(&self) -> ULPWDGT_R {
+        ULPWDGT_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Peripheral Bridge 0 Trap Disable"]
-    #[inline]
-    pub fn bwerr0t(&self) -> BWERR0TR {
-        BWERR0TR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bwerr0t(&self) -> BWERR0T_R {
+        BWERR0T_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Peripheral Bridge 1 Trap Disable"]
-    #[inline]
-    pub fn bwerr1t(&self) -> BWERR1TR {
-        BWERR1TR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bwerr1t(&self) -> BWERR1T_R {
+        BWERR1T_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 16 - EtherCat Reset 0 Trap Disable"]
-    #[inline]
-    pub fn ecat0rst(&self) -> ECAT0RSTR {
-        ECAT0RSTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ecat0rst(&self) -> ECAT0RST_R {
+        ECAT0RST_R::new(((self.bits >> 16) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 66045 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - OSC_HP Oscillator Watchdog Trap Disable"]
-    #[inline]
-    pub fn soscwdgt(&mut self) -> _SOSCWDGTW {
-        _SOSCWDGTW { w: self }
+    #[inline(always)]
+    pub fn soscwdgt(&mut self) -> SOSCWDGT_W {
+        SOSCWDGT_W { w: self }
     }
     #[doc = "Bit 2 - System VCO Lock Trap Disable"]
-    #[inline]
-    pub fn svcolckt(&mut self) -> _SVCOLCKTW {
-        _SVCOLCKTW { w: self }
+    #[inline(always)]
+    pub fn svcolckt(&mut self) -> SVCOLCKT_W {
+        SVCOLCKT_W { w: self }
     }
     #[doc = "Bit 3 - USB VCO Lock Trap Disable"]
-    #[inline]
-    pub fn uvcolckt(&mut self) -> _UVCOLCKTW {
-        _UVCOLCKTW { w: self }
+    #[inline(always)]
+    pub fn uvcolckt(&mut self) -> UVCOLCKT_W {
+        UVCOLCKT_W { w: self }
     }
     #[doc = "Bit 4 - Parity Error Trap Disable"]
-    #[inline]
-    pub fn pet(&mut self) -> _PETW {
-        _PETW { w: self }
+    #[inline(always)]
+    pub fn pet(&mut self) -> PET_W {
+        PET_W { w: self }
     }
     #[doc = "Bit 5 - Brown Out Trap Disable"]
-    #[inline]
-    pub fn brwnt(&mut self) -> _BRWNTW {
-        _BRWNTW { w: self }
+    #[inline(always)]
+    pub fn brwnt(&mut self) -> BRWNT_W {
+        BRWNT_W { w: self }
     }
     #[doc = "Bit 6 - OSC_ULP Oscillator Watchdog Trap Disable"]
-    #[inline]
-    pub fn ulpwdgt(&mut self) -> _ULPWDGTW {
-        _ULPWDGTW { w: self }
+    #[inline(always)]
+    pub fn ulpwdgt(&mut self) -> ULPWDGT_W {
+        ULPWDGT_W { w: self }
     }
     #[doc = "Bit 7 - Peripheral Bridge 0 Trap Disable"]
-    #[inline]
-    pub fn bwerr0t(&mut self) -> _BWERR0TW {
-        _BWERR0TW { w: self }
+    #[inline(always)]
+    pub fn bwerr0t(&mut self) -> BWERR0T_W {
+        BWERR0T_W { w: self }
     }
     #[doc = "Bit 8 - Peripheral Bridge 1 Trap Disable"]
-    #[inline]
-    pub fn bwerr1t(&mut self) -> _BWERR1TW {
-        _BWERR1TW { w: self }
+    #[inline(always)]
+    pub fn bwerr1t(&mut self) -> BWERR1T_W {
+        BWERR1T_W { w: self }
     }
     #[doc = "Bit 16 - EtherCat Reset 0 Trap Disable"]
-    #[inline]
-    pub fn ecat0rst(&mut self) -> _ECAT0RSTW {
-        _ECAT0RSTW { w: self }
+    #[inline(always)]
+    pub fn ecat0rst(&mut self) -> ECAT0RST_W {
+        ECAT0RST_W { w: self }
     }
 }

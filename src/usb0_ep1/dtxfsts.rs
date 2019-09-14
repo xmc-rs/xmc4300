@@ -1,77 +1,59 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::DTXFSTS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `INEPTxFSpcAvail`"]
+#[doc = "Reader of register DTXFSTS"]
+pub type R = crate::R<u32, super::DTXFSTS>;
+#[doc = "IN Endpoint TxFIFO Space Avail\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INEPTXFSPCAVAILR {
-    #[doc = "Endpoint TxFIFO is full"]
+pub enum INEPTXFSPCAVAIL_A {
+    #[doc = "0: Endpoint TxFIFO is full"]
     VALUE1,
-    #[doc = "1 word available"]
+    #[doc = "1: 1 word available"]
     VALUE2,
-    #[doc = "2 words available"]
+    #[doc = "2: 2 words available"]
     VALUE3,
-    #[doc = r" Reserved"]
-    _Reserved(u16),
 }
-impl INEPTXFSPCAVAILR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        match *self {
-            INEPTXFSPCAVAILR::VALUE1 => 0,
-            INEPTXFSPCAVAILR::VALUE2 => 1,
-            INEPTXFSPCAVAILR::VALUE3 => 2,
-            INEPTXFSPCAVAILR::_Reserved(bits) => bits,
+impl From<INEPTXFSPCAVAIL_A> for u16 {
+    #[inline(always)]
+    fn from(variant: INEPTXFSPCAVAIL_A) -> Self {
+        match variant {
+            INEPTXFSPCAVAIL_A::VALUE1 => 0,
+            INEPTXFSPCAVAIL_A::VALUE2 => 1,
+            INEPTXFSPCAVAIL_A::VALUE3 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u16) -> INEPTXFSPCAVAILR {
-        match value {
-            0 => INEPTXFSPCAVAILR::VALUE1,
-            1 => INEPTXFSPCAVAILR::VALUE2,
-            2 => INEPTXFSPCAVAILR::VALUE3,
-            i => INEPTXFSPCAVAILR::_Reserved(i),
+}
+#[doc = "Reader of field `INEPTxFSpcAvail`"]
+pub type INEPTXFSPCAVAIL_R = crate::R<u16, INEPTXFSPCAVAIL_A>;
+impl INEPTXFSPCAVAIL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u16, INEPTXFSPCAVAIL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(INEPTXFSPCAVAIL_A::VALUE1),
+            1 => Val(INEPTXFSPCAVAIL_A::VALUE2),
+            2 => Val(INEPTXFSPCAVAIL_A::VALUE3),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == INEPTXFSPCAVAILR::VALUE1
+        *self == INEPTXFSPCAVAIL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == INEPTXFSPCAVAILR::VALUE2
+        *self == INEPTXFSPCAVAIL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == INEPTXFSPCAVAILR::VALUE3
+        *self == INEPTXFSPCAVAIL_A::VALUE3
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - IN Endpoint TxFIFO Space Avail"]
-    #[inline]
-    pub fn ineptx_fspc_avail(&self) -> INEPTXFSPCAVAILR {
-        INEPTXFSPCAVAILR::_from({
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        })
+    #[inline(always)]
+    pub fn ineptx_fspc_avail(&self) -> INEPTXFSPCAVAIL_R {
+        INEPTXFSPCAVAIL_R::new((self.bits & 0xffff) as u16)
     }
 }

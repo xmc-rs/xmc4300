@@ -1,262 +1,170 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::HPTXSTS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register HPTXSTS"]
+pub type R = crate::R<u32, super::HPTXSTS>;
+#[doc = "Writer for register HPTXSTS"]
+pub type W = crate::W<u32, super::HPTXSTS>;
+#[doc = "Register HPTXSTS `reset()`'s with value 0x0008_0100"]
+impl crate::ResetValue for super::HPTXSTS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0008_0100
     }
 }
-#[doc = "Possible values of the field `PTxFSpcAvail`"]
+#[doc = "Periodic Transmit Data FIFO Space Available\n\nValue on reset: 256"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PTXFSPCAVAILR {
-    #[doc = "Periodic TxFIFO is full"]
+pub enum PTXFSPCAVAIL_A {
+    #[doc = "0: Periodic TxFIFO is full"]
     VALUE1,
-    #[doc = "1 word available"]
+    #[doc = "1: 1 word available"]
     VALUE2,
-    #[doc = "2 words available"]
+    #[doc = "2: 2 words available"]
     VALUE3,
-    #[doc = r" Reserved"]
-    _Reserved(u16),
 }
-impl PTXFSPCAVAILR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        match *self {
-            PTXFSPCAVAILR::VALUE1 => 0,
-            PTXFSPCAVAILR::VALUE2 => 1,
-            PTXFSPCAVAILR::VALUE3 => 2,
-            PTXFSPCAVAILR::_Reserved(bits) => bits,
+impl From<PTXFSPCAVAIL_A> for u16 {
+    #[inline(always)]
+    fn from(variant: PTXFSPCAVAIL_A) -> Self {
+        match variant {
+            PTXFSPCAVAIL_A::VALUE1 => 0,
+            PTXFSPCAVAIL_A::VALUE2 => 1,
+            PTXFSPCAVAIL_A::VALUE3 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u16) -> PTXFSPCAVAILR {
-        match value {
-            0 => PTXFSPCAVAILR::VALUE1,
-            1 => PTXFSPCAVAILR::VALUE2,
-            2 => PTXFSPCAVAILR::VALUE3,
-            i => PTXFSPCAVAILR::_Reserved(i),
+}
+#[doc = "Reader of field `PTxFSpcAvail`"]
+pub type PTXFSPCAVAIL_R = crate::R<u16, PTXFSPCAVAIL_A>;
+impl PTXFSPCAVAIL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u16, PTXFSPCAVAIL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PTXFSPCAVAIL_A::VALUE1),
+            1 => Val(PTXFSPCAVAIL_A::VALUE2),
+            2 => Val(PTXFSPCAVAIL_A::VALUE3),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PTXFSPCAVAILR::VALUE1
+        *self == PTXFSPCAVAIL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PTXFSPCAVAILR::VALUE2
+        *self == PTXFSPCAVAIL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == PTXFSPCAVAILR::VALUE3
+        *self == PTXFSPCAVAIL_A::VALUE3
     }
 }
-#[doc = "Possible values of the field `PTxQSpcAvail`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PTXQSPCAVAILR {
-    #[doc = "Periodic Transmit Request Queue is full"]
-    VALUE1,
-    #[doc = "1 location available"]
-    VALUE2,
-    #[doc = "2 locations available"]
-    VALUE3,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl PTXQSPCAVAILR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PTXQSPCAVAILR::VALUE1 => 0,
-            PTXQSPCAVAILR::VALUE2 => 1,
-            PTXQSPCAVAILR::VALUE3 => 2,
-            PTXQSPCAVAILR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PTXQSPCAVAILR {
-        match value {
-            0 => PTXQSPCAVAILR::VALUE1,
-            1 => PTXQSPCAVAILR::VALUE2,
-            2 => PTXQSPCAVAILR::VALUE3,
-            i => PTXQSPCAVAILR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == PTXQSPCAVAILR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == PTXQSPCAVAILR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == PTXQSPCAVAILR::VALUE3
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PTXQTOPR {
-    bits: u8,
-}
-impl PTXQTOPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `PTxFSpcAvail`"]
-pub enum PTXFSPCAVAILW {
-    #[doc = "Periodic TxFIFO is full"]
-    VALUE1,
-    #[doc = "1 word available"]
-    VALUE2,
-    #[doc = "2 words available"]
-    VALUE3,
-}
-impl PTXFSPCAVAILW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u16 {
-        match *self {
-            PTXFSPCAVAILW::VALUE1 => 0,
-            PTXFSPCAVAILW::VALUE2 => 1,
-            PTXFSPCAVAILW::VALUE3 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PTXFSPCAVAILW<'a> {
+#[doc = "Write proxy for field `PTxFSpcAvail`"]
+pub struct PTXFSPCAVAIL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PTXFSPCAVAILW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PTXFSPCAVAILW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> PTXFSPCAVAIL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PTXFSPCAVAIL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Periodic TxFIFO is full"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(PTXFSPCAVAILW::VALUE1)
+        self.variant(PTXFSPCAVAIL_A::VALUE1)
     }
     #[doc = "1 word available"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(PTXFSPCAVAILW::VALUE2)
+        self.variant(PTXFSPCAVAIL_A::VALUE2)
     }
     #[doc = "2 words available"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(PTXFSPCAVAILW::VALUE3)
+        self.variant(PTXFSPCAVAIL_A::VALUE3)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
         self.w
     }
 }
-impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
+#[doc = "Periodic Transmit Request Queue Space Available\n\nValue on reset: 8"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PTXQSPCAVAIL_A {
+    #[doc = "0: Periodic Transmit Request Queue is full"]
+    VALUE1,
+    #[doc = "1: 1 location available"]
+    VALUE2,
+    #[doc = "2: 2 locations available"]
+    VALUE3,
+}
+impl From<PTXQSPCAVAIL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PTXQSPCAVAIL_A) -> Self {
+        match variant {
+            PTXQSPCAVAIL_A::VALUE1 => 0,
+            PTXQSPCAVAIL_A::VALUE2 => 1,
+            PTXQSPCAVAIL_A::VALUE3 => 2,
+        }
     }
+}
+#[doc = "Reader of field `PTxQSpcAvail`"]
+pub type PTXQSPCAVAIL_R = crate::R<u8, PTXQSPCAVAIL_A>;
+impl PTXQSPCAVAIL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PTXQSPCAVAIL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PTXQSPCAVAIL_A::VALUE1),
+            1 => Val(PTXQSPCAVAIL_A::VALUE2),
+            2 => Val(PTXQSPCAVAIL_A::VALUE3),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == PTXQSPCAVAIL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == PTXQSPCAVAIL_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == PTXQSPCAVAIL_A::VALUE3
+    }
+}
+#[doc = "Reader of field `PTxQTop`"]
+pub type PTXQTOP_R = crate::R<u8, u8>;
+impl R {
     #[doc = "Bits 0:15 - Periodic Transmit Data FIFO Space Available"]
-    #[inline]
-    pub fn ptx_fspc_avail(&self) -> PTXFSPCAVAILR {
-        PTXFSPCAVAILR::_from({
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        })
+    #[inline(always)]
+    pub fn ptx_fspc_avail(&self) -> PTXFSPCAVAIL_R {
+        PTXFSPCAVAIL_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:23 - Periodic Transmit Request Queue Space Available"]
-    #[inline]
-    pub fn ptx_qspc_avail(&self) -> PTXQSPCAVAILR {
-        PTXQSPCAVAILR::_from({
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ptx_qspc_avail(&self) -> PTXQSPCAVAIL_R {
+        PTXQSPCAVAIL_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Top of the Periodic Transmit Request Queue"]
-    #[inline]
-    pub fn ptx_qtop(&self) -> PTXQTOPR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PTXQTOPR { bits }
+    #[inline(always)]
+    pub fn ptx_qtop(&self) -> PTXQTOP_R {
+        PTXQTOP_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 524544 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - Periodic Transmit Data FIFO Space Available"]
-    #[inline]
-    pub fn ptx_fspc_avail(&mut self) -> _PTXFSPCAVAILW {
-        _PTXFSPCAVAILW { w: self }
+    #[inline(always)]
+    pub fn ptx_fspc_avail(&mut self) -> PTXFSPCAVAIL_W {
+        PTXFSPCAVAIL_W { w: self }
     }
 }

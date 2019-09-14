@@ -1,811 +1,576 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::GAHBCFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register GAHBCFG"]
+pub type R = crate::R<u32, super::GAHBCFG>;
+#[doc = "Writer for register GAHBCFG"]
+pub type W = crate::W<u32, super::GAHBCFG>;
+#[doc = "Register GAHBCFG `reset()`'s with value 0"]
+impl crate::ResetValue for super::GAHBCFG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `GlblIntrMsk`"]
+#[doc = "Global Interrupt Mask\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GLBLINTRMSKR {
+pub enum GLBLINTRMSK_A {
+    #[doc = "0: Mask the interrupt assertion to the application."]
+    VALUE1,
+    #[doc = "1: Unmask the interrupt assertion to the application."]
+    VALUE2,
+}
+impl From<GLBLINTRMSK_A> for bool {
+    #[inline(always)]
+    fn from(variant: GLBLINTRMSK_A) -> Self {
+        match variant {
+            GLBLINTRMSK_A::VALUE1 => false,
+            GLBLINTRMSK_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `GlblIntrMsk`"]
+pub type GLBLINTRMSK_R = crate::R<bool, GLBLINTRMSK_A>;
+impl GLBLINTRMSK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GLBLINTRMSK_A {
+        match self.bits {
+            false => GLBLINTRMSK_A::VALUE1,
+            true => GLBLINTRMSK_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == GLBLINTRMSK_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == GLBLINTRMSK_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `GlblIntrMsk`"]
+pub struct GLBLINTRMSK_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> GLBLINTRMSK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: GLBLINTRMSK_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Mask the interrupt assertion to the application."]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(GLBLINTRMSK_A::VALUE1)
+    }
     #[doc = "Unmask the interrupt assertion to the application."]
-    VALUE2,
-}
-impl GLBLINTRMSKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(GLBLINTRMSK_A::VALUE2)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            GLBLINTRMSKR::VALUE1 => false,
-            GLBLINTRMSKR::VALUE2 => true,
-        }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> GLBLINTRMSKR {
-        match value {
-            false => GLBLINTRMSKR::VALUE1,
-            true => GLBLINTRMSKR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == GLBLINTRMSKR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == GLBLINTRMSKR::VALUE2
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
-#[doc = "Possible values of the field `HBstLen`"]
+#[doc = "Burst Length/Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HBSTLENR {
-    #[doc = "Single"]
+pub enum HBSTLEN_A {
+    #[doc = "0: Single"]
     VALUE1,
-    #[doc = "INCR"]
+    #[doc = "1: INCR"]
     VALUE2,
-    #[doc = "INCR4"]
+    #[doc = "3: INCR4"]
     VALUE3,
-    #[doc = "INCR8"]
+    #[doc = "5: INCR8"]
     VALUE4,
-    #[doc = "INCR16"]
+    #[doc = "7: INCR16"]
     VALUE5,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl HBSTLENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            HBSTLENR::VALUE1 => 0,
-            HBSTLENR::VALUE2 => 1,
-            HBSTLENR::VALUE3 => 3,
-            HBSTLENR::VALUE4 => 5,
-            HBSTLENR::VALUE5 => 7,
-            HBSTLENR::_Reserved(bits) => bits,
+impl From<HBSTLEN_A> for u8 {
+    #[inline(always)]
+    fn from(variant: HBSTLEN_A) -> Self {
+        match variant {
+            HBSTLEN_A::VALUE1 => 0,
+            HBSTLEN_A::VALUE2 => 1,
+            HBSTLEN_A::VALUE3 => 3,
+            HBSTLEN_A::VALUE4 => 5,
+            HBSTLEN_A::VALUE5 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> HBSTLENR {
-        match value {
-            0 => HBSTLENR::VALUE1,
-            1 => HBSTLENR::VALUE2,
-            3 => HBSTLENR::VALUE3,
-            5 => HBSTLENR::VALUE4,
-            7 => HBSTLENR::VALUE5,
-            i => HBSTLENR::_Reserved(i),
+}
+#[doc = "Reader of field `HBstLen`"]
+pub type HBSTLEN_R = crate::R<u8, HBSTLEN_A>;
+impl HBSTLEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, HBSTLEN_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(HBSTLEN_A::VALUE1),
+            1 => Val(HBSTLEN_A::VALUE2),
+            3 => Val(HBSTLEN_A::VALUE3),
+            5 => Val(HBSTLEN_A::VALUE4),
+            7 => Val(HBSTLEN_A::VALUE5),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == HBSTLENR::VALUE1
+        *self == HBSTLEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == HBSTLENR::VALUE2
+        *self == HBSTLEN_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == HBSTLENR::VALUE3
+        *self == HBSTLEN_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == HBSTLENR::VALUE4
+        *self == HBSTLEN_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == HBSTLENR::VALUE5
+        *self == HBSTLEN_A::VALUE5
     }
 }
-#[doc = "Possible values of the field `DMAEn`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DMAENR {
-    #[doc = "Core operates in Slave mode"]
-    VALUE1,
-    #[doc = "Core operates in a DMA mode"]
-    VALUE2,
-}
-impl DMAENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DMAENR::VALUE1 => false,
-            DMAENR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DMAENR {
-        match value {
-            false => DMAENR::VALUE1,
-            true => DMAENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == DMAENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == DMAENR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `NPTxFEmpLvl`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NPTXFEMPLVLR {
-    #[doc = "DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is half empty"]
-    VALUE1,
-    #[doc = "DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is completely empty"]
-    VALUE2,
-}
-impl NPTXFEMPLVLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            NPTXFEMPLVLR::VALUE1 => false,
-            NPTXFEMPLVLR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> NPTXFEMPLVLR {
-        match value {
-            false => NPTXFEMPLVLR::VALUE1,
-            true => NPTXFEMPLVLR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == NPTXFEMPLVLR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == NPTXFEMPLVLR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `PTxFEmpLvl`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PTXFEMPLVLR {
-    #[doc = "GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is half empty"]
-    VALUE1,
-    #[doc = "GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is completely empty"]
-    VALUE2,
-}
-impl PTXFEMPLVLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PTXFEMPLVLR::VALUE1 => false,
-            PTXFEMPLVLR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PTXFEMPLVLR {
-        match value {
-            false => PTXFEMPLVLR::VALUE1,
-            true => PTXFEMPLVLR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == PTXFEMPLVLR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == PTXFEMPLVLR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `AHBSingle`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AHBSINGLER {
-    #[doc = "The remaining data in a transfer is sent using INCR burst size. This is the default mode."]
-    VALUE1,
-    #[doc = "The remaining data in a transfer is sent using single burst size."]
-    VALUE2,
-}
-impl AHBSINGLER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            AHBSINGLER::VALUE1 => false,
-            AHBSINGLER::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> AHBSINGLER {
-        match value {
-            false => AHBSINGLER::VALUE1,
-            true => AHBSINGLER::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == AHBSINGLER::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == AHBSINGLER::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `GlblIntrMsk`"]
-pub enum GLBLINTRMSKW {
-    #[doc = "Mask the interrupt assertion to the application."]
-    VALUE1,
-    #[doc = "Unmask the interrupt assertion to the application."]
-    VALUE2,
-}
-impl GLBLINTRMSKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            GLBLINTRMSKW::VALUE1 => false,
-            GLBLINTRMSKW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _GLBLINTRMSKW<'a> {
+#[doc = "Write proxy for field `HBstLen`"]
+pub struct HBSTLEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GLBLINTRMSKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: GLBLINTRMSKW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Mask the interrupt assertion to the application."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(GLBLINTRMSKW::VALUE1)
-    }
-    #[doc = "Unmask the interrupt assertion to the application."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(GLBLINTRMSKW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `HBstLen`"]
-pub enum HBSTLENW {
-    #[doc = "Single"]
-    VALUE1,
-    #[doc = "INCR"]
-    VALUE2,
-    #[doc = "INCR4"]
-    VALUE3,
-    #[doc = "INCR8"]
-    VALUE4,
-    #[doc = "INCR16"]
-    VALUE5,
-}
-impl HBSTLENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            HBSTLENW::VALUE1 => 0,
-            HBSTLENW::VALUE2 => 1,
-            HBSTLENW::VALUE3 => 3,
-            HBSTLENW::VALUE4 => 5,
-            HBSTLENW::VALUE5 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HBSTLENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HBSTLENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HBSTLENW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> HBSTLEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HBSTLEN_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Single"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(HBSTLENW::VALUE1)
+        self.variant(HBSTLEN_A::VALUE1)
     }
     #[doc = "INCR"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(HBSTLENW::VALUE2)
+        self.variant(HBSTLEN_A::VALUE2)
     }
     #[doc = "INCR4"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(HBSTLENW::VALUE3)
+        self.variant(HBSTLEN_A::VALUE3)
     }
     #[doc = "INCR8"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(HBSTLENW::VALUE4)
+        self.variant(HBSTLEN_A::VALUE4)
     }
     #[doc = "INCR16"]
-    #[inline]
+    #[inline(always)]
     pub fn value5(self) -> &'a mut W {
-        self.variant(HBSTLENW::VALUE5)
+        self.variant(HBSTLEN_A::VALUE5)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 1)) | (((value as u32) & 0x0f) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DMAEn`"]
-pub enum DMAENW {
+#[doc = "DMA Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMAEN_A {
+    #[doc = "0: Core operates in Slave mode"]
+    VALUE1,
+    #[doc = "1: Core operates in a DMA mode"]
+    VALUE2,
+}
+impl From<DMAEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMAEN_A) -> Self {
+        match variant {
+            DMAEN_A::VALUE1 => false,
+            DMAEN_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `DMAEn`"]
+pub type DMAEN_R = crate::R<bool, DMAEN_A>;
+impl DMAEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMAEN_A {
+        match self.bits {
+            false => DMAEN_A::VALUE1,
+            true => DMAEN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == DMAEN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == DMAEN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `DMAEn`"]
+pub struct DMAEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DMAEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DMAEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Core operates in Slave mode"]
-    VALUE1,
-    #[doc = "Core operates in a DMA mode"]
-    VALUE2,
-}
-impl DMAENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DMAENW::VALUE1 => false,
-            DMAENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DMAENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DMAENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DMAENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Core operates in Slave mode"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(DMAENW::VALUE1)
+        self.variant(DMAEN_A::VALUE1)
     }
     #[doc = "Core operates in a DMA mode"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(DMAENW::VALUE2)
+        self.variant(DMAEN_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `NPTxFEmpLvl`"]
-pub enum NPTXFEMPLVLW {
-    #[doc = "DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is half empty"]
+#[doc = "Non-Periodic TxFIFO Empty Level\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum NPTXFEMPLVL_A {
+    #[doc = "0: DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is half empty"]
     VALUE1,
-    #[doc = "DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is completely empty"]
+    #[doc = "1: DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is completely empty"]
     VALUE2,
 }
-impl NPTXFEMPLVLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            NPTXFEMPLVLW::VALUE1 => false,
-            NPTXFEMPLVLW::VALUE2 => true,
+impl From<NPTXFEMPLVL_A> for bool {
+    #[inline(always)]
+    fn from(variant: NPTXFEMPLVL_A) -> Self {
+        match variant {
+            NPTXFEMPLVL_A::VALUE1 => false,
+            NPTXFEMPLVL_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _NPTXFEMPLVLW<'a> {
+#[doc = "Reader of field `NPTxFEmpLvl`"]
+pub type NPTXFEMPLVL_R = crate::R<bool, NPTXFEMPLVL_A>;
+impl NPTXFEMPLVL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> NPTXFEMPLVL_A {
+        match self.bits {
+            false => NPTXFEMPLVL_A::VALUE1,
+            true => NPTXFEMPLVL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == NPTXFEMPLVL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == NPTXFEMPLVL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `NPTxFEmpLvl`"]
+pub struct NPTXFEMPLVL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NPTXFEMPLVLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: NPTXFEMPLVLW) -> &'a mut W {
+impl<'a> NPTXFEMPLVL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: NPTXFEMPLVL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is half empty"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(NPTXFEMPLVLW::VALUE1)
+        self.variant(NPTXFEMPLVL_A::VALUE1)
     }
     #[doc = "DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is completely empty"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(NPTXFEMPLVLW::VALUE2)
+        self.variant(NPTXFEMPLVL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PTxFEmpLvl`"]
-pub enum PTXFEMPLVLW {
-    #[doc = "GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is half empty"]
+#[doc = "Periodic TxFIFO Empty Level\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PTXFEMPLVL_A {
+    #[doc = "0: GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is half empty"]
     VALUE1,
-    #[doc = "GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is completely empty"]
+    #[doc = "1: GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is completely empty"]
     VALUE2,
 }
-impl PTXFEMPLVLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PTXFEMPLVLW::VALUE1 => false,
-            PTXFEMPLVLW::VALUE2 => true,
+impl From<PTXFEMPLVL_A> for bool {
+    #[inline(always)]
+    fn from(variant: PTXFEMPLVL_A) -> Self {
+        match variant {
+            PTXFEMPLVL_A::VALUE1 => false,
+            PTXFEMPLVL_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PTXFEMPLVLW<'a> {
+#[doc = "Reader of field `PTxFEmpLvl`"]
+pub type PTXFEMPLVL_R = crate::R<bool, PTXFEMPLVL_A>;
+impl PTXFEMPLVL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PTXFEMPLVL_A {
+        match self.bits {
+            false => PTXFEMPLVL_A::VALUE1,
+            true => PTXFEMPLVL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == PTXFEMPLVL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == PTXFEMPLVL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `PTxFEmpLvl`"]
+pub struct PTXFEMPLVL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PTXFEMPLVLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PTXFEMPLVLW) -> &'a mut W {
+impl<'a> PTXFEMPLVL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PTXFEMPLVL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is half empty"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(PTXFEMPLVLW::VALUE1)
+        self.variant(PTXFEMPLVL_A::VALUE1)
     }
     #[doc = "GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is completely empty"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(PTXFEMPLVLW::VALUE2)
+        self.variant(PTXFEMPLVL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `AHBSingle`"]
-pub enum AHBSINGLEW {
-    #[doc = "The remaining data in a transfer is sent using INCR burst size. This is the default mode."]
+#[doc = "AHB Single Support\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum AHBSINGLE_A {
+    #[doc = "0: The remaining data in a transfer is sent using INCR burst size. This is the default mode."]
     VALUE1,
-    #[doc = "The remaining data in a transfer is sent using single burst size."]
+    #[doc = "1: The remaining data in a transfer is sent using single burst size."]
     VALUE2,
 }
-impl AHBSINGLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            AHBSINGLEW::VALUE1 => false,
-            AHBSINGLEW::VALUE2 => true,
+impl From<AHBSINGLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: AHBSINGLE_A) -> Self {
+        match variant {
+            AHBSINGLE_A::VALUE1 => false,
+            AHBSINGLE_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _AHBSINGLEW<'a> {
+#[doc = "Reader of field `AHBSingle`"]
+pub type AHBSINGLE_R = crate::R<bool, AHBSINGLE_A>;
+impl AHBSINGLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AHBSINGLE_A {
+        match self.bits {
+            false => AHBSINGLE_A::VALUE1,
+            true => AHBSINGLE_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == AHBSINGLE_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == AHBSINGLE_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `AHBSingle`"]
+pub struct AHBSINGLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AHBSINGLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AHBSINGLEW) -> &'a mut W {
+impl<'a> AHBSINGLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AHBSINGLE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The remaining data in a transfer is sent using INCR burst size. This is the default mode."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(AHBSINGLEW::VALUE1)
+        self.variant(AHBSINGLE_A::VALUE1)
     }
     #[doc = "The remaining data in a transfer is sent using single burst size."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(AHBSINGLEW::VALUE2)
+        self.variant(AHBSINGLE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Global Interrupt Mask"]
-    #[inline]
-    pub fn glbl_intr_msk(&self) -> GLBLINTRMSKR {
-        GLBLINTRMSKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn glbl_intr_msk(&self) -> GLBLINTRMSK_R {
+        GLBLINTRMSK_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bits 1:4 - Burst Length/Type"]
-    #[inline]
-    pub fn hbst_len(&self) -> HBSTLENR {
-        HBSTLENR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn hbst_len(&self) -> HBSTLEN_R {
+        HBSTLEN_R::new(((self.bits >> 1) & 0x0f) as u8)
     }
     #[doc = "Bit 5 - DMA Enable"]
-    #[inline]
-    pub fn dmaen(&self) -> DMAENR {
-        DMAENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dmaen(&self) -> DMAEN_R {
+        DMAEN_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Non-Periodic TxFIFO Empty Level"]
-    #[inline]
-    pub fn nptx_femp_lvl(&self) -> NPTXFEMPLVLR {
-        NPTXFEMPLVLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn nptx_femp_lvl(&self) -> NPTXFEMPLVL_R {
+        NPTXFEMPLVL_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Periodic TxFIFO Empty Level"]
-    #[inline]
-    pub fn ptx_femp_lvl(&self) -> PTXFEMPLVLR {
-        PTXFEMPLVLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ptx_femp_lvl(&self) -> PTXFEMPLVL_R {
+        PTXFEMPLVL_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 23 - AHB Single Support"]
-    #[inline]
-    pub fn ahbsingle(&self) -> AHBSINGLER {
-        AHBSINGLER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ahbsingle(&self) -> AHBSINGLE_R {
+        AHBSINGLE_R::new(((self.bits >> 23) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Global Interrupt Mask"]
-    #[inline]
-    pub fn glbl_intr_msk(&mut self) -> _GLBLINTRMSKW {
-        _GLBLINTRMSKW { w: self }
+    #[inline(always)]
+    pub fn glbl_intr_msk(&mut self) -> GLBLINTRMSK_W {
+        GLBLINTRMSK_W { w: self }
     }
     #[doc = "Bits 1:4 - Burst Length/Type"]
-    #[inline]
-    pub fn hbst_len(&mut self) -> _HBSTLENW {
-        _HBSTLENW { w: self }
+    #[inline(always)]
+    pub fn hbst_len(&mut self) -> HBSTLEN_W {
+        HBSTLEN_W { w: self }
     }
     #[doc = "Bit 5 - DMA Enable"]
-    #[inline]
-    pub fn dmaen(&mut self) -> _DMAENW {
-        _DMAENW { w: self }
+    #[inline(always)]
+    pub fn dmaen(&mut self) -> DMAEN_W {
+        DMAEN_W { w: self }
     }
     #[doc = "Bit 7 - Non-Periodic TxFIFO Empty Level"]
-    #[inline]
-    pub fn nptx_femp_lvl(&mut self) -> _NPTXFEMPLVLW {
-        _NPTXFEMPLVLW { w: self }
+    #[inline(always)]
+    pub fn nptx_femp_lvl(&mut self) -> NPTXFEMPLVL_W {
+        NPTXFEMPLVL_W { w: self }
     }
     #[doc = "Bit 8 - Periodic TxFIFO Empty Level"]
-    #[inline]
-    pub fn ptx_femp_lvl(&mut self) -> _PTXFEMPLVLW {
-        _PTXFEMPLVLW { w: self }
+    #[inline(always)]
+    pub fn ptx_femp_lvl(&mut self) -> PTXFEMPLVL_W {
+        PTXFEMPLVL_W { w: self }
     }
     #[doc = "Bit 23 - AHB Single Support"]
-    #[inline]
-    pub fn ahbsingle(&mut self) -> _AHBSINGLEW {
-        _AHBSINGLEW { w: self }
+    #[inline(always)]
+    pub fn ahbsingle(&mut self) -> AHBSINGLE_W {
+        AHBSINGLE_W { w: self }
     }
 }

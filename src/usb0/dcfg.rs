@@ -1,623 +1,425 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DCFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DCFG"]
+pub type R = crate::R<u32, super::DCFG>;
+#[doc = "Writer for register DCFG"]
+pub type W = crate::W<u32, super::DCFG>;
+#[doc = "Register DCFG `reset()`'s with value 0x0820_0000"]
+impl crate::ResetValue for super::DCFG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0820_0000
     }
 }
-#[doc = "Possible values of the field `DevSpd`"]
+#[doc = "Device Speed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DEVSPDR {
-    #[doc = "Full speed (USB 1.1 transceiver clock is 48 MHz)"]
+pub enum DEVSPD_A {
+    #[doc = "3: Full speed (USB 1.1 transceiver clock is 48 MHz)"]
     VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl DEVSPDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DEVSPDR::VALUE4 => 3,
-            DEVSPDR::_Reserved(bits) => bits,
+impl From<DEVSPD_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DEVSPD_A) -> Self {
+        match variant {
+            DEVSPD_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DEVSPDR {
-        match value {
-            3 => DEVSPDR::VALUE4,
-            i => DEVSPDR::_Reserved(i),
+}
+#[doc = "Reader of field `DevSpd`"]
+pub type DEVSPD_R = crate::R<u8, DEVSPD_A>;
+impl DEVSPD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, DEVSPD_A> {
+        use crate::Variant::*;
+        match self.bits {
+            3 => Val(DEVSPD_A::VALUE4),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == DEVSPDR::VALUE4
+        *self == DEVSPD_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `NZStsOUTHShk`"]
+#[doc = "Write proxy for field `DevSpd`"]
+pub struct DEVSPD_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DEVSPD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DEVSPD_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Full speed (USB 1.1 transceiver clock is 48 MHz)"]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(DEVSPD_A::VALUE4)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w
+    }
+}
+#[doc = "Non-Zero-Length Status OUT Handshake\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NZSTSOUTHSHKR {
-    #[doc = "Send a STALL handshake on a nonzero-length status OUT transaction and do not send the received OUT packet to the application."]
+pub enum NZSTSOUTHSHK_A {
+    #[doc = "1: Send a STALL handshake on a nonzero-length status OUT transaction and do not send the received OUT packet to the application."]
     VALUE1,
-    #[doc = "Send the received OUT packet to the application (zero-length or nonzero-length) and send a handshake based on the NAK and STALL bits for the endpoint in the Device Endpoint Control register."]
+    #[doc = "0: Send the received OUT packet to the application (zero-length or nonzero-length) and send a handshake based on the NAK and STALL bits for the endpoint in the Device Endpoint Control register."]
     VALUE2,
 }
-impl NZSTSOUTHSHKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            NZSTSOUTHSHKR::VALUE1 => true,
-            NZSTSOUTHSHKR::VALUE2 => false,
+impl From<NZSTSOUTHSHK_A> for bool {
+    #[inline(always)]
+    fn from(variant: NZSTSOUTHSHK_A) -> Self {
+        match variant {
+            NZSTSOUTHSHK_A::VALUE1 => true,
+            NZSTSOUTHSHK_A::VALUE2 => false,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> NZSTSOUTHSHKR {
-        match value {
-            true => NZSTSOUTHSHKR::VALUE1,
-            false => NZSTSOUTHSHKR::VALUE2,
+}
+#[doc = "Reader of field `NZStsOUTHShk`"]
+pub type NZSTSOUTHSHK_R = crate::R<bool, NZSTSOUTHSHK_A>;
+impl NZSTSOUTHSHK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> NZSTSOUTHSHK_A {
+        match self.bits {
+            true => NZSTSOUTHSHK_A::VALUE1,
+            false => NZSTSOUTHSHK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == NZSTSOUTHSHKR::VALUE1
+        *self == NZSTSOUTHSHK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == NZSTSOUTHSHKR::VALUE2
+        *self == NZSTSOUTHSHK_A::VALUE2
     }
 }
-#[doc = r" Value of the field"]
-pub struct DEVADDRR {
-    bits: u8,
+#[doc = "Write proxy for field `NZStsOUTHShk`"]
+pub struct NZSTSOUTHSHK_W<'a> {
+    w: &'a mut W,
 }
-impl DEVADDRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `PerFrInt`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PERFRINTR {
-    #[doc = "80% of the frame interval"]
-    VALUE1,
-    #[doc = "85%"]
-    VALUE2,
-    #[doc = "90%"]
-    VALUE3,
-    #[doc = "95%"]
-    VALUE4,
-}
-impl PERFRINTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PERFRINTR::VALUE1 => 0,
-            PERFRINTR::VALUE2 => 1,
-            PERFRINTR::VALUE3 => 2,
-            PERFRINTR::VALUE4 => 3,
+impl<'a> NZSTSOUTHSHK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: NZSTSOUTHSHK_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PERFRINTR {
-        match value {
-            0 => PERFRINTR::VALUE1,
-            1 => PERFRINTR::VALUE2,
-            2 => PERFRINTR::VALUE3,
-            3 => PERFRINTR::VALUE4,
+    #[doc = "Send a STALL handshake on a nonzero-length status OUT transaction and do not send the received OUT packet to the application."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(NZSTSOUTHSHK_A::VALUE1)
+    }
+    #[doc = "Send the received OUT packet to the application (zero-length or nonzero-length) and send a handshake based on the NAK and STALL bits for the endpoint in the Device Endpoint Control register."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(NZSTSOUTHSHK_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Reader of field `DevAddr`"]
+pub type DEVADDR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DevAddr`"]
+pub struct DEVADDR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DEVADDR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x7f << 4)) | (((value as u32) & 0x7f) << 4);
+        self.w
+    }
+}
+#[doc = "Periodic Frame Interval\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PERFRINT_A {
+    #[doc = "0: 80% of the frame interval"]
+    VALUE1,
+    #[doc = "1: 85%"]
+    VALUE2,
+    #[doc = "2: 90%"]
+    VALUE3,
+    #[doc = "3: 95%"]
+    VALUE4,
+}
+impl From<PERFRINT_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PERFRINT_A) -> Self {
+        match variant {
+            PERFRINT_A::VALUE1 => 0,
+            PERFRINT_A::VALUE2 => 1,
+            PERFRINT_A::VALUE3 => 2,
+            PERFRINT_A::VALUE4 => 3,
+        }
+    }
+}
+#[doc = "Reader of field `PerFrInt`"]
+pub type PERFRINT_R = crate::R<u8, PERFRINT_A>;
+impl PERFRINT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PERFRINT_A {
+        match self.bits {
+            0 => PERFRINT_A::VALUE1,
+            1 => PERFRINT_A::VALUE2,
+            2 => PERFRINT_A::VALUE3,
+            3 => PERFRINT_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PERFRINTR::VALUE1
+        *self == PERFRINT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PERFRINTR::VALUE2
+        *self == PERFRINT_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == PERFRINTR::VALUE3
+        *self == PERFRINT_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == PERFRINTR::VALUE4
+        *self == PERFRINT_A::VALUE4
     }
 }
-#[doc = r" Value of the field"]
-pub struct DESCDMAR {
-    bits: bool,
+#[doc = "Write proxy for field `PerFrInt`"]
+pub struct PERFRINT_W<'a> {
+    w: &'a mut W,
 }
-impl DESCDMAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `PerSchIntvl`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PERSCHINTVLR {
-    #[doc = "25% of frame."]
-    VALUE1,
-    #[doc = "50% of frame."]
-    VALUE2,
-    #[doc = "75% of frame."]
-    VALUE3,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl PERSCHINTVLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PERSCHINTVLR::VALUE1 => 0,
-            PERSCHINTVLR::VALUE2 => 1,
-            PERSCHINTVLR::VALUE3 => 2,
-            PERSCHINTVLR::_Reserved(bits) => bits,
+impl<'a> PERFRINT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PERFRINT_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PERSCHINTVLR {
-        match value {
-            0 => PERSCHINTVLR::VALUE1,
-            1 => PERSCHINTVLR::VALUE2,
-            2 => PERSCHINTVLR::VALUE3,
-            i => PERSCHINTVLR::_Reserved(i),
+    #[doc = "80% of the frame interval"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(PERFRINT_A::VALUE1)
+    }
+    #[doc = "85%"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(PERFRINT_A::VALUE2)
+    }
+    #[doc = "90%"]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(PERFRINT_A::VALUE3)
+    }
+    #[doc = "95%"]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(PERFRINT_A::VALUE4)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 11)) | (((value as u32) & 0x03) << 11);
+        self.w
+    }
+}
+#[doc = "Reader of field `DescDMA`"]
+pub type DESCDMA_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DescDMA`"]
+pub struct DESCDMA_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DESCDMA_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w
+    }
+}
+#[doc = "Periodic Scheduling Interval\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PERSCHINTVL_A {
+    #[doc = "0: 25% of frame."]
+    VALUE1,
+    #[doc = "1: 50% of frame."]
+    VALUE2,
+    #[doc = "2: 75% of frame."]
+    VALUE3,
+}
+impl From<PERSCHINTVL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PERSCHINTVL_A) -> Self {
+        match variant {
+            PERSCHINTVL_A::VALUE1 => 0,
+            PERSCHINTVL_A::VALUE2 => 1,
+            PERSCHINTVL_A::VALUE3 => 2,
+        }
+    }
+}
+#[doc = "Reader of field `PerSchIntvl`"]
+pub type PERSCHINTVL_R = crate::R<u8, PERSCHINTVL_A>;
+impl PERSCHINTVL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PERSCHINTVL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PERSCHINTVL_A::VALUE1),
+            1 => Val(PERSCHINTVL_A::VALUE2),
+            2 => Val(PERSCHINTVL_A::VALUE3),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PERSCHINTVLR::VALUE1
+        *self == PERSCHINTVL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PERSCHINTVLR::VALUE2
+        *self == PERSCHINTVL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == PERSCHINTVLR::VALUE3
+        *self == PERSCHINTVL_A::VALUE3
     }
 }
-#[doc = "Values that can be written to the field `DevSpd`"]
-pub enum DEVSPDW {
-    #[doc = "Full speed (USB 1.1 transceiver clock is 48 MHz)"]
-    VALUE4,
-}
-impl DEVSPDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            DEVSPDW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DEVSPDW<'a> {
+#[doc = "Write proxy for field `PerSchIntvl`"]
+pub struct PERSCHINTVL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DEVSPDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DEVSPDW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Full speed (USB 1.1 transceiver clock is 48 MHz)"]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(DEVSPDW::VALUE4)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `NZStsOUTHShk`"]
-pub enum NZSTSOUTHSHKW {
-    #[doc = "Send a STALL handshake on a nonzero-length status OUT transaction and do not send the received OUT packet to the application."]
-    VALUE1,
-    #[doc = "Send the received OUT packet to the application (zero-length or nonzero-length) and send a handshake based on the NAK and STALL bits for the endpoint in the Device Endpoint Control register."]
-    VALUE2,
-}
-impl NZSTSOUTHSHKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            NZSTSOUTHSHKW::VALUE1 => true,
-            NZSTSOUTHSHKW::VALUE2 => false,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NZSTSOUTHSHKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _NZSTSOUTHSHKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: NZSTSOUTHSHKW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Send a STALL handshake on a nonzero-length status OUT transaction and do not send the received OUT packet to the application."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(NZSTSOUTHSHKW::VALUE1)
-    }
-    #[doc = "Send the received OUT packet to the application (zero-length or nonzero-length) and send a handshake based on the NAK and STALL bits for the endpoint in the Device Endpoint Control register."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(NZSTSOUTHSHKW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DEVADDRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DEVADDRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 127;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PerFrInt`"]
-pub enum PERFRINTW {
-    #[doc = "80% of the frame interval"]
-    VALUE1,
-    #[doc = "85%"]
-    VALUE2,
-    #[doc = "90%"]
-    VALUE3,
-    #[doc = "95%"]
-    VALUE4,
-}
-impl PERFRINTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PERFRINTW::VALUE1 => 0,
-            PERFRINTW::VALUE2 => 1,
-            PERFRINTW::VALUE3 => 2,
-            PERFRINTW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PERFRINTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PERFRINTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PERFRINTW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "80% of the frame interval"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(PERFRINTW::VALUE1)
-    }
-    #[doc = "85%"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(PERFRINTW::VALUE2)
-    }
-    #[doc = "90%"]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(PERFRINTW::VALUE3)
-    }
-    #[doc = "95%"]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(PERFRINTW::VALUE4)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DESCDMAW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DESCDMAW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PerSchIntvl`"]
-pub enum PERSCHINTVLW {
-    #[doc = "25% of frame."]
-    VALUE1,
-    #[doc = "50% of frame."]
-    VALUE2,
-    #[doc = "75% of frame."]
-    VALUE3,
-}
-impl PERSCHINTVLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PERSCHINTVLW::VALUE1 => 0,
-            PERSCHINTVLW::VALUE2 => 1,
-            PERSCHINTVLW::VALUE3 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PERSCHINTVLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PERSCHINTVLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PERSCHINTVLW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> PERSCHINTVL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PERSCHINTVL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "25% of frame."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(PERSCHINTVLW::VALUE1)
+        self.variant(PERSCHINTVL_A::VALUE1)
     }
     #[doc = "50% of frame."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(PERSCHINTVLW::VALUE2)
+        self.variant(PERSCHINTVL_A::VALUE2)
     }
     #[doc = "75% of frame."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(PERSCHINTVLW::VALUE3)
+        self.variant(PERSCHINTVL_A::VALUE3)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Device Speed"]
-    #[inline]
-    pub fn dev_spd(&self) -> DEVSPDR {
-        DEVSPDR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn dev_spd(&self) -> DEVSPD_R {
+        DEVSPD_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 2 - Non-Zero-Length Status OUT Handshake"]
-    #[inline]
-    pub fn nzsts_outhshk(&self) -> NZSTSOUTHSHKR {
-        NZSTSOUTHSHKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn nzsts_outhshk(&self) -> NZSTSOUTHSHK_R {
+        NZSTSOUTHSHK_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bits 4:10 - Device Address"]
-    #[inline]
-    pub fn dev_addr(&self) -> DEVADDRR {
-        let bits = {
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DEVADDRR { bits }
+    #[inline(always)]
+    pub fn dev_addr(&self) -> DEVADDR_R {
+        DEVADDR_R::new(((self.bits >> 4) & 0x7f) as u8)
     }
     #[doc = "Bits 11:12 - Periodic Frame Interval"]
-    #[inline]
-    pub fn per_fr_int(&self) -> PERFRINTR {
-        PERFRINTR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn per_fr_int(&self) -> PERFRINT_R {
+        PERFRINT_R::new(((self.bits >> 11) & 0x03) as u8)
     }
     #[doc = "Bit 23 - Enable Scatter/Gather DMA in Device mode."]
-    #[inline]
-    pub fn desc_dma(&self) -> DESCDMAR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DESCDMAR { bits }
+    #[inline(always)]
+    pub fn desc_dma(&self) -> DESCDMA_R {
+        DESCDMA_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bits 24:25 - Periodic Scheduling Interval"]
-    #[inline]
-    pub fn per_sch_intvl(&self) -> PERSCHINTVLR {
-        PERSCHINTVLR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn per_sch_intvl(&self) -> PERSCHINTVL_R {
+        PERSCHINTVL_R::new(((self.bits >> 24) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 136314880 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Device Speed"]
-    #[inline]
-    pub fn dev_spd(&mut self) -> _DEVSPDW {
-        _DEVSPDW { w: self }
+    #[inline(always)]
+    pub fn dev_spd(&mut self) -> DEVSPD_W {
+        DEVSPD_W { w: self }
     }
     #[doc = "Bit 2 - Non-Zero-Length Status OUT Handshake"]
-    #[inline]
-    pub fn nzsts_outhshk(&mut self) -> _NZSTSOUTHSHKW {
-        _NZSTSOUTHSHKW { w: self }
+    #[inline(always)]
+    pub fn nzsts_outhshk(&mut self) -> NZSTSOUTHSHK_W {
+        NZSTSOUTHSHK_W { w: self }
     }
     #[doc = "Bits 4:10 - Device Address"]
-    #[inline]
-    pub fn dev_addr(&mut self) -> _DEVADDRW {
-        _DEVADDRW { w: self }
+    #[inline(always)]
+    pub fn dev_addr(&mut self) -> DEVADDR_W {
+        DEVADDR_W { w: self }
     }
     #[doc = "Bits 11:12 - Periodic Frame Interval"]
-    #[inline]
-    pub fn per_fr_int(&mut self) -> _PERFRINTW {
-        _PERFRINTW { w: self }
+    #[inline(always)]
+    pub fn per_fr_int(&mut self) -> PERFRINT_W {
+        PERFRINT_W { w: self }
     }
     #[doc = "Bit 23 - Enable Scatter/Gather DMA in Device mode."]
-    #[inline]
-    pub fn desc_dma(&mut self) -> _DESCDMAW {
-        _DESCDMAW { w: self }
+    #[inline(always)]
+    pub fn desc_dma(&mut self) -> DESCDMA_W {
+        DESCDMA_W { w: self }
     }
     #[doc = "Bits 24:25 - Periodic Scheduling Interval"]
-    #[inline]
-    pub fn per_sch_intvl(&mut self) -> _PERSCHINTVLW {
-        _PERSCHINTVLW { w: self }
+    #[inline(always)]
+    pub fn per_sch_intvl(&mut self) -> PERSCHINTVL_W {
+        PERSCHINTVL_W { w: self }
     }
 }

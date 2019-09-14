@@ -1,300 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::G0ORCEN {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register G0ORCEN"]
+pub type R = crate::R<u32, super::G0ORCEN>;
+#[doc = "Writer for register G0ORCEN"]
+pub type W = crate::W<u32, super::G0ORCEN>;
+#[doc = "Register G0ORCEN `reset()`'s with value 0"]
+impl crate::ResetValue for super::G0ORCEN {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ENORC6`"]
+#[doc = "Enable Out of Range Comparator, Channel 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENORC6R {
-    #[doc = "Disabled"]
+pub enum ENORC6_A {
+    #[doc = "0: Disabled"]
     CONST_0,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     CONST_1,
 }
-impl ENORC6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENORC6R::CONST_0 => false,
-            ENORC6R::CONST_1 => true,
+impl From<ENORC6_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENORC6_A) -> Self {
+        match variant {
+            ENORC6_A::CONST_0 => false,
+            ENORC6_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENORC6R {
-        match value {
-            false => ENORC6R::CONST_0,
-            true => ENORC6R::CONST_1,
+}
+#[doc = "Reader of field `ENORC6`"]
+pub type ENORC6_R = crate::R<bool, ENORC6_A>;
+impl ENORC6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENORC6_A {
+        match self.bits {
+            false => ENORC6_A::CONST_0,
+            true => ENORC6_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ENORC6R::CONST_0
+        *self == ENORC6_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ENORC6R::CONST_1
+        *self == ENORC6_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `ENORC7`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENORC7R {
-    #[doc = "Disabled"]
-    CONST_0,
-    #[doc = "Enabled"]
-    CONST_1,
-}
-impl ENORC7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENORC7R::CONST_0 => false,
-            ENORC7R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENORC7R {
-        match value {
-            false => ENORC7R::CONST_0,
-            true => ENORC7R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == ENORC7R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == ENORC7R::CONST_1
-    }
-}
-#[doc = "Values that can be written to the field `ENORC6`"]
-pub enum ENORC6W {
-    #[doc = "Disabled"]
-    CONST_0,
-    #[doc = "Enabled"]
-    CONST_1,
-}
-impl ENORC6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENORC6W::CONST_0 => false,
-            ENORC6W::CONST_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENORC6W<'a> {
+#[doc = "Write proxy for field `ENORC6`"]
+pub struct ENORC6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENORC6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENORC6W) -> &'a mut W {
+impl<'a> ENORC6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENORC6_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(ENORC6W::CONST_0)
+        self.variant(ENORC6_A::CONST_0)
     }
     #[doc = "Enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(ENORC6W::CONST_1)
+        self.variant(ENORC6_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ENORC7`"]
-pub enum ENORC7W {
-    #[doc = "Disabled"]
+#[doc = "Enable Out of Range Comparator, Channel 7\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ENORC7_A {
+    #[doc = "0: Disabled"]
     CONST_0,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     CONST_1,
 }
-impl ENORC7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENORC7W::CONST_0 => false,
-            ENORC7W::CONST_1 => true,
+impl From<ENORC7_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENORC7_A) -> Self {
+        match variant {
+            ENORC7_A::CONST_0 => false,
+            ENORC7_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ENORC7W<'a> {
+#[doc = "Reader of field `ENORC7`"]
+pub type ENORC7_R = crate::R<bool, ENORC7_A>;
+impl ENORC7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENORC7_A {
+        match self.bits {
+            false => ENORC7_A::CONST_0,
+            true => ENORC7_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == ENORC7_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == ENORC7_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `ENORC7`"]
+pub struct ENORC7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENORC7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENORC7W) -> &'a mut W {
+impl<'a> ENORC7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENORC7_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(ENORC7W::CONST_0)
+        self.variant(ENORC7_A::CONST_0)
     }
     #[doc = "Enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(ENORC7W::CONST_1)
+        self.variant(ENORC7_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 6 - Enable Out of Range Comparator, Channel 6"]
-    #[inline]
-    pub fn enorc6(&self) -> ENORC6R {
-        ENORC6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn enorc6(&self) -> ENORC6_R {
+        ENORC6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Enable Out of Range Comparator, Channel 7"]
-    #[inline]
-    pub fn enorc7(&self) -> ENORC7R {
-        ENORC7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn enorc7(&self) -> ENORC7_R {
+        ENORC7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 6 - Enable Out of Range Comparator, Channel 6"]
-    #[inline]
-    pub fn enorc6(&mut self) -> _ENORC6W {
-        _ENORC6W { w: self }
+    #[inline(always)]
+    pub fn enorc6(&mut self) -> ENORC6_W {
+        ENORC6_W { w: self }
     }
     #[doc = "Bit 7 - Enable Out of Range Comparator, Channel 7"]
-    #[inline]
-    pub fn enorc7(&mut self) -> _ENORC7W {
-        _ENORC7W { w: self }
+    #[inline(always)]
+    pub fn enorc7(&mut self) -> ENORC7_W {
+        ENORC7_W { w: self }
     }
 }

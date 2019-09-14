@@ -1,1248 +1,913 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::TBCTR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register TBCTR"]
+pub type R = crate::R<u32, super::TBCTR>;
+#[doc = "Writer for register TBCTR"]
+pub type W = crate::W<u32, super::TBCTR>;
+#[doc = "Register TBCTR `reset()`'s with value 0"]
+impl crate::ResetValue for super::TBCTR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct LIMITR {
-    bits: u8,
+#[doc = "Write proxy for field `DPTR`"]
+pub struct DPTR_W<'a> {
+    w: &'a mut W,
 }
-impl LIMITR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> DPTR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w
     }
 }
-#[doc = "Possible values of the field `STBTM`"]
+#[doc = "Reader of field `LIMIT`"]
+pub type LIMIT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `LIMIT`"]
+pub struct LIMIT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LIMIT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
+        self.w
+    }
+}
+#[doc = "Standard Transmit Buffer Trigger Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STBTMR {
+pub enum STBTM_A {
+    #[doc = "0: Trigger mode 0: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.LIMIT."]
+    VALUE1,
+    #[doc = "1: Trigger mode 1: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.SIZE."]
+    VALUE2,
+}
+impl From<STBTM_A> for bool {
+    #[inline(always)]
+    fn from(variant: STBTM_A) -> Self {
+        match variant {
+            STBTM_A::VALUE1 => false,
+            STBTM_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `STBTM`"]
+pub type STBTM_R = crate::R<bool, STBTM_A>;
+impl STBTM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> STBTM_A {
+        match self.bits {
+            false => STBTM_A::VALUE1,
+            true => STBTM_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == STBTM_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == STBTM_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `STBTM`"]
+pub struct STBTM_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> STBTM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: STBTM_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Trigger mode 0: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.LIMIT."]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(STBTM_A::VALUE1)
+    }
     #[doc = "Trigger mode 1: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.SIZE."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(STBTM_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w
+    }
+}
+#[doc = "Standard Transmit Buffer Trigger Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STBTEN_A {
+    #[doc = "0: The standard transmit buffer event trigger through bit TRBSR.STBT is disabled."]
+    VALUE1,
+    #[doc = "1: The standard transmit buffer event trigger through bit TRBSR.STBT is enabled."]
     VALUE2,
 }
-impl STBTMR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            STBTMR::VALUE1 => false,
-            STBTMR::VALUE2 => true,
+impl From<STBTEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: STBTEN_A) -> Self {
+        match variant {
+            STBTEN_A::VALUE1 => false,
+            STBTEN_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> STBTMR {
-        match value {
-            false => STBTMR::VALUE1,
-            true => STBTMR::VALUE2,
+}
+#[doc = "Reader of field `STBTEN`"]
+pub type STBTEN_R = crate::R<bool, STBTEN_A>;
+impl STBTEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> STBTEN_A {
+        match self.bits {
+            false => STBTEN_A::VALUE1,
+            true => STBTEN_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == STBTMR::VALUE1
+        *self == STBTEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == STBTMR::VALUE2
+        *self == STBTEN_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `STBTEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STBTENR {
+#[doc = "Write proxy for field `STBTEN`"]
+pub struct STBTEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> STBTEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: STBTEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "The standard transmit buffer event trigger through bit TRBSR.STBT is disabled."]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(STBTEN_A::VALUE1)
+    }
     #[doc = "The standard transmit buffer event trigger through bit TRBSR.STBT is enabled."]
-    VALUE2,
-}
-impl STBTENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(STBTEN_A::VALUE2)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            STBTENR::VALUE1 => false,
-            STBTENR::VALUE2 => true,
-        }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> STBTENR {
-        match value {
-            false => STBTENR::VALUE1,
-            true => STBTENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == STBTENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == STBTENR::VALUE2
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w
     }
 }
-#[doc = "Possible values of the field `STBINP`"]
+#[doc = "Standard Transmit Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STBINPR {
-    #[doc = "Output SR0 becomes activated."]
+pub enum STBINP_A {
+    #[doc = "0: Output SR0 becomes activated."]
     VALUE1,
-    #[doc = "Output SR1 becomes activated."]
+    #[doc = "1: Output SR1 becomes activated."]
     VALUE2,
-    #[doc = "Output SR2 becomes activated."]
+    #[doc = "2: Output SR2 becomes activated."]
     VALUE3,
-    #[doc = "Output SR3 becomes activated."]
+    #[doc = "3: Output SR3 becomes activated."]
     VALUE4,
-    #[doc = "Output SR4 becomes activated."]
+    #[doc = "4: Output SR4 becomes activated."]
     VALUE5,
-    #[doc = "Output SR5 becomes activated."]
+    #[doc = "5: Output SR5 becomes activated."]
     VALUE6,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl STBINPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            STBINPR::VALUE1 => 0,
-            STBINPR::VALUE2 => 1,
-            STBINPR::VALUE3 => 2,
-            STBINPR::VALUE4 => 3,
-            STBINPR::VALUE5 => 4,
-            STBINPR::VALUE6 => 5,
-            STBINPR::_Reserved(bits) => bits,
+impl From<STBINP_A> for u8 {
+    #[inline(always)]
+    fn from(variant: STBINP_A) -> Self {
+        match variant {
+            STBINP_A::VALUE1 => 0,
+            STBINP_A::VALUE2 => 1,
+            STBINP_A::VALUE3 => 2,
+            STBINP_A::VALUE4 => 3,
+            STBINP_A::VALUE5 => 4,
+            STBINP_A::VALUE6 => 5,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> STBINPR {
-        match value {
-            0 => STBINPR::VALUE1,
-            1 => STBINPR::VALUE2,
-            2 => STBINPR::VALUE3,
-            3 => STBINPR::VALUE4,
-            4 => STBINPR::VALUE5,
-            5 => STBINPR::VALUE6,
-            i => STBINPR::_Reserved(i),
+}
+#[doc = "Reader of field `STBINP`"]
+pub type STBINP_R = crate::R<u8, STBINP_A>;
+impl STBINP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, STBINP_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(STBINP_A::VALUE1),
+            1 => Val(STBINP_A::VALUE2),
+            2 => Val(STBINP_A::VALUE3),
+            3 => Val(STBINP_A::VALUE4),
+            4 => Val(STBINP_A::VALUE5),
+            5 => Val(STBINP_A::VALUE6),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == STBINPR::VALUE1
+        *self == STBINP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == STBINPR::VALUE2
+        *self == STBINP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == STBINPR::VALUE3
+        *self == STBINP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == STBINPR::VALUE4
+        *self == STBINP_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == STBINPR::VALUE5
+        *self == STBINP_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == STBINPR::VALUE6
+        *self == STBINP_A::VALUE6
     }
 }
-#[doc = "Possible values of the field `ATBINP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ATBINPR {
-    #[doc = "Output SR0 becomes activated."]
-    VALUE1,
-    #[doc = "Output SR1 becomes activated."]
-    VALUE2,
-    #[doc = "Output SR2 becomes activated."]
-    VALUE3,
-    #[doc = "Output SR3 becomes activated."]
-    VALUE4,
-    #[doc = "Output SR4 becomes activated."]
-    VALUE5,
-    #[doc = "Output SR5 becomes activated."]
-    VALUE6,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[doc = "Write proxy for field `STBINP`"]
+pub struct STBINP_W<'a> {
+    w: &'a mut W,
 }
-impl ATBINPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ATBINPR::VALUE1 => 0,
-            ATBINPR::VALUE2 => 1,
-            ATBINPR::VALUE3 => 2,
-            ATBINPR::VALUE4 => 3,
-            ATBINPR::VALUE5 => 4,
-            ATBINPR::VALUE6 => 5,
-            ATBINPR::_Reserved(bits) => bits,
+impl<'a> STBINP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: STBINP_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Output SR0 becomes activated."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(STBINP_A::VALUE1)
+    }
+    #[doc = "Output SR1 becomes activated."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(STBINP_A::VALUE2)
+    }
+    #[doc = "Output SR2 becomes activated."]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(STBINP_A::VALUE3)
+    }
+    #[doc = "Output SR3 becomes activated."]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(STBINP_A::VALUE4)
+    }
+    #[doc = "Output SR4 becomes activated."]
+    #[inline(always)]
+    pub fn value5(self) -> &'a mut W {
+        self.variant(STBINP_A::VALUE5)
+    }
+    #[doc = "Output SR5 becomes activated."]
+    #[inline(always)]
+    pub fn value6(self) -> &'a mut W {
+        self.variant(STBINP_A::VALUE6)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
+        self.w
+    }
+}
+#[doc = "Alternative Transmit Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ATBINP_A {
+    #[doc = "0: Output SR0 becomes activated."]
+    VALUE1,
+    #[doc = "1: Output SR1 becomes activated."]
+    VALUE2,
+    #[doc = "2: Output SR2 becomes activated."]
+    VALUE3,
+    #[doc = "3: Output SR3 becomes activated."]
+    VALUE4,
+    #[doc = "4: Output SR4 becomes activated."]
+    VALUE5,
+    #[doc = "5: Output SR5 becomes activated."]
+    VALUE6,
+}
+impl From<ATBINP_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ATBINP_A) -> Self {
+        match variant {
+            ATBINP_A::VALUE1 => 0,
+            ATBINP_A::VALUE2 => 1,
+            ATBINP_A::VALUE3 => 2,
+            ATBINP_A::VALUE4 => 3,
+            ATBINP_A::VALUE5 => 4,
+            ATBINP_A::VALUE6 => 5,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ATBINPR {
-        match value {
-            0 => ATBINPR::VALUE1,
-            1 => ATBINPR::VALUE2,
-            2 => ATBINPR::VALUE3,
-            3 => ATBINPR::VALUE4,
-            4 => ATBINPR::VALUE5,
-            5 => ATBINPR::VALUE6,
-            i => ATBINPR::_Reserved(i),
+}
+#[doc = "Reader of field `ATBINP`"]
+pub type ATBINP_R = crate::R<u8, ATBINP_A>;
+impl ATBINP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, ATBINP_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(ATBINP_A::VALUE1),
+            1 => Val(ATBINP_A::VALUE2),
+            2 => Val(ATBINP_A::VALUE3),
+            3 => Val(ATBINP_A::VALUE4),
+            4 => Val(ATBINP_A::VALUE5),
+            5 => Val(ATBINP_A::VALUE6),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ATBINPR::VALUE1
+        *self == ATBINP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ATBINPR::VALUE2
+        *self == ATBINP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == ATBINPR::VALUE3
+        *self == ATBINP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == ATBINPR::VALUE4
+        *self == ATBINP_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == ATBINPR::VALUE5
+        *self == ATBINP_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == ATBINPR::VALUE6
+        *self == ATBINP_A::VALUE6
     }
 }
-#[doc = "Possible values of the field `SIZE`"]
+#[doc = "Write proxy for field `ATBINP`"]
+pub struct ATBINP_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ATBINP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ATBINP_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Output SR0 becomes activated."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(ATBINP_A::VALUE1)
+    }
+    #[doc = "Output SR1 becomes activated."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(ATBINP_A::VALUE2)
+    }
+    #[doc = "Output SR2 becomes activated."]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(ATBINP_A::VALUE3)
+    }
+    #[doc = "Output SR3 becomes activated."]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(ATBINP_A::VALUE4)
+    }
+    #[doc = "Output SR4 becomes activated."]
+    #[inline(always)]
+    pub fn value5(self) -> &'a mut W {
+        self.variant(ATBINP_A::VALUE5)
+    }
+    #[doc = "Output SR5 becomes activated."]
+    #[inline(always)]
+    pub fn value6(self) -> &'a mut W {
+        self.variant(ATBINP_A::VALUE6)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 19)) | (((value as u32) & 0x07) << 19);
+        self.w
+    }
+}
+#[doc = "Buffer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SIZER {
-    #[doc = "The FIFO mechanism is disabled. The buffer does not accept any request for data."]
+pub enum SIZE_A {
+    #[doc = "0: The FIFO mechanism is disabled. The buffer does not accept any request for data."]
     VALUE1,
-    #[doc = "The FIFO buffer contains 2 entries."]
+    #[doc = "1: The FIFO buffer contains 2 entries."]
     VALUE2,
-    #[doc = "The FIFO buffer contains 4 entries."]
+    #[doc = "2: The FIFO buffer contains 4 entries."]
     VALUE3,
-    #[doc = "The FIFO buffer contains 8 entries."]
+    #[doc = "3: The FIFO buffer contains 8 entries."]
     VALUE4,
-    #[doc = "The FIFO buffer contains 16 entries."]
+    #[doc = "4: The FIFO buffer contains 16 entries."]
     VALUE5,
-    #[doc = "The FIFO buffer contains 32 entries."]
+    #[doc = "5: The FIFO buffer contains 32 entries."]
     VALUE6,
-    #[doc = "The FIFO buffer contains 64 entries."]
+    #[doc = "6: The FIFO buffer contains 64 entries."]
     VALUE7,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SIZER::VALUE1 => 0,
-            SIZER::VALUE2 => 1,
-            SIZER::VALUE3 => 2,
-            SIZER::VALUE4 => 3,
-            SIZER::VALUE5 => 4,
-            SIZER::VALUE6 => 5,
-            SIZER::VALUE7 => 6,
-            SIZER::_Reserved(bits) => bits,
+impl From<SIZE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SIZE_A) -> Self {
+        match variant {
+            SIZE_A::VALUE1 => 0,
+            SIZE_A::VALUE2 => 1,
+            SIZE_A::VALUE3 => 2,
+            SIZE_A::VALUE4 => 3,
+            SIZE_A::VALUE5 => 4,
+            SIZE_A::VALUE6 => 5,
+            SIZE_A::VALUE7 => 6,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SIZER {
-        match value {
-            0 => SIZER::VALUE1,
-            1 => SIZER::VALUE2,
-            2 => SIZER::VALUE3,
-            3 => SIZER::VALUE4,
-            4 => SIZER::VALUE5,
-            5 => SIZER::VALUE6,
-            6 => SIZER::VALUE7,
-            i => SIZER::_Reserved(i),
+}
+#[doc = "Reader of field `SIZE`"]
+pub type SIZE_R = crate::R<u8, SIZE_A>;
+impl SIZE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SIZE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SIZE_A::VALUE1),
+            1 => Val(SIZE_A::VALUE2),
+            2 => Val(SIZE_A::VALUE3),
+            3 => Val(SIZE_A::VALUE4),
+            4 => Val(SIZE_A::VALUE5),
+            5 => Val(SIZE_A::VALUE6),
+            6 => Val(SIZE_A::VALUE7),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SIZER::VALUE1
+        *self == SIZE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SIZER::VALUE2
+        *self == SIZE_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == SIZER::VALUE3
+        *self == SIZE_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == SIZER::VALUE4
+        *self == SIZE_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == SIZER::VALUE5
+        *self == SIZE_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == SIZER::VALUE6
+        *self == SIZE_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == SIZER::VALUE7
+        *self == SIZE_A::VALUE7
     }
 }
-#[doc = "Possible values of the field `LOF`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOFR {
-    #[doc = "A standard transmit buffer event occurs when the filling level equals the limit value and gets lower due to transmission of a data word."]
-    VALUE1,
-    #[doc = "A standard transmit buffer interrupt event occurs when the filling level equals the limit value and gets bigger due to a write access to a data input location INx."]
-    VALUE2,
-}
-impl LOFR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LOFR::VALUE1 => false,
-            LOFR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LOFR {
-        match value {
-            false => LOFR::VALUE1,
-            true => LOFR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LOFR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LOFR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `STBIEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STBIENR {
-    #[doc = "The standard transmit buffer interrupt generation is disabled."]
-    VALUE1,
-    #[doc = "The standard transmit buffer interrupt generation is enabled."]
-    VALUE2,
-}
-impl STBIENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            STBIENR::VALUE1 => false,
-            STBIENR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> STBIENR {
-        match value {
-            false => STBIENR::VALUE1,
-            true => STBIENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == STBIENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == STBIENR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `TBERIEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TBERIENR {
-    #[doc = "The transmit buffer error interrupt generation is disabled."]
-    VALUE1,
-    #[doc = "The transmit buffer error interrupt generation is enabled."]
-    VALUE2,
-}
-impl TBERIENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TBERIENR::VALUE1 => false,
-            TBERIENR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TBERIENR {
-        match value {
-            false => TBERIENR::VALUE1,
-            true => TBERIENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == TBERIENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == TBERIENR::VALUE2
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DPTRW<'a> {
+#[doc = "Write proxy for field `SIZE`"]
+pub struct SIZE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DPTRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LIMITW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LIMITW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `STBTM`"]
-pub enum STBTMW {
-    #[doc = "Trigger mode 0: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.LIMIT."]
-    VALUE1,
-    #[doc = "Trigger mode 1: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.SIZE."]
-    VALUE2,
-}
-impl STBTMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            STBTMW::VALUE1 => false,
-            STBTMW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STBTMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _STBTMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: STBTMW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Trigger mode 0: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.LIMIT."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(STBTMW::VALUE1)
-    }
-    #[doc = "Trigger mode 1: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.SIZE."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(STBTMW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `STBTEN`"]
-pub enum STBTENW {
-    #[doc = "The standard transmit buffer event trigger through bit TRBSR.STBT is disabled."]
-    VALUE1,
-    #[doc = "The standard transmit buffer event trigger through bit TRBSR.STBT is enabled."]
-    VALUE2,
-}
-impl STBTENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            STBTENW::VALUE1 => false,
-            STBTENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STBTENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _STBTENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: STBTENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The standard transmit buffer event trigger through bit TRBSR.STBT is disabled."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(STBTENW::VALUE1)
-    }
-    #[doc = "The standard transmit buffer event trigger through bit TRBSR.STBT is enabled."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(STBTENW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `STBINP`"]
-pub enum STBINPW {
-    #[doc = "Output SR0 becomes activated."]
-    VALUE1,
-    #[doc = "Output SR1 becomes activated."]
-    VALUE2,
-    #[doc = "Output SR2 becomes activated."]
-    VALUE3,
-    #[doc = "Output SR3 becomes activated."]
-    VALUE4,
-    #[doc = "Output SR4 becomes activated."]
-    VALUE5,
-    #[doc = "Output SR5 becomes activated."]
-    VALUE6,
-}
-impl STBINPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            STBINPW::VALUE1 => 0,
-            STBINPW::VALUE2 => 1,
-            STBINPW::VALUE3 => 2,
-            STBINPW::VALUE4 => 3,
-            STBINPW::VALUE5 => 4,
-            STBINPW::VALUE6 => 5,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STBINPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _STBINPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: STBINPW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Output SR0 becomes activated."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(STBINPW::VALUE1)
-    }
-    #[doc = "Output SR1 becomes activated."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(STBINPW::VALUE2)
-    }
-    #[doc = "Output SR2 becomes activated."]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(STBINPW::VALUE3)
-    }
-    #[doc = "Output SR3 becomes activated."]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(STBINPW::VALUE4)
-    }
-    #[doc = "Output SR4 becomes activated."]
-    #[inline]
-    pub fn value5(self) -> &'a mut W {
-        self.variant(STBINPW::VALUE5)
-    }
-    #[doc = "Output SR5 becomes activated."]
-    #[inline]
-    pub fn value6(self) -> &'a mut W {
-        self.variant(STBINPW::VALUE6)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ATBINP`"]
-pub enum ATBINPW {
-    #[doc = "Output SR0 becomes activated."]
-    VALUE1,
-    #[doc = "Output SR1 becomes activated."]
-    VALUE2,
-    #[doc = "Output SR2 becomes activated."]
-    VALUE3,
-    #[doc = "Output SR3 becomes activated."]
-    VALUE4,
-    #[doc = "Output SR4 becomes activated."]
-    VALUE5,
-    #[doc = "Output SR5 becomes activated."]
-    VALUE6,
-}
-impl ATBINPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ATBINPW::VALUE1 => 0,
-            ATBINPW::VALUE2 => 1,
-            ATBINPW::VALUE3 => 2,
-            ATBINPW::VALUE4 => 3,
-            ATBINPW::VALUE5 => 4,
-            ATBINPW::VALUE6 => 5,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ATBINPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ATBINPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ATBINPW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Output SR0 becomes activated."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(ATBINPW::VALUE1)
-    }
-    #[doc = "Output SR1 becomes activated."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(ATBINPW::VALUE2)
-    }
-    #[doc = "Output SR2 becomes activated."]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(ATBINPW::VALUE3)
-    }
-    #[doc = "Output SR3 becomes activated."]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(ATBINPW::VALUE4)
-    }
-    #[doc = "Output SR4 becomes activated."]
-    #[inline]
-    pub fn value5(self) -> &'a mut W {
-        self.variant(ATBINPW::VALUE5)
-    }
-    #[doc = "Output SR5 becomes activated."]
-    #[inline]
-    pub fn value6(self) -> &'a mut W {
-        self.variant(ATBINPW::VALUE6)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SIZE`"]
-pub enum SIZEW {
-    #[doc = "The FIFO mechanism is disabled. The buffer does not accept any request for data."]
-    VALUE1,
-    #[doc = "The FIFO buffer contains 2 entries."]
-    VALUE2,
-    #[doc = "The FIFO buffer contains 4 entries."]
-    VALUE3,
-    #[doc = "The FIFO buffer contains 8 entries."]
-    VALUE4,
-    #[doc = "The FIFO buffer contains 16 entries."]
-    VALUE5,
-    #[doc = "The FIFO buffer contains 32 entries."]
-    VALUE6,
-    #[doc = "The FIFO buffer contains 64 entries."]
-    VALUE7,
-}
-impl SIZEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SIZEW::VALUE1 => 0,
-            SIZEW::VALUE2 => 1,
-            SIZEW::VALUE3 => 2,
-            SIZEW::VALUE4 => 3,
-            SIZEW::VALUE5 => 4,
-            SIZEW::VALUE6 => 5,
-            SIZEW::VALUE7 => 6,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SIZEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SIZEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SIZEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> SIZE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SIZE_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "The FIFO mechanism is disabled. The buffer does not accept any request for data."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE1)
+        self.variant(SIZE_A::VALUE1)
     }
     #[doc = "The FIFO buffer contains 2 entries."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE2)
+        self.variant(SIZE_A::VALUE2)
     }
     #[doc = "The FIFO buffer contains 4 entries."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE3)
+        self.variant(SIZE_A::VALUE3)
     }
     #[doc = "The FIFO buffer contains 8 entries."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE4)
+        self.variant(SIZE_A::VALUE4)
     }
     #[doc = "The FIFO buffer contains 16 entries."]
-    #[inline]
+    #[inline(always)]
     pub fn value5(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE5)
+        self.variant(SIZE_A::VALUE5)
     }
     #[doc = "The FIFO buffer contains 32 entries."]
-    #[inline]
+    #[inline(always)]
     pub fn value6(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE6)
+        self.variant(SIZE_A::VALUE6)
     }
     #[doc = "The FIFO buffer contains 64 entries."]
-    #[inline]
+    #[inline(always)]
     pub fn value7(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE7)
+        self.variant(SIZE_A::VALUE7)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LOF`"]
-pub enum LOFW {
+#[doc = "Buffer Event on Limit Overflow\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LOF_A {
+    #[doc = "0: A standard transmit buffer event occurs when the filling level equals the limit value and gets lower due to transmission of a data word."]
+    VALUE1,
+    #[doc = "1: A standard transmit buffer interrupt event occurs when the filling level equals the limit value and gets bigger due to a write access to a data input location INx."]
+    VALUE2,
+}
+impl From<LOF_A> for bool {
+    #[inline(always)]
+    fn from(variant: LOF_A) -> Self {
+        match variant {
+            LOF_A::VALUE1 => false,
+            LOF_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `LOF`"]
+pub type LOF_R = crate::R<bool, LOF_A>;
+impl LOF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LOF_A {
+        match self.bits {
+            false => LOF_A::VALUE1,
+            true => LOF_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LOF_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LOF_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `LOF`"]
+pub struct LOF_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LOF_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOF_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "A standard transmit buffer event occurs when the filling level equals the limit value and gets lower due to transmission of a data word."]
-    VALUE1,
-    #[doc = "A standard transmit buffer interrupt event occurs when the filling level equals the limit value and gets bigger due to a write access to a data input location INx."]
-    VALUE2,
-}
-impl LOFW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LOFW::VALUE1 => false,
-            LOFW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LOFW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LOFW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOFW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "A standard transmit buffer event occurs when the filling level equals the limit value and gets lower due to transmission of a data word."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LOFW::VALUE1)
+        self.variant(LOF_A::VALUE1)
     }
     #[doc = "A standard transmit buffer interrupt event occurs when the filling level equals the limit value and gets bigger due to a write access to a data input location INx."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LOFW::VALUE2)
+        self.variant(LOF_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `STBIEN`"]
-pub enum STBIENW {
-    #[doc = "The standard transmit buffer interrupt generation is disabled."]
+#[doc = "Standard Transmit Buffer Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STBIEN_A {
+    #[doc = "0: The standard transmit buffer interrupt generation is disabled."]
     VALUE1,
-    #[doc = "The standard transmit buffer interrupt generation is enabled."]
+    #[doc = "1: The standard transmit buffer interrupt generation is enabled."]
     VALUE2,
 }
-impl STBIENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            STBIENW::VALUE1 => false,
-            STBIENW::VALUE2 => true,
+impl From<STBIEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: STBIEN_A) -> Self {
+        match variant {
+            STBIEN_A::VALUE1 => false,
+            STBIEN_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _STBIENW<'a> {
+#[doc = "Reader of field `STBIEN`"]
+pub type STBIEN_R = crate::R<bool, STBIEN_A>;
+impl STBIEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> STBIEN_A {
+        match self.bits {
+            false => STBIEN_A::VALUE1,
+            true => STBIEN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == STBIEN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == STBIEN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `STBIEN`"]
+pub struct STBIEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _STBIENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: STBIENW) -> &'a mut W {
+impl<'a> STBIEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: STBIEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The standard transmit buffer interrupt generation is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(STBIENW::VALUE1)
+        self.variant(STBIEN_A::VALUE1)
     }
     #[doc = "The standard transmit buffer interrupt generation is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(STBIENW::VALUE2)
+        self.variant(STBIEN_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TBERIEN`"]
-pub enum TBERIENW {
-    #[doc = "The transmit buffer error interrupt generation is disabled."]
+#[doc = "Transmit Buffer Error Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TBERIEN_A {
+    #[doc = "0: The transmit buffer error interrupt generation is disabled."]
     VALUE1,
-    #[doc = "The transmit buffer error interrupt generation is enabled."]
+    #[doc = "1: The transmit buffer error interrupt generation is enabled."]
     VALUE2,
 }
-impl TBERIENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TBERIENW::VALUE1 => false,
-            TBERIENW::VALUE2 => true,
+impl From<TBERIEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TBERIEN_A) -> Self {
+        match variant {
+            TBERIEN_A::VALUE1 => false,
+            TBERIEN_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TBERIENW<'a> {
+#[doc = "Reader of field `TBERIEN`"]
+pub type TBERIEN_R = crate::R<bool, TBERIEN_A>;
+impl TBERIEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TBERIEN_A {
+        match self.bits {
+            false => TBERIEN_A::VALUE1,
+            true => TBERIEN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == TBERIEN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == TBERIEN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `TBERIEN`"]
+pub struct TBERIEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TBERIENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TBERIENW) -> &'a mut W {
+impl<'a> TBERIEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TBERIEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The transmit buffer error interrupt generation is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(TBERIENW::VALUE1)
+        self.variant(TBERIEN_A::VALUE1)
     }
     #[doc = "The transmit buffer error interrupt generation is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(TBERIENW::VALUE2)
+        self.variant(TBERIEN_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 8:13 - Limit For Interrupt Generation"]
-    #[inline]
-    pub fn limit(&self) -> LIMITR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        LIMITR { bits }
+    #[inline(always)]
+    pub fn limit(&self) -> LIMIT_R {
+        LIMIT_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bit 14 - Standard Transmit Buffer Trigger Mode"]
-    #[inline]
-    pub fn stbtm(&self) -> STBTMR {
-        STBTMR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn stbtm(&self) -> STBTM_R {
+        STBTM_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Standard Transmit Buffer Trigger Enable"]
-    #[inline]
-    pub fn stbten(&self) -> STBTENR {
-        STBTENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn stbten(&self) -> STBTEN_R {
+        STBTEN_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bits 16:18 - Standard Transmit Buffer Interrupt Node Pointer"]
-    #[inline]
-    pub fn stbinp(&self) -> STBINPR {
-        STBINPR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn stbinp(&self) -> STBINP_R {
+        STBINP_R::new(((self.bits >> 16) & 0x07) as u8)
     }
     #[doc = "Bits 19:21 - Alternative Transmit Buffer Interrupt Node Pointer"]
-    #[inline]
-    pub fn atbinp(&self) -> ATBINPR {
-        ATBINPR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn atbinp(&self) -> ATBINP_R {
+        ATBINP_R::new(((self.bits >> 19) & 0x07) as u8)
     }
     #[doc = "Bits 24:26 - Buffer Size"]
-    #[inline]
-    pub fn size(&self) -> SIZER {
-        SIZER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn size(&self) -> SIZE_R {
+        SIZE_R::new(((self.bits >> 24) & 0x07) as u8)
     }
     #[doc = "Bit 28 - Buffer Event on Limit Overflow"]
-    #[inline]
-    pub fn lof(&self) -> LOFR {
-        LOFR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lof(&self) -> LOF_R {
+        LOF_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 30 - Standard Transmit Buffer Interrupt Enable"]
-    #[inline]
-    pub fn stbien(&self) -> STBIENR {
-        STBIENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn stbien(&self) -> STBIEN_R {
+        STBIEN_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Transmit Buffer Error Interrupt Enable"]
-    #[inline]
-    pub fn tberien(&self) -> TBERIENR {
-        TBERIENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tberien(&self) -> TBERIEN_R {
+        TBERIEN_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - Data Pointer"]
-    #[inline]
-    pub fn dptr(&mut self) -> _DPTRW {
-        _DPTRW { w: self }
+    #[inline(always)]
+    pub fn dptr(&mut self) -> DPTR_W {
+        DPTR_W { w: self }
     }
     #[doc = "Bits 8:13 - Limit For Interrupt Generation"]
-    #[inline]
-    pub fn limit(&mut self) -> _LIMITW {
-        _LIMITW { w: self }
+    #[inline(always)]
+    pub fn limit(&mut self) -> LIMIT_W {
+        LIMIT_W { w: self }
     }
     #[doc = "Bit 14 - Standard Transmit Buffer Trigger Mode"]
-    #[inline]
-    pub fn stbtm(&mut self) -> _STBTMW {
-        _STBTMW { w: self }
+    #[inline(always)]
+    pub fn stbtm(&mut self) -> STBTM_W {
+        STBTM_W { w: self }
     }
     #[doc = "Bit 15 - Standard Transmit Buffer Trigger Enable"]
-    #[inline]
-    pub fn stbten(&mut self) -> _STBTENW {
-        _STBTENW { w: self }
+    #[inline(always)]
+    pub fn stbten(&mut self) -> STBTEN_W {
+        STBTEN_W { w: self }
     }
     #[doc = "Bits 16:18 - Standard Transmit Buffer Interrupt Node Pointer"]
-    #[inline]
-    pub fn stbinp(&mut self) -> _STBINPW {
-        _STBINPW { w: self }
+    #[inline(always)]
+    pub fn stbinp(&mut self) -> STBINP_W {
+        STBINP_W { w: self }
     }
     #[doc = "Bits 19:21 - Alternative Transmit Buffer Interrupt Node Pointer"]
-    #[inline]
-    pub fn atbinp(&mut self) -> _ATBINPW {
-        _ATBINPW { w: self }
+    #[inline(always)]
+    pub fn atbinp(&mut self) -> ATBINP_W {
+        ATBINP_W { w: self }
     }
     #[doc = "Bits 24:26 - Buffer Size"]
-    #[inline]
-    pub fn size(&mut self) -> _SIZEW {
-        _SIZEW { w: self }
+    #[inline(always)]
+    pub fn size(&mut self) -> SIZE_W {
+        SIZE_W { w: self }
     }
     #[doc = "Bit 28 - Buffer Event on Limit Overflow"]
-    #[inline]
-    pub fn lof(&mut self) -> _LOFW {
-        _LOFW { w: self }
+    #[inline(always)]
+    pub fn lof(&mut self) -> LOF_W {
+        LOF_W { w: self }
     }
     #[doc = "Bit 30 - Standard Transmit Buffer Interrupt Enable"]
-    #[inline]
-    pub fn stbien(&mut self) -> _STBIENW {
-        _STBIENW { w: self }
+    #[inline(always)]
+    pub fn stbien(&mut self) -> STBIEN_W {
+        STBIEN_W { w: self }
     }
     #[doc = "Bit 31 - Transmit Buffer Error Interrupt Enable"]
-    #[inline]
-    pub fn tberien(&mut self) -> _TBERIENW {
-        _TBERIENW { w: self }
+    #[inline(always)]
+    pub fn tberien(&mut self) -> TBERIEN_W {
+        TBERIEN_W { w: self }
     }
 }

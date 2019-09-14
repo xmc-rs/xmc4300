@@ -1,74 +1,48 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-impl super::MII_ECAT_ACS_STATE {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `EN_ACS_MII_BY_PDI`"]
+#[doc = "Reader of register MII_ECAT_ACS_STATE"]
+pub type R = crate::R<u8, super::MII_ECAT_ACS_STATE>;
+#[doc = "Access to MII management\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EN_ACS_MII_BY_PDIR {
-    #[doc = "ECAT enables PDI takeover of MII management control"]
+pub enum EN_ACS_MII_BY_PDI_A {
+    #[doc = "0: ECAT enables PDI takeover of MII management control"]
     VALUE1,
-    #[doc = "ECAT claims exclusive access to MII management"]
+    #[doc = "1: ECAT claims exclusive access to MII management"]
     VALUE2,
 }
-impl EN_ACS_MII_BY_PDIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EN_ACS_MII_BY_PDIR::VALUE1 => false,
-            EN_ACS_MII_BY_PDIR::VALUE2 => true,
+impl From<EN_ACS_MII_BY_PDI_A> for bool {
+    #[inline(always)]
+    fn from(variant: EN_ACS_MII_BY_PDI_A) -> Self {
+        match variant {
+            EN_ACS_MII_BY_PDI_A::VALUE1 => false,
+            EN_ACS_MII_BY_PDI_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EN_ACS_MII_BY_PDIR {
-        match value {
-            false => EN_ACS_MII_BY_PDIR::VALUE1,
-            true => EN_ACS_MII_BY_PDIR::VALUE2,
+}
+#[doc = "Reader of field `EN_ACS_MII_BY_PDI`"]
+pub type EN_ACS_MII_BY_PDI_R = crate::R<bool, EN_ACS_MII_BY_PDI_A>;
+impl EN_ACS_MII_BY_PDI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EN_ACS_MII_BY_PDI_A {
+        match self.bits {
+            false => EN_ACS_MII_BY_PDI_A::VALUE1,
+            true => EN_ACS_MII_BY_PDI_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EN_ACS_MII_BY_PDIR::VALUE1
+        *self == EN_ACS_MII_BY_PDI_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EN_ACS_MII_BY_PDIR::VALUE2
+        *self == EN_ACS_MII_BY_PDI_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 0 - Access to MII management"]
-    #[inline]
-    pub fn en_acs_mii_by_pdi(&self) -> EN_ACS_MII_BY_PDIR {
-        EN_ACS_MII_BY_PDIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn en_acs_mii_by_pdi(&self) -> EN_ACS_MII_BY_PDI_R {
+        EN_ACS_MII_BY_PDI_R::new((self.bits & 0x01) != 0)
     }
 }

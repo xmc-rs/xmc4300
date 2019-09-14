@@ -1,74 +1,48 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-impl super::WR_REG_PROTECT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `WR_REG_P`"]
+#[doc = "Reader of register WR_REG_PROTECT"]
+pub type R = crate::R<u8, super::WR_REG_PROTECT>;
+#[doc = "Write register protection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WR_REG_PR {
-    #[doc = "Protection disabled"]
+pub enum WR_REG_P_A {
+    #[doc = "0: Protection disabled"]
     VALUE1,
-    #[doc = "Protection enabled"]
+    #[doc = "1: Protection enabled"]
     VALUE2,
 }
-impl WR_REG_PR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WR_REG_PR::VALUE1 => false,
-            WR_REG_PR::VALUE2 => true,
+impl From<WR_REG_P_A> for bool {
+    #[inline(always)]
+    fn from(variant: WR_REG_P_A) -> Self {
+        match variant {
+            WR_REG_P_A::VALUE1 => false,
+            WR_REG_P_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WR_REG_PR {
-        match value {
-            false => WR_REG_PR::VALUE1,
-            true => WR_REG_PR::VALUE2,
+}
+#[doc = "Reader of field `WR_REG_P`"]
+pub type WR_REG_P_R = crate::R<bool, WR_REG_P_A>;
+impl WR_REG_P_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WR_REG_P_A {
+        match self.bits {
+            false => WR_REG_P_A::VALUE1,
+            true => WR_REG_P_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WR_REG_PR::VALUE1
+        *self == WR_REG_P_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WR_REG_PR::VALUE2
+        *self == WR_REG_P_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 0 - Write register protection"]
-    #[inline]
-    pub fn wr_reg_p(&self) -> WR_REG_PR {
-        WR_REG_PR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn wr_reg_p(&self) -> WR_REG_P_R {
+        WR_REG_P_R::new((self.bits & 0x01) != 0)
     }
 }

@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::RX_FIFO_OVERFLOW_FRAMES {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXFIFOOVFLR {
-    bits: u32,
-}
-impl RXFIFOOVFLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register RX_FIFO_OVERFLOW_FRAMES"]
+pub type R = crate::R<u32, super::RX_FIFO_OVERFLOW_FRAMES>;
+#[doc = "Reader of field `RXFIFOOVFL`"]
+pub type RXFIFOOVFL_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - This field indicates the number of received frames missed because of FIFO overflow."]
-    #[inline]
-    pub fn rxfifoovfl(&self) -> RXFIFOOVFLR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        RXFIFOOVFLR { bits }
+    #[inline(always)]
+    pub fn rxfifoovfl(&self) -> RXFIFOOVFL_R {
+        RXFIFOOVFL_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

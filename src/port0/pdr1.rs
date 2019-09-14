@@ -1,390 +1,208 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PDR1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PDR1"]
+pub type R = crate::R<u32, super::PDR1>;
+#[doc = "Writer for register PDR1"]
+pub type W = crate::W<u32, super::PDR1>;
+#[doc = "Register PDR1 `reset()`'s with value 0x2222_2222"]
+impl crate::ResetValue for super::PDR1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x2222_2222
     }
 }
-#[doc = r" Value of the field"]
-pub struct PD8R {
-    bits: u8,
-}
-impl PD8R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PD9R {
-    bits: u8,
-}
-impl PD9R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PD10R {
-    bits: u8,
-}
-impl PD10R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PD11R {
-    bits: u8,
-}
-impl PD11R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PD12R {
-    bits: u8,
-}
-impl PD12R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PD13R {
-    bits: u8,
-}
-impl PD13R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PD14R {
-    bits: u8,
-}
-impl PD14R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PD15R {
-    bits: u8,
-}
-impl PD15R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PD8W<'a> {
+#[doc = "Reader of field `PD8`"]
+pub type PD8_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PD8`"]
+pub struct PD8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PD8W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PD8_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PD9W<'a> {
+#[doc = "Reader of field `PD9`"]
+pub type PD9_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PD9`"]
+pub struct PD9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PD9W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PD9_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PD10W<'a> {
+#[doc = "Reader of field `PD10`"]
+pub type PD10_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PD10`"]
+pub struct PD10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PD10W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PD10_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PD11W<'a> {
+#[doc = "Reader of field `PD11`"]
+pub type PD11_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PD11`"]
+pub struct PD11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PD11W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PD11_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u32) & 0x07) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PD12W<'a> {
+#[doc = "Reader of field `PD12`"]
+pub type PD12_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PD12`"]
+pub struct PD12_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PD12W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PD12_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PD13W<'a> {
+#[doc = "Reader of field `PD13`"]
+pub type PD13_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PD13`"]
+pub struct PD13_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PD13W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PD13_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PD14W<'a> {
+#[doc = "Reader of field `PD14`"]
+pub type PD14_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PD14`"]
+pub struct PD14_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PD14W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PD14_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PD15W<'a> {
+#[doc = "Reader of field `PD15`"]
+pub type PD15_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PD15`"]
+pub struct PD15_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PD15W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PD15_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 28)) | (((value as u32) & 0x07) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.8"]
-    #[inline]
-    pub fn pd8(&self) -> PD8R {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PD8R { bits }
+    #[inline(always)]
+    pub fn pd8(&self) -> PD8_R {
+        PD8_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 4:6 - Pad Driver Mode for Pn.9"]
-    #[inline]
-    pub fn pd9(&self) -> PD9R {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PD9R { bits }
+    #[inline(always)]
+    pub fn pd9(&self) -> PD9_R {
+        PD9_R::new(((self.bits >> 4) & 0x07) as u8)
     }
     #[doc = "Bits 8:10 - Pad Driver Mode for Pn.10"]
-    #[inline]
-    pub fn pd10(&self) -> PD10R {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PD10R { bits }
+    #[inline(always)]
+    pub fn pd10(&self) -> PD10_R {
+        PD10_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bits 12:14 - Pad Driver Mode for Pn.11"]
-    #[inline]
-    pub fn pd11(&self) -> PD11R {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PD11R { bits }
+    #[inline(always)]
+    pub fn pd11(&self) -> PD11_R {
+        PD11_R::new(((self.bits >> 12) & 0x07) as u8)
     }
     #[doc = "Bits 16:18 - Pad Driver Mode for Pn.12"]
-    #[inline]
-    pub fn pd12(&self) -> PD12R {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PD12R { bits }
+    #[inline(always)]
+    pub fn pd12(&self) -> PD12_R {
+        PD12_R::new(((self.bits >> 16) & 0x07) as u8)
     }
     #[doc = "Bits 20:22 - Pad Driver Mode for Pn.13"]
-    #[inline]
-    pub fn pd13(&self) -> PD13R {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PD13R { bits }
+    #[inline(always)]
+    pub fn pd13(&self) -> PD13_R {
+        PD13_R::new(((self.bits >> 20) & 0x07) as u8)
     }
     #[doc = "Bits 24:26 - Pad Driver Mode for Pn.14"]
-    #[inline]
-    pub fn pd14(&self) -> PD14R {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PD14R { bits }
+    #[inline(always)]
+    pub fn pd14(&self) -> PD14_R {
+        PD14_R::new(((self.bits >> 24) & 0x07) as u8)
     }
     #[doc = "Bits 28:30 - Pad Driver Mode for Pn.15"]
-    #[inline]
-    pub fn pd15(&self) -> PD15R {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PD15R { bits }
+    #[inline(always)]
+    pub fn pd15(&self) -> PD15_R {
+        PD15_R::new(((self.bits >> 28) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 572662306 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.8"]
-    #[inline]
-    pub fn pd8(&mut self) -> _PD8W {
-        _PD8W { w: self }
+    #[inline(always)]
+    pub fn pd8(&mut self) -> PD8_W {
+        PD8_W { w: self }
     }
     #[doc = "Bits 4:6 - Pad Driver Mode for Pn.9"]
-    #[inline]
-    pub fn pd9(&mut self) -> _PD9W {
-        _PD9W { w: self }
+    #[inline(always)]
+    pub fn pd9(&mut self) -> PD9_W {
+        PD9_W { w: self }
     }
     #[doc = "Bits 8:10 - Pad Driver Mode for Pn.10"]
-    #[inline]
-    pub fn pd10(&mut self) -> _PD10W {
-        _PD10W { w: self }
+    #[inline(always)]
+    pub fn pd10(&mut self) -> PD10_W {
+        PD10_W { w: self }
     }
     #[doc = "Bits 12:14 - Pad Driver Mode for Pn.11"]
-    #[inline]
-    pub fn pd11(&mut self) -> _PD11W {
-        _PD11W { w: self }
+    #[inline(always)]
+    pub fn pd11(&mut self) -> PD11_W {
+        PD11_W { w: self }
     }
     #[doc = "Bits 16:18 - Pad Driver Mode for Pn.12"]
-    #[inline]
-    pub fn pd12(&mut self) -> _PD12W {
-        _PD12W { w: self }
+    #[inline(always)]
+    pub fn pd12(&mut self) -> PD12_W {
+        PD12_W { w: self }
     }
     #[doc = "Bits 20:22 - Pad Driver Mode for Pn.13"]
-    #[inline]
-    pub fn pd13(&mut self) -> _PD13W {
-        _PD13W { w: self }
+    #[inline(always)]
+    pub fn pd13(&mut self) -> PD13_W {
+        PD13_W { w: self }
     }
     #[doc = "Bits 24:26 - Pad Driver Mode for Pn.14"]
-    #[inline]
-    pub fn pd14(&mut self) -> _PD14W {
-        _PD14W { w: self }
+    #[inline(always)]
+    pub fn pd14(&mut self) -> PD14_W {
+        PD14_W { w: self }
     }
     #[doc = "Bits 28:30 - Pad Driver Mode for Pn.15"]
-    #[inline]
-    pub fn pd15(&mut self) -> _PD15W {
-        _PD15W { w: self }
+    #[inline(always)]
+    pub fn pd15(&mut self) -> PD15_W {
+        PD15_W { w: self }
     }
 }

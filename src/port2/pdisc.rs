@@ -1,914 +1,708 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PDISC {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `PDIS0`"]
+#[doc = "Reader of register PDISC"]
+pub type R = crate::R<u32, super::PDISC>;
+#[doc = "Pad Disable for Port n Pin 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS0R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS0_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS0R::CONST_0 => false,
-            PDIS0R::CONST_1 => true,
+impl From<PDIS0_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS0_A) -> Self {
+        match variant {
+            PDIS0_A::CONST_0 => false,
+            PDIS0_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS0R {
-        match value {
-            false => PDIS0R::CONST_0,
-            true => PDIS0R::CONST_1,
+}
+#[doc = "Reader of field `PDIS0`"]
+pub type PDIS0_R = crate::R<bool, PDIS0_A>;
+impl PDIS0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS0_A {
+        match self.bits {
+            false => PDIS0_A::CONST_0,
+            true => PDIS0_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS0R::CONST_0
+        *self == PDIS0_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS0R::CONST_1
+        *self == PDIS0_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS1`"]
+#[doc = "Pad Disable for Port n Pin 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS1R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS1_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS1R::CONST_0 => false,
-            PDIS1R::CONST_1 => true,
+impl From<PDIS1_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS1_A) -> Self {
+        match variant {
+            PDIS1_A::CONST_0 => false,
+            PDIS1_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS1R {
-        match value {
-            false => PDIS1R::CONST_0,
-            true => PDIS1R::CONST_1,
+}
+#[doc = "Reader of field `PDIS1`"]
+pub type PDIS1_R = crate::R<bool, PDIS1_A>;
+impl PDIS1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS1_A {
+        match self.bits {
+            false => PDIS1_A::CONST_0,
+            true => PDIS1_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS1R::CONST_0
+        *self == PDIS1_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS1R::CONST_1
+        *self == PDIS1_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS2`"]
+#[doc = "Pad Disable for Port n Pin 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS2R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS2_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS2R::CONST_0 => false,
-            PDIS2R::CONST_1 => true,
+impl From<PDIS2_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS2_A) -> Self {
+        match variant {
+            PDIS2_A::CONST_0 => false,
+            PDIS2_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS2R {
-        match value {
-            false => PDIS2R::CONST_0,
-            true => PDIS2R::CONST_1,
+}
+#[doc = "Reader of field `PDIS2`"]
+pub type PDIS2_R = crate::R<bool, PDIS2_A>;
+impl PDIS2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS2_A {
+        match self.bits {
+            false => PDIS2_A::CONST_0,
+            true => PDIS2_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS2R::CONST_0
+        *self == PDIS2_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS2R::CONST_1
+        *self == PDIS2_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS3`"]
+#[doc = "Pad Disable for Port n Pin 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS3R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS3_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS3R::CONST_0 => false,
-            PDIS3R::CONST_1 => true,
+impl From<PDIS3_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS3_A) -> Self {
+        match variant {
+            PDIS3_A::CONST_0 => false,
+            PDIS3_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS3R {
-        match value {
-            false => PDIS3R::CONST_0,
-            true => PDIS3R::CONST_1,
+}
+#[doc = "Reader of field `PDIS3`"]
+pub type PDIS3_R = crate::R<bool, PDIS3_A>;
+impl PDIS3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS3_A {
+        match self.bits {
+            false => PDIS3_A::CONST_0,
+            true => PDIS3_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS3R::CONST_0
+        *self == PDIS3_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS3R::CONST_1
+        *self == PDIS3_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS4`"]
+#[doc = "Pad Disable for Port n Pin 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS4R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS4_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS4R::CONST_0 => false,
-            PDIS4R::CONST_1 => true,
+impl From<PDIS4_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS4_A) -> Self {
+        match variant {
+            PDIS4_A::CONST_0 => false,
+            PDIS4_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS4R {
-        match value {
-            false => PDIS4R::CONST_0,
-            true => PDIS4R::CONST_1,
+}
+#[doc = "Reader of field `PDIS4`"]
+pub type PDIS4_R = crate::R<bool, PDIS4_A>;
+impl PDIS4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS4_A {
+        match self.bits {
+            false => PDIS4_A::CONST_0,
+            true => PDIS4_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS4R::CONST_0
+        *self == PDIS4_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS4R::CONST_1
+        *self == PDIS4_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS5`"]
+#[doc = "Pad Disable for Port n Pin 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS5R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS5_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS5R::CONST_0 => false,
-            PDIS5R::CONST_1 => true,
+impl From<PDIS5_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS5_A) -> Self {
+        match variant {
+            PDIS5_A::CONST_0 => false,
+            PDIS5_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS5R {
-        match value {
-            false => PDIS5R::CONST_0,
-            true => PDIS5R::CONST_1,
+}
+#[doc = "Reader of field `PDIS5`"]
+pub type PDIS5_R = crate::R<bool, PDIS5_A>;
+impl PDIS5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS5_A {
+        match self.bits {
+            false => PDIS5_A::CONST_0,
+            true => PDIS5_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS5R::CONST_0
+        *self == PDIS5_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS5R::CONST_1
+        *self == PDIS5_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS6`"]
+#[doc = "Pad Disable for Port n Pin 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS6R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS6_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS6R::CONST_0 => false,
-            PDIS6R::CONST_1 => true,
+impl From<PDIS6_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS6_A) -> Self {
+        match variant {
+            PDIS6_A::CONST_0 => false,
+            PDIS6_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS6R {
-        match value {
-            false => PDIS6R::CONST_0,
-            true => PDIS6R::CONST_1,
+}
+#[doc = "Reader of field `PDIS6`"]
+pub type PDIS6_R = crate::R<bool, PDIS6_A>;
+impl PDIS6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS6_A {
+        match self.bits {
+            false => PDIS6_A::CONST_0,
+            true => PDIS6_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS6R::CONST_0
+        *self == PDIS6_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS6R::CONST_1
+        *self == PDIS6_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS7`"]
+#[doc = "Pad Disable for Port n Pin 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS7R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS7_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS7R::CONST_0 => false,
-            PDIS7R::CONST_1 => true,
+impl From<PDIS7_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS7_A) -> Self {
+        match variant {
+            PDIS7_A::CONST_0 => false,
+            PDIS7_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS7R {
-        match value {
-            false => PDIS7R::CONST_0,
-            true => PDIS7R::CONST_1,
+}
+#[doc = "Reader of field `PDIS7`"]
+pub type PDIS7_R = crate::R<bool, PDIS7_A>;
+impl PDIS7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS7_A {
+        match self.bits {
+            false => PDIS7_A::CONST_0,
+            true => PDIS7_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS7R::CONST_0
+        *self == PDIS7_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS7R::CONST_1
+        *self == PDIS7_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS8`"]
+#[doc = "Pad Disable for Port n Pin 8\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS8R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS8_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS8R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS8R::CONST_0 => false,
-            PDIS8R::CONST_1 => true,
+impl From<PDIS8_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS8_A) -> Self {
+        match variant {
+            PDIS8_A::CONST_0 => false,
+            PDIS8_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS8R {
-        match value {
-            false => PDIS8R::CONST_0,
-            true => PDIS8R::CONST_1,
+}
+#[doc = "Reader of field `PDIS8`"]
+pub type PDIS8_R = crate::R<bool, PDIS8_A>;
+impl PDIS8_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS8_A {
+        match self.bits {
+            false => PDIS8_A::CONST_0,
+            true => PDIS8_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS8R::CONST_0
+        *self == PDIS8_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS8R::CONST_1
+        *self == PDIS8_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS9`"]
+#[doc = "Pad Disable for Port n Pin 9\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS9R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS9_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS9R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS9R::CONST_0 => false,
-            PDIS9R::CONST_1 => true,
+impl From<PDIS9_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS9_A) -> Self {
+        match variant {
+            PDIS9_A::CONST_0 => false,
+            PDIS9_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS9R {
-        match value {
-            false => PDIS9R::CONST_0,
-            true => PDIS9R::CONST_1,
+}
+#[doc = "Reader of field `PDIS9`"]
+pub type PDIS9_R = crate::R<bool, PDIS9_A>;
+impl PDIS9_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS9_A {
+        match self.bits {
+            false => PDIS9_A::CONST_0,
+            true => PDIS9_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS9R::CONST_0
+        *self == PDIS9_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS9R::CONST_1
+        *self == PDIS9_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS10`"]
+#[doc = "Pad Disable for Port n Pin 10\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS10R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS10_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS10R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS10R::CONST_0 => false,
-            PDIS10R::CONST_1 => true,
+impl From<PDIS10_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS10_A) -> Self {
+        match variant {
+            PDIS10_A::CONST_0 => false,
+            PDIS10_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS10R {
-        match value {
-            false => PDIS10R::CONST_0,
-            true => PDIS10R::CONST_1,
+}
+#[doc = "Reader of field `PDIS10`"]
+pub type PDIS10_R = crate::R<bool, PDIS10_A>;
+impl PDIS10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS10_A {
+        match self.bits {
+            false => PDIS10_A::CONST_0,
+            true => PDIS10_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS10R::CONST_0
+        *self == PDIS10_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS10R::CONST_1
+        *self == PDIS10_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS11`"]
+#[doc = "Pad Disable for Port n Pin 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS11R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS11_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS11R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS11R::CONST_0 => false,
-            PDIS11R::CONST_1 => true,
+impl From<PDIS11_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS11_A) -> Self {
+        match variant {
+            PDIS11_A::CONST_0 => false,
+            PDIS11_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS11R {
-        match value {
-            false => PDIS11R::CONST_0,
-            true => PDIS11R::CONST_1,
+}
+#[doc = "Reader of field `PDIS11`"]
+pub type PDIS11_R = crate::R<bool, PDIS11_A>;
+impl PDIS11_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS11_A {
+        match self.bits {
+            false => PDIS11_A::CONST_0,
+            true => PDIS11_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS11R::CONST_0
+        *self == PDIS11_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS11R::CONST_1
+        *self == PDIS11_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS12`"]
+#[doc = "Pad Disable for Port n Pin 12\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS12R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS12_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS12R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS12R::CONST_0 => false,
-            PDIS12R::CONST_1 => true,
+impl From<PDIS12_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS12_A) -> Self {
+        match variant {
+            PDIS12_A::CONST_0 => false,
+            PDIS12_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS12R {
-        match value {
-            false => PDIS12R::CONST_0,
-            true => PDIS12R::CONST_1,
+}
+#[doc = "Reader of field `PDIS12`"]
+pub type PDIS12_R = crate::R<bool, PDIS12_A>;
+impl PDIS12_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS12_A {
+        match self.bits {
+            false => PDIS12_A::CONST_0,
+            true => PDIS12_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS12R::CONST_0
+        *self == PDIS12_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS12R::CONST_1
+        *self == PDIS12_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS13`"]
+#[doc = "Pad Disable for Port n Pin 13\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS13R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS13_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS13R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS13R::CONST_0 => false,
-            PDIS13R::CONST_1 => true,
+impl From<PDIS13_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS13_A) -> Self {
+        match variant {
+            PDIS13_A::CONST_0 => false,
+            PDIS13_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS13R {
-        match value {
-            false => PDIS13R::CONST_0,
-            true => PDIS13R::CONST_1,
+}
+#[doc = "Reader of field `PDIS13`"]
+pub type PDIS13_R = crate::R<bool, PDIS13_A>;
+impl PDIS13_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS13_A {
+        match self.bits {
+            false => PDIS13_A::CONST_0,
+            true => PDIS13_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS13R::CONST_0
+        *self == PDIS13_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS13R::CONST_1
+        *self == PDIS13_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS14`"]
+#[doc = "Pad Disable for Port n Pin 14\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS14R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS14_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS14R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS14R::CONST_0 => false,
-            PDIS14R::CONST_1 => true,
+impl From<PDIS14_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS14_A) -> Self {
+        match variant {
+            PDIS14_A::CONST_0 => false,
+            PDIS14_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS14R {
-        match value {
-            false => PDIS14R::CONST_0,
-            true => PDIS14R::CONST_1,
+}
+#[doc = "Reader of field `PDIS14`"]
+pub type PDIS14_R = crate::R<bool, PDIS14_A>;
+impl PDIS14_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS14_A {
+        match self.bits {
+            false => PDIS14_A::CONST_0,
+            true => PDIS14_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS14R::CONST_0
+        *self == PDIS14_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS14R::CONST_1
+        *self == PDIS14_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PDIS15`"]
+#[doc = "Pad Disable for Port n Pin 15\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDIS15R {
-    #[doc = "Pad Pn.x is enabled."]
+pub enum PDIS15_A {
+    #[doc = "0: Pad Pn.x is enabled."]
     CONST_0,
-    #[doc = "Pad Pn.x is disabled."]
+    #[doc = "1: Pad Pn.x is disabled."]
     CONST_1,
 }
-impl PDIS15R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDIS15R::CONST_0 => false,
-            PDIS15R::CONST_1 => true,
+impl From<PDIS15_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDIS15_A) -> Self {
+        match variant {
+            PDIS15_A::CONST_0 => false,
+            PDIS15_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDIS15R {
-        match value {
-            false => PDIS15R::CONST_0,
-            true => PDIS15R::CONST_1,
+}
+#[doc = "Reader of field `PDIS15`"]
+pub type PDIS15_R = crate::R<bool, PDIS15_A>;
+impl PDIS15_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDIS15_A {
+        match self.bits {
+            false => PDIS15_A::CONST_0,
+            true => PDIS15_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS15R::CONST_0
+        *self == PDIS15_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS15R::CONST_1
+        *self == PDIS15_A::CONST_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Pad Disable for Port n Pin 0"]
-    #[inline]
-    pub fn pdis0(&self) -> PDIS0R {
-        PDIS0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis0(&self) -> PDIS0_R {
+        PDIS0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Pad Disable for Port n Pin 1"]
-    #[inline]
-    pub fn pdis1(&self) -> PDIS1R {
-        PDIS1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis1(&self) -> PDIS1_R {
+        PDIS1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Pad Disable for Port n Pin 2"]
-    #[inline]
-    pub fn pdis2(&self) -> PDIS2R {
-        PDIS2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis2(&self) -> PDIS2_R {
+        PDIS2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Pad Disable for Port n Pin 3"]
-    #[inline]
-    pub fn pdis3(&self) -> PDIS3R {
-        PDIS3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis3(&self) -> PDIS3_R {
+        PDIS3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Pad Disable for Port n Pin 4"]
-    #[inline]
-    pub fn pdis4(&self) -> PDIS4R {
-        PDIS4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis4(&self) -> PDIS4_R {
+        PDIS4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Pad Disable for Port n Pin 5"]
-    #[inline]
-    pub fn pdis5(&self) -> PDIS5R {
-        PDIS5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis5(&self) -> PDIS5_R {
+        PDIS5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Pad Disable for Port n Pin 6"]
-    #[inline]
-    pub fn pdis6(&self) -> PDIS6R {
-        PDIS6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis6(&self) -> PDIS6_R {
+        PDIS6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Pad Disable for Port n Pin 7"]
-    #[inline]
-    pub fn pdis7(&self) -> PDIS7R {
-        PDIS7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis7(&self) -> PDIS7_R {
+        PDIS7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Pad Disable for Port n Pin 8"]
-    #[inline]
-    pub fn pdis8(&self) -> PDIS8R {
-        PDIS8R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis8(&self) -> PDIS8_R {
+        PDIS8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Pad Disable for Port n Pin 9"]
-    #[inline]
-    pub fn pdis9(&self) -> PDIS9R {
-        PDIS9R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis9(&self) -> PDIS9_R {
+        PDIS9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Pad Disable for Port n Pin 10"]
-    #[inline]
-    pub fn pdis10(&self) -> PDIS10R {
-        PDIS10R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis10(&self) -> PDIS10_R {
+        PDIS10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Pad Disable for Port n Pin 11"]
-    #[inline]
-    pub fn pdis11(&self) -> PDIS11R {
-        PDIS11R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis11(&self) -> PDIS11_R {
+        PDIS11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Pad Disable for Port n Pin 12"]
-    #[inline]
-    pub fn pdis12(&self) -> PDIS12R {
-        PDIS12R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis12(&self) -> PDIS12_R {
+        PDIS12_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Pad Disable for Port n Pin 13"]
-    #[inline]
-    pub fn pdis13(&self) -> PDIS13R {
-        PDIS13R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis13(&self) -> PDIS13_R {
+        PDIS13_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Pad Disable for Port n Pin 14"]
-    #[inline]
-    pub fn pdis14(&self) -> PDIS14R {
-        PDIS14R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis14(&self) -> PDIS14_R {
+        PDIS14_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Pad Disable for Port n Pin 15"]
-    #[inline]
-    pub fn pdis15(&self) -> PDIS15R {
-        PDIS15R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdis15(&self) -> PDIS15_R {
+        PDIS15_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }

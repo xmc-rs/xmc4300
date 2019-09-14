@@ -1,301 +1,196 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::MARP {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register MARP"]
+pub type R = crate::R<u32, super::MARP>;
+#[doc = "Writer for register MARP"]
+pub type W = crate::W<u32, super::MARP>;
+#[doc = "Register MARP `reset()`'s with value 0"]
+impl crate::ResetValue for super::MARP {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `MARGIN`"]
+#[doc = "PFLASH Margin Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MARGINR {
-    #[doc = "Standard (default) margin."]
+pub enum MARGIN_A {
+    #[doc = "0: Standard (default) margin."]
     VALUE1,
-    #[doc = "Tight margin for 0 (low) level. Suboptimal 0-bits are read as 1s."]
+    #[doc = "1: Tight margin for 0 (low) level. Suboptimal 0-bits are read as 1s."]
     VALUE2,
-    #[doc = "Tight margin for 1 (high) level. Suboptimal 1-bits are read as 0s."]
+    #[doc = "4: Tight margin for 1 (high) level. Suboptimal 1-bits are read as 0s."]
     VALUE3,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl MARGINR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MARGINR::VALUE1 => 0,
-            MARGINR::VALUE2 => 1,
-            MARGINR::VALUE3 => 4,
-            MARGINR::_Reserved(bits) => bits,
+impl From<MARGIN_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MARGIN_A) -> Self {
+        match variant {
+            MARGIN_A::VALUE1 => 0,
+            MARGIN_A::VALUE2 => 1,
+            MARGIN_A::VALUE3 => 4,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MARGINR {
-        match value {
-            0 => MARGINR::VALUE1,
-            1 => MARGINR::VALUE2,
-            4 => MARGINR::VALUE3,
-            i => MARGINR::_Reserved(i),
+}
+#[doc = "Reader of field `MARGIN`"]
+pub type MARGIN_R = crate::R<u8, MARGIN_A>;
+impl MARGIN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MARGIN_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MARGIN_A::VALUE1),
+            1 => Val(MARGIN_A::VALUE2),
+            4 => Val(MARGIN_A::VALUE3),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MARGINR::VALUE1
+        *self == MARGIN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MARGINR::VALUE2
+        *self == MARGIN_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == MARGINR::VALUE3
+        *self == MARGIN_A::VALUE3
     }
 }
-#[doc = "Possible values of the field `TRAPDIS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRAPDISR {
-    #[doc = "If a double-bit error occurs in PFLASH, a bus error trap is generated."]
-    VALUE1,
-    #[doc = "The double-bit error trap is disabled. Shall be used only during margin check"]
-    VALUE2,
-}
-impl TRAPDISR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRAPDISR::VALUE1 => false,
-            TRAPDISR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRAPDISR {
-        match value {
-            false => TRAPDISR::VALUE1,
-            true => TRAPDISR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == TRAPDISR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == TRAPDISR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `MARGIN`"]
-pub enum MARGINW {
-    #[doc = "Standard (default) margin."]
-    VALUE1,
-    #[doc = "Tight margin for 0 (low) level. Suboptimal 0-bits are read as 1s."]
-    VALUE2,
-    #[doc = "Tight margin for 1 (high) level. Suboptimal 1-bits are read as 0s."]
-    VALUE3,
-}
-impl MARGINW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MARGINW::VALUE1 => 0,
-            MARGINW::VALUE2 => 1,
-            MARGINW::VALUE3 => 4,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MARGINW<'a> {
+#[doc = "Write proxy for field `MARGIN`"]
+pub struct MARGIN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MARGINW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MARGINW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> MARGIN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MARGIN_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Standard (default) margin."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MARGINW::VALUE1)
+        self.variant(MARGIN_A::VALUE1)
     }
     #[doc = "Tight margin for 0 (low) level. Suboptimal 0-bits are read as 1s."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MARGINW::VALUE2)
+        self.variant(MARGIN_A::VALUE2)
     }
     #[doc = "Tight margin for 1 (high) level. Suboptimal 1-bits are read as 0s."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(MARGINW::VALUE3)
+        self.variant(MARGIN_A::VALUE3)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRAPDIS`"]
-pub enum TRAPDISW {
-    #[doc = "If a double-bit error occurs in PFLASH, a bus error trap is generated."]
+#[doc = "PFLASH Double-Bit Error Trap Disable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRAPDIS_A {
+    #[doc = "0: If a double-bit error occurs in PFLASH, a bus error trap is generated."]
     VALUE1,
-    #[doc = "The double-bit error trap is disabled. Shall be used only during margin check"]
+    #[doc = "1: The double-bit error trap is disabled. Shall be used only during margin check"]
     VALUE2,
 }
-impl TRAPDISW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRAPDISW::VALUE1 => false,
-            TRAPDISW::VALUE2 => true,
+impl From<TRAPDIS_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRAPDIS_A) -> Self {
+        match variant {
+            TRAPDIS_A::VALUE1 => false,
+            TRAPDIS_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRAPDISW<'a> {
+#[doc = "Reader of field `TRAPDIS`"]
+pub type TRAPDIS_R = crate::R<bool, TRAPDIS_A>;
+impl TRAPDIS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRAPDIS_A {
+        match self.bits {
+            false => TRAPDIS_A::VALUE1,
+            true => TRAPDIS_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == TRAPDIS_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == TRAPDIS_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `TRAPDIS`"]
+pub struct TRAPDIS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRAPDISW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRAPDISW) -> &'a mut W {
+impl<'a> TRAPDIS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRAPDIS_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "If a double-bit error occurs in PFLASH, a bus error trap is generated."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(TRAPDISW::VALUE1)
+        self.variant(TRAPDIS_A::VALUE1)
     }
     #[doc = "The double-bit error trap is disabled. Shall be used only during margin check"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(TRAPDISW::VALUE2)
+        self.variant(TRAPDIS_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - PFLASH Margin Selection"]
-    #[inline]
-    pub fn margin(&self) -> MARGINR {
-        MARGINR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn margin(&self) -> MARGIN_R {
+        MARGIN_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 15 - PFLASH Double-Bit Error Trap Disable"]
-    #[inline]
-    pub fn trapdis(&self) -> TRAPDISR {
-        TRAPDISR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn trapdis(&self) -> TRAPDIS_R {
+        TRAPDIS_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - PFLASH Margin Selection"]
-    #[inline]
-    pub fn margin(&mut self) -> _MARGINW {
-        _MARGINW { w: self }
+    #[inline(always)]
+    pub fn margin(&mut self) -> MARGIN_W {
+        MARGIN_W { w: self }
     }
     #[doc = "Bit 15 - PFLASH Double-Bit Error Trap Disable"]
-    #[inline]
-    pub fn trapdis(&mut self) -> _TRAPDISW {
-        _TRAPDISW { w: self }
+    #[inline(always)]
+    pub fn trapdis(&mut self) -> TRAPDIS_W {
+        TRAPDIS_W { w: self }
     }
 }

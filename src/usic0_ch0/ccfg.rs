@@ -1,354 +1,268 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::CCFG {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `SSC`"]
+#[doc = "Reader of register CCFG"]
+pub type R = crate::R<u32, super::CCFG>;
+#[doc = "SSC Protocol Available\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SSCR {
-    #[doc = "The SSC protocol is not available."]
+pub enum SSC_A {
+    #[doc = "0: The SSC protocol is not available."]
     VALUE1,
-    #[doc = "The SSC protocol is available."]
+    #[doc = "1: The SSC protocol is available."]
     VALUE2,
 }
-impl SSCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SSCR::VALUE1 => false,
-            SSCR::VALUE2 => true,
+impl From<SSC_A> for bool {
+    #[inline(always)]
+    fn from(variant: SSC_A) -> Self {
+        match variant {
+            SSC_A::VALUE1 => false,
+            SSC_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SSCR {
-        match value {
-            false => SSCR::VALUE1,
-            true => SSCR::VALUE2,
+}
+#[doc = "Reader of field `SSC`"]
+pub type SSC_R = crate::R<bool, SSC_A>;
+impl SSC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SSC_A {
+        match self.bits {
+            false => SSC_A::VALUE1,
+            true => SSC_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SSCR::VALUE1
+        *self == SSC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SSCR::VALUE2
+        *self == SSC_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `ASC`"]
+#[doc = "ASC Protocol Available\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ASCR {
-    #[doc = "The ASC protocol is not available."]
+pub enum ASC_A {
+    #[doc = "0: The ASC protocol is not available."]
     VALUE1,
-    #[doc = "The ASC protocol is available."]
+    #[doc = "1: The ASC protocol is available."]
     VALUE2,
 }
-impl ASCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ASCR::VALUE1 => false,
-            ASCR::VALUE2 => true,
+impl From<ASC_A> for bool {
+    #[inline(always)]
+    fn from(variant: ASC_A) -> Self {
+        match variant {
+            ASC_A::VALUE1 => false,
+            ASC_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ASCR {
-        match value {
-            false => ASCR::VALUE1,
-            true => ASCR::VALUE2,
+}
+#[doc = "Reader of field `ASC`"]
+pub type ASC_R = crate::R<bool, ASC_A>;
+impl ASC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ASC_A {
+        match self.bits {
+            false => ASC_A::VALUE1,
+            true => ASC_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ASCR::VALUE1
+        *self == ASC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ASCR::VALUE2
+        *self == ASC_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `IIC`"]
+#[doc = "IIC Protocol Available\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IICR {
-    #[doc = "The IIC protocol is not available."]
+pub enum IIC_A {
+    #[doc = "0: The IIC protocol is not available."]
     VALUE1,
-    #[doc = "The IIC protocol is available."]
+    #[doc = "1: The IIC protocol is available."]
     VALUE2,
 }
-impl IICR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IICR::VALUE1 => false,
-            IICR::VALUE2 => true,
+impl From<IIC_A> for bool {
+    #[inline(always)]
+    fn from(variant: IIC_A) -> Self {
+        match variant {
+            IIC_A::VALUE1 => false,
+            IIC_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IICR {
-        match value {
-            false => IICR::VALUE1,
-            true => IICR::VALUE2,
+}
+#[doc = "Reader of field `IIC`"]
+pub type IIC_R = crate::R<bool, IIC_A>;
+impl IIC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IIC_A {
+        match self.bits {
+            false => IIC_A::VALUE1,
+            true => IIC_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == IICR::VALUE1
+        *self == IIC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == IICR::VALUE2
+        *self == IIC_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `IIS`"]
+#[doc = "IIS Protocol Available\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IISR {
-    #[doc = "The IIS protocol is not available."]
+pub enum IIS_A {
+    #[doc = "0: The IIS protocol is not available."]
     VALUE1,
-    #[doc = "The IIS protocol is available."]
+    #[doc = "1: The IIS protocol is available."]
     VALUE2,
 }
-impl IISR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IISR::VALUE1 => false,
-            IISR::VALUE2 => true,
+impl From<IIS_A> for bool {
+    #[inline(always)]
+    fn from(variant: IIS_A) -> Self {
+        match variant {
+            IIS_A::VALUE1 => false,
+            IIS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IISR {
-        match value {
-            false => IISR::VALUE1,
-            true => IISR::VALUE2,
+}
+#[doc = "Reader of field `IIS`"]
+pub type IIS_R = crate::R<bool, IIS_A>;
+impl IIS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IIS_A {
+        match self.bits {
+            false => IIS_A::VALUE1,
+            true => IIS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == IISR::VALUE1
+        *self == IIS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == IISR::VALUE2
+        *self == IIS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `RB`"]
+#[doc = "Receive FIFO Buffer Available\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RBR {
-    #[doc = "A receive FIFO buffer is not available."]
+pub enum RB_A {
+    #[doc = "0: A receive FIFO buffer is not available."]
     VALUE1,
-    #[doc = "A receive FIFO buffer is available."]
+    #[doc = "1: A receive FIFO buffer is available."]
     VALUE2,
 }
-impl RBR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RBR::VALUE1 => false,
-            RBR::VALUE2 => true,
+impl From<RB_A> for bool {
+    #[inline(always)]
+    fn from(variant: RB_A) -> Self {
+        match variant {
+            RB_A::VALUE1 => false,
+            RB_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RBR {
-        match value {
-            false => RBR::VALUE1,
-            true => RBR::VALUE2,
+}
+#[doc = "Reader of field `RB`"]
+pub type RB_R = crate::R<bool, RB_A>;
+impl RB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RB_A {
+        match self.bits {
+            false => RB_A::VALUE1,
+            true => RB_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RBR::VALUE1
+        *self == RB_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RBR::VALUE2
+        *self == RB_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `TB`"]
+#[doc = "Transmit FIFO Buffer Available\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TBR {
-    #[doc = "A transmit FIFO buffer is not available."]
+pub enum TB_A {
+    #[doc = "0: A transmit FIFO buffer is not available."]
     VALUE1,
-    #[doc = "A transmit FIFO buffer is available."]
+    #[doc = "1: A transmit FIFO buffer is available."]
     VALUE2,
 }
-impl TBR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TBR::VALUE1 => false,
-            TBR::VALUE2 => true,
+impl From<TB_A> for bool {
+    #[inline(always)]
+    fn from(variant: TB_A) -> Self {
+        match variant {
+            TB_A::VALUE1 => false,
+            TB_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TBR {
-        match value {
-            false => TBR::VALUE1,
-            true => TBR::VALUE2,
+}
+#[doc = "Reader of field `TB`"]
+pub type TB_R = crate::R<bool, TB_A>;
+impl TB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TB_A {
+        match self.bits {
+            false => TB_A::VALUE1,
+            true => TB_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TBR::VALUE1
+        *self == TB_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TBR::VALUE2
+        *self == TB_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - SSC Protocol Available"]
-    #[inline]
-    pub fn ssc(&self) -> SSCR {
-        SSCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ssc(&self) -> SSC_R {
+        SSC_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - ASC Protocol Available"]
-    #[inline]
-    pub fn asc(&self) -> ASCR {
-        ASCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn asc(&self) -> ASC_R {
+        ASC_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - IIC Protocol Available"]
-    #[inline]
-    pub fn iic(&self) -> IICR {
-        IICR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iic(&self) -> IIC_R {
+        IIC_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - IIS Protocol Available"]
-    #[inline]
-    pub fn iis(&self) -> IISR {
-        IISR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iis(&self) -> IIS_R {
+        IIS_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Receive FIFO Buffer Available"]
-    #[inline]
-    pub fn rb(&self) -> RBR {
-        RBR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rb(&self) -> RB_R {
+        RB_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Transmit FIFO Buffer Available"]
-    #[inline]
-    pub fn tb(&self) -> TBR {
-        TBR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tb(&self) -> TB_R {
+        TB_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }

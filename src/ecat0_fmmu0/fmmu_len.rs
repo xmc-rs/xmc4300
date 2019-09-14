@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u16,
-}
-impl super::FMMU_LEN {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OFFSETR {
-    bits: u16,
-}
-impl OFFSETR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of register FMMU_LEN"]
+pub type R = crate::R<u16, super::FMMU_LEN>;
+#[doc = "Reader of field `OFFSET`"]
+pub type OFFSET_R = crate::R<u16, u16>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Offset from the first logical FMMU Byte to the last FMMU Byte + 1"]
-    #[inline]
-    pub fn offset(&self) -> OFFSETR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u16) as u16
-        };
-        OFFSETR { bits }
+    #[inline(always)]
+    pub fn offset(&self) -> OFFSET_R {
+        OFFSET_R::new((self.bits & 0xffff) as u16)
     }
 }

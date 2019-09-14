@@ -1,1053 +1,746 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::BRG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register BRG"]
+pub type R = crate::R<u32, super::BRG>;
+#[doc = "Writer for register BRG"]
+pub type W = crate::W<u32, super::BRG>;
+#[doc = "Register BRG `reset()`'s with value 0"]
+impl crate::ResetValue for super::BRG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `CLKSEL`"]
+#[doc = "Clock Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLKSELR {
-    #[doc = "The fractional divider frequency fFD is selected."]
+pub enum CLKSEL_A {
+    #[doc = "0: The fractional divider frequency fFD is selected."]
     VALUE1,
-    #[doc = "The trigger signal DX1T defines fPIN. Signal MCLK toggles with fPIN."]
+    #[doc = "2: The trigger signal DX1T defines fPIN. Signal MCLK toggles with fPIN."]
     VALUE3,
-    #[doc = "Signal MCLK corresponds to the DX1S signal and the frequency fPIN is derived from the rising edges of DX1S."]
+    #[doc = "3: Signal MCLK corresponds to the DX1S signal and the frequency fPIN is derived from the rising edges of DX1S."]
     VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CLKSELR::VALUE1 => 0,
-            CLKSELR::VALUE3 => 2,
-            CLKSELR::VALUE4 => 3,
-            CLKSELR::_Reserved(bits) => bits,
+impl From<CLKSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CLKSEL_A) -> Self {
+        match variant {
+            CLKSEL_A::VALUE1 => 0,
+            CLKSEL_A::VALUE3 => 2,
+            CLKSEL_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CLKSELR {
-        match value {
-            0 => CLKSELR::VALUE1,
-            2 => CLKSELR::VALUE3,
-            3 => CLKSELR::VALUE4,
-            i => CLKSELR::_Reserved(i),
+}
+#[doc = "Reader of field `CLKSEL`"]
+pub type CLKSEL_R = crate::R<u8, CLKSEL_A>;
+impl CLKSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CLKSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CLKSEL_A::VALUE1),
+            2 => Val(CLKSEL_A::VALUE3),
+            3 => Val(CLKSEL_A::VALUE4),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CLKSELR::VALUE1
+        *self == CLKSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CLKSELR::VALUE3
+        *self == CLKSEL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == CLKSELR::VALUE4
+        *self == CLKSEL_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `TMEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TMENR {
-    #[doc = "Timing measurement is disabled: The trigger signals DX0T and DX1T are ignored."]
-    VALUE1,
-    #[doc = "Timing measurement is enabled: The 10-bit counter is incremented by 1 with fPPP and stops counting when reaching its maximum value. If one of the trigger signals DX0T or DX1T become active, the counter value is captured into bit field CTV, the counter is cleared and a transmit shift event is generated."]
-    VALUE2,
-}
-impl TMENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TMENR::VALUE1 => false,
-            TMENR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TMENR {
-        match value {
-            false => TMENR::VALUE1,
-            true => TMENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == TMENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == TMENR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `PPPEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPPENR {
-    #[doc = "The 2:1 divider for fPPP is disabled. fPPP = fPIN"]
-    VALUE1,
-    #[doc = "The 2:1 divider for fPPP is enabled. fPPP = fMCLK = fPIN / 2."]
-    VALUE2,
-}
-impl PPPENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPPENR::VALUE1 => false,
-            PPPENR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPPENR {
-        match value {
-            false => PPPENR::VALUE1,
-            true => PPPENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == PPPENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == PPPENR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CTQSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CTQSELR {
-    #[doc = "fCTQIN = fPDIV"]
-    VALUE1,
-    #[doc = "fCTQIN = fPPP"]
-    VALUE2,
-    #[doc = "fCTQIN = fSCLK"]
-    VALUE3,
-    #[doc = "fCTQIN = fMCLK"]
-    VALUE4,
-}
-impl CTQSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CTQSELR::VALUE1 => 0,
-            CTQSELR::VALUE2 => 1,
-            CTQSELR::VALUE3 => 2,
-            CTQSELR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CTQSELR {
-        match value {
-            0 => CTQSELR::VALUE1,
-            1 => CTQSELR::VALUE2,
-            2 => CTQSELR::VALUE3,
-            3 => CTQSELR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CTQSELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CTQSELR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == CTQSELR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == CTQSELR::VALUE4
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PCTQR {
-    bits: u8,
-}
-impl PCTQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DCTQR {
-    bits: u8,
-}
-impl DCTQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PDIVR {
-    bits: u16,
-}
-impl PDIVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `SCLKOSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SCLKOSELR {
-    #[doc = "SCLK from the baud rate generator is selected as the SCLKOUT input source."]
-    VALUE1,
-    #[doc = "The transmit shift clock from DX1 input stage is selected as the SCLKOUT input source."]
-    VALUE2,
-}
-impl SCLKOSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SCLKOSELR::VALUE1 => false,
-            SCLKOSELR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SCLKOSELR {
-        match value {
-            false => SCLKOSELR::VALUE1,
-            true => SCLKOSELR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == SCLKOSELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == SCLKOSELR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `MCLKCFG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MCLKCFGR {
-    #[doc = "The passive level is 0."]
-    VALUE1,
-    #[doc = "The passive level is 1."]
-    VALUE2,
-}
-impl MCLKCFGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MCLKCFGR::VALUE1 => false,
-            MCLKCFGR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MCLKCFGR {
-        match value {
-            false => MCLKCFGR::VALUE1,
-            true => MCLKCFGR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MCLKCFGR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MCLKCFGR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `SCLKCFG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SCLKCFGR {
-    #[doc = "The passive level is 0 and the delay is disabled."]
-    VALUE1,
-    #[doc = "The passive level is 1 and the delay is disabled."]
-    VALUE2,
-    #[doc = "The passive level is 0 and the delay is enabled."]
-    VALUE3,
-    #[doc = "The passive level is 1 and the delay is enabled."]
-    VALUE4,
-}
-impl SCLKCFGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SCLKCFGR::VALUE1 => 0,
-            SCLKCFGR::VALUE2 => 1,
-            SCLKCFGR::VALUE3 => 2,
-            SCLKCFGR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SCLKCFGR {
-        match value {
-            0 => SCLKCFGR::VALUE1,
-            1 => SCLKCFGR::VALUE2,
-            2 => SCLKCFGR::VALUE3,
-            3 => SCLKCFGR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == SCLKCFGR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == SCLKCFGR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == SCLKCFGR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == SCLKCFGR::VALUE4
-    }
-}
-#[doc = "Values that can be written to the field `CLKSEL`"]
-pub enum CLKSELW {
-    #[doc = "The fractional divider frequency fFD is selected."]
-    VALUE1,
-    #[doc = "The trigger signal DX1T defines fPIN. Signal MCLK toggles with fPIN."]
-    VALUE3,
-    #[doc = "Signal MCLK corresponds to the DX1S signal and the frequency fPIN is derived from the rising edges of DX1S."]
-    VALUE4,
-}
-impl CLKSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CLKSELW::VALUE1 => 0,
-            CLKSELW::VALUE3 => 2,
-            CLKSELW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CLKSELW<'a> {
+#[doc = "Write proxy for field `CLKSEL`"]
+pub struct CLKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLKSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CLKSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> CLKSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CLKSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "The fractional divider frequency fFD is selected."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CLKSELW::VALUE1)
+        self.variant(CLKSEL_A::VALUE1)
     }
     #[doc = "The trigger signal DX1T defines fPIN. Signal MCLK toggles with fPIN."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(CLKSELW::VALUE3)
+        self.variant(CLKSEL_A::VALUE3)
     }
     #[doc = "Signal MCLK corresponds to the DX1S signal and the frequency fPIN is derived from the rising edges of DX1S."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(CLKSELW::VALUE4)
+        self.variant(CLKSEL_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TMEN`"]
-pub enum TMENW {
-    #[doc = "Timing measurement is disabled: The trigger signals DX0T and DX1T are ignored."]
+#[doc = "Timing Measurement Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TMEN_A {
+    #[doc = "0: Timing measurement is disabled: The trigger signals DX0T and DX1T are ignored."]
     VALUE1,
-    #[doc = "Timing measurement is enabled: The 10-bit counter is incremented by 1 with fPPP and stops counting when reaching its maximum value. If one of the trigger signals DX0T or DX1T become active, the counter value is captured into bit field CTV, the counter is cleared and a transmit shift event is generated."]
+    #[doc = "1: Timing measurement is enabled: The 10-bit counter is incremented by 1 with fPPP and stops counting when reaching its maximum value. If one of the trigger signals DX0T or DX1T become active, the counter value is captured into bit field CTV, the counter is cleared and a transmit shift event is generated."]
     VALUE2,
 }
-impl TMENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TMENW::VALUE1 => false,
-            TMENW::VALUE2 => true,
+impl From<TMEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TMEN_A) -> Self {
+        match variant {
+            TMEN_A::VALUE1 => false,
+            TMEN_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TMENW<'a> {
+#[doc = "Reader of field `TMEN`"]
+pub type TMEN_R = crate::R<bool, TMEN_A>;
+impl TMEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TMEN_A {
+        match self.bits {
+            false => TMEN_A::VALUE1,
+            true => TMEN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == TMEN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == TMEN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `TMEN`"]
+pub struct TMEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TMENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TMENW) -> &'a mut W {
+impl<'a> TMEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TMEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Timing measurement is disabled: The trigger signals DX0T and DX1T are ignored."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(TMENW::VALUE1)
+        self.variant(TMEN_A::VALUE1)
     }
     #[doc = "Timing measurement is enabled: The 10-bit counter is incremented by 1 with fPPP and stops counting when reaching its maximum value. If one of the trigger signals DX0T or DX1T become active, the counter value is captured into bit field CTV, the counter is cleared and a transmit shift event is generated."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(TMENW::VALUE2)
+        self.variant(TMEN_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPPEN`"]
-pub enum PPPENW {
-    #[doc = "The 2:1 divider for fPPP is disabled. fPPP = fPIN"]
+#[doc = "Enable 2:1 Divider for fPPP\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPPEN_A {
+    #[doc = "0: The 2:1 divider for fPPP is disabled. fPPP = fPIN"]
     VALUE1,
-    #[doc = "The 2:1 divider for fPPP is enabled. fPPP = fMCLK = fPIN / 2."]
+    #[doc = "1: The 2:1 divider for fPPP is enabled. fPPP = fMCLK = fPIN / 2."]
     VALUE2,
 }
-impl PPPENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPPENW::VALUE1 => false,
-            PPPENW::VALUE2 => true,
+impl From<PPPEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPPEN_A) -> Self {
+        match variant {
+            PPPEN_A::VALUE1 => false,
+            PPPEN_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPPENW<'a> {
+#[doc = "Reader of field `PPPEN`"]
+pub type PPPEN_R = crate::R<bool, PPPEN_A>;
+impl PPPEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPPEN_A {
+        match self.bits {
+            false => PPPEN_A::VALUE1,
+            true => PPPEN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == PPPEN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == PPPEN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `PPPEN`"]
+pub struct PPPEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPPENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPPENW) -> &'a mut W {
+impl<'a> PPPEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPPEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The 2:1 divider for fPPP is disabled. fPPP = fPIN"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(PPPENW::VALUE1)
+        self.variant(PPPEN_A::VALUE1)
     }
     #[doc = "The 2:1 divider for fPPP is enabled. fPPP = fMCLK = fPIN / 2."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(PPPENW::VALUE2)
+        self.variant(PPPEN_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CTQSEL`"]
-pub enum CTQSELW {
-    #[doc = "fCTQIN = fPDIV"]
+#[doc = "Input Selection for CTQ\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CTQSEL_A {
+    #[doc = "0: fCTQIN = fPDIV"]
     VALUE1,
-    #[doc = "fCTQIN = fPPP"]
+    #[doc = "1: fCTQIN = fPPP"]
     VALUE2,
-    #[doc = "fCTQIN = fSCLK"]
+    #[doc = "2: fCTQIN = fSCLK"]
     VALUE3,
-    #[doc = "fCTQIN = fMCLK"]
+    #[doc = "3: fCTQIN = fMCLK"]
     VALUE4,
 }
-impl CTQSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CTQSELW::VALUE1 => 0,
-            CTQSELW::VALUE2 => 1,
-            CTQSELW::VALUE3 => 2,
-            CTQSELW::VALUE4 => 3,
+impl From<CTQSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CTQSEL_A) -> Self {
+        match variant {
+            CTQSEL_A::VALUE1 => 0,
+            CTQSEL_A::VALUE2 => 1,
+            CTQSEL_A::VALUE3 => 2,
+            CTQSEL_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CTQSELW<'a> {
+#[doc = "Reader of field `CTQSEL`"]
+pub type CTQSEL_R = crate::R<u8, CTQSEL_A>;
+impl CTQSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CTQSEL_A {
+        match self.bits {
+            0 => CTQSEL_A::VALUE1,
+            1 => CTQSEL_A::VALUE2,
+            2 => CTQSEL_A::VALUE3,
+            3 => CTQSEL_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CTQSEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CTQSEL_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == CTQSEL_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == CTQSEL_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `CTQSEL`"]
+pub struct CTQSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CTQSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CTQSELW) -> &'a mut W {
+impl<'a> CTQSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CTQSEL_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "fCTQIN = fPDIV"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CTQSELW::VALUE1)
+        self.variant(CTQSEL_A::VALUE1)
     }
     #[doc = "fCTQIN = fPPP"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CTQSELW::VALUE2)
+        self.variant(CTQSEL_A::VALUE2)
     }
     #[doc = "fCTQIN = fSCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(CTQSELW::VALUE3)
+        self.variant(CTQSEL_A::VALUE3)
     }
     #[doc = "fCTQIN = fMCLK"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(CTQSELW::VALUE4)
+        self.variant(CTQSEL_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PCTQW<'a> {
+#[doc = "Reader of field `PCTQ`"]
+pub type PCTQ_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PCTQ`"]
+pub struct PCTQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PCTQW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PCTQ_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DCTQW<'a> {
+#[doc = "Reader of field `DCTQ`"]
+pub type DCTQ_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DCTQ`"]
+pub struct DCTQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DCTQW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DCTQ_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 10)) | (((value as u32) & 0x1f) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PDIVW<'a> {
+#[doc = "Reader of field `PDIV`"]
+pub type PDIV_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `PDIV`"]
+pub struct PDIV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PDIVW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PDIV_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 1023;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03ff << 16)) | (((value as u32) & 0x03ff) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SCLKOSEL`"]
-pub enum SCLKOSELW {
-    #[doc = "SCLK from the baud rate generator is selected as the SCLKOUT input source."]
+#[doc = "Shift Clock Output Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SCLKOSEL_A {
+    #[doc = "0: SCLK from the baud rate generator is selected as the SCLKOUT input source."]
     VALUE1,
-    #[doc = "The transmit shift clock from DX1 input stage is selected as the SCLKOUT input source."]
+    #[doc = "1: The transmit shift clock from DX1 input stage is selected as the SCLKOUT input source."]
     VALUE2,
 }
-impl SCLKOSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SCLKOSELW::VALUE1 => false,
-            SCLKOSELW::VALUE2 => true,
+impl From<SCLKOSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: SCLKOSEL_A) -> Self {
+        match variant {
+            SCLKOSEL_A::VALUE1 => false,
+            SCLKOSEL_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SCLKOSELW<'a> {
+#[doc = "Reader of field `SCLKOSEL`"]
+pub type SCLKOSEL_R = crate::R<bool, SCLKOSEL_A>;
+impl SCLKOSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SCLKOSEL_A {
+        match self.bits {
+            false => SCLKOSEL_A::VALUE1,
+            true => SCLKOSEL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == SCLKOSEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == SCLKOSEL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `SCLKOSEL`"]
+pub struct SCLKOSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SCLKOSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SCLKOSELW) -> &'a mut W {
+impl<'a> SCLKOSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SCLKOSEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "SCLK from the baud rate generator is selected as the SCLKOUT input source."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SCLKOSELW::VALUE1)
+        self.variant(SCLKOSEL_A::VALUE1)
     }
     #[doc = "The transmit shift clock from DX1 input stage is selected as the SCLKOUT input source."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SCLKOSELW::VALUE2)
+        self.variant(SCLKOSEL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MCLKCFG`"]
-pub enum MCLKCFGW {
-    #[doc = "The passive level is 0."]
+#[doc = "Master Clock Configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MCLKCFG_A {
+    #[doc = "0: The passive level is 0."]
     VALUE1,
-    #[doc = "The passive level is 1."]
+    #[doc = "1: The passive level is 1."]
     VALUE2,
 }
-impl MCLKCFGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MCLKCFGW::VALUE1 => false,
-            MCLKCFGW::VALUE2 => true,
+impl From<MCLKCFG_A> for bool {
+    #[inline(always)]
+    fn from(variant: MCLKCFG_A) -> Self {
+        match variant {
+            MCLKCFG_A::VALUE1 => false,
+            MCLKCFG_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MCLKCFGW<'a> {
+#[doc = "Reader of field `MCLKCFG`"]
+pub type MCLKCFG_R = crate::R<bool, MCLKCFG_A>;
+impl MCLKCFG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MCLKCFG_A {
+        match self.bits {
+            false => MCLKCFG_A::VALUE1,
+            true => MCLKCFG_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MCLKCFG_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MCLKCFG_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `MCLKCFG`"]
+pub struct MCLKCFG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MCLKCFGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MCLKCFGW) -> &'a mut W {
+impl<'a> MCLKCFG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MCLKCFG_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The passive level is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MCLKCFGW::VALUE1)
+        self.variant(MCLKCFG_A::VALUE1)
     }
     #[doc = "The passive level is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MCLKCFGW::VALUE2)
+        self.variant(MCLKCFG_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SCLKCFG`"]
-pub enum SCLKCFGW {
-    #[doc = "The passive level is 0 and the delay is disabled."]
+#[doc = "Shift Clock Output Configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SCLKCFG_A {
+    #[doc = "0: The passive level is 0 and the delay is disabled."]
     VALUE1,
-    #[doc = "The passive level is 1 and the delay is disabled."]
+    #[doc = "1: The passive level is 1 and the delay is disabled."]
     VALUE2,
-    #[doc = "The passive level is 0 and the delay is enabled."]
+    #[doc = "2: The passive level is 0 and the delay is enabled."]
     VALUE3,
-    #[doc = "The passive level is 1 and the delay is enabled."]
+    #[doc = "3: The passive level is 1 and the delay is enabled."]
     VALUE4,
 }
-impl SCLKCFGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SCLKCFGW::VALUE1 => 0,
-            SCLKCFGW::VALUE2 => 1,
-            SCLKCFGW::VALUE3 => 2,
-            SCLKCFGW::VALUE4 => 3,
+impl From<SCLKCFG_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SCLKCFG_A) -> Self {
+        match variant {
+            SCLKCFG_A::VALUE1 => 0,
+            SCLKCFG_A::VALUE2 => 1,
+            SCLKCFG_A::VALUE3 => 2,
+            SCLKCFG_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SCLKCFGW<'a> {
+#[doc = "Reader of field `SCLKCFG`"]
+pub type SCLKCFG_R = crate::R<u8, SCLKCFG_A>;
+impl SCLKCFG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SCLKCFG_A {
+        match self.bits {
+            0 => SCLKCFG_A::VALUE1,
+            1 => SCLKCFG_A::VALUE2,
+            2 => SCLKCFG_A::VALUE3,
+            3 => SCLKCFG_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == SCLKCFG_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == SCLKCFG_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == SCLKCFG_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == SCLKCFG_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `SCLKCFG`"]
+pub struct SCLKCFG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SCLKCFGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SCLKCFGW) -> &'a mut W {
+impl<'a> SCLKCFG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SCLKCFG_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "The passive level is 0 and the delay is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SCLKCFGW::VALUE1)
+        self.variant(SCLKCFG_A::VALUE1)
     }
     #[doc = "The passive level is 1 and the delay is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SCLKCFGW::VALUE2)
+        self.variant(SCLKCFG_A::VALUE2)
     }
     #[doc = "The passive level is 0 and the delay is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(SCLKCFGW::VALUE3)
+        self.variant(SCLKCFG_A::VALUE3)
     }
     #[doc = "The passive level is 1 and the delay is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(SCLKCFGW::VALUE4)
+        self.variant(SCLKCFG_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 30)) | (((value as u32) & 0x03) << 30);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Clock Selection"]
-    #[inline]
-    pub fn clksel(&self) -> CLKSELR {
-        CLKSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn clksel(&self) -> CLKSEL_R {
+        CLKSEL_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 3 - Timing Measurement Enable"]
-    #[inline]
-    pub fn tmen(&self) -> TMENR {
-        TMENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tmen(&self) -> TMEN_R {
+        TMEN_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Enable 2:1 Divider for fPPP"]
-    #[inline]
-    pub fn pppen(&self) -> PPPENR {
-        PPPENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pppen(&self) -> PPPEN_R {
+        PPPEN_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bits 6:7 - Input Selection for CTQ"]
-    #[inline]
-    pub fn ctqsel(&self) -> CTQSELR {
-        CTQSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ctqsel(&self) -> CTQSEL_R {
+        CTQSEL_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bits 8:9 - Pre-Divider for Time Quanta Counter"]
-    #[inline]
-    pub fn pctq(&self) -> PCTQR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PCTQR { bits }
+    #[inline(always)]
+    pub fn pctq(&self) -> PCTQ_R {
+        PCTQ_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 10:14 - Denominator for Time Quanta Counter"]
-    #[inline]
-    pub fn dctq(&self) -> DCTQR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DCTQR { bits }
+    #[inline(always)]
+    pub fn dctq(&self) -> DCTQ_R {
+        DCTQ_R::new(((self.bits >> 10) & 0x1f) as u8)
     }
     #[doc = "Bits 16:25 - Divider Mode: Divider Factor to Generate fPDIV"]
-    #[inline]
-    pub fn pdiv(&self) -> PDIVR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        PDIVR { bits }
+    #[inline(always)]
+    pub fn pdiv(&self) -> PDIV_R {
+        PDIV_R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
     #[doc = "Bit 28 - Shift Clock Output Select"]
-    #[inline]
-    pub fn sclkosel(&self) -> SCLKOSELR {
-        SCLKOSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sclkosel(&self) -> SCLKOSEL_R {
+        SCLKOSEL_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - Master Clock Configuration"]
-    #[inline]
-    pub fn mclkcfg(&self) -> MCLKCFGR {
-        MCLKCFGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mclkcfg(&self) -> MCLKCFG_R {
+        MCLKCFG_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bits 30:31 - Shift Clock Output Configuration"]
-    #[inline]
-    pub fn sclkcfg(&self) -> SCLKCFGR {
-        SCLKCFGR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sclkcfg(&self) -> SCLKCFG_R {
+        SCLKCFG_R::new(((self.bits >> 30) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Clock Selection"]
-    #[inline]
-    pub fn clksel(&mut self) -> _CLKSELW {
-        _CLKSELW { w: self }
+    #[inline(always)]
+    pub fn clksel(&mut self) -> CLKSEL_W {
+        CLKSEL_W { w: self }
     }
     #[doc = "Bit 3 - Timing Measurement Enable"]
-    #[inline]
-    pub fn tmen(&mut self) -> _TMENW {
-        _TMENW { w: self }
+    #[inline(always)]
+    pub fn tmen(&mut self) -> TMEN_W {
+        TMEN_W { w: self }
     }
     #[doc = "Bit 4 - Enable 2:1 Divider for fPPP"]
-    #[inline]
-    pub fn pppen(&mut self) -> _PPPENW {
-        _PPPENW { w: self }
+    #[inline(always)]
+    pub fn pppen(&mut self) -> PPPEN_W {
+        PPPEN_W { w: self }
     }
     #[doc = "Bits 6:7 - Input Selection for CTQ"]
-    #[inline]
-    pub fn ctqsel(&mut self) -> _CTQSELW {
-        _CTQSELW { w: self }
+    #[inline(always)]
+    pub fn ctqsel(&mut self) -> CTQSEL_W {
+        CTQSEL_W { w: self }
     }
     #[doc = "Bits 8:9 - Pre-Divider for Time Quanta Counter"]
-    #[inline]
-    pub fn pctq(&mut self) -> _PCTQW {
-        _PCTQW { w: self }
+    #[inline(always)]
+    pub fn pctq(&mut self) -> PCTQ_W {
+        PCTQ_W { w: self }
     }
     #[doc = "Bits 10:14 - Denominator for Time Quanta Counter"]
-    #[inline]
-    pub fn dctq(&mut self) -> _DCTQW {
-        _DCTQW { w: self }
+    #[inline(always)]
+    pub fn dctq(&mut self) -> DCTQ_W {
+        DCTQ_W { w: self }
     }
     #[doc = "Bits 16:25 - Divider Mode: Divider Factor to Generate fPDIV"]
-    #[inline]
-    pub fn pdiv(&mut self) -> _PDIVW {
-        _PDIVW { w: self }
+    #[inline(always)]
+    pub fn pdiv(&mut self) -> PDIV_W {
+        PDIV_W { w: self }
     }
     #[doc = "Bit 28 - Shift Clock Output Select"]
-    #[inline]
-    pub fn sclkosel(&mut self) -> _SCLKOSELW {
-        _SCLKOSELW { w: self }
+    #[inline(always)]
+    pub fn sclkosel(&mut self) -> SCLKOSEL_W {
+        SCLKOSEL_W { w: self }
     }
     #[doc = "Bit 29 - Master Clock Configuration"]
-    #[inline]
-    pub fn mclkcfg(&mut self) -> _MCLKCFGW {
-        _MCLKCFGW { w: self }
+    #[inline(always)]
+    pub fn mclkcfg(&mut self) -> MCLKCFG_W {
+        MCLKCFG_W { w: self }
     }
     #[doc = "Bits 30:31 - Shift Clock Output Configuration"]
-    #[inline]
-    pub fn sclkcfg(&mut self) -> _SCLKCFGW {
-        _SCLKCFGW { w: self }
+    #[inline(always)]
+    pub fn sclkcfg(&mut self) -> SCLKCFG_W {
+        SCLKCFG_W { w: self }
     }
 }

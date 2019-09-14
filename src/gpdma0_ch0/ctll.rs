@@ -1,922 +1,598 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CTLL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CTLL"]
+pub type R = crate::R<u32, super::CTLL>;
+#[doc = "Writer for register CTLL"]
+pub type W = crate::W<u32, super::CTLL>;
+#[doc = "Register CTLL `reset()`'s with value 0x0030_4801"]
+impl crate::ResetValue for super::CTLL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0030_4801
     }
 }
-#[doc = r" Value of the field"]
-pub struct LLP_SRC_ENR {
-    bits: bool,
+#[doc = "Reader of field `LLP_SRC_EN`"]
+pub type LLP_SRC_EN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `LLP_SRC_EN`"]
+pub struct LLP_SRC_EN_W<'a> {
+    w: &'a mut W,
 }
-impl LLP_SRC_ENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> LLP_SRC_EN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LLP_DST_ENR {
-    bits: bool,
-}
-impl LLP_DST_ENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct TT_FCR {
-    bits: u8,
+#[doc = "Reader of field `LLP_DST_EN`"]
+pub type LLP_DST_EN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `LLP_DST_EN`"]
+pub struct LLP_DST_EN_W<'a> {
+    w: &'a mut W,
 }
-impl TT_FCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> LLP_DST_EN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
+        self.w
     }
 }
-#[doc = "Possible values of the field `DST_SCATTER_EN`"]
+#[doc = "Reader of field `TT_FC`"]
+pub type TT_FC_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TT_FC`"]
+pub struct TT_FC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TT_FC_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
+        self.w
+    }
+}
+#[doc = "Destination scatter enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DST_SCATTER_ENR {
+pub enum DST_SCATTER_EN_A {
+    #[doc = "0: Scatter disabled"]
+    VALUE1,
+    #[doc = "1: Scatter enabled"]
+    VALUE2,
+}
+impl From<DST_SCATTER_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: DST_SCATTER_EN_A) -> Self {
+        match variant {
+            DST_SCATTER_EN_A::VALUE1 => false,
+            DST_SCATTER_EN_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `DST_SCATTER_EN`"]
+pub type DST_SCATTER_EN_R = crate::R<bool, DST_SCATTER_EN_A>;
+impl DST_SCATTER_EN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DST_SCATTER_EN_A {
+        match self.bits {
+            false => DST_SCATTER_EN_A::VALUE1,
+            true => DST_SCATTER_EN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == DST_SCATTER_EN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == DST_SCATTER_EN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `DST_SCATTER_EN`"]
+pub struct DST_SCATTER_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DST_SCATTER_EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DST_SCATTER_EN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Scatter disabled"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(DST_SCATTER_EN_A::VALUE1)
+    }
     #[doc = "Scatter enabled"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(DST_SCATTER_EN_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w
+    }
+}
+#[doc = "Source gather enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SRC_GATHER_EN_A {
+    #[doc = "0: Gather disabled"]
+    VALUE1,
+    #[doc = "1: Gather enabled"]
     VALUE2,
 }
-impl DST_SCATTER_ENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DST_SCATTER_ENR::VALUE1 => false,
-            DST_SCATTER_ENR::VALUE2 => true,
+impl From<SRC_GATHER_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: SRC_GATHER_EN_A) -> Self {
+        match variant {
+            SRC_GATHER_EN_A::VALUE1 => false,
+            SRC_GATHER_EN_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DST_SCATTER_ENR {
-        match value {
-            false => DST_SCATTER_ENR::VALUE1,
-            true => DST_SCATTER_ENR::VALUE2,
+}
+#[doc = "Reader of field `SRC_GATHER_EN`"]
+pub type SRC_GATHER_EN_R = crate::R<bool, SRC_GATHER_EN_A>;
+impl SRC_GATHER_EN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SRC_GATHER_EN_A {
+        match self.bits {
+            false => SRC_GATHER_EN_A::VALUE1,
+            true => SRC_GATHER_EN_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DST_SCATTER_ENR::VALUE1
+        *self == SRC_GATHER_EN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DST_SCATTER_ENR::VALUE2
+        *self == SRC_GATHER_EN_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `SRC_GATHER_EN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SRC_GATHER_ENR {
+#[doc = "Write proxy for field `SRC_GATHER_EN`"]
+pub struct SRC_GATHER_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SRC_GATHER_EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SRC_GATHER_EN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Gather disabled"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(SRC_GATHER_EN_A::VALUE1)
+    }
     #[doc = "Gather enabled"]
-    VALUE2,
-}
-impl SRC_GATHER_ENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(SRC_GATHER_EN_A::VALUE2)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SRC_GATHER_ENR::VALUE1 => false,
-            SRC_GATHER_ENR::VALUE2 => true,
-        }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SRC_GATHER_ENR {
-        match value {
-            false => SRC_GATHER_ENR::VALUE1,
-            true => SRC_GATHER_ENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == SRC_GATHER_ENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == SRC_GATHER_ENR::VALUE2
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct SRC_MSIZER {
-    bits: u8,
+#[doc = "Reader of field `SRC_MSIZE`"]
+pub type SRC_MSIZE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SRC_MSIZE`"]
+pub struct SRC_MSIZE_W<'a> {
+    w: &'a mut W,
 }
-impl SRC_MSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> SRC_MSIZE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 14)) | (((value as u32) & 0x07) << 14);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct DEST_MSIZER {
-    bits: u8,
+#[doc = "Reader of field `DEST_MSIZE`"]
+pub type DEST_MSIZE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DEST_MSIZE`"]
+pub struct DEST_MSIZE_W<'a> {
+    w: &'a mut W,
 }
-impl DEST_MSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> DEST_MSIZE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 11)) | (((value as u32) & 0x07) << 11);
+        self.w
     }
 }
-#[doc = "Possible values of the field `SINC`"]
+#[doc = "Source Address Increment\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SINCR {
-    #[doc = "Increment"]
+pub enum SINC_A {
+    #[doc = "0: Increment"]
     VALUE1,
-    #[doc = "Decrement"]
+    #[doc = "1: Decrement"]
     VALUE2,
-    #[doc = "No change"]
+    #[doc = "2: No change"]
     VALUE3,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SINCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SINCR::VALUE1 => 0,
-            SINCR::VALUE2 => 1,
-            SINCR::VALUE3 => 2,
-            SINCR::_Reserved(bits) => bits,
+impl From<SINC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SINC_A) -> Self {
+        match variant {
+            SINC_A::VALUE1 => 0,
+            SINC_A::VALUE2 => 1,
+            SINC_A::VALUE3 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SINCR {
-        match value {
-            0 => SINCR::VALUE1,
-            1 => SINCR::VALUE2,
-            2 => SINCR::VALUE3,
-            i => SINCR::_Reserved(i),
+}
+#[doc = "Reader of field `SINC`"]
+pub type SINC_R = crate::R<u8, SINC_A>;
+impl SINC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SINC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SINC_A::VALUE1),
+            1 => Val(SINC_A::VALUE2),
+            2 => Val(SINC_A::VALUE3),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SINCR::VALUE1
+        *self == SINC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SINCR::VALUE2
+        *self == SINC_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == SINCR::VALUE3
+        *self == SINC_A::VALUE3
     }
 }
-#[doc = "Possible values of the field `DINC`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DINCR {
-    #[doc = "Increment"]
-    VALUE1,
-    #[doc = "Decrement"]
-    VALUE2,
-    #[doc = "No change"]
-    VALUE3,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[doc = "Write proxy for field `SINC`"]
+pub struct SINC_W<'a> {
+    w: &'a mut W,
 }
-impl DINCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DINCR::VALUE1 => 0,
-            DINCR::VALUE2 => 1,
-            DINCR::VALUE3 => 2,
-            DINCR::_Reserved(bits) => bits,
+impl<'a> SINC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SINC_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Increment"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(SINC_A::VALUE1)
+    }
+    #[doc = "Decrement"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(SINC_A::VALUE2)
+    }
+    #[doc = "No change"]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(SINC_A::VALUE3)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 9)) | (((value as u32) & 0x03) << 9);
+        self.w
+    }
+}
+#[doc = "Destination Address Increment\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DINC_A {
+    #[doc = "0: Increment"]
+    VALUE1,
+    #[doc = "1: Decrement"]
+    VALUE2,
+    #[doc = "2: No change"]
+    VALUE3,
+}
+impl From<DINC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DINC_A) -> Self {
+        match variant {
+            DINC_A::VALUE1 => 0,
+            DINC_A::VALUE2 => 1,
+            DINC_A::VALUE3 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DINCR {
-        match value {
-            0 => DINCR::VALUE1,
-            1 => DINCR::VALUE2,
-            2 => DINCR::VALUE3,
-            i => DINCR::_Reserved(i),
+}
+#[doc = "Reader of field `DINC`"]
+pub type DINC_R = crate::R<u8, DINC_A>;
+impl DINC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, DINC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(DINC_A::VALUE1),
+            1 => Val(DINC_A::VALUE2),
+            2 => Val(DINC_A::VALUE3),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DINCR::VALUE1
+        *self == DINC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DINCR::VALUE2
+        *self == DINC_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == DINCR::VALUE3
+        *self == DINC_A::VALUE3
     }
 }
-#[doc = r" Value of the field"]
-pub struct SRC_TR_WIDTHR {
-    bits: u8,
-}
-impl SRC_TR_WIDTHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DST_TR_WIDTHR {
-    bits: u8,
-}
-impl DST_TR_WIDTHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INT_ENR {
-    bits: bool,
-}
-impl INT_ENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LLP_SRC_ENW<'a> {
+#[doc = "Write proxy for field `DINC`"]
+pub struct DINC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LLP_SRC_ENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LLP_DST_ENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LLP_DST_ENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TT_FCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TT_FCW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DST_SCATTER_EN`"]
-pub enum DST_SCATTER_ENW {
-    #[doc = "Scatter disabled"]
-    VALUE1,
-    #[doc = "Scatter enabled"]
-    VALUE2,
-}
-impl DST_SCATTER_ENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DST_SCATTER_ENW::VALUE1 => false,
-            DST_SCATTER_ENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DST_SCATTER_ENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DST_SCATTER_ENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DST_SCATTER_ENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Scatter disabled"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(DST_SCATTER_ENW::VALUE1)
-    }
-    #[doc = "Scatter enabled"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(DST_SCATTER_ENW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SRC_GATHER_EN`"]
-pub enum SRC_GATHER_ENW {
-    #[doc = "Gather disabled"]
-    VALUE1,
-    #[doc = "Gather enabled"]
-    VALUE2,
-}
-impl SRC_GATHER_ENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SRC_GATHER_ENW::VALUE1 => false,
-            SRC_GATHER_ENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SRC_GATHER_ENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SRC_GATHER_ENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SRC_GATHER_ENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Gather disabled"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(SRC_GATHER_ENW::VALUE1)
-    }
-    #[doc = "Gather enabled"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(SRC_GATHER_ENW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SRC_MSIZEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SRC_MSIZEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DEST_MSIZEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DEST_MSIZEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SINC`"]
-pub enum SINCW {
-    #[doc = "Increment"]
-    VALUE1,
-    #[doc = "Decrement"]
-    VALUE2,
-    #[doc = "No change"]
-    VALUE3,
-}
-impl SINCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SINCW::VALUE1 => 0,
-            SINCW::VALUE2 => 1,
-            SINCW::VALUE3 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SINCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SINCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SINCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> DINC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DINC_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Increment"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SINCW::VALUE1)
+        self.variant(DINC_A::VALUE1)
     }
     #[doc = "Decrement"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SINCW::VALUE2)
+        self.variant(DINC_A::VALUE2)
     }
     #[doc = "No change"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(SINCW::VALUE3)
+        self.variant(DINC_A::VALUE3)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 7)) | (((value as u32) & 0x03) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DINC`"]
-pub enum DINCW {
-    #[doc = "Increment"]
-    VALUE1,
-    #[doc = "Decrement"]
-    VALUE2,
-    #[doc = "No change"]
-    VALUE3,
-}
-impl DINCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            DINCW::VALUE1 => 0,
-            DINCW::VALUE2 => 1,
-            DINCW::VALUE3 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DINCW<'a> {
+#[doc = "Reader of field `SRC_TR_WIDTH`"]
+pub type SRC_TR_WIDTH_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SRC_TR_WIDTH`"]
+pub struct SRC_TR_WIDTH_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DINCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DINCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Increment"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(DINCW::VALUE1)
-    }
-    #[doc = "Decrement"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(DINCW::VALUE2)
-    }
-    #[doc = "No change"]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(DINCW::VALUE3)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SRC_TR_WIDTH_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SRC_TR_WIDTHW<'a> {
+#[doc = "Reader of field `DST_TR_WIDTH`"]
+pub type DST_TR_WIDTH_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DST_TR_WIDTH`"]
+pub struct DST_TR_WIDTH_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SRC_TR_WIDTHW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DST_TR_WIDTH_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 1)) | (((value as u32) & 0x07) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DST_TR_WIDTHW<'a> {
+#[doc = "Reader of field `INT_EN`"]
+pub type INT_EN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INT_EN`"]
+pub struct INT_EN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DST_TR_WIDTHW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INT_ENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INT_ENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INT_EN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 28 - Linked List Pointer for Source Enable"]
-    #[inline]
-    pub fn llp_src_en(&self) -> LLP_SRC_ENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LLP_SRC_ENR { bits }
+    #[inline(always)]
+    pub fn llp_src_en(&self) -> LLP_SRC_EN_R {
+        LLP_SRC_EN_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 27 - Linked List Pointer for Destination Enable"]
-    #[inline]
-    pub fn llp_dst_en(&self) -> LLP_DST_ENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LLP_DST_ENR { bits }
+    #[inline(always)]
+    pub fn llp_dst_en(&self) -> LLP_DST_EN_R {
+        LLP_DST_EN_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bits 20:22 - Transfer Type and Flow Control"]
-    #[inline]
-    pub fn tt_fc(&self) -> TT_FCR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TT_FCR { bits }
+    #[inline(always)]
+    pub fn tt_fc(&self) -> TT_FC_R {
+        TT_FC_R::new(((self.bits >> 20) & 0x07) as u8)
     }
     #[doc = "Bit 18 - Destination scatter enable"]
-    #[inline]
-    pub fn dst_scatter_en(&self) -> DST_SCATTER_ENR {
-        DST_SCATTER_ENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dst_scatter_en(&self) -> DST_SCATTER_EN_R {
+        DST_SCATTER_EN_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Source gather enable"]
-    #[inline]
-    pub fn src_gather_en(&self) -> SRC_GATHER_ENR {
-        SRC_GATHER_ENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn src_gather_en(&self) -> SRC_GATHER_EN_R {
+        SRC_GATHER_EN_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bits 14:16 - Source Burst Transaction Length"]
-    #[inline]
-    pub fn src_msize(&self) -> SRC_MSIZER {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SRC_MSIZER { bits }
+    #[inline(always)]
+    pub fn src_msize(&self) -> SRC_MSIZE_R {
+        SRC_MSIZE_R::new(((self.bits >> 14) & 0x07) as u8)
     }
     #[doc = "Bits 11:13 - Destination Burst Transaction Length"]
-    #[inline]
-    pub fn dest_msize(&self) -> DEST_MSIZER {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DEST_MSIZER { bits }
+    #[inline(always)]
+    pub fn dest_msize(&self) -> DEST_MSIZE_R {
+        DEST_MSIZE_R::new(((self.bits >> 11) & 0x07) as u8)
     }
     #[doc = "Bits 9:10 - Source Address Increment"]
-    #[inline]
-    pub fn sinc(&self) -> SINCR {
-        SINCR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sinc(&self) -> SINC_R {
+        SINC_R::new(((self.bits >> 9) & 0x03) as u8)
     }
     #[doc = "Bits 7:8 - Destination Address Increment"]
-    #[inline]
-    pub fn dinc(&self) -> DINCR {
-        DINCR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn dinc(&self) -> DINC_R {
+        DINC_R::new(((self.bits >> 7) & 0x03) as u8)
     }
     #[doc = "Bits 4:6 - Source Transfer Width"]
-    #[inline]
-    pub fn src_tr_width(&self) -> SRC_TR_WIDTHR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SRC_TR_WIDTHR { bits }
+    #[inline(always)]
+    pub fn src_tr_width(&self) -> SRC_TR_WIDTH_R {
+        SRC_TR_WIDTH_R::new(((self.bits >> 4) & 0x07) as u8)
     }
     #[doc = "Bits 1:3 - Destination Transfer Width"]
-    #[inline]
-    pub fn dst_tr_width(&self) -> DST_TR_WIDTHR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DST_TR_WIDTHR { bits }
+    #[inline(always)]
+    pub fn dst_tr_width(&self) -> DST_TR_WIDTH_R {
+        DST_TR_WIDTH_R::new(((self.bits >> 1) & 0x07) as u8)
     }
     #[doc = "Bit 0 - Interrupt Enable Bit"]
-    #[inline]
-    pub fn int_en(&self) -> INT_ENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INT_ENR { bits }
+    #[inline(always)]
+    pub fn int_en(&self) -> INT_EN_R {
+        INT_EN_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 3164161 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 28 - Linked List Pointer for Source Enable"]
-    #[inline]
-    pub fn llp_src_en(&mut self) -> _LLP_SRC_ENW {
-        _LLP_SRC_ENW { w: self }
+    #[inline(always)]
+    pub fn llp_src_en(&mut self) -> LLP_SRC_EN_W {
+        LLP_SRC_EN_W { w: self }
     }
     #[doc = "Bit 27 - Linked List Pointer for Destination Enable"]
-    #[inline]
-    pub fn llp_dst_en(&mut self) -> _LLP_DST_ENW {
-        _LLP_DST_ENW { w: self }
+    #[inline(always)]
+    pub fn llp_dst_en(&mut self) -> LLP_DST_EN_W {
+        LLP_DST_EN_W { w: self }
     }
     #[doc = "Bits 20:22 - Transfer Type and Flow Control"]
-    #[inline]
-    pub fn tt_fc(&mut self) -> _TT_FCW {
-        _TT_FCW { w: self }
+    #[inline(always)]
+    pub fn tt_fc(&mut self) -> TT_FC_W {
+        TT_FC_W { w: self }
     }
     #[doc = "Bit 18 - Destination scatter enable"]
-    #[inline]
-    pub fn dst_scatter_en(&mut self) -> _DST_SCATTER_ENW {
-        _DST_SCATTER_ENW { w: self }
+    #[inline(always)]
+    pub fn dst_scatter_en(&mut self) -> DST_SCATTER_EN_W {
+        DST_SCATTER_EN_W { w: self }
     }
     #[doc = "Bit 17 - Source gather enable"]
-    #[inline]
-    pub fn src_gather_en(&mut self) -> _SRC_GATHER_ENW {
-        _SRC_GATHER_ENW { w: self }
+    #[inline(always)]
+    pub fn src_gather_en(&mut self) -> SRC_GATHER_EN_W {
+        SRC_GATHER_EN_W { w: self }
     }
     #[doc = "Bits 14:16 - Source Burst Transaction Length"]
-    #[inline]
-    pub fn src_msize(&mut self) -> _SRC_MSIZEW {
-        _SRC_MSIZEW { w: self }
+    #[inline(always)]
+    pub fn src_msize(&mut self) -> SRC_MSIZE_W {
+        SRC_MSIZE_W { w: self }
     }
     #[doc = "Bits 11:13 - Destination Burst Transaction Length"]
-    #[inline]
-    pub fn dest_msize(&mut self) -> _DEST_MSIZEW {
-        _DEST_MSIZEW { w: self }
+    #[inline(always)]
+    pub fn dest_msize(&mut self) -> DEST_MSIZE_W {
+        DEST_MSIZE_W { w: self }
     }
     #[doc = "Bits 9:10 - Source Address Increment"]
-    #[inline]
-    pub fn sinc(&mut self) -> _SINCW {
-        _SINCW { w: self }
+    #[inline(always)]
+    pub fn sinc(&mut self) -> SINC_W {
+        SINC_W { w: self }
     }
     #[doc = "Bits 7:8 - Destination Address Increment"]
-    #[inline]
-    pub fn dinc(&mut self) -> _DINCW {
-        _DINCW { w: self }
+    #[inline(always)]
+    pub fn dinc(&mut self) -> DINC_W {
+        DINC_W { w: self }
     }
     #[doc = "Bits 4:6 - Source Transfer Width"]
-    #[inline]
-    pub fn src_tr_width(&mut self) -> _SRC_TR_WIDTHW {
-        _SRC_TR_WIDTHW { w: self }
+    #[inline(always)]
+    pub fn src_tr_width(&mut self) -> SRC_TR_WIDTH_W {
+        SRC_TR_WIDTH_W { w: self }
     }
     #[doc = "Bits 1:3 - Destination Transfer Width"]
-    #[inline]
-    pub fn dst_tr_width(&mut self) -> _DST_TR_WIDTHW {
-        _DST_TR_WIDTHW { w: self }
+    #[inline(always)]
+    pub fn dst_tr_width(&mut self) -> DST_TR_WIDTH_W {
+        DST_TR_WIDTH_W { w: self }
     }
     #[doc = "Bit 0 - Interrupt Enable Bit"]
-    #[inline]
-    pub fn int_en(&mut self) -> _INT_ENW {
-        _INT_ENW { w: self }
+    #[inline(always)]
+    pub fn int_en(&mut self) -> INT_EN_W {
+        INT_EN_W { w: self }
     }
 }

@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::TX_EXCESSIVE_DEFERRAL_ERROR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXEXSDEFR {
-    bits: u32,
-}
-impl TXEXSDEFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register TX_EXCESSIVE_DEFERRAL_ERROR"]
+pub type R = crate::R<u32, super::TX_EXCESSIVE_DEFERRAL_ERROR>;
+#[doc = "Reader of field `TXEXSDEF`"]
+pub type TXEXSDEF_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - This field indicates the number of frames aborted because of excessive deferral error, that is, frames deferred for more than two max-sized frame times."]
-    #[inline]
-    pub fn txexsdef(&self) -> TXEXSDEFR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        TXEXSDEFR { bits }
+    #[inline(always)]
+    pub fn txexsdef(&self) -> TXEXSDEF_R {
+        TXEXSDEF_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

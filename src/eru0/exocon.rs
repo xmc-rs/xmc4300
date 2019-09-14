@@ -1,985 +1,714 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::EXOCON {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register EXOCON[%s]"]
+pub type R = crate::R<u32, super::EXOCON>;
+#[doc = "Writer for register EXOCON[%s]"]
+pub type W = crate::W<u32, super::EXOCON>;
+#[doc = "Register EXOCON[%s] `reset()`'s with value 0x08"]
+impl crate::ResetValue for super::EXOCON {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x08
     }
 }
-#[doc = "Possible values of the field `ISS`"]
+#[doc = "Internal Trigger Source Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISSR {
-    #[doc = "The peripheral trigger function is disabled"]
+pub enum ISS_A {
+    #[doc = "0: The peripheral trigger function is disabled"]
     VALUE1,
-    #[doc = "Input ERU_OGUy1 is selected"]
+    #[doc = "1: Input ERU_OGUy1 is selected"]
     VALUE2,
-    #[doc = "Input ERU_OGUy2 is selected"]
+    #[doc = "2: Input ERU_OGUy2 is selected"]
     VALUE3,
-    #[doc = "Input ERU_OGUy3 is selected"]
+    #[doc = "3: Input ERU_OGUy3 is selected"]
     VALUE4,
 }
-impl ISSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ISSR::VALUE1 => 0,
-            ISSR::VALUE2 => 1,
-            ISSR::VALUE3 => 2,
-            ISSR::VALUE4 => 3,
+impl From<ISS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ISS_A) -> Self {
+        match variant {
+            ISS_A::VALUE1 => 0,
+            ISS_A::VALUE2 => 1,
+            ISS_A::VALUE3 => 2,
+            ISS_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ISSR {
-        match value {
-            0 => ISSR::VALUE1,
-            1 => ISSR::VALUE2,
-            2 => ISSR::VALUE3,
-            3 => ISSR::VALUE4,
+}
+#[doc = "Reader of field `ISS`"]
+pub type ISS_R = crate::R<u8, ISS_A>;
+impl ISS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ISS_A {
+        match self.bits {
+            0 => ISS_A::VALUE1,
+            1 => ISS_A::VALUE2,
+            2 => ISS_A::VALUE3,
+            3 => ISS_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ISSR::VALUE1
+        *self == ISS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ISSR::VALUE2
+        *self == ISS_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == ISSR::VALUE3
+        *self == ISS_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == ISSR::VALUE4
+        *self == ISS_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `GEEN`"]
+#[doc = "Write proxy for field `ISS`"]
+pub struct ISS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ISS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ISS_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
+        }
+    }
+    #[doc = "The peripheral trigger function is disabled"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(ISS_A::VALUE1)
+    }
+    #[doc = "Input ERU_OGUy1 is selected"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(ISS_A::VALUE2)
+    }
+    #[doc = "Input ERU_OGUy2 is selected"]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(ISS_A::VALUE3)
+    }
+    #[doc = "Input ERU_OGUy3 is selected"]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(ISS_A::VALUE4)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w
+    }
+}
+#[doc = "Gating Event Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GEENR {
+pub enum GEEN_A {
+    #[doc = "0: The event detection is disabled"]
+    VALUE1,
+    #[doc = "1: The event detection is enabled"]
+    VALUE2,
+}
+impl From<GEEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: GEEN_A) -> Self {
+        match variant {
+            GEEN_A::VALUE1 => false,
+            GEEN_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `GEEN`"]
+pub type GEEN_R = crate::R<bool, GEEN_A>;
+impl GEEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GEEN_A {
+        match self.bits {
+            false => GEEN_A::VALUE1,
+            true => GEEN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == GEEN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == GEEN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `GEEN`"]
+pub struct GEEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> GEEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: GEEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "The event detection is disabled"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(GEEN_A::VALUE1)
+    }
     #[doc = "The event detection is enabled"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(GEEN_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Pattern Detection Result Flag\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PDR_A {
+    #[doc = "0: A pattern miss is detected"]
+    VALUE1,
+    #[doc = "1: A pattern match is detected"]
     VALUE2,
 }
-impl GEENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            GEENR::VALUE1 => false,
-            GEENR::VALUE2 => true,
+impl From<PDR_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDR_A) -> Self {
+        match variant {
+            PDR_A::VALUE1 => false,
+            PDR_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> GEENR {
-        match value {
-            false => GEENR::VALUE1,
-            true => GEENR::VALUE2,
+}
+#[doc = "Reader of field `PDR`"]
+pub type PDR_R = crate::R<bool, PDR_A>;
+impl PDR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDR_A {
+        match self.bits {
+            false => PDR_A::VALUE1,
+            true => PDR_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == GEENR::VALUE1
+        *self == PDR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == GEENR::VALUE2
+        *self == PDR_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `PDR`"]
+#[doc = "Gating Selection for Pattern Detection Result\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDRR {
-    #[doc = "A pattern miss is detected"]
+pub enum GP_A {
+    #[doc = "0: ERU_GOUTy is always disabled and ERU_IOUTy can not be activated"]
     VALUE1,
-    #[doc = "A pattern match is detected"]
+    #[doc = "1: ERU_GOUTy is always enabled and ERU_IOUTy becomes activated with each activation of ERU_TOUTy"]
     VALUE2,
-}
-impl PDRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDRR::VALUE1 => false,
-            PDRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDRR {
-        match value {
-            false => PDRR::VALUE1,
-            true => PDRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == PDRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == PDRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `GP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GPR {
-    #[doc = "ERU_GOUTy is always disabled and ERU_IOUTy can not be activated"]
-    VALUE1,
-    #[doc = "ERU_GOUTy is always enabled and ERU_IOUTy becomes activated with each activation of ERU_TOUTy"]
-    VALUE2,
-    #[doc = "ERU_GOUTy is equal to ERU_PDOUTy and ERU_IOUTy becomes activated with an activation of ERU_TOUTy while the desired pattern is detected (pattern match PDR = 1)"]
+    #[doc = "2: ERU_GOUTy is equal to ERU_PDOUTy and ERU_IOUTy becomes activated with an activation of ERU_TOUTy while the desired pattern is detected (pattern match PDR = 1)"]
     VALUE3,
-    #[doc = "ERU_GOUTy is inverted to ERU_PDOUTy and ERU_IOUTy becomes activated with an activation of ERU_TOUTy while the desired pattern is not detected (pattern miss PDR = 0)"]
+    #[doc = "3: ERU_GOUTy is inverted to ERU_PDOUTy and ERU_IOUTy becomes activated with an activation of ERU_TOUTy while the desired pattern is not detected (pattern miss PDR = 0)"]
     VALUE4,
 }
-impl GPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            GPR::VALUE1 => 0,
-            GPR::VALUE2 => 1,
-            GPR::VALUE3 => 2,
-            GPR::VALUE4 => 3,
+impl From<GP_A> for u8 {
+    #[inline(always)]
+    fn from(variant: GP_A) -> Self {
+        match variant {
+            GP_A::VALUE1 => 0,
+            GP_A::VALUE2 => 1,
+            GP_A::VALUE3 => 2,
+            GP_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> GPR {
-        match value {
-            0 => GPR::VALUE1,
-            1 => GPR::VALUE2,
-            2 => GPR::VALUE3,
-            3 => GPR::VALUE4,
+}
+#[doc = "Reader of field `GP`"]
+pub type GP_R = crate::R<u8, GP_A>;
+impl GP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GP_A {
+        match self.bits {
+            0 => GP_A::VALUE1,
+            1 => GP_A::VALUE2,
+            2 => GP_A::VALUE3,
+            3 => GP_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == GPR::VALUE1
+        *self == GP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == GPR::VALUE2
+        *self == GP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == GPR::VALUE3
+        *self == GP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == GPR::VALUE4
+        *self == GP_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `IPEN0`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IPEN0R {
-    #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
-    VALUE1,
-    #[doc = "Flag EXICONx.FL is included in the pattern detection"]
-    VALUE2,
-}
-impl IPEN0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IPEN0R::VALUE1 => false,
-            IPEN0R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IPEN0R {
-        match value {
-            false => IPEN0R::VALUE1,
-            true => IPEN0R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == IPEN0R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == IPEN0R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `IPEN1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IPEN1R {
-    #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
-    VALUE1,
-    #[doc = "Flag EXICONx.FL is included in the pattern detection"]
-    VALUE2,
-}
-impl IPEN1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IPEN1R::VALUE1 => false,
-            IPEN1R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IPEN1R {
-        match value {
-            false => IPEN1R::VALUE1,
-            true => IPEN1R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == IPEN1R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == IPEN1R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `IPEN2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IPEN2R {
-    #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
-    VALUE1,
-    #[doc = "Flag EXICONx.FL is included in the pattern detection"]
-    VALUE2,
-}
-impl IPEN2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IPEN2R::VALUE1 => false,
-            IPEN2R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IPEN2R {
-        match value {
-            false => IPEN2R::VALUE1,
-            true => IPEN2R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == IPEN2R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == IPEN2R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `IPEN3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IPEN3R {
-    #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
-    VALUE1,
-    #[doc = "Flag EXICONx.FL is included in the pattern detection"]
-    VALUE2,
-}
-impl IPEN3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IPEN3R::VALUE1 => false,
-            IPEN3R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IPEN3R {
-        match value {
-            false => IPEN3R::VALUE1,
-            true => IPEN3R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == IPEN3R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == IPEN3R::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `ISS`"]
-pub enum ISSW {
-    #[doc = "The peripheral trigger function is disabled"]
-    VALUE1,
-    #[doc = "Input ERU_OGUy1 is selected"]
-    VALUE2,
-    #[doc = "Input ERU_OGUy2 is selected"]
-    VALUE3,
-    #[doc = "Input ERU_OGUy3 is selected"]
-    VALUE4,
-}
-impl ISSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ISSW::VALUE1 => 0,
-            ISSW::VALUE2 => 1,
-            ISSW::VALUE3 => 2,
-            ISSW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ISSW<'a> {
+#[doc = "Write proxy for field `GP`"]
+pub struct GP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ISSW) -> &'a mut W {
+impl<'a> GP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: GP_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "The peripheral trigger function is disabled"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(ISSW::VALUE1)
-    }
-    #[doc = "Input ERU_OGUy1 is selected"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(ISSW::VALUE2)
-    }
-    #[doc = "Input ERU_OGUy2 is selected"]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(ISSW::VALUE3)
-    }
-    #[doc = "Input ERU_OGUy3 is selected"]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(ISSW::VALUE4)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `GEEN`"]
-pub enum GEENW {
-    #[doc = "The event detection is disabled"]
-    VALUE1,
-    #[doc = "The event detection is enabled"]
-    VALUE2,
-}
-impl GEENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            GEENW::VALUE1 => false,
-            GEENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _GEENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _GEENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: GEENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The event detection is disabled"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(GEENW::VALUE1)
-    }
-    #[doc = "The event detection is enabled"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(GEENW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `GP`"]
-pub enum GPW {
-    #[doc = "ERU_GOUTy is always disabled and ERU_IOUTy can not be activated"]
-    VALUE1,
-    #[doc = "ERU_GOUTy is always enabled and ERU_IOUTy becomes activated with each activation of ERU_TOUTy"]
-    VALUE2,
-    #[doc = "ERU_GOUTy is equal to ERU_PDOUTy and ERU_IOUTy becomes activated with an activation of ERU_TOUTy while the desired pattern is detected (pattern match PDR = 1)"]
-    VALUE3,
-    #[doc = "ERU_GOUTy is inverted to ERU_PDOUTy and ERU_IOUTy becomes activated with an activation of ERU_TOUTy while the desired pattern is not detected (pattern miss PDR = 0)"]
-    VALUE4,
-}
-impl GPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            GPW::VALUE1 => 0,
-            GPW::VALUE2 => 1,
-            GPW::VALUE3 => 2,
-            GPW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _GPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _GPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: GPW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "ERU_GOUTy is always disabled and ERU_IOUTy can not be activated"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(GPW::VALUE1)
+        self.variant(GP_A::VALUE1)
     }
     #[doc = "ERU_GOUTy is always enabled and ERU_IOUTy becomes activated with each activation of ERU_TOUTy"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(GPW::VALUE2)
+        self.variant(GP_A::VALUE2)
     }
     #[doc = "ERU_GOUTy is equal to ERU_PDOUTy and ERU_IOUTy becomes activated with an activation of ERU_TOUTy while the desired pattern is detected (pattern match PDR = 1)"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(GPW::VALUE3)
+        self.variant(GP_A::VALUE3)
     }
     #[doc = "ERU_GOUTy is inverted to ERU_PDOUTy and ERU_IOUTy becomes activated with an activation of ERU_TOUTy while the desired pattern is not detected (pattern miss PDR = 0)"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(GPW::VALUE4)
+        self.variant(GP_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IPEN0`"]
-pub enum IPEN0W {
-    #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
+#[doc = "Pattern Detection Enable for ETL0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IPEN0_A {
+    #[doc = "0: Flag EXICONx.FL is excluded from the pattern detection"]
     VALUE1,
-    #[doc = "Flag EXICONx.FL is included in the pattern detection"]
+    #[doc = "1: Flag EXICONx.FL is included in the pattern detection"]
     VALUE2,
 }
-impl IPEN0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IPEN0W::VALUE1 => false,
-            IPEN0W::VALUE2 => true,
+impl From<IPEN0_A> for bool {
+    #[inline(always)]
+    fn from(variant: IPEN0_A) -> Self {
+        match variant {
+            IPEN0_A::VALUE1 => false,
+            IPEN0_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IPEN0W<'a> {
+#[doc = "Reader of field `IPEN0`"]
+pub type IPEN0_R = crate::R<bool, IPEN0_A>;
+impl IPEN0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IPEN0_A {
+        match self.bits {
+            false => IPEN0_A::VALUE1,
+            true => IPEN0_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == IPEN0_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == IPEN0_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `IPEN0`"]
+pub struct IPEN0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IPEN0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IPEN0W) -> &'a mut W {
+impl<'a> IPEN0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IPEN0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(IPEN0W::VALUE1)
+        self.variant(IPEN0_A::VALUE1)
     }
     #[doc = "Flag EXICONx.FL is included in the pattern detection"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(IPEN0W::VALUE2)
+        self.variant(IPEN0_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IPEN1`"]
-pub enum IPEN1W {
-    #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
+#[doc = "Pattern Detection Enable for ETL1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IPEN1_A {
+    #[doc = "0: Flag EXICONx.FL is excluded from the pattern detection"]
     VALUE1,
-    #[doc = "Flag EXICONx.FL is included in the pattern detection"]
+    #[doc = "1: Flag EXICONx.FL is included in the pattern detection"]
     VALUE2,
 }
-impl IPEN1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IPEN1W::VALUE1 => false,
-            IPEN1W::VALUE2 => true,
+impl From<IPEN1_A> for bool {
+    #[inline(always)]
+    fn from(variant: IPEN1_A) -> Self {
+        match variant {
+            IPEN1_A::VALUE1 => false,
+            IPEN1_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IPEN1W<'a> {
+#[doc = "Reader of field `IPEN1`"]
+pub type IPEN1_R = crate::R<bool, IPEN1_A>;
+impl IPEN1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IPEN1_A {
+        match self.bits {
+            false => IPEN1_A::VALUE1,
+            true => IPEN1_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == IPEN1_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == IPEN1_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `IPEN1`"]
+pub struct IPEN1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IPEN1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IPEN1W) -> &'a mut W {
+impl<'a> IPEN1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IPEN1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(IPEN1W::VALUE1)
+        self.variant(IPEN1_A::VALUE1)
     }
     #[doc = "Flag EXICONx.FL is included in the pattern detection"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(IPEN1W::VALUE2)
+        self.variant(IPEN1_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IPEN2`"]
-pub enum IPEN2W {
-    #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
+#[doc = "Pattern Detection Enable for ETL2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IPEN2_A {
+    #[doc = "0: Flag EXICONx.FL is excluded from the pattern detection"]
     VALUE1,
-    #[doc = "Flag EXICONx.FL is included in the pattern detection"]
+    #[doc = "1: Flag EXICONx.FL is included in the pattern detection"]
     VALUE2,
 }
-impl IPEN2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IPEN2W::VALUE1 => false,
-            IPEN2W::VALUE2 => true,
+impl From<IPEN2_A> for bool {
+    #[inline(always)]
+    fn from(variant: IPEN2_A) -> Self {
+        match variant {
+            IPEN2_A::VALUE1 => false,
+            IPEN2_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IPEN2W<'a> {
+#[doc = "Reader of field `IPEN2`"]
+pub type IPEN2_R = crate::R<bool, IPEN2_A>;
+impl IPEN2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IPEN2_A {
+        match self.bits {
+            false => IPEN2_A::VALUE1,
+            true => IPEN2_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == IPEN2_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == IPEN2_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `IPEN2`"]
+pub struct IPEN2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IPEN2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IPEN2W) -> &'a mut W {
+impl<'a> IPEN2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IPEN2_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(IPEN2W::VALUE1)
+        self.variant(IPEN2_A::VALUE1)
     }
     #[doc = "Flag EXICONx.FL is included in the pattern detection"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(IPEN2W::VALUE2)
+        self.variant(IPEN2_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IPEN3`"]
-pub enum IPEN3W {
-    #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
+#[doc = "Pattern Detection Enable for ETL3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IPEN3_A {
+    #[doc = "0: Flag EXICONx.FL is excluded from the pattern detection"]
     VALUE1,
-    #[doc = "Flag EXICONx.FL is included in the pattern detection"]
+    #[doc = "1: Flag EXICONx.FL is included in the pattern detection"]
     VALUE2,
 }
-impl IPEN3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IPEN3W::VALUE1 => false,
-            IPEN3W::VALUE2 => true,
+impl From<IPEN3_A> for bool {
+    #[inline(always)]
+    fn from(variant: IPEN3_A) -> Self {
+        match variant {
+            IPEN3_A::VALUE1 => false,
+            IPEN3_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IPEN3W<'a> {
+#[doc = "Reader of field `IPEN3`"]
+pub type IPEN3_R = crate::R<bool, IPEN3_A>;
+impl IPEN3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IPEN3_A {
+        match self.bits {
+            false => IPEN3_A::VALUE1,
+            true => IPEN3_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == IPEN3_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == IPEN3_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `IPEN3`"]
+pub struct IPEN3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IPEN3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IPEN3W) -> &'a mut W {
+impl<'a> IPEN3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IPEN3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(IPEN3W::VALUE1)
+        self.variant(IPEN3_A::VALUE1)
     }
     #[doc = "Flag EXICONx.FL is included in the pattern detection"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(IPEN3W::VALUE2)
+        self.variant(IPEN3_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Internal Trigger Source Selection"]
-    #[inline]
-    pub fn iss(&self) -> ISSR {
-        ISSR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn iss(&self) -> ISS_R {
+        ISS_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 2 - Gating Event Enable"]
-    #[inline]
-    pub fn geen(&self) -> GEENR {
-        GEENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn geen(&self) -> GEEN_R {
+        GEEN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Pattern Detection Result Flag"]
-    #[inline]
-    pub fn pdr(&self) -> PDRR {
-        PDRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdr(&self) -> PDR_R {
+        PDR_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bits 4:5 - Gating Selection for Pattern Detection Result"]
-    #[inline]
-    pub fn gp(&self) -> GPR {
-        GPR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn gp(&self) -> GP_R {
+        GP_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bit 12 - Pattern Detection Enable for ETL0"]
-    #[inline]
-    pub fn ipen0(&self) -> IPEN0R {
-        IPEN0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ipen0(&self) -> IPEN0_R {
+        IPEN0_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Pattern Detection Enable for ETL1"]
-    #[inline]
-    pub fn ipen1(&self) -> IPEN1R {
-        IPEN1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ipen1(&self) -> IPEN1_R {
+        IPEN1_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Pattern Detection Enable for ETL2"]
-    #[inline]
-    pub fn ipen2(&self) -> IPEN2R {
-        IPEN2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ipen2(&self) -> IPEN2_R {
+        IPEN2_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Pattern Detection Enable for ETL3"]
-    #[inline]
-    pub fn ipen3(&self) -> IPEN3R {
-        IPEN3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ipen3(&self) -> IPEN3_R {
+        IPEN3_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 8 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Internal Trigger Source Selection"]
-    #[inline]
-    pub fn iss(&mut self) -> _ISSW {
-        _ISSW { w: self }
+    #[inline(always)]
+    pub fn iss(&mut self) -> ISS_W {
+        ISS_W { w: self }
     }
     #[doc = "Bit 2 - Gating Event Enable"]
-    #[inline]
-    pub fn geen(&mut self) -> _GEENW {
-        _GEENW { w: self }
+    #[inline(always)]
+    pub fn geen(&mut self) -> GEEN_W {
+        GEEN_W { w: self }
     }
     #[doc = "Bits 4:5 - Gating Selection for Pattern Detection Result"]
-    #[inline]
-    pub fn gp(&mut self) -> _GPW {
-        _GPW { w: self }
+    #[inline(always)]
+    pub fn gp(&mut self) -> GP_W {
+        GP_W { w: self }
     }
     #[doc = "Bit 12 - Pattern Detection Enable for ETL0"]
-    #[inline]
-    pub fn ipen0(&mut self) -> _IPEN0W {
-        _IPEN0W { w: self }
+    #[inline(always)]
+    pub fn ipen0(&mut self) -> IPEN0_W {
+        IPEN0_W { w: self }
     }
     #[doc = "Bit 13 - Pattern Detection Enable for ETL1"]
-    #[inline]
-    pub fn ipen1(&mut self) -> _IPEN1W {
-        _IPEN1W { w: self }
+    #[inline(always)]
+    pub fn ipen1(&mut self) -> IPEN1_W {
+        IPEN1_W { w: self }
     }
     #[doc = "Bit 14 - Pattern Detection Enable for ETL2"]
-    #[inline]
-    pub fn ipen2(&mut self) -> _IPEN2W {
-        _IPEN2W { w: self }
+    #[inline(always)]
+    pub fn ipen2(&mut self) -> IPEN2_W {
+        IPEN2_W { w: self }
     }
     #[doc = "Bit 15 - Pattern Detection Enable for ETL3"]
-    #[inline]
-    pub fn ipen3(&mut self) -> _IPEN3W {
-        _IPEN3W { w: self }
+    #[inline(always)]
+    pub fn ipen3(&mut self) -> IPEN3_W {
+        IPEN3_W { w: self }
     }
 }

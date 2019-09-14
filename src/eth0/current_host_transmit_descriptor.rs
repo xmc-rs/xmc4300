@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::CURRENT_HOST_TRANSMIT_DESCRIPTOR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CURTDESAPTRR {
-    bits: u32,
-}
-impl CURTDESAPTRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register CURRENT_HOST_TRANSMIT_DESCRIPTOR"]
+pub type R = crate::R<u32, super::CURRENT_HOST_TRANSMIT_DESCRIPTOR>;
+#[doc = "Reader of field `CURTDESAPTR`"]
+pub type CURTDESAPTR_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - Host Transmit Descriptor Address Pointer"]
-    #[inline]
-    pub fn curtdesaptr(&self) -> CURTDESAPTRR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        CURTDESAPTRR { bits }
+    #[inline(always)]
+    pub fn curtdesaptr(&self) -> CURTDESAPTR_R {
+        CURTDESAPTR_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

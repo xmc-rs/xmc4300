@@ -1,423 +1,264 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CFGH {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CFGH"]
+pub type R = crate::R<u32, super::CFGH>;
+#[doc = "Writer for register CFGH"]
+pub type W = crate::W<u32, super::CFGH>;
+#[doc = "Register CFGH `reset()`'s with value 0x04"]
+impl crate::ResetValue for super::CFGH {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x04
     }
 }
-#[doc = r" Value of the field"]
-pub struct DEST_PERR {
-    bits: u8,
+#[doc = "Reader of field `DEST_PER`"]
+pub type DEST_PER_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DEST_PER`"]
+pub struct DEST_PER_W<'a> {
+    w: &'a mut W,
 }
-impl DEST_PERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> DEST_PER_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 11)) | (((value as u32) & 0x0f) << 11);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct SRC_PERR {
-    bits: u8,
+#[doc = "Reader of field `SRC_PER`"]
+pub type SRC_PER_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SRC_PER`"]
+pub struct SRC_PER_W<'a> {
+    w: &'a mut W,
 }
-impl SRC_PERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> SRC_PER_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 7)) | (((value as u32) & 0x0f) << 7);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct PROTCTLR {
-    bits: u8,
+#[doc = "Reader of field `PROTCTL`"]
+pub type PROTCTL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PROTCTL`"]
+pub struct PROTCTL_W<'a> {
+    w: &'a mut W,
 }
-impl PROTCTLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> PROTCTL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 2)) | (((value as u32) & 0x07) << 2);
+        self.w
     }
 }
-#[doc = "Possible values of the field `FIFO_MODE`"]
+#[doc = "FIFO Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FIFO_MODER {
-    #[doc = "Space/data available for single AHB transfer of the specified transfer width."]
+pub enum FIFO_MODE_A {
+    #[doc = "0: Space/data available for single AHB transfer of the specified transfer width."]
     VALUE1,
-    #[doc = "Data available is greater than or equal to half the FIFO depth for destination transfers and space available is greater than half the fifo depth for source transfers. The exceptions are at the end of a burst transaction request or at the end of a block transfer."]
+    #[doc = "1: Data available is greater than or equal to half the FIFO depth for destination transfers and space available is greater than half the fifo depth for source transfers. The exceptions are at the end of a burst transaction request or at the end of a block transfer."]
     VALUE2,
 }
-impl FIFO_MODER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FIFO_MODER::VALUE1 => false,
-            FIFO_MODER::VALUE2 => true,
+impl From<FIFO_MODE_A> for bool {
+    #[inline(always)]
+    fn from(variant: FIFO_MODE_A) -> Self {
+        match variant {
+            FIFO_MODE_A::VALUE1 => false,
+            FIFO_MODE_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FIFO_MODER {
-        match value {
-            false => FIFO_MODER::VALUE1,
-            true => FIFO_MODER::VALUE2,
+}
+#[doc = "Reader of field `FIFO_MODE`"]
+pub type FIFO_MODE_R = crate::R<bool, FIFO_MODE_A>;
+impl FIFO_MODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FIFO_MODE_A {
+        match self.bits {
+            false => FIFO_MODE_A::VALUE1,
+            true => FIFO_MODE_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == FIFO_MODER::VALUE1
+        *self == FIFO_MODE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == FIFO_MODER::VALUE2
+        *self == FIFO_MODE_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `FCMODE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FCMODER {
-    #[doc = "Source transaction requests are serviced when they occur. Data pre-fetching is enabled."]
-    VALUE1,
-    #[doc = "Source transaction requests are not serviced until a destination transaction request occurs. In this mode, the amount of data transferred from the source is limited so that it is guaranteed to be transferred to the destination prior to block termination by the destination. Data pre-fetching is disabled."]
-    VALUE2,
+#[doc = "Write proxy for field `FIFO_MODE`"]
+pub struct FIFO_MODE_W<'a> {
+    w: &'a mut W,
 }
-impl FCMODER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FCMODER::VALUE1 => false,
-            FCMODER::VALUE2 => true,
+impl<'a> FIFO_MODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FIFO_MODE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FCMODER {
-        match value {
-            false => FCMODER::VALUE1,
-            true => FCMODER::VALUE2,
+    #[doc = "Space/data available for single AHB transfer of the specified transfer width."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(FIFO_MODE_A::VALUE1)
+    }
+    #[doc = "Data available is greater than or equal to half the FIFO depth for destination transfers and space available is greater than half the fifo depth for source transfers. The exceptions are at the end of a burst transaction request or at the end of a block transfer."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(FIFO_MODE_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "Flow Control Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FCMODE_A {
+    #[doc = "0: Source transaction requests are serviced when they occur. Data pre-fetching is enabled."]
+    VALUE1,
+    #[doc = "1: Source transaction requests are not serviced until a destination transaction request occurs. In this mode, the amount of data transferred from the source is limited so that it is guaranteed to be transferred to the destination prior to block termination by the destination. Data pre-fetching is disabled."]
+    VALUE2,
+}
+impl From<FCMODE_A> for bool {
+    #[inline(always)]
+    fn from(variant: FCMODE_A) -> Self {
+        match variant {
+            FCMODE_A::VALUE1 => false,
+            FCMODE_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `FCMODE`"]
+pub type FCMODE_R = crate::R<bool, FCMODE_A>;
+impl FCMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FCMODE_A {
+        match self.bits {
+            false => FCMODE_A::VALUE1,
+            true => FCMODE_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == FCMODER::VALUE1
+        *self == FCMODE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == FCMODER::VALUE2
+        *self == FCMODE_A::VALUE2
     }
 }
-#[doc = r" Proxy"]
-pub struct _DEST_PERW<'a> {
+#[doc = "Write proxy for field `FCMODE`"]
+pub struct FCMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DEST_PERW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SRC_PERW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SRC_PERW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PROTCTLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PROTCTLW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FIFO_MODE`"]
-pub enum FIFO_MODEW {
-    #[doc = "Space/data available for single AHB transfer of the specified transfer width."]
-    VALUE1,
-    #[doc = "Data available is greater than or equal to half the FIFO depth for destination transfers and space available is greater than half the fifo depth for source transfers. The exceptions are at the end of a burst transaction request or at the end of a block transfer."]
-    VALUE2,
-}
-impl FIFO_MODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FIFO_MODEW::VALUE1 => false,
-            FIFO_MODEW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FIFO_MODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FIFO_MODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FIFO_MODEW) -> &'a mut W {
+impl<'a> FCMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FCMODE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Space/data available for single AHB transfer of the specified transfer width."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(FIFO_MODEW::VALUE1)
-    }
-    #[doc = "Data available is greater than or equal to half the FIFO depth for destination transfers and space available is greater than half the fifo depth for source transfers. The exceptions are at the end of a burst transaction request or at the end of a block transfer."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(FIFO_MODEW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FCMODE`"]
-pub enum FCMODEW {
-    #[doc = "Source transaction requests are serviced when they occur. Data pre-fetching is enabled."]
-    VALUE1,
-    #[doc = "Source transaction requests are not serviced until a destination transaction request occurs. In this mode, the amount of data transferred from the source is limited so that it is guaranteed to be transferred to the destination prior to block termination by the destination. Data pre-fetching is disabled."]
-    VALUE2,
-}
-impl FCMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FCMODEW::VALUE1 => false,
-            FCMODEW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FCMODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FCMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FCMODEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Source transaction requests are serviced when they occur. Data pre-fetching is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(FCMODEW::VALUE1)
+        self.variant(FCMODE_A::VALUE1)
     }
     #[doc = "Source transaction requests are not serviced until a destination transaction request occurs. In this mode, the amount of data transferred from the source is limited so that it is guaranteed to be transferred to the destination prior to block termination by the destination. Data pre-fetching is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(FCMODEW::VALUE2)
+        self.variant(FCMODE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 11:14 - Destination Peripheral"]
-    #[inline]
-    pub fn dest_per(&self) -> DEST_PERR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DEST_PERR { bits }
+    #[inline(always)]
+    pub fn dest_per(&self) -> DEST_PER_R {
+        DEST_PER_R::new(((self.bits >> 11) & 0x0f) as u8)
     }
     #[doc = "Bits 7:10 - Source Peripheral"]
-    #[inline]
-    pub fn src_per(&self) -> SRC_PERR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SRC_PERR { bits }
+    #[inline(always)]
+    pub fn src_per(&self) -> SRC_PER_R {
+        SRC_PER_R::new(((self.bits >> 7) & 0x0f) as u8)
     }
     #[doc = "Bits 2:4 - Protection Control"]
-    #[inline]
-    pub fn protctl(&self) -> PROTCTLR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PROTCTLR { bits }
+    #[inline(always)]
+    pub fn protctl(&self) -> PROTCTL_R {
+        PROTCTL_R::new(((self.bits >> 2) & 0x07) as u8)
     }
     #[doc = "Bit 1 - FIFO Mode Select"]
-    #[inline]
-    pub fn fifo_mode(&self) -> FIFO_MODER {
-        FIFO_MODER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fifo_mode(&self) -> FIFO_MODE_R {
+        FIFO_MODE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 0 - Flow Control Mode"]
-    #[inline]
-    pub fn fcmode(&self) -> FCMODER {
-        FCMODER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fcmode(&self) -> FCMODE_R {
+        FCMODE_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 4 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 11:14 - Destination Peripheral"]
-    #[inline]
-    pub fn dest_per(&mut self) -> _DEST_PERW {
-        _DEST_PERW { w: self }
+    #[inline(always)]
+    pub fn dest_per(&mut self) -> DEST_PER_W {
+        DEST_PER_W { w: self }
     }
     #[doc = "Bits 7:10 - Source Peripheral"]
-    #[inline]
-    pub fn src_per(&mut self) -> _SRC_PERW {
-        _SRC_PERW { w: self }
+    #[inline(always)]
+    pub fn src_per(&mut self) -> SRC_PER_W {
+        SRC_PER_W { w: self }
     }
     #[doc = "Bits 2:4 - Protection Control"]
-    #[inline]
-    pub fn protctl(&mut self) -> _PROTCTLW {
-        _PROTCTLW { w: self }
+    #[inline(always)]
+    pub fn protctl(&mut self) -> PROTCTL_W {
+        PROTCTL_W { w: self }
     }
     #[doc = "Bit 1 - FIFO Mode Select"]
-    #[inline]
-    pub fn fifo_mode(&mut self) -> _FIFO_MODEW {
-        _FIFO_MODEW { w: self }
+    #[inline(always)]
+    pub fn fifo_mode(&mut self) -> FIFO_MODE_W {
+        FIFO_MODE_W { w: self }
     }
     #[doc = "Bit 0 - Flow Control Mode"]
-    #[inline]
-    pub fn fcmode(&mut self) -> _FCMODEW {
-        _FCMODEW { w: self }
+    #[inline(always)]
+    pub fn fcmode(&mut self) -> FCMODE_W {
+        FCMODE_W { w: self }
     }
 }

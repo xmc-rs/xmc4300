@@ -1,692 +1,463 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CON {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CON"]
+pub type R = crate::R<u32, super::CON>;
+#[doc = "Writer for register CON"]
+pub type W = crate::W<u32, super::CON>;
+#[doc = "Register CON `reset()`'s with value 0"]
+impl crate::ResetValue for super::CON {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ECATRSTEN`"]
+#[doc = "Enable EtherCAT Reset Request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ECATRSTENR {
-    #[doc = "Reset request by EtherCAT Master disabled"]
+pub enum ECATRSTEN_A {
+    #[doc = "0: Reset request by EtherCAT Master disabled"]
     VALUE1,
-    #[doc = "Reset request by EtherCAT Master enabled"]
+    #[doc = "1: Reset request by EtherCAT Master enabled"]
     VALUE2,
 }
-impl ECATRSTENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ECATRSTENR::VALUE1 => false,
-            ECATRSTENR::VALUE2 => true,
+impl From<ECATRSTEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ECATRSTEN_A) -> Self {
+        match variant {
+            ECATRSTEN_A::VALUE1 => false,
+            ECATRSTEN_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ECATRSTENR {
-        match value {
-            false => ECATRSTENR::VALUE1,
-            true => ECATRSTENR::VALUE2,
+}
+#[doc = "Reader of field `ECATRSTEN`"]
+pub type ECATRSTEN_R = crate::R<bool, ECATRSTEN_A>;
+impl ECATRSTEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ECATRSTEN_A {
+        match self.bits {
+            false => ECATRSTEN_A::VALUE1,
+            true => ECATRSTEN_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ECATRSTENR::VALUE1
+        *self == ECATRSTEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ECATRSTENR::VALUE2
+        *self == ECATRSTEN_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `LATCHIN0SEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LATCHIN0SELR {
-    #[doc = "Data input LATCHIN0A is selected"]
-    VALUE1,
-    #[doc = "Data input LATCHIN0B is selected"]
-    VALUE2,
-    #[doc = "Data input LATCHIN0C is selected"]
-    VALUE3,
-    #[doc = "Data input LATCHIN0D is selected"]
-    VALUE4,
-}
-impl LATCHIN0SELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LATCHIN0SELR::VALUE1 => 0,
-            LATCHIN0SELR::VALUE2 => 1,
-            LATCHIN0SELR::VALUE3 => 2,
-            LATCHIN0SELR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LATCHIN0SELR {
-        match value {
-            0 => LATCHIN0SELR::VALUE1,
-            1 => LATCHIN0SELR::VALUE2,
-            2 => LATCHIN0SELR::VALUE3,
-            3 => LATCHIN0SELR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LATCHIN0SELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LATCHIN0SELR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == LATCHIN0SELR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == LATCHIN0SELR::VALUE4
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LATCHIN0R {
-    bits: bool,
-}
-impl LATCHIN0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `LATCHIN1SEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LATCHIN1SELR {
-    #[doc = "Data input LATCHIN1A is selected"]
-    VALUE1,
-    #[doc = "Data input LATCHIN1B is selected"]
-    VALUE2,
-    #[doc = "Data input LATCHIN1C is selected"]
-    VALUE3,
-    #[doc = "Data input LATCHIN1D is selected"]
-    VALUE4,
-}
-impl LATCHIN1SELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LATCHIN1SELR::VALUE1 => 0,
-            LATCHIN1SELR::VALUE2 => 1,
-            LATCHIN1SELR::VALUE3 => 2,
-            LATCHIN1SELR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LATCHIN1SELR {
-        match value {
-            0 => LATCHIN1SELR::VALUE1,
-            1 => LATCHIN1SELR::VALUE2,
-            2 => LATCHIN1SELR::VALUE3,
-            3 => LATCHIN1SELR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LATCHIN1SELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LATCHIN1SELR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == LATCHIN1SELR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == LATCHIN1SELR::VALUE4
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LATCHIN1R {
-    bits: bool,
-}
-impl LATCHIN1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PHYOFFSETR {
-    bits: u8,
-}
-impl PHYOFFSETR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `MDIO`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MDIOR {
-    #[doc = "Data input MDIA is selected"]
-    VALUE1,
-    #[doc = "Data input MDIB is selected"]
-    VALUE2,
-    #[doc = "Data input MDIC is selected"]
-    VALUE3,
-    #[doc = "Data input MDID is selected"]
-    VALUE4,
-}
-impl MDIOR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MDIOR::VALUE1 => 0,
-            MDIOR::VALUE2 => 1,
-            MDIOR::VALUE3 => 2,
-            MDIOR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MDIOR {
-        match value {
-            0 => MDIOR::VALUE1,
-            1 => MDIOR::VALUE2,
-            2 => MDIOR::VALUE3,
-            3 => MDIOR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MDIOR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MDIOR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == MDIOR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == MDIOR::VALUE4
-    }
-}
-#[doc = "Values that can be written to the field `ECATRSTEN`"]
-pub enum ECATRSTENW {
-    #[doc = "Reset request by EtherCAT Master disabled"]
-    VALUE1,
-    #[doc = "Reset request by EtherCAT Master enabled"]
-    VALUE2,
-}
-impl ECATRSTENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ECATRSTENW::VALUE1 => false,
-            ECATRSTENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ECATRSTENW<'a> {
+#[doc = "Write proxy for field `ECATRSTEN`"]
+pub struct ECATRSTEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ECATRSTENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ECATRSTENW) -> &'a mut W {
+impl<'a> ECATRSTEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ECATRSTEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Reset request by EtherCAT Master disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ECATRSTENW::VALUE1)
+        self.variant(ECATRSTEN_A::VALUE1)
     }
     #[doc = "Reset request by EtherCAT Master enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ECATRSTENW::VALUE2)
+        self.variant(ECATRSTEN_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LATCHIN0SEL`"]
-pub enum LATCHIN0SELW {
-    #[doc = "Data input LATCHIN0A is selected"]
+#[doc = "LATCHIN0 Input Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LATCHIN0SEL_A {
+    #[doc = "0: Data input LATCHIN0A is selected"]
     VALUE1,
-    #[doc = "Data input LATCHIN0B is selected"]
+    #[doc = "1: Data input LATCHIN0B is selected"]
     VALUE2,
-    #[doc = "Data input LATCHIN0C is selected"]
+    #[doc = "2: Data input LATCHIN0C is selected"]
     VALUE3,
-    #[doc = "Data input LATCHIN0D is selected"]
+    #[doc = "3: Data input LATCHIN0D is selected"]
     VALUE4,
 }
-impl LATCHIN0SELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LATCHIN0SELW::VALUE1 => 0,
-            LATCHIN0SELW::VALUE2 => 1,
-            LATCHIN0SELW::VALUE3 => 2,
-            LATCHIN0SELW::VALUE4 => 3,
+impl From<LATCHIN0SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LATCHIN0SEL_A) -> Self {
+        match variant {
+            LATCHIN0SEL_A::VALUE1 => 0,
+            LATCHIN0SEL_A::VALUE2 => 1,
+            LATCHIN0SEL_A::VALUE3 => 2,
+            LATCHIN0SEL_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _LATCHIN0SELW<'a> {
+#[doc = "Reader of field `LATCHIN0SEL`"]
+pub type LATCHIN0SEL_R = crate::R<u8, LATCHIN0SEL_A>;
+impl LATCHIN0SEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LATCHIN0SEL_A {
+        match self.bits {
+            0 => LATCHIN0SEL_A::VALUE1,
+            1 => LATCHIN0SEL_A::VALUE2,
+            2 => LATCHIN0SEL_A::VALUE3,
+            3 => LATCHIN0SEL_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LATCHIN0SEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LATCHIN0SEL_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == LATCHIN0SEL_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == LATCHIN0SEL_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `LATCHIN0SEL`"]
+pub struct LATCHIN0SEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LATCHIN0SELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LATCHIN0SELW) -> &'a mut W {
+impl<'a> LATCHIN0SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LATCHIN0SEL_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Data input LATCHIN0A is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LATCHIN0SELW::VALUE1)
+        self.variant(LATCHIN0SEL_A::VALUE1)
     }
     #[doc = "Data input LATCHIN0B is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LATCHIN0SELW::VALUE2)
+        self.variant(LATCHIN0SEL_A::VALUE2)
     }
     #[doc = "Data input LATCHIN0C is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(LATCHIN0SELW::VALUE3)
+        self.variant(LATCHIN0SEL_A::VALUE3)
     }
     #[doc = "Data input LATCHIN0D is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(LATCHIN0SELW::VALUE4)
+        self.variant(LATCHIN0SEL_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LATCHIN1SEL`"]
-pub enum LATCHIN1SELW {
-    #[doc = "Data input LATCHIN1A is selected"]
+#[doc = "Reader of field `LATCHIN0`"]
+pub type LATCHIN0_R = crate::R<bool, bool>;
+#[doc = "LATCHIN1 Input Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LATCHIN1SEL_A {
+    #[doc = "0: Data input LATCHIN1A is selected"]
     VALUE1,
-    #[doc = "Data input LATCHIN1B is selected"]
+    #[doc = "1: Data input LATCHIN1B is selected"]
     VALUE2,
-    #[doc = "Data input LATCHIN1C is selected"]
+    #[doc = "2: Data input LATCHIN1C is selected"]
     VALUE3,
-    #[doc = "Data input LATCHIN1D is selected"]
+    #[doc = "3: Data input LATCHIN1D is selected"]
     VALUE4,
 }
-impl LATCHIN1SELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LATCHIN1SELW::VALUE1 => 0,
-            LATCHIN1SELW::VALUE2 => 1,
-            LATCHIN1SELW::VALUE3 => 2,
-            LATCHIN1SELW::VALUE4 => 3,
+impl From<LATCHIN1SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LATCHIN1SEL_A) -> Self {
+        match variant {
+            LATCHIN1SEL_A::VALUE1 => 0,
+            LATCHIN1SEL_A::VALUE2 => 1,
+            LATCHIN1SEL_A::VALUE3 => 2,
+            LATCHIN1SEL_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _LATCHIN1SELW<'a> {
+#[doc = "Reader of field `LATCHIN1SEL`"]
+pub type LATCHIN1SEL_R = crate::R<u8, LATCHIN1SEL_A>;
+impl LATCHIN1SEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LATCHIN1SEL_A {
+        match self.bits {
+            0 => LATCHIN1SEL_A::VALUE1,
+            1 => LATCHIN1SEL_A::VALUE2,
+            2 => LATCHIN1SEL_A::VALUE3,
+            3 => LATCHIN1SEL_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LATCHIN1SEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LATCHIN1SEL_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == LATCHIN1SEL_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == LATCHIN1SEL_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `LATCHIN1SEL`"]
+pub struct LATCHIN1SEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LATCHIN1SELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LATCHIN1SELW) -> &'a mut W {
+impl<'a> LATCHIN1SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LATCHIN1SEL_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Data input LATCHIN1A is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LATCHIN1SELW::VALUE1)
+        self.variant(LATCHIN1SEL_A::VALUE1)
     }
     #[doc = "Data input LATCHIN1B is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LATCHIN1SELW::VALUE2)
+        self.variant(LATCHIN1SEL_A::VALUE2)
     }
     #[doc = "Data input LATCHIN1C is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(LATCHIN1SELW::VALUE3)
+        self.variant(LATCHIN1SEL_A::VALUE3)
     }
     #[doc = "Data input LATCHIN1D is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(LATCHIN1SELW::VALUE4)
+        self.variant(LATCHIN1SEL_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PHYOFFSETW<'a> {
+#[doc = "Reader of field `LATCHIN1`"]
+pub type LATCHIN1_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PHYOFFSET`"]
+pub type PHYOFFSET_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PHYOFFSET`"]
+pub struct PHYOFFSET_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PHYOFFSETW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PHYOFFSET_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 16)) | (((value as u32) & 0x1f) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MDIO`"]
-pub enum MDIOW {
-    #[doc = "Data input MDIA is selected"]
+#[doc = "MDIO Input Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MDIO_A {
+    #[doc = "0: Data input MDIA is selected"]
     VALUE1,
-    #[doc = "Data input MDIB is selected"]
+    #[doc = "1: Data input MDIB is selected"]
     VALUE2,
-    #[doc = "Data input MDIC is selected"]
+    #[doc = "2: Data input MDIC is selected"]
     VALUE3,
-    #[doc = "Data input MDID is selected"]
+    #[doc = "3: Data input MDID is selected"]
     VALUE4,
 }
-impl MDIOW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MDIOW::VALUE1 => 0,
-            MDIOW::VALUE2 => 1,
-            MDIOW::VALUE3 => 2,
-            MDIOW::VALUE4 => 3,
+impl From<MDIO_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MDIO_A) -> Self {
+        match variant {
+            MDIO_A::VALUE1 => 0,
+            MDIO_A::VALUE2 => 1,
+            MDIO_A::VALUE3 => 2,
+            MDIO_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MDIOW<'a> {
+#[doc = "Reader of field `MDIO`"]
+pub type MDIO_R = crate::R<u8, MDIO_A>;
+impl MDIO_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MDIO_A {
+        match self.bits {
+            0 => MDIO_A::VALUE1,
+            1 => MDIO_A::VALUE2,
+            2 => MDIO_A::VALUE3,
+            3 => MDIO_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MDIO_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MDIO_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == MDIO_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == MDIO_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `MDIO`"]
+pub struct MDIO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MDIOW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MDIOW) -> &'a mut W {
+impl<'a> MDIO_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MDIO_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Data input MDIA is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MDIOW::VALUE1)
+        self.variant(MDIO_A::VALUE1)
     }
     #[doc = "Data input MDIB is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MDIOW::VALUE2)
+        self.variant(MDIO_A::VALUE2)
     }
     #[doc = "Data input MDIC is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(MDIOW::VALUE3)
+        self.variant(MDIO_A::VALUE3)
     }
     #[doc = "Data input MDID is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(MDIOW::VALUE4)
+        self.variant(MDIO_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Enable EtherCAT Reset Request"]
-    #[inline]
-    pub fn ecatrsten(&self) -> ECATRSTENR {
-        ECATRSTENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ecatrsten(&self) -> ECATRSTEN_R {
+        ECATRSTEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bits 8:9 - LATCHIN0 Input Select"]
-    #[inline]
-    pub fn latchin0sel(&self) -> LATCHIN0SELR {
-        LATCHIN0SELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn latchin0sel(&self) -> LATCHIN0SEL_R {
+        LATCHIN0SEL_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bit 11 - EtherCAT LATCH_IN0 Input Signal"]
-    #[inline]
-    pub fn latchin0(&self) -> LATCHIN0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LATCHIN0R { bits }
+    #[inline(always)]
+    pub fn latchin0(&self) -> LATCHIN0_R {
+        LATCHIN0_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bits 12:13 - LATCHIN1 Input Select"]
-    #[inline]
-    pub fn latchin1sel(&self) -> LATCHIN1SELR {
-        LATCHIN1SELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn latchin1sel(&self) -> LATCHIN1SEL_R {
+        LATCHIN1SEL_R::new(((self.bits >> 12) & 0x03) as u8)
     }
     #[doc = "Bit 15 - EtherCAT LATCH_IN1 Input Signal"]
-    #[inline]
-    pub fn latchin1(&self) -> LATCHIN1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LATCHIN1R { bits }
+    #[inline(always)]
+    pub fn latchin1(&self) -> LATCHIN1_R {
+        LATCHIN1_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bits 16:20 - Ethernet PHY Address Offset"]
-    #[inline]
-    pub fn phyoffset(&self) -> PHYOFFSETR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PHYOFFSETR { bits }
+    #[inline(always)]
+    pub fn phyoffset(&self) -> PHYOFFSET_R {
+        PHYOFFSET_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
     #[doc = "Bits 22:23 - MDIO Input Select"]
-    #[inline]
-    pub fn mdio(&self) -> MDIOR {
-        MDIOR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mdio(&self) -> MDIO_R {
+        MDIO_R::new(((self.bits >> 22) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Enable EtherCAT Reset Request"]
-    #[inline]
-    pub fn ecatrsten(&mut self) -> _ECATRSTENW {
-        _ECATRSTENW { w: self }
+    #[inline(always)]
+    pub fn ecatrsten(&mut self) -> ECATRSTEN_W {
+        ECATRSTEN_W { w: self }
     }
     #[doc = "Bits 8:9 - LATCHIN0 Input Select"]
-    #[inline]
-    pub fn latchin0sel(&mut self) -> _LATCHIN0SELW {
-        _LATCHIN0SELW { w: self }
+    #[inline(always)]
+    pub fn latchin0sel(&mut self) -> LATCHIN0SEL_W {
+        LATCHIN0SEL_W { w: self }
     }
     #[doc = "Bits 12:13 - LATCHIN1 Input Select"]
-    #[inline]
-    pub fn latchin1sel(&mut self) -> _LATCHIN1SELW {
-        _LATCHIN1SELW { w: self }
+    #[inline(always)]
+    pub fn latchin1sel(&mut self) -> LATCHIN1SEL_W {
+        LATCHIN1SEL_W { w: self }
     }
     #[doc = "Bits 16:20 - Ethernet PHY Address Offset"]
-    #[inline]
-    pub fn phyoffset(&mut self) -> _PHYOFFSETW {
-        _PHYOFFSETW { w: self }
+    #[inline(always)]
+    pub fn phyoffset(&mut self) -> PHYOFFSET_W {
+        PHYOFFSET_W { w: self }
     }
     #[doc = "Bits 22:23 - MDIO Input Select"]
-    #[inline]
-    pub fn mdio(&mut self) -> _MDIOW {
-        _MDIOW { w: self }
+    #[inline(always)]
+    pub fn mdio(&mut self) -> MDIO_W {
+        MDIO_W { w: self }
     }
 }

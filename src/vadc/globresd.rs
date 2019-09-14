@@ -1,362 +1,200 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::GLOBRESD {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register GLOBRESD"]
+pub type R = crate::R<u32, super::GLOBRESD>;
+#[doc = "Writer for register GLOBRESD"]
+pub type W = crate::W<u32, super::GLOBRESD>;
+#[doc = "Register GLOBRESD `reset()`'s with value 0"]
+impl crate::ResetValue for super::GLOBRESD {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct RESULTR {
-    bits: u16,
-}
-impl RESULTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct GNRR {
-    bits: u8,
-}
-impl GNRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CHNRR {
-    bits: u8,
-}
-impl CHNRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EMUXR {
-    bits: u8,
-}
-impl EMUXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CRSR {
-    bits: u8,
-}
-impl CRSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `FCR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FCRR {
-    #[doc = "Signal level was below compare value"]
-    VALUE1,
-    #[doc = "Signal level was above compare value"]
-    VALUE2,
-}
-impl FCRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FCRR::VALUE1 => false,
-            FCRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FCRR {
-        match value {
-            false => FCRR::VALUE1,
-            true => FCRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == FCRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == FCRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `VF`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VFR {
-    #[doc = "Read access: No new valid data available Write access: No effect"]
-    VALUE1,
-    #[doc = "Read access: Bitfield RESULT contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and the data reduction counter (overrides a hardware set action)"]
-    VALUE2,
-}
-impl VFR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VFR::VALUE1 => false,
-            VFR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VFR {
-        match value {
-            false => VFR::VALUE1,
-            true => VFR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == VFR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == VFR::VALUE2
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RESULTW<'a> {
+#[doc = "Reader of field `RESULT`"]
+pub type RESULT_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `RESULT`"]
+pub struct RESULT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RESULTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RESULT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `VF`"]
-pub enum VFW {
-    #[doc = "Read access: No new valid data available Write access: No effect"]
+#[doc = "Reader of field `GNR`"]
+pub type GNR_R = crate::R<u8, u8>;
+#[doc = "Reader of field `CHNR`"]
+pub type CHNR_R = crate::R<u8, u8>;
+#[doc = "Reader of field `EMUX`"]
+pub type EMUX_R = crate::R<u8, u8>;
+#[doc = "Reader of field `CRS`"]
+pub type CRS_R = crate::R<u8, u8>;
+#[doc = "Fast Compare Result\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FCR_A {
+    #[doc = "0: Signal level was below compare value"]
     VALUE1,
-    #[doc = "Read access: Bitfield RESULT contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and the data reduction counter (overrides a hardware set action)"]
+    #[doc = "1: Signal level was above compare value"]
     VALUE2,
 }
-impl VFW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            VFW::VALUE1 => false,
-            VFW::VALUE2 => true,
+impl From<FCR_A> for bool {
+    #[inline(always)]
+    fn from(variant: FCR_A) -> Self {
+        match variant {
+            FCR_A::VALUE1 => false,
+            FCR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _VFW<'a> {
+#[doc = "Reader of field `FCR`"]
+pub type FCR_R = crate::R<bool, FCR_A>;
+impl FCR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FCR_A {
+        match self.bits {
+            false => FCR_A::VALUE1,
+            true => FCR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == FCR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == FCR_A::VALUE2
+    }
+}
+#[doc = "Valid Flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VF_A {
+    #[doc = "0: Read access: No new valid data available Write access: No effect"]
+    VALUE1,
+    #[doc = "1: Read access: Bitfield RESULT contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and the data reduction counter (overrides a hardware set action)"]
+    VALUE2,
+}
+impl From<VF_A> for bool {
+    #[inline(always)]
+    fn from(variant: VF_A) -> Self {
+        match variant {
+            VF_A::VALUE1 => false,
+            VF_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `VF`"]
+pub type VF_R = crate::R<bool, VF_A>;
+impl VF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VF_A {
+        match self.bits {
+            false => VF_A::VALUE1,
+            true => VF_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == VF_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == VF_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `VF`"]
+pub struct VF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _VFW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: VFW) -> &'a mut W {
+impl<'a> VF_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: VF_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(VFW::VALUE1)
+        self.variant(VF_A::VALUE1)
     }
     #[doc = "Read access: Bitfield RESULT contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and the data reduction counter (overrides a hardware set action)"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(VFW::VALUE2)
+        self.variant(VF_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Result of most recent conversion"]
-    #[inline]
-    pub fn result(&self) -> RESULTR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        RESULTR { bits }
+    #[inline(always)]
+    pub fn result(&self) -> RESULT_R {
+        RESULT_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:19 - Group Number"]
-    #[inline]
-    pub fn gnr(&self) -> GNRR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        GNRR { bits }
+    #[inline(always)]
+    pub fn gnr(&self) -> GNR_R {
+        GNR_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bits 20:24 - Channel Number"]
-    #[inline]
-    pub fn chnr(&self) -> CHNRR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CHNRR { bits }
+    #[inline(always)]
+    pub fn chnr(&self) -> CHNR_R {
+        CHNR_R::new(((self.bits >> 20) & 0x1f) as u8)
     }
     #[doc = "Bits 25:27 - External Multiplexer Setting"]
-    #[inline]
-    pub fn emux(&self) -> EMUXR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        EMUXR { bits }
+    #[inline(always)]
+    pub fn emux(&self) -> EMUX_R {
+        EMUX_R::new(((self.bits >> 25) & 0x07) as u8)
     }
     #[doc = "Bits 28:29 - Converted Request Source"]
-    #[inline]
-    pub fn crs(&self) -> CRSR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CRSR { bits }
+    #[inline(always)]
+    pub fn crs(&self) -> CRS_R {
+        CRS_R::new(((self.bits >> 28) & 0x03) as u8)
     }
     #[doc = "Bit 30 - Fast Compare Result"]
-    #[inline]
-    pub fn fcr(&self) -> FCRR {
-        FCRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fcr(&self) -> FCR_R {
+        FCR_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Valid Flag"]
-    #[inline]
-    pub fn vf(&self) -> VFR {
-        VFR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn vf(&self) -> VF_R {
+        VF_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - Result of most recent conversion"]
-    #[inline]
-    pub fn result(&mut self) -> _RESULTW {
-        _RESULTW { w: self }
+    #[inline(always)]
+    pub fn result(&mut self) -> RESULT_W {
+        RESULT_W { w: self }
     }
     #[doc = "Bit 31 - Valid Flag"]
-    #[inline]
-    pub fn vf(&mut self) -> _VFW {
-        _VFW { w: self }
+    #[inline(always)]
+    pub fn vf(&mut self) -> VF_W {
+        VF_W { w: self }
     }
 }

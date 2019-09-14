@@ -1,533 +1,500 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CEFCLR {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register CEFCLR"]
+pub type W = crate::W<u32, super::CEFCLR>;
+#[doc = "Register CEFCLR `reset()`'s with value 0"]
+impl crate::ResetValue for super::CEFCLR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Values that can be written to the field `CEV0`"]
-pub enum CEV0W {
-    #[doc = "No action"]
+#[doc = "Clear Channel Event for Channel 0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV0_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Clear the channel event flag in GxCEFLAG"]
+    #[doc = "1: Clear the channel event flag in GxCEFLAG"]
     VALUE2,
 }
-impl CEV0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV0W::VALUE1 => false,
-            CEV0W::VALUE2 => true,
+impl From<CEV0_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CEV0_AW) -> Self {
+        match variant {
+            CEV0_AW::VALUE1 => false,
+            CEV0_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV0W<'a> {
+#[doc = "Write proxy for field `CEV0`"]
+pub struct CEV0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV0W) -> &'a mut W {
+impl<'a> CEV0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV0_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV0W::VALUE1)
+        self.variant(CEV0_AW::VALUE1)
     }
     #[doc = "Clear the channel event flag in GxCEFLAG"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV0W::VALUE2)
+        self.variant(CEV0_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV1`"]
-pub enum CEV1W {
-    #[doc = "No action"]
+#[doc = "Clear Channel Event for Channel 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV1_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Clear the channel event flag in GxCEFLAG"]
+    #[doc = "1: Clear the channel event flag in GxCEFLAG"]
     VALUE2,
 }
-impl CEV1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV1W::VALUE1 => false,
-            CEV1W::VALUE2 => true,
+impl From<CEV1_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CEV1_AW) -> Self {
+        match variant {
+            CEV1_AW::VALUE1 => false,
+            CEV1_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV1W<'a> {
+#[doc = "Write proxy for field `CEV1`"]
+pub struct CEV1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV1W) -> &'a mut W {
+impl<'a> CEV1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV1_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV1W::VALUE1)
+        self.variant(CEV1_AW::VALUE1)
     }
     #[doc = "Clear the channel event flag in GxCEFLAG"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV1W::VALUE2)
+        self.variant(CEV1_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV2`"]
-pub enum CEV2W {
-    #[doc = "No action"]
+#[doc = "Clear Channel Event for Channel 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV2_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Clear the channel event flag in GxCEFLAG"]
+    #[doc = "1: Clear the channel event flag in GxCEFLAG"]
     VALUE2,
 }
-impl CEV2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV2W::VALUE1 => false,
-            CEV2W::VALUE2 => true,
+impl From<CEV2_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CEV2_AW) -> Self {
+        match variant {
+            CEV2_AW::VALUE1 => false,
+            CEV2_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV2W<'a> {
+#[doc = "Write proxy for field `CEV2`"]
+pub struct CEV2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV2W) -> &'a mut W {
+impl<'a> CEV2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV2_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV2W::VALUE1)
+        self.variant(CEV2_AW::VALUE1)
     }
     #[doc = "Clear the channel event flag in GxCEFLAG"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV2W::VALUE2)
+        self.variant(CEV2_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV3`"]
-pub enum CEV3W {
-    #[doc = "No action"]
+#[doc = "Clear Channel Event for Channel 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV3_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Clear the channel event flag in GxCEFLAG"]
+    #[doc = "1: Clear the channel event flag in GxCEFLAG"]
     VALUE2,
 }
-impl CEV3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV3W::VALUE1 => false,
-            CEV3W::VALUE2 => true,
+impl From<CEV3_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CEV3_AW) -> Self {
+        match variant {
+            CEV3_AW::VALUE1 => false,
+            CEV3_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV3W<'a> {
+#[doc = "Write proxy for field `CEV3`"]
+pub struct CEV3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV3W) -> &'a mut W {
+impl<'a> CEV3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV3_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV3W::VALUE1)
+        self.variant(CEV3_AW::VALUE1)
     }
     #[doc = "Clear the channel event flag in GxCEFLAG"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV3W::VALUE2)
+        self.variant(CEV3_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV4`"]
-pub enum CEV4W {
-    #[doc = "No action"]
+#[doc = "Clear Channel Event for Channel 4\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV4_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Clear the channel event flag in GxCEFLAG"]
+    #[doc = "1: Clear the channel event flag in GxCEFLAG"]
     VALUE2,
 }
-impl CEV4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV4W::VALUE1 => false,
-            CEV4W::VALUE2 => true,
+impl From<CEV4_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CEV4_AW) -> Self {
+        match variant {
+            CEV4_AW::VALUE1 => false,
+            CEV4_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV4W<'a> {
+#[doc = "Write proxy for field `CEV4`"]
+pub struct CEV4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV4W) -> &'a mut W {
+impl<'a> CEV4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV4_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV4W::VALUE1)
+        self.variant(CEV4_AW::VALUE1)
     }
     #[doc = "Clear the channel event flag in GxCEFLAG"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV4W::VALUE2)
+        self.variant(CEV4_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV5`"]
-pub enum CEV5W {
-    #[doc = "No action"]
+#[doc = "Clear Channel Event for Channel 5\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV5_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Clear the channel event flag in GxCEFLAG"]
+    #[doc = "1: Clear the channel event flag in GxCEFLAG"]
     VALUE2,
 }
-impl CEV5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV5W::VALUE1 => false,
-            CEV5W::VALUE2 => true,
+impl From<CEV5_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CEV5_AW) -> Self {
+        match variant {
+            CEV5_AW::VALUE1 => false,
+            CEV5_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV5W<'a> {
+#[doc = "Write proxy for field `CEV5`"]
+pub struct CEV5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV5W) -> &'a mut W {
+impl<'a> CEV5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV5_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV5W::VALUE1)
+        self.variant(CEV5_AW::VALUE1)
     }
     #[doc = "Clear the channel event flag in GxCEFLAG"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV5W::VALUE2)
+        self.variant(CEV5_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV6`"]
-pub enum CEV6W {
-    #[doc = "No action"]
+#[doc = "Clear Channel Event for Channel 6\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV6_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Clear the channel event flag in GxCEFLAG"]
+    #[doc = "1: Clear the channel event flag in GxCEFLAG"]
     VALUE2,
 }
-impl CEV6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV6W::VALUE1 => false,
-            CEV6W::VALUE2 => true,
+impl From<CEV6_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CEV6_AW) -> Self {
+        match variant {
+            CEV6_AW::VALUE1 => false,
+            CEV6_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV6W<'a> {
+#[doc = "Write proxy for field `CEV6`"]
+pub struct CEV6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV6W) -> &'a mut W {
+impl<'a> CEV6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV6_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV6W::VALUE1)
+        self.variant(CEV6_AW::VALUE1)
     }
     #[doc = "Clear the channel event flag in GxCEFLAG"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV6W::VALUE2)
+        self.variant(CEV6_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV7`"]
-pub enum CEV7W {
-    #[doc = "No action"]
+#[doc = "Clear Channel Event for Channel 7\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV7_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Clear the channel event flag in GxCEFLAG"]
+    #[doc = "1: Clear the channel event flag in GxCEFLAG"]
     VALUE2,
 }
-impl CEV7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV7W::VALUE1 => false,
-            CEV7W::VALUE2 => true,
+impl From<CEV7_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CEV7_AW) -> Self {
+        match variant {
+            CEV7_AW::VALUE1 => false,
+            CEV7_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV7W<'a> {
+#[doc = "Write proxy for field `CEV7`"]
+pub struct CEV7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV7W) -> &'a mut W {
+impl<'a> CEV7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV7_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV7W::VALUE1)
+        self.variant(CEV7_AW::VALUE1)
     }
     #[doc = "Clear the channel event flag in GxCEFLAG"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV7W::VALUE2)
+        self.variant(CEV7_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Clear Channel Event for Channel 0"]
-    #[inline]
-    pub fn cev0(&mut self) -> _CEV0W {
-        _CEV0W { w: self }
+    #[inline(always)]
+    pub fn cev0(&mut self) -> CEV0_W {
+        CEV0_W { w: self }
     }
     #[doc = "Bit 1 - Clear Channel Event for Channel 1"]
-    #[inline]
-    pub fn cev1(&mut self) -> _CEV1W {
-        _CEV1W { w: self }
+    #[inline(always)]
+    pub fn cev1(&mut self) -> CEV1_W {
+        CEV1_W { w: self }
     }
     #[doc = "Bit 2 - Clear Channel Event for Channel 2"]
-    #[inline]
-    pub fn cev2(&mut self) -> _CEV2W {
-        _CEV2W { w: self }
+    #[inline(always)]
+    pub fn cev2(&mut self) -> CEV2_W {
+        CEV2_W { w: self }
     }
     #[doc = "Bit 3 - Clear Channel Event for Channel 3"]
-    #[inline]
-    pub fn cev3(&mut self) -> _CEV3W {
-        _CEV3W { w: self }
+    #[inline(always)]
+    pub fn cev3(&mut self) -> CEV3_W {
+        CEV3_W { w: self }
     }
     #[doc = "Bit 4 - Clear Channel Event for Channel 4"]
-    #[inline]
-    pub fn cev4(&mut self) -> _CEV4W {
-        _CEV4W { w: self }
+    #[inline(always)]
+    pub fn cev4(&mut self) -> CEV4_W {
+        CEV4_W { w: self }
     }
     #[doc = "Bit 5 - Clear Channel Event for Channel 5"]
-    #[inline]
-    pub fn cev5(&mut self) -> _CEV5W {
-        _CEV5W { w: self }
+    #[inline(always)]
+    pub fn cev5(&mut self) -> CEV5_W {
+        CEV5_W { w: self }
     }
     #[doc = "Bit 6 - Clear Channel Event for Channel 6"]
-    #[inline]
-    pub fn cev6(&mut self) -> _CEV6W {
-        _CEV6W { w: self }
+    #[inline(always)]
+    pub fn cev6(&mut self) -> CEV6_W {
+        CEV6_W { w: self }
     }
     #[doc = "Bit 7 - Clear Channel Event for Channel 7"]
-    #[inline]
-    pub fn cev7(&mut self) -> _CEV7W {
-        _CEV7W { w: self }
+    #[inline(always)]
+    pub fn cev7(&mut self) -> CEV7_W {
+        CEV7_W { w: self }
     }
 }

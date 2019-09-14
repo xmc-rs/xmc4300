@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::RX_ALIGNMENT_ERROR_FRAMES {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXALGNERRR {
-    bits: u32,
-}
-impl RXALGNERRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register RX_ALIGNMENT_ERROR_FRAMES"]
+pub type R = crate::R<u32, super::RX_ALIGNMENT_ERROR_FRAMES>;
+#[doc = "Reader of field `RXALGNERR`"]
+pub type RXALGNERR_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - This field indicates the number of frames received with alignment (dribble) error."]
-    #[inline]
-    pub fn rxalgnerr(&self) -> RXALGNERRR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        RXALGNERRR { bits }
+    #[inline(always)]
+    pub fn rxalgnerr(&self) -> RXALGNERR_R {
+        RXALGNERR_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

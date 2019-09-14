@@ -1,81 +1,25 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::ID {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MODRR {
-    bits: u8,
-}
-impl MODRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MODTR {
-    bits: u8,
-}
-impl MODTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MODNR {
-    bits: u16,
-}
-impl MODNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of register ID"]
+pub type R = crate::R<u32, super::ID>;
+#[doc = "Reader of field `MODR`"]
+pub type MODR_R = crate::R<u8, u8>;
+#[doc = "Reader of field `MODT`"]
+pub type MODT_R = crate::R<u8, u8>;
+#[doc = "Reader of field `MODN`"]
+pub type MODN_R = crate::R<u16, u16>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Module Revision"]
-    #[inline]
-    pub fn modr(&self) -> MODRR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MODRR { bits }
+    #[inline(always)]
+    pub fn modr(&self) -> MODR_R {
+        MODR_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Module Type"]
-    #[inline]
-    pub fn modt(&self) -> MODTR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MODTR { bits }
+    #[inline(always)]
+    pub fn modt(&self) -> MODT_R {
+        MODT_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:31 - Module Number"]
-    #[inline]
-    pub fn modn(&self) -> MODNR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        MODNR { bits }
+    #[inline(always)]
+    pub fn modn(&self) -> MODN_R {
+        MODN_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }

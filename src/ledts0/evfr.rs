@@ -1,400 +1,264 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::EVFR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register EVFR"]
+pub type R = crate::R<u32, super::EVFR>;
+#[doc = "Writer for register EVFR"]
+pub type W = crate::W<u32, super::EVFR>;
+#[doc = "Register EVFR `reset()`'s with value 0"]
+impl crate::ResetValue for super::EVFR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct TSFR {
-    bits: bool,
-}
-impl TSFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TFFR {
-    bits: bool,
-}
-impl TFFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TPFR {
-    bits: bool,
-}
-impl TPFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `TSCTROVF`"]
+#[doc = "Reader of field `TSF`"]
+pub type TSF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TFF`"]
+pub type TFF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TPF`"]
+pub type TPF_R = crate::R<bool, bool>;
+#[doc = "TS-Counter Overflow Indication\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TSCTROVFR {
-    #[doc = "No overflow has occurred."]
+pub enum TSCTROVF_A {
+    #[doc = "0: No overflow has occurred."]
     VALUE1,
-    #[doc = "The TS-counter has overflowed at least once."]
+    #[doc = "1: The TS-counter has overflowed at least once."]
     VALUE2,
 }
-impl TSCTROVFR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TSCTROVFR::VALUE1 => false,
-            TSCTROVFR::VALUE2 => true,
+impl From<TSCTROVF_A> for bool {
+    #[inline(always)]
+    fn from(variant: TSCTROVF_A) -> Self {
+        match variant {
+            TSCTROVF_A::VALUE1 => false,
+            TSCTROVF_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TSCTROVFR {
-        match value {
-            false => TSCTROVFR::VALUE1,
-            true => TSCTROVFR::VALUE2,
+}
+#[doc = "Reader of field `TSCTROVF`"]
+pub type TSCTROVF_R = crate::R<bool, TSCTROVF_A>;
+impl TSCTROVF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TSCTROVF_A {
+        match self.bits {
+            false => TSCTROVF_A::VALUE1,
+            true => TSCTROVF_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TSCTROVFR::VALUE1
+        *self == TSCTROVF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TSCTROVFR::VALUE2
+        *self == TSCTROVF_A::VALUE2
     }
 }
-#[doc = "Values that can be written to the field `CTSF`"]
-pub enum CTSFW {
-    #[doc = "No action."]
+#[doc = "Clear Time Slice Interrupt Flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CTSF_AW {
+    #[doc = "0: No action."]
     VALUE1,
-    #[doc = "Bit TSF is cleared."]
+    #[doc = "1: Bit TSF is cleared."]
     VALUE2,
 }
-impl CTSFW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CTSFW::VALUE1 => false,
-            CTSFW::VALUE2 => true,
+impl From<CTSF_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CTSF_AW) -> Self {
+        match variant {
+            CTSF_AW::VALUE1 => false,
+            CTSF_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CTSFW<'a> {
+#[doc = "Write proxy for field `CTSF`"]
+pub struct CTSF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CTSFW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CTSFW) -> &'a mut W {
+impl<'a> CTSF_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CTSF_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CTSFW::VALUE1)
+        self.variant(CTSF_AW::VALUE1)
     }
     #[doc = "Bit TSF is cleared."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CTSFW::VALUE2)
+        self.variant(CTSF_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CTFF`"]
-pub enum CTFFW {
-    #[doc = "No action."]
+#[doc = "Clear (Extended) Time Frame Interrupt Flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CTFF_AW {
+    #[doc = "0: No action."]
     VALUE1,
-    #[doc = "Bit TFF is cleared."]
+    #[doc = "1: Bit TFF is cleared."]
     VALUE2,
 }
-impl CTFFW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CTFFW::VALUE1 => false,
-            CTFFW::VALUE2 => true,
+impl From<CTFF_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CTFF_AW) -> Self {
+        match variant {
+            CTFF_AW::VALUE1 => false,
+            CTFF_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CTFFW<'a> {
+#[doc = "Write proxy for field `CTFF`"]
+pub struct CTFF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CTFFW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CTFFW) -> &'a mut W {
+impl<'a> CTFF_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CTFF_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CTFFW::VALUE1)
+        self.variant(CTFF_AW::VALUE1)
     }
     #[doc = "Bit TFF is cleared."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CTFFW::VALUE2)
+        self.variant(CTFF_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CTPF`"]
-pub enum CTPFW {
-    #[doc = "No action."]
+#[doc = "Clear Autoscan Time Period Interrupt Flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CTPF_AW {
+    #[doc = "0: No action."]
     VALUE1,
-    #[doc = "Bit TPF is cleared."]
+    #[doc = "1: Bit TPF is cleared."]
     VALUE2,
 }
-impl CTPFW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CTPFW::VALUE1 => false,
-            CTPFW::VALUE2 => true,
+impl From<CTPF_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CTPF_AW) -> Self {
+        match variant {
+            CTPF_AW::VALUE1 => false,
+            CTPF_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CTPFW<'a> {
+#[doc = "Write proxy for field `CTPF`"]
+pub struct CTPF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CTPFW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CTPFW) -> &'a mut W {
+impl<'a> CTPF_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CTPF_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CTPFW::VALUE1)
+        self.variant(CTPF_AW::VALUE1)
     }
     #[doc = "Bit TPF is cleared."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CTPFW::VALUE2)
+        self.variant(CTPF_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Time Slice Interrupt Flag"]
-    #[inline]
-    pub fn tsf(&self) -> TSFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TSFR { bits }
+    #[inline(always)]
+    pub fn tsf(&self) -> TSF_R {
+        TSF_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - (Extended) Time Frame Interrupt Flag"]
-    #[inline]
-    pub fn tff(&self) -> TFFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TFFR { bits }
+    #[inline(always)]
+    pub fn tff(&self) -> TFF_R {
+        TFF_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Autoscan Time Period Interrupt Flag"]
-    #[inline]
-    pub fn tpf(&self) -> TPFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TPFR { bits }
+    #[inline(always)]
+    pub fn tpf(&self) -> TPF_R {
+        TPF_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - TS-Counter Overflow Indication"]
-    #[inline]
-    pub fn tsctrovf(&self) -> TSCTROVFR {
-        TSCTROVFR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tsctrovf(&self) -> TSCTROVF_R {
+        TSCTROVF_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 16 - Clear Time Slice Interrupt Flag"]
-    #[inline]
-    pub fn ctsf(&mut self) -> _CTSFW {
-        _CTSFW { w: self }
+    #[inline(always)]
+    pub fn ctsf(&mut self) -> CTSF_W {
+        CTSF_W { w: self }
     }
     #[doc = "Bit 17 - Clear (Extended) Time Frame Interrupt Flag"]
-    #[inline]
-    pub fn ctff(&mut self) -> _CTFFW {
-        _CTFFW { w: self }
+    #[inline(always)]
+    pub fn ctff(&mut self) -> CTFF_W {
+        CTFF_W { w: self }
     }
     #[doc = "Bit 18 - Clear Autoscan Time Period Interrupt Flag"]
-    #[inline]
-    pub fn ctpf(&mut self) -> _CTPFW {
-        _CTPFW { w: self }
+    #[inline(always)]
+    pub fn ctpf(&mut self) -> CTPF_W {
+        CTPF_W { w: self }
     }
 }

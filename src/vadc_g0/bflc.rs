@@ -1,610 +1,440 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::BFLC {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register BFLC"]
+pub type R = crate::R<u32, super::BFLC>;
+#[doc = "Writer for register BFLC"]
+pub type W = crate::W<u32, super::BFLC>;
+#[doc = "Register BFLC `reset()`'s with value 0"]
+impl crate::ResetValue for super::BFLC {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `BFM0`"]
+#[doc = "Boundary Flag y Mode Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BFM0R {
-    #[doc = "Disable boundary flag, BFLy is not changed"]
+pub enum BFM0_A {
+    #[doc = "0: Disable boundary flag, BFLy is not changed"]
     VALUE1,
-    #[doc = "Always enable boundary flag (follow compare results)"]
+    #[doc = "1: Always enable boundary flag (follow compare results)"]
     VALUE2,
-    #[doc = "Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
+    #[doc = "2: Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
     VALUE3,
-    #[doc = "Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
+    #[doc = "3: Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
     VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl BFM0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            BFM0R::VALUE1 => 0,
-            BFM0R::VALUE2 => 1,
-            BFM0R::VALUE3 => 2,
-            BFM0R::VALUE4 => 3,
-            BFM0R::_Reserved(bits) => bits,
+impl From<BFM0_A> for u8 {
+    #[inline(always)]
+    fn from(variant: BFM0_A) -> Self {
+        match variant {
+            BFM0_A::VALUE1 => 0,
+            BFM0_A::VALUE2 => 1,
+            BFM0_A::VALUE3 => 2,
+            BFM0_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> BFM0R {
-        match value {
-            0 => BFM0R::VALUE1,
-            1 => BFM0R::VALUE2,
-            2 => BFM0R::VALUE3,
-            3 => BFM0R::VALUE4,
-            i => BFM0R::_Reserved(i),
+}
+#[doc = "Reader of field `BFM0`"]
+pub type BFM0_R = crate::R<u8, BFM0_A>;
+impl BFM0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, BFM0_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(BFM0_A::VALUE1),
+            1 => Val(BFM0_A::VALUE2),
+            2 => Val(BFM0_A::VALUE3),
+            3 => Val(BFM0_A::VALUE4),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFM0R::VALUE1
+        *self == BFM0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFM0R::VALUE2
+        *self == BFM0_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == BFM0R::VALUE3
+        *self == BFM0_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == BFM0R::VALUE4
+        *self == BFM0_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `BFM1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BFM1R {
-    #[doc = "Disable boundary flag, BFLy is not changed"]
-    VALUE1,
-    #[doc = "Always enable boundary flag (follow compare results)"]
-    VALUE2,
-    #[doc = "Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
-    VALUE3,
-    #[doc = "Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
-    VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl BFM1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            BFM1R::VALUE1 => 0,
-            BFM1R::VALUE2 => 1,
-            BFM1R::VALUE3 => 2,
-            BFM1R::VALUE4 => 3,
-            BFM1R::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> BFM1R {
-        match value {
-            0 => BFM1R::VALUE1,
-            1 => BFM1R::VALUE2,
-            2 => BFM1R::VALUE3,
-            3 => BFM1R::VALUE4,
-            i => BFM1R::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == BFM1R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == BFM1R::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == BFM1R::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == BFM1R::VALUE4
-    }
-}
-#[doc = "Possible values of the field `BFM2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BFM2R {
-    #[doc = "Disable boundary flag, BFLy is not changed"]
-    VALUE1,
-    #[doc = "Always enable boundary flag (follow compare results)"]
-    VALUE2,
-    #[doc = "Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
-    VALUE3,
-    #[doc = "Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
-    VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl BFM2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            BFM2R::VALUE1 => 0,
-            BFM2R::VALUE2 => 1,
-            BFM2R::VALUE3 => 2,
-            BFM2R::VALUE4 => 3,
-            BFM2R::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> BFM2R {
-        match value {
-            0 => BFM2R::VALUE1,
-            1 => BFM2R::VALUE2,
-            2 => BFM2R::VALUE3,
-            3 => BFM2R::VALUE4,
-            i => BFM2R::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == BFM2R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == BFM2R::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == BFM2R::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == BFM2R::VALUE4
-    }
-}
-#[doc = "Possible values of the field `BFM3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BFM3R {
-    #[doc = "Disable boundary flag, BFLy is not changed"]
-    VALUE1,
-    #[doc = "Always enable boundary flag (follow compare results)"]
-    VALUE2,
-    #[doc = "Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
-    VALUE3,
-    #[doc = "Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
-    VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl BFM3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            BFM3R::VALUE1 => 0,
-            BFM3R::VALUE2 => 1,
-            BFM3R::VALUE3 => 2,
-            BFM3R::VALUE4 => 3,
-            BFM3R::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> BFM3R {
-        match value {
-            0 => BFM3R::VALUE1,
-            1 => BFM3R::VALUE2,
-            2 => BFM3R::VALUE3,
-            3 => BFM3R::VALUE4,
-            i => BFM3R::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == BFM3R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == BFM3R::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == BFM3R::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == BFM3R::VALUE4
-    }
-}
-#[doc = "Values that can be written to the field `BFM0`"]
-pub enum BFM0W {
-    #[doc = "Disable boundary flag, BFLy is not changed"]
-    VALUE1,
-    #[doc = "Always enable boundary flag (follow compare results)"]
-    VALUE2,
-    #[doc = "Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
-    VALUE3,
-    #[doc = "Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
-    VALUE4,
-}
-impl BFM0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            BFM0W::VALUE1 => 0,
-            BFM0W::VALUE2 => 1,
-            BFM0W::VALUE3 => 2,
-            BFM0W::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BFM0W<'a> {
+#[doc = "Write proxy for field `BFM0`"]
+pub struct BFM0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BFM0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BFM0W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> BFM0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BFM0_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Disable boundary flag, BFLy is not changed"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(BFM0W::VALUE1)
+        self.variant(BFM0_A::VALUE1)
     }
     #[doc = "Always enable boundary flag (follow compare results)"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(BFM0W::VALUE2)
+        self.variant(BFM0_A::VALUE2)
     }
     #[doc = "Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(BFM0W::VALUE3)
+        self.variant(BFM0_A::VALUE3)
     }
     #[doc = "Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(BFM0W::VALUE4)
+        self.variant(BFM0_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BFM1`"]
-pub enum BFM1W {
-    #[doc = "Disable boundary flag, BFLy is not changed"]
+#[doc = "Boundary Flag y Mode Control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BFM1_A {
+    #[doc = "0: Disable boundary flag, BFLy is not changed"]
     VALUE1,
-    #[doc = "Always enable boundary flag (follow compare results)"]
+    #[doc = "1: Always enable boundary flag (follow compare results)"]
     VALUE2,
-    #[doc = "Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
+    #[doc = "2: Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
     VALUE3,
-    #[doc = "Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
+    #[doc = "3: Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
     VALUE4,
 }
-impl BFM1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            BFM1W::VALUE1 => 0,
-            BFM1W::VALUE2 => 1,
-            BFM1W::VALUE3 => 2,
-            BFM1W::VALUE4 => 3,
+impl From<BFM1_A> for u8 {
+    #[inline(always)]
+    fn from(variant: BFM1_A) -> Self {
+        match variant {
+            BFM1_A::VALUE1 => 0,
+            BFM1_A::VALUE2 => 1,
+            BFM1_A::VALUE3 => 2,
+            BFM1_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BFM1W<'a> {
+#[doc = "Reader of field `BFM1`"]
+pub type BFM1_R = crate::R<u8, BFM1_A>;
+impl BFM1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, BFM1_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(BFM1_A::VALUE1),
+            1 => Val(BFM1_A::VALUE2),
+            2 => Val(BFM1_A::VALUE3),
+            3 => Val(BFM1_A::VALUE4),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == BFM1_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == BFM1_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == BFM1_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == BFM1_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `BFM1`"]
+pub struct BFM1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BFM1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BFM1W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> BFM1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BFM1_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Disable boundary flag, BFLy is not changed"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(BFM1W::VALUE1)
+        self.variant(BFM1_A::VALUE1)
     }
     #[doc = "Always enable boundary flag (follow compare results)"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(BFM1W::VALUE2)
+        self.variant(BFM1_A::VALUE2)
     }
     #[doc = "Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(BFM1W::VALUE3)
+        self.variant(BFM1_A::VALUE3)
     }
     #[doc = "Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(BFM1W::VALUE4)
+        self.variant(BFM1_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BFM2`"]
-pub enum BFM2W {
-    #[doc = "Disable boundary flag, BFLy is not changed"]
+#[doc = "Boundary Flag y Mode Control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BFM2_A {
+    #[doc = "0: Disable boundary flag, BFLy is not changed"]
     VALUE1,
-    #[doc = "Always enable boundary flag (follow compare results)"]
+    #[doc = "1: Always enable boundary flag (follow compare results)"]
     VALUE2,
-    #[doc = "Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
+    #[doc = "2: Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
     VALUE3,
-    #[doc = "Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
+    #[doc = "3: Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
     VALUE4,
 }
-impl BFM2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            BFM2W::VALUE1 => 0,
-            BFM2W::VALUE2 => 1,
-            BFM2W::VALUE3 => 2,
-            BFM2W::VALUE4 => 3,
+impl From<BFM2_A> for u8 {
+    #[inline(always)]
+    fn from(variant: BFM2_A) -> Self {
+        match variant {
+            BFM2_A::VALUE1 => 0,
+            BFM2_A::VALUE2 => 1,
+            BFM2_A::VALUE3 => 2,
+            BFM2_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BFM2W<'a> {
+#[doc = "Reader of field `BFM2`"]
+pub type BFM2_R = crate::R<u8, BFM2_A>;
+impl BFM2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, BFM2_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(BFM2_A::VALUE1),
+            1 => Val(BFM2_A::VALUE2),
+            2 => Val(BFM2_A::VALUE3),
+            3 => Val(BFM2_A::VALUE4),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == BFM2_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == BFM2_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == BFM2_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == BFM2_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `BFM2`"]
+pub struct BFM2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BFM2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BFM2W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> BFM2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BFM2_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Disable boundary flag, BFLy is not changed"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(BFM2W::VALUE1)
+        self.variant(BFM2_A::VALUE1)
     }
     #[doc = "Always enable boundary flag (follow compare results)"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(BFM2W::VALUE2)
+        self.variant(BFM2_A::VALUE2)
     }
     #[doc = "Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(BFM2W::VALUE3)
+        self.variant(BFM2_A::VALUE3)
     }
     #[doc = "Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(BFM2W::VALUE4)
+        self.variant(BFM2_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BFM3`"]
-pub enum BFM3W {
-    #[doc = "Disable boundary flag, BFLy is not changed"]
+#[doc = "Boundary Flag y Mode Control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BFM3_A {
+    #[doc = "0: Disable boundary flag, BFLy is not changed"]
     VALUE1,
-    #[doc = "Always enable boundary flag (follow compare results)"]
+    #[doc = "1: Always enable boundary flag (follow compare results)"]
     VALUE2,
-    #[doc = "Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
+    #[doc = "2: Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
     VALUE3,
-    #[doc = "Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
+    #[doc = "3: Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
     VALUE4,
 }
-impl BFM3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            BFM3W::VALUE1 => 0,
-            BFM3W::VALUE2 => 1,
-            BFM3W::VALUE3 => 2,
-            BFM3W::VALUE4 => 3,
+impl From<BFM3_A> for u8 {
+    #[inline(always)]
+    fn from(variant: BFM3_A) -> Self {
+        match variant {
+            BFM3_A::VALUE1 => 0,
+            BFM3_A::VALUE2 => 1,
+            BFM3_A::VALUE3 => 2,
+            BFM3_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BFM3W<'a> {
+#[doc = "Reader of field `BFM3`"]
+pub type BFM3_R = crate::R<u8, BFM3_A>;
+impl BFM3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, BFM3_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(BFM3_A::VALUE1),
+            1 => Val(BFM3_A::VALUE2),
+            2 => Val(BFM3_A::VALUE3),
+            3 => Val(BFM3_A::VALUE4),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == BFM3_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == BFM3_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == BFM3_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == BFM3_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `BFM3`"]
+pub struct BFM3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BFM3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BFM3W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> BFM3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BFM3_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Disable boundary flag, BFLy is not changed"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(BFM3W::VALUE1)
+        self.variant(BFM3_A::VALUE1)
     }
     #[doc = "Always enable boundary flag (follow compare results)"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(BFM3W::VALUE2)
+        self.variant(BFM3_A::VALUE2)
     }
     #[doc = "Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(BFM3W::VALUE3)
+        self.variant(BFM3_A::VALUE3)
     }
     #[doc = "Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(BFM3W::VALUE4)
+        self.variant(BFM3_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Boundary Flag y Mode Control"]
-    #[inline]
-    pub fn bfm0(&self) -> BFM0R {
-        BFM0R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn bfm0(&self) -> BFM0_R {
+        BFM0_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Boundary Flag y Mode Control"]
-    #[inline]
-    pub fn bfm1(&self) -> BFM1R {
-        BFM1R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn bfm1(&self) -> BFM1_R {
+        BFM1_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - Boundary Flag y Mode Control"]
-    #[inline]
-    pub fn bfm2(&self) -> BFM2R {
-        BFM2R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn bfm2(&self) -> BFM2_R {
+        BFM2_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - Boundary Flag y Mode Control"]
-    #[inline]
-    pub fn bfm3(&self) -> BFM3R {
-        BFM3R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn bfm3(&self) -> BFM3_R {
+        BFM3_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Boundary Flag y Mode Control"]
-    #[inline]
-    pub fn bfm0(&mut self) -> _BFM0W {
-        _BFM0W { w: self }
+    #[inline(always)]
+    pub fn bfm0(&mut self) -> BFM0_W {
+        BFM0_W { w: self }
     }
     #[doc = "Bits 4:7 - Boundary Flag y Mode Control"]
-    #[inline]
-    pub fn bfm1(&mut self) -> _BFM1W {
-        _BFM1W { w: self }
+    #[inline(always)]
+    pub fn bfm1(&mut self) -> BFM1_W {
+        BFM1_W { w: self }
     }
     #[doc = "Bits 8:11 - Boundary Flag y Mode Control"]
-    #[inline]
-    pub fn bfm2(&mut self) -> _BFM2W {
-        _BFM2W { w: self }
+    #[inline(always)]
+    pub fn bfm2(&mut self) -> BFM2_W {
+        BFM2_W { w: self }
     }
     #[doc = "Bits 12:15 - Boundary Flag y Mode Control"]
-    #[inline]
-    pub fn bfm3(&mut self) -> _BFM3W {
-        _BFM3W { w: self }
+    #[inline(always)]
+    pub fn bfm3(&mut self) -> BFM3_W {
+        BFM3_W { w: self }
     }
 }

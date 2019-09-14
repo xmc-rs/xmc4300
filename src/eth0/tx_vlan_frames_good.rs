@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::TX_VLAN_FRAMES_GOOD {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXVLANGR {
-    bits: u32,
-}
-impl TXVLANGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register TX_VLAN_FRAMES_GOOD"]
+pub type R = crate::R<u32, super::TX_VLAN_FRAMES_GOOD>;
+#[doc = "Reader of field `TXVLANG`"]
+pub type TXVLANG_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - This register maintains the number of transmitted good VLAN frames, exclusive of retried frames."]
-    #[inline]
-    pub fn txvlang(&self) -> TXVLANGR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        TXVLANGR { bits }
+    #[inline(always)]
+    pub fn txvlang(&self) -> TXVLANG_R {
+        TXVLANG_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

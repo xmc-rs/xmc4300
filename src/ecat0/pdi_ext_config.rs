@@ -1,136 +1,114 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u16,
-}
-impl super::PDI_EXT_CONFIG {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `R_Pref`"]
+#[doc = "Reader of register PDI_EXT_CONFIG"]
+pub type R = crate::R<u16, super::PDI_EXT_CONFIG>;
+#[doc = "Read Prefetch Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum R_PREFR {
-    #[doc = "4 cycles"]
+pub enum R_PREF_A {
+    #[doc = "0: 4 cycles"]
     VALUE1,
-    #[doc = "1 cycle (typical)"]
+    #[doc = "1: 1 cycle (typical)"]
     VALUE2,
-    #[doc = "2 cycles"]
+    #[doc = "2: 2 cycles"]
     VALUE3,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl R_PREFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            R_PREFR::VALUE1 => 0,
-            R_PREFR::VALUE2 => 1,
-            R_PREFR::VALUE3 => 2,
-            R_PREFR::_Reserved(bits) => bits,
+impl From<R_PREF_A> for u8 {
+    #[inline(always)]
+    fn from(variant: R_PREF_A) -> Self {
+        match variant {
+            R_PREF_A::VALUE1 => 0,
+            R_PREF_A::VALUE2 => 1,
+            R_PREF_A::VALUE3 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> R_PREFR {
-        match value {
-            0 => R_PREFR::VALUE1,
-            1 => R_PREFR::VALUE2,
-            2 => R_PREFR::VALUE3,
-            i => R_PREFR::_Reserved(i),
+}
+#[doc = "Reader of field `R_Pref`"]
+pub type R_PREF_R = crate::R<u8, R_PREF_A>;
+impl R_PREF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, R_PREF_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(R_PREF_A::VALUE1),
+            1 => Val(R_PREF_A::VALUE2),
+            2 => Val(R_PREF_A::VALUE3),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == R_PREFR::VALUE1
+        *self == R_PREF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == R_PREFR::VALUE2
+        *self == R_PREF_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == R_PREFR::VALUE3
+        *self == R_PREF_A::VALUE3
     }
 }
-#[doc = "Possible values of the field `SUB_TYPE`"]
+#[doc = "On-chip Sub Type for AXI\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SUB_TYPER {
-    #[doc = "AXI3"]
+pub enum SUB_TYPE_A {
+    #[doc = "0: AXI3"]
     VALUE1,
-    #[doc = "AXI4"]
+    #[doc = "1: AXI4"]
     VALUE2,
-    #[doc = "AXI4 Lite"]
+    #[doc = "2: AXI4 Lite"]
     VALUE3,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SUB_TYPER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SUB_TYPER::VALUE1 => 0,
-            SUB_TYPER::VALUE2 => 1,
-            SUB_TYPER::VALUE3 => 2,
-            SUB_TYPER::_Reserved(bits) => bits,
+impl From<SUB_TYPE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SUB_TYPE_A) -> Self {
+        match variant {
+            SUB_TYPE_A::VALUE1 => 0,
+            SUB_TYPE_A::VALUE2 => 1,
+            SUB_TYPE_A::VALUE3 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SUB_TYPER {
-        match value {
-            0 => SUB_TYPER::VALUE1,
-            1 => SUB_TYPER::VALUE2,
-            2 => SUB_TYPER::VALUE3,
-            i => SUB_TYPER::_Reserved(i),
+}
+#[doc = "Reader of field `SUB_TYPE`"]
+pub type SUB_TYPE_R = crate::R<u8, SUB_TYPE_A>;
+impl SUB_TYPE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SUB_TYPE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SUB_TYPE_A::VALUE1),
+            1 => Val(SUB_TYPE_A::VALUE2),
+            2 => Val(SUB_TYPE_A::VALUE3),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SUB_TYPER::VALUE1
+        *self == SUB_TYPE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SUB_TYPER::VALUE2
+        *self == SUB_TYPE_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == SUB_TYPER::VALUE3
+        *self == SUB_TYPE_A::VALUE3
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Read Prefetch Size"]
-    #[inline]
-    pub fn r_pref(&self) -> R_PREFR {
-        R_PREFR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u16) as u8
-        })
+    #[inline(always)]
+    pub fn r_pref(&self) -> R_PREF_R {
+        R_PREF_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 8:10 - On-chip Sub Type for AXI"]
-    #[inline]
-    pub fn sub_type(&self) -> SUB_TYPER {
-        SUB_TYPER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u16) as u8
-        })
+    #[inline(always)]
+    pub fn sub_type(&self) -> SUB_TYPE_R {
+        SUB_TYPE_R::new(((self.bits >> 8) & 0x07) as u8)
     }
 }

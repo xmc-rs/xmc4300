@@ -1,144 +1,64 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SGR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SGR"]
+pub type R = crate::R<u32, super::SGR>;
+#[doc = "Writer for register SGR"]
+pub type W = crate::W<u32, super::SGR>;
+#[doc = "Register SGR `reset()`'s with value 0"]
+impl crate::ResetValue for super::SGR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct SGCR {
-    bits: u16,
-}
-impl SGCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SGIR {
-    bits: u32,
-}
-impl SGIR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SGCW<'a> {
+#[doc = "Reader of field `SGC`"]
+pub type SGC_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `SGC`"]
+pub struct SGC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SGCW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SGC_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 4095;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0fff << 20)) | (((value as u32) & 0x0fff) << 20);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SGIW<'a> {
+#[doc = "Reader of field `SGI`"]
+pub type SGI_R = crate::R<u32, u32>;
+#[doc = "Write proxy for field `SGI`"]
+pub struct SGI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SGIW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SGI_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 1048575;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x000f_ffff) | ((value as u32) & 0x000f_ffff);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 20:31 - Source gather count"]
-    #[inline]
-    pub fn sgc(&self) -> SGCR {
-        let bits = {
-            const MASK: u16 = 4095;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        SGCR { bits }
+    #[inline(always)]
+    pub fn sgc(&self) -> SGC_R {
+        SGC_R::new(((self.bits >> 20) & 0x0fff) as u16)
     }
     #[doc = "Bits 0:19 - Source gather interval"]
-    #[inline]
-    pub fn sgi(&self) -> SGIR {
-        let bits = {
-            const MASK: u32 = 1048575;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        SGIR { bits }
+    #[inline(always)]
+    pub fn sgi(&self) -> SGI_R {
+        SGI_R::new((self.bits & 0x000f_ffff) as u32)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 20:31 - Source gather count"]
-    #[inline]
-    pub fn sgc(&mut self) -> _SGCW {
-        _SGCW { w: self }
+    #[inline(always)]
+    pub fn sgc(&mut self) -> SGC_W {
+        SGC_W { w: self }
     }
     #[doc = "Bits 0:19 - Source gather interval"]
-    #[inline]
-    pub fn sgi(&mut self) -> _SGIW {
-        _SGIW { w: self }
+    #[inline(always)]
+    pub fn sgi(&mut self) -> SGI_W {
+        SGI_W { w: self }
     }
 }

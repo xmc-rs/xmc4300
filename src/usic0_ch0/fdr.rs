@@ -1,260 +1,154 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FDR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FDR"]
+pub type R = crate::R<u32, super::FDR>;
+#[doc = "Writer for register FDR"]
+pub type W = crate::W<u32, super::FDR>;
+#[doc = "Register FDR `reset()`'s with value 0"]
+impl crate::ResetValue for super::FDR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct STEPR {
-    bits: u16,
+#[doc = "Reader of field `STEP`"]
+pub type STEP_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `STEP`"]
+pub struct STEP_W<'a> {
+    w: &'a mut W,
 }
-impl STEPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
+impl<'a> STEP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03ff) | ((value as u32) & 0x03ff);
+        self.w
     }
 }
-#[doc = "Possible values of the field `DM`"]
+#[doc = "Divider Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DMR {
-    #[doc = "The divider is switched off, fFD = 0."]
+pub enum DM_A {
+    #[doc = "0: The divider is switched off, fFD = 0."]
     VALUE1,
-    #[doc = "Normal divider mode selected."]
+    #[doc = "1: Normal divider mode selected."]
     VALUE2,
-    #[doc = "Fractional divider mode selected."]
+    #[doc = "2: Fractional divider mode selected."]
     VALUE3,
-    #[doc = "The divider is switched off, fFD = 0."]
+    #[doc = "3: The divider is switched off, fFD = 0."]
     VALUE4,
 }
-impl DMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DMR::VALUE1 => 0,
-            DMR::VALUE2 => 1,
-            DMR::VALUE3 => 2,
-            DMR::VALUE4 => 3,
+impl From<DM_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DM_A) -> Self {
+        match variant {
+            DM_A::VALUE1 => 0,
+            DM_A::VALUE2 => 1,
+            DM_A::VALUE3 => 2,
+            DM_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DMR {
-        match value {
-            0 => DMR::VALUE1,
-            1 => DMR::VALUE2,
-            2 => DMR::VALUE3,
-            3 => DMR::VALUE4,
+}
+#[doc = "Reader of field `DM`"]
+pub type DM_R = crate::R<u8, DM_A>;
+impl DM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DM_A {
+        match self.bits {
+            0 => DM_A::VALUE1,
+            1 => DM_A::VALUE2,
+            2 => DM_A::VALUE3,
+            3 => DM_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DMR::VALUE1
+        *self == DM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DMR::VALUE2
+        *self == DM_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == DMR::VALUE3
+        *self == DM_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == DMR::VALUE4
+        *self == DM_A::VALUE4
     }
 }
-#[doc = r" Value of the field"]
-pub struct RESULTR {
-    bits: u16,
-}
-impl RESULTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STEPW<'a> {
+#[doc = "Write proxy for field `DM`"]
+pub struct DM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _STEPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 1023;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DM`"]
-pub enum DMW {
-    #[doc = "The divider is switched off, fFD = 0."]
-    VALUE1,
-    #[doc = "Normal divider mode selected."]
-    VALUE2,
-    #[doc = "Fractional divider mode selected."]
-    VALUE3,
-    #[doc = "The divider is switched off, fFD = 0."]
-    VALUE4,
-}
-impl DMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            DMW::VALUE1 => 0,
-            DMW::VALUE2 => 1,
-            DMW::VALUE3 => 2,
-            DMW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DMW) -> &'a mut W {
+impl<'a> DM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DM_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "The divider is switched off, fFD = 0."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(DMW::VALUE1)
+        self.variant(DM_A::VALUE1)
     }
     #[doc = "Normal divider mode selected."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(DMW::VALUE2)
+        self.variant(DM_A::VALUE2)
     }
     #[doc = "Fractional divider mode selected."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(DMW::VALUE3)
+        self.variant(DM_A::VALUE3)
     }
     #[doc = "The divider is switched off, fFD = 0."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(DMW::VALUE4)
+        self.variant(DM_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
         self.w
     }
 }
+#[doc = "Reader of field `RESULT`"]
+pub type RESULT_R = crate::R<u16, u16>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:9 - Step Value"]
-    #[inline]
-    pub fn step(&self) -> STEPR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        STEPR { bits }
+    #[inline(always)]
+    pub fn step(&self) -> STEP_R {
+        STEP_R::new((self.bits & 0x03ff) as u16)
     }
     #[doc = "Bits 14:15 - Divider Mode"]
-    #[inline]
-    pub fn dm(&self) -> DMR {
-        DMR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn dm(&self) -> DM_R {
+        DM_R::new(((self.bits >> 14) & 0x03) as u8)
     }
     #[doc = "Bits 16:25 - Result Value"]
-    #[inline]
-    pub fn result(&self) -> RESULTR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        RESULTR { bits }
+    #[inline(always)]
+    pub fn result(&self) -> RESULT_R {
+        RESULT_R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:9 - Step Value"]
-    #[inline]
-    pub fn step(&mut self) -> _STEPW {
-        _STEPW { w: self }
+    #[inline(always)]
+    pub fn step(&mut self) -> STEP_W {
+        STEP_W { w: self }
     }
     #[doc = "Bits 14:15 - Divider Mode"]
-    #[inline]
-    pub fn dm(&mut self) -> _DMW {
-        _DMW { w: self }
+    #[inline(always)]
+    pub fn dm(&mut self) -> DM_W {
+        DM_W { w: self }
     }
 }

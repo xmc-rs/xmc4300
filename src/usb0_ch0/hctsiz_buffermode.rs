@@ -1,280 +1,171 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::HCTSIZ_BUFFERMODE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register HCTSIZ_BUFFERMODE"]
+pub type R = crate::R<u32, super::HCTSIZ_BUFFERMODE>;
+#[doc = "Writer for register HCTSIZ_BUFFERMODE"]
+pub type W = crate::W<u32, super::HCTSIZ_BUFFERMODE>;
+#[doc = "Register HCTSIZ_BUFFERMODE `reset()`'s with value 0"]
+impl crate::ResetValue for super::HCTSIZ_BUFFERMODE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct XFERSIZER {
-    bits: u32,
+#[doc = "Reader of field `XferSize`"]
+pub type XFERSIZE_R = crate::R<u32, u32>;
+#[doc = "Write proxy for field `XferSize`"]
+pub struct XFERSIZE_W<'a> {
+    w: &'a mut W,
 }
-impl XFERSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
+impl<'a> XFERSIZE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u32) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x0007_ffff) | ((value as u32) & 0x0007_ffff);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct PKTCNTR {
-    bits: u16,
+#[doc = "Reader of field `PktCnt`"]
+pub type PKTCNT_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `PktCnt`"]
+pub struct PKTCNT_W<'a> {
+    w: &'a mut W,
 }
-impl PKTCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
+impl<'a> PKTCNT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03ff << 19)) | (((value as u32) & 0x03ff) << 19);
+        self.w
     }
 }
-#[doc = "Possible values of the field `Pid`"]
+#[doc = "PID\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIDR {
-    #[doc = "DATA0"]
+pub enum PID_A {
+    #[doc = "0: DATA0"]
     VALUE1,
-    #[doc = "DATA2"]
+    #[doc = "1: DATA2"]
     VALUE2,
-    #[doc = "DATA1"]
+    #[doc = "2: DATA1"]
     VALUE3,
-    #[doc = "MDATA (non-control)/SETUP (control)"]
+    #[doc = "3: MDATA (non-control)/SETUP (control)"]
     VALUE4,
 }
-impl PIDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PIDR::VALUE1 => 0,
-            PIDR::VALUE2 => 1,
-            PIDR::VALUE3 => 2,
-            PIDR::VALUE4 => 3,
+impl From<PID_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PID_A) -> Self {
+        match variant {
+            PID_A::VALUE1 => 0,
+            PID_A::VALUE2 => 1,
+            PID_A::VALUE3 => 2,
+            PID_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PIDR {
-        match value {
-            0 => PIDR::VALUE1,
-            1 => PIDR::VALUE2,
-            2 => PIDR::VALUE3,
-            3 => PIDR::VALUE4,
+}
+#[doc = "Reader of field `Pid`"]
+pub type PID_R = crate::R<u8, PID_A>;
+impl PID_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PID_A {
+        match self.bits {
+            0 => PID_A::VALUE1,
+            1 => PID_A::VALUE2,
+            2 => PID_A::VALUE3,
+            3 => PID_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PIDR::VALUE1
+        *self == PID_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PIDR::VALUE2
+        *self == PID_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == PIDR::VALUE3
+        *self == PID_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == PIDR::VALUE4
+        *self == PID_A::VALUE4
     }
 }
-#[doc = r" Proxy"]
-pub struct _XFERSIZEW<'a> {
+#[doc = "Write proxy for field `Pid`"]
+pub struct PID_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _XFERSIZEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 524287;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PKTCNTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PKTCNTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 1023;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `Pid`"]
-pub enum PIDW {
-    #[doc = "DATA0"]
-    VALUE1,
-    #[doc = "DATA2"]
-    VALUE2,
-    #[doc = "DATA1"]
-    VALUE3,
-    #[doc = "MDATA (non-control)/SETUP (control)"]
-    VALUE4,
-}
-impl PIDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PIDW::VALUE1 => 0,
-            PIDW::VALUE2 => 1,
-            PIDW::VALUE3 => 2,
-            PIDW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PIDW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PIDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PIDW) -> &'a mut W {
+impl<'a> PID_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PID_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "DATA0"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(PIDW::VALUE1)
+        self.variant(PID_A::VALUE1)
     }
     #[doc = "DATA2"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(PIDW::VALUE2)
+        self.variant(PID_A::VALUE2)
     }
     #[doc = "DATA1"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(PIDW::VALUE3)
+        self.variant(PID_A::VALUE3)
     }
     #[doc = "MDATA (non-control)/SETUP (control)"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(PIDW::VALUE4)
+        self.variant(PID_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 29)) | (((value as u32) & 0x03) << 29);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:18 - Transfer Size"]
-    #[inline]
-    pub fn xfer_size(&self) -> XFERSIZER {
-        let bits = {
-            const MASK: u32 = 524287;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        XFERSIZER { bits }
+    #[inline(always)]
+    pub fn xfer_size(&self) -> XFERSIZE_R {
+        XFERSIZE_R::new((self.bits & 0x0007_ffff) as u32)
     }
     #[doc = "Bits 19:28 - Packet Count"]
-    #[inline]
-    pub fn pkt_cnt(&self) -> PKTCNTR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        PKTCNTR { bits }
+    #[inline(always)]
+    pub fn pkt_cnt(&self) -> PKTCNT_R {
+        PKTCNT_R::new(((self.bits >> 19) & 0x03ff) as u16)
     }
     #[doc = "Bits 29:30 - PID"]
-    #[inline]
-    pub fn pid(&self) -> PIDR {
-        PIDR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pid(&self) -> PID_R {
+        PID_R::new(((self.bits >> 29) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:18 - Transfer Size"]
-    #[inline]
-    pub fn xfer_size(&mut self) -> _XFERSIZEW {
-        _XFERSIZEW { w: self }
+    #[inline(always)]
+    pub fn xfer_size(&mut self) -> XFERSIZE_W {
+        XFERSIZE_W { w: self }
     }
     #[doc = "Bits 19:28 - Packet Count"]
-    #[inline]
-    pub fn pkt_cnt(&mut self) -> _PKTCNTW {
-        _PKTCNTW { w: self }
+    #[inline(always)]
+    pub fn pkt_cnt(&mut self) -> PKTCNT_W {
+        PKTCNT_W { w: self }
     }
     #[doc = "Bits 29:30 - PID"]
-    #[inline]
-    pub fn pid(&mut self) -> _PIDW {
-        _PIDW { w: self }
+    #[inline(always)]
+    pub fn pid(&mut self) -> PID_W {
+        PID_W { w: self }
     }
 }

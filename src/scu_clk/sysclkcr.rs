@@ -1,222 +1,128 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SYSCLKCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SYSCLKCR"]
+pub type R = crate::R<u32, super::SYSCLKCR>;
+#[doc = "Writer for register SYSCLKCR"]
+pub type W = crate::W<u32, super::SYSCLKCR>;
+#[doc = "Register SYSCLKCR `reset()`'s with value 0"]
+impl crate::ResetValue for super::SYSCLKCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct SYSDIVR {
-    bits: u8,
-}
-impl SYSDIVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `SYSSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SYSSELR {
-    #[doc = "fOFI clock"]
-    CONST_0,
-    #[doc = "fPLL clock"]
-    CONST_1,
-}
-impl SYSSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SYSSELR::CONST_0 => false,
-            SYSSELR::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SYSSELR {
-        match value {
-            false => SYSSELR::CONST_0,
-            true => SYSSELR::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == SYSSELR::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == SYSSELR::CONST_1
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SYSDIVW<'a> {
+#[doc = "Reader of field `SYSDIV`"]
+pub type SYSDIV_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SYSDIV`"]
+pub struct SYSDIV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SYSDIVW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SYSDIV_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SYSSEL`"]
-pub enum SYSSELW {
-    #[doc = "fOFI clock"]
+#[doc = "System Clock Selection Value\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SYSSEL_A {
+    #[doc = "0: fOFI clock"]
     CONST_0,
-    #[doc = "fPLL clock"]
+    #[doc = "1: fPLL clock"]
     CONST_1,
 }
-impl SYSSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SYSSELW::CONST_0 => false,
-            SYSSELW::CONST_1 => true,
+impl From<SYSSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: SYSSEL_A) -> Self {
+        match variant {
+            SYSSEL_A::CONST_0 => false,
+            SYSSEL_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SYSSELW<'a> {
+#[doc = "Reader of field `SYSSEL`"]
+pub type SYSSEL_R = crate::R<bool, SYSSEL_A>;
+impl SYSSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SYSSEL_A {
+        match self.bits {
+            false => SYSSEL_A::CONST_0,
+            true => SYSSEL_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == SYSSEL_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == SYSSEL_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `SYSSEL`"]
+pub struct SYSSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SYSSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SYSSELW) -> &'a mut W {
+impl<'a> SYSSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SYSSEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "fOFI clock"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(SYSSELW::CONST_0)
+        self.variant(SYSSEL_A::CONST_0)
     }
     #[doc = "fPLL clock"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(SYSSELW::CONST_1)
+        self.variant(SYSSEL_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - System Clock Division Value"]
-    #[inline]
-    pub fn sysdiv(&self) -> SYSDIVR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SYSDIVR { bits }
+    #[inline(always)]
+    pub fn sysdiv(&self) -> SYSDIV_R {
+        SYSDIV_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bit 16 - System Clock Selection Value"]
-    #[inline]
-    pub fn syssel(&self) -> SYSSELR {
-        SYSSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn syssel(&self) -> SYSSEL_R {
+        SYSSEL_R::new(((self.bits >> 16) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - System Clock Division Value"]
-    #[inline]
-    pub fn sysdiv(&mut self) -> _SYSDIVW {
-        _SYSDIVW { w: self }
+    #[inline(always)]
+    pub fn sysdiv(&mut self) -> SYSDIV_W {
+        SYSDIV_W { w: self }
     }
     #[doc = "Bit 16 - System Clock Selection Value"]
-    #[inline]
-    pub fn syssel(&mut self) -> _SYSSELW {
-        _SYSSELW { w: self }
+    #[inline(always)]
+    pub fn syssel(&mut self) -> SYSSEL_W {
+        SYSSEL_W { w: self }
     }
 }

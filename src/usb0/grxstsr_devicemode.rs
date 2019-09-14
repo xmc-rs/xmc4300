@@ -1,223 +1,161 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::GRXSTSR_DEVICEMODE {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EPNUMR {
-    bits: u8,
-}
-impl EPNUMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BCNTR {
-    bits: u16,
-}
-impl BCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `DPID`"]
+#[doc = "Reader of register GRXSTSR_DEVICEMODE"]
+pub type R = crate::R<u32, super::GRXSTSR_DEVICEMODE>;
+#[doc = "Reader of field `EPNum`"]
+pub type EPNUM_R = crate::R<u8, u8>;
+#[doc = "Reader of field `BCnt`"]
+pub type BCNT_R = crate::R<u16, u16>;
+#[doc = "Data PID\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DPIDR {
-    #[doc = "DATA0"]
+pub enum DPID_A {
+    #[doc = "0: DATA0"]
     VALUE1,
-    #[doc = "DATA1"]
+    #[doc = "2: DATA1"]
     VALUE2,
-    #[doc = "DATA2"]
+    #[doc = "1: DATA2"]
     VALUE3,
-    #[doc = "MDATA"]
+    #[doc = "3: MDATA"]
     VALUE4,
 }
-impl DPIDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DPIDR::VALUE1 => 0,
-            DPIDR::VALUE2 => 2,
-            DPIDR::VALUE3 => 1,
-            DPIDR::VALUE4 => 3,
+impl From<DPID_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DPID_A) -> Self {
+        match variant {
+            DPID_A::VALUE1 => 0,
+            DPID_A::VALUE2 => 2,
+            DPID_A::VALUE3 => 1,
+            DPID_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DPIDR {
-        match value {
-            0 => DPIDR::VALUE1,
-            2 => DPIDR::VALUE2,
-            1 => DPIDR::VALUE3,
-            3 => DPIDR::VALUE4,
+}
+#[doc = "Reader of field `DPID`"]
+pub type DPID_R = crate::R<u8, DPID_A>;
+impl DPID_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DPID_A {
+        match self.bits {
+            0 => DPID_A::VALUE1,
+            2 => DPID_A::VALUE2,
+            1 => DPID_A::VALUE3,
+            3 => DPID_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DPIDR::VALUE1
+        *self == DPID_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DPIDR::VALUE2
+        *self == DPID_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == DPIDR::VALUE3
+        *self == DPID_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == DPIDR::VALUE4
+        *self == DPID_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `PktSts`"]
+#[doc = "Packet Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PKTSTSR {
-    #[doc = "Global OUT NAK (triggers an interrupt)"]
+pub enum PKTSTS_A {
+    #[doc = "1: Global OUT NAK (triggers an interrupt)"]
     VALUE1,
-    #[doc = "OUT data packet received"]
+    #[doc = "2: OUT data packet received"]
     VALUE2,
-    #[doc = "OUT transfer completed (triggers an interrupt)"]
+    #[doc = "3: OUT transfer completed (triggers an interrupt)"]
     VALUE3,
-    #[doc = "SETUP transaction completed (triggers an interrupt)"]
+    #[doc = "4: SETUP transaction completed (triggers an interrupt)"]
     VALUE4,
-    #[doc = "SETUP data packet received"]
+    #[doc = "6: SETUP data packet received"]
     VALUE5,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl PKTSTSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PKTSTSR::VALUE1 => 1,
-            PKTSTSR::VALUE2 => 2,
-            PKTSTSR::VALUE3 => 3,
-            PKTSTSR::VALUE4 => 4,
-            PKTSTSR::VALUE5 => 6,
-            PKTSTSR::_Reserved(bits) => bits,
+impl From<PKTSTS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PKTSTS_A) -> Self {
+        match variant {
+            PKTSTS_A::VALUE1 => 1,
+            PKTSTS_A::VALUE2 => 2,
+            PKTSTS_A::VALUE3 => 3,
+            PKTSTS_A::VALUE4 => 4,
+            PKTSTS_A::VALUE5 => 6,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PKTSTSR {
-        match value {
-            1 => PKTSTSR::VALUE1,
-            2 => PKTSTSR::VALUE2,
-            3 => PKTSTSR::VALUE3,
-            4 => PKTSTSR::VALUE4,
-            6 => PKTSTSR::VALUE5,
-            i => PKTSTSR::_Reserved(i),
+}
+#[doc = "Reader of field `PktSts`"]
+pub type PKTSTS_R = crate::R<u8, PKTSTS_A>;
+impl PKTSTS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PKTSTS_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(PKTSTS_A::VALUE1),
+            2 => Val(PKTSTS_A::VALUE2),
+            3 => Val(PKTSTS_A::VALUE3),
+            4 => Val(PKTSTS_A::VALUE4),
+            6 => Val(PKTSTS_A::VALUE5),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PKTSTSR::VALUE1
+        *self == PKTSTS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PKTSTSR::VALUE2
+        *self == PKTSTS_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == PKTSTSR::VALUE3
+        *self == PKTSTS_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == PKTSTSR::VALUE4
+        *self == PKTSTS_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == PKTSTSR::VALUE5
+        *self == PKTSTS_A::VALUE5
     }
 }
-#[doc = r" Value of the field"]
-pub struct FNR {
-    bits: u8,
-}
-impl FNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of field `FN`"]
+pub type FN_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Endpoint Number"]
-    #[inline]
-    pub fn epnum(&self) -> EPNUMR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        EPNUMR { bits }
+    #[inline(always)]
+    pub fn epnum(&self) -> EPNUM_R {
+        EPNUM_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:14 - Byte Count"]
-    #[inline]
-    pub fn bcnt(&self) -> BCNTR {
-        let bits = {
-            const MASK: u16 = 2047;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        BCNTR { bits }
+    #[inline(always)]
+    pub fn bcnt(&self) -> BCNT_R {
+        BCNT_R::new(((self.bits >> 4) & 0x07ff) as u16)
     }
     #[doc = "Bits 15:16 - Data PID"]
-    #[inline]
-    pub fn dpid(&self) -> DPIDR {
-        DPIDR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn dpid(&self) -> DPID_R {
+        DPID_R::new(((self.bits >> 15) & 0x03) as u8)
     }
     #[doc = "Bits 17:20 - Packet Status"]
-    #[inline]
-    pub fn pkt_sts(&self) -> PKTSTSR {
-        PKTSTSR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pkt_sts(&self) -> PKTSTS_R {
+        PKTSTS_R::new(((self.bits >> 17) & 0x0f) as u8)
     }
     #[doc = "Bits 21:24 - Frame Number"]
-    #[inline]
-    pub fn fn_(&self) -> FNR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        FNR { bits }
+    #[inline(always)]
+    pub fn fn_(&self) -> FN_R {
+        FN_R::new(((self.bits >> 21) & 0x0f) as u8)
     }
 }

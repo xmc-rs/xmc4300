@@ -1,155 +1,134 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SEFCLR {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register SEFCLR"]
+pub type W = crate::W<u32, super::SEFCLR>;
+#[doc = "Register SEFCLR `reset()`'s with value 0"]
+impl crate::ResetValue for super::SEFCLR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Values that can be written to the field `SEV0`"]
-pub enum SEV0W {
-    #[doc = "No action"]
+#[doc = "Clear Source Event 0/1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEV0_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Clear the source event flag in GxSEFLAG"]
+    #[doc = "1: Clear the source event flag in GxSEFLAG"]
     VALUE2,
 }
-impl SEV0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SEV0W::VALUE1 => false,
-            SEV0W::VALUE2 => true,
+impl From<SEV0_AW> for bool {
+    #[inline(always)]
+    fn from(variant: SEV0_AW) -> Self {
+        match variant {
+            SEV0_AW::VALUE1 => false,
+            SEV0_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SEV0W<'a> {
+#[doc = "Write proxy for field `SEV0`"]
+pub struct SEV0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SEV0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SEV0W) -> &'a mut W {
+impl<'a> SEV0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SEV0_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SEV0W::VALUE1)
+        self.variant(SEV0_AW::VALUE1)
     }
     #[doc = "Clear the source event flag in GxSEFLAG"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SEV0W::VALUE2)
+        self.variant(SEV0_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SEV1`"]
-pub enum SEV1W {
-    #[doc = "No action"]
+#[doc = "Clear Source Event 0/1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEV1_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Clear the source event flag in GxSEFLAG"]
+    #[doc = "1: Clear the source event flag in GxSEFLAG"]
     VALUE2,
 }
-impl SEV1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SEV1W::VALUE1 => false,
-            SEV1W::VALUE2 => true,
+impl From<SEV1_AW> for bool {
+    #[inline(always)]
+    fn from(variant: SEV1_AW) -> Self {
+        match variant {
+            SEV1_AW::VALUE1 => false,
+            SEV1_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SEV1W<'a> {
+#[doc = "Write proxy for field `SEV1`"]
+pub struct SEV1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SEV1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SEV1W) -> &'a mut W {
+impl<'a> SEV1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SEV1_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SEV1W::VALUE1)
+        self.variant(SEV1_AW::VALUE1)
     }
     #[doc = "Clear the source event flag in GxSEFLAG"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SEV1W::VALUE2)
+        self.variant(SEV1_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Clear Source Event 0/1"]
-    #[inline]
-    pub fn sev0(&mut self) -> _SEV0W {
-        _SEV0W { w: self }
+    #[inline(always)]
+    pub fn sev0(&mut self) -> SEV0_W {
+        SEV0_W { w: self }
     }
     #[doc = "Bit 1 - Clear Source Event 0/1"]
-    #[inline]
-    pub fn sev1(&mut self) -> _SEV1W {
-        _SEV1W { w: self }
+    #[inline(always)]
+    pub fn sev1(&mut self) -> SEV1_W {
+        SEV1_W { w: self }
     }
 }

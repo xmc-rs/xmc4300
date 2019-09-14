@@ -1,95 +1,55 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::DC_SYS_TIME_DIFF {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TIME_DIFR {
-    bits: u32,
-}
-impl TIME_DIFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `CPY`"]
+#[doc = "Reader of register DC_SYS_TIME_DIFF"]
+pub type R = crate::R<u32, super::DC_SYS_TIME_DIFF>;
+#[doc = "Reader of field `TIME_DIF`"]
+pub type TIME_DIF_R = crate::R<u32, u32>;
+#[doc = "Local copy of System Time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPYR {
-    #[doc = "Greater than or equal received System Time"]
+pub enum CPY_A {
+    #[doc = "0: Greater than or equal received System Time"]
     VALUE1,
-    #[doc = "Smaller than received System Time"]
+    #[doc = "1: Smaller than received System Time"]
     VALUE2,
 }
-impl CPYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CPYR::VALUE1 => false,
-            CPYR::VALUE2 => true,
+impl From<CPY_A> for bool {
+    #[inline(always)]
+    fn from(variant: CPY_A) -> Self {
+        match variant {
+            CPY_A::VALUE1 => false,
+            CPY_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CPYR {
-        match value {
-            false => CPYR::VALUE1,
-            true => CPYR::VALUE2,
+}
+#[doc = "Reader of field `CPY`"]
+pub type CPY_R = crate::R<bool, CPY_A>;
+impl CPY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CPY_A {
+        match self.bits {
+            false => CPY_A::VALUE1,
+            true => CPY_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CPYR::VALUE1
+        *self == CPY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CPYR::VALUE2
+        *self == CPY_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:30 - Mean difference between local copy of System Time and received System Time values"]
-    #[inline]
-    pub fn time_dif(&self) -> TIME_DIFR {
-        let bits = {
-            const MASK: u32 = 2147483647;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        TIME_DIFR { bits }
+    #[inline(always)]
+    pub fn time_dif(&self) -> TIME_DIF_R {
+        TIME_DIF_R::new((self.bits & 0x7fff_ffff) as u32)
     }
     #[doc = "Bit 31 - Local copy of System Time"]
-    #[inline]
-    pub fn cpy(&self) -> CPYR {
-        CPYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cpy(&self) -> CPY_R {
+        CPY_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }

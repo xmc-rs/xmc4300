@@ -1,254 +1,200 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::QSR0 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `FILL`"]
+#[doc = "Reader of register QSR0"]
+pub type R = crate::R<u32, super::QSR0>;
+#[doc = "Filling Level for Queue 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FILLR {
-    #[doc = "There is 1 ( if EMPTY = 0) or no (if EMPTY = 1) valid entry in the queue"]
+pub enum FILL_A {
+    #[doc = "0: There is 1 ( if EMPTY = 0) or no (if EMPTY = 1) valid entry in the queue"]
     VALUE1,
-    #[doc = "There are 2 valid entries in the queue"]
+    #[doc = "1: There are 2 valid entries in the queue"]
     VALUE2,
-    #[doc = "There are 3 valid entries in the queue"]
+    #[doc = "2: There are 3 valid entries in the queue"]
     VALUE3,
-    #[doc = "There are 8 valid entries in the queue"]
+    #[doc = "7: There are 8 valid entries in the queue"]
     VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl FILLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FILLR::VALUE1 => 0,
-            FILLR::VALUE2 => 1,
-            FILLR::VALUE3 => 2,
-            FILLR::VALUE4 => 7,
-            FILLR::_Reserved(bits) => bits,
+impl From<FILL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FILL_A) -> Self {
+        match variant {
+            FILL_A::VALUE1 => 0,
+            FILL_A::VALUE2 => 1,
+            FILL_A::VALUE3 => 2,
+            FILL_A::VALUE4 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FILLR {
-        match value {
-            0 => FILLR::VALUE1,
-            1 => FILLR::VALUE2,
-            2 => FILLR::VALUE3,
-            7 => FILLR::VALUE4,
-            i => FILLR::_Reserved(i),
+}
+#[doc = "Reader of field `FILL`"]
+pub type FILL_R = crate::R<u8, FILL_A>;
+impl FILL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FILL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(FILL_A::VALUE1),
+            1 => Val(FILL_A::VALUE2),
+            2 => Val(FILL_A::VALUE3),
+            7 => Val(FILL_A::VALUE4),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == FILLR::VALUE1
+        *self == FILL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == FILLR::VALUE2
+        *self == FILL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == FILLR::VALUE3
+        *self == FILL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == FILLR::VALUE4
+        *self == FILL_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `EMPTY`"]
+#[doc = "Queue Empty\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EMPTYR {
-    #[doc = "There are valid entries in the queue (see FILL)"]
+pub enum EMPTY_A {
+    #[doc = "0: There are valid entries in the queue (see FILL)"]
     VALUE1,
-    #[doc = "No valid entries (queue is empty)"]
+    #[doc = "1: No valid entries (queue is empty)"]
     VALUE2,
 }
-impl EMPTYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EMPTYR::VALUE1 => false,
-            EMPTYR::VALUE2 => true,
+impl From<EMPTY_A> for bool {
+    #[inline(always)]
+    fn from(variant: EMPTY_A) -> Self {
+        match variant {
+            EMPTY_A::VALUE1 => false,
+            EMPTY_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EMPTYR {
-        match value {
-            false => EMPTYR::VALUE1,
-            true => EMPTYR::VALUE2,
+}
+#[doc = "Reader of field `EMPTY`"]
+pub type EMPTY_R = crate::R<bool, EMPTY_A>;
+impl EMPTY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EMPTY_A {
+        match self.bits {
+            false => EMPTY_A::VALUE1,
+            true => EMPTY_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EMPTYR::VALUE1
+        *self == EMPTY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EMPTYR::VALUE2
+        *self == EMPTY_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `REQGT`"]
+#[doc = "Request Gate Level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REQGTR {
-    #[doc = "The gate input is low"]
+pub enum REQGT_A {
+    #[doc = "0: The gate input is low"]
     VALUE1,
-    #[doc = "The gate input is high"]
+    #[doc = "1: The gate input is high"]
     VALUE2,
 }
-impl REQGTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            REQGTR::VALUE1 => false,
-            REQGTR::VALUE2 => true,
+impl From<REQGT_A> for bool {
+    #[inline(always)]
+    fn from(variant: REQGT_A) -> Self {
+        match variant {
+            REQGT_A::VALUE1 => false,
+            REQGT_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> REQGTR {
-        match value {
-            false => REQGTR::VALUE1,
-            true => REQGTR::VALUE2,
+}
+#[doc = "Reader of field `REQGT`"]
+pub type REQGT_R = crate::R<bool, REQGT_A>;
+impl REQGT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REQGT_A {
+        match self.bits {
+            false => REQGT_A::VALUE1,
+            true => REQGT_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == REQGTR::VALUE1
+        *self == REQGT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == REQGTR::VALUE2
+        *self == REQGT_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `EV`"]
+#[doc = "Event Detected\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVR {
-    #[doc = "No trigger event"]
+pub enum EV_A {
+    #[doc = "0: No trigger event"]
     VALUE1,
-    #[doc = "A trigger event has been detected"]
+    #[doc = "1: A trigger event has been detected"]
     VALUE2,
 }
-impl EVR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EVR::VALUE1 => false,
-            EVR::VALUE2 => true,
+impl From<EV_A> for bool {
+    #[inline(always)]
+    fn from(variant: EV_A) -> Self {
+        match variant {
+            EV_A::VALUE1 => false,
+            EV_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EVR {
-        match value {
-            false => EVR::VALUE1,
-            true => EVR::VALUE2,
+}
+#[doc = "Reader of field `EV`"]
+pub type EV_R = crate::R<bool, EV_A>;
+impl EV_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EV_A {
+        match self.bits {
+            false => EV_A::VALUE1,
+            true => EV_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EVR::VALUE1
+        *self == EV_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EVR::VALUE2
+        *self == EV_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Filling Level for Queue 2"]
-    #[inline]
-    pub fn fill(&self) -> FILLR {
-        FILLR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn fill(&self) -> FILL_R {
+        FILL_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 5 - Queue Empty"]
-    #[inline]
-    pub fn empty(&self) -> EMPTYR {
-        EMPTYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn empty(&self) -> EMPTY_R {
+        EMPTY_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Request Gate Level"]
-    #[inline]
-    pub fn reqgt(&self) -> REQGTR {
-        REQGTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn reqgt(&self) -> REQGT_R {
+        REQGT_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Event Detected"]
-    #[inline]
-    pub fn ev(&self) -> EVR {
-        EVR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ev(&self) -> EV_R {
+        EV_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }

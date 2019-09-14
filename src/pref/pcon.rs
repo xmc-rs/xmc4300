@@ -1,363 +1,253 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PCON {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PCON"]
+pub type R = crate::R<u32, super::PCON>;
+#[doc = "Writer for register PCON"]
+pub type W = crate::W<u32, super::PCON>;
+#[doc = "Register PCON `reset()`'s with value 0"]
+impl crate::ResetValue for super::PCON {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `IBYP`"]
+#[doc = "Instruction Prefetch Buffer Bypass\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IBYPR {
-    #[doc = "Instruction prefetch buffer not bypassed."]
+pub enum IBYP_A {
+    #[doc = "0: Instruction prefetch buffer not bypassed."]
     CONST_0,
-    #[doc = "Instruction prefetch buffer bypassed."]
+    #[doc = "1: Instruction prefetch buffer bypassed."]
     CONST_1,
 }
-impl IBYPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IBYPR::CONST_0 => false,
-            IBYPR::CONST_1 => true,
+impl From<IBYP_A> for bool {
+    #[inline(always)]
+    fn from(variant: IBYP_A) -> Self {
+        match variant {
+            IBYP_A::CONST_0 => false,
+            IBYP_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IBYPR {
-        match value {
-            false => IBYPR::CONST_0,
-            true => IBYPR::CONST_1,
+}
+#[doc = "Reader of field `IBYP`"]
+pub type IBYP_R = crate::R<bool, IBYP_A>;
+impl IBYP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IBYP_A {
+        match self.bits {
+            false => IBYP_A::CONST_0,
+            true => IBYP_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == IBYPR::CONST_0
+        *self == IBYP_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == IBYPR::CONST_1
+        *self == IBYP_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `DBYP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DBYPR {
-    #[doc = "Prefetch Data buffer not bypassed."]
-    VALUE1,
-    #[doc = "Prefetch Data buffer bypassed."]
-    VALUE2,
+#[doc = "Write proxy for field `IBYP`"]
+pub struct IBYP_W<'a> {
+    w: &'a mut W,
 }
-impl DBYPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DBYPR::VALUE1 => false,
-            DBYPR::VALUE2 => true,
+impl<'a> IBYP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IBYP_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DBYPR {
-        match value {
-            false => DBYPR::VALUE1,
-            true => DBYPR::VALUE2,
+    #[doc = "Instruction prefetch buffer not bypassed."]
+    #[inline(always)]
+    pub fn const_0(self) -> &'a mut W {
+        self.variant(IBYP_A::CONST_0)
+    }
+    #[doc = "Instruction prefetch buffer bypassed."]
+    #[inline(always)]
+    pub fn const_1(self) -> &'a mut W {
+        self.variant(IBYP_A::CONST_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "Instruction Prefetch Buffer Invalidate\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IINV_AW {
+    #[doc = "0: No effect."]
+    CONST_0,
+    #[doc = "1: Initiate invalidation of entire instruction cache."]
+    CONST_1,
+}
+impl From<IINV_AW> for bool {
+    #[inline(always)]
+    fn from(variant: IINV_AW) -> Self {
+        match variant {
+            IINV_AW::CONST_0 => false,
+            IINV_AW::CONST_1 => true,
+        }
+    }
+}
+#[doc = "Write proxy for field `IINV`"]
+pub struct IINV_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> IINV_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IINV_AW) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "No effect."]
+    #[inline(always)]
+    pub fn const_0(self) -> &'a mut W {
+        self.variant(IINV_AW::CONST_0)
+    }
+    #[doc = "Initiate invalidation of entire instruction cache."]
+    #[inline(always)]
+    pub fn const_1(self) -> &'a mut W {
+        self.variant(IINV_AW::CONST_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "Data Buffer Bypass\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DBYP_A {
+    #[doc = "0: Prefetch Data buffer not bypassed."]
+    VALUE1,
+    #[doc = "1: Prefetch Data buffer bypassed."]
+    VALUE2,
+}
+impl From<DBYP_A> for bool {
+    #[inline(always)]
+    fn from(variant: DBYP_A) -> Self {
+        match variant {
+            DBYP_A::VALUE1 => false,
+            DBYP_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `DBYP`"]
+pub type DBYP_R = crate::R<bool, DBYP_A>;
+impl DBYP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DBYP_A {
+        match self.bits {
+            false => DBYP_A::VALUE1,
+            true => DBYP_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DBYPR::VALUE1
+        *self == DBYP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DBYPR::VALUE2
+        *self == DBYP_A::VALUE2
     }
 }
-#[doc = "Values that can be written to the field `IBYP`"]
-pub enum IBYPW {
-    #[doc = "Instruction prefetch buffer not bypassed."]
-    CONST_0,
-    #[doc = "Instruction prefetch buffer bypassed."]
-    CONST_1,
-}
-impl IBYPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IBYPW::CONST_0 => false,
-            IBYPW::CONST_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IBYPW<'a> {
+#[doc = "Write proxy for field `DBYP`"]
+pub struct DBYP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IBYPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IBYPW) -> &'a mut W {
+impl<'a> DBYP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DBYP_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Instruction prefetch buffer not bypassed."]
-    #[inline]
-    pub fn const_0(self) -> &'a mut W {
-        self.variant(IBYPW::CONST_0)
-    }
-    #[doc = "Instruction prefetch buffer bypassed."]
-    #[inline]
-    pub fn const_1(self) -> &'a mut W {
-        self.variant(IBYPW::CONST_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `IINV`"]
-pub enum IINVW {
-    #[doc = "No effect."]
-    CONST_0,
-    #[doc = "Initiate invalidation of entire instruction cache."]
-    CONST_1,
-}
-impl IINVW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IINVW::CONST_0 => false,
-            IINVW::CONST_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IINVW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _IINVW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IINVW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No effect."]
-    #[inline]
-    pub fn const_0(self) -> &'a mut W {
-        self.variant(IINVW::CONST_0)
-    }
-    #[doc = "Initiate invalidation of entire instruction cache."]
-    #[inline]
-    pub fn const_1(self) -> &'a mut W {
-        self.variant(IINVW::CONST_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DBYP`"]
-pub enum DBYPW {
-    #[doc = "Prefetch Data buffer not bypassed."]
-    VALUE1,
-    #[doc = "Prefetch Data buffer bypassed."]
-    VALUE2,
-}
-impl DBYPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DBYPW::VALUE1 => false,
-            DBYPW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DBYPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DBYPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DBYPW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Prefetch Data buffer not bypassed."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(DBYPW::VALUE1)
+        self.variant(DBYP_A::VALUE1)
     }
     #[doc = "Prefetch Data buffer bypassed."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(DBYPW::VALUE2)
+        self.variant(DBYP_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Instruction Prefetch Buffer Bypass"]
-    #[inline]
-    pub fn ibyp(&self) -> IBYPR {
-        IBYPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ibyp(&self) -> IBYP_R {
+        IBYP_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 4 - Data Buffer Bypass"]
-    #[inline]
-    pub fn dbyp(&self) -> DBYPR {
-        DBYPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dbyp(&self) -> DBYP_R {
+        DBYP_R::new(((self.bits >> 4) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Instruction Prefetch Buffer Bypass"]
-    #[inline]
-    pub fn ibyp(&mut self) -> _IBYPW {
-        _IBYPW { w: self }
+    #[inline(always)]
+    pub fn ibyp(&mut self) -> IBYP_W {
+        IBYP_W { w: self }
     }
     #[doc = "Bit 1 - Instruction Prefetch Buffer Invalidate"]
-    #[inline]
-    pub fn iinv(&mut self) -> _IINVW {
-        _IINVW { w: self }
+    #[inline(always)]
+    pub fn iinv(&mut self) -> IINV_W {
+        IINV_W { w: self }
     }
     #[doc = "Bit 4 - Data Buffer Bypass"]
-    #[inline]
-    pub fn dbyp(&mut self) -> _DBYPW {
-        _DBYPW { w: self }
+    #[inline(always)]
+    pub fn dbyp(&mut self) -> DBYP_W {
+        DBYP_W { w: self }
     }
 }

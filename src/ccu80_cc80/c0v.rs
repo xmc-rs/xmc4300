@@ -1,116 +1,62 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::C0V {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CAPTVR {
-    bits: u16,
-}
-impl CAPTVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FPCVR {
-    bits: u8,
-}
-impl FPCVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `FFL`"]
+#[doc = "Reader of register C0V"]
+pub type R = crate::R<u32, super::C0V>;
+#[doc = "Reader of field `CAPTV`"]
+pub type CAPTV_R = crate::R<u16, u16>;
+#[doc = "Reader of field `FPCV`"]
+pub type FPCV_R = crate::R<u8, u8>;
+#[doc = "Full Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FFLR {
-    #[doc = "No new value was captured into the specific capture register"]
+pub enum FFL_A {
+    #[doc = "0: No new value was captured into the specific capture register"]
     VALUE1,
-    #[doc = "A new value was captured into the specific register"]
+    #[doc = "1: A new value was captured into the specific register"]
     VALUE2,
 }
-impl FFLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FFLR::VALUE1 => false,
-            FFLR::VALUE2 => true,
+impl From<FFL_A> for bool {
+    #[inline(always)]
+    fn from(variant: FFL_A) -> Self {
+        match variant {
+            FFL_A::VALUE1 => false,
+            FFL_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FFLR {
-        match value {
-            false => FFLR::VALUE1,
-            true => FFLR::VALUE2,
+}
+#[doc = "Reader of field `FFL`"]
+pub type FFL_R = crate::R<bool, FFL_A>;
+impl FFL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FFL_A {
+        match self.bits {
+            false => FFL_A::VALUE1,
+            true => FFL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == FFLR::VALUE1
+        *self == FFL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == FFLR::VALUE2
+        *self == FFL_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Capture Value"]
-    #[inline]
-    pub fn captv(&self) -> CAPTVR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        CAPTVR { bits }
+    #[inline(always)]
+    pub fn captv(&self) -> CAPTV_R {
+        CAPTV_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:19 - Prescaler Value"]
-    #[inline]
-    pub fn fpcv(&self) -> FPCVR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        FPCVR { bits }
+    #[inline(always)]
+    pub fn fpcv(&self) -> FPCV_R {
+        FPCV_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bit 20 - Full Flag"]
-    #[inline]
-    pub fn ffl(&self) -> FFLR {
-        FFLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ffl(&self) -> FFL_R {
+        FFL_R::new(((self.bits >> 20) & 0x01) != 0)
     }
 }

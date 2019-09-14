@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::MSID {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INDEXR {
-    bits: u8,
-}
-impl INDEXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register MSID[%s]"]
+pub type R = crate::R<u32, super::MSID>;
+#[doc = "Reader of field `INDEX`"]
+pub type INDEX_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - Message Pending Index"]
-    #[inline]
-    pub fn index(&self) -> INDEXR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INDEXR { bits }
+    #[inline(always)]
+    pub fn index(&self) -> INDEX_R {
+        INDEX_R::new((self.bits & 0x3f) as u8)
     }
 }

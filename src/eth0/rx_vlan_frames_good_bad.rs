@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::RX_VLAN_FRAMES_GOOD_BAD {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXVLANFRGBR {
-    bits: u32,
-}
-impl RXVLANFRGBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register RX_VLAN_FRAMES_GOOD_BAD"]
+pub type R = crate::R<u32, super::RX_VLAN_FRAMES_GOOD_BAD>;
+#[doc = "Reader of field `RXVLANFRGB`"]
+pub type RXVLANFRGB_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - This field indicates the number of received good and bad VLAN frames."]
-    #[inline]
-    pub fn rxvlanfrgb(&self) -> RXVLANFRGBR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        RXVLANFRGBR { bits }
+    #[inline(always)]
+    pub fn rxvlanfrgb(&self) -> RXVLANFRGB_R {
+        RXVLANFRGB_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

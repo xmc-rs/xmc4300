@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::TX_OCTET_COUNT_GOOD {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXOCTGR {
-    bits: u32,
-}
-impl TXOCTGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register TX_OCTET_COUNT_GOOD"]
+pub type R = crate::R<u32, super::TX_OCTET_COUNT_GOOD>;
+#[doc = "Reader of field `TXOCTG`"]
+pub type TXOCTG_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - This field indicates the number of bytes transmitted, exclusive of preamble, in good frames."]
-    #[inline]
-    pub fn txoctg(&self) -> TXOCTGR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        TXOCTGR { bits }
+    #[inline(always)]
+    pub fn txoctg(&self) -> TXOCTG_R {
+        TXOCTG_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

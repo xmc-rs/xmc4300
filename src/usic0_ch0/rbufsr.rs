@@ -1,225 +1,53 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::RBUFSR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WLENR {
-    bits: u8,
-}
-impl WLENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SOFR {
-    bits: bool,
-}
-impl SOFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PARR {
-    bits: bool,
-}
-impl PARR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PERRR {
-    bits: bool,
-}
-impl PERRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RDV0R {
-    bits: bool,
-}
-impl RDV0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RDV1R {
-    bits: bool,
-}
-impl RDV1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DSR {
-    bits: bool,
-}
-impl DSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register RBUFSR"]
+pub type R = crate::R<u32, super::RBUFSR>;
+#[doc = "Reader of field `WLEN`"]
+pub type WLEN_R = crate::R<u8, u8>;
+#[doc = "Reader of field `SOF`"]
+pub type SOF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PAR`"]
+pub type PAR_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PERR`"]
+pub type PERR_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RDV0`"]
+pub type RDV0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RDV1`"]
+pub type RDV1_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DS`"]
+pub type DS_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Received Data Word Length in RBUF or RBUFD"]
-    #[inline]
-    pub fn wlen(&self) -> WLENR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        WLENR { bits }
+    #[inline(always)]
+    pub fn wlen(&self) -> WLEN_R {
+        WLEN_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 6 - Start of Frame in RBUF or RBUFD"]
-    #[inline]
-    pub fn sof(&self) -> SOFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SOFR { bits }
+    #[inline(always)]
+    pub fn sof(&self) -> SOF_R {
+        SOF_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Protocol-Related Argument in RBUF or RBUFD"]
-    #[inline]
-    pub fn par(&self) -> PARR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PARR { bits }
+    #[inline(always)]
+    pub fn par(&self) -> PAR_R {
+        PAR_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Protocol-related Error in RBUF or RBUFD"]
-    #[inline]
-    pub fn perr(&self) -> PERRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PERRR { bits }
+    #[inline(always)]
+    pub fn perr(&self) -> PERR_R {
+        PERR_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Receive Data Valid in RBUF or RBUFD"]
-    #[inline]
-    pub fn rdv0(&self) -> RDV0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RDV0R { bits }
+    #[inline(always)]
+    pub fn rdv0(&self) -> RDV0_R {
+        RDV0_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Receive Data Valid in RBUF or RBUFD"]
-    #[inline]
-    pub fn rdv1(&self) -> RDV1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RDV1R { bits }
+    #[inline(always)]
+    pub fn rdv1(&self) -> RDV1_R {
+        RDV1_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Data Source of RBUF or RBUFD"]
-    #[inline]
-    pub fn ds(&self) -> DSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DSR { bits }
+    #[inline(always)]
+    pub fn ds(&self) -> DS_R {
+        DS_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }

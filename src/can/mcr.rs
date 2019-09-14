@@ -1,257 +1,160 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::MCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register MCR"]
+pub type R = crate::R<u32, super::MCR>;
+#[doc = "Writer for register MCR"]
+pub type W = crate::W<u32, super::MCR>;
+#[doc = "Register MCR `reset()`'s with value 0"]
+impl crate::ResetValue for super::MCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `CLKSEL`"]
+#[doc = "Baud Rate Logic Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLKSELR {
-    #[doc = "No clock supplied"]
+pub enum CLKSEL_A {
+    #[doc = "0: No clock supplied"]
     VALUE1,
-    #[doc = "fPERIPH"]
+    #[doc = "1: fPERIPH"]
     VALUE2,
-    #[doc = "fOHP"]
+    #[doc = "2: fOHP"]
     VALUE3,
-    #[doc = "hard wired to 0"]
+    #[doc = "4: hard wired to 0"]
     VALUE4,
-    #[doc = "hard wired to 0"]
+    #[doc = "8: hard wired to 0"]
     VALUE5,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CLKSELR::VALUE1 => 0,
-            CLKSELR::VALUE2 => 1,
-            CLKSELR::VALUE3 => 2,
-            CLKSELR::VALUE4 => 4,
-            CLKSELR::VALUE5 => 8,
-            CLKSELR::_Reserved(bits) => bits,
+impl From<CLKSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CLKSEL_A) -> Self {
+        match variant {
+            CLKSEL_A::VALUE1 => 0,
+            CLKSEL_A::VALUE2 => 1,
+            CLKSEL_A::VALUE3 => 2,
+            CLKSEL_A::VALUE4 => 4,
+            CLKSEL_A::VALUE5 => 8,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CLKSELR {
-        match value {
-            0 => CLKSELR::VALUE1,
-            1 => CLKSELR::VALUE2,
-            2 => CLKSELR::VALUE3,
-            4 => CLKSELR::VALUE4,
-            8 => CLKSELR::VALUE5,
-            i => CLKSELR::_Reserved(i),
+}
+#[doc = "Reader of field `CLKSEL`"]
+pub type CLKSEL_R = crate::R<u8, CLKSEL_A>;
+impl CLKSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CLKSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CLKSEL_A::VALUE1),
+            1 => Val(CLKSEL_A::VALUE2),
+            2 => Val(CLKSEL_A::VALUE3),
+            4 => Val(CLKSEL_A::VALUE4),
+            8 => Val(CLKSEL_A::VALUE5),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CLKSELR::VALUE1
+        *self == CLKSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CLKSELR::VALUE2
+        *self == CLKSEL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CLKSELR::VALUE3
+        *self == CLKSEL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == CLKSELR::VALUE4
+        *self == CLKSEL_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == CLKSELR::VALUE5
+        *self == CLKSEL_A::VALUE5
     }
 }
-#[doc = r" Value of the field"]
-pub struct MPSELR {
-    bits: u8,
-}
-impl MPSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `CLKSEL`"]
-pub enum CLKSELW {
-    #[doc = "No clock supplied"]
-    VALUE1,
-    #[doc = "fPERIPH"]
-    VALUE2,
-    #[doc = "fOHP"]
-    VALUE3,
-    #[doc = "hard wired to 0"]
-    VALUE4,
-    #[doc = "hard wired to 0"]
-    VALUE5,
-}
-impl CLKSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CLKSELW::VALUE1 => 0,
-            CLKSELW::VALUE2 => 1,
-            CLKSELW::VALUE3 => 2,
-            CLKSELW::VALUE4 => 4,
-            CLKSELW::VALUE5 => 8,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CLKSELW<'a> {
+#[doc = "Write proxy for field `CLKSEL`"]
+pub struct CLKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLKSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CLKSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> CLKSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CLKSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "No clock supplied"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CLKSELW::VALUE1)
+        self.variant(CLKSEL_A::VALUE1)
     }
     #[doc = "fPERIPH"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CLKSELW::VALUE2)
+        self.variant(CLKSEL_A::VALUE2)
     }
     #[doc = "fOHP"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(CLKSELW::VALUE3)
+        self.variant(CLKSEL_A::VALUE3)
     }
     #[doc = "hard wired to 0"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(CLKSELW::VALUE4)
+        self.variant(CLKSEL_A::VALUE4)
     }
     #[doc = "hard wired to 0"]
-    #[inline]
+    #[inline(always)]
     pub fn value5(self) -> &'a mut W {
-        self.variant(CLKSELW::VALUE5)
+        self.variant(CLKSEL_A::VALUE5)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MPSELW<'a> {
+#[doc = "Reader of field `MPSEL`"]
+pub type MPSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `MPSEL`"]
+pub struct MPSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MPSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> MPSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Baud Rate Logic Clock Select"]
-    #[inline]
-    pub fn clksel(&self) -> CLKSELR {
-        CLKSELR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn clksel(&self) -> CLKSEL_R {
+        CLKSEL_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - Message Pending Selector"]
-    #[inline]
-    pub fn mpsel(&self) -> MPSELR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MPSELR { bits }
+    #[inline(always)]
+    pub fn mpsel(&self) -> MPSEL_R {
+        MPSEL_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Baud Rate Logic Clock Select"]
-    #[inline]
-    pub fn clksel(&mut self) -> _CLKSELW {
-        _CLKSELW { w: self }
+    #[inline(always)]
+    pub fn clksel(&mut self) -> CLKSEL_W {
+        CLKSEL_W { w: self }
     }
     #[doc = "Bits 12:15 - Message Pending Selector"]
-    #[inline]
-    pub fn mpsel(&mut self) -> _MPSELW {
-        _MPSELW { w: self }
+    #[inline(always)]
+    pub fn mpsel(&mut self) -> MPSEL_W {
+        MPSEL_W { w: self }
     }
 }

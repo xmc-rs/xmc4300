@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::RX_CONTROL_FRAMES_GOOD {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXCTRLGR {
-    bits: u32,
-}
-impl RXCTRLGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register RX_CONTROL_FRAMES_GOOD"]
+pub type R = crate::R<u32, super::RX_CONTROL_FRAMES_GOOD>;
+#[doc = "Reader of field `RXCTRLG`"]
+pub type RXCTRLG_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - This field indicates the number of frames received with error because of the watchdog timeout error (frames with more than 2,048 bytes data load)."]
-    #[inline]
-    pub fn rxctrlg(&self) -> RXCTRLGR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        RXCTRLGR { bits }
+    #[inline(always)]
+    pub fn rxctrlg(&self) -> RXCTRLG_R {
+        RXCTRLG_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u16,
-}
-impl super::BUILD {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BUILDR {
-    bits: u16,
-}
-impl BUILDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of register BUILD"]
+pub type R = crate::R<u16, super::BUILD>;
+#[doc = "Reader of field `BUILD`"]
+pub type BUILD_R = crate::R<u16, u16>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Actual build of EtherCAT controller"]
-    #[inline]
-    pub fn build(&self) -> BUILDR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u16) as u16
-        };
-        BUILDR { bits }
+    #[inline(always)]
+    pub fn build(&self) -> BUILD_R {
+        BUILD_R::new((self.bits & 0xffff) as u16)
     }
 }

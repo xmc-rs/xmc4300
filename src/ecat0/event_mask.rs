@@ -1,634 +1,488 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u16,
-}
-impl super::EVENT_MASK {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `DC_LE_MASK`"]
+#[doc = "Reader of register EVENT_MASK"]
+pub type R = crate::R<u16, super::EVENT_MASK>;
+#[doc = "DC Latch event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DC_LE_MASKR {
-    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
+pub enum DC_LE_MASK_A {
+    #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
     VALUE1,
-    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
+    #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
     VALUE2,
 }
-impl DC_LE_MASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DC_LE_MASKR::VALUE1 => false,
-            DC_LE_MASKR::VALUE2 => true,
+impl From<DC_LE_MASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: DC_LE_MASK_A) -> Self {
+        match variant {
+            DC_LE_MASK_A::VALUE1 => false,
+            DC_LE_MASK_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DC_LE_MASKR {
-        match value {
-            false => DC_LE_MASKR::VALUE1,
-            true => DC_LE_MASKR::VALUE2,
+}
+#[doc = "Reader of field `DC_LE_MASK`"]
+pub type DC_LE_MASK_R = crate::R<bool, DC_LE_MASK_A>;
+impl DC_LE_MASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DC_LE_MASK_A {
+        match self.bits {
+            false => DC_LE_MASK_A::VALUE1,
+            true => DC_LE_MASK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DC_LE_MASKR::VALUE1
+        *self == DC_LE_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DC_LE_MASKR::VALUE2
+        *self == DC_LE_MASK_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `DL_SE_MASK`"]
+#[doc = "DL Status event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DL_SE_MASKR {
-    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
+pub enum DL_SE_MASK_A {
+    #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
     VALUE1,
-    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
+    #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
     VALUE2,
 }
-impl DL_SE_MASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DL_SE_MASKR::VALUE1 => false,
-            DL_SE_MASKR::VALUE2 => true,
+impl From<DL_SE_MASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: DL_SE_MASK_A) -> Self {
+        match variant {
+            DL_SE_MASK_A::VALUE1 => false,
+            DL_SE_MASK_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DL_SE_MASKR {
-        match value {
-            false => DL_SE_MASKR::VALUE1,
-            true => DL_SE_MASKR::VALUE2,
+}
+#[doc = "Reader of field `DL_SE_MASK`"]
+pub type DL_SE_MASK_R = crate::R<bool, DL_SE_MASK_A>;
+impl DL_SE_MASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DL_SE_MASK_A {
+        match self.bits {
+            false => DL_SE_MASK_A::VALUE1,
+            true => DL_SE_MASK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DL_SE_MASKR::VALUE1
+        *self == DL_SE_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DL_SE_MASKR::VALUE2
+        *self == DL_SE_MASK_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `AL_SE_MASK`"]
+#[doc = "AL Status event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AL_SE_MASKR {
-    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
+pub enum AL_SE_MASK_A {
+    #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
     VALUE1,
-    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
+    #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
     VALUE2,
 }
-impl AL_SE_MASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            AL_SE_MASKR::VALUE1 => false,
-            AL_SE_MASKR::VALUE2 => true,
+impl From<AL_SE_MASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: AL_SE_MASK_A) -> Self {
+        match variant {
+            AL_SE_MASK_A::VALUE1 => false,
+            AL_SE_MASK_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> AL_SE_MASKR {
-        match value {
-            false => AL_SE_MASKR::VALUE1,
-            true => AL_SE_MASKR::VALUE2,
+}
+#[doc = "Reader of field `AL_SE_MASK`"]
+pub type AL_SE_MASK_R = crate::R<bool, AL_SE_MASK_A>;
+impl AL_SE_MASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AL_SE_MASK_A {
+        match self.bits {
+            false => AL_SE_MASK_A::VALUE1,
+            true => AL_SE_MASK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == AL_SE_MASKR::VALUE1
+        *self == AL_SE_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == AL_SE_MASKR::VALUE2
+        *self == AL_SE_MASK_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `MIR_0_MASK`"]
+#[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MIR_0_MASKR {
-    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
+pub enum MIR_0_MASK_A {
+    #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
     VALUE1,
-    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
+    #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
     VALUE2,
 }
-impl MIR_0_MASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MIR_0_MASKR::VALUE1 => false,
-            MIR_0_MASKR::VALUE2 => true,
+impl From<MIR_0_MASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: MIR_0_MASK_A) -> Self {
+        match variant {
+            MIR_0_MASK_A::VALUE1 => false,
+            MIR_0_MASK_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MIR_0_MASKR {
-        match value {
-            false => MIR_0_MASKR::VALUE1,
-            true => MIR_0_MASKR::VALUE2,
+}
+#[doc = "Reader of field `MIR_0_MASK`"]
+pub type MIR_0_MASK_R = crate::R<bool, MIR_0_MASK_A>;
+impl MIR_0_MASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MIR_0_MASK_A {
+        match self.bits {
+            false => MIR_0_MASK_A::VALUE1,
+            true => MIR_0_MASK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_0_MASKR::VALUE1
+        *self == MIR_0_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_0_MASKR::VALUE2
+        *self == MIR_0_MASK_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `MIR_1_MASK`"]
+#[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MIR_1_MASKR {
-    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
+pub enum MIR_1_MASK_A {
+    #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
     VALUE1,
-    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
+    #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
     VALUE2,
 }
-impl MIR_1_MASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MIR_1_MASKR::VALUE1 => false,
-            MIR_1_MASKR::VALUE2 => true,
+impl From<MIR_1_MASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: MIR_1_MASK_A) -> Self {
+        match variant {
+            MIR_1_MASK_A::VALUE1 => false,
+            MIR_1_MASK_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MIR_1_MASKR {
-        match value {
-            false => MIR_1_MASKR::VALUE1,
-            true => MIR_1_MASKR::VALUE2,
+}
+#[doc = "Reader of field `MIR_1_MASK`"]
+pub type MIR_1_MASK_R = crate::R<bool, MIR_1_MASK_A>;
+impl MIR_1_MASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MIR_1_MASK_A {
+        match self.bits {
+            false => MIR_1_MASK_A::VALUE1,
+            true => MIR_1_MASK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_1_MASKR::VALUE1
+        *self == MIR_1_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_1_MASKR::VALUE2
+        *self == MIR_1_MASK_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `MIR_2_MASK`"]
+#[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MIR_2_MASKR {
-    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
+pub enum MIR_2_MASK_A {
+    #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
     VALUE1,
-    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
+    #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
     VALUE2,
 }
-impl MIR_2_MASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MIR_2_MASKR::VALUE1 => false,
-            MIR_2_MASKR::VALUE2 => true,
+impl From<MIR_2_MASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: MIR_2_MASK_A) -> Self {
+        match variant {
+            MIR_2_MASK_A::VALUE1 => false,
+            MIR_2_MASK_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MIR_2_MASKR {
-        match value {
-            false => MIR_2_MASKR::VALUE1,
-            true => MIR_2_MASKR::VALUE2,
+}
+#[doc = "Reader of field `MIR_2_MASK`"]
+pub type MIR_2_MASK_R = crate::R<bool, MIR_2_MASK_A>;
+impl MIR_2_MASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MIR_2_MASK_A {
+        match self.bits {
+            false => MIR_2_MASK_A::VALUE1,
+            true => MIR_2_MASK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_2_MASKR::VALUE1
+        *self == MIR_2_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_2_MASKR::VALUE2
+        *self == MIR_2_MASK_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `MIR_3_MASK`"]
+#[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MIR_3_MASKR {
-    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
+pub enum MIR_3_MASK_A {
+    #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
     VALUE1,
-    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
+    #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
     VALUE2,
 }
-impl MIR_3_MASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MIR_3_MASKR::VALUE1 => false,
-            MIR_3_MASKR::VALUE2 => true,
+impl From<MIR_3_MASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: MIR_3_MASK_A) -> Self {
+        match variant {
+            MIR_3_MASK_A::VALUE1 => false,
+            MIR_3_MASK_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MIR_3_MASKR {
-        match value {
-            false => MIR_3_MASKR::VALUE1,
-            true => MIR_3_MASKR::VALUE2,
+}
+#[doc = "Reader of field `MIR_3_MASK`"]
+pub type MIR_3_MASK_R = crate::R<bool, MIR_3_MASK_A>;
+impl MIR_3_MASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MIR_3_MASK_A {
+        match self.bits {
+            false => MIR_3_MASK_A::VALUE1,
+            true => MIR_3_MASK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_3_MASKR::VALUE1
+        *self == MIR_3_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_3_MASKR::VALUE2
+        *self == MIR_3_MASK_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `MIR_4_MASK`"]
+#[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MIR_4_MASKR {
-    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
+pub enum MIR_4_MASK_A {
+    #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
     VALUE1,
-    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
+    #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
     VALUE2,
 }
-impl MIR_4_MASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MIR_4_MASKR::VALUE1 => false,
-            MIR_4_MASKR::VALUE2 => true,
+impl From<MIR_4_MASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: MIR_4_MASK_A) -> Self {
+        match variant {
+            MIR_4_MASK_A::VALUE1 => false,
+            MIR_4_MASK_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MIR_4_MASKR {
-        match value {
-            false => MIR_4_MASKR::VALUE1,
-            true => MIR_4_MASKR::VALUE2,
+}
+#[doc = "Reader of field `MIR_4_MASK`"]
+pub type MIR_4_MASK_R = crate::R<bool, MIR_4_MASK_A>;
+impl MIR_4_MASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MIR_4_MASK_A {
+        match self.bits {
+            false => MIR_4_MASK_A::VALUE1,
+            true => MIR_4_MASK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_4_MASKR::VALUE1
+        *self == MIR_4_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_4_MASKR::VALUE2
+        *self == MIR_4_MASK_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `MIR_5_MASK`"]
+#[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MIR_5_MASKR {
-    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
+pub enum MIR_5_MASK_A {
+    #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
     VALUE1,
-    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
+    #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
     VALUE2,
 }
-impl MIR_5_MASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MIR_5_MASKR::VALUE1 => false,
-            MIR_5_MASKR::VALUE2 => true,
+impl From<MIR_5_MASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: MIR_5_MASK_A) -> Self {
+        match variant {
+            MIR_5_MASK_A::VALUE1 => false,
+            MIR_5_MASK_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MIR_5_MASKR {
-        match value {
-            false => MIR_5_MASKR::VALUE1,
-            true => MIR_5_MASKR::VALUE2,
+}
+#[doc = "Reader of field `MIR_5_MASK`"]
+pub type MIR_5_MASK_R = crate::R<bool, MIR_5_MASK_A>;
+impl MIR_5_MASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MIR_5_MASK_A {
+        match self.bits {
+            false => MIR_5_MASK_A::VALUE1,
+            true => MIR_5_MASK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_5_MASKR::VALUE1
+        *self == MIR_5_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_5_MASKR::VALUE2
+        *self == MIR_5_MASK_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `MIR_6_MASK`"]
+#[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MIR_6_MASKR {
-    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
+pub enum MIR_6_MASK_A {
+    #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
     VALUE1,
-    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
+    #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
     VALUE2,
 }
-impl MIR_6_MASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MIR_6_MASKR::VALUE1 => false,
-            MIR_6_MASKR::VALUE2 => true,
+impl From<MIR_6_MASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: MIR_6_MASK_A) -> Self {
+        match variant {
+            MIR_6_MASK_A::VALUE1 => false,
+            MIR_6_MASK_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MIR_6_MASKR {
-        match value {
-            false => MIR_6_MASKR::VALUE1,
-            true => MIR_6_MASKR::VALUE2,
+}
+#[doc = "Reader of field `MIR_6_MASK`"]
+pub type MIR_6_MASK_R = crate::R<bool, MIR_6_MASK_A>;
+impl MIR_6_MASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MIR_6_MASK_A {
+        match self.bits {
+            false => MIR_6_MASK_A::VALUE1,
+            true => MIR_6_MASK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_6_MASKR::VALUE1
+        *self == MIR_6_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_6_MASKR::VALUE2
+        *self == MIR_6_MASK_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `MIR_7_MASK`"]
+#[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MIR_7_MASKR {
-    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
+pub enum MIR_7_MASK_A {
+    #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
     VALUE1,
-    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
+    #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
     VALUE2,
 }
-impl MIR_7_MASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MIR_7_MASKR::VALUE1 => false,
-            MIR_7_MASKR::VALUE2 => true,
+impl From<MIR_7_MASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: MIR_7_MASK_A) -> Self {
+        match variant {
+            MIR_7_MASK_A::VALUE1 => false,
+            MIR_7_MASK_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MIR_7_MASKR {
-        match value {
-            false => MIR_7_MASKR::VALUE1,
-            true => MIR_7_MASKR::VALUE2,
+}
+#[doc = "Reader of field `MIR_7_MASK`"]
+pub type MIR_7_MASK_R = crate::R<bool, MIR_7_MASK_A>;
+impl MIR_7_MASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MIR_7_MASK_A {
+        match self.bits {
+            false => MIR_7_MASK_A::VALUE1,
+            true => MIR_7_MASK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_7_MASKR::VALUE1
+        *self == MIR_7_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_7_MASKR::VALUE2
+        *self == MIR_7_MASK_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
     #[doc = "Bit 0 - DC Latch event"]
-    #[inline]
-    pub fn dc_le_mask(&self) -> DC_LE_MASKR {
-        DC_LE_MASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn dc_le_mask(&self) -> DC_LE_MASK_R {
+        DC_LE_MASK_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 2 - DL Status event"]
-    #[inline]
-    pub fn dl_se_mask(&self) -> DL_SE_MASKR {
-        DL_SE_MASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn dl_se_mask(&self) -> DL_SE_MASK_R {
+        DL_SE_MASK_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - AL Status event"]
-    #[inline]
-    pub fn al_se_mask(&self) -> AL_SE_MASKR {
-        AL_SE_MASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn al_se_mask(&self) -> AL_SE_MASK_R {
+        AL_SE_MASK_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Mirrors values of each SyncManager Status"]
-    #[inline]
-    pub fn mir_0_mask(&self) -> MIR_0_MASKR {
-        MIR_0_MASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn mir_0_mask(&self) -> MIR_0_MASK_R {
+        MIR_0_MASK_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Mirrors values of each SyncManager Status"]
-    #[inline]
-    pub fn mir_1_mask(&self) -> MIR_1_MASKR {
-        MIR_1_MASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn mir_1_mask(&self) -> MIR_1_MASK_R {
+        MIR_1_MASK_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Mirrors values of each SyncManager Status"]
-    #[inline]
-    pub fn mir_2_mask(&self) -> MIR_2_MASKR {
-        MIR_2_MASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn mir_2_mask(&self) -> MIR_2_MASK_R {
+        MIR_2_MASK_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Mirrors values of each SyncManager Status"]
-    #[inline]
-    pub fn mir_3_mask(&self) -> MIR_3_MASKR {
-        MIR_3_MASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn mir_3_mask(&self) -> MIR_3_MASK_R {
+        MIR_3_MASK_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Mirrors values of each SyncManager Status"]
-    #[inline]
-    pub fn mir_4_mask(&self) -> MIR_4_MASKR {
-        MIR_4_MASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn mir_4_mask(&self) -> MIR_4_MASK_R {
+        MIR_4_MASK_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Mirrors values of each SyncManager Status"]
-    #[inline]
-    pub fn mir_5_mask(&self) -> MIR_5_MASKR {
-        MIR_5_MASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn mir_5_mask(&self) -> MIR_5_MASK_R {
+        MIR_5_MASK_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Mirrors values of each SyncManager Status"]
-    #[inline]
-    pub fn mir_6_mask(&self) -> MIR_6_MASKR {
-        MIR_6_MASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn mir_6_mask(&self) -> MIR_6_MASK_R {
+        MIR_6_MASK_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Mirrors values of each SyncManager Status"]
-    #[inline]
-    pub fn mir_7_mask(&self) -> MIR_7_MASKR {
-        MIR_7_MASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn mir_7_mask(&self) -> MIR_7_MASK_R {
+        MIR_7_MASK_R::new(((self.bits >> 11) & 0x01) != 0)
     }
 }

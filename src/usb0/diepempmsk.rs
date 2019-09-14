@@ -1,103 +1,40 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DIEPEMPMSK {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DIEPEMPMSK"]
+pub type R = crate::R<u32, super::DIEPEMPMSK>;
+#[doc = "Writer for register DIEPEMPMSK"]
+pub type W = crate::W<u32, super::DIEPEMPMSK>;
+#[doc = "Register DIEPEMPMSK `reset()`'s with value 0"]
+impl crate::ResetValue for super::DIEPEMPMSK {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct INEPTXFEMPMSKR {
-    bits: u16,
-}
-impl INEPTXFEMPMSKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INEPTXFEMPMSKW<'a> {
+#[doc = "Reader of field `InEpTxfEmpMsk`"]
+pub type INEPTXFEMPMSK_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `InEpTxfEmpMsk`"]
+pub struct INEPTXFEMPMSK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INEPTXFEMPMSKW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INEPTXFEMPMSK_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - IN EP Tx FIFO Empty Interrupt Mask Bits"]
-    #[inline]
-    pub fn in_ep_txf_emp_msk(&self) -> INEPTXFEMPMSKR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        INEPTXFEMPMSKR { bits }
+    #[inline(always)]
+    pub fn in_ep_txf_emp_msk(&self) -> INEPTXFEMPMSK_R {
+        INEPTXFEMPMSK_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - IN EP Tx FIFO Empty Interrupt Mask Bits"]
-    #[inline]
-    pub fn in_ep_txf_emp_msk(&mut self) -> _INEPTXFEMPMSKW {
-        _INEPTXFEMPMSKW { w: self }
+    #[inline(always)]
+    pub fn in_ep_txf_emp_msk(&mut self) -> INEPTXFEMPMSK_W {
+        INEPTXFEMPMSK_W { w: self }
     }
 }

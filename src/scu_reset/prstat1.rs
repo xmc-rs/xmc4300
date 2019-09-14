@@ -1,354 +1,268 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PRSTAT1 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `LEDTSCU0RS`"]
+#[doc = "Reader of register PRSTAT1"]
+pub type R = crate::R<u32, super::PRSTAT1>;
+#[doc = "LEDTS Reset Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LEDTSCU0RSR {
-    #[doc = "Reset de-asserted"]
+pub enum LEDTSCU0RS_A {
+    #[doc = "0: Reset de-asserted"]
     CONST_0,
-    #[doc = "Reset asserted"]
+    #[doc = "1: Reset asserted"]
     CONST_1,
 }
-impl LEDTSCU0RSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LEDTSCU0RSR::CONST_0 => false,
-            LEDTSCU0RSR::CONST_1 => true,
+impl From<LEDTSCU0RS_A> for bool {
+    #[inline(always)]
+    fn from(variant: LEDTSCU0RS_A) -> Self {
+        match variant {
+            LEDTSCU0RS_A::CONST_0 => false,
+            LEDTSCU0RS_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LEDTSCU0RSR {
-        match value {
-            false => LEDTSCU0RSR::CONST_0,
-            true => LEDTSCU0RSR::CONST_1,
+}
+#[doc = "Reader of field `LEDTSCU0RS`"]
+pub type LEDTSCU0RS_R = crate::R<bool, LEDTSCU0RS_A>;
+impl LEDTSCU0RS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LEDTSCU0RS_A {
+        match self.bits {
+            false => LEDTSCU0RS_A::CONST_0,
+            true => LEDTSCU0RS_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == LEDTSCU0RSR::CONST_0
+        *self == LEDTSCU0RS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == LEDTSCU0RSR::CONST_1
+        *self == LEDTSCU0RS_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `MCAN0RS`"]
+#[doc = "MultiCAN Reset Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MCAN0RSR {
-    #[doc = "Reset de-asserted"]
+pub enum MCAN0RS_A {
+    #[doc = "0: Reset de-asserted"]
     CONST_0,
-    #[doc = "Reset asserted"]
+    #[doc = "1: Reset asserted"]
     CONST_1,
 }
-impl MCAN0RSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MCAN0RSR::CONST_0 => false,
-            MCAN0RSR::CONST_1 => true,
+impl From<MCAN0RS_A> for bool {
+    #[inline(always)]
+    fn from(variant: MCAN0RS_A) -> Self {
+        match variant {
+            MCAN0RS_A::CONST_0 => false,
+            MCAN0RS_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MCAN0RSR {
-        match value {
-            false => MCAN0RSR::CONST_0,
-            true => MCAN0RSR::CONST_1,
+}
+#[doc = "Reader of field `MCAN0RS`"]
+pub type MCAN0RS_R = crate::R<bool, MCAN0RS_A>;
+impl MCAN0RS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MCAN0RS_A {
+        match self.bits {
+            false => MCAN0RS_A::CONST_0,
+            true => MCAN0RS_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == MCAN0RSR::CONST_0
+        *self == MCAN0RS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == MCAN0RSR::CONST_1
+        *self == MCAN0RS_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `DACRS`"]
+#[doc = "DAC Reset Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DACRSR {
-    #[doc = "Reset de-asserted"]
+pub enum DACRS_A {
+    #[doc = "0: Reset de-asserted"]
     CONST_0,
-    #[doc = "Reset asserted"]
+    #[doc = "1: Reset asserted"]
     CONST_1,
 }
-impl DACRSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DACRSR::CONST_0 => false,
-            DACRSR::CONST_1 => true,
+impl From<DACRS_A> for bool {
+    #[inline(always)]
+    fn from(variant: DACRS_A) -> Self {
+        match variant {
+            DACRS_A::CONST_0 => false,
+            DACRS_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DACRSR {
-        match value {
-            false => DACRSR::CONST_0,
-            true => DACRSR::CONST_1,
+}
+#[doc = "Reader of field `DACRS`"]
+pub type DACRS_R = crate::R<bool, DACRS_A>;
+impl DACRS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DACRS_A {
+        match self.bits {
+            false => DACRS_A::CONST_0,
+            true => DACRS_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == DACRSR::CONST_0
+        *self == DACRS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == DACRSR::CONST_1
+        *self == DACRS_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `MMCIRS`"]
+#[doc = "MMC Interface Reset Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MMCIRSR {
-    #[doc = "Reset de-asserted"]
+pub enum MMCIRS_A {
+    #[doc = "0: Reset de-asserted"]
     CONST_0,
-    #[doc = "Reset asserted"]
+    #[doc = "1: Reset asserted"]
     CONST_1,
 }
-impl MMCIRSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MMCIRSR::CONST_0 => false,
-            MMCIRSR::CONST_1 => true,
+impl From<MMCIRS_A> for bool {
+    #[inline(always)]
+    fn from(variant: MMCIRS_A) -> Self {
+        match variant {
+            MMCIRS_A::CONST_0 => false,
+            MMCIRS_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MMCIRSR {
-        match value {
-            false => MMCIRSR::CONST_0,
-            true => MMCIRSR::CONST_1,
+}
+#[doc = "Reader of field `MMCIRS`"]
+pub type MMCIRS_R = crate::R<bool, MMCIRS_A>;
+impl MMCIRS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MMCIRS_A {
+        match self.bits {
+            false => MMCIRS_A::CONST_0,
+            true => MMCIRS_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == MMCIRSR::CONST_0
+        *self == MMCIRS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == MMCIRSR::CONST_1
+        *self == MMCIRS_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `USIC1RS`"]
+#[doc = "USIC1 Reset Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum USIC1RSR {
-    #[doc = "Reset de-asserted"]
+pub enum USIC1RS_A {
+    #[doc = "0: Reset de-asserted"]
     CONST_0,
-    #[doc = "Reset asserted"]
+    #[doc = "1: Reset asserted"]
     CONST_1,
 }
-impl USIC1RSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            USIC1RSR::CONST_0 => false,
-            USIC1RSR::CONST_1 => true,
+impl From<USIC1RS_A> for bool {
+    #[inline(always)]
+    fn from(variant: USIC1RS_A) -> Self {
+        match variant {
+            USIC1RS_A::CONST_0 => false,
+            USIC1RS_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> USIC1RSR {
-        match value {
-            false => USIC1RSR::CONST_0,
-            true => USIC1RSR::CONST_1,
+}
+#[doc = "Reader of field `USIC1RS`"]
+pub type USIC1RS_R = crate::R<bool, USIC1RS_A>;
+impl USIC1RS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> USIC1RS_A {
+        match self.bits {
+            false => USIC1RS_A::CONST_0,
+            true => USIC1RS_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == USIC1RSR::CONST_0
+        *self == USIC1RS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == USIC1RSR::CONST_1
+        *self == USIC1RS_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PPORTSRS`"]
+#[doc = "PORTS Reset Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPORTSRSR {
-    #[doc = "Reset de-asserted"]
+pub enum PPORTSRS_A {
+    #[doc = "0: Reset de-asserted"]
     CONST_0,
-    #[doc = "Reset asserted"]
+    #[doc = "1: Reset asserted"]
     CONST_1,
 }
-impl PPORTSRSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPORTSRSR::CONST_0 => false,
-            PPORTSRSR::CONST_1 => true,
+impl From<PPORTSRS_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPORTSRS_A) -> Self {
+        match variant {
+            PPORTSRS_A::CONST_0 => false,
+            PPORTSRS_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPORTSRSR {
-        match value {
-            false => PPORTSRSR::CONST_0,
-            true => PPORTSRSR::CONST_1,
+}
+#[doc = "Reader of field `PPORTSRS`"]
+pub type PPORTSRS_R = crate::R<bool, PPORTSRS_A>;
+impl PPORTSRS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPORTSRS_A {
+        match self.bits {
+            false => PPORTSRS_A::CONST_0,
+            true => PPORTSRS_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPORTSRSR::CONST_0
+        *self == PPORTSRS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPORTSRSR::CONST_1
+        *self == PPORTSRS_A::CONST_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 3 - LEDTS Reset Status"]
-    #[inline]
-    pub fn ledtscu0rs(&self) -> LEDTSCU0RSR {
-        LEDTSCU0RSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ledtscu0rs(&self) -> LEDTSCU0RS_R {
+        LEDTSCU0RS_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - MultiCAN Reset Status"]
-    #[inline]
-    pub fn mcan0rs(&self) -> MCAN0RSR {
-        MCAN0RSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mcan0rs(&self) -> MCAN0RS_R {
+        MCAN0RS_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - DAC Reset Status"]
-    #[inline]
-    pub fn dacrs(&self) -> DACRSR {
-        DACRSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dacrs(&self) -> DACRS_R {
+        DACRS_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - MMC Interface Reset Status"]
-    #[inline]
-    pub fn mmcirs(&self) -> MMCIRSR {
-        MMCIRSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mmcirs(&self) -> MMCIRS_R {
+        MMCIRS_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - USIC1 Reset Status"]
-    #[inline]
-    pub fn usic1rs(&self) -> USIC1RSR {
-        USIC1RSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn usic1rs(&self) -> USIC1RS_R {
+        USIC1RS_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 9 - PORTS Reset Status"]
-    #[inline]
-    pub fn pportsrs(&self) -> PPORTSRSR {
-        PPORTSRSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pportsrs(&self) -> PPORTSRS_R {
+        PPORTSRS_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }

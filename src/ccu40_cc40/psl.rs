@@ -1,181 +1,104 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PSL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PSL"]
+pub type R = crate::R<u32, super::PSL>;
+#[doc = "Writer for register PSL"]
+pub type W = crate::W<u32, super::PSL>;
+#[doc = "Register PSL `reset()`'s with value 0"]
+impl crate::ResetValue for super::PSL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `PSL`"]
+#[doc = "Output Passive Level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PSLR {
-    #[doc = "Passive Level is LOW"]
+pub enum PSL_A {
+    #[doc = "0: Passive Level is LOW"]
     VALUE1,
-    #[doc = "Passive Level is HIGH"]
+    #[doc = "1: Passive Level is HIGH"]
     VALUE2,
 }
-impl PSLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PSLR::VALUE1 => false,
-            PSLR::VALUE2 => true,
+impl From<PSL_A> for bool {
+    #[inline(always)]
+    fn from(variant: PSL_A) -> Self {
+        match variant {
+            PSL_A::VALUE1 => false,
+            PSL_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PSLR {
-        match value {
-            false => PSLR::VALUE1,
-            true => PSLR::VALUE2,
+}
+#[doc = "Reader of field `PSL`"]
+pub type PSL_R = crate::R<bool, PSL_A>;
+impl PSL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PSL_A {
+        match self.bits {
+            false => PSL_A::VALUE1,
+            true => PSL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PSLR::VALUE1
+        *self == PSL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PSLR::VALUE2
+        *self == PSL_A::VALUE2
     }
 }
-#[doc = "Values that can be written to the field `PSL`"]
-pub enum PSLW {
-    #[doc = "Passive Level is LOW"]
-    VALUE1,
-    #[doc = "Passive Level is HIGH"]
-    VALUE2,
-}
-impl PSLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PSLW::VALUE1 => false,
-            PSLW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PSLW<'a> {
+#[doc = "Write proxy for field `PSL`"]
+pub struct PSL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PSLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PSLW) -> &'a mut W {
+impl<'a> PSL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PSL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Passive Level is LOW"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(PSLW::VALUE1)
+        self.variant(PSL_A::VALUE1)
     }
     #[doc = "Passive Level is HIGH"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(PSLW::VALUE2)
+        self.variant(PSL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Output Passive Level"]
-    #[inline]
-    pub fn psl(&self) -> PSLR {
-        PSLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn psl(&self) -> PSL_R {
+        PSL_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Output Passive Level"]
-    #[inline]
-    pub fn psl(&mut self) -> _PSLW {
-        _PSLW { w: self }
+    #[inline(always)]
+    pub fn psl(&mut self) -> PSL_W {
+        PSL_W { w: self }
     }
 }

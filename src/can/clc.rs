@@ -1,211 +1,91 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CLC {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CLC"]
+pub type R = crate::R<u32, super::CLC>;
+#[doc = "Writer for register CLC"]
+pub type W = crate::W<u32, super::CLC>;
+#[doc = "Register CLC `reset()`'s with value 0x03"]
+impl crate::ResetValue for super::CLC {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x03
     }
 }
-#[doc = r" Value of the field"]
-pub struct DISRR {
-    bits: bool,
-}
-impl DISRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DISSR {
-    bits: bool,
-}
-impl DISSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EDISR {
-    bits: bool,
-}
-impl EDISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DISRW<'a> {
+#[doc = "Reader of field `DISR`"]
+pub type DISR_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DISR`"]
+pub struct DISR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DISRW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DISR_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _EDISW<'a> {
+#[doc = "Reader of field `DISS`"]
+pub type DISS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `EDIS`"]
+pub type EDIS_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `EDIS`"]
+pub struct EDIS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EDISW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> EDIS_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Module Disable Request Bit"]
-    #[inline]
-    pub fn disr(&self) -> DISRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DISRR { bits }
+    #[inline(always)]
+    pub fn disr(&self) -> DISR_R {
+        DISR_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Module Disable Status Bit"]
-    #[inline]
-    pub fn diss(&self) -> DISSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DISSR { bits }
+    #[inline(always)]
+    pub fn diss(&self) -> DISS_R {
+        DISS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Sleep Mode Enable Control"]
-    #[inline]
-    pub fn edis(&self) -> EDISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EDISR { bits }
+    #[inline(always)]
+    pub fn edis(&self) -> EDIS_R {
+        EDIS_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 3 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Module Disable Request Bit"]
-    #[inline]
-    pub fn disr(&mut self) -> _DISRW {
-        _DISRW { w: self }
+    #[inline(always)]
+    pub fn disr(&mut self) -> DISR_W {
+        DISR_W { w: self }
     }
     #[doc = "Bit 3 - Sleep Mode Enable Control"]
-    #[inline]
-    pub fn edis(&mut self) -> _EDISW {
-        _EDISW { w: self }
+    #[inline(always)]
+    pub fn edis(&mut self) -> EDIS_W {
+        EDIS_W { w: self }
     }
 }

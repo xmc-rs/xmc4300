@@ -1,206 +1,118 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::HCDMA_SCATGATHER {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register HCDMA_SCATGATHER"]
+pub type R = crate::R<u32, super::HCDMA_SCATGATHER>;
+#[doc = "Writer for register HCDMA_SCATGATHER"]
+pub type W = crate::W<u32, super::HCDMA_SCATGATHER>;
+#[doc = "Register HCDMA_SCATGATHER `reset()`'s with value 0"]
+impl crate::ResetValue for super::HCDMA_SCATGATHER {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `CTD`"]
+#[doc = "Current Transfer Desc:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CTDR {
-    #[doc = "1 descriptor"]
+pub enum CTD_A {
+    #[doc = "0: 1 descriptor"]
     VALUE1,
-    #[doc = "64 descriptors"]
+    #[doc = "63: 64 descriptors"]
     VALUE2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CTDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CTDR::VALUE1 => 0,
-            CTDR::VALUE2 => 63,
-            CTDR::_Reserved(bits) => bits,
+impl From<CTD_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CTD_A) -> Self {
+        match variant {
+            CTD_A::VALUE1 => 0,
+            CTD_A::VALUE2 => 63,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CTDR {
-        match value {
-            0 => CTDR::VALUE1,
-            63 => CTDR::VALUE2,
-            i => CTDR::_Reserved(i),
+}
+#[doc = "Reader of field `CTD`"]
+pub type CTD_R = crate::R<u8, CTD_A>;
+impl CTD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CTD_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CTD_A::VALUE1),
+            63 => Val(CTD_A::VALUE2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CTDR::VALUE1
+        *self == CTD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CTDR::VALUE2
+        *self == CTD_A::VALUE2
     }
 }
-#[doc = r" Value of the field"]
-pub struct DMAADDRR {
-    bits: u32,
-}
-impl DMAADDRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `CTD`"]
-pub enum CTDW {
-    #[doc = "1 descriptor"]
-    VALUE1,
-    #[doc = "64 descriptors"]
-    VALUE2,
-}
-impl CTDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CTDW::VALUE1 => 0,
-            CTDW::VALUE2 => 63,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CTDW<'a> {
+#[doc = "Write proxy for field `CTD`"]
+pub struct CTD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CTDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CTDW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> CTD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CTD_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "1 descriptor"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CTDW::VALUE1)
+        self.variant(CTD_A::VALUE1)
     }
     #[doc = "64 descriptors"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CTDW::VALUE2)
+        self.variant(CTD_A::VALUE2)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x3f << 3)) | (((value as u32) & 0x3f) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DMAADDRW<'a> {
+#[doc = "Reader of field `DMAAddr`"]
+pub type DMAADDR_R = crate::R<u32, u32>;
+#[doc = "Write proxy for field `DMAAddr`"]
+pub struct DMAADDR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DMAADDRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DMAADDR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 8388607;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x007f_ffff << 9)) | (((value as u32) & 0x007f_ffff) << 9);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 3:8 - Current Transfer Desc:"]
-    #[inline]
-    pub fn ctd(&self) -> CTDR {
-        CTDR::_from({
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ctd(&self) -> CTD_R {
+        CTD_R::new(((self.bits >> 3) & 0x3f) as u8)
     }
     #[doc = "Bits 9:31 - DMA Address"]
-    #[inline]
-    pub fn dmaaddr(&self) -> DMAADDRR {
-        let bits = {
-            const MASK: u32 = 8388607;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        DMAADDRR { bits }
+    #[inline(always)]
+    pub fn dmaaddr(&self) -> DMAADDR_R {
+        DMAADDR_R::new(((self.bits >> 9) & 0x007f_ffff) as u32)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 3:8 - Current Transfer Desc:"]
-    #[inline]
-    pub fn ctd(&mut self) -> _CTDW {
-        _CTDW { w: self }
+    #[inline(always)]
+    pub fn ctd(&mut self) -> CTD_W {
+        CTD_W { w: self }
     }
     #[doc = "Bits 9:31 - DMA Address"]
-    #[inline]
-    pub fn dmaaddr(&mut self) -> _DMAADDRW {
-        _DMAADDRW { w: self }
+    #[inline(always)]
+    pub fn dmaaddr(&mut self) -> DMAADDR_W {
+        DMAADDR_W { w: self }
     }
 }

@@ -1,634 +1,488 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u16,
-}
-impl super::FEATURE {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `FMMU`"]
+#[doc = "Reader of register FEATURE"]
+pub type R = crate::R<u16, super::FEATURE>;
+#[doc = "FMMU Operation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FMMUR {
-    #[doc = "Bit oriented"]
+pub enum FMMU_A {
+    #[doc = "0: Bit oriented"]
     VALUE1,
-    #[doc = "Byte oriented"]
+    #[doc = "1: Byte oriented"]
     VALUE2,
 }
-impl FMMUR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FMMUR::VALUE1 => false,
-            FMMUR::VALUE2 => true,
+impl From<FMMU_A> for bool {
+    #[inline(always)]
+    fn from(variant: FMMU_A) -> Self {
+        match variant {
+            FMMU_A::VALUE1 => false,
+            FMMU_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FMMUR {
-        match value {
-            false => FMMUR::VALUE1,
-            true => FMMUR::VALUE2,
+}
+#[doc = "Reader of field `FMMU`"]
+pub type FMMU_R = crate::R<bool, FMMU_A>;
+impl FMMU_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FMMU_A {
+        match self.bits {
+            false => FMMU_A::VALUE1,
+            true => FMMU_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == FMMUR::VALUE1
+        *self == FMMU_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == FMMUR::VALUE2
+        *self == FMMU_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `CLKS`"]
+#[doc = "Distributed Clocks\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLKSR {
-    #[doc = "Not available"]
+pub enum CLKS_A {
+    #[doc = "0: Not available"]
     VALUE1,
-    #[doc = "Available"]
+    #[doc = "1: Available"]
     VALUE2,
 }
-impl CLKSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CLKSR::VALUE1 => false,
-            CLKSR::VALUE2 => true,
+impl From<CLKS_A> for bool {
+    #[inline(always)]
+    fn from(variant: CLKS_A) -> Self {
+        match variant {
+            CLKS_A::VALUE1 => false,
+            CLKS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CLKSR {
-        match value {
-            false => CLKSR::VALUE1,
-            true => CLKSR::VALUE2,
+}
+#[doc = "Reader of field `CLKS`"]
+pub type CLKS_R = crate::R<bool, CLKS_A>;
+impl CLKS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CLKS_A {
+        match self.bits {
+            false => CLKS_A::VALUE1,
+            true => CLKS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CLKSR::VALUE1
+        *self == CLKS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CLKSR::VALUE2
+        *self == CLKS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `CLKS_W`"]
+#[doc = "Distributed Clocks (width)\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLKS_WR {
-    #[doc = "32 bits"]
+pub enum CLKS_W_A {
+    #[doc = "0: 32 bits"]
     VALUE1,
-    #[doc = "64 bits"]
+    #[doc = "1: 64 bits"]
     VALUE2,
 }
-impl CLKS_WR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CLKS_WR::VALUE1 => false,
-            CLKS_WR::VALUE2 => true,
+impl From<CLKS_W_A> for bool {
+    #[inline(always)]
+    fn from(variant: CLKS_W_A) -> Self {
+        match variant {
+            CLKS_W_A::VALUE1 => false,
+            CLKS_W_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CLKS_WR {
-        match value {
-            false => CLKS_WR::VALUE1,
-            true => CLKS_WR::VALUE2,
+}
+#[doc = "Reader of field `CLKS_W`"]
+pub type CLKS_W_R = crate::R<bool, CLKS_W_A>;
+impl CLKS_W_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CLKS_W_A {
+        match self.bits {
+            false => CLKS_W_A::VALUE1,
+            true => CLKS_W_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CLKS_WR::VALUE1
+        *self == CLKS_W_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CLKS_WR::VALUE2
+        *self == CLKS_W_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `LJ_EBUS`"]
+#[doc = "Low Jitter EBUS\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LJ_EBUSR {
-    #[doc = "Not available, standard jitter"]
+pub enum LJ_EBUS_A {
+    #[doc = "0: Not available, standard jitter"]
     VALUE1,
-    #[doc = "Available, jitter minimized"]
+    #[doc = "1: Available, jitter minimized"]
     VALUE2,
 }
-impl LJ_EBUSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LJ_EBUSR::VALUE1 => false,
-            LJ_EBUSR::VALUE2 => true,
+impl From<LJ_EBUS_A> for bool {
+    #[inline(always)]
+    fn from(variant: LJ_EBUS_A) -> Self {
+        match variant {
+            LJ_EBUS_A::VALUE1 => false,
+            LJ_EBUS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LJ_EBUSR {
-        match value {
-            false => LJ_EBUSR::VALUE1,
-            true => LJ_EBUSR::VALUE2,
+}
+#[doc = "Reader of field `LJ_EBUS`"]
+pub type LJ_EBUS_R = crate::R<bool, LJ_EBUS_A>;
+impl LJ_EBUS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LJ_EBUS_A {
+        match self.bits {
+            false => LJ_EBUS_A::VALUE1,
+            true => LJ_EBUS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LJ_EBUSR::VALUE1
+        *self == LJ_EBUS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LJ_EBUSR::VALUE2
+        *self == LJ_EBUS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `ELD_EBUS`"]
+#[doc = "Enhanced Link Detection EBUS\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ELD_EBUSR {
-    #[doc = "Not available"]
+pub enum ELD_EBUS_A {
+    #[doc = "0: Not available"]
     VALUE1,
-    #[doc = "Available"]
+    #[doc = "1: Available"]
     VALUE2,
 }
-impl ELD_EBUSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ELD_EBUSR::VALUE1 => false,
-            ELD_EBUSR::VALUE2 => true,
+impl From<ELD_EBUS_A> for bool {
+    #[inline(always)]
+    fn from(variant: ELD_EBUS_A) -> Self {
+        match variant {
+            ELD_EBUS_A::VALUE1 => false,
+            ELD_EBUS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ELD_EBUSR {
-        match value {
-            false => ELD_EBUSR::VALUE1,
-            true => ELD_EBUSR::VALUE2,
+}
+#[doc = "Reader of field `ELD_EBUS`"]
+pub type ELD_EBUS_R = crate::R<bool, ELD_EBUS_A>;
+impl ELD_EBUS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ELD_EBUS_A {
+        match self.bits {
+            false => ELD_EBUS_A::VALUE1,
+            true => ELD_EBUS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ELD_EBUSR::VALUE1
+        *self == ELD_EBUS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ELD_EBUSR::VALUE2
+        *self == ELD_EBUS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `ELD_MII`"]
+#[doc = "Enhanced Link Detection MII\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ELD_MIIR {
-    #[doc = "Not available"]
+pub enum ELD_MII_A {
+    #[doc = "0: Not available"]
     VALUE1,
-    #[doc = "Available"]
+    #[doc = "1: Available"]
     VALUE2,
 }
-impl ELD_MIIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ELD_MIIR::VALUE1 => false,
-            ELD_MIIR::VALUE2 => true,
+impl From<ELD_MII_A> for bool {
+    #[inline(always)]
+    fn from(variant: ELD_MII_A) -> Self {
+        match variant {
+            ELD_MII_A::VALUE1 => false,
+            ELD_MII_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ELD_MIIR {
-        match value {
-            false => ELD_MIIR::VALUE1,
-            true => ELD_MIIR::VALUE2,
+}
+#[doc = "Reader of field `ELD_MII`"]
+pub type ELD_MII_R = crate::R<bool, ELD_MII_A>;
+impl ELD_MII_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ELD_MII_A {
+        match self.bits {
+            false => ELD_MII_A::VALUE1,
+            true => ELD_MII_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ELD_MIIR::VALUE1
+        *self == ELD_MII_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ELD_MIIR::VALUE2
+        *self == ELD_MII_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `SH_FCSE`"]
+#[doc = "Separate Handling of FCS Errors\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SH_FCSER {
-    #[doc = "Not supported"]
+pub enum SH_FCSE_A {
+    #[doc = "0: Not supported"]
     VALUE1,
-    #[doc = "Supported, frames with wrong FCS and additional nibble will be counted separately in Forwarded RX Error Counter"]
+    #[doc = "1: Supported, frames with wrong FCS and additional nibble will be counted separately in Forwarded RX Error Counter"]
     VALUE2,
 }
-impl SH_FCSER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SH_FCSER::VALUE1 => false,
-            SH_FCSER::VALUE2 => true,
+impl From<SH_FCSE_A> for bool {
+    #[inline(always)]
+    fn from(variant: SH_FCSE_A) -> Self {
+        match variant {
+            SH_FCSE_A::VALUE1 => false,
+            SH_FCSE_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SH_FCSER {
-        match value {
-            false => SH_FCSER::VALUE1,
-            true => SH_FCSER::VALUE2,
+}
+#[doc = "Reader of field `SH_FCSE`"]
+pub type SH_FCSE_R = crate::R<bool, SH_FCSE_A>;
+impl SH_FCSE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SH_FCSE_A {
+        match self.bits {
+            false => SH_FCSE_A::VALUE1,
+            true => SH_FCSE_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SH_FCSER::VALUE1
+        *self == SH_FCSE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SH_FCSER::VALUE2
+        *self == SH_FCSE_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `EDC_SYNCA`"]
+#[doc = "Enhanced DC SYNC Activation\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDC_SYNCAR {
-    #[doc = "Not available"]
+pub enum EDC_SYNCA_A {
+    #[doc = "0: Not available"]
     VALUE1,
-    #[doc = "Available"]
+    #[doc = "1: Available"]
     VALUE2,
 }
-impl EDC_SYNCAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDC_SYNCAR::VALUE1 => false,
-            EDC_SYNCAR::VALUE2 => true,
+impl From<EDC_SYNCA_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDC_SYNCA_A) -> Self {
+        match variant {
+            EDC_SYNCA_A::VALUE1 => false,
+            EDC_SYNCA_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDC_SYNCAR {
-        match value {
-            false => EDC_SYNCAR::VALUE1,
-            true => EDC_SYNCAR::VALUE2,
+}
+#[doc = "Reader of field `EDC_SYNCA`"]
+pub type EDC_SYNCA_R = crate::R<bool, EDC_SYNCA_A>;
+impl EDC_SYNCA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDC_SYNCA_A {
+        match self.bits {
+            false => EDC_SYNCA_A::VALUE1,
+            true => EDC_SYNCA_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EDC_SYNCAR::VALUE1
+        *self == EDC_SYNCA_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EDC_SYNCAR::VALUE2
+        *self == EDC_SYNCA_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `LRW_CS`"]
+#[doc = "EtherCAT LRW command support\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LRW_CSR {
-    #[doc = "Supported"]
+pub enum LRW_CS_A {
+    #[doc = "0: Supported"]
     VALUE1,
-    #[doc = "Not supported"]
+    #[doc = "1: Not supported"]
     VALUE2,
 }
-impl LRW_CSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LRW_CSR::VALUE1 => false,
-            LRW_CSR::VALUE2 => true,
+impl From<LRW_CS_A> for bool {
+    #[inline(always)]
+    fn from(variant: LRW_CS_A) -> Self {
+        match variant {
+            LRW_CS_A::VALUE1 => false,
+            LRW_CS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LRW_CSR {
-        match value {
-            false => LRW_CSR::VALUE1,
-            true => LRW_CSR::VALUE2,
+}
+#[doc = "Reader of field `LRW_CS`"]
+pub type LRW_CS_R = crate::R<bool, LRW_CS_A>;
+impl LRW_CS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LRW_CS_A {
+        match self.bits {
+            false => LRW_CS_A::VALUE1,
+            true => LRW_CS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LRW_CSR::VALUE1
+        *self == LRW_CS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LRW_CSR::VALUE2
+        *self == LRW_CS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `RW_CS`"]
+#[doc = "EtherCAT read/write command support (BRW, APRW, FPRW)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RW_CSR {
-    #[doc = "Supported"]
+pub enum RW_CS_A {
+    #[doc = "0: Supported"]
     VALUE1,
-    #[doc = "Not supported"]
+    #[doc = "1: Not supported"]
     VALUE2,
 }
-impl RW_CSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RW_CSR::VALUE1 => false,
-            RW_CSR::VALUE2 => true,
+impl From<RW_CS_A> for bool {
+    #[inline(always)]
+    fn from(variant: RW_CS_A) -> Self {
+        match variant {
+            RW_CS_A::VALUE1 => false,
+            RW_CS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RW_CSR {
-        match value {
-            false => RW_CSR::VALUE1,
-            true => RW_CSR::VALUE2,
+}
+#[doc = "Reader of field `RW_CS`"]
+pub type RW_CS_R = crate::R<bool, RW_CS_A>;
+impl RW_CS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RW_CS_A {
+        match self.bits {
+            false => RW_CS_A::VALUE1,
+            true => RW_CS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RW_CSR::VALUE1
+        *self == RW_CS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RW_CSR::VALUE2
+        *self == RW_CS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `FX_CONF`"]
+#[doc = "Fixed FMMU/SyncManager configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FX_CONFR {
-    #[doc = "Variable configuration"]
+pub enum FX_CONF_A {
+    #[doc = "0: Variable configuration"]
     VALUE1,
-    #[doc = "Fixed configuration (refer to documentation of supporting ESCs)"]
+    #[doc = "1: Fixed configuration (refer to documentation of supporting ESCs)"]
     VALUE2,
 }
-impl FX_CONFR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FX_CONFR::VALUE1 => false,
-            FX_CONFR::VALUE2 => true,
+impl From<FX_CONF_A> for bool {
+    #[inline(always)]
+    fn from(variant: FX_CONF_A) -> Self {
+        match variant {
+            FX_CONF_A::VALUE1 => false,
+            FX_CONF_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FX_CONFR {
-        match value {
-            false => FX_CONFR::VALUE1,
-            true => FX_CONFR::VALUE2,
+}
+#[doc = "Reader of field `FX_CONF`"]
+pub type FX_CONF_R = crate::R<bool, FX_CONF_A>;
+impl FX_CONF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FX_CONF_A {
+        match self.bits {
+            false => FX_CONF_A::VALUE1,
+            true => FX_CONF_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == FX_CONFR::VALUE1
+        *self == FX_CONF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == FX_CONFR::VALUE2
+        *self == FX_CONF_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
     #[doc = "Bit 0 - FMMU Operation"]
-    #[inline]
-    pub fn fmmu(&self) -> FMMUR {
-        FMMUR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn fmmu(&self) -> FMMU_R {
+        FMMU_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 2 - Distributed Clocks"]
-    #[inline]
-    pub fn clks(&self) -> CLKSR {
-        CLKSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn clks(&self) -> CLKS_R {
+        CLKS_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Distributed Clocks (width)"]
-    #[inline]
-    pub fn clks_w(&self) -> CLKS_WR {
-        CLKS_WR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn clks_w(&self) -> CLKS_W_R {
+        CLKS_W_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Low Jitter EBUS"]
-    #[inline]
-    pub fn lj_ebus(&self) -> LJ_EBUSR {
-        LJ_EBUSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn lj_ebus(&self) -> LJ_EBUS_R {
+        LJ_EBUS_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Enhanced Link Detection EBUS"]
-    #[inline]
-    pub fn eld_ebus(&self) -> ELD_EBUSR {
-        ELD_EBUSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn eld_ebus(&self) -> ELD_EBUS_R {
+        ELD_EBUS_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Enhanced Link Detection MII"]
-    #[inline]
-    pub fn eld_mii(&self) -> ELD_MIIR {
-        ELD_MIIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn eld_mii(&self) -> ELD_MII_R {
+        ELD_MII_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Separate Handling of FCS Errors"]
-    #[inline]
-    pub fn sh_fcse(&self) -> SH_FCSER {
-        SH_FCSER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn sh_fcse(&self) -> SH_FCSE_R {
+        SH_FCSE_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Enhanced DC SYNC Activation"]
-    #[inline]
-    pub fn edc_synca(&self) -> EDC_SYNCAR {
-        EDC_SYNCAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn edc_synca(&self) -> EDC_SYNCA_R {
+        EDC_SYNCA_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - EtherCAT LRW command support"]
-    #[inline]
-    pub fn lrw_cs(&self) -> LRW_CSR {
-        LRW_CSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn lrw_cs(&self) -> LRW_CS_R {
+        LRW_CS_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - EtherCAT read/write command support (BRW, APRW, FPRW)"]
-    #[inline]
-    pub fn rw_cs(&self) -> RW_CSR {
-        RW_CSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn rw_cs(&self) -> RW_CS_R {
+        RW_CS_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Fixed FMMU/SyncManager configuration"]
-    #[inline]
-    pub fn fx_conf(&self) -> FX_CONFR {
-        FX_CONFR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn fx_conf(&self) -> FX_CONF_R {
+        FX_CONF_R::new(((self.bits >> 11) & 0x01) != 0)
     }
 }

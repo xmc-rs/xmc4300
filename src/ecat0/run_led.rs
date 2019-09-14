@@ -1,335 +1,224 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u8,
-}
-impl super::RUN_LED {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register RUN_LED"]
+pub type R = crate::R<u8, super::RUN_LED>;
+#[doc = "Writer for register RUN_LED"]
+pub type W = crate::W<u8, super::RUN_LED>;
+#[doc = "Register RUN_LED `reset()`'s with value 0x0e"]
+impl crate::ResetValue for super::RUN_LED {
+    type Type = u8;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0e
     }
 }
-#[doc = "Possible values of the field `LED_CODE`"]
+#[doc = "LED Code\n\nValue on reset: 14"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LED_CODER {
-    #[doc = "OFF - Init State"]
+pub enum LED_CODE_A {
+    #[doc = "0: OFF - Init State"]
     VALUE1,
-    #[doc = "Flash - SafeOp)"]
+    #[doc = "1: Flash - SafeOp)"]
     VALUE2,
-    #[doc = "Blinking - PreOp"]
+    #[doc = "13: Blinking - PreOp"]
     VALUE3,
-    #[doc = "Flickering - Bootstrap"]
+    #[doc = "14: Flickering - Bootstrap"]
     VALUE4,
-    #[doc = "On - Operational"]
+    #[doc = "15: On - Operational"]
     VALUE5,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl LED_CODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LED_CODER::VALUE1 => 0,
-            LED_CODER::VALUE2 => 1,
-            LED_CODER::VALUE3 => 13,
-            LED_CODER::VALUE4 => 14,
-            LED_CODER::VALUE5 => 15,
-            LED_CODER::_Reserved(bits) => bits,
+impl From<LED_CODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LED_CODE_A) -> Self {
+        match variant {
+            LED_CODE_A::VALUE1 => 0,
+            LED_CODE_A::VALUE2 => 1,
+            LED_CODE_A::VALUE3 => 13,
+            LED_CODE_A::VALUE4 => 14,
+            LED_CODE_A::VALUE5 => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LED_CODER {
-        match value {
-            0 => LED_CODER::VALUE1,
-            1 => LED_CODER::VALUE2,
-            13 => LED_CODER::VALUE3,
-            14 => LED_CODER::VALUE4,
-            15 => LED_CODER::VALUE5,
-            i => LED_CODER::_Reserved(i),
+}
+#[doc = "Reader of field `LED_CODE`"]
+pub type LED_CODE_R = crate::R<u8, LED_CODE_A>;
+impl LED_CODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, LED_CODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(LED_CODE_A::VALUE1),
+            1 => Val(LED_CODE_A::VALUE2),
+            13 => Val(LED_CODE_A::VALUE3),
+            14 => Val(LED_CODE_A::VALUE4),
+            15 => Val(LED_CODE_A::VALUE5),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LED_CODER::VALUE1
+        *self == LED_CODE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LED_CODER::VALUE2
+        *self == LED_CODE_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == LED_CODER::VALUE3
+        *self == LED_CODE_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == LED_CODER::VALUE4
+        *self == LED_CODE_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == LED_CODER::VALUE5
+        *self == LED_CODE_A::VALUE5
     }
 }
-#[doc = "Possible values of the field `EN_OVERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EN_OVERRR {
-    #[doc = "Override disable"]
-    VALUE1,
-    #[doc = "Override enable"]
-    VALUE2,
-}
-impl EN_OVERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EN_OVERRR::VALUE1 => false,
-            EN_OVERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EN_OVERRR {
-        match value {
-            false => EN_OVERRR::VALUE1,
-            true => EN_OVERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EN_OVERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EN_OVERRR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `LED_CODE`"]
-pub enum LED_CODEW {
-    #[doc = "OFF - Init State"]
-    VALUE1,
-    #[doc = "Flash - SafeOp)"]
-    VALUE2,
-    #[doc = "Blinking - PreOp"]
-    VALUE3,
-    #[doc = "Flickering - Bootstrap"]
-    VALUE4,
-    #[doc = "On - Operational"]
-    VALUE5,
-}
-impl LED_CODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LED_CODEW::VALUE1 => 0,
-            LED_CODEW::VALUE2 => 1,
-            LED_CODEW::VALUE3 => 13,
-            LED_CODEW::VALUE4 => 14,
-            LED_CODEW::VALUE5 => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LED_CODEW<'a> {
+#[doc = "Write proxy for field `LED_CODE`"]
+pub struct LED_CODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LED_CODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LED_CODEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> LED_CODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LED_CODE_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "OFF - Init State"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LED_CODEW::VALUE1)
+        self.variant(LED_CODE_A::VALUE1)
     }
     #[doc = "Flash - SafeOp)"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LED_CODEW::VALUE2)
+        self.variant(LED_CODE_A::VALUE2)
     }
     #[doc = "Blinking - PreOp"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(LED_CODEW::VALUE3)
+        self.variant(LED_CODE_A::VALUE3)
     }
     #[doc = "Flickering - Bootstrap"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(LED_CODEW::VALUE4)
+        self.variant(LED_CODE_A::VALUE4)
     }
     #[doc = "On - Operational"]
-    #[inline]
+    #[inline(always)]
     pub fn value5(self) -> &'a mut W {
-        self.variant(LED_CODEW::VALUE5)
+        self.variant(LED_CODE_A::VALUE5)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u8) & 0x0f);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EN_OVERR`"]
-pub enum EN_OVERRW {
-    #[doc = "Override disable"]
+#[doc = "Enable Override\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EN_OVERR_A {
+    #[doc = "0: Override disable"]
     VALUE1,
-    #[doc = "Override enable"]
+    #[doc = "1: Override enable"]
     VALUE2,
 }
-impl EN_OVERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EN_OVERRW::VALUE1 => false,
-            EN_OVERRW::VALUE2 => true,
+impl From<EN_OVERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: EN_OVERR_A) -> Self {
+        match variant {
+            EN_OVERR_A::VALUE1 => false,
+            EN_OVERR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EN_OVERRW<'a> {
+#[doc = "Reader of field `EN_OVERR`"]
+pub type EN_OVERR_R = crate::R<bool, EN_OVERR_A>;
+impl EN_OVERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EN_OVERR_A {
+        match self.bits {
+            false => EN_OVERR_A::VALUE1,
+            true => EN_OVERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EN_OVERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EN_OVERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EN_OVERR`"]
+pub struct EN_OVERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EN_OVERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EN_OVERRW) -> &'a mut W {
+impl<'a> EN_OVERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EN_OVERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Override disable"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EN_OVERRW::VALUE1)
+        self.variant(EN_OVERR_A::VALUE1)
     }
     #[doc = "Override enable"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EN_OVERRW::VALUE2)
+        self.variant(EN_OVERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u8) & 0x01) << 4);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - LED Code"]
-    #[inline]
-    pub fn led_code(&self) -> LED_CODER {
-        LED_CODER::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) as u8
-        })
+    #[inline(always)]
+    pub fn led_code(&self) -> LED_CODE_R {
+        LED_CODE_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 4 - Enable Override"]
-    #[inline]
-    pub fn en_overr(&self) -> EN_OVERRR {
-        EN_OVERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn en_overr(&self) -> EN_OVERR_R {
+        EN_OVERR_R::new(((self.bits >> 4) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 14 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - LED Code"]
-    #[inline]
-    pub fn led_code(&mut self) -> _LED_CODEW {
-        _LED_CODEW { w: self }
+    #[inline(always)]
+    pub fn led_code(&mut self) -> LED_CODE_W {
+        LED_CODE_W { w: self }
     }
     #[doc = "Bit 4 - Enable Override"]
-    #[inline]
-    pub fn en_overr(&mut self) -> _EN_OVERRW {
-        _EN_OVERRW { w: self }
+    #[inline(always)]
+    pub fn en_overr(&mut self) -> EN_OVERR_W {
+        EN_OVERR_W { w: self }
     }
 }

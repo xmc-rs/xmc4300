@@ -1,538 +1,368 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SDMMC_CON {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SDMMC_CON"]
+pub type R = crate::R<u32, super::SDMMC_CON>;
+#[doc = "Writer for register SDMMC_CON"]
+pub type W = crate::W<u32, super::SDMMC_CON>;
+#[doc = "Register SDMMC_CON `reset()`'s with value 0"]
+impl crate::ResetValue for super::SDMMC_CON {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `WPSEL`"]
+#[doc = "SDMMC Write Protection Input Multiplexer Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WPSELR {
-    #[doc = "P1.1 input pin selected"]
+pub enum WPSEL_A {
+    #[doc = "0: P1.1 input pin selected"]
     VALUE1,
-    #[doc = "Software bit WPVAL is selected"]
+    #[doc = "1: Software bit WPVAL is selected"]
     VALUE2,
 }
-impl WPSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WPSELR::VALUE1 => false,
-            WPSELR::VALUE2 => true,
+impl From<WPSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: WPSEL_A) -> Self {
+        match variant {
+            WPSEL_A::VALUE1 => false,
+            WPSEL_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WPSELR {
-        match value {
-            false => WPSELR::VALUE1,
-            true => WPSELR::VALUE2,
+}
+#[doc = "Reader of field `WPSEL`"]
+pub type WPSEL_R = crate::R<bool, WPSEL_A>;
+impl WPSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WPSEL_A {
+        match self.bits {
+            false => WPSEL_A::VALUE1,
+            true => WPSEL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WPSELR::VALUE1
+        *self == WPSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WPSELR::VALUE2
+        *self == WPSEL_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `WPSVAL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WPSVALR {
-    #[doc = "No write protection"]
-    VALUE1,
-    #[doc = "Write protection active"]
-    VALUE2,
-}
-impl WPSVALR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WPSVALR::VALUE1 => false,
-            WPSVALR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WPSVALR {
-        match value {
-            false => WPSVALR::VALUE1,
-            true => WPSVALR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == WPSVALR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == WPSVALR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CDSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CDSELR {
-    #[doc = "P1.10 input pin selected"]
-    VALUE1,
-    #[doc = "Software bit CDSVAL is selected"]
-    VALUE2,
-}
-impl CDSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CDSELR::VALUE1 => false,
-            CDSELR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CDSELR {
-        match value {
-            false => CDSELR::VALUE1,
-            true => CDSELR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CDSELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CDSELR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CDSVAL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CDSVALR {
-    #[doc = "No card detected"]
-    VALUE1,
-    #[doc = "Card detected"]
-    VALUE2,
-}
-impl CDSVALR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CDSVALR::VALUE1 => false,
-            CDSVALR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CDSVALR {
-        match value {
-            false => CDSVALR::VALUE1,
-            true => CDSVALR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CDSVALR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CDSVALR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `WPSEL`"]
-pub enum WPSELW {
-    #[doc = "P1.1 input pin selected"]
-    VALUE1,
-    #[doc = "Software bit WPVAL is selected"]
-    VALUE2,
-}
-impl WPSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WPSELW::VALUE1 => false,
-            WPSELW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WPSELW<'a> {
+#[doc = "Write proxy for field `WPSEL`"]
+pub struct WPSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WPSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WPSELW) -> &'a mut W {
+impl<'a> WPSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WPSEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "P1.1 input pin selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(WPSELW::VALUE1)
+        self.variant(WPSEL_A::VALUE1)
     }
     #[doc = "Software bit WPVAL is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(WPSELW::VALUE2)
+        self.variant(WPSEL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `WPSVAL`"]
-pub enum WPSVALW {
+#[doc = "SDMMC Write Protect Software Control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WPSVAL_A {
+    #[doc = "0: No write protection"]
+    VALUE1,
+    #[doc = "1: Write protection active"]
+    VALUE2,
+}
+impl From<WPSVAL_A> for bool {
+    #[inline(always)]
+    fn from(variant: WPSVAL_A) -> Self {
+        match variant {
+            WPSVAL_A::VALUE1 => false,
+            WPSVAL_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `WPSVAL`"]
+pub type WPSVAL_R = crate::R<bool, WPSVAL_A>;
+impl WPSVAL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WPSVAL_A {
+        match self.bits {
+            false => WPSVAL_A::VALUE1,
+            true => WPSVAL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == WPSVAL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == WPSVAL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `WPSVAL`"]
+pub struct WPSVAL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> WPSVAL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WPSVAL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "No write protection"]
-    VALUE1,
-    #[doc = "Write protection active"]
-    VALUE2,
-}
-impl WPSVALW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WPSVALW::VALUE1 => false,
-            WPSVALW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WPSVALW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _WPSVALW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WPSVALW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No write protection"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(WPSVALW::VALUE1)
+        self.variant(WPSVAL_A::VALUE1)
     }
     #[doc = "Write protection active"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(WPSVALW::VALUE2)
+        self.variant(WPSVAL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CDSEL`"]
-pub enum CDSELW {
-    #[doc = "P1.10 input pin selected"]
+#[doc = "SDMMC Card Detection Control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CDSEL_A {
+    #[doc = "0: P1.10 input pin selected"]
     VALUE1,
-    #[doc = "Software bit CDSVAL is selected"]
+    #[doc = "1: Software bit CDSVAL is selected"]
     VALUE2,
 }
-impl CDSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CDSELW::VALUE1 => false,
-            CDSELW::VALUE2 => true,
+impl From<CDSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: CDSEL_A) -> Self {
+        match variant {
+            CDSEL_A::VALUE1 => false,
+            CDSEL_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CDSELW<'a> {
+#[doc = "Reader of field `CDSEL`"]
+pub type CDSEL_R = crate::R<bool, CDSEL_A>;
+impl CDSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CDSEL_A {
+        match self.bits {
+            false => CDSEL_A::VALUE1,
+            true => CDSEL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CDSEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CDSEL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CDSEL`"]
+pub struct CDSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CDSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CDSELW) -> &'a mut W {
+impl<'a> CDSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CDSEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "P1.10 input pin selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CDSELW::VALUE1)
+        self.variant(CDSEL_A::VALUE1)
     }
     #[doc = "Software bit CDSVAL is selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CDSELW::VALUE2)
+        self.variant(CDSEL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CDSVAL`"]
-pub enum CDSVALW {
-    #[doc = "No card detected"]
+#[doc = "SDMMC Write Protect Software Control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CDSVAL_A {
+    #[doc = "0: No card detected"]
     VALUE1,
-    #[doc = "Card detected"]
+    #[doc = "1: Card detected"]
     VALUE2,
 }
-impl CDSVALW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CDSVALW::VALUE1 => false,
-            CDSVALW::VALUE2 => true,
+impl From<CDSVAL_A> for bool {
+    #[inline(always)]
+    fn from(variant: CDSVAL_A) -> Self {
+        match variant {
+            CDSVAL_A::VALUE1 => false,
+            CDSVAL_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CDSVALW<'a> {
+#[doc = "Reader of field `CDSVAL`"]
+pub type CDSVAL_R = crate::R<bool, CDSVAL_A>;
+impl CDSVAL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CDSVAL_A {
+        match self.bits {
+            false => CDSVAL_A::VALUE1,
+            true => CDSVAL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CDSVAL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CDSVAL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CDSVAL`"]
+pub struct CDSVAL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CDSVALW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CDSVALW) -> &'a mut W {
+impl<'a> CDSVAL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CDSVAL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No card detected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CDSVALW::VALUE1)
+        self.variant(CDSVAL_A::VALUE1)
     }
     #[doc = "Card detected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CDSVALW::VALUE2)
+        self.variant(CDSVAL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - SDMMC Write Protection Input Multiplexer Control"]
-    #[inline]
-    pub fn wpsel(&self) -> WPSELR {
-        WPSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wpsel(&self) -> WPSEL_R {
+        WPSEL_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 4 - SDMMC Write Protect Software Control"]
-    #[inline]
-    pub fn wpsval(&self) -> WPSVALR {
-        WPSVALR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wpsval(&self) -> WPSVAL_R {
+        WPSVAL_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 16 - SDMMC Card Detection Control"]
-    #[inline]
-    pub fn cdsel(&self) -> CDSELR {
-        CDSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cdsel(&self) -> CDSEL_R {
+        CDSEL_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 20 - SDMMC Write Protect Software Control"]
-    #[inline]
-    pub fn cdsval(&self) -> CDSVALR {
-        CDSVALR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cdsval(&self) -> CDSVAL_R {
+        CDSVAL_R::new(((self.bits >> 20) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - SDMMC Write Protection Input Multiplexer Control"]
-    #[inline]
-    pub fn wpsel(&mut self) -> _WPSELW {
-        _WPSELW { w: self }
+    #[inline(always)]
+    pub fn wpsel(&mut self) -> WPSEL_W {
+        WPSEL_W { w: self }
     }
     #[doc = "Bit 4 - SDMMC Write Protect Software Control"]
-    #[inline]
-    pub fn wpsval(&mut self) -> _WPSVALW {
-        _WPSVALW { w: self }
+    #[inline(always)]
+    pub fn wpsval(&mut self) -> WPSVAL_W {
+        WPSVAL_W { w: self }
     }
     #[doc = "Bit 16 - SDMMC Card Detection Control"]
-    #[inline]
-    pub fn cdsel(&mut self) -> _CDSELW {
-        _CDSELW { w: self }
+    #[inline(always)]
+    pub fn cdsel(&mut self) -> CDSEL_W {
+        CDSEL_W { w: self }
     }
     #[doc = "Bit 20 - SDMMC Write Protect Software Control"]
-    #[inline]
-    pub fn cdsval(&mut self) -> _CDSVALW {
-        _CDSVALW { w: self }
+    #[inline(always)]
+    pub fn cdsval(&mut self) -> CDSVAL_W {
+        CDSVAL_W { w: self }
     }
 }

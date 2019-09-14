@@ -1,419 +1,280 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u8,
-}
-impl super::WAKEUP_CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register WAKEUP_CTRL"]
+pub type R = crate::R<u8, super::WAKEUP_CTRL>;
+#[doc = "Writer for register WAKEUP_CTRL"]
+pub type W = crate::W<u8, super::WAKEUP_CTRL>;
+#[doc = "Register WAKEUP_CTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::WAKEUP_CTRL {
+    type Type = u8;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `WAKEUP_EVENT_EN_REM`"]
+#[doc = "Wakeup Event Enable On SD Card Removal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WAKEUP_EVENT_EN_REMR {
-    #[doc = "Disable"]
+pub enum WAKEUP_EVENT_EN_REM_A {
+    #[doc = "0: Disable"]
     VALUE1,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     VALUE2,
 }
-impl WAKEUP_EVENT_EN_REMR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WAKEUP_EVENT_EN_REMR::VALUE1 => false,
-            WAKEUP_EVENT_EN_REMR::VALUE2 => true,
+impl From<WAKEUP_EVENT_EN_REM_A> for bool {
+    #[inline(always)]
+    fn from(variant: WAKEUP_EVENT_EN_REM_A) -> Self {
+        match variant {
+            WAKEUP_EVENT_EN_REM_A::VALUE1 => false,
+            WAKEUP_EVENT_EN_REM_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WAKEUP_EVENT_EN_REMR {
-        match value {
-            false => WAKEUP_EVENT_EN_REMR::VALUE1,
-            true => WAKEUP_EVENT_EN_REMR::VALUE2,
+}
+#[doc = "Reader of field `WAKEUP_EVENT_EN_REM`"]
+pub type WAKEUP_EVENT_EN_REM_R = crate::R<bool, WAKEUP_EVENT_EN_REM_A>;
+impl WAKEUP_EVENT_EN_REM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WAKEUP_EVENT_EN_REM_A {
+        match self.bits {
+            false => WAKEUP_EVENT_EN_REM_A::VALUE1,
+            true => WAKEUP_EVENT_EN_REM_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WAKEUP_EVENT_EN_REMR::VALUE1
+        *self == WAKEUP_EVENT_EN_REM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WAKEUP_EVENT_EN_REMR::VALUE2
+        *self == WAKEUP_EVENT_EN_REM_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `WAKEUP_EVENT_EN_INS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WAKEUP_EVENT_EN_INSR {
-    #[doc = "Disable"]
-    VALUE1,
-    #[doc = "Enable"]
-    VALUE2,
-}
-impl WAKEUP_EVENT_EN_INSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WAKEUP_EVENT_EN_INSR::VALUE1 => false,
-            WAKEUP_EVENT_EN_INSR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WAKEUP_EVENT_EN_INSR {
-        match value {
-            false => WAKEUP_EVENT_EN_INSR::VALUE1,
-            true => WAKEUP_EVENT_EN_INSR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == WAKEUP_EVENT_EN_INSR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == WAKEUP_EVENT_EN_INSR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `WAKEUP_EVENT_EN_INT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WAKEUP_EVENT_EN_INTR {
-    #[doc = "Disable"]
-    VALUE1,
-    #[doc = "Enable"]
-    VALUE2,
-}
-impl WAKEUP_EVENT_EN_INTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WAKEUP_EVENT_EN_INTR::VALUE1 => false,
-            WAKEUP_EVENT_EN_INTR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WAKEUP_EVENT_EN_INTR {
-        match value {
-            false => WAKEUP_EVENT_EN_INTR::VALUE1,
-            true => WAKEUP_EVENT_EN_INTR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == WAKEUP_EVENT_EN_INTR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == WAKEUP_EVENT_EN_INTR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `WAKEUP_EVENT_EN_REM`"]
-pub enum WAKEUP_EVENT_EN_REMW {
-    #[doc = "Disable"]
-    VALUE1,
-    #[doc = "Enable"]
-    VALUE2,
-}
-impl WAKEUP_EVENT_EN_REMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WAKEUP_EVENT_EN_REMW::VALUE1 => false,
-            WAKEUP_EVENT_EN_REMW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WAKEUP_EVENT_EN_REMW<'a> {
+#[doc = "Write proxy for field `WAKEUP_EVENT_EN_REM`"]
+pub struct WAKEUP_EVENT_EN_REM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WAKEUP_EVENT_EN_REMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WAKEUP_EVENT_EN_REMW) -> &'a mut W {
+impl<'a> WAKEUP_EVENT_EN_REM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WAKEUP_EVENT_EN_REM_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(WAKEUP_EVENT_EN_REMW::VALUE1)
+        self.variant(WAKEUP_EVENT_EN_REM_A::VALUE1)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(WAKEUP_EVENT_EN_REMW::VALUE2)
+        self.variant(WAKEUP_EVENT_EN_REM_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u8) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `WAKEUP_EVENT_EN_INS`"]
-pub enum WAKEUP_EVENT_EN_INSW {
-    #[doc = "Disable"]
+#[doc = "Wakeup Event Enable On SD Card Insertion\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WAKEUP_EVENT_EN_INS_A {
+    #[doc = "0: Disable"]
     VALUE1,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     VALUE2,
 }
-impl WAKEUP_EVENT_EN_INSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WAKEUP_EVENT_EN_INSW::VALUE1 => false,
-            WAKEUP_EVENT_EN_INSW::VALUE2 => true,
+impl From<WAKEUP_EVENT_EN_INS_A> for bool {
+    #[inline(always)]
+    fn from(variant: WAKEUP_EVENT_EN_INS_A) -> Self {
+        match variant {
+            WAKEUP_EVENT_EN_INS_A::VALUE1 => false,
+            WAKEUP_EVENT_EN_INS_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _WAKEUP_EVENT_EN_INSW<'a> {
+#[doc = "Reader of field `WAKEUP_EVENT_EN_INS`"]
+pub type WAKEUP_EVENT_EN_INS_R = crate::R<bool, WAKEUP_EVENT_EN_INS_A>;
+impl WAKEUP_EVENT_EN_INS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WAKEUP_EVENT_EN_INS_A {
+        match self.bits {
+            false => WAKEUP_EVENT_EN_INS_A::VALUE1,
+            true => WAKEUP_EVENT_EN_INS_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == WAKEUP_EVENT_EN_INS_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == WAKEUP_EVENT_EN_INS_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `WAKEUP_EVENT_EN_INS`"]
+pub struct WAKEUP_EVENT_EN_INS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WAKEUP_EVENT_EN_INSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WAKEUP_EVENT_EN_INSW) -> &'a mut W {
+impl<'a> WAKEUP_EVENT_EN_INS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WAKEUP_EVENT_EN_INS_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(WAKEUP_EVENT_EN_INSW::VALUE1)
+        self.variant(WAKEUP_EVENT_EN_INS_A::VALUE1)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(WAKEUP_EVENT_EN_INSW::VALUE2)
+        self.variant(WAKEUP_EVENT_EN_INS_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u8) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `WAKEUP_EVENT_EN_INT`"]
-pub enum WAKEUP_EVENT_EN_INTW {
-    #[doc = "Disable"]
+#[doc = "Wakeup Event Enable On Card Interrupt\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WAKEUP_EVENT_EN_INT_A {
+    #[doc = "0: Disable"]
     VALUE1,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     VALUE2,
 }
-impl WAKEUP_EVENT_EN_INTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WAKEUP_EVENT_EN_INTW::VALUE1 => false,
-            WAKEUP_EVENT_EN_INTW::VALUE2 => true,
+impl From<WAKEUP_EVENT_EN_INT_A> for bool {
+    #[inline(always)]
+    fn from(variant: WAKEUP_EVENT_EN_INT_A) -> Self {
+        match variant {
+            WAKEUP_EVENT_EN_INT_A::VALUE1 => false,
+            WAKEUP_EVENT_EN_INT_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _WAKEUP_EVENT_EN_INTW<'a> {
+#[doc = "Reader of field `WAKEUP_EVENT_EN_INT`"]
+pub type WAKEUP_EVENT_EN_INT_R = crate::R<bool, WAKEUP_EVENT_EN_INT_A>;
+impl WAKEUP_EVENT_EN_INT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WAKEUP_EVENT_EN_INT_A {
+        match self.bits {
+            false => WAKEUP_EVENT_EN_INT_A::VALUE1,
+            true => WAKEUP_EVENT_EN_INT_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == WAKEUP_EVENT_EN_INT_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == WAKEUP_EVENT_EN_INT_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `WAKEUP_EVENT_EN_INT`"]
+pub struct WAKEUP_EVENT_EN_INT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WAKEUP_EVENT_EN_INTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WAKEUP_EVENT_EN_INTW) -> &'a mut W {
+impl<'a> WAKEUP_EVENT_EN_INT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WAKEUP_EVENT_EN_INT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(WAKEUP_EVENT_EN_INTW::VALUE1)
+        self.variant(WAKEUP_EVENT_EN_INT_A::VALUE1)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(WAKEUP_EVENT_EN_INTW::VALUE2)
+        self.variant(WAKEUP_EVENT_EN_INT_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u8) & 0x01);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 2 - Wakeup Event Enable On SD Card Removal"]
-    #[inline]
-    pub fn wakeup_event_en_rem(&self) -> WAKEUP_EVENT_EN_REMR {
-        WAKEUP_EVENT_EN_REMR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn wakeup_event_en_rem(&self) -> WAKEUP_EVENT_EN_REM_R {
+        WAKEUP_EVENT_EN_REM_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 1 - Wakeup Event Enable On SD Card Insertion"]
-    #[inline]
-    pub fn wakeup_event_en_ins(&self) -> WAKEUP_EVENT_EN_INSR {
-        WAKEUP_EVENT_EN_INSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn wakeup_event_en_ins(&self) -> WAKEUP_EVENT_EN_INS_R {
+        WAKEUP_EVENT_EN_INS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 0 - Wakeup Event Enable On Card Interrupt"]
-    #[inline]
-    pub fn wakeup_event_en_int(&self) -> WAKEUP_EVENT_EN_INTR {
-        WAKEUP_EVENT_EN_INTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn wakeup_event_en_int(&self) -> WAKEUP_EVENT_EN_INT_R {
+        WAKEUP_EVENT_EN_INT_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 2 - Wakeup Event Enable On SD Card Removal"]
-    #[inline]
-    pub fn wakeup_event_en_rem(&mut self) -> _WAKEUP_EVENT_EN_REMW {
-        _WAKEUP_EVENT_EN_REMW { w: self }
+    #[inline(always)]
+    pub fn wakeup_event_en_rem(&mut self) -> WAKEUP_EVENT_EN_REM_W {
+        WAKEUP_EVENT_EN_REM_W { w: self }
     }
     #[doc = "Bit 1 - Wakeup Event Enable On SD Card Insertion"]
-    #[inline]
-    pub fn wakeup_event_en_ins(&mut self) -> _WAKEUP_EVENT_EN_INSW {
-        _WAKEUP_EVENT_EN_INSW { w: self }
+    #[inline(always)]
+    pub fn wakeup_event_en_ins(&mut self) -> WAKEUP_EVENT_EN_INS_W {
+        WAKEUP_EVENT_EN_INS_W { w: self }
     }
     #[doc = "Bit 0 - Wakeup Event Enable On Card Interrupt"]
-    #[inline]
-    pub fn wakeup_event_en_int(&mut self) -> _WAKEUP_EVENT_EN_INTW {
-        _WAKEUP_EVENT_EN_INTW { w: self }
+    #[inline(always)]
+    pub fn wakeup_event_en_int(&mut self) -> WAKEUP_EVENT_EN_INT_W {
+        WAKEUP_EVENT_EN_INT_W { w: self }
     }
 }

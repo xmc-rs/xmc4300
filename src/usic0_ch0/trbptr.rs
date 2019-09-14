@@ -1,102 +1,32 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::TRBPTR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TDIPTRR {
-    bits: u8,
-}
-impl TDIPTRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TDOPTRR {
-    bits: u8,
-}
-impl TDOPTRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RDIPTRR {
-    bits: u8,
-}
-impl RDIPTRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RDOPTRR {
-    bits: u8,
-}
-impl RDOPTRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register TRBPTR"]
+pub type R = crate::R<u32, super::TRBPTR>;
+#[doc = "Reader of field `TDIPTR`"]
+pub type TDIPTR_R = crate::R<u8, u8>;
+#[doc = "Reader of field `TDOPTR`"]
+pub type TDOPTR_R = crate::R<u8, u8>;
+#[doc = "Reader of field `RDIPTR`"]
+pub type RDIPTR_R = crate::R<u8, u8>;
+#[doc = "Reader of field `RDOPTR`"]
+pub type RDOPTR_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - Transmitter Data Input Pointer"]
-    #[inline]
-    pub fn tdiptr(&self) -> TDIPTRR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TDIPTRR { bits }
+    #[inline(always)]
+    pub fn tdiptr(&self) -> TDIPTR_R {
+        TDIPTR_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 8:13 - Transmitter Data Output Pointer"]
-    #[inline]
-    pub fn tdoptr(&self) -> TDOPTRR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TDOPTRR { bits }
+    #[inline(always)]
+    pub fn tdoptr(&self) -> TDOPTR_R {
+        TDOPTR_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bits 16:21 - Receiver Data Input Pointer"]
-    #[inline]
-    pub fn rdiptr(&self) -> RDIPTRR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RDIPTRR { bits }
+    #[inline(always)]
+    pub fn rdiptr(&self) -> RDIPTR_R {
+        RDIPTR_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
     #[doc = "Bits 24:29 - Receiver Data Output Pointer"]
-    #[inline]
-    pub fn rdoptr(&self) -> RDOPTRR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RDOPTRR { bits }
+    #[inline(always)]
+    pub fn rdoptr(&self) -> RDOPTR_R {
+        RDOPTR_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }

@@ -1,281 +1,256 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PWRSET {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register PWRSET"]
+pub type W = crate::W<u32, super::PWRSET>;
+#[doc = "Register PWRSET `reset()`'s with value 0"]
+impl crate::ResetValue for super::PWRSET {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Values that can be written to the field `HIB`"]
-pub enum HIBW {
-    #[doc = "No effect"]
+#[doc = "Set Hibernate Domain Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HIB_AW {
+    #[doc = "0: No effect"]
     CONST_0,
-    #[doc = "Enable Hibernate domain"]
+    #[doc = "1: Enable Hibernate domain"]
     CONST_1,
 }
-impl HIBW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HIBW::CONST_0 => false,
-            HIBW::CONST_1 => true,
+impl From<HIB_AW> for bool {
+    #[inline(always)]
+    fn from(variant: HIB_AW) -> Self {
+        match variant {
+            HIB_AW::CONST_0 => false,
+            HIB_AW::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _HIBW<'a> {
+#[doc = "Write proxy for field `HIB`"]
+pub struct HIB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HIBW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HIBW) -> &'a mut W {
+impl<'a> HIB_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HIB_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No effect"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(HIBW::CONST_0)
+        self.variant(HIB_AW::CONST_0)
     }
     #[doc = "Enable Hibernate domain"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(HIBW::CONST_1)
+        self.variant(HIB_AW::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `USBPHYPDQ`"]
-pub enum USBPHYPDQW {
-    #[doc = "No effect"]
+#[doc = "Set USB PHY Transceiver Disable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum USBPHYPDQ_AW {
+    #[doc = "0: No effect"]
     CONST_0,
-    #[doc = "Active"]
+    #[doc = "1: Active"]
     CONST_1,
 }
-impl USBPHYPDQW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            USBPHYPDQW::CONST_0 => false,
-            USBPHYPDQW::CONST_1 => true,
+impl From<USBPHYPDQ_AW> for bool {
+    #[inline(always)]
+    fn from(variant: USBPHYPDQ_AW) -> Self {
+        match variant {
+            USBPHYPDQ_AW::CONST_0 => false,
+            USBPHYPDQ_AW::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _USBPHYPDQW<'a> {
+#[doc = "Write proxy for field `USBPHYPDQ`"]
+pub struct USBPHYPDQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _USBPHYPDQW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: USBPHYPDQW) -> &'a mut W {
+impl<'a> USBPHYPDQ_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: USBPHYPDQ_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No effect"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(USBPHYPDQW::CONST_0)
+        self.variant(USBPHYPDQ_AW::CONST_0)
     }
     #[doc = "Active"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(USBPHYPDQW::CONST_1)
+        self.variant(USBPHYPDQ_AW::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `USBOTGEN`"]
-pub enum USBOTGENW {
-    #[doc = "No effect"]
+#[doc = "Set USB On-The-Go Comparators Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum USBOTGEN_AW {
+    #[doc = "0: No effect"]
     CONST_0,
-    #[doc = "Active"]
+    #[doc = "1: Active"]
     CONST_1,
 }
-impl USBOTGENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            USBOTGENW::CONST_0 => false,
-            USBOTGENW::CONST_1 => true,
+impl From<USBOTGEN_AW> for bool {
+    #[inline(always)]
+    fn from(variant: USBOTGEN_AW) -> Self {
+        match variant {
+            USBOTGEN_AW::CONST_0 => false,
+            USBOTGEN_AW::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _USBOTGENW<'a> {
+#[doc = "Write proxy for field `USBOTGEN`"]
+pub struct USBOTGEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _USBOTGENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: USBOTGENW) -> &'a mut W {
+impl<'a> USBOTGEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: USBOTGEN_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No effect"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(USBOTGENW::CONST_0)
+        self.variant(USBOTGEN_AW::CONST_0)
     }
     #[doc = "Active"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(USBOTGENW::CONST_1)
+        self.variant(USBOTGEN_AW::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `USBPUWQ`"]
-pub enum USBPUWQW {
-    #[doc = "No effect"]
+#[doc = "Set USB Weak Pull-Up at PADN Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum USBPUWQ_AW {
+    #[doc = "0: No effect"]
     CONST_0,
-    #[doc = "Pull-up not active"]
+    #[doc = "1: Pull-up not active"]
     CONST_1,
 }
-impl USBPUWQW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            USBPUWQW::CONST_0 => false,
-            USBPUWQW::CONST_1 => true,
+impl From<USBPUWQ_AW> for bool {
+    #[inline(always)]
+    fn from(variant: USBPUWQ_AW) -> Self {
+        match variant {
+            USBPUWQ_AW::CONST_0 => false,
+            USBPUWQ_AW::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _USBPUWQW<'a> {
+#[doc = "Write proxy for field `USBPUWQ`"]
+pub struct USBPUWQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _USBPUWQW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: USBPUWQW) -> &'a mut W {
+impl<'a> USBPUWQ_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: USBPUWQ_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No effect"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(USBPUWQW::CONST_0)
+        self.variant(USBPUWQ_AW::CONST_0)
     }
     #[doc = "Pull-up not active"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(USBPUWQW::CONST_1)
+        self.variant(USBPUWQ_AW::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Set Hibernate Domain Enable"]
-    #[inline]
-    pub fn hib(&mut self) -> _HIBW {
-        _HIBW { w: self }
+    #[inline(always)]
+    pub fn hib(&mut self) -> HIB_W {
+        HIB_W { w: self }
     }
     #[doc = "Bit 16 - Set USB PHY Transceiver Disable"]
-    #[inline]
-    pub fn usbphypdq(&mut self) -> _USBPHYPDQW {
-        _USBPHYPDQW { w: self }
+    #[inline(always)]
+    pub fn usbphypdq(&mut self) -> USBPHYPDQ_W {
+        USBPHYPDQ_W { w: self }
     }
     #[doc = "Bit 17 - Set USB On-The-Go Comparators Enable"]
-    #[inline]
-    pub fn usbotgen(&mut self) -> _USBOTGENW {
-        _USBOTGENW { w: self }
+    #[inline(always)]
+    pub fn usbotgen(&mut self) -> USBOTGEN_W {
+        USBOTGEN_W { w: self }
     }
     #[doc = "Bit 18 - Set USB Weak Pull-Up at PADN Enable"]
-    #[inline]
-    pub fn usbpuwq(&mut self) -> _USBPUWQW {
-        _USBPUWQW { w: self }
+    #[inline(always)]
+    pub fn usbpuwq(&mut self) -> USBPUWQ_W {
+        USBPUWQ_W { w: self }
     }
 }

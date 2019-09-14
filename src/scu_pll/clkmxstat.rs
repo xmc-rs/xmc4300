@@ -1,68 +1,50 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::CLKMXSTAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `SYSCLKMUX`"]
+#[doc = "Reader of register CLKMXSTAT"]
+pub type R = crate::R<u32, super::CLKMXSTAT>;
+#[doc = "Status of System Clock Multiplexing Upon Source Switching\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SYSCLKMUXR {
-    #[doc = "fOFI clock active"]
+pub enum SYSCLKMUX_A {
+    #[doc = "1: fOFI clock active"]
     CONST_X1,
-    #[doc = "fPLL clock active"]
+    #[doc = "2: fPLL clock active"]
     CONST_1X,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SYSCLKMUXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SYSCLKMUXR::CONST_X1 => 1,
-            SYSCLKMUXR::CONST_1X => 2,
-            SYSCLKMUXR::_Reserved(bits) => bits,
+impl From<SYSCLKMUX_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SYSCLKMUX_A) -> Self {
+        match variant {
+            SYSCLKMUX_A::CONST_X1 => 1,
+            SYSCLKMUX_A::CONST_1X => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SYSCLKMUXR {
-        match value {
-            1 => SYSCLKMUXR::CONST_X1,
-            2 => SYSCLKMUXR::CONST_1X,
-            i => SYSCLKMUXR::_Reserved(i),
+}
+#[doc = "Reader of field `SYSCLKMUX`"]
+pub type SYSCLKMUX_R = crate::R<u8, SYSCLKMUX_A>;
+impl SYSCLKMUX_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SYSCLKMUX_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(SYSCLKMUX_A::CONST_X1),
+            2 => Val(SYSCLKMUX_A::CONST_1X),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `CONST_X1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_x1(&self) -> bool {
-        *self == SYSCLKMUXR::CONST_X1
+        *self == SYSCLKMUX_A::CONST_X1
     }
     #[doc = "Checks if the value of the field is `CONST_1X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1x(&self) -> bool {
-        *self == SYSCLKMUXR::CONST_1X
+        *self == SYSCLKMUX_A::CONST_1X
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Status of System Clock Multiplexing Upon Source Switching"]
-    #[inline]
-    pub fn sysclkmux(&self) -> SYSCLKMUXR {
-        SYSCLKMUXR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sysclkmux(&self) -> SYSCLKMUX_R {
+        SYSCLKMUX_R::new((self.bits & 0x03) as u8)
     }
 }
