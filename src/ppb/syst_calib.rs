@@ -1,341 +1,216 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SYST_CALIB {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SYST_CALIB"]
+pub type R = crate::R<u32, super::SYST_CALIB>;
+#[doc = "Writer for register SYST_CALIB"]
+pub type W = crate::W<u32, super::SYST_CALIB>;
+#[doc = "Register SYST_CALIB `reset()`'s with value 0xc000_0000"]
+impl crate::ResetValue for super::SYST_CALIB {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xc000_0000
     }
 }
-#[doc = r" Value of the field"]
-pub struct TENMSR {
-    bits: u32,
-}
-impl TENMSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `SKEW`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SKEWR {
-    #[doc = "TENMS value is exact"]
-    VALUE1,
-    #[doc = "TENMS value is inexact, or not given."]
-    VALUE2,
-}
-impl SKEWR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SKEWR::VALUE1 => false,
-            SKEWR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SKEWR {
-        match value {
-            false => SKEWR::VALUE1,
-            true => SKEWR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == SKEWR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == SKEWR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `NOREF`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NOREFR {
-    #[doc = "reference clock provided"]
-    VALUE1,
-    #[doc = "no reference clock provided."]
-    VALUE2,
-}
-impl NOREFR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            NOREFR::VALUE1 => false,
-            NOREFR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> NOREFR {
-        match value {
-            false => NOREFR::VALUE1,
-            true => NOREFR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == NOREFR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == NOREFR::VALUE2
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TENMSW<'a> {
+#[doc = "Reader of field `TENMS`"]
+pub type TENMS_R = crate::R<u32, u32>;
+#[doc = "Write proxy for field `TENMS`"]
+pub struct TENMS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TENMSW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TENMS_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 16777215;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x00ff_ffff) | ((value as u32) & 0x00ff_ffff);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SKEW`"]
-pub enum SKEWW {
-    #[doc = "TENMS value is exact"]
+#[doc = "Ten Milliseconds Skewed\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SKEW_A {
+    #[doc = "0: TENMS value is exact"]
     VALUE1,
-    #[doc = "TENMS value is inexact, or not given."]
+    #[doc = "1: TENMS value is inexact, or not given."]
     VALUE2,
 }
-impl SKEWW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SKEWW::VALUE1 => false,
-            SKEWW::VALUE2 => true,
+impl From<SKEW_A> for bool {
+    #[inline(always)]
+    fn from(variant: SKEW_A) -> Self {
+        match variant {
+            SKEW_A::VALUE1 => false,
+            SKEW_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SKEWW<'a> {
+#[doc = "Reader of field `SKEW`"]
+pub type SKEW_R = crate::R<bool, SKEW_A>;
+impl SKEW_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SKEW_A {
+        match self.bits {
+            false => SKEW_A::VALUE1,
+            true => SKEW_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == SKEW_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == SKEW_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `SKEW`"]
+pub struct SKEW_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SKEWW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SKEWW) -> &'a mut W {
+impl<'a> SKEW_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SKEW_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "TENMS value is exact"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SKEWW::VALUE1)
+        self.variant(SKEW_A::VALUE1)
     }
     #[doc = "TENMS value is inexact, or not given."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SKEWW::VALUE2)
+        self.variant(SKEW_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `NOREF`"]
-pub enum NOREFW {
-    #[doc = "reference clock provided"]
+#[doc = "No Reference Clock\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum NOREF_A {
+    #[doc = "0: reference clock provided"]
     VALUE1,
-    #[doc = "no reference clock provided."]
+    #[doc = "1: no reference clock provided."]
     VALUE2,
 }
-impl NOREFW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            NOREFW::VALUE1 => false,
-            NOREFW::VALUE2 => true,
+impl From<NOREF_A> for bool {
+    #[inline(always)]
+    fn from(variant: NOREF_A) -> Self {
+        match variant {
+            NOREF_A::VALUE1 => false,
+            NOREF_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _NOREFW<'a> {
+#[doc = "Reader of field `NOREF`"]
+pub type NOREF_R = crate::R<bool, NOREF_A>;
+impl NOREF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> NOREF_A {
+        match self.bits {
+            false => NOREF_A::VALUE1,
+            true => NOREF_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == NOREF_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == NOREF_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `NOREF`"]
+pub struct NOREF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NOREFW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: NOREFW) -> &'a mut W {
+impl<'a> NOREF_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: NOREF_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "reference clock provided"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(NOREFW::VALUE1)
+        self.variant(NOREF_A::VALUE1)
     }
     #[doc = "no reference clock provided."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(NOREFW::VALUE2)
+        self.variant(NOREF_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:23 - Ten Milliseconds Reload Value"]
-    #[inline]
-    pub fn tenms(&self) -> TENMSR {
-        let bits = {
-            const MASK: u32 = 16777215;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        TENMSR { bits }
+    #[inline(always)]
+    pub fn tenms(&self) -> TENMS_R {
+        TENMS_R::new((self.bits & 0x00ff_ffff) as u32)
     }
     #[doc = "Bit 30 - Ten Milliseconds Skewed"]
-    #[inline]
-    pub fn skew(&self) -> SKEWR {
-        SKEWR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn skew(&self) -> SKEW_R {
+        SKEW_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - No Reference Clock"]
-    #[inline]
-    pub fn noref(&self) -> NOREFR {
-        NOREFR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn noref(&self) -> NOREF_R {
+        NOREF_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 3221225472 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:23 - Ten Milliseconds Reload Value"]
-    #[inline]
-    pub fn tenms(&mut self) -> _TENMSW {
-        _TENMSW { w: self }
+    #[inline(always)]
+    pub fn tenms(&mut self) -> TENMS_W {
+        TENMS_W { w: self }
     }
     #[doc = "Bit 30 - Ten Milliseconds Skewed"]
-    #[inline]
-    pub fn skew(&mut self) -> _SKEWW {
-        _SKEWW { w: self }
+    #[inline(always)]
+    pub fn skew(&mut self) -> SKEW_W {
+        SKEW_W { w: self }
     }
     #[doc = "Bit 31 - No Reference Clock"]
-    #[inline]
-    pub fn noref(&mut self) -> _NOREFW {
-        _NOREFW { w: self }
+    #[inline(always)]
+    pub fn noref(&mut self) -> NOREF_W {
+        NOREF_W { w: self }
     }
 }

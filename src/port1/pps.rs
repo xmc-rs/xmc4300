@@ -1,1966 +1,1424 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PPS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PPS"]
+pub type R = crate::R<u32, super::PPS>;
+#[doc = "Writer for register PPS"]
+pub type W = crate::W<u32, super::PPS>;
+#[doc = "Register PPS `reset()`'s with value 0"]
+impl crate::ResetValue for super::PPS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `PPS0`"]
+#[doc = "Port n Pin Power Save Bit 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS0R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+pub enum PPS0_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS0R::CONST_0 => false,
-            PPS0R::CONST_1 => true,
+impl From<PPS0_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS0_A) -> Self {
+        match variant {
+            PPS0_A::CONST_0 => false,
+            PPS0_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS0R {
-        match value {
-            false => PPS0R::CONST_0,
-            true => PPS0R::CONST_1,
+}
+#[doc = "Reader of field `PPS0`"]
+pub type PPS0_R = crate::R<bool, PPS0_A>;
+impl PPS0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS0_A {
+        match self.bits {
+            false => PPS0_A::CONST_0,
+            true => PPS0_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS0R::CONST_0
+        *self == PPS0_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS0R::CONST_1
+        *self == PPS0_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PPS1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS1R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS1R::CONST_0 => false,
-            PPS1R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS1R {
-        match value {
-            false => PPS1R::CONST_0,
-            true => PPS1R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS1R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS1R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS2R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS2R::CONST_0 => false,
-            PPS2R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS2R {
-        match value {
-            false => PPS2R::CONST_0,
-            true => PPS2R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS2R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS2R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS3R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS3R::CONST_0 => false,
-            PPS3R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS3R {
-        match value {
-            false => PPS3R::CONST_0,
-            true => PPS3R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS3R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS3R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS4`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS4R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS4R::CONST_0 => false,
-            PPS4R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS4R {
-        match value {
-            false => PPS4R::CONST_0,
-            true => PPS4R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS4R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS4R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS5`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS5R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS5R::CONST_0 => false,
-            PPS5R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS5R {
-        match value {
-            false => PPS5R::CONST_0,
-            true => PPS5R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS5R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS5R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS6`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS6R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS6R::CONST_0 => false,
-            PPS6R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS6R {
-        match value {
-            false => PPS6R::CONST_0,
-            true => PPS6R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS6R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS6R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS7`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS7R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS7R::CONST_0 => false,
-            PPS7R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS7R {
-        match value {
-            false => PPS7R::CONST_0,
-            true => PPS7R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS7R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS7R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS8`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS8R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS8R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS8R::CONST_0 => false,
-            PPS8R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS8R {
-        match value {
-            false => PPS8R::CONST_0,
-            true => PPS8R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS8R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS8R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS9`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS9R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS9R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS9R::CONST_0 => false,
-            PPS9R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS9R {
-        match value {
-            false => PPS9R::CONST_0,
-            true => PPS9R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS9R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS9R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS10`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS10R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS10R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS10R::CONST_0 => false,
-            PPS10R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS10R {
-        match value {
-            false => PPS10R::CONST_0,
-            true => PPS10R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS10R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS10R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS11`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS11R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS11R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS11R::CONST_0 => false,
-            PPS11R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS11R {
-        match value {
-            false => PPS11R::CONST_0,
-            true => PPS11R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS11R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS11R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS12`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS12R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS12R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS12R::CONST_0 => false,
-            PPS12R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS12R {
-        match value {
-            false => PPS12R::CONST_0,
-            true => PPS12R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS12R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS12R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS13`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS13R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS13R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS13R::CONST_0 => false,
-            PPS13R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS13R {
-        match value {
-            false => PPS13R::CONST_0,
-            true => PPS13R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS13R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS13R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS14`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS14R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS14R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS14R::CONST_0 => false,
-            PPS14R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS14R {
-        match value {
-            false => PPS14R::CONST_0,
-            true => PPS14R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS14R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS14R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `PPS15`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PPS15R {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS15R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PPS15R::CONST_0 => false,
-            PPS15R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PPS15R {
-        match value {
-            false => PPS15R::CONST_0,
-            true => PPS15R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PPS15R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PPS15R::CONST_1
-    }
-}
-#[doc = "Values that can be written to the field `PPS0`"]
-pub enum PPS0W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
-    CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
-    CONST_1,
-}
-impl PPS0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS0W::CONST_0 => false,
-            PPS0W::CONST_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PPS0W<'a> {
+#[doc = "Write proxy for field `PPS0`"]
+pub struct PPS0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS0W) -> &'a mut W {
+impl<'a> PPS0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS0W::CONST_0)
+        self.variant(PPS0_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS0W::CONST_1)
+        self.variant(PPS0_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS1`"]
-pub enum PPS1W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS1_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS1W::CONST_0 => false,
-            PPS1W::CONST_1 => true,
+impl From<PPS1_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS1_A) -> Self {
+        match variant {
+            PPS1_A::CONST_0 => false,
+            PPS1_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS1W<'a> {
+#[doc = "Reader of field `PPS1`"]
+pub type PPS1_R = crate::R<bool, PPS1_A>;
+impl PPS1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS1_A {
+        match self.bits {
+            false => PPS1_A::CONST_0,
+            true => PPS1_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS1_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS1_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS1`"]
+pub struct PPS1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS1W) -> &'a mut W {
+impl<'a> PPS1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS1W::CONST_0)
+        self.variant(PPS1_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS1W::CONST_1)
+        self.variant(PPS1_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS2`"]
-pub enum PPS2W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS2_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS2W::CONST_0 => false,
-            PPS2W::CONST_1 => true,
+impl From<PPS2_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS2_A) -> Self {
+        match variant {
+            PPS2_A::CONST_0 => false,
+            PPS2_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS2W<'a> {
+#[doc = "Reader of field `PPS2`"]
+pub type PPS2_R = crate::R<bool, PPS2_A>;
+impl PPS2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS2_A {
+        match self.bits {
+            false => PPS2_A::CONST_0,
+            true => PPS2_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS2_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS2_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS2`"]
+pub struct PPS2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS2W) -> &'a mut W {
+impl<'a> PPS2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS2_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS2W::CONST_0)
+        self.variant(PPS2_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS2W::CONST_1)
+        self.variant(PPS2_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS3`"]
-pub enum PPS3W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS3_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS3W::CONST_0 => false,
-            PPS3W::CONST_1 => true,
+impl From<PPS3_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS3_A) -> Self {
+        match variant {
+            PPS3_A::CONST_0 => false,
+            PPS3_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS3W<'a> {
+#[doc = "Reader of field `PPS3`"]
+pub type PPS3_R = crate::R<bool, PPS3_A>;
+impl PPS3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS3_A {
+        match self.bits {
+            false => PPS3_A::CONST_0,
+            true => PPS3_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS3_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS3_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS3`"]
+pub struct PPS3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS3W) -> &'a mut W {
+impl<'a> PPS3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS3W::CONST_0)
+        self.variant(PPS3_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS3W::CONST_1)
+        self.variant(PPS3_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS4`"]
-pub enum PPS4W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 4\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS4_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS4W::CONST_0 => false,
-            PPS4W::CONST_1 => true,
+impl From<PPS4_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS4_A) -> Self {
+        match variant {
+            PPS4_A::CONST_0 => false,
+            PPS4_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS4W<'a> {
+#[doc = "Reader of field `PPS4`"]
+pub type PPS4_R = crate::R<bool, PPS4_A>;
+impl PPS4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS4_A {
+        match self.bits {
+            false => PPS4_A::CONST_0,
+            true => PPS4_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS4_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS4_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS4`"]
+pub struct PPS4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS4W) -> &'a mut W {
+impl<'a> PPS4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS4_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS4W::CONST_0)
+        self.variant(PPS4_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS4W::CONST_1)
+        self.variant(PPS4_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS5`"]
-pub enum PPS5W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 5\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS5_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS5W::CONST_0 => false,
-            PPS5W::CONST_1 => true,
+impl From<PPS5_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS5_A) -> Self {
+        match variant {
+            PPS5_A::CONST_0 => false,
+            PPS5_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS5W<'a> {
+#[doc = "Reader of field `PPS5`"]
+pub type PPS5_R = crate::R<bool, PPS5_A>;
+impl PPS5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS5_A {
+        match self.bits {
+            false => PPS5_A::CONST_0,
+            true => PPS5_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS5_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS5_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS5`"]
+pub struct PPS5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS5W) -> &'a mut W {
+impl<'a> PPS5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS5_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS5W::CONST_0)
+        self.variant(PPS5_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS5W::CONST_1)
+        self.variant(PPS5_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS6`"]
-pub enum PPS6W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 6\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS6_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS6W::CONST_0 => false,
-            PPS6W::CONST_1 => true,
+impl From<PPS6_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS6_A) -> Self {
+        match variant {
+            PPS6_A::CONST_0 => false,
+            PPS6_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS6W<'a> {
+#[doc = "Reader of field `PPS6`"]
+pub type PPS6_R = crate::R<bool, PPS6_A>;
+impl PPS6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS6_A {
+        match self.bits {
+            false => PPS6_A::CONST_0,
+            true => PPS6_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS6_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS6_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS6`"]
+pub struct PPS6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS6W) -> &'a mut W {
+impl<'a> PPS6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS6_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS6W::CONST_0)
+        self.variant(PPS6_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS6W::CONST_1)
+        self.variant(PPS6_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS7`"]
-pub enum PPS7W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 7\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS7_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS7W::CONST_0 => false,
-            PPS7W::CONST_1 => true,
+impl From<PPS7_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS7_A) -> Self {
+        match variant {
+            PPS7_A::CONST_0 => false,
+            PPS7_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS7W<'a> {
+#[doc = "Reader of field `PPS7`"]
+pub type PPS7_R = crate::R<bool, PPS7_A>;
+impl PPS7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS7_A {
+        match self.bits {
+            false => PPS7_A::CONST_0,
+            true => PPS7_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS7_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS7_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS7`"]
+pub struct PPS7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS7W) -> &'a mut W {
+impl<'a> PPS7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS7_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS7W::CONST_0)
+        self.variant(PPS7_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS7W::CONST_1)
+        self.variant(PPS7_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS8`"]
-pub enum PPS8W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 8\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS8_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS8W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS8W::CONST_0 => false,
-            PPS8W::CONST_1 => true,
+impl From<PPS8_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS8_A) -> Self {
+        match variant {
+            PPS8_A::CONST_0 => false,
+            PPS8_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS8W<'a> {
+#[doc = "Reader of field `PPS8`"]
+pub type PPS8_R = crate::R<bool, PPS8_A>;
+impl PPS8_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS8_A {
+        match self.bits {
+            false => PPS8_A::CONST_0,
+            true => PPS8_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS8_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS8_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS8`"]
+pub struct PPS8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS8W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS8W) -> &'a mut W {
+impl<'a> PPS8_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS8_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS8W::CONST_0)
+        self.variant(PPS8_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS8W::CONST_1)
+        self.variant(PPS8_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS9`"]
-pub enum PPS9W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 9\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS9_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS9W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS9W::CONST_0 => false,
-            PPS9W::CONST_1 => true,
+impl From<PPS9_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS9_A) -> Self {
+        match variant {
+            PPS9_A::CONST_0 => false,
+            PPS9_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS9W<'a> {
+#[doc = "Reader of field `PPS9`"]
+pub type PPS9_R = crate::R<bool, PPS9_A>;
+impl PPS9_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS9_A {
+        match self.bits {
+            false => PPS9_A::CONST_0,
+            true => PPS9_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS9_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS9_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS9`"]
+pub struct PPS9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS9W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS9W) -> &'a mut W {
+impl<'a> PPS9_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS9_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS9W::CONST_0)
+        self.variant(PPS9_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS9W::CONST_1)
+        self.variant(PPS9_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS10`"]
-pub enum PPS10W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 10\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS10_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS10W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS10W::CONST_0 => false,
-            PPS10W::CONST_1 => true,
+impl From<PPS10_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS10_A) -> Self {
+        match variant {
+            PPS10_A::CONST_0 => false,
+            PPS10_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS10W<'a> {
+#[doc = "Reader of field `PPS10`"]
+pub type PPS10_R = crate::R<bool, PPS10_A>;
+impl PPS10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS10_A {
+        match self.bits {
+            false => PPS10_A::CONST_0,
+            true => PPS10_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS10_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS10_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS10`"]
+pub struct PPS10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS10W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS10W) -> &'a mut W {
+impl<'a> PPS10_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS10_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS10W::CONST_0)
+        self.variant(PPS10_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS10W::CONST_1)
+        self.variant(PPS10_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS11`"]
-pub enum PPS11W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 11\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS11_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS11W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS11W::CONST_0 => false,
-            PPS11W::CONST_1 => true,
+impl From<PPS11_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS11_A) -> Self {
+        match variant {
+            PPS11_A::CONST_0 => false,
+            PPS11_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS11W<'a> {
+#[doc = "Reader of field `PPS11`"]
+pub type PPS11_R = crate::R<bool, PPS11_A>;
+impl PPS11_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS11_A {
+        match self.bits {
+            false => PPS11_A::CONST_0,
+            true => PPS11_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS11_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS11_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS11`"]
+pub struct PPS11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS11W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS11W) -> &'a mut W {
+impl<'a> PPS11_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS11_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS11W::CONST_0)
+        self.variant(PPS11_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS11W::CONST_1)
+        self.variant(PPS11_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS12`"]
-pub enum PPS12W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 12\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS12_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS12W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS12W::CONST_0 => false,
-            PPS12W::CONST_1 => true,
+impl From<PPS12_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS12_A) -> Self {
+        match variant {
+            PPS12_A::CONST_0 => false,
+            PPS12_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS12W<'a> {
+#[doc = "Reader of field `PPS12`"]
+pub type PPS12_R = crate::R<bool, PPS12_A>;
+impl PPS12_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS12_A {
+        match self.bits {
+            false => PPS12_A::CONST_0,
+            true => PPS12_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS12_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS12_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS12`"]
+pub struct PPS12_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS12W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS12W) -> &'a mut W {
+impl<'a> PPS12_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS12_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS12W::CONST_0)
+        self.variant(PPS12_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS12W::CONST_1)
+        self.variant(PPS12_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS13`"]
-pub enum PPS13W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 13\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS13_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS13W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS13W::CONST_0 => false,
-            PPS13W::CONST_1 => true,
+impl From<PPS13_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS13_A) -> Self {
+        match variant {
+            PPS13_A::CONST_0 => false,
+            PPS13_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS13W<'a> {
+#[doc = "Reader of field `PPS13`"]
+pub type PPS13_R = crate::R<bool, PPS13_A>;
+impl PPS13_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS13_A {
+        match self.bits {
+            false => PPS13_A::CONST_0,
+            true => PPS13_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS13_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS13_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS13`"]
+pub struct PPS13_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS13W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS13W) -> &'a mut W {
+impl<'a> PPS13_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS13_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS13W::CONST_0)
+        self.variant(PPS13_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS13W::CONST_1)
+        self.variant(PPS13_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS14`"]
-pub enum PPS14W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 14\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS14_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS14W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS14W::CONST_0 => false,
-            PPS14W::CONST_1 => true,
+impl From<PPS14_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS14_A) -> Self {
+        match variant {
+            PPS14_A::CONST_0 => false,
+            PPS14_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS14W<'a> {
+#[doc = "Reader of field `PPS14`"]
+pub type PPS14_R = crate::R<bool, PPS14_A>;
+impl PPS14_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS14_A {
+        match self.bits {
+            false => PPS14_A::CONST_0,
+            true => PPS14_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS14_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS14_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS14`"]
+pub struct PPS14_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS14W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS14W) -> &'a mut W {
+impl<'a> PPS14_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS14_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS14W::CONST_0)
+        self.variant(PPS14_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS14W::CONST_1)
+        self.variant(PPS14_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PPS15`"]
-pub enum PPS15W {
-    #[doc = "Pin Power Save of Pn.x is disabled."]
+#[doc = "Port n Pin Power Save Bit 15\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PPS15_A {
+    #[doc = "0: Pin Power Save of Pn.x is disabled."]
     CONST_0,
-    #[doc = "Pin Power Save of Pn.x is enabled."]
+    #[doc = "1: Pin Power Save of Pn.x is enabled."]
     CONST_1,
 }
-impl PPS15W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PPS15W::CONST_0 => false,
-            PPS15W::CONST_1 => true,
+impl From<PPS15_A> for bool {
+    #[inline(always)]
+    fn from(variant: PPS15_A) -> Self {
+        match variant {
+            PPS15_A::CONST_0 => false,
+            PPS15_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PPS15W<'a> {
+#[doc = "Reader of field `PPS15`"]
+pub type PPS15_R = crate::R<bool, PPS15_A>;
+impl PPS15_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PPS15_A {
+        match self.bits {
+            false => PPS15_A::CONST_0,
+            true => PPS15_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PPS15_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PPS15_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PPS15`"]
+pub struct PPS15_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PPS15W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PPS15W) -> &'a mut W {
+impl<'a> PPS15_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PPS15_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PPS15W::CONST_0)
+        self.variant(PPS15_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PPS15W::CONST_1)
+        self.variant(PPS15_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Port n Pin Power Save Bit 0"]
-    #[inline]
-    pub fn pps0(&self) -> PPS0R {
-        PPS0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps0(&self) -> PPS0_R {
+        PPS0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Port n Pin Power Save Bit 1"]
-    #[inline]
-    pub fn pps1(&self) -> PPS1R {
-        PPS1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps1(&self) -> PPS1_R {
+        PPS1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Port n Pin Power Save Bit 2"]
-    #[inline]
-    pub fn pps2(&self) -> PPS2R {
-        PPS2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps2(&self) -> PPS2_R {
+        PPS2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Port n Pin Power Save Bit 3"]
-    #[inline]
-    pub fn pps3(&self) -> PPS3R {
-        PPS3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps3(&self) -> PPS3_R {
+        PPS3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Port n Pin Power Save Bit 4"]
-    #[inline]
-    pub fn pps4(&self) -> PPS4R {
-        PPS4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps4(&self) -> PPS4_R {
+        PPS4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Port n Pin Power Save Bit 5"]
-    #[inline]
-    pub fn pps5(&self) -> PPS5R {
-        PPS5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps5(&self) -> PPS5_R {
+        PPS5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Port n Pin Power Save Bit 6"]
-    #[inline]
-    pub fn pps6(&self) -> PPS6R {
-        PPS6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps6(&self) -> PPS6_R {
+        PPS6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Port n Pin Power Save Bit 7"]
-    #[inline]
-    pub fn pps7(&self) -> PPS7R {
-        PPS7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps7(&self) -> PPS7_R {
+        PPS7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Port n Pin Power Save Bit 8"]
-    #[inline]
-    pub fn pps8(&self) -> PPS8R {
-        PPS8R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps8(&self) -> PPS8_R {
+        PPS8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Port n Pin Power Save Bit 9"]
-    #[inline]
-    pub fn pps9(&self) -> PPS9R {
-        PPS9R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps9(&self) -> PPS9_R {
+        PPS9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Port n Pin Power Save Bit 10"]
-    #[inline]
-    pub fn pps10(&self) -> PPS10R {
-        PPS10R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps10(&self) -> PPS10_R {
+        PPS10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Port n Pin Power Save Bit 11"]
-    #[inline]
-    pub fn pps11(&self) -> PPS11R {
-        PPS11R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps11(&self) -> PPS11_R {
+        PPS11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Port n Pin Power Save Bit 12"]
-    #[inline]
-    pub fn pps12(&self) -> PPS12R {
-        PPS12R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps12(&self) -> PPS12_R {
+        PPS12_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Port n Pin Power Save Bit 13"]
-    #[inline]
-    pub fn pps13(&self) -> PPS13R {
-        PPS13R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps13(&self) -> PPS13_R {
+        PPS13_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Port n Pin Power Save Bit 14"]
-    #[inline]
-    pub fn pps14(&self) -> PPS14R {
-        PPS14R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps14(&self) -> PPS14_R {
+        PPS14_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Port n Pin Power Save Bit 15"]
-    #[inline]
-    pub fn pps15(&self) -> PPS15R {
-        PPS15R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pps15(&self) -> PPS15_R {
+        PPS15_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Port n Pin Power Save Bit 0"]
-    #[inline]
-    pub fn pps0(&mut self) -> _PPS0W {
-        _PPS0W { w: self }
+    #[inline(always)]
+    pub fn pps0(&mut self) -> PPS0_W {
+        PPS0_W { w: self }
     }
     #[doc = "Bit 1 - Port n Pin Power Save Bit 1"]
-    #[inline]
-    pub fn pps1(&mut self) -> _PPS1W {
-        _PPS1W { w: self }
+    #[inline(always)]
+    pub fn pps1(&mut self) -> PPS1_W {
+        PPS1_W { w: self }
     }
     #[doc = "Bit 2 - Port n Pin Power Save Bit 2"]
-    #[inline]
-    pub fn pps2(&mut self) -> _PPS2W {
-        _PPS2W { w: self }
+    #[inline(always)]
+    pub fn pps2(&mut self) -> PPS2_W {
+        PPS2_W { w: self }
     }
     #[doc = "Bit 3 - Port n Pin Power Save Bit 3"]
-    #[inline]
-    pub fn pps3(&mut self) -> _PPS3W {
-        _PPS3W { w: self }
+    #[inline(always)]
+    pub fn pps3(&mut self) -> PPS3_W {
+        PPS3_W { w: self }
     }
     #[doc = "Bit 4 - Port n Pin Power Save Bit 4"]
-    #[inline]
-    pub fn pps4(&mut self) -> _PPS4W {
-        _PPS4W { w: self }
+    #[inline(always)]
+    pub fn pps4(&mut self) -> PPS4_W {
+        PPS4_W { w: self }
     }
     #[doc = "Bit 5 - Port n Pin Power Save Bit 5"]
-    #[inline]
-    pub fn pps5(&mut self) -> _PPS5W {
-        _PPS5W { w: self }
+    #[inline(always)]
+    pub fn pps5(&mut self) -> PPS5_W {
+        PPS5_W { w: self }
     }
     #[doc = "Bit 6 - Port n Pin Power Save Bit 6"]
-    #[inline]
-    pub fn pps6(&mut self) -> _PPS6W {
-        _PPS6W { w: self }
+    #[inline(always)]
+    pub fn pps6(&mut self) -> PPS6_W {
+        PPS6_W { w: self }
     }
     #[doc = "Bit 7 - Port n Pin Power Save Bit 7"]
-    #[inline]
-    pub fn pps7(&mut self) -> _PPS7W {
-        _PPS7W { w: self }
+    #[inline(always)]
+    pub fn pps7(&mut self) -> PPS7_W {
+        PPS7_W { w: self }
     }
     #[doc = "Bit 8 - Port n Pin Power Save Bit 8"]
-    #[inline]
-    pub fn pps8(&mut self) -> _PPS8W {
-        _PPS8W { w: self }
+    #[inline(always)]
+    pub fn pps8(&mut self) -> PPS8_W {
+        PPS8_W { w: self }
     }
     #[doc = "Bit 9 - Port n Pin Power Save Bit 9"]
-    #[inline]
-    pub fn pps9(&mut self) -> _PPS9W {
-        _PPS9W { w: self }
+    #[inline(always)]
+    pub fn pps9(&mut self) -> PPS9_W {
+        PPS9_W { w: self }
     }
     #[doc = "Bit 10 - Port n Pin Power Save Bit 10"]
-    #[inline]
-    pub fn pps10(&mut self) -> _PPS10W {
-        _PPS10W { w: self }
+    #[inline(always)]
+    pub fn pps10(&mut self) -> PPS10_W {
+        PPS10_W { w: self }
     }
     #[doc = "Bit 11 - Port n Pin Power Save Bit 11"]
-    #[inline]
-    pub fn pps11(&mut self) -> _PPS11W {
-        _PPS11W { w: self }
+    #[inline(always)]
+    pub fn pps11(&mut self) -> PPS11_W {
+        PPS11_W { w: self }
     }
     #[doc = "Bit 12 - Port n Pin Power Save Bit 12"]
-    #[inline]
-    pub fn pps12(&mut self) -> _PPS12W {
-        _PPS12W { w: self }
+    #[inline(always)]
+    pub fn pps12(&mut self) -> PPS12_W {
+        PPS12_W { w: self }
     }
     #[doc = "Bit 13 - Port n Pin Power Save Bit 13"]
-    #[inline]
-    pub fn pps13(&mut self) -> _PPS13W {
-        _PPS13W { w: self }
+    #[inline(always)]
+    pub fn pps13(&mut self) -> PPS13_W {
+        PPS13_W { w: self }
     }
     #[doc = "Bit 14 - Port n Pin Power Save Bit 14"]
-    #[inline]
-    pub fn pps14(&mut self) -> _PPS14W {
-        _PPS14W { w: self }
+    #[inline(always)]
+    pub fn pps14(&mut self) -> PPS14_W {
+        PPS14_W { w: self }
     }
     #[doc = "Bit 15 - Port n Pin Power Save Bit 15"]
-    #[inline]
-    pub fn pps15(&mut self) -> _PPS15W {
-        _PPS15W { w: self }
+    #[inline(always)]
+    pub fn pps15(&mut self) -> PPS15_W {
+        PPS15_W { w: self }
     }
 }

@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u16,
-}
-impl super::PHYSICAL_RW_OFFSET {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OFFSETR {
-    bits: u16,
-}
-impl OFFSETR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of register PHYSICAL_RW_OFFSET"]
+pub type R = crate::R<u16, super::PHYSICAL_RW_OFFSET>;
+#[doc = "Reader of field `OFFSET`"]
+pub type OFFSET_R = crate::R<u16, u16>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Offset of R/W Commands (FPRW, APRW) between Read address and Write address"]
-    #[inline]
-    pub fn offset(&self) -> OFFSETR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u16) as u16
-        };
-        OFFSETR { bits }
+    #[inline(always)]
+    pub fn offset(&self) -> OFFSET_R {
+        OFFSET_R::new((self.bits & 0xffff) as u16)
     }
 }

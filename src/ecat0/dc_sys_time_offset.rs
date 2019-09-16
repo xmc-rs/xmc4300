@@ -1,103 +1,40 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DC_SYS_TIME_OFFSET {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DC_SYS_TIME_OFFSET[%s]"]
+pub type R = crate::R<u32, super::DC_SYS_TIME_OFFSET>;
+#[doc = "Writer for register DC_SYS_TIME_OFFSET[%s]"]
+pub type W = crate::W<u32, super::DC_SYS_TIME_OFFSET>;
+#[doc = "Register DC_SYS_TIME_OFFSET[%s] `reset()`'s with value 0"]
+impl crate::ResetValue for super::DC_SYS_TIME_OFFSET {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct DC_SYS_TIME_OFFSETR {
-    bits: u32,
-}
-impl DC_SYS_TIME_OFFSETR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DC_SYS_TIME_OFFSETW<'a> {
+#[doc = "Reader of field `DC_SYS_TIME_OFFSET`"]
+pub type DC_SYS_TIME_OFFSET_R = crate::R<u32, u32>;
+#[doc = "Write proxy for field `DC_SYS_TIME_OFFSET`"]
+pub struct DC_SYS_TIME_OFFSET_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DC_SYS_TIME_OFFSETW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DC_SYS_TIME_OFFSET_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 4294967295;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - Difference between local time and System Time"]
-    #[inline]
-    pub fn dc_sys_time_offset(&self) -> DC_SYS_TIME_OFFSETR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        DC_SYS_TIME_OFFSETR { bits }
+    #[inline(always)]
+    pub fn dc_sys_time_offset(&self) -> DC_SYS_TIME_OFFSET_R {
+        DC_SYS_TIME_OFFSET_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:31 - Difference between local time and System Time"]
-    #[inline]
-    pub fn dc_sys_time_offset(&mut self) -> _DC_SYS_TIME_OFFSETW {
-        _DC_SYS_TIME_OFFSETW { w: self }
+    #[inline(always)]
+    pub fn dc_sys_time_offset(&mut self) -> DC_SYS_TIME_OFFSET_W {
+        DC_SYS_TIME_OFFSET_W { w: self }
     }
 }

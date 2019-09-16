@@ -1,658 +1,459 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::EMUXCTR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register EMUXCTR"]
+pub type R = crate::R<u32, super::EMUXCTR>;
+#[doc = "Writer for register EMUXCTR"]
+pub type W = crate::W<u32, super::EMUXCTR>;
+#[doc = "Register EMUXCTR `reset()`'s with value 0"]
+impl crate::ResetValue for super::EMUXCTR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct EMUXSETR {
-    bits: u8,
+#[doc = "Reader of field `EMUXSET`"]
+pub type EMUXSET_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `EMUXSET`"]
+pub struct EMUXSET_W<'a> {
+    w: &'a mut W,
 }
-impl EMUXSETR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> EMUXSET_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct EMUXACTR {
-    bits: u8,
+#[doc = "Reader of field `EMUXACT`"]
+pub type EMUXACT_R = crate::R<u8, u8>;
+#[doc = "Reader of field `EMUXCH`"]
+pub type EMUXCH_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `EMUXCH`"]
+pub struct EMUXCH_W<'a> {
+    w: &'a mut W,
 }
-impl EMUXACTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> EMUXCH_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03ff << 16)) | (((value as u32) & 0x03ff) << 16);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct EMUXCHR {
-    bits: u16,
-}
-impl EMUXCHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `EMUXMODE`"]
+#[doc = "External Multiplexer Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EMUXMODER {
-    #[doc = "Software control (no hardware action)"]
+pub enum EMUXMODE_A {
+    #[doc = "0: Software control (no hardware action)"]
     VALUE1,
-    #[doc = "Steady mode (use EMUXSET value)"]
+    #[doc = "1: Steady mode (use EMUXSET value)"]
     VALUE2,
-    #[doc = "Single-step mode"]
+    #[doc = "2: Single-step mode"]
     VALUE3,
-    #[doc = "Sequence mode"]
+    #[doc = "3: Sequence mode"]
     VALUE4,
 }
-impl EMUXMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            EMUXMODER::VALUE1 => 0,
-            EMUXMODER::VALUE2 => 1,
-            EMUXMODER::VALUE3 => 2,
-            EMUXMODER::VALUE4 => 3,
+impl From<EMUXMODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EMUXMODE_A) -> Self {
+        match variant {
+            EMUXMODE_A::VALUE1 => 0,
+            EMUXMODE_A::VALUE2 => 1,
+            EMUXMODE_A::VALUE3 => 2,
+            EMUXMODE_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EMUXMODER {
-        match value {
-            0 => EMUXMODER::VALUE1,
-            1 => EMUXMODER::VALUE2,
-            2 => EMUXMODER::VALUE3,
-            3 => EMUXMODER::VALUE4,
+}
+#[doc = "Reader of field `EMUXMODE`"]
+pub type EMUXMODE_R = crate::R<u8, EMUXMODE_A>;
+impl EMUXMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EMUXMODE_A {
+        match self.bits {
+            0 => EMUXMODE_A::VALUE1,
+            1 => EMUXMODE_A::VALUE2,
+            2 => EMUXMODE_A::VALUE3,
+            3 => EMUXMODE_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EMUXMODER::VALUE1
+        *self == EMUXMODE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EMUXMODER::VALUE2
+        *self == EMUXMODE_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EMUXMODER::VALUE3
+        *self == EMUXMODE_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EMUXMODER::VALUE4
+        *self == EMUXMODE_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `EMXCOD`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EMXCODR {
-    #[doc = "Output the channel number in binary code"]
-    VALUE1,
-    #[doc = "Output the channel number in Gray code"]
-    VALUE2,
-}
-impl EMXCODR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EMXCODR::VALUE1 => false,
-            EMXCODR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EMXCODR {
-        match value {
-            false => EMXCODR::VALUE1,
-            true => EMXCODR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EMXCODR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EMXCODR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `EMXST`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EMXSTR {
-    #[doc = "Use STCE whenever the setting changes"]
-    VALUE1,
-    #[doc = "Use STCE for each conversion of an external channel"]
-    VALUE2,
-}
-impl EMXSTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EMXSTR::VALUE1 => false,
-            EMXSTR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EMXSTR {
-        match value {
-            false => EMXSTR::VALUE1,
-            true => EMXSTR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EMXSTR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EMXSTR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `EMXCSS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EMXCSSR {
-    #[doc = "Channel number: Bitfield EMUXCH selects an arbitrary channel"]
-    VALUE1,
-    #[doc = "Channel enable: Each bit of bitfield EMUXCH selects the associated channel for EMUX control"]
-    VALUE2,
-}
-impl EMXCSSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EMXCSSR::VALUE1 => false,
-            EMXCSSR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EMXCSSR {
-        match value {
-            false => EMXCSSR::VALUE1,
-            true => EMXCSSR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EMXCSSR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EMXCSSR::VALUE2
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EMUXSETW<'a> {
+#[doc = "Write proxy for field `EMUXMODE`"]
+pub struct EMUXMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EMUXSETW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EMUXCHW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EMUXCHW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 1023;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `EMUXMODE`"]
-pub enum EMUXMODEW {
-    #[doc = "Software control (no hardware action)"]
-    VALUE1,
-    #[doc = "Steady mode (use EMUXSET value)"]
-    VALUE2,
-    #[doc = "Single-step mode"]
-    VALUE3,
-    #[doc = "Sequence mode"]
-    VALUE4,
-}
-impl EMUXMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EMUXMODEW::VALUE1 => 0,
-            EMUXMODEW::VALUE2 => 1,
-            EMUXMODEW::VALUE3 => 2,
-            EMUXMODEW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EMUXMODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EMUXMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EMUXMODEW) -> &'a mut W {
+impl<'a> EMUXMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EMUXMODE_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Software control (no hardware action)"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EMUXMODEW::VALUE1)
+        self.variant(EMUXMODE_A::VALUE1)
     }
     #[doc = "Steady mode (use EMUXSET value)"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EMUXMODEW::VALUE2)
+        self.variant(EMUXMODE_A::VALUE2)
     }
     #[doc = "Single-step mode"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(EMUXMODEW::VALUE3)
+        self.variant(EMUXMODE_A::VALUE3)
     }
     #[doc = "Sequence mode"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(EMUXMODEW::VALUE4)
+        self.variant(EMUXMODE_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 26)) | (((value as u32) & 0x03) << 26);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EMXCOD`"]
-pub enum EMXCODW {
+#[doc = "External Multiplexer Coding Scheme\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EMXCOD_A {
+    #[doc = "0: Output the channel number in binary code"]
+    VALUE1,
+    #[doc = "1: Output the channel number in Gray code"]
+    VALUE2,
+}
+impl From<EMXCOD_A> for bool {
+    #[inline(always)]
+    fn from(variant: EMXCOD_A) -> Self {
+        match variant {
+            EMXCOD_A::VALUE1 => false,
+            EMXCOD_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `EMXCOD`"]
+pub type EMXCOD_R = crate::R<bool, EMXCOD_A>;
+impl EMXCOD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EMXCOD_A {
+        match self.bits {
+            false => EMXCOD_A::VALUE1,
+            true => EMXCOD_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EMXCOD_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EMXCOD_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EMXCOD`"]
+pub struct EMXCOD_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EMXCOD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EMXCOD_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Output the channel number in binary code"]
-    VALUE1,
-    #[doc = "Output the channel number in Gray code"]
-    VALUE2,
-}
-impl EMXCODW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EMXCODW::VALUE1 => false,
-            EMXCODW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EMXCODW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EMXCODW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EMXCODW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Output the channel number in binary code"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EMXCODW::VALUE1)
+        self.variant(EMXCOD_A::VALUE1)
     }
     #[doc = "Output the channel number in Gray code"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EMXCODW::VALUE2)
+        self.variant(EMXCOD_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EMXST`"]
-pub enum EMXSTW {
-    #[doc = "Use STCE whenever the setting changes"]
+#[doc = "External Multiplexer Sample Time Control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EMXST_A {
+    #[doc = "0: Use STCE whenever the setting changes"]
     VALUE1,
-    #[doc = "Use STCE for each conversion of an external channel"]
+    #[doc = "1: Use STCE for each conversion of an external channel"]
     VALUE2,
 }
-impl EMXSTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EMXSTW::VALUE1 => false,
-            EMXSTW::VALUE2 => true,
+impl From<EMXST_A> for bool {
+    #[inline(always)]
+    fn from(variant: EMXST_A) -> Self {
+        match variant {
+            EMXST_A::VALUE1 => false,
+            EMXST_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EMXSTW<'a> {
+#[doc = "Reader of field `EMXST`"]
+pub type EMXST_R = crate::R<bool, EMXST_A>;
+impl EMXST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EMXST_A {
+        match self.bits {
+            false => EMXST_A::VALUE1,
+            true => EMXST_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EMXST_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EMXST_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EMXST`"]
+pub struct EMXST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EMXSTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EMXSTW) -> &'a mut W {
+impl<'a> EMXST_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EMXST_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Use STCE whenever the setting changes"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EMXSTW::VALUE1)
+        self.variant(EMXST_A::VALUE1)
     }
     #[doc = "Use STCE for each conversion of an external channel"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EMXSTW::VALUE2)
+        self.variant(EMXST_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EMXWC`"]
-pub enum EMXWCW {
-    #[doc = "No write access to EMUX cfg."]
+#[doc = "External Multiplexer Channel Selection Style\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EMXCSS_A {
+    #[doc = "0: Channel number: Bitfield EMUXCH selects an arbitrary channel"]
     VALUE1,
-    #[doc = "Bitfields EMXMODE, EMXCOD, EMXST, EMXCSS can be written"]
+    #[doc = "1: Channel enable: Each bit of bitfield EMUXCH selects the associated channel for EMUX control"]
     VALUE2,
 }
-impl EMXWCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EMXWCW::VALUE1 => false,
-            EMXWCW::VALUE2 => true,
+impl From<EMXCSS_A> for bool {
+    #[inline(always)]
+    fn from(variant: EMXCSS_A) -> Self {
+        match variant {
+            EMXCSS_A::VALUE1 => false,
+            EMXCSS_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EMXWCW<'a> {
+#[doc = "Reader of field `EMXCSS`"]
+pub type EMXCSS_R = crate::R<bool, EMXCSS_A>;
+impl EMXCSS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EMXCSS_A {
+        match self.bits {
+            false => EMXCSS_A::VALUE1,
+            true => EMXCSS_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EMXCSS_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EMXCSS_A::VALUE2
+    }
+}
+#[doc = "Write Control for EMUX Configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EMXWC_AW {
+    #[doc = "0: No write access to EMUX cfg."]
+    VALUE1,
+    #[doc = "1: Bitfields EMXMODE, EMXCOD, EMXST, EMXCSS can be written"]
+    VALUE2,
+}
+impl From<EMXWC_AW> for bool {
+    #[inline(always)]
+    fn from(variant: EMXWC_AW) -> Self {
+        match variant {
+            EMXWC_AW::VALUE1 => false,
+            EMXWC_AW::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Write proxy for field `EMXWC`"]
+pub struct EMXWC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EMXWCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EMXWCW) -> &'a mut W {
+impl<'a> EMXWC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EMXWC_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No write access to EMUX cfg."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EMXWCW::VALUE1)
+        self.variant(EMXWC_AW::VALUE1)
     }
     #[doc = "Bitfields EMXMODE, EMXCOD, EMXST, EMXCSS can be written"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EMXWCW::VALUE2)
+        self.variant(EMXWC_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - External Multiplexer Start Selection"]
-    #[inline]
-    pub fn emuxset(&self) -> EMUXSETR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        EMUXSETR { bits }
+    #[inline(always)]
+    pub fn emuxset(&self) -> EMUXSET_R {
+        EMUXSET_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 8:10 - External Multiplexer Actual Selection"]
-    #[inline]
-    pub fn emuxact(&self) -> EMUXACTR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        EMUXACTR { bits }
+    #[inline(always)]
+    pub fn emuxact(&self) -> EMUXACT_R {
+        EMUXACT_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bits 16:25 - External Multiplexer Channel Select"]
-    #[inline]
-    pub fn emuxch(&self) -> EMUXCHR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        EMUXCHR { bits }
+    #[inline(always)]
+    pub fn emuxch(&self) -> EMUXCH_R {
+        EMUXCH_R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
     #[doc = "Bits 26:27 - External Multiplexer Mode"]
-    #[inline]
-    pub fn emuxmode(&self) -> EMUXMODER {
-        EMUXMODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn emuxmode(&self) -> EMUXMODE_R {
+        EMUXMODE_R::new(((self.bits >> 26) & 0x03) as u8)
     }
     #[doc = "Bit 28 - External Multiplexer Coding Scheme"]
-    #[inline]
-    pub fn emxcod(&self) -> EMXCODR {
-        EMXCODR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn emxcod(&self) -> EMXCOD_R {
+        EMXCOD_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - External Multiplexer Sample Time Control"]
-    #[inline]
-    pub fn emxst(&self) -> EMXSTR {
-        EMXSTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn emxst(&self) -> EMXST_R {
+        EMXST_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 30 - External Multiplexer Channel Selection Style"]
-    #[inline]
-    pub fn emxcss(&self) -> EMXCSSR {
-        EMXCSSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn emxcss(&self) -> EMXCSS_R {
+        EMXCSS_R::new(((self.bits >> 30) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - External Multiplexer Start Selection"]
-    #[inline]
-    pub fn emuxset(&mut self) -> _EMUXSETW {
-        _EMUXSETW { w: self }
+    #[inline(always)]
+    pub fn emuxset(&mut self) -> EMUXSET_W {
+        EMUXSET_W { w: self }
     }
     #[doc = "Bits 16:25 - External Multiplexer Channel Select"]
-    #[inline]
-    pub fn emuxch(&mut self) -> _EMUXCHW {
-        _EMUXCHW { w: self }
+    #[inline(always)]
+    pub fn emuxch(&mut self) -> EMUXCH_W {
+        EMUXCH_W { w: self }
     }
     #[doc = "Bits 26:27 - External Multiplexer Mode"]
-    #[inline]
-    pub fn emuxmode(&mut self) -> _EMUXMODEW {
-        _EMUXMODEW { w: self }
+    #[inline(always)]
+    pub fn emuxmode(&mut self) -> EMUXMODE_W {
+        EMUXMODE_W { w: self }
     }
     #[doc = "Bit 28 - External Multiplexer Coding Scheme"]
-    #[inline]
-    pub fn emxcod(&mut self) -> _EMXCODW {
-        _EMXCODW { w: self }
+    #[inline(always)]
+    pub fn emxcod(&mut self) -> EMXCOD_W {
+        EMXCOD_W { w: self }
     }
     #[doc = "Bit 29 - External Multiplexer Sample Time Control"]
-    #[inline]
-    pub fn emxst(&mut self) -> _EMXSTW {
-        _EMXSTW { w: self }
+    #[inline(always)]
+    pub fn emxst(&mut self) -> EMXST_W {
+        EMXST_W { w: self }
     }
     #[doc = "Bit 31 - Write Control for EMUX Configuration"]
-    #[inline]
-    pub fn emxwc(&mut self) -> _EMXWCW {
-        _EMXWCW { w: self }
+    #[inline(always)]
+    pub fn emxwc(&mut self) -> EMXWC_W {
+        EMXWC_W { w: self }
     }
 }

@@ -1,60 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::DIT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DCVR {
-    bits: u8,
-}
-impl DCVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DCNTR {
-    bits: u8,
-}
-impl DCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register DIT"]
+pub type R = crate::R<u32, super::DIT>;
+#[doc = "Reader of field `DCV`"]
+pub type DCV_R = crate::R<u8, u8>;
+#[doc = "Reader of field `DCNT`"]
+pub type DCNT_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Dither compare Value"]
-    #[inline]
-    pub fn dcv(&self) -> DCVR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DCVR { bits }
+    #[inline(always)]
+    pub fn dcv(&self) -> DCV_R {
+        DCV_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - Dither counter actual value"]
-    #[inline]
-    pub fn dcnt(&self) -> DCNTR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DCNTR { bits }
+    #[inline(always)]
+    pub fn dcnt(&self) -> DCNT_R {
+        DCNT_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }

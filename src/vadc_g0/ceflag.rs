@@ -1,1014 +1,720 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CEFLAG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CEFLAG"]
+pub type R = crate::R<u32, super::CEFLAG>;
+#[doc = "Writer for register CEFLAG"]
+pub type W = crate::W<u32, super::CEFLAG>;
+#[doc = "Register CEFLAG `reset()`'s with value 0"]
+impl crate::ResetValue for super::CEFLAG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `CEV0`"]
+#[doc = "Channel Event for Channel 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CEV0R {
-    #[doc = "No channel event"]
+pub enum CEV0_A {
+    #[doc = "0: No channel event"]
     VALUE1,
-    #[doc = "A channel event has occurred"]
+    #[doc = "1: A channel event has occurred"]
     VALUE2,
 }
-impl CEV0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CEV0R::VALUE1 => false,
-            CEV0R::VALUE2 => true,
+impl From<CEV0_A> for bool {
+    #[inline(always)]
+    fn from(variant: CEV0_A) -> Self {
+        match variant {
+            CEV0_A::VALUE1 => false,
+            CEV0_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CEV0R {
-        match value {
-            false => CEV0R::VALUE1,
-            true => CEV0R::VALUE2,
+}
+#[doc = "Reader of field `CEV0`"]
+pub type CEV0_R = crate::R<bool, CEV0_A>;
+impl CEV0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CEV0_A {
+        match self.bits {
+            false => CEV0_A::VALUE1,
+            true => CEV0_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CEV0R::VALUE1
+        *self == CEV0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CEV0R::VALUE2
+        *self == CEV0_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `CEV1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CEV1R {
-    #[doc = "No channel event"]
-    VALUE1,
-    #[doc = "A channel event has occurred"]
-    VALUE2,
-}
-impl CEV1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CEV1R::VALUE1 => false,
-            CEV1R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CEV1R {
-        match value {
-            false => CEV1R::VALUE1,
-            true => CEV1R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CEV1R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CEV1R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CEV2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CEV2R {
-    #[doc = "No channel event"]
-    VALUE1,
-    #[doc = "A channel event has occurred"]
-    VALUE2,
-}
-impl CEV2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CEV2R::VALUE1 => false,
-            CEV2R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CEV2R {
-        match value {
-            false => CEV2R::VALUE1,
-            true => CEV2R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CEV2R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CEV2R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CEV3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CEV3R {
-    #[doc = "No channel event"]
-    VALUE1,
-    #[doc = "A channel event has occurred"]
-    VALUE2,
-}
-impl CEV3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CEV3R::VALUE1 => false,
-            CEV3R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CEV3R {
-        match value {
-            false => CEV3R::VALUE1,
-            true => CEV3R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CEV3R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CEV3R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CEV4`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CEV4R {
-    #[doc = "No channel event"]
-    VALUE1,
-    #[doc = "A channel event has occurred"]
-    VALUE2,
-}
-impl CEV4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CEV4R::VALUE1 => false,
-            CEV4R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CEV4R {
-        match value {
-            false => CEV4R::VALUE1,
-            true => CEV4R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CEV4R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CEV4R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CEV5`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CEV5R {
-    #[doc = "No channel event"]
-    VALUE1,
-    #[doc = "A channel event has occurred"]
-    VALUE2,
-}
-impl CEV5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CEV5R::VALUE1 => false,
-            CEV5R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CEV5R {
-        match value {
-            false => CEV5R::VALUE1,
-            true => CEV5R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CEV5R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CEV5R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CEV6`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CEV6R {
-    #[doc = "No channel event"]
-    VALUE1,
-    #[doc = "A channel event has occurred"]
-    VALUE2,
-}
-impl CEV6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CEV6R::VALUE1 => false,
-            CEV6R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CEV6R {
-        match value {
-            false => CEV6R::VALUE1,
-            true => CEV6R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CEV6R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CEV6R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CEV7`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CEV7R {
-    #[doc = "No channel event"]
-    VALUE1,
-    #[doc = "A channel event has occurred"]
-    VALUE2,
-}
-impl CEV7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CEV7R::VALUE1 => false,
-            CEV7R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CEV7R {
-        match value {
-            false => CEV7R::VALUE1,
-            true => CEV7R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CEV7R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CEV7R::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `CEV0`"]
-pub enum CEV0W {
-    #[doc = "No channel event"]
-    VALUE1,
-    #[doc = "A channel event has occurred"]
-    VALUE2,
-}
-impl CEV0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV0W::VALUE1 => false,
-            CEV0W::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CEV0W<'a> {
+#[doc = "Write proxy for field `CEV0`"]
+pub struct CEV0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV0W) -> &'a mut W {
+impl<'a> CEV0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No channel event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV0W::VALUE1)
+        self.variant(CEV0_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV0W::VALUE2)
+        self.variant(CEV0_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV1`"]
-pub enum CEV1W {
-    #[doc = "No channel event"]
+#[doc = "Channel Event for Channel 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV1_A {
+    #[doc = "0: No channel event"]
     VALUE1,
-    #[doc = "A channel event has occurred"]
+    #[doc = "1: A channel event has occurred"]
     VALUE2,
 }
-impl CEV1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV1W::VALUE1 => false,
-            CEV1W::VALUE2 => true,
+impl From<CEV1_A> for bool {
+    #[inline(always)]
+    fn from(variant: CEV1_A) -> Self {
+        match variant {
+            CEV1_A::VALUE1 => false,
+            CEV1_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV1W<'a> {
+#[doc = "Reader of field `CEV1`"]
+pub type CEV1_R = crate::R<bool, CEV1_A>;
+impl CEV1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CEV1_A {
+        match self.bits {
+            false => CEV1_A::VALUE1,
+            true => CEV1_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CEV1_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CEV1_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CEV1`"]
+pub struct CEV1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV1W) -> &'a mut W {
+impl<'a> CEV1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No channel event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV1W::VALUE1)
+        self.variant(CEV1_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV1W::VALUE2)
+        self.variant(CEV1_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV2`"]
-pub enum CEV2W {
-    #[doc = "No channel event"]
+#[doc = "Channel Event for Channel 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV2_A {
+    #[doc = "0: No channel event"]
     VALUE1,
-    #[doc = "A channel event has occurred"]
+    #[doc = "1: A channel event has occurred"]
     VALUE2,
 }
-impl CEV2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV2W::VALUE1 => false,
-            CEV2W::VALUE2 => true,
+impl From<CEV2_A> for bool {
+    #[inline(always)]
+    fn from(variant: CEV2_A) -> Self {
+        match variant {
+            CEV2_A::VALUE1 => false,
+            CEV2_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV2W<'a> {
+#[doc = "Reader of field `CEV2`"]
+pub type CEV2_R = crate::R<bool, CEV2_A>;
+impl CEV2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CEV2_A {
+        match self.bits {
+            false => CEV2_A::VALUE1,
+            true => CEV2_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CEV2_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CEV2_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CEV2`"]
+pub struct CEV2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV2W) -> &'a mut W {
+impl<'a> CEV2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV2_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No channel event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV2W::VALUE1)
+        self.variant(CEV2_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV2W::VALUE2)
+        self.variant(CEV2_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV3`"]
-pub enum CEV3W {
-    #[doc = "No channel event"]
+#[doc = "Channel Event for Channel 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV3_A {
+    #[doc = "0: No channel event"]
     VALUE1,
-    #[doc = "A channel event has occurred"]
+    #[doc = "1: A channel event has occurred"]
     VALUE2,
 }
-impl CEV3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV3W::VALUE1 => false,
-            CEV3W::VALUE2 => true,
+impl From<CEV3_A> for bool {
+    #[inline(always)]
+    fn from(variant: CEV3_A) -> Self {
+        match variant {
+            CEV3_A::VALUE1 => false,
+            CEV3_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV3W<'a> {
+#[doc = "Reader of field `CEV3`"]
+pub type CEV3_R = crate::R<bool, CEV3_A>;
+impl CEV3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CEV3_A {
+        match self.bits {
+            false => CEV3_A::VALUE1,
+            true => CEV3_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CEV3_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CEV3_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CEV3`"]
+pub struct CEV3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV3W) -> &'a mut W {
+impl<'a> CEV3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No channel event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV3W::VALUE1)
+        self.variant(CEV3_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV3W::VALUE2)
+        self.variant(CEV3_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV4`"]
-pub enum CEV4W {
-    #[doc = "No channel event"]
+#[doc = "Channel Event for Channel 4\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV4_A {
+    #[doc = "0: No channel event"]
     VALUE1,
-    #[doc = "A channel event has occurred"]
+    #[doc = "1: A channel event has occurred"]
     VALUE2,
 }
-impl CEV4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV4W::VALUE1 => false,
-            CEV4W::VALUE2 => true,
+impl From<CEV4_A> for bool {
+    #[inline(always)]
+    fn from(variant: CEV4_A) -> Self {
+        match variant {
+            CEV4_A::VALUE1 => false,
+            CEV4_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV4W<'a> {
+#[doc = "Reader of field `CEV4`"]
+pub type CEV4_R = crate::R<bool, CEV4_A>;
+impl CEV4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CEV4_A {
+        match self.bits {
+            false => CEV4_A::VALUE1,
+            true => CEV4_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CEV4_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CEV4_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CEV4`"]
+pub struct CEV4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV4W) -> &'a mut W {
+impl<'a> CEV4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV4_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No channel event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV4W::VALUE1)
+        self.variant(CEV4_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV4W::VALUE2)
+        self.variant(CEV4_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV5`"]
-pub enum CEV5W {
-    #[doc = "No channel event"]
+#[doc = "Channel Event for Channel 5\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV5_A {
+    #[doc = "0: No channel event"]
     VALUE1,
-    #[doc = "A channel event has occurred"]
+    #[doc = "1: A channel event has occurred"]
     VALUE2,
 }
-impl CEV5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV5W::VALUE1 => false,
-            CEV5W::VALUE2 => true,
+impl From<CEV5_A> for bool {
+    #[inline(always)]
+    fn from(variant: CEV5_A) -> Self {
+        match variant {
+            CEV5_A::VALUE1 => false,
+            CEV5_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV5W<'a> {
+#[doc = "Reader of field `CEV5`"]
+pub type CEV5_R = crate::R<bool, CEV5_A>;
+impl CEV5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CEV5_A {
+        match self.bits {
+            false => CEV5_A::VALUE1,
+            true => CEV5_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CEV5_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CEV5_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CEV5`"]
+pub struct CEV5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV5W) -> &'a mut W {
+impl<'a> CEV5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV5_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No channel event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV5W::VALUE1)
+        self.variant(CEV5_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV5W::VALUE2)
+        self.variant(CEV5_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV6`"]
-pub enum CEV6W {
-    #[doc = "No channel event"]
+#[doc = "Channel Event for Channel 6\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV6_A {
+    #[doc = "0: No channel event"]
     VALUE1,
-    #[doc = "A channel event has occurred"]
+    #[doc = "1: A channel event has occurred"]
     VALUE2,
 }
-impl CEV6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV6W::VALUE1 => false,
-            CEV6W::VALUE2 => true,
+impl From<CEV6_A> for bool {
+    #[inline(always)]
+    fn from(variant: CEV6_A) -> Self {
+        match variant {
+            CEV6_A::VALUE1 => false,
+            CEV6_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV6W<'a> {
+#[doc = "Reader of field `CEV6`"]
+pub type CEV6_R = crate::R<bool, CEV6_A>;
+impl CEV6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CEV6_A {
+        match self.bits {
+            false => CEV6_A::VALUE1,
+            true => CEV6_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CEV6_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CEV6_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CEV6`"]
+pub struct CEV6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV6W) -> &'a mut W {
+impl<'a> CEV6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV6_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No channel event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV6W::VALUE1)
+        self.variant(CEV6_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV6W::VALUE2)
+        self.variant(CEV6_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV7`"]
-pub enum CEV7W {
-    #[doc = "No channel event"]
+#[doc = "Channel Event for Channel 7\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV7_A {
+    #[doc = "0: No channel event"]
     VALUE1,
-    #[doc = "A channel event has occurred"]
+    #[doc = "1: A channel event has occurred"]
     VALUE2,
 }
-impl CEV7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEV7W::VALUE1 => false,
-            CEV7W::VALUE2 => true,
+impl From<CEV7_A> for bool {
+    #[inline(always)]
+    fn from(variant: CEV7_A) -> Self {
+        match variant {
+            CEV7_A::VALUE1 => false,
+            CEV7_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEV7W<'a> {
+#[doc = "Reader of field `CEV7`"]
+pub type CEV7_R = crate::R<bool, CEV7_A>;
+impl CEV7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CEV7_A {
+        match self.bits {
+            false => CEV7_A::VALUE1,
+            true => CEV7_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CEV7_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CEV7_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CEV7`"]
+pub struct CEV7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEV7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEV7W) -> &'a mut W {
+impl<'a> CEV7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV7_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No channel event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEV7W::VALUE1)
+        self.variant(CEV7_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEV7W::VALUE2)
+        self.variant(CEV7_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Channel Event for Channel 0"]
-    #[inline]
-    pub fn cev0(&self) -> CEV0R {
-        CEV0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cev0(&self) -> CEV0_R {
+        CEV0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Channel Event for Channel 1"]
-    #[inline]
-    pub fn cev1(&self) -> CEV1R {
-        CEV1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cev1(&self) -> CEV1_R {
+        CEV1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Channel Event for Channel 2"]
-    #[inline]
-    pub fn cev2(&self) -> CEV2R {
-        CEV2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cev2(&self) -> CEV2_R {
+        CEV2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Channel Event for Channel 3"]
-    #[inline]
-    pub fn cev3(&self) -> CEV3R {
-        CEV3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cev3(&self) -> CEV3_R {
+        CEV3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Channel Event for Channel 4"]
-    #[inline]
-    pub fn cev4(&self) -> CEV4R {
-        CEV4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cev4(&self) -> CEV4_R {
+        CEV4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Channel Event for Channel 5"]
-    #[inline]
-    pub fn cev5(&self) -> CEV5R {
-        CEV5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cev5(&self) -> CEV5_R {
+        CEV5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Channel Event for Channel 6"]
-    #[inline]
-    pub fn cev6(&self) -> CEV6R {
-        CEV6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cev6(&self) -> CEV6_R {
+        CEV6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Channel Event for Channel 7"]
-    #[inline]
-    pub fn cev7(&self) -> CEV7R {
-        CEV7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cev7(&self) -> CEV7_R {
+        CEV7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Channel Event for Channel 0"]
-    #[inline]
-    pub fn cev0(&mut self) -> _CEV0W {
-        _CEV0W { w: self }
+    #[inline(always)]
+    pub fn cev0(&mut self) -> CEV0_W {
+        CEV0_W { w: self }
     }
     #[doc = "Bit 1 - Channel Event for Channel 1"]
-    #[inline]
-    pub fn cev1(&mut self) -> _CEV1W {
-        _CEV1W { w: self }
+    #[inline(always)]
+    pub fn cev1(&mut self) -> CEV1_W {
+        CEV1_W { w: self }
     }
     #[doc = "Bit 2 - Channel Event for Channel 2"]
-    #[inline]
-    pub fn cev2(&mut self) -> _CEV2W {
-        _CEV2W { w: self }
+    #[inline(always)]
+    pub fn cev2(&mut self) -> CEV2_W {
+        CEV2_W { w: self }
     }
     #[doc = "Bit 3 - Channel Event for Channel 3"]
-    #[inline]
-    pub fn cev3(&mut self) -> _CEV3W {
-        _CEV3W { w: self }
+    #[inline(always)]
+    pub fn cev3(&mut self) -> CEV3_W {
+        CEV3_W { w: self }
     }
     #[doc = "Bit 4 - Channel Event for Channel 4"]
-    #[inline]
-    pub fn cev4(&mut self) -> _CEV4W {
-        _CEV4W { w: self }
+    #[inline(always)]
+    pub fn cev4(&mut self) -> CEV4_W {
+        CEV4_W { w: self }
     }
     #[doc = "Bit 5 - Channel Event for Channel 5"]
-    #[inline]
-    pub fn cev5(&mut self) -> _CEV5W {
-        _CEV5W { w: self }
+    #[inline(always)]
+    pub fn cev5(&mut self) -> CEV5_W {
+        CEV5_W { w: self }
     }
     #[doc = "Bit 6 - Channel Event for Channel 6"]
-    #[inline]
-    pub fn cev6(&mut self) -> _CEV6W {
-        _CEV6W { w: self }
+    #[inline(always)]
+    pub fn cev6(&mut self) -> CEV6_W {
+        CEV6_W { w: self }
     }
     #[doc = "Bit 7 - Channel Event for Channel 7"]
-    #[inline]
-    pub fn cev7(&mut self) -> _CEV7W {
-        _CEV7W { w: self }
+    #[inline(always)]
+    pub fn cev7(&mut self) -> CEV7_W {
+        CEV7_W { w: self }
     }
 }

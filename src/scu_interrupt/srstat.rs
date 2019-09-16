@@ -1,783 +1,553 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::SRSTAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `PRWARN`"]
+#[doc = "Reader of register SRSTAT"]
+pub type R = crate::R<u32, super::SRSTAT>;
+#[doc = "WDT pre-warning Interrupt Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRWARNR {
-    #[doc = "Inactive"]
+pub enum PRWARN_A {
+    #[doc = "0: Inactive"]
     CONST_0,
-    #[doc = "Active"]
+    #[doc = "1: Active"]
     CONST_1,
 }
-impl PRWARNR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PRWARNR::CONST_0 => false,
-            PRWARNR::CONST_1 => true,
+impl From<PRWARN_A> for bool {
+    #[inline(always)]
+    fn from(variant: PRWARN_A) -> Self {
+        match variant {
+            PRWARN_A::CONST_0 => false,
+            PRWARN_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PRWARNR {
-        match value {
-            false => PRWARNR::CONST_0,
-            true => PRWARNR::CONST_1,
+}
+#[doc = "Reader of field `PRWARN`"]
+pub type PRWARN_R = crate::R<bool, PRWARN_A>;
+impl PRWARN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PRWARN_A {
+        match self.bits {
+            false => PRWARN_A::CONST_0,
+            true => PRWARN_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PRWARNR::CONST_0
+        *self == PRWARN_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PRWARNR::CONST_1
+        *self == PRWARN_A::CONST_1
     }
 }
-#[doc = r" Value of the field"]
-pub struct PIR {
-    bits: bool,
-}
-impl PIR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AIR {
-    bits: bool,
-}
-impl AIR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DLROVRR {
-    bits: bool,
-}
-impl DLROVRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `HDCLR`"]
+#[doc = "Reader of field `PI`"]
+pub type PI_R = crate::R<bool, bool>;
+#[doc = "Reader of field `AI`"]
+pub type AI_R = crate::R<bool, bool>;
+#[doc = "Reader of field `DLROVR`"]
+pub type DLROVR_R = crate::R<bool, bool>;
+#[doc = "HDCLR Mirror Register Update Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HDCLRR {
-    #[doc = "Not updated"]
+pub enum HDCLR_A {
+    #[doc = "0: Not updated"]
     CONST_0,
-    #[doc = "Update completed"]
+    #[doc = "1: Update completed"]
     CONST_1,
 }
-impl HDCLRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HDCLRR::CONST_0 => false,
-            HDCLRR::CONST_1 => true,
+impl From<HDCLR_A> for bool {
+    #[inline(always)]
+    fn from(variant: HDCLR_A) -> Self {
+        match variant {
+            HDCLR_A::CONST_0 => false,
+            HDCLR_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HDCLRR {
-        match value {
-            false => HDCLRR::CONST_0,
-            true => HDCLRR::CONST_1,
+}
+#[doc = "Reader of field `HDCLR`"]
+pub type HDCLR_R = crate::R<bool, HDCLR_A>;
+impl HDCLR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HDCLR_A {
+        match self.bits {
+            false => HDCLR_A::CONST_0,
+            true => HDCLR_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == HDCLRR::CONST_0
+        *self == HDCLR_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == HDCLRR::CONST_1
+        *self == HDCLR_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `HDSET`"]
+#[doc = "HDSET Mirror Register Update Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HDSETR {
-    #[doc = "Not updated"]
+pub enum HDSET_A {
+    #[doc = "0: Not updated"]
     CONST_0,
-    #[doc = "Update completed"]
+    #[doc = "1: Update completed"]
     CONST_1,
 }
-impl HDSETR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HDSETR::CONST_0 => false,
-            HDSETR::CONST_1 => true,
+impl From<HDSET_A> for bool {
+    #[inline(always)]
+    fn from(variant: HDSET_A) -> Self {
+        match variant {
+            HDSET_A::CONST_0 => false,
+            HDSET_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HDSETR {
-        match value {
-            false => HDSETR::CONST_0,
-            true => HDSETR::CONST_1,
+}
+#[doc = "Reader of field `HDSET`"]
+pub type HDSET_R = crate::R<bool, HDSET_A>;
+impl HDSET_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HDSET_A {
+        match self.bits {
+            false => HDSET_A::CONST_0,
+            true => HDSET_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == HDSETR::CONST_0
+        *self == HDSET_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == HDSETR::CONST_1
+        *self == HDSET_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `HDCR`"]
+#[doc = "HDCR Mirror Register Update Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HDCRR {
-    #[doc = "Not updated"]
+pub enum HDCR_A {
+    #[doc = "0: Not updated"]
     CONST_0,
-    #[doc = "Update completed"]
+    #[doc = "1: Update completed"]
     CONST_1,
 }
-impl HDCRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HDCRR::CONST_0 => false,
-            HDCRR::CONST_1 => true,
+impl From<HDCR_A> for bool {
+    #[inline(always)]
+    fn from(variant: HDCR_A) -> Self {
+        match variant {
+            HDCR_A::CONST_0 => false,
+            HDCR_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HDCRR {
-        match value {
-            false => HDCRR::CONST_0,
-            true => HDCRR::CONST_1,
+}
+#[doc = "Reader of field `HDCR`"]
+pub type HDCR_R = crate::R<bool, HDCR_A>;
+impl HDCR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HDCR_A {
+        match self.bits {
+            false => HDCR_A::CONST_0,
+            true => HDCR_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == HDCRR::CONST_0
+        *self == HDCR_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == HDCRR::CONST_1
+        *self == HDCR_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `OSCSICTRL`"]
+#[doc = "OSCSICTRL Mirror Register Update Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OSCSICTRLR {
-    #[doc = "Not updated"]
+pub enum OSCSICTRL_A {
+    #[doc = "0: Not updated"]
     CONST_0,
-    #[doc = "Update completed"]
+    #[doc = "1: Update completed"]
     CONST_1,
 }
-impl OSCSICTRLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            OSCSICTRLR::CONST_0 => false,
-            OSCSICTRLR::CONST_1 => true,
+impl From<OSCSICTRL_A> for bool {
+    #[inline(always)]
+    fn from(variant: OSCSICTRL_A) -> Self {
+        match variant {
+            OSCSICTRL_A::CONST_0 => false,
+            OSCSICTRL_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> OSCSICTRLR {
-        match value {
-            false => OSCSICTRLR::CONST_0,
-            true => OSCSICTRLR::CONST_1,
+}
+#[doc = "Reader of field `OSCSICTRL`"]
+pub type OSCSICTRL_R = crate::R<bool, OSCSICTRL_A>;
+impl OSCSICTRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OSCSICTRL_A {
+        match self.bits {
+            false => OSCSICTRL_A::CONST_0,
+            true => OSCSICTRL_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == OSCSICTRLR::CONST_0
+        *self == OSCSICTRL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == OSCSICTRLR::CONST_1
+        *self == OSCSICTRL_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `OSCULCTRL`"]
+#[doc = "OSCULCTRL Mirror Register Update Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OSCULCTRLR {
-    #[doc = "Not updated"]
+pub enum OSCULCTRL_A {
+    #[doc = "0: Not updated"]
     CONST_0,
-    #[doc = "Update completed"]
+    #[doc = "1: Update completed"]
     CONST_1,
 }
-impl OSCULCTRLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            OSCULCTRLR::CONST_0 => false,
-            OSCULCTRLR::CONST_1 => true,
+impl From<OSCULCTRL_A> for bool {
+    #[inline(always)]
+    fn from(variant: OSCULCTRL_A) -> Self {
+        match variant {
+            OSCULCTRL_A::CONST_0 => false,
+            OSCULCTRL_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> OSCULCTRLR {
-        match value {
-            false => OSCULCTRLR::CONST_0,
-            true => OSCULCTRLR::CONST_1,
+}
+#[doc = "Reader of field `OSCULCTRL`"]
+pub type OSCULCTRL_R = crate::R<bool, OSCULCTRL_A>;
+impl OSCULCTRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OSCULCTRL_A {
+        match self.bits {
+            false => OSCULCTRL_A::CONST_0,
+            true => OSCULCTRL_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == OSCULCTRLR::CONST_0
+        *self == OSCULCTRL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == OSCULCTRLR::CONST_1
+        *self == OSCULCTRL_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `RTC_CTR`"]
+#[doc = "RTC CTR Mirror Register Update Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RTC_CTRR {
-    #[doc = "Not updated"]
+pub enum RTC_CTR_A {
+    #[doc = "0: Not updated"]
     CONST_0,
-    #[doc = "Update completed"]
+    #[doc = "1: Update completed"]
     CONST_1,
 }
-impl RTC_CTRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RTC_CTRR::CONST_0 => false,
-            RTC_CTRR::CONST_1 => true,
+impl From<RTC_CTR_A> for bool {
+    #[inline(always)]
+    fn from(variant: RTC_CTR_A) -> Self {
+        match variant {
+            RTC_CTR_A::CONST_0 => false,
+            RTC_CTR_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RTC_CTRR {
-        match value {
-            false => RTC_CTRR::CONST_0,
-            true => RTC_CTRR::CONST_1,
+}
+#[doc = "Reader of field `RTC_CTR`"]
+pub type RTC_CTR_R = crate::R<bool, RTC_CTR_A>;
+impl RTC_CTR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RTC_CTR_A {
+        match self.bits {
+            false => RTC_CTR_A::CONST_0,
+            true => RTC_CTR_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RTC_CTRR::CONST_0
+        *self == RTC_CTR_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RTC_CTRR::CONST_1
+        *self == RTC_CTR_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `RTC_ATIM0`"]
+#[doc = "RTC ATIM0 Mirror Register Update Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RTC_ATIM0R {
-    #[doc = "Not updated"]
+pub enum RTC_ATIM0_A {
+    #[doc = "0: Not updated"]
     CONST_0,
-    #[doc = "Update completed"]
+    #[doc = "1: Update completed"]
     CONST_1,
 }
-impl RTC_ATIM0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RTC_ATIM0R::CONST_0 => false,
-            RTC_ATIM0R::CONST_1 => true,
+impl From<RTC_ATIM0_A> for bool {
+    #[inline(always)]
+    fn from(variant: RTC_ATIM0_A) -> Self {
+        match variant {
+            RTC_ATIM0_A::CONST_0 => false,
+            RTC_ATIM0_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RTC_ATIM0R {
-        match value {
-            false => RTC_ATIM0R::CONST_0,
-            true => RTC_ATIM0R::CONST_1,
+}
+#[doc = "Reader of field `RTC_ATIM0`"]
+pub type RTC_ATIM0_R = crate::R<bool, RTC_ATIM0_A>;
+impl RTC_ATIM0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RTC_ATIM0_A {
+        match self.bits {
+            false => RTC_ATIM0_A::CONST_0,
+            true => RTC_ATIM0_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RTC_ATIM0R::CONST_0
+        *self == RTC_ATIM0_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RTC_ATIM0R::CONST_1
+        *self == RTC_ATIM0_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `RTC_ATIM1`"]
+#[doc = "RTC ATIM1 Mirror Register Update Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RTC_ATIM1R {
-    #[doc = "Not updated"]
+pub enum RTC_ATIM1_A {
+    #[doc = "0: Not updated"]
     CONST_0,
-    #[doc = "Update completed"]
+    #[doc = "1: Update completed"]
     CONST_1,
 }
-impl RTC_ATIM1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RTC_ATIM1R::CONST_0 => false,
-            RTC_ATIM1R::CONST_1 => true,
+impl From<RTC_ATIM1_A> for bool {
+    #[inline(always)]
+    fn from(variant: RTC_ATIM1_A) -> Self {
+        match variant {
+            RTC_ATIM1_A::CONST_0 => false,
+            RTC_ATIM1_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RTC_ATIM1R {
-        match value {
-            false => RTC_ATIM1R::CONST_0,
-            true => RTC_ATIM1R::CONST_1,
+}
+#[doc = "Reader of field `RTC_ATIM1`"]
+pub type RTC_ATIM1_R = crate::R<bool, RTC_ATIM1_A>;
+impl RTC_ATIM1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RTC_ATIM1_A {
+        match self.bits {
+            false => RTC_ATIM1_A::CONST_0,
+            true => RTC_ATIM1_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RTC_ATIM1R::CONST_0
+        *self == RTC_ATIM1_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RTC_ATIM1R::CONST_1
+        *self == RTC_ATIM1_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `RTC_TIM0`"]
+#[doc = "RTC TIM0 Mirror Register Update Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RTC_TIM0R {
-    #[doc = "Not updated"]
+pub enum RTC_TIM0_A {
+    #[doc = "0: Not updated"]
     CONST_0,
-    #[doc = "Update completed"]
+    #[doc = "1: Update completed"]
     CONST_1,
 }
-impl RTC_TIM0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RTC_TIM0R::CONST_0 => false,
-            RTC_TIM0R::CONST_1 => true,
+impl From<RTC_TIM0_A> for bool {
+    #[inline(always)]
+    fn from(variant: RTC_TIM0_A) -> Self {
+        match variant {
+            RTC_TIM0_A::CONST_0 => false,
+            RTC_TIM0_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RTC_TIM0R {
-        match value {
-            false => RTC_TIM0R::CONST_0,
-            true => RTC_TIM0R::CONST_1,
+}
+#[doc = "Reader of field `RTC_TIM0`"]
+pub type RTC_TIM0_R = crate::R<bool, RTC_TIM0_A>;
+impl RTC_TIM0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RTC_TIM0_A {
+        match self.bits {
+            false => RTC_TIM0_A::CONST_0,
+            true => RTC_TIM0_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RTC_TIM0R::CONST_0
+        *self == RTC_TIM0_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RTC_TIM0R::CONST_1
+        *self == RTC_TIM0_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `RTC_TIM1`"]
+#[doc = "RTC TIM1 Mirror Register Update Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RTC_TIM1R {
-    #[doc = "Not updated"]
+pub enum RTC_TIM1_A {
+    #[doc = "0: Not updated"]
     CONST_0,
-    #[doc = "Update completed"]
+    #[doc = "1: Update completed"]
     CONST_1,
 }
-impl RTC_TIM1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RTC_TIM1R::CONST_0 => false,
-            RTC_TIM1R::CONST_1 => true,
+impl From<RTC_TIM1_A> for bool {
+    #[inline(always)]
+    fn from(variant: RTC_TIM1_A) -> Self {
+        match variant {
+            RTC_TIM1_A::CONST_0 => false,
+            RTC_TIM1_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RTC_TIM1R {
-        match value {
-            false => RTC_TIM1R::CONST_0,
-            true => RTC_TIM1R::CONST_1,
+}
+#[doc = "Reader of field `RTC_TIM1`"]
+pub type RTC_TIM1_R = crate::R<bool, RTC_TIM1_A>;
+impl RTC_TIM1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RTC_TIM1_A {
+        match self.bits {
+            false => RTC_TIM1_A::CONST_0,
+            true => RTC_TIM1_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RTC_TIM1R::CONST_0
+        *self == RTC_TIM1_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RTC_TIM1R::CONST_1
+        *self == RTC_TIM1_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `RMX`"]
+#[doc = "Retention Memory Mirror Register Update Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RMXR {
-    #[doc = "Not updated"]
+pub enum RMX_A {
+    #[doc = "0: Not updated"]
     CONST_0,
-    #[doc = "Update completed"]
+    #[doc = "1: Update completed"]
     CONST_1,
 }
-impl RMXR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RMXR::CONST_0 => false,
-            RMXR::CONST_1 => true,
+impl From<RMX_A> for bool {
+    #[inline(always)]
+    fn from(variant: RMX_A) -> Self {
+        match variant {
+            RMX_A::CONST_0 => false,
+            RMX_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RMXR {
-        match value {
-            false => RMXR::CONST_0,
-            true => RMXR::CONST_1,
+}
+#[doc = "Reader of field `RMX`"]
+pub type RMX_R = crate::R<bool, RMX_A>;
+impl RMX_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RMX_A {
+        match self.bits {
+            false => RMX_A::CONST_0,
+            true => RMX_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RMXR::CONST_0
+        *self == RMX_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RMXR::CONST_1
+        *self == RMX_A::CONST_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - WDT pre-warning Interrupt Status"]
-    #[inline]
-    pub fn prwarn(&self) -> PRWARNR {
-        PRWARNR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn prwarn(&self) -> PRWARN_R {
+        PRWARN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - RTC Periodic Interrupt Status"]
-    #[inline]
-    pub fn pi(&self) -> PIR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PIR { bits }
+    #[inline(always)]
+    pub fn pi(&self) -> PI_R {
+        PI_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Alarm Interrupt Status"]
-    #[inline]
-    pub fn ai(&self) -> AIR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AIR { bits }
+    #[inline(always)]
+    pub fn ai(&self) -> AI_R {
+        AI_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - DLR Request Overrun Interrupt Status"]
-    #[inline]
-    pub fn dlrovr(&self) -> DLROVRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DLROVRR { bits }
+    #[inline(always)]
+    pub fn dlrovr(&self) -> DLROVR_R {
+        DLROVR_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 17 - HDCLR Mirror Register Update Status"]
-    #[inline]
-    pub fn hdclr(&self) -> HDCLRR {
-        HDCLRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hdclr(&self) -> HDCLR_R {
+        HDCLR_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - HDSET Mirror Register Update Status"]
-    #[inline]
-    pub fn hdset(&self) -> HDSETR {
-        HDSETR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hdset(&self) -> HDSET_R {
+        HDSET_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - HDCR Mirror Register Update Status"]
-    #[inline]
-    pub fn hdcr(&self) -> HDCRR {
-        HDCRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hdcr(&self) -> HDCR_R {
+        HDCR_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 21 - OSCSICTRL Mirror Register Update Status"]
-    #[inline]
-    pub fn oscsictrl(&self) -> OSCSICTRLR {
-        OSCSICTRLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn oscsictrl(&self) -> OSCSICTRL_R {
+        OSCSICTRL_R::new(((self.bits >> 21) & 0x01) != 0)
     }
     #[doc = "Bit 23 - OSCULCTRL Mirror Register Update Status"]
-    #[inline]
-    pub fn osculctrl(&self) -> OSCULCTRLR {
-        OSCULCTRLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn osculctrl(&self) -> OSCULCTRL_R {
+        OSCULCTRL_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bit 24 - RTC CTR Mirror Register Update Status"]
-    #[inline]
-    pub fn rtc_ctr(&self) -> RTC_CTRR {
-        RTC_CTRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rtc_ctr(&self) -> RTC_CTR_R {
+        RTC_CTR_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - RTC ATIM0 Mirror Register Update Status"]
-    #[inline]
-    pub fn rtc_atim0(&self) -> RTC_ATIM0R {
-        RTC_ATIM0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rtc_atim0(&self) -> RTC_ATIM0_R {
+        RTC_ATIM0_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - RTC ATIM1 Mirror Register Update Status"]
-    #[inline]
-    pub fn rtc_atim1(&self) -> RTC_ATIM1R {
-        RTC_ATIM1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rtc_atim1(&self) -> RTC_ATIM1_R {
+        RTC_ATIM1_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - RTC TIM0 Mirror Register Update Status"]
-    #[inline]
-    pub fn rtc_tim0(&self) -> RTC_TIM0R {
-        RTC_TIM0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rtc_tim0(&self) -> RTC_TIM0_R {
+        RTC_TIM0_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 28 - RTC TIM1 Mirror Register Update Status"]
-    #[inline]
-    pub fn rtc_tim1(&self) -> RTC_TIM1R {
-        RTC_TIM1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rtc_tim1(&self) -> RTC_TIM1_R {
+        RTC_TIM1_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - Retention Memory Mirror Register Update Status"]
-    #[inline]
-    pub fn rmx(&self) -> RMXR {
-        RMXR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rmx(&self) -> RMX_R {
+        RMX_R::new(((self.bits >> 29) & 0x01) != 0)
     }
 }

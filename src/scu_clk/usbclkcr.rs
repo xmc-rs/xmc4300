@@ -1,222 +1,128 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::USBCLKCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register USBCLKCR"]
+pub type R = crate::R<u32, super::USBCLKCR>;
+#[doc = "Writer for register USBCLKCR"]
+pub type W = crate::W<u32, super::USBCLKCR>;
+#[doc = "Register USBCLKCR `reset()`'s with value 0"]
+impl crate::ResetValue for super::USBCLKCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct USBDIVR {
-    bits: u8,
-}
-impl USBDIVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `USBSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum USBSELR {
-    #[doc = "USB PLL Clock"]
-    CONST_0,
-    #[doc = "PLL Clock"]
-    CONST_1,
-}
-impl USBSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            USBSELR::CONST_0 => false,
-            USBSELR::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> USBSELR {
-        match value {
-            false => USBSELR::CONST_0,
-            true => USBSELR::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == USBSELR::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == USBSELR::CONST_1
-    }
-}
-#[doc = r" Proxy"]
-pub struct _USBDIVW<'a> {
+#[doc = "Reader of field `USBDIV`"]
+pub type USBDIV_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `USBDIV`"]
+pub struct USBDIV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _USBDIVW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> USBDIV_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `USBSEL`"]
-pub enum USBSELW {
-    #[doc = "USB PLL Clock"]
+#[doc = "USB Clock Selection Value\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum USBSEL_A {
+    #[doc = "0: USB PLL Clock"]
     CONST_0,
-    #[doc = "PLL Clock"]
+    #[doc = "1: PLL Clock"]
     CONST_1,
 }
-impl USBSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            USBSELW::CONST_0 => false,
-            USBSELW::CONST_1 => true,
+impl From<USBSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: USBSEL_A) -> Self {
+        match variant {
+            USBSEL_A::CONST_0 => false,
+            USBSEL_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _USBSELW<'a> {
+#[doc = "Reader of field `USBSEL`"]
+pub type USBSEL_R = crate::R<bool, USBSEL_A>;
+impl USBSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> USBSEL_A {
+        match self.bits {
+            false => USBSEL_A::CONST_0,
+            true => USBSEL_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == USBSEL_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == USBSEL_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `USBSEL`"]
+pub struct USBSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _USBSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: USBSELW) -> &'a mut W {
+impl<'a> USBSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: USBSEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "USB PLL Clock"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(USBSELW::CONST_0)
+        self.variant(USBSEL_A::CONST_0)
     }
     #[doc = "PLL Clock"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(USBSELW::CONST_1)
+        self.variant(USBSEL_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - USB Clock Divider Value"]
-    #[inline]
-    pub fn usbdiv(&self) -> USBDIVR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        USBDIVR { bits }
+    #[inline(always)]
+    pub fn usbdiv(&self) -> USBDIV_R {
+        USBDIV_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bit 16 - USB Clock Selection Value"]
-    #[inline]
-    pub fn usbsel(&self) -> USBSELR {
-        USBSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn usbsel(&self) -> USBSEL_R {
+        USBSEL_R::new(((self.bits >> 16) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - USB Clock Divider Value"]
-    #[inline]
-    pub fn usbdiv(&mut self) -> _USBDIVW {
-        _USBDIVW { w: self }
+    #[inline(always)]
+    pub fn usbdiv(&mut self) -> USBDIV_W {
+        USBDIV_W { w: self }
     }
     #[doc = "Bit 16 - USB Clock Selection Value"]
-    #[inline]
-    pub fn usbsel(&mut self) -> _USBSELW {
-        _USBSELW { w: self }
+    #[inline(always)]
+    pub fn usbsel(&mut self) -> USBSEL_W {
+        USBSEL_W { w: self }
     }
 }

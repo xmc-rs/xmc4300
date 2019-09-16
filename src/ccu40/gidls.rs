@@ -1,197 +1,174 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::GIDLS {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register GIDLS"]
+pub type W = crate::W<u32, super::GIDLS>;
+#[doc = "Register GIDLS `reset()`'s with value 0"]
+impl crate::ResetValue for super::GIDLS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Proxy"]
-pub struct _SS0IW<'a> {
+#[doc = "Write proxy for field `SS0I`"]
+pub struct SS0I_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SS0IW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SS0I_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SS1IW<'a> {
+#[doc = "Write proxy for field `SS1I`"]
+pub struct SS1I_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SS1IW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SS1I_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SS2IW<'a> {
+#[doc = "Write proxy for field `SS2I`"]
+pub struct SS2I_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SS2IW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SS2I_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SS3IW<'a> {
+#[doc = "Write proxy for field `SS3I`"]
+pub struct SS3I_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SS3IW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SS3I_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CPRBW<'a> {
+#[doc = "Write proxy for field `CPRB`"]
+pub struct CPRB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CPRBW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CPRB_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PSICW<'a> {
+#[doc = "Write proxy for field `PSIC`"]
+pub struct PSIC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PSICW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PSIC_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - CC40 IDLE mode set"]
-    #[inline]
-    pub fn ss0i(&mut self) -> _SS0IW {
-        _SS0IW { w: self }
+    #[inline(always)]
+    pub fn ss0i(&mut self) -> SS0I_W {
+        SS0I_W { w: self }
     }
     #[doc = "Bit 1 - CC41 IDLE mode set"]
-    #[inline]
-    pub fn ss1i(&mut self) -> _SS1IW {
-        _SS1IW { w: self }
+    #[inline(always)]
+    pub fn ss1i(&mut self) -> SS1I_W {
+        SS1I_W { w: self }
     }
     #[doc = "Bit 2 - CC42 IDLE mode set"]
-    #[inline]
-    pub fn ss2i(&mut self) -> _SS2IW {
-        _SS2IW { w: self }
+    #[inline(always)]
+    pub fn ss2i(&mut self) -> SS2I_W {
+        SS2I_W { w: self }
     }
     #[doc = "Bit 3 - CC43 IDLE mode set"]
-    #[inline]
-    pub fn ss3i(&mut self) -> _SS3IW {
-        _SS3IW { w: self }
+    #[inline(always)]
+    pub fn ss3i(&mut self) -> SS3I_W {
+        SS3I_W { w: self }
     }
     #[doc = "Bit 8 - Prescaler Run Bit Clear"]
-    #[inline]
-    pub fn cprb(&mut self) -> _CPRBW {
-        _CPRBW { w: self }
+    #[inline(always)]
+    pub fn cprb(&mut self) -> CPRB_W {
+        CPRB_W { w: self }
     }
     #[doc = "Bit 9 - Prescaler clear"]
-    #[inline]
-    pub fn psic(&mut self) -> _PSICW {
-        _PSICW { w: self }
+    #[inline(always)]
+    pub fn psic(&mut self) -> PSIC_W {
+        PSIC_W { w: self }
     }
 }

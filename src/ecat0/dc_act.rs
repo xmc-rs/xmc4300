@@ -1,419 +1,280 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u8,
-}
-impl super::DC_ACT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DC_ACT"]
+pub type R = crate::R<u8, super::DC_ACT>;
+#[doc = "Writer for register DC_ACT"]
+pub type W = crate::W<u8, super::DC_ACT>;
+#[doc = "Register DC_ACT `reset()`'s with value 0"]
+impl crate::ResetValue for super::DC_ACT {
+    type Type = u8;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `SYNC_OUT`"]
+#[doc = "Sync Out Unit activation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SYNC_OUTR {
-    #[doc = "Deactivated"]
+pub enum SYNC_OUT_A {
+    #[doc = "0: Deactivated"]
     VALUE1,
-    #[doc = "Activated"]
+    #[doc = "1: Activated"]
     VALUE2,
 }
-impl SYNC_OUTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SYNC_OUTR::VALUE1 => false,
-            SYNC_OUTR::VALUE2 => true,
+impl From<SYNC_OUT_A> for bool {
+    #[inline(always)]
+    fn from(variant: SYNC_OUT_A) -> Self {
+        match variant {
+            SYNC_OUT_A::VALUE1 => false,
+            SYNC_OUT_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SYNC_OUTR {
-        match value {
-            false => SYNC_OUTR::VALUE1,
-            true => SYNC_OUTR::VALUE2,
+}
+#[doc = "Reader of field `SYNC_OUT`"]
+pub type SYNC_OUT_R = crate::R<bool, SYNC_OUT_A>;
+impl SYNC_OUT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SYNC_OUT_A {
+        match self.bits {
+            false => SYNC_OUT_A::VALUE1,
+            true => SYNC_OUT_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SYNC_OUTR::VALUE1
+        *self == SYNC_OUT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SYNC_OUTR::VALUE2
+        *self == SYNC_OUT_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `SYNC_0`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SYNC_0R {
-    #[doc = "Deactivated"]
-    VALUE1,
-    #[doc = "SYNC0 pulse is generated"]
-    VALUE2,
-}
-impl SYNC_0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SYNC_0R::VALUE1 => false,
-            SYNC_0R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SYNC_0R {
-        match value {
-            false => SYNC_0R::VALUE1,
-            true => SYNC_0R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == SYNC_0R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == SYNC_0R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `SYNC_1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SYNC_1R {
-    #[doc = "Deactivated"]
-    VALUE1,
-    #[doc = "SYNC1 pulse is generated"]
-    VALUE2,
-}
-impl SYNC_1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SYNC_1R::VALUE1 => false,
-            SYNC_1R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SYNC_1R {
-        match value {
-            false => SYNC_1R::VALUE1,
-            true => SYNC_1R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == SYNC_1R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == SYNC_1R::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `SYNC_OUT`"]
-pub enum SYNC_OUTW {
-    #[doc = "Deactivated"]
-    VALUE1,
-    #[doc = "Activated"]
-    VALUE2,
-}
-impl SYNC_OUTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SYNC_OUTW::VALUE1 => false,
-            SYNC_OUTW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SYNC_OUTW<'a> {
+#[doc = "Write proxy for field `SYNC_OUT`"]
+pub struct SYNC_OUT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SYNC_OUTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SYNC_OUTW) -> &'a mut W {
+impl<'a> SYNC_OUT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SYNC_OUT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Deactivated"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SYNC_OUTW::VALUE1)
+        self.variant(SYNC_OUT_A::VALUE1)
     }
     #[doc = "Activated"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SYNC_OUTW::VALUE2)
+        self.variant(SYNC_OUT_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u8) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SYNC_0`"]
-pub enum SYNC_0W {
-    #[doc = "Deactivated"]
+#[doc = "SYNC0 generation\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SYNC_0_A {
+    #[doc = "0: Deactivated"]
     VALUE1,
-    #[doc = "SYNC0 pulse is generated"]
+    #[doc = "1: SYNC0 pulse is generated"]
     VALUE2,
 }
-impl SYNC_0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SYNC_0W::VALUE1 => false,
-            SYNC_0W::VALUE2 => true,
+impl From<SYNC_0_A> for bool {
+    #[inline(always)]
+    fn from(variant: SYNC_0_A) -> Self {
+        match variant {
+            SYNC_0_A::VALUE1 => false,
+            SYNC_0_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SYNC_0W<'a> {
+#[doc = "Reader of field `SYNC_0`"]
+pub type SYNC_0_R = crate::R<bool, SYNC_0_A>;
+impl SYNC_0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SYNC_0_A {
+        match self.bits {
+            false => SYNC_0_A::VALUE1,
+            true => SYNC_0_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == SYNC_0_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == SYNC_0_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `SYNC_0`"]
+pub struct SYNC_0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SYNC_0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SYNC_0W) -> &'a mut W {
+impl<'a> SYNC_0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SYNC_0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Deactivated"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SYNC_0W::VALUE1)
+        self.variant(SYNC_0_A::VALUE1)
     }
     #[doc = "SYNC0 pulse is generated"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SYNC_0W::VALUE2)
+        self.variant(SYNC_0_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u8) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SYNC_1`"]
-pub enum SYNC_1W {
-    #[doc = "Deactivated"]
+#[doc = "SYNC1 generation\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SYNC_1_A {
+    #[doc = "0: Deactivated"]
     VALUE1,
-    #[doc = "SYNC1 pulse is generated"]
+    #[doc = "1: SYNC1 pulse is generated"]
     VALUE2,
 }
-impl SYNC_1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SYNC_1W::VALUE1 => false,
-            SYNC_1W::VALUE2 => true,
+impl From<SYNC_1_A> for bool {
+    #[inline(always)]
+    fn from(variant: SYNC_1_A) -> Self {
+        match variant {
+            SYNC_1_A::VALUE1 => false,
+            SYNC_1_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SYNC_1W<'a> {
+#[doc = "Reader of field `SYNC_1`"]
+pub type SYNC_1_R = crate::R<bool, SYNC_1_A>;
+impl SYNC_1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SYNC_1_A {
+        match self.bits {
+            false => SYNC_1_A::VALUE1,
+            true => SYNC_1_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == SYNC_1_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == SYNC_1_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `SYNC_1`"]
+pub struct SYNC_1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SYNC_1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SYNC_1W) -> &'a mut W {
+impl<'a> SYNC_1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SYNC_1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Deactivated"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SYNC_1W::VALUE1)
+        self.variant(SYNC_1_A::VALUE1)
     }
     #[doc = "SYNC1 pulse is generated"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SYNC_1W::VALUE2)
+        self.variant(SYNC_1_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u8) & 0x01) << 2);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 0 - Sync Out Unit activation"]
-    #[inline]
-    pub fn sync_out(&self) -> SYNC_OUTR {
-        SYNC_OUTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn sync_out(&self) -> SYNC_OUT_R {
+        SYNC_OUT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - SYNC0 generation"]
-    #[inline]
-    pub fn sync_0(&self) -> SYNC_0R {
-        SYNC_0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn sync_0(&self) -> SYNC_0_R {
+        SYNC_0_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - SYNC1 generation"]
-    #[inline]
-    pub fn sync_1(&self) -> SYNC_1R {
-        SYNC_1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn sync_1(&self) -> SYNC_1_R {
+        SYNC_1_R::new(((self.bits >> 2) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Sync Out Unit activation"]
-    #[inline]
-    pub fn sync_out(&mut self) -> _SYNC_OUTW {
-        _SYNC_OUTW { w: self }
+    #[inline(always)]
+    pub fn sync_out(&mut self) -> SYNC_OUT_W {
+        SYNC_OUT_W { w: self }
     }
     #[doc = "Bit 1 - SYNC0 generation"]
-    #[inline]
-    pub fn sync_0(&mut self) -> _SYNC_0W {
-        _SYNC_0W { w: self }
+    #[inline(always)]
+    pub fn sync_0(&mut self) -> SYNC_0_W {
+        SYNC_0_W { w: self }
     }
     #[doc = "Bit 2 - SYNC1 generation"]
-    #[inline]
-    pub fn sync_1(&mut self) -> _SYNC_1W {
-        _SYNC_1W { w: self }
+    #[inline(always)]
+    pub fn sync_1(&mut self) -> SYNC_1_W {
+        SYNC_1_W { w: self }
     }
 }

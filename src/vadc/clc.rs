@@ -1,356 +1,236 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CLC {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CLC"]
+pub type R = crate::R<u32, super::CLC>;
+#[doc = "Writer for register CLC"]
+pub type W = crate::W<u32, super::CLC>;
+#[doc = "Register CLC `reset()`'s with value 0x03"]
+impl crate::ResetValue for super::CLC {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x03
     }
 }
-#[doc = "Possible values of the field `DISR`"]
+#[doc = "Module Disable Request Bit\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DISRR {
-    #[doc = "On request: enable the module clock"]
+pub enum DISR_A {
+    #[doc = "0: On request: enable the module clock"]
     VALUE1,
-    #[doc = "Off request: stop the module clock"]
+    #[doc = "1: Off request: stop the module clock"]
     VALUE2,
 }
-impl DISRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DISRR::VALUE1 => false,
-            DISRR::VALUE2 => true,
+impl From<DISR_A> for bool {
+    #[inline(always)]
+    fn from(variant: DISR_A) -> Self {
+        match variant {
+            DISR_A::VALUE1 => false,
+            DISR_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DISRR {
-        match value {
-            false => DISRR::VALUE1,
-            true => DISRR::VALUE2,
+}
+#[doc = "Reader of field `DISR`"]
+pub type DISR_R = crate::R<bool, DISR_A>;
+impl DISR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DISR_A {
+        match self.bits {
+            false => DISR_A::VALUE1,
+            true => DISR_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DISRR::VALUE1
+        *self == DISR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DISRR::VALUE2
+        *self == DISR_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `DISS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DISSR {
-    #[doc = "Module clock is enabled"]
-    VALUE1,
-    #[doc = "Off: module is not clocked"]
-    VALUE2,
-}
-impl DISSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DISSR::VALUE1 => false,
-            DISSR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DISSR {
-        match value {
-            false => DISSR::VALUE1,
-            true => DISSR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == DISSR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == DISSR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `EDIS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDISR {
-    #[doc = "Sleep mode request is enabled and functional"]
-    VALUE1,
-    #[doc = "Module disregards the sleep mode control signal"]
-    VALUE2,
-}
-impl EDISR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDISR::VALUE1 => false,
-            EDISR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDISR {
-        match value {
-            false => EDISR::VALUE1,
-            true => EDISR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EDISR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EDISR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `DISR`"]
-pub enum DISRW {
-    #[doc = "On request: enable the module clock"]
-    VALUE1,
-    #[doc = "Off request: stop the module clock"]
-    VALUE2,
-}
-impl DISRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DISRW::VALUE1 => false,
-            DISRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DISRW<'a> {
+#[doc = "Write proxy for field `DISR`"]
+pub struct DISR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DISRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DISRW) -> &'a mut W {
+impl<'a> DISR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DISR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "On request: enable the module clock"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(DISRW::VALUE1)
+        self.variant(DISR_A::VALUE1)
     }
     #[doc = "Off request: stop the module clock"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(DISRW::VALUE2)
+        self.variant(DISR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDIS`"]
-pub enum EDISW {
-    #[doc = "Sleep mode request is enabled and functional"]
+#[doc = "Module Disable Status Bit\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DISS_A {
+    #[doc = "0: Module clock is enabled"]
     VALUE1,
-    #[doc = "Module disregards the sleep mode control signal"]
+    #[doc = "1: Off: module is not clocked"]
     VALUE2,
 }
-impl EDISW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDISW::VALUE1 => false,
-            EDISW::VALUE2 => true,
+impl From<DISS_A> for bool {
+    #[inline(always)]
+    fn from(variant: DISS_A) -> Self {
+        match variant {
+            DISS_A::VALUE1 => false,
+            DISS_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EDISW<'a> {
+#[doc = "Reader of field `DISS`"]
+pub type DISS_R = crate::R<bool, DISS_A>;
+impl DISS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DISS_A {
+        match self.bits {
+            false => DISS_A::VALUE1,
+            true => DISS_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == DISS_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == DISS_A::VALUE2
+    }
+}
+#[doc = "Sleep Mode Enable Control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDIS_A {
+    #[doc = "0: Sleep mode request is enabled and functional"]
+    VALUE1,
+    #[doc = "1: Module disregards the sleep mode control signal"]
+    VALUE2,
+}
+impl From<EDIS_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDIS_A) -> Self {
+        match variant {
+            EDIS_A::VALUE1 => false,
+            EDIS_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `EDIS`"]
+pub type EDIS_R = crate::R<bool, EDIS_A>;
+impl EDIS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDIS_A {
+        match self.bits {
+            false => EDIS_A::VALUE1,
+            true => EDIS_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EDIS_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EDIS_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EDIS`"]
+pub struct EDIS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EDISW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDISW) -> &'a mut W {
+impl<'a> EDIS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDIS_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Sleep mode request is enabled and functional"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EDISW::VALUE1)
+        self.variant(EDIS_A::VALUE1)
     }
     #[doc = "Module disregards the sleep mode control signal"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EDISW::VALUE2)
+        self.variant(EDIS_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Module Disable Request Bit"]
-    #[inline]
-    pub fn disr(&self) -> DISRR {
-        DISRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn disr(&self) -> DISR_R {
+        DISR_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Module Disable Status Bit"]
-    #[inline]
-    pub fn diss(&self) -> DISSR {
-        DISSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn diss(&self) -> DISS_R {
+        DISS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Sleep Mode Enable Control"]
-    #[inline]
-    pub fn edis(&self) -> EDISR {
-        EDISR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edis(&self) -> EDIS_R {
+        EDIS_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 3 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Module Disable Request Bit"]
-    #[inline]
-    pub fn disr(&mut self) -> _DISRW {
-        _DISRW { w: self }
+    #[inline(always)]
+    pub fn disr(&mut self) -> DISR_W {
+        DISR_W { w: self }
     }
     #[doc = "Bit 3 - Sleep Mode Enable Control"]
-    #[inline]
-    pub fn edis(&mut self) -> _EDISW {
-        _EDISW { w: self }
+    #[inline(always)]
+    pub fn edis(&mut self) -> EDIS_W {
+        EDIS_W { w: self }
     }
 }

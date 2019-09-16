@@ -1,235 +1,53 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STSSR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SPSER {
-    bits: bool,
-}
-impl SPSER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SPMIR {
-    bits: bool,
-}
-impl SPMIR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SPHOR {
-    bits: bool,
-}
-impl SPHOR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SPDAR {
-    bits: bool,
-}
-impl SPDAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SPMOR {
-    bits: bool,
-}
-impl SPMOR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SPYER {
-    bits: bool,
-}
-impl SPYER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SAIR {
-    bits: bool,
-}
-impl SAIR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register STSSR"]
+pub type R = crate::R<u32, super::STSSR>;
+#[doc = "Reader of field `SPSE`"]
+pub type SPSE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SPMI`"]
+pub type SPMI_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SPHO`"]
+pub type SPHO_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SPDA`"]
+pub type SPDA_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SPMO`"]
+pub type SPMO_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SPYE`"]
+pub type SPYE_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SAI`"]
+pub type SAI_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Periodic Seconds Service Request Status after Masking"]
-    #[inline]
-    pub fn spse(&self) -> SPSER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SPSER { bits }
+    #[inline(always)]
+    pub fn spse(&self) -> SPSE_R {
+        SPSE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Periodic Minutes Service Request Status after Masking"]
-    #[inline]
-    pub fn spmi(&self) -> SPMIR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SPMIR { bits }
+    #[inline(always)]
+    pub fn spmi(&self) -> SPMI_R {
+        SPMI_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Periodic Hours Service Request Status after Masking"]
-    #[inline]
-    pub fn spho(&self) -> SPHOR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SPHOR { bits }
+    #[inline(always)]
+    pub fn spho(&self) -> SPHO_R {
+        SPHO_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Periodic Days Service Request Status after Masking"]
-    #[inline]
-    pub fn spda(&self) -> SPDAR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SPDAR { bits }
+    #[inline(always)]
+    pub fn spda(&self) -> SPDA_R {
+        SPDA_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Periodic Months Service Request Status after Masking"]
-    #[inline]
-    pub fn spmo(&self) -> SPMOR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SPMOR { bits }
+    #[inline(always)]
+    pub fn spmo(&self) -> SPMO_R {
+        SPMO_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Periodic Years Service Request Status after Masking"]
-    #[inline]
-    pub fn spye(&self) -> SPYER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SPYER { bits }
+    #[inline(always)]
+    pub fn spye(&self) -> SPYE_R {
+        SPYE_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Alarm Service Request Status after Masking"]
-    #[inline]
-    pub fn sai(&self) -> SAIR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SAIR { bits }
+    #[inline(always)]
+    pub fn sai(&self) -> SAI_R {
+        SAI_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }

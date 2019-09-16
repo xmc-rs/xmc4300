@@ -1,397 +1,246 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::INPR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INPR"]
+pub type R = crate::R<u32, super::INPR>;
+#[doc = "Writer for register INPR"]
+pub type W = crate::W<u32, super::INPR>;
+#[doc = "Register INPR `reset()`'s with value 0"]
+impl crate::ResetValue for super::INPR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `TSINP`"]
+#[doc = "Transmit Shift Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TSINPR {
-    #[doc = "Output SR0 becomes activated."]
+pub enum TSINP_A {
+    #[doc = "0: Output SR0 becomes activated."]
     VALUE1,
-    #[doc = "Output SR1 becomes activated."]
+    #[doc = "1: Output SR1 becomes activated."]
     VALUE2,
-    #[doc = "Output SR2 becomes activated."]
+    #[doc = "2: Output SR2 becomes activated."]
     VALUE3,
-    #[doc = "Output SR3 becomes activated."]
+    #[doc = "3: Output SR3 becomes activated."]
     VALUE4,
-    #[doc = "Output SR4 becomes activated."]
+    #[doc = "4: Output SR4 becomes activated."]
     VALUE5,
-    #[doc = "Output SR5 becomes activated."]
+    #[doc = "5: Output SR5 becomes activated."]
     VALUE6,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl TSINPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            TSINPR::VALUE1 => 0,
-            TSINPR::VALUE2 => 1,
-            TSINPR::VALUE3 => 2,
-            TSINPR::VALUE4 => 3,
-            TSINPR::VALUE5 => 4,
-            TSINPR::VALUE6 => 5,
-            TSINPR::_Reserved(bits) => bits,
+impl From<TSINP_A> for u8 {
+    #[inline(always)]
+    fn from(variant: TSINP_A) -> Self {
+        match variant {
+            TSINP_A::VALUE1 => 0,
+            TSINP_A::VALUE2 => 1,
+            TSINP_A::VALUE3 => 2,
+            TSINP_A::VALUE4 => 3,
+            TSINP_A::VALUE5 => 4,
+            TSINP_A::VALUE6 => 5,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> TSINPR {
-        match value {
-            0 => TSINPR::VALUE1,
-            1 => TSINPR::VALUE2,
-            2 => TSINPR::VALUE3,
-            3 => TSINPR::VALUE4,
-            4 => TSINPR::VALUE5,
-            5 => TSINPR::VALUE6,
-            i => TSINPR::_Reserved(i),
+}
+#[doc = "Reader of field `TSINP`"]
+pub type TSINP_R = crate::R<u8, TSINP_A>;
+impl TSINP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, TSINP_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(TSINP_A::VALUE1),
+            1 => Val(TSINP_A::VALUE2),
+            2 => Val(TSINP_A::VALUE3),
+            3 => Val(TSINP_A::VALUE4),
+            4 => Val(TSINP_A::VALUE5),
+            5 => Val(TSINP_A::VALUE6),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TSINPR::VALUE1
+        *self == TSINP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TSINPR::VALUE2
+        *self == TSINP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == TSINPR::VALUE3
+        *self == TSINP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == TSINPR::VALUE4
+        *self == TSINP_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == TSINPR::VALUE5
+        *self == TSINP_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == TSINPR::VALUE6
+        *self == TSINP_A::VALUE6
     }
 }
-#[doc = r" Value of the field"]
-pub struct TBINPR {
-    bits: u8,
-}
-impl TBINPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RINPR {
-    bits: u8,
-}
-impl RINPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AINPR {
-    bits: u8,
-}
-impl AINPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PINPR {
-    bits: u8,
-}
-impl PINPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `TSINP`"]
-pub enum TSINPW {
-    #[doc = "Output SR0 becomes activated."]
-    VALUE1,
-    #[doc = "Output SR1 becomes activated."]
-    VALUE2,
-    #[doc = "Output SR2 becomes activated."]
-    VALUE3,
-    #[doc = "Output SR3 becomes activated."]
-    VALUE4,
-    #[doc = "Output SR4 becomes activated."]
-    VALUE5,
-    #[doc = "Output SR5 becomes activated."]
-    VALUE6,
-}
-impl TSINPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            TSINPW::VALUE1 => 0,
-            TSINPW::VALUE2 => 1,
-            TSINPW::VALUE3 => 2,
-            TSINPW::VALUE4 => 3,
-            TSINPW::VALUE5 => 4,
-            TSINPW::VALUE6 => 5,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TSINPW<'a> {
+#[doc = "Write proxy for field `TSINP`"]
+pub struct TSINP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TSINPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TSINPW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> TSINP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TSINP_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Output SR0 becomes activated."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(TSINPW::VALUE1)
+        self.variant(TSINP_A::VALUE1)
     }
     #[doc = "Output SR1 becomes activated."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(TSINPW::VALUE2)
+        self.variant(TSINP_A::VALUE2)
     }
     #[doc = "Output SR2 becomes activated."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(TSINPW::VALUE3)
+        self.variant(TSINP_A::VALUE3)
     }
     #[doc = "Output SR3 becomes activated."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(TSINPW::VALUE4)
+        self.variant(TSINP_A::VALUE4)
     }
     #[doc = "Output SR4 becomes activated."]
-    #[inline]
+    #[inline(always)]
     pub fn value5(self) -> &'a mut W {
-        self.variant(TSINPW::VALUE5)
+        self.variant(TSINP_A::VALUE5)
     }
     #[doc = "Output SR5 becomes activated."]
-    #[inline]
+    #[inline(always)]
     pub fn value6(self) -> &'a mut W {
-        self.variant(TSINPW::VALUE6)
+        self.variant(TSINP_A::VALUE6)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TBINPW<'a> {
+#[doc = "Reader of field `TBINP`"]
+pub type TBINP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TBINP`"]
+pub struct TBINP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TBINPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TBINP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RINPW<'a> {
+#[doc = "Reader of field `RINP`"]
+pub type RINP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RINP`"]
+pub struct RINP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RINPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RINP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _AINPW<'a> {
+#[doc = "Reader of field `AINP`"]
+pub type AINP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `AINP`"]
+pub struct AINP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AINPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> AINP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u32) & 0x07) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PINPW<'a> {
+#[doc = "Reader of field `PINP`"]
+pub type PINP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PINP`"]
+pub struct PINP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PINPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PINP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Transmit Shift Interrupt Node Pointer"]
-    #[inline]
-    pub fn tsinp(&self) -> TSINPR {
-        TSINPR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn tsinp(&self) -> TSINP_R {
+        TSINP_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 4:6 - Transmit Buffer Interrupt Node Pointer"]
-    #[inline]
-    pub fn tbinp(&self) -> TBINPR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TBINPR { bits }
+    #[inline(always)]
+    pub fn tbinp(&self) -> TBINP_R {
+        TBINP_R::new(((self.bits >> 4) & 0x07) as u8)
     }
     #[doc = "Bits 8:10 - Receive Interrupt Node Pointer"]
-    #[inline]
-    pub fn rinp(&self) -> RINPR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RINPR { bits }
+    #[inline(always)]
+    pub fn rinp(&self) -> RINP_R {
+        RINP_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bits 12:14 - Alternative Receive Interrupt Node Pointer"]
-    #[inline]
-    pub fn ainp(&self) -> AINPR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        AINPR { bits }
+    #[inline(always)]
+    pub fn ainp(&self) -> AINP_R {
+        AINP_R::new(((self.bits >> 12) & 0x07) as u8)
     }
     #[doc = "Bits 16:18 - Transmit Shift Interrupt Node Pointer"]
-    #[inline]
-    pub fn pinp(&self) -> PINPR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PINPR { bits }
+    #[inline(always)]
+    pub fn pinp(&self) -> PINP_R {
+        PINP_R::new(((self.bits >> 16) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Transmit Shift Interrupt Node Pointer"]
-    #[inline]
-    pub fn tsinp(&mut self) -> _TSINPW {
-        _TSINPW { w: self }
+    #[inline(always)]
+    pub fn tsinp(&mut self) -> TSINP_W {
+        TSINP_W { w: self }
     }
     #[doc = "Bits 4:6 - Transmit Buffer Interrupt Node Pointer"]
-    #[inline]
-    pub fn tbinp(&mut self) -> _TBINPW {
-        _TBINPW { w: self }
+    #[inline(always)]
+    pub fn tbinp(&mut self) -> TBINP_W {
+        TBINP_W { w: self }
     }
     #[doc = "Bits 8:10 - Receive Interrupt Node Pointer"]
-    #[inline]
-    pub fn rinp(&mut self) -> _RINPW {
-        _RINPW { w: self }
+    #[inline(always)]
+    pub fn rinp(&mut self) -> RINP_W {
+        RINP_W { w: self }
     }
     #[doc = "Bits 12:14 - Alternative Receive Interrupt Node Pointer"]
-    #[inline]
-    pub fn ainp(&mut self) -> _AINPW {
-        _AINPW { w: self }
+    #[inline(always)]
+    pub fn ainp(&mut self) -> AINP_W {
+        AINP_W { w: self }
     }
     #[doc = "Bits 16:18 - Transmit Shift Interrupt Node Pointer"]
-    #[inline]
-    pub fn pinp(&mut self) -> _PINPW {
-        _PINPW { w: self }
+    #[inline(always)]
+    pub fn pinp(&mut self) -> PINP_W {
+        PINP_W { w: self }
     }
 }

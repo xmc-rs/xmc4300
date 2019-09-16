@@ -1,824 +1,186 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::MMC_RECEIVE_INTERRUPT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXGBFRMISR {
-    bits: bool,
-}
-impl RXGBFRMISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXGBOCTISR {
-    bits: bool,
-}
-impl RXGBOCTISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXGOCTISR {
-    bits: bool,
-}
-impl RXGOCTISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXBCGFISR {
-    bits: bool,
-}
-impl RXBCGFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXMCGFISR {
-    bits: bool,
-}
-impl RXMCGFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXCRCERFISR {
-    bits: bool,
-}
-impl RXCRCERFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXALGNERFISR {
-    bits: bool,
-}
-impl RXALGNERFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXRUNTFISR {
-    bits: bool,
-}
-impl RXRUNTFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXJABERFISR {
-    bits: bool,
-}
-impl RXJABERFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXUSIZEGFISR {
-    bits: bool,
-}
-impl RXUSIZEGFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXOSIZEGFISR {
-    bits: bool,
-}
-impl RXOSIZEGFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RX64OCTGBFISR {
-    bits: bool,
-}
-impl RX64OCTGBFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RX65T127OCTGBFISR {
-    bits: bool,
-}
-impl RX65T127OCTGBFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RX128T255OCTGBFISR {
-    bits: bool,
-}
-impl RX128T255OCTGBFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RX256T511OCTGBFISR {
-    bits: bool,
-}
-impl RX256T511OCTGBFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RX512T1023OCTGBFISR {
-    bits: bool,
-}
-impl RX512T1023OCTGBFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RX1024TMAXOCTGBFISR {
-    bits: bool,
-}
-impl RX1024TMAXOCTGBFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXUCGFISR {
-    bits: bool,
-}
-impl RXUCGFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXLENERFISR {
-    bits: bool,
-}
-impl RXLENERFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXORANGEFISR {
-    bits: bool,
-}
-impl RXORANGEFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXPAUSFISR {
-    bits: bool,
-}
-impl RXPAUSFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXFOVFISR {
-    bits: bool,
-}
-impl RXFOVFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXVLANGBFISR {
-    bits: bool,
-}
-impl RXVLANGBFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXWDOGFISR {
-    bits: bool,
-}
-impl RXWDOGFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXRCVERRFISR {
-    bits: bool,
-}
-impl RXRCVERRFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXCTRLFISR {
-    bits: bool,
-}
-impl RXCTRLFISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register MMC_RECEIVE_INTERRUPT"]
+pub type R = crate::R<u32, super::MMC_RECEIVE_INTERRUPT>;
+#[doc = "Reader of field `RXGBFRMIS`"]
+pub type RXGBFRMIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXGBOCTIS`"]
+pub type RXGBOCTIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXGOCTIS`"]
+pub type RXGOCTIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXBCGFIS`"]
+pub type RXBCGFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXMCGFIS`"]
+pub type RXMCGFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXCRCERFIS`"]
+pub type RXCRCERFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXALGNERFIS`"]
+pub type RXALGNERFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXRUNTFIS`"]
+pub type RXRUNTFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXJABERFIS`"]
+pub type RXJABERFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXUSIZEGFIS`"]
+pub type RXUSIZEGFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXOSIZEGFIS`"]
+pub type RXOSIZEGFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RX64OCTGBFIS`"]
+pub type RX64OCTGBFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RX65T127OCTGBFIS`"]
+pub type RX65T127OCTGBFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RX128T255OCTGBFIS`"]
+pub type RX128T255OCTGBFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RX256T511OCTGBFIS`"]
+pub type RX256T511OCTGBFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RX512T1023OCTGBFIS`"]
+pub type RX512T1023OCTGBFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RX1024TMAXOCTGBFIS`"]
+pub type RX1024TMAXOCTGBFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXUCGFIS`"]
+pub type RXUCGFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXLENERFIS`"]
+pub type RXLENERFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXORANGEFIS`"]
+pub type RXORANGEFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXPAUSFIS`"]
+pub type RXPAUSFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXFOVFIS`"]
+pub type RXFOVFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXVLANGBFIS`"]
+pub type RXVLANGBFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXWDOGFIS`"]
+pub type RXWDOGFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXRCVERRFIS`"]
+pub type RXRCVERRFIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RXCTRLFIS`"]
+pub type RXCTRLFIS_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - MMC Receive Good Bad Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxgbfrmis(&self) -> RXGBFRMISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXGBFRMISR { bits }
+    #[inline(always)]
+    pub fn rxgbfrmis(&self) -> RXGBFRMIS_R {
+        RXGBFRMIS_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - MMC Receive Good Bad Octet Counter Interrupt Status"]
-    #[inline]
-    pub fn rxgboctis(&self) -> RXGBOCTISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXGBOCTISR { bits }
+    #[inline(always)]
+    pub fn rxgboctis(&self) -> RXGBOCTIS_R {
+        RXGBOCTIS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - MMC Receive Good Octet Counter Interrupt Status."]
-    #[inline]
-    pub fn rxgoctis(&self) -> RXGOCTISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXGOCTISR { bits }
+    #[inline(always)]
+    pub fn rxgoctis(&self) -> RXGOCTIS_R {
+        RXGOCTIS_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - MMC Receive Broadcast Good Frame Counter Interrupt Status."]
-    #[inline]
-    pub fn rxbcgfis(&self) -> RXBCGFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXBCGFISR { bits }
+    #[inline(always)]
+    pub fn rxbcgfis(&self) -> RXBCGFIS_R {
+        RXBCGFIS_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - MMC Receive Multicast Good Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxmcgfis(&self) -> RXMCGFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXMCGFISR { bits }
+    #[inline(always)]
+    pub fn rxmcgfis(&self) -> RXMCGFIS_R {
+        RXMCGFIS_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - MMC Receive CRC Error Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxcrcerfis(&self) -> RXCRCERFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXCRCERFISR { bits }
+    #[inline(always)]
+    pub fn rxcrcerfis(&self) -> RXCRCERFIS_R {
+        RXCRCERFIS_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - MMC Receive Alignment Error Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxalgnerfis(&self) -> RXALGNERFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXALGNERFISR { bits }
+    #[inline(always)]
+    pub fn rxalgnerfis(&self) -> RXALGNERFIS_R {
+        RXALGNERFIS_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - MMC Receive Runt Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxruntfis(&self) -> RXRUNTFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXRUNTFISR { bits }
+    #[inline(always)]
+    pub fn rxruntfis(&self) -> RXRUNTFIS_R {
+        RXRUNTFIS_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - MMC Receive Jabber Error Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxjaberfis(&self) -> RXJABERFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXJABERFISR { bits }
+    #[inline(always)]
+    pub fn rxjaberfis(&self) -> RXJABERFIS_R {
+        RXJABERFIS_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - MMC Receive Undersize Good Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxusizegfis(&self) -> RXUSIZEGFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXUSIZEGFISR { bits }
+    #[inline(always)]
+    pub fn rxusizegfis(&self) -> RXUSIZEGFIS_R {
+        RXUSIZEGFIS_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - MMC Receive Oversize Good Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxosizegfis(&self) -> RXOSIZEGFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXOSIZEGFISR { bits }
+    #[inline(always)]
+    pub fn rxosizegfis(&self) -> RXOSIZEGFIS_R {
+        RXOSIZEGFIS_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - MMC Receive 64 Octet Good Bad Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rx64octgbfis(&self) -> RX64OCTGBFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RX64OCTGBFISR { bits }
+    #[inline(always)]
+    pub fn rx64octgbfis(&self) -> RX64OCTGBFIS_R {
+        RX64OCTGBFIS_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - MMC Receive 65 to 127 Octet Good Bad Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rx65t127octgbfis(&self) -> RX65T127OCTGBFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RX65T127OCTGBFISR { bits }
+    #[inline(always)]
+    pub fn rx65t127octgbfis(&self) -> RX65T127OCTGBFIS_R {
+        RX65T127OCTGBFIS_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - MMC Receive 128 to 255 Octet Good Bad Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rx128t255octgbfis(&self) -> RX128T255OCTGBFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RX128T255OCTGBFISR { bits }
+    #[inline(always)]
+    pub fn rx128t255octgbfis(&self) -> RX128T255OCTGBFIS_R {
+        RX128T255OCTGBFIS_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - MMC Receive 256 to 511 Octet Good Bad Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rx256t511octgbfis(&self) -> RX256T511OCTGBFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RX256T511OCTGBFISR { bits }
+    #[inline(always)]
+    pub fn rx256t511octgbfis(&self) -> RX256T511OCTGBFIS_R {
+        RX256T511OCTGBFIS_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - MMC Receive 512 to 1023 Octet Good Bad Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rx512t1023octgbfis(&self) -> RX512T1023OCTGBFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RX512T1023OCTGBFISR { bits }
+    #[inline(always)]
+    pub fn rx512t1023octgbfis(&self) -> RX512T1023OCTGBFIS_R {
+        RX512T1023OCTGBFIS_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bit 16 - MMC Receive 1024 to Maximum Octet Good Bad Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rx1024tmaxoctgbfis(&self) -> RX1024TMAXOCTGBFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RX1024TMAXOCTGBFISR { bits }
+    #[inline(always)]
+    pub fn rx1024tmaxoctgbfis(&self) -> RX1024TMAXOCTGBFIS_R {
+        RX1024TMAXOCTGBFIS_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - MMC Receive Unicast Good Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxucgfis(&self) -> RXUCGFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXUCGFISR { bits }
+    #[inline(always)]
+    pub fn rxucgfis(&self) -> RXUCGFIS_R {
+        RXUCGFIS_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - MMC Receive Length Error Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxlenerfis(&self) -> RXLENERFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXLENERFISR { bits }
+    #[inline(always)]
+    pub fn rxlenerfis(&self) -> RXLENERFIS_R {
+        RXLENERFIS_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - MMC Receive Out Of Range Error Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxorangefis(&self) -> RXORANGEFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXORANGEFISR { bits }
+    #[inline(always)]
+    pub fn rxorangefis(&self) -> RXORANGEFIS_R {
+        RXORANGEFIS_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 20 - MMC Receive Pause Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxpausfis(&self) -> RXPAUSFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXPAUSFISR { bits }
+    #[inline(always)]
+    pub fn rxpausfis(&self) -> RXPAUSFIS_R {
+        RXPAUSFIS_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 21 - MMC Receive FIFO Overflow Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxfovfis(&self) -> RXFOVFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXFOVFISR { bits }
+    #[inline(always)]
+    pub fn rxfovfis(&self) -> RXFOVFIS_R {
+        RXFOVFIS_R::new(((self.bits >> 21) & 0x01) != 0)
     }
     #[doc = "Bit 22 - MMC Receive VLAN Good Bad Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxvlangbfis(&self) -> RXVLANGBFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXVLANGBFISR { bits }
+    #[inline(always)]
+    pub fn rxvlangbfis(&self) -> RXVLANGBFIS_R {
+        RXVLANGBFIS_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 23 - MMC Receive Watchdog Error Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxwdogfis(&self) -> RXWDOGFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXWDOGFISR { bits }
+    #[inline(always)]
+    pub fn rxwdogfis(&self) -> RXWDOGFIS_R {
+        RXWDOGFIS_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bit 24 - MMC Receive Error Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxrcverrfis(&self) -> RXRCVERRFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXRCVERRFISR { bits }
+    #[inline(always)]
+    pub fn rxrcverrfis(&self) -> RXRCVERRFIS_R {
+        RXRCVERRFIS_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - MMC Receive Control Frame Counter Interrupt Status"]
-    #[inline]
-    pub fn rxctrlfis(&self) -> RXCTRLFISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RXCTRLFISR { bits }
+    #[inline(always)]
+    pub fn rxctrlfis(&self) -> RXCTRLFIS_R {
+        RXCTRLFIS_R::new(((self.bits >> 25) & 0x01) != 0)
     }
 }

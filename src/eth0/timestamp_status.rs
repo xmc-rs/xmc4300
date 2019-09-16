@@ -1,297 +1,67 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::TIMESTAMP_STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TSSOVFR {
-    bits: bool,
-}
-impl TSSOVFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TSTARGTR {
-    bits: bool,
-}
-impl TSTARGTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TSTRGTERRR {
-    bits: bool,
-}
-impl TSTRGTERRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TSTARGT1R {
-    bits: bool,
-}
-impl TSTARGT1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TSTRGTERR1R {
-    bits: bool,
-}
-impl TSTRGTERR1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TSTARGT2R {
-    bits: bool,
-}
-impl TSTARGT2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TSTRGTERR2R {
-    bits: bool,
-}
-impl TSTRGTERR2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TSTARGT3R {
-    bits: bool,
-}
-impl TSTARGT3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TSTRGTERR3R {
-    bits: bool,
-}
-impl TSTRGTERR3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register TIMESTAMP_STATUS"]
+pub type R = crate::R<u32, super::TIMESTAMP_STATUS>;
+#[doc = "Reader of field `TSSOVF`"]
+pub type TSSOVF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TSTARGT`"]
+pub type TSTARGT_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TSTRGTERR`"]
+pub type TSTRGTERR_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TSTARGT1`"]
+pub type TSTARGT1_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TSTRGTERR1`"]
+pub type TSTRGTERR1_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TSTARGT2`"]
+pub type TSTARGT2_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TSTRGTERR2`"]
+pub type TSTRGTERR2_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TSTARGT3`"]
+pub type TSTARGT3_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TSTRGTERR3`"]
+pub type TSTRGTERR3_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Timestamp Seconds Overflow"]
-    #[inline]
-    pub fn tssovf(&self) -> TSSOVFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TSSOVFR { bits }
+    #[inline(always)]
+    pub fn tssovf(&self) -> TSSOVF_R {
+        TSSOVF_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Timestamp Target Time Reached"]
-    #[inline]
-    pub fn tstargt(&self) -> TSTARGTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TSTARGTR { bits }
+    #[inline(always)]
+    pub fn tstargt(&self) -> TSTARGT_R {
+        TSTARGT_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Timestamp Target Time Error"]
-    #[inline]
-    pub fn tstrgterr(&self) -> TSTRGTERRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TSTRGTERRR { bits }
+    #[inline(always)]
+    pub fn tstrgterr(&self) -> TSTRGTERR_R {
+        TSTRGTERR_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Timestamp Target Time Reached for Target Time PPS1"]
-    #[inline]
-    pub fn tstargt1(&self) -> TSTARGT1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TSTARGT1R { bits }
+    #[inline(always)]
+    pub fn tstargt1(&self) -> TSTARGT1_R {
+        TSTARGT1_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Timestamp Target Time Error"]
-    #[inline]
-    pub fn tstrgterr1(&self) -> TSTRGTERR1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TSTRGTERR1R { bits }
+    #[inline(always)]
+    pub fn tstrgterr1(&self) -> TSTRGTERR1_R {
+        TSTRGTERR1_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Timestamp Target Time Reached for Target Time PPS2"]
-    #[inline]
-    pub fn tstargt2(&self) -> TSTARGT2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TSTARGT2R { bits }
+    #[inline(always)]
+    pub fn tstargt2(&self) -> TSTARGT2_R {
+        TSTARGT2_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Timestamp Target Time Error"]
-    #[inline]
-    pub fn tstrgterr2(&self) -> TSTRGTERR2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TSTRGTERR2R { bits }
+    #[inline(always)]
+    pub fn tstrgterr2(&self) -> TSTRGTERR2_R {
+        TSTRGTERR2_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Timestamp Target Time Reached for Target Time PPS3"]
-    #[inline]
-    pub fn tstargt3(&self) -> TSTARGT3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TSTARGT3R { bits }
+    #[inline(always)]
+    pub fn tstargt3(&self) -> TSTARGT3_R {
+        TSTARGT3_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Timestamp Target Time Error"]
-    #[inline]
-    pub fn tstrgterr3(&self) -> TSTRGTERR3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TSTRGTERR3R { bits }
+    #[inline(always)]
+    pub fn tstrgterr3(&self) -> TSTRGTERR3_R {
+        TSTRGTERR3_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }

@@ -1,130 +1,92 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::TCST {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `TRB`"]
+#[doc = "Reader of register TCST"]
+pub type R = crate::R<u32, super::TCST>;
+#[doc = "Timer Run Bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRBR {
-    #[doc = "Timer is stopped"]
+pub enum TRB_A {
+    #[doc = "0: Timer is stopped"]
     VALUE1,
-    #[doc = "Timer is running"]
+    #[doc = "1: Timer is running"]
     VALUE2,
 }
-impl TRBR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRBR::VALUE1 => false,
-            TRBR::VALUE2 => true,
+impl From<TRB_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRB_A) -> Self {
+        match variant {
+            TRB_A::VALUE1 => false,
+            TRB_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRBR {
-        match value {
-            false => TRBR::VALUE1,
-            true => TRBR::VALUE2,
+}
+#[doc = "Reader of field `TRB`"]
+pub type TRB_R = crate::R<bool, TRB_A>;
+impl TRB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRB_A {
+        match self.bits {
+            false => TRB_A::VALUE1,
+            true => TRB_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TRBR::VALUE1
+        *self == TRB_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TRBR::VALUE2
+        *self == TRB_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `CDIR`"]
+#[doc = "Timer Counting Direction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CDIRR {
-    #[doc = "Timer is counting up"]
+pub enum CDIR_A {
+    #[doc = "0: Timer is counting up"]
     VALUE1,
-    #[doc = "Timer is counting down"]
+    #[doc = "1: Timer is counting down"]
     VALUE2,
 }
-impl CDIRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CDIRR::VALUE1 => false,
-            CDIRR::VALUE2 => true,
+impl From<CDIR_A> for bool {
+    #[inline(always)]
+    fn from(variant: CDIR_A) -> Self {
+        match variant {
+            CDIR_A::VALUE1 => false,
+            CDIR_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CDIRR {
-        match value {
-            false => CDIRR::VALUE1,
-            true => CDIRR::VALUE2,
+}
+#[doc = "Reader of field `CDIR`"]
+pub type CDIR_R = crate::R<bool, CDIR_A>;
+impl CDIR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CDIR_A {
+        match self.bits {
+            false => CDIR_A::VALUE1,
+            true => CDIR_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CDIRR::VALUE1
+        *self == CDIR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CDIRR::VALUE2
+        *self == CDIR_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Timer Run Bit"]
-    #[inline]
-    pub fn trb(&self) -> TRBR {
-        TRBR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn trb(&self) -> TRB_R {
+        TRB_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Timer Counting Direction"]
-    #[inline]
-    pub fn cdir(&self) -> CDIRR {
-        CDIRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cdir(&self) -> CDIR_R {
+        CDIR_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }

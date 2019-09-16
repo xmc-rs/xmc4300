@@ -1,2323 +1,1688 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CFSR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CFSR"]
+pub type R = crate::R<u32, super::CFSR>;
+#[doc = "Writer for register CFSR"]
+pub type W = crate::W<u32, super::CFSR>;
+#[doc = "Register CFSR `reset()`'s with value 0"]
+impl crate::ResetValue for super::CFSR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `IACCVIOL`"]
+#[doc = "Instruction access violation flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IACCVIOLR {
-    #[doc = "no instruction access violation fault"]
+pub enum IACCVIOL_A {
+    #[doc = "0: no instruction access violation fault"]
     VALUE1,
-    #[doc = "the processor attempted an instruction fetch from a location that does not permit execution."]
+    #[doc = "1: the processor attempted an instruction fetch from a location that does not permit execution."]
     VALUE2,
 }
-impl IACCVIOLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IACCVIOLR::VALUE1 => false,
-            IACCVIOLR::VALUE2 => true,
+impl From<IACCVIOL_A> for bool {
+    #[inline(always)]
+    fn from(variant: IACCVIOL_A) -> Self {
+        match variant {
+            IACCVIOL_A::VALUE1 => false,
+            IACCVIOL_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IACCVIOLR {
-        match value {
-            false => IACCVIOLR::VALUE1,
-            true => IACCVIOLR::VALUE2,
+}
+#[doc = "Reader of field `IACCVIOL`"]
+pub type IACCVIOL_R = crate::R<bool, IACCVIOL_A>;
+impl IACCVIOL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IACCVIOL_A {
+        match self.bits {
+            false => IACCVIOL_A::VALUE1,
+            true => IACCVIOL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == IACCVIOLR::VALUE1
+        *self == IACCVIOL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == IACCVIOLR::VALUE2
+        *self == IACCVIOL_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `DACCVIOL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DACCVIOLR {
-    #[doc = "no data access violation fault"]
-    VALUE1,
-    #[doc = "the processor attempted a load or store at a location that does not permit the operation."]
-    VALUE2,
-}
-impl DACCVIOLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DACCVIOLR::VALUE1 => false,
-            DACCVIOLR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DACCVIOLR {
-        match value {
-            false => DACCVIOLR::VALUE1,
-            true => DACCVIOLR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == DACCVIOLR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == DACCVIOLR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `MUNSTKERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MUNSTKERRR {
-    #[doc = "no unstacking fault"]
-    VALUE1,
-    #[doc = "unstack for an exception return has caused one or more access violations."]
-    VALUE2,
-}
-impl MUNSTKERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MUNSTKERRR::VALUE1 => false,
-            MUNSTKERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MUNSTKERRR {
-        match value {
-            false => MUNSTKERRR::VALUE1,
-            true => MUNSTKERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MUNSTKERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MUNSTKERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `MSTKERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSTKERRR {
-    #[doc = "no stacking fault"]
-    VALUE1,
-    #[doc = "stacking for an exception entry has caused one or more access violations."]
-    VALUE2,
-}
-impl MSTKERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MSTKERRR::VALUE1 => false,
-            MSTKERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MSTKERRR {
-        match value {
-            false => MSTKERRR::VALUE1,
-            true => MSTKERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MSTKERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MSTKERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `MLSPERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MLSPERRR {
-    #[doc = "No MemManage fault occurred during floating-point lazy state preservation"]
-    VALUE1,
-    #[doc = "A MemManage fault occurred during floating-point lazy state preservation"]
-    VALUE2,
-}
-impl MLSPERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MLSPERRR::VALUE1 => false,
-            MLSPERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MLSPERRR {
-        match value {
-            false => MLSPERRR::VALUE1,
-            true => MLSPERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MLSPERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MLSPERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `MMARVALID`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MMARVALIDR {
-    #[doc = "value in MMAR is not a valid fault address"]
-    VALUE1,
-    #[doc = "MMAR holds a valid fault address."]
-    VALUE2,
-}
-impl MMARVALIDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MMARVALIDR::VALUE1 => false,
-            MMARVALIDR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MMARVALIDR {
-        match value {
-            false => MMARVALIDR::VALUE1,
-            true => MMARVALIDR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MMARVALIDR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MMARVALIDR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `IBUSERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IBUSERRR {
-    #[doc = "no instruction bus error"]
-    VALUE1,
-    #[doc = "instruction bus error."]
-    VALUE2,
-}
-impl IBUSERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IBUSERRR::VALUE1 => false,
-            IBUSERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IBUSERRR {
-        match value {
-            false => IBUSERRR::VALUE1,
-            true => IBUSERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == IBUSERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == IBUSERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `PRECISERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRECISERRR {
-    #[doc = "no precise data bus error"]
-    VALUE1,
-    #[doc = "a data bus error has occurred, and the PC value stacked for the exception return points to the instruction that caused the fault."]
-    VALUE2,
-}
-impl PRECISERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PRECISERRR::VALUE1 => false,
-            PRECISERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PRECISERRR {
-        match value {
-            false => PRECISERRR::VALUE1,
-            true => PRECISERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == PRECISERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == PRECISERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `IMPRECISERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IMPRECISERRR {
-    #[doc = "no imprecise data bus error"]
-    VALUE1,
-    #[doc = "a data bus error has occurred, but the return address in the stack frame is not related to the instruction that caused the error."]
-    VALUE2,
-}
-impl IMPRECISERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IMPRECISERRR::VALUE1 => false,
-            IMPRECISERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IMPRECISERRR {
-        match value {
-            false => IMPRECISERRR::VALUE1,
-            true => IMPRECISERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == IMPRECISERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == IMPRECISERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `UNSTKERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UNSTKERRR {
-    #[doc = "no unstacking fault"]
-    VALUE1,
-    #[doc = "stacking for an exception entry has caused one or more BusFaults."]
-    VALUE2,
-}
-impl UNSTKERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            UNSTKERRR::VALUE1 => false,
-            UNSTKERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> UNSTKERRR {
-        match value {
-            false => UNSTKERRR::VALUE1,
-            true => UNSTKERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == UNSTKERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == UNSTKERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `STKERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STKERRR {
-    #[doc = "no stacking fault"]
-    VALUE1,
-    #[doc = "stacking for an exception entry has caused one or more BusFaults."]
-    VALUE2,
-}
-impl STKERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            STKERRR::VALUE1 => false,
-            STKERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> STKERRR {
-        match value {
-            false => STKERRR::VALUE1,
-            true => STKERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == STKERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == STKERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `LSPERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LSPERRR {
-    #[doc = "No bus fault occurred during floating-point lazy state preservation."]
-    VALUE1,
-    #[doc = "A bus fault occurred during floating-point lazy state preservation"]
-    VALUE2,
-}
-impl LSPERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LSPERRR::VALUE1 => false,
-            LSPERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LSPERRR {
-        match value {
-            false => LSPERRR::VALUE1,
-            true => LSPERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LSPERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LSPERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `BFARVALID`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BFARVALIDR {
-    #[doc = "value in BFAR is not a valid fault address"]
-    VALUE1,
-    #[doc = "BFAR holds a valid fault address."]
-    VALUE2,
-}
-impl BFARVALIDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BFARVALIDR::VALUE1 => false,
-            BFARVALIDR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BFARVALIDR {
-        match value {
-            false => BFARVALIDR::VALUE1,
-            true => BFARVALIDR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == BFARVALIDR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == BFARVALIDR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `UNDEFINSTR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UNDEFINSTRR {
-    #[doc = "no undefined instruction UsageFault"]
-    VALUE1,
-    #[doc = "the processor has attempted to execute an undefined instruction."]
-    VALUE2,
-}
-impl UNDEFINSTRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            UNDEFINSTRR::VALUE1 => false,
-            UNDEFINSTRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> UNDEFINSTRR {
-        match value {
-            false => UNDEFINSTRR::VALUE1,
-            true => UNDEFINSTRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == UNDEFINSTRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == UNDEFINSTRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `INVSTATE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INVSTATER {
-    #[doc = "no invalid state UsageFault"]
-    VALUE1,
-    #[doc = "the processor has attempted to execute an instruction that makes illegal use of the EPSR."]
-    VALUE2,
-}
-impl INVSTATER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INVSTATER::VALUE1 => false,
-            INVSTATER::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INVSTATER {
-        match value {
-            false => INVSTATER::VALUE1,
-            true => INVSTATER::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == INVSTATER::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == INVSTATER::VALUE2
-    }
-}
-#[doc = "Possible values of the field `INVPC`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INVPCR {
-    #[doc = "no invalid PC load UsageFault"]
-    VALUE1,
-    #[doc = "the processor has attempted an illegal load of EXC_RETURN to the PC, as a result of an invalid context, or an invalid EXC_RETURN value."]
-    VALUE2,
-}
-impl INVPCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INVPCR::VALUE1 => false,
-            INVPCR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INVPCR {
-        match value {
-            false => INVPCR::VALUE1,
-            true => INVPCR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == INVPCR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == INVPCR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `NOCP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NOCPR {
-    #[doc = "no UsageFault caused by attempting to access a coprocessor"]
-    VALUE1,
-    #[doc = "the processor has attempted to access a coprocessor."]
-    VALUE2,
-}
-impl NOCPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            NOCPR::VALUE1 => false,
-            NOCPR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> NOCPR {
-        match value {
-            false => NOCPR::VALUE1,
-            true => NOCPR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == NOCPR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == NOCPR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `UNALIGNED`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UNALIGNEDR {
-    #[doc = "no unaligned access fault, or unaligned access trapping not enabled"]
-    VALUE1,
-    #[doc = "the processor has made an unaligned memory access."]
-    VALUE2,
-}
-impl UNALIGNEDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            UNALIGNEDR::VALUE1 => false,
-            UNALIGNEDR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> UNALIGNEDR {
-        match value {
-            false => UNALIGNEDR::VALUE1,
-            true => UNALIGNEDR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == UNALIGNEDR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == UNALIGNEDR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `DIVBYZERO`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIVBYZEROR {
-    #[doc = "no divide by zero fault, or divide by zero trapping not enabled"]
-    VALUE1,
-    #[doc = "the processor has executed an SDIV or UDIV instruction with a divisor of 0"]
-    VALUE2,
-}
-impl DIVBYZEROR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DIVBYZEROR::VALUE1 => false,
-            DIVBYZEROR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DIVBYZEROR {
-        match value {
-            false => DIVBYZEROR::VALUE1,
-            true => DIVBYZEROR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == DIVBYZEROR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == DIVBYZEROR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `IACCVIOL`"]
-pub enum IACCVIOLW {
-    #[doc = "no instruction access violation fault"]
-    VALUE1,
-    #[doc = "the processor attempted an instruction fetch from a location that does not permit execution."]
-    VALUE2,
-}
-impl IACCVIOLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IACCVIOLW::VALUE1 => false,
-            IACCVIOLW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IACCVIOLW<'a> {
+#[doc = "Write proxy for field `IACCVIOL`"]
+pub struct IACCVIOL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IACCVIOLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IACCVIOLW) -> &'a mut W {
+impl<'a> IACCVIOL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IACCVIOL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "no instruction access violation fault"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(IACCVIOLW::VALUE1)
+        self.variant(IACCVIOL_A::VALUE1)
     }
     #[doc = "the processor attempted an instruction fetch from a location that does not permit execution."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(IACCVIOLW::VALUE2)
+        self.variant(IACCVIOL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DACCVIOL`"]
-pub enum DACCVIOLW {
+#[doc = "Data access violation flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DACCVIOL_A {
+    #[doc = "0: no data access violation fault"]
+    VALUE1,
+    #[doc = "1: the processor attempted a load or store at a location that does not permit the operation."]
+    VALUE2,
+}
+impl From<DACCVIOL_A> for bool {
+    #[inline(always)]
+    fn from(variant: DACCVIOL_A) -> Self {
+        match variant {
+            DACCVIOL_A::VALUE1 => false,
+            DACCVIOL_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `DACCVIOL`"]
+pub type DACCVIOL_R = crate::R<bool, DACCVIOL_A>;
+impl DACCVIOL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DACCVIOL_A {
+        match self.bits {
+            false => DACCVIOL_A::VALUE1,
+            true => DACCVIOL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == DACCVIOL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == DACCVIOL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `DACCVIOL`"]
+pub struct DACCVIOL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DACCVIOL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DACCVIOL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "no data access violation fault"]
-    VALUE1,
-    #[doc = "the processor attempted a load or store at a location that does not permit the operation."]
-    VALUE2,
-}
-impl DACCVIOLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DACCVIOLW::VALUE1 => false,
-            DACCVIOLW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DACCVIOLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DACCVIOLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DACCVIOLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "no data access violation fault"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(DACCVIOLW::VALUE1)
+        self.variant(DACCVIOL_A::VALUE1)
     }
     #[doc = "the processor attempted a load or store at a location that does not permit the operation."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(DACCVIOLW::VALUE2)
+        self.variant(DACCVIOL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MUNSTKERR`"]
-pub enum MUNSTKERRW {
-    #[doc = "no unstacking fault"]
+#[doc = "MemManage fault on unstacking for a return from exception\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MUNSTKERR_A {
+    #[doc = "0: no unstacking fault"]
     VALUE1,
+    #[doc = "1: unstack for an exception return has caused one or more access violations."]
+    VALUE2,
+}
+impl From<MUNSTKERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: MUNSTKERR_A) -> Self {
+        match variant {
+            MUNSTKERR_A::VALUE1 => false,
+            MUNSTKERR_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `MUNSTKERR`"]
+pub type MUNSTKERR_R = crate::R<bool, MUNSTKERR_A>;
+impl MUNSTKERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MUNSTKERR_A {
+        match self.bits {
+            false => MUNSTKERR_A::VALUE1,
+            true => MUNSTKERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MUNSTKERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MUNSTKERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `MUNSTKERR`"]
+pub struct MUNSTKERR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MUNSTKERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MUNSTKERR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "no unstacking fault"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(MUNSTKERR_A::VALUE1)
+    }
     #[doc = "unstack for an exception return has caused one or more access violations."]
-    VALUE2,
-}
-impl MUNSTKERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MUNSTKERRW::VALUE1 => false,
-            MUNSTKERRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MUNSTKERRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MUNSTKERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MUNSTKERRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "no unstacking fault"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(MUNSTKERRW::VALUE1)
-    }
-    #[doc = "unstack for an exception return has caused one or more access violations."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MUNSTKERRW::VALUE2)
+        self.variant(MUNSTKERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MSTKERR`"]
-pub enum MSTKERRW {
-    #[doc = "no stacking fault"]
+#[doc = "MemManage fault on stacking for exception entry\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MSTKERR_A {
+    #[doc = "0: no stacking fault"]
     VALUE1,
-    #[doc = "stacking for an exception entry has caused one or more access violations."]
+    #[doc = "1: stacking for an exception entry has caused one or more access violations."]
     VALUE2,
 }
-impl MSTKERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MSTKERRW::VALUE1 => false,
-            MSTKERRW::VALUE2 => true,
+impl From<MSTKERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: MSTKERR_A) -> Self {
+        match variant {
+            MSTKERR_A::VALUE1 => false,
+            MSTKERR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MSTKERRW<'a> {
+#[doc = "Reader of field `MSTKERR`"]
+pub type MSTKERR_R = crate::R<bool, MSTKERR_A>;
+impl MSTKERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MSTKERR_A {
+        match self.bits {
+            false => MSTKERR_A::VALUE1,
+            true => MSTKERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MSTKERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MSTKERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `MSTKERR`"]
+pub struct MSTKERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MSTKERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MSTKERRW) -> &'a mut W {
+impl<'a> MSTKERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MSTKERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "no stacking fault"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MSTKERRW::VALUE1)
+        self.variant(MSTKERR_A::VALUE1)
     }
     #[doc = "stacking for an exception entry has caused one or more access violations."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MSTKERRW::VALUE2)
+        self.variant(MSTKERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MLSPERR`"]
-pub enum MLSPERRW {
+#[doc = "MemManage fault during floating point lazy state preservation\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MLSPERR_A {
+    #[doc = "0: No MemManage fault occurred during floating-point lazy state preservation"]
+    VALUE1,
+    #[doc = "1: A MemManage fault occurred during floating-point lazy state preservation"]
+    VALUE2,
+}
+impl From<MLSPERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: MLSPERR_A) -> Self {
+        match variant {
+            MLSPERR_A::VALUE1 => false,
+            MLSPERR_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `MLSPERR`"]
+pub type MLSPERR_R = crate::R<bool, MLSPERR_A>;
+impl MLSPERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MLSPERR_A {
+        match self.bits {
+            false => MLSPERR_A::VALUE1,
+            true => MLSPERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MLSPERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MLSPERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `MLSPERR`"]
+pub struct MLSPERR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MLSPERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MLSPERR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "No MemManage fault occurred during floating-point lazy state preservation"]
-    VALUE1,
-    #[doc = "A MemManage fault occurred during floating-point lazy state preservation"]
-    VALUE2,
-}
-impl MLSPERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MLSPERRW::VALUE1 => false,
-            MLSPERRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MLSPERRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MLSPERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MLSPERRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No MemManage fault occurred during floating-point lazy state preservation"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MLSPERRW::VALUE1)
+        self.variant(MLSPERR_A::VALUE1)
     }
     #[doc = "A MemManage fault occurred during floating-point lazy state preservation"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MLSPERRW::VALUE2)
+        self.variant(MLSPERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MMARVALID`"]
-pub enum MMARVALIDW {
-    #[doc = "value in MMAR is not a valid fault address"]
+#[doc = "MemManage Fault Address Register (MMFAR) valid flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MMARVALID_A {
+    #[doc = "0: value in MMAR is not a valid fault address"]
     VALUE1,
-    #[doc = "MMAR holds a valid fault address."]
+    #[doc = "1: MMAR holds a valid fault address."]
     VALUE2,
 }
-impl MMARVALIDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MMARVALIDW::VALUE1 => false,
-            MMARVALIDW::VALUE2 => true,
+impl From<MMARVALID_A> for bool {
+    #[inline(always)]
+    fn from(variant: MMARVALID_A) -> Self {
+        match variant {
+            MMARVALID_A::VALUE1 => false,
+            MMARVALID_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MMARVALIDW<'a> {
+#[doc = "Reader of field `MMARVALID`"]
+pub type MMARVALID_R = crate::R<bool, MMARVALID_A>;
+impl MMARVALID_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MMARVALID_A {
+        match self.bits {
+            false => MMARVALID_A::VALUE1,
+            true => MMARVALID_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MMARVALID_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MMARVALID_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `MMARVALID`"]
+pub struct MMARVALID_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MMARVALIDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MMARVALIDW) -> &'a mut W {
+impl<'a> MMARVALID_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MMARVALID_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "value in MMAR is not a valid fault address"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MMARVALIDW::VALUE1)
+        self.variant(MMARVALID_A::VALUE1)
     }
     #[doc = "MMAR holds a valid fault address."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MMARVALIDW::VALUE2)
+        self.variant(MMARVALID_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IBUSERR`"]
-pub enum IBUSERRW {
+#[doc = "Instruction bus error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IBUSERR_A {
+    #[doc = "0: no instruction bus error"]
+    VALUE1,
+    #[doc = "1: instruction bus error."]
+    VALUE2,
+}
+impl From<IBUSERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: IBUSERR_A) -> Self {
+        match variant {
+            IBUSERR_A::VALUE1 => false,
+            IBUSERR_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `IBUSERR`"]
+pub type IBUSERR_R = crate::R<bool, IBUSERR_A>;
+impl IBUSERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IBUSERR_A {
+        match self.bits {
+            false => IBUSERR_A::VALUE1,
+            true => IBUSERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == IBUSERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == IBUSERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `IBUSERR`"]
+pub struct IBUSERR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> IBUSERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IBUSERR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "no instruction bus error"]
-    VALUE1,
-    #[doc = "instruction bus error."]
-    VALUE2,
-}
-impl IBUSERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IBUSERRW::VALUE1 => false,
-            IBUSERRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IBUSERRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _IBUSERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IBUSERRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "no instruction bus error"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(IBUSERRW::VALUE1)
+        self.variant(IBUSERR_A::VALUE1)
     }
     #[doc = "instruction bus error."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(IBUSERRW::VALUE2)
+        self.variant(IBUSERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PRECISERR`"]
-pub enum PRECISERRW {
-    #[doc = "no precise data bus error"]
+#[doc = "Precise data bus error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PRECISERR_A {
+    #[doc = "0: no precise data bus error"]
     VALUE1,
-    #[doc = "a data bus error has occurred, and the PC value stacked for the exception return points to the instruction that caused the fault."]
+    #[doc = "1: a data bus error has occurred, and the PC value stacked for the exception return points to the instruction that caused the fault."]
     VALUE2,
 }
-impl PRECISERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PRECISERRW::VALUE1 => false,
-            PRECISERRW::VALUE2 => true,
+impl From<PRECISERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: PRECISERR_A) -> Self {
+        match variant {
+            PRECISERR_A::VALUE1 => false,
+            PRECISERR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PRECISERRW<'a> {
+#[doc = "Reader of field `PRECISERR`"]
+pub type PRECISERR_R = crate::R<bool, PRECISERR_A>;
+impl PRECISERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PRECISERR_A {
+        match self.bits {
+            false => PRECISERR_A::VALUE1,
+            true => PRECISERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == PRECISERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == PRECISERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `PRECISERR`"]
+pub struct PRECISERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PRECISERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRECISERRW) -> &'a mut W {
+impl<'a> PRECISERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRECISERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "no precise data bus error"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(PRECISERRW::VALUE1)
+        self.variant(PRECISERR_A::VALUE1)
     }
     #[doc = "a data bus error has occurred, and the PC value stacked for the exception return points to the instruction that caused the fault."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(PRECISERRW::VALUE2)
+        self.variant(PRECISERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IMPRECISERR`"]
-pub enum IMPRECISERRW {
+#[doc = "Imprecise data bus error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IMPRECISERR_A {
+    #[doc = "0: no imprecise data bus error"]
+    VALUE1,
+    #[doc = "1: a data bus error has occurred, but the return address in the stack frame is not related to the instruction that caused the error."]
+    VALUE2,
+}
+impl From<IMPRECISERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: IMPRECISERR_A) -> Self {
+        match variant {
+            IMPRECISERR_A::VALUE1 => false,
+            IMPRECISERR_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `IMPRECISERR`"]
+pub type IMPRECISERR_R = crate::R<bool, IMPRECISERR_A>;
+impl IMPRECISERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IMPRECISERR_A {
+        match self.bits {
+            false => IMPRECISERR_A::VALUE1,
+            true => IMPRECISERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == IMPRECISERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == IMPRECISERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `IMPRECISERR`"]
+pub struct IMPRECISERR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> IMPRECISERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IMPRECISERR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "no imprecise data bus error"]
-    VALUE1,
-    #[doc = "a data bus error has occurred, but the return address in the stack frame is not related to the instruction that caused the error."]
-    VALUE2,
-}
-impl IMPRECISERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IMPRECISERRW::VALUE1 => false,
-            IMPRECISERRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IMPRECISERRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _IMPRECISERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IMPRECISERRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "no imprecise data bus error"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(IMPRECISERRW::VALUE1)
+        self.variant(IMPRECISERR_A::VALUE1)
     }
     #[doc = "a data bus error has occurred, but the return address in the stack frame is not related to the instruction that caused the error."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(IMPRECISERRW::VALUE2)
+        self.variant(IMPRECISERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `UNSTKERR`"]
-pub enum UNSTKERRW {
-    #[doc = "no unstacking fault"]
+#[doc = "BusFault on unstacking for a return from exception\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum UNSTKERR_A {
+    #[doc = "0: no unstacking fault"]
     VALUE1,
-    #[doc = "stacking for an exception entry has caused one or more BusFaults."]
+    #[doc = "1: stacking for an exception entry has caused one or more BusFaults."]
     VALUE2,
 }
-impl UNSTKERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            UNSTKERRW::VALUE1 => false,
-            UNSTKERRW::VALUE2 => true,
+impl From<UNSTKERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: UNSTKERR_A) -> Self {
+        match variant {
+            UNSTKERR_A::VALUE1 => false,
+            UNSTKERR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _UNSTKERRW<'a> {
+#[doc = "Reader of field `UNSTKERR`"]
+pub type UNSTKERR_R = crate::R<bool, UNSTKERR_A>;
+impl UNSTKERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> UNSTKERR_A {
+        match self.bits {
+            false => UNSTKERR_A::VALUE1,
+            true => UNSTKERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == UNSTKERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == UNSTKERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `UNSTKERR`"]
+pub struct UNSTKERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _UNSTKERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: UNSTKERRW) -> &'a mut W {
+impl<'a> UNSTKERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: UNSTKERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "no unstacking fault"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(UNSTKERRW::VALUE1)
+        self.variant(UNSTKERR_A::VALUE1)
     }
     #[doc = "stacking for an exception entry has caused one or more BusFaults."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(UNSTKERRW::VALUE2)
+        self.variant(UNSTKERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `STKERR`"]
-pub enum STKERRW {
+#[doc = "BusFault on stacking for exception entry\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STKERR_A {
+    #[doc = "0: no stacking fault"]
+    VALUE1,
+    #[doc = "1: stacking for an exception entry has caused one or more BusFaults."]
+    VALUE2,
+}
+impl From<STKERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: STKERR_A) -> Self {
+        match variant {
+            STKERR_A::VALUE1 => false,
+            STKERR_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `STKERR`"]
+pub type STKERR_R = crate::R<bool, STKERR_A>;
+impl STKERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> STKERR_A {
+        match self.bits {
+            false => STKERR_A::VALUE1,
+            true => STKERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == STKERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == STKERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `STKERR`"]
+pub struct STKERR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> STKERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: STKERR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "no stacking fault"]
-    VALUE1,
-    #[doc = "stacking for an exception entry has caused one or more BusFaults."]
-    VALUE2,
-}
-impl STKERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            STKERRW::VALUE1 => false,
-            STKERRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STKERRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _STKERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: STKERRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "no stacking fault"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(STKERRW::VALUE1)
+        self.variant(STKERR_A::VALUE1)
     }
     #[doc = "stacking for an exception entry has caused one or more BusFaults."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(STKERRW::VALUE2)
+        self.variant(STKERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LSPERR`"]
-pub enum LSPERRW {
-    #[doc = "No bus fault occurred during floating-point lazy state preservation."]
+#[doc = "BusFault during floating point lazy state preservation\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LSPERR_A {
+    #[doc = "0: No bus fault occurred during floating-point lazy state preservation."]
     VALUE1,
-    #[doc = "A bus fault occurred during floating-point lazy state preservation"]
+    #[doc = "1: A bus fault occurred during floating-point lazy state preservation"]
     VALUE2,
 }
-impl LSPERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LSPERRW::VALUE1 => false,
-            LSPERRW::VALUE2 => true,
+impl From<LSPERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: LSPERR_A) -> Self {
+        match variant {
+            LSPERR_A::VALUE1 => false,
+            LSPERR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _LSPERRW<'a> {
+#[doc = "Reader of field `LSPERR`"]
+pub type LSPERR_R = crate::R<bool, LSPERR_A>;
+impl LSPERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LSPERR_A {
+        match self.bits {
+            false => LSPERR_A::VALUE1,
+            true => LSPERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LSPERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LSPERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `LSPERR`"]
+pub struct LSPERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LSPERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LSPERRW) -> &'a mut W {
+impl<'a> LSPERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LSPERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No bus fault occurred during floating-point lazy state preservation."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LSPERRW::VALUE1)
+        self.variant(LSPERR_A::VALUE1)
     }
     #[doc = "A bus fault occurred during floating-point lazy state preservation"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LSPERRW::VALUE2)
+        self.variant(LSPERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BFARVALID`"]
-pub enum BFARVALIDW {
+#[doc = "BusFault Address Register (BFAR) valid flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BFARVALID_A {
+    #[doc = "0: value in BFAR is not a valid fault address"]
+    VALUE1,
+    #[doc = "1: BFAR holds a valid fault address."]
+    VALUE2,
+}
+impl From<BFARVALID_A> for bool {
+    #[inline(always)]
+    fn from(variant: BFARVALID_A) -> Self {
+        match variant {
+            BFARVALID_A::VALUE1 => false,
+            BFARVALID_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `BFARVALID`"]
+pub type BFARVALID_R = crate::R<bool, BFARVALID_A>;
+impl BFARVALID_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BFARVALID_A {
+        match self.bits {
+            false => BFARVALID_A::VALUE1,
+            true => BFARVALID_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == BFARVALID_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == BFARVALID_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `BFARVALID`"]
+pub struct BFARVALID_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> BFARVALID_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BFARVALID_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "value in BFAR is not a valid fault address"]
-    VALUE1,
-    #[doc = "BFAR holds a valid fault address."]
-    VALUE2,
-}
-impl BFARVALIDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BFARVALIDW::VALUE1 => false,
-            BFARVALIDW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BFARVALIDW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BFARVALIDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BFARVALIDW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "value in BFAR is not a valid fault address"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(BFARVALIDW::VALUE1)
+        self.variant(BFARVALID_A::VALUE1)
     }
     #[doc = "BFAR holds a valid fault address."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(BFARVALIDW::VALUE2)
+        self.variant(BFARVALID_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `UNDEFINSTR`"]
-pub enum UNDEFINSTRW {
-    #[doc = "no undefined instruction UsageFault"]
+#[doc = "Undefined instruction UsageFault\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum UNDEFINSTR_A {
+    #[doc = "0: no undefined instruction UsageFault"]
     VALUE1,
-    #[doc = "the processor has attempted to execute an undefined instruction."]
+    #[doc = "1: the processor has attempted to execute an undefined instruction."]
     VALUE2,
 }
-impl UNDEFINSTRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            UNDEFINSTRW::VALUE1 => false,
-            UNDEFINSTRW::VALUE2 => true,
+impl From<UNDEFINSTR_A> for bool {
+    #[inline(always)]
+    fn from(variant: UNDEFINSTR_A) -> Self {
+        match variant {
+            UNDEFINSTR_A::VALUE1 => false,
+            UNDEFINSTR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _UNDEFINSTRW<'a> {
+#[doc = "Reader of field `UNDEFINSTR`"]
+pub type UNDEFINSTR_R = crate::R<bool, UNDEFINSTR_A>;
+impl UNDEFINSTR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> UNDEFINSTR_A {
+        match self.bits {
+            false => UNDEFINSTR_A::VALUE1,
+            true => UNDEFINSTR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == UNDEFINSTR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == UNDEFINSTR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `UNDEFINSTR`"]
+pub struct UNDEFINSTR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _UNDEFINSTRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: UNDEFINSTRW) -> &'a mut W {
+impl<'a> UNDEFINSTR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: UNDEFINSTR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "no undefined instruction UsageFault"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(UNDEFINSTRW::VALUE1)
+        self.variant(UNDEFINSTR_A::VALUE1)
     }
     #[doc = "the processor has attempted to execute an undefined instruction."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(UNDEFINSTRW::VALUE2)
+        self.variant(UNDEFINSTR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `INVSTATE`"]
-pub enum INVSTATEW {
+#[doc = "Invalid state UsageFault\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum INVSTATE_A {
+    #[doc = "0: no invalid state UsageFault"]
+    VALUE1,
+    #[doc = "1: the processor has attempted to execute an instruction that makes illegal use of the EPSR."]
+    VALUE2,
+}
+impl From<INVSTATE_A> for bool {
+    #[inline(always)]
+    fn from(variant: INVSTATE_A) -> Self {
+        match variant {
+            INVSTATE_A::VALUE1 => false,
+            INVSTATE_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `INVSTATE`"]
+pub type INVSTATE_R = crate::R<bool, INVSTATE_A>;
+impl INVSTATE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INVSTATE_A {
+        match self.bits {
+            false => INVSTATE_A::VALUE1,
+            true => INVSTATE_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == INVSTATE_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == INVSTATE_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `INVSTATE`"]
+pub struct INVSTATE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> INVSTATE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INVSTATE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "no invalid state UsageFault"]
-    VALUE1,
-    #[doc = "the processor has attempted to execute an instruction that makes illegal use of the EPSR."]
-    VALUE2,
-}
-impl INVSTATEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INVSTATEW::VALUE1 => false,
-            INVSTATEW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INVSTATEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INVSTATEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INVSTATEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "no invalid state UsageFault"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(INVSTATEW::VALUE1)
+        self.variant(INVSTATE_A::VALUE1)
     }
     #[doc = "the processor has attempted to execute an instruction that makes illegal use of the EPSR."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(INVSTATEW::VALUE2)
+        self.variant(INVSTATE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `INVPC`"]
-pub enum INVPCW {
-    #[doc = "no invalid PC load UsageFault"]
+#[doc = "Invalid PC load UsageFault\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum INVPC_A {
+    #[doc = "0: no invalid PC load UsageFault"]
     VALUE1,
-    #[doc = "the processor has attempted an illegal load of EXC_RETURN to the PC, as a result of an invalid context, or an invalid EXC_RETURN value."]
+    #[doc = "1: the processor has attempted an illegal load of EXC_RETURN to the PC, as a result of an invalid context, or an invalid EXC_RETURN value."]
     VALUE2,
 }
-impl INVPCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INVPCW::VALUE1 => false,
-            INVPCW::VALUE2 => true,
+impl From<INVPC_A> for bool {
+    #[inline(always)]
+    fn from(variant: INVPC_A) -> Self {
+        match variant {
+            INVPC_A::VALUE1 => false,
+            INVPC_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _INVPCW<'a> {
+#[doc = "Reader of field `INVPC`"]
+pub type INVPC_R = crate::R<bool, INVPC_A>;
+impl INVPC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INVPC_A {
+        match self.bits {
+            false => INVPC_A::VALUE1,
+            true => INVPC_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == INVPC_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == INVPC_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `INVPC`"]
+pub struct INVPC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INVPCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INVPCW) -> &'a mut W {
+impl<'a> INVPC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INVPC_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "no invalid PC load UsageFault"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(INVPCW::VALUE1)
+        self.variant(INVPC_A::VALUE1)
     }
     #[doc = "the processor has attempted an illegal load of EXC_RETURN to the PC, as a result of an invalid context, or an invalid EXC_RETURN value."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(INVPCW::VALUE2)
+        self.variant(INVPC_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `NOCP`"]
-pub enum NOCPW {
+#[doc = "No coprocessor UsageFault\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum NOCP_A {
+    #[doc = "0: no UsageFault caused by attempting to access a coprocessor"]
+    VALUE1,
+    #[doc = "1: the processor has attempted to access a coprocessor."]
+    VALUE2,
+}
+impl From<NOCP_A> for bool {
+    #[inline(always)]
+    fn from(variant: NOCP_A) -> Self {
+        match variant {
+            NOCP_A::VALUE1 => false,
+            NOCP_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `NOCP`"]
+pub type NOCP_R = crate::R<bool, NOCP_A>;
+impl NOCP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> NOCP_A {
+        match self.bits {
+            false => NOCP_A::VALUE1,
+            true => NOCP_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == NOCP_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == NOCP_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `NOCP`"]
+pub struct NOCP_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> NOCP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: NOCP_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "no UsageFault caused by attempting to access a coprocessor"]
-    VALUE1,
-    #[doc = "the processor has attempted to access a coprocessor."]
-    VALUE2,
-}
-impl NOCPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            NOCPW::VALUE1 => false,
-            NOCPW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NOCPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _NOCPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: NOCPW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "no UsageFault caused by attempting to access a coprocessor"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(NOCPW::VALUE1)
+        self.variant(NOCP_A::VALUE1)
     }
     #[doc = "the processor has attempted to access a coprocessor."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(NOCPW::VALUE2)
+        self.variant(NOCP_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `UNALIGNED`"]
-pub enum UNALIGNEDW {
-    #[doc = "no unaligned access fault, or unaligned access trapping not enabled"]
+#[doc = "Unaligned access UsageFault\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum UNALIGNED_A {
+    #[doc = "0: no unaligned access fault, or unaligned access trapping not enabled"]
     VALUE1,
-    #[doc = "the processor has made an unaligned memory access."]
+    #[doc = "1: the processor has made an unaligned memory access."]
     VALUE2,
 }
-impl UNALIGNEDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            UNALIGNEDW::VALUE1 => false,
-            UNALIGNEDW::VALUE2 => true,
+impl From<UNALIGNED_A> for bool {
+    #[inline(always)]
+    fn from(variant: UNALIGNED_A) -> Self {
+        match variant {
+            UNALIGNED_A::VALUE1 => false,
+            UNALIGNED_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _UNALIGNEDW<'a> {
+#[doc = "Reader of field `UNALIGNED`"]
+pub type UNALIGNED_R = crate::R<bool, UNALIGNED_A>;
+impl UNALIGNED_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> UNALIGNED_A {
+        match self.bits {
+            false => UNALIGNED_A::VALUE1,
+            true => UNALIGNED_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == UNALIGNED_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == UNALIGNED_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `UNALIGNED`"]
+pub struct UNALIGNED_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _UNALIGNEDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: UNALIGNEDW) -> &'a mut W {
+impl<'a> UNALIGNED_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: UNALIGNED_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "no unaligned access fault, or unaligned access trapping not enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(UNALIGNEDW::VALUE1)
+        self.variant(UNALIGNED_A::VALUE1)
     }
     #[doc = "the processor has made an unaligned memory access."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(UNALIGNEDW::VALUE2)
+        self.variant(UNALIGNED_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DIVBYZERO`"]
-pub enum DIVBYZEROW {
-    #[doc = "no divide by zero fault, or divide by zero trapping not enabled"]
+#[doc = "Divide by zero UsageFault\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DIVBYZERO_A {
+    #[doc = "0: no divide by zero fault, or divide by zero trapping not enabled"]
     VALUE1,
-    #[doc = "the processor has executed an SDIV or UDIV instruction with a divisor of 0"]
+    #[doc = "1: the processor has executed an SDIV or UDIV instruction with a divisor of 0"]
     VALUE2,
 }
-impl DIVBYZEROW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DIVBYZEROW::VALUE1 => false,
-            DIVBYZEROW::VALUE2 => true,
+impl From<DIVBYZERO_A> for bool {
+    #[inline(always)]
+    fn from(variant: DIVBYZERO_A) -> Self {
+        match variant {
+            DIVBYZERO_A::VALUE1 => false,
+            DIVBYZERO_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _DIVBYZEROW<'a> {
+#[doc = "Reader of field `DIVBYZERO`"]
+pub type DIVBYZERO_R = crate::R<bool, DIVBYZERO_A>;
+impl DIVBYZERO_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DIVBYZERO_A {
+        match self.bits {
+            false => DIVBYZERO_A::VALUE1,
+            true => DIVBYZERO_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == DIVBYZERO_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == DIVBYZERO_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `DIVBYZERO`"]
+pub struct DIVBYZERO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DIVBYZEROW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DIVBYZEROW) -> &'a mut W {
+impl<'a> DIVBYZERO_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DIVBYZERO_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "no divide by zero fault, or divide by zero trapping not enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(DIVBYZEROW::VALUE1)
+        self.variant(DIVBYZERO_A::VALUE1)
     }
     #[doc = "the processor has executed an SDIV or UDIV instruction with a divisor of 0"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(DIVBYZEROW::VALUE2)
+        self.variant(DIVBYZERO_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Instruction access violation flag"]
-    #[inline]
-    pub fn iaccviol(&self) -> IACCVIOLR {
-        IACCVIOLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iaccviol(&self) -> IACCVIOL_R {
+        IACCVIOL_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Data access violation flag"]
-    #[inline]
-    pub fn daccviol(&self) -> DACCVIOLR {
-        DACCVIOLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn daccviol(&self) -> DACCVIOL_R {
+        DACCVIOL_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 3 - MemManage fault on unstacking for a return from exception"]
-    #[inline]
-    pub fn munstkerr(&self) -> MUNSTKERRR {
-        MUNSTKERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn munstkerr(&self) -> MUNSTKERR_R {
+        MUNSTKERR_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - MemManage fault on stacking for exception entry"]
-    #[inline]
-    pub fn mstkerr(&self) -> MSTKERRR {
-        MSTKERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mstkerr(&self) -> MSTKERR_R {
+        MSTKERR_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - MemManage fault during floating point lazy state preservation"]
-    #[inline]
-    pub fn mlsperr(&self) -> MLSPERRR {
-        MLSPERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mlsperr(&self) -> MLSPERR_R {
+        MLSPERR_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 7 - MemManage Fault Address Register (MMFAR) valid flag"]
-    #[inline]
-    pub fn mmarvalid(&self) -> MMARVALIDR {
-        MMARVALIDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mmarvalid(&self) -> MMARVALID_R {
+        MMARVALID_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Instruction bus error"]
-    #[inline]
-    pub fn ibuserr(&self) -> IBUSERRR {
-        IBUSERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ibuserr(&self) -> IBUSERR_R {
+        IBUSERR_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Precise data bus error"]
-    #[inline]
-    pub fn preciserr(&self) -> PRECISERRR {
-        PRECISERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn preciserr(&self) -> PRECISERR_R {
+        PRECISERR_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Imprecise data bus error"]
-    #[inline]
-    pub fn impreciserr(&self) -> IMPRECISERRR {
-        IMPRECISERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn impreciserr(&self) -> IMPRECISERR_R {
+        IMPRECISERR_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - BusFault on unstacking for a return from exception"]
-    #[inline]
-    pub fn unstkerr(&self) -> UNSTKERRR {
-        UNSTKERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn unstkerr(&self) -> UNSTKERR_R {
+        UNSTKERR_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - BusFault on stacking for exception entry"]
-    #[inline]
-    pub fn stkerr(&self) -> STKERRR {
-        STKERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn stkerr(&self) -> STKERR_R {
+        STKERR_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - BusFault during floating point lazy state preservation"]
-    #[inline]
-    pub fn lsperr(&self) -> LSPERRR {
-        LSPERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lsperr(&self) -> LSPERR_R {
+        LSPERR_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 15 - BusFault Address Register (BFAR) valid flag"]
-    #[inline]
-    pub fn bfarvalid(&self) -> BFARVALIDR {
-        BFARVALIDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bfarvalid(&self) -> BFARVALID_R {
+        BFARVALID_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Undefined instruction UsageFault"]
-    #[inline]
-    pub fn undefinstr(&self) -> UNDEFINSTRR {
-        UNDEFINSTRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn undefinstr(&self) -> UNDEFINSTR_R {
+        UNDEFINSTR_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Invalid state UsageFault"]
-    #[inline]
-    pub fn invstate(&self) -> INVSTATER {
-        INVSTATER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn invstate(&self) -> INVSTATE_R {
+        INVSTATE_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - Invalid PC load UsageFault"]
-    #[inline]
-    pub fn invpc(&self) -> INVPCR {
-        INVPCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn invpc(&self) -> INVPC_R {
+        INVPC_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - No coprocessor UsageFault"]
-    #[inline]
-    pub fn nocp(&self) -> NOCPR {
-        NOCPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn nocp(&self) -> NOCP_R {
+        NOCP_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Unaligned access UsageFault"]
-    #[inline]
-    pub fn unaligned(&self) -> UNALIGNEDR {
-        UNALIGNEDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn unaligned(&self) -> UNALIGNED_R {
+        UNALIGNED_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Divide by zero UsageFault"]
-    #[inline]
-    pub fn divbyzero(&self) -> DIVBYZEROR {
-        DIVBYZEROR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn divbyzero(&self) -> DIVBYZERO_R {
+        DIVBYZERO_R::new(((self.bits >> 25) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Instruction access violation flag"]
-    #[inline]
-    pub fn iaccviol(&mut self) -> _IACCVIOLW {
-        _IACCVIOLW { w: self }
+    #[inline(always)]
+    pub fn iaccviol(&mut self) -> IACCVIOL_W {
+        IACCVIOL_W { w: self }
     }
     #[doc = "Bit 1 - Data access violation flag"]
-    #[inline]
-    pub fn daccviol(&mut self) -> _DACCVIOLW {
-        _DACCVIOLW { w: self }
+    #[inline(always)]
+    pub fn daccviol(&mut self) -> DACCVIOL_W {
+        DACCVIOL_W { w: self }
     }
     #[doc = "Bit 3 - MemManage fault on unstacking for a return from exception"]
-    #[inline]
-    pub fn munstkerr(&mut self) -> _MUNSTKERRW {
-        _MUNSTKERRW { w: self }
+    #[inline(always)]
+    pub fn munstkerr(&mut self) -> MUNSTKERR_W {
+        MUNSTKERR_W { w: self }
     }
     #[doc = "Bit 4 - MemManage fault on stacking for exception entry"]
-    #[inline]
-    pub fn mstkerr(&mut self) -> _MSTKERRW {
-        _MSTKERRW { w: self }
+    #[inline(always)]
+    pub fn mstkerr(&mut self) -> MSTKERR_W {
+        MSTKERR_W { w: self }
     }
     #[doc = "Bit 5 - MemManage fault during floating point lazy state preservation"]
-    #[inline]
-    pub fn mlsperr(&mut self) -> _MLSPERRW {
-        _MLSPERRW { w: self }
+    #[inline(always)]
+    pub fn mlsperr(&mut self) -> MLSPERR_W {
+        MLSPERR_W { w: self }
     }
     #[doc = "Bit 7 - MemManage Fault Address Register (MMFAR) valid flag"]
-    #[inline]
-    pub fn mmarvalid(&mut self) -> _MMARVALIDW {
-        _MMARVALIDW { w: self }
+    #[inline(always)]
+    pub fn mmarvalid(&mut self) -> MMARVALID_W {
+        MMARVALID_W { w: self }
     }
     #[doc = "Bit 8 - Instruction bus error"]
-    #[inline]
-    pub fn ibuserr(&mut self) -> _IBUSERRW {
-        _IBUSERRW { w: self }
+    #[inline(always)]
+    pub fn ibuserr(&mut self) -> IBUSERR_W {
+        IBUSERR_W { w: self }
     }
     #[doc = "Bit 9 - Precise data bus error"]
-    #[inline]
-    pub fn preciserr(&mut self) -> _PRECISERRW {
-        _PRECISERRW { w: self }
+    #[inline(always)]
+    pub fn preciserr(&mut self) -> PRECISERR_W {
+        PRECISERR_W { w: self }
     }
     #[doc = "Bit 10 - Imprecise data bus error"]
-    #[inline]
-    pub fn impreciserr(&mut self) -> _IMPRECISERRW {
-        _IMPRECISERRW { w: self }
+    #[inline(always)]
+    pub fn impreciserr(&mut self) -> IMPRECISERR_W {
+        IMPRECISERR_W { w: self }
     }
     #[doc = "Bit 11 - BusFault on unstacking for a return from exception"]
-    #[inline]
-    pub fn unstkerr(&mut self) -> _UNSTKERRW {
-        _UNSTKERRW { w: self }
+    #[inline(always)]
+    pub fn unstkerr(&mut self) -> UNSTKERR_W {
+        UNSTKERR_W { w: self }
     }
     #[doc = "Bit 12 - BusFault on stacking for exception entry"]
-    #[inline]
-    pub fn stkerr(&mut self) -> _STKERRW {
-        _STKERRW { w: self }
+    #[inline(always)]
+    pub fn stkerr(&mut self) -> STKERR_W {
+        STKERR_W { w: self }
     }
     #[doc = "Bit 13 - BusFault during floating point lazy state preservation"]
-    #[inline]
-    pub fn lsperr(&mut self) -> _LSPERRW {
-        _LSPERRW { w: self }
+    #[inline(always)]
+    pub fn lsperr(&mut self) -> LSPERR_W {
+        LSPERR_W { w: self }
     }
     #[doc = "Bit 15 - BusFault Address Register (BFAR) valid flag"]
-    #[inline]
-    pub fn bfarvalid(&mut self) -> _BFARVALIDW {
-        _BFARVALIDW { w: self }
+    #[inline(always)]
+    pub fn bfarvalid(&mut self) -> BFARVALID_W {
+        BFARVALID_W { w: self }
     }
     #[doc = "Bit 16 - Undefined instruction UsageFault"]
-    #[inline]
-    pub fn undefinstr(&mut self) -> _UNDEFINSTRW {
-        _UNDEFINSTRW { w: self }
+    #[inline(always)]
+    pub fn undefinstr(&mut self) -> UNDEFINSTR_W {
+        UNDEFINSTR_W { w: self }
     }
     #[doc = "Bit 17 - Invalid state UsageFault"]
-    #[inline]
-    pub fn invstate(&mut self) -> _INVSTATEW {
-        _INVSTATEW { w: self }
+    #[inline(always)]
+    pub fn invstate(&mut self) -> INVSTATE_W {
+        INVSTATE_W { w: self }
     }
     #[doc = "Bit 18 - Invalid PC load UsageFault"]
-    #[inline]
-    pub fn invpc(&mut self) -> _INVPCW {
-        _INVPCW { w: self }
+    #[inline(always)]
+    pub fn invpc(&mut self) -> INVPC_W {
+        INVPC_W { w: self }
     }
     #[doc = "Bit 19 - No coprocessor UsageFault"]
-    #[inline]
-    pub fn nocp(&mut self) -> _NOCPW {
-        _NOCPW { w: self }
+    #[inline(always)]
+    pub fn nocp(&mut self) -> NOCP_W {
+        NOCP_W { w: self }
     }
     #[doc = "Bit 24 - Unaligned access UsageFault"]
-    #[inline]
-    pub fn unaligned(&mut self) -> _UNALIGNEDW {
-        _UNALIGNEDW { w: self }
+    #[inline(always)]
+    pub fn unaligned(&mut self) -> UNALIGNED_W {
+        UNALIGNED_W { w: self }
     }
     #[doc = "Bit 25 - Divide by zero UsageFault"]
-    #[inline]
-    pub fn divbyzero(&mut self) -> _DIVBYZEROW {
-        _DIVBYZEROW { w: self }
+    #[inline(always)]
+    pub fn divbyzero(&mut self) -> DIVBYZERO_W {
+        DIVBYZERO_W { w: self }
     }
 }

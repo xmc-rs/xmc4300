@@ -1,222 +1,128 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SDMMCDEL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SDMMCDEL"]
+pub type R = crate::R<u32, super::SDMMCDEL>;
+#[doc = "Writer for register SDMMCDEL"]
+pub type W = crate::W<u32, super::SDMMCDEL>;
+#[doc = "Register SDMMCDEL `reset()`'s with value 0"]
+impl crate::ResetValue for super::SDMMCDEL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `TAPEN`"]
+#[doc = "Enable delay on the CMD/DAT out lines\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TAPENR {
-    #[doc = "Disabled"]
+pub enum TAPEN_A {
+    #[doc = "0: Disabled"]
     VALUE1,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     VALUE2,
 }
-impl TAPENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TAPENR::VALUE1 => false,
-            TAPENR::VALUE2 => true,
+impl From<TAPEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TAPEN_A) -> Self {
+        match variant {
+            TAPEN_A::VALUE1 => false,
+            TAPEN_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TAPENR {
-        match value {
-            false => TAPENR::VALUE1,
-            true => TAPENR::VALUE2,
+}
+#[doc = "Reader of field `TAPEN`"]
+pub type TAPEN_R = crate::R<bool, TAPEN_A>;
+impl TAPEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TAPEN_A {
+        match self.bits {
+            false => TAPEN_A::VALUE1,
+            true => TAPEN_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TAPENR::VALUE1
+        *self == TAPEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TAPENR::VALUE2
+        *self == TAPEN_A::VALUE2
     }
 }
-#[doc = r" Value of the field"]
-pub struct TAPDELR {
-    bits: u8,
-}
-impl TAPDELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `TAPEN`"]
-pub enum TAPENW {
-    #[doc = "Disabled"]
-    VALUE1,
-    #[doc = "Enabled"]
-    VALUE2,
-}
-impl TAPENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TAPENW::VALUE1 => false,
-            TAPENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TAPENW<'a> {
+#[doc = "Write proxy for field `TAPEN`"]
+pub struct TAPEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TAPENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TAPENW) -> &'a mut W {
+impl<'a> TAPEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TAPEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(TAPENW::VALUE1)
+        self.variant(TAPEN_A::VALUE1)
     }
     #[doc = "Enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(TAPENW::VALUE2)
+        self.variant(TAPEN_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TAPDELW<'a> {
+#[doc = "Reader of field `TAPDEL`"]
+pub type TAPDEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TAPDEL`"]
+pub struct TAPDEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TAPDELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TAPDEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Enable delay on the CMD/DAT out lines"]
-    #[inline]
-    pub fn tapen(&self) -> TAPENR {
-        TAPENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tapen(&self) -> TAPEN_R {
+        TAPEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bits 4:7 - Number of Delay Elements Select"]
-    #[inline]
-    pub fn tapdel(&self) -> TAPDELR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TAPDELR { bits }
+    #[inline(always)]
+    pub fn tapdel(&self) -> TAPDEL_R {
+        TAPDEL_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Enable delay on the CMD/DAT out lines"]
-    #[inline]
-    pub fn tapen(&mut self) -> _TAPENW {
-        _TAPENW { w: self }
+    #[inline(always)]
+    pub fn tapen(&mut self) -> TAPEN_W {
+        TAPEN_W { w: self }
     }
     #[doc = "Bits 4:7 - Number of Delay Elements Select"]
-    #[inline]
-    pub fn tapdel(&mut self) -> _TAPDELW {
-        _TAPDELW { w: self }
+    #[inline(always)]
+    pub fn tapdel(&mut self) -> TAPDEL_W {
+        TAPDEL_W { w: self }
     }
 }

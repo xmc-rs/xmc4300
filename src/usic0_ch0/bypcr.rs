@@ -1,734 +1,503 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::BYPCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register BYPCR"]
+pub type R = crate::R<u32, super::BYPCR>;
+#[doc = "Writer for register BYPCR"]
+pub type W = crate::W<u32, super::BYPCR>;
+#[doc = "Register BYPCR `reset()`'s with value 0"]
+impl crate::ResetValue for super::BYPCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct BWLER {
-    bits: u8,
+#[doc = "Reader of field `BWLE`"]
+pub type BWLE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `BWLE`"]
+pub struct BWLE_W<'a> {
+    w: &'a mut W,
 }
-impl BWLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> BWLE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w
     }
 }
-#[doc = "Possible values of the field `BDSSM`"]
+#[doc = "Bypass Data Single Shot Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BDSSMR {
-    #[doc = "The bypass data is still considered as valid after it has been loaded into TBUF. The loading of the data into TBUF does not clear BDV."]
+pub enum BDSSM_A {
+    #[doc = "0: The bypass data is still considered as valid after it has been loaded into TBUF. The loading of the data into TBUF does not clear BDV."]
     VALUE1,
-    #[doc = "The bypass data is considered as invalid after it has been loaded into TBUF. The loading of the data into TBUF clears BDV."]
+    #[doc = "1: The bypass data is considered as invalid after it has been loaded into TBUF. The loading of the data into TBUF clears BDV."]
     VALUE2,
 }
-impl BDSSMR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BDSSMR::VALUE1 => false,
-            BDSSMR::VALUE2 => true,
+impl From<BDSSM_A> for bool {
+    #[inline(always)]
+    fn from(variant: BDSSM_A) -> Self {
+        match variant {
+            BDSSM_A::VALUE1 => false,
+            BDSSM_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BDSSMR {
-        match value {
-            false => BDSSMR::VALUE1,
-            true => BDSSMR::VALUE2,
+}
+#[doc = "Reader of field `BDSSM`"]
+pub type BDSSM_R = crate::R<bool, BDSSM_A>;
+impl BDSSM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BDSSM_A {
+        match self.bits {
+            false => BDSSM_A::VALUE1,
+            true => BDSSM_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BDSSMR::VALUE1
+        *self == BDSSM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BDSSMR::VALUE2
+        *self == BDSSM_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `BDEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BDENR {
-    #[doc = "The transfer of bypass data is disabled."]
-    VALUE1,
-    #[doc = "The transfer of bypass data to TBUF is possible. Bypass data will be transferred to TBUF according to its priority if BDV = 1."]
-    VALUE2,
-    #[doc = "Gated bypass data transfer is enabled. Bypass data will be transferred to TBUF according to its priority if BDV = 1 and while DX2S = 0."]
-    VALUE3,
-    #[doc = "Gated bypass data transfer is enabled. Bypass data will be transferred to TBUF according to its priority if BDV = 1 and while DX2S = 1."]
-    VALUE4,
+#[doc = "Write proxy for field `BDSSM`"]
+pub struct BDSSM_W<'a> {
+    w: &'a mut W,
 }
-impl BDENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            BDENR::VALUE1 => 0,
-            BDENR::VALUE2 => 1,
-            BDENR::VALUE3 => 2,
-            BDENR::VALUE4 => 3,
+impl<'a> BDSSM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BDSSM_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> BDENR {
-        match value {
-            0 => BDENR::VALUE1,
-            1 => BDENR::VALUE2,
-            2 => BDENR::VALUE3,
-            3 => BDENR::VALUE4,
+    #[doc = "The bypass data is still considered as valid after it has been loaded into TBUF. The loading of the data into TBUF does not clear BDV."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(BDSSM_A::VALUE1)
+    }
+    #[doc = "The bypass data is considered as invalid after it has been loaded into TBUF. The loading of the data into TBUF clears BDV."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(BDSSM_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
+    }
+}
+#[doc = "Bypass Data Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BDEN_A {
+    #[doc = "0: The transfer of bypass data is disabled."]
+    VALUE1,
+    #[doc = "1: The transfer of bypass data to TBUF is possible. Bypass data will be transferred to TBUF according to its priority if BDV = 1."]
+    VALUE2,
+    #[doc = "2: Gated bypass data transfer is enabled. Bypass data will be transferred to TBUF according to its priority if BDV = 1 and while DX2S = 0."]
+    VALUE3,
+    #[doc = "3: Gated bypass data transfer is enabled. Bypass data will be transferred to TBUF according to its priority if BDV = 1 and while DX2S = 1."]
+    VALUE4,
+}
+impl From<BDEN_A> for u8 {
+    #[inline(always)]
+    fn from(variant: BDEN_A) -> Self {
+        match variant {
+            BDEN_A::VALUE1 => 0,
+            BDEN_A::VALUE2 => 1,
+            BDEN_A::VALUE3 => 2,
+            BDEN_A::VALUE4 => 3,
+        }
+    }
+}
+#[doc = "Reader of field `BDEN`"]
+pub type BDEN_R = crate::R<u8, BDEN_A>;
+impl BDEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BDEN_A {
+        match self.bits {
+            0 => BDEN_A::VALUE1,
+            1 => BDEN_A::VALUE2,
+            2 => BDEN_A::VALUE3,
+            3 => BDEN_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BDENR::VALUE1
+        *self == BDEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BDENR::VALUE2
+        *self == BDEN_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == BDENR::VALUE3
+        *self == BDEN_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == BDENR::VALUE4
+        *self == BDEN_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `BDVTR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BDVTRR {
-    #[doc = "Bit BDV is not influenced by DX2T."]
-    VALUE1,
-    #[doc = "Bit BDV is set if DX2T is active."]
-    VALUE2,
-}
-impl BDVTRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BDVTRR::VALUE1 => false,
-            BDVTRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BDVTRR {
-        match value {
-            false => BDVTRR::VALUE1,
-            true => BDVTRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == BDVTRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == BDVTRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `BPRIO`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BPRIOR {
-    #[doc = "The transmit FIFO data has a higher priority than the bypass data."]
-    VALUE1,
-    #[doc = "The bypass data has a higher priority than the transmit FIFO data."]
-    VALUE2,
-}
-impl BPRIOR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BPRIOR::VALUE1 => false,
-            BPRIOR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BPRIOR {
-        match value {
-            false => BPRIOR::VALUE1,
-            true => BPRIOR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == BPRIOR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == BPRIOR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `BDV`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BDVR {
-    #[doc = "The bypass data is not valid."]
-    VALUE1,
-    #[doc = "The bypass data is valid."]
-    VALUE2,
-}
-impl BDVR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BDVR::VALUE1 => false,
-            BDVR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BDVR {
-        match value {
-            false => BDVR::VALUE1,
-            true => BDVR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == BDVR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == BDVR::VALUE2
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BSELOR {
-    bits: u8,
-}
-impl BSELOR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct BHPCR {
-    bits: u8,
-}
-impl BHPCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BWLEW<'a> {
+#[doc = "Write proxy for field `BDEN`"]
+pub struct BDEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BWLEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `BDSSM`"]
-pub enum BDSSMW {
-    #[doc = "The bypass data is still considered as valid after it has been loaded into TBUF. The loading of the data into TBUF does not clear BDV."]
-    VALUE1,
-    #[doc = "The bypass data is considered as invalid after it has been loaded into TBUF. The loading of the data into TBUF clears BDV."]
-    VALUE2,
-}
-impl BDSSMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BDSSMW::VALUE1 => false,
-            BDSSMW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BDSSMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BDSSMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BDSSMW) -> &'a mut W {
+impl<'a> BDEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BDEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The bypass data is still considered as valid after it has been loaded into TBUF. The loading of the data into TBUF does not clear BDV."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(BDSSMW::VALUE1)
-    }
-    #[doc = "The bypass data is considered as invalid after it has been loaded into TBUF. The loading of the data into TBUF clears BDV."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(BDSSMW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `BDEN`"]
-pub enum BDENW {
-    #[doc = "The transfer of bypass data is disabled."]
-    VALUE1,
-    #[doc = "The transfer of bypass data to TBUF is possible. Bypass data will be transferred to TBUF according to its priority if BDV = 1."]
-    VALUE2,
-    #[doc = "Gated bypass data transfer is enabled. Bypass data will be transferred to TBUF according to its priority if BDV = 1 and while DX2S = 0."]
-    VALUE3,
-    #[doc = "Gated bypass data transfer is enabled. Bypass data will be transferred to TBUF according to its priority if BDV = 1 and while DX2S = 1."]
-    VALUE4,
-}
-impl BDENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            BDENW::VALUE1 => 0,
-            BDENW::VALUE2 => 1,
-            BDENW::VALUE3 => 2,
-            BDENW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BDENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BDENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BDENW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "The transfer of bypass data is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(BDENW::VALUE1)
+        self.variant(BDEN_A::VALUE1)
     }
     #[doc = "The transfer of bypass data to TBUF is possible. Bypass data will be transferred to TBUF according to its priority if BDV = 1."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(BDENW::VALUE2)
+        self.variant(BDEN_A::VALUE2)
     }
     #[doc = "Gated bypass data transfer is enabled. Bypass data will be transferred to TBUF according to its priority if BDV = 1 and while DX2S = 0."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(BDENW::VALUE3)
+        self.variant(BDEN_A::VALUE3)
     }
     #[doc = "Gated bypass data transfer is enabled. Bypass data will be transferred to TBUF according to its priority if BDV = 1 and while DX2S = 1."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(BDENW::VALUE4)
+        self.variant(BDEN_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BDVTR`"]
-pub enum BDVTRW {
-    #[doc = "Bit BDV is not influenced by DX2T."]
+#[doc = "Bypass Data Valid Trigger\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BDVTR_A {
+    #[doc = "0: Bit BDV is not influenced by DX2T."]
     VALUE1,
-    #[doc = "Bit BDV is set if DX2T is active."]
+    #[doc = "1: Bit BDV is set if DX2T is active."]
     VALUE2,
 }
-impl BDVTRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BDVTRW::VALUE1 => false,
-            BDVTRW::VALUE2 => true,
+impl From<BDVTR_A> for bool {
+    #[inline(always)]
+    fn from(variant: BDVTR_A) -> Self {
+        match variant {
+            BDVTR_A::VALUE1 => false,
+            BDVTR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BDVTRW<'a> {
+#[doc = "Reader of field `BDVTR`"]
+pub type BDVTR_R = crate::R<bool, BDVTR_A>;
+impl BDVTR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BDVTR_A {
+        match self.bits {
+            false => BDVTR_A::VALUE1,
+            true => BDVTR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == BDVTR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == BDVTR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `BDVTR`"]
+pub struct BDVTR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BDVTRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BDVTRW) -> &'a mut W {
+impl<'a> BDVTR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BDVTR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Bit BDV is not influenced by DX2T."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(BDVTRW::VALUE1)
+        self.variant(BDVTR_A::VALUE1)
     }
     #[doc = "Bit BDV is set if DX2T is active."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(BDVTRW::VALUE2)
+        self.variant(BDVTR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BPRIO`"]
-pub enum BPRIOW {
-    #[doc = "The transmit FIFO data has a higher priority than the bypass data."]
+#[doc = "Bypass Priority\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BPRIO_A {
+    #[doc = "0: The transmit FIFO data has a higher priority than the bypass data."]
     VALUE1,
-    #[doc = "The bypass data has a higher priority than the transmit FIFO data."]
+    #[doc = "1: The bypass data has a higher priority than the transmit FIFO data."]
     VALUE2,
 }
-impl BPRIOW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BPRIOW::VALUE1 => false,
-            BPRIOW::VALUE2 => true,
+impl From<BPRIO_A> for bool {
+    #[inline(always)]
+    fn from(variant: BPRIO_A) -> Self {
+        match variant {
+            BPRIO_A::VALUE1 => false,
+            BPRIO_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BPRIOW<'a> {
+#[doc = "Reader of field `BPRIO`"]
+pub type BPRIO_R = crate::R<bool, BPRIO_A>;
+impl BPRIO_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BPRIO_A {
+        match self.bits {
+            false => BPRIO_A::VALUE1,
+            true => BPRIO_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == BPRIO_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == BPRIO_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `BPRIO`"]
+pub struct BPRIO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BPRIOW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BPRIOW) -> &'a mut W {
+impl<'a> BPRIO_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BPRIO_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The transmit FIFO data has a higher priority than the bypass data."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(BPRIOW::VALUE1)
+        self.variant(BPRIO_A::VALUE1)
     }
     #[doc = "The bypass data has a higher priority than the transmit FIFO data."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(BPRIOW::VALUE2)
+        self.variant(BPRIO_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _BSELOW<'a> {
+#[doc = "Bypass Data Valid\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BDV_A {
+    #[doc = "0: The bypass data is not valid."]
+    VALUE1,
+    #[doc = "1: The bypass data is valid."]
+    VALUE2,
+}
+impl From<BDV_A> for bool {
+    #[inline(always)]
+    fn from(variant: BDV_A) -> Self {
+        match variant {
+            BDV_A::VALUE1 => false,
+            BDV_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `BDV`"]
+pub type BDV_R = crate::R<bool, BDV_A>;
+impl BDV_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BDV_A {
+        match self.bits {
+            false => BDV_A::VALUE1,
+            true => BDV_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == BDV_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == BDV_A::VALUE2
+    }
+}
+#[doc = "Reader of field `BSELO`"]
+pub type BSELO_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `BSELO`"]
+pub struct BSELO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BSELOW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> BSELO_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 16)) | (((value as u32) & 0x1f) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _BHPCW<'a> {
+#[doc = "Reader of field `BHPC`"]
+pub type BHPC_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `BHPC`"]
+pub struct BHPC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BHPCW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> BHPC_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 21)) | (((value as u32) & 0x07) << 21);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Bypass Word Length"]
-    #[inline]
-    pub fn bwle(&self) -> BWLER {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        BWLER { bits }
+    #[inline(always)]
+    pub fn bwle(&self) -> BWLE_R {
+        BWLE_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 8 - Bypass Data Single Shot Mode"]
-    #[inline]
-    pub fn bdssm(&self) -> BDSSMR {
-        BDSSMR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bdssm(&self) -> BDSSM_R {
+        BDSSM_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bits 10:11 - Bypass Data Enable"]
-    #[inline]
-    pub fn bden(&self) -> BDENR {
-        BDENR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn bden(&self) -> BDEN_R {
+        BDEN_R::new(((self.bits >> 10) & 0x03) as u8)
     }
     #[doc = "Bit 12 - Bypass Data Valid Trigger"]
-    #[inline]
-    pub fn bdvtr(&self) -> BDVTRR {
-        BDVTRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bdvtr(&self) -> BDVTR_R {
+        BDVTR_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Bypass Priority"]
-    #[inline]
-    pub fn bprio(&self) -> BPRIOR {
-        BPRIOR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bprio(&self) -> BPRIO_R {
+        BPRIO_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Bypass Data Valid"]
-    #[inline]
-    pub fn bdv(&self) -> BDVR {
-        BDVR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bdv(&self) -> BDV_R {
+        BDV_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bits 16:20 - Bypass Select Outputs"]
-    #[inline]
-    pub fn bselo(&self) -> BSELOR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        BSELOR { bits }
+    #[inline(always)]
+    pub fn bselo(&self) -> BSELO_R {
+        BSELO_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
     #[doc = "Bits 21:23 - Bypass Hardware Port Control"]
-    #[inline]
-    pub fn bhpc(&self) -> BHPCR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        BHPCR { bits }
+    #[inline(always)]
+    pub fn bhpc(&self) -> BHPC_R {
+        BHPC_R::new(((self.bits >> 21) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Bypass Word Length"]
-    #[inline]
-    pub fn bwle(&mut self) -> _BWLEW {
-        _BWLEW { w: self }
+    #[inline(always)]
+    pub fn bwle(&mut self) -> BWLE_W {
+        BWLE_W { w: self }
     }
     #[doc = "Bit 8 - Bypass Data Single Shot Mode"]
-    #[inline]
-    pub fn bdssm(&mut self) -> _BDSSMW {
-        _BDSSMW { w: self }
+    #[inline(always)]
+    pub fn bdssm(&mut self) -> BDSSM_W {
+        BDSSM_W { w: self }
     }
     #[doc = "Bits 10:11 - Bypass Data Enable"]
-    #[inline]
-    pub fn bden(&mut self) -> _BDENW {
-        _BDENW { w: self }
+    #[inline(always)]
+    pub fn bden(&mut self) -> BDEN_W {
+        BDEN_W { w: self }
     }
     #[doc = "Bit 12 - Bypass Data Valid Trigger"]
-    #[inline]
-    pub fn bdvtr(&mut self) -> _BDVTRW {
-        _BDVTRW { w: self }
+    #[inline(always)]
+    pub fn bdvtr(&mut self) -> BDVTR_W {
+        BDVTR_W { w: self }
     }
     #[doc = "Bit 13 - Bypass Priority"]
-    #[inline]
-    pub fn bprio(&mut self) -> _BPRIOW {
-        _BPRIOW { w: self }
+    #[inline(always)]
+    pub fn bprio(&mut self) -> BPRIO_W {
+        BPRIO_W { w: self }
     }
     #[doc = "Bits 16:20 - Bypass Select Outputs"]
-    #[inline]
-    pub fn bselo(&mut self) -> _BSELOW {
-        _BSELOW { w: self }
+    #[inline(always)]
+    pub fn bselo(&mut self) -> BSELO_W {
+        BSELO_W { w: self }
     }
     #[doc = "Bits 21:23 - Bypass Hardware Port Control"]
-    #[inline]
-    pub fn bhpc(&mut self) -> _BHPCW {
-        _BHPCW { w: self }
+    #[inline(always)]
+    pub fn bhpc(&mut self) -> BHPC_W {
+        BHPC_W { w: self }
     }
 }

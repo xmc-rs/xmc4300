@@ -1,858 +1,664 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u16,
-}
-impl super::ESC_DL_STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `PDI_EEPROM`"]
+#[doc = "Reader of register ESC_DL_STATUS"]
+pub type R = crate::R<u16, super::ESC_DL_STATUS>;
+#[doc = "PDI operational/EEPROM loaded correctly\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDI_EEPROMR {
-    #[doc = "EEPROM not loaded, PDI not operational (no access to Process Data RAM)"]
+pub enum PDI_EEPROM_A {
+    #[doc = "0: EEPROM not loaded, PDI not operational (no access to Process Data RAM)"]
     VALUE1,
-    #[doc = "EEPROM loaded correctly, PDI operational (access to Process Data RAM)"]
+    #[doc = "1: EEPROM loaded correctly, PDI operational (access to Process Data RAM)"]
     VALUE2,
 }
-impl PDI_EEPROMR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDI_EEPROMR::VALUE1 => false,
-            PDI_EEPROMR::VALUE2 => true,
+impl From<PDI_EEPROM_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDI_EEPROM_A) -> Self {
+        match variant {
+            PDI_EEPROM_A::VALUE1 => false,
+            PDI_EEPROM_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDI_EEPROMR {
-        match value {
-            false => PDI_EEPROMR::VALUE1,
-            true => PDI_EEPROMR::VALUE2,
+}
+#[doc = "Reader of field `PDI_EEPROM`"]
+pub type PDI_EEPROM_R = crate::R<bool, PDI_EEPROM_A>;
+impl PDI_EEPROM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDI_EEPROM_A {
+        match self.bits {
+            false => PDI_EEPROM_A::VALUE1,
+            true => PDI_EEPROM_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PDI_EEPROMR::VALUE1
+        *self == PDI_EEPROM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PDI_EEPROMR::VALUE2
+        *self == PDI_EEPROM_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `PDI_WDT_S`"]
+#[doc = "PDI Watchdog Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDI_WDT_SR {
-    #[doc = "Watchdog expired"]
+pub enum PDI_WDT_S_A {
+    #[doc = "0: Watchdog expired"]
     VALUE1,
-    #[doc = "Watchdog reloaded"]
+    #[doc = "1: Watchdog reloaded"]
     VALUE2,
 }
-impl PDI_WDT_SR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDI_WDT_SR::VALUE1 => false,
-            PDI_WDT_SR::VALUE2 => true,
+impl From<PDI_WDT_S_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDI_WDT_S_A) -> Self {
+        match variant {
+            PDI_WDT_S_A::VALUE1 => false,
+            PDI_WDT_S_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDI_WDT_SR {
-        match value {
-            false => PDI_WDT_SR::VALUE1,
-            true => PDI_WDT_SR::VALUE2,
+}
+#[doc = "Reader of field `PDI_WDT_S`"]
+pub type PDI_WDT_S_R = crate::R<bool, PDI_WDT_S_A>;
+impl PDI_WDT_S_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDI_WDT_S_A {
+        match self.bits {
+            false => PDI_WDT_S_A::VALUE1,
+            true => PDI_WDT_S_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PDI_WDT_SR::VALUE1
+        *self == PDI_WDT_S_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PDI_WDT_SR::VALUE2
+        *self == PDI_WDT_S_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `ELD`"]
+#[doc = "Enhanced Link detection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ELDR {
-    #[doc = "Deactivated for all ports"]
+pub enum ELD_A {
+    #[doc = "0: Deactivated for all ports"]
     VALUE1,
-    #[doc = "Activated for at least one port"]
+    #[doc = "1: Activated for at least one port"]
     VALUE2,
 }
-impl ELDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ELDR::VALUE1 => false,
-            ELDR::VALUE2 => true,
+impl From<ELD_A> for bool {
+    #[inline(always)]
+    fn from(variant: ELD_A) -> Self {
+        match variant {
+            ELD_A::VALUE1 => false,
+            ELD_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ELDR {
-        match value {
-            false => ELDR::VALUE1,
-            true => ELDR::VALUE2,
+}
+#[doc = "Reader of field `ELD`"]
+pub type ELD_R = crate::R<bool, ELD_A>;
+impl ELD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ELD_A {
+        match self.bits {
+            false => ELD_A::VALUE1,
+            true => ELD_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ELDR::VALUE1
+        *self == ELD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ELDR::VALUE2
+        *self == ELD_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `LINK_P0`"]
+#[doc = "Physical link on Port 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LINK_P0R {
-    #[doc = "No link"]
+pub enum LINK_P0_A {
+    #[doc = "0: No link"]
     VALUE1,
-    #[doc = "Link detected"]
+    #[doc = "1: Link detected"]
     VALUE2,
 }
-impl LINK_P0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LINK_P0R::VALUE1 => false,
-            LINK_P0R::VALUE2 => true,
+impl From<LINK_P0_A> for bool {
+    #[inline(always)]
+    fn from(variant: LINK_P0_A) -> Self {
+        match variant {
+            LINK_P0_A::VALUE1 => false,
+            LINK_P0_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LINK_P0R {
-        match value {
-            false => LINK_P0R::VALUE1,
-            true => LINK_P0R::VALUE2,
+}
+#[doc = "Reader of field `LINK_P0`"]
+pub type LINK_P0_R = crate::R<bool, LINK_P0_A>;
+impl LINK_P0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LINK_P0_A {
+        match self.bits {
+            false => LINK_P0_A::VALUE1,
+            true => LINK_P0_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LINK_P0R::VALUE1
+        *self == LINK_P0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LINK_P0R::VALUE2
+        *self == LINK_P0_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `LINK_P1`"]
+#[doc = "Physical link on Port 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LINK_P1R {
-    #[doc = "No link"]
+pub enum LINK_P1_A {
+    #[doc = "0: No link"]
     VALUE1,
-    #[doc = "Link detected"]
+    #[doc = "1: Link detected"]
     VALUE2,
 }
-impl LINK_P1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LINK_P1R::VALUE1 => false,
-            LINK_P1R::VALUE2 => true,
+impl From<LINK_P1_A> for bool {
+    #[inline(always)]
+    fn from(variant: LINK_P1_A) -> Self {
+        match variant {
+            LINK_P1_A::VALUE1 => false,
+            LINK_P1_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LINK_P1R {
-        match value {
-            false => LINK_P1R::VALUE1,
-            true => LINK_P1R::VALUE2,
+}
+#[doc = "Reader of field `LINK_P1`"]
+pub type LINK_P1_R = crate::R<bool, LINK_P1_A>;
+impl LINK_P1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LINK_P1_A {
+        match self.bits {
+            false => LINK_P1_A::VALUE1,
+            true => LINK_P1_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LINK_P1R::VALUE1
+        *self == LINK_P1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LINK_P1R::VALUE2
+        *self == LINK_P1_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `LINK_P2`"]
+#[doc = "Physical link on Port 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LINK_P2R {
-    #[doc = "No link"]
+pub enum LINK_P2_A {
+    #[doc = "0: No link"]
     VALUE1,
-    #[doc = "Link detected"]
+    #[doc = "1: Link detected"]
     VALUE2,
 }
-impl LINK_P2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LINK_P2R::VALUE1 => false,
-            LINK_P2R::VALUE2 => true,
+impl From<LINK_P2_A> for bool {
+    #[inline(always)]
+    fn from(variant: LINK_P2_A) -> Self {
+        match variant {
+            LINK_P2_A::VALUE1 => false,
+            LINK_P2_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LINK_P2R {
-        match value {
-            false => LINK_P2R::VALUE1,
-            true => LINK_P2R::VALUE2,
+}
+#[doc = "Reader of field `LINK_P2`"]
+pub type LINK_P2_R = crate::R<bool, LINK_P2_A>;
+impl LINK_P2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LINK_P2_A {
+        match self.bits {
+            false => LINK_P2_A::VALUE1,
+            true => LINK_P2_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LINK_P2R::VALUE1
+        *self == LINK_P2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LINK_P2R::VALUE2
+        *self == LINK_P2_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `LINK_P3`"]
+#[doc = "Physical link on Port 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LINK_P3R {
-    #[doc = "No link"]
+pub enum LINK_P3_A {
+    #[doc = "0: No link"]
     VALUE1,
-    #[doc = "Link detected"]
+    #[doc = "1: Link detected"]
     VALUE2,
 }
-impl LINK_P3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LINK_P3R::VALUE1 => false,
-            LINK_P3R::VALUE2 => true,
+impl From<LINK_P3_A> for bool {
+    #[inline(always)]
+    fn from(variant: LINK_P3_A) -> Self {
+        match variant {
+            LINK_P3_A::VALUE1 => false,
+            LINK_P3_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LINK_P3R {
-        match value {
-            false => LINK_P3R::VALUE1,
-            true => LINK_P3R::VALUE2,
+}
+#[doc = "Reader of field `LINK_P3`"]
+pub type LINK_P3_R = crate::R<bool, LINK_P3_A>;
+impl LINK_P3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LINK_P3_A {
+        match self.bits {
+            false => LINK_P3_A::VALUE1,
+            true => LINK_P3_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LINK_P3R::VALUE1
+        *self == LINK_P3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LINK_P3R::VALUE2
+        *self == LINK_P3_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `LP0`"]
+#[doc = "Loop Port 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LP0R {
-    #[doc = "Open"]
+pub enum LP0_A {
+    #[doc = "0: Open"]
     VALUE1,
-    #[doc = "Closed"]
+    #[doc = "1: Closed"]
     VALUE2,
 }
-impl LP0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LP0R::VALUE1 => false,
-            LP0R::VALUE2 => true,
+impl From<LP0_A> for bool {
+    #[inline(always)]
+    fn from(variant: LP0_A) -> Self {
+        match variant {
+            LP0_A::VALUE1 => false,
+            LP0_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LP0R {
-        match value {
-            false => LP0R::VALUE1,
-            true => LP0R::VALUE2,
+}
+#[doc = "Reader of field `LP0`"]
+pub type LP0_R = crate::R<bool, LP0_A>;
+impl LP0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LP0_A {
+        match self.bits {
+            false => LP0_A::VALUE1,
+            true => LP0_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LP0R::VALUE1
+        *self == LP0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LP0R::VALUE2
+        *self == LP0_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `COM_P0`"]
+#[doc = "Communication on Port 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COM_P0R {
-    #[doc = "No stable communication"]
+pub enum COM_P0_A {
+    #[doc = "0: No stable communication"]
     VALUE1,
-    #[doc = "Communication established"]
+    #[doc = "1: Communication established"]
     VALUE2,
 }
-impl COM_P0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            COM_P0R::VALUE1 => false,
-            COM_P0R::VALUE2 => true,
+impl From<COM_P0_A> for bool {
+    #[inline(always)]
+    fn from(variant: COM_P0_A) -> Self {
+        match variant {
+            COM_P0_A::VALUE1 => false,
+            COM_P0_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> COM_P0R {
-        match value {
-            false => COM_P0R::VALUE1,
-            true => COM_P0R::VALUE2,
+}
+#[doc = "Reader of field `COM_P0`"]
+pub type COM_P0_R = crate::R<bool, COM_P0_A>;
+impl COM_P0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> COM_P0_A {
+        match self.bits {
+            false => COM_P0_A::VALUE1,
+            true => COM_P0_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == COM_P0R::VALUE1
+        *self == COM_P0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == COM_P0R::VALUE2
+        *self == COM_P0_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `LP1`"]
+#[doc = "Loop Port 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LP1R {
-    #[doc = "Open"]
+pub enum LP1_A {
+    #[doc = "0: Open"]
     VALUE1,
-    #[doc = "Closed"]
+    #[doc = "1: Closed"]
     VALUE2,
 }
-impl LP1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LP1R::VALUE1 => false,
-            LP1R::VALUE2 => true,
+impl From<LP1_A> for bool {
+    #[inline(always)]
+    fn from(variant: LP1_A) -> Self {
+        match variant {
+            LP1_A::VALUE1 => false,
+            LP1_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LP1R {
-        match value {
-            false => LP1R::VALUE1,
-            true => LP1R::VALUE2,
+}
+#[doc = "Reader of field `LP1`"]
+pub type LP1_R = crate::R<bool, LP1_A>;
+impl LP1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LP1_A {
+        match self.bits {
+            false => LP1_A::VALUE1,
+            true => LP1_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LP1R::VALUE1
+        *self == LP1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LP1R::VALUE2
+        *self == LP1_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `COM_P1`"]
+#[doc = "Communication on Port 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COM_P1R {
-    #[doc = "No stable communication"]
+pub enum COM_P1_A {
+    #[doc = "0: No stable communication"]
     VALUE1,
-    #[doc = "Communication established"]
+    #[doc = "1: Communication established"]
     VALUE2,
 }
-impl COM_P1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            COM_P1R::VALUE1 => false,
-            COM_P1R::VALUE2 => true,
+impl From<COM_P1_A> for bool {
+    #[inline(always)]
+    fn from(variant: COM_P1_A) -> Self {
+        match variant {
+            COM_P1_A::VALUE1 => false,
+            COM_P1_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> COM_P1R {
-        match value {
-            false => COM_P1R::VALUE1,
-            true => COM_P1R::VALUE2,
+}
+#[doc = "Reader of field `COM_P1`"]
+pub type COM_P1_R = crate::R<bool, COM_P1_A>;
+impl COM_P1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> COM_P1_A {
+        match self.bits {
+            false => COM_P1_A::VALUE1,
+            true => COM_P1_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == COM_P1R::VALUE1
+        *self == COM_P1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == COM_P1R::VALUE2
+        *self == COM_P1_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `LP2`"]
+#[doc = "Loop Port 2\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LP2R {
-    #[doc = "Open"]
+pub enum LP2_A {
+    #[doc = "0: Open"]
     VALUE1,
-    #[doc = "Closed"]
+    #[doc = "1: Closed"]
     VALUE2,
 }
-impl LP2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LP2R::VALUE1 => false,
-            LP2R::VALUE2 => true,
+impl From<LP2_A> for bool {
+    #[inline(always)]
+    fn from(variant: LP2_A) -> Self {
+        match variant {
+            LP2_A::VALUE1 => false,
+            LP2_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LP2R {
-        match value {
-            false => LP2R::VALUE1,
-            true => LP2R::VALUE2,
+}
+#[doc = "Reader of field `LP2`"]
+pub type LP2_R = crate::R<bool, LP2_A>;
+impl LP2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LP2_A {
+        match self.bits {
+            false => LP2_A::VALUE1,
+            true => LP2_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LP2R::VALUE1
+        *self == LP2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LP2R::VALUE2
+        *self == LP2_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `COM_P2`"]
+#[doc = "Communication on Port 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COM_P2R {
-    #[doc = "No stable communication"]
+pub enum COM_P2_A {
+    #[doc = "0: No stable communication"]
     VALUE1,
-    #[doc = "Communication established"]
+    #[doc = "1: Communication established"]
     VALUE2,
 }
-impl COM_P2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            COM_P2R::VALUE1 => false,
-            COM_P2R::VALUE2 => true,
+impl From<COM_P2_A> for bool {
+    #[inline(always)]
+    fn from(variant: COM_P2_A) -> Self {
+        match variant {
+            COM_P2_A::VALUE1 => false,
+            COM_P2_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> COM_P2R {
-        match value {
-            false => COM_P2R::VALUE1,
-            true => COM_P2R::VALUE2,
+}
+#[doc = "Reader of field `COM_P2`"]
+pub type COM_P2_R = crate::R<bool, COM_P2_A>;
+impl COM_P2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> COM_P2_A {
+        match self.bits {
+            false => COM_P2_A::VALUE1,
+            true => COM_P2_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == COM_P2R::VALUE1
+        *self == COM_P2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == COM_P2R::VALUE2
+        *self == COM_P2_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `LP3`"]
+#[doc = "Loop Port 3\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LP3R {
-    #[doc = "Open"]
+pub enum LP3_A {
+    #[doc = "0: Open"]
     VALUE1,
-    #[doc = "Closed"]
+    #[doc = "1: Closed"]
     VALUE2,
 }
-impl LP3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LP3R::VALUE1 => false,
-            LP3R::VALUE2 => true,
+impl From<LP3_A> for bool {
+    #[inline(always)]
+    fn from(variant: LP3_A) -> Self {
+        match variant {
+            LP3_A::VALUE1 => false,
+            LP3_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LP3R {
-        match value {
-            false => LP3R::VALUE1,
-            true => LP3R::VALUE2,
+}
+#[doc = "Reader of field `LP3`"]
+pub type LP3_R = crate::R<bool, LP3_A>;
+impl LP3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LP3_A {
+        match self.bits {
+            false => LP3_A::VALUE1,
+            true => LP3_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LP3R::VALUE1
+        *self == LP3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LP3R::VALUE2
+        *self == LP3_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `COM_P3`"]
+#[doc = "Communication on Port 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COM_P3R {
-    #[doc = "No stable communication"]
+pub enum COM_P3_A {
+    #[doc = "0: No stable communication"]
     VALUE1,
-    #[doc = "Communication established"]
+    #[doc = "1: Communication established"]
     VALUE2,
 }
-impl COM_P3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            COM_P3R::VALUE1 => false,
-            COM_P3R::VALUE2 => true,
+impl From<COM_P3_A> for bool {
+    #[inline(always)]
+    fn from(variant: COM_P3_A) -> Self {
+        match variant {
+            COM_P3_A::VALUE1 => false,
+            COM_P3_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> COM_P3R {
-        match value {
-            false => COM_P3R::VALUE1,
-            true => COM_P3R::VALUE2,
+}
+#[doc = "Reader of field `COM_P3`"]
+pub type COM_P3_R = crate::R<bool, COM_P3_A>;
+impl COM_P3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> COM_P3_A {
+        match self.bits {
+            false => COM_P3_A::VALUE1,
+            true => COM_P3_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == COM_P3R::VALUE1
+        *self == COM_P3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == COM_P3R::VALUE2
+        *self == COM_P3_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
     #[doc = "Bit 0 - PDI operational/EEPROM loaded correctly"]
-    #[inline]
-    pub fn pdi_eeprom(&self) -> PDI_EEPROMR {
-        PDI_EEPROMR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn pdi_eeprom(&self) -> PDI_EEPROM_R {
+        PDI_EEPROM_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - PDI Watchdog Status"]
-    #[inline]
-    pub fn pdi_wdt_s(&self) -> PDI_WDT_SR {
-        PDI_WDT_SR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn pdi_wdt_s(&self) -> PDI_WDT_S_R {
+        PDI_WDT_S_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Enhanced Link detection"]
-    #[inline]
-    pub fn eld(&self) -> ELDR {
-        ELDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn eld(&self) -> ELD_R {
+        ELD_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Physical link on Port 0"]
-    #[inline]
-    pub fn link_p0(&self) -> LINK_P0R {
-        LINK_P0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn link_p0(&self) -> LINK_P0_R {
+        LINK_P0_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Physical link on Port 1"]
-    #[inline]
-    pub fn link_p1(&self) -> LINK_P1R {
-        LINK_P1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn link_p1(&self) -> LINK_P1_R {
+        LINK_P1_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Physical link on Port 2"]
-    #[inline]
-    pub fn link_p2(&self) -> LINK_P2R {
-        LINK_P2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn link_p2(&self) -> LINK_P2_R {
+        LINK_P2_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Physical link on Port 3"]
-    #[inline]
-    pub fn link_p3(&self) -> LINK_P3R {
-        LINK_P3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn link_p3(&self) -> LINK_P3_R {
+        LINK_P3_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Loop Port 0"]
-    #[inline]
-    pub fn lp0(&self) -> LP0R {
-        LP0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn lp0(&self) -> LP0_R {
+        LP0_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Communication on Port 0"]
-    #[inline]
-    pub fn com_p0(&self) -> COM_P0R {
-        COM_P0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn com_p0(&self) -> COM_P0_R {
+        COM_P0_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Loop Port 1"]
-    #[inline]
-    pub fn lp1(&self) -> LP1R {
-        LP1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn lp1(&self) -> LP1_R {
+        LP1_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Communication on Port 1"]
-    #[inline]
-    pub fn com_p1(&self) -> COM_P1R {
-        COM_P1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn com_p1(&self) -> COM_P1_R {
+        COM_P1_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Loop Port 2"]
-    #[inline]
-    pub fn lp2(&self) -> LP2R {
-        LP2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn lp2(&self) -> LP2_R {
+        LP2_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Communication on Port 2"]
-    #[inline]
-    pub fn com_p2(&self) -> COM_P2R {
-        COM_P2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn com_p2(&self) -> COM_P2_R {
+        COM_P2_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Loop Port 3"]
-    #[inline]
-    pub fn lp3(&self) -> LP3R {
-        LP3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn lp3(&self) -> LP3_R {
+        LP3_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Communication on Port 3"]
-    #[inline]
-    pub fn com_p3(&self) -> COM_P3R {
-        COM_P3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn com_p3(&self) -> COM_P3_R {
+        COM_P3_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }

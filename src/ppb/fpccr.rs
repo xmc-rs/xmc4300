@@ -1,1133 +1,808 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FPCCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FPCCR"]
+pub type R = crate::R<u32, super::FPCCR>;
+#[doc = "Writer for register FPCCR"]
+pub type W = crate::W<u32, super::FPCCR>;
+#[doc = "Register FPCCR `reset()`'s with value 0"]
+impl crate::ResetValue for super::FPCCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `LSPACT`"]
+#[doc = "Lazy State Preservation Active\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LSPACTR {
-    #[doc = "Lazy state preservation is not active."]
+pub enum LSPACT_A {
+    #[doc = "0: Lazy state preservation is not active."]
     VALUE1,
-    #[doc = "Lazy state preservation is active. floating-point stack frame has been allocated but saving state to it has been deferred."]
+    #[doc = "1: Lazy state preservation is active. floating-point stack frame has been allocated but saving state to it has been deferred."]
     VALUE2,
 }
-impl LSPACTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LSPACTR::VALUE1 => false,
-            LSPACTR::VALUE2 => true,
+impl From<LSPACT_A> for bool {
+    #[inline(always)]
+    fn from(variant: LSPACT_A) -> Self {
+        match variant {
+            LSPACT_A::VALUE1 => false,
+            LSPACT_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LSPACTR {
-        match value {
-            false => LSPACTR::VALUE1,
-            true => LSPACTR::VALUE2,
+}
+#[doc = "Reader of field `LSPACT`"]
+pub type LSPACT_R = crate::R<bool, LSPACT_A>;
+impl LSPACT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LSPACT_A {
+        match self.bits {
+            false => LSPACT_A::VALUE1,
+            true => LSPACT_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LSPACTR::VALUE1
+        *self == LSPACT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LSPACTR::VALUE2
+        *self == LSPACT_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `USER`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum USERR {
-    #[doc = "Privilege level was not user when the floating-point stack frame was allocated."]
-    VALUE1,
-    #[doc = "Privilege level was user when the floating-point stack frame was allocated."]
-    VALUE2,
-}
-impl USERR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            USERR::VALUE1 => false,
-            USERR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> USERR {
-        match value {
-            false => USERR::VALUE1,
-            true => USERR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == USERR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == USERR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `THREAD`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum THREADR {
-    #[doc = "Mode was not Thread Mode when the floating-point stack frame was allocated."]
-    VALUE1,
-    #[doc = "Mode was Thread Mode when the floating-point stack frame was allocated."]
-    VALUE2,
-}
-impl THREADR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            THREADR::VALUE1 => false,
-            THREADR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> THREADR {
-        match value {
-            false => THREADR::VALUE1,
-            true => THREADR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == THREADR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == THREADR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `HFRDY`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HFRDYR {
-    #[doc = "Priority did not permit setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE1,
-    #[doc = "Priority permitted setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE2,
-}
-impl HFRDYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HFRDYR::VALUE1 => false,
-            HFRDYR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HFRDYR {
-        match value {
-            false => HFRDYR::VALUE1,
-            true => HFRDYR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == HFRDYR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == HFRDYR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `MMRDY`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MMRDYR {
-    #[doc = "MemManage is disabled or priority did not permit setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE1,
-    #[doc = "MemManage is enabled and priority permitted setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE2,
-}
-impl MMRDYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MMRDYR::VALUE1 => false,
-            MMRDYR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MMRDYR {
-        match value {
-            false => MMRDYR::VALUE1,
-            true => MMRDYR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MMRDYR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MMRDYR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `BFRDY`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BFRDYR {
-    #[doc = "BusFault is disabled or priority did not permit setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE1,
-    #[doc = "BusFault is enabled and priority permitted setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE2,
-}
-impl BFRDYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BFRDYR::VALUE1 => false,
-            BFRDYR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BFRDYR {
-        match value {
-            false => BFRDYR::VALUE1,
-            true => BFRDYR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == BFRDYR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == BFRDYR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `MONRDY`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MONRDYR {
-    #[doc = "Debug Monitor is disabled or priority did not permit setting MON_PEND when the floating-point stack frame was allocated."]
-    VALUE1,
-    #[doc = "Debug Monitor is enabled and priority permits setting MON_PEND when the floating-point stack frame was allocated."]
-    VALUE2,
-}
-impl MONRDYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MONRDYR::VALUE1 => false,
-            MONRDYR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MONRDYR {
-        match value {
-            false => MONRDYR::VALUE1,
-            true => MONRDYR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MONRDYR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MONRDYR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `LSPEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LSPENR {
-    #[doc = "Disable automatic lazy state preservation for floating-point context."]
-    VALUE1,
-    #[doc = "Enable automatic lazy state preservation for floating-point context."]
-    VALUE2,
-}
-impl LSPENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LSPENR::VALUE1 => false,
-            LSPENR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LSPENR {
-        match value {
-            false => LSPENR::VALUE1,
-            true => LSPENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LSPENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LSPENR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `ASPEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ASPENR {
-    #[doc = "Disable CONTROL setting on execution of a floating-point instruction."]
-    VALUE1,
-    #[doc = "Enable CONTROL setting on execution of a floating-point instruction."]
-    VALUE2,
-}
-impl ASPENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ASPENR::VALUE1 => false,
-            ASPENR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ASPENR {
-        match value {
-            false => ASPENR::VALUE1,
-            true => ASPENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ASPENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ASPENR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `LSPACT`"]
-pub enum LSPACTW {
-    #[doc = "Lazy state preservation is not active."]
-    VALUE1,
-    #[doc = "Lazy state preservation is active. floating-point stack frame has been allocated but saving state to it has been deferred."]
-    VALUE2,
-}
-impl LSPACTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LSPACTW::VALUE1 => false,
-            LSPACTW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LSPACTW<'a> {
+#[doc = "Write proxy for field `LSPACT`"]
+pub struct LSPACT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LSPACTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LSPACTW) -> &'a mut W {
+impl<'a> LSPACT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LSPACT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Lazy state preservation is not active."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LSPACTW::VALUE1)
+        self.variant(LSPACT_A::VALUE1)
     }
     #[doc = "Lazy state preservation is active. floating-point stack frame has been allocated but saving state to it has been deferred."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LSPACTW::VALUE2)
+        self.variant(LSPACT_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `USER`"]
-pub enum USERW {
+#[doc = "User allocated Stack Frame\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum USER_A {
+    #[doc = "0: Privilege level was not user when the floating-point stack frame was allocated."]
+    VALUE1,
+    #[doc = "1: Privilege level was user when the floating-point stack frame was allocated."]
+    VALUE2,
+}
+impl From<USER_A> for bool {
+    #[inline(always)]
+    fn from(variant: USER_A) -> Self {
+        match variant {
+            USER_A::VALUE1 => false,
+            USER_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `USER`"]
+pub type USER_R = crate::R<bool, USER_A>;
+impl USER_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> USER_A {
+        match self.bits {
+            false => USER_A::VALUE1,
+            true => USER_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == USER_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == USER_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `USER`"]
+pub struct USER_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> USER_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: USER_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Privilege level was not user when the floating-point stack frame was allocated."]
-    VALUE1,
-    #[doc = "Privilege level was user when the floating-point stack frame was allocated."]
-    VALUE2,
-}
-impl USERW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            USERW::VALUE1 => false,
-            USERW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _USERW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _USERW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: USERW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Privilege level was not user when the floating-point stack frame was allocated."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(USERW::VALUE1)
+        self.variant(USER_A::VALUE1)
     }
     #[doc = "Privilege level was user when the floating-point stack frame was allocated."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(USERW::VALUE2)
+        self.variant(USER_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `THREAD`"]
-pub enum THREADW {
-    #[doc = "Mode was not Thread Mode when the floating-point stack frame was allocated."]
+#[doc = "Thread Mode allocated Stack Frame\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum THREAD_A {
+    #[doc = "0: Mode was not Thread Mode when the floating-point stack frame was allocated."]
     VALUE1,
-    #[doc = "Mode was Thread Mode when the floating-point stack frame was allocated."]
+    #[doc = "1: Mode was Thread Mode when the floating-point stack frame was allocated."]
     VALUE2,
 }
-impl THREADW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            THREADW::VALUE1 => false,
-            THREADW::VALUE2 => true,
+impl From<THREAD_A> for bool {
+    #[inline(always)]
+    fn from(variant: THREAD_A) -> Self {
+        match variant {
+            THREAD_A::VALUE1 => false,
+            THREAD_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _THREADW<'a> {
+#[doc = "Reader of field `THREAD`"]
+pub type THREAD_R = crate::R<bool, THREAD_A>;
+impl THREAD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> THREAD_A {
+        match self.bits {
+            false => THREAD_A::VALUE1,
+            true => THREAD_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == THREAD_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == THREAD_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `THREAD`"]
+pub struct THREAD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _THREADW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: THREADW) -> &'a mut W {
+impl<'a> THREAD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: THREAD_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Mode was not Thread Mode when the floating-point stack frame was allocated."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(THREADW::VALUE1)
+        self.variant(THREAD_A::VALUE1)
     }
     #[doc = "Mode was Thread Mode when the floating-point stack frame was allocated."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(THREADW::VALUE2)
+        self.variant(THREAD_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `HFRDY`"]
-pub enum HFRDYW {
+#[doc = "HardFault Ready\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HFRDY_A {
+    #[doc = "0: Priority did not permit setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
+    VALUE1,
+    #[doc = "1: Priority permitted setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
+    VALUE2,
+}
+impl From<HFRDY_A> for bool {
+    #[inline(always)]
+    fn from(variant: HFRDY_A) -> Self {
+        match variant {
+            HFRDY_A::VALUE1 => false,
+            HFRDY_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `HFRDY`"]
+pub type HFRDY_R = crate::R<bool, HFRDY_A>;
+impl HFRDY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HFRDY_A {
+        match self.bits {
+            false => HFRDY_A::VALUE1,
+            true => HFRDY_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == HFRDY_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == HFRDY_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `HFRDY`"]
+pub struct HFRDY_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> HFRDY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HFRDY_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Priority did not permit setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE1,
-    #[doc = "Priority permitted setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE2,
-}
-impl HFRDYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HFRDYW::VALUE1 => false,
-            HFRDYW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HFRDYW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HFRDYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HFRDYW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Priority did not permit setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(HFRDYW::VALUE1)
+        self.variant(HFRDY_A::VALUE1)
     }
     #[doc = "Priority permitted setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(HFRDYW::VALUE2)
+        self.variant(HFRDY_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MMRDY`"]
-pub enum MMRDYW {
-    #[doc = "MemManage is disabled or priority did not permit setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
+#[doc = "MemManage Ready\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MMRDY_A {
+    #[doc = "0: MemManage is disabled or priority did not permit setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
     VALUE1,
-    #[doc = "MemManage is enabled and priority permitted setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
+    #[doc = "1: MemManage is enabled and priority permitted setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
     VALUE2,
 }
-impl MMRDYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MMRDYW::VALUE1 => false,
-            MMRDYW::VALUE2 => true,
+impl From<MMRDY_A> for bool {
+    #[inline(always)]
+    fn from(variant: MMRDY_A) -> Self {
+        match variant {
+            MMRDY_A::VALUE1 => false,
+            MMRDY_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MMRDYW<'a> {
+#[doc = "Reader of field `MMRDY`"]
+pub type MMRDY_R = crate::R<bool, MMRDY_A>;
+impl MMRDY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MMRDY_A {
+        match self.bits {
+            false => MMRDY_A::VALUE1,
+            true => MMRDY_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MMRDY_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MMRDY_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `MMRDY`"]
+pub struct MMRDY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MMRDYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MMRDYW) -> &'a mut W {
+impl<'a> MMRDY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MMRDY_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "MemManage is disabled or priority did not permit setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MMRDYW::VALUE1)
+        self.variant(MMRDY_A::VALUE1)
     }
     #[doc = "MemManage is enabled and priority permitted setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MMRDYW::VALUE2)
+        self.variant(MMRDY_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BFRDY`"]
-pub enum BFRDYW {
+#[doc = "BusFault Ready\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BFRDY_A {
+    #[doc = "0: BusFault is disabled or priority did not permit setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
+    VALUE1,
+    #[doc = "1: BusFault is enabled and priority permitted setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
+    VALUE2,
+}
+impl From<BFRDY_A> for bool {
+    #[inline(always)]
+    fn from(variant: BFRDY_A) -> Self {
+        match variant {
+            BFRDY_A::VALUE1 => false,
+            BFRDY_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `BFRDY`"]
+pub type BFRDY_R = crate::R<bool, BFRDY_A>;
+impl BFRDY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BFRDY_A {
+        match self.bits {
+            false => BFRDY_A::VALUE1,
+            true => BFRDY_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == BFRDY_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == BFRDY_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `BFRDY`"]
+pub struct BFRDY_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> BFRDY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BFRDY_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "BusFault is disabled or priority did not permit setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE1,
-    #[doc = "BusFault is enabled and priority permitted setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE2,
-}
-impl BFRDYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BFRDYW::VALUE1 => false,
-            BFRDYW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BFRDYW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BFRDYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BFRDYW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "BusFault is disabled or priority did not permit setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(BFRDYW::VALUE1)
+        self.variant(BFRDY_A::VALUE1)
     }
     #[doc = "BusFault is enabled and priority permitted setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(BFRDYW::VALUE2)
+        self.variant(BFRDY_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MONRDY`"]
-pub enum MONRDYW {
-    #[doc = "Debug Monitor is disabled or priority did not permit setting MON_PEND when the floating-point stack frame was allocated."]
+#[doc = "Monitor Ready\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MONRDY_A {
+    #[doc = "0: Debug Monitor is disabled or priority did not permit setting MON_PEND when the floating-point stack frame was allocated."]
     VALUE1,
-    #[doc = "Debug Monitor is enabled and priority permits setting MON_PEND when the floating-point stack frame was allocated."]
+    #[doc = "1: Debug Monitor is enabled and priority permits setting MON_PEND when the floating-point stack frame was allocated."]
     VALUE2,
 }
-impl MONRDYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MONRDYW::VALUE1 => false,
-            MONRDYW::VALUE2 => true,
+impl From<MONRDY_A> for bool {
+    #[inline(always)]
+    fn from(variant: MONRDY_A) -> Self {
+        match variant {
+            MONRDY_A::VALUE1 => false,
+            MONRDY_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MONRDYW<'a> {
+#[doc = "Reader of field `MONRDY`"]
+pub type MONRDY_R = crate::R<bool, MONRDY_A>;
+impl MONRDY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MONRDY_A {
+        match self.bits {
+            false => MONRDY_A::VALUE1,
+            true => MONRDY_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MONRDY_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MONRDY_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `MONRDY`"]
+pub struct MONRDY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MONRDYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MONRDYW) -> &'a mut W {
+impl<'a> MONRDY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MONRDY_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Debug Monitor is disabled or priority did not permit setting MON_PEND when the floating-point stack frame was allocated."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MONRDYW::VALUE1)
+        self.variant(MONRDY_A::VALUE1)
     }
     #[doc = "Debug Monitor is enabled and priority permits setting MON_PEND when the floating-point stack frame was allocated."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MONRDYW::VALUE2)
+        self.variant(MONRDY_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LSPEN`"]
-pub enum LSPENW {
-    #[doc = "Disable automatic lazy state preservation for floating-point context."]
+#[doc = "Lazy State Preservation Enabled\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LSPEN_A {
+    #[doc = "0: Disable automatic lazy state preservation for floating-point context."]
     VALUE1,
-    #[doc = "Enable automatic lazy state preservation for floating-point context."]
+    #[doc = "1: Enable automatic lazy state preservation for floating-point context."]
     VALUE2,
 }
-impl LSPENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LSPENW::VALUE1 => false,
-            LSPENW::VALUE2 => true,
+impl From<LSPEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: LSPEN_A) -> Self {
+        match variant {
+            LSPEN_A::VALUE1 => false,
+            LSPEN_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _LSPENW<'a> {
+#[doc = "Reader of field `LSPEN`"]
+pub type LSPEN_R = crate::R<bool, LSPEN_A>;
+impl LSPEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LSPEN_A {
+        match self.bits {
+            false => LSPEN_A::VALUE1,
+            true => LSPEN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LSPEN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LSPEN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `LSPEN`"]
+pub struct LSPEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LSPENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LSPENW) -> &'a mut W {
+impl<'a> LSPEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LSPEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable automatic lazy state preservation for floating-point context."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LSPENW::VALUE1)
+        self.variant(LSPEN_A::VALUE1)
     }
     #[doc = "Enable automatic lazy state preservation for floating-point context."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LSPENW::VALUE2)
+        self.variant(LSPEN_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ASPEN`"]
-pub enum ASPENW {
-    #[doc = "Disable CONTROL setting on execution of a floating-point instruction."]
+#[doc = "Automatic State Preservation\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ASPEN_A {
+    #[doc = "0: Disable CONTROL setting on execution of a floating-point instruction."]
     VALUE1,
-    #[doc = "Enable CONTROL setting on execution of a floating-point instruction."]
+    #[doc = "1: Enable CONTROL setting on execution of a floating-point instruction."]
     VALUE2,
 }
-impl ASPENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ASPENW::VALUE1 => false,
-            ASPENW::VALUE2 => true,
+impl From<ASPEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ASPEN_A) -> Self {
+        match variant {
+            ASPEN_A::VALUE1 => false,
+            ASPEN_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ASPENW<'a> {
+#[doc = "Reader of field `ASPEN`"]
+pub type ASPEN_R = crate::R<bool, ASPEN_A>;
+impl ASPEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ASPEN_A {
+        match self.bits {
+            false => ASPEN_A::VALUE1,
+            true => ASPEN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ASPEN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ASPEN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ASPEN`"]
+pub struct ASPEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ASPENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ASPENW) -> &'a mut W {
+impl<'a> ASPEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ASPEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable CONTROL setting on execution of a floating-point instruction."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ASPENW::VALUE1)
+        self.variant(ASPEN_A::VALUE1)
     }
     #[doc = "Enable CONTROL setting on execution of a floating-point instruction."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ASPENW::VALUE2)
+        self.variant(ASPEN_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Lazy State Preservation Active"]
-    #[inline]
-    pub fn lspact(&self) -> LSPACTR {
-        LSPACTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lspact(&self) -> LSPACT_R {
+        LSPACT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - User allocated Stack Frame"]
-    #[inline]
-    pub fn user(&self) -> USERR {
-        USERR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn user(&self) -> USER_R {
+        USER_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Thread Mode allocated Stack Frame"]
-    #[inline]
-    pub fn thread(&self) -> THREADR {
-        THREADR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn thread(&self) -> THREAD_R {
+        THREAD_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - HardFault Ready"]
-    #[inline]
-    pub fn hfrdy(&self) -> HFRDYR {
-        HFRDYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hfrdy(&self) -> HFRDY_R {
+        HFRDY_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - MemManage Ready"]
-    #[inline]
-    pub fn mmrdy(&self) -> MMRDYR {
-        MMRDYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mmrdy(&self) -> MMRDY_R {
+        MMRDY_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - BusFault Ready"]
-    #[inline]
-    pub fn bfrdy(&self) -> BFRDYR {
-        BFRDYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bfrdy(&self) -> BFRDY_R {
+        BFRDY_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Monitor Ready"]
-    #[inline]
-    pub fn monrdy(&self) -> MONRDYR {
-        MONRDYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn monrdy(&self) -> MONRDY_R {
+        MONRDY_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 30 - Lazy State Preservation Enabled"]
-    #[inline]
-    pub fn lspen(&self) -> LSPENR {
-        LSPENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lspen(&self) -> LSPEN_R {
+        LSPEN_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Automatic State Preservation"]
-    #[inline]
-    pub fn aspen(&self) -> ASPENR {
-        ASPENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn aspen(&self) -> ASPEN_R {
+        ASPEN_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Lazy State Preservation Active"]
-    #[inline]
-    pub fn lspact(&mut self) -> _LSPACTW {
-        _LSPACTW { w: self }
+    #[inline(always)]
+    pub fn lspact(&mut self) -> LSPACT_W {
+        LSPACT_W { w: self }
     }
     #[doc = "Bit 1 - User allocated Stack Frame"]
-    #[inline]
-    pub fn user(&mut self) -> _USERW {
-        _USERW { w: self }
+    #[inline(always)]
+    pub fn user(&mut self) -> USER_W {
+        USER_W { w: self }
     }
     #[doc = "Bit 3 - Thread Mode allocated Stack Frame"]
-    #[inline]
-    pub fn thread(&mut self) -> _THREADW {
-        _THREADW { w: self }
+    #[inline(always)]
+    pub fn thread(&mut self) -> THREAD_W {
+        THREAD_W { w: self }
     }
     #[doc = "Bit 4 - HardFault Ready"]
-    #[inline]
-    pub fn hfrdy(&mut self) -> _HFRDYW {
-        _HFRDYW { w: self }
+    #[inline(always)]
+    pub fn hfrdy(&mut self) -> HFRDY_W {
+        HFRDY_W { w: self }
     }
     #[doc = "Bit 5 - MemManage Ready"]
-    #[inline]
-    pub fn mmrdy(&mut self) -> _MMRDYW {
-        _MMRDYW { w: self }
+    #[inline(always)]
+    pub fn mmrdy(&mut self) -> MMRDY_W {
+        MMRDY_W { w: self }
     }
     #[doc = "Bit 6 - BusFault Ready"]
-    #[inline]
-    pub fn bfrdy(&mut self) -> _BFRDYW {
-        _BFRDYW { w: self }
+    #[inline(always)]
+    pub fn bfrdy(&mut self) -> BFRDY_W {
+        BFRDY_W { w: self }
     }
     #[doc = "Bit 8 - Monitor Ready"]
-    #[inline]
-    pub fn monrdy(&mut self) -> _MONRDYW {
-        _MONRDYW { w: self }
+    #[inline(always)]
+    pub fn monrdy(&mut self) -> MONRDY_W {
+        MONRDY_W { w: self }
     }
     #[doc = "Bit 30 - Lazy State Preservation Enabled"]
-    #[inline]
-    pub fn lspen(&mut self) -> _LSPENW {
-        _LSPENW { w: self }
+    #[inline(always)]
+    pub fn lspen(&mut self) -> LSPEN_W {
+        LSPEN_W { w: self }
     }
     #[doc = "Bit 31 - Automatic State Preservation"]
-    #[inline]
-    pub fn aspen(&mut self) -> _ASPENW {
-        _ASPENW { w: self }
+    #[inline(always)]
+    pub fn aspen(&mut self) -> ASPEN_W {
+        ASPEN_W { w: self }
     }
 }

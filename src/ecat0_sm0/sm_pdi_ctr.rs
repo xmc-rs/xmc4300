@@ -1,240 +1,138 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u8,
-}
-impl super::SM_PDI_CTR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SM_PDI_CTR"]
+pub type R = crate::R<u8, super::SM_PDI_CTR>;
+#[doc = "Writer for register SM_PDI_CTR"]
+pub type W = crate::W<u8, super::SM_PDI_CTR>;
+#[doc = "Register SM_PDI_CTR `reset()`'s with value 0"]
+impl crate::ResetValue for super::SM_PDI_CTR {
+    type Type = u8;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `DEACT`"]
+#[doc = "Deactivate SyncManager\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DEACTR {
-    #[doc = "Read 0 for Normal operation, SyncManager activated, write 0 for Activate SyncManager"]
+pub enum DEACT_A {
+    #[doc = "0: Read 0 for Normal operation, SyncManager activated, write 0 for Activate SyncManager"]
     VALUE1,
-    #[doc = "Read 1 for SyncManager deactivated and reset SyncManager locks access to Memory area, write 1 for Request SyncManager deactivation"]
+    #[doc = "1: Read 1 for SyncManager deactivated and reset SyncManager locks access to Memory area, write 1 for Request SyncManager deactivation"]
     VALUE2,
 }
-impl DEACTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DEACTR::VALUE1 => false,
-            DEACTR::VALUE2 => true,
+impl From<DEACT_A> for bool {
+    #[inline(always)]
+    fn from(variant: DEACT_A) -> Self {
+        match variant {
+            DEACT_A::VALUE1 => false,
+            DEACT_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DEACTR {
-        match value {
-            false => DEACTR::VALUE1,
-            true => DEACTR::VALUE2,
+}
+#[doc = "Reader of field `DEACT`"]
+pub type DEACT_R = crate::R<bool, DEACT_A>;
+impl DEACT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DEACT_A {
+        match self.bits {
+            false => DEACT_A::VALUE1,
+            true => DEACT_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DEACTR::VALUE1
+        *self == DEACT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DEACTR::VALUE2
+        *self == DEACT_A::VALUE2
     }
 }
-#[doc = r" Value of the field"]
-pub struct REP_ACKR {
-    bits: bool,
-}
-impl REP_ACKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `DEACT`"]
-pub enum DEACTW {
-    #[doc = "Read 0 for Normal operation, SyncManager activated, write 0 for Activate SyncManager"]
-    VALUE1,
-    #[doc = "Read 1 for SyncManager deactivated and reset SyncManager locks access to Memory area, write 1 for Request SyncManager deactivation"]
-    VALUE2,
-}
-impl DEACTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DEACTW::VALUE1 => false,
-            DEACTW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DEACTW<'a> {
+#[doc = "Write proxy for field `DEACT`"]
+pub struct DEACT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DEACTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DEACTW) -> &'a mut W {
+impl<'a> DEACT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DEACT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Read 0 for Normal operation, SyncManager activated, write 0 for Activate SyncManager"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(DEACTW::VALUE1)
+        self.variant(DEACT_A::VALUE1)
     }
     #[doc = "Read 1 for SyncManager deactivated and reset SyncManager locks access to Memory area, write 1 for Request SyncManager deactivation"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(DEACTW::VALUE2)
+        self.variant(DEACT_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u8) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _REP_ACKW<'a> {
+#[doc = "Reader of field `REP_ACK`"]
+pub type REP_ACK_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `REP_ACK`"]
+pub struct REP_ACK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REP_ACKW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> REP_ACK_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u8) & 0x01) << 1);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 0 - Deactivate SyncManager"]
-    #[inline]
-    pub fn deact(&self) -> DEACTR {
-        DEACTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn deact(&self) -> DEACT_R {
+        DEACT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Repeat Ack"]
-    #[inline]
-    pub fn rep_ack(&self) -> REP_ACKR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        };
-        REP_ACKR { bits }
+    #[inline(always)]
+    pub fn rep_ack(&self) -> REP_ACK_R {
+        REP_ACK_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Deactivate SyncManager"]
-    #[inline]
-    pub fn deact(&mut self) -> _DEACTW {
-        _DEACTW { w: self }
+    #[inline(always)]
+    pub fn deact(&mut self) -> DEACT_W {
+        DEACT_W { w: self }
     }
     #[doc = "Bit 1 - Repeat Ack"]
-    #[inline]
-    pub fn rep_ack(&mut self) -> _REP_ACKW {
-        _REP_ACKW { w: self }
+    #[inline(always)]
+    pub fn rep_ack(&mut self) -> REP_ACK_W {
+        REP_ACK_W { w: self }
     }
 }

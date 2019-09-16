@@ -1,2255 +1,1747 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::INS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INS"]
+pub type R = crate::R<u32, super::INS>;
+#[doc = "Writer for register INS"]
+pub type W = crate::W<u32, super::INS>;
+#[doc = "Register INS `reset()`'s with value 0"]
+impl crate::ResetValue for super::INS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `EV0IS`"]
+#[doc = "Event 0 signal selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EV0ISR {
-    #[doc = "CCU4x.INyA"]
+pub enum EV0IS_A {
+    #[doc = "0: CCU4x.INyA"]
     VALUE1,
-    #[doc = "CCU4x.INyB"]
+    #[doc = "1: CCU4x.INyB"]
     VALUE2,
-    #[doc = "CCU4x.INyC"]
+    #[doc = "2: CCU4x.INyC"]
     VALUE3,
-    #[doc = "CCU4x.INyD"]
+    #[doc = "3: CCU4x.INyD"]
     VALUE4,
-    #[doc = "CCU4x.INyE"]
+    #[doc = "4: CCU4x.INyE"]
     VALUE5,
-    #[doc = "CCU4x.INyF"]
+    #[doc = "5: CCU4x.INyF"]
     VALUE6,
-    #[doc = "CCU4x.INyG"]
+    #[doc = "6: CCU4x.INyG"]
     VALUE7,
-    #[doc = "CCU4x.INyH"]
+    #[doc = "7: CCU4x.INyH"]
     VALUE8,
-    #[doc = "CCU4x.INyI"]
+    #[doc = "8: CCU4x.INyI"]
     VALUE9,
-    #[doc = "CCU4x.INyJ"]
+    #[doc = "9: CCU4x.INyJ"]
     VALUE10,
-    #[doc = "CCU4x.INyK"]
+    #[doc = "10: CCU4x.INyK"]
     VALUE11,
-    #[doc = "CCU4x.INyL"]
+    #[doc = "11: CCU4x.INyL"]
     VALUE12,
-    #[doc = "CCU4x.INyM"]
+    #[doc = "12: CCU4x.INyM"]
     VALUE13,
-    #[doc = "CCU4x.INyN"]
+    #[doc = "13: CCU4x.INyN"]
     VALUE14,
-    #[doc = "CCU4x.INyO"]
+    #[doc = "14: CCU4x.INyO"]
     VALUE15,
-    #[doc = "CCU4x.INyP"]
+    #[doc = "15: CCU4x.INyP"]
     VALUE16,
 }
-impl EV0ISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            EV0ISR::VALUE1 => 0,
-            EV0ISR::VALUE2 => 1,
-            EV0ISR::VALUE3 => 2,
-            EV0ISR::VALUE4 => 3,
-            EV0ISR::VALUE5 => 4,
-            EV0ISR::VALUE6 => 5,
-            EV0ISR::VALUE7 => 6,
-            EV0ISR::VALUE8 => 7,
-            EV0ISR::VALUE9 => 8,
-            EV0ISR::VALUE10 => 9,
-            EV0ISR::VALUE11 => 10,
-            EV0ISR::VALUE12 => 11,
-            EV0ISR::VALUE13 => 12,
-            EV0ISR::VALUE14 => 13,
-            EV0ISR::VALUE15 => 14,
-            EV0ISR::VALUE16 => 15,
+impl From<EV0IS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EV0IS_A) -> Self {
+        match variant {
+            EV0IS_A::VALUE1 => 0,
+            EV0IS_A::VALUE2 => 1,
+            EV0IS_A::VALUE3 => 2,
+            EV0IS_A::VALUE4 => 3,
+            EV0IS_A::VALUE5 => 4,
+            EV0IS_A::VALUE6 => 5,
+            EV0IS_A::VALUE7 => 6,
+            EV0IS_A::VALUE8 => 7,
+            EV0IS_A::VALUE9 => 8,
+            EV0IS_A::VALUE10 => 9,
+            EV0IS_A::VALUE11 => 10,
+            EV0IS_A::VALUE12 => 11,
+            EV0IS_A::VALUE13 => 12,
+            EV0IS_A::VALUE14 => 13,
+            EV0IS_A::VALUE15 => 14,
+            EV0IS_A::VALUE16 => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EV0ISR {
-        match value {
-            0 => EV0ISR::VALUE1,
-            1 => EV0ISR::VALUE2,
-            2 => EV0ISR::VALUE3,
-            3 => EV0ISR::VALUE4,
-            4 => EV0ISR::VALUE5,
-            5 => EV0ISR::VALUE6,
-            6 => EV0ISR::VALUE7,
-            7 => EV0ISR::VALUE8,
-            8 => EV0ISR::VALUE9,
-            9 => EV0ISR::VALUE10,
-            10 => EV0ISR::VALUE11,
-            11 => EV0ISR::VALUE12,
-            12 => EV0ISR::VALUE13,
-            13 => EV0ISR::VALUE14,
-            14 => EV0ISR::VALUE15,
-            15 => EV0ISR::VALUE16,
+}
+#[doc = "Reader of field `EV0IS`"]
+pub type EV0IS_R = crate::R<u8, EV0IS_A>;
+impl EV0IS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EV0IS_A {
+        match self.bits {
+            0 => EV0IS_A::VALUE1,
+            1 => EV0IS_A::VALUE2,
+            2 => EV0IS_A::VALUE3,
+            3 => EV0IS_A::VALUE4,
+            4 => EV0IS_A::VALUE5,
+            5 => EV0IS_A::VALUE6,
+            6 => EV0IS_A::VALUE7,
+            7 => EV0IS_A::VALUE8,
+            8 => EV0IS_A::VALUE9,
+            9 => EV0IS_A::VALUE10,
+            10 => EV0IS_A::VALUE11,
+            11 => EV0IS_A::VALUE12,
+            12 => EV0IS_A::VALUE13,
+            13 => EV0IS_A::VALUE14,
+            14 => EV0IS_A::VALUE15,
+            15 => EV0IS_A::VALUE16,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EV0ISR::VALUE1
+        *self == EV0IS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EV0ISR::VALUE2
+        *self == EV0IS_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EV0ISR::VALUE3
+        *self == EV0IS_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EV0ISR::VALUE4
+        *self == EV0IS_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == EV0ISR::VALUE5
+        *self == EV0IS_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == EV0ISR::VALUE6
+        *self == EV0IS_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == EV0ISR::VALUE7
+        *self == EV0IS_A::VALUE7
     }
     #[doc = "Checks if the value of the field is `VALUE8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        *self == EV0ISR::VALUE8
+        *self == EV0IS_A::VALUE8
     }
     #[doc = "Checks if the value of the field is `VALUE9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value9(&self) -> bool {
-        *self == EV0ISR::VALUE9
+        *self == EV0IS_A::VALUE9
     }
     #[doc = "Checks if the value of the field is `VALUE10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value10(&self) -> bool {
-        *self == EV0ISR::VALUE10
+        *self == EV0IS_A::VALUE10
     }
     #[doc = "Checks if the value of the field is `VALUE11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value11(&self) -> bool {
-        *self == EV0ISR::VALUE11
+        *self == EV0IS_A::VALUE11
     }
     #[doc = "Checks if the value of the field is `VALUE12`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value12(&self) -> bool {
-        *self == EV0ISR::VALUE12
+        *self == EV0IS_A::VALUE12
     }
     #[doc = "Checks if the value of the field is `VALUE13`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value13(&self) -> bool {
-        *self == EV0ISR::VALUE13
+        *self == EV0IS_A::VALUE13
     }
     #[doc = "Checks if the value of the field is `VALUE14`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value14(&self) -> bool {
-        *self == EV0ISR::VALUE14
+        *self == EV0IS_A::VALUE14
     }
     #[doc = "Checks if the value of the field is `VALUE15`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value15(&self) -> bool {
-        *self == EV0ISR::VALUE15
+        *self == EV0IS_A::VALUE15
     }
     #[doc = "Checks if the value of the field is `VALUE16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value16(&self) -> bool {
-        *self == EV0ISR::VALUE16
+        *self == EV0IS_A::VALUE16
     }
 }
-#[doc = "Possible values of the field `EV1IS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EV1ISR {
-    #[doc = "CCU4x.INyA"]
-    VALUE1,
-    #[doc = "CCU4x.INyB"]
-    VALUE2,
-    #[doc = "CCU4x.INyC"]
-    VALUE3,
-    #[doc = "CCU4x.INyD"]
-    VALUE4,
-    #[doc = "CCU4x.INyE"]
-    VALUE5,
-    #[doc = "CCU4x.INyF"]
-    VALUE6,
-    #[doc = "CCU4x.INyG"]
-    VALUE7,
-    #[doc = "CCU4x.INyH"]
-    VALUE8,
-    #[doc = "CCU4x.INyI"]
-    VALUE9,
-    #[doc = "CCU4x.INyJ"]
-    VALUE10,
-    #[doc = "CCU4x.INyK"]
-    VALUE11,
-    #[doc = "CCU4x.INyL"]
-    VALUE12,
-    #[doc = "CCU4x.INyM"]
-    VALUE13,
-    #[doc = "CCU4x.INyN"]
-    VALUE14,
-    #[doc = "CCU4x.INyO"]
-    VALUE15,
-    #[doc = "CCU4x.INyP"]
-    VALUE16,
+#[doc = "Write proxy for field `EV0IS`"]
+pub struct EV0IS_W<'a> {
+    w: &'a mut W,
 }
-impl EV1ISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            EV1ISR::VALUE1 => 0,
-            EV1ISR::VALUE2 => 1,
-            EV1ISR::VALUE3 => 2,
-            EV1ISR::VALUE4 => 3,
-            EV1ISR::VALUE5 => 4,
-            EV1ISR::VALUE6 => 5,
-            EV1ISR::VALUE7 => 6,
-            EV1ISR::VALUE8 => 7,
-            EV1ISR::VALUE9 => 8,
-            EV1ISR::VALUE10 => 9,
-            EV1ISR::VALUE11 => 10,
-            EV1ISR::VALUE12 => 11,
-            EV1ISR::VALUE13 => 12,
-            EV1ISR::VALUE14 => 13,
-            EV1ISR::VALUE15 => 14,
-            EV1ISR::VALUE16 => 15,
+impl<'a> EV0IS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EV0IS_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EV1ISR {
-        match value {
-            0 => EV1ISR::VALUE1,
-            1 => EV1ISR::VALUE2,
-            2 => EV1ISR::VALUE3,
-            3 => EV1ISR::VALUE4,
-            4 => EV1ISR::VALUE5,
-            5 => EV1ISR::VALUE6,
-            6 => EV1ISR::VALUE7,
-            7 => EV1ISR::VALUE8,
-            8 => EV1ISR::VALUE9,
-            9 => EV1ISR::VALUE10,
-            10 => EV1ISR::VALUE11,
-            11 => EV1ISR::VALUE12,
-            12 => EV1ISR::VALUE13,
-            13 => EV1ISR::VALUE14,
-            14 => EV1ISR::VALUE15,
-            15 => EV1ISR::VALUE16,
+    #[doc = "CCU4x.INyA"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE1)
+    }
+    #[doc = "CCU4x.INyB"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE2)
+    }
+    #[doc = "CCU4x.INyC"]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE3)
+    }
+    #[doc = "CCU4x.INyD"]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE4)
+    }
+    #[doc = "CCU4x.INyE"]
+    #[inline(always)]
+    pub fn value5(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE5)
+    }
+    #[doc = "CCU4x.INyF"]
+    #[inline(always)]
+    pub fn value6(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE6)
+    }
+    #[doc = "CCU4x.INyG"]
+    #[inline(always)]
+    pub fn value7(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE7)
+    }
+    #[doc = "CCU4x.INyH"]
+    #[inline(always)]
+    pub fn value8(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE8)
+    }
+    #[doc = "CCU4x.INyI"]
+    #[inline(always)]
+    pub fn value9(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE9)
+    }
+    #[doc = "CCU4x.INyJ"]
+    #[inline(always)]
+    pub fn value10(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE10)
+    }
+    #[doc = "CCU4x.INyK"]
+    #[inline(always)]
+    pub fn value11(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE11)
+    }
+    #[doc = "CCU4x.INyL"]
+    #[inline(always)]
+    pub fn value12(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE12)
+    }
+    #[doc = "CCU4x.INyM"]
+    #[inline(always)]
+    pub fn value13(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE13)
+    }
+    #[doc = "CCU4x.INyN"]
+    #[inline(always)]
+    pub fn value14(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE14)
+    }
+    #[doc = "CCU4x.INyO"]
+    #[inline(always)]
+    pub fn value15(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE15)
+    }
+    #[doc = "CCU4x.INyP"]
+    #[inline(always)]
+    pub fn value16(self) -> &'a mut W {
+        self.variant(EV0IS_A::VALUE16)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w
+    }
+}
+#[doc = "Event 1 signal selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EV1IS_A {
+    #[doc = "0: CCU4x.INyA"]
+    VALUE1,
+    #[doc = "1: CCU4x.INyB"]
+    VALUE2,
+    #[doc = "2: CCU4x.INyC"]
+    VALUE3,
+    #[doc = "3: CCU4x.INyD"]
+    VALUE4,
+    #[doc = "4: CCU4x.INyE"]
+    VALUE5,
+    #[doc = "5: CCU4x.INyF"]
+    VALUE6,
+    #[doc = "6: CCU4x.INyG"]
+    VALUE7,
+    #[doc = "7: CCU4x.INyH"]
+    VALUE8,
+    #[doc = "8: CCU4x.INyI"]
+    VALUE9,
+    #[doc = "9: CCU4x.INyJ"]
+    VALUE10,
+    #[doc = "10: CCU4x.INyK"]
+    VALUE11,
+    #[doc = "11: CCU4x.INyL"]
+    VALUE12,
+    #[doc = "12: CCU4x.INyM"]
+    VALUE13,
+    #[doc = "13: CCU4x.INyN"]
+    VALUE14,
+    #[doc = "14: CCU4x.INyO"]
+    VALUE15,
+    #[doc = "15: CCU4x.INyP"]
+    VALUE16,
+}
+impl From<EV1IS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EV1IS_A) -> Self {
+        match variant {
+            EV1IS_A::VALUE1 => 0,
+            EV1IS_A::VALUE2 => 1,
+            EV1IS_A::VALUE3 => 2,
+            EV1IS_A::VALUE4 => 3,
+            EV1IS_A::VALUE5 => 4,
+            EV1IS_A::VALUE6 => 5,
+            EV1IS_A::VALUE7 => 6,
+            EV1IS_A::VALUE8 => 7,
+            EV1IS_A::VALUE9 => 8,
+            EV1IS_A::VALUE10 => 9,
+            EV1IS_A::VALUE11 => 10,
+            EV1IS_A::VALUE12 => 11,
+            EV1IS_A::VALUE13 => 12,
+            EV1IS_A::VALUE14 => 13,
+            EV1IS_A::VALUE15 => 14,
+            EV1IS_A::VALUE16 => 15,
+        }
+    }
+}
+#[doc = "Reader of field `EV1IS`"]
+pub type EV1IS_R = crate::R<u8, EV1IS_A>;
+impl EV1IS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EV1IS_A {
+        match self.bits {
+            0 => EV1IS_A::VALUE1,
+            1 => EV1IS_A::VALUE2,
+            2 => EV1IS_A::VALUE3,
+            3 => EV1IS_A::VALUE4,
+            4 => EV1IS_A::VALUE5,
+            5 => EV1IS_A::VALUE6,
+            6 => EV1IS_A::VALUE7,
+            7 => EV1IS_A::VALUE8,
+            8 => EV1IS_A::VALUE9,
+            9 => EV1IS_A::VALUE10,
+            10 => EV1IS_A::VALUE11,
+            11 => EV1IS_A::VALUE12,
+            12 => EV1IS_A::VALUE13,
+            13 => EV1IS_A::VALUE14,
+            14 => EV1IS_A::VALUE15,
+            15 => EV1IS_A::VALUE16,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EV1ISR::VALUE1
+        *self == EV1IS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EV1ISR::VALUE2
+        *self == EV1IS_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EV1ISR::VALUE3
+        *self == EV1IS_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EV1ISR::VALUE4
+        *self == EV1IS_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == EV1ISR::VALUE5
+        *self == EV1IS_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == EV1ISR::VALUE6
+        *self == EV1IS_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == EV1ISR::VALUE7
+        *self == EV1IS_A::VALUE7
     }
     #[doc = "Checks if the value of the field is `VALUE8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        *self == EV1ISR::VALUE8
+        *self == EV1IS_A::VALUE8
     }
     #[doc = "Checks if the value of the field is `VALUE9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value9(&self) -> bool {
-        *self == EV1ISR::VALUE9
+        *self == EV1IS_A::VALUE9
     }
     #[doc = "Checks if the value of the field is `VALUE10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value10(&self) -> bool {
-        *self == EV1ISR::VALUE10
+        *self == EV1IS_A::VALUE10
     }
     #[doc = "Checks if the value of the field is `VALUE11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value11(&self) -> bool {
-        *self == EV1ISR::VALUE11
+        *self == EV1IS_A::VALUE11
     }
     #[doc = "Checks if the value of the field is `VALUE12`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value12(&self) -> bool {
-        *self == EV1ISR::VALUE12
+        *self == EV1IS_A::VALUE12
     }
     #[doc = "Checks if the value of the field is `VALUE13`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value13(&self) -> bool {
-        *self == EV1ISR::VALUE13
+        *self == EV1IS_A::VALUE13
     }
     #[doc = "Checks if the value of the field is `VALUE14`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value14(&self) -> bool {
-        *self == EV1ISR::VALUE14
+        *self == EV1IS_A::VALUE14
     }
     #[doc = "Checks if the value of the field is `VALUE15`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value15(&self) -> bool {
-        *self == EV1ISR::VALUE15
+        *self == EV1IS_A::VALUE15
     }
     #[doc = "Checks if the value of the field is `VALUE16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value16(&self) -> bool {
-        *self == EV1ISR::VALUE16
+        *self == EV1IS_A::VALUE16
     }
 }
-#[doc = "Possible values of the field `EV2IS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EV2ISR {
-    #[doc = "CCU4x.INyA"]
-    VALUE1,
-    #[doc = "CCU4x.INyB"]
-    VALUE2,
-    #[doc = "CCU4x.INyC"]
-    VALUE3,
-    #[doc = "CCU4x.INyD"]
-    VALUE4,
-    #[doc = "CCU4x.INyE"]
-    VALUE5,
-    #[doc = "CCU4x.INyF"]
-    VALUE6,
-    #[doc = "CCU4x.INyG"]
-    VALUE7,
-    #[doc = "CCU4x.INyH"]
-    VALUE8,
-    #[doc = "CCU4x.INyI"]
-    VALUE9,
-    #[doc = "CCU4x.INyJ"]
-    VALUE10,
-    #[doc = "CCU4x.INyK"]
-    VALUE11,
-    #[doc = "CCU4x.INyL"]
-    VALUE12,
-    #[doc = "CCU4x.INyM"]
-    VALUE13,
-    #[doc = "CCU4x.INyN"]
-    VALUE14,
-    #[doc = "CCU4x.INyO"]
-    VALUE15,
-    #[doc = "CCU4x.INyP"]
-    VALUE16,
+#[doc = "Write proxy for field `EV1IS`"]
+pub struct EV1IS_W<'a> {
+    w: &'a mut W,
 }
-impl EV2ISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            EV2ISR::VALUE1 => 0,
-            EV2ISR::VALUE2 => 1,
-            EV2ISR::VALUE3 => 2,
-            EV2ISR::VALUE4 => 3,
-            EV2ISR::VALUE5 => 4,
-            EV2ISR::VALUE6 => 5,
-            EV2ISR::VALUE7 => 6,
-            EV2ISR::VALUE8 => 7,
-            EV2ISR::VALUE9 => 8,
-            EV2ISR::VALUE10 => 9,
-            EV2ISR::VALUE11 => 10,
-            EV2ISR::VALUE12 => 11,
-            EV2ISR::VALUE13 => 12,
-            EV2ISR::VALUE14 => 13,
-            EV2ISR::VALUE15 => 14,
-            EV2ISR::VALUE16 => 15,
+impl<'a> EV1IS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EV1IS_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EV2ISR {
-        match value {
-            0 => EV2ISR::VALUE1,
-            1 => EV2ISR::VALUE2,
-            2 => EV2ISR::VALUE3,
-            3 => EV2ISR::VALUE4,
-            4 => EV2ISR::VALUE5,
-            5 => EV2ISR::VALUE6,
-            6 => EV2ISR::VALUE7,
-            7 => EV2ISR::VALUE8,
-            8 => EV2ISR::VALUE9,
-            9 => EV2ISR::VALUE10,
-            10 => EV2ISR::VALUE11,
-            11 => EV2ISR::VALUE12,
-            12 => EV2ISR::VALUE13,
-            13 => EV2ISR::VALUE14,
-            14 => EV2ISR::VALUE15,
-            15 => EV2ISR::VALUE16,
+    #[doc = "CCU4x.INyA"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE1)
+    }
+    #[doc = "CCU4x.INyB"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE2)
+    }
+    #[doc = "CCU4x.INyC"]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE3)
+    }
+    #[doc = "CCU4x.INyD"]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE4)
+    }
+    #[doc = "CCU4x.INyE"]
+    #[inline(always)]
+    pub fn value5(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE5)
+    }
+    #[doc = "CCU4x.INyF"]
+    #[inline(always)]
+    pub fn value6(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE6)
+    }
+    #[doc = "CCU4x.INyG"]
+    #[inline(always)]
+    pub fn value7(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE7)
+    }
+    #[doc = "CCU4x.INyH"]
+    #[inline(always)]
+    pub fn value8(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE8)
+    }
+    #[doc = "CCU4x.INyI"]
+    #[inline(always)]
+    pub fn value9(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE9)
+    }
+    #[doc = "CCU4x.INyJ"]
+    #[inline(always)]
+    pub fn value10(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE10)
+    }
+    #[doc = "CCU4x.INyK"]
+    #[inline(always)]
+    pub fn value11(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE11)
+    }
+    #[doc = "CCU4x.INyL"]
+    #[inline(always)]
+    pub fn value12(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE12)
+    }
+    #[doc = "CCU4x.INyM"]
+    #[inline(always)]
+    pub fn value13(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE13)
+    }
+    #[doc = "CCU4x.INyN"]
+    #[inline(always)]
+    pub fn value14(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE14)
+    }
+    #[doc = "CCU4x.INyO"]
+    #[inline(always)]
+    pub fn value15(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE15)
+    }
+    #[doc = "CCU4x.INyP"]
+    #[inline(always)]
+    pub fn value16(self) -> &'a mut W {
+        self.variant(EV1IS_A::VALUE16)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
+        self.w
+    }
+}
+#[doc = "Event 2 signal selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EV2IS_A {
+    #[doc = "0: CCU4x.INyA"]
+    VALUE1,
+    #[doc = "1: CCU4x.INyB"]
+    VALUE2,
+    #[doc = "2: CCU4x.INyC"]
+    VALUE3,
+    #[doc = "3: CCU4x.INyD"]
+    VALUE4,
+    #[doc = "4: CCU4x.INyE"]
+    VALUE5,
+    #[doc = "5: CCU4x.INyF"]
+    VALUE6,
+    #[doc = "6: CCU4x.INyG"]
+    VALUE7,
+    #[doc = "7: CCU4x.INyH"]
+    VALUE8,
+    #[doc = "8: CCU4x.INyI"]
+    VALUE9,
+    #[doc = "9: CCU4x.INyJ"]
+    VALUE10,
+    #[doc = "10: CCU4x.INyK"]
+    VALUE11,
+    #[doc = "11: CCU4x.INyL"]
+    VALUE12,
+    #[doc = "12: CCU4x.INyM"]
+    VALUE13,
+    #[doc = "13: CCU4x.INyN"]
+    VALUE14,
+    #[doc = "14: CCU4x.INyO"]
+    VALUE15,
+    #[doc = "15: CCU4x.INyP"]
+    VALUE16,
+}
+impl From<EV2IS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EV2IS_A) -> Self {
+        match variant {
+            EV2IS_A::VALUE1 => 0,
+            EV2IS_A::VALUE2 => 1,
+            EV2IS_A::VALUE3 => 2,
+            EV2IS_A::VALUE4 => 3,
+            EV2IS_A::VALUE5 => 4,
+            EV2IS_A::VALUE6 => 5,
+            EV2IS_A::VALUE7 => 6,
+            EV2IS_A::VALUE8 => 7,
+            EV2IS_A::VALUE9 => 8,
+            EV2IS_A::VALUE10 => 9,
+            EV2IS_A::VALUE11 => 10,
+            EV2IS_A::VALUE12 => 11,
+            EV2IS_A::VALUE13 => 12,
+            EV2IS_A::VALUE14 => 13,
+            EV2IS_A::VALUE15 => 14,
+            EV2IS_A::VALUE16 => 15,
+        }
+    }
+}
+#[doc = "Reader of field `EV2IS`"]
+pub type EV2IS_R = crate::R<u8, EV2IS_A>;
+impl EV2IS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EV2IS_A {
+        match self.bits {
+            0 => EV2IS_A::VALUE1,
+            1 => EV2IS_A::VALUE2,
+            2 => EV2IS_A::VALUE3,
+            3 => EV2IS_A::VALUE4,
+            4 => EV2IS_A::VALUE5,
+            5 => EV2IS_A::VALUE6,
+            6 => EV2IS_A::VALUE7,
+            7 => EV2IS_A::VALUE8,
+            8 => EV2IS_A::VALUE9,
+            9 => EV2IS_A::VALUE10,
+            10 => EV2IS_A::VALUE11,
+            11 => EV2IS_A::VALUE12,
+            12 => EV2IS_A::VALUE13,
+            13 => EV2IS_A::VALUE14,
+            14 => EV2IS_A::VALUE15,
+            15 => EV2IS_A::VALUE16,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EV2ISR::VALUE1
+        *self == EV2IS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EV2ISR::VALUE2
+        *self == EV2IS_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EV2ISR::VALUE3
+        *self == EV2IS_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EV2ISR::VALUE4
+        *self == EV2IS_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == EV2ISR::VALUE5
+        *self == EV2IS_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == EV2ISR::VALUE6
+        *self == EV2IS_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == EV2ISR::VALUE7
+        *self == EV2IS_A::VALUE7
     }
     #[doc = "Checks if the value of the field is `VALUE8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        *self == EV2ISR::VALUE8
+        *self == EV2IS_A::VALUE8
     }
     #[doc = "Checks if the value of the field is `VALUE9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value9(&self) -> bool {
-        *self == EV2ISR::VALUE9
+        *self == EV2IS_A::VALUE9
     }
     #[doc = "Checks if the value of the field is `VALUE10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value10(&self) -> bool {
-        *self == EV2ISR::VALUE10
+        *self == EV2IS_A::VALUE10
     }
     #[doc = "Checks if the value of the field is `VALUE11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value11(&self) -> bool {
-        *self == EV2ISR::VALUE11
+        *self == EV2IS_A::VALUE11
     }
     #[doc = "Checks if the value of the field is `VALUE12`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value12(&self) -> bool {
-        *self == EV2ISR::VALUE12
+        *self == EV2IS_A::VALUE12
     }
     #[doc = "Checks if the value of the field is `VALUE13`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value13(&self) -> bool {
-        *self == EV2ISR::VALUE13
+        *self == EV2IS_A::VALUE13
     }
     #[doc = "Checks if the value of the field is `VALUE14`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value14(&self) -> bool {
-        *self == EV2ISR::VALUE14
+        *self == EV2IS_A::VALUE14
     }
     #[doc = "Checks if the value of the field is `VALUE15`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value15(&self) -> bool {
-        *self == EV2ISR::VALUE15
+        *self == EV2IS_A::VALUE15
     }
     #[doc = "Checks if the value of the field is `VALUE16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value16(&self) -> bool {
-        *self == EV2ISR::VALUE16
+        *self == EV2IS_A::VALUE16
     }
 }
-#[doc = "Possible values of the field `EV0EM`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EV0EMR {
-    #[doc = "No action"]
-    VALUE1,
-    #[doc = "Signal active on rising edge"]
-    VALUE2,
-    #[doc = "Signal active on falling edge"]
-    VALUE3,
-    #[doc = "Signal active on both edges"]
-    VALUE4,
-}
-impl EV0EMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            EV0EMR::VALUE1 => 0,
-            EV0EMR::VALUE2 => 1,
-            EV0EMR::VALUE3 => 2,
-            EV0EMR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EV0EMR {
-        match value {
-            0 => EV0EMR::VALUE1,
-            1 => EV0EMR::VALUE2,
-            2 => EV0EMR::VALUE3,
-            3 => EV0EMR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EV0EMR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EV0EMR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == EV0EMR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == EV0EMR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `EV1EM`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EV1EMR {
-    #[doc = "No action"]
-    VALUE1,
-    #[doc = "Signal active on rising edge"]
-    VALUE2,
-    #[doc = "Signal active on falling edge"]
-    VALUE3,
-    #[doc = "Signal active on both edges"]
-    VALUE4,
-}
-impl EV1EMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            EV1EMR::VALUE1 => 0,
-            EV1EMR::VALUE2 => 1,
-            EV1EMR::VALUE3 => 2,
-            EV1EMR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EV1EMR {
-        match value {
-            0 => EV1EMR::VALUE1,
-            1 => EV1EMR::VALUE2,
-            2 => EV1EMR::VALUE3,
-            3 => EV1EMR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EV1EMR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EV1EMR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == EV1EMR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == EV1EMR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `EV2EM`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EV2EMR {
-    #[doc = "No action"]
-    VALUE1,
-    #[doc = "Signal active on rising edge"]
-    VALUE2,
-    #[doc = "Signal active on falling edge"]
-    VALUE3,
-    #[doc = "Signal active on both edges"]
-    VALUE4,
-}
-impl EV2EMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            EV2EMR::VALUE1 => 0,
-            EV2EMR::VALUE2 => 1,
-            EV2EMR::VALUE3 => 2,
-            EV2EMR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EV2EMR {
-        match value {
-            0 => EV2EMR::VALUE1,
-            1 => EV2EMR::VALUE2,
-            2 => EV2EMR::VALUE3,
-            3 => EV2EMR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EV2EMR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EV2EMR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == EV2EMR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == EV2EMR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `EV0LM`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EV0LMR {
-    #[doc = "Active on HIGH level"]
-    VALUE1,
-    #[doc = "Active on LOW level"]
-    VALUE2,
-}
-impl EV0LMR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EV0LMR::VALUE1 => false,
-            EV0LMR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EV0LMR {
-        match value {
-            false => EV0LMR::VALUE1,
-            true => EV0LMR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EV0LMR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EV0LMR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `EV1LM`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EV1LMR {
-    #[doc = "Active on HIGH level"]
-    VALUE1,
-    #[doc = "Active on LOW level"]
-    VALUE2,
-}
-impl EV1LMR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EV1LMR::VALUE1 => false,
-            EV1LMR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EV1LMR {
-        match value {
-            false => EV1LMR::VALUE1,
-            true => EV1LMR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EV1LMR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EV1LMR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `EV2LM`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EV2LMR {
-    #[doc = "Active on HIGH level"]
-    VALUE1,
-    #[doc = "Active on LOW level"]
-    VALUE2,
-}
-impl EV2LMR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EV2LMR::VALUE1 => false,
-            EV2LMR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EV2LMR {
-        match value {
-            false => EV2LMR::VALUE1,
-            true => EV2LMR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EV2LMR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EV2LMR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `LPF0M`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LPF0MR {
-    #[doc = "LPF is disabled"]
-    VALUE1,
-    #[doc = "3 clock cycles of fCCU4"]
-    VALUE2,
-    #[doc = "5 clock cycles of fCCU4"]
-    VALUE3,
-    #[doc = "7 clock cycles of fCCU4"]
-    VALUE4,
-}
-impl LPF0MR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LPF0MR::VALUE1 => 0,
-            LPF0MR::VALUE2 => 1,
-            LPF0MR::VALUE3 => 2,
-            LPF0MR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LPF0MR {
-        match value {
-            0 => LPF0MR::VALUE1,
-            1 => LPF0MR::VALUE2,
-            2 => LPF0MR::VALUE3,
-            3 => LPF0MR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LPF0MR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LPF0MR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == LPF0MR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == LPF0MR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `LPF1M`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LPF1MR {
-    #[doc = "LPF is disabled"]
-    VALUE1,
-    #[doc = "3 clock cycles of fCCU4"]
-    VALUE2,
-    #[doc = "5 clock cycles of fCCU4"]
-    VALUE3,
-    #[doc = "7 clock cycles of fCCU4"]
-    VALUE4,
-}
-impl LPF1MR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LPF1MR::VALUE1 => 0,
-            LPF1MR::VALUE2 => 1,
-            LPF1MR::VALUE3 => 2,
-            LPF1MR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LPF1MR {
-        match value {
-            0 => LPF1MR::VALUE1,
-            1 => LPF1MR::VALUE2,
-            2 => LPF1MR::VALUE3,
-            3 => LPF1MR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LPF1MR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LPF1MR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == LPF1MR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == LPF1MR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `LPF2M`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LPF2MR {
-    #[doc = "LPF is disabled"]
-    VALUE1,
-    #[doc = "3 clock cycles of fCCU4"]
-    VALUE2,
-    #[doc = "5 clock cycles of fCCU4"]
-    VALUE3,
-    #[doc = "7 clock cycles of fCCU4"]
-    VALUE4,
-}
-impl LPF2MR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LPF2MR::VALUE1 => 0,
-            LPF2MR::VALUE2 => 1,
-            LPF2MR::VALUE3 => 2,
-            LPF2MR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LPF2MR {
-        match value {
-            0 => LPF2MR::VALUE1,
-            1 => LPF2MR::VALUE2,
-            2 => LPF2MR::VALUE3,
-            3 => LPF2MR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LPF2MR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LPF2MR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == LPF2MR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == LPF2MR::VALUE4
-    }
-}
-#[doc = "Values that can be written to the field `EV0IS`"]
-pub enum EV0ISW {
-    #[doc = "CCU4x.INyA"]
-    VALUE1,
-    #[doc = "CCU4x.INyB"]
-    VALUE2,
-    #[doc = "CCU4x.INyC"]
-    VALUE3,
-    #[doc = "CCU4x.INyD"]
-    VALUE4,
-    #[doc = "CCU4x.INyE"]
-    VALUE5,
-    #[doc = "CCU4x.INyF"]
-    VALUE6,
-    #[doc = "CCU4x.INyG"]
-    VALUE7,
-    #[doc = "CCU4x.INyH"]
-    VALUE8,
-    #[doc = "CCU4x.INyI"]
-    VALUE9,
-    #[doc = "CCU4x.INyJ"]
-    VALUE10,
-    #[doc = "CCU4x.INyK"]
-    VALUE11,
-    #[doc = "CCU4x.INyL"]
-    VALUE12,
-    #[doc = "CCU4x.INyM"]
-    VALUE13,
-    #[doc = "CCU4x.INyN"]
-    VALUE14,
-    #[doc = "CCU4x.INyO"]
-    VALUE15,
-    #[doc = "CCU4x.INyP"]
-    VALUE16,
-}
-impl EV0ISW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EV0ISW::VALUE1 => 0,
-            EV0ISW::VALUE2 => 1,
-            EV0ISW::VALUE3 => 2,
-            EV0ISW::VALUE4 => 3,
-            EV0ISW::VALUE5 => 4,
-            EV0ISW::VALUE6 => 5,
-            EV0ISW::VALUE7 => 6,
-            EV0ISW::VALUE8 => 7,
-            EV0ISW::VALUE9 => 8,
-            EV0ISW::VALUE10 => 9,
-            EV0ISW::VALUE11 => 10,
-            EV0ISW::VALUE12 => 11,
-            EV0ISW::VALUE13 => 12,
-            EV0ISW::VALUE14 => 13,
-            EV0ISW::VALUE15 => 14,
-            EV0ISW::VALUE16 => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EV0ISW<'a> {
+#[doc = "Write proxy for field `EV2IS`"]
+pub struct EV2IS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EV0ISW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EV0ISW) -> &'a mut W {
+impl<'a> EV2IS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EV2IS_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "CCU4x.INyA"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE1)
+        self.variant(EV2IS_A::VALUE1)
     }
     #[doc = "CCU4x.INyB"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE2)
+        self.variant(EV2IS_A::VALUE2)
     }
     #[doc = "CCU4x.INyC"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE3)
+        self.variant(EV2IS_A::VALUE3)
     }
     #[doc = "CCU4x.INyD"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE4)
+        self.variant(EV2IS_A::VALUE4)
     }
     #[doc = "CCU4x.INyE"]
-    #[inline]
+    #[inline(always)]
     pub fn value5(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE5)
+        self.variant(EV2IS_A::VALUE5)
     }
     #[doc = "CCU4x.INyF"]
-    #[inline]
+    #[inline(always)]
     pub fn value6(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE6)
+        self.variant(EV2IS_A::VALUE6)
     }
     #[doc = "CCU4x.INyG"]
-    #[inline]
+    #[inline(always)]
     pub fn value7(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE7)
+        self.variant(EV2IS_A::VALUE7)
     }
     #[doc = "CCU4x.INyH"]
-    #[inline]
+    #[inline(always)]
     pub fn value8(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE8)
+        self.variant(EV2IS_A::VALUE8)
     }
     #[doc = "CCU4x.INyI"]
-    #[inline]
+    #[inline(always)]
     pub fn value9(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE9)
+        self.variant(EV2IS_A::VALUE9)
     }
     #[doc = "CCU4x.INyJ"]
-    #[inline]
+    #[inline(always)]
     pub fn value10(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE10)
+        self.variant(EV2IS_A::VALUE10)
     }
     #[doc = "CCU4x.INyK"]
-    #[inline]
+    #[inline(always)]
     pub fn value11(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE11)
+        self.variant(EV2IS_A::VALUE11)
     }
     #[doc = "CCU4x.INyL"]
-    #[inline]
+    #[inline(always)]
     pub fn value12(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE12)
+        self.variant(EV2IS_A::VALUE12)
     }
     #[doc = "CCU4x.INyM"]
-    #[inline]
+    #[inline(always)]
     pub fn value13(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE13)
+        self.variant(EV2IS_A::VALUE13)
     }
     #[doc = "CCU4x.INyN"]
-    #[inline]
+    #[inline(always)]
     pub fn value14(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE14)
+        self.variant(EV2IS_A::VALUE14)
     }
     #[doc = "CCU4x.INyO"]
-    #[inline]
+    #[inline(always)]
     pub fn value15(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE15)
+        self.variant(EV2IS_A::VALUE15)
     }
     #[doc = "CCU4x.INyP"]
-    #[inline]
+    #[inline(always)]
     pub fn value16(self) -> &'a mut W {
-        self.variant(EV0ISW::VALUE16)
+        self.variant(EV2IS_A::VALUE16)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EV1IS`"]
-pub enum EV1ISW {
-    #[doc = "CCU4x.INyA"]
+#[doc = "Event 0 Edge Selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EV0EM_A {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "CCU4x.INyB"]
+    #[doc = "1: Signal active on rising edge"]
     VALUE2,
-    #[doc = "CCU4x.INyC"]
+    #[doc = "2: Signal active on falling edge"]
     VALUE3,
-    #[doc = "CCU4x.INyD"]
-    VALUE4,
-    #[doc = "CCU4x.INyE"]
-    VALUE5,
-    #[doc = "CCU4x.INyF"]
-    VALUE6,
-    #[doc = "CCU4x.INyG"]
-    VALUE7,
-    #[doc = "CCU4x.INyH"]
-    VALUE8,
-    #[doc = "CCU4x.INyI"]
-    VALUE9,
-    #[doc = "CCU4x.INyJ"]
-    VALUE10,
-    #[doc = "CCU4x.INyK"]
-    VALUE11,
-    #[doc = "CCU4x.INyL"]
-    VALUE12,
-    #[doc = "CCU4x.INyM"]
-    VALUE13,
-    #[doc = "CCU4x.INyN"]
-    VALUE14,
-    #[doc = "CCU4x.INyO"]
-    VALUE15,
-    #[doc = "CCU4x.INyP"]
-    VALUE16,
-}
-impl EV1ISW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EV1ISW::VALUE1 => 0,
-            EV1ISW::VALUE2 => 1,
-            EV1ISW::VALUE3 => 2,
-            EV1ISW::VALUE4 => 3,
-            EV1ISW::VALUE5 => 4,
-            EV1ISW::VALUE6 => 5,
-            EV1ISW::VALUE7 => 6,
-            EV1ISW::VALUE8 => 7,
-            EV1ISW::VALUE9 => 8,
-            EV1ISW::VALUE10 => 9,
-            EV1ISW::VALUE11 => 10,
-            EV1ISW::VALUE12 => 11,
-            EV1ISW::VALUE13 => 12,
-            EV1ISW::VALUE14 => 13,
-            EV1ISW::VALUE15 => 14,
-            EV1ISW::VALUE16 => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EV1ISW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EV1ISW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EV1ISW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CCU4x.INyA"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE1)
-    }
-    #[doc = "CCU4x.INyB"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE2)
-    }
-    #[doc = "CCU4x.INyC"]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE3)
-    }
-    #[doc = "CCU4x.INyD"]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE4)
-    }
-    #[doc = "CCU4x.INyE"]
-    #[inline]
-    pub fn value5(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE5)
-    }
-    #[doc = "CCU4x.INyF"]
-    #[inline]
-    pub fn value6(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE6)
-    }
-    #[doc = "CCU4x.INyG"]
-    #[inline]
-    pub fn value7(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE7)
-    }
-    #[doc = "CCU4x.INyH"]
-    #[inline]
-    pub fn value8(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE8)
-    }
-    #[doc = "CCU4x.INyI"]
-    #[inline]
-    pub fn value9(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE9)
-    }
-    #[doc = "CCU4x.INyJ"]
-    #[inline]
-    pub fn value10(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE10)
-    }
-    #[doc = "CCU4x.INyK"]
-    #[inline]
-    pub fn value11(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE11)
-    }
-    #[doc = "CCU4x.INyL"]
-    #[inline]
-    pub fn value12(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE12)
-    }
-    #[doc = "CCU4x.INyM"]
-    #[inline]
-    pub fn value13(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE13)
-    }
-    #[doc = "CCU4x.INyN"]
-    #[inline]
-    pub fn value14(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE14)
-    }
-    #[doc = "CCU4x.INyO"]
-    #[inline]
-    pub fn value15(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE15)
-    }
-    #[doc = "CCU4x.INyP"]
-    #[inline]
-    pub fn value16(self) -> &'a mut W {
-        self.variant(EV1ISW::VALUE16)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `EV2IS`"]
-pub enum EV2ISW {
-    #[doc = "CCU4x.INyA"]
-    VALUE1,
-    #[doc = "CCU4x.INyB"]
-    VALUE2,
-    #[doc = "CCU4x.INyC"]
-    VALUE3,
-    #[doc = "CCU4x.INyD"]
-    VALUE4,
-    #[doc = "CCU4x.INyE"]
-    VALUE5,
-    #[doc = "CCU4x.INyF"]
-    VALUE6,
-    #[doc = "CCU4x.INyG"]
-    VALUE7,
-    #[doc = "CCU4x.INyH"]
-    VALUE8,
-    #[doc = "CCU4x.INyI"]
-    VALUE9,
-    #[doc = "CCU4x.INyJ"]
-    VALUE10,
-    #[doc = "CCU4x.INyK"]
-    VALUE11,
-    #[doc = "CCU4x.INyL"]
-    VALUE12,
-    #[doc = "CCU4x.INyM"]
-    VALUE13,
-    #[doc = "CCU4x.INyN"]
-    VALUE14,
-    #[doc = "CCU4x.INyO"]
-    VALUE15,
-    #[doc = "CCU4x.INyP"]
-    VALUE16,
-}
-impl EV2ISW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EV2ISW::VALUE1 => 0,
-            EV2ISW::VALUE2 => 1,
-            EV2ISW::VALUE3 => 2,
-            EV2ISW::VALUE4 => 3,
-            EV2ISW::VALUE5 => 4,
-            EV2ISW::VALUE6 => 5,
-            EV2ISW::VALUE7 => 6,
-            EV2ISW::VALUE8 => 7,
-            EV2ISW::VALUE9 => 8,
-            EV2ISW::VALUE10 => 9,
-            EV2ISW::VALUE11 => 10,
-            EV2ISW::VALUE12 => 11,
-            EV2ISW::VALUE13 => 12,
-            EV2ISW::VALUE14 => 13,
-            EV2ISW::VALUE15 => 14,
-            EV2ISW::VALUE16 => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EV2ISW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EV2ISW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EV2ISW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "CCU4x.INyA"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE1)
-    }
-    #[doc = "CCU4x.INyB"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE2)
-    }
-    #[doc = "CCU4x.INyC"]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE3)
-    }
-    #[doc = "CCU4x.INyD"]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE4)
-    }
-    #[doc = "CCU4x.INyE"]
-    #[inline]
-    pub fn value5(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE5)
-    }
-    #[doc = "CCU4x.INyF"]
-    #[inline]
-    pub fn value6(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE6)
-    }
-    #[doc = "CCU4x.INyG"]
-    #[inline]
-    pub fn value7(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE7)
-    }
-    #[doc = "CCU4x.INyH"]
-    #[inline]
-    pub fn value8(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE8)
-    }
-    #[doc = "CCU4x.INyI"]
-    #[inline]
-    pub fn value9(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE9)
-    }
-    #[doc = "CCU4x.INyJ"]
-    #[inline]
-    pub fn value10(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE10)
-    }
-    #[doc = "CCU4x.INyK"]
-    #[inline]
-    pub fn value11(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE11)
-    }
-    #[doc = "CCU4x.INyL"]
-    #[inline]
-    pub fn value12(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE12)
-    }
-    #[doc = "CCU4x.INyM"]
-    #[inline]
-    pub fn value13(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE13)
-    }
-    #[doc = "CCU4x.INyN"]
-    #[inline]
-    pub fn value14(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE14)
-    }
-    #[doc = "CCU4x.INyO"]
-    #[inline]
-    pub fn value15(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE15)
-    }
-    #[doc = "CCU4x.INyP"]
-    #[inline]
-    pub fn value16(self) -> &'a mut W {
-        self.variant(EV2ISW::VALUE16)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `EV0EM`"]
-pub enum EV0EMW {
-    #[doc = "No action"]
-    VALUE1,
-    #[doc = "Signal active on rising edge"]
-    VALUE2,
-    #[doc = "Signal active on falling edge"]
-    VALUE3,
-    #[doc = "Signal active on both edges"]
+    #[doc = "3: Signal active on both edges"]
     VALUE4,
 }
-impl EV0EMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EV0EMW::VALUE1 => 0,
-            EV0EMW::VALUE2 => 1,
-            EV0EMW::VALUE3 => 2,
-            EV0EMW::VALUE4 => 3,
+impl From<EV0EM_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EV0EM_A) -> Self {
+        match variant {
+            EV0EM_A::VALUE1 => 0,
+            EV0EM_A::VALUE2 => 1,
+            EV0EM_A::VALUE3 => 2,
+            EV0EM_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EV0EMW<'a> {
+#[doc = "Reader of field `EV0EM`"]
+pub type EV0EM_R = crate::R<u8, EV0EM_A>;
+impl EV0EM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EV0EM_A {
+        match self.bits {
+            0 => EV0EM_A::VALUE1,
+            1 => EV0EM_A::VALUE2,
+            2 => EV0EM_A::VALUE3,
+            3 => EV0EM_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EV0EM_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EV0EM_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == EV0EM_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == EV0EM_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `EV0EM`"]
+pub struct EV0EM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EV0EMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EV0EMW) -> &'a mut W {
+impl<'a> EV0EM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EV0EM_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EV0EMW::VALUE1)
+        self.variant(EV0EM_A::VALUE1)
     }
     #[doc = "Signal active on rising edge"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EV0EMW::VALUE2)
+        self.variant(EV0EM_A::VALUE2)
     }
     #[doc = "Signal active on falling edge"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(EV0EMW::VALUE3)
+        self.variant(EV0EM_A::VALUE3)
     }
     #[doc = "Signal active on both edges"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(EV0EMW::VALUE4)
+        self.variant(EV0EM_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EV1EM`"]
-pub enum EV1EMW {
-    #[doc = "No action"]
+#[doc = "Event 1 Edge Selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EV1EM_A {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Signal active on rising edge"]
+    #[doc = "1: Signal active on rising edge"]
     VALUE2,
-    #[doc = "Signal active on falling edge"]
+    #[doc = "2: Signal active on falling edge"]
     VALUE3,
-    #[doc = "Signal active on both edges"]
+    #[doc = "3: Signal active on both edges"]
     VALUE4,
 }
-impl EV1EMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EV1EMW::VALUE1 => 0,
-            EV1EMW::VALUE2 => 1,
-            EV1EMW::VALUE3 => 2,
-            EV1EMW::VALUE4 => 3,
+impl From<EV1EM_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EV1EM_A) -> Self {
+        match variant {
+            EV1EM_A::VALUE1 => 0,
+            EV1EM_A::VALUE2 => 1,
+            EV1EM_A::VALUE3 => 2,
+            EV1EM_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EV1EMW<'a> {
+#[doc = "Reader of field `EV1EM`"]
+pub type EV1EM_R = crate::R<u8, EV1EM_A>;
+impl EV1EM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EV1EM_A {
+        match self.bits {
+            0 => EV1EM_A::VALUE1,
+            1 => EV1EM_A::VALUE2,
+            2 => EV1EM_A::VALUE3,
+            3 => EV1EM_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EV1EM_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EV1EM_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == EV1EM_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == EV1EM_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `EV1EM`"]
+pub struct EV1EM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EV1EMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EV1EMW) -> &'a mut W {
+impl<'a> EV1EM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EV1EM_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EV1EMW::VALUE1)
+        self.variant(EV1EM_A::VALUE1)
     }
     #[doc = "Signal active on rising edge"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EV1EMW::VALUE2)
+        self.variant(EV1EM_A::VALUE2)
     }
     #[doc = "Signal active on falling edge"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(EV1EMW::VALUE3)
+        self.variant(EV1EM_A::VALUE3)
     }
     #[doc = "Signal active on both edges"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(EV1EMW::VALUE4)
+        self.variant(EV1EM_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 18)) | (((value as u32) & 0x03) << 18);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EV2EM`"]
-pub enum EV2EMW {
-    #[doc = "No action"]
+#[doc = "Event 2 Edge Selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EV2EM_A {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Signal active on rising edge"]
+    #[doc = "1: Signal active on rising edge"]
     VALUE2,
-    #[doc = "Signal active on falling edge"]
+    #[doc = "2: Signal active on falling edge"]
     VALUE3,
-    #[doc = "Signal active on both edges"]
+    #[doc = "3: Signal active on both edges"]
     VALUE4,
 }
-impl EV2EMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EV2EMW::VALUE1 => 0,
-            EV2EMW::VALUE2 => 1,
-            EV2EMW::VALUE3 => 2,
-            EV2EMW::VALUE4 => 3,
+impl From<EV2EM_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EV2EM_A) -> Self {
+        match variant {
+            EV2EM_A::VALUE1 => 0,
+            EV2EM_A::VALUE2 => 1,
+            EV2EM_A::VALUE3 => 2,
+            EV2EM_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EV2EMW<'a> {
+#[doc = "Reader of field `EV2EM`"]
+pub type EV2EM_R = crate::R<u8, EV2EM_A>;
+impl EV2EM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EV2EM_A {
+        match self.bits {
+            0 => EV2EM_A::VALUE1,
+            1 => EV2EM_A::VALUE2,
+            2 => EV2EM_A::VALUE3,
+            3 => EV2EM_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EV2EM_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EV2EM_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == EV2EM_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == EV2EM_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `EV2EM`"]
+pub struct EV2EM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EV2EMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EV2EMW) -> &'a mut W {
+impl<'a> EV2EM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EV2EM_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EV2EMW::VALUE1)
+        self.variant(EV2EM_A::VALUE1)
     }
     #[doc = "Signal active on rising edge"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EV2EMW::VALUE2)
+        self.variant(EV2EM_A::VALUE2)
     }
     #[doc = "Signal active on falling edge"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(EV2EMW::VALUE3)
+        self.variant(EV2EM_A::VALUE3)
     }
     #[doc = "Signal active on both edges"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(EV2EMW::VALUE4)
+        self.variant(EV2EM_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EV0LM`"]
-pub enum EV0LMW {
-    #[doc = "Active on HIGH level"]
+#[doc = "Event 0 Level Selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EV0LM_A {
+    #[doc = "0: Active on HIGH level"]
     VALUE1,
-    #[doc = "Active on LOW level"]
+    #[doc = "1: Active on LOW level"]
     VALUE2,
 }
-impl EV0LMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EV0LMW::VALUE1 => false,
-            EV0LMW::VALUE2 => true,
+impl From<EV0LM_A> for bool {
+    #[inline(always)]
+    fn from(variant: EV0LM_A) -> Self {
+        match variant {
+            EV0LM_A::VALUE1 => false,
+            EV0LM_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EV0LMW<'a> {
+#[doc = "Reader of field `EV0LM`"]
+pub type EV0LM_R = crate::R<bool, EV0LM_A>;
+impl EV0LM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EV0LM_A {
+        match self.bits {
+            false => EV0LM_A::VALUE1,
+            true => EV0LM_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EV0LM_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EV0LM_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EV0LM`"]
+pub struct EV0LM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EV0LMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EV0LMW) -> &'a mut W {
+impl<'a> EV0LM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EV0LM_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Active on HIGH level"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EV0LMW::VALUE1)
+        self.variant(EV0LM_A::VALUE1)
     }
     #[doc = "Active on LOW level"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EV0LMW::VALUE2)
+        self.variant(EV0LM_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EV1LM`"]
-pub enum EV1LMW {
-    #[doc = "Active on HIGH level"]
+#[doc = "Event 1 Level Selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EV1LM_A {
+    #[doc = "0: Active on HIGH level"]
     VALUE1,
-    #[doc = "Active on LOW level"]
+    #[doc = "1: Active on LOW level"]
     VALUE2,
 }
-impl EV1LMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EV1LMW::VALUE1 => false,
-            EV1LMW::VALUE2 => true,
+impl From<EV1LM_A> for bool {
+    #[inline(always)]
+    fn from(variant: EV1LM_A) -> Self {
+        match variant {
+            EV1LM_A::VALUE1 => false,
+            EV1LM_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EV1LMW<'a> {
+#[doc = "Reader of field `EV1LM`"]
+pub type EV1LM_R = crate::R<bool, EV1LM_A>;
+impl EV1LM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EV1LM_A {
+        match self.bits {
+            false => EV1LM_A::VALUE1,
+            true => EV1LM_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EV1LM_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EV1LM_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EV1LM`"]
+pub struct EV1LM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EV1LMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EV1LMW) -> &'a mut W {
+impl<'a> EV1LM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EV1LM_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Active on HIGH level"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EV1LMW::VALUE1)
+        self.variant(EV1LM_A::VALUE1)
     }
     #[doc = "Active on LOW level"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EV1LMW::VALUE2)
+        self.variant(EV1LM_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EV2LM`"]
-pub enum EV2LMW {
-    #[doc = "Active on HIGH level"]
+#[doc = "Event 2 Level Selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EV2LM_A {
+    #[doc = "0: Active on HIGH level"]
     VALUE1,
-    #[doc = "Active on LOW level"]
+    #[doc = "1: Active on LOW level"]
     VALUE2,
 }
-impl EV2LMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EV2LMW::VALUE1 => false,
-            EV2LMW::VALUE2 => true,
+impl From<EV2LM_A> for bool {
+    #[inline(always)]
+    fn from(variant: EV2LM_A) -> Self {
+        match variant {
+            EV2LM_A::VALUE1 => false,
+            EV2LM_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EV2LMW<'a> {
+#[doc = "Reader of field `EV2LM`"]
+pub type EV2LM_R = crate::R<bool, EV2LM_A>;
+impl EV2LM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EV2LM_A {
+        match self.bits {
+            false => EV2LM_A::VALUE1,
+            true => EV2LM_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EV2LM_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EV2LM_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EV2LM`"]
+pub struct EV2LM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EV2LMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EV2LMW) -> &'a mut W {
+impl<'a> EV2LM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EV2LM_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Active on HIGH level"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EV2LMW::VALUE1)
+        self.variant(EV2LM_A::VALUE1)
     }
     #[doc = "Active on LOW level"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EV2LMW::VALUE2)
+        self.variant(EV2LM_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LPF0M`"]
-pub enum LPF0MW {
-    #[doc = "LPF is disabled"]
+#[doc = "Event 0 Low Pass Filter Configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LPF0M_A {
+    #[doc = "0: LPF is disabled"]
     VALUE1,
-    #[doc = "3 clock cycles of fCCU4"]
+    #[doc = "1: 3 clock cycles of fCCU4"]
     VALUE2,
-    #[doc = "5 clock cycles of fCCU4"]
+    #[doc = "2: 5 clock cycles of fCCU4"]
     VALUE3,
-    #[doc = "7 clock cycles of fCCU4"]
+    #[doc = "3: 7 clock cycles of fCCU4"]
     VALUE4,
 }
-impl LPF0MW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LPF0MW::VALUE1 => 0,
-            LPF0MW::VALUE2 => 1,
-            LPF0MW::VALUE3 => 2,
-            LPF0MW::VALUE4 => 3,
+impl From<LPF0M_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LPF0M_A) -> Self {
+        match variant {
+            LPF0M_A::VALUE1 => 0,
+            LPF0M_A::VALUE2 => 1,
+            LPF0M_A::VALUE3 => 2,
+            LPF0M_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _LPF0MW<'a> {
+#[doc = "Reader of field `LPF0M`"]
+pub type LPF0M_R = crate::R<u8, LPF0M_A>;
+impl LPF0M_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LPF0M_A {
+        match self.bits {
+            0 => LPF0M_A::VALUE1,
+            1 => LPF0M_A::VALUE2,
+            2 => LPF0M_A::VALUE3,
+            3 => LPF0M_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LPF0M_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LPF0M_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == LPF0M_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == LPF0M_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `LPF0M`"]
+pub struct LPF0M_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LPF0MW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LPF0MW) -> &'a mut W {
+impl<'a> LPF0M_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LPF0M_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "LPF is disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LPF0MW::VALUE1)
+        self.variant(LPF0M_A::VALUE1)
     }
     #[doc = "3 clock cycles of fCCU4"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LPF0MW::VALUE2)
+        self.variant(LPF0M_A::VALUE2)
     }
     #[doc = "5 clock cycles of fCCU4"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(LPF0MW::VALUE3)
+        self.variant(LPF0M_A::VALUE3)
     }
     #[doc = "7 clock cycles of fCCU4"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(LPF0MW::VALUE4)
+        self.variant(LPF0M_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 25)) | (((value as u32) & 0x03) << 25);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LPF1M`"]
-pub enum LPF1MW {
-    #[doc = "LPF is disabled"]
+#[doc = "Event 1 Low Pass Filter Configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LPF1M_A {
+    #[doc = "0: LPF is disabled"]
     VALUE1,
-    #[doc = "3 clock cycles of fCCU4"]
+    #[doc = "1: 3 clock cycles of fCCU4"]
     VALUE2,
-    #[doc = "5 clock cycles of fCCU4"]
+    #[doc = "2: 5 clock cycles of fCCU4"]
     VALUE3,
-    #[doc = "7 clock cycles of fCCU4"]
+    #[doc = "3: 7 clock cycles of fCCU4"]
     VALUE4,
 }
-impl LPF1MW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LPF1MW::VALUE1 => 0,
-            LPF1MW::VALUE2 => 1,
-            LPF1MW::VALUE3 => 2,
-            LPF1MW::VALUE4 => 3,
+impl From<LPF1M_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LPF1M_A) -> Self {
+        match variant {
+            LPF1M_A::VALUE1 => 0,
+            LPF1M_A::VALUE2 => 1,
+            LPF1M_A::VALUE3 => 2,
+            LPF1M_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _LPF1MW<'a> {
+#[doc = "Reader of field `LPF1M`"]
+pub type LPF1M_R = crate::R<u8, LPF1M_A>;
+impl LPF1M_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LPF1M_A {
+        match self.bits {
+            0 => LPF1M_A::VALUE1,
+            1 => LPF1M_A::VALUE2,
+            2 => LPF1M_A::VALUE3,
+            3 => LPF1M_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LPF1M_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LPF1M_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == LPF1M_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == LPF1M_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `LPF1M`"]
+pub struct LPF1M_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LPF1MW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LPF1MW) -> &'a mut W {
+impl<'a> LPF1M_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LPF1M_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "LPF is disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LPF1MW::VALUE1)
+        self.variant(LPF1M_A::VALUE1)
     }
     #[doc = "3 clock cycles of fCCU4"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LPF1MW::VALUE2)
+        self.variant(LPF1M_A::VALUE2)
     }
     #[doc = "5 clock cycles of fCCU4"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(LPF1MW::VALUE3)
+        self.variant(LPF1M_A::VALUE3)
     }
     #[doc = "7 clock cycles of fCCU4"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(LPF1MW::VALUE4)
+        self.variant(LPF1M_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 27)) | (((value as u32) & 0x03) << 27);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LPF2M`"]
-pub enum LPF2MW {
-    #[doc = "LPF is disabled"]
+#[doc = "Event 2 Low Pass Filter Configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LPF2M_A {
+    #[doc = "0: LPF is disabled"]
     VALUE1,
-    #[doc = "3 clock cycles of fCCU4"]
+    #[doc = "1: 3 clock cycles of fCCU4"]
     VALUE2,
-    #[doc = "5 clock cycles of fCCU4"]
+    #[doc = "2: 5 clock cycles of fCCU4"]
     VALUE3,
-    #[doc = "7 clock cycles of fCCU4"]
+    #[doc = "3: 7 clock cycles of fCCU4"]
     VALUE4,
 }
-impl LPF2MW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LPF2MW::VALUE1 => 0,
-            LPF2MW::VALUE2 => 1,
-            LPF2MW::VALUE3 => 2,
-            LPF2MW::VALUE4 => 3,
+impl From<LPF2M_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LPF2M_A) -> Self {
+        match variant {
+            LPF2M_A::VALUE1 => 0,
+            LPF2M_A::VALUE2 => 1,
+            LPF2M_A::VALUE3 => 2,
+            LPF2M_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _LPF2MW<'a> {
+#[doc = "Reader of field `LPF2M`"]
+pub type LPF2M_R = crate::R<u8, LPF2M_A>;
+impl LPF2M_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LPF2M_A {
+        match self.bits {
+            0 => LPF2M_A::VALUE1,
+            1 => LPF2M_A::VALUE2,
+            2 => LPF2M_A::VALUE3,
+            3 => LPF2M_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LPF2M_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LPF2M_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == LPF2M_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == LPF2M_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `LPF2M`"]
+pub struct LPF2M_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LPF2MW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LPF2MW) -> &'a mut W {
+impl<'a> LPF2M_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LPF2M_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "LPF is disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LPF2MW::VALUE1)
+        self.variant(LPF2M_A::VALUE1)
     }
     #[doc = "3 clock cycles of fCCU4"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LPF2MW::VALUE2)
+        self.variant(LPF2M_A::VALUE2)
     }
     #[doc = "5 clock cycles of fCCU4"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(LPF2MW::VALUE3)
+        self.variant(LPF2M_A::VALUE3)
     }
     #[doc = "7 clock cycles of fCCU4"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(LPF2MW::VALUE4)
+        self.variant(LPF2M_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 29)) | (((value as u32) & 0x03) << 29);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Event 0 signal selection"]
-    #[inline]
-    pub fn ev0is(&self) -> EV0ISR {
-        EV0ISR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ev0is(&self) -> EV0IS_R {
+        EV0IS_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Event 1 signal selection"]
-    #[inline]
-    pub fn ev1is(&self) -> EV1ISR {
-        EV1ISR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ev1is(&self) -> EV1IS_R {
+        EV1IS_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - Event 2 signal selection"]
-    #[inline]
-    pub fn ev2is(&self) -> EV2ISR {
-        EV2ISR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ev2is(&self) -> EV2IS_R {
+        EV2IS_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 16:17 - Event 0 Edge Selection"]
-    #[inline]
-    pub fn ev0em(&self) -> EV0EMR {
-        EV0EMR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ev0em(&self) -> EV0EM_R {
+        EV0EM_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bits 18:19 - Event 1 Edge Selection"]
-    #[inline]
-    pub fn ev1em(&self) -> EV1EMR {
-        EV1EMR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ev1em(&self) -> EV1EM_R {
+        EV1EM_R::new(((self.bits >> 18) & 0x03) as u8)
     }
     #[doc = "Bits 20:21 - Event 2 Edge Selection"]
-    #[inline]
-    pub fn ev2em(&self) -> EV2EMR {
-        EV2EMR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ev2em(&self) -> EV2EM_R {
+        EV2EM_R::new(((self.bits >> 20) & 0x03) as u8)
     }
     #[doc = "Bit 22 - Event 0 Level Selection"]
-    #[inline]
-    pub fn ev0lm(&self) -> EV0LMR {
-        EV0LMR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ev0lm(&self) -> EV0LM_R {
+        EV0LM_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 23 - Event 1 Level Selection"]
-    #[inline]
-    pub fn ev1lm(&self) -> EV1LMR {
-        EV1LMR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ev1lm(&self) -> EV1LM_R {
+        EV1LM_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Event 2 Level Selection"]
-    #[inline]
-    pub fn ev2lm(&self) -> EV2LMR {
-        EV2LMR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ev2lm(&self) -> EV2LM_R {
+        EV2LM_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bits 25:26 - Event 0 Low Pass Filter Configuration"]
-    #[inline]
-    pub fn lpf0m(&self) -> LPF0MR {
-        LPF0MR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lpf0m(&self) -> LPF0M_R {
+        LPF0M_R::new(((self.bits >> 25) & 0x03) as u8)
     }
     #[doc = "Bits 27:28 - Event 1 Low Pass Filter Configuration"]
-    #[inline]
-    pub fn lpf1m(&self) -> LPF1MR {
-        LPF1MR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lpf1m(&self) -> LPF1M_R {
+        LPF1M_R::new(((self.bits >> 27) & 0x03) as u8)
     }
     #[doc = "Bits 29:30 - Event 2 Low Pass Filter Configuration"]
-    #[inline]
-    pub fn lpf2m(&self) -> LPF2MR {
-        LPF2MR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lpf2m(&self) -> LPF2M_R {
+        LPF2M_R::new(((self.bits >> 29) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Event 0 signal selection"]
-    #[inline]
-    pub fn ev0is(&mut self) -> _EV0ISW {
-        _EV0ISW { w: self }
+    #[inline(always)]
+    pub fn ev0is(&mut self) -> EV0IS_W {
+        EV0IS_W { w: self }
     }
     #[doc = "Bits 4:7 - Event 1 signal selection"]
-    #[inline]
-    pub fn ev1is(&mut self) -> _EV1ISW {
-        _EV1ISW { w: self }
+    #[inline(always)]
+    pub fn ev1is(&mut self) -> EV1IS_W {
+        EV1IS_W { w: self }
     }
     #[doc = "Bits 8:11 - Event 2 signal selection"]
-    #[inline]
-    pub fn ev2is(&mut self) -> _EV2ISW {
-        _EV2ISW { w: self }
+    #[inline(always)]
+    pub fn ev2is(&mut self) -> EV2IS_W {
+        EV2IS_W { w: self }
     }
     #[doc = "Bits 16:17 - Event 0 Edge Selection"]
-    #[inline]
-    pub fn ev0em(&mut self) -> _EV0EMW {
-        _EV0EMW { w: self }
+    #[inline(always)]
+    pub fn ev0em(&mut self) -> EV0EM_W {
+        EV0EM_W { w: self }
     }
     #[doc = "Bits 18:19 - Event 1 Edge Selection"]
-    #[inline]
-    pub fn ev1em(&mut self) -> _EV1EMW {
-        _EV1EMW { w: self }
+    #[inline(always)]
+    pub fn ev1em(&mut self) -> EV1EM_W {
+        EV1EM_W { w: self }
     }
     #[doc = "Bits 20:21 - Event 2 Edge Selection"]
-    #[inline]
-    pub fn ev2em(&mut self) -> _EV2EMW {
-        _EV2EMW { w: self }
+    #[inline(always)]
+    pub fn ev2em(&mut self) -> EV2EM_W {
+        EV2EM_W { w: self }
     }
     #[doc = "Bit 22 - Event 0 Level Selection"]
-    #[inline]
-    pub fn ev0lm(&mut self) -> _EV0LMW {
-        _EV0LMW { w: self }
+    #[inline(always)]
+    pub fn ev0lm(&mut self) -> EV0LM_W {
+        EV0LM_W { w: self }
     }
     #[doc = "Bit 23 - Event 1 Level Selection"]
-    #[inline]
-    pub fn ev1lm(&mut self) -> _EV1LMW {
-        _EV1LMW { w: self }
+    #[inline(always)]
+    pub fn ev1lm(&mut self) -> EV1LM_W {
+        EV1LM_W { w: self }
     }
     #[doc = "Bit 24 - Event 2 Level Selection"]
-    #[inline]
-    pub fn ev2lm(&mut self) -> _EV2LMW {
-        _EV2LMW { w: self }
+    #[inline(always)]
+    pub fn ev2lm(&mut self) -> EV2LM_W {
+        EV2LM_W { w: self }
     }
     #[doc = "Bits 25:26 - Event 0 Low Pass Filter Configuration"]
-    #[inline]
-    pub fn lpf0m(&mut self) -> _LPF0MW {
-        _LPF0MW { w: self }
+    #[inline(always)]
+    pub fn lpf0m(&mut self) -> LPF0M_W {
+        LPF0M_W { w: self }
     }
     #[doc = "Bits 27:28 - Event 1 Low Pass Filter Configuration"]
-    #[inline]
-    pub fn lpf1m(&mut self) -> _LPF1MW {
-        _LPF1MW { w: self }
+    #[inline(always)]
+    pub fn lpf1m(&mut self) -> LPF1M_W {
+        LPF1M_W { w: self }
     }
     #[doc = "Bits 29:30 - Event 2 Low Pass Filter Configuration"]
-    #[inline]
-    pub fn lpf2m(&mut self) -> _LPF2MW {
-        _LPF2MW { w: self }
+    #[inline(always)]
+    pub fn lpf2m(&mut self) -> LPF2M_W {
+        LPF2M_W { w: self }
     }
 }

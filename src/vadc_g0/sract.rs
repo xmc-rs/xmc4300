@@ -1,533 +1,500 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SRACT {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register SRACT"]
+pub type W = crate::W<u32, super::SRACT>;
+#[doc = "Register SRACT `reset()`'s with value 0"]
+impl crate::ResetValue for super::SRACT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Values that can be written to the field `AGSR0`"]
-pub enum AGSR0W {
-    #[doc = "No action"]
+#[doc = "Activate Group Service Request Node 0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum AGSR0_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Activate the associated service request line"]
+    #[doc = "1: Activate the associated service request line"]
     VALUE2,
 }
-impl AGSR0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            AGSR0W::VALUE1 => false,
-            AGSR0W::VALUE2 => true,
+impl From<AGSR0_AW> for bool {
+    #[inline(always)]
+    fn from(variant: AGSR0_AW) -> Self {
+        match variant {
+            AGSR0_AW::VALUE1 => false,
+            AGSR0_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _AGSR0W<'a> {
+#[doc = "Write proxy for field `AGSR0`"]
+pub struct AGSR0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AGSR0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AGSR0W) -> &'a mut W {
+impl<'a> AGSR0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AGSR0_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(AGSR0W::VALUE1)
+        self.variant(AGSR0_AW::VALUE1)
     }
     #[doc = "Activate the associated service request line"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(AGSR0W::VALUE2)
+        self.variant(AGSR0_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `AGSR1`"]
-pub enum AGSR1W {
-    #[doc = "No action"]
+#[doc = "Activate Group Service Request Node 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum AGSR1_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Activate the associated service request line"]
+    #[doc = "1: Activate the associated service request line"]
     VALUE2,
 }
-impl AGSR1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            AGSR1W::VALUE1 => false,
-            AGSR1W::VALUE2 => true,
+impl From<AGSR1_AW> for bool {
+    #[inline(always)]
+    fn from(variant: AGSR1_AW) -> Self {
+        match variant {
+            AGSR1_AW::VALUE1 => false,
+            AGSR1_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _AGSR1W<'a> {
+#[doc = "Write proxy for field `AGSR1`"]
+pub struct AGSR1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AGSR1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AGSR1W) -> &'a mut W {
+impl<'a> AGSR1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AGSR1_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(AGSR1W::VALUE1)
+        self.variant(AGSR1_AW::VALUE1)
     }
     #[doc = "Activate the associated service request line"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(AGSR1W::VALUE2)
+        self.variant(AGSR1_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `AGSR2`"]
-pub enum AGSR2W {
-    #[doc = "No action"]
+#[doc = "Activate Group Service Request Node 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum AGSR2_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Activate the associated service request line"]
+    #[doc = "1: Activate the associated service request line"]
     VALUE2,
 }
-impl AGSR2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            AGSR2W::VALUE1 => false,
-            AGSR2W::VALUE2 => true,
+impl From<AGSR2_AW> for bool {
+    #[inline(always)]
+    fn from(variant: AGSR2_AW) -> Self {
+        match variant {
+            AGSR2_AW::VALUE1 => false,
+            AGSR2_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _AGSR2W<'a> {
+#[doc = "Write proxy for field `AGSR2`"]
+pub struct AGSR2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AGSR2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AGSR2W) -> &'a mut W {
+impl<'a> AGSR2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AGSR2_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(AGSR2W::VALUE1)
+        self.variant(AGSR2_AW::VALUE1)
     }
     #[doc = "Activate the associated service request line"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(AGSR2W::VALUE2)
+        self.variant(AGSR2_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `AGSR3`"]
-pub enum AGSR3W {
-    #[doc = "No action"]
+#[doc = "Activate Group Service Request Node 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum AGSR3_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Activate the associated service request line"]
+    #[doc = "1: Activate the associated service request line"]
     VALUE2,
 }
-impl AGSR3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            AGSR3W::VALUE1 => false,
-            AGSR3W::VALUE2 => true,
+impl From<AGSR3_AW> for bool {
+    #[inline(always)]
+    fn from(variant: AGSR3_AW) -> Self {
+        match variant {
+            AGSR3_AW::VALUE1 => false,
+            AGSR3_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _AGSR3W<'a> {
+#[doc = "Write proxy for field `AGSR3`"]
+pub struct AGSR3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AGSR3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AGSR3W) -> &'a mut W {
+impl<'a> AGSR3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AGSR3_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(AGSR3W::VALUE1)
+        self.variant(AGSR3_AW::VALUE1)
     }
     #[doc = "Activate the associated service request line"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(AGSR3W::VALUE2)
+        self.variant(AGSR3_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ASSR0`"]
-pub enum ASSR0W {
-    #[doc = "No action"]
+#[doc = "Activate Shared Service Request Node 0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ASSR0_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Activate the associated service request line"]
+    #[doc = "1: Activate the associated service request line"]
     VALUE2,
 }
-impl ASSR0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ASSR0W::VALUE1 => false,
-            ASSR0W::VALUE2 => true,
+impl From<ASSR0_AW> for bool {
+    #[inline(always)]
+    fn from(variant: ASSR0_AW) -> Self {
+        match variant {
+            ASSR0_AW::VALUE1 => false,
+            ASSR0_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ASSR0W<'a> {
+#[doc = "Write proxy for field `ASSR0`"]
+pub struct ASSR0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ASSR0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ASSR0W) -> &'a mut W {
+impl<'a> ASSR0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ASSR0_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ASSR0W::VALUE1)
+        self.variant(ASSR0_AW::VALUE1)
     }
     #[doc = "Activate the associated service request line"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ASSR0W::VALUE2)
+        self.variant(ASSR0_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ASSR1`"]
-pub enum ASSR1W {
-    #[doc = "No action"]
+#[doc = "Activate Shared Service Request Node 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ASSR1_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Activate the associated service request line"]
+    #[doc = "1: Activate the associated service request line"]
     VALUE2,
 }
-impl ASSR1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ASSR1W::VALUE1 => false,
-            ASSR1W::VALUE2 => true,
+impl From<ASSR1_AW> for bool {
+    #[inline(always)]
+    fn from(variant: ASSR1_AW) -> Self {
+        match variant {
+            ASSR1_AW::VALUE1 => false,
+            ASSR1_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ASSR1W<'a> {
+#[doc = "Write proxy for field `ASSR1`"]
+pub struct ASSR1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ASSR1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ASSR1W) -> &'a mut W {
+impl<'a> ASSR1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ASSR1_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ASSR1W::VALUE1)
+        self.variant(ASSR1_AW::VALUE1)
     }
     #[doc = "Activate the associated service request line"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ASSR1W::VALUE2)
+        self.variant(ASSR1_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ASSR2`"]
-pub enum ASSR2W {
-    #[doc = "No action"]
+#[doc = "Activate Shared Service Request Node 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ASSR2_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Activate the associated service request line"]
+    #[doc = "1: Activate the associated service request line"]
     VALUE2,
 }
-impl ASSR2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ASSR2W::VALUE1 => false,
-            ASSR2W::VALUE2 => true,
+impl From<ASSR2_AW> for bool {
+    #[inline(always)]
+    fn from(variant: ASSR2_AW) -> Self {
+        match variant {
+            ASSR2_AW::VALUE1 => false,
+            ASSR2_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ASSR2W<'a> {
+#[doc = "Write proxy for field `ASSR2`"]
+pub struct ASSR2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ASSR2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ASSR2W) -> &'a mut W {
+impl<'a> ASSR2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ASSR2_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ASSR2W::VALUE1)
+        self.variant(ASSR2_AW::VALUE1)
     }
     #[doc = "Activate the associated service request line"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ASSR2W::VALUE2)
+        self.variant(ASSR2_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ASSR3`"]
-pub enum ASSR3W {
-    #[doc = "No action"]
+#[doc = "Activate Shared Service Request Node 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ASSR3_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Activate the associated service request line"]
+    #[doc = "1: Activate the associated service request line"]
     VALUE2,
 }
-impl ASSR3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ASSR3W::VALUE1 => false,
-            ASSR3W::VALUE2 => true,
+impl From<ASSR3_AW> for bool {
+    #[inline(always)]
+    fn from(variant: ASSR3_AW) -> Self {
+        match variant {
+            ASSR3_AW::VALUE1 => false,
+            ASSR3_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ASSR3W<'a> {
+#[doc = "Write proxy for field `ASSR3`"]
+pub struct ASSR3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ASSR3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ASSR3W) -> &'a mut W {
+impl<'a> ASSR3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ASSR3_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ASSR3W::VALUE1)
+        self.variant(ASSR3_AW::VALUE1)
     }
     #[doc = "Activate the associated service request line"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ASSR3W::VALUE2)
+        self.variant(ASSR3_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Activate Group Service Request Node 0"]
-    #[inline]
-    pub fn agsr0(&mut self) -> _AGSR0W {
-        _AGSR0W { w: self }
+    #[inline(always)]
+    pub fn agsr0(&mut self) -> AGSR0_W {
+        AGSR0_W { w: self }
     }
     #[doc = "Bit 1 - Activate Group Service Request Node 1"]
-    #[inline]
-    pub fn agsr1(&mut self) -> _AGSR1W {
-        _AGSR1W { w: self }
+    #[inline(always)]
+    pub fn agsr1(&mut self) -> AGSR1_W {
+        AGSR1_W { w: self }
     }
     #[doc = "Bit 2 - Activate Group Service Request Node 2"]
-    #[inline]
-    pub fn agsr2(&mut self) -> _AGSR2W {
-        _AGSR2W { w: self }
+    #[inline(always)]
+    pub fn agsr2(&mut self) -> AGSR2_W {
+        AGSR2_W { w: self }
     }
     #[doc = "Bit 3 - Activate Group Service Request Node 3"]
-    #[inline]
-    pub fn agsr3(&mut self) -> _AGSR3W {
-        _AGSR3W { w: self }
+    #[inline(always)]
+    pub fn agsr3(&mut self) -> AGSR3_W {
+        AGSR3_W { w: self }
     }
     #[doc = "Bit 8 - Activate Shared Service Request Node 0"]
-    #[inline]
-    pub fn assr0(&mut self) -> _ASSR0W {
-        _ASSR0W { w: self }
+    #[inline(always)]
+    pub fn assr0(&mut self) -> ASSR0_W {
+        ASSR0_W { w: self }
     }
     #[doc = "Bit 9 - Activate Shared Service Request Node 1"]
-    #[inline]
-    pub fn assr1(&mut self) -> _ASSR1W {
-        _ASSR1W { w: self }
+    #[inline(always)]
+    pub fn assr1(&mut self) -> ASSR1_W {
+        ASSR1_W { w: self }
     }
     #[doc = "Bit 10 - Activate Shared Service Request Node 2"]
-    #[inline]
-    pub fn assr2(&mut self) -> _ASSR2W {
-        _ASSR2W { w: self }
+    #[inline(always)]
+    pub fn assr2(&mut self) -> ASSR2_W {
+        ASSR2_W { w: self }
     }
     #[doc = "Bit 11 - Activate Shared Service Request Node 3"]
-    #[inline]
-    pub fn assr3(&mut self) -> _ASSR3W {
-        _ASSR3W { w: self }
+    #[inline(always)]
+    pub fn assr3(&mut self) -> ASSR3_W {
+        ASSR3_W { w: self }
     }
 }

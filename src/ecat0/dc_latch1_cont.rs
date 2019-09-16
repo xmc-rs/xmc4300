@@ -1,300 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u8,
-}
-impl super::DC_LATCH1_CONT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DC_LATCH1_CONT"]
+pub type R = crate::R<u8, super::DC_LATCH1_CONT>;
+#[doc = "Writer for register DC_LATCH1_CONT"]
+pub type W = crate::W<u8, super::DC_LATCH1_CONT>;
+#[doc = "Register DC_LATCH1_CONT `reset()`'s with value 0"]
+impl crate::ResetValue for super::DC_LATCH1_CONT {
+    type Type = u8;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `L1_POS`"]
+#[doc = "Latch1 positive edge\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum L1_POSR {
-    #[doc = "Continuous Latch active"]
+pub enum L1_POS_A {
+    #[doc = "0: Continuous Latch active"]
     VALUE1,
-    #[doc = "Single event (only first event active)"]
+    #[doc = "1: Single event (only first event active)"]
     VALUE2,
 }
-impl L1_POSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            L1_POSR::VALUE1 => false,
-            L1_POSR::VALUE2 => true,
+impl From<L1_POS_A> for bool {
+    #[inline(always)]
+    fn from(variant: L1_POS_A) -> Self {
+        match variant {
+            L1_POS_A::VALUE1 => false,
+            L1_POS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> L1_POSR {
-        match value {
-            false => L1_POSR::VALUE1,
-            true => L1_POSR::VALUE2,
+}
+#[doc = "Reader of field `L1_POS`"]
+pub type L1_POS_R = crate::R<bool, L1_POS_A>;
+impl L1_POS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> L1_POS_A {
+        match self.bits {
+            false => L1_POS_A::VALUE1,
+            true => L1_POS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == L1_POSR::VALUE1
+        *self == L1_POS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == L1_POSR::VALUE2
+        *self == L1_POS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `L1_NEG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum L1_NEGR {
-    #[doc = "Continuous Latch active"]
-    VALUE1,
-    #[doc = "Single event (only first event active)"]
-    VALUE2,
-}
-impl L1_NEGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            L1_NEGR::VALUE1 => false,
-            L1_NEGR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> L1_NEGR {
-        match value {
-            false => L1_NEGR::VALUE1,
-            true => L1_NEGR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == L1_NEGR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == L1_NEGR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `L1_POS`"]
-pub enum L1_POSW {
-    #[doc = "Continuous Latch active"]
-    VALUE1,
-    #[doc = "Single event (only first event active)"]
-    VALUE2,
-}
-impl L1_POSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            L1_POSW::VALUE1 => false,
-            L1_POSW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _L1_POSW<'a> {
+#[doc = "Write proxy for field `L1_POS`"]
+pub struct L1_POS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _L1_POSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: L1_POSW) -> &'a mut W {
+impl<'a> L1_POS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: L1_POS_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Continuous Latch active"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(L1_POSW::VALUE1)
+        self.variant(L1_POS_A::VALUE1)
     }
     #[doc = "Single event (only first event active)"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(L1_POSW::VALUE2)
+        self.variant(L1_POS_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u8) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `L1_NEG`"]
-pub enum L1_NEGW {
-    #[doc = "Continuous Latch active"]
+#[doc = "Latch1 negative edge\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum L1_NEG_A {
+    #[doc = "0: Continuous Latch active"]
     VALUE1,
-    #[doc = "Single event (only first event active)"]
+    #[doc = "1: Single event (only first event active)"]
     VALUE2,
 }
-impl L1_NEGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            L1_NEGW::VALUE1 => false,
-            L1_NEGW::VALUE2 => true,
+impl From<L1_NEG_A> for bool {
+    #[inline(always)]
+    fn from(variant: L1_NEG_A) -> Self {
+        match variant {
+            L1_NEG_A::VALUE1 => false,
+            L1_NEG_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _L1_NEGW<'a> {
+#[doc = "Reader of field `L1_NEG`"]
+pub type L1_NEG_R = crate::R<bool, L1_NEG_A>;
+impl L1_NEG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> L1_NEG_A {
+        match self.bits {
+            false => L1_NEG_A::VALUE1,
+            true => L1_NEG_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == L1_NEG_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == L1_NEG_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `L1_NEG`"]
+pub struct L1_NEG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _L1_NEGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: L1_NEGW) -> &'a mut W {
+impl<'a> L1_NEG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: L1_NEG_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Continuous Latch active"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(L1_NEGW::VALUE1)
+        self.variant(L1_NEG_A::VALUE1)
     }
     #[doc = "Single event (only first event active)"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(L1_NEGW::VALUE2)
+        self.variant(L1_NEG_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u8) << OFFSET);
-        self.w.bits |= ((value & MASK) as u8) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u8) & 0x01) << 1);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 0 - Latch1 positive edge"]
-    #[inline]
-    pub fn l1_pos(&self) -> L1_POSR {
-        L1_POSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn l1_pos(&self) -> L1_POS_R {
+        L1_POS_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Latch1 negative edge"]
-    #[inline]
-    pub fn l1_neg(&self) -> L1_NEGR {
-        L1_NEGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn l1_neg(&self) -> L1_NEG_R {
+        L1_NEG_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Latch1 positive edge"]
-    #[inline]
-    pub fn l1_pos(&mut self) -> _L1_POSW {
-        _L1_POSW { w: self }
+    #[inline(always)]
+    pub fn l1_pos(&mut self) -> L1_POS_W {
+        L1_POS_W { w: self }
     }
     #[doc = "Bit 1 - Latch1 negative edge"]
-    #[inline]
-    pub fn l1_neg(&mut self) -> _L1_NEGW {
-        _L1_NEGW { w: self }
+    #[inline(always)]
+    pub fn l1_neg(&mut self) -> L1_NEG_W {
+        L1_NEG_W { w: self }
     }
 }

@@ -1,1153 +1,800 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CFGL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CFGL"]
+pub type R = crate::R<u32, super::CFGL>;
+#[doc = "Writer for register CFGL"]
+pub type W = crate::W<u32, super::CFGL>;
+#[doc = "Register CFGL `reset()`'s with value 0x0e00"]
+impl crate::ResetValue for super::CFGL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0e00
     }
 }
-#[doc = r" Value of the field"]
-pub struct MAX_ABRSTR {
-    bits: u16,
-}
-impl MAX_ABRSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `SRC_HS_POL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SRC_HS_POLR {
-    #[doc = "Active high"]
-    VALUE1,
-    #[doc = "Active low"]
-    VALUE2,
-}
-impl SRC_HS_POLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SRC_HS_POLR::VALUE1 => false,
-            SRC_HS_POLR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SRC_HS_POLR {
-        match value {
-            false => SRC_HS_POLR::VALUE1,
-            true => SRC_HS_POLR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == SRC_HS_POLR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == SRC_HS_POLR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `DST_HS_POL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DST_HS_POLR {
-    #[doc = "Active high"]
-    VALUE1,
-    #[doc = "Active low"]
-    VALUE2,
-}
-impl DST_HS_POLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DST_HS_POLR::VALUE1 => false,
-            DST_HS_POLR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DST_HS_POLR {
-        match value {
-            false => DST_HS_POLR::VALUE1,
-            true => DST_HS_POLR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == DST_HS_POLR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == DST_HS_POLR::VALUE2
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LOCK_BR {
-    bits: bool,
-}
-impl LOCK_BR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LOCK_CHR {
-    bits: bool,
-}
-impl LOCK_CHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `LOCK_B_L`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_B_LR {
-    #[doc = "Over complete DMA transfer"]
-    VALUE1,
-    #[doc = "Over complete DMA block transfer"]
-    VALUE2,
-    #[doc = "Over complete DMA transaction"]
-    VALUE3,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl LOCK_B_LR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LOCK_B_LR::VALUE1 => 0,
-            LOCK_B_LR::VALUE2 => 1,
-            LOCK_B_LR::VALUE3 => 2,
-            LOCK_B_LR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LOCK_B_LR {
-        match value {
-            0 => LOCK_B_LR::VALUE1,
-            1 => LOCK_B_LR::VALUE2,
-            2 => LOCK_B_LR::VALUE3,
-            i => LOCK_B_LR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LOCK_B_LR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LOCK_B_LR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == LOCK_B_LR::VALUE3
-    }
-}
-#[doc = "Possible values of the field `LOCK_CH_L`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_CH_LR {
-    #[doc = "Over complete DMA transfer"]
-    VALUE1,
-    #[doc = "Over complete DMA block transfer"]
-    VALUE2,
-    #[doc = "Over complete DMA transaction"]
-    VALUE3,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl LOCK_CH_LR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LOCK_CH_LR::VALUE1 => 0,
-            LOCK_CH_LR::VALUE2 => 1,
-            LOCK_CH_LR::VALUE3 => 2,
-            LOCK_CH_LR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LOCK_CH_LR {
-        match value {
-            0 => LOCK_CH_LR::VALUE1,
-            1 => LOCK_CH_LR::VALUE2,
-            2 => LOCK_CH_LR::VALUE3,
-            i => LOCK_CH_LR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LOCK_CH_LR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LOCK_CH_LR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == LOCK_CH_LR::VALUE3
-    }
-}
-#[doc = "Possible values of the field `HS_SEL_SRC`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HS_SEL_SRCR {
-    #[doc = "Hardware handshaking interface. Software-initiated transaction requests are ignored."]
-    VALUE1,
-    #[doc = "Software handshaking interface. Hardware-initiated transaction requests are ignored."]
-    VALUE2,
-}
-impl HS_SEL_SRCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HS_SEL_SRCR::VALUE1 => false,
-            HS_SEL_SRCR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HS_SEL_SRCR {
-        match value {
-            false => HS_SEL_SRCR::VALUE1,
-            true => HS_SEL_SRCR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == HS_SEL_SRCR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == HS_SEL_SRCR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `HS_SEL_DST`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HS_SEL_DSTR {
-    #[doc = "Hardware handshaking interface. Software-initiated transaction requests are ignored."]
-    VALUE1,
-    #[doc = "Software handshaking interface. Hardware- initiated transaction requests are ignored."]
-    VALUE2,
-}
-impl HS_SEL_DSTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HS_SEL_DSTR::VALUE1 => false,
-            HS_SEL_DSTR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HS_SEL_DSTR {
-        match value {
-            false => HS_SEL_DSTR::VALUE1,
-            true => HS_SEL_DSTR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == HS_SEL_DSTR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == HS_SEL_DSTR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `FIFO_EMPTY`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FIFO_EMPTYR {
-    #[doc = "Channel FIFO empty"]
-    VALUE1,
-    #[doc = "Channel FIFO not empty"]
-    VALUE2,
-}
-impl FIFO_EMPTYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FIFO_EMPTYR::VALUE1 => true,
-            FIFO_EMPTYR::VALUE2 => false,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FIFO_EMPTYR {
-        match value {
-            true => FIFO_EMPTYR::VALUE1,
-            false => FIFO_EMPTYR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == FIFO_EMPTYR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == FIFO_EMPTYR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CH_SUSP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CH_SUSPR {
-    #[doc = "Not suspended."]
-    VALUE1,
-    #[doc = "Suspend DMA transfer from the source."]
-    VALUE2,
-}
-impl CH_SUSPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CH_SUSPR::VALUE1 => false,
-            CH_SUSPR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CH_SUSPR {
-        match value {
-            false => CH_SUSPR::VALUE1,
-            true => CH_SUSPR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CH_SUSPR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CH_SUSPR::VALUE2
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CH_PRIORR {
-    bits: u8,
-}
-impl CH_PRIORR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MAX_ABRSTW<'a> {
+#[doc = "Reader of field `MAX_ABRST`"]
+pub type MAX_ABRST_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `MAX_ABRST`"]
+pub struct MAX_ABRST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MAX_ABRSTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> MAX_ABRST_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 1023;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03ff << 20)) | (((value as u32) & 0x03ff) << 20);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SRC_HS_POL`"]
-pub enum SRC_HS_POLW {
-    #[doc = "Active high"]
+#[doc = "Source Handshaking Interface Polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SRC_HS_POL_A {
+    #[doc = "0: Active high"]
     VALUE1,
-    #[doc = "Active low"]
+    #[doc = "1: Active low"]
     VALUE2,
 }
-impl SRC_HS_POLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SRC_HS_POLW::VALUE1 => false,
-            SRC_HS_POLW::VALUE2 => true,
+impl From<SRC_HS_POL_A> for bool {
+    #[inline(always)]
+    fn from(variant: SRC_HS_POL_A) -> Self {
+        match variant {
+            SRC_HS_POL_A::VALUE1 => false,
+            SRC_HS_POL_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SRC_HS_POLW<'a> {
+#[doc = "Reader of field `SRC_HS_POL`"]
+pub type SRC_HS_POL_R = crate::R<bool, SRC_HS_POL_A>;
+impl SRC_HS_POL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SRC_HS_POL_A {
+        match self.bits {
+            false => SRC_HS_POL_A::VALUE1,
+            true => SRC_HS_POL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == SRC_HS_POL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == SRC_HS_POL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `SRC_HS_POL`"]
+pub struct SRC_HS_POL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SRC_HS_POLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SRC_HS_POLW) -> &'a mut W {
+impl<'a> SRC_HS_POL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SRC_HS_POL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Active high"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SRC_HS_POLW::VALUE1)
+        self.variant(SRC_HS_POL_A::VALUE1)
     }
     #[doc = "Active low"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SRC_HS_POLW::VALUE2)
+        self.variant(SRC_HS_POL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DST_HS_POL`"]
-pub enum DST_HS_POLW {
-    #[doc = "Active high"]
+#[doc = "Destination Handshaking Interface Polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DST_HS_POL_A {
+    #[doc = "0: Active high"]
     VALUE1,
-    #[doc = "Active low"]
+    #[doc = "1: Active low"]
     VALUE2,
 }
-impl DST_HS_POLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DST_HS_POLW::VALUE1 => false,
-            DST_HS_POLW::VALUE2 => true,
+impl From<DST_HS_POL_A> for bool {
+    #[inline(always)]
+    fn from(variant: DST_HS_POL_A) -> Self {
+        match variant {
+            DST_HS_POL_A::VALUE1 => false,
+            DST_HS_POL_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _DST_HS_POLW<'a> {
+#[doc = "Reader of field `DST_HS_POL`"]
+pub type DST_HS_POL_R = crate::R<bool, DST_HS_POL_A>;
+impl DST_HS_POL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DST_HS_POL_A {
+        match self.bits {
+            false => DST_HS_POL_A::VALUE1,
+            true => DST_HS_POL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == DST_HS_POL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == DST_HS_POL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `DST_HS_POL`"]
+pub struct DST_HS_POL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DST_HS_POLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DST_HS_POLW) -> &'a mut W {
+impl<'a> DST_HS_POL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DST_HS_POL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Active high"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(DST_HS_POLW::VALUE1)
+        self.variant(DST_HS_POL_A::VALUE1)
     }
     #[doc = "Active low"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(DST_HS_POLW::VALUE2)
+        self.variant(DST_HS_POL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _LOCK_BW<'a> {
+#[doc = "Reader of field `LOCK_B`"]
+pub type LOCK_B_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `LOCK_B`"]
+pub struct LOCK_B_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LOCK_BW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> LOCK_B_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _LOCK_CHW<'a> {
+#[doc = "Reader of field `LOCK_CH`"]
+pub type LOCK_CH_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `LOCK_CH`"]
+pub struct LOCK_CH_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LOCK_CHW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> LOCK_CH_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LOCK_B_L`"]
-pub enum LOCK_B_LW {
-    #[doc = "Over complete DMA transfer"]
+#[doc = "Bus Lock Level\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LOCK_B_L_A {
+    #[doc = "0: Over complete DMA transfer"]
     VALUE1,
-    #[doc = "Over complete DMA block transfer"]
+    #[doc = "1: Over complete DMA block transfer"]
     VALUE2,
-    #[doc = "Over complete DMA transaction"]
+    #[doc = "2: Over complete DMA transaction"]
     VALUE3,
 }
-impl LOCK_B_LW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LOCK_B_LW::VALUE1 => 0,
-            LOCK_B_LW::VALUE2 => 1,
-            LOCK_B_LW::VALUE3 => 2,
+impl From<LOCK_B_L_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LOCK_B_L_A) -> Self {
+        match variant {
+            LOCK_B_L_A::VALUE1 => 0,
+            LOCK_B_L_A::VALUE2 => 1,
+            LOCK_B_L_A::VALUE3 => 2,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _LOCK_B_LW<'a> {
+#[doc = "Reader of field `LOCK_B_L`"]
+pub type LOCK_B_L_R = crate::R<u8, LOCK_B_L_A>;
+impl LOCK_B_L_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, LOCK_B_L_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(LOCK_B_L_A::VALUE1),
+            1 => Val(LOCK_B_L_A::VALUE2),
+            2 => Val(LOCK_B_L_A::VALUE3),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LOCK_B_L_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LOCK_B_L_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == LOCK_B_L_A::VALUE3
+    }
+}
+#[doc = "Write proxy for field `LOCK_B_L`"]
+pub struct LOCK_B_L_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LOCK_B_LW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOCK_B_LW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> LOCK_B_L_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOCK_B_L_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Over complete DMA transfer"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LOCK_B_LW::VALUE1)
+        self.variant(LOCK_B_L_A::VALUE1)
     }
     #[doc = "Over complete DMA block transfer"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LOCK_B_LW::VALUE2)
+        self.variant(LOCK_B_L_A::VALUE2)
     }
     #[doc = "Over complete DMA transaction"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(LOCK_B_LW::VALUE3)
+        self.variant(LOCK_B_L_A::VALUE3)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LOCK_CH_L`"]
-pub enum LOCK_CH_LW {
-    #[doc = "Over complete DMA transfer"]
+#[doc = "Channel Lock Level\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LOCK_CH_L_A {
+    #[doc = "0: Over complete DMA transfer"]
     VALUE1,
-    #[doc = "Over complete DMA block transfer"]
+    #[doc = "1: Over complete DMA block transfer"]
     VALUE2,
-    #[doc = "Over complete DMA transaction"]
+    #[doc = "2: Over complete DMA transaction"]
     VALUE3,
 }
-impl LOCK_CH_LW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LOCK_CH_LW::VALUE1 => 0,
-            LOCK_CH_LW::VALUE2 => 1,
-            LOCK_CH_LW::VALUE3 => 2,
+impl From<LOCK_CH_L_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LOCK_CH_L_A) -> Self {
+        match variant {
+            LOCK_CH_L_A::VALUE1 => 0,
+            LOCK_CH_L_A::VALUE2 => 1,
+            LOCK_CH_L_A::VALUE3 => 2,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _LOCK_CH_LW<'a> {
+#[doc = "Reader of field `LOCK_CH_L`"]
+pub type LOCK_CH_L_R = crate::R<u8, LOCK_CH_L_A>;
+impl LOCK_CH_L_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, LOCK_CH_L_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(LOCK_CH_L_A::VALUE1),
+            1 => Val(LOCK_CH_L_A::VALUE2),
+            2 => Val(LOCK_CH_L_A::VALUE3),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LOCK_CH_L_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LOCK_CH_L_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == LOCK_CH_L_A::VALUE3
+    }
+}
+#[doc = "Write proxy for field `LOCK_CH_L`"]
+pub struct LOCK_CH_L_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LOCK_CH_LW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOCK_CH_LW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> LOCK_CH_L_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOCK_CH_L_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Over complete DMA transfer"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LOCK_CH_LW::VALUE1)
+        self.variant(LOCK_CH_L_A::VALUE1)
     }
     #[doc = "Over complete DMA block transfer"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LOCK_CH_LW::VALUE2)
+        self.variant(LOCK_CH_L_A::VALUE2)
     }
     #[doc = "Over complete DMA transaction"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(LOCK_CH_LW::VALUE3)
+        self.variant(LOCK_CH_L_A::VALUE3)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `HS_SEL_SRC`"]
-pub enum HS_SEL_SRCW {
-    #[doc = "Hardware handshaking interface. Software-initiated transaction requests are ignored."]
+#[doc = "Source Software or Hardware Handshaking Select\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HS_SEL_SRC_A {
+    #[doc = "0: Hardware handshaking interface. Software-initiated transaction requests are ignored."]
     VALUE1,
+    #[doc = "1: Software handshaking interface. Hardware-initiated transaction requests are ignored."]
+    VALUE2,
+}
+impl From<HS_SEL_SRC_A> for bool {
+    #[inline(always)]
+    fn from(variant: HS_SEL_SRC_A) -> Self {
+        match variant {
+            HS_SEL_SRC_A::VALUE1 => false,
+            HS_SEL_SRC_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `HS_SEL_SRC`"]
+pub type HS_SEL_SRC_R = crate::R<bool, HS_SEL_SRC_A>;
+impl HS_SEL_SRC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HS_SEL_SRC_A {
+        match self.bits {
+            false => HS_SEL_SRC_A::VALUE1,
+            true => HS_SEL_SRC_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == HS_SEL_SRC_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == HS_SEL_SRC_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `HS_SEL_SRC`"]
+pub struct HS_SEL_SRC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> HS_SEL_SRC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HS_SEL_SRC_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Hardware handshaking interface. Software-initiated transaction requests are ignored."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(HS_SEL_SRC_A::VALUE1)
+    }
     #[doc = "Software handshaking interface. Hardware-initiated transaction requests are ignored."]
-    VALUE2,
-}
-impl HS_SEL_SRCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HS_SEL_SRCW::VALUE1 => false,
-            HS_SEL_SRCW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HS_SEL_SRCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HS_SEL_SRCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HS_SEL_SRCW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Hardware handshaking interface. Software-initiated transaction requests are ignored."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(HS_SEL_SRCW::VALUE1)
-    }
-    #[doc = "Software handshaking interface. Hardware-initiated transaction requests are ignored."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(HS_SEL_SRCW::VALUE2)
+        self.variant(HS_SEL_SRC_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `HS_SEL_DST`"]
-pub enum HS_SEL_DSTW {
-    #[doc = "Hardware handshaking interface. Software-initiated transaction requests are ignored."]
+#[doc = "Destination Software or Hardware Handshaking Select\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HS_SEL_DST_A {
+    #[doc = "0: Hardware handshaking interface. Software-initiated transaction requests are ignored."]
     VALUE1,
-    #[doc = "Software handshaking interface. Hardware- initiated transaction requests are ignored."]
+    #[doc = "1: Software handshaking interface. Hardware- initiated transaction requests are ignored."]
     VALUE2,
 }
-impl HS_SEL_DSTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HS_SEL_DSTW::VALUE1 => false,
-            HS_SEL_DSTW::VALUE2 => true,
+impl From<HS_SEL_DST_A> for bool {
+    #[inline(always)]
+    fn from(variant: HS_SEL_DST_A) -> Self {
+        match variant {
+            HS_SEL_DST_A::VALUE1 => false,
+            HS_SEL_DST_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _HS_SEL_DSTW<'a> {
+#[doc = "Reader of field `HS_SEL_DST`"]
+pub type HS_SEL_DST_R = crate::R<bool, HS_SEL_DST_A>;
+impl HS_SEL_DST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HS_SEL_DST_A {
+        match self.bits {
+            false => HS_SEL_DST_A::VALUE1,
+            true => HS_SEL_DST_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == HS_SEL_DST_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == HS_SEL_DST_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `HS_SEL_DST`"]
+pub struct HS_SEL_DST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HS_SEL_DSTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HS_SEL_DSTW) -> &'a mut W {
+impl<'a> HS_SEL_DST_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HS_SEL_DST_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Hardware handshaking interface. Software-initiated transaction requests are ignored."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(HS_SEL_DSTW::VALUE1)
+        self.variant(HS_SEL_DST_A::VALUE1)
     }
     #[doc = "Software handshaking interface. Hardware- initiated transaction requests are ignored."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(HS_SEL_DSTW::VALUE2)
+        self.variant(HS_SEL_DST_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CH_SUSP`"]
-pub enum CH_SUSPW {
-    #[doc = "Not suspended."]
+#[doc = "Indicates if there is data left in the channel FIFO\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FIFO_EMPTY_A {
+    #[doc = "1: Channel FIFO empty"]
     VALUE1,
-    #[doc = "Suspend DMA transfer from the source."]
+    #[doc = "0: Channel FIFO not empty"]
     VALUE2,
 }
-impl CH_SUSPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CH_SUSPW::VALUE1 => false,
-            CH_SUSPW::VALUE2 => true,
+impl From<FIFO_EMPTY_A> for bool {
+    #[inline(always)]
+    fn from(variant: FIFO_EMPTY_A) -> Self {
+        match variant {
+            FIFO_EMPTY_A::VALUE1 => true,
+            FIFO_EMPTY_A::VALUE2 => false,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CH_SUSPW<'a> {
+#[doc = "Reader of field `FIFO_EMPTY`"]
+pub type FIFO_EMPTY_R = crate::R<bool, FIFO_EMPTY_A>;
+impl FIFO_EMPTY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FIFO_EMPTY_A {
+        match self.bits {
+            true => FIFO_EMPTY_A::VALUE1,
+            false => FIFO_EMPTY_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == FIFO_EMPTY_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == FIFO_EMPTY_A::VALUE2
+    }
+}
+#[doc = "Channel Suspend\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH_SUSP_A {
+    #[doc = "0: Not suspended."]
+    VALUE1,
+    #[doc = "1: Suspend DMA transfer from the source."]
+    VALUE2,
+}
+impl From<CH_SUSP_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH_SUSP_A) -> Self {
+        match variant {
+            CH_SUSP_A::VALUE1 => false,
+            CH_SUSP_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `CH_SUSP`"]
+pub type CH_SUSP_R = crate::R<bool, CH_SUSP_A>;
+impl CH_SUSP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH_SUSP_A {
+        match self.bits {
+            false => CH_SUSP_A::VALUE1,
+            true => CH_SUSP_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CH_SUSP_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CH_SUSP_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CH_SUSP`"]
+pub struct CH_SUSP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH_SUSPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CH_SUSPW) -> &'a mut W {
+impl<'a> CH_SUSP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH_SUSP_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Not suspended."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CH_SUSPW::VALUE1)
+        self.variant(CH_SUSP_A::VALUE1)
     }
     #[doc = "Suspend DMA transfer from the source."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CH_SUSPW::VALUE2)
+        self.variant(CH_SUSP_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CH_PRIORW<'a> {
+#[doc = "Reader of field `CH_PRIOR`"]
+pub type CH_PRIOR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CH_PRIOR`"]
+pub struct CH_PRIOR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CH_PRIORW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CH_PRIOR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 5)) | (((value as u32) & 0x07) << 5);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 20:29 - Maximum AMBA Burst Length"]
-    #[inline]
-    pub fn max_abrst(&self) -> MAX_ABRSTR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        MAX_ABRSTR { bits }
+    #[inline(always)]
+    pub fn max_abrst(&self) -> MAX_ABRST_R {
+        MAX_ABRST_R::new(((self.bits >> 20) & 0x03ff) as u16)
     }
     #[doc = "Bit 19 - Source Handshaking Interface Polarity"]
-    #[inline]
-    pub fn src_hs_pol(&self) -> SRC_HS_POLR {
-        SRC_HS_POLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn src_hs_pol(&self) -> SRC_HS_POL_R {
+        SRC_HS_POL_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 18 - Destination Handshaking Interface Polarity"]
-    #[inline]
-    pub fn dst_hs_pol(&self) -> DST_HS_POLR {
-        DST_HS_POLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dst_hs_pol(&self) -> DST_HS_POL_R {
+        DST_HS_POL_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Bus Lock Bit"]
-    #[inline]
-    pub fn lock_b(&self) -> LOCK_BR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LOCK_BR { bits }
+    #[inline(always)]
+    pub fn lock_b(&self) -> LOCK_B_R {
+        LOCK_B_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Channel Lock Bit"]
-    #[inline]
-    pub fn lock_ch(&self) -> LOCK_CHR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LOCK_CHR { bits }
+    #[inline(always)]
+    pub fn lock_ch(&self) -> LOCK_CH_R {
+        LOCK_CH_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bits 14:15 - Bus Lock Level"]
-    #[inline]
-    pub fn lock_b_l(&self) -> LOCK_B_LR {
-        LOCK_B_LR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lock_b_l(&self) -> LOCK_B_L_R {
+        LOCK_B_L_R::new(((self.bits >> 14) & 0x03) as u8)
     }
     #[doc = "Bits 12:13 - Channel Lock Level"]
-    #[inline]
-    pub fn lock_ch_l(&self) -> LOCK_CH_LR {
-        LOCK_CH_LR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lock_ch_l(&self) -> LOCK_CH_L_R {
+        LOCK_CH_L_R::new(((self.bits >> 12) & 0x03) as u8)
     }
     #[doc = "Bit 11 - Source Software or Hardware Handshaking Select"]
-    #[inline]
-    pub fn hs_sel_src(&self) -> HS_SEL_SRCR {
-        HS_SEL_SRCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hs_sel_src(&self) -> HS_SEL_SRC_R {
+        HS_SEL_SRC_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Destination Software or Hardware Handshaking Select"]
-    #[inline]
-    pub fn hs_sel_dst(&self) -> HS_SEL_DSTR {
-        HS_SEL_DSTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hs_sel_dst(&self) -> HS_SEL_DST_R {
+        HS_SEL_DST_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Indicates if there is data left in the channel FIFO"]
-    #[inline]
-    pub fn fifo_empty(&self) -> FIFO_EMPTYR {
-        FIFO_EMPTYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fifo_empty(&self) -> FIFO_EMPTY_R {
+        FIFO_EMPTY_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Channel Suspend"]
-    #[inline]
-    pub fn ch_susp(&self) -> CH_SUSPR {
-        CH_SUSPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ch_susp(&self) -> CH_SUSP_R {
+        CH_SUSP_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bits 5:7 - Channel priority"]
-    #[inline]
-    pub fn ch_prior(&self) -> CH_PRIORR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CH_PRIORR { bits }
+    #[inline(always)]
+    pub fn ch_prior(&self) -> CH_PRIOR_R {
+        CH_PRIOR_R::new(((self.bits >> 5) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 3584 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 20:29 - Maximum AMBA Burst Length"]
-    #[inline]
-    pub fn max_abrst(&mut self) -> _MAX_ABRSTW {
-        _MAX_ABRSTW { w: self }
+    #[inline(always)]
+    pub fn max_abrst(&mut self) -> MAX_ABRST_W {
+        MAX_ABRST_W { w: self }
     }
     #[doc = "Bit 19 - Source Handshaking Interface Polarity"]
-    #[inline]
-    pub fn src_hs_pol(&mut self) -> _SRC_HS_POLW {
-        _SRC_HS_POLW { w: self }
+    #[inline(always)]
+    pub fn src_hs_pol(&mut self) -> SRC_HS_POL_W {
+        SRC_HS_POL_W { w: self }
     }
     #[doc = "Bit 18 - Destination Handshaking Interface Polarity"]
-    #[inline]
-    pub fn dst_hs_pol(&mut self) -> _DST_HS_POLW {
-        _DST_HS_POLW { w: self }
+    #[inline(always)]
+    pub fn dst_hs_pol(&mut self) -> DST_HS_POL_W {
+        DST_HS_POL_W { w: self }
     }
     #[doc = "Bit 17 - Bus Lock Bit"]
-    #[inline]
-    pub fn lock_b(&mut self) -> _LOCK_BW {
-        _LOCK_BW { w: self }
+    #[inline(always)]
+    pub fn lock_b(&mut self) -> LOCK_B_W {
+        LOCK_B_W { w: self }
     }
     #[doc = "Bit 16 - Channel Lock Bit"]
-    #[inline]
-    pub fn lock_ch(&mut self) -> _LOCK_CHW {
-        _LOCK_CHW { w: self }
+    #[inline(always)]
+    pub fn lock_ch(&mut self) -> LOCK_CH_W {
+        LOCK_CH_W { w: self }
     }
     #[doc = "Bits 14:15 - Bus Lock Level"]
-    #[inline]
-    pub fn lock_b_l(&mut self) -> _LOCK_B_LW {
-        _LOCK_B_LW { w: self }
+    #[inline(always)]
+    pub fn lock_b_l(&mut self) -> LOCK_B_L_W {
+        LOCK_B_L_W { w: self }
     }
     #[doc = "Bits 12:13 - Channel Lock Level"]
-    #[inline]
-    pub fn lock_ch_l(&mut self) -> _LOCK_CH_LW {
-        _LOCK_CH_LW { w: self }
+    #[inline(always)]
+    pub fn lock_ch_l(&mut self) -> LOCK_CH_L_W {
+        LOCK_CH_L_W { w: self }
     }
     #[doc = "Bit 11 - Source Software or Hardware Handshaking Select"]
-    #[inline]
-    pub fn hs_sel_src(&mut self) -> _HS_SEL_SRCW {
-        _HS_SEL_SRCW { w: self }
+    #[inline(always)]
+    pub fn hs_sel_src(&mut self) -> HS_SEL_SRC_W {
+        HS_SEL_SRC_W { w: self }
     }
     #[doc = "Bit 10 - Destination Software or Hardware Handshaking Select"]
-    #[inline]
-    pub fn hs_sel_dst(&mut self) -> _HS_SEL_DSTW {
-        _HS_SEL_DSTW { w: self }
+    #[inline(always)]
+    pub fn hs_sel_dst(&mut self) -> HS_SEL_DST_W {
+        HS_SEL_DST_W { w: self }
     }
     #[doc = "Bit 8 - Channel Suspend"]
-    #[inline]
-    pub fn ch_susp(&mut self) -> _CH_SUSPW {
-        _CH_SUSPW { w: self }
+    #[inline(always)]
+    pub fn ch_susp(&mut self) -> CH_SUSP_W {
+        CH_SUSP_W { w: self }
     }
     #[doc = "Bits 5:7 - Channel priority"]
-    #[inline]
-    pub fn ch_prior(&mut self) -> _CH_PRIORW {
-        _CH_PRIORW { w: self }
+    #[inline(always)]
+    pub fn ch_prior(&mut self) -> CH_PRIOR_W {
+        CH_PRIOR_W { w: self }
     }
 }

@@ -1,407 +1,378 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CGATCLR2 {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register CGATCLR2"]
+pub type W = crate::W<u32, super::CGATCLR2>;
+#[doc = "Register CGATCLR2 `reset()`'s with value 0"]
+impl crate::ResetValue for super::CGATCLR2 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Values that can be written to the field `WDT`"]
-pub enum WDTW {
-    #[doc = "No effect"]
+#[doc = "WDT Gating Clear\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WDT_AW {
+    #[doc = "0: No effect"]
     CONST_0,
-    #[doc = "Disable gating"]
+    #[doc = "1: Disable gating"]
     CONST_1,
 }
-impl WDTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WDTW::CONST_0 => false,
-            WDTW::CONST_1 => true,
+impl From<WDT_AW> for bool {
+    #[inline(always)]
+    fn from(variant: WDT_AW) -> Self {
+        match variant {
+            WDT_AW::CONST_0 => false,
+            WDT_AW::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _WDTW<'a> {
+#[doc = "Write proxy for field `WDT`"]
+pub struct WDT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WDTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WDTW) -> &'a mut W {
+impl<'a> WDT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WDT_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No effect"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(WDTW::CONST_0)
+        self.variant(WDT_AW::CONST_0)
     }
     #[doc = "Disable gating"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(WDTW::CONST_1)
+        self.variant(WDT_AW::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ETH0`"]
-pub enum ETH0W {
-    #[doc = "No effect"]
+#[doc = "ETH0 Gating Clear\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ETH0_AW {
+    #[doc = "0: No effect"]
     CONST_0,
-    #[doc = "Disable gating"]
+    #[doc = "1: Disable gating"]
     CONST_1,
 }
-impl ETH0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ETH0W::CONST_0 => false,
-            ETH0W::CONST_1 => true,
+impl From<ETH0_AW> for bool {
+    #[inline(always)]
+    fn from(variant: ETH0_AW) -> Self {
+        match variant {
+            ETH0_AW::CONST_0 => false,
+            ETH0_AW::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ETH0W<'a> {
+#[doc = "Write proxy for field `ETH0`"]
+pub struct ETH0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ETH0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ETH0W) -> &'a mut W {
+impl<'a> ETH0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ETH0_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No effect"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(ETH0W::CONST_0)
+        self.variant(ETH0_AW::CONST_0)
     }
     #[doc = "Disable gating"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(ETH0W::CONST_1)
+        self.variant(ETH0_AW::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DMA0`"]
-pub enum DMA0W {
-    #[doc = "No effect"]
+#[doc = "DMA0 Gating Clear\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMA0_AW {
+    #[doc = "0: No effect"]
     CONST_0,
-    #[doc = "Disable gating"]
+    #[doc = "1: Disable gating"]
     CONST_1,
 }
-impl DMA0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DMA0W::CONST_0 => false,
-            DMA0W::CONST_1 => true,
+impl From<DMA0_AW> for bool {
+    #[inline(always)]
+    fn from(variant: DMA0_AW) -> Self {
+        match variant {
+            DMA0_AW::CONST_0 => false,
+            DMA0_AW::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _DMA0W<'a> {
+#[doc = "Write proxy for field `DMA0`"]
+pub struct DMA0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DMA0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DMA0W) -> &'a mut W {
+impl<'a> DMA0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DMA0_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No effect"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(DMA0W::CONST_0)
+        self.variant(DMA0_AW::CONST_0)
     }
     #[doc = "Disable gating"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(DMA0W::CONST_1)
+        self.variant(DMA0_AW::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FCE`"]
-pub enum FCEW {
-    #[doc = "No effect"]
+#[doc = "FCE Gating Clear\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FCE_AW {
+    #[doc = "0: No effect"]
     CONST_0,
-    #[doc = "Disable gating"]
+    #[doc = "1: Disable gating"]
     CONST_1,
 }
-impl FCEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FCEW::CONST_0 => false,
-            FCEW::CONST_1 => true,
+impl From<FCE_AW> for bool {
+    #[inline(always)]
+    fn from(variant: FCE_AW) -> Self {
+        match variant {
+            FCE_AW::CONST_0 => false,
+            FCE_AW::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _FCEW<'a> {
+#[doc = "Write proxy for field `FCE`"]
+pub struct FCE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FCEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FCEW) -> &'a mut W {
+impl<'a> FCE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FCE_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No effect"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(FCEW::CONST_0)
+        self.variant(FCE_AW::CONST_0)
     }
     #[doc = "Disable gating"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(FCEW::CONST_1)
+        self.variant(FCE_AW::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `USB`"]
-pub enum USBW {
-    #[doc = "No effect"]
+#[doc = "USB Gating Clear\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum USB_AW {
+    #[doc = "0: No effect"]
     CONST_0,
-    #[doc = "Disable gating"]
+    #[doc = "1: Disable gating"]
     CONST_1,
 }
-impl USBW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            USBW::CONST_0 => false,
-            USBW::CONST_1 => true,
+impl From<USB_AW> for bool {
+    #[inline(always)]
+    fn from(variant: USB_AW) -> Self {
+        match variant {
+            USB_AW::CONST_0 => false,
+            USB_AW::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _USBW<'a> {
+#[doc = "Write proxy for field `USB`"]
+pub struct USB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _USBW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: USBW) -> &'a mut W {
+impl<'a> USB_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: USB_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No effect"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(USBW::CONST_0)
+        self.variant(USB_AW::CONST_0)
     }
     #[doc = "Disable gating"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(USBW::CONST_1)
+        self.variant(USB_AW::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ECAT0`"]
-pub enum ECAT0W {
-    #[doc = "No effect"]
+#[doc = "ECAT0 Gating Clear\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ECAT0_AW {
+    #[doc = "0: No effect"]
     CONST_0,
-    #[doc = "Disable gating"]
+    #[doc = "1: Disable gating"]
     CONST_1,
 }
-impl ECAT0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ECAT0W::CONST_0 => false,
-            ECAT0W::CONST_1 => true,
+impl From<ECAT0_AW> for bool {
+    #[inline(always)]
+    fn from(variant: ECAT0_AW) -> Self {
+        match variant {
+            ECAT0_AW::CONST_0 => false,
+            ECAT0_AW::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ECAT0W<'a> {
+#[doc = "Write proxy for field `ECAT0`"]
+pub struct ECAT0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ECAT0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ECAT0W) -> &'a mut W {
+impl<'a> ECAT0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ECAT0_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No effect"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(ECAT0W::CONST_0)
+        self.variant(ECAT0_AW::CONST_0)
     }
     #[doc = "Disable gating"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(ECAT0W::CONST_1)
+        self.variant(ECAT0_AW::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 1 - WDT Gating Clear"]
-    #[inline]
-    pub fn wdt(&mut self) -> _WDTW {
-        _WDTW { w: self }
+    #[inline(always)]
+    pub fn wdt(&mut self) -> WDT_W {
+        WDT_W { w: self }
     }
     #[doc = "Bit 2 - ETH0 Gating Clear"]
-    #[inline]
-    pub fn eth0(&mut self) -> _ETH0W {
-        _ETH0W { w: self }
+    #[inline(always)]
+    pub fn eth0(&mut self) -> ETH0_W {
+        ETH0_W { w: self }
     }
     #[doc = "Bit 4 - DMA0 Gating Clear"]
-    #[inline]
-    pub fn dma0(&mut self) -> _DMA0W {
-        _DMA0W { w: self }
+    #[inline(always)]
+    pub fn dma0(&mut self) -> DMA0_W {
+        DMA0_W { w: self }
     }
     #[doc = "Bit 6 - FCE Gating Clear"]
-    #[inline]
-    pub fn fce(&mut self) -> _FCEW {
-        _FCEW { w: self }
+    #[inline(always)]
+    pub fn fce(&mut self) -> FCE_W {
+        FCE_W { w: self }
     }
     #[doc = "Bit 7 - USB Gating Clear"]
-    #[inline]
-    pub fn usb(&mut self) -> _USBW {
-        _USBW { w: self }
+    #[inline(always)]
+    pub fn usb(&mut self) -> USB_W {
+        USB_W { w: self }
     }
     #[doc = "Bit 10 - ECAT0 Gating Clear"]
-    #[inline]
-    pub fn ecat0(&mut self) -> _ECAT0W {
-        _ECAT0W { w: self }
+    #[inline(always)]
+    pub fn ecat0(&mut self) -> ECAT0_W {
+        ECAT0_W { w: self }
     }
 }

@@ -1,1252 +1,896 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u16,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u16,
-}
-impl super::INT_STATUS_ERR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INT_STATUS_ERR"]
+pub type R = crate::R<u16, super::INT_STATUS_ERR>;
+#[doc = "Writer for register INT_STATUS_ERR"]
+pub type W = crate::W<u16, super::INT_STATUS_ERR>;
+#[doc = "Register INT_STATUS_ERR `reset()`'s with value 0"]
+impl crate::ResetValue for super::INT_STATUS_ERR {
+    type Type = u16;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `CEATA_ERR`"]
+#[doc = "Ceata Error Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CEATA_ERRR {
-    #[doc = "no error"]
+pub enum CEATA_ERR_A {
+    #[doc = "0: no error"]
     VALUE1,
-    #[doc = "error"]
+    #[doc = "1: error"]
     VALUE2,
 }
-impl CEATA_ERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CEATA_ERRR::VALUE1 => false,
-            CEATA_ERRR::VALUE2 => true,
+impl From<CEATA_ERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: CEATA_ERR_A) -> Self {
+        match variant {
+            CEATA_ERR_A::VALUE1 => false,
+            CEATA_ERR_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CEATA_ERRR {
-        match value {
-            false => CEATA_ERRR::VALUE1,
-            true => CEATA_ERRR::VALUE2,
+}
+#[doc = "Reader of field `CEATA_ERR`"]
+pub type CEATA_ERR_R = crate::R<bool, CEATA_ERR_A>;
+impl CEATA_ERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CEATA_ERR_A {
+        match self.bits {
+            false => CEATA_ERR_A::VALUE1,
+            true => CEATA_ERR_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CEATA_ERRR::VALUE1
+        *self == CEATA_ERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CEATA_ERRR::VALUE2
+        *self == CEATA_ERR_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `ACMD_ERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ACMD_ERRR {
-    #[doc = "No Error"]
-    VALUE1,
-    #[doc = "Error"]
-    VALUE2,
-}
-impl ACMD_ERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ACMD_ERRR::VALUE1 => false,
-            ACMD_ERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ACMD_ERRR {
-        match value {
-            false => ACMD_ERRR::VALUE1,
-            true => ACMD_ERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ACMD_ERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ACMD_ERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CURRENT_LIMIT_ERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CURRENT_LIMIT_ERRR {
-    #[doc = "No Error"]
-    VALUE1,
-    #[doc = "Power Fail"]
-    VALUE2,
-}
-impl CURRENT_LIMIT_ERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CURRENT_LIMIT_ERRR::VALUE1 => false,
-            CURRENT_LIMIT_ERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CURRENT_LIMIT_ERRR {
-        match value {
-            false => CURRENT_LIMIT_ERRR::VALUE1,
-            true => CURRENT_LIMIT_ERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CURRENT_LIMIT_ERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CURRENT_LIMIT_ERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `DATA_END_BIT_ERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DATA_END_BIT_ERRR {
-    #[doc = "No Error"]
-    VALUE1,
-    #[doc = "Error"]
-    VALUE2,
-}
-impl DATA_END_BIT_ERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DATA_END_BIT_ERRR::VALUE1 => false,
-            DATA_END_BIT_ERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DATA_END_BIT_ERRR {
-        match value {
-            false => DATA_END_BIT_ERRR::VALUE1,
-            true => DATA_END_BIT_ERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == DATA_END_BIT_ERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == DATA_END_BIT_ERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `DATA_CRC_ERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DATA_CRC_ERRR {
-    #[doc = "No Error"]
-    VALUE1,
-    #[doc = "Error"]
-    VALUE2,
-}
-impl DATA_CRC_ERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DATA_CRC_ERRR::VALUE1 => false,
-            DATA_CRC_ERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DATA_CRC_ERRR {
-        match value {
-            false => DATA_CRC_ERRR::VALUE1,
-            true => DATA_CRC_ERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == DATA_CRC_ERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == DATA_CRC_ERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `DATA_TIMEOUT_ERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DATA_TIMEOUT_ERRR {
-    #[doc = "No Error"]
-    VALUE1,
-    #[doc = "Timeout"]
-    VALUE2,
-}
-impl DATA_TIMEOUT_ERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DATA_TIMEOUT_ERRR::VALUE1 => false,
-            DATA_TIMEOUT_ERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DATA_TIMEOUT_ERRR {
-        match value {
-            false => DATA_TIMEOUT_ERRR::VALUE1,
-            true => DATA_TIMEOUT_ERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == DATA_TIMEOUT_ERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == DATA_TIMEOUT_ERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CMD_IND_ERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CMD_IND_ERRR {
-    #[doc = "No Error"]
-    VALUE1,
-    #[doc = "Error"]
-    VALUE2,
-}
-impl CMD_IND_ERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CMD_IND_ERRR::VALUE1 => false,
-            CMD_IND_ERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CMD_IND_ERRR {
-        match value {
-            false => CMD_IND_ERRR::VALUE1,
-            true => CMD_IND_ERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CMD_IND_ERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CMD_IND_ERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CMD_END_BIT_ERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CMD_END_BIT_ERRR {
-    #[doc = "No Error"]
-    VALUE1,
-    #[doc = "End Bit Error Generated"]
-    VALUE2,
-}
-impl CMD_END_BIT_ERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CMD_END_BIT_ERRR::VALUE1 => false,
-            CMD_END_BIT_ERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CMD_END_BIT_ERRR {
-        match value {
-            false => CMD_END_BIT_ERRR::VALUE1,
-            true => CMD_END_BIT_ERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CMD_END_BIT_ERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CMD_END_BIT_ERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CMD_CRC_ERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CMD_CRC_ERRR {
-    #[doc = "No Error"]
-    VALUE1,
-    #[doc = "CRC Error Generated"]
-    VALUE2,
-}
-impl CMD_CRC_ERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CMD_CRC_ERRR::VALUE1 => false,
-            CMD_CRC_ERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CMD_CRC_ERRR {
-        match value {
-            false => CMD_CRC_ERRR::VALUE1,
-            true => CMD_CRC_ERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CMD_CRC_ERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CMD_CRC_ERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CMD_TIMEOUT_ERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CMD_TIMEOUT_ERRR {
-    #[doc = "No Error"]
-    VALUE1,
-    #[doc = "Timeout"]
-    VALUE2,
-}
-impl CMD_TIMEOUT_ERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CMD_TIMEOUT_ERRR::VALUE1 => false,
-            CMD_TIMEOUT_ERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CMD_TIMEOUT_ERRR {
-        match value {
-            false => CMD_TIMEOUT_ERRR::VALUE1,
-            true => CMD_TIMEOUT_ERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CMD_TIMEOUT_ERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CMD_TIMEOUT_ERRR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `CEATA_ERR`"]
-pub enum CEATA_ERRW {
-    #[doc = "no error"]
-    VALUE1,
-    #[doc = "error"]
-    VALUE2,
-}
-impl CEATA_ERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEATA_ERRW::VALUE1 => false,
-            CEATA_ERRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CEATA_ERRW<'a> {
+#[doc = "Write proxy for field `CEATA_ERR`"]
+pub struct CEATA_ERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEATA_ERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEATA_ERRW) -> &'a mut W {
+impl<'a> CEATA_ERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEATA_ERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "no error"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEATA_ERRW::VALUE1)
+        self.variant(CEATA_ERR_A::VALUE1)
     }
     #[doc = "error"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEATA_ERRW::VALUE2)
+        self.variant(CEATA_ERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u16) & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ACMD_ERR`"]
-pub enum ACMD_ERRW {
-    #[doc = "No Error"]
+#[doc = "Auto CMD Error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ACMD_ERR_A {
+    #[doc = "0: No Error"]
     VALUE1,
-    #[doc = "Error"]
+    #[doc = "1: Error"]
     VALUE2,
 }
-impl ACMD_ERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ACMD_ERRW::VALUE1 => false,
-            ACMD_ERRW::VALUE2 => true,
+impl From<ACMD_ERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: ACMD_ERR_A) -> Self {
+        match variant {
+            ACMD_ERR_A::VALUE1 => false,
+            ACMD_ERR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ACMD_ERRW<'a> {
+#[doc = "Reader of field `ACMD_ERR`"]
+pub type ACMD_ERR_R = crate::R<bool, ACMD_ERR_A>;
+impl ACMD_ERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ACMD_ERR_A {
+        match self.bits {
+            false => ACMD_ERR_A::VALUE1,
+            true => ACMD_ERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ACMD_ERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ACMD_ERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ACMD_ERR`"]
+pub struct ACMD_ERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ACMD_ERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ACMD_ERRW) -> &'a mut W {
+impl<'a> ACMD_ERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ACMD_ERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No Error"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ACMD_ERRW::VALUE1)
+        self.variant(ACMD_ERR_A::VALUE1)
     }
     #[doc = "Error"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ACMD_ERRW::VALUE2)
+        self.variant(ACMD_ERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CURRENT_LIMIT_ERR`"]
-pub enum CURRENT_LIMIT_ERRW {
-    #[doc = "No Error"]
+#[doc = "Current Limit Error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CURRENT_LIMIT_ERR_A {
+    #[doc = "0: No Error"]
     VALUE1,
+    #[doc = "1: Power Fail"]
+    VALUE2,
+}
+impl From<CURRENT_LIMIT_ERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: CURRENT_LIMIT_ERR_A) -> Self {
+        match variant {
+            CURRENT_LIMIT_ERR_A::VALUE1 => false,
+            CURRENT_LIMIT_ERR_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `CURRENT_LIMIT_ERR`"]
+pub type CURRENT_LIMIT_ERR_R = crate::R<bool, CURRENT_LIMIT_ERR_A>;
+impl CURRENT_LIMIT_ERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CURRENT_LIMIT_ERR_A {
+        match self.bits {
+            false => CURRENT_LIMIT_ERR_A::VALUE1,
+            true => CURRENT_LIMIT_ERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CURRENT_LIMIT_ERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CURRENT_LIMIT_ERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CURRENT_LIMIT_ERR`"]
+pub struct CURRENT_LIMIT_ERR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CURRENT_LIMIT_ERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CURRENT_LIMIT_ERR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "No Error"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(CURRENT_LIMIT_ERR_A::VALUE1)
+    }
     #[doc = "Power Fail"]
-    VALUE2,
-}
-impl CURRENT_LIMIT_ERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CURRENT_LIMIT_ERRW::VALUE1 => false,
-            CURRENT_LIMIT_ERRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CURRENT_LIMIT_ERRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CURRENT_LIMIT_ERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CURRENT_LIMIT_ERRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No Error"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(CURRENT_LIMIT_ERRW::VALUE1)
-    }
-    #[doc = "Power Fail"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CURRENT_LIMIT_ERRW::VALUE2)
+        self.variant(CURRENT_LIMIT_ERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DATA_END_BIT_ERR`"]
-pub enum DATA_END_BIT_ERRW {
-    #[doc = "No Error"]
+#[doc = "Data End Bit Error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DATA_END_BIT_ERR_A {
+    #[doc = "0: No Error"]
     VALUE1,
-    #[doc = "Error"]
+    #[doc = "1: Error"]
     VALUE2,
 }
-impl DATA_END_BIT_ERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DATA_END_BIT_ERRW::VALUE1 => false,
-            DATA_END_BIT_ERRW::VALUE2 => true,
+impl From<DATA_END_BIT_ERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: DATA_END_BIT_ERR_A) -> Self {
+        match variant {
+            DATA_END_BIT_ERR_A::VALUE1 => false,
+            DATA_END_BIT_ERR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _DATA_END_BIT_ERRW<'a> {
+#[doc = "Reader of field `DATA_END_BIT_ERR`"]
+pub type DATA_END_BIT_ERR_R = crate::R<bool, DATA_END_BIT_ERR_A>;
+impl DATA_END_BIT_ERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DATA_END_BIT_ERR_A {
+        match self.bits {
+            false => DATA_END_BIT_ERR_A::VALUE1,
+            true => DATA_END_BIT_ERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == DATA_END_BIT_ERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == DATA_END_BIT_ERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `DATA_END_BIT_ERR`"]
+pub struct DATA_END_BIT_ERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DATA_END_BIT_ERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DATA_END_BIT_ERRW) -> &'a mut W {
+impl<'a> DATA_END_BIT_ERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DATA_END_BIT_ERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No Error"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(DATA_END_BIT_ERRW::VALUE1)
+        self.variant(DATA_END_BIT_ERR_A::VALUE1)
     }
     #[doc = "Error"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(DATA_END_BIT_ERRW::VALUE2)
+        self.variant(DATA_END_BIT_ERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DATA_CRC_ERR`"]
-pub enum DATA_CRC_ERRW {
-    #[doc = "No Error"]
+#[doc = "Data CRC Error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DATA_CRC_ERR_A {
+    #[doc = "0: No Error"]
     VALUE1,
-    #[doc = "Error"]
+    #[doc = "1: Error"]
     VALUE2,
 }
-impl DATA_CRC_ERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DATA_CRC_ERRW::VALUE1 => false,
-            DATA_CRC_ERRW::VALUE2 => true,
+impl From<DATA_CRC_ERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: DATA_CRC_ERR_A) -> Self {
+        match variant {
+            DATA_CRC_ERR_A::VALUE1 => false,
+            DATA_CRC_ERR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _DATA_CRC_ERRW<'a> {
+#[doc = "Reader of field `DATA_CRC_ERR`"]
+pub type DATA_CRC_ERR_R = crate::R<bool, DATA_CRC_ERR_A>;
+impl DATA_CRC_ERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DATA_CRC_ERR_A {
+        match self.bits {
+            false => DATA_CRC_ERR_A::VALUE1,
+            true => DATA_CRC_ERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == DATA_CRC_ERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == DATA_CRC_ERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `DATA_CRC_ERR`"]
+pub struct DATA_CRC_ERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DATA_CRC_ERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DATA_CRC_ERRW) -> &'a mut W {
+impl<'a> DATA_CRC_ERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DATA_CRC_ERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No Error"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(DATA_CRC_ERRW::VALUE1)
+        self.variant(DATA_CRC_ERR_A::VALUE1)
     }
     #[doc = "Error"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(DATA_CRC_ERRW::VALUE2)
+        self.variant(DATA_CRC_ERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DATA_TIMEOUT_ERR`"]
-pub enum DATA_TIMEOUT_ERRW {
-    #[doc = "No Error"]
+#[doc = "Data Timeout Error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DATA_TIMEOUT_ERR_A {
+    #[doc = "0: No Error"]
     VALUE1,
+    #[doc = "1: Timeout"]
+    VALUE2,
+}
+impl From<DATA_TIMEOUT_ERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: DATA_TIMEOUT_ERR_A) -> Self {
+        match variant {
+            DATA_TIMEOUT_ERR_A::VALUE1 => false,
+            DATA_TIMEOUT_ERR_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `DATA_TIMEOUT_ERR`"]
+pub type DATA_TIMEOUT_ERR_R = crate::R<bool, DATA_TIMEOUT_ERR_A>;
+impl DATA_TIMEOUT_ERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DATA_TIMEOUT_ERR_A {
+        match self.bits {
+            false => DATA_TIMEOUT_ERR_A::VALUE1,
+            true => DATA_TIMEOUT_ERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == DATA_TIMEOUT_ERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == DATA_TIMEOUT_ERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `DATA_TIMEOUT_ERR`"]
+pub struct DATA_TIMEOUT_ERR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DATA_TIMEOUT_ERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DATA_TIMEOUT_ERR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "No Error"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(DATA_TIMEOUT_ERR_A::VALUE1)
+    }
     #[doc = "Timeout"]
-    VALUE2,
-}
-impl DATA_TIMEOUT_ERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DATA_TIMEOUT_ERRW::VALUE1 => false,
-            DATA_TIMEOUT_ERRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DATA_TIMEOUT_ERRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DATA_TIMEOUT_ERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DATA_TIMEOUT_ERRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No Error"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(DATA_TIMEOUT_ERRW::VALUE1)
-    }
-    #[doc = "Timeout"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(DATA_TIMEOUT_ERRW::VALUE2)
+        self.variant(DATA_TIMEOUT_ERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CMD_IND_ERR`"]
-pub enum CMD_IND_ERRW {
-    #[doc = "No Error"]
+#[doc = "Command Index Error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CMD_IND_ERR_A {
+    #[doc = "0: No Error"]
     VALUE1,
-    #[doc = "Error"]
+    #[doc = "1: Error"]
     VALUE2,
 }
-impl CMD_IND_ERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CMD_IND_ERRW::VALUE1 => false,
-            CMD_IND_ERRW::VALUE2 => true,
+impl From<CMD_IND_ERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: CMD_IND_ERR_A) -> Self {
+        match variant {
+            CMD_IND_ERR_A::VALUE1 => false,
+            CMD_IND_ERR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CMD_IND_ERRW<'a> {
+#[doc = "Reader of field `CMD_IND_ERR`"]
+pub type CMD_IND_ERR_R = crate::R<bool, CMD_IND_ERR_A>;
+impl CMD_IND_ERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CMD_IND_ERR_A {
+        match self.bits {
+            false => CMD_IND_ERR_A::VALUE1,
+            true => CMD_IND_ERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CMD_IND_ERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CMD_IND_ERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CMD_IND_ERR`"]
+pub struct CMD_IND_ERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CMD_IND_ERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CMD_IND_ERRW) -> &'a mut W {
+impl<'a> CMD_IND_ERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CMD_IND_ERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No Error"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CMD_IND_ERRW::VALUE1)
+        self.variant(CMD_IND_ERR_A::VALUE1)
     }
     #[doc = "Error"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CMD_IND_ERRW::VALUE2)
+        self.variant(CMD_IND_ERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CMD_END_BIT_ERR`"]
-pub enum CMD_END_BIT_ERRW {
-    #[doc = "No Error"]
+#[doc = "Command End Bit Error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CMD_END_BIT_ERR_A {
+    #[doc = "0: No Error"]
     VALUE1,
+    #[doc = "1: End Bit Error Generated"]
+    VALUE2,
+}
+impl From<CMD_END_BIT_ERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: CMD_END_BIT_ERR_A) -> Self {
+        match variant {
+            CMD_END_BIT_ERR_A::VALUE1 => false,
+            CMD_END_BIT_ERR_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `CMD_END_BIT_ERR`"]
+pub type CMD_END_BIT_ERR_R = crate::R<bool, CMD_END_BIT_ERR_A>;
+impl CMD_END_BIT_ERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CMD_END_BIT_ERR_A {
+        match self.bits {
+            false => CMD_END_BIT_ERR_A::VALUE1,
+            true => CMD_END_BIT_ERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CMD_END_BIT_ERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CMD_END_BIT_ERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CMD_END_BIT_ERR`"]
+pub struct CMD_END_BIT_ERR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CMD_END_BIT_ERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CMD_END_BIT_ERR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "No Error"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(CMD_END_BIT_ERR_A::VALUE1)
+    }
     #[doc = "End Bit Error Generated"]
-    VALUE2,
-}
-impl CMD_END_BIT_ERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CMD_END_BIT_ERRW::VALUE1 => false,
-            CMD_END_BIT_ERRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CMD_END_BIT_ERRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CMD_END_BIT_ERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CMD_END_BIT_ERRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No Error"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(CMD_END_BIT_ERRW::VALUE1)
-    }
-    #[doc = "End Bit Error Generated"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CMD_END_BIT_ERRW::VALUE2)
+        self.variant(CMD_END_BIT_ERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CMD_CRC_ERR`"]
-pub enum CMD_CRC_ERRW {
-    #[doc = "No Error"]
+#[doc = "Command CRC Error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CMD_CRC_ERR_A {
+    #[doc = "0: No Error"]
     VALUE1,
-    #[doc = "CRC Error Generated"]
+    #[doc = "1: CRC Error Generated"]
     VALUE2,
 }
-impl CMD_CRC_ERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CMD_CRC_ERRW::VALUE1 => false,
-            CMD_CRC_ERRW::VALUE2 => true,
+impl From<CMD_CRC_ERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: CMD_CRC_ERR_A) -> Self {
+        match variant {
+            CMD_CRC_ERR_A::VALUE1 => false,
+            CMD_CRC_ERR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CMD_CRC_ERRW<'a> {
+#[doc = "Reader of field `CMD_CRC_ERR`"]
+pub type CMD_CRC_ERR_R = crate::R<bool, CMD_CRC_ERR_A>;
+impl CMD_CRC_ERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CMD_CRC_ERR_A {
+        match self.bits {
+            false => CMD_CRC_ERR_A::VALUE1,
+            true => CMD_CRC_ERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CMD_CRC_ERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CMD_CRC_ERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CMD_CRC_ERR`"]
+pub struct CMD_CRC_ERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CMD_CRC_ERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CMD_CRC_ERRW) -> &'a mut W {
+impl<'a> CMD_CRC_ERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CMD_CRC_ERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No Error"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CMD_CRC_ERRW::VALUE1)
+        self.variant(CMD_CRC_ERR_A::VALUE1)
     }
     #[doc = "CRC Error Generated"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CMD_CRC_ERRW::VALUE2)
+        self.variant(CMD_CRC_ERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CMD_TIMEOUT_ERR`"]
-pub enum CMD_TIMEOUT_ERRW {
-    #[doc = "No Error"]
+#[doc = "Command Timeout Error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CMD_TIMEOUT_ERR_A {
+    #[doc = "0: No Error"]
     VALUE1,
-    #[doc = "Timeout"]
+    #[doc = "1: Timeout"]
     VALUE2,
 }
-impl CMD_TIMEOUT_ERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CMD_TIMEOUT_ERRW::VALUE1 => false,
-            CMD_TIMEOUT_ERRW::VALUE2 => true,
+impl From<CMD_TIMEOUT_ERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: CMD_TIMEOUT_ERR_A) -> Self {
+        match variant {
+            CMD_TIMEOUT_ERR_A::VALUE1 => false,
+            CMD_TIMEOUT_ERR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CMD_TIMEOUT_ERRW<'a> {
+#[doc = "Reader of field `CMD_TIMEOUT_ERR`"]
+pub type CMD_TIMEOUT_ERR_R = crate::R<bool, CMD_TIMEOUT_ERR_A>;
+impl CMD_TIMEOUT_ERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CMD_TIMEOUT_ERR_A {
+        match self.bits {
+            false => CMD_TIMEOUT_ERR_A::VALUE1,
+            true => CMD_TIMEOUT_ERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CMD_TIMEOUT_ERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CMD_TIMEOUT_ERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CMD_TIMEOUT_ERR`"]
+pub struct CMD_TIMEOUT_ERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CMD_TIMEOUT_ERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CMD_TIMEOUT_ERRW) -> &'a mut W {
+impl<'a> CMD_TIMEOUT_ERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CMD_TIMEOUT_ERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No Error"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CMD_TIMEOUT_ERRW::VALUE1)
+        self.variant(CMD_TIMEOUT_ERR_A::VALUE1)
     }
     #[doc = "Timeout"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CMD_TIMEOUT_ERRW::VALUE2)
+        self.variant(CMD_TIMEOUT_ERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
     #[doc = "Bit 13 - Ceata Error Status"]
-    #[inline]
-    pub fn ceata_err(&self) -> CEATA_ERRR {
-        CEATA_ERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn ceata_err(&self) -> CEATA_ERR_R {
+        CEATA_ERR_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Auto CMD Error"]
-    #[inline]
-    pub fn acmd_err(&self) -> ACMD_ERRR {
-        ACMD_ERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn acmd_err(&self) -> ACMD_ERR_R {
+        ACMD_ERR_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Current Limit Error"]
-    #[inline]
-    pub fn current_limit_err(&self) -> CURRENT_LIMIT_ERRR {
-        CURRENT_LIMIT_ERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn current_limit_err(&self) -> CURRENT_LIMIT_ERR_R {
+        CURRENT_LIMIT_ERR_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Data End Bit Error"]
-    #[inline]
-    pub fn data_end_bit_err(&self) -> DATA_END_BIT_ERRR {
-        DATA_END_BIT_ERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn data_end_bit_err(&self) -> DATA_END_BIT_ERR_R {
+        DATA_END_BIT_ERR_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Data CRC Error"]
-    #[inline]
-    pub fn data_crc_err(&self) -> DATA_CRC_ERRR {
-        DATA_CRC_ERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn data_crc_err(&self) -> DATA_CRC_ERR_R {
+        DATA_CRC_ERR_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Data Timeout Error"]
-    #[inline]
-    pub fn data_timeout_err(&self) -> DATA_TIMEOUT_ERRR {
-        DATA_TIMEOUT_ERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn data_timeout_err(&self) -> DATA_TIMEOUT_ERR_R {
+        DATA_TIMEOUT_ERR_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Command Index Error"]
-    #[inline]
-    pub fn cmd_ind_err(&self) -> CMD_IND_ERRR {
-        CMD_IND_ERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn cmd_ind_err(&self) -> CMD_IND_ERR_R {
+        CMD_IND_ERR_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Command End Bit Error"]
-    #[inline]
-    pub fn cmd_end_bit_err(&self) -> CMD_END_BIT_ERRR {
-        CMD_END_BIT_ERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn cmd_end_bit_err(&self) -> CMD_END_BIT_ERR_R {
+        CMD_END_BIT_ERR_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 1 - Command CRC Error"]
-    #[inline]
-    pub fn cmd_crc_err(&self) -> CMD_CRC_ERRR {
-        CMD_CRC_ERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn cmd_crc_err(&self) -> CMD_CRC_ERR_R {
+        CMD_CRC_ERR_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 0 - Command Timeout Error"]
-    #[inline]
-    pub fn cmd_timeout_err(&self) -> CMD_TIMEOUT_ERRR {
-        CMD_TIMEOUT_ERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn cmd_timeout_err(&self) -> CMD_TIMEOUT_ERR_R {
+        CMD_TIMEOUT_ERR_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 13 - Ceata Error Status"]
-    #[inline]
-    pub fn ceata_err(&mut self) -> _CEATA_ERRW {
-        _CEATA_ERRW { w: self }
+    #[inline(always)]
+    pub fn ceata_err(&mut self) -> CEATA_ERR_W {
+        CEATA_ERR_W { w: self }
     }
     #[doc = "Bit 8 - Auto CMD Error"]
-    #[inline]
-    pub fn acmd_err(&mut self) -> _ACMD_ERRW {
-        _ACMD_ERRW { w: self }
+    #[inline(always)]
+    pub fn acmd_err(&mut self) -> ACMD_ERR_W {
+        ACMD_ERR_W { w: self }
     }
     #[doc = "Bit 7 - Current Limit Error"]
-    #[inline]
-    pub fn current_limit_err(&mut self) -> _CURRENT_LIMIT_ERRW {
-        _CURRENT_LIMIT_ERRW { w: self }
+    #[inline(always)]
+    pub fn current_limit_err(&mut self) -> CURRENT_LIMIT_ERR_W {
+        CURRENT_LIMIT_ERR_W { w: self }
     }
     #[doc = "Bit 6 - Data End Bit Error"]
-    #[inline]
-    pub fn data_end_bit_err(&mut self) -> _DATA_END_BIT_ERRW {
-        _DATA_END_BIT_ERRW { w: self }
+    #[inline(always)]
+    pub fn data_end_bit_err(&mut self) -> DATA_END_BIT_ERR_W {
+        DATA_END_BIT_ERR_W { w: self }
     }
     #[doc = "Bit 5 - Data CRC Error"]
-    #[inline]
-    pub fn data_crc_err(&mut self) -> _DATA_CRC_ERRW {
-        _DATA_CRC_ERRW { w: self }
+    #[inline(always)]
+    pub fn data_crc_err(&mut self) -> DATA_CRC_ERR_W {
+        DATA_CRC_ERR_W { w: self }
     }
     #[doc = "Bit 4 - Data Timeout Error"]
-    #[inline]
-    pub fn data_timeout_err(&mut self) -> _DATA_TIMEOUT_ERRW {
-        _DATA_TIMEOUT_ERRW { w: self }
+    #[inline(always)]
+    pub fn data_timeout_err(&mut self) -> DATA_TIMEOUT_ERR_W {
+        DATA_TIMEOUT_ERR_W { w: self }
     }
     #[doc = "Bit 3 - Command Index Error"]
-    #[inline]
-    pub fn cmd_ind_err(&mut self) -> _CMD_IND_ERRW {
-        _CMD_IND_ERRW { w: self }
+    #[inline(always)]
+    pub fn cmd_ind_err(&mut self) -> CMD_IND_ERR_W {
+        CMD_IND_ERR_W { w: self }
     }
     #[doc = "Bit 2 - Command End Bit Error"]
-    #[inline]
-    pub fn cmd_end_bit_err(&mut self) -> _CMD_END_BIT_ERRW {
-        _CMD_END_BIT_ERRW { w: self }
+    #[inline(always)]
+    pub fn cmd_end_bit_err(&mut self) -> CMD_END_BIT_ERR_W {
+        CMD_END_BIT_ERR_W { w: self }
     }
     #[doc = "Bit 1 - Command CRC Error"]
-    #[inline]
-    pub fn cmd_crc_err(&mut self) -> _CMD_CRC_ERRW {
-        _CMD_CRC_ERRW { w: self }
+    #[inline(always)]
+    pub fn cmd_crc_err(&mut self) -> CMD_CRC_ERR_W {
+        CMD_CRC_ERR_W { w: self }
     }
     #[doc = "Bit 0 - Command Timeout Error"]
-    #[inline]
-    pub fn cmd_timeout_err(&mut self) -> _CMD_TIMEOUT_ERRW {
-        _CMD_TIMEOUT_ERRW { w: self }
+    #[inline(always)]
+    pub fn cmd_timeout_err(&mut self) -> CMD_TIMEOUT_ERR_W {
+        CMD_TIMEOUT_ERR_W { w: self }
     }
 }

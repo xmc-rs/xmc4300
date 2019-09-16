@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::WADDR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WADDRR {
-    bits: u32,
-}
-impl WADDRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register WADDR"]
+pub type R = crate::R<u32, super::WADDR>;
+#[doc = "Reader of field `WADDR`"]
+pub type WADDR_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - Write Error Address"]
-    #[inline]
-    pub fn waddr(&self) -> WADDRR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        WADDRR { bits }
+    #[inline(always)]
+    pub fn waddr(&self) -> WADDR_R {
+        WADDR_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::SYSTEM_TIME_NANOSECONDS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TSSSR {
-    bits: u32,
-}
-impl TSSSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register SYSTEM_TIME_NANOSECONDS"]
+pub type R = crate::R<u32, super::SYSTEM_TIME_NANOSECONDS>;
+#[doc = "Reader of field `TSSS`"]
+pub type TSSS_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:30 - Timestamp Sub Seconds"]
-    #[inline]
-    pub fn tsss(&self) -> TSSSR {
-        let bits = {
-            const MASK: u32 = 2147483647;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        TSSSR { bits }
+    #[inline(always)]
+    pub fn tsss(&self) -> TSSS_R {
+        TSSS_R::new((self.bits & 0x7fff_ffff) as u32)
     }
 }

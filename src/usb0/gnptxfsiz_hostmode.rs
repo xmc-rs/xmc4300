@@ -1,144 +1,64 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::GNPTXFSIZ_HOSTMODE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register GNPTXFSIZ_HOSTMODE"]
+pub type R = crate::R<u32, super::GNPTXFSIZ_HOSTMODE>;
+#[doc = "Writer for register GNPTXFSIZ_HOSTMODE"]
+pub type W = crate::W<u32, super::GNPTXFSIZ_HOSTMODE>;
+#[doc = "Register GNPTXFSIZ_HOSTMODE `reset()`'s with value 0x0010_011a"]
+impl crate::ResetValue for super::GNPTXFSIZ_HOSTMODE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0010_011a
     }
 }
-#[doc = r" Value of the field"]
-pub struct NPTXFSTADDRR {
-    bits: u16,
-}
-impl NPTXFSTADDRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NPTXFDEPR {
-    bits: u16,
-}
-impl NPTXFDEPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NPTXFSTADDRW<'a> {
+#[doc = "Reader of field `NPTxFStAddr`"]
+pub type NPTXFSTADDR_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `NPTxFStAddr`"]
+pub struct NPTXFSTADDR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NPTXFSTADDRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> NPTXFSTADDR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _NPTXFDEPW<'a> {
+#[doc = "Reader of field `NPTxFDep`"]
+pub type NPTXFDEP_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `NPTxFDep`"]
+pub struct NPTXFDEP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NPTXFDEPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> NPTXFDEP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xffff << 16)) | (((value as u32) & 0xffff) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Non-periodic Transmit RAM Start Address"]
-    #[inline]
-    pub fn nptx_fst_addr(&self) -> NPTXFSTADDRR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        NPTXFSTADDRR { bits }
+    #[inline(always)]
+    pub fn nptx_fst_addr(&self) -> NPTXFSTADDR_R {
+        NPTXFSTADDR_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:31 - Non-periodic TxFIFO Depth"]
-    #[inline]
-    pub fn nptx_fdep(&self) -> NPTXFDEPR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        NPTXFDEPR { bits }
+    #[inline(always)]
+    pub fn nptx_fdep(&self) -> NPTXFDEP_R {
+        NPTXFDEP_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1048858 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - Non-periodic Transmit RAM Start Address"]
-    #[inline]
-    pub fn nptx_fst_addr(&mut self) -> _NPTXFSTADDRW {
-        _NPTXFSTADDRW { w: self }
+    #[inline(always)]
+    pub fn nptx_fst_addr(&mut self) -> NPTXFSTADDR_W {
+        NPTXFSTADDR_W { w: self }
     }
     #[doc = "Bits 16:31 - Non-periodic TxFIFO Depth"]
-    #[inline]
-    pub fn nptx_fdep(&mut self) -> _NPTXFDEPW {
-        _NPTXFDEPW { w: self }
+    #[inline(always)]
+    pub fn nptx_fdep(&mut self) -> NPTXFDEP_W {
+        NPTXFDEP_W { w: self }
     }
 }

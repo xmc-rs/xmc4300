@@ -1,834 +1,558 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::NCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register NCR"]
+pub type R = crate::R<u32, super::NCR>;
+#[doc = "Writer for register NCR"]
+pub type W = crate::W<u32, super::NCR>;
+#[doc = "Register NCR `reset()`'s with value 0x41"]
+impl crate::ResetValue for super::NCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x41
     }
 }
-#[doc = "Possible values of the field `INIT`"]
+#[doc = "Node Initialization\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INITR {
-    #[doc = "Resetting bit INIT enables the participation of the node in the CAN traffic. If the CAN node is in the bus-off state, the ongoing bus-off recovery (which does not depend on the INIT bit) is continued. With the end of the bus-off recovery sequence the CAN node is allowed to take part in the CAN traffic. If the CAN node is not in the bus-off state, a sequence of 11 consecutive recessive bits must be detected before the node is allowed to take part in the CAN traffic."]
+pub enum INIT_A {
+    #[doc = "0: Resetting bit INIT enables the participation of the node in the CAN traffic. If the CAN node is in the bus-off state, the ongoing bus-off recovery (which does not depend on the INIT bit) is continued. With the end of the bus-off recovery sequence the CAN node is allowed to take part in the CAN traffic. If the CAN node is not in the bus-off state, a sequence of 11 consecutive recessive bits must be detected before the node is allowed to take part in the CAN traffic."]
     VALUE1,
-    #[doc = "Setting this bit terminates the participation of this node in the CAN traffic. Any ongoing frame transfer is cancelled and the transmit line goes recessive. If the CAN node is in the bus-off state, then the running bus-off recovery sequence is continued. If the INIT bit is still set after the successful completion of the bus-off recovery sequence, i.e. after detecting 128 sequences of 11 consecutive recessive bits (11 1), then the CAN node leaves the bus-off state but remains inactive as long as INIT remains set."]
+    #[doc = "1: Setting this bit terminates the participation of this node in the CAN traffic. Any ongoing frame transfer is cancelled and the transmit line goes recessive. If the CAN node is in the bus-off state, then the running bus-off recovery sequence is continued. If the INIT bit is still set after the successful completion of the bus-off recovery sequence, i.e. after detecting 128 sequences of 11 consecutive recessive bits (11 1), then the CAN node leaves the bus-off state but remains inactive as long as INIT remains set."]
     VALUE2,
 }
-impl INITR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INITR::VALUE1 => false,
-            INITR::VALUE2 => true,
+impl From<INIT_A> for bool {
+    #[inline(always)]
+    fn from(variant: INIT_A) -> Self {
+        match variant {
+            INIT_A::VALUE1 => false,
+            INIT_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INITR {
-        match value {
-            false => INITR::VALUE1,
-            true => INITR::VALUE2,
+}
+#[doc = "Reader of field `INIT`"]
+pub type INIT_R = crate::R<bool, INIT_A>;
+impl INIT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INIT_A {
+        match self.bits {
+            false => INIT_A::VALUE1,
+            true => INIT_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == INITR::VALUE1
+        *self == INIT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == INITR::VALUE2
+        *self == INIT_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `TRIE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIER {
-    #[doc = "Transfer interrupt is disabled."]
-    VALUE1,
-    #[doc = "Transfer interrupt is enabled."]
-    VALUE2,
-}
-impl TRIER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIER::VALUE1 => false,
-            TRIER::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIER {
-        match value {
-            false => TRIER::VALUE1,
-            true => TRIER::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == TRIER::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == TRIER::VALUE2
-    }
-}
-#[doc = "Possible values of the field `LECIE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LECIER {
-    #[doc = "Last error code interrupt is disabled."]
-    VALUE1,
-    #[doc = "Last error code interrupt is enabled."]
-    VALUE2,
-}
-impl LECIER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LECIER::VALUE1 => false,
-            LECIER::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LECIER {
-        match value {
-            false => LECIER::VALUE1,
-            true => LECIER::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LECIER::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LECIER::VALUE2
-    }
-}
-#[doc = "Possible values of the field `ALIE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ALIER {
-    #[doc = "Alert interrupt is disabled."]
-    VALUE1,
-    #[doc = "Alert interrupt is enabled."]
-    VALUE2,
-}
-impl ALIER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ALIER::VALUE1 => false,
-            ALIER::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ALIER {
-        match value {
-            false => ALIER::VALUE1,
-            true => ALIER::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ALIER::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ALIER::VALUE2
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CANDISR {
-    bits: bool,
-}
-impl CANDISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXDISR {
-    bits: bool,
-}
-impl TXDISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `CCE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CCER {
-    #[doc = "The Bit Timing Register, the Port Control Register, Error Counter Register may only be read. All attempts to modify them are ignored."]
-    VALUE1,
-    #[doc = "The Bit Timing Register, the Port Control Register, Error Counter Register may be read and written."]
-    VALUE2,
-}
-impl CCER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CCER::VALUE1 => false,
-            CCER::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CCER {
-        match value {
-            false => CCER::VALUE1,
-            true => CCER::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CCER::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CCER::VALUE2
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CALMR {
-    bits: bool,
-}
-impl CALMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `INIT`"]
-pub enum INITW {
-    #[doc = "Resetting bit INIT enables the participation of the node in the CAN traffic. If the CAN node is in the bus-off state, the ongoing bus-off recovery (which does not depend on the INIT bit) is continued. With the end of the bus-off recovery sequence the CAN node is allowed to take part in the CAN traffic. If the CAN node is not in the bus-off state, a sequence of 11 consecutive recessive bits must be detected before the node is allowed to take part in the CAN traffic."]
-    VALUE1,
-    #[doc = "Setting this bit terminates the participation of this node in the CAN traffic. Any ongoing frame transfer is cancelled and the transmit line goes recessive. If the CAN node is in the bus-off state, then the running bus-off recovery sequence is continued. If the INIT bit is still set after the successful completion of the bus-off recovery sequence, i.e. after detecting 128 sequences of 11 consecutive recessive bits (11 1), then the CAN node leaves the bus-off state but remains inactive as long as INIT remains set."]
-    VALUE2,
-}
-impl INITW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INITW::VALUE1 => false,
-            INITW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INITW<'a> {
+#[doc = "Write proxy for field `INIT`"]
+pub struct INIT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INITW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INITW) -> &'a mut W {
+impl<'a> INIT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INIT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Resetting bit INIT enables the participation of the node in the CAN traffic. If the CAN node is in the bus-off state, the ongoing bus-off recovery (which does not depend on the INIT bit) is continued. With the end of the bus-off recovery sequence the CAN node is allowed to take part in the CAN traffic. If the CAN node is not in the bus-off state, a sequence of 11 consecutive recessive bits must be detected before the node is allowed to take part in the CAN traffic."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(INITW::VALUE1)
+        self.variant(INIT_A::VALUE1)
     }
     #[doc = "Setting this bit terminates the participation of this node in the CAN traffic. Any ongoing frame transfer is cancelled and the transmit line goes recessive. If the CAN node is in the bus-off state, then the running bus-off recovery sequence is continued. If the INIT bit is still set after the successful completion of the bus-off recovery sequence, i.e. after detecting 128 sequences of 11 consecutive recessive bits (11 1), then the CAN node leaves the bus-off state but remains inactive as long as INIT remains set."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(INITW::VALUE2)
+        self.variant(INIT_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIE`"]
-pub enum TRIEW {
+#[doc = "Transfer Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIE_A {
+    #[doc = "0: Transfer interrupt is disabled."]
+    VALUE1,
+    #[doc = "1: Transfer interrupt is enabled."]
+    VALUE2,
+}
+impl From<TRIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIE_A) -> Self {
+        match variant {
+            TRIE_A::VALUE1 => false,
+            TRIE_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIE`"]
+pub type TRIE_R = crate::R<bool, TRIE_A>;
+impl TRIE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIE_A {
+        match self.bits {
+            false => TRIE_A::VALUE1,
+            true => TRIE_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == TRIE_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == TRIE_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `TRIE`"]
+pub struct TRIE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TRIE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Transfer interrupt is disabled."]
-    VALUE1,
-    #[doc = "Transfer interrupt is enabled."]
-    VALUE2,
-}
-impl TRIEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIEW::VALUE1 => false,
-            TRIEW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TRIEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TRIEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Transfer interrupt is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(TRIEW::VALUE1)
+        self.variant(TRIE_A::VALUE1)
     }
     #[doc = "Transfer interrupt is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(TRIEW::VALUE2)
+        self.variant(TRIE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LECIE`"]
-pub enum LECIEW {
-    #[doc = "Last error code interrupt is disabled."]
+#[doc = "LEC Indicated Error Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LECIE_A {
+    #[doc = "0: Last error code interrupt is disabled."]
     VALUE1,
-    #[doc = "Last error code interrupt is enabled."]
+    #[doc = "1: Last error code interrupt is enabled."]
     VALUE2,
 }
-impl LECIEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LECIEW::VALUE1 => false,
-            LECIEW::VALUE2 => true,
+impl From<LECIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: LECIE_A) -> Self {
+        match variant {
+            LECIE_A::VALUE1 => false,
+            LECIE_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _LECIEW<'a> {
+#[doc = "Reader of field `LECIE`"]
+pub type LECIE_R = crate::R<bool, LECIE_A>;
+impl LECIE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LECIE_A {
+        match self.bits {
+            false => LECIE_A::VALUE1,
+            true => LECIE_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LECIE_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LECIE_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `LECIE`"]
+pub struct LECIE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LECIEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LECIEW) -> &'a mut W {
+impl<'a> LECIE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LECIE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Last error code interrupt is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LECIEW::VALUE1)
+        self.variant(LECIE_A::VALUE1)
     }
     #[doc = "Last error code interrupt is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LECIEW::VALUE2)
+        self.variant(LECIE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ALIE`"]
-pub enum ALIEW {
-    #[doc = "Alert interrupt is disabled."]
+#[doc = "Alert Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ALIE_A {
+    #[doc = "0: Alert interrupt is disabled."]
     VALUE1,
-    #[doc = "Alert interrupt is enabled."]
+    #[doc = "1: Alert interrupt is enabled."]
     VALUE2,
 }
-impl ALIEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ALIEW::VALUE1 => false,
-            ALIEW::VALUE2 => true,
+impl From<ALIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: ALIE_A) -> Self {
+        match variant {
+            ALIE_A::VALUE1 => false,
+            ALIE_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ALIEW<'a> {
+#[doc = "Reader of field `ALIE`"]
+pub type ALIE_R = crate::R<bool, ALIE_A>;
+impl ALIE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ALIE_A {
+        match self.bits {
+            false => ALIE_A::VALUE1,
+            true => ALIE_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ALIE_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ALIE_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ALIE`"]
+pub struct ALIE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ALIEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ALIEW) -> &'a mut W {
+impl<'a> ALIE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ALIE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Alert interrupt is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ALIEW::VALUE1)
+        self.variant(ALIE_A::VALUE1)
     }
     #[doc = "Alert interrupt is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ALIEW::VALUE2)
+        self.variant(ALIE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CANDISW<'a> {
+#[doc = "Reader of field `CANDIS`"]
+pub type CANDIS_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CANDIS`"]
+pub struct CANDIS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CANDISW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CANDIS_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TXDISW<'a> {
+#[doc = "Reader of field `TXDIS`"]
+pub type TXDIS_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXDIS`"]
+pub struct TXDIS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXDISW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> TXDIS_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CCE`"]
-pub enum CCEW {
-    #[doc = "The Bit Timing Register, the Port Control Register, Error Counter Register may only be read. All attempts to modify them are ignored."]
+#[doc = "Configuration Change Enable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CCE_A {
+    #[doc = "0: The Bit Timing Register, the Port Control Register, Error Counter Register may only be read. All attempts to modify them are ignored."]
     VALUE1,
-    #[doc = "The Bit Timing Register, the Port Control Register, Error Counter Register may be read and written."]
+    #[doc = "1: The Bit Timing Register, the Port Control Register, Error Counter Register may be read and written."]
     VALUE2,
 }
-impl CCEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CCEW::VALUE1 => false,
-            CCEW::VALUE2 => true,
+impl From<CCE_A> for bool {
+    #[inline(always)]
+    fn from(variant: CCE_A) -> Self {
+        match variant {
+            CCE_A::VALUE1 => false,
+            CCE_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CCEW<'a> {
+#[doc = "Reader of field `CCE`"]
+pub type CCE_R = crate::R<bool, CCE_A>;
+impl CCE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CCE_A {
+        match self.bits {
+            false => CCE_A::VALUE1,
+            true => CCE_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CCE_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CCE_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CCE`"]
+pub struct CCE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CCEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CCEW) -> &'a mut W {
+impl<'a> CCE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CCE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The Bit Timing Register, the Port Control Register, Error Counter Register may only be read. All attempts to modify them are ignored."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CCEW::VALUE1)
+        self.variant(CCE_A::VALUE1)
     }
     #[doc = "The Bit Timing Register, the Port Control Register, Error Counter Register may be read and written."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CCEW::VALUE2)
+        self.variant(CCE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CALMW<'a> {
+#[doc = "Reader of field `CALM`"]
+pub type CALM_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CALM`"]
+pub struct CALM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CALMW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CALM_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Node Initialization"]
-    #[inline]
-    pub fn init(&self) -> INITR {
-        INITR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn init(&self) -> INIT_R {
+        INIT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Transfer Interrupt Enable"]
-    #[inline]
-    pub fn trie(&self) -> TRIER {
-        TRIER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn trie(&self) -> TRIE_R {
+        TRIE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - LEC Indicated Error Interrupt Enable"]
-    #[inline]
-    pub fn lecie(&self) -> LECIER {
-        LECIER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lecie(&self) -> LECIE_R {
+        LECIE_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Alert Interrupt Enable"]
-    #[inline]
-    pub fn alie(&self) -> ALIER {
-        ALIER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn alie(&self) -> ALIE_R {
+        ALIE_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - CAN Disable"]
-    #[inline]
-    pub fn candis(&self) -> CANDISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CANDISR { bits }
+    #[inline(always)]
+    pub fn candis(&self) -> CANDIS_R {
+        CANDIS_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Transmit Disable"]
-    #[inline]
-    pub fn txdis(&self) -> TXDISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXDISR { bits }
+    #[inline(always)]
+    pub fn txdis(&self) -> TXDIS_R {
+        TXDIS_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Configuration Change Enable"]
-    #[inline]
-    pub fn cce(&self) -> CCER {
-        CCER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cce(&self) -> CCE_R {
+        CCE_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - CAN Analyzer Mode"]
-    #[inline]
-    pub fn calm(&self) -> CALMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CALMR { bits }
+    #[inline(always)]
+    pub fn calm(&self) -> CALM_R {
+        CALM_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 65 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Node Initialization"]
-    #[inline]
-    pub fn init(&mut self) -> _INITW {
-        _INITW { w: self }
+    #[inline(always)]
+    pub fn init(&mut self) -> INIT_W {
+        INIT_W { w: self }
     }
     #[doc = "Bit 1 - Transfer Interrupt Enable"]
-    #[inline]
-    pub fn trie(&mut self) -> _TRIEW {
-        _TRIEW { w: self }
+    #[inline(always)]
+    pub fn trie(&mut self) -> TRIE_W {
+        TRIE_W { w: self }
     }
     #[doc = "Bit 2 - LEC Indicated Error Interrupt Enable"]
-    #[inline]
-    pub fn lecie(&mut self) -> _LECIEW {
-        _LECIEW { w: self }
+    #[inline(always)]
+    pub fn lecie(&mut self) -> LECIE_W {
+        LECIE_W { w: self }
     }
     #[doc = "Bit 3 - Alert Interrupt Enable"]
-    #[inline]
-    pub fn alie(&mut self) -> _ALIEW {
-        _ALIEW { w: self }
+    #[inline(always)]
+    pub fn alie(&mut self) -> ALIE_W {
+        ALIE_W { w: self }
     }
     #[doc = "Bit 4 - CAN Disable"]
-    #[inline]
-    pub fn candis(&mut self) -> _CANDISW {
-        _CANDISW { w: self }
+    #[inline(always)]
+    pub fn candis(&mut self) -> CANDIS_W {
+        CANDIS_W { w: self }
     }
     #[doc = "Bit 5 - Transmit Disable"]
-    #[inline]
-    pub fn txdis(&mut self) -> _TXDISW {
-        _TXDISW { w: self }
+    #[inline(always)]
+    pub fn txdis(&mut self) -> TXDIS_W {
+        TXDIS_W { w: self }
     }
     #[doc = "Bit 6 - Configuration Change Enable"]
-    #[inline]
-    pub fn cce(&mut self) -> _CCEW {
-        _CCEW { w: self }
+    #[inline(always)]
+    pub fn cce(&mut self) -> CCE_W {
+        CCE_W { w: self }
     }
     #[doc = "Bit 7 - CAN Analyzer Mode"]
-    #[inline]
-    pub fn calm(&mut self) -> _CALMW {
-        _CALMW { w: self }
+    #[inline(always)]
+    pub fn calm(&mut self) -> CALM_W {
+        CALM_W { w: self }
     }
 }

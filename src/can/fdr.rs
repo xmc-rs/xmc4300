@@ -1,144 +1,64 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FDR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FDR"]
+pub type R = crate::R<u32, super::FDR>;
+#[doc = "Writer for register FDR"]
+pub type W = crate::W<u32, super::FDR>;
+#[doc = "Register FDR `reset()`'s with value 0"]
+impl crate::ResetValue for super::FDR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct STEPR {
-    bits: u16,
-}
-impl STEPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DMR {
-    bits: u8,
-}
-impl DMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STEPW<'a> {
+#[doc = "Reader of field `STEP`"]
+pub type STEP_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `STEP`"]
+pub struct STEP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _STEPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> STEP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 1023;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03ff) | ((value as u32) & 0x03ff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DMW<'a> {
+#[doc = "Reader of field `DM`"]
+pub type DM_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DM`"]
+pub struct DM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DMW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DM_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:9 - Step Value"]
-    #[inline]
-    pub fn step(&self) -> STEPR {
-        let bits = {
-            const MASK: u16 = 1023;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        STEPR { bits }
+    #[inline(always)]
+    pub fn step(&self) -> STEP_R {
+        STEP_R::new((self.bits & 0x03ff) as u16)
     }
     #[doc = "Bits 14:15 - Divider Mode"]
-    #[inline]
-    pub fn dm(&self) -> DMR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DMR { bits }
+    #[inline(always)]
+    pub fn dm(&self) -> DM_R {
+        DM_R::new(((self.bits >> 14) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:9 - Step Value"]
-    #[inline]
-    pub fn step(&mut self) -> _STEPW {
-        _STEPW { w: self }
+    #[inline(always)]
+    pub fn step(&mut self) -> STEP_W {
+        STEP_W { w: self }
     }
     #[doc = "Bits 14:15 - Divider Mode"]
-    #[inline]
-    pub fn dm(&mut self) -> _DMW {
-        _DMW { w: self }
+    #[inline(always)]
+    pub fn dm(&mut self) -> DM_W {
+        DM_W { w: self }
     }
 }

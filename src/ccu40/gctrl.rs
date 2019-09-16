@@ -1,1084 +1,794 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::GCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register GCTRL"]
+pub type R = crate::R<u32, super::GCTRL>;
+#[doc = "Writer for register GCTRL"]
+pub type W = crate::W<u32, super::GCTRL>;
+#[doc = "Register GCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::GCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `PRBC`"]
+#[doc = "Prescaler Clear Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRBCR {
-    #[doc = "SW only"]
+pub enum PRBC_A {
+    #[doc = "0: SW only"]
     VALUE1,
-    #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC40 is cleared."]
+    #[doc = "1: GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC40 is cleared."]
     VALUE2,
-    #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC41 is cleared."]
+    #[doc = "2: GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC41 is cleared."]
     VALUE3,
-    #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC42 is cleared."]
+    #[doc = "3: GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC42 is cleared."]
     VALUE4,
-    #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC43 is cleared."]
+    #[doc = "4: GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC43 is cleared."]
     VALUE5,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl PRBCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PRBCR::VALUE1 => 0,
-            PRBCR::VALUE2 => 1,
-            PRBCR::VALUE3 => 2,
-            PRBCR::VALUE4 => 3,
-            PRBCR::VALUE5 => 4,
-            PRBCR::_Reserved(bits) => bits,
+impl From<PRBC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PRBC_A) -> Self {
+        match variant {
+            PRBC_A::VALUE1 => 0,
+            PRBC_A::VALUE2 => 1,
+            PRBC_A::VALUE3 => 2,
+            PRBC_A::VALUE4 => 3,
+            PRBC_A::VALUE5 => 4,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PRBCR {
-        match value {
-            0 => PRBCR::VALUE1,
-            1 => PRBCR::VALUE2,
-            2 => PRBCR::VALUE3,
-            3 => PRBCR::VALUE4,
-            4 => PRBCR::VALUE5,
-            i => PRBCR::_Reserved(i),
+}
+#[doc = "Reader of field `PRBC`"]
+pub type PRBC_R = crate::R<u8, PRBC_A>;
+impl PRBC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PRBC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PRBC_A::VALUE1),
+            1 => Val(PRBC_A::VALUE2),
+            2 => Val(PRBC_A::VALUE3),
+            3 => Val(PRBC_A::VALUE4),
+            4 => Val(PRBC_A::VALUE5),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PRBCR::VALUE1
+        *self == PRBC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PRBCR::VALUE2
+        *self == PRBC_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == PRBCR::VALUE3
+        *self == PRBC_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == PRBCR::VALUE4
+        *self == PRBC_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == PRBCR::VALUE5
+        *self == PRBC_A::VALUE5
     }
 }
-#[doc = "Possible values of the field `PCIS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PCISR {
-    #[doc = "Module clock"]
-    VALUE1,
-    #[doc = "CCU4x.ECLKA"]
-    VALUE2,
-    #[doc = "CCU4x.ECLKB"]
-    VALUE3,
-    #[doc = "CCU4x.ECLKC"]
-    VALUE4,
-}
-impl PCISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PCISR::VALUE1 => 0,
-            PCISR::VALUE2 => 1,
-            PCISR::VALUE3 => 2,
-            PCISR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PCISR {
-        match value {
-            0 => PCISR::VALUE1,
-            1 => PCISR::VALUE2,
-            2 => PCISR::VALUE3,
-            3 => PCISR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == PCISR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == PCISR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == PCISR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == PCISR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `SUSCFG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SUSCFGR {
-    #[doc = "Suspend request ignored. The module never enters in suspend"]
-    VALUE1,
-    #[doc = "Stops all the running slices immediately. Safe stop is not applied."]
-    VALUE2,
-    #[doc = "Stops the block immediately and clamps all the outputs to PASSIVE state. Safe stop is applied."]
-    VALUE3,
-    #[doc = "Waits for the roll over of each slice to stop and clamp the slices outputs. Safe stop is applied."]
-    VALUE4,
-}
-impl SUSCFGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SUSCFGR::VALUE1 => 0,
-            SUSCFGR::VALUE2 => 1,
-            SUSCFGR::VALUE3 => 2,
-            SUSCFGR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SUSCFGR {
-        match value {
-            0 => SUSCFGR::VALUE1,
-            1 => SUSCFGR::VALUE2,
-            2 => SUSCFGR::VALUE3,
-            3 => SUSCFGR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == SUSCFGR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == SUSCFGR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == SUSCFGR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == SUSCFGR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `MSE0`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSE0R {
-    #[doc = "Shadow transfer can only be requested by SW"]
-    VALUE1,
-    #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
-    VALUE2,
-}
-impl MSE0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MSE0R::VALUE1 => false,
-            MSE0R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MSE0R {
-        match value {
-            false => MSE0R::VALUE1,
-            true => MSE0R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MSE0R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MSE0R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `MSE1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSE1R {
-    #[doc = "Shadow transfer can only be requested by SW"]
-    VALUE1,
-    #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
-    VALUE2,
-}
-impl MSE1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MSE1R::VALUE1 => false,
-            MSE1R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MSE1R {
-        match value {
-            false => MSE1R::VALUE1,
-            true => MSE1R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MSE1R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MSE1R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `MSE2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSE2R {
-    #[doc = "Shadow transfer can only be requested by SW"]
-    VALUE1,
-    #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
-    VALUE2,
-}
-impl MSE2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MSE2R::VALUE1 => false,
-            MSE2R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MSE2R {
-        match value {
-            false => MSE2R::VALUE1,
-            true => MSE2R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MSE2R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MSE2R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `MSE3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSE3R {
-    #[doc = "Shadow transfer can only be requested by SW"]
-    VALUE1,
-    #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
-    VALUE2,
-}
-impl MSE3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MSE3R::VALUE1 => false,
-            MSE3R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MSE3R {
-        match value {
-            false => MSE3R::VALUE1,
-            true => MSE3R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MSE3R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MSE3R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `MSDE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSDER {
-    #[doc = "Only the shadow transfer for period and compare values is requested"]
-    VALUE1,
-    #[doc = "Shadow transfer for the compare, period and prescaler compare values is requested"]
-    VALUE2,
-    #[doc = "Shadow transfer for the compare, period, prescaler and dither compare values is requested"]
-    VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl MSDER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MSDER::VALUE1 => 0,
-            MSDER::VALUE2 => 1,
-            MSDER::VALUE4 => 3,
-            MSDER::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MSDER {
-        match value {
-            0 => MSDER::VALUE1,
-            1 => MSDER::VALUE2,
-            3 => MSDER::VALUE4,
-            i => MSDER::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MSDER::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MSDER::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == MSDER::VALUE4
-    }
-}
-#[doc = "Values that can be written to the field `PRBC`"]
-pub enum PRBCW {
-    #[doc = "SW only"]
-    VALUE1,
-    #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC40 is cleared."]
-    VALUE2,
-    #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC41 is cleared."]
-    VALUE3,
-    #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC42 is cleared."]
-    VALUE4,
-    #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC43 is cleared."]
-    VALUE5,
-}
-impl PRBCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PRBCW::VALUE1 => 0,
-            PRBCW::VALUE2 => 1,
-            PRBCW::VALUE3 => 2,
-            PRBCW::VALUE4 => 3,
-            PRBCW::VALUE5 => 4,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PRBCW<'a> {
+#[doc = "Write proxy for field `PRBC`"]
+pub struct PRBC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PRBCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRBCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> PRBC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRBC_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "SW only"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(PRBCW::VALUE1)
+        self.variant(PRBC_A::VALUE1)
     }
     #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC40 is cleared."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(PRBCW::VALUE2)
+        self.variant(PRBC_A::VALUE2)
     }
     #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC41 is cleared."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(PRBCW::VALUE3)
+        self.variant(PRBC_A::VALUE3)
     }
     #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC42 is cleared."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(PRBCW::VALUE4)
+        self.variant(PRBC_A::VALUE4)
     }
     #[doc = "GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC43 is cleared."]
-    #[inline]
+    #[inline(always)]
     pub fn value5(self) -> &'a mut W {
-        self.variant(PRBCW::VALUE5)
+        self.variant(PRBC_A::VALUE5)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PCIS`"]
-pub enum PCISW {
-    #[doc = "Module clock"]
+#[doc = "Prescaler Input Clock Selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PCIS_A {
+    #[doc = "0: Module clock"]
     VALUE1,
-    #[doc = "CCU4x.ECLKA"]
+    #[doc = "1: CCU4x.ECLKA"]
     VALUE2,
-    #[doc = "CCU4x.ECLKB"]
+    #[doc = "2: CCU4x.ECLKB"]
     VALUE3,
-    #[doc = "CCU4x.ECLKC"]
+    #[doc = "3: CCU4x.ECLKC"]
     VALUE4,
 }
-impl PCISW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PCISW::VALUE1 => 0,
-            PCISW::VALUE2 => 1,
-            PCISW::VALUE3 => 2,
-            PCISW::VALUE4 => 3,
+impl From<PCIS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PCIS_A) -> Self {
+        match variant {
+            PCIS_A::VALUE1 => 0,
+            PCIS_A::VALUE2 => 1,
+            PCIS_A::VALUE3 => 2,
+            PCIS_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PCISW<'a> {
+#[doc = "Reader of field `PCIS`"]
+pub type PCIS_R = crate::R<u8, PCIS_A>;
+impl PCIS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PCIS_A {
+        match self.bits {
+            0 => PCIS_A::VALUE1,
+            1 => PCIS_A::VALUE2,
+            2 => PCIS_A::VALUE3,
+            3 => PCIS_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == PCIS_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == PCIS_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == PCIS_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == PCIS_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `PCIS`"]
+pub struct PCIS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PCISW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PCISW) -> &'a mut W {
+impl<'a> PCIS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PCIS_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Module clock"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(PCISW::VALUE1)
+        self.variant(PCIS_A::VALUE1)
     }
     #[doc = "CCU4x.ECLKA"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(PCISW::VALUE2)
+        self.variant(PCIS_A::VALUE2)
     }
     #[doc = "CCU4x.ECLKB"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(PCISW::VALUE3)
+        self.variant(PCIS_A::VALUE3)
     }
     #[doc = "CCU4x.ECLKC"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(PCISW::VALUE4)
+        self.variant(PCIS_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SUSCFG`"]
-pub enum SUSCFGW {
-    #[doc = "Suspend request ignored. The module never enters in suspend"]
+#[doc = "Suspend Mode Configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SUSCFG_A {
+    #[doc = "0: Suspend request ignored. The module never enters in suspend"]
     VALUE1,
-    #[doc = "Stops all the running slices immediately. Safe stop is not applied."]
+    #[doc = "1: Stops all the running slices immediately. Safe stop is not applied."]
     VALUE2,
-    #[doc = "Stops the block immediately and clamps all the outputs to PASSIVE state. Safe stop is applied."]
+    #[doc = "2: Stops the block immediately and clamps all the outputs to PASSIVE state. Safe stop is applied."]
     VALUE3,
-    #[doc = "Waits for the roll over of each slice to stop and clamp the slices outputs. Safe stop is applied."]
+    #[doc = "3: Waits for the roll over of each slice to stop and clamp the slices outputs. Safe stop is applied."]
     VALUE4,
 }
-impl SUSCFGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SUSCFGW::VALUE1 => 0,
-            SUSCFGW::VALUE2 => 1,
-            SUSCFGW::VALUE3 => 2,
-            SUSCFGW::VALUE4 => 3,
+impl From<SUSCFG_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SUSCFG_A) -> Self {
+        match variant {
+            SUSCFG_A::VALUE1 => 0,
+            SUSCFG_A::VALUE2 => 1,
+            SUSCFG_A::VALUE3 => 2,
+            SUSCFG_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SUSCFGW<'a> {
+#[doc = "Reader of field `SUSCFG`"]
+pub type SUSCFG_R = crate::R<u8, SUSCFG_A>;
+impl SUSCFG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SUSCFG_A {
+        match self.bits {
+            0 => SUSCFG_A::VALUE1,
+            1 => SUSCFG_A::VALUE2,
+            2 => SUSCFG_A::VALUE3,
+            3 => SUSCFG_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == SUSCFG_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == SUSCFG_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == SUSCFG_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == SUSCFG_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `SUSCFG`"]
+pub struct SUSCFG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SUSCFGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SUSCFGW) -> &'a mut W {
+impl<'a> SUSCFG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SUSCFG_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Suspend request ignored. The module never enters in suspend"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SUSCFGW::VALUE1)
+        self.variant(SUSCFG_A::VALUE1)
     }
     #[doc = "Stops all the running slices immediately. Safe stop is not applied."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SUSCFGW::VALUE2)
+        self.variant(SUSCFG_A::VALUE2)
     }
     #[doc = "Stops the block immediately and clamps all the outputs to PASSIVE state. Safe stop is applied."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(SUSCFGW::VALUE3)
+        self.variant(SUSCFG_A::VALUE3)
     }
     #[doc = "Waits for the roll over of each slice to stop and clamp the slices outputs. Safe stop is applied."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(SUSCFGW::VALUE4)
+        self.variant(SUSCFG_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MSE0`"]
-pub enum MSE0W {
-    #[doc = "Shadow transfer can only be requested by SW"]
+#[doc = "Slice 0 Multi Channel shadow transfer enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MSE0_A {
+    #[doc = "0: Shadow transfer can only be requested by SW"]
     VALUE1,
-    #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
+    #[doc = "1: Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
     VALUE2,
 }
-impl MSE0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MSE0W::VALUE1 => false,
-            MSE0W::VALUE2 => true,
+impl From<MSE0_A> for bool {
+    #[inline(always)]
+    fn from(variant: MSE0_A) -> Self {
+        match variant {
+            MSE0_A::VALUE1 => false,
+            MSE0_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MSE0W<'a> {
+#[doc = "Reader of field `MSE0`"]
+pub type MSE0_R = crate::R<bool, MSE0_A>;
+impl MSE0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MSE0_A {
+        match self.bits {
+            false => MSE0_A::VALUE1,
+            true => MSE0_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MSE0_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MSE0_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `MSE0`"]
+pub struct MSE0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MSE0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MSE0W) -> &'a mut W {
+impl<'a> MSE0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MSE0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Shadow transfer can only be requested by SW"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MSE0W::VALUE1)
+        self.variant(MSE0_A::VALUE1)
     }
     #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MSE0W::VALUE2)
+        self.variant(MSE0_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MSE1`"]
-pub enum MSE1W {
-    #[doc = "Shadow transfer can only be requested by SW"]
+#[doc = "Slice 1 Multi Channel shadow transfer enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MSE1_A {
+    #[doc = "0: Shadow transfer can only be requested by SW"]
     VALUE1,
-    #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
+    #[doc = "1: Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
     VALUE2,
 }
-impl MSE1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MSE1W::VALUE1 => false,
-            MSE1W::VALUE2 => true,
+impl From<MSE1_A> for bool {
+    #[inline(always)]
+    fn from(variant: MSE1_A) -> Self {
+        match variant {
+            MSE1_A::VALUE1 => false,
+            MSE1_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MSE1W<'a> {
+#[doc = "Reader of field `MSE1`"]
+pub type MSE1_R = crate::R<bool, MSE1_A>;
+impl MSE1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MSE1_A {
+        match self.bits {
+            false => MSE1_A::VALUE1,
+            true => MSE1_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MSE1_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MSE1_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `MSE1`"]
+pub struct MSE1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MSE1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MSE1W) -> &'a mut W {
+impl<'a> MSE1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MSE1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Shadow transfer can only be requested by SW"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MSE1W::VALUE1)
+        self.variant(MSE1_A::VALUE1)
     }
     #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MSE1W::VALUE2)
+        self.variant(MSE1_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MSE2`"]
-pub enum MSE2W {
-    #[doc = "Shadow transfer can only be requested by SW"]
+#[doc = "Slice 2 Multi Channel shadow transfer enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MSE2_A {
+    #[doc = "0: Shadow transfer can only be requested by SW"]
     VALUE1,
-    #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
+    #[doc = "1: Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
     VALUE2,
 }
-impl MSE2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MSE2W::VALUE1 => false,
-            MSE2W::VALUE2 => true,
+impl From<MSE2_A> for bool {
+    #[inline(always)]
+    fn from(variant: MSE2_A) -> Self {
+        match variant {
+            MSE2_A::VALUE1 => false,
+            MSE2_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MSE2W<'a> {
+#[doc = "Reader of field `MSE2`"]
+pub type MSE2_R = crate::R<bool, MSE2_A>;
+impl MSE2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MSE2_A {
+        match self.bits {
+            false => MSE2_A::VALUE1,
+            true => MSE2_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MSE2_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MSE2_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `MSE2`"]
+pub struct MSE2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MSE2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MSE2W) -> &'a mut W {
+impl<'a> MSE2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MSE2_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Shadow transfer can only be requested by SW"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MSE2W::VALUE1)
+        self.variant(MSE2_A::VALUE1)
     }
     #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MSE2W::VALUE2)
+        self.variant(MSE2_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MSE3`"]
-pub enum MSE3W {
-    #[doc = "Shadow transfer can only be requested by SW"]
+#[doc = "Slice 3 Multi Channel shadow transfer enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MSE3_A {
+    #[doc = "0: Shadow transfer can only be requested by SW"]
     VALUE1,
-    #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
+    #[doc = "1: Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
     VALUE2,
 }
-impl MSE3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MSE3W::VALUE1 => false,
-            MSE3W::VALUE2 => true,
+impl From<MSE3_A> for bool {
+    #[inline(always)]
+    fn from(variant: MSE3_A) -> Self {
+        match variant {
+            MSE3_A::VALUE1 => false,
+            MSE3_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MSE3W<'a> {
+#[doc = "Reader of field `MSE3`"]
+pub type MSE3_R = crate::R<bool, MSE3_A>;
+impl MSE3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MSE3_A {
+        match self.bits {
+            false => MSE3_A::VALUE1,
+            true => MSE3_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MSE3_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MSE3_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `MSE3`"]
+pub struct MSE3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MSE3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MSE3W) -> &'a mut W {
+impl<'a> MSE3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MSE3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Shadow transfer can only be requested by SW"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MSE3W::VALUE1)
+        self.variant(MSE3_A::VALUE1)
     }
     #[doc = "Shadow transfer can be requested via SW and via the CCU4x.MCSS input."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MSE3W::VALUE2)
+        self.variant(MSE3_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MSDE`"]
-pub enum MSDEW {
-    #[doc = "Only the shadow transfer for period and compare values is requested"]
+#[doc = "Multi Channel shadow transfer request configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MSDE_A {
+    #[doc = "0: Only the shadow transfer for period and compare values is requested"]
     VALUE1,
-    #[doc = "Shadow transfer for the compare, period and prescaler compare values is requested"]
+    #[doc = "1: Shadow transfer for the compare, period and prescaler compare values is requested"]
     VALUE2,
-    #[doc = "Shadow transfer for the compare, period, prescaler and dither compare values is requested"]
+    #[doc = "3: Shadow transfer for the compare, period, prescaler and dither compare values is requested"]
     VALUE4,
 }
-impl MSDEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MSDEW::VALUE1 => 0,
-            MSDEW::VALUE2 => 1,
-            MSDEW::VALUE4 => 3,
+impl From<MSDE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MSDE_A) -> Self {
+        match variant {
+            MSDE_A::VALUE1 => 0,
+            MSDE_A::VALUE2 => 1,
+            MSDE_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MSDEW<'a> {
+#[doc = "Reader of field `MSDE`"]
+pub type MSDE_R = crate::R<u8, MSDE_A>;
+impl MSDE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MSDE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MSDE_A::VALUE1),
+            1 => Val(MSDE_A::VALUE2),
+            3 => Val(MSDE_A::VALUE4),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MSDE_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MSDE_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == MSDE_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `MSDE`"]
+pub struct MSDE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MSDEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MSDEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> MSDE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MSDE_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Only the shadow transfer for period and compare values is requested"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MSDEW::VALUE1)
+        self.variant(MSDE_A::VALUE1)
     }
     #[doc = "Shadow transfer for the compare, period and prescaler compare values is requested"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MSDEW::VALUE2)
+        self.variant(MSDE_A::VALUE2)
     }
     #[doc = "Shadow transfer for the compare, period, prescaler and dither compare values is requested"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(MSDEW::VALUE4)
+        self.variant(MSDE_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Prescaler Clear Configuration"]
-    #[inline]
-    pub fn prbc(&self) -> PRBCR {
-        PRBCR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn prbc(&self) -> PRBC_R {
+        PRBC_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 4:5 - Prescaler Input Clock Selection"]
-    #[inline]
-    pub fn pcis(&self) -> PCISR {
-        PCISR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pcis(&self) -> PCIS_R {
+        PCIS_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 8:9 - Suspend Mode Configuration"]
-    #[inline]
-    pub fn suscfg(&self) -> SUSCFGR {
-        SUSCFGR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn suscfg(&self) -> SUSCFG_R {
+        SUSCFG_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bit 10 - Slice 0 Multi Channel shadow transfer enable"]
-    #[inline]
-    pub fn mse0(&self) -> MSE0R {
-        MSE0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mse0(&self) -> MSE0_R {
+        MSE0_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Slice 1 Multi Channel shadow transfer enable"]
-    #[inline]
-    pub fn mse1(&self) -> MSE1R {
-        MSE1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mse1(&self) -> MSE1_R {
+        MSE1_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Slice 2 Multi Channel shadow transfer enable"]
-    #[inline]
-    pub fn mse2(&self) -> MSE2R {
-        MSE2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mse2(&self) -> MSE2_R {
+        MSE2_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Slice 3 Multi Channel shadow transfer enable"]
-    #[inline]
-    pub fn mse3(&self) -> MSE3R {
-        MSE3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mse3(&self) -> MSE3_R {
+        MSE3_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bits 14:15 - Multi Channel shadow transfer request configuration"]
-    #[inline]
-    pub fn msde(&self) -> MSDER {
-        MSDER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn msde(&self) -> MSDE_R {
+        MSDE_R::new(((self.bits >> 14) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Prescaler Clear Configuration"]
-    #[inline]
-    pub fn prbc(&mut self) -> _PRBCW {
-        _PRBCW { w: self }
+    #[inline(always)]
+    pub fn prbc(&mut self) -> PRBC_W {
+        PRBC_W { w: self }
     }
     #[doc = "Bits 4:5 - Prescaler Input Clock Selection"]
-    #[inline]
-    pub fn pcis(&mut self) -> _PCISW {
-        _PCISW { w: self }
+    #[inline(always)]
+    pub fn pcis(&mut self) -> PCIS_W {
+        PCIS_W { w: self }
     }
     #[doc = "Bits 8:9 - Suspend Mode Configuration"]
-    #[inline]
-    pub fn suscfg(&mut self) -> _SUSCFGW {
-        _SUSCFGW { w: self }
+    #[inline(always)]
+    pub fn suscfg(&mut self) -> SUSCFG_W {
+        SUSCFG_W { w: self }
     }
     #[doc = "Bit 10 - Slice 0 Multi Channel shadow transfer enable"]
-    #[inline]
-    pub fn mse0(&mut self) -> _MSE0W {
-        _MSE0W { w: self }
+    #[inline(always)]
+    pub fn mse0(&mut self) -> MSE0_W {
+        MSE0_W { w: self }
     }
     #[doc = "Bit 11 - Slice 1 Multi Channel shadow transfer enable"]
-    #[inline]
-    pub fn mse1(&mut self) -> _MSE1W {
-        _MSE1W { w: self }
+    #[inline(always)]
+    pub fn mse1(&mut self) -> MSE1_W {
+        MSE1_W { w: self }
     }
     #[doc = "Bit 12 - Slice 2 Multi Channel shadow transfer enable"]
-    #[inline]
-    pub fn mse2(&mut self) -> _MSE2W {
-        _MSE2W { w: self }
+    #[inline(always)]
+    pub fn mse2(&mut self) -> MSE2_W {
+        MSE2_W { w: self }
     }
     #[doc = "Bit 13 - Slice 3 Multi Channel shadow transfer enable"]
-    #[inline]
-    pub fn mse3(&mut self) -> _MSE3W {
-        _MSE3W { w: self }
+    #[inline(always)]
+    pub fn mse3(&mut self) -> MSE3_W {
+        MSE3_W { w: self }
     }
     #[doc = "Bits 14:15 - Multi Channel shadow transfer request configuration"]
-    #[inline]
-    pub fn msde(&mut self) -> _MSDEW {
-        _MSDEW { w: self }
+    #[inline(always)]
+    pub fn msde(&mut self) -> MSDE_W {
+        MSDE_W { w: self }
     }
 }

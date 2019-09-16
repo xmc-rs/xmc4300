@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u16,
-}
-impl super::DC_SPEED_COUNT_DIFF {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DEVIATIONR {
-    bits: u16,
-}
-impl DEVIATIONR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of register DC_SPEED_COUNT_DIFF"]
+pub type R = crate::R<u16, super::DC_SPEED_COUNT_DIFF>;
+#[doc = "Reader of field `DEVIATION`"]
+pub type DEVIATION_R = crate::R<u16, u16>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Representation of the deviation between local clock period and Reference Clock's clock period"]
-    #[inline]
-    pub fn deviation(&self) -> DEVIATIONR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u16) as u16
-        };
-        DEVIATIONR { bits }
+    #[inline(always)]
+    pub fn deviation(&self) -> DEVIATION_R {
+        DEVIATION_R::new((self.bits & 0xffff) as u16)
     }
 }

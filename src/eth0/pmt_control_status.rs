@@ -1,419 +1,200 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PMT_CONTROL_STATUS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PMT_CONTROL_STATUS"]
+pub type R = crate::R<u32, super::PMT_CONTROL_STATUS>;
+#[doc = "Writer for register PMT_CONTROL_STATUS"]
+pub type W = crate::W<u32, super::PMT_CONTROL_STATUS>;
+#[doc = "Register PMT_CONTROL_STATUS `reset()`'s with value 0"]
+impl crate::ResetValue for super::PMT_CONTROL_STATUS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct PWRDWNR {
-    bits: bool,
-}
-impl PWRDWNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MGKPKTENR {
-    bits: bool,
-}
-impl MGKPKTENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RWKPKTENR {
-    bits: bool,
-}
-impl RWKPKTENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MGKPRCVDR {
-    bits: bool,
-}
-impl MGKPRCVDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RWKPRCVDR {
-    bits: bool,
-}
-impl RWKPRCVDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct GLBLUCASTR {
-    bits: bool,
-}
-impl GLBLUCASTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RWKFILTRSTR {
-    bits: bool,
-}
-impl RWKFILTRSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PWRDWNW<'a> {
+#[doc = "Reader of field `PWRDWN`"]
+pub type PWRDWN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PWRDWN`"]
+pub struct PWRDWN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PWRDWNW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PWRDWN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MGKPKTENW<'a> {
+#[doc = "Reader of field `MGKPKTEN`"]
+pub type MGKPKTEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MGKPKTEN`"]
+pub struct MGKPKTEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MGKPKTENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> MGKPKTEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RWKPKTENW<'a> {
+#[doc = "Reader of field `RWKPKTEN`"]
+pub type RWKPKTEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RWKPKTEN`"]
+pub struct RWKPKTEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RWKPKTENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> RWKPKTEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _GLBLUCASTW<'a> {
+#[doc = "Reader of field `MGKPRCVD`"]
+pub type MGKPRCVD_R = crate::R<bool, bool>;
+#[doc = "Reader of field `RWKPRCVD`"]
+pub type RWKPRCVD_R = crate::R<bool, bool>;
+#[doc = "Reader of field `GLBLUCAST`"]
+pub type GLBLUCAST_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `GLBLUCAST`"]
+pub struct GLBLUCAST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GLBLUCASTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> GLBLUCAST_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RWKFILTRSTW<'a> {
+#[doc = "Reader of field `RWKFILTRST`"]
+pub type RWKFILTRST_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RWKFILTRST`"]
+pub struct RWKFILTRST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RWKFILTRSTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> RWKFILTRST_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Power Down"]
-    #[inline]
-    pub fn pwrdwn(&self) -> PWRDWNR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PWRDWNR { bits }
+    #[inline(always)]
+    pub fn pwrdwn(&self) -> PWRDWN_R {
+        PWRDWN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Magic Packet Enable"]
-    #[inline]
-    pub fn mgkpkten(&self) -> MGKPKTENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MGKPKTENR { bits }
+    #[inline(always)]
+    pub fn mgkpkten(&self) -> MGKPKTEN_R {
+        MGKPKTEN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Wake-Up Frame Enable"]
-    #[inline]
-    pub fn rwkpkten(&self) -> RWKPKTENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RWKPKTENR { bits }
+    #[inline(always)]
+    pub fn rwkpkten(&self) -> RWKPKTEN_R {
+        RWKPKTEN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Magic Packet Received"]
-    #[inline]
-    pub fn mgkprcvd(&self) -> MGKPRCVDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MGKPRCVDR { bits }
+    #[inline(always)]
+    pub fn mgkprcvd(&self) -> MGKPRCVD_R {
+        MGKPRCVD_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Wake-Up Frame Received"]
-    #[inline]
-    pub fn rwkprcvd(&self) -> RWKPRCVDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RWKPRCVDR { bits }
+    #[inline(always)]
+    pub fn rwkprcvd(&self) -> RWKPRCVD_R {
+        RWKPRCVD_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Global Unicast"]
-    #[inline]
-    pub fn glblucast(&self) -> GLBLUCASTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        GLBLUCASTR { bits }
+    #[inline(always)]
+    pub fn glblucast(&self) -> GLBLUCAST_R {
+        GLBLUCAST_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Wake-Up Frame Filter Register Pointer Reset"]
-    #[inline]
-    pub fn rwkfiltrst(&self) -> RWKFILTRSTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RWKFILTRSTR { bits }
+    #[inline(always)]
+    pub fn rwkfiltrst(&self) -> RWKFILTRST_R {
+        RWKFILTRST_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Power Down"]
-    #[inline]
-    pub fn pwrdwn(&mut self) -> _PWRDWNW {
-        _PWRDWNW { w: self }
+    #[inline(always)]
+    pub fn pwrdwn(&mut self) -> PWRDWN_W {
+        PWRDWN_W { w: self }
     }
     #[doc = "Bit 1 - Magic Packet Enable"]
-    #[inline]
-    pub fn mgkpkten(&mut self) -> _MGKPKTENW {
-        _MGKPKTENW { w: self }
+    #[inline(always)]
+    pub fn mgkpkten(&mut self) -> MGKPKTEN_W {
+        MGKPKTEN_W { w: self }
     }
     #[doc = "Bit 2 - Wake-Up Frame Enable"]
-    #[inline]
-    pub fn rwkpkten(&mut self) -> _RWKPKTENW {
-        _RWKPKTENW { w: self }
+    #[inline(always)]
+    pub fn rwkpkten(&mut self) -> RWKPKTEN_W {
+        RWKPKTEN_W { w: self }
     }
     #[doc = "Bit 9 - Global Unicast"]
-    #[inline]
-    pub fn glblucast(&mut self) -> _GLBLUCASTW {
-        _GLBLUCASTW { w: self }
+    #[inline(always)]
+    pub fn glblucast(&mut self) -> GLBLUCAST_W {
+        GLBLUCAST_W { w: self }
     }
     #[doc = "Bit 31 - Wake-Up Frame Filter Register Pointer Reset"]
-    #[inline]
-    pub fn rwkfiltrst(&mut self) -> _RWKFILTRSTW {
-        _RWKFILTRSTW { w: self }
+    #[inline(always)]
+    pub fn rwkfiltrst(&mut self) -> RWKFILTRST_W {
+        RWKFILTRST_W { w: self }
     }
 }

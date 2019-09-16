@@ -1,217 +1,143 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-impl super::SM_ACT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `SM_EN`"]
+#[doc = "Reader of register SM_ACT"]
+pub type R = crate::R<u8, super::SM_ACT>;
+#[doc = "SyncManager Enable/Disable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SM_ENR {
-    #[doc = "Disable: Access to Memory without SyncManager control"]
+pub enum SM_EN_A {
+    #[doc = "0: Disable: Access to Memory without SyncManager control"]
     VALUE1,
-    #[doc = "Enable: SyncManager is active and controls Memory area set in configuration"]
+    #[doc = "1: Enable: SyncManager is active and controls Memory area set in configuration"]
     VALUE2,
 }
-impl SM_ENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SM_ENR::VALUE1 => false,
-            SM_ENR::VALUE2 => true,
+impl From<SM_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: SM_EN_A) -> Self {
+        match variant {
+            SM_EN_A::VALUE1 => false,
+            SM_EN_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SM_ENR {
-        match value {
-            false => SM_ENR::VALUE1,
-            true => SM_ENR::VALUE2,
+}
+#[doc = "Reader of field `SM_EN`"]
+pub type SM_EN_R = crate::R<bool, SM_EN_A>;
+impl SM_EN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SM_EN_A {
+        match self.bits {
+            false => SM_EN_A::VALUE1,
+            true => SM_EN_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SM_ENR::VALUE1
+        *self == SM_EN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SM_ENR::VALUE2
+        *self == SM_EN_A::VALUE2
     }
 }
-#[doc = r" Value of the field"]
-pub struct REP_REQR {
-    bits: bool,
-}
-impl REP_REQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `LE_ECAT`"]
+#[doc = "Reader of field `REP_REQ`"]
+pub type REP_REQ_R = crate::R<bool, bool>;
+#[doc = "LatchEvent ECAT\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LE_ECATR {
-    #[doc = "No"]
+pub enum LE_ECAT_A {
+    #[doc = "0: No"]
     VALUE1,
-    #[doc = "Generate Latch event if EtherCAT master issues a buffer exchange"]
+    #[doc = "1: Generate Latch event if EtherCAT master issues a buffer exchange"]
     VALUE2,
 }
-impl LE_ECATR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LE_ECATR::VALUE1 => false,
-            LE_ECATR::VALUE2 => true,
+impl From<LE_ECAT_A> for bool {
+    #[inline(always)]
+    fn from(variant: LE_ECAT_A) -> Self {
+        match variant {
+            LE_ECAT_A::VALUE1 => false,
+            LE_ECAT_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LE_ECATR {
-        match value {
-            false => LE_ECATR::VALUE1,
-            true => LE_ECATR::VALUE2,
+}
+#[doc = "Reader of field `LE_ECAT`"]
+pub type LE_ECAT_R = crate::R<bool, LE_ECAT_A>;
+impl LE_ECAT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LE_ECAT_A {
+        match self.bits {
+            false => LE_ECAT_A::VALUE1,
+            true => LE_ECAT_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LE_ECATR::VALUE1
+        *self == LE_ECAT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LE_ECATR::VALUE2
+        *self == LE_ECAT_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `LE_PDI`"]
+#[doc = "LatchEvent PDI\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LE_PDIR {
-    #[doc = "No"]
+pub enum LE_PDI_A {
+    #[doc = "0: No"]
     VALUE1,
-    #[doc = "Generate Latch events if PDI issues a buffer exchange or if PDI accesses buffer start address"]
+    #[doc = "1: Generate Latch events if PDI issues a buffer exchange or if PDI accesses buffer start address"]
     VALUE2,
 }
-impl LE_PDIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LE_PDIR::VALUE1 => false,
-            LE_PDIR::VALUE2 => true,
+impl From<LE_PDI_A> for bool {
+    #[inline(always)]
+    fn from(variant: LE_PDI_A) -> Self {
+        match variant {
+            LE_PDI_A::VALUE1 => false,
+            LE_PDI_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LE_PDIR {
-        match value {
-            false => LE_PDIR::VALUE1,
-            true => LE_PDIR::VALUE2,
+}
+#[doc = "Reader of field `LE_PDI`"]
+pub type LE_PDI_R = crate::R<bool, LE_PDI_A>;
+impl LE_PDI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LE_PDI_A {
+        match self.bits {
+            false => LE_PDI_A::VALUE1,
+            true => LE_PDI_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LE_PDIR::VALUE1
+        *self == LE_PDI_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LE_PDIR::VALUE2
+        *self == LE_PDI_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 0 - SyncManager Enable/Disable"]
-    #[inline]
-    pub fn sm_en(&self) -> SM_ENR {
-        SM_ENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn sm_en(&self) -> SM_EN_R {
+        SM_EN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Repeat Request"]
-    #[inline]
-    pub fn rep_req(&self) -> REP_REQR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        };
-        REP_REQR { bits }
+    #[inline(always)]
+    pub fn rep_req(&self) -> REP_REQ_R {
+        REP_REQ_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 6 - LatchEvent ECAT"]
-    #[inline]
-    pub fn le_ecat(&self) -> LE_ECATR {
-        LE_ECATR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn le_ecat(&self) -> LE_ECAT_R {
+        LE_ECAT_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - LatchEvent PDI"]
-    #[inline]
-    pub fn le_pdi(&self) -> LE_PDIR {
-        LE_PDIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn le_pdi(&self) -> LE_PDI_R {
+        LE_PDI_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }

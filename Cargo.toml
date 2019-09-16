@@ -1,16 +1,22 @@
 [package]
 name = "xmc4300"
 version = "0.1.0"
+description = "XMC peripheral library for XMC4300 generated from SVD"
 authors = ["Lucas Brendel <lucasbrendel@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/xmc-rs/xmc4300"
+license = "MIT"
+keywords = ["cortex-m", "infineon", "arm", "xmc4x"]
+documentation = "https://docs.rs/xmc4300/"
 
 [dependencies]
 cortex-m = "0.5.8"
-bare-metal = "0.2.4"
-vcell = "0.1.0"
+bare-metal = "0.2.5"
+vcell = "0.1.2"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "0.6.7"
+version = "0.6.10"
 
 [features]
 rt = ["cortex-m-rt"]

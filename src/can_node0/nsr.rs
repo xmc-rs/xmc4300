@@ -1,750 +1,514 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::NSR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register NSR"]
+pub type R = crate::R<u32, super::NSR>;
+#[doc = "Writer for register NSR"]
+pub type W = crate::W<u32, super::NSR>;
+#[doc = "Register NSR `reset()`'s with value 0"]
+impl crate::ResetValue for super::NSR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct LECR {
-    bits: u8,
-}
-impl LECR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `TXOK`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXOKR {
-    #[doc = "No successful transmission since last (most recent) flag reset."]
-    VALUE1,
-    #[doc = "A message has been transmitted successfully (error-free and acknowledged by at least another node)."]
-    VALUE2,
-}
-impl TXOKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TXOKR::VALUE1 => false,
-            TXOKR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TXOKR {
-        match value {
-            false => TXOKR::VALUE1,
-            true => TXOKR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == TXOKR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == TXOKR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `RXOK`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXOKR {
-    #[doc = "No successful reception since last (most recent) flag reset."]
-    VALUE1,
-    #[doc = "A message has been received successfully."]
-    VALUE2,
-}
-impl RXOKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RXOKR::VALUE1 => false,
-            RXOKR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RXOKR {
-        match value {
-            false => RXOKR::VALUE1,
-            true => RXOKR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == RXOKR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == RXOKR::VALUE2
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ALERTR {
-    bits: bool,
-}
-impl ALERTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `EWRN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EWRNR {
-    #[doc = "No warning limit exceeded."]
-    VALUE1,
-    #[doc = "One of the error counters REC or TEC reached the warning limit EWRNLVL."]
-    VALUE2,
-}
-impl EWRNR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EWRNR::VALUE1 => false,
-            EWRNR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EWRNR {
-        match value {
-            false => EWRNR::VALUE1,
-            true => EWRNR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EWRNR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EWRNR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `BOFF`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BOFFR {
-    #[doc = "CAN controller is not in the bus-off state."]
-    VALUE1,
-    #[doc = "CAN controller is in the bus-off state."]
-    VALUE2,
-}
-impl BOFFR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BOFFR::VALUE1 => false,
-            BOFFR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BOFFR {
-        match value {
-            false => BOFFR::VALUE1,
-            true => BOFFR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == BOFFR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == BOFFR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `LLE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LLER {
-    #[doc = "No List Length Error since last (most recent) flag reset."]
-    VALUE1,
-    #[doc = "A List Length Error has been detected during message acceptance filtering. The number of elements in the list that belongs to this CAN node differs from the list SIZE given in the list termination pointer."]
-    VALUE2,
-}
-impl LLER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LLER::VALUE1 => false,
-            LLER::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LLER {
-        match value {
-            false => LLER::VALUE1,
-            true => LLER::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LLER::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LLER::VALUE2
-    }
-}
-#[doc = "Possible values of the field `LOE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOER {
-    #[doc = "No List Object Error since last (most recent) flag reset."]
-    VALUE1,
-    #[doc = "A List Object Error has been detected during message acceptance filtering. A message object with wrong LIST index entry in the Message Object Status Register has been detected."]
-    VALUE2,
-}
-impl LOER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LOER::VALUE1 => false,
-            LOER::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LOER {
-        match value {
-            false => LOER::VALUE1,
-            true => LOER::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LOER::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LOER::VALUE2
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LECW<'a> {
+#[doc = "Reader of field `LEC`"]
+pub type LEC_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `LEC`"]
+pub struct LEC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LECW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> LEC_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TXOK`"]
-pub enum TXOKW {
+#[doc = "Message Transmitted Successfully\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TXOK_A {
+    #[doc = "0: No successful transmission since last (most recent) flag reset."]
+    VALUE1,
+    #[doc = "1: A message has been transmitted successfully (error-free and acknowledged by at least another node)."]
+    VALUE2,
+}
+impl From<TXOK_A> for bool {
+    #[inline(always)]
+    fn from(variant: TXOK_A) -> Self {
+        match variant {
+            TXOK_A::VALUE1 => false,
+            TXOK_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `TXOK`"]
+pub type TXOK_R = crate::R<bool, TXOK_A>;
+impl TXOK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TXOK_A {
+        match self.bits {
+            false => TXOK_A::VALUE1,
+            true => TXOK_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == TXOK_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == TXOK_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `TXOK`"]
+pub struct TXOK_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TXOK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TXOK_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "No successful transmission since last (most recent) flag reset."]
-    VALUE1,
-    #[doc = "A message has been transmitted successfully (error-free and acknowledged by at least another node)."]
-    VALUE2,
-}
-impl TXOKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TXOKW::VALUE1 => false,
-            TXOKW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXOKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TXOKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TXOKW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No successful transmission since last (most recent) flag reset."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(TXOKW::VALUE1)
+        self.variant(TXOK_A::VALUE1)
     }
     #[doc = "A message has been transmitted successfully (error-free and acknowledged by at least another node)."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(TXOKW::VALUE2)
+        self.variant(TXOK_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RXOK`"]
-pub enum RXOKW {
-    #[doc = "No successful reception since last (most recent) flag reset."]
+#[doc = "Message Received Successfully\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RXOK_A {
+    #[doc = "0: No successful reception since last (most recent) flag reset."]
     VALUE1,
-    #[doc = "A message has been received successfully."]
+    #[doc = "1: A message has been received successfully."]
     VALUE2,
 }
-impl RXOKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RXOKW::VALUE1 => false,
-            RXOKW::VALUE2 => true,
+impl From<RXOK_A> for bool {
+    #[inline(always)]
+    fn from(variant: RXOK_A) -> Self {
+        match variant {
+            RXOK_A::VALUE1 => false,
+            RXOK_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RXOKW<'a> {
+#[doc = "Reader of field `RXOK`"]
+pub type RXOK_R = crate::R<bool, RXOK_A>;
+impl RXOK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXOK_A {
+        match self.bits {
+            false => RXOK_A::VALUE1,
+            true => RXOK_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == RXOK_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == RXOK_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `RXOK`"]
+pub struct RXOK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RXOKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RXOKW) -> &'a mut W {
+impl<'a> RXOK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RXOK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No successful reception since last (most recent) flag reset."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(RXOKW::VALUE1)
+        self.variant(RXOK_A::VALUE1)
     }
     #[doc = "A message has been received successfully."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(RXOKW::VALUE2)
+        self.variant(RXOK_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ALERTW<'a> {
+#[doc = "Reader of field `ALERT`"]
+pub type ALERT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ALERT`"]
+pub struct ALERT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ALERTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ALERT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LLE`"]
-pub enum LLEW {
-    #[doc = "No List Length Error since last (most recent) flag reset."]
+#[doc = "Error Warning Status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EWRN_A {
+    #[doc = "0: No warning limit exceeded."]
     VALUE1,
-    #[doc = "A List Length Error has been detected during message acceptance filtering. The number of elements in the list that belongs to this CAN node differs from the list SIZE given in the list termination pointer."]
+    #[doc = "1: One of the error counters REC or TEC reached the warning limit EWRNLVL."]
     VALUE2,
 }
-impl LLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LLEW::VALUE1 => false,
-            LLEW::VALUE2 => true,
+impl From<EWRN_A> for bool {
+    #[inline(always)]
+    fn from(variant: EWRN_A) -> Self {
+        match variant {
+            EWRN_A::VALUE1 => false,
+            EWRN_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _LLEW<'a> {
+#[doc = "Reader of field `EWRN`"]
+pub type EWRN_R = crate::R<bool, EWRN_A>;
+impl EWRN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EWRN_A {
+        match self.bits {
+            false => EWRN_A::VALUE1,
+            true => EWRN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EWRN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EWRN_A::VALUE2
+    }
+}
+#[doc = "Bus-off Status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BOFF_A {
+    #[doc = "0: CAN controller is not in the bus-off state."]
+    VALUE1,
+    #[doc = "1: CAN controller is in the bus-off state."]
+    VALUE2,
+}
+impl From<BOFF_A> for bool {
+    #[inline(always)]
+    fn from(variant: BOFF_A) -> Self {
+        match variant {
+            BOFF_A::VALUE1 => false,
+            BOFF_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `BOFF`"]
+pub type BOFF_R = crate::R<bool, BOFF_A>;
+impl BOFF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BOFF_A {
+        match self.bits {
+            false => BOFF_A::VALUE1,
+            true => BOFF_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == BOFF_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == BOFF_A::VALUE2
+    }
+}
+#[doc = "List Length Error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LLE_A {
+    #[doc = "0: No List Length Error since last (most recent) flag reset."]
+    VALUE1,
+    #[doc = "1: A List Length Error has been detected during message acceptance filtering. The number of elements in the list that belongs to this CAN node differs from the list SIZE given in the list termination pointer."]
+    VALUE2,
+}
+impl From<LLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: LLE_A) -> Self {
+        match variant {
+            LLE_A::VALUE1 => false,
+            LLE_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `LLE`"]
+pub type LLE_R = crate::R<bool, LLE_A>;
+impl LLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LLE_A {
+        match self.bits {
+            false => LLE_A::VALUE1,
+            true => LLE_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LLE_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LLE_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `LLE`"]
+pub struct LLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LLEW) -> &'a mut W {
+impl<'a> LLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LLE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No List Length Error since last (most recent) flag reset."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LLEW::VALUE1)
+        self.variant(LLE_A::VALUE1)
     }
     #[doc = "A List Length Error has been detected during message acceptance filtering. The number of elements in the list that belongs to this CAN node differs from the list SIZE given in the list termination pointer."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LLEW::VALUE2)
+        self.variant(LLE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LOE`"]
-pub enum LOEW {
-    #[doc = "No List Object Error since last (most recent) flag reset."]
+#[doc = "List Object Error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LOE_A {
+    #[doc = "0: No List Object Error since last (most recent) flag reset."]
     VALUE1,
-    #[doc = "A List Object Error has been detected during message acceptance filtering. A message object with wrong LIST index entry in the Message Object Status Register has been detected."]
+    #[doc = "1: A List Object Error has been detected during message acceptance filtering. A message object with wrong LIST index entry in the Message Object Status Register has been detected."]
     VALUE2,
 }
-impl LOEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LOEW::VALUE1 => false,
-            LOEW::VALUE2 => true,
+impl From<LOE_A> for bool {
+    #[inline(always)]
+    fn from(variant: LOE_A) -> Self {
+        match variant {
+            LOE_A::VALUE1 => false,
+            LOE_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _LOEW<'a> {
+#[doc = "Reader of field `LOE`"]
+pub type LOE_R = crate::R<bool, LOE_A>;
+impl LOE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LOE_A {
+        match self.bits {
+            false => LOE_A::VALUE1,
+            true => LOE_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LOE_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LOE_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `LOE`"]
+pub struct LOE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LOEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOEW) -> &'a mut W {
+impl<'a> LOE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No List Object Error since last (most recent) flag reset."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LOEW::VALUE1)
+        self.variant(LOE_A::VALUE1)
     }
     #[doc = "A List Object Error has been detected during message acceptance filtering. A message object with wrong LIST index entry in the Message Object Status Register has been detected."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LOEW::VALUE2)
+        self.variant(LOE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Last Error Code"]
-    #[inline]
-    pub fn lec(&self) -> LECR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        LECR { bits }
+    #[inline(always)]
+    pub fn lec(&self) -> LEC_R {
+        LEC_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bit 3 - Message Transmitted Successfully"]
-    #[inline]
-    pub fn txok(&self) -> TXOKR {
-        TXOKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn txok(&self) -> TXOK_R {
+        TXOK_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Message Received Successfully"]
-    #[inline]
-    pub fn rxok(&self) -> RXOKR {
-        RXOKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rxok(&self) -> RXOK_R {
+        RXOK_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Alert Warning"]
-    #[inline]
-    pub fn alert(&self) -> ALERTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ALERTR { bits }
+    #[inline(always)]
+    pub fn alert(&self) -> ALERT_R {
+        ALERT_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Error Warning Status"]
-    #[inline]
-    pub fn ewrn(&self) -> EWRNR {
-        EWRNR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ewrn(&self) -> EWRN_R {
+        EWRN_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Bus-off Status"]
-    #[inline]
-    pub fn boff(&self) -> BOFFR {
-        BOFFR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn boff(&self) -> BOFF_R {
+        BOFF_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - List Length Error"]
-    #[inline]
-    pub fn lle(&self) -> LLER {
-        LLER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lle(&self) -> LLE_R {
+        LLE_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - List Object Error"]
-    #[inline]
-    pub fn loe(&self) -> LOER {
-        LOER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn loe(&self) -> LOE_R {
+        LOE_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Last Error Code"]
-    #[inline]
-    pub fn lec(&mut self) -> _LECW {
-        _LECW { w: self }
+    #[inline(always)]
+    pub fn lec(&mut self) -> LEC_W {
+        LEC_W { w: self }
     }
     #[doc = "Bit 3 - Message Transmitted Successfully"]
-    #[inline]
-    pub fn txok(&mut self) -> _TXOKW {
-        _TXOKW { w: self }
+    #[inline(always)]
+    pub fn txok(&mut self) -> TXOK_W {
+        TXOK_W { w: self }
     }
     #[doc = "Bit 4 - Message Received Successfully"]
-    #[inline]
-    pub fn rxok(&mut self) -> _RXOKW {
-        _RXOKW { w: self }
+    #[inline(always)]
+    pub fn rxok(&mut self) -> RXOK_W {
+        RXOK_W { w: self }
     }
     #[doc = "Bit 5 - Alert Warning"]
-    #[inline]
-    pub fn alert(&mut self) -> _ALERTW {
-        _ALERTW { w: self }
+    #[inline(always)]
+    pub fn alert(&mut self) -> ALERT_W {
+        ALERT_W { w: self }
     }
     #[doc = "Bit 8 - List Length Error"]
-    #[inline]
-    pub fn lle(&mut self) -> _LLEW {
-        _LLEW { w: self }
+    #[inline(always)]
+    pub fn lle(&mut self) -> LLE_W {
+        LLE_W { w: self }
     }
     #[doc = "Bit 9 - List Object Error"]
-    #[inline]
-    pub fn loe(&mut self) -> _LOEW {
-        _LOEW { w: self }
+    #[inline(always)]
+    pub fn loe(&mut self) -> LOE_W {
+        LOE_W { w: self }
     }
 }

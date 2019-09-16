@@ -1,188 +1,76 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::QBUR0 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct REQCHNRR {
-    bits: u8,
-}
-impl REQCHNRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RFR {
-    bits: bool,
-}
-impl RFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ENSIR {
-    bits: bool,
-}
-impl ENSIR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct EXTRR {
-    bits: bool,
-}
-impl EXTRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `V`"]
+#[doc = "Reader of register QBUR0"]
+pub type R = crate::R<u32, super::QBUR0>;
+#[doc = "Reader of field `REQCHNR`"]
+pub type REQCHNR_R = crate::R<u8, u8>;
+#[doc = "Reader of field `RF`"]
+pub type RF_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ENSI`"]
+pub type ENSI_R = crate::R<bool, bool>;
+#[doc = "Reader of field `EXTR`"]
+pub type EXTR_R = crate::R<bool, bool>;
+#[doc = "Request Channel Number Valid\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VR {
-    #[doc = "Backup register not valid"]
+pub enum V_A {
+    #[doc = "0: Backup register not valid"]
     VALUE1,
-    #[doc = "Backup register contains a valid entry. This will be requested before a valid entry in queue register 0 (stage 0) will be requested."]
+    #[doc = "1: Backup register contains a valid entry. This will be requested before a valid entry in queue register 0 (stage 0) will be requested."]
     VALUE2,
 }
-impl VR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VR::VALUE1 => false,
-            VR::VALUE2 => true,
+impl From<V_A> for bool {
+    #[inline(always)]
+    fn from(variant: V_A) -> Self {
+        match variant {
+            V_A::VALUE1 => false,
+            V_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VR {
-        match value {
-            false => VR::VALUE1,
-            true => VR::VALUE2,
+}
+#[doc = "Reader of field `V`"]
+pub type V_R = crate::R<bool, V_A>;
+impl V_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> V_A {
+        match self.bits {
+            false => V_A::VALUE1,
+            true => V_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VR::VALUE1
+        *self == V_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VR::VALUE2
+        *self == V_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:4 - Request Channel Number"]
-    #[inline]
-    pub fn reqchnr(&self) -> REQCHNRR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        REQCHNRR { bits }
+    #[inline(always)]
+    pub fn reqchnr(&self) -> REQCHNR_R {
+        REQCHNR_R::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bit 5 - Refill"]
-    #[inline]
-    pub fn rf(&self) -> RFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RFR { bits }
+    #[inline(always)]
+    pub fn rf(&self) -> RF_R {
+        RF_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Enable Source Interrupt"]
-    #[inline]
-    pub fn ensi(&self) -> ENSIR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ENSIR { bits }
+    #[inline(always)]
+    pub fn ensi(&self) -> ENSI_R {
+        ENSI_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - External Trigger"]
-    #[inline]
-    pub fn extr(&self) -> EXTRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        EXTRR { bits }
+    #[inline(always)]
+    pub fn extr(&self) -> EXTR_R {
+        EXTR_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Request Channel Number Valid"]
-    #[inline]
-    pub fn v(&self) -> VR {
-        VR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn v(&self) -> V_R {
+        V_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }

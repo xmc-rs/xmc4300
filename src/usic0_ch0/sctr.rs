@@ -1,956 +1,687 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SCTR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SCTR"]
+pub type R = crate::R<u32, super::SCTR>;
+#[doc = "Writer for register SCTR"]
+pub type W = crate::W<u32, super::SCTR>;
+#[doc = "Register SCTR `reset()`'s with value 0"]
+impl crate::ResetValue for super::SCTR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `SDIR`"]
+#[doc = "Shift Direction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SDIRR {
+pub enum SDIR_A {
+    #[doc = "0: Shift LSB first. The first data bit of a data word is located at bit position 0."]
+    VALUE1,
+    #[doc = "1: Shift MSB first. The first data bit of a data word is located at the bit position given by bit field SCTR.WLE."]
+    VALUE2,
+}
+impl From<SDIR_A> for bool {
+    #[inline(always)]
+    fn from(variant: SDIR_A) -> Self {
+        match variant {
+            SDIR_A::VALUE1 => false,
+            SDIR_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `SDIR`"]
+pub type SDIR_R = crate::R<bool, SDIR_A>;
+impl SDIR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SDIR_A {
+        match self.bits {
+            false => SDIR_A::VALUE1,
+            true => SDIR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == SDIR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == SDIR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `SDIR`"]
+pub struct SDIR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SDIR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SDIR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Shift LSB first. The first data bit of a data word is located at bit position 0."]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(SDIR_A::VALUE1)
+    }
     #[doc = "Shift MSB first. The first data bit of a data word is located at the bit position given by bit field SCTR.WLE."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(SDIR_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "Passive Data Level\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PDL_A {
+    #[doc = "0: The passive data level is 0."]
+    VALUE1,
+    #[doc = "1: The passive data level is 1."]
     VALUE2,
 }
-impl SDIRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SDIRR::VALUE1 => false,
-            SDIRR::VALUE2 => true,
+impl From<PDL_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDL_A) -> Self {
+        match variant {
+            PDL_A::VALUE1 => false,
+            PDL_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SDIRR {
-        match value {
-            false => SDIRR::VALUE1,
-            true => SDIRR::VALUE2,
+}
+#[doc = "Reader of field `PDL`"]
+pub type PDL_R = crate::R<bool, PDL_A>;
+impl PDL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDL_A {
+        match self.bits {
+            false => PDL_A::VALUE1,
+            true => PDL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SDIRR::VALUE1
+        *self == PDL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SDIRR::VALUE2
+        *self == PDL_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `PDL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDLR {
+#[doc = "Write proxy for field `PDL`"]
+pub struct PDL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "The passive data level is 0."]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(PDL_A::VALUE1)
+    }
     #[doc = "The passive data level is 1."]
-    VALUE2,
-}
-impl PDLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(PDL_A::VALUE2)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDLR::VALUE1 => false,
-            PDLR::VALUE2 => true,
-        }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDLR {
-        match value {
-            false => PDLR::VALUE1,
-            true => PDLR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == PDLR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == PDLR::VALUE2
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
-#[doc = "Possible values of the field `DSM`"]
+#[doc = "Data Shift Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DSMR {
-    #[doc = "Receive and transmit data is shifted in and out one bit at a time through DX0 and DOUT0."]
+pub enum DSM_A {
+    #[doc = "0: Receive and transmit data is shifted in and out one bit at a time through DX0 and DOUT0."]
     VALUE1,
-    #[doc = "Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\] respectively."]
+    #[doc = "2: Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\] respectively."]
     VALUE3,
-    #[doc = "Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\] respectively."]
+    #[doc = "3: Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\] respectively."]
     VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl DSMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DSMR::VALUE1 => 0,
-            DSMR::VALUE3 => 2,
-            DSMR::VALUE4 => 3,
-            DSMR::_Reserved(bits) => bits,
+impl From<DSM_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DSM_A) -> Self {
+        match variant {
+            DSM_A::VALUE1 => 0,
+            DSM_A::VALUE3 => 2,
+            DSM_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DSMR {
-        match value {
-            0 => DSMR::VALUE1,
-            2 => DSMR::VALUE3,
-            3 => DSMR::VALUE4,
-            i => DSMR::_Reserved(i),
+}
+#[doc = "Reader of field `DSM`"]
+pub type DSM_R = crate::R<u8, DSM_A>;
+impl DSM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, DSM_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(DSM_A::VALUE1),
+            2 => Val(DSM_A::VALUE3),
+            3 => Val(DSM_A::VALUE4),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DSMR::VALUE1
+        *self == DSM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == DSMR::VALUE3
+        *self == DSM_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == DSMR::VALUE4
+        *self == DSM_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `HPCDIR`"]
+#[doc = "Write proxy for field `DSM`"]
+pub struct DSM_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DSM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DSM_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Receive and transmit data is shifted in and out one bit at a time through DX0 and DOUT0."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(DSM_A::VALUE1)
+    }
+    #[doc = "Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\] respectively."]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(DSM_A::VALUE3)
+    }
+    #[doc = "Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\] respectively."]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(DSM_A::VALUE4)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w
+    }
+}
+#[doc = "Port Control Direction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HPCDIRR {
+pub enum HPCDIR_A {
+    #[doc = "0: The pin(s) with hardware pin control enabled are selected to be in input mode."]
+    VALUE1,
+    #[doc = "1: The pin(s) with hardware pin control enabled are selected to be in output mode."]
+    VALUE2,
+}
+impl From<HPCDIR_A> for bool {
+    #[inline(always)]
+    fn from(variant: HPCDIR_A) -> Self {
+        match variant {
+            HPCDIR_A::VALUE1 => false,
+            HPCDIR_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `HPCDIR`"]
+pub type HPCDIR_R = crate::R<bool, HPCDIR_A>;
+impl HPCDIR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HPCDIR_A {
+        match self.bits {
+            false => HPCDIR_A::VALUE1,
+            true => HPCDIR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == HPCDIR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == HPCDIR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `HPCDIR`"]
+pub struct HPCDIR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> HPCDIR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HPCDIR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "The pin(s) with hardware pin control enabled are selected to be in input mode."]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(HPCDIR_A::VALUE1)
+    }
     #[doc = "The pin(s) with hardware pin control enabled are selected to be in output mode."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(HPCDIR_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
+    }
+}
+#[doc = "Data Output Configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DOCFG_A {
+    #[doc = "0: DOUTx = shift data value"]
+    VALUE1,
+    #[doc = "1: DOUTx = inverted shift data value"]
     VALUE2,
 }
-impl HPCDIRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HPCDIRR::VALUE1 => false,
-            HPCDIRR::VALUE2 => true,
+impl From<DOCFG_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DOCFG_A) -> Self {
+        match variant {
+            DOCFG_A::VALUE1 => 0,
+            DOCFG_A::VALUE2 => 1,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HPCDIRR {
-        match value {
-            false => HPCDIRR::VALUE1,
-            true => HPCDIRR::VALUE2,
+}
+#[doc = "Reader of field `DOCFG`"]
+pub type DOCFG_R = crate::R<u8, DOCFG_A>;
+impl DOCFG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, DOCFG_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(DOCFG_A::VALUE1),
+            1 => Val(DOCFG_A::VALUE2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == HPCDIRR::VALUE1
+        *self == DOCFG_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == HPCDIRR::VALUE2
+        *self == DOCFG_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `DOCFG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DOCFGR {
+#[doc = "Write proxy for field `DOCFG`"]
+pub struct DOCFG_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DOCFG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DOCFG_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
     #[doc = "DOUTx = shift data value"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(DOCFG_A::VALUE1)
+    }
     #[doc = "DOUTx = inverted shift data value"]
-    VALUE2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl DOCFGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DOCFGR::VALUE1 => 0,
-            DOCFGR::VALUE2 => 1,
-            DOCFGR::_Reserved(bits) => bits,
-        }
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(DOCFG_A::VALUE2)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DOCFGR {
-        match value {
-            0 => DOCFGR::VALUE1,
-            1 => DOCFGR::VALUE2,
-            i => DOCFGR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == DOCFGR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == DOCFGR::VALUE2
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w
     }
 }
-#[doc = "Possible values of the field `TRM`"]
+#[doc = "Transmission Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRMR {
-    #[doc = "The shift control signal is considered as inactive and data frame transfers are not possible."]
+pub enum TRM_A {
+    #[doc = "0: The shift control signal is considered as inactive and data frame transfers are not possible."]
     VALUE1,
-    #[doc = "The shift control signal is considered active if it is at 1-level. This is the setting to be programmed to allow data transfers."]
+    #[doc = "1: The shift control signal is considered active if it is at 1-level. This is the setting to be programmed to allow data transfers."]
     VALUE2,
-    #[doc = "The shift control signal is considered active if it is at 0-level. It is recommended to avoid this setting and to use the inversion in the DX2 stage in case of a low-active signal."]
+    #[doc = "2: The shift control signal is considered active if it is at 0-level. It is recommended to avoid this setting and to use the inversion in the DX2 stage in case of a low-active signal."]
     VALUE3,
-    #[doc = "The shift control signal is considered active without referring to the actual signal level. Data frame transfer is possible after each edge of the signal."]
+    #[doc = "3: The shift control signal is considered active without referring to the actual signal level. Data frame transfer is possible after each edge of the signal."]
     VALUE4,
 }
-impl TRMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            TRMR::VALUE1 => 0,
-            TRMR::VALUE2 => 1,
-            TRMR::VALUE3 => 2,
-            TRMR::VALUE4 => 3,
+impl From<TRM_A> for u8 {
+    #[inline(always)]
+    fn from(variant: TRM_A) -> Self {
+        match variant {
+            TRM_A::VALUE1 => 0,
+            TRM_A::VALUE2 => 1,
+            TRM_A::VALUE3 => 2,
+            TRM_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> TRMR {
-        match value {
-            0 => TRMR::VALUE1,
-            1 => TRMR::VALUE2,
-            2 => TRMR::VALUE3,
-            3 => TRMR::VALUE4,
+}
+#[doc = "Reader of field `TRM`"]
+pub type TRM_R = crate::R<u8, TRM_A>;
+impl TRM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRM_A {
+        match self.bits {
+            0 => TRM_A::VALUE1,
+            1 => TRM_A::VALUE2,
+            2 => TRM_A::VALUE3,
+            3 => TRM_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TRMR::VALUE1
+        *self == TRM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TRMR::VALUE2
+        *self == TRM_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == TRMR::VALUE3
+        *self == TRM_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == TRMR::VALUE4
+        *self == TRM_A::VALUE4
     }
 }
-#[doc = r" Value of the field"]
-pub struct FLER {
-    bits: u8,
+#[doc = "Write proxy for field `TRM`"]
+pub struct TRM_W<'a> {
+    w: &'a mut W,
 }
-impl FLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `WLE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WLER {
-    #[doc = "The data word contains 1 data bit located at bit position 0."]
-    VALUE1,
-    #[doc = "The data word contains 2 data bits located at bit positions \\[1:0\\]."]
-    VALUE2,
-    #[doc = "The data word contains 15 data bits located at bit positions \\[14:0\\]."]
-    VALUE3,
-    #[doc = "The data word contains 16 data bits located at bit positions \\[15:0\\]."]
-    VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl WLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            WLER::VALUE1 => 0,
-            WLER::VALUE2 => 1,
-            WLER::VALUE3 => 14,
-            WLER::VALUE4 => 15,
-            WLER::_Reserved(bits) => bits,
+impl<'a> TRM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRM_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> WLER {
-        match value {
-            0 => WLER::VALUE1,
-            1 => WLER::VALUE2,
-            14 => WLER::VALUE3,
-            15 => WLER::VALUE4,
-            i => WLER::_Reserved(i),
+    #[doc = "The shift control signal is considered as inactive and data frame transfers are not possible."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(TRM_A::VALUE1)
+    }
+    #[doc = "The shift control signal is considered active if it is at 1-level. This is the setting to be programmed to allow data transfers."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(TRM_A::VALUE2)
+    }
+    #[doc = "The shift control signal is considered active if it is at 0-level. It is recommended to avoid this setting and to use the inversion in the DX2 stage in case of a low-active signal."]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(TRM_A::VALUE3)
+    }
+    #[doc = "The shift control signal is considered active without referring to the actual signal level. Data frame transfer is possible after each edge of the signal."]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(TRM_A::VALUE4)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w
+    }
+}
+#[doc = "Reader of field `FLE`"]
+pub type FLE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `FLE`"]
+pub struct FLE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FLE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x3f << 16)) | (((value as u32) & 0x3f) << 16);
+        self.w
+    }
+}
+#[doc = "Word Length\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WLE_A {
+    #[doc = "0: The data word contains 1 data bit located at bit position 0."]
+    VALUE1,
+    #[doc = "1: The data word contains 2 data bits located at bit positions \\[1:0\\]."]
+    VALUE2,
+    #[doc = "14: The data word contains 15 data bits located at bit positions \\[14:0\\]."]
+    VALUE3,
+    #[doc = "15: The data word contains 16 data bits located at bit positions \\[15:0\\]."]
+    VALUE4,
+}
+impl From<WLE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: WLE_A) -> Self {
+        match variant {
+            WLE_A::VALUE1 => 0,
+            WLE_A::VALUE2 => 1,
+            WLE_A::VALUE3 => 14,
+            WLE_A::VALUE4 => 15,
+        }
+    }
+}
+#[doc = "Reader of field `WLE`"]
+pub type WLE_R = crate::R<u8, WLE_A>;
+impl WLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, WLE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(WLE_A::VALUE1),
+            1 => Val(WLE_A::VALUE2),
+            14 => Val(WLE_A::VALUE3),
+            15 => Val(WLE_A::VALUE4),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WLER::VALUE1
+        *self == WLE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WLER::VALUE2
+        *self == WLE_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == WLER::VALUE3
+        *self == WLE_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == WLER::VALUE4
+        *self == WLE_A::VALUE4
     }
 }
-#[doc = "Values that can be written to the field `SDIR`"]
-pub enum SDIRW {
-    #[doc = "Shift LSB first. The first data bit of a data word is located at bit position 0."]
-    VALUE1,
-    #[doc = "Shift MSB first. The first data bit of a data word is located at the bit position given by bit field SCTR.WLE."]
-    VALUE2,
-}
-impl SDIRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SDIRW::VALUE1 => false,
-            SDIRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SDIRW<'a> {
+#[doc = "Write proxy for field `WLE`"]
+pub struct WLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SDIRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SDIRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Shift LSB first. The first data bit of a data word is located at bit position 0."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(SDIRW::VALUE1)
-    }
-    #[doc = "Shift MSB first. The first data bit of a data word is located at the bit position given by bit field SCTR.WLE."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(SDIRW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDL`"]
-pub enum PDLW {
-    #[doc = "The passive data level is 0."]
-    VALUE1,
-    #[doc = "The passive data level is 1."]
-    VALUE2,
-}
-impl PDLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDLW::VALUE1 => false,
-            PDLW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The passive data level is 0."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(PDLW::VALUE1)
-    }
-    #[doc = "The passive data level is 1."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(PDLW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DSM`"]
-pub enum DSMW {
-    #[doc = "Receive and transmit data is shifted in and out one bit at a time through DX0 and DOUT0."]
-    VALUE1,
-    #[doc = "Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\] respectively."]
-    VALUE3,
-    #[doc = "Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\] respectively."]
-    VALUE4,
-}
-impl DSMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            DSMW::VALUE1 => 0,
-            DSMW::VALUE3 => 2,
-            DSMW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DSMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DSMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DSMW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Receive and transmit data is shifted in and out one bit at a time through DX0 and DOUT0."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(DSMW::VALUE1)
-    }
-    #[doc = "Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\] respectively."]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(DSMW::VALUE3)
-    }
-    #[doc = "Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\] respectively."]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(DSMW::VALUE4)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `HPCDIR`"]
-pub enum HPCDIRW {
-    #[doc = "The pin(s) with hardware pin control enabled are selected to be in input mode."]
-    VALUE1,
-    #[doc = "The pin(s) with hardware pin control enabled are selected to be in output mode."]
-    VALUE2,
-}
-impl HPCDIRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HPCDIRW::VALUE1 => false,
-            HPCDIRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HPCDIRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HPCDIRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HPCDIRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The pin(s) with hardware pin control enabled are selected to be in input mode."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(HPCDIRW::VALUE1)
-    }
-    #[doc = "The pin(s) with hardware pin control enabled are selected to be in output mode."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(HPCDIRW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DOCFG`"]
-pub enum DOCFGW {
-    #[doc = "DOUTx = shift data value"]
-    VALUE1,
-    #[doc = "DOUTx = inverted shift data value"]
-    VALUE2,
-}
-impl DOCFGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            DOCFGW::VALUE1 => 0,
-            DOCFGW::VALUE2 => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DOCFGW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DOCFGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DOCFGW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "DOUTx = shift data value"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(DOCFGW::VALUE1)
-    }
-    #[doc = "DOUTx = inverted shift data value"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(DOCFGW::VALUE2)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TRM`"]
-pub enum TRMW {
-    #[doc = "The shift control signal is considered as inactive and data frame transfers are not possible."]
-    VALUE1,
-    #[doc = "The shift control signal is considered active if it is at 1-level. This is the setting to be programmed to allow data transfers."]
-    VALUE2,
-    #[doc = "The shift control signal is considered active if it is at 0-level. It is recommended to avoid this setting and to use the inversion in the DX2 stage in case of a low-active signal."]
-    VALUE3,
-    #[doc = "The shift control signal is considered active without referring to the actual signal level. Data frame transfer is possible after each edge of the signal."]
-    VALUE4,
-}
-impl TRMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            TRMW::VALUE1 => 0,
-            TRMW::VALUE2 => 1,
-            TRMW::VALUE3 => 2,
-            TRMW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TRMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TRMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRMW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "The shift control signal is considered as inactive and data frame transfers are not possible."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(TRMW::VALUE1)
-    }
-    #[doc = "The shift control signal is considered active if it is at 1-level. This is the setting to be programmed to allow data transfers."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(TRMW::VALUE2)
-    }
-    #[doc = "The shift control signal is considered active if it is at 0-level. It is recommended to avoid this setting and to use the inversion in the DX2 stage in case of a low-active signal."]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(TRMW::VALUE3)
-    }
-    #[doc = "The shift control signal is considered active without referring to the actual signal level. Data frame transfer is possible after each edge of the signal."]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(TRMW::VALUE4)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FLEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FLEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `WLE`"]
-pub enum WLEW {
-    #[doc = "The data word contains 1 data bit located at bit position 0."]
-    VALUE1,
-    #[doc = "The data word contains 2 data bits located at bit positions \\[1:0\\]."]
-    VALUE2,
-    #[doc = "The data word contains 15 data bits located at bit positions \\[14:0\\]."]
-    VALUE3,
-    #[doc = "The data word contains 16 data bits located at bit positions \\[15:0\\]."]
-    VALUE4,
-}
-impl WLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            WLEW::VALUE1 => 0,
-            WLEW::VALUE2 => 1,
-            WLEW::VALUE3 => 14,
-            WLEW::VALUE4 => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WLEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _WLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WLEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> WLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WLE_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "The data word contains 1 data bit located at bit position 0."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(WLEW::VALUE1)
+        self.variant(WLE_A::VALUE1)
     }
     #[doc = "The data word contains 2 data bits located at bit positions \\[1:0\\]."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(WLEW::VALUE2)
+        self.variant(WLE_A::VALUE2)
     }
     #[doc = "The data word contains 15 data bits located at bit positions \\[14:0\\]."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(WLEW::VALUE3)
+        self.variant(WLE_A::VALUE3)
     }
     #[doc = "The data word contains 16 data bits located at bit positions \\[15:0\\]."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(WLEW::VALUE4)
+        self.variant(WLE_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 24)) | (((value as u32) & 0x0f) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Shift Direction"]
-    #[inline]
-    pub fn sdir(&self) -> SDIRR {
-        SDIRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sdir(&self) -> SDIR_R {
+        SDIR_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Passive Data Level"]
-    #[inline]
-    pub fn pdl(&self) -> PDLR {
-        PDLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdl(&self) -> PDL_R {
+        PDL_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bits 2:3 - Data Shift Mode"]
-    #[inline]
-    pub fn dsm(&self) -> DSMR {
-        DSMR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn dsm(&self) -> DSM_R {
+        DSM_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bit 4 - Port Control Direction"]
-    #[inline]
-    pub fn hpcdir(&self) -> HPCDIRR {
-        HPCDIRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hpcdir(&self) -> HPCDIR_R {
+        HPCDIR_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bits 6:7 - Data Output Configuration"]
-    #[inline]
-    pub fn docfg(&self) -> DOCFGR {
-        DOCFGR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn docfg(&self) -> DOCFG_R {
+        DOCFG_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bits 8:9 - Transmission Mode"]
-    #[inline]
-    pub fn trm(&self) -> TRMR {
-        TRMR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn trm(&self) -> TRM_R {
+        TRM_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 16:21 - Frame Length"]
-    #[inline]
-    pub fn fle(&self) -> FLER {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        FLER { bits }
+    #[inline(always)]
+    pub fn fle(&self) -> FLE_R {
+        FLE_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
     #[doc = "Bits 24:27 - Word Length"]
-    #[inline]
-    pub fn wle(&self) -> WLER {
-        WLER::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn wle(&self) -> WLE_R {
+        WLE_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Shift Direction"]
-    #[inline]
-    pub fn sdir(&mut self) -> _SDIRW {
-        _SDIRW { w: self }
+    #[inline(always)]
+    pub fn sdir(&mut self) -> SDIR_W {
+        SDIR_W { w: self }
     }
     #[doc = "Bit 1 - Passive Data Level"]
-    #[inline]
-    pub fn pdl(&mut self) -> _PDLW {
-        _PDLW { w: self }
+    #[inline(always)]
+    pub fn pdl(&mut self) -> PDL_W {
+        PDL_W { w: self }
     }
     #[doc = "Bits 2:3 - Data Shift Mode"]
-    #[inline]
-    pub fn dsm(&mut self) -> _DSMW {
-        _DSMW { w: self }
+    #[inline(always)]
+    pub fn dsm(&mut self) -> DSM_W {
+        DSM_W { w: self }
     }
     #[doc = "Bit 4 - Port Control Direction"]
-    #[inline]
-    pub fn hpcdir(&mut self) -> _HPCDIRW {
-        _HPCDIRW { w: self }
+    #[inline(always)]
+    pub fn hpcdir(&mut self) -> HPCDIR_W {
+        HPCDIR_W { w: self }
     }
     #[doc = "Bits 6:7 - Data Output Configuration"]
-    #[inline]
-    pub fn docfg(&mut self) -> _DOCFGW {
-        _DOCFGW { w: self }
+    #[inline(always)]
+    pub fn docfg(&mut self) -> DOCFG_W {
+        DOCFG_W { w: self }
     }
     #[doc = "Bits 8:9 - Transmission Mode"]
-    #[inline]
-    pub fn trm(&mut self) -> _TRMW {
-        _TRMW { w: self }
+    #[inline(always)]
+    pub fn trm(&mut self) -> TRM_W {
+        TRM_W { w: self }
     }
     #[doc = "Bits 16:21 - Frame Length"]
-    #[inline]
-    pub fn fle(&mut self) -> _FLEW {
-        _FLEW { w: self }
+    #[inline(always)]
+    pub fn fle(&mut self) -> FLE_W {
+        FLE_W { w: self }
     }
     #[doc = "Bits 24:27 - Word Length"]
-    #[inline]
-    pub fn wle(&mut self) -> _WLEW {
-        _WLEW { w: self }
+    #[inline(always)]
+    pub fn wle(&mut self) -> WLE_W {
+        WLE_W { w: self }
     }
 }

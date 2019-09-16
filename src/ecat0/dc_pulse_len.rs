@@ -1,59 +1,41 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u16,
-}
-impl super::DC_PULSE_LEN {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `PULS_LENGTH`"]
+#[doc = "Reader of register DC_PULSE_LEN"]
+pub type R = crate::R<u16, super::DC_PULSE_LEN>;
+#[doc = "Pulse length of SyncSignals\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PULS_LENGTHR {
-    #[doc = "Acknowledge mode: SyncSignal will be cleared by reading SYNC\\[1:0\\] Status register"]
+pub enum PULS_LENGTH_A {
+    #[doc = "0: Acknowledge mode: SyncSignal will be cleared by reading SYNC\\[1:0\\] Status register"]
     VALUE1,
-    #[doc = r" Reserved"]
-    _Reserved(u16),
 }
-impl PULS_LENGTHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        match *self {
-            PULS_LENGTHR::VALUE1 => 0,
-            PULS_LENGTHR::_Reserved(bits) => bits,
+impl From<PULS_LENGTH_A> for u16 {
+    #[inline(always)]
+    fn from(variant: PULS_LENGTH_A) -> Self {
+        match variant {
+            PULS_LENGTH_A::VALUE1 => 0,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u16) -> PULS_LENGTHR {
-        match value {
-            0 => PULS_LENGTHR::VALUE1,
-            i => PULS_LENGTHR::_Reserved(i),
+}
+#[doc = "Reader of field `PULS_LENGTH`"]
+pub type PULS_LENGTH_R = crate::R<u16, PULS_LENGTH_A>;
+impl PULS_LENGTH_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u16, PULS_LENGTH_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PULS_LENGTH_A::VALUE1),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PULS_LENGTHR::VALUE1
+        *self == PULS_LENGTH_A::VALUE1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Pulse length of SyncSignals"]
-    #[inline]
-    pub fn puls_length(&self) -> PULS_LENGTHR {
-        PULS_LENGTHR::_from({
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u16) as u16
-        })
+    #[inline(always)]
+    pub fn puls_length(&self) -> PULS_LENGTH_R {
+        PULS_LENGTH_R::new((self.bits & 0xffff) as u16)
     }
 }

@@ -1,238 +1,212 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::QINR0 {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register QINR0"]
+pub type W = crate::W<u32, super::QINR0>;
+#[doc = "Register QINR0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::QINR0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Proxy"]
-pub struct _REQCHNRW<'a> {
+#[doc = "Write proxy for field `REQCHNR`"]
+pub struct REQCHNR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REQCHNRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> REQCHNR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RF`"]
-pub enum RFW {
-    #[doc = "No refill: this queue entry is converted once and then invalidated"]
+#[doc = "Refill\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RF_AW {
+    #[doc = "0: No refill: this queue entry is converted once and then invalidated"]
     VALUE1,
-    #[doc = "Automatic refill: this queue entry is automatically reloaded into QINRx when the related conversion is started"]
+    #[doc = "1: Automatic refill: this queue entry is automatically reloaded into QINRx when the related conversion is started"]
     VALUE2,
 }
-impl RFW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RFW::VALUE1 => false,
-            RFW::VALUE2 => true,
+impl From<RF_AW> for bool {
+    #[inline(always)]
+    fn from(variant: RF_AW) -> Self {
+        match variant {
+            RF_AW::VALUE1 => false,
+            RF_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RFW<'a> {
+#[doc = "Write proxy for field `RF`"]
+pub struct RF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RFW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RFW) -> &'a mut W {
+impl<'a> RF_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RF_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No refill: this queue entry is converted once and then invalidated"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(RFW::VALUE1)
+        self.variant(RF_AW::VALUE1)
     }
     #[doc = "Automatic refill: this queue entry is automatically reloaded into QINRx when the related conversion is started"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(RFW::VALUE2)
+        self.variant(RF_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ENSI`"]
-pub enum ENSIW {
-    #[doc = "No request source interrupt"]
+#[doc = "Enable Source Interrupt\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ENSI_AW {
+    #[doc = "0: No request source interrupt"]
     VALUE1,
-    #[doc = "A request source event interrupt is generated upon a request source event (related conversion is finished)"]
+    #[doc = "1: A request source event interrupt is generated upon a request source event (related conversion is finished)"]
     VALUE2,
 }
-impl ENSIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENSIW::VALUE1 => false,
-            ENSIW::VALUE2 => true,
+impl From<ENSI_AW> for bool {
+    #[inline(always)]
+    fn from(variant: ENSI_AW) -> Self {
+        match variant {
+            ENSI_AW::VALUE1 => false,
+            ENSI_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ENSIW<'a> {
+#[doc = "Write proxy for field `ENSI`"]
+pub struct ENSI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENSIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENSIW) -> &'a mut W {
+impl<'a> ENSI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENSI_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No request source interrupt"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ENSIW::VALUE1)
+        self.variant(ENSI_AW::VALUE1)
     }
     #[doc = "A request source event interrupt is generated upon a request source event (related conversion is finished)"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ENSIW::VALUE2)
+        self.variant(ENSI_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EXTR`"]
-pub enum EXTRW {
-    #[doc = "A valid queue entry immediately leads to a conversion request."]
+#[doc = "External Trigger\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EXTR_AW {
+    #[doc = "0: A valid queue entry immediately leads to a conversion request."]
     VALUE1,
-    #[doc = "A valid queue entry waits for a trigger event to occur before issuing a conversion request."]
+    #[doc = "1: A valid queue entry waits for a trigger event to occur before issuing a conversion request."]
     VALUE2,
 }
-impl EXTRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EXTRW::VALUE1 => false,
-            EXTRW::VALUE2 => true,
+impl From<EXTR_AW> for bool {
+    #[inline(always)]
+    fn from(variant: EXTR_AW) -> Self {
+        match variant {
+            EXTR_AW::VALUE1 => false,
+            EXTR_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EXTRW<'a> {
+#[doc = "Write proxy for field `EXTR`"]
+pub struct EXTR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EXTRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EXTRW) -> &'a mut W {
+impl<'a> EXTR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXTR_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "A valid queue entry immediately leads to a conversion request."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EXTRW::VALUE1)
+        self.variant(EXTR_AW::VALUE1)
     }
     #[doc = "A valid queue entry waits for a trigger event to occur before issuing a conversion request."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EXTRW::VALUE2)
+        self.variant(EXTR_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:4 - Request Channel Number"]
-    #[inline]
-    pub fn reqchnr(&mut self) -> _REQCHNRW {
-        _REQCHNRW { w: self }
+    #[inline(always)]
+    pub fn reqchnr(&mut self) -> REQCHNR_W {
+        REQCHNR_W { w: self }
     }
     #[doc = "Bit 5 - Refill"]
-    #[inline]
-    pub fn rf(&mut self) -> _RFW {
-        _RFW { w: self }
+    #[inline(always)]
+    pub fn rf(&mut self) -> RF_W {
+        RF_W { w: self }
     }
     #[doc = "Bit 6 - Enable Source Interrupt"]
-    #[inline]
-    pub fn ensi(&mut self) -> _ENSIW {
-        _ENSIW { w: self }
+    #[inline(always)]
+    pub fn ensi(&mut self) -> ENSI_W {
+        ENSI_W { w: self }
     }
     #[doc = "Bit 7 - External Trigger"]
-    #[inline]
-    pub fn extr(&mut self) -> _EXTRW {
-        _EXTRW { w: self }
+    #[inline(always)]
+    pub fn extr(&mut self) -> EXTR_W {
+        EXTR_W { w: self }
     }
 }

@@ -1,441 +1,319 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::INTS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `PMUS`"]
+#[doc = "Reader of register INTS"]
+pub type R = crate::R<u32, super::INTS>;
+#[doc = "Period Match while Counting Up\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PMUSR {
-    #[doc = "Period match while counting up not detected"]
+pub enum PMUS_A {
+    #[doc = "0: Period match while counting up not detected"]
     VALUE1,
-    #[doc = "Period match while counting up detected"]
+    #[doc = "1: Period match while counting up detected"]
     VALUE2,
 }
-impl PMUSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PMUSR::VALUE1 => false,
-            PMUSR::VALUE2 => true,
+impl From<PMUS_A> for bool {
+    #[inline(always)]
+    fn from(variant: PMUS_A) -> Self {
+        match variant {
+            PMUS_A::VALUE1 => false,
+            PMUS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PMUSR {
-        match value {
-            false => PMUSR::VALUE1,
-            true => PMUSR::VALUE2,
+}
+#[doc = "Reader of field `PMUS`"]
+pub type PMUS_R = crate::R<bool, PMUS_A>;
+impl PMUS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PMUS_A {
+        match self.bits {
+            false => PMUS_A::VALUE1,
+            true => PMUS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PMUSR::VALUE1
+        *self == PMUS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PMUSR::VALUE2
+        *self == PMUS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `OMDS`"]
+#[doc = "One Match while Counting Down\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OMDSR {
-    #[doc = "One match while counting down not detected"]
+pub enum OMDS_A {
+    #[doc = "0: One match while counting down not detected"]
     VALUE1,
-    #[doc = "One match while counting down detected"]
+    #[doc = "1: One match while counting down detected"]
     VALUE2,
 }
-impl OMDSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            OMDSR::VALUE1 => false,
-            OMDSR::VALUE2 => true,
+impl From<OMDS_A> for bool {
+    #[inline(always)]
+    fn from(variant: OMDS_A) -> Self {
+        match variant {
+            OMDS_A::VALUE1 => false,
+            OMDS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> OMDSR {
-        match value {
-            false => OMDSR::VALUE1,
-            true => OMDSR::VALUE2,
+}
+#[doc = "Reader of field `OMDS`"]
+pub type OMDS_R = crate::R<bool, OMDS_A>;
+impl OMDS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OMDS_A {
+        match self.bits {
+            false => OMDS_A::VALUE1,
+            true => OMDS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == OMDSR::VALUE1
+        *self == OMDS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == OMDSR::VALUE2
+        *self == OMDS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `CMUS`"]
+#[doc = "Compare Match while Counting Up\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CMUSR {
-    #[doc = "Compare match while counting up not detected"]
+pub enum CMUS_A {
+    #[doc = "0: Compare match while counting up not detected"]
     VALUE1,
-    #[doc = "Compare match while counting up detected"]
+    #[doc = "1: Compare match while counting up detected"]
     VALUE2,
 }
-impl CMUSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CMUSR::VALUE1 => false,
-            CMUSR::VALUE2 => true,
+impl From<CMUS_A> for bool {
+    #[inline(always)]
+    fn from(variant: CMUS_A) -> Self {
+        match variant {
+            CMUS_A::VALUE1 => false,
+            CMUS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CMUSR {
-        match value {
-            false => CMUSR::VALUE1,
-            true => CMUSR::VALUE2,
+}
+#[doc = "Reader of field `CMUS`"]
+pub type CMUS_R = crate::R<bool, CMUS_A>;
+impl CMUS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CMUS_A {
+        match self.bits {
+            false => CMUS_A::VALUE1,
+            true => CMUS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CMUSR::VALUE1
+        *self == CMUS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CMUSR::VALUE2
+        *self == CMUS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `CMDS`"]
+#[doc = "Compare Match while Counting Down\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CMDSR {
-    #[doc = "Compare match while counting down not detected"]
+pub enum CMDS_A {
+    #[doc = "0: Compare match while counting down not detected"]
     VALUE1,
-    #[doc = "Compare match while counting down detected"]
+    #[doc = "1: Compare match while counting down detected"]
     VALUE2,
 }
-impl CMDSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CMDSR::VALUE1 => false,
-            CMDSR::VALUE2 => true,
+impl From<CMDS_A> for bool {
+    #[inline(always)]
+    fn from(variant: CMDS_A) -> Self {
+        match variant {
+            CMDS_A::VALUE1 => false,
+            CMDS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CMDSR {
-        match value {
-            false => CMDSR::VALUE1,
-            true => CMDSR::VALUE2,
+}
+#[doc = "Reader of field `CMDS`"]
+pub type CMDS_R = crate::R<bool, CMDS_A>;
+impl CMDS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CMDS_A {
+        match self.bits {
+            false => CMDS_A::VALUE1,
+            true => CMDS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CMDSR::VALUE1
+        *self == CMDS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CMDSR::VALUE2
+        *self == CMDS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `E0AS`"]
+#[doc = "Event 0 Detection Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum E0ASR {
-    #[doc = "Event 0 not detected"]
+pub enum E0AS_A {
+    #[doc = "0: Event 0 not detected"]
     VALUE1,
-    #[doc = "Event 0 detected"]
+    #[doc = "1: Event 0 detected"]
     VALUE2,
 }
-impl E0ASR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            E0ASR::VALUE1 => false,
-            E0ASR::VALUE2 => true,
+impl From<E0AS_A> for bool {
+    #[inline(always)]
+    fn from(variant: E0AS_A) -> Self {
+        match variant {
+            E0AS_A::VALUE1 => false,
+            E0AS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> E0ASR {
-        match value {
-            false => E0ASR::VALUE1,
-            true => E0ASR::VALUE2,
+}
+#[doc = "Reader of field `E0AS`"]
+pub type E0AS_R = crate::R<bool, E0AS_A>;
+impl E0AS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> E0AS_A {
+        match self.bits {
+            false => E0AS_A::VALUE1,
+            true => E0AS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == E0ASR::VALUE1
+        *self == E0AS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == E0ASR::VALUE2
+        *self == E0AS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `E1AS`"]
+#[doc = "Event 1 Detection Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum E1ASR {
-    #[doc = "Event 1 not detected"]
+pub enum E1AS_A {
+    #[doc = "0: Event 1 not detected"]
     VALUE1,
-    #[doc = "Event 1 detected"]
+    #[doc = "1: Event 1 detected"]
     VALUE2,
 }
-impl E1ASR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            E1ASR::VALUE1 => false,
-            E1ASR::VALUE2 => true,
+impl From<E1AS_A> for bool {
+    #[inline(always)]
+    fn from(variant: E1AS_A) -> Self {
+        match variant {
+            E1AS_A::VALUE1 => false,
+            E1AS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> E1ASR {
-        match value {
-            false => E1ASR::VALUE1,
-            true => E1ASR::VALUE2,
+}
+#[doc = "Reader of field `E1AS`"]
+pub type E1AS_R = crate::R<bool, E1AS_A>;
+impl E1AS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> E1AS_A {
+        match self.bits {
+            false => E1AS_A::VALUE1,
+            true => E1AS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == E1ASR::VALUE1
+        *self == E1AS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == E1ASR::VALUE2
+        *self == E1AS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `E2AS`"]
+#[doc = "Event 2 Detection Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum E2ASR {
-    #[doc = "Event 2 not detected"]
+pub enum E2AS_A {
+    #[doc = "0: Event 2 not detected"]
     VALUE1,
-    #[doc = "Event 2 detected"]
+    #[doc = "1: Event 2 detected"]
     VALUE2,
 }
-impl E2ASR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            E2ASR::VALUE1 => false,
-            E2ASR::VALUE2 => true,
+impl From<E2AS_A> for bool {
+    #[inline(always)]
+    fn from(variant: E2AS_A) -> Self {
+        match variant {
+            E2AS_A::VALUE1 => false,
+            E2AS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> E2ASR {
-        match value {
-            false => E2ASR::VALUE1,
-            true => E2ASR::VALUE2,
+}
+#[doc = "Reader of field `E2AS`"]
+pub type E2AS_R = crate::R<bool, E2AS_A>;
+impl E2AS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> E2AS_A {
+        match self.bits {
+            false => E2AS_A::VALUE1,
+            true => E2AS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == E2ASR::VALUE1
+        *self == E2AS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == E2ASR::VALUE2
+        *self == E2AS_A::VALUE2
     }
 }
-#[doc = r" Value of the field"]
-pub struct TRPFR {
-    bits: bool,
-}
-impl TRPFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of field `TRPF`"]
+pub type TRPF_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Period Match while Counting Up"]
-    #[inline]
-    pub fn pmus(&self) -> PMUSR {
-        PMUSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pmus(&self) -> PMUS_R {
+        PMUS_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - One Match while Counting Down"]
-    #[inline]
-    pub fn omds(&self) -> OMDSR {
-        OMDSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn omds(&self) -> OMDS_R {
+        OMDS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Compare Match while Counting Up"]
-    #[inline]
-    pub fn cmus(&self) -> CMUSR {
-        CMUSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cmus(&self) -> CMUS_R {
+        CMUS_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Compare Match while Counting Down"]
-    #[inline]
-    pub fn cmds(&self) -> CMDSR {
-        CMDSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cmds(&self) -> CMDS_R {
+        CMDS_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Event 0 Detection Status"]
-    #[inline]
-    pub fn e0as(&self) -> E0ASR {
-        E0ASR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn e0as(&self) -> E0AS_R {
+        E0AS_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Event 1 Detection Status"]
-    #[inline]
-    pub fn e1as(&self) -> E1ASR {
-        E1ASR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn e1as(&self) -> E1AS_R {
+        E1AS_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Event 2 Detection Status"]
-    #[inline]
-    pub fn e2as(&self) -> E2ASR {
-        E2ASR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn e2as(&self) -> E2AS_R {
+        E2AS_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Trap Flag Status"]
-    #[inline]
-    pub fn trpf(&self) -> TRPFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TRPFR { bits }
+    #[inline(always)]
+    pub fn trpf(&self) -> TRPF_R {
+        TRPF_R::new(((self.bits >> 11) & 0x01) != 0)
     }
 }

@@ -1,386 +1,256 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::GLOBRCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register GLOBRCR"]
+pub type R = crate::R<u32, super::GLOBRCR>;
+#[doc = "Writer for register GLOBRCR"]
+pub type W = crate::W<u32, super::GLOBRCR>;
+#[doc = "Register GLOBRCR `reset()`'s with value 0"]
+impl crate::ResetValue for super::GLOBRCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `DRCTR`"]
+#[doc = "Data Reduction Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DRCTRR {
-    #[doc = "Data reduction disabled"]
+pub enum DRCTR_A {
+    #[doc = "0: Data reduction disabled"]
     VALUE1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl DRCTRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DRCTRR::VALUE1 => 0,
-            DRCTRR::_Reserved(bits) => bits,
+impl From<DRCTR_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DRCTR_A) -> Self {
+        match variant {
+            DRCTR_A::VALUE1 => 0,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DRCTRR {
-        match value {
-            0 => DRCTRR::VALUE1,
-            i => DRCTRR::_Reserved(i),
+}
+#[doc = "Reader of field `DRCTR`"]
+pub type DRCTR_R = crate::R<u8, DRCTR_A>;
+impl DRCTR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, DRCTR_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(DRCTR_A::VALUE1),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DRCTRR::VALUE1
+        *self == DRCTR_A::VALUE1
     }
 }
-#[doc = "Possible values of the field `WFR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WFRR {
-    #[doc = "Overwrite mode"]
-    VALUE1,
-    #[doc = "Wait-for-read mode enabled for this register"]
-    VALUE2,
-}
-impl WFRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WFRR::VALUE1 => false,
-            WFRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WFRR {
-        match value {
-            false => WFRR::VALUE1,
-            true => WFRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == WFRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == WFRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `SRGEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SRGENR {
-    #[doc = "No service request"]
-    VALUE1,
-    #[doc = "Service request after a result event"]
-    VALUE2,
-}
-impl SRGENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SRGENR::VALUE1 => false,
-            SRGENR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SRGENR {
-        match value {
-            false => SRGENR::VALUE1,
-            true => SRGENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == SRGENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == SRGENR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `DRCTR`"]
-pub enum DRCTRW {
-    #[doc = "Data reduction disabled"]
-    VALUE1,
-}
-impl DRCTRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            DRCTRW::VALUE1 => 0,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DRCTRW<'a> {
+#[doc = "Write proxy for field `DRCTR`"]
+pub struct DRCTR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DRCTRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DRCTRW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> DRCTR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DRCTR_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Data reduction disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(DRCTRW::VALUE1)
+        self.variant(DRCTR_A::VALUE1)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `WFR`"]
-pub enum WFRW {
-    #[doc = "Overwrite mode"]
+#[doc = "Wait-for-Read Mode Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WFR_A {
+    #[doc = "0: Overwrite mode"]
     VALUE1,
-    #[doc = "Wait-for-read mode enabled for this register"]
+    #[doc = "1: Wait-for-read mode enabled for this register"]
     VALUE2,
 }
-impl WFRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WFRW::VALUE1 => false,
-            WFRW::VALUE2 => true,
+impl From<WFR_A> for bool {
+    #[inline(always)]
+    fn from(variant: WFR_A) -> Self {
+        match variant {
+            WFR_A::VALUE1 => false,
+            WFR_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _WFRW<'a> {
+#[doc = "Reader of field `WFR`"]
+pub type WFR_R = crate::R<bool, WFR_A>;
+impl WFR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WFR_A {
+        match self.bits {
+            false => WFR_A::VALUE1,
+            true => WFR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == WFR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == WFR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `WFR`"]
+pub struct WFR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WFRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WFRW) -> &'a mut W {
+impl<'a> WFR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WFR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Overwrite mode"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(WFRW::VALUE1)
+        self.variant(WFR_A::VALUE1)
     }
     #[doc = "Wait-for-read mode enabled for this register"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(WFRW::VALUE2)
+        self.variant(WFR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SRGEN`"]
-pub enum SRGENW {
-    #[doc = "No service request"]
+#[doc = "Service Request Generation Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SRGEN_A {
+    #[doc = "0: No service request"]
     VALUE1,
-    #[doc = "Service request after a result event"]
+    #[doc = "1: Service request after a result event"]
     VALUE2,
 }
-impl SRGENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SRGENW::VALUE1 => false,
-            SRGENW::VALUE2 => true,
+impl From<SRGEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: SRGEN_A) -> Self {
+        match variant {
+            SRGEN_A::VALUE1 => false,
+            SRGEN_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SRGENW<'a> {
+#[doc = "Reader of field `SRGEN`"]
+pub type SRGEN_R = crate::R<bool, SRGEN_A>;
+impl SRGEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SRGEN_A {
+        match self.bits {
+            false => SRGEN_A::VALUE1,
+            true => SRGEN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == SRGEN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == SRGEN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `SRGEN`"]
+pub struct SRGEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SRGENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SRGENW) -> &'a mut W {
+impl<'a> SRGEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SRGEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No service request"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SRGENW::VALUE1)
+        self.variant(SRGEN_A::VALUE1)
     }
     #[doc = "Service request after a result event"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SRGENW::VALUE2)
+        self.variant(SRGEN_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 16:19 - Data Reduction Control"]
-    #[inline]
-    pub fn drctr(&self) -> DRCTRR {
-        DRCTRR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn drctr(&self) -> DRCTR_R {
+        DRCTR_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bit 24 - Wait-for-Read Mode Enable"]
-    #[inline]
-    pub fn wfr(&self) -> WFRR {
-        WFRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wfr(&self) -> WFR_R {
+        WFR_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Service Request Generation Enable"]
-    #[inline]
-    pub fn srgen(&self) -> SRGENR {
-        SRGENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn srgen(&self) -> SRGEN_R {
+        SRGEN_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 16:19 - Data Reduction Control"]
-    #[inline]
-    pub fn drctr(&mut self) -> _DRCTRW {
-        _DRCTRW { w: self }
+    #[inline(always)]
+    pub fn drctr(&mut self) -> DRCTR_W {
+        DRCTR_W { w: self }
     }
     #[doc = "Bit 24 - Wait-for-Read Mode Enable"]
-    #[inline]
-    pub fn wfr(&mut self) -> _WFRW {
-        _WFRW { w: self }
+    #[inline(always)]
+    pub fn wfr(&mut self) -> WFR_W {
+        WFR_W { w: self }
     }
     #[doc = "Bit 31 - Service Request Generation Enable"]
-    #[inline]
-    pub fn srgen(&mut self) -> _SRGENW {
-        _SRGENW { w: self }
+    #[inline(always)]
+    pub fn srgen(&mut self) -> SRGEN_W {
+        SRGEN_W { w: self }
     }
 }

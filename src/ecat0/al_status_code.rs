@@ -1,103 +1,40 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u16,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u16,
-}
-impl super::AL_STATUS_CODE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register AL_STATUS_CODE"]
+pub type R = crate::R<u16, super::AL_STATUS_CODE>;
+#[doc = "Writer for register AL_STATUS_CODE"]
+pub type W = crate::W<u16, super::AL_STATUS_CODE>;
+#[doc = "Register AL_STATUS_CODE `reset()`'s with value 0"]
+impl crate::ResetValue for super::AL_STATUS_CODE {
+    type Type = u16;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct AL_S_CODER {
-    bits: u16,
-}
-impl AL_S_CODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AL_S_CODEW<'a> {
+#[doc = "Reader of field `AL_S_CODE`"]
+pub type AL_S_CODE_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `AL_S_CODE`"]
+pub struct AL_S_CODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AL_S_CODEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> AL_S_CODE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u16) << OFFSET);
-        self.w.bits |= ((value & MASK) as u16) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u16) & 0xffff);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - AL Status Code"]
-    #[inline]
-    pub fn al_s_code(&self) -> AL_S_CODER {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u16) as u16
-        };
-        AL_S_CODER { bits }
+    #[inline(always)]
+    pub fn al_s_code(&self) -> AL_S_CODE_R {
+        AL_S_CODE_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - AL Status Code"]
-    #[inline]
-    pub fn al_s_code(&mut self) -> _AL_S_CODEW {
-        _AL_S_CODEW { w: self }
+    #[inline(always)]
+    pub fn al_s_code(&mut self) -> AL_S_CODE_W {
+        AL_S_CODE_W { w: self }
     }
 }

@@ -1,1966 +1,1424 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::OUT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register OUT"]
+pub type R = crate::R<u32, super::OUT>;
+#[doc = "Writer for register OUT"]
+pub type W = crate::W<u32, super::OUT>;
+#[doc = "Register OUT `reset()`'s with value 0"]
+impl crate::ResetValue for super::OUT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `P0`"]
+#[doc = "Port n Output Bit 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P0R {
-    #[doc = "The output level of Pn.x is 0."]
+pub enum P0_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P0R::CONST_0 => false,
-            P0R::CONST_1 => true,
+impl From<P0_A> for bool {
+    #[inline(always)]
+    fn from(variant: P0_A) -> Self {
+        match variant {
+            P0_A::CONST_0 => false,
+            P0_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P0R {
-        match value {
-            false => P0R::CONST_0,
-            true => P0R::CONST_1,
+}
+#[doc = "Reader of field `P0`"]
+pub type P0_R = crate::R<bool, P0_A>;
+impl P0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P0_A {
+        match self.bits {
+            false => P0_A::CONST_0,
+            true => P0_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P0R::CONST_0
+        *self == P0_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P0R::CONST_1
+        *self == P0_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `P1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P1R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P1R::CONST_0 => false,
-            P1R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P1R {
-        match value {
-            false => P1R::CONST_0,
-            true => P1R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P1R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P1R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P2R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P2R::CONST_0 => false,
-            P2R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P2R {
-        match value {
-            false => P2R::CONST_0,
-            true => P2R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P2R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P2R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P3R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P3R::CONST_0 => false,
-            P3R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P3R {
-        match value {
-            false => P3R::CONST_0,
-            true => P3R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P3R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P3R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P4`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P4R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P4R::CONST_0 => false,
-            P4R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P4R {
-        match value {
-            false => P4R::CONST_0,
-            true => P4R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P4R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P4R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P5`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P5R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P5R::CONST_0 => false,
-            P5R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P5R {
-        match value {
-            false => P5R::CONST_0,
-            true => P5R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P5R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P5R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P6`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P6R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P6R::CONST_0 => false,
-            P6R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P6R {
-        match value {
-            false => P6R::CONST_0,
-            true => P6R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P6R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P6R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P7`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P7R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P7R::CONST_0 => false,
-            P7R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P7R {
-        match value {
-            false => P7R::CONST_0,
-            true => P7R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P7R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P7R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P8`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P8R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P8R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P8R::CONST_0 => false,
-            P8R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P8R {
-        match value {
-            false => P8R::CONST_0,
-            true => P8R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P8R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P8R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P9`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P9R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P9R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P9R::CONST_0 => false,
-            P9R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P9R {
-        match value {
-            false => P9R::CONST_0,
-            true => P9R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P9R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P9R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P10`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P10R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P10R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P10R::CONST_0 => false,
-            P10R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P10R {
-        match value {
-            false => P10R::CONST_0,
-            true => P10R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P10R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P10R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P11`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P11R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P11R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P11R::CONST_0 => false,
-            P11R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P11R {
-        match value {
-            false => P11R::CONST_0,
-            true => P11R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P11R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P11R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P12`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P12R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P12R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P12R::CONST_0 => false,
-            P12R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P12R {
-        match value {
-            false => P12R::CONST_0,
-            true => P12R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P12R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P12R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P13`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P13R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P13R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P13R::CONST_0 => false,
-            P13R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P13R {
-        match value {
-            false => P13R::CONST_0,
-            true => P13R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P13R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P13R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P14`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P14R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P14R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P14R::CONST_0 => false,
-            P14R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P14R {
-        match value {
-            false => P14R::CONST_0,
-            true => P14R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P14R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P14R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `P15`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P15R {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P15R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            P15R::CONST_0 => false,
-            P15R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> P15R {
-        match value {
-            false => P15R::CONST_0,
-            true => P15R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == P15R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == P15R::CONST_1
-    }
-}
-#[doc = "Values that can be written to the field `P0`"]
-pub enum P0W {
-    #[doc = "The output level of Pn.x is 0."]
-    CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
-    CONST_1,
-}
-impl P0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P0W::CONST_0 => false,
-            P0W::CONST_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _P0W<'a> {
+#[doc = "Write proxy for field `P0`"]
+pub struct P0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P0W) -> &'a mut W {
+impl<'a> P0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P0W::CONST_0)
+        self.variant(P0_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P0W::CONST_1)
+        self.variant(P0_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P1`"]
-pub enum P1W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P1_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P1W::CONST_0 => false,
-            P1W::CONST_1 => true,
+impl From<P1_A> for bool {
+    #[inline(always)]
+    fn from(variant: P1_A) -> Self {
+        match variant {
+            P1_A::CONST_0 => false,
+            P1_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P1W<'a> {
+#[doc = "Reader of field `P1`"]
+pub type P1_R = crate::R<bool, P1_A>;
+impl P1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P1_A {
+        match self.bits {
+            false => P1_A::CONST_0,
+            true => P1_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P1_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P1_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P1`"]
+pub struct P1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P1W) -> &'a mut W {
+impl<'a> P1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P1W::CONST_0)
+        self.variant(P1_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P1W::CONST_1)
+        self.variant(P1_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P2`"]
-pub enum P2W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P2_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P2W::CONST_0 => false,
-            P2W::CONST_1 => true,
+impl From<P2_A> for bool {
+    #[inline(always)]
+    fn from(variant: P2_A) -> Self {
+        match variant {
+            P2_A::CONST_0 => false,
+            P2_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P2W<'a> {
+#[doc = "Reader of field `P2`"]
+pub type P2_R = crate::R<bool, P2_A>;
+impl P2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P2_A {
+        match self.bits {
+            false => P2_A::CONST_0,
+            true => P2_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P2_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P2_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P2`"]
+pub struct P2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P2W) -> &'a mut W {
+impl<'a> P2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P2_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P2W::CONST_0)
+        self.variant(P2_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P2W::CONST_1)
+        self.variant(P2_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P3`"]
-pub enum P3W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P3_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P3W::CONST_0 => false,
-            P3W::CONST_1 => true,
+impl From<P3_A> for bool {
+    #[inline(always)]
+    fn from(variant: P3_A) -> Self {
+        match variant {
+            P3_A::CONST_0 => false,
+            P3_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P3W<'a> {
+#[doc = "Reader of field `P3`"]
+pub type P3_R = crate::R<bool, P3_A>;
+impl P3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P3_A {
+        match self.bits {
+            false => P3_A::CONST_0,
+            true => P3_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P3_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P3_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P3`"]
+pub struct P3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P3W) -> &'a mut W {
+impl<'a> P3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P3W::CONST_0)
+        self.variant(P3_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P3W::CONST_1)
+        self.variant(P3_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P4`"]
-pub enum P4W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 4\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P4_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P4W::CONST_0 => false,
-            P4W::CONST_1 => true,
+impl From<P4_A> for bool {
+    #[inline(always)]
+    fn from(variant: P4_A) -> Self {
+        match variant {
+            P4_A::CONST_0 => false,
+            P4_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P4W<'a> {
+#[doc = "Reader of field `P4`"]
+pub type P4_R = crate::R<bool, P4_A>;
+impl P4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P4_A {
+        match self.bits {
+            false => P4_A::CONST_0,
+            true => P4_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P4_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P4_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P4`"]
+pub struct P4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P4W) -> &'a mut W {
+impl<'a> P4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P4_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P4W::CONST_0)
+        self.variant(P4_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P4W::CONST_1)
+        self.variant(P4_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P5`"]
-pub enum P5W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 5\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P5_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P5W::CONST_0 => false,
-            P5W::CONST_1 => true,
+impl From<P5_A> for bool {
+    #[inline(always)]
+    fn from(variant: P5_A) -> Self {
+        match variant {
+            P5_A::CONST_0 => false,
+            P5_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P5W<'a> {
+#[doc = "Reader of field `P5`"]
+pub type P5_R = crate::R<bool, P5_A>;
+impl P5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P5_A {
+        match self.bits {
+            false => P5_A::CONST_0,
+            true => P5_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P5_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P5_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P5`"]
+pub struct P5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P5W) -> &'a mut W {
+impl<'a> P5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P5_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P5W::CONST_0)
+        self.variant(P5_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P5W::CONST_1)
+        self.variant(P5_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P6`"]
-pub enum P6W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 6\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P6_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P6W::CONST_0 => false,
-            P6W::CONST_1 => true,
+impl From<P6_A> for bool {
+    #[inline(always)]
+    fn from(variant: P6_A) -> Self {
+        match variant {
+            P6_A::CONST_0 => false,
+            P6_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P6W<'a> {
+#[doc = "Reader of field `P6`"]
+pub type P6_R = crate::R<bool, P6_A>;
+impl P6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P6_A {
+        match self.bits {
+            false => P6_A::CONST_0,
+            true => P6_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P6_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P6_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P6`"]
+pub struct P6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P6W) -> &'a mut W {
+impl<'a> P6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P6_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P6W::CONST_0)
+        self.variant(P6_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P6W::CONST_1)
+        self.variant(P6_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P7`"]
-pub enum P7W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 7\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P7_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P7W::CONST_0 => false,
-            P7W::CONST_1 => true,
+impl From<P7_A> for bool {
+    #[inline(always)]
+    fn from(variant: P7_A) -> Self {
+        match variant {
+            P7_A::CONST_0 => false,
+            P7_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P7W<'a> {
+#[doc = "Reader of field `P7`"]
+pub type P7_R = crate::R<bool, P7_A>;
+impl P7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P7_A {
+        match self.bits {
+            false => P7_A::CONST_0,
+            true => P7_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P7_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P7_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P7`"]
+pub struct P7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P7W) -> &'a mut W {
+impl<'a> P7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P7_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P7W::CONST_0)
+        self.variant(P7_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P7W::CONST_1)
+        self.variant(P7_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P8`"]
-pub enum P8W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 8\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P8_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P8W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P8W::CONST_0 => false,
-            P8W::CONST_1 => true,
+impl From<P8_A> for bool {
+    #[inline(always)]
+    fn from(variant: P8_A) -> Self {
+        match variant {
+            P8_A::CONST_0 => false,
+            P8_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P8W<'a> {
+#[doc = "Reader of field `P8`"]
+pub type P8_R = crate::R<bool, P8_A>;
+impl P8_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P8_A {
+        match self.bits {
+            false => P8_A::CONST_0,
+            true => P8_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P8_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P8_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P8`"]
+pub struct P8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P8W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P8W) -> &'a mut W {
+impl<'a> P8_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P8_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P8W::CONST_0)
+        self.variant(P8_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P8W::CONST_1)
+        self.variant(P8_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P9`"]
-pub enum P9W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 9\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P9_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P9W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P9W::CONST_0 => false,
-            P9W::CONST_1 => true,
+impl From<P9_A> for bool {
+    #[inline(always)]
+    fn from(variant: P9_A) -> Self {
+        match variant {
+            P9_A::CONST_0 => false,
+            P9_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P9W<'a> {
+#[doc = "Reader of field `P9`"]
+pub type P9_R = crate::R<bool, P9_A>;
+impl P9_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P9_A {
+        match self.bits {
+            false => P9_A::CONST_0,
+            true => P9_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P9_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P9_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P9`"]
+pub struct P9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P9W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P9W) -> &'a mut W {
+impl<'a> P9_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P9_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P9W::CONST_0)
+        self.variant(P9_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P9W::CONST_1)
+        self.variant(P9_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P10`"]
-pub enum P10W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 10\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P10_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P10W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P10W::CONST_0 => false,
-            P10W::CONST_1 => true,
+impl From<P10_A> for bool {
+    #[inline(always)]
+    fn from(variant: P10_A) -> Self {
+        match variant {
+            P10_A::CONST_0 => false,
+            P10_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P10W<'a> {
+#[doc = "Reader of field `P10`"]
+pub type P10_R = crate::R<bool, P10_A>;
+impl P10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P10_A {
+        match self.bits {
+            false => P10_A::CONST_0,
+            true => P10_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P10_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P10_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P10`"]
+pub struct P10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P10W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P10W) -> &'a mut W {
+impl<'a> P10_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P10_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P10W::CONST_0)
+        self.variant(P10_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P10W::CONST_1)
+        self.variant(P10_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P11`"]
-pub enum P11W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 11\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P11_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P11W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P11W::CONST_0 => false,
-            P11W::CONST_1 => true,
+impl From<P11_A> for bool {
+    #[inline(always)]
+    fn from(variant: P11_A) -> Self {
+        match variant {
+            P11_A::CONST_0 => false,
+            P11_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P11W<'a> {
+#[doc = "Reader of field `P11`"]
+pub type P11_R = crate::R<bool, P11_A>;
+impl P11_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P11_A {
+        match self.bits {
+            false => P11_A::CONST_0,
+            true => P11_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P11_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P11_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P11`"]
+pub struct P11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P11W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P11W) -> &'a mut W {
+impl<'a> P11_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P11_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P11W::CONST_0)
+        self.variant(P11_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P11W::CONST_1)
+        self.variant(P11_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P12`"]
-pub enum P12W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 12\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P12_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P12W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P12W::CONST_0 => false,
-            P12W::CONST_1 => true,
+impl From<P12_A> for bool {
+    #[inline(always)]
+    fn from(variant: P12_A) -> Self {
+        match variant {
+            P12_A::CONST_0 => false,
+            P12_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P12W<'a> {
+#[doc = "Reader of field `P12`"]
+pub type P12_R = crate::R<bool, P12_A>;
+impl P12_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P12_A {
+        match self.bits {
+            false => P12_A::CONST_0,
+            true => P12_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P12_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P12_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P12`"]
+pub struct P12_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P12W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P12W) -> &'a mut W {
+impl<'a> P12_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P12_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P12W::CONST_0)
+        self.variant(P12_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P12W::CONST_1)
+        self.variant(P12_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P13`"]
-pub enum P13W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 13\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P13_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P13W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P13W::CONST_0 => false,
-            P13W::CONST_1 => true,
+impl From<P13_A> for bool {
+    #[inline(always)]
+    fn from(variant: P13_A) -> Self {
+        match variant {
+            P13_A::CONST_0 => false,
+            P13_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P13W<'a> {
+#[doc = "Reader of field `P13`"]
+pub type P13_R = crate::R<bool, P13_A>;
+impl P13_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P13_A {
+        match self.bits {
+            false => P13_A::CONST_0,
+            true => P13_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P13_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P13_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P13`"]
+pub struct P13_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P13W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P13W) -> &'a mut W {
+impl<'a> P13_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P13_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P13W::CONST_0)
+        self.variant(P13_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P13W::CONST_1)
+        self.variant(P13_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P14`"]
-pub enum P14W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 14\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P14_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P14W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P14W::CONST_0 => false,
-            P14W::CONST_1 => true,
+impl From<P14_A> for bool {
+    #[inline(always)]
+    fn from(variant: P14_A) -> Self {
+        match variant {
+            P14_A::CONST_0 => false,
+            P14_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P14W<'a> {
+#[doc = "Reader of field `P14`"]
+pub type P14_R = crate::R<bool, P14_A>;
+impl P14_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P14_A {
+        match self.bits {
+            false => P14_A::CONST_0,
+            true => P14_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P14_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P14_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P14`"]
+pub struct P14_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P14W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P14W) -> &'a mut W {
+impl<'a> P14_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P14_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P14W::CONST_0)
+        self.variant(P14_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P14W::CONST_1)
+        self.variant(P14_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `P15`"]
-pub enum P15W {
-    #[doc = "The output level of Pn.x is 0."]
+#[doc = "Port n Output Bit 15\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P15_A {
+    #[doc = "0: The output level of Pn.x is 0."]
     CONST_0,
-    #[doc = "The output level of Pn.x is 1."]
+    #[doc = "1: The output level of Pn.x is 1."]
     CONST_1,
 }
-impl P15W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            P15W::CONST_0 => false,
-            P15W::CONST_1 => true,
+impl From<P15_A> for bool {
+    #[inline(always)]
+    fn from(variant: P15_A) -> Self {
+        match variant {
+            P15_A::CONST_0 => false,
+            P15_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _P15W<'a> {
+#[doc = "Reader of field `P15`"]
+pub type P15_R = crate::R<bool, P15_A>;
+impl P15_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P15_A {
+        match self.bits {
+            false => P15_A::CONST_0,
+            true => P15_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == P15_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == P15_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `P15`"]
+pub struct P15_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _P15W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: P15W) -> &'a mut W {
+impl<'a> P15_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: P15_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The output level of Pn.x is 0."]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(P15W::CONST_0)
+        self.variant(P15_A::CONST_0)
     }
     #[doc = "The output level of Pn.x is 1."]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(P15W::CONST_1)
+        self.variant(P15_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Port n Output Bit 0"]
-    #[inline]
-    pub fn p0(&self) -> P0R {
-        P0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p0(&self) -> P0_R {
+        P0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Port n Output Bit 1"]
-    #[inline]
-    pub fn p1(&self) -> P1R {
-        P1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p1(&self) -> P1_R {
+        P1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Port n Output Bit 2"]
-    #[inline]
-    pub fn p2(&self) -> P2R {
-        P2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p2(&self) -> P2_R {
+        P2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Port n Output Bit 3"]
-    #[inline]
-    pub fn p3(&self) -> P3R {
-        P3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p3(&self) -> P3_R {
+        P3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Port n Output Bit 4"]
-    #[inline]
-    pub fn p4(&self) -> P4R {
-        P4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p4(&self) -> P4_R {
+        P4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Port n Output Bit 5"]
-    #[inline]
-    pub fn p5(&self) -> P5R {
-        P5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p5(&self) -> P5_R {
+        P5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Port n Output Bit 6"]
-    #[inline]
-    pub fn p6(&self) -> P6R {
-        P6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p6(&self) -> P6_R {
+        P6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Port n Output Bit 7"]
-    #[inline]
-    pub fn p7(&self) -> P7R {
-        P7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p7(&self) -> P7_R {
+        P7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Port n Output Bit 8"]
-    #[inline]
-    pub fn p8(&self) -> P8R {
-        P8R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p8(&self) -> P8_R {
+        P8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Port n Output Bit 9"]
-    #[inline]
-    pub fn p9(&self) -> P9R {
-        P9R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p9(&self) -> P9_R {
+        P9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Port n Output Bit 10"]
-    #[inline]
-    pub fn p10(&self) -> P10R {
-        P10R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p10(&self) -> P10_R {
+        P10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Port n Output Bit 11"]
-    #[inline]
-    pub fn p11(&self) -> P11R {
-        P11R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p11(&self) -> P11_R {
+        P11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Port n Output Bit 12"]
-    #[inline]
-    pub fn p12(&self) -> P12R {
-        P12R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p12(&self) -> P12_R {
+        P12_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Port n Output Bit 13"]
-    #[inline]
-    pub fn p13(&self) -> P13R {
-        P13R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p13(&self) -> P13_R {
+        P13_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Port n Output Bit 14"]
-    #[inline]
-    pub fn p14(&self) -> P14R {
-        P14R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p14(&self) -> P14_R {
+        P14_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Port n Output Bit 15"]
-    #[inline]
-    pub fn p15(&self) -> P15R {
-        P15R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn p15(&self) -> P15_R {
+        P15_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Port n Output Bit 0"]
-    #[inline]
-    pub fn p0(&mut self) -> _P0W {
-        _P0W { w: self }
+    #[inline(always)]
+    pub fn p0(&mut self) -> P0_W {
+        P0_W { w: self }
     }
     #[doc = "Bit 1 - Port n Output Bit 1"]
-    #[inline]
-    pub fn p1(&mut self) -> _P1W {
-        _P1W { w: self }
+    #[inline(always)]
+    pub fn p1(&mut self) -> P1_W {
+        P1_W { w: self }
     }
     #[doc = "Bit 2 - Port n Output Bit 2"]
-    #[inline]
-    pub fn p2(&mut self) -> _P2W {
-        _P2W { w: self }
+    #[inline(always)]
+    pub fn p2(&mut self) -> P2_W {
+        P2_W { w: self }
     }
     #[doc = "Bit 3 - Port n Output Bit 3"]
-    #[inline]
-    pub fn p3(&mut self) -> _P3W {
-        _P3W { w: self }
+    #[inline(always)]
+    pub fn p3(&mut self) -> P3_W {
+        P3_W { w: self }
     }
     #[doc = "Bit 4 - Port n Output Bit 4"]
-    #[inline]
-    pub fn p4(&mut self) -> _P4W {
-        _P4W { w: self }
+    #[inline(always)]
+    pub fn p4(&mut self) -> P4_W {
+        P4_W { w: self }
     }
     #[doc = "Bit 5 - Port n Output Bit 5"]
-    #[inline]
-    pub fn p5(&mut self) -> _P5W {
-        _P5W { w: self }
+    #[inline(always)]
+    pub fn p5(&mut self) -> P5_W {
+        P5_W { w: self }
     }
     #[doc = "Bit 6 - Port n Output Bit 6"]
-    #[inline]
-    pub fn p6(&mut self) -> _P6W {
-        _P6W { w: self }
+    #[inline(always)]
+    pub fn p6(&mut self) -> P6_W {
+        P6_W { w: self }
     }
     #[doc = "Bit 7 - Port n Output Bit 7"]
-    #[inline]
-    pub fn p7(&mut self) -> _P7W {
-        _P7W { w: self }
+    #[inline(always)]
+    pub fn p7(&mut self) -> P7_W {
+        P7_W { w: self }
     }
     #[doc = "Bit 8 - Port n Output Bit 8"]
-    #[inline]
-    pub fn p8(&mut self) -> _P8W {
-        _P8W { w: self }
+    #[inline(always)]
+    pub fn p8(&mut self) -> P8_W {
+        P8_W { w: self }
     }
     #[doc = "Bit 9 - Port n Output Bit 9"]
-    #[inline]
-    pub fn p9(&mut self) -> _P9W {
-        _P9W { w: self }
+    #[inline(always)]
+    pub fn p9(&mut self) -> P9_W {
+        P9_W { w: self }
     }
     #[doc = "Bit 10 - Port n Output Bit 10"]
-    #[inline]
-    pub fn p10(&mut self) -> _P10W {
-        _P10W { w: self }
+    #[inline(always)]
+    pub fn p10(&mut self) -> P10_W {
+        P10_W { w: self }
     }
     #[doc = "Bit 11 - Port n Output Bit 11"]
-    #[inline]
-    pub fn p11(&mut self) -> _P11W {
-        _P11W { w: self }
+    #[inline(always)]
+    pub fn p11(&mut self) -> P11_W {
+        P11_W { w: self }
     }
     #[doc = "Bit 12 - Port n Output Bit 12"]
-    #[inline]
-    pub fn p12(&mut self) -> _P12W {
-        _P12W { w: self }
+    #[inline(always)]
+    pub fn p12(&mut self) -> P12_W {
+        P12_W { w: self }
     }
     #[doc = "Bit 13 - Port n Output Bit 13"]
-    #[inline]
-    pub fn p13(&mut self) -> _P13W {
-        _P13W { w: self }
+    #[inline(always)]
+    pub fn p13(&mut self) -> P13_W {
+        P13_W { w: self }
     }
     #[doc = "Bit 14 - Port n Output Bit 14"]
-    #[inline]
-    pub fn p14(&mut self) -> _P14W {
-        _P14W { w: self }
+    #[inline(always)]
+    pub fn p14(&mut self) -> P14_W {
+        P14_W { w: self }
     }
     #[doc = "Bit 15 - Port n Output Bit 15"]
-    #[inline]
-    pub fn p15(&mut self) -> _P15W {
-        _P15W { w: self }
+    #[inline(always)]
+    pub fn p15(&mut self) -> P15_W {
+        P15_W { w: self }
     }
 }

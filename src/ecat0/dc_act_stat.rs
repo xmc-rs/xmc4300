@@ -1,186 +1,136 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-impl super::DC_ACT_STAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `S0_ACK_STATE`"]
+#[doc = "Reader of register DC_ACT_STAT"]
+pub type R = crate::R<u8, super::DC_ACT_STAT>;
+#[doc = "SYNC0 activation state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum S0_ACK_STATER {
-    #[doc = "First SYNC0 pulse is not pending"]
+pub enum S0_ACK_STATE_A {
+    #[doc = "0: First SYNC0 pulse is not pending"]
     VALUE1,
-    #[doc = "First SYNC0 pulse is pending"]
+    #[doc = "1: First SYNC0 pulse is pending"]
     VALUE2,
 }
-impl S0_ACK_STATER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            S0_ACK_STATER::VALUE1 => false,
-            S0_ACK_STATER::VALUE2 => true,
+impl From<S0_ACK_STATE_A> for bool {
+    #[inline(always)]
+    fn from(variant: S0_ACK_STATE_A) -> Self {
+        match variant {
+            S0_ACK_STATE_A::VALUE1 => false,
+            S0_ACK_STATE_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> S0_ACK_STATER {
-        match value {
-            false => S0_ACK_STATER::VALUE1,
-            true => S0_ACK_STATER::VALUE2,
+}
+#[doc = "Reader of field `S0_ACK_STATE`"]
+pub type S0_ACK_STATE_R = crate::R<bool, S0_ACK_STATE_A>;
+impl S0_ACK_STATE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> S0_ACK_STATE_A {
+        match self.bits {
+            false => S0_ACK_STATE_A::VALUE1,
+            true => S0_ACK_STATE_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S0_ACK_STATER::VALUE1
+        *self == S0_ACK_STATE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S0_ACK_STATER::VALUE2
+        *self == S0_ACK_STATE_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `S1_ACK_STATE`"]
+#[doc = "SYNC1 activation state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum S1_ACK_STATER {
-    #[doc = "First SYNC1 pulse is not pending"]
+pub enum S1_ACK_STATE_A {
+    #[doc = "0: First SYNC1 pulse is not pending"]
     VALUE1,
-    #[doc = "First SYNC1 pulse is pending"]
+    #[doc = "1: First SYNC1 pulse is pending"]
     VALUE2,
 }
-impl S1_ACK_STATER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            S1_ACK_STATER::VALUE1 => false,
-            S1_ACK_STATER::VALUE2 => true,
+impl From<S1_ACK_STATE_A> for bool {
+    #[inline(always)]
+    fn from(variant: S1_ACK_STATE_A) -> Self {
+        match variant {
+            S1_ACK_STATE_A::VALUE1 => false,
+            S1_ACK_STATE_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> S1_ACK_STATER {
-        match value {
-            false => S1_ACK_STATER::VALUE1,
-            true => S1_ACK_STATER::VALUE2,
+}
+#[doc = "Reader of field `S1_ACK_STATE`"]
+pub type S1_ACK_STATE_R = crate::R<bool, S1_ACK_STATE_A>;
+impl S1_ACK_STATE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> S1_ACK_STATE_A {
+        match self.bits {
+            false => S1_ACK_STATE_A::VALUE1,
+            true => S1_ACK_STATE_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S1_ACK_STATER::VALUE1
+        *self == S1_ACK_STATE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S1_ACK_STATER::VALUE2
+        *self == S1_ACK_STATE_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `S_TIME`"]
+#[doc = "Start Time Cyclic Operation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum S_TIMER {
-    #[doc = "Start Time was within near future"]
+pub enum S_TIME_A {
+    #[doc = "0: Start Time was within near future"]
     VALUE1,
-    #[doc = "Start Time was out of near future (0x0981.6)"]
+    #[doc = "1: Start Time was out of near future (0x0981.6)"]
     VALUE2,
 }
-impl S_TIMER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            S_TIMER::VALUE1 => false,
-            S_TIMER::VALUE2 => true,
+impl From<S_TIME_A> for bool {
+    #[inline(always)]
+    fn from(variant: S_TIME_A) -> Self {
+        match variant {
+            S_TIME_A::VALUE1 => false,
+            S_TIME_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> S_TIMER {
-        match value {
-            false => S_TIMER::VALUE1,
-            true => S_TIMER::VALUE2,
+}
+#[doc = "Reader of field `S_TIME`"]
+pub type S_TIME_R = crate::R<bool, S_TIME_A>;
+impl S_TIME_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> S_TIME_A {
+        match self.bits {
+            false => S_TIME_A::VALUE1,
+            true => S_TIME_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S_TIMER::VALUE1
+        *self == S_TIME_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S_TIMER::VALUE2
+        *self == S_TIME_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 0 - SYNC0 activation state"]
-    #[inline]
-    pub fn s0_ack_state(&self) -> S0_ACK_STATER {
-        S0_ACK_STATER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn s0_ack_state(&self) -> S0_ACK_STATE_R {
+        S0_ACK_STATE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - SYNC1 activation state"]
-    #[inline]
-    pub fn s1_ack_state(&self) -> S1_ACK_STATER {
-        S1_ACK_STATER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn s1_ack_state(&self) -> S1_ACK_STATE_R {
+        S1_ACK_STATE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Start Time Cyclic Operation"]
-    #[inline]
-    pub fn s_time(&self) -> S_TIMER {
-        S_TIMER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn s_time(&self) -> S_TIME_R {
+        S_TIME_R::new(((self.bits >> 2) & 0x01) != 0)
     }
 }

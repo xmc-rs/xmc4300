@@ -1,419 +1,280 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::MPU_CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register MPU_CTRL"]
+pub type R = crate::R<u32, super::MPU_CTRL>;
+#[doc = "Writer for register MPU_CTRL"]
+pub type W = crate::W<u32, super::MPU_CTRL>;
+#[doc = "Register MPU_CTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::MPU_CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ENABLE`"]
+#[doc = "Enable MPU\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENABLER {
-    #[doc = "MPU disabled"]
+pub enum ENABLE_A {
+    #[doc = "0: MPU disabled"]
     VALUE1,
-    #[doc = "MPU enabled."]
+    #[doc = "1: MPU enabled."]
     VALUE2,
 }
-impl ENABLER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENABLER::VALUE1 => false,
-            ENABLER::VALUE2 => true,
+impl From<ENABLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENABLE_A) -> Self {
+        match variant {
+            ENABLE_A::VALUE1 => false,
+            ENABLE_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENABLER {
-        match value {
-            false => ENABLER::VALUE1,
-            true => ENABLER::VALUE2,
+}
+#[doc = "Reader of field `ENABLE`"]
+pub type ENABLE_R = crate::R<bool, ENABLE_A>;
+impl ENABLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENABLE_A {
+        match self.bits {
+            false => ENABLE_A::VALUE1,
+            true => ENABLE_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ENABLER::VALUE1
+        *self == ENABLE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ENABLER::VALUE2
+        *self == ENABLE_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `HFNMIENA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HFNMIENAR {
-    #[doc = "MPU is disabled during hard fault, NMI, and FAULTMASK handlers, regardless of the value of the ENABLE bit"]
-    VALUE1,
-    #[doc = "the MPU is enabled during hard fault, NMI, and FAULTMASK handlers."]
-    VALUE2,
-}
-impl HFNMIENAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HFNMIENAR::VALUE1 => false,
-            HFNMIENAR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HFNMIENAR {
-        match value {
-            false => HFNMIENAR::VALUE1,
-            true => HFNMIENAR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == HFNMIENAR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == HFNMIENAR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `PRIVDEFENA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRIVDEFENAR {
-    #[doc = "If the MPU is enabled, disables use of the default memory map. Any memory access to a location not covered by any enabled region causes a fault."]
-    VALUE1,
-    #[doc = "If the MPU is enabled, enables use of the default memory map as a background region for privileged software accesses."]
-    VALUE2,
-}
-impl PRIVDEFENAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PRIVDEFENAR::VALUE1 => false,
-            PRIVDEFENAR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PRIVDEFENAR {
-        match value {
-            false => PRIVDEFENAR::VALUE1,
-            true => PRIVDEFENAR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == PRIVDEFENAR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == PRIVDEFENAR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `ENABLE`"]
-pub enum ENABLEW {
-    #[doc = "MPU disabled"]
-    VALUE1,
-    #[doc = "MPU enabled."]
-    VALUE2,
-}
-impl ENABLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENABLEW::VALUE1 => false,
-            ENABLEW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENABLEW<'a> {
+#[doc = "Write proxy for field `ENABLE`"]
+pub struct ENABLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENABLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENABLEW) -> &'a mut W {
+impl<'a> ENABLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENABLE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "MPU disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ENABLEW::VALUE1)
+        self.variant(ENABLE_A::VALUE1)
     }
     #[doc = "MPU enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ENABLEW::VALUE2)
+        self.variant(ENABLE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `HFNMIENA`"]
-pub enum HFNMIENAW {
-    #[doc = "MPU is disabled during hard fault, NMI, and FAULTMASK handlers, regardless of the value of the ENABLE bit"]
+#[doc = "Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HFNMIENA_A {
+    #[doc = "0: MPU is disabled during hard fault, NMI, and FAULTMASK handlers, regardless of the value of the ENABLE bit"]
     VALUE1,
-    #[doc = "the MPU is enabled during hard fault, NMI, and FAULTMASK handlers."]
+    #[doc = "1: the MPU is enabled during hard fault, NMI, and FAULTMASK handlers."]
     VALUE2,
 }
-impl HFNMIENAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HFNMIENAW::VALUE1 => false,
-            HFNMIENAW::VALUE2 => true,
+impl From<HFNMIENA_A> for bool {
+    #[inline(always)]
+    fn from(variant: HFNMIENA_A) -> Self {
+        match variant {
+            HFNMIENA_A::VALUE1 => false,
+            HFNMIENA_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _HFNMIENAW<'a> {
+#[doc = "Reader of field `HFNMIENA`"]
+pub type HFNMIENA_R = crate::R<bool, HFNMIENA_A>;
+impl HFNMIENA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HFNMIENA_A {
+        match self.bits {
+            false => HFNMIENA_A::VALUE1,
+            true => HFNMIENA_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == HFNMIENA_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == HFNMIENA_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `HFNMIENA`"]
+pub struct HFNMIENA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HFNMIENAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HFNMIENAW) -> &'a mut W {
+impl<'a> HFNMIENA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HFNMIENA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "MPU is disabled during hard fault, NMI, and FAULTMASK handlers, regardless of the value of the ENABLE bit"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(HFNMIENAW::VALUE1)
+        self.variant(HFNMIENA_A::VALUE1)
     }
     #[doc = "the MPU is enabled during hard fault, NMI, and FAULTMASK handlers."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(HFNMIENAW::VALUE2)
+        self.variant(HFNMIENA_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PRIVDEFENA`"]
-pub enum PRIVDEFENAW {
-    #[doc = "If the MPU is enabled, disables use of the default memory map. Any memory access to a location not covered by any enabled region causes a fault."]
+#[doc = "Enables privileged software access to the default memory map\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PRIVDEFENA_A {
+    #[doc = "0: If the MPU is enabled, disables use of the default memory map. Any memory access to a location not covered by any enabled region causes a fault."]
     VALUE1,
-    #[doc = "If the MPU is enabled, enables use of the default memory map as a background region for privileged software accesses."]
+    #[doc = "1: If the MPU is enabled, enables use of the default memory map as a background region for privileged software accesses."]
     VALUE2,
 }
-impl PRIVDEFENAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PRIVDEFENAW::VALUE1 => false,
-            PRIVDEFENAW::VALUE2 => true,
+impl From<PRIVDEFENA_A> for bool {
+    #[inline(always)]
+    fn from(variant: PRIVDEFENA_A) -> Self {
+        match variant {
+            PRIVDEFENA_A::VALUE1 => false,
+            PRIVDEFENA_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PRIVDEFENAW<'a> {
+#[doc = "Reader of field `PRIVDEFENA`"]
+pub type PRIVDEFENA_R = crate::R<bool, PRIVDEFENA_A>;
+impl PRIVDEFENA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PRIVDEFENA_A {
+        match self.bits {
+            false => PRIVDEFENA_A::VALUE1,
+            true => PRIVDEFENA_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == PRIVDEFENA_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == PRIVDEFENA_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `PRIVDEFENA`"]
+pub struct PRIVDEFENA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PRIVDEFENAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRIVDEFENAW) -> &'a mut W {
+impl<'a> PRIVDEFENA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRIVDEFENA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "If the MPU is enabled, disables use of the default memory map. Any memory access to a location not covered by any enabled region causes a fault."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(PRIVDEFENAW::VALUE1)
+        self.variant(PRIVDEFENA_A::VALUE1)
     }
     #[doc = "If the MPU is enabled, enables use of the default memory map as a background region for privileged software accesses."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(PRIVDEFENAW::VALUE2)
+        self.variant(PRIVDEFENA_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Enable MPU"]
-    #[inline]
-    pub fn enable(&self) -> ENABLER {
-        ENABLER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn enable(&self) -> ENABLE_R {
+        ENABLE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers"]
-    #[inline]
-    pub fn hfnmiena(&self) -> HFNMIENAR {
-        HFNMIENAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hfnmiena(&self) -> HFNMIENA_R {
+        HFNMIENA_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Enables privileged software access to the default memory map"]
-    #[inline]
-    pub fn privdefena(&self) -> PRIVDEFENAR {
-        PRIVDEFENAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn privdefena(&self) -> PRIVDEFENA_R {
+        PRIVDEFENA_R::new(((self.bits >> 2) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Enable MPU"]
-    #[inline]
-    pub fn enable(&mut self) -> _ENABLEW {
-        _ENABLEW { w: self }
+    #[inline(always)]
+    pub fn enable(&mut self) -> ENABLE_W {
+        ENABLE_W { w: self }
     }
     #[doc = "Bit 1 - Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers"]
-    #[inline]
-    pub fn hfnmiena(&mut self) -> _HFNMIENAW {
-        _HFNMIENAW { w: self }
+    #[inline(always)]
+    pub fn hfnmiena(&mut self) -> HFNMIENA_W {
+        HFNMIENA_W { w: self }
     }
     #[doc = "Bit 2 - Enables privileged software access to the default memory map"]
-    #[inline]
-    pub fn privdefena(&mut self) -> _PRIVDEFENAW {
-        _PRIVDEFENAW { w: self }
+    #[inline(always)]
+    pub fn privdefena(&mut self) -> PRIVDEFENA_W {
+        PRIVDEFENA_W { w: self }
     }
 }

@@ -1,688 +1,543 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::QMR0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register QMR0"]
+pub type R = crate::R<u32, super::QMR0>;
+#[doc = "Writer for register QMR0"]
+pub type W = crate::W<u32, super::QMR0>;
+#[doc = "Register QMR0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::QMR0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ENGT`"]
+#[doc = "Enable Gate\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENGTR {
-    #[doc = "No conversion requests are issued"]
+pub enum ENGT_A {
+    #[doc = "0: No conversion requests are issued"]
     VALUE1,
-    #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register"]
+    #[doc = "1: Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register"]
     VALUE2,
-    #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 1"]
+    #[doc = "2: Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 1"]
     VALUE3,
-    #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 0"]
+    #[doc = "3: Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 0"]
     VALUE4,
 }
-impl ENGTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ENGTR::VALUE1 => 0,
-            ENGTR::VALUE2 => 1,
-            ENGTR::VALUE3 => 2,
-            ENGTR::VALUE4 => 3,
+impl From<ENGT_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ENGT_A) -> Self {
+        match variant {
+            ENGT_A::VALUE1 => 0,
+            ENGT_A::VALUE2 => 1,
+            ENGT_A::VALUE3 => 2,
+            ENGT_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ENGTR {
-        match value {
-            0 => ENGTR::VALUE1,
-            1 => ENGTR::VALUE2,
-            2 => ENGTR::VALUE3,
-            3 => ENGTR::VALUE4,
+}
+#[doc = "Reader of field `ENGT`"]
+pub type ENGT_R = crate::R<u8, ENGT_A>;
+impl ENGT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENGT_A {
+        match self.bits {
+            0 => ENGT_A::VALUE1,
+            1 => ENGT_A::VALUE2,
+            2 => ENGT_A::VALUE3,
+            3 => ENGT_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ENGTR::VALUE1
+        *self == ENGT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ENGTR::VALUE2
+        *self == ENGT_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == ENGTR::VALUE3
+        *self == ENGT_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == ENGTR::VALUE4
+        *self == ENGT_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `ENTR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENTRR {
-    #[doc = "External trigger disabled"]
-    VALUE1,
-    #[doc = "The selected edge at the selected trigger input signal REQTR generates the trigger event"]
-    VALUE2,
-}
-impl ENTRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENTRR::VALUE1 => false,
-            ENTRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENTRR {
-        match value {
-            false => ENTRR::VALUE1,
-            true => ENTRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ENTRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ENTRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `RPTDIS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RPTDISR {
-    #[doc = "A cancelled conversion is repeated"]
-    VALUE1,
-    #[doc = "A cancelled conversion is discarded"]
-    VALUE2,
-}
-impl RPTDISR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RPTDISR::VALUE1 => false,
-            RPTDISR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RPTDISR {
-        match value {
-            false => RPTDISR::VALUE1,
-            true => RPTDISR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == RPTDISR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == RPTDISR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `ENGT`"]
-pub enum ENGTW {
-    #[doc = "No conversion requests are issued"]
-    VALUE1,
-    #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register"]
-    VALUE2,
-    #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 1"]
-    VALUE3,
-    #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 0"]
-    VALUE4,
-}
-impl ENGTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ENGTW::VALUE1 => 0,
-            ENGTW::VALUE2 => 1,
-            ENGTW::VALUE3 => 2,
-            ENGTW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENGTW<'a> {
+#[doc = "Write proxy for field `ENGT`"]
+pub struct ENGT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENGTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENGTW) -> &'a mut W {
+impl<'a> ENGT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENGT_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "No conversion requests are issued"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ENGTW::VALUE1)
+        self.variant(ENGT_A::VALUE1)
     }
     #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ENGTW::VALUE2)
+        self.variant(ENGT_A::VALUE2)
     }
     #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 1"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(ENGTW::VALUE3)
+        self.variant(ENGT_A::VALUE3)
     }
     #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 0"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(ENGTW::VALUE4)
+        self.variant(ENGT_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ENTR`"]
-pub enum ENTRW {
+#[doc = "Enable External Trigger\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ENTR_A {
+    #[doc = "0: External trigger disabled"]
+    VALUE1,
+    #[doc = "1: The selected edge at the selected trigger input signal REQTR generates the trigger event"]
+    VALUE2,
+}
+impl From<ENTR_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENTR_A) -> Self {
+        match variant {
+            ENTR_A::VALUE1 => false,
+            ENTR_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `ENTR`"]
+pub type ENTR_R = crate::R<bool, ENTR_A>;
+impl ENTR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENTR_A {
+        match self.bits {
+            false => ENTR_A::VALUE1,
+            true => ENTR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ENTR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ENTR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ENTR`"]
+pub struct ENTR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ENTR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENTR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "External trigger disabled"]
-    VALUE1,
-    #[doc = "The selected edge at the selected trigger input signal REQTR generates the trigger event"]
-    VALUE2,
-}
-impl ENTRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENTRW::VALUE1 => false,
-            ENTRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENTRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ENTRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENTRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "External trigger disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ENTRW::VALUE1)
+        self.variant(ENTR_A::VALUE1)
     }
     #[doc = "The selected edge at the selected trigger input signal REQTR generates the trigger event"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ENTRW::VALUE2)
+        self.variant(ENTR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CLRV`"]
-pub enum CLRVW {
-    #[doc = "No action"]
+#[doc = "Clear Valid Bit\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CLRV_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "The next pending valid queue entry in the sequence and the event flag EV are cleared. If there is a valid entry in the queue backup register (QBUR.V = 1), this entry is cleared, otherwise the entry in queue register 0 is cleared."]
+    #[doc = "1: The next pending valid queue entry in the sequence and the event flag EV are cleared. If there is a valid entry in the queue backup register (QBUR.V = 1), this entry is cleared, otherwise the entry in queue register 0 is cleared."]
     VALUE2,
 }
-impl CLRVW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CLRVW::VALUE1 => false,
-            CLRVW::VALUE2 => true,
+impl From<CLRV_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CLRV_AW) -> Self {
+        match variant {
+            CLRV_AW::VALUE1 => false,
+            CLRV_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CLRVW<'a> {
+#[doc = "Write proxy for field `CLRV`"]
+pub struct CLRV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLRVW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CLRVW) -> &'a mut W {
+impl<'a> CLRV_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CLRV_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CLRVW::VALUE1)
+        self.variant(CLRV_AW::VALUE1)
     }
     #[doc = "The next pending valid queue entry in the sequence and the event flag EV are cleared. If there is a valid entry in the queue backup register (QBUR.V = 1), this entry is cleared, otherwise the entry in queue register 0 is cleared."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CLRVW::VALUE2)
+        self.variant(CLRV_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TREV`"]
-pub enum TREVW {
-    #[doc = "No action"]
+#[doc = "Trigger Event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TREV_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Generate a trigger event by software"]
+    #[doc = "1: Generate a trigger event by software"]
     VALUE2,
 }
-impl TREVW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TREVW::VALUE1 => false,
-            TREVW::VALUE2 => true,
+impl From<TREV_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TREV_AW) -> Self {
+        match variant {
+            TREV_AW::VALUE1 => false,
+            TREV_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TREVW<'a> {
+#[doc = "Write proxy for field `TREV`"]
+pub struct TREV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TREVW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TREVW) -> &'a mut W {
+impl<'a> TREV_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TREV_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(TREVW::VALUE1)
+        self.variant(TREV_AW::VALUE1)
     }
     #[doc = "Generate a trigger event by software"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(TREVW::VALUE2)
+        self.variant(TREV_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FLUSH`"]
-pub enum FLUSHW {
-    #[doc = "No action"]
+#[doc = "Flush Queue\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FLUSH_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Clear all queue entries (including backup stage) and the event flag EV. The queue contains no more valid entry."]
+    #[doc = "1: Clear all queue entries (including backup stage) and the event flag EV. The queue contains no more valid entry."]
     VALUE2,
 }
-impl FLUSHW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FLUSHW::VALUE1 => false,
-            FLUSHW::VALUE2 => true,
+impl From<FLUSH_AW> for bool {
+    #[inline(always)]
+    fn from(variant: FLUSH_AW) -> Self {
+        match variant {
+            FLUSH_AW::VALUE1 => false,
+            FLUSH_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _FLUSHW<'a> {
+#[doc = "Write proxy for field `FLUSH`"]
+pub struct FLUSH_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FLUSHW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FLUSHW) -> &'a mut W {
+impl<'a> FLUSH_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FLUSH_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(FLUSHW::VALUE1)
+        self.variant(FLUSH_AW::VALUE1)
     }
     #[doc = "Clear all queue entries (including backup stage) and the event flag EV. The queue contains no more valid entry."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(FLUSHW::VALUE2)
+        self.variant(FLUSH_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CEV`"]
-pub enum CEVW {
-    #[doc = "No action"]
+#[doc = "Clear Event Flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEV_AW {
+    #[doc = "0: No action"]
     VALUE1,
-    #[doc = "Clear bit EV"]
+    #[doc = "1: Clear bit EV"]
     VALUE2,
 }
-impl CEVW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CEVW::VALUE1 => false,
-            CEVW::VALUE2 => true,
+impl From<CEV_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CEV_AW) -> Self {
+        match variant {
+            CEV_AW::VALUE1 => false,
+            CEV_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CEVW<'a> {
+#[doc = "Write proxy for field `CEV`"]
+pub struct CEV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CEVW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CEVW) -> &'a mut W {
+impl<'a> CEV_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CEV_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No action"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CEVW::VALUE1)
+        self.variant(CEV_AW::VALUE1)
     }
     #[doc = "Clear bit EV"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CEVW::VALUE2)
+        self.variant(CEV_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RPTDIS`"]
-pub enum RPTDISW {
-    #[doc = "A cancelled conversion is repeated"]
+#[doc = "Repeat Disable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RPTDIS_A {
+    #[doc = "0: A cancelled conversion is repeated"]
     VALUE1,
-    #[doc = "A cancelled conversion is discarded"]
+    #[doc = "1: A cancelled conversion is discarded"]
     VALUE2,
 }
-impl RPTDISW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RPTDISW::VALUE1 => false,
-            RPTDISW::VALUE2 => true,
+impl From<RPTDIS_A> for bool {
+    #[inline(always)]
+    fn from(variant: RPTDIS_A) -> Self {
+        match variant {
+            RPTDIS_A::VALUE1 => false,
+            RPTDIS_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RPTDISW<'a> {
+#[doc = "Reader of field `RPTDIS`"]
+pub type RPTDIS_R = crate::R<bool, RPTDIS_A>;
+impl RPTDIS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RPTDIS_A {
+        match self.bits {
+            false => RPTDIS_A::VALUE1,
+            true => RPTDIS_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == RPTDIS_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == RPTDIS_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `RPTDIS`"]
+pub struct RPTDIS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RPTDISW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RPTDISW) -> &'a mut W {
+impl<'a> RPTDIS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RPTDIS_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "A cancelled conversion is repeated"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(RPTDISW::VALUE1)
+        self.variant(RPTDIS_A::VALUE1)
     }
     #[doc = "A cancelled conversion is discarded"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(RPTDISW::VALUE2)
+        self.variant(RPTDIS_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Enable Gate"]
-    #[inline]
-    pub fn engt(&self) -> ENGTR {
-        ENGTR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn engt(&self) -> ENGT_R {
+        ENGT_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 2 - Enable External Trigger"]
-    #[inline]
-    pub fn entr(&self) -> ENTRR {
-        ENTRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn entr(&self) -> ENTR_R {
+        ENTR_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Repeat Disable"]
-    #[inline]
-    pub fn rptdis(&self) -> RPTDISR {
-        RPTDISR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rptdis(&self) -> RPTDIS_R {
+        RPTDIS_R::new(((self.bits >> 16) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Enable Gate"]
-    #[inline]
-    pub fn engt(&mut self) -> _ENGTW {
-        _ENGTW { w: self }
+    #[inline(always)]
+    pub fn engt(&mut self) -> ENGT_W {
+        ENGT_W { w: self }
     }
     #[doc = "Bit 2 - Enable External Trigger"]
-    #[inline]
-    pub fn entr(&mut self) -> _ENTRW {
-        _ENTRW { w: self }
+    #[inline(always)]
+    pub fn entr(&mut self) -> ENTR_W {
+        ENTR_W { w: self }
     }
     #[doc = "Bit 8 - Clear Valid Bit"]
-    #[inline]
-    pub fn clrv(&mut self) -> _CLRVW {
-        _CLRVW { w: self }
+    #[inline(always)]
+    pub fn clrv(&mut self) -> CLRV_W {
+        CLRV_W { w: self }
     }
     #[doc = "Bit 9 - Trigger Event"]
-    #[inline]
-    pub fn trev(&mut self) -> _TREVW {
-        _TREVW { w: self }
+    #[inline(always)]
+    pub fn trev(&mut self) -> TREV_W {
+        TREV_W { w: self }
     }
     #[doc = "Bit 10 - Flush Queue"]
-    #[inline]
-    pub fn flush(&mut self) -> _FLUSHW {
-        _FLUSHW { w: self }
+    #[inline(always)]
+    pub fn flush(&mut self) -> FLUSH_W {
+        FLUSH_W { w: self }
     }
     #[doc = "Bit 11 - Clear Event Flag"]
-    #[inline]
-    pub fn cev(&mut self) -> _CEVW {
-        _CEVW { w: self }
+    #[inline(always)]
+    pub fn cev(&mut self) -> CEV_W {
+        CEV_W { w: self }
     }
     #[doc = "Bit 16 - Repeat Disable"]
-    #[inline]
-    pub fn rptdis(&mut self) -> _RPTDISW {
-        _RPTDISW { w: self }
+    #[inline(always)]
+    pub fn rptdis(&mut self) -> RPTDIS_W {
+        RPTDIS_W { w: self }
     }
 }

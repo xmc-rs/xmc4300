@@ -1,239 +1,118 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CTR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CTR"]
+pub type R = crate::R<u32, super::CTR>;
+#[doc = "Writer for register CTR"]
+pub type W = crate::W<u32, super::CTR>;
+#[doc = "Register CTR `reset()`'s with value 0"]
+impl crate::ResetValue for super::CTR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct FCMR {
-    bits: bool,
-}
-impl FCMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FRM_CFGR {
-    bits: bool,
-}
-impl FRM_CFGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FRM_CHECKR {
-    bits: bool,
-}
-impl FRM_CHECKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FCMW<'a> {
+#[doc = "Reader of field `FCM`"]
+pub type FCM_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `FCM`"]
+pub struct FCM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FCMW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> FCM_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _FRM_CFGW<'a> {
+#[doc = "Reader of field `FRM_CFG`"]
+pub type FRM_CFG_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `FRM_CFG`"]
+pub struct FRM_CFG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FRM_CFGW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> FRM_CFG_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _FRM_CHECKW<'a> {
+#[doc = "Reader of field `FRM_CHECK`"]
+pub type FRM_CHECK_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `FRM_CHECK`"]
+pub struct FRM_CHECK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FRM_CHECKW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> FRM_CHECK_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Force CRC Mismatch"]
-    #[inline]
-    pub fn fcm(&self) -> FCMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FCMR { bits }
+    #[inline(always)]
+    pub fn fcm(&self) -> FCM_R {
+        FCM_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Force CFG Register Mismatch"]
-    #[inline]
-    pub fn frm_cfg(&self) -> FRM_CFGR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FRM_CFGR { bits }
+    #[inline(always)]
+    pub fn frm_cfg(&self) -> FRM_CFG_R {
+        FRM_CFG_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Force Check Register Mismatch"]
-    #[inline]
-    pub fn frm_check(&self) -> FRM_CHECKR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FRM_CHECKR { bits }
+    #[inline(always)]
+    pub fn frm_check(&self) -> FRM_CHECK_R {
+        FRM_CHECK_R::new(((self.bits >> 2) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Force CRC Mismatch"]
-    #[inline]
-    pub fn fcm(&mut self) -> _FCMW {
-        _FCMW { w: self }
+    #[inline(always)]
+    pub fn fcm(&mut self) -> FCM_W {
+        FCM_W { w: self }
     }
     #[doc = "Bit 1 - Force CFG Register Mismatch"]
-    #[inline]
-    pub fn frm_cfg(&mut self) -> _FRM_CFGW {
-        _FRM_CFGW { w: self }
+    #[inline(always)]
+    pub fn frm_cfg(&mut self) -> FRM_CFG_W {
+        FRM_CFG_W { w: self }
     }
     #[doc = "Bit 2 - Force Check Register Mismatch"]
-    #[inline]
-    pub fn frm_check(&mut self) -> _FRM_CHECKW {
-        _FRM_CHECKW { w: self }
+    #[inline(always)]
+    pub fn frm_check(&mut self) -> FRM_CHECK_W {
+        FRM_CHECK_W { w: self }
     }
 }

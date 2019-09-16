@@ -1,286 +1,228 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-impl super::SM_CONTROL {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `OP_MODE`"]
+#[doc = "Reader of register SM_CONTROL"]
+pub type R = crate::R<u8, super::SM_CONTROL>;
+#[doc = "Operation Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OP_MODER {
-    #[doc = "Buffered (3 buffer mode)"]
+pub enum OP_MODE_A {
+    #[doc = "0: Buffered (3 buffer mode)"]
     VALUE1,
-    #[doc = "Mailbox (Single buffer mode)"]
+    #[doc = "2: Mailbox (Single buffer mode)"]
     VALUE3,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl OP_MODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            OP_MODER::VALUE1 => 0,
-            OP_MODER::VALUE3 => 2,
-            OP_MODER::_Reserved(bits) => bits,
+impl From<OP_MODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: OP_MODE_A) -> Self {
+        match variant {
+            OP_MODE_A::VALUE1 => 0,
+            OP_MODE_A::VALUE3 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> OP_MODER {
-        match value {
-            0 => OP_MODER::VALUE1,
-            2 => OP_MODER::VALUE3,
-            i => OP_MODER::_Reserved(i),
+}
+#[doc = "Reader of field `OP_MODE`"]
+pub type OP_MODE_R = crate::R<u8, OP_MODE_A>;
+impl OP_MODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, OP_MODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(OP_MODE_A::VALUE1),
+            2 => Val(OP_MODE_A::VALUE3),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == OP_MODER::VALUE1
+        *self == OP_MODE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == OP_MODER::VALUE3
+        *self == OP_MODE_A::VALUE3
     }
 }
-#[doc = "Possible values of the field `DIR`"]
+#[doc = "Direction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIRR {
-    #[doc = "Read: ECAT read access, PDI write access"]
+pub enum DIR_A {
+    #[doc = "0: Read: ECAT read access, PDI write access"]
     VALUE1,
-    #[doc = "Write: ECAT write access, PDI read access"]
+    #[doc = "1: Write: ECAT write access, PDI read access"]
     VALUE2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl DIRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DIRR::VALUE1 => 0,
-            DIRR::VALUE2 => 1,
-            DIRR::_Reserved(bits) => bits,
+impl From<DIR_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DIR_A) -> Self {
+        match variant {
+            DIR_A::VALUE1 => 0,
+            DIR_A::VALUE2 => 1,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DIRR {
-        match value {
-            0 => DIRR::VALUE1,
-            1 => DIRR::VALUE2,
-            i => DIRR::_Reserved(i),
+}
+#[doc = "Reader of field `DIR`"]
+pub type DIR_R = crate::R<u8, DIR_A>;
+impl DIR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, DIR_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(DIR_A::VALUE1),
+            1 => Val(DIR_A::VALUE2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DIRR::VALUE1
+        *self == DIR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DIRR::VALUE2
+        *self == DIR_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `INT_ECAT`"]
+#[doc = "Interrupt in ECAT Event Request Register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INT_ECATR {
-    #[doc = "Disabled"]
+pub enum INT_ECAT_A {
+    #[doc = "0: Disabled"]
     VALUE1,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     VALUE2,
 }
-impl INT_ECATR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INT_ECATR::VALUE1 => false,
-            INT_ECATR::VALUE2 => true,
+impl From<INT_ECAT_A> for bool {
+    #[inline(always)]
+    fn from(variant: INT_ECAT_A) -> Self {
+        match variant {
+            INT_ECAT_A::VALUE1 => false,
+            INT_ECAT_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INT_ECATR {
-        match value {
-            false => INT_ECATR::VALUE1,
-            true => INT_ECATR::VALUE2,
+}
+#[doc = "Reader of field `INT_ECAT`"]
+pub type INT_ECAT_R = crate::R<bool, INT_ECAT_A>;
+impl INT_ECAT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INT_ECAT_A {
+        match self.bits {
+            false => INT_ECAT_A::VALUE1,
+            true => INT_ECAT_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == INT_ECATR::VALUE1
+        *self == INT_ECAT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == INT_ECATR::VALUE2
+        *self == INT_ECAT_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `INT_PDI`"]
+#[doc = "Interrupt in PDI Event Request Register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INT_PDIR {
-    #[doc = "Disabled"]
+pub enum INT_PDI_A {
+    #[doc = "0: Disabled"]
     VALUE1,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     VALUE2,
 }
-impl INT_PDIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INT_PDIR::VALUE1 => false,
-            INT_PDIR::VALUE2 => true,
+impl From<INT_PDI_A> for bool {
+    #[inline(always)]
+    fn from(variant: INT_PDI_A) -> Self {
+        match variant {
+            INT_PDI_A::VALUE1 => false,
+            INT_PDI_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INT_PDIR {
-        match value {
-            false => INT_PDIR::VALUE1,
-            true => INT_PDIR::VALUE2,
+}
+#[doc = "Reader of field `INT_PDI`"]
+pub type INT_PDI_R = crate::R<bool, INT_PDI_A>;
+impl INT_PDI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INT_PDI_A {
+        match self.bits {
+            false => INT_PDI_A::VALUE1,
+            true => INT_PDI_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == INT_PDIR::VALUE1
+        *self == INT_PDI_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == INT_PDIR::VALUE2
+        *self == INT_PDI_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `WD_TRG`"]
+#[doc = "Watchdog Trigger Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WD_TRGR {
-    #[doc = "Disabled"]
+pub enum WD_TRG_A {
+    #[doc = "0: Disabled"]
     VALUE1,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     VALUE2,
 }
-impl WD_TRGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WD_TRGR::VALUE1 => false,
-            WD_TRGR::VALUE2 => true,
+impl From<WD_TRG_A> for bool {
+    #[inline(always)]
+    fn from(variant: WD_TRG_A) -> Self {
+        match variant {
+            WD_TRG_A::VALUE1 => false,
+            WD_TRG_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WD_TRGR {
-        match value {
-            false => WD_TRGR::VALUE1,
-            true => WD_TRGR::VALUE2,
+}
+#[doc = "Reader of field `WD_TRG`"]
+pub type WD_TRG_R = crate::R<bool, WD_TRG_A>;
+impl WD_TRG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WD_TRG_A {
+        match self.bits {
+            false => WD_TRG_A::VALUE1,
+            true => WD_TRG_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WD_TRGR::VALUE1
+        *self == WD_TRG_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WD_TRGR::VALUE2
+        *self == WD_TRG_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Operation Mode"]
-    #[inline]
-    pub fn op_mode(&self) -> OP_MODER {
-        OP_MODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) as u8
-        })
+    #[inline(always)]
+    pub fn op_mode(&self) -> OP_MODE_R {
+        OP_MODE_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - Direction"]
-    #[inline]
-    pub fn dir(&self) -> DIRR {
-        DIRR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u8) as u8
-        })
+    #[inline(always)]
+    pub fn dir(&self) -> DIR_R {
+        DIR_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bit 4 - Interrupt in ECAT Event Request Register"]
-    #[inline]
-    pub fn int_ecat(&self) -> INT_ECATR {
-        INT_ECATR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn int_ecat(&self) -> INT_ECAT_R {
+        INT_ECAT_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Interrupt in PDI Event Request Register"]
-    #[inline]
-    pub fn int_pdi(&self) -> INT_PDIR {
-        INT_PDIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn int_pdi(&self) -> INT_PDI_R {
+        INT_PDI_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Watchdog Trigger Enable"]
-    #[inline]
-    pub fn wd_trg(&self) -> WD_TRGR {
-        WD_TRGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn wd_trg(&self) -> WD_TRG_R {
+        WD_TRG_R::new(((self.bits >> 6) & 0x01) != 0)
     }
 }

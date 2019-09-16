@@ -1,895 +1,632 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::NMIREQEN {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register NMIREQEN"]
+pub type R = crate::R<u32, super::NMIREQEN>;
+#[doc = "Writer for register NMIREQEN"]
+pub type W = crate::W<u32, super::NMIREQEN>;
+#[doc = "Register NMIREQEN `reset()`'s with value 0"]
+impl crate::ResetValue for super::NMIREQEN {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `PRWARN`"]
+#[doc = "Promote Pre-Warning Interrupt Request to NMI Request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRWARNR {
-    #[doc = "Disabled"]
+pub enum PRWARN_A {
+    #[doc = "0: Disabled"]
     CONST_0,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     CONST_1,
 }
-impl PRWARNR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PRWARNR::CONST_0 => false,
-            PRWARNR::CONST_1 => true,
+impl From<PRWARN_A> for bool {
+    #[inline(always)]
+    fn from(variant: PRWARN_A) -> Self {
+        match variant {
+            PRWARN_A::CONST_0 => false,
+            PRWARN_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PRWARNR {
-        match value {
-            false => PRWARNR::CONST_0,
-            true => PRWARNR::CONST_1,
+}
+#[doc = "Reader of field `PRWARN`"]
+pub type PRWARN_R = crate::R<bool, PRWARN_A>;
+impl PRWARN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PRWARN_A {
+        match self.bits {
+            false => PRWARN_A::CONST_0,
+            true => PRWARN_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PRWARNR::CONST_0
+        *self == PRWARN_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PRWARNR::CONST_1
+        *self == PRWARN_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PI`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIR {
-    #[doc = "Disabled"]
-    CONST_0,
-    #[doc = "Enabled"]
-    CONST_1,
-}
-impl PIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIR::CONST_0 => false,
-            PIR::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIR {
-        match value {
-            false => PIR::CONST_0,
-            true => PIR::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == PIR::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == PIR::CONST_1
-    }
-}
-#[doc = "Possible values of the field `AI`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AIR {
-    #[doc = "Disabled"]
-    CONST_0,
-    #[doc = "Enabled"]
-    CONST_1,
-}
-impl AIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            AIR::CONST_0 => false,
-            AIR::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> AIR {
-        match value {
-            false => AIR::CONST_0,
-            true => AIR::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == AIR::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == AIR::CONST_1
-    }
-}
-#[doc = "Possible values of the field `ERU00`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ERU00R {
-    #[doc = "Disabled"]
-    CONST_0,
-    #[doc = "Enabled"]
-    CONST_1,
-}
-impl ERU00R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ERU00R::CONST_0 => false,
-            ERU00R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ERU00R {
-        match value {
-            false => ERU00R::CONST_0,
-            true => ERU00R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == ERU00R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == ERU00R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `ERU01`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ERU01R {
-    #[doc = "Disabled"]
-    CONST_0,
-    #[doc = "Enabled"]
-    CONST_1,
-}
-impl ERU01R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ERU01R::CONST_0 => false,
-            ERU01R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ERU01R {
-        match value {
-            false => ERU01R::CONST_0,
-            true => ERU01R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == ERU01R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == ERU01R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `ERU02`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ERU02R {
-    #[doc = "Disabled"]
-    CONST_0,
-    #[doc = "Enabled"]
-    CONST_1,
-}
-impl ERU02R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ERU02R::CONST_0 => false,
-            ERU02R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ERU02R {
-        match value {
-            false => ERU02R::CONST_0,
-            true => ERU02R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == ERU02R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == ERU02R::CONST_1
-    }
-}
-#[doc = "Possible values of the field `ERU03`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ERU03R {
-    #[doc = "Disabled"]
-    CONST_0,
-    #[doc = "Enabled"]
-    CONST_1,
-}
-impl ERU03R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ERU03R::CONST_0 => false,
-            ERU03R::CONST_1 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ERU03R {
-        match value {
-            false => ERU03R::CONST_0,
-            true => ERU03R::CONST_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
-    pub fn is_const_0(&self) -> bool {
-        *self == ERU03R::CONST_0
-    }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
-    pub fn is_const_1(&self) -> bool {
-        *self == ERU03R::CONST_1
-    }
-}
-#[doc = "Values that can be written to the field `PRWARN`"]
-pub enum PRWARNW {
-    #[doc = "Disabled"]
-    CONST_0,
-    #[doc = "Enabled"]
-    CONST_1,
-}
-impl PRWARNW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PRWARNW::CONST_0 => false,
-            PRWARNW::CONST_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PRWARNW<'a> {
+#[doc = "Write proxy for field `PRWARN`"]
+pub struct PRWARN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PRWARNW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRWARNW) -> &'a mut W {
+impl<'a> PRWARN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRWARN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PRWARNW::CONST_0)
+        self.variant(PRWARN_A::CONST_0)
     }
     #[doc = "Enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PRWARNW::CONST_1)
+        self.variant(PRWARN_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PI`"]
-pub enum PIW {
-    #[doc = "Disabled"]
+#[doc = "Promote RTC Periodic Interrupt request to NMI Request\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PI_A {
+    #[doc = "0: Disabled"]
     CONST_0,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     CONST_1,
 }
-impl PIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PIW::CONST_0 => false,
-            PIW::CONST_1 => true,
+impl From<PI_A> for bool {
+    #[inline(always)]
+    fn from(variant: PI_A) -> Self {
+        match variant {
+            PI_A::CONST_0 => false,
+            PI_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PIW<'a> {
+#[doc = "Reader of field `PI`"]
+pub type PI_R = crate::R<bool, PI_A>;
+impl PI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PI_A {
+        match self.bits {
+            false => PI_A::CONST_0,
+            true => PI_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == PI_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == PI_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `PI`"]
+pub struct PI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PIW) -> &'a mut W {
+impl<'a> PI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PI_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(PIW::CONST_0)
+        self.variant(PI_A::CONST_0)
     }
     #[doc = "Enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(PIW::CONST_1)
+        self.variant(PI_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `AI`"]
-pub enum AIW {
-    #[doc = "Disabled"]
+#[doc = "Promote RTC Alarm Interrupt Request to NMI Request\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum AI_A {
+    #[doc = "0: Disabled"]
     CONST_0,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     CONST_1,
 }
-impl AIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            AIW::CONST_0 => false,
-            AIW::CONST_1 => true,
+impl From<AI_A> for bool {
+    #[inline(always)]
+    fn from(variant: AI_A) -> Self {
+        match variant {
+            AI_A::CONST_0 => false,
+            AI_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _AIW<'a> {
+#[doc = "Reader of field `AI`"]
+pub type AI_R = crate::R<bool, AI_A>;
+impl AI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AI_A {
+        match self.bits {
+            false => AI_A::CONST_0,
+            true => AI_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == AI_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == AI_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `AI`"]
+pub struct AI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AIW) -> &'a mut W {
+impl<'a> AI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AI_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(AIW::CONST_0)
+        self.variant(AI_A::CONST_0)
     }
     #[doc = "Enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(AIW::CONST_1)
+        self.variant(AI_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ERU00`"]
-pub enum ERU00W {
-    #[doc = "Disabled"]
+#[doc = "Promote Channel 0 Interrupt of ERU0 Request to NMI Request\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ERU00_A {
+    #[doc = "0: Disabled"]
     CONST_0,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     CONST_1,
 }
-impl ERU00W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ERU00W::CONST_0 => false,
-            ERU00W::CONST_1 => true,
+impl From<ERU00_A> for bool {
+    #[inline(always)]
+    fn from(variant: ERU00_A) -> Self {
+        match variant {
+            ERU00_A::CONST_0 => false,
+            ERU00_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERU00W<'a> {
+#[doc = "Reader of field `ERU00`"]
+pub type ERU00_R = crate::R<bool, ERU00_A>;
+impl ERU00_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ERU00_A {
+        match self.bits {
+            false => ERU00_A::CONST_0,
+            true => ERU00_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == ERU00_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == ERU00_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `ERU00`"]
+pub struct ERU00_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERU00W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ERU00W) -> &'a mut W {
+impl<'a> ERU00_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ERU00_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(ERU00W::CONST_0)
+        self.variant(ERU00_A::CONST_0)
     }
     #[doc = "Enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(ERU00W::CONST_1)
+        self.variant(ERU00_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ERU01`"]
-pub enum ERU01W {
-    #[doc = "Disabled"]
+#[doc = "Promote Channel 1 Interrupt of ERU0 Request to NMI Request\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ERU01_A {
+    #[doc = "0: Disabled"]
     CONST_0,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     CONST_1,
 }
-impl ERU01W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ERU01W::CONST_0 => false,
-            ERU01W::CONST_1 => true,
+impl From<ERU01_A> for bool {
+    #[inline(always)]
+    fn from(variant: ERU01_A) -> Self {
+        match variant {
+            ERU01_A::CONST_0 => false,
+            ERU01_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERU01W<'a> {
+#[doc = "Reader of field `ERU01`"]
+pub type ERU01_R = crate::R<bool, ERU01_A>;
+impl ERU01_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ERU01_A {
+        match self.bits {
+            false => ERU01_A::CONST_0,
+            true => ERU01_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == ERU01_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == ERU01_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `ERU01`"]
+pub struct ERU01_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERU01W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ERU01W) -> &'a mut W {
+impl<'a> ERU01_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ERU01_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(ERU01W::CONST_0)
+        self.variant(ERU01_A::CONST_0)
     }
     #[doc = "Enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(ERU01W::CONST_1)
+        self.variant(ERU01_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ERU02`"]
-pub enum ERU02W {
-    #[doc = "Disabled"]
+#[doc = "Promote Channel 2 Interrupt of ERU0 Request to NMI Request\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ERU02_A {
+    #[doc = "0: Disabled"]
     CONST_0,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     CONST_1,
 }
-impl ERU02W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ERU02W::CONST_0 => false,
-            ERU02W::CONST_1 => true,
+impl From<ERU02_A> for bool {
+    #[inline(always)]
+    fn from(variant: ERU02_A) -> Self {
+        match variant {
+            ERU02_A::CONST_0 => false,
+            ERU02_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERU02W<'a> {
+#[doc = "Reader of field `ERU02`"]
+pub type ERU02_R = crate::R<bool, ERU02_A>;
+impl ERU02_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ERU02_A {
+        match self.bits {
+            false => ERU02_A::CONST_0,
+            true => ERU02_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == ERU02_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == ERU02_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `ERU02`"]
+pub struct ERU02_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERU02W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ERU02W) -> &'a mut W {
+impl<'a> ERU02_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ERU02_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(ERU02W::CONST_0)
+        self.variant(ERU02_A::CONST_0)
     }
     #[doc = "Enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(ERU02W::CONST_1)
+        self.variant(ERU02_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ERU03`"]
-pub enum ERU03W {
-    #[doc = "Disabled"]
+#[doc = "Promote Channel 3 Interrupt of ERU0 Request to NMI Request\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ERU03_A {
+    #[doc = "0: Disabled"]
     CONST_0,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     CONST_1,
 }
-impl ERU03W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ERU03W::CONST_0 => false,
-            ERU03W::CONST_1 => true,
+impl From<ERU03_A> for bool {
+    #[inline(always)]
+    fn from(variant: ERU03_A) -> Self {
+        match variant {
+            ERU03_A::CONST_0 => false,
+            ERU03_A::CONST_1 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERU03W<'a> {
+#[doc = "Reader of field `ERU03`"]
+pub type ERU03_R = crate::R<bool, ERU03_A>;
+impl ERU03_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ERU03_A {
+        match self.bits {
+            false => ERU03_A::CONST_0,
+            true => ERU03_A::CONST_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[inline(always)]
+    pub fn is_const_0(&self) -> bool {
+        *self == ERU03_A::CONST_0
+    }
+    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[inline(always)]
+    pub fn is_const_1(&self) -> bool {
+        *self == ERU03_A::CONST_1
+    }
+}
+#[doc = "Write proxy for field `ERU03`"]
+pub struct ERU03_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERU03W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ERU03W) -> &'a mut W {
+impl<'a> ERU03_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ERU03_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
-        self.variant(ERU03W::CONST_0)
+        self.variant(ERU03_A::CONST_0)
     }
     #[doc = "Enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn const_1(self) -> &'a mut W {
-        self.variant(ERU03W::CONST_1)
+        self.variant(ERU03_A::CONST_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Promote Pre-Warning Interrupt Request to NMI Request"]
-    #[inline]
-    pub fn prwarn(&self) -> PRWARNR {
-        PRWARNR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn prwarn(&self) -> PRWARN_R {
+        PRWARN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Promote RTC Periodic Interrupt request to NMI Request"]
-    #[inline]
-    pub fn pi(&self) -> PIR {
-        PIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pi(&self) -> PI_R {
+        PI_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Promote RTC Alarm Interrupt Request to NMI Request"]
-    #[inline]
-    pub fn ai(&self) -> AIR {
-        AIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ai(&self) -> AI_R {
+        AI_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Promote Channel 0 Interrupt of ERU0 Request to NMI Request"]
-    #[inline]
-    pub fn eru00(&self) -> ERU00R {
-        ERU00R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn eru00(&self) -> ERU00_R {
+        ERU00_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Promote Channel 1 Interrupt of ERU0 Request to NMI Request"]
-    #[inline]
-    pub fn eru01(&self) -> ERU01R {
-        ERU01R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn eru01(&self) -> ERU01_R {
+        ERU01_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - Promote Channel 2 Interrupt of ERU0 Request to NMI Request"]
-    #[inline]
-    pub fn eru02(&self) -> ERU02R {
-        ERU02R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn eru02(&self) -> ERU02_R {
+        ERU02_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - Promote Channel 3 Interrupt of ERU0 Request to NMI Request"]
-    #[inline]
-    pub fn eru03(&self) -> ERU03R {
-        ERU03R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn eru03(&self) -> ERU03_R {
+        ERU03_R::new(((self.bits >> 19) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Promote Pre-Warning Interrupt Request to NMI Request"]
-    #[inline]
-    pub fn prwarn(&mut self) -> _PRWARNW {
-        _PRWARNW { w: self }
+    #[inline(always)]
+    pub fn prwarn(&mut self) -> PRWARN_W {
+        PRWARN_W { w: self }
     }
     #[doc = "Bit 1 - Promote RTC Periodic Interrupt request to NMI Request"]
-    #[inline]
-    pub fn pi(&mut self) -> _PIW {
-        _PIW { w: self }
+    #[inline(always)]
+    pub fn pi(&mut self) -> PI_W {
+        PI_W { w: self }
     }
     #[doc = "Bit 2 - Promote RTC Alarm Interrupt Request to NMI Request"]
-    #[inline]
-    pub fn ai(&mut self) -> _AIW {
-        _AIW { w: self }
+    #[inline(always)]
+    pub fn ai(&mut self) -> AI_W {
+        AI_W { w: self }
     }
     #[doc = "Bit 16 - Promote Channel 0 Interrupt of ERU0 Request to NMI Request"]
-    #[inline]
-    pub fn eru00(&mut self) -> _ERU00W {
-        _ERU00W { w: self }
+    #[inline(always)]
+    pub fn eru00(&mut self) -> ERU00_W {
+        ERU00_W { w: self }
     }
     #[doc = "Bit 17 - Promote Channel 1 Interrupt of ERU0 Request to NMI Request"]
-    #[inline]
-    pub fn eru01(&mut self) -> _ERU01W {
-        _ERU01W { w: self }
+    #[inline(always)]
+    pub fn eru01(&mut self) -> ERU01_W {
+        ERU01_W { w: self }
     }
     #[doc = "Bit 18 - Promote Channel 2 Interrupt of ERU0 Request to NMI Request"]
-    #[inline]
-    pub fn eru02(&mut self) -> _ERU02W {
-        _ERU02W { w: self }
+    #[inline(always)]
+    pub fn eru02(&mut self) -> ERU02_W {
+        ERU02_W { w: self }
     }
     #[doc = "Bit 19 - Promote Channel 3 Interrupt of ERU0 Request to NMI Request"]
-    #[inline]
-    pub fn eru03(&mut self) -> _ERU03W {
-        _ERU03W { w: self }
+    #[inline(always)]
+    pub fn eru03(&mut self) -> ERU03_W {
+        ERU03_W { w: self }
     }
 }

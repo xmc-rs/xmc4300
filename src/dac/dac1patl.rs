@@ -1,308 +1,160 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DAC1PATL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DAC1PATL"]
+pub type R = crate::R<u32, super::DAC1PATL>;
+#[doc = "Writer for register DAC1PATL"]
+pub type W = crate::W<u32, super::DAC1PATL>;
+#[doc = "Register DAC1PATL `reset()`'s with value 0x3568_b0c0"]
+impl crate::ResetValue for super::DAC1PATL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x3568_b0c0
     }
 }
-#[doc = r" Value of the field"]
-pub struct PAT0R {
-    bits: u8,
-}
-impl PAT0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PAT1R {
-    bits: u8,
-}
-impl PAT1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PAT2R {
-    bits: u8,
-}
-impl PAT2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PAT3R {
-    bits: u8,
-}
-impl PAT3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PAT4R {
-    bits: u8,
-}
-impl PAT4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PAT5R {
-    bits: u8,
-}
-impl PAT5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PAT0W<'a> {
+#[doc = "Reader of field `PAT0`"]
+pub type PAT0_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PAT0`"]
+pub struct PAT0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PAT0W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PAT0_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PAT1W<'a> {
+#[doc = "Reader of field `PAT1`"]
+pub type PAT1_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PAT1`"]
+pub struct PAT1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PAT1W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PAT1_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 5)) | (((value as u32) & 0x1f) << 5);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PAT2W<'a> {
+#[doc = "Reader of field `PAT2`"]
+pub type PAT2_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PAT2`"]
+pub struct PAT2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PAT2W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PAT2_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 10)) | (((value as u32) & 0x1f) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PAT3W<'a> {
+#[doc = "Reader of field `PAT3`"]
+pub type PAT3_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PAT3`"]
+pub struct PAT3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PAT3W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PAT3_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 15)) | (((value as u32) & 0x1f) << 15);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PAT4W<'a> {
+#[doc = "Reader of field `PAT4`"]
+pub type PAT4_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PAT4`"]
+pub struct PAT4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PAT4W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PAT4_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 20)) | (((value as u32) & 0x1f) << 20);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PAT5W<'a> {
+#[doc = "Reader of field `PAT5`"]
+pub type PAT5_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PAT5`"]
+pub struct PAT5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PAT5W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PAT5_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 25)) | (((value as u32) & 0x1f) << 25);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:4 - Pattern Number 0 for PATGEN of DAC1"]
-    #[inline]
-    pub fn pat0(&self) -> PAT0R {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PAT0R { bits }
+    #[inline(always)]
+    pub fn pat0(&self) -> PAT0_R {
+        PAT0_R::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bits 5:9 - Pattern Number 1 for PATGEN of DAC1"]
-    #[inline]
-    pub fn pat1(&self) -> PAT1R {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PAT1R { bits }
+    #[inline(always)]
+    pub fn pat1(&self) -> PAT1_R {
+        PAT1_R::new(((self.bits >> 5) & 0x1f) as u8)
     }
     #[doc = "Bits 10:14 - Pattern Number 2 for PATGEN of DAC1"]
-    #[inline]
-    pub fn pat2(&self) -> PAT2R {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PAT2R { bits }
+    #[inline(always)]
+    pub fn pat2(&self) -> PAT2_R {
+        PAT2_R::new(((self.bits >> 10) & 0x1f) as u8)
     }
     #[doc = "Bits 15:19 - Pattern Number 3 for PATGEN of DAC1"]
-    #[inline]
-    pub fn pat3(&self) -> PAT3R {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PAT3R { bits }
+    #[inline(always)]
+    pub fn pat3(&self) -> PAT3_R {
+        PAT3_R::new(((self.bits >> 15) & 0x1f) as u8)
     }
     #[doc = "Bits 20:24 - Pattern Number 4 for PATGEN of DAC1"]
-    #[inline]
-    pub fn pat4(&self) -> PAT4R {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PAT4R { bits }
+    #[inline(always)]
+    pub fn pat4(&self) -> PAT4_R {
+        PAT4_R::new(((self.bits >> 20) & 0x1f) as u8)
     }
     #[doc = "Bits 25:29 - Pattern Number 5 for PATGEN of DAC1"]
-    #[inline]
-    pub fn pat5(&self) -> PAT5R {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PAT5R { bits }
+    #[inline(always)]
+    pub fn pat5(&self) -> PAT5_R {
+        PAT5_R::new(((self.bits >> 25) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 896053440 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:4 - Pattern Number 0 for PATGEN of DAC1"]
-    #[inline]
-    pub fn pat0(&mut self) -> _PAT0W {
-        _PAT0W { w: self }
+    #[inline(always)]
+    pub fn pat0(&mut self) -> PAT0_W {
+        PAT0_W { w: self }
     }
     #[doc = "Bits 5:9 - Pattern Number 1 for PATGEN of DAC1"]
-    #[inline]
-    pub fn pat1(&mut self) -> _PAT1W {
-        _PAT1W { w: self }
+    #[inline(always)]
+    pub fn pat1(&mut self) -> PAT1_W {
+        PAT1_W { w: self }
     }
     #[doc = "Bits 10:14 - Pattern Number 2 for PATGEN of DAC1"]
-    #[inline]
-    pub fn pat2(&mut self) -> _PAT2W {
-        _PAT2W { w: self }
+    #[inline(always)]
+    pub fn pat2(&mut self) -> PAT2_W {
+        PAT2_W { w: self }
     }
     #[doc = "Bits 15:19 - Pattern Number 3 for PATGEN of DAC1"]
-    #[inline]
-    pub fn pat3(&mut self) -> _PAT3W {
-        _PAT3W { w: self }
+    #[inline(always)]
+    pub fn pat3(&mut self) -> PAT3_W {
+        PAT3_W { w: self }
     }
     #[doc = "Bits 20:24 - Pattern Number 4 for PATGEN of DAC1"]
-    #[inline]
-    pub fn pat4(&mut self) -> _PAT4W {
-        _PAT4W { w: self }
+    #[inline(always)]
+    pub fn pat4(&mut self) -> PAT4_W {
+        PAT4_W { w: self }
     }
     #[doc = "Bits 25:29 - Pattern Number 5 for PATGEN of DAC1"]
-    #[inline]
-    pub fn pat5(&mut self) -> _PAT5W {
-        _PAT5W { w: self }
+    #[inline(always)]
+    pub fn pat5(&mut self) -> PAT5_W {
+        PAT5_W { w: self }
     }
 }

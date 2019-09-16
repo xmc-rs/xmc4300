@@ -1,298 +1,224 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::HDSTAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `EPEV`"]
+#[doc = "Reader of register HDSTAT"]
+pub type R = crate::R<u32, super::HDSTAT>;
+#[doc = "Wake-up Pin Event Positive Edge\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPEVR {
-    #[doc = "Wake-up on positive edge pin event inactive"]
+pub enum EPEV_A {
+    #[doc = "0: Wake-up on positive edge pin event inactive"]
     CONST_0,
-    #[doc = "Wake-up on positive edge pin event active"]
+    #[doc = "1: Wake-up on positive edge pin event active"]
     CONST_1,
 }
-impl EPEVR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EPEVR::CONST_0 => false,
-            EPEVR::CONST_1 => true,
+impl From<EPEV_A> for bool {
+    #[inline(always)]
+    fn from(variant: EPEV_A) -> Self {
+        match variant {
+            EPEV_A::CONST_0 => false,
+            EPEV_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EPEVR {
-        match value {
-            false => EPEVR::CONST_0,
-            true => EPEVR::CONST_1,
+}
+#[doc = "Reader of field `EPEV`"]
+pub type EPEV_R = crate::R<bool, EPEV_A>;
+impl EPEV_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EPEV_A {
+        match self.bits {
+            false => EPEV_A::CONST_0,
+            true => EPEV_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == EPEVR::CONST_0
+        *self == EPEV_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == EPEVR::CONST_1
+        *self == EPEV_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `ENEV`"]
+#[doc = "Wake-up Pin Event Negative Edge\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENEVR {
-    #[doc = "Wake-up on negative edge pin event inactive"]
+pub enum ENEV_A {
+    #[doc = "0: Wake-up on negative edge pin event inactive"]
     CONST_0,
-    #[doc = "Wake-up on negative edge pin event active"]
+    #[doc = "1: Wake-up on negative edge pin event active"]
     CONST_1,
 }
-impl ENEVR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENEVR::CONST_0 => false,
-            ENEVR::CONST_1 => true,
+impl From<ENEV_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENEV_A) -> Self {
+        match variant {
+            ENEV_A::CONST_0 => false,
+            ENEV_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENEVR {
-        match value {
-            false => ENEVR::CONST_0,
-            true => ENEVR::CONST_1,
+}
+#[doc = "Reader of field `ENEV`"]
+pub type ENEV_R = crate::R<bool, ENEV_A>;
+impl ENEV_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENEV_A {
+        match self.bits {
+            false => ENEV_A::CONST_0,
+            true => ENEV_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ENEVR::CONST_0
+        *self == ENEV_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ENEVR::CONST_1
+        *self == ENEV_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `RTCEV`"]
+#[doc = "RTC Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RTCEVR {
-    #[doc = "Wake-up on RTC event inactive"]
+pub enum RTCEV_A {
+    #[doc = "0: Wake-up on RTC event inactive"]
     CONST_0,
-    #[doc = "Wake-up on RTC event active"]
+    #[doc = "1: Wake-up on RTC event active"]
     CONST_1,
 }
-impl RTCEVR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RTCEVR::CONST_0 => false,
-            RTCEVR::CONST_1 => true,
+impl From<RTCEV_A> for bool {
+    #[inline(always)]
+    fn from(variant: RTCEV_A) -> Self {
+        match variant {
+            RTCEV_A::CONST_0 => false,
+            RTCEV_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RTCEVR {
-        match value {
-            false => RTCEVR::CONST_0,
-            true => RTCEVR::CONST_1,
+}
+#[doc = "Reader of field `RTCEV`"]
+pub type RTCEV_R = crate::R<bool, RTCEV_A>;
+impl RTCEV_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RTCEV_A {
+        match self.bits {
+            false => RTCEV_A::CONST_0,
+            true => RTCEV_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RTCEVR::CONST_0
+        *self == RTCEV_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RTCEVR::CONST_1
+        *self == RTCEV_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `ULPWDG`"]
+#[doc = "ULP WDG Alarm Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ULPWDGR {
-    #[doc = "Watchdog alarm did not occur"]
+pub enum ULPWDG_A {
+    #[doc = "0: Watchdog alarm did not occur"]
     CONST_0,
-    #[doc = "Watchdog alarm occurred"]
+    #[doc = "1: Watchdog alarm occurred"]
     CONST_1,
 }
-impl ULPWDGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ULPWDGR::CONST_0 => false,
-            ULPWDGR::CONST_1 => true,
+impl From<ULPWDG_A> for bool {
+    #[inline(always)]
+    fn from(variant: ULPWDG_A) -> Self {
+        match variant {
+            ULPWDG_A::CONST_0 => false,
+            ULPWDG_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ULPWDGR {
-        match value {
-            false => ULPWDGR::CONST_0,
-            true => ULPWDGR::CONST_1,
+}
+#[doc = "Reader of field `ULPWDG`"]
+pub type ULPWDG_R = crate::R<bool, ULPWDG_A>;
+impl ULPWDG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ULPWDG_A {
+        match self.bits {
+            false => ULPWDG_A::CONST_0,
+            true => ULPWDG_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ULPWDGR::CONST_0
+        *self == ULPWDG_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ULPWDGR::CONST_1
+        *self == ULPWDG_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `HIBNOUT`"]
+#[doc = "Hibernate Control Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HIBNOUTR {
-    #[doc = "Hibernate not driven active to pads"]
+pub enum HIBNOUT_A {
+    #[doc = "0: Hibernate not driven active to pads"]
     CONST_0,
-    #[doc = "Hibernate driven active to pads"]
+    #[doc = "1: Hibernate driven active to pads"]
     CONST_1,
 }
-impl HIBNOUTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HIBNOUTR::CONST_0 => false,
-            HIBNOUTR::CONST_1 => true,
+impl From<HIBNOUT_A> for bool {
+    #[inline(always)]
+    fn from(variant: HIBNOUT_A) -> Self {
+        match variant {
+            HIBNOUT_A::CONST_0 => false,
+            HIBNOUT_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HIBNOUTR {
-        match value {
-            false => HIBNOUTR::CONST_0,
-            true => HIBNOUTR::CONST_1,
+}
+#[doc = "Reader of field `HIBNOUT`"]
+pub type HIBNOUT_R = crate::R<bool, HIBNOUT_A>;
+impl HIBNOUT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HIBNOUT_A {
+        match self.bits {
+            false => HIBNOUT_A::CONST_0,
+            true => HIBNOUT_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == HIBNOUTR::CONST_0
+        *self == HIBNOUT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == HIBNOUTR::CONST_1
+        *self == HIBNOUT_A::CONST_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Wake-up Pin Event Positive Edge"]
-    #[inline]
-    pub fn epev(&self) -> EPEVR {
-        EPEVR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn epev(&self) -> EPEV_R {
+        EPEV_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Wake-up Pin Event Negative Edge"]
-    #[inline]
-    pub fn enev(&self) -> ENEVR {
-        ENEVR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn enev(&self) -> ENEV_R {
+        ENEV_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - RTC Event"]
-    #[inline]
-    pub fn rtcev(&self) -> RTCEVR {
-        RTCEVR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rtcev(&self) -> RTCEV_R {
+        RTCEV_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - ULP WDG Alarm Status"]
-    #[inline]
-    pub fn ulpwdg(&self) -> ULPWDGR {
-        ULPWDGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ulpwdg(&self) -> ULPWDG_R {
+        ULPWDG_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Hibernate Control Status"]
-    #[inline]
-    pub fn hibnout(&self) -> HIBNOUTR {
-        HIBNOUTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hibnout(&self) -> HIBNOUT_R {
+        HIBNOUT_R::new(((self.bits >> 4) & 0x01) != 0)
     }
 }

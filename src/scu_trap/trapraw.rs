@@ -1,522 +1,400 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::TRAPRAW {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `SOSCWDGT`"]
+#[doc = "Reader of register TRAPRAW"]
+pub type R = crate::R<u32, super::TRAPRAW>;
+#[doc = "OSC_HP Oscillator Watchdog Trap Raw Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SOSCWDGTR {
-    #[doc = "No pending trap request"]
+pub enum SOSCWDGT_A {
+    #[doc = "0: No pending trap request"]
     CONST_0,
-    #[doc = "Pending trap request"]
+    #[doc = "1: Pending trap request"]
     CONST_1,
 }
-impl SOSCWDGTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SOSCWDGTR::CONST_0 => false,
-            SOSCWDGTR::CONST_1 => true,
+impl From<SOSCWDGT_A> for bool {
+    #[inline(always)]
+    fn from(variant: SOSCWDGT_A) -> Self {
+        match variant {
+            SOSCWDGT_A::CONST_0 => false,
+            SOSCWDGT_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SOSCWDGTR {
-        match value {
-            false => SOSCWDGTR::CONST_0,
-            true => SOSCWDGTR::CONST_1,
+}
+#[doc = "Reader of field `SOSCWDGT`"]
+pub type SOSCWDGT_R = crate::R<bool, SOSCWDGT_A>;
+impl SOSCWDGT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SOSCWDGT_A {
+        match self.bits {
+            false => SOSCWDGT_A::CONST_0,
+            true => SOSCWDGT_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == SOSCWDGTR::CONST_0
+        *self == SOSCWDGT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == SOSCWDGTR::CONST_1
+        *self == SOSCWDGT_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `SVCOLCKT`"]
+#[doc = "System VCO Lock Trap Raw Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SVCOLCKTR {
-    #[doc = "No pending trap request"]
+pub enum SVCOLCKT_A {
+    #[doc = "0: No pending trap request"]
     CONST_0,
-    #[doc = "Pending trap request"]
+    #[doc = "1: Pending trap request"]
     CONST_1,
 }
-impl SVCOLCKTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SVCOLCKTR::CONST_0 => false,
-            SVCOLCKTR::CONST_1 => true,
+impl From<SVCOLCKT_A> for bool {
+    #[inline(always)]
+    fn from(variant: SVCOLCKT_A) -> Self {
+        match variant {
+            SVCOLCKT_A::CONST_0 => false,
+            SVCOLCKT_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SVCOLCKTR {
-        match value {
-            false => SVCOLCKTR::CONST_0,
-            true => SVCOLCKTR::CONST_1,
+}
+#[doc = "Reader of field `SVCOLCKT`"]
+pub type SVCOLCKT_R = crate::R<bool, SVCOLCKT_A>;
+impl SVCOLCKT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SVCOLCKT_A {
+        match self.bits {
+            false => SVCOLCKT_A::CONST_0,
+            true => SVCOLCKT_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == SVCOLCKTR::CONST_0
+        *self == SVCOLCKT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == SVCOLCKTR::CONST_1
+        *self == SVCOLCKT_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `UVCOLCKT`"]
+#[doc = "USB VCO Lock Trap Raw Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UVCOLCKTR {
-    #[doc = "No pending trap request"]
+pub enum UVCOLCKT_A {
+    #[doc = "0: No pending trap request"]
     CONST_0,
-    #[doc = "Pending trap request"]
+    #[doc = "1: Pending trap request"]
     CONST_1,
 }
-impl UVCOLCKTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            UVCOLCKTR::CONST_0 => false,
-            UVCOLCKTR::CONST_1 => true,
+impl From<UVCOLCKT_A> for bool {
+    #[inline(always)]
+    fn from(variant: UVCOLCKT_A) -> Self {
+        match variant {
+            UVCOLCKT_A::CONST_0 => false,
+            UVCOLCKT_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> UVCOLCKTR {
-        match value {
-            false => UVCOLCKTR::CONST_0,
-            true => UVCOLCKTR::CONST_1,
+}
+#[doc = "Reader of field `UVCOLCKT`"]
+pub type UVCOLCKT_R = crate::R<bool, UVCOLCKT_A>;
+impl UVCOLCKT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> UVCOLCKT_A {
+        match self.bits {
+            false => UVCOLCKT_A::CONST_0,
+            true => UVCOLCKT_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == UVCOLCKTR::CONST_0
+        *self == UVCOLCKT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == UVCOLCKTR::CONST_1
+        *self == UVCOLCKT_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `PET`"]
+#[doc = "Parity Error Trap Raw Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PETR {
-    #[doc = "No pending trap request"]
+pub enum PET_A {
+    #[doc = "0: No pending trap request"]
     CONST_0,
-    #[doc = "Pending trap request"]
+    #[doc = "1: Pending trap request"]
     CONST_1,
 }
-impl PETR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PETR::CONST_0 => false,
-            PETR::CONST_1 => true,
+impl From<PET_A> for bool {
+    #[inline(always)]
+    fn from(variant: PET_A) -> Self {
+        match variant {
+            PET_A::CONST_0 => false,
+            PET_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PETR {
-        match value {
-            false => PETR::CONST_0,
-            true => PETR::CONST_1,
+}
+#[doc = "Reader of field `PET`"]
+pub type PET_R = crate::R<bool, PET_A>;
+impl PET_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PET_A {
+        match self.bits {
+            false => PET_A::CONST_0,
+            true => PET_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PETR::CONST_0
+        *self == PET_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PETR::CONST_1
+        *self == PET_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `BRWNT`"]
+#[doc = "Brown Out Trap Raw Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BRWNTR {
-    #[doc = "No pending trap request"]
+pub enum BRWNT_A {
+    #[doc = "0: No pending trap request"]
     CONST_0,
-    #[doc = "Pending trap request"]
+    #[doc = "1: Pending trap request"]
     CONST_1,
 }
-impl BRWNTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BRWNTR::CONST_0 => false,
-            BRWNTR::CONST_1 => true,
+impl From<BRWNT_A> for bool {
+    #[inline(always)]
+    fn from(variant: BRWNT_A) -> Self {
+        match variant {
+            BRWNT_A::CONST_0 => false,
+            BRWNT_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BRWNTR {
-        match value {
-            false => BRWNTR::CONST_0,
-            true => BRWNTR::CONST_1,
+}
+#[doc = "Reader of field `BRWNT`"]
+pub type BRWNT_R = crate::R<bool, BRWNT_A>;
+impl BRWNT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BRWNT_A {
+        match self.bits {
+            false => BRWNT_A::CONST_0,
+            true => BRWNT_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == BRWNTR::CONST_0
+        *self == BRWNT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == BRWNTR::CONST_1
+        *self == BRWNT_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `ULPWDGT`"]
+#[doc = "OSC_ULP Oscillator Watchdog Trap Raw Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ULPWDGTR {
-    #[doc = "No pending trap request"]
+pub enum ULPWDGT_A {
+    #[doc = "0: No pending trap request"]
     CONST_0,
-    #[doc = "Pending trap request"]
+    #[doc = "1: Pending trap request"]
     CONST_1,
 }
-impl ULPWDGTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ULPWDGTR::CONST_0 => false,
-            ULPWDGTR::CONST_1 => true,
+impl From<ULPWDGT_A> for bool {
+    #[inline(always)]
+    fn from(variant: ULPWDGT_A) -> Self {
+        match variant {
+            ULPWDGT_A::CONST_0 => false,
+            ULPWDGT_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ULPWDGTR {
-        match value {
-            false => ULPWDGTR::CONST_0,
-            true => ULPWDGTR::CONST_1,
+}
+#[doc = "Reader of field `ULPWDGT`"]
+pub type ULPWDGT_R = crate::R<bool, ULPWDGT_A>;
+impl ULPWDGT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ULPWDGT_A {
+        match self.bits {
+            false => ULPWDGT_A::CONST_0,
+            true => ULPWDGT_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ULPWDGTR::CONST_0
+        *self == ULPWDGT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ULPWDGTR::CONST_1
+        *self == ULPWDGT_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `BWERR0T`"]
+#[doc = "Peripheral Bridge 0 Trap Raw Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BWERR0TR {
-    #[doc = "No pending trap request"]
+pub enum BWERR0T_A {
+    #[doc = "0: No pending trap request"]
     CONST_0,
-    #[doc = "Pending trap request"]
+    #[doc = "1: Pending trap request"]
     CONST_1,
 }
-impl BWERR0TR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BWERR0TR::CONST_0 => false,
-            BWERR0TR::CONST_1 => true,
+impl From<BWERR0T_A> for bool {
+    #[inline(always)]
+    fn from(variant: BWERR0T_A) -> Self {
+        match variant {
+            BWERR0T_A::CONST_0 => false,
+            BWERR0T_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BWERR0TR {
-        match value {
-            false => BWERR0TR::CONST_0,
-            true => BWERR0TR::CONST_1,
+}
+#[doc = "Reader of field `BWERR0T`"]
+pub type BWERR0T_R = crate::R<bool, BWERR0T_A>;
+impl BWERR0T_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BWERR0T_A {
+        match self.bits {
+            false => BWERR0T_A::CONST_0,
+            true => BWERR0T_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == BWERR0TR::CONST_0
+        *self == BWERR0T_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == BWERR0TR::CONST_1
+        *self == BWERR0T_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `BWERR1T`"]
+#[doc = "Peripheral Bridge 1 Trap Raw Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BWERR1TR {
-    #[doc = "No pending trap request"]
+pub enum BWERR1T_A {
+    #[doc = "0: No pending trap request"]
     CONST_0,
-    #[doc = "Pending trap request"]
+    #[doc = "1: Pending trap request"]
     CONST_1,
 }
-impl BWERR1TR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BWERR1TR::CONST_0 => false,
-            BWERR1TR::CONST_1 => true,
+impl From<BWERR1T_A> for bool {
+    #[inline(always)]
+    fn from(variant: BWERR1T_A) -> Self {
+        match variant {
+            BWERR1T_A::CONST_0 => false,
+            BWERR1T_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BWERR1TR {
-        match value {
-            false => BWERR1TR::CONST_0,
-            true => BWERR1TR::CONST_1,
+}
+#[doc = "Reader of field `BWERR1T`"]
+pub type BWERR1T_R = crate::R<bool, BWERR1T_A>;
+impl BWERR1T_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BWERR1T_A {
+        match self.bits {
+            false => BWERR1T_A::CONST_0,
+            true => BWERR1T_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == BWERR1TR::CONST_0
+        *self == BWERR1T_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == BWERR1TR::CONST_1
+        *self == BWERR1T_A::CONST_1
     }
 }
-#[doc = "Possible values of the field `ECAT0RST`"]
+#[doc = "EtherCat Reset 0 Trap Raw Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ECAT0RSTR {
-    #[doc = "No pending trap request"]
+pub enum ECAT0RST_A {
+    #[doc = "0: No pending trap request"]
     CONST_0,
-    #[doc = "Pending trap request"]
+    #[doc = "1: Pending trap request"]
     CONST_1,
 }
-impl ECAT0RSTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ECAT0RSTR::CONST_0 => false,
-            ECAT0RSTR::CONST_1 => true,
+impl From<ECAT0RST_A> for bool {
+    #[inline(always)]
+    fn from(variant: ECAT0RST_A) -> Self {
+        match variant {
+            ECAT0RST_A::CONST_0 => false,
+            ECAT0RST_A::CONST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ECAT0RSTR {
-        match value {
-            false => ECAT0RSTR::CONST_0,
-            true => ECAT0RSTR::CONST_1,
+}
+#[doc = "Reader of field `ECAT0RST`"]
+pub type ECAT0RST_R = crate::R<bool, ECAT0RST_A>;
+impl ECAT0RST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ECAT0RST_A {
+        match self.bits {
+            false => ECAT0RST_A::CONST_0,
+            true => ECAT0RST_A::CONST_1,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ECAT0RSTR::CONST_0
+        *self == ECAT0RST_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ECAT0RSTR::CONST_1
+        *self == ECAT0RST_A::CONST_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - OSC_HP Oscillator Watchdog Trap Raw Status"]
-    #[inline]
-    pub fn soscwdgt(&self) -> SOSCWDGTR {
-        SOSCWDGTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn soscwdgt(&self) -> SOSCWDGT_R {
+        SOSCWDGT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 2 - System VCO Lock Trap Raw Status"]
-    #[inline]
-    pub fn svcolckt(&self) -> SVCOLCKTR {
-        SVCOLCKTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn svcolckt(&self) -> SVCOLCKT_R {
+        SVCOLCKT_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - USB VCO Lock Trap Raw Status"]
-    #[inline]
-    pub fn uvcolckt(&self) -> UVCOLCKTR {
-        UVCOLCKTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn uvcolckt(&self) -> UVCOLCKT_R {
+        UVCOLCKT_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Parity Error Trap Raw Status"]
-    #[inline]
-    pub fn pet(&self) -> PETR {
-        PETR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pet(&self) -> PET_R {
+        PET_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Brown Out Trap Raw Status"]
-    #[inline]
-    pub fn brwnt(&self) -> BRWNTR {
-        BRWNTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn brwnt(&self) -> BRWNT_R {
+        BRWNT_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - OSC_ULP Oscillator Watchdog Trap Raw Status"]
-    #[inline]
-    pub fn ulpwdgt(&self) -> ULPWDGTR {
-        ULPWDGTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ulpwdgt(&self) -> ULPWDGT_R {
+        ULPWDGT_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Peripheral Bridge 0 Trap Raw Status"]
-    #[inline]
-    pub fn bwerr0t(&self) -> BWERR0TR {
-        BWERR0TR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bwerr0t(&self) -> BWERR0T_R {
+        BWERR0T_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Peripheral Bridge 1 Trap Raw Status"]
-    #[inline]
-    pub fn bwerr1t(&self) -> BWERR1TR {
-        BWERR1TR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bwerr1t(&self) -> BWERR1T_R {
+        BWERR1T_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 16 - EtherCat Reset 0 Trap Raw Status"]
-    #[inline]
-    pub fn ecat0rst(&self) -> ECAT0RSTR {
-        ECAT0RSTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ecat0rst(&self) -> ECAT0RST_R {
+        ECAT0RST_R::new(((self.bits >> 16) & 0x01) != 0)
     }
 }

@@ -1,555 +1,387 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SYNCTR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SYNCTR"]
+pub type R = crate::R<u32, super::SYNCTR>;
+#[doc = "Writer for register SYNCTR"]
+pub type W = crate::W<u32, super::SYNCTR>;
+#[doc = "Register SYNCTR `reset()`'s with value 0"]
+impl crate::ResetValue for super::SYNCTR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `STSEL`"]
+#[doc = "Start Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STSELR {
-    #[doc = "Kernel is synchronization master: Use own bitfield GxARBCFG.ANONC"]
+pub enum STSEL_A {
+    #[doc = "0: Kernel is synchronization master: Use own bitfield GxARBCFG.ANONC"]
     VALUE1,
-    #[doc = "Kernel is synchronization slave: Control information from input CI1"]
+    #[doc = "1: Kernel is synchronization slave: Control information from input CI1"]
     VALUE2,
-    #[doc = "Kernel is synchronization slave: Control information from input CI2"]
+    #[doc = "2: Kernel is synchronization slave: Control information from input CI2"]
     VALUE3,
-    #[doc = "Kernel is synchronization slave: Control information from input CI3"]
+    #[doc = "3: Kernel is synchronization slave: Control information from input CI3"]
     VALUE4,
 }
-impl STSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            STSELR::VALUE1 => 0,
-            STSELR::VALUE2 => 1,
-            STSELR::VALUE3 => 2,
-            STSELR::VALUE4 => 3,
+impl From<STSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: STSEL_A) -> Self {
+        match variant {
+            STSEL_A::VALUE1 => 0,
+            STSEL_A::VALUE2 => 1,
+            STSEL_A::VALUE3 => 2,
+            STSEL_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> STSELR {
-        match value {
-            0 => STSELR::VALUE1,
-            1 => STSELR::VALUE2,
-            2 => STSELR::VALUE3,
-            3 => STSELR::VALUE4,
+}
+#[doc = "Reader of field `STSEL`"]
+pub type STSEL_R = crate::R<u8, STSEL_A>;
+impl STSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> STSEL_A {
+        match self.bits {
+            0 => STSEL_A::VALUE1,
+            1 => STSEL_A::VALUE2,
+            2 => STSEL_A::VALUE3,
+            3 => STSEL_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == STSELR::VALUE1
+        *self == STSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == STSELR::VALUE2
+        *self == STSEL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == STSELR::VALUE3
+        *self == STSEL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == STSELR::VALUE4
+        *self == STSEL_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `EVALR1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVALR1R {
-    #[doc = "No ready input control"]
-    VALUE1,
-    #[doc = "Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
-    VALUE2,
-}
-impl EVALR1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EVALR1R::VALUE1 => false,
-            EVALR1R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EVALR1R {
-        match value {
-            false => EVALR1R::VALUE1,
-            true => EVALR1R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EVALR1R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EVALR1R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `EVALR2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVALR2R {
-    #[doc = "No ready input control"]
-    VALUE1,
-    #[doc = "Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
-    VALUE2,
-}
-impl EVALR2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EVALR2R::VALUE1 => false,
-            EVALR2R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EVALR2R {
-        match value {
-            false => EVALR2R::VALUE1,
-            true => EVALR2R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EVALR2R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EVALR2R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `EVALR3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EVALR3R {
-    #[doc = "No ready input control"]
-    VALUE1,
-    #[doc = "Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
-    VALUE2,
-}
-impl EVALR3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EVALR3R::VALUE1 => false,
-            EVALR3R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EVALR3R {
-        match value {
-            false => EVALR3R::VALUE1,
-            true => EVALR3R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EVALR3R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EVALR3R::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `STSEL`"]
-pub enum STSELW {
-    #[doc = "Kernel is synchronization master: Use own bitfield GxARBCFG.ANONC"]
-    VALUE1,
-    #[doc = "Kernel is synchronization slave: Control information from input CI1"]
-    VALUE2,
-    #[doc = "Kernel is synchronization slave: Control information from input CI2"]
-    VALUE3,
-    #[doc = "Kernel is synchronization slave: Control information from input CI3"]
-    VALUE4,
-}
-impl STSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            STSELW::VALUE1 => 0,
-            STSELW::VALUE2 => 1,
-            STSELW::VALUE3 => 2,
-            STSELW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STSELW<'a> {
+#[doc = "Write proxy for field `STSEL`"]
+pub struct STSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _STSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: STSELW) -> &'a mut W {
+impl<'a> STSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: STSEL_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Kernel is synchronization master: Use own bitfield GxARBCFG.ANONC"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(STSELW::VALUE1)
+        self.variant(STSEL_A::VALUE1)
     }
     #[doc = "Kernel is synchronization slave: Control information from input CI1"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(STSELW::VALUE2)
+        self.variant(STSEL_A::VALUE2)
     }
     #[doc = "Kernel is synchronization slave: Control information from input CI2"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(STSELW::VALUE3)
+        self.variant(STSEL_A::VALUE3)
     }
     #[doc = "Kernel is synchronization slave: Control information from input CI3"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(STSELW::VALUE4)
+        self.variant(STSEL_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EVALR1`"]
-pub enum EVALR1W {
-    #[doc = "No ready input control"]
+#[doc = "Evaluate Ready Input Rx\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EVALR1_A {
+    #[doc = "0: No ready input control"]
     VALUE1,
-    #[doc = "Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
+    #[doc = "1: Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
     VALUE2,
 }
-impl EVALR1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EVALR1W::VALUE1 => false,
-            EVALR1W::VALUE2 => true,
+impl From<EVALR1_A> for bool {
+    #[inline(always)]
+    fn from(variant: EVALR1_A) -> Self {
+        match variant {
+            EVALR1_A::VALUE1 => false,
+            EVALR1_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EVALR1W<'a> {
+#[doc = "Reader of field `EVALR1`"]
+pub type EVALR1_R = crate::R<bool, EVALR1_A>;
+impl EVALR1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EVALR1_A {
+        match self.bits {
+            false => EVALR1_A::VALUE1,
+            true => EVALR1_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EVALR1_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EVALR1_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EVALR1`"]
+pub struct EVALR1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EVALR1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EVALR1W) -> &'a mut W {
+impl<'a> EVALR1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EVALR1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No ready input control"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EVALR1W::VALUE1)
+        self.variant(EVALR1_A::VALUE1)
     }
     #[doc = "Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EVALR1W::VALUE2)
+        self.variant(EVALR1_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EVALR2`"]
-pub enum EVALR2W {
-    #[doc = "No ready input control"]
+#[doc = "Evaluate Ready Input Rx\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EVALR2_A {
+    #[doc = "0: No ready input control"]
     VALUE1,
-    #[doc = "Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
+    #[doc = "1: Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
     VALUE2,
 }
-impl EVALR2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EVALR2W::VALUE1 => false,
-            EVALR2W::VALUE2 => true,
+impl From<EVALR2_A> for bool {
+    #[inline(always)]
+    fn from(variant: EVALR2_A) -> Self {
+        match variant {
+            EVALR2_A::VALUE1 => false,
+            EVALR2_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EVALR2W<'a> {
+#[doc = "Reader of field `EVALR2`"]
+pub type EVALR2_R = crate::R<bool, EVALR2_A>;
+impl EVALR2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EVALR2_A {
+        match self.bits {
+            false => EVALR2_A::VALUE1,
+            true => EVALR2_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EVALR2_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EVALR2_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EVALR2`"]
+pub struct EVALR2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EVALR2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EVALR2W) -> &'a mut W {
+impl<'a> EVALR2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EVALR2_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No ready input control"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EVALR2W::VALUE1)
+        self.variant(EVALR2_A::VALUE1)
     }
     #[doc = "Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EVALR2W::VALUE2)
+        self.variant(EVALR2_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EVALR3`"]
-pub enum EVALR3W {
-    #[doc = "No ready input control"]
+#[doc = "Evaluate Ready Input Rx\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EVALR3_A {
+    #[doc = "0: No ready input control"]
     VALUE1,
-    #[doc = "Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
+    #[doc = "1: Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
     VALUE2,
 }
-impl EVALR3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EVALR3W::VALUE1 => false,
-            EVALR3W::VALUE2 => true,
+impl From<EVALR3_A> for bool {
+    #[inline(always)]
+    fn from(variant: EVALR3_A) -> Self {
+        match variant {
+            EVALR3_A::VALUE1 => false,
+            EVALR3_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EVALR3W<'a> {
+#[doc = "Reader of field `EVALR3`"]
+pub type EVALR3_R = crate::R<bool, EVALR3_A>;
+impl EVALR3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EVALR3_A {
+        match self.bits {
+            false => EVALR3_A::VALUE1,
+            true => EVALR3_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EVALR3_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EVALR3_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EVALR3`"]
+pub struct EVALR3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EVALR3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EVALR3W) -> &'a mut W {
+impl<'a> EVALR3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EVALR3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No ready input control"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EVALR3W::VALUE1)
+        self.variant(EVALR3_A::VALUE1)
     }
     #[doc = "Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EVALR3W::VALUE2)
+        self.variant(EVALR3_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Start Selection"]
-    #[inline]
-    pub fn stsel(&self) -> STSELR {
-        STSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn stsel(&self) -> STSEL_R {
+        STSEL_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 4 - Evaluate Ready Input Rx"]
-    #[inline]
-    pub fn evalr1(&self) -> EVALR1R {
-        EVALR1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn evalr1(&self) -> EVALR1_R {
+        EVALR1_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Evaluate Ready Input Rx"]
-    #[inline]
-    pub fn evalr2(&self) -> EVALR2R {
-        EVALR2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn evalr2(&self) -> EVALR2_R {
+        EVALR2_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Evaluate Ready Input Rx"]
-    #[inline]
-    pub fn evalr3(&self) -> EVALR3R {
-        EVALR3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn evalr3(&self) -> EVALR3_R {
+        EVALR3_R::new(((self.bits >> 6) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Start Selection"]
-    #[inline]
-    pub fn stsel(&mut self) -> _STSELW {
-        _STSELW { w: self }
+    #[inline(always)]
+    pub fn stsel(&mut self) -> STSEL_W {
+        STSEL_W { w: self }
     }
     #[doc = "Bit 4 - Evaluate Ready Input Rx"]
-    #[inline]
-    pub fn evalr1(&mut self) -> _EVALR1W {
-        _EVALR1W { w: self }
+    #[inline(always)]
+    pub fn evalr1(&mut self) -> EVALR1_W {
+        EVALR1_W { w: self }
     }
     #[doc = "Bit 5 - Evaluate Ready Input Rx"]
-    #[inline]
-    pub fn evalr2(&mut self) -> _EVALR2W {
-        _EVALR2W { w: self }
+    #[inline(always)]
+    pub fn evalr2(&mut self) -> EVALR2_W {
+        EVALR2_W { w: self }
     }
     #[doc = "Bit 6 - Evaluate Ready Input Rx"]
-    #[inline]
-    pub fn evalr3(&mut self) -> _EVALR3W {
-        _EVALR3W { w: self }
+    #[inline(always)]
+    pub fn evalr3(&mut self) -> EVALR3_W {
+        EVALR3_W { w: self }
     }
 }

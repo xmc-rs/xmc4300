@@ -1,39 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::TX_DEFERRED_FRAMES {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXDEFRDR {
-    bits: u32,
-}
-impl TXDEFRDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register TX_DEFERRED_FRAMES"]
+pub type R = crate::R<u32, super::TX_DEFERRED_FRAMES>;
+#[doc = "Reader of field `TXDEFRD`"]
+pub type TXDEFRD_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - This field indicates the number of successfully transmitted frames after a deferral in the half-duplex mode."]
-    #[inline]
-    pub fn txdefrd(&self) -> TXDEFRDR {
-        let bits = {
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        TXDEFRDR { bits }
+    #[inline(always)]
+    pub fn txdefrd(&self) -> TXDEFRD_R {
+        TXDEFRD_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

@@ -1,204 +1,46 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::INTERRUPT_STATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PMTISR {
-    bits: bool,
-}
-impl PMTISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MMCISR {
-    bits: bool,
-}
-impl MMCISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MMCRXISR {
-    bits: bool,
-}
-impl MMCRXISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MMCTXISR {
-    bits: bool,
-}
-impl MMCTXISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MMCRXIPISR {
-    bits: bool,
-}
-impl MMCRXIPISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TSISR {
-    bits: bool,
-}
-impl TSISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register INTERRUPT_STATUS"]
+pub type R = crate::R<u32, super::INTERRUPT_STATUS>;
+#[doc = "Reader of field `PMTIS`"]
+pub type PMTIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `MMCIS`"]
+pub type MMCIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `MMCRXIS`"]
+pub type MMCRXIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `MMCTXIS`"]
+pub type MMCTXIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `MMCRXIPIS`"]
+pub type MMCRXIPIS_R = crate::R<bool, bool>;
+#[doc = "Reader of field `TSIS`"]
+pub type TSIS_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 3 - PMT Interrupt Status"]
-    #[inline]
-    pub fn pmtis(&self) -> PMTISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PMTISR { bits }
+    #[inline(always)]
+    pub fn pmtis(&self) -> PMTIS_R {
+        PMTIS_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - MMC Interrupt Status"]
-    #[inline]
-    pub fn mmcis(&self) -> MMCISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MMCISR { bits }
+    #[inline(always)]
+    pub fn mmcis(&self) -> MMCIS_R {
+        MMCIS_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - MMC Receive Interrupt Status"]
-    #[inline]
-    pub fn mmcrxis(&self) -> MMCRXISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MMCRXISR { bits }
+    #[inline(always)]
+    pub fn mmcrxis(&self) -> MMCRXIS_R {
+        MMCRXIS_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - MMC Transmit Interrupt Status"]
-    #[inline]
-    pub fn mmctxis(&self) -> MMCTXISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MMCTXISR { bits }
+    #[inline(always)]
+    pub fn mmctxis(&self) -> MMCTXIS_R {
+        MMCTXIS_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - MMC Receive Checksum Offload Interrupt Status"]
-    #[inline]
-    pub fn mmcrxipis(&self) -> MMCRXIPISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MMCRXIPISR { bits }
+    #[inline(always)]
+    pub fn mmcrxipis(&self) -> MMCRXIPIS_R {
+        MMCRXIPIS_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Timestamp Interrupt Status"]
-    #[inline]
-    pub fn tsis(&self) -> TSISR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TSISR { bits }
+    #[inline(always)]
+    pub fn tsis(&self) -> TSIS_R {
+        TSIS_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }

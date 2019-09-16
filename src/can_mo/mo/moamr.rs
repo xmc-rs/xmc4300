@@ -1,222 +1,128 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::MOAMR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register MOAMR"]
+pub type R = crate::R<u32, super::MOAMR>;
+#[doc = "Writer for register MOAMR"]
+pub type W = crate::W<u32, super::MOAMR>;
+#[doc = "Register MOAMR `reset()`'s with value 0x3fff_ffff"]
+impl crate::ResetValue for super::MOAMR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x3fff_ffff
     }
 }
-#[doc = r" Value of the field"]
-pub struct AMR {
-    bits: u32,
-}
-impl AMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `MIDE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MIDER {
-    #[doc = "Message object n accepts the reception of both, standard and extended frames."]
-    VALUE1,
-    #[doc = "Message object n receives frames only with matching IDE bit."]
-    VALUE2,
-}
-impl MIDER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MIDER::VALUE1 => false,
-            MIDER::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MIDER {
-        match value {
-            false => MIDER::VALUE1,
-            true => MIDER::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MIDER::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MIDER::VALUE2
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AMW<'a> {
+#[doc = "Reader of field `AM`"]
+pub type AM_R = crate::R<u32, u32>;
+#[doc = "Write proxy for field `AM`"]
+pub struct AM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AMW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> AM_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 536870911;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x1fff_ffff) | ((value as u32) & 0x1fff_ffff);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MIDE`"]
-pub enum MIDEW {
-    #[doc = "Message object n accepts the reception of both, standard and extended frames."]
+#[doc = "Acceptance Mask Bit for Message IDE Bit\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MIDE_A {
+    #[doc = "0: Message object n accepts the reception of both, standard and extended frames."]
     VALUE1,
-    #[doc = "Message object n receives frames only with matching IDE bit."]
+    #[doc = "1: Message object n receives frames only with matching IDE bit."]
     VALUE2,
 }
-impl MIDEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MIDEW::VALUE1 => false,
-            MIDEW::VALUE2 => true,
+impl From<MIDE_A> for bool {
+    #[inline(always)]
+    fn from(variant: MIDE_A) -> Self {
+        match variant {
+            MIDE_A::VALUE1 => false,
+            MIDE_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MIDEW<'a> {
+#[doc = "Reader of field `MIDE`"]
+pub type MIDE_R = crate::R<bool, MIDE_A>;
+impl MIDE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MIDE_A {
+        match self.bits {
+            false => MIDE_A::VALUE1,
+            true => MIDE_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MIDE_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MIDE_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `MIDE`"]
+pub struct MIDE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MIDEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MIDEW) -> &'a mut W {
+impl<'a> MIDE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MIDE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Message object n accepts the reception of both, standard and extended frames."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MIDEW::VALUE1)
+        self.variant(MIDE_A::VALUE1)
     }
     #[doc = "Message object n receives frames only with matching IDE bit."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MIDEW::VALUE2)
+        self.variant(MIDE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:28 - Acceptance Mask for Message Identifier"]
-    #[inline]
-    pub fn am(&self) -> AMR {
-        let bits = {
-            const MASK: u32 = 536870911;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        AMR { bits }
+    #[inline(always)]
+    pub fn am(&self) -> AM_R {
+        AM_R::new((self.bits & 0x1fff_ffff) as u32)
     }
     #[doc = "Bit 29 - Acceptance Mask Bit for Message IDE Bit"]
-    #[inline]
-    pub fn mide(&self) -> MIDER {
-        MIDER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mide(&self) -> MIDE_R {
+        MIDE_R::new(((self.bits >> 29) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1073741823 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:28 - Acceptance Mask for Message Identifier"]
-    #[inline]
-    pub fn am(&mut self) -> _AMW {
-        _AMW { w: self }
+    #[inline(always)]
+    pub fn am(&mut self) -> AM_W {
+        AM_W { w: self }
     }
     #[doc = "Bit 29 - Acceptance Mask Bit for Message IDE Bit"]
-    #[inline]
-    pub fn mide(&mut self) -> _MIDEW {
-        _MIDEW { w: self }
+    #[inline(always)]
+    pub fn mide(&mut self) -> MIDE_W {
+        MIDE_W { w: self }
     }
 }

@@ -1,223 +1,132 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::EXTCLKCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register EXTCLKCR"]
+pub type R = crate::R<u32, super::EXTCLKCR>;
+#[doc = "Writer for register EXTCLKCR"]
+pub type W = crate::W<u32, super::EXTCLKCR>;
+#[doc = "Register EXTCLKCR `reset()`'s with value 0"]
+impl crate::ResetValue for super::EXTCLKCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ECKSEL`"]
+#[doc = "External Clock Selection Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ECKSELR {
-    #[doc = "fSYS clock"]
+pub enum ECKSEL_A {
+    #[doc = "0: fSYS clock"]
     CONST_00,
-    #[doc = "fUSB clock divided according to ECKDIV bit field configuration"]
+    #[doc = "2: fUSB clock divided according to ECKDIV bit field configuration"]
     CONST_10,
-    #[doc = "fPLL clock divided according to ECKDIV bit field configuration"]
+    #[doc = "3: fPLL clock divided according to ECKDIV bit field configuration"]
     CONST_11,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl ECKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ECKSELR::CONST_00 => 0,
-            ECKSELR::CONST_10 => 2,
-            ECKSELR::CONST_11 => 3,
-            ECKSELR::_Reserved(bits) => bits,
+impl From<ECKSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ECKSEL_A) -> Self {
+        match variant {
+            ECKSEL_A::CONST_00 => 0,
+            ECKSEL_A::CONST_10 => 2,
+            ECKSEL_A::CONST_11 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ECKSELR {
-        match value {
-            0 => ECKSELR::CONST_00,
-            2 => ECKSELR::CONST_10,
-            3 => ECKSELR::CONST_11,
-            i => ECKSELR::_Reserved(i),
+}
+#[doc = "Reader of field `ECKSEL`"]
+pub type ECKSEL_R = crate::R<u8, ECKSEL_A>;
+impl ECKSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, ECKSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(ECKSEL_A::CONST_00),
+            2 => Val(ECKSEL_A::CONST_10),
+            3 => Val(ECKSEL_A::CONST_11),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `CONST_00`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        *self == ECKSELR::CONST_00
+        *self == ECKSEL_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        *self == ECKSELR::CONST_10
+        *self == ECKSEL_A::CONST_10
     }
     #[doc = "Checks if the value of the field is `CONST_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_const_11(&self) -> bool {
-        *self == ECKSELR::CONST_11
+        *self == ECKSEL_A::CONST_11
     }
 }
-#[doc = r" Value of the field"]
-pub struct ECKDIVR {
-    bits: u16,
-}
-impl ECKDIVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `ECKSEL`"]
-pub enum ECKSELW {
-    #[doc = "fSYS clock"]
-    CONST_00,
-    #[doc = "fUSB clock divided according to ECKDIV bit field configuration"]
-    CONST_10,
-    #[doc = "fPLL clock divided according to ECKDIV bit field configuration"]
-    CONST_11,
-}
-impl ECKSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ECKSELW::CONST_00 => 0,
-            ECKSELW::CONST_10 => 2,
-            ECKSELW::CONST_11 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ECKSELW<'a> {
+#[doc = "Write proxy for field `ECKSEL`"]
+pub struct ECKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ECKSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ECKSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> ECKSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ECKSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "fSYS clock"]
-    #[inline]
+    #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
-        self.variant(ECKSELW::CONST_00)
+        self.variant(ECKSEL_A::CONST_00)
     }
     #[doc = "fUSB clock divided according to ECKDIV bit field configuration"]
-    #[inline]
+    #[inline(always)]
     pub fn const_10(self) -> &'a mut W {
-        self.variant(ECKSELW::CONST_10)
+        self.variant(ECKSEL_A::CONST_10)
     }
     #[doc = "fPLL clock divided according to ECKDIV bit field configuration"]
-    #[inline]
+    #[inline(always)]
     pub fn const_11(self) -> &'a mut W {
-        self.variant(ECKSELW::CONST_11)
+        self.variant(ECKSEL_A::CONST_11)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ECKDIVW<'a> {
+#[doc = "Reader of field `ECKDIV`"]
+pub type ECKDIV_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `ECKDIV`"]
+pub struct ECKDIV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ECKDIVW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> ECKDIV_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 511;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01ff << 16)) | (((value as u32) & 0x01ff) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - External Clock Selection Value"]
-    #[inline]
-    pub fn ecksel(&self) -> ECKSELR {
-        ECKSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ecksel(&self) -> ECKSEL_R {
+        ECKSEL_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 16:24 - External Clock Divider Value"]
-    #[inline]
-    pub fn eckdiv(&self) -> ECKDIVR {
-        let bits = {
-            const MASK: u16 = 511;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        ECKDIVR { bits }
+    #[inline(always)]
+    pub fn eckdiv(&self) -> ECKDIV_R {
+        ECKDIV_R::new(((self.bits >> 16) & 0x01ff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - External Clock Selection Value"]
-    #[inline]
-    pub fn ecksel(&mut self) -> _ECKSELW {
-        _ECKSELW { w: self }
+    #[inline(always)]
+    pub fn ecksel(&mut self) -> ECKSEL_W {
+        ECKSEL_W { w: self }
     }
     #[doc = "Bits 16:24 - External Clock Divider Value"]
-    #[inline]
-    pub fn eckdiv(&mut self) -> _ECKDIVW {
-        _ECKDIVW { w: self }
+    #[inline(always)]
+    pub fn eckdiv(&mut self) -> ECKDIV_W {
+        ECKDIV_W { w: self }
     }
 }

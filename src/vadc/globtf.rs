@@ -1,603 +1,445 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::GLOBTF {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register GLOBTF"]
+pub type R = crate::R<u32, super::GLOBTF>;
+#[doc = "Writer for register GLOBTF"]
+pub type W = crate::W<u32, super::GLOBTF>;
+#[doc = "Register GLOBTF `reset()`'s with value 0"]
+impl crate::ResetValue for super::GLOBTF {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct CDGRR {
-    bits: u8,
+#[doc = "Reader of field `CDGR`"]
+pub type CDGR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CDGR`"]
+pub struct CDGR_W<'a> {
+    w: &'a mut W,
 }
-impl CDGRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> CDGR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
+        self.w
     }
 }
-#[doc = "Possible values of the field `CDEN`"]
+#[doc = "Converter Diagnostics Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CDENR {
-    #[doc = "All diagnostic pull devices are disconnected"]
+pub enum CDEN_A {
+    #[doc = "0: All diagnostic pull devices are disconnected"]
     VALUE1,
-    #[doc = "Diagnostic pull devices connected as selected by bitfield CDSEL"]
+    #[doc = "1: Diagnostic pull devices connected as selected by bitfield CDSEL"]
     VALUE2,
 }
-impl CDENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CDENR::VALUE1 => false,
-            CDENR::VALUE2 => true,
+impl From<CDEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CDEN_A) -> Self {
+        match variant {
+            CDEN_A::VALUE1 => false,
+            CDEN_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CDENR {
-        match value {
-            false => CDENR::VALUE1,
-            true => CDENR::VALUE2,
+}
+#[doc = "Reader of field `CDEN`"]
+pub type CDEN_R = crate::R<bool, CDEN_A>;
+impl CDEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CDEN_A {
+        match self.bits {
+            false => CDEN_A::VALUE1,
+            true => CDEN_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CDENR::VALUE1
+        *self == CDEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CDENR::VALUE2
+        *self == CDEN_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `CDSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CDSELR {
-    #[doc = "Connected to VAREF"]
-    VALUE1,
-    #[doc = "Connected to VAGND"]
-    VALUE2,
-    #[doc = "Connected to 1/3rd VAREF"]
-    VALUE3,
-    #[doc = "Connected to 2/3rd VAREF"]
-    VALUE4,
+#[doc = "Write proxy for field `CDEN`"]
+pub struct CDEN_W<'a> {
+    w: &'a mut W,
 }
-impl CDSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CDSELR::VALUE1 => 0,
-            CDSELR::VALUE2 => 1,
-            CDSELR::VALUE3 => 2,
-            CDSELR::VALUE4 => 3,
+impl<'a> CDEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CDEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CDSELR {
-        match value {
-            0 => CDSELR::VALUE1,
-            1 => CDSELR::VALUE2,
-            2 => CDSELR::VALUE3,
-            3 => CDSELR::VALUE4,
+    #[doc = "All diagnostic pull devices are disconnected"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(CDEN_A::VALUE1)
+    }
+    #[doc = "Diagnostic pull devices connected as selected by bitfield CDSEL"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(CDEN_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
+    }
+}
+#[doc = "Converter Diagnostics Pull-Devices Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CDSEL_A {
+    #[doc = "0: Connected to VAREF"]
+    VALUE1,
+    #[doc = "1: Connected to VAGND"]
+    VALUE2,
+    #[doc = "2: Connected to 1/3rd VAREF"]
+    VALUE3,
+    #[doc = "3: Connected to 2/3rd VAREF"]
+    VALUE4,
+}
+impl From<CDSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CDSEL_A) -> Self {
+        match variant {
+            CDSEL_A::VALUE1 => 0,
+            CDSEL_A::VALUE2 => 1,
+            CDSEL_A::VALUE3 => 2,
+            CDSEL_A::VALUE4 => 3,
+        }
+    }
+}
+#[doc = "Reader of field `CDSEL`"]
+pub type CDSEL_R = crate::R<u8, CDSEL_A>;
+impl CDSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CDSEL_A {
+        match self.bits {
+            0 => CDSEL_A::VALUE1,
+            1 => CDSEL_A::VALUE2,
+            2 => CDSEL_A::VALUE3,
+            3 => CDSEL_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CDSELR::VALUE1
+        *self == CDSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CDSELR::VALUE2
+        *self == CDSEL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CDSELR::VALUE3
+        *self == CDSEL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == CDSELR::VALUE4
+        *self == CDSEL_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `PDD`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDDR {
-    #[doc = "Disconnected"]
-    VALUE1,
-    #[doc = "The pull-down diagnostics device is active"]
-    VALUE2,
+#[doc = "Write proxy for field `CDSEL`"]
+pub struct CDSEL_W<'a> {
+    w: &'a mut W,
 }
-impl PDDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDDR::VALUE1 => false,
-            PDDR::VALUE2 => true,
+impl<'a> CDSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CDSEL_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDDR {
-        match value {
-            false => PDDR::VALUE1,
-            true => PDDR::VALUE2,
+    #[doc = "Connected to VAREF"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(CDSEL_A::VALUE1)
+    }
+    #[doc = "Connected to VAGND"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(CDSEL_A::VALUE2)
+    }
+    #[doc = "Connected to 1/3rd VAREF"]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(CDSEL_A::VALUE3)
+    }
+    #[doc = "Connected to 2/3rd VAREF"]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(CDSEL_A::VALUE4)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 9)) | (((value as u32) & 0x03) << 9);
+        self.w
+    }
+}
+#[doc = "Write Control for Conversion Diagnostics\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CDWC_AW {
+    #[doc = "0: No write access to parameters"]
+    VALUE1,
+    #[doc = "1: Bitfields CDSEL, CDEN, CDGR can be written"]
+    VALUE2,
+}
+impl From<CDWC_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CDWC_AW) -> Self {
+        match variant {
+            CDWC_AW::VALUE1 => false,
+            CDWC_AW::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Write proxy for field `CDWC`"]
+pub struct CDWC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CDWC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CDWC_AW) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "No write access to parameters"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(CDWC_AW::VALUE1)
+    }
+    #[doc = "Bitfields CDSEL, CDEN, CDGR can be written"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(CDWC_AW::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w
+    }
+}
+#[doc = "Pull-Down Diagnostics Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PDD_A {
+    #[doc = "0: Disconnected"]
+    VALUE1,
+    #[doc = "1: The pull-down diagnostics device is active"]
+    VALUE2,
+}
+impl From<PDD_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDD_A) -> Self {
+        match variant {
+            PDD_A::VALUE1 => false,
+            PDD_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `PDD`"]
+pub type PDD_R = crate::R<bool, PDD_A>;
+impl PDD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDD_A {
+        match self.bits {
+            false => PDD_A::VALUE1,
+            true => PDD_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PDDR::VALUE1
+        *self == PDD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PDDR::VALUE2
+        *self == PDD_A::VALUE2
     }
 }
-#[doc = r" Proxy"]
-pub struct _CDGRW<'a> {
+#[doc = "Write proxy for field `PDD`"]
+pub struct PDD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CDGRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CDEN`"]
-pub enum CDENW {
-    #[doc = "All diagnostic pull devices are disconnected"]
-    VALUE1,
-    #[doc = "Diagnostic pull devices connected as selected by bitfield CDSEL"]
-    VALUE2,
-}
-impl CDENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CDENW::VALUE1 => false,
-            CDENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CDENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CDENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CDENW) -> &'a mut W {
+impl<'a> PDD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDD_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "All diagnostic pull devices are disconnected"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(CDENW::VALUE1)
-    }
-    #[doc = "Diagnostic pull devices connected as selected by bitfield CDSEL"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(CDENW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CDSEL`"]
-pub enum CDSELW {
-    #[doc = "Connected to VAREF"]
-    VALUE1,
-    #[doc = "Connected to VAGND"]
-    VALUE2,
-    #[doc = "Connected to 1/3rd VAREF"]
-    VALUE3,
-    #[doc = "Connected to 2/3rd VAREF"]
-    VALUE4,
-}
-impl CDSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CDSELW::VALUE1 => 0,
-            CDSELW::VALUE2 => 1,
-            CDSELW::VALUE3 => 2,
-            CDSELW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CDSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CDSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CDSELW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Connected to VAREF"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(CDSELW::VALUE1)
-    }
-    #[doc = "Connected to VAGND"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(CDSELW::VALUE2)
-    }
-    #[doc = "Connected to 1/3rd VAREF"]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(CDSELW::VALUE3)
-    }
-    #[doc = "Connected to 2/3rd VAREF"]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(CDSELW::VALUE4)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CDWC`"]
-pub enum CDWCW {
-    #[doc = "No write access to parameters"]
-    VALUE1,
-    #[doc = "Bitfields CDSEL, CDEN, CDGR can be written"]
-    VALUE2,
-}
-impl CDWCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CDWCW::VALUE1 => false,
-            CDWCW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CDWCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CDWCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CDWCW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No write access to parameters"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(CDWCW::VALUE1)
-    }
-    #[doc = "Bitfields CDSEL, CDEN, CDGR can be written"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(CDWCW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDD`"]
-pub enum PDDW {
-    #[doc = "Disconnected"]
-    VALUE1,
-    #[doc = "The pull-down diagnostics device is active"]
-    VALUE2,
-}
-impl PDDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDDW::VALUE1 => false,
-            PDDW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDDW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDDW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disconnected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(PDDW::VALUE1)
+        self.variant(PDD_A::VALUE1)
     }
     #[doc = "The pull-down diagnostics device is active"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(PDDW::VALUE2)
+        self.variant(PDD_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MDWC`"]
-pub enum MDWCW {
-    #[doc = "No write access to parameters"]
+#[doc = "Write Control for Multiplexer Diagnostics\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MDWC_AW {
+    #[doc = "0: No write access to parameters"]
     VALUE1,
-    #[doc = "Bitfield PDD can be written"]
+    #[doc = "1: Bitfield PDD can be written"]
     VALUE2,
 }
-impl MDWCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MDWCW::VALUE1 => false,
-            MDWCW::VALUE2 => true,
+impl From<MDWC_AW> for bool {
+    #[inline(always)]
+    fn from(variant: MDWC_AW) -> Self {
+        match variant {
+            MDWC_AW::VALUE1 => false,
+            MDWC_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MDWCW<'a> {
+#[doc = "Write proxy for field `MDWC`"]
+pub struct MDWC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MDWCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MDWCW) -> &'a mut W {
+impl<'a> MDWC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MDWC_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No write access to parameters"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MDWCW::VALUE1)
+        self.variant(MDWC_AW::VALUE1)
     }
     #[doc = "Bitfield PDD can be written"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MDWCW::VALUE2)
+        self.variant(MDWC_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 4:7 - Converter Diagnostics Group"]
-    #[inline]
-    pub fn cdgr(&self) -> CDGRR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CDGRR { bits }
+    #[inline(always)]
+    pub fn cdgr(&self) -> CDGR_R {
+        CDGR_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bit 8 - Converter Diagnostics Enable"]
-    #[inline]
-    pub fn cden(&self) -> CDENR {
-        CDENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cden(&self) -> CDEN_R {
+        CDEN_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bits 9:10 - Converter Diagnostics Pull-Devices Select"]
-    #[inline]
-    pub fn cdsel(&self) -> CDSELR {
-        CDSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn cdsel(&self) -> CDSEL_R {
+        CDSEL_R::new(((self.bits >> 9) & 0x03) as u8)
     }
     #[doc = "Bit 16 - Pull-Down Diagnostics Enable"]
-    #[inline]
-    pub fn pdd(&self) -> PDDR {
-        PDDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pdd(&self) -> PDD_R {
+        PDD_R::new(((self.bits >> 16) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 4:7 - Converter Diagnostics Group"]
-    #[inline]
-    pub fn cdgr(&mut self) -> _CDGRW {
-        _CDGRW { w: self }
+    #[inline(always)]
+    pub fn cdgr(&mut self) -> CDGR_W {
+        CDGR_W { w: self }
     }
     #[doc = "Bit 8 - Converter Diagnostics Enable"]
-    #[inline]
-    pub fn cden(&mut self) -> _CDENW {
-        _CDENW { w: self }
+    #[inline(always)]
+    pub fn cden(&mut self) -> CDEN_W {
+        CDEN_W { w: self }
     }
     #[doc = "Bits 9:10 - Converter Diagnostics Pull-Devices Select"]
-    #[inline]
-    pub fn cdsel(&mut self) -> _CDSELW {
-        _CDSELW { w: self }
+    #[inline(always)]
+    pub fn cdsel(&mut self) -> CDSEL_W {
+        CDSEL_W { w: self }
     }
     #[doc = "Bit 15 - Write Control for Conversion Diagnostics"]
-    #[inline]
-    pub fn cdwc(&mut self) -> _CDWCW {
-        _CDWCW { w: self }
+    #[inline(always)]
+    pub fn cdwc(&mut self) -> CDWC_W {
+        CDWC_W { w: self }
     }
     #[doc = "Bit 16 - Pull-Down Diagnostics Enable"]
-    #[inline]
-    pub fn pdd(&mut self) -> _PDDW {
-        _PDDW { w: self }
+    #[inline(always)]
+    pub fn pdd(&mut self) -> PDD_W {
+        PDD_W { w: self }
     }
     #[doc = "Bit 23 - Write Control for Multiplexer Diagnostics"]
-    #[inline]
-    pub fn mdwc(&mut self) -> _MDWCW {
-        _MDWCW { w: self }
+    #[inline(always)]
+    pub fn mdwc(&mut self) -> MDWC_W {
+        MDWC_W { w: self }
     }
 }

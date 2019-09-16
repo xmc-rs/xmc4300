@@ -1,239 +1,118 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CCUCON {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CCUCON"]
+pub type R = crate::R<u32, super::CCUCON>;
+#[doc = "Writer for register CCUCON"]
+pub type W = crate::W<u32, super::CCUCON>;
+#[doc = "Register CCUCON `reset()`'s with value 0"]
+impl crate::ResetValue for super::CCUCON {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct GSC40R {
-    bits: bool,
-}
-impl GSC40R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct GSC41R {
-    bits: bool,
-}
-impl GSC41R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct GSC80R {
-    bits: bool,
-}
-impl GSC80R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _GSC40W<'a> {
+#[doc = "Reader of field `GSC40`"]
+pub type GSC40_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `GSC40`"]
+pub struct GSC40_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GSC40W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> GSC40_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _GSC41W<'a> {
+#[doc = "Reader of field `GSC41`"]
+pub type GSC41_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `GSC41`"]
+pub struct GSC41_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GSC41W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> GSC41_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _GSC80W<'a> {
+#[doc = "Reader of field `GSC80`"]
+pub type GSC80_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `GSC80`"]
+pub struct GSC80_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GSC80W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> GSC80_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Global Start Control CCU40"]
-    #[inline]
-    pub fn gsc40(&self) -> GSC40R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        GSC40R { bits }
+    #[inline(always)]
+    pub fn gsc40(&self) -> GSC40_R {
+        GSC40_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Global Start Control CCU41"]
-    #[inline]
-    pub fn gsc41(&self) -> GSC41R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        GSC41R { bits }
+    #[inline(always)]
+    pub fn gsc41(&self) -> GSC41_R {
+        GSC41_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Global Start Control CCU80"]
-    #[inline]
-    pub fn gsc80(&self) -> GSC80R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        GSC80R { bits }
+    #[inline(always)]
+    pub fn gsc80(&self) -> GSC80_R {
+        GSC80_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Global Start Control CCU40"]
-    #[inline]
-    pub fn gsc40(&mut self) -> _GSC40W {
-        _GSC40W { w: self }
+    #[inline(always)]
+    pub fn gsc40(&mut self) -> GSC40_W {
+        GSC40_W { w: self }
     }
     #[doc = "Bit 1 - Global Start Control CCU41"]
-    #[inline]
-    pub fn gsc41(&mut self) -> _GSC41W {
-        _GSC41W { w: self }
+    #[inline(always)]
+    pub fn gsc41(&mut self) -> GSC41_W {
+        GSC41_W { w: self }
     }
     #[doc = "Bit 8 - Global Start Control CCU80"]
-    #[inline]
-    pub fn gsc80(&mut self) -> _GSC80W {
-        _GSC80W { w: self }
+    #[inline(always)]
+    pub fn gsc80(&mut self) -> GSC80_W {
+        GSC80_W { w: self }
     }
 }

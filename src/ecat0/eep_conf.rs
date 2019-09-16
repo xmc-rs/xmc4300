@@ -1,130 +1,92 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u8,
-}
-impl super::EEP_CONF {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `TO_PDI`"]
+#[doc = "Reader of register EEP_CONF"]
+pub type R = crate::R<u8, super::EEP_CONF>;
+#[doc = "EEPROM control is offered to PDI\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TO_PDIR {
-    #[doc = "No"]
+pub enum TO_PDI_A {
+    #[doc = "0: No"]
     VALUE1,
-    #[doc = "Yes (PDI has EEPROM control)"]
+    #[doc = "1: Yes (PDI has EEPROM control)"]
     VALUE2,
 }
-impl TO_PDIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TO_PDIR::VALUE1 => false,
-            TO_PDIR::VALUE2 => true,
+impl From<TO_PDI_A> for bool {
+    #[inline(always)]
+    fn from(variant: TO_PDI_A) -> Self {
+        match variant {
+            TO_PDI_A::VALUE1 => false,
+            TO_PDI_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TO_PDIR {
-        match value {
-            false => TO_PDIR::VALUE1,
-            true => TO_PDIR::VALUE2,
+}
+#[doc = "Reader of field `TO_PDI`"]
+pub type TO_PDI_R = crate::R<bool, TO_PDI_A>;
+impl TO_PDI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TO_PDI_A {
+        match self.bits {
+            false => TO_PDI_A::VALUE1,
+            true => TO_PDI_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TO_PDIR::VALUE1
+        *self == TO_PDI_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TO_PDIR::VALUE2
+        *self == TO_PDI_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `FORCE`"]
+#[doc = "Force ECAT access\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FORCER {
-    #[doc = "Do not change Bit 501.0"]
+pub enum FORCE_A {
+    #[doc = "0: Do not change Bit 501.0"]
     VALUE1,
-    #[doc = "Reset Bit 501.0 to 0"]
+    #[doc = "1: Reset Bit 501.0 to 0"]
     VALUE2,
 }
-impl FORCER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FORCER::VALUE1 => false,
-            FORCER::VALUE2 => true,
+impl From<FORCE_A> for bool {
+    #[inline(always)]
+    fn from(variant: FORCE_A) -> Self {
+        match variant {
+            FORCE_A::VALUE1 => false,
+            FORCE_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FORCER {
-        match value {
-            false => FORCER::VALUE1,
-            true => FORCER::VALUE2,
+}
+#[doc = "Reader of field `FORCE`"]
+pub type FORCE_R = crate::R<bool, FORCE_A>;
+impl FORCE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FORCE_A {
+        match self.bits {
+            false => FORCE_A::VALUE1,
+            true => FORCE_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == FORCER::VALUE1
+        *self == FORCE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == FORCER::VALUE2
+        *self == FORCE_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
     #[doc = "Bit 0 - EEPROM control is offered to PDI"]
-    #[inline]
-    pub fn to_pdi(&self) -> TO_PDIR {
-        TO_PDIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn to_pdi(&self) -> TO_PDI_R {
+        TO_PDI_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Force ECAT access"]
-    #[inline]
-    pub fn force(&self) -> FORCER {
-        FORCER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u8) != 0
-        })
+    #[inline(always)]
+    pub fn force(&self) -> FORCE_R {
+        FORCE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }

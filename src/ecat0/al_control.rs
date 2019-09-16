@@ -1,207 +1,165 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u16,
-}
-impl super::AL_CONTROL {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `IST`"]
+#[doc = "Reader of register AL_CONTROL"]
+pub type R = crate::R<u16, super::AL_CONTROL>;
+#[doc = "Initiate State Transition of the Device StateMachine\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISTR {
-    #[doc = "Request Init State"]
+pub enum IST_A {
+    #[doc = "1: Request Init State"]
     VALUE1,
-    #[doc = "Request Pre-Operational State"]
+    #[doc = "2: Request Pre-Operational State"]
     VALUE2,
-    #[doc = "Request Bootstrap State"]
+    #[doc = "3: Request Bootstrap State"]
     VALUE3,
-    #[doc = "Request Safe-Operational State"]
+    #[doc = "4: Request Safe-Operational State"]
     VALUE4,
-    #[doc = "Request Operational State"]
+    #[doc = "8: Request Operational State"]
     VALUE5,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl ISTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ISTR::VALUE1 => 1,
-            ISTR::VALUE2 => 2,
-            ISTR::VALUE3 => 3,
-            ISTR::VALUE4 => 4,
-            ISTR::VALUE5 => 8,
-            ISTR::_Reserved(bits) => bits,
+impl From<IST_A> for u8 {
+    #[inline(always)]
+    fn from(variant: IST_A) -> Self {
+        match variant {
+            IST_A::VALUE1 => 1,
+            IST_A::VALUE2 => 2,
+            IST_A::VALUE3 => 3,
+            IST_A::VALUE4 => 4,
+            IST_A::VALUE5 => 8,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ISTR {
-        match value {
-            1 => ISTR::VALUE1,
-            2 => ISTR::VALUE2,
-            3 => ISTR::VALUE3,
-            4 => ISTR::VALUE4,
-            8 => ISTR::VALUE5,
-            i => ISTR::_Reserved(i),
+}
+#[doc = "Reader of field `IST`"]
+pub type IST_R = crate::R<u8, IST_A>;
+impl IST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, IST_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(IST_A::VALUE1),
+            2 => Val(IST_A::VALUE2),
+            3 => Val(IST_A::VALUE3),
+            4 => Val(IST_A::VALUE4),
+            8 => Val(IST_A::VALUE5),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ISTR::VALUE1
+        *self == IST_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ISTR::VALUE2
+        *self == IST_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == ISTR::VALUE3
+        *self == IST_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == ISTR::VALUE4
+        *self == IST_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == ISTR::VALUE5
+        *self == IST_A::VALUE5
     }
 }
-#[doc = "Possible values of the field `EIA`"]
+#[doc = "Error Ind Ack\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EIAR {
-    #[doc = "No Ack of Error Ind in AL status register"]
+pub enum EIA_A {
+    #[doc = "0: No Ack of Error Ind in AL status register"]
     VALUE1,
-    #[doc = "Ack of Error Ind in AL status register"]
+    #[doc = "1: Ack of Error Ind in AL status register"]
     VALUE2,
 }
-impl EIAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EIAR::VALUE1 => false,
-            EIAR::VALUE2 => true,
+impl From<EIA_A> for bool {
+    #[inline(always)]
+    fn from(variant: EIA_A) -> Self {
+        match variant {
+            EIA_A::VALUE1 => false,
+            EIA_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EIAR {
-        match value {
-            false => EIAR::VALUE1,
-            true => EIAR::VALUE2,
+}
+#[doc = "Reader of field `EIA`"]
+pub type EIA_R = crate::R<bool, EIA_A>;
+impl EIA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EIA_A {
+        match self.bits {
+            false => EIA_A::VALUE1,
+            true => EIA_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EIAR::VALUE1
+        *self == EIA_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EIAR::VALUE2
+        *self == EIA_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `DID`"]
+#[doc = "Device Identification\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIDR {
-    #[doc = "No request"]
+pub enum DID_A {
+    #[doc = "0: No request"]
     VALUE1,
-    #[doc = "Device Identification request"]
+    #[doc = "1: Device Identification request"]
     VALUE2,
 }
-impl DIDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DIDR::VALUE1 => false,
-            DIDR::VALUE2 => true,
+impl From<DID_A> for bool {
+    #[inline(always)]
+    fn from(variant: DID_A) -> Self {
+        match variant {
+            DID_A::VALUE1 => false,
+            DID_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DIDR {
-        match value {
-            false => DIDR::VALUE1,
-            true => DIDR::VALUE2,
+}
+#[doc = "Reader of field `DID`"]
+pub type DID_R = crate::R<bool, DID_A>;
+impl DID_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DID_A {
+        match self.bits {
+            false => DID_A::VALUE1,
+            true => DID_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DIDR::VALUE1
+        *self == DID_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DIDR::VALUE2
+        *self == DID_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Initiate State Transition of the Device StateMachine"]
-    #[inline]
-    pub fn ist(&self) -> ISTR {
-        ISTR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u16) as u8
-        })
+    #[inline(always)]
+    pub fn ist(&self) -> IST_R {
+        IST_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 4 - Error Ind Ack"]
-    #[inline]
-    pub fn eia(&self) -> EIAR {
-        EIAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn eia(&self) -> EIA_R {
+        EIA_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Device Identification"]
-    #[inline]
-    pub fn did(&self) -> DIDR {
-        DIDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u16) != 0
-        })
+    #[inline(always)]
+    pub fn did(&self) -> DID_R {
+        DID_R::new(((self.bits >> 5) & 0x01) != 0)
     }
 }

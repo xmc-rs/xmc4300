@@ -1,101 +1,55 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::ID {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MOD_REVR {
-    bits: u8,
-}
-impl MOD_REVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `MOD_TYPE`"]
+#[doc = "Reader of register ID"]
+pub type R = crate::R<u32, super::ID>;
+#[doc = "Reader of field `MOD_REV`"]
+pub type MOD_REV_R = crate::R<u8, u8>;
+#[doc = "Module Type\n\nValue on reset: 192"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MOD_TYPER {
-    #[doc = "Define the module as a 32-bit module."]
+pub enum MOD_TYPE_A {
+    #[doc = "192: Define the module as a 32-bit module."]
     VALUE1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl MOD_TYPER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MOD_TYPER::VALUE1 => 192,
-            MOD_TYPER::_Reserved(bits) => bits,
+impl From<MOD_TYPE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MOD_TYPE_A) -> Self {
+        match variant {
+            MOD_TYPE_A::VALUE1 => 192,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MOD_TYPER {
-        match value {
-            192 => MOD_TYPER::VALUE1,
-            i => MOD_TYPER::_Reserved(i),
+}
+#[doc = "Reader of field `MOD_TYPE`"]
+pub type MOD_TYPE_R = crate::R<u8, MOD_TYPE_A>;
+impl MOD_TYPE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MOD_TYPE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            192 => Val(MOD_TYPE_A::VALUE1),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MOD_TYPER::VALUE1
+        *self == MOD_TYPE_A::VALUE1
     }
 }
-#[doc = r" Value of the field"]
-pub struct MOD_NUMBERR {
-    bits: u16,
-}
-impl MOD_NUMBERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of field `MOD_NUMBER`"]
+pub type MOD_NUMBER_R = crate::R<u16, u16>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Module Revision Number"]
-    #[inline]
-    pub fn mod_rev(&self) -> MOD_REVR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MOD_REVR { bits }
+    #[inline(always)]
+    pub fn mod_rev(&self) -> MOD_REV_R {
+        MOD_REV_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Module Type"]
-    #[inline]
-    pub fn mod_type(&self) -> MOD_TYPER {
-        MOD_TYPER::_from({
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mod_type(&self) -> MOD_TYPE_R {
+        MOD_TYPE_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:31 - Module Number Value"]
-    #[inline]
-    pub fn mod_number(&self) -> MOD_NUMBERR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        MOD_NUMBERR { bits }
+    #[inline(always)]
+    pub fn mod_number(&self) -> MOD_NUMBER_R {
+        MOD_NUMBER_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }

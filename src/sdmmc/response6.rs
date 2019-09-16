@@ -1,60 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::RESPONSE6 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RESPONSE7R {
-    bits: u16,
-}
-impl RESPONSE7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RESPONSE6R {
-    bits: u16,
-}
-impl RESPONSE6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of register RESPONSE6"]
+pub type R = crate::R<u32, super::RESPONSE6>;
+#[doc = "Reader of field `RESPONSE7`"]
+pub type RESPONSE7_R = crate::R<u16, u16>;
+#[doc = "Reader of field `RESPONSE6`"]
+pub type RESPONSE6_R = crate::R<u16, u16>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 16:31 - Response7"]
-    #[inline]
-    pub fn response7(&self) -> RESPONSE7R {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        RESPONSE7R { bits }
+    #[inline(always)]
+    pub fn response7(&self) -> RESPONSE7_R {
+        RESPONSE7_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
     #[doc = "Bits 0:15 - Response6"]
-    #[inline]
-    pub fn response6(&self) -> RESPONSE6R {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        RESPONSE6R { bits }
+    #[inline(always)]
+    pub fn response6(&self) -> RESPONSE6_R {
+        RESPONSE6_R::new((self.bits & 0xffff) as u16)
     }
 }

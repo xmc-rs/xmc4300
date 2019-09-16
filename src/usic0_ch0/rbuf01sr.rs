@@ -1,711 +1,511 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::RBUF01SR {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct WLEN0R {
-    bits: u8,
-}
-impl WLEN0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `SOF0`"]
+#[doc = "Reader of register RBUF01SR"]
+pub type R = crate::R<u32, super::RBUF01SR>;
+#[doc = "Reader of field `WLEN0`"]
+pub type WLEN0_R = crate::R<u8, u8>;
+#[doc = "Start of Frame in RBUF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SOF0R {
-    #[doc = "The data in RBUF0 has not been the first data word of a data frame."]
+pub enum SOF0_A {
+    #[doc = "0: The data in RBUF0 has not been the first data word of a data frame."]
     VALUE1,
-    #[doc = "The data in RBUF0 has been the first data word of a data frame."]
+    #[doc = "1: The data in RBUF0 has been the first data word of a data frame."]
     VALUE2,
 }
-impl SOF0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SOF0R::VALUE1 => false,
-            SOF0R::VALUE2 => true,
+impl From<SOF0_A> for bool {
+    #[inline(always)]
+    fn from(variant: SOF0_A) -> Self {
+        match variant {
+            SOF0_A::VALUE1 => false,
+            SOF0_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SOF0R {
-        match value {
-            false => SOF0R::VALUE1,
-            true => SOF0R::VALUE2,
+}
+#[doc = "Reader of field `SOF0`"]
+pub type SOF0_R = crate::R<bool, SOF0_A>;
+impl SOF0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SOF0_A {
+        match self.bits {
+            false => SOF0_A::VALUE1,
+            true => SOF0_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SOF0R::VALUE1
+        *self == SOF0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SOF0R::VALUE2
+        *self == SOF0_A::VALUE2
     }
 }
-#[doc = r" Value of the field"]
-pub struct PAR0R {
-    bits: bool,
-}
-impl PAR0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `PERR0`"]
+#[doc = "Reader of field `PAR0`"]
+pub type PAR0_R = crate::R<bool, bool>;
+#[doc = "Protocol-related Error in RBUF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PERR0R {
-    #[doc = "The received protocol-related argument PAR matches the expected value. The reception of the data word sets bit PSR.RIF and can generate a receive interrupt."]
+pub enum PERR0_A {
+    #[doc = "0: The received protocol-related argument PAR matches the expected value. The reception of the data word sets bit PSR.RIF and can generate a receive interrupt."]
     VALUE1,
-    #[doc = "The received protocol-related argument PAR does not match the expected value. The reception of the data word sets bit PSR.AIF and can generate an alternative receive interrupt."]
+    #[doc = "1: The received protocol-related argument PAR does not match the expected value. The reception of the data word sets bit PSR.AIF and can generate an alternative receive interrupt."]
     VALUE2,
 }
-impl PERR0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PERR0R::VALUE1 => false,
-            PERR0R::VALUE2 => true,
+impl From<PERR0_A> for bool {
+    #[inline(always)]
+    fn from(variant: PERR0_A) -> Self {
+        match variant {
+            PERR0_A::VALUE1 => false,
+            PERR0_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PERR0R {
-        match value {
-            false => PERR0R::VALUE1,
-            true => PERR0R::VALUE2,
+}
+#[doc = "Reader of field `PERR0`"]
+pub type PERR0_R = crate::R<bool, PERR0_A>;
+impl PERR0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PERR0_A {
+        match self.bits {
+            false => PERR0_A::VALUE1,
+            true => PERR0_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PERR0R::VALUE1
+        *self == PERR0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PERR0R::VALUE2
+        *self == PERR0_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `RDV00`"]
+#[doc = "Receive Data Valid in RBUF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RDV00R {
-    #[doc = "Register RBUF0 does not contain data that has not yet been read out."]
+pub enum RDV00_A {
+    #[doc = "0: Register RBUF0 does not contain data that has not yet been read out."]
     VALUE1,
-    #[doc = "Register RBUF0 contains data that has not yet been read out."]
+    #[doc = "1: Register RBUF0 contains data that has not yet been read out."]
     VALUE2,
 }
-impl RDV00R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RDV00R::VALUE1 => false,
-            RDV00R::VALUE2 => true,
+impl From<RDV00_A> for bool {
+    #[inline(always)]
+    fn from(variant: RDV00_A) -> Self {
+        match variant {
+            RDV00_A::VALUE1 => false,
+            RDV00_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RDV00R {
-        match value {
-            false => RDV00R::VALUE1,
-            true => RDV00R::VALUE2,
+}
+#[doc = "Reader of field `RDV00`"]
+pub type RDV00_R = crate::R<bool, RDV00_A>;
+impl RDV00_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RDV00_A {
+        match self.bits {
+            false => RDV00_A::VALUE1,
+            true => RDV00_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RDV00R::VALUE1
+        *self == RDV00_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RDV00R::VALUE2
+        *self == RDV00_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `RDV01`"]
+#[doc = "Receive Data Valid in RBUF1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RDV01R {
-    #[doc = "Register RBUF1 does not contain data that has not yet been read out."]
+pub enum RDV01_A {
+    #[doc = "0: Register RBUF1 does not contain data that has not yet been read out."]
     VALUE1,
-    #[doc = "Register RBUF1 contains data that has not yet been read out."]
+    #[doc = "1: Register RBUF1 contains data that has not yet been read out."]
     VALUE2,
 }
-impl RDV01R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RDV01R::VALUE1 => false,
-            RDV01R::VALUE2 => true,
+impl From<RDV01_A> for bool {
+    #[inline(always)]
+    fn from(variant: RDV01_A) -> Self {
+        match variant {
+            RDV01_A::VALUE1 => false,
+            RDV01_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RDV01R {
-        match value {
-            false => RDV01R::VALUE1,
-            true => RDV01R::VALUE2,
+}
+#[doc = "Reader of field `RDV01`"]
+pub type RDV01_R = crate::R<bool, RDV01_A>;
+impl RDV01_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RDV01_A {
+        match self.bits {
+            false => RDV01_A::VALUE1,
+            true => RDV01_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RDV01R::VALUE1
+        *self == RDV01_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RDV01R::VALUE2
+        *self == RDV01_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `DS0`"]
+#[doc = "Data Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DS0R {
-    #[doc = "The register RBUF contains the data of RBUF0 (same for associated status information)."]
+pub enum DS0_A {
+    #[doc = "0: The register RBUF contains the data of RBUF0 (same for associated status information)."]
     VALUE1,
-    #[doc = "The register RBUF contains the data of RBUF1 (same for associated status information)."]
+    #[doc = "1: The register RBUF contains the data of RBUF1 (same for associated status information)."]
     VALUE2,
 }
-impl DS0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DS0R::VALUE1 => false,
-            DS0R::VALUE2 => true,
+impl From<DS0_A> for bool {
+    #[inline(always)]
+    fn from(variant: DS0_A) -> Self {
+        match variant {
+            DS0_A::VALUE1 => false,
+            DS0_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DS0R {
-        match value {
-            false => DS0R::VALUE1,
-            true => DS0R::VALUE2,
+}
+#[doc = "Reader of field `DS0`"]
+pub type DS0_R = crate::R<bool, DS0_A>;
+impl DS0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DS0_A {
+        match self.bits {
+            false => DS0_A::VALUE1,
+            true => DS0_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DS0R::VALUE1
+        *self == DS0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DS0R::VALUE2
+        *self == DS0_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `WLEN1`"]
+#[doc = "Received Data Word Length in RBUF1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WLEN1R {
-    #[doc = "One bit has been received."]
+pub enum WLEN1_A {
+    #[doc = "0: One bit has been received."]
     VALUE1,
-    #[doc = "Sixteen bits have been received."]
+    #[doc = "15: Sixteen bits have been received."]
     VALUE2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl WLEN1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            WLEN1R::VALUE1 => 0,
-            WLEN1R::VALUE2 => 15,
-            WLEN1R::_Reserved(bits) => bits,
+impl From<WLEN1_A> for u8 {
+    #[inline(always)]
+    fn from(variant: WLEN1_A) -> Self {
+        match variant {
+            WLEN1_A::VALUE1 => 0,
+            WLEN1_A::VALUE2 => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> WLEN1R {
-        match value {
-            0 => WLEN1R::VALUE1,
-            15 => WLEN1R::VALUE2,
-            i => WLEN1R::_Reserved(i),
+}
+#[doc = "Reader of field `WLEN1`"]
+pub type WLEN1_R = crate::R<u8, WLEN1_A>;
+impl WLEN1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, WLEN1_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(WLEN1_A::VALUE1),
+            15 => Val(WLEN1_A::VALUE2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WLEN1R::VALUE1
+        *self == WLEN1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WLEN1R::VALUE2
+        *self == WLEN1_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `SOF1`"]
+#[doc = "Start of Frame in RBUF1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SOF1R {
-    #[doc = "The data in RBUF1 has not been the first data word of a data frame."]
+pub enum SOF1_A {
+    #[doc = "0: The data in RBUF1 has not been the first data word of a data frame."]
     VALUE1,
-    #[doc = "The data in RBUF1 has been the first data word of a data frame."]
+    #[doc = "1: The data in RBUF1 has been the first data word of a data frame."]
     VALUE2,
 }
-impl SOF1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SOF1R::VALUE1 => false,
-            SOF1R::VALUE2 => true,
+impl From<SOF1_A> for bool {
+    #[inline(always)]
+    fn from(variant: SOF1_A) -> Self {
+        match variant {
+            SOF1_A::VALUE1 => false,
+            SOF1_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SOF1R {
-        match value {
-            false => SOF1R::VALUE1,
-            true => SOF1R::VALUE2,
+}
+#[doc = "Reader of field `SOF1`"]
+pub type SOF1_R = crate::R<bool, SOF1_A>;
+impl SOF1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SOF1_A {
+        match self.bits {
+            false => SOF1_A::VALUE1,
+            true => SOF1_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SOF1R::VALUE1
+        *self == SOF1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SOF1R::VALUE2
+        *self == SOF1_A::VALUE2
     }
 }
-#[doc = r" Value of the field"]
-pub struct PAR1R {
-    bits: bool,
-}
-impl PAR1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `PERR1`"]
+#[doc = "Reader of field `PAR1`"]
+pub type PAR1_R = crate::R<bool, bool>;
+#[doc = "Protocol-related Error in RBUF1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PERR1R {
-    #[doc = "The received protocol-related argument PAR matches the expected value. The reception of the data word sets bit PSR.RIF and can generate a receive interrupt."]
+pub enum PERR1_A {
+    #[doc = "0: The received protocol-related argument PAR matches the expected value. The reception of the data word sets bit PSR.RIF and can generate a receive interrupt."]
     VALUE1,
-    #[doc = "The received protocol-related argument PAR does not match the expected value. The reception of the data word sets bit PSR.AIF and can generate an alternative receive interrupt."]
+    #[doc = "1: The received protocol-related argument PAR does not match the expected value. The reception of the data word sets bit PSR.AIF and can generate an alternative receive interrupt."]
     VALUE2,
 }
-impl PERR1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PERR1R::VALUE1 => false,
-            PERR1R::VALUE2 => true,
+impl From<PERR1_A> for bool {
+    #[inline(always)]
+    fn from(variant: PERR1_A) -> Self {
+        match variant {
+            PERR1_A::VALUE1 => false,
+            PERR1_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PERR1R {
-        match value {
-            false => PERR1R::VALUE1,
-            true => PERR1R::VALUE2,
+}
+#[doc = "Reader of field `PERR1`"]
+pub type PERR1_R = crate::R<bool, PERR1_A>;
+impl PERR1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PERR1_A {
+        match self.bits {
+            false => PERR1_A::VALUE1,
+            true => PERR1_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PERR1R::VALUE1
+        *self == PERR1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PERR1R::VALUE2
+        *self == PERR1_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `RDV10`"]
+#[doc = "Receive Data Valid in RBUF0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RDV10R {
-    #[doc = "Register RBUF0 does not contain data that has not yet been read out."]
+pub enum RDV10_A {
+    #[doc = "0: Register RBUF0 does not contain data that has not yet been read out."]
     VALUE1,
-    #[doc = "Register RBUF0 contains data that has not yet been read out."]
+    #[doc = "1: Register RBUF0 contains data that has not yet been read out."]
     VALUE2,
 }
-impl RDV10R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RDV10R::VALUE1 => false,
-            RDV10R::VALUE2 => true,
+impl From<RDV10_A> for bool {
+    #[inline(always)]
+    fn from(variant: RDV10_A) -> Self {
+        match variant {
+            RDV10_A::VALUE1 => false,
+            RDV10_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RDV10R {
-        match value {
-            false => RDV10R::VALUE1,
-            true => RDV10R::VALUE2,
+}
+#[doc = "Reader of field `RDV10`"]
+pub type RDV10_R = crate::R<bool, RDV10_A>;
+impl RDV10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RDV10_A {
+        match self.bits {
+            false => RDV10_A::VALUE1,
+            true => RDV10_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RDV10R::VALUE1
+        *self == RDV10_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RDV10R::VALUE2
+        *self == RDV10_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `RDV11`"]
+#[doc = "Receive Data Valid in RBUF1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RDV11R {
-    #[doc = "Register RBUF1 does not contain data that has not yet been read out."]
+pub enum RDV11_A {
+    #[doc = "0: Register RBUF1 does not contain data that has not yet been read out."]
     VALUE1,
-    #[doc = "Register RBUF1 contains data that has not yet been read out."]
+    #[doc = "1: Register RBUF1 contains data that has not yet been read out."]
     VALUE2,
 }
-impl RDV11R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RDV11R::VALUE1 => false,
-            RDV11R::VALUE2 => true,
+impl From<RDV11_A> for bool {
+    #[inline(always)]
+    fn from(variant: RDV11_A) -> Self {
+        match variant {
+            RDV11_A::VALUE1 => false,
+            RDV11_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RDV11R {
-        match value {
-            false => RDV11R::VALUE1,
-            true => RDV11R::VALUE2,
+}
+#[doc = "Reader of field `RDV11`"]
+pub type RDV11_R = crate::R<bool, RDV11_A>;
+impl RDV11_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RDV11_A {
+        match self.bits {
+            false => RDV11_A::VALUE1,
+            true => RDV11_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RDV11R::VALUE1
+        *self == RDV11_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RDV11R::VALUE2
+        *self == RDV11_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `DS1`"]
+#[doc = "Data Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DS1R {
-    #[doc = "The register RBUF contains the data of RBUF0 (same for associated status information)."]
+pub enum DS1_A {
+    #[doc = "0: The register RBUF contains the data of RBUF0 (same for associated status information)."]
     VALUE1,
-    #[doc = "The register RBUF contains the data of RBUF1 (same for associated status information)."]
+    #[doc = "1: The register RBUF contains the data of RBUF1 (same for associated status information)."]
     VALUE2,
 }
-impl DS1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DS1R::VALUE1 => false,
-            DS1R::VALUE2 => true,
+impl From<DS1_A> for bool {
+    #[inline(always)]
+    fn from(variant: DS1_A) -> Self {
+        match variant {
+            DS1_A::VALUE1 => false,
+            DS1_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DS1R {
-        match value {
-            false => DS1R::VALUE1,
-            true => DS1R::VALUE2,
+}
+#[doc = "Reader of field `DS1`"]
+pub type DS1_R = crate::R<bool, DS1_A>;
+impl DS1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DS1_A {
+        match self.bits {
+            false => DS1_A::VALUE1,
+            true => DS1_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DS1R::VALUE1
+        *self == DS1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DS1R::VALUE2
+        *self == DS1_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Received Data Word Length in RBUF0"]
-    #[inline]
-    pub fn wlen0(&self) -> WLEN0R {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        WLEN0R { bits }
+    #[inline(always)]
+    pub fn wlen0(&self) -> WLEN0_R {
+        WLEN0_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 6 - Start of Frame in RBUF0"]
-    #[inline]
-    pub fn sof0(&self) -> SOF0R {
-        SOF0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sof0(&self) -> SOF0_R {
+        SOF0_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Protocol-Related Argument in RBUF0"]
-    #[inline]
-    pub fn par0(&self) -> PAR0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PAR0R { bits }
+    #[inline(always)]
+    pub fn par0(&self) -> PAR0_R {
+        PAR0_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Protocol-related Error in RBUF0"]
-    #[inline]
-    pub fn perr0(&self) -> PERR0R {
-        PERR0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn perr0(&self) -> PERR0_R {
+        PERR0_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Receive Data Valid in RBUF0"]
-    #[inline]
-    pub fn rdv00(&self) -> RDV00R {
-        RDV00R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rdv00(&self) -> RDV00_R {
+        RDV00_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Receive Data Valid in RBUF1"]
-    #[inline]
-    pub fn rdv01(&self) -> RDV01R {
-        RDV01R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rdv01(&self) -> RDV01_R {
+        RDV01_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Data Source"]
-    #[inline]
-    pub fn ds0(&self) -> DS0R {
-        DS0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ds0(&self) -> DS0_R {
+        DS0_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bits 16:19 - Received Data Word Length in RBUF1"]
-    #[inline]
-    pub fn wlen1(&self) -> WLEN1R {
-        WLEN1R::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn wlen1(&self) -> WLEN1_R {
+        WLEN1_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bit 22 - Start of Frame in RBUF1"]
-    #[inline]
-    pub fn sof1(&self) -> SOF1R {
-        SOF1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sof1(&self) -> SOF1_R {
+        SOF1_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Protocol-Related Argument in RBUF1"]
-    #[inline]
-    pub fn par1(&self) -> PAR1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PAR1R { bits }
+    #[inline(always)]
+    pub fn par1(&self) -> PAR1_R {
+        PAR1_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Protocol-related Error in RBUF1"]
-    #[inline]
-    pub fn perr1(&self) -> PERR1R {
-        PERR1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn perr1(&self) -> PERR1_R {
+        PERR1_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 29 - Receive Data Valid in RBUF0"]
-    #[inline]
-    pub fn rdv10(&self) -> RDV10R {
-        RDV10R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rdv10(&self) -> RDV10_R {
+        RDV10_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 30 - Receive Data Valid in RBUF1"]
-    #[inline]
-    pub fn rdv11(&self) -> RDV11R {
-        RDV11R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rdv11(&self) -> RDV11_R {
+        RDV11_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Data Source"]
-    #[inline]
-    pub fn ds1(&self) -> DS1R {
-        DS1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ds1(&self) -> DS1_R {
+        DS1_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }

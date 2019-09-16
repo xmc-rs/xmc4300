@@ -1,547 +1,418 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::KSCFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register KSCFG"]
+pub type R = crate::R<u32, super::KSCFG>;
+#[doc = "Writer for register KSCFG"]
+pub type W = crate::W<u32, super::KSCFG>;
+#[doc = "Register KSCFG `reset()`'s with value 0"]
+impl crate::ResetValue for super::KSCFG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `MODEN`"]
+#[doc = "Module Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODENR {
-    #[doc = "The module is switched off immediately (without respecting a stop condition). It does not react on mode control actions and the module clock is switched off. The module does not react on read accesses and ignores write accesses (except to KSCFG)."]
+pub enum MODEN_A {
+    #[doc = "0: The module is switched off immediately (without respecting a stop condition). It does not react on mode control actions and the module clock is switched off. The module does not react on read accesses and ignores write accesses (except to KSCFG)."]
     VALUE1,
-    #[doc = "The module is switched on and can operate. After writing 1 to MODEN, it is recommended to read register KSCFG to avoid pipeline effects in the control block before accessing other Service Request Processing registers."]
+    #[doc = "1: The module is switched on and can operate. After writing 1 to MODEN, it is recommended to read register KSCFG to avoid pipeline effects in the control block before accessing other Service Request Processing registers."]
     VALUE2,
 }
-impl MODENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MODENR::VALUE1 => false,
-            MODENR::VALUE2 => true,
+impl From<MODEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: MODEN_A) -> Self {
+        match variant {
+            MODEN_A::VALUE1 => false,
+            MODEN_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MODENR {
-        match value {
-            false => MODENR::VALUE1,
-            true => MODENR::VALUE2,
+}
+#[doc = "Reader of field `MODEN`"]
+pub type MODEN_R = crate::R<bool, MODEN_A>;
+impl MODEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODEN_A {
+        match self.bits {
+            false => MODEN_A::VALUE1,
+            true => MODEN_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MODENR::VALUE1
+        *self == MODEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MODENR::VALUE2
+        *self == MODEN_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `NOMCFG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NOMCFGR {
-    #[doc = "Run mode 0 is selected."]
-    VALUE1,
-    #[doc = "Run mode 1 is selected."]
-    VALUE2,
-    #[doc = "Stop mode 0 is selected."]
-    VALUE3,
-    #[doc = "Stop mode 1 is selected."]
-    VALUE4,
+#[doc = "Write proxy for field `MODEN`"]
+pub struct MODEN_W<'a> {
+    w: &'a mut W,
 }
-impl NOMCFGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            NOMCFGR::VALUE1 => 0,
-            NOMCFGR::VALUE2 => 1,
-            NOMCFGR::VALUE3 => 2,
-            NOMCFGR::VALUE4 => 3,
+impl<'a> MODEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> NOMCFGR {
-        match value {
-            0 => NOMCFGR::VALUE1,
-            1 => NOMCFGR::VALUE2,
-            2 => NOMCFGR::VALUE3,
-            3 => NOMCFGR::VALUE4,
+    #[doc = "The module is switched off immediately (without respecting a stop condition). It does not react on mode control actions and the module clock is switched off. The module does not react on read accesses and ignores write accesses (except to KSCFG)."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(MODEN_A::VALUE1)
+    }
+    #[doc = "The module is switched on and can operate. After writing 1 to MODEN, it is recommended to read register KSCFG to avoid pipeline effects in the control block before accessing other Service Request Processing registers."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(MODEN_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "Bit Protection for MODEN\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BPMODEN_AW {
+    #[doc = "0: MODEN is not changed."]
+    VALUE1,
+    #[doc = "1: MODEN is updated with the written value."]
+    VALUE2,
+}
+impl From<BPMODEN_AW> for bool {
+    #[inline(always)]
+    fn from(variant: BPMODEN_AW) -> Self {
+        match variant {
+            BPMODEN_AW::VALUE1 => false,
+            BPMODEN_AW::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Write proxy for field `BPMODEN`"]
+pub struct BPMODEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> BPMODEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BPMODEN_AW) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "MODEN is not changed."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(BPMODEN_AW::VALUE1)
+    }
+    #[doc = "MODEN is updated with the written value."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(BPMODEN_AW::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "Normal Operation Mode Configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum NOMCFG_A {
+    #[doc = "0: Run mode 0 is selected."]
+    VALUE1,
+    #[doc = "1: Run mode 1 is selected."]
+    VALUE2,
+    #[doc = "2: Stop mode 0 is selected."]
+    VALUE3,
+    #[doc = "3: Stop mode 1 is selected."]
+    VALUE4,
+}
+impl From<NOMCFG_A> for u8 {
+    #[inline(always)]
+    fn from(variant: NOMCFG_A) -> Self {
+        match variant {
+            NOMCFG_A::VALUE1 => 0,
+            NOMCFG_A::VALUE2 => 1,
+            NOMCFG_A::VALUE3 => 2,
+            NOMCFG_A::VALUE4 => 3,
+        }
+    }
+}
+#[doc = "Reader of field `NOMCFG`"]
+pub type NOMCFG_R = crate::R<u8, NOMCFG_A>;
+impl NOMCFG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> NOMCFG_A {
+        match self.bits {
+            0 => NOMCFG_A::VALUE1,
+            1 => NOMCFG_A::VALUE2,
+            2 => NOMCFG_A::VALUE3,
+            3 => NOMCFG_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == NOMCFGR::VALUE1
+        *self == NOMCFG_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == NOMCFGR::VALUE2
+        *self == NOMCFG_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == NOMCFGR::VALUE3
+        *self == NOMCFG_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == NOMCFGR::VALUE4
+        *self == NOMCFG_A::VALUE4
     }
 }
-#[doc = r" Value of the field"]
-pub struct SUMCFGR {
-    bits: u8,
-}
-impl SUMCFGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `MODEN`"]
-pub enum MODENW {
-    #[doc = "The module is switched off immediately (without respecting a stop condition). It does not react on mode control actions and the module clock is switched off. The module does not react on read accesses and ignores write accesses (except to KSCFG)."]
-    VALUE1,
-    #[doc = "The module is switched on and can operate. After writing 1 to MODEN, it is recommended to read register KSCFG to avoid pipeline effects in the control block before accessing other Service Request Processing registers."]
-    VALUE2,
-}
-impl MODENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MODENW::VALUE1 => false,
-            MODENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODENW<'a> {
+#[doc = "Write proxy for field `NOMCFG`"]
+pub struct NOMCFG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MODENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODENW) -> &'a mut W {
+impl<'a> NOMCFG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: NOMCFG_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The module is switched off immediately (without respecting a stop condition). It does not react on mode control actions and the module clock is switched off. The module does not react on read accesses and ignores write accesses (except to KSCFG)."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(MODENW::VALUE1)
-    }
-    #[doc = "The module is switched on and can operate. After writing 1 to MODEN, it is recommended to read register KSCFG to avoid pipeline effects in the control block before accessing other Service Request Processing registers."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(MODENW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `BPMODEN`"]
-pub enum BPMODENW {
-    #[doc = "MODEN is not changed."]
-    VALUE1,
-    #[doc = "MODEN is updated with the written value."]
-    VALUE2,
-}
-impl BPMODENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BPMODENW::VALUE1 => false,
-            BPMODENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BPMODENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BPMODENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BPMODENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "MODEN is not changed."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(BPMODENW::VALUE1)
-    }
-    #[doc = "MODEN is updated with the written value."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(BPMODENW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `NOMCFG`"]
-pub enum NOMCFGW {
-    #[doc = "Run mode 0 is selected."]
-    VALUE1,
-    #[doc = "Run mode 1 is selected."]
-    VALUE2,
-    #[doc = "Stop mode 0 is selected."]
-    VALUE3,
-    #[doc = "Stop mode 1 is selected."]
-    VALUE4,
-}
-impl NOMCFGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            NOMCFGW::VALUE1 => 0,
-            NOMCFGW::VALUE2 => 1,
-            NOMCFGW::VALUE3 => 2,
-            NOMCFGW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NOMCFGW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _NOMCFGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: NOMCFGW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Run mode 0 is selected."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(NOMCFGW::VALUE1)
+        self.variant(NOMCFG_A::VALUE1)
     }
     #[doc = "Run mode 1 is selected."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(NOMCFGW::VALUE2)
+        self.variant(NOMCFG_A::VALUE2)
     }
     #[doc = "Stop mode 0 is selected."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(NOMCFGW::VALUE3)
+        self.variant(NOMCFG_A::VALUE3)
     }
     #[doc = "Stop mode 1 is selected."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(NOMCFGW::VALUE4)
+        self.variant(NOMCFG_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BPNOM`"]
-pub enum BPNOMW {
-    #[doc = "NOMCFG is not changed."]
+#[doc = "Bit Protection for NOMCFG\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BPNOM_AW {
+    #[doc = "0: NOMCFG is not changed."]
     VALUE1,
-    #[doc = "NOMCFG is updated with the written value."]
+    #[doc = "1: NOMCFG is updated with the written value."]
     VALUE2,
 }
-impl BPNOMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BPNOMW::VALUE1 => false,
-            BPNOMW::VALUE2 => true,
+impl From<BPNOM_AW> for bool {
+    #[inline(always)]
+    fn from(variant: BPNOM_AW) -> Self {
+        match variant {
+            BPNOM_AW::VALUE1 => false,
+            BPNOM_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BPNOMW<'a> {
+#[doc = "Write proxy for field `BPNOM`"]
+pub struct BPNOM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BPNOMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BPNOMW) -> &'a mut W {
+impl<'a> BPNOM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BPNOM_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "NOMCFG is not changed."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(BPNOMW::VALUE1)
+        self.variant(BPNOM_AW::VALUE1)
     }
     #[doc = "NOMCFG is updated with the written value."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(BPNOMW::VALUE2)
+        self.variant(BPNOM_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SUMCFGW<'a> {
+#[doc = "Reader of field `SUMCFG`"]
+pub type SUMCFG_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SUMCFG`"]
+pub struct SUMCFG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SUMCFGW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SUMCFG_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BPSUM`"]
-pub enum BPSUMW {
-    #[doc = "SUMCFG is not changed."]
+#[doc = "Bit Protection for SUMCFG\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BPSUM_AW {
+    #[doc = "0: SUMCFG is not changed."]
     VALUE1,
-    #[doc = "SUMCFG is updated with the written value."]
+    #[doc = "1: SUMCFG is updated with the written value."]
     VALUE2,
 }
-impl BPSUMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BPSUMW::VALUE1 => false,
-            BPSUMW::VALUE2 => true,
+impl From<BPSUM_AW> for bool {
+    #[inline(always)]
+    fn from(variant: BPSUM_AW) -> Self {
+        match variant {
+            BPSUM_AW::VALUE1 => false,
+            BPSUM_AW::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BPSUMW<'a> {
+#[doc = "Write proxy for field `BPSUM`"]
+pub struct BPSUM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BPSUMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BPSUMW) -> &'a mut W {
+impl<'a> BPSUM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BPSUM_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "SUMCFG is not changed."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(BPSUMW::VALUE1)
+        self.variant(BPSUM_AW::VALUE1)
     }
     #[doc = "SUMCFG is updated with the written value."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(BPSUMW::VALUE2)
+        self.variant(BPSUM_AW::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Module Enable"]
-    #[inline]
-    pub fn moden(&self) -> MODENR {
-        MODENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn moden(&self) -> MODEN_R {
+        MODEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bits 4:5 - Normal Operation Mode Configuration"]
-    #[inline]
-    pub fn nomcfg(&self) -> NOMCFGR {
-        NOMCFGR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn nomcfg(&self) -> NOMCFG_R {
+        NOMCFG_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 8:9 - Suspend Mode Configuration"]
-    #[inline]
-    pub fn sumcfg(&self) -> SUMCFGR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SUMCFGR { bits }
+    #[inline(always)]
+    pub fn sumcfg(&self) -> SUMCFG_R {
+        SUMCFG_R::new(((self.bits >> 8) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Module Enable"]
-    #[inline]
-    pub fn moden(&mut self) -> _MODENW {
-        _MODENW { w: self }
+    #[inline(always)]
+    pub fn moden(&mut self) -> MODEN_W {
+        MODEN_W { w: self }
     }
     #[doc = "Bit 1 - Bit Protection for MODEN"]
-    #[inline]
-    pub fn bpmoden(&mut self) -> _BPMODENW {
-        _BPMODENW { w: self }
+    #[inline(always)]
+    pub fn bpmoden(&mut self) -> BPMODEN_W {
+        BPMODEN_W { w: self }
     }
     #[doc = "Bits 4:5 - Normal Operation Mode Configuration"]
-    #[inline]
-    pub fn nomcfg(&mut self) -> _NOMCFGW {
-        _NOMCFGW { w: self }
+    #[inline(always)]
+    pub fn nomcfg(&mut self) -> NOMCFG_W {
+        NOMCFG_W { w: self }
     }
     #[doc = "Bit 7 - Bit Protection for NOMCFG"]
-    #[inline]
-    pub fn bpnom(&mut self) -> _BPNOMW {
-        _BPNOMW { w: self }
+    #[inline(always)]
+    pub fn bpnom(&mut self) -> BPNOM_W {
+        BPNOM_W { w: self }
     }
     #[doc = "Bits 8:9 - Suspend Mode Configuration"]
-    #[inline]
-    pub fn sumcfg(&mut self) -> _SUMCFGW {
-        _SUMCFGW { w: self }
+    #[inline(always)]
+    pub fn sumcfg(&mut self) -> SUMCFG_W {
+        SUMCFG_W { w: self }
     }
     #[doc = "Bit 11 - Bit Protection for SUMCFG"]
-    #[inline]
-    pub fn bpsum(&mut self) -> _BPSUMW {
-        _BPSUMW { w: self }
+    #[inline(always)]
+    pub fn bpsum(&mut self) -> BPSUM_W {
+        BPSUM_W { w: self }
     }
 }

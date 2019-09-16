@@ -1,1622 +1,1196 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::RBCTR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register RBCTR"]
+pub type R = crate::R<u32, super::RBCTR>;
+#[doc = "Writer for register RBCTR"]
+pub type W = crate::W<u32, super::RBCTR>;
+#[doc = "Register RBCTR `reset()`'s with value 0"]
+impl crate::ResetValue for super::RBCTR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct LIMITR {
-    bits: u8,
+#[doc = "Write proxy for field `DPTR`"]
+pub struct DPTR_W<'a> {
+    w: &'a mut W,
 }
-impl LIMITR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> DPTR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w
     }
 }
-#[doc = "Possible values of the field `SRBTM`"]
+#[doc = "Reader of field `LIMIT`"]
+pub type LIMIT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `LIMIT`"]
+pub struct LIMIT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LIMIT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
+        self.w
+    }
+}
+#[doc = "Standard Receive Buffer Trigger Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SRBTMR {
+pub enum SRBTM_A {
+    #[doc = "0: Trigger mode 0: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=RBCTR.LIMIT."]
+    VALUE1,
+    #[doc = "1: Trigger mode 1: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=0."]
+    VALUE2,
+}
+impl From<SRBTM_A> for bool {
+    #[inline(always)]
+    fn from(variant: SRBTM_A) -> Self {
+        match variant {
+            SRBTM_A::VALUE1 => false,
+            SRBTM_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `SRBTM`"]
+pub type SRBTM_R = crate::R<bool, SRBTM_A>;
+impl SRBTM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SRBTM_A {
+        match self.bits {
+            false => SRBTM_A::VALUE1,
+            true => SRBTM_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == SRBTM_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == SRBTM_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `SRBTM`"]
+pub struct SRBTM_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SRBTM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SRBTM_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Trigger mode 0: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=RBCTR.LIMIT."]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(SRBTM_A::VALUE1)
+    }
     #[doc = "Trigger mode 1: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=0."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(SRBTM_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w
+    }
+}
+#[doc = "Standard Receive Buffer Trigger Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SRBTEN_A {
+    #[doc = "0: The standard receive buffer event trigger through bit TRBSR.SRBT is disabled."]
+    VALUE1,
+    #[doc = "1: The standard receive buffer event trigger through bit TRBSR.SRBT is enabled."]
     VALUE2,
 }
-impl SRBTMR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SRBTMR::VALUE1 => false,
-            SRBTMR::VALUE2 => true,
+impl From<SRBTEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: SRBTEN_A) -> Self {
+        match variant {
+            SRBTEN_A::VALUE1 => false,
+            SRBTEN_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SRBTMR {
-        match value {
-            false => SRBTMR::VALUE1,
-            true => SRBTMR::VALUE2,
+}
+#[doc = "Reader of field `SRBTEN`"]
+pub type SRBTEN_R = crate::R<bool, SRBTEN_A>;
+impl SRBTEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SRBTEN_A {
+        match self.bits {
+            false => SRBTEN_A::VALUE1,
+            true => SRBTEN_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SRBTMR::VALUE1
+        *self == SRBTEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SRBTMR::VALUE2
+        *self == SRBTEN_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `SRBTEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SRBTENR {
+#[doc = "Write proxy for field `SRBTEN`"]
+pub struct SRBTEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SRBTEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SRBTEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "The standard receive buffer event trigger through bit TRBSR.SRBT is disabled."]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(SRBTEN_A::VALUE1)
+    }
     #[doc = "The standard receive buffer event trigger through bit TRBSR.SRBT is enabled."]
-    VALUE2,
-}
-impl SRBTENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(SRBTEN_A::VALUE2)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SRBTENR::VALUE1 => false,
-            SRBTENR::VALUE2 => true,
-        }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SRBTENR {
-        match value {
-            false => SRBTENR::VALUE1,
-            true => SRBTENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == SRBTENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == SRBTENR::VALUE2
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w
     }
 }
-#[doc = "Possible values of the field `SRBINP`"]
+#[doc = "Standard Receive Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SRBINPR {
-    #[doc = "Output SR0 becomes activated."]
+pub enum SRBINP_A {
+    #[doc = "0: Output SR0 becomes activated."]
     VALUE1,
-    #[doc = "Output SR1 becomes activated."]
+    #[doc = "1: Output SR1 becomes activated."]
     VALUE2,
-    #[doc = "Output SR2 becomes activated."]
+    #[doc = "2: Output SR2 becomes activated."]
     VALUE3,
-    #[doc = "Output SR3 becomes activated."]
+    #[doc = "3: Output SR3 becomes activated."]
     VALUE4,
-    #[doc = "Output SR4 becomes activated."]
+    #[doc = "4: Output SR4 becomes activated."]
     VALUE5,
-    #[doc = "Output SR5 becomes activated."]
+    #[doc = "5: Output SR5 becomes activated."]
     VALUE6,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SRBINPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SRBINPR::VALUE1 => 0,
-            SRBINPR::VALUE2 => 1,
-            SRBINPR::VALUE3 => 2,
-            SRBINPR::VALUE4 => 3,
-            SRBINPR::VALUE5 => 4,
-            SRBINPR::VALUE6 => 5,
-            SRBINPR::_Reserved(bits) => bits,
+impl From<SRBINP_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SRBINP_A) -> Self {
+        match variant {
+            SRBINP_A::VALUE1 => 0,
+            SRBINP_A::VALUE2 => 1,
+            SRBINP_A::VALUE3 => 2,
+            SRBINP_A::VALUE4 => 3,
+            SRBINP_A::VALUE5 => 4,
+            SRBINP_A::VALUE6 => 5,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SRBINPR {
-        match value {
-            0 => SRBINPR::VALUE1,
-            1 => SRBINPR::VALUE2,
-            2 => SRBINPR::VALUE3,
-            3 => SRBINPR::VALUE4,
-            4 => SRBINPR::VALUE5,
-            5 => SRBINPR::VALUE6,
-            i => SRBINPR::_Reserved(i),
+}
+#[doc = "Reader of field `SRBINP`"]
+pub type SRBINP_R = crate::R<u8, SRBINP_A>;
+impl SRBINP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SRBINP_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SRBINP_A::VALUE1),
+            1 => Val(SRBINP_A::VALUE2),
+            2 => Val(SRBINP_A::VALUE3),
+            3 => Val(SRBINP_A::VALUE4),
+            4 => Val(SRBINP_A::VALUE5),
+            5 => Val(SRBINP_A::VALUE6),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SRBINPR::VALUE1
+        *self == SRBINP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SRBINPR::VALUE2
+        *self == SRBINP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == SRBINPR::VALUE3
+        *self == SRBINP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == SRBINPR::VALUE4
+        *self == SRBINP_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == SRBINPR::VALUE5
+        *self == SRBINP_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == SRBINPR::VALUE6
+        *self == SRBINP_A::VALUE6
     }
 }
-#[doc = "Possible values of the field `ARBINP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ARBINPR {
-    #[doc = "Output SR0 becomes activated."]
-    VALUE1,
-    #[doc = "Output SR1 becomes activated."]
-    VALUE2,
-    #[doc = "Output SR2 becomes activated."]
-    VALUE3,
-    #[doc = "Output SR3 becomes activated."]
-    VALUE4,
-    #[doc = "Output SR4 becomes activated."]
-    VALUE5,
-    #[doc = "Output SR5 becomes activated."]
-    VALUE6,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[doc = "Write proxy for field `SRBINP`"]
+pub struct SRBINP_W<'a> {
+    w: &'a mut W,
 }
-impl ARBINPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ARBINPR::VALUE1 => 0,
-            ARBINPR::VALUE2 => 1,
-            ARBINPR::VALUE3 => 2,
-            ARBINPR::VALUE4 => 3,
-            ARBINPR::VALUE5 => 4,
-            ARBINPR::VALUE6 => 5,
-            ARBINPR::_Reserved(bits) => bits,
+impl<'a> SRBINP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SRBINP_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Output SR0 becomes activated."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(SRBINP_A::VALUE1)
+    }
+    #[doc = "Output SR1 becomes activated."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(SRBINP_A::VALUE2)
+    }
+    #[doc = "Output SR2 becomes activated."]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(SRBINP_A::VALUE3)
+    }
+    #[doc = "Output SR3 becomes activated."]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(SRBINP_A::VALUE4)
+    }
+    #[doc = "Output SR4 becomes activated."]
+    #[inline(always)]
+    pub fn value5(self) -> &'a mut W {
+        self.variant(SRBINP_A::VALUE5)
+    }
+    #[doc = "Output SR5 becomes activated."]
+    #[inline(always)]
+    pub fn value6(self) -> &'a mut W {
+        self.variant(SRBINP_A::VALUE6)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
+        self.w
+    }
+}
+#[doc = "Alternative Receive Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ARBINP_A {
+    #[doc = "0: Output SR0 becomes activated."]
+    VALUE1,
+    #[doc = "1: Output SR1 becomes activated."]
+    VALUE2,
+    #[doc = "2: Output SR2 becomes activated."]
+    VALUE3,
+    #[doc = "3: Output SR3 becomes activated."]
+    VALUE4,
+    #[doc = "4: Output SR4 becomes activated."]
+    VALUE5,
+    #[doc = "5: Output SR5 becomes activated."]
+    VALUE6,
+}
+impl From<ARBINP_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ARBINP_A) -> Self {
+        match variant {
+            ARBINP_A::VALUE1 => 0,
+            ARBINP_A::VALUE2 => 1,
+            ARBINP_A::VALUE3 => 2,
+            ARBINP_A::VALUE4 => 3,
+            ARBINP_A::VALUE5 => 4,
+            ARBINP_A::VALUE6 => 5,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ARBINPR {
-        match value {
-            0 => ARBINPR::VALUE1,
-            1 => ARBINPR::VALUE2,
-            2 => ARBINPR::VALUE3,
-            3 => ARBINPR::VALUE4,
-            4 => ARBINPR::VALUE5,
-            5 => ARBINPR::VALUE6,
-            i => ARBINPR::_Reserved(i),
+}
+#[doc = "Reader of field `ARBINP`"]
+pub type ARBINP_R = crate::R<u8, ARBINP_A>;
+impl ARBINP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, ARBINP_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(ARBINP_A::VALUE1),
+            1 => Val(ARBINP_A::VALUE2),
+            2 => Val(ARBINP_A::VALUE3),
+            3 => Val(ARBINP_A::VALUE4),
+            4 => Val(ARBINP_A::VALUE5),
+            5 => Val(ARBINP_A::VALUE6),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ARBINPR::VALUE1
+        *self == ARBINP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ARBINPR::VALUE2
+        *self == ARBINP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == ARBINPR::VALUE3
+        *self == ARBINP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == ARBINPR::VALUE4
+        *self == ARBINP_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == ARBINPR::VALUE5
+        *self == ARBINP_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == ARBINPR::VALUE6
+        *self == ARBINP_A::VALUE6
     }
 }
-#[doc = "Possible values of the field `RCIM`"]
+#[doc = "Write proxy for field `ARBINP`"]
+pub struct ARBINP_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ARBINP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ARBINP_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Output SR0 becomes activated."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(ARBINP_A::VALUE1)
+    }
+    #[doc = "Output SR1 becomes activated."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(ARBINP_A::VALUE2)
+    }
+    #[doc = "Output SR2 becomes activated."]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(ARBINP_A::VALUE3)
+    }
+    #[doc = "Output SR3 becomes activated."]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(ARBINP_A::VALUE4)
+    }
+    #[doc = "Output SR4 becomes activated."]
+    #[inline(always)]
+    pub fn value5(self) -> &'a mut W {
+        self.variant(ARBINP_A::VALUE5)
+    }
+    #[doc = "Output SR5 becomes activated."]
+    #[inline(always)]
+    pub fn value6(self) -> &'a mut W {
+        self.variant(ARBINP_A::VALUE6)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 19)) | (((value as u32) & 0x07) << 19);
+        self.w
+    }
+}
+#[doc = "Receiver Control Information Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCIMR {
-    #[doc = "RCI\\[4\\] = PERR, RCI\\[3:0\\] = WLEN"]
+pub enum RCIM_A {
+    #[doc = "0: RCI\\[4\\] = PERR, RCI\\[3:0\\] = WLEN"]
     VALUE1,
-    #[doc = "RCI\\[4\\] = SOF, RCI\\[3:0\\] = WLEN"]
+    #[doc = "1: RCI\\[4\\] = SOF, RCI\\[3:0\\] = WLEN"]
     VALUE2,
-    #[doc = "RCI\\[4\\] = 0, RCI\\[3:0\\] = WLEN"]
+    #[doc = "2: RCI\\[4\\] = 0, RCI\\[3:0\\] = WLEN"]
     VALUE3,
-    #[doc = "RCI\\[4\\] = PERR, RCI\\[3\\] = PAR, RCI\\[2:1\\] = 00B, RCI\\[0\\] = SOF"]
+    #[doc = "3: RCI\\[4\\] = PERR, RCI\\[3\\] = PAR, RCI\\[2:1\\] = 00B, RCI\\[0\\] = SOF"]
     VALUE4,
 }
-impl RCIMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            RCIMR::VALUE1 => 0,
-            RCIMR::VALUE2 => 1,
-            RCIMR::VALUE3 => 2,
-            RCIMR::VALUE4 => 3,
+impl From<RCIM_A> for u8 {
+    #[inline(always)]
+    fn from(variant: RCIM_A) -> Self {
+        match variant {
+            RCIM_A::VALUE1 => 0,
+            RCIM_A::VALUE2 => 1,
+            RCIM_A::VALUE3 => 2,
+            RCIM_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RCIMR {
-        match value {
-            0 => RCIMR::VALUE1,
-            1 => RCIMR::VALUE2,
-            2 => RCIMR::VALUE3,
-            3 => RCIMR::VALUE4,
+}
+#[doc = "Reader of field `RCIM`"]
+pub type RCIM_R = crate::R<u8, RCIM_A>;
+impl RCIM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCIM_A {
+        match self.bits {
+            0 => RCIM_A::VALUE1,
+            1 => RCIM_A::VALUE2,
+            2 => RCIM_A::VALUE3,
+            3 => RCIM_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RCIMR::VALUE1
+        *self == RCIM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RCIMR::VALUE2
+        *self == RCIM_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == RCIMR::VALUE3
+        *self == RCIM_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == RCIMR::VALUE4
+        *self == RCIM_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `SIZE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SIZER {
-    #[doc = "The FIFO mechanism is disabled. The buffer does not accept any request for data."]
-    VALUE1,
-    #[doc = "The FIFO buffer contains 2 entries."]
-    VALUE2,
-    #[doc = "The FIFO buffer contains 4 entries."]
-    VALUE3,
-    #[doc = "The FIFO buffer contains 8 entries."]
-    VALUE4,
-    #[doc = "The FIFO buffer contains 16 entries."]
-    VALUE5,
-    #[doc = "The FIFO buffer contains 32 entries."]
-    VALUE6,
-    #[doc = "The FIFO buffer contains 64 entries."]
-    VALUE7,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[doc = "Write proxy for field `RCIM`"]
+pub struct RCIM_W<'a> {
+    w: &'a mut W,
 }
-impl SIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SIZER::VALUE1 => 0,
-            SIZER::VALUE2 => 1,
-            SIZER::VALUE3 => 2,
-            SIZER::VALUE4 => 3,
-            SIZER::VALUE5 => 4,
-            SIZER::VALUE6 => 5,
-            SIZER::VALUE7 => 6,
-            SIZER::_Reserved(bits) => bits,
+impl<'a> RCIM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RCIM_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SIZER {
-        match value {
-            0 => SIZER::VALUE1,
-            1 => SIZER::VALUE2,
-            2 => SIZER::VALUE3,
-            3 => SIZER::VALUE4,
-            4 => SIZER::VALUE5,
-            5 => SIZER::VALUE6,
-            6 => SIZER::VALUE7,
-            i => SIZER::_Reserved(i),
+    #[doc = "RCI\\[4\\] = PERR, RCI\\[3:0\\] = WLEN"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(RCIM_A::VALUE1)
+    }
+    #[doc = "RCI\\[4\\] = SOF, RCI\\[3:0\\] = WLEN"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(RCIM_A::VALUE2)
+    }
+    #[doc = "RCI\\[4\\] = 0, RCI\\[3:0\\] = WLEN"]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(RCIM_A::VALUE3)
+    }
+    #[doc = "RCI\\[4\\] = PERR, RCI\\[3\\] = PAR, RCI\\[2:1\\] = 00B, RCI\\[0\\] = SOF"]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(RCIM_A::VALUE4)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
+        self.w
+    }
+}
+#[doc = "Buffer Size\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SIZE_A {
+    #[doc = "0: The FIFO mechanism is disabled. The buffer does not accept any request for data."]
+    VALUE1,
+    #[doc = "1: The FIFO buffer contains 2 entries."]
+    VALUE2,
+    #[doc = "2: The FIFO buffer contains 4 entries."]
+    VALUE3,
+    #[doc = "3: The FIFO buffer contains 8 entries."]
+    VALUE4,
+    #[doc = "4: The FIFO buffer contains 16 entries."]
+    VALUE5,
+    #[doc = "5: The FIFO buffer contains 32 entries."]
+    VALUE6,
+    #[doc = "6: The FIFO buffer contains 64 entries."]
+    VALUE7,
+}
+impl From<SIZE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SIZE_A) -> Self {
+        match variant {
+            SIZE_A::VALUE1 => 0,
+            SIZE_A::VALUE2 => 1,
+            SIZE_A::VALUE3 => 2,
+            SIZE_A::VALUE4 => 3,
+            SIZE_A::VALUE5 => 4,
+            SIZE_A::VALUE6 => 5,
+            SIZE_A::VALUE7 => 6,
+        }
+    }
+}
+#[doc = "Reader of field `SIZE`"]
+pub type SIZE_R = crate::R<u8, SIZE_A>;
+impl SIZE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SIZE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SIZE_A::VALUE1),
+            1 => Val(SIZE_A::VALUE2),
+            2 => Val(SIZE_A::VALUE3),
+            3 => Val(SIZE_A::VALUE4),
+            4 => Val(SIZE_A::VALUE5),
+            5 => Val(SIZE_A::VALUE6),
+            6 => Val(SIZE_A::VALUE7),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SIZER::VALUE1
+        *self == SIZE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SIZER::VALUE2
+        *self == SIZE_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == SIZER::VALUE3
+        *self == SIZE_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == SIZER::VALUE4
+        *self == SIZE_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == SIZER::VALUE5
+        *self == SIZE_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == SIZER::VALUE6
+        *self == SIZE_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == SIZER::VALUE7
+        *self == SIZE_A::VALUE7
     }
 }
-#[doc = "Possible values of the field `RNM`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RNMR {
-    #[doc = "Filling level mode: A standard receive buffer event occurs when the filling level equals the limit value and changes, either due to a read access from OUTR (LOF = 0) or due to a new received data word (LOF = 1)."]
-    VALUE1,
-    #[doc = "RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\] = 0. If OUTR.RCI\\[4\\] = 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
-    VALUE2,
-}
-impl RNMR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RNMR::VALUE1 => false,
-            RNMR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RNMR {
-        match value {
-            false => RNMR::VALUE1,
-            true => RNMR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == RNMR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == RNMR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `LOF`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOFR {
-    #[doc = "A standard receive buffer event occurs when the filling level equals the limit value and gets lower due to a read access from OUTR."]
-    VALUE1,
-    #[doc = "A standard receive buffer event occurs when the filling level equals the limit value and gets bigger due to the reception of a new data word."]
-    VALUE2,
-}
-impl LOFR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LOFR::VALUE1 => false,
-            LOFR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LOFR {
-        match value {
-            false => LOFR::VALUE1,
-            true => LOFR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == LOFR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == LOFR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `ARBIEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ARBIENR {
-    #[doc = "The alternative receive buffer interrupt generation is disabled."]
-    VALUE1,
-    #[doc = "The alternative receive buffer interrupt generation is enabled."]
-    VALUE2,
-}
-impl ARBIENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ARBIENR::VALUE1 => false,
-            ARBIENR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ARBIENR {
-        match value {
-            false => ARBIENR::VALUE1,
-            true => ARBIENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ARBIENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ARBIENR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `SRBIEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SRBIENR {
-    #[doc = "The standard receive buffer interrupt generation is disabled."]
-    VALUE1,
-    #[doc = "The standard receive buffer interrupt generation is enabled."]
-    VALUE2,
-}
-impl SRBIENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SRBIENR::VALUE1 => false,
-            SRBIENR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SRBIENR {
-        match value {
-            false => SRBIENR::VALUE1,
-            true => SRBIENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == SRBIENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == SRBIENR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `RBERIEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RBERIENR {
-    #[doc = "The receive buffer error interrupt generation is disabled."]
-    VALUE1,
-    #[doc = "The receive buffer error interrupt generation is enabled."]
-    VALUE2,
-}
-impl RBERIENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RBERIENR::VALUE1 => false,
-            RBERIENR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RBERIENR {
-        match value {
-            false => RBERIENR::VALUE1,
-            true => RBERIENR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == RBERIENR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == RBERIENR::VALUE2
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DPTRW<'a> {
+#[doc = "Write proxy for field `SIZE`"]
+pub struct SIZE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DPTRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LIMITW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LIMITW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SRBTM`"]
-pub enum SRBTMW {
-    #[doc = "Trigger mode 0: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=RBCTR.LIMIT."]
-    VALUE1,
-    #[doc = "Trigger mode 1: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=0."]
-    VALUE2,
-}
-impl SRBTMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SRBTMW::VALUE1 => false,
-            SRBTMW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SRBTMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SRBTMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SRBTMW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Trigger mode 0: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=RBCTR.LIMIT."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(SRBTMW::VALUE1)
-    }
-    #[doc = "Trigger mode 1: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=0."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(SRBTMW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SRBTEN`"]
-pub enum SRBTENW {
-    #[doc = "The standard receive buffer event trigger through bit TRBSR.SRBT is disabled."]
-    VALUE1,
-    #[doc = "The standard receive buffer event trigger through bit TRBSR.SRBT is enabled."]
-    VALUE2,
-}
-impl SRBTENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SRBTENW::VALUE1 => false,
-            SRBTENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SRBTENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SRBTENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SRBTENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The standard receive buffer event trigger through bit TRBSR.SRBT is disabled."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(SRBTENW::VALUE1)
-    }
-    #[doc = "The standard receive buffer event trigger through bit TRBSR.SRBT is enabled."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(SRBTENW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SRBINP`"]
-pub enum SRBINPW {
-    #[doc = "Output SR0 becomes activated."]
-    VALUE1,
-    #[doc = "Output SR1 becomes activated."]
-    VALUE2,
-    #[doc = "Output SR2 becomes activated."]
-    VALUE3,
-    #[doc = "Output SR3 becomes activated."]
-    VALUE4,
-    #[doc = "Output SR4 becomes activated."]
-    VALUE5,
-    #[doc = "Output SR5 becomes activated."]
-    VALUE6,
-}
-impl SRBINPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SRBINPW::VALUE1 => 0,
-            SRBINPW::VALUE2 => 1,
-            SRBINPW::VALUE3 => 2,
-            SRBINPW::VALUE4 => 3,
-            SRBINPW::VALUE5 => 4,
-            SRBINPW::VALUE6 => 5,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SRBINPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SRBINPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SRBINPW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Output SR0 becomes activated."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(SRBINPW::VALUE1)
-    }
-    #[doc = "Output SR1 becomes activated."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(SRBINPW::VALUE2)
-    }
-    #[doc = "Output SR2 becomes activated."]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(SRBINPW::VALUE3)
-    }
-    #[doc = "Output SR3 becomes activated."]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(SRBINPW::VALUE4)
-    }
-    #[doc = "Output SR4 becomes activated."]
-    #[inline]
-    pub fn value5(self) -> &'a mut W {
-        self.variant(SRBINPW::VALUE5)
-    }
-    #[doc = "Output SR5 becomes activated."]
-    #[inline]
-    pub fn value6(self) -> &'a mut W {
-        self.variant(SRBINPW::VALUE6)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ARBINP`"]
-pub enum ARBINPW {
-    #[doc = "Output SR0 becomes activated."]
-    VALUE1,
-    #[doc = "Output SR1 becomes activated."]
-    VALUE2,
-    #[doc = "Output SR2 becomes activated."]
-    VALUE3,
-    #[doc = "Output SR3 becomes activated."]
-    VALUE4,
-    #[doc = "Output SR4 becomes activated."]
-    VALUE5,
-    #[doc = "Output SR5 becomes activated."]
-    VALUE6,
-}
-impl ARBINPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ARBINPW::VALUE1 => 0,
-            ARBINPW::VALUE2 => 1,
-            ARBINPW::VALUE3 => 2,
-            ARBINPW::VALUE4 => 3,
-            ARBINPW::VALUE5 => 4,
-            ARBINPW::VALUE6 => 5,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ARBINPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ARBINPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ARBINPW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Output SR0 becomes activated."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(ARBINPW::VALUE1)
-    }
-    #[doc = "Output SR1 becomes activated."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(ARBINPW::VALUE2)
-    }
-    #[doc = "Output SR2 becomes activated."]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(ARBINPW::VALUE3)
-    }
-    #[doc = "Output SR3 becomes activated."]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(ARBINPW::VALUE4)
-    }
-    #[doc = "Output SR4 becomes activated."]
-    #[inline]
-    pub fn value5(self) -> &'a mut W {
-        self.variant(ARBINPW::VALUE5)
-    }
-    #[doc = "Output SR5 becomes activated."]
-    #[inline]
-    pub fn value6(self) -> &'a mut W {
-        self.variant(ARBINPW::VALUE6)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RCIM`"]
-pub enum RCIMW {
-    #[doc = "RCI\\[4\\] = PERR, RCI\\[3:0\\] = WLEN"]
-    VALUE1,
-    #[doc = "RCI\\[4\\] = SOF, RCI\\[3:0\\] = WLEN"]
-    VALUE2,
-    #[doc = "RCI\\[4\\] = 0, RCI\\[3:0\\] = WLEN"]
-    VALUE3,
-    #[doc = "RCI\\[4\\] = PERR, RCI\\[3\\] = PAR, RCI\\[2:1\\] = 00B, RCI\\[0\\] = SOF"]
-    VALUE4,
-}
-impl RCIMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RCIMW::VALUE1 => 0,
-            RCIMW::VALUE2 => 1,
-            RCIMW::VALUE3 => 2,
-            RCIMW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RCIMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RCIMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RCIMW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "RCI\\[4\\] = PERR, RCI\\[3:0\\] = WLEN"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(RCIMW::VALUE1)
-    }
-    #[doc = "RCI\\[4\\] = SOF, RCI\\[3:0\\] = WLEN"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(RCIMW::VALUE2)
-    }
-    #[doc = "RCI\\[4\\] = 0, RCI\\[3:0\\] = WLEN"]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(RCIMW::VALUE3)
-    }
-    #[doc = "RCI\\[4\\] = PERR, RCI\\[3\\] = PAR, RCI\\[2:1\\] = 00B, RCI\\[0\\] = SOF"]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(RCIMW::VALUE4)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SIZE`"]
-pub enum SIZEW {
-    #[doc = "The FIFO mechanism is disabled. The buffer does not accept any request for data."]
-    VALUE1,
-    #[doc = "The FIFO buffer contains 2 entries."]
-    VALUE2,
-    #[doc = "The FIFO buffer contains 4 entries."]
-    VALUE3,
-    #[doc = "The FIFO buffer contains 8 entries."]
-    VALUE4,
-    #[doc = "The FIFO buffer contains 16 entries."]
-    VALUE5,
-    #[doc = "The FIFO buffer contains 32 entries."]
-    VALUE6,
-    #[doc = "The FIFO buffer contains 64 entries."]
-    VALUE7,
-}
-impl SIZEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SIZEW::VALUE1 => 0,
-            SIZEW::VALUE2 => 1,
-            SIZEW::VALUE3 => 2,
-            SIZEW::VALUE4 => 3,
-            SIZEW::VALUE5 => 4,
-            SIZEW::VALUE6 => 5,
-            SIZEW::VALUE7 => 6,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SIZEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SIZEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SIZEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> SIZE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SIZE_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "The FIFO mechanism is disabled. The buffer does not accept any request for data."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE1)
+        self.variant(SIZE_A::VALUE1)
     }
     #[doc = "The FIFO buffer contains 2 entries."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE2)
+        self.variant(SIZE_A::VALUE2)
     }
     #[doc = "The FIFO buffer contains 4 entries."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE3)
+        self.variant(SIZE_A::VALUE3)
     }
     #[doc = "The FIFO buffer contains 8 entries."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE4)
+        self.variant(SIZE_A::VALUE4)
     }
     #[doc = "The FIFO buffer contains 16 entries."]
-    #[inline]
+    #[inline(always)]
     pub fn value5(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE5)
+        self.variant(SIZE_A::VALUE5)
     }
     #[doc = "The FIFO buffer contains 32 entries."]
-    #[inline]
+    #[inline(always)]
     pub fn value6(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE6)
+        self.variant(SIZE_A::VALUE6)
     }
     #[doc = "The FIFO buffer contains 64 entries."]
-    #[inline]
+    #[inline(always)]
     pub fn value7(self) -> &'a mut W {
-        self.variant(SIZEW::VALUE7)
+        self.variant(SIZE_A::VALUE7)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RNM`"]
-pub enum RNMW {
+#[doc = "Receiver Notification Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RNM_A {
+    #[doc = "0: Filling level mode: A standard receive buffer event occurs when the filling level equals the limit value and changes, either due to a read access from OUTR (LOF = 0) or due to a new received data word (LOF = 1)."]
+    VALUE1,
+    #[doc = "1: RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\] = 0. If OUTR.RCI\\[4\\] = 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
+    VALUE2,
+}
+impl From<RNM_A> for bool {
+    #[inline(always)]
+    fn from(variant: RNM_A) -> Self {
+        match variant {
+            RNM_A::VALUE1 => false,
+            RNM_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `RNM`"]
+pub type RNM_R = crate::R<bool, RNM_A>;
+impl RNM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RNM_A {
+        match self.bits {
+            false => RNM_A::VALUE1,
+            true => RNM_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == RNM_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == RNM_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `RNM`"]
+pub struct RNM_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RNM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RNM_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Filling level mode: A standard receive buffer event occurs when the filling level equals the limit value and changes, either due to a read access from OUTR (LOF = 0) or due to a new received data word (LOF = 1)."]
-    VALUE1,
-    #[doc = "RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\] = 0. If OUTR.RCI\\[4\\] = 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
-    VALUE2,
-}
-impl RNMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RNMW::VALUE1 => false,
-            RNMW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RNMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RNMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RNMW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Filling level mode: A standard receive buffer event occurs when the filling level equals the limit value and changes, either due to a read access from OUTR (LOF = 0) or due to a new received data word (LOF = 1)."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(RNMW::VALUE1)
+        self.variant(RNM_A::VALUE1)
     }
     #[doc = "RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\] = 0. If OUTR.RCI\\[4\\] = 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(RNMW::VALUE2)
+        self.variant(RNM_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `LOF`"]
-pub enum LOFW {
-    #[doc = "A standard receive buffer event occurs when the filling level equals the limit value and gets lower due to a read access from OUTR."]
+#[doc = "Buffer Event on Limit Overflow\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LOF_A {
+    #[doc = "0: A standard receive buffer event occurs when the filling level equals the limit value and gets lower due to a read access from OUTR."]
     VALUE1,
-    #[doc = "A standard receive buffer event occurs when the filling level equals the limit value and gets bigger due to the reception of a new data word."]
+    #[doc = "1: A standard receive buffer event occurs when the filling level equals the limit value and gets bigger due to the reception of a new data word."]
     VALUE2,
 }
-impl LOFW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LOFW::VALUE1 => false,
-            LOFW::VALUE2 => true,
+impl From<LOF_A> for bool {
+    #[inline(always)]
+    fn from(variant: LOF_A) -> Self {
+        match variant {
+            LOF_A::VALUE1 => false,
+            LOF_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _LOFW<'a> {
+#[doc = "Reader of field `LOF`"]
+pub type LOF_R = crate::R<bool, LOF_A>;
+impl LOF_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LOF_A {
+        match self.bits {
+            false => LOF_A::VALUE1,
+            true => LOF_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == LOF_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == LOF_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `LOF`"]
+pub struct LOF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LOFW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOFW) -> &'a mut W {
+impl<'a> LOF_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOF_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "A standard receive buffer event occurs when the filling level equals the limit value and gets lower due to a read access from OUTR."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(LOFW::VALUE1)
+        self.variant(LOF_A::VALUE1)
     }
     #[doc = "A standard receive buffer event occurs when the filling level equals the limit value and gets bigger due to the reception of a new data word."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(LOFW::VALUE2)
+        self.variant(LOF_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ARBIEN`"]
-pub enum ARBIENW {
+#[doc = "Alternative Receive Buffer Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ARBIEN_A {
+    #[doc = "0: The alternative receive buffer interrupt generation is disabled."]
+    VALUE1,
+    #[doc = "1: The alternative receive buffer interrupt generation is enabled."]
+    VALUE2,
+}
+impl From<ARBIEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ARBIEN_A) -> Self {
+        match variant {
+            ARBIEN_A::VALUE1 => false,
+            ARBIEN_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `ARBIEN`"]
+pub type ARBIEN_R = crate::R<bool, ARBIEN_A>;
+impl ARBIEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ARBIEN_A {
+        match self.bits {
+            false => ARBIEN_A::VALUE1,
+            true => ARBIEN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ARBIEN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ARBIEN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ARBIEN`"]
+pub struct ARBIEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ARBIEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ARBIEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "The alternative receive buffer interrupt generation is disabled."]
-    VALUE1,
-    #[doc = "The alternative receive buffer interrupt generation is enabled."]
-    VALUE2,
-}
-impl ARBIENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ARBIENW::VALUE1 => false,
-            ARBIENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ARBIENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ARBIENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ARBIENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The alternative receive buffer interrupt generation is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ARBIENW::VALUE1)
+        self.variant(ARBIEN_A::VALUE1)
     }
     #[doc = "The alternative receive buffer interrupt generation is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ARBIENW::VALUE2)
+        self.variant(ARBIEN_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SRBIEN`"]
-pub enum SRBIENW {
-    #[doc = "The standard receive buffer interrupt generation is disabled."]
+#[doc = "Standard Receive Buffer Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SRBIEN_A {
+    #[doc = "0: The standard receive buffer interrupt generation is disabled."]
     VALUE1,
-    #[doc = "The standard receive buffer interrupt generation is enabled."]
+    #[doc = "1: The standard receive buffer interrupt generation is enabled."]
     VALUE2,
 }
-impl SRBIENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SRBIENW::VALUE1 => false,
-            SRBIENW::VALUE2 => true,
+impl From<SRBIEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: SRBIEN_A) -> Self {
+        match variant {
+            SRBIEN_A::VALUE1 => false,
+            SRBIEN_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SRBIENW<'a> {
+#[doc = "Reader of field `SRBIEN`"]
+pub type SRBIEN_R = crate::R<bool, SRBIEN_A>;
+impl SRBIEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SRBIEN_A {
+        match self.bits {
+            false => SRBIEN_A::VALUE1,
+            true => SRBIEN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == SRBIEN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == SRBIEN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `SRBIEN`"]
+pub struct SRBIEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SRBIENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SRBIENW) -> &'a mut W {
+impl<'a> SRBIEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SRBIEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The standard receive buffer interrupt generation is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SRBIENW::VALUE1)
+        self.variant(SRBIEN_A::VALUE1)
     }
     #[doc = "The standard receive buffer interrupt generation is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SRBIENW::VALUE2)
+        self.variant(SRBIEN_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RBERIEN`"]
-pub enum RBERIENW {
-    #[doc = "The receive buffer error interrupt generation is disabled."]
+#[doc = "Receive Buffer Error Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RBERIEN_A {
+    #[doc = "0: The receive buffer error interrupt generation is disabled."]
     VALUE1,
-    #[doc = "The receive buffer error interrupt generation is enabled."]
+    #[doc = "1: The receive buffer error interrupt generation is enabled."]
     VALUE2,
 }
-impl RBERIENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RBERIENW::VALUE1 => false,
-            RBERIENW::VALUE2 => true,
+impl From<RBERIEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: RBERIEN_A) -> Self {
+        match variant {
+            RBERIEN_A::VALUE1 => false,
+            RBERIEN_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RBERIENW<'a> {
+#[doc = "Reader of field `RBERIEN`"]
+pub type RBERIEN_R = crate::R<bool, RBERIEN_A>;
+impl RBERIEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RBERIEN_A {
+        match self.bits {
+            false => RBERIEN_A::VALUE1,
+            true => RBERIEN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == RBERIEN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == RBERIEN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `RBERIEN`"]
+pub struct RBERIEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RBERIENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RBERIENW) -> &'a mut W {
+impl<'a> RBERIEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RBERIEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The receive buffer error interrupt generation is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(RBERIENW::VALUE1)
+        self.variant(RBERIEN_A::VALUE1)
     }
     #[doc = "The receive buffer error interrupt generation is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(RBERIENW::VALUE2)
+        self.variant(RBERIEN_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 8:13 - Limit For Interrupt Generation"]
-    #[inline]
-    pub fn limit(&self) -> LIMITR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        LIMITR { bits }
+    #[inline(always)]
+    pub fn limit(&self) -> LIMIT_R {
+        LIMIT_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bit 14 - Standard Receive Buffer Trigger Mode"]
-    #[inline]
-    pub fn srbtm(&self) -> SRBTMR {
-        SRBTMR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn srbtm(&self) -> SRBTM_R {
+        SRBTM_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Standard Receive Buffer Trigger Enable"]
-    #[inline]
-    pub fn srbten(&self) -> SRBTENR {
-        SRBTENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn srbten(&self) -> SRBTEN_R {
+        SRBTEN_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bits 16:18 - Standard Receive Buffer Interrupt Node Pointer"]
-    #[inline]
-    pub fn srbinp(&self) -> SRBINPR {
-        SRBINPR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn srbinp(&self) -> SRBINP_R {
+        SRBINP_R::new(((self.bits >> 16) & 0x07) as u8)
     }
     #[doc = "Bits 19:21 - Alternative Receive Buffer Interrupt Node Pointer"]
-    #[inline]
-    pub fn arbinp(&self) -> ARBINPR {
-        ARBINPR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn arbinp(&self) -> ARBINP_R {
+        ARBINP_R::new(((self.bits >> 19) & 0x07) as u8)
     }
     #[doc = "Bits 22:23 - Receiver Control Information Mode"]
-    #[inline]
-    pub fn rcim(&self) -> RCIMR {
-        RCIMR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn rcim(&self) -> RCIM_R {
+        RCIM_R::new(((self.bits >> 22) & 0x03) as u8)
     }
     #[doc = "Bits 24:26 - Buffer Size"]
-    #[inline]
-    pub fn size(&self) -> SIZER {
-        SIZER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn size(&self) -> SIZE_R {
+        SIZE_R::new(((self.bits >> 24) & 0x07) as u8)
     }
     #[doc = "Bit 27 - Receiver Notification Mode"]
-    #[inline]
-    pub fn rnm(&self) -> RNMR {
-        RNMR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rnm(&self) -> RNM_R {
+        RNM_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 28 - Buffer Event on Limit Overflow"]
-    #[inline]
-    pub fn lof(&self) -> LOFR {
-        LOFR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lof(&self) -> LOF_R {
+        LOF_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - Alternative Receive Buffer Interrupt Enable"]
-    #[inline]
-    pub fn arbien(&self) -> ARBIENR {
-        ARBIENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn arbien(&self) -> ARBIEN_R {
+        ARBIEN_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 30 - Standard Receive Buffer Interrupt Enable"]
-    #[inline]
-    pub fn srbien(&self) -> SRBIENR {
-        SRBIENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn srbien(&self) -> SRBIEN_R {
+        SRBIEN_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Receive Buffer Error Interrupt Enable"]
-    #[inline]
-    pub fn rberien(&self) -> RBERIENR {
-        RBERIENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rberien(&self) -> RBERIEN_R {
+        RBERIEN_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - Data Pointer"]
-    #[inline]
-    pub fn dptr(&mut self) -> _DPTRW {
-        _DPTRW { w: self }
+    #[inline(always)]
+    pub fn dptr(&mut self) -> DPTR_W {
+        DPTR_W { w: self }
     }
     #[doc = "Bits 8:13 - Limit For Interrupt Generation"]
-    #[inline]
-    pub fn limit(&mut self) -> _LIMITW {
-        _LIMITW { w: self }
+    #[inline(always)]
+    pub fn limit(&mut self) -> LIMIT_W {
+        LIMIT_W { w: self }
     }
     #[doc = "Bit 14 - Standard Receive Buffer Trigger Mode"]
-    #[inline]
-    pub fn srbtm(&mut self) -> _SRBTMW {
-        _SRBTMW { w: self }
+    #[inline(always)]
+    pub fn srbtm(&mut self) -> SRBTM_W {
+        SRBTM_W { w: self }
     }
     #[doc = "Bit 15 - Standard Receive Buffer Trigger Enable"]
-    #[inline]
-    pub fn srbten(&mut self) -> _SRBTENW {
-        _SRBTENW { w: self }
+    #[inline(always)]
+    pub fn srbten(&mut self) -> SRBTEN_W {
+        SRBTEN_W { w: self }
     }
     #[doc = "Bits 16:18 - Standard Receive Buffer Interrupt Node Pointer"]
-    #[inline]
-    pub fn srbinp(&mut self) -> _SRBINPW {
-        _SRBINPW { w: self }
+    #[inline(always)]
+    pub fn srbinp(&mut self) -> SRBINP_W {
+        SRBINP_W { w: self }
     }
     #[doc = "Bits 19:21 - Alternative Receive Buffer Interrupt Node Pointer"]
-    #[inline]
-    pub fn arbinp(&mut self) -> _ARBINPW {
-        _ARBINPW { w: self }
+    #[inline(always)]
+    pub fn arbinp(&mut self) -> ARBINP_W {
+        ARBINP_W { w: self }
     }
     #[doc = "Bits 22:23 - Receiver Control Information Mode"]
-    #[inline]
-    pub fn rcim(&mut self) -> _RCIMW {
-        _RCIMW { w: self }
+    #[inline(always)]
+    pub fn rcim(&mut self) -> RCIM_W {
+        RCIM_W { w: self }
     }
     #[doc = "Bits 24:26 - Buffer Size"]
-    #[inline]
-    pub fn size(&mut self) -> _SIZEW {
-        _SIZEW { w: self }
+    #[inline(always)]
+    pub fn size(&mut self) -> SIZE_W {
+        SIZE_W { w: self }
     }
     #[doc = "Bit 27 - Receiver Notification Mode"]
-    #[inline]
-    pub fn rnm(&mut self) -> _RNMW {
-        _RNMW { w: self }
+    #[inline(always)]
+    pub fn rnm(&mut self) -> RNM_W {
+        RNM_W { w: self }
     }
     #[doc = "Bit 28 - Buffer Event on Limit Overflow"]
-    #[inline]
-    pub fn lof(&mut self) -> _LOFW {
-        _LOFW { w: self }
+    #[inline(always)]
+    pub fn lof(&mut self) -> LOF_W {
+        LOF_W { w: self }
     }
     #[doc = "Bit 29 - Alternative Receive Buffer Interrupt Enable"]
-    #[inline]
-    pub fn arbien(&mut self) -> _ARBIENW {
-        _ARBIENW { w: self }
+    #[inline(always)]
+    pub fn arbien(&mut self) -> ARBIEN_W {
+        ARBIEN_W { w: self }
     }
     #[doc = "Bit 30 - Standard Receive Buffer Interrupt Enable"]
-    #[inline]
-    pub fn srbien(&mut self) -> _SRBIENW {
-        _SRBIENW { w: self }
+    #[inline(always)]
+    pub fn srbien(&mut self) -> SRBIEN_W {
+        SRBIEN_W { w: self }
     }
     #[doc = "Bit 31 - Receive Buffer Error Interrupt Enable"]
-    #[inline]
-    pub fn rberien(&mut self) -> _RBERIENW {
-        _RBERIENW { w: self }
+    #[inline(always)]
+    pub fn rberien(&mut self) -> RBERIEN_W {
+        RBERIEN_W { w: self }
     }
 }
