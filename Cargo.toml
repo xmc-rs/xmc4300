@@ -10,7 +10,7 @@ keywords = ["cortex-m", "infineon", "arm", "xmc4x"]
 documentation = "https://docs.rs/xmc4300/"
 
 [dependencies]
-cortex-m = "0.5.8"
+cortex-m = "0.6.1"
 bare-metal = "0.2.5"
 vcell = "0.1.2"
 
