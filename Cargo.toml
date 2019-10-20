@@ -1,6 +1,6 @@
 [package]
 name = "xmc4300"
-version = "0.1.0"
+version = "0.1.1"
 description = "XMC peripheral library for XMC4300 generated from SVD"
 authors = ["Lucas Brendel <lucasbrendel@gmail.com>"]
 readme = "README.md"
@@ -19,4 +19,4 @@ optional = true
 version = "0.6.10"
 
 [features]
-rt = ["cortex-m-rt"]
+rt = ["cortex-m-rt/device"]
