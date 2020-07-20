@@ -1182,356 +1182,356 @@ impl Deref for ETH0 {
 }
 #[doc = "Ethernet Unit 0"]
 pub mod eth0;
-#[doc = "EtherCAT 0 Control Register"]
-pub struct ECAT0_CON {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_CON {}
-impl ECAT0_CON {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_con::RegisterBlock {
-        0x5000_41b0 as *const _
-    }
-}
-impl Deref for ECAT0_CON {
-    type Target = ecat0_con::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_CON::ptr() }
-    }
-}
-#[doc = "EtherCAT 0 Control Register"]
-pub mod ecat0_con;
-#[doc = "EtherCAT 0"]
-pub struct ECAT0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0 {}
-impl ECAT0 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0::RegisterBlock {
-        0x5401_0000 as *const _
-    }
-}
-impl Deref for ECAT0 {
-    type Target = ecat0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub mod ecat0;
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_FMMU0 {}
-impl ECAT0_FMMU0 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
-        0x5401_0600 as *const _
-    }
-}
-impl Deref for ECAT0_FMMU0 {
-    type Target = ecat0_fmmu0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_FMMU0::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub mod ecat0_fmmu0;
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_FMMU1 {}
-impl ECAT0_FMMU1 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
-        0x5401_0610 as *const _
-    }
-}
-impl Deref for ECAT0_FMMU1 {
-    type Target = ecat0_fmmu0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_FMMU1::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU2 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_FMMU2 {}
-impl ECAT0_FMMU2 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
-        0x5401_0620 as *const _
-    }
-}
-impl Deref for ECAT0_FMMU2 {
-    type Target = ecat0_fmmu0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_FMMU2::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU3 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_FMMU3 {}
-impl ECAT0_FMMU3 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
-        0x5401_0630 as *const _
-    }
-}
-impl Deref for ECAT0_FMMU3 {
-    type Target = ecat0_fmmu0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_FMMU3::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU4 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_FMMU4 {}
-impl ECAT0_FMMU4 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
-        0x5401_0640 as *const _
-    }
-}
-impl Deref for ECAT0_FMMU4 {
-    type Target = ecat0_fmmu0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_FMMU4::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU5 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_FMMU5 {}
-impl ECAT0_FMMU5 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
-        0x5401_0650 as *const _
-    }
-}
-impl Deref for ECAT0_FMMU5 {
-    type Target = ecat0_fmmu0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_FMMU5::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU6 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_FMMU6 {}
-impl ECAT0_FMMU6 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
-        0x5401_0660 as *const _
-    }
-}
-impl Deref for ECAT0_FMMU6 {
-    type Target = ecat0_fmmu0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_FMMU6::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_FMMU7 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_FMMU7 {}
-impl ECAT0_FMMU7 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
-        0x5401_0670 as *const _
-    }
-}
-impl Deref for ECAT0_FMMU7 {
-    type Target = ecat0_fmmu0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_FMMU7::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_SM0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_SM0 {}
-impl ECAT0_SM0 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
-        0x5401_0800 as *const _
-    }
-}
-impl Deref for ECAT0_SM0 {
-    type Target = ecat0_sm0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_SM0::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub mod ecat0_sm0;
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_SM1 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_SM1 {}
-impl ECAT0_SM1 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
-        0x5401_0808 as *const _
-    }
-}
-impl Deref for ECAT0_SM1 {
-    type Target = ecat0_sm0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_SM1::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_SM2 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_SM2 {}
-impl ECAT0_SM2 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
-        0x5401_0810 as *const _
-    }
-}
-impl Deref for ECAT0_SM2 {
-    type Target = ecat0_sm0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_SM2::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_SM3 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_SM3 {}
-impl ECAT0_SM3 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
-        0x5401_0818 as *const _
-    }
-}
-impl Deref for ECAT0_SM3 {
-    type Target = ecat0_sm0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_SM3::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_SM4 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_SM4 {}
-impl ECAT0_SM4 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
-        0x5401_0820 as *const _
-    }
-}
-impl Deref for ECAT0_SM4 {
-    type Target = ecat0_sm0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_SM4::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_SM5 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_SM5 {}
-impl ECAT0_SM5 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
-        0x5401_0828 as *const _
-    }
-}
-impl Deref for ECAT0_SM5 {
-    type Target = ecat0_sm0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_SM5::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_SM6 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_SM6 {}
-impl ECAT0_SM6 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
-        0x5401_0830 as *const _
-    }
-}
-impl Deref for ECAT0_SM6 {
-    type Target = ecat0_sm0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_SM6::ptr() }
-    }
-}
-#[doc = "EtherCAT 0"]
-pub struct ECAT0_SM7 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for ECAT0_SM7 {}
-impl ECAT0_SM7 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
-        0x5401_0838 as *const _
-    }
-}
-impl Deref for ECAT0_SM7 {
-    type Target = ecat0_sm0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*ECAT0_SM7::ptr() }
-    }
-}
+// #[doc = "EtherCAT 0 Control Register"]
+// pub struct ECAT0_CON {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_CON {}
+// impl ECAT0_CON {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_con::RegisterBlock {
+//         0x5000_41b0 as *const _
+//     }
+// }
+// impl Deref for ECAT0_CON {
+//     type Target = ecat0_con::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_CON::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0 Control Register"]
+// pub mod ecat0_con;
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0 {}
+// impl ECAT0 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0::RegisterBlock {
+//         0x5401_0000 as *const _
+//     }
+// }
+// impl Deref for ECAT0 {
+//     type Target = ecat0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub mod ecat0;
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_FMMU0 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_FMMU0 {}
+// impl ECAT0_FMMU0 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
+//         0x5401_0600 as *const _
+//     }
+// }
+// impl Deref for ECAT0_FMMU0 {
+//     type Target = ecat0_fmmu0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_FMMU0::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub mod ecat0_fmmu0;
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_FMMU1 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_FMMU1 {}
+// impl ECAT0_FMMU1 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
+//         0x5401_0610 as *const _
+//     }
+// }
+// impl Deref for ECAT0_FMMU1 {
+//     type Target = ecat0_fmmu0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_FMMU1::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_FMMU2 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_FMMU2 {}
+// impl ECAT0_FMMU2 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
+//         0x5401_0620 as *const _
+//     }
+// }
+// impl Deref for ECAT0_FMMU2 {
+//     type Target = ecat0_fmmu0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_FMMU2::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_FMMU3 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_FMMU3 {}
+// impl ECAT0_FMMU3 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
+//         0x5401_0630 as *const _
+//     }
+// }
+// impl Deref for ECAT0_FMMU3 {
+//     type Target = ecat0_fmmu0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_FMMU3::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_FMMU4 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_FMMU4 {}
+// impl ECAT0_FMMU4 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
+//         0x5401_0640 as *const _
+//     }
+// }
+// impl Deref for ECAT0_FMMU4 {
+//     type Target = ecat0_fmmu0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_FMMU4::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_FMMU5 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_FMMU5 {}
+// impl ECAT0_FMMU5 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
+//         0x5401_0650 as *const _
+//     }
+// }
+// impl Deref for ECAT0_FMMU5 {
+//     type Target = ecat0_fmmu0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_FMMU5::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_FMMU6 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_FMMU6 {}
+// impl ECAT0_FMMU6 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
+//         0x5401_0660 as *const _
+//     }
+// }
+// impl Deref for ECAT0_FMMU6 {
+//     type Target = ecat0_fmmu0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_FMMU6::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_FMMU7 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_FMMU7 {}
+// impl ECAT0_FMMU7 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_fmmu0::RegisterBlock {
+//         0x5401_0670 as *const _
+//     }
+// }
+// impl Deref for ECAT0_FMMU7 {
+//     type Target = ecat0_fmmu0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_FMMU7::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_SM0 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_SM0 {}
+// impl ECAT0_SM0 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
+//         0x5401_0800 as *const _
+//     }
+// }
+// impl Deref for ECAT0_SM0 {
+//     type Target = ecat0_sm0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_SM0::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub mod ecat0_sm0;
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_SM1 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_SM1 {}
+// impl ECAT0_SM1 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
+//         0x5401_0808 as *const _
+//     }
+// }
+// impl Deref for ECAT0_SM1 {
+//     type Target = ecat0_sm0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_SM1::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_SM2 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_SM2 {}
+// impl ECAT0_SM2 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
+//         0x5401_0810 as *const _
+//     }
+// }
+// impl Deref for ECAT0_SM2 {
+//     type Target = ecat0_sm0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_SM2::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_SM3 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_SM3 {}
+// impl ECAT0_SM3 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
+//         0x5401_0818 as *const _
+//     }
+// }
+// impl Deref for ECAT0_SM3 {
+//     type Target = ecat0_sm0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_SM3::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_SM4 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_SM4 {}
+// impl ECAT0_SM4 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
+//         0x5401_0820 as *const _
+//     }
+// }
+// impl Deref for ECAT0_SM4 {
+//     type Target = ecat0_sm0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_SM4::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_SM5 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_SM5 {}
+// impl ECAT0_SM5 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
+//         0x5401_0828 as *const _
+//     }
+// }
+// impl Deref for ECAT0_SM5 {
+//     type Target = ecat0_sm0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_SM5::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_SM6 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_SM6 {}
+// impl ECAT0_SM6 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
+//         0x5401_0830 as *const _
+//     }
+// }
+// impl Deref for ECAT0_SM6 {
+//     type Target = ecat0_sm0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_SM6::ptr() }
+//     }
+// }
+// #[doc = "EtherCAT 0"]
+// pub struct ECAT0_SM7 {
+//     _marker: PhantomData<*const ()>,
+// }
+// unsafe impl Send for ECAT0_SM7 {}
+// impl ECAT0_SM7 {
+//     #[doc = r"Returns a pointer to the register block"]
+//     #[inline(always)]
+//     pub const fn ptr() -> *const ecat0_sm0::RegisterBlock {
+//         0x5401_0838 as *const _
+//     }
+// }
+// impl Deref for ECAT0_SM7 {
+//     type Target = ecat0_sm0::RegisterBlock;
+//     #[inline(always)]
+//     fn deref(&self) -> &Self::Target {
+//         unsafe { &*ECAT0_SM7::ptr() }
+//     }
+// }
 #[doc = "Universal Serial Bus"]
 pub struct USB0 {
     _marker: PhantomData<*const ()>,
@@ -2786,42 +2786,42 @@ pub struct Peripherals {
     pub ETH0_CON: ETH0_CON,
     #[doc = "ETH0"]
     pub ETH0: ETH0,
-    #[doc = "ECAT0_CON"]
-    pub ECAT0_CON: ECAT0_CON,
-    #[doc = "ECAT0"]
-    pub ECAT0: ECAT0,
-    #[doc = "ECAT0_FMMU0"]
-    pub ECAT0_FMMU0: ECAT0_FMMU0,
-    #[doc = "ECAT0_FMMU1"]
-    pub ECAT0_FMMU1: ECAT0_FMMU1,
-    #[doc = "ECAT0_FMMU2"]
-    pub ECAT0_FMMU2: ECAT0_FMMU2,
-    #[doc = "ECAT0_FMMU3"]
-    pub ECAT0_FMMU3: ECAT0_FMMU3,
-    #[doc = "ECAT0_FMMU4"]
-    pub ECAT0_FMMU4: ECAT0_FMMU4,
-    #[doc = "ECAT0_FMMU5"]
-    pub ECAT0_FMMU5: ECAT0_FMMU5,
-    #[doc = "ECAT0_FMMU6"]
-    pub ECAT0_FMMU6: ECAT0_FMMU6,
-    #[doc = "ECAT0_FMMU7"]
-    pub ECAT0_FMMU7: ECAT0_FMMU7,
-    #[doc = "ECAT0_SM0"]
-    pub ECAT0_SM0: ECAT0_SM0,
-    #[doc = "ECAT0_SM1"]
-    pub ECAT0_SM1: ECAT0_SM1,
-    #[doc = "ECAT0_SM2"]
-    pub ECAT0_SM2: ECAT0_SM2,
-    #[doc = "ECAT0_SM3"]
-    pub ECAT0_SM3: ECAT0_SM3,
-    #[doc = "ECAT0_SM4"]
-    pub ECAT0_SM4: ECAT0_SM4,
-    #[doc = "ECAT0_SM5"]
-    pub ECAT0_SM5: ECAT0_SM5,
-    #[doc = "ECAT0_SM6"]
-    pub ECAT0_SM6: ECAT0_SM6,
-    #[doc = "ECAT0_SM7"]
-    pub ECAT0_SM7: ECAT0_SM7,
+    // #[doc = "ECAT0_CON"]
+    // pub ECAT0_CON: ECAT0_CON,
+    // #[doc = "ECAT0"]
+    // pub ECAT0: ECAT0,
+    // #[doc = "ECAT0_FMMU0"]
+    // pub ECAT0_FMMU0: ECAT0_FMMU0,
+    // #[doc = "ECAT0_FMMU1"]
+    // pub ECAT0_FMMU1: ECAT0_FMMU1,
+    // #[doc = "ECAT0_FMMU2"]
+    // pub ECAT0_FMMU2: ECAT0_FMMU2,
+    // #[doc = "ECAT0_FMMU3"]
+    // pub ECAT0_FMMU3: ECAT0_FMMU3,
+    // #[doc = "ECAT0_FMMU4"]
+    // pub ECAT0_FMMU4: ECAT0_FMMU4,
+    // #[doc = "ECAT0_FMMU5"]
+    // pub ECAT0_FMMU5: ECAT0_FMMU5,
+    // #[doc = "ECAT0_FMMU6"]
+    // pub ECAT0_FMMU6: ECAT0_FMMU6,
+    // #[doc = "ECAT0_FMMU7"]
+    // pub ECAT0_FMMU7: ECAT0_FMMU7,
+    // #[doc = "ECAT0_SM0"]
+    // pub ECAT0_SM0: ECAT0_SM0,
+    // #[doc = "ECAT0_SM1"]
+    // pub ECAT0_SM1: ECAT0_SM1,
+    // #[doc = "ECAT0_SM2"]
+    // pub ECAT0_SM2: ECAT0_SM2,
+    // #[doc = "ECAT0_SM3"]
+    // pub ECAT0_SM3: ECAT0_SM3,
+    // #[doc = "ECAT0_SM4"]
+    // pub ECAT0_SM4: ECAT0_SM4,
+    // #[doc = "ECAT0_SM5"]
+    // pub ECAT0_SM5: ECAT0_SM5,
+    // #[doc = "ECAT0_SM6"]
+    // pub ECAT0_SM6: ECAT0_SM6,
+    // #[doc = "ECAT0_SM7"]
+    // pub ECAT0_SM7: ECAT0_SM7,
     #[doc = "USB0"]
     pub USB0: USB0,
     #[doc = "USB0_EP0"]
@@ -2992,24 +2992,24 @@ impl Peripherals {
             SDMMC: SDMMC { _marker: PhantomData },
             ETH0_CON: ETH0_CON { _marker: PhantomData },
             ETH0: ETH0 { _marker: PhantomData },
-            ECAT0_CON: ECAT0_CON { _marker: PhantomData },
-            ECAT0: ECAT0 { _marker: PhantomData },
-            ECAT0_FMMU0: ECAT0_FMMU0 { _marker: PhantomData },
-            ECAT0_FMMU1: ECAT0_FMMU1 { _marker: PhantomData },
-            ECAT0_FMMU2: ECAT0_FMMU2 { _marker: PhantomData },
-            ECAT0_FMMU3: ECAT0_FMMU3 { _marker: PhantomData },
-            ECAT0_FMMU4: ECAT0_FMMU4 { _marker: PhantomData },
-            ECAT0_FMMU5: ECAT0_FMMU5 { _marker: PhantomData },
-            ECAT0_FMMU6: ECAT0_FMMU6 { _marker: PhantomData },
-            ECAT0_FMMU7: ECAT0_FMMU7 { _marker: PhantomData },
-            ECAT0_SM0: ECAT0_SM0 { _marker: PhantomData },
-            ECAT0_SM1: ECAT0_SM1 { _marker: PhantomData },
-            ECAT0_SM2: ECAT0_SM2 { _marker: PhantomData },
-            ECAT0_SM3: ECAT0_SM3 { _marker: PhantomData },
-            ECAT0_SM4: ECAT0_SM4 { _marker: PhantomData },
-            ECAT0_SM5: ECAT0_SM5 { _marker: PhantomData },
-            ECAT0_SM6: ECAT0_SM6 { _marker: PhantomData },
-            ECAT0_SM7: ECAT0_SM7 { _marker: PhantomData },
+            // ECAT0_CON: ECAT0_CON { _marker: PhantomData },
+            // ECAT0: ECAT0 { _marker: PhantomData },
+            // ECAT0_FMMU0: ECAT0_FMMU0 { _marker: PhantomData },
+            // ECAT0_FMMU1: ECAT0_FMMU1 { _marker: PhantomData },
+            // ECAT0_FMMU2: ECAT0_FMMU2 { _marker: PhantomData },
+            // ECAT0_FMMU3: ECAT0_FMMU3 { _marker: PhantomData },
+            // ECAT0_FMMU4: ECAT0_FMMU4 { _marker: PhantomData },
+            // ECAT0_FMMU5: ECAT0_FMMU5 { _marker: PhantomData },
+            // ECAT0_FMMU6: ECAT0_FMMU6 { _marker: PhantomData },
+            // ECAT0_FMMU7: ECAT0_FMMU7 { _marker: PhantomData },
+            // ECAT0_SM0: ECAT0_SM0 { _marker: PhantomData },
+            // ECAT0_SM1: ECAT0_SM1 { _marker: PhantomData },
+            // ECAT0_SM2: ECAT0_SM2 { _marker: PhantomData },
+            // ECAT0_SM3: ECAT0_SM3 { _marker: PhantomData },
+            // ECAT0_SM4: ECAT0_SM4 { _marker: PhantomData },
+            // ECAT0_SM5: ECAT0_SM5 { _marker: PhantomData },
+            // ECAT0_SM6: ECAT0_SM6 { _marker: PhantomData },
+            // ECAT0_SM7: ECAT0_SM7 { _marker: PhantomData },
             USB0: USB0 { _marker: PhantomData },
             USB0_EP0: USB0_EP0 { _marker: PhantomData },
             USB0_EP1: USB0_EP1 { _marker: PhantomData },
