@@ -2,28 +2,23 @@
 pub type R = crate::R<u16, super::AL_CONTROL>;
 #[doc = "Initiate State Transition of the Device StateMachine\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IST_A {
     #[doc = "1: Request Init State"]
-    VALUE1,
+    VALUE1 = 1,
     #[doc = "2: Request Pre-Operational State"]
-    VALUE2,
+    VALUE2 = 2,
     #[doc = "3: Request Bootstrap State"]
-    VALUE3,
+    VALUE3 = 3,
     #[doc = "4: Request Safe-Operational State"]
-    VALUE4,
+    VALUE4 = 4,
     #[doc = "8: Request Operational State"]
-    VALUE5,
+    VALUE5 = 8,
 }
 impl From<IST_A> for u8 {
     #[inline(always)]
     fn from(variant: IST_A) -> Self {
-        match variant {
-            IST_A::VALUE1 => 1,
-            IST_A::VALUE2 => 2,
-            IST_A::VALUE3 => 3,
-            IST_A::VALUE4 => 4,
-            IST_A::VALUE5 => 8,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `IST`"]
@@ -72,17 +67,14 @@ impl IST_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EIA_A {
     #[doc = "0: No Ack of Error Ind in AL status register"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Ack of Error Ind in AL status register"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EIA_A> for bool {
     #[inline(always)]
     fn from(variant: EIA_A) -> Self {
-        match variant {
-            EIA_A::VALUE1 => false,
-            EIA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EIA`"]
@@ -111,17 +103,14 @@ impl EIA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DID_A {
     #[doc = "0: No request"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Device Identification request"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DID_A> for bool {
     #[inline(always)]
     fn from(variant: DID_A) -> Self {
-        match variant {
-            DID_A::VALUE1 => false,
-            DID_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DID`"]

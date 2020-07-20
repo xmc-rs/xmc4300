@@ -12,25 +12,21 @@ impl crate::ResetValue for super::GLOBEVNP {
 }
 #[doc = "Service Request Node Pointer Backgr. Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SEV0NP_A {
     #[doc = "0: Select shared service request line 0 of common service request group 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select shared service request line 3 of common service request group 0"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0 of common service request group 1"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3 of common service request group 1"]
-    VALUE4,
+    VALUE4 = 7,
 }
 impl From<SEV0NP_A> for u8 {
     #[inline(always)]
     fn from(variant: SEV0NP_A) -> Self {
-        match variant {
-            SEV0NP_A::VALUE1 => 0,
-            SEV0NP_A::VALUE2 => 3,
-            SEV0NP_A::VALUE3 => 4,
-            SEV0NP_A::VALUE4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SEV0NP`"]
@@ -108,25 +104,21 @@ impl<'a> SEV0NP_W<'a> {
 }
 #[doc = "Service Request Node Pointer Backgr. Result\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REV0NP_A {
     #[doc = "0: Select shared service request line 0 of common service request group 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select shared service request line 3 of common service request group 0"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0 of common service request group 1"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3 of common service request group 1"]
-    VALUE4,
+    VALUE4 = 7,
 }
 impl From<REV0NP_A> for u8 {
     #[inline(always)]
     fn from(variant: REV0NP_A) -> Self {
-        match variant {
-            REV0NP_A::VALUE1 => 0,
-            REV0NP_A::VALUE2 => 3,
-            REV0NP_A::VALUE3 => 4,
-            REV0NP_A::VALUE4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REV0NP`"]

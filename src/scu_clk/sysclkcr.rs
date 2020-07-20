@@ -28,17 +28,14 @@ impl<'a> SYSDIV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYSSEL_A {
     #[doc = "0: fOFI clock"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: fPLL clock"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SYSSEL_A> for bool {
     #[inline(always)]
     fn from(variant: SYSSEL_A) -> Self {
-        match variant {
-            SYSSEL_A::CONST_0 => false,
-            SYSSEL_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYSSEL`"]

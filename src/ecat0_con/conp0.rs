@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CONP0 {
 }
 #[doc = "PORT0 Receive Input 0 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RXD0_A {
     #[doc = "0: Data input RXD0A is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data input RXD0B is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Data input RXD0C is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Data input RXD0D is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<RXD0_A> for u8 {
     #[inline(always)]
     fn from(variant: RXD0_A) -> Self {
-        match variant {
-            RXD0_A::VALUE1 => 0,
-            RXD0_A::VALUE2 => 1,
-            RXD0_A::VALUE3 => 2,
-            RXD0_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RXD0`"]
@@ -109,25 +105,21 @@ impl<'a> RXD0_W<'a> {
 }
 #[doc = "Port0 Receive Input 1 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RXD1_A {
     #[doc = "0: Data input RXD1A is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data input RXD1B is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Data input RXD1C is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Data input RXD1D is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<RXD1_A> for u8 {
     #[inline(always)]
     fn from(variant: RXD1_A) -> Self {
-        match variant {
-            RXD1_A::VALUE1 => 0,
-            RXD1_A::VALUE2 => 1,
-            RXD1_A::VALUE3 => 2,
-            RXD1_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RXD1`"]
@@ -206,25 +198,21 @@ impl<'a> RXD1_W<'a> {
 }
 #[doc = "Port0 Receive Input 2 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RXD2_A {
     #[doc = "0: Data input RXD2A is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data input RXD2B is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Data input RXD2C is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Data input RXD2D is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<RXD2_A> for u8 {
     #[inline(always)]
     fn from(variant: RXD2_A) -> Self {
-        match variant {
-            RXD2_A::VALUE1 => 0,
-            RXD2_A::VALUE2 => 1,
-            RXD2_A::VALUE3 => 2,
-            RXD2_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RXD2`"]
@@ -303,25 +291,21 @@ impl<'a> RXD2_W<'a> {
 }
 #[doc = "Port0 Receive Input 3 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RXD3_A {
     #[doc = "0: Data input RXD3A is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data input RXD3B is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Data input RXD3C is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Data input RXD3D is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<RXD3_A> for u8 {
     #[inline(always)]
     fn from(variant: RXD3_A) -> Self {
-        match variant {
-            RXD3_A::VALUE1 => 0,
-            RXD3_A::VALUE2 => 1,
-            RXD3_A::VALUE3 => 2,
-            RXD3_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RXD3`"]
@@ -400,25 +384,21 @@ impl<'a> RXD3_W<'a> {
 }
 #[doc = "Port0 MII RX ERROR Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RX_ERR_A {
     #[doc = "0: Data input RX_ERRA is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data input RX_ERRB is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Data input RX_ERRC is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Data input RX_ERRD is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<RX_ERR_A> for u8 {
     #[inline(always)]
     fn from(variant: RX_ERR_A) -> Self {
-        match variant {
-            RX_ERR_A::VALUE1 => 0,
-            RX_ERR_A::VALUE2 => 1,
-            RX_ERR_A::VALUE3 => 2,
-            RX_ERR_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RX_ERR`"]
@@ -497,25 +477,21 @@ impl<'a> RX_ERR_W<'a> {
 }
 #[doc = "Port0 MII RX DV Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RX_DV_A {
     #[doc = "0: Data input RX_DVA is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data input RX_DVB is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Data input RX_DVC is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Data input RX_DVD is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<RX_DV_A> for u8 {
     #[inline(always)]
     fn from(variant: RX_DV_A) -> Self {
-        match variant {
-            RX_DV_A::VALUE1 => 0,
-            RX_DV_A::VALUE2 => 1,
-            RX_DV_A::VALUE3 => 2,
-            RX_DV_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RX_DV`"]
@@ -594,25 +570,21 @@ impl<'a> RX_DV_W<'a> {
 }
 #[doc = "Port0 MII RX Clock Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RX_CLK_A {
     #[doc = "0: Clock input RX_CLKA"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clock input RX_CLKB"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Clock input RX_CLKC"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Clock input RX_CLKD"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<RX_CLK_A> for u8 {
     #[inline(always)]
     fn from(variant: RX_CLK_A) -> Self {
-        match variant {
-            RX_CLK_A::VALUE1 => 0,
-            RX_CLK_A::VALUE2 => 1,
-            RX_CLK_A::VALUE3 => 2,
-            RX_CLK_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RX_CLK`"]
@@ -691,25 +663,21 @@ impl<'a> RX_CLK_W<'a> {
 }
 #[doc = "Port0 PHY Link Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LINK_A {
     #[doc = "0: PHY LINKA"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: PHY LINKB"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: PHY LINKC"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: PHY LINKD"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<LINK_A> for u8 {
     #[inline(always)]
     fn from(variant: LINK_A) -> Self {
-        match variant {
-            LINK_A::VALUE1 => 0,
-            LINK_A::VALUE2 => 1,
-            LINK_A::VALUE3 => 2,
-            LINK_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LINK`"]
@@ -788,25 +756,21 @@ impl<'a> LINK_W<'a> {
 }
 #[doc = "Port0 MII TX Clock Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TX_CLK_A {
     #[doc = "0: Clock input TX_CLKA"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clock input TX_CLKB"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Clock input TX_CLKC"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Clock input TX_CLKD"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<TX_CLK_A> for u8 {
     #[inline(always)]
     fn from(variant: TX_CLK_A) -> Self {
-        match variant {
-            TX_CLK_A::VALUE1 => 0,
-            TX_CLK_A::VALUE2 => 1,
-            TX_CLK_A::VALUE3 => 2,
-            TX_CLK_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TX_CLK`"]
@@ -885,25 +849,21 @@ impl<'a> TX_CLK_W<'a> {
 }
 #[doc = "Port0 Manual TX Shift configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TX_SHIFT_A {
     #[doc = "0: 0 ns"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 10 ns"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 20 ns"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 30 ns"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<TX_SHIFT_A> for u8 {
     #[inline(always)]
     fn from(variant: TX_SHIFT_A) -> Self {
-        match variant {
-            TX_SHIFT_A::VALUE1 => 0,
-            TX_SHIFT_A::VALUE2 => 1,
-            TX_SHIFT_A::VALUE3 => 2,
-            TX_SHIFT_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TX_SHIFT`"]

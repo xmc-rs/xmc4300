@@ -14,17 +14,14 @@ impl crate::ResetValue for super::ASSEL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHSEL0_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: This channel is part of the scan sequence"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHSEL0_A> for bool {
     #[inline(always)]
     fn from(variant: CHSEL0_A) -> Self {
-        match variant {
-            CHSEL0_A::VALUE1 => false,
-            CHSEL0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHSEL0`"]
@@ -92,17 +89,14 @@ impl<'a> CHSEL0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHSEL1_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: This channel is part of the scan sequence"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHSEL1_A> for bool {
     #[inline(always)]
     fn from(variant: CHSEL1_A) -> Self {
-        match variant {
-            CHSEL1_A::VALUE1 => false,
-            CHSEL1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHSEL1`"]
@@ -170,17 +164,14 @@ impl<'a> CHSEL1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHSEL2_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: This channel is part of the scan sequence"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHSEL2_A> for bool {
     #[inline(always)]
     fn from(variant: CHSEL2_A) -> Self {
-        match variant {
-            CHSEL2_A::VALUE1 => false,
-            CHSEL2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHSEL2`"]
@@ -248,17 +239,14 @@ impl<'a> CHSEL2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHSEL3_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: This channel is part of the scan sequence"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHSEL3_A> for bool {
     #[inline(always)]
     fn from(variant: CHSEL3_A) -> Self {
-        match variant {
-            CHSEL3_A::VALUE1 => false,
-            CHSEL3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHSEL3`"]
@@ -326,17 +314,14 @@ impl<'a> CHSEL3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHSEL4_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: This channel is part of the scan sequence"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHSEL4_A> for bool {
     #[inline(always)]
     fn from(variant: CHSEL4_A) -> Self {
-        match variant {
-            CHSEL4_A::VALUE1 => false,
-            CHSEL4_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHSEL4`"]
@@ -404,17 +389,14 @@ impl<'a> CHSEL4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHSEL5_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: This channel is part of the scan sequence"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHSEL5_A> for bool {
     #[inline(always)]
     fn from(variant: CHSEL5_A) -> Self {
-        match variant {
-            CHSEL5_A::VALUE1 => false,
-            CHSEL5_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHSEL5`"]
@@ -482,17 +464,14 @@ impl<'a> CHSEL5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHSEL6_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: This channel is part of the scan sequence"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHSEL6_A> for bool {
     #[inline(always)]
     fn from(variant: CHSEL6_A) -> Self {
-        match variant {
-            CHSEL6_A::VALUE1 => false,
-            CHSEL6_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHSEL6`"]
@@ -560,17 +539,14 @@ impl<'a> CHSEL6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHSEL7_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: This channel is part of the scan sequence"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHSEL7_A> for bool {
     #[inline(always)]
     fn from(variant: CHSEL7_A) -> Self {
-        match variant {
-            CHSEL7_A::VALUE1 => false,
-            CHSEL7_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHSEL7`"]

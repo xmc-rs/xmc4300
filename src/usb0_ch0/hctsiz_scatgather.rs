@@ -40,25 +40,21 @@ impl<'a> NTD_W<'a> {
 }
 #[doc = "PID\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PID_A {
     #[doc = "0: DATA0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: DATA2"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: DATA1"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: MDATA (non-control)"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<PID_A> for u8 {
     #[inline(always)]
     fn from(variant: PID_A) -> Self {
-        match variant {
-            PID_A::VALUE1 => 0,
-            PID_A::VALUE2 => 1,
-            PID_A::VALUE3 => 2,
-            PID_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `Pid`"]

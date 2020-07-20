@@ -12,61 +12,45 @@ impl crate::ResetValue for super::INS {
 }
 #[doc = "Event 0 signal selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EV0IS_A {
     #[doc = "0: CCU4x.INyA"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CCU4x.INyB"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: CCU4x.INyC"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: CCU4x.INyD"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: CCU4x.INyE"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: CCU4x.INyF"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: CCU4x.INyG"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: CCU4x.INyH"]
-    VALUE8,
+    VALUE8 = 7,
     #[doc = "8: CCU4x.INyI"]
-    VALUE9,
+    VALUE9 = 8,
     #[doc = "9: CCU4x.INyJ"]
-    VALUE10,
+    VALUE10 = 9,
     #[doc = "10: CCU4x.INyK"]
-    VALUE11,
+    VALUE11 = 10,
     #[doc = "11: CCU4x.INyL"]
-    VALUE12,
+    VALUE12 = 11,
     #[doc = "12: CCU4x.INyM"]
-    VALUE13,
+    VALUE13 = 12,
     #[doc = "13: CCU4x.INyN"]
-    VALUE14,
+    VALUE14 = 13,
     #[doc = "14: CCU4x.INyO"]
-    VALUE15,
+    VALUE15 = 14,
     #[doc = "15: CCU4x.INyP"]
-    VALUE16,
+    VALUE16 = 15,
 }
 impl From<EV0IS_A> for u8 {
     #[inline(always)]
     fn from(variant: EV0IS_A) -> Self {
-        match variant {
-            EV0IS_A::VALUE1 => 0,
-            EV0IS_A::VALUE2 => 1,
-            EV0IS_A::VALUE3 => 2,
-            EV0IS_A::VALUE4 => 3,
-            EV0IS_A::VALUE5 => 4,
-            EV0IS_A::VALUE6 => 5,
-            EV0IS_A::VALUE7 => 6,
-            EV0IS_A::VALUE8 => 7,
-            EV0IS_A::VALUE9 => 8,
-            EV0IS_A::VALUE10 => 9,
-            EV0IS_A::VALUE11 => 10,
-            EV0IS_A::VALUE12 => 11,
-            EV0IS_A::VALUE13 => 12,
-            EV0IS_A::VALUE14 => 13,
-            EV0IS_A::VALUE15 => 14,
-            EV0IS_A::VALUE16 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EV0IS`"]
@@ -277,61 +261,45 @@ impl<'a> EV0IS_W<'a> {
 }
 #[doc = "Event 1 signal selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EV1IS_A {
     #[doc = "0: CCU4x.INyA"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CCU4x.INyB"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: CCU4x.INyC"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: CCU4x.INyD"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: CCU4x.INyE"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: CCU4x.INyF"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: CCU4x.INyG"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: CCU4x.INyH"]
-    VALUE8,
+    VALUE8 = 7,
     #[doc = "8: CCU4x.INyI"]
-    VALUE9,
+    VALUE9 = 8,
     #[doc = "9: CCU4x.INyJ"]
-    VALUE10,
+    VALUE10 = 9,
     #[doc = "10: CCU4x.INyK"]
-    VALUE11,
+    VALUE11 = 10,
     #[doc = "11: CCU4x.INyL"]
-    VALUE12,
+    VALUE12 = 11,
     #[doc = "12: CCU4x.INyM"]
-    VALUE13,
+    VALUE13 = 12,
     #[doc = "13: CCU4x.INyN"]
-    VALUE14,
+    VALUE14 = 13,
     #[doc = "14: CCU4x.INyO"]
-    VALUE15,
+    VALUE15 = 14,
     #[doc = "15: CCU4x.INyP"]
-    VALUE16,
+    VALUE16 = 15,
 }
 impl From<EV1IS_A> for u8 {
     #[inline(always)]
     fn from(variant: EV1IS_A) -> Self {
-        match variant {
-            EV1IS_A::VALUE1 => 0,
-            EV1IS_A::VALUE2 => 1,
-            EV1IS_A::VALUE3 => 2,
-            EV1IS_A::VALUE4 => 3,
-            EV1IS_A::VALUE5 => 4,
-            EV1IS_A::VALUE6 => 5,
-            EV1IS_A::VALUE7 => 6,
-            EV1IS_A::VALUE8 => 7,
-            EV1IS_A::VALUE9 => 8,
-            EV1IS_A::VALUE10 => 9,
-            EV1IS_A::VALUE11 => 10,
-            EV1IS_A::VALUE12 => 11,
-            EV1IS_A::VALUE13 => 12,
-            EV1IS_A::VALUE14 => 13,
-            EV1IS_A::VALUE15 => 14,
-            EV1IS_A::VALUE16 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EV1IS`"]
@@ -542,61 +510,45 @@ impl<'a> EV1IS_W<'a> {
 }
 #[doc = "Event 2 signal selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EV2IS_A {
     #[doc = "0: CCU4x.INyA"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CCU4x.INyB"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: CCU4x.INyC"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: CCU4x.INyD"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: CCU4x.INyE"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: CCU4x.INyF"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: CCU4x.INyG"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: CCU4x.INyH"]
-    VALUE8,
+    VALUE8 = 7,
     #[doc = "8: CCU4x.INyI"]
-    VALUE9,
+    VALUE9 = 8,
     #[doc = "9: CCU4x.INyJ"]
-    VALUE10,
+    VALUE10 = 9,
     #[doc = "10: CCU4x.INyK"]
-    VALUE11,
+    VALUE11 = 10,
     #[doc = "11: CCU4x.INyL"]
-    VALUE12,
+    VALUE12 = 11,
     #[doc = "12: CCU4x.INyM"]
-    VALUE13,
+    VALUE13 = 12,
     #[doc = "13: CCU4x.INyN"]
-    VALUE14,
+    VALUE14 = 13,
     #[doc = "14: CCU4x.INyO"]
-    VALUE15,
+    VALUE15 = 14,
     #[doc = "15: CCU4x.INyP"]
-    VALUE16,
+    VALUE16 = 15,
 }
 impl From<EV2IS_A> for u8 {
     #[inline(always)]
     fn from(variant: EV2IS_A) -> Self {
-        match variant {
-            EV2IS_A::VALUE1 => 0,
-            EV2IS_A::VALUE2 => 1,
-            EV2IS_A::VALUE3 => 2,
-            EV2IS_A::VALUE4 => 3,
-            EV2IS_A::VALUE5 => 4,
-            EV2IS_A::VALUE6 => 5,
-            EV2IS_A::VALUE7 => 6,
-            EV2IS_A::VALUE8 => 7,
-            EV2IS_A::VALUE9 => 8,
-            EV2IS_A::VALUE10 => 9,
-            EV2IS_A::VALUE11 => 10,
-            EV2IS_A::VALUE12 => 11,
-            EV2IS_A::VALUE13 => 12,
-            EV2IS_A::VALUE14 => 13,
-            EV2IS_A::VALUE15 => 14,
-            EV2IS_A::VALUE16 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EV2IS`"]
@@ -807,25 +759,21 @@ impl<'a> EV2IS_W<'a> {
 }
 #[doc = "Event 0 Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EV0EM_A {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Signal active on rising edge"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Signal active on falling edge"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Signal active on both edges"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EV0EM_A> for u8 {
     #[inline(always)]
     fn from(variant: EV0EM_A) -> Self {
-        match variant {
-            EV0EM_A::VALUE1 => 0,
-            EV0EM_A::VALUE2 => 1,
-            EV0EM_A::VALUE3 => 2,
-            EV0EM_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EV0EM`"]
@@ -904,25 +852,21 @@ impl<'a> EV0EM_W<'a> {
 }
 #[doc = "Event 1 Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EV1EM_A {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Signal active on rising edge"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Signal active on falling edge"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Signal active on both edges"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EV1EM_A> for u8 {
     #[inline(always)]
     fn from(variant: EV1EM_A) -> Self {
-        match variant {
-            EV1EM_A::VALUE1 => 0,
-            EV1EM_A::VALUE2 => 1,
-            EV1EM_A::VALUE3 => 2,
-            EV1EM_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EV1EM`"]
@@ -1001,25 +945,21 @@ impl<'a> EV1EM_W<'a> {
 }
 #[doc = "Event 2 Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EV2EM_A {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Signal active on rising edge"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Signal active on falling edge"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Signal active on both edges"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EV2EM_A> for u8 {
     #[inline(always)]
     fn from(variant: EV2EM_A) -> Self {
-        match variant {
-            EV2EM_A::VALUE1 => 0,
-            EV2EM_A::VALUE2 => 1,
-            EV2EM_A::VALUE3 => 2,
-            EV2EM_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EV2EM`"]
@@ -1100,17 +1040,14 @@ impl<'a> EV2EM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EV0LM_A {
     #[doc = "0: Active on HIGH level"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Active on LOW level"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EV0LM_A> for bool {
     #[inline(always)]
     fn from(variant: EV0LM_A) -> Self {
-        match variant {
-            EV0LM_A::VALUE1 => false,
-            EV0LM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EV0LM`"]
@@ -1178,17 +1115,14 @@ impl<'a> EV0LM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EV1LM_A {
     #[doc = "0: Active on HIGH level"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Active on LOW level"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EV1LM_A> for bool {
     #[inline(always)]
     fn from(variant: EV1LM_A) -> Self {
-        match variant {
-            EV1LM_A::VALUE1 => false,
-            EV1LM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EV1LM`"]
@@ -1256,17 +1190,14 @@ impl<'a> EV1LM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EV2LM_A {
     #[doc = "0: Active on HIGH level"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Active on LOW level"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EV2LM_A> for bool {
     #[inline(always)]
     fn from(variant: EV2LM_A) -> Self {
-        match variant {
-            EV2LM_A::VALUE1 => false,
-            EV2LM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EV2LM`"]
@@ -1332,25 +1263,21 @@ impl<'a> EV2LM_W<'a> {
 }
 #[doc = "Event 0 Low Pass Filter Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LPF0M_A {
     #[doc = "0: LPF is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 3 clock cycles of fCCU4"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 5 clock cycles of fCCU4"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 7 clock cycles of fCCU4"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<LPF0M_A> for u8 {
     #[inline(always)]
     fn from(variant: LPF0M_A) -> Self {
-        match variant {
-            LPF0M_A::VALUE1 => 0,
-            LPF0M_A::VALUE2 => 1,
-            LPF0M_A::VALUE3 => 2,
-            LPF0M_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LPF0M`"]
@@ -1429,25 +1356,21 @@ impl<'a> LPF0M_W<'a> {
 }
 #[doc = "Event 1 Low Pass Filter Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LPF1M_A {
     #[doc = "0: LPF is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 3 clock cycles of fCCU4"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 5 clock cycles of fCCU4"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 7 clock cycles of fCCU4"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<LPF1M_A> for u8 {
     #[inline(always)]
     fn from(variant: LPF1M_A) -> Self {
-        match variant {
-            LPF1M_A::VALUE1 => 0,
-            LPF1M_A::VALUE2 => 1,
-            LPF1M_A::VALUE3 => 2,
-            LPF1M_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LPF1M`"]
@@ -1526,25 +1449,21 @@ impl<'a> LPF1M_W<'a> {
 }
 #[doc = "Event 2 Low Pass Filter Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LPF2M_A {
     #[doc = "0: LPF is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 3 clock cycles of fCCU4"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 5 clock cycles of fCCU4"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 7 clock cycles of fCCU4"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<LPF2M_A> for u8 {
     #[inline(always)]
     fn from(variant: LPF2M_A) -> Self {
-        match variant {
-            LPF2M_A::VALUE1 => 0,
-            LPF2M_A::VALUE2 => 1,
-            LPF2M_A::VALUE3 => 2,
-            LPF2M_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LPF2M`"]

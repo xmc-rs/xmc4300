@@ -36,25 +36,21 @@ impl<'a> PASE_W<'a> {
 }
 #[doc = "Parity Checker Automatic start/stop selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PACS_A {
     #[doc = "0: CC80"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CC81"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: CC82"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: CC83"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<PACS_A> for u8 {
     #[inline(always)]
     fn from(variant: PACS_A) -> Self {
-        match variant {
-            PACS_A::VALUE1 => 0,
-            PACS_A::VALUE2 => 1,
-            PACS_A::VALUE3 => 2,
-            PACS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PACS`"]
@@ -133,25 +129,21 @@ impl<'a> PACS_W<'a> {
 }
 #[doc = "Driver Input signal selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PISEL_A {
     #[doc = "0: CC8x.GP01 - driver output is connected to event 1 of slice 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CC8x.GP11 - drive output is connected to event 1 of slice 1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: CC8x.GP21 - driver output is connected to event 1 of slice 2"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: CC8x.GP31 - driver output is connected to event 1 of slice 3"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<PISEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PISEL_A) -> Self {
-        match variant {
-            PISEL_A::VALUE1 => 0,
-            PISEL_A::VALUE2 => 1,
-            PISEL_A::VALUE3 => 2,
-            PISEL_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PISEL`"]
@@ -230,25 +222,21 @@ impl<'a> PISEL_W<'a> {
 }
 #[doc = "Parity Checker Delay Input Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PCDS_A {
     #[doc = "0: CCU8x.IGBTA"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CCU8x.IGBTB"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: CCU8x.IGBTC"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: CCU8x.IGBTD"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<PCDS_A> for u8 {
     #[inline(always)]
     fn from(variant: PCDS_A) -> Self {
-        match variant {
-            PCDS_A::VALUE1 => 0,
-            PCDS_A::VALUE2 => 1,
-            PCDS_A::VALUE3 => 2,
-            PCDS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PCDS`"]
@@ -329,17 +317,14 @@ impl<'a> PCDS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCTS_A {
     #[doc = "0: Even parity enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Odd parity enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PCTS_A> for bool {
     #[inline(always)]
     fn from(variant: PCTS_A) -> Self {
-        match variant {
-            PCTS_A::VALUE1 => false,
-            PCTS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PCTS`"]

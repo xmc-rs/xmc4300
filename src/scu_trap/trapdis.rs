@@ -14,17 +14,14 @@ impl crate::ResetValue for super::TRAPDIS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOSCWDGT_A {
     #[doc = "0: Trap request enabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Trap request disabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SOSCWDGT_A> for bool {
     #[inline(always)]
     fn from(variant: SOSCWDGT_A) -> Self {
-        match variant {
-            SOSCWDGT_A::CONST_0 => false,
-            SOSCWDGT_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SOSCWDGT`"]
@@ -92,17 +89,14 @@ impl<'a> SOSCWDGT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SVCOLCKT_A {
     #[doc = "0: Trap request enabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Trap request disabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SVCOLCKT_A> for bool {
     #[inline(always)]
     fn from(variant: SVCOLCKT_A) -> Self {
-        match variant {
-            SVCOLCKT_A::CONST_0 => false,
-            SVCOLCKT_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SVCOLCKT`"]
@@ -170,17 +164,14 @@ impl<'a> SVCOLCKT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UVCOLCKT_A {
     #[doc = "0: Trap request enabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Trap request disabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<UVCOLCKT_A> for bool {
     #[inline(always)]
     fn from(variant: UVCOLCKT_A) -> Self {
-        match variant {
-            UVCOLCKT_A::CONST_0 => false,
-            UVCOLCKT_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UVCOLCKT`"]
@@ -248,17 +239,14 @@ impl<'a> UVCOLCKT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PET_A {
     #[doc = "0: Trap request enabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Trap request disabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PET_A> for bool {
     #[inline(always)]
     fn from(variant: PET_A) -> Self {
-        match variant {
-            PET_A::CONST_0 => false,
-            PET_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PET`"]
@@ -326,17 +314,14 @@ impl<'a> PET_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BRWNT_A {
     #[doc = "0: Trap request enabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Trap request disabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<BRWNT_A> for bool {
     #[inline(always)]
     fn from(variant: BRWNT_A) -> Self {
-        match variant {
-            BRWNT_A::CONST_0 => false,
-            BRWNT_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BRWNT`"]
@@ -404,17 +389,14 @@ impl<'a> BRWNT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ULPWDGT_A {
     #[doc = "0: Trap request enabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Trap request disabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ULPWDGT_A> for bool {
     #[inline(always)]
     fn from(variant: ULPWDGT_A) -> Self {
-        match variant {
-            ULPWDGT_A::CONST_0 => false,
-            ULPWDGT_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ULPWDGT`"]
@@ -482,17 +464,14 @@ impl<'a> ULPWDGT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BWERR0T_A {
     #[doc = "0: Trap request enabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Trap request disabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<BWERR0T_A> for bool {
     #[inline(always)]
     fn from(variant: BWERR0T_A) -> Self {
-        match variant {
-            BWERR0T_A::CONST_0 => false,
-            BWERR0T_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BWERR0T`"]
@@ -560,17 +539,14 @@ impl<'a> BWERR0T_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BWERR1T_A {
     #[doc = "0: Trap request enabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Trap request disabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<BWERR1T_A> for bool {
     #[inline(always)]
     fn from(variant: BWERR1T_A) -> Self {
-        match variant {
-            BWERR1T_A::CONST_0 => false,
-            BWERR1T_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BWERR1T`"]
@@ -638,17 +614,14 @@ impl<'a> BWERR1T_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECAT0RST_A {
     #[doc = "0: Trap request enabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Trap request disabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ECAT0RST_A> for bool {
     #[inline(always)]
     fn from(variant: ECAT0RST_A) -> Self {
-        match variant {
-            ECAT0RST_A::CONST_0 => false,
-            ECAT0RST_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ECAT0RST`"]

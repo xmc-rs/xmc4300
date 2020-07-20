@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::RCR>;
 #[doc = "Writer for register RCR[%s]"]
 pub type W = crate::W<u32, super::RCR>;
-#[doc = "Register RCR[%s] `reset()`'s with value 0"]
+#[doc = "Register RCR[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::RCR {
     type Type = u32;
     #[inline(always)]
@@ -26,22 +27,19 @@ impl<'a> DRCTR_W<'a> {
 }
 #[doc = "Data Modification Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DMM_A {
     #[doc = "0: Standard data reduction (accumulation)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Result filtering mode"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Difference mode"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<DMM_A> for u8 {
     #[inline(always)]
     fn from(variant: DMM_A) -> Self {
-        match variant {
-            DMM_A::VALUE1 => 0,
-            DMM_A::VALUE2 => 1,
-            DMM_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DMM`"]
@@ -110,17 +108,14 @@ impl<'a> DMM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WFR_A {
     #[doc = "0: Overwrite mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Wait-for-read mode enabled for this register"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WFR_A> for bool {
     #[inline(always)]
     fn from(variant: WFR_A) -> Self {
-        match variant {
-            WFR_A::VALUE1 => false,
-            WFR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WFR`"]
@@ -186,19 +181,17 @@ impl<'a> WFR_W<'a> {
 }
 #[doc = "FIFO Mode Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FEN_A {
     #[doc = "0: Separate result register"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Part of a FIFO structure: copy each new valid result"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FEN_A> for u8 {
     #[inline(always)]
     fn from(variant: FEN_A) -> Self {
-        match variant {
-            FEN_A::VALUE1 => 0,
-            FEN_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FEN`"]
@@ -256,17 +249,14 @@ impl<'a> FEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRGEN_A {
     #[doc = "0: No service request"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Service request after a result event"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SRGEN_A> for bool {
     #[inline(always)]
     fn from(variant: SRGEN_A) -> Self {
-        match variant {
-            SRGEN_A::VALUE1 => false,
-            SRGEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRGEN`"]

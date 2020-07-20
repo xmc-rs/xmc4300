@@ -4,14 +4,12 @@ pub type R = crate::R<u32, super::CAPABILITIES_HI>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDR50_SUPPORT_A {
     #[doc = "0: SDR50 is not supported"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<SDR50_SUPPORT_A> for bool {
     #[inline(always)]
     fn from(variant: SDR50_SUPPORT_A) -> Self {
-        match variant {
-            SDR50_SUPPORT_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDR50_SUPPORT`"]
@@ -36,14 +34,12 @@ impl SDR50_SUPPORT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDR104_SUPPORT_A {
     #[doc = "0: SDR104 is not supported"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<SDR104_SUPPORT_A> for bool {
     #[inline(always)]
     fn from(variant: SDR104_SUPPORT_A) -> Self {
-        match variant {
-            SDR104_SUPPORT_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDR104_SUPPORT`"]
@@ -68,14 +64,12 @@ impl SDR104_SUPPORT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DDR50_SUPPORT_A {
     #[doc = "0: DDR50 is not supported"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<DDR50_SUPPORT_A> for bool {
     #[inline(always)]
     fn from(variant: DDR50_SUPPORT_A) -> Self {
-        match variant {
-            DDR50_SUPPORT_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DDR50_SUPPORT`"]
@@ -100,14 +94,12 @@ impl DDR50_SUPPORT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DRV_A_SUPPORT_A {
     #[doc = "0: Driver Type A is not supported"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<DRV_A_SUPPORT_A> for bool {
     #[inline(always)]
     fn from(variant: DRV_A_SUPPORT_A) -> Self {
-        match variant {
-            DRV_A_SUPPORT_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DRV_A_SUPPORT`"]
@@ -132,14 +124,12 @@ impl DRV_A_SUPPORT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DRV_C_SUPPORT_A {
     #[doc = "0: Driver Type C is not supported"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<DRV_C_SUPPORT_A> for bool {
     #[inline(always)]
     fn from(variant: DRV_C_SUPPORT_A) -> Self {
-        match variant {
-            DRV_C_SUPPORT_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DRV_C_SUPPORT`"]
@@ -164,14 +154,12 @@ impl DRV_C_SUPPORT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DRV_D_SUPPORT_A {
     #[doc = "0: Driver Type D is not supported"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<DRV_D_SUPPORT_A> for bool {
     #[inline(always)]
     fn from(variant: DRV_D_SUPPORT_A) -> Self {
-        match variant {
-            DRV_D_SUPPORT_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DRV_D_SUPPORT`"]
@@ -194,16 +182,15 @@ impl DRV_D_SUPPORT_R {
 }
 #[doc = "Timer count for Re-Tuning\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TIM_CNT_RETUNE_A {
     #[doc = "0: Get information via other source"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<TIM_CNT_RETUNE_A> for u8 {
     #[inline(always)]
     fn from(variant: TIM_CNT_RETUNE_A) -> Self {
-        match variant {
-            TIM_CNT_RETUNE_A::VALUE1 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TIM_CNT_RETUNE`"]
@@ -228,14 +215,12 @@ impl TIM_CNT_RETUNE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USE_TUNING_SDR50_A {
     #[doc = "0: SDR50 does not require tuning"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<USE_TUNING_SDR50_A> for bool {
     #[inline(always)]
     fn from(variant: USE_TUNING_SDR50_A) -> Self {
-        match variant {
-            USE_TUNING_SDR50_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USE_TUNING_SDR50`"]
@@ -258,16 +243,15 @@ impl USE_TUNING_SDR50_R {
 }
 #[doc = "Re-tuning modes\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RE_TUNING_MODES_A {
     #[doc = "0: Mode 1"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<RE_TUNING_MODES_A> for u8 {
     #[inline(always)]
     fn from(variant: RE_TUNING_MODES_A) -> Self {
-        match variant {
-            RE_TUNING_MODES_A::VALUE1 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RE_TUNING_MODES`"]
@@ -290,16 +274,15 @@ impl RE_TUNING_MODES_R {
 }
 #[doc = "Clock Multiplier\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CLK_MULT_A {
     #[doc = "0: Clock Multiplier not supported"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<CLK_MULT_A> for u8 {
     #[inline(always)]
     fn from(variant: CLK_MULT_A) -> Self {
-        match variant {
-            CLK_MULT_A::VALUE1 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLK_MULT`"]

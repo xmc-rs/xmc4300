@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::EXOCON>;
 #[doc = "Writer for register EXOCON[%s]"]
 pub type W = crate::W<u32, super::EXOCON>;
-#[doc = "Register EXOCON[%s] `reset()`'s with value 0x08"]
+#[doc = "Register EXOCON[%s]
+`reset()`'s with value 0x08"]
 impl crate::ResetValue for super::EXOCON {
     type Type = u32;
     #[inline(always)]
@@ -12,25 +13,21 @@ impl crate::ResetValue for super::EXOCON {
 }
 #[doc = "Internal Trigger Source Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ISS_A {
     #[doc = "0: The peripheral trigger function is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input ERU_OGUy1 is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input ERU_OGUy2 is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input ERU_OGUy3 is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<ISS_A> for u8 {
     #[inline(always)]
     fn from(variant: ISS_A) -> Self {
-        match variant {
-            ISS_A::VALUE1 => 0,
-            ISS_A::VALUE2 => 1,
-            ISS_A::VALUE3 => 2,
-            ISS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ISS`"]
@@ -111,17 +108,14 @@ impl<'a> ISS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GEEN_A {
     #[doc = "0: The event detection is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The event detection is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<GEEN_A> for bool {
     #[inline(always)]
     fn from(variant: GEEN_A) -> Self {
-        match variant {
-            GEEN_A::VALUE1 => false,
-            GEEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GEEN`"]
@@ -189,17 +183,14 @@ impl<'a> GEEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDR_A {
     #[doc = "0: A pattern miss is detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A pattern match is detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDR_A> for bool {
     #[inline(always)]
     fn from(variant: PDR_A) -> Self {
-        match variant {
-            PDR_A::VALUE1 => false,
-            PDR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDR`"]
@@ -226,25 +217,21 @@ impl PDR_R {
 }
 #[doc = "Gating Selection for Pattern Detection Result\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum GP_A {
     #[doc = "0: ERU_GOUTy is always disabled and ERU_IOUTy can not be activated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: ERU_GOUTy is always enabled and ERU_IOUTy becomes activated with each activation of ERU_TOUTy"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: ERU_GOUTy is equal to ERU_PDOUTy and ERU_IOUTy becomes activated with an activation of ERU_TOUTy while the desired pattern is detected (pattern match PDR = 1)"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: ERU_GOUTy is inverted to ERU_PDOUTy and ERU_IOUTy becomes activated with an activation of ERU_TOUTy while the desired pattern is not detected (pattern miss PDR = 0)"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<GP_A> for u8 {
     #[inline(always)]
     fn from(variant: GP_A) -> Self {
-        match variant {
-            GP_A::VALUE1 => 0,
-            GP_A::VALUE2 => 1,
-            GP_A::VALUE3 => 2,
-            GP_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `GP`"]
@@ -325,17 +312,14 @@ impl<'a> GP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IPEN0_A {
     #[doc = "0: Flag EXICONx.FL is excluded from the pattern detection"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag EXICONx.FL is included in the pattern detection"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IPEN0_A> for bool {
     #[inline(always)]
     fn from(variant: IPEN0_A) -> Self {
-        match variant {
-            IPEN0_A::VALUE1 => false,
-            IPEN0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IPEN0`"]
@@ -403,17 +387,14 @@ impl<'a> IPEN0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IPEN1_A {
     #[doc = "0: Flag EXICONx.FL is excluded from the pattern detection"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag EXICONx.FL is included in the pattern detection"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IPEN1_A> for bool {
     #[inline(always)]
     fn from(variant: IPEN1_A) -> Self {
-        match variant {
-            IPEN1_A::VALUE1 => false,
-            IPEN1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IPEN1`"]
@@ -481,17 +462,14 @@ impl<'a> IPEN1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IPEN2_A {
     #[doc = "0: Flag EXICONx.FL is excluded from the pattern detection"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag EXICONx.FL is included in the pattern detection"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IPEN2_A> for bool {
     #[inline(always)]
     fn from(variant: IPEN2_A) -> Self {
-        match variant {
-            IPEN2_A::VALUE1 => false,
-            IPEN2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IPEN2`"]
@@ -559,17 +537,14 @@ impl<'a> IPEN2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IPEN3_A {
     #[doc = "0: Flag EXICONx.FL is excluded from the pattern detection"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag EXICONx.FL is included in the pattern detection"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IPEN3_A> for bool {
     #[inline(always)]
     fn from(variant: IPEN3_A) -> Self {
-        match variant {
-            IPEN3_A::VALUE1 => false,
-            IPEN3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IPEN3`"]

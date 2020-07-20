@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SGLREQDSTREG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WE_CH0_AW {
     #[doc = "0: write disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WE_CH0_AW> for bool {
     #[inline(always)]
     fn from(variant: WE_CH0_AW) -> Self {
-        match variant {
-            WE_CH0_AW::VALUE1 => false,
-            WE_CH0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WE_CH0`"]
@@ -70,17 +67,14 @@ impl<'a> WE_CH0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WE_CH1_AW {
     #[doc = "0: write disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WE_CH1_AW> for bool {
     #[inline(always)]
     fn from(variant: WE_CH1_AW) -> Self {
-        match variant {
-            WE_CH1_AW::VALUE1 => false,
-            WE_CH1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WE_CH1`"]
@@ -126,17 +120,14 @@ impl<'a> WE_CH1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WE_CH2_AW {
     #[doc = "0: write disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WE_CH2_AW> for bool {
     #[inline(always)]
     fn from(variant: WE_CH2_AW) -> Self {
-        match variant {
-            WE_CH2_AW::VALUE1 => false,
-            WE_CH2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WE_CH2`"]
@@ -182,17 +173,14 @@ impl<'a> WE_CH2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WE_CH3_AW {
     #[doc = "0: write disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WE_CH3_AW> for bool {
     #[inline(always)]
     fn from(variant: WE_CH3_AW) -> Self {
-        match variant {
-            WE_CH3_AW::VALUE1 => false,
-            WE_CH3_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WE_CH3`"]
@@ -238,17 +226,14 @@ impl<'a> WE_CH3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WE_CH4_AW {
     #[doc = "0: write disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WE_CH4_AW> for bool {
     #[inline(always)]
     fn from(variant: WE_CH4_AW) -> Self {
-        match variant {
-            WE_CH4_AW::VALUE1 => false,
-            WE_CH4_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WE_CH4`"]
@@ -294,17 +279,14 @@ impl<'a> WE_CH4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WE_CH5_AW {
     #[doc = "0: write disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WE_CH5_AW> for bool {
     #[inline(always)]
     fn from(variant: WE_CH5_AW) -> Self {
-        match variant {
-            WE_CH5_AW::VALUE1 => false,
-            WE_CH5_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WE_CH5`"]
@@ -350,17 +332,14 @@ impl<'a> WE_CH5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WE_CH6_AW {
     #[doc = "0: write disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WE_CH6_AW> for bool {
     #[inline(always)]
     fn from(variant: WE_CH6_AW) -> Self {
-        match variant {
-            WE_CH6_AW::VALUE1 => false,
-            WE_CH6_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WE_CH6`"]
@@ -406,17 +385,14 @@ impl<'a> WE_CH6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WE_CH7_AW {
     #[doc = "0: write disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WE_CH7_AW> for bool {
     #[inline(always)]
     fn from(variant: WE_CH7_AW) -> Self {
-        match variant {
-            WE_CH7_AW::VALUE1 => false,
-            WE_CH7_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WE_CH7`"]

@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::CHCTR>;
 #[doc = "Writer for register CHCTR[%s]"]
 pub type W = crate::W<u32, super::CHCTR>;
-#[doc = "Register CHCTR[%s] `reset()`'s with value 0"]
+#[doc = "Register CHCTR[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::CHCTR {
     type Type = u32;
     #[inline(always)]
@@ -12,25 +13,21 @@ impl crate::ResetValue for super::CHCTR {
 }
 #[doc = "Input Class Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ICLSEL_A {
     #[doc = "0: Use group-specific class 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Use group-specific class 1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Use global class 0"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Use global class 1"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<ICLSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: ICLSEL_A) -> Self {
-        match variant {
-            ICLSEL_A::VALUE1 => 0,
-            ICLSEL_A::VALUE2 => 1,
-            ICLSEL_A::VALUE3 => 2,
-            ICLSEL_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ICLSEL`"]
@@ -109,25 +106,21 @@ impl<'a> ICLSEL_W<'a> {
 }
 #[doc = "Lower Boundary Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BNDSELL_A {
     #[doc = "0: Use group-specific boundary 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Use group-specific boundary 1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Use global boundary 0"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Use global boundary 1"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<BNDSELL_A> for u8 {
     #[inline(always)]
     fn from(variant: BNDSELL_A) -> Self {
-        match variant {
-            BNDSELL_A::VALUE1 => 0,
-            BNDSELL_A::VALUE2 => 1,
-            BNDSELL_A::VALUE3 => 2,
-            BNDSELL_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BNDSELL`"]
@@ -206,25 +199,21 @@ impl<'a> BNDSELL_W<'a> {
 }
 #[doc = "Upper Boundary Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BNDSELU_A {
     #[doc = "0: Use group-specific boundary 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Use group-specific boundary 1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Use global boundary 0"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Use global boundary 1"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<BNDSELU_A> for u8 {
     #[inline(always)]
     fn from(variant: BNDSELU_A) -> Self {
-        match variant {
-            BNDSELU_A::VALUE1 => 0,
-            BNDSELU_A::VALUE2 => 1,
-            BNDSELU_A::VALUE3 => 2,
-            BNDSELU_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BNDSELU`"]
@@ -303,25 +292,21 @@ impl<'a> BNDSELU_W<'a> {
 }
 #[doc = "Channel Event Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CHEVMODE_A {
     #[doc = "0: Never"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: NCM: If result is inside the boundary band FCM: If result becomes high (above cmp. val.)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: NCM: If result is outside the boundary band FCM: If result becomes low (below cmp. val.)"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: NCM: Always (ignore band) FCM: If result switches to either level"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CHEVMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: CHEVMODE_A) -> Self {
-        match variant {
-            CHEVMODE_A::VALUE1 => 0,
-            CHEVMODE_A::VALUE2 => 1,
-            CHEVMODE_A::VALUE3 => 2,
-            CHEVMODE_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CHEVMODE`"]
@@ -402,17 +387,14 @@ impl<'a> CHEVMODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNC_A {
     #[doc = "0: No synchroniz. request, standalone operation"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Request a synchronized conversion of this channel (only taken into account for a master)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SYNC_A> for bool {
     #[inline(always)]
     fn from(variant: SYNC_A) -> Self {
-        match variant {
-            SYNC_A::VALUE1 => false,
-            SYNC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYNC`"]
@@ -480,17 +462,14 @@ impl<'a> SYNC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REFSEL_A {
     #[doc = "0: Standard reference input VAREF"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Alternate reference input from CH0"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REFSEL_A> for bool {
     #[inline(always)]
     fn from(variant: REFSEL_A) -> Self {
-        match variant {
-            REFSEL_A::VALUE1 => false,
-            REFSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REFSEL`"]
@@ -556,19 +535,17 @@ impl<'a> REFSEL_W<'a> {
 }
 #[doc = "Result Register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RESREG_A {
     #[doc = "0: Store result in group result register GxRES0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "15: Store result in group result register GxRES15"]
-    VALUE2,
+    VALUE2 = 15,
 }
 impl From<RESREG_A> for u8 {
     #[inline(always)]
     fn from(variant: RESREG_A) -> Self {
-        match variant {
-            RESREG_A::VALUE1 => 0,
-            RESREG_A::VALUE2 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RESREG`"]
@@ -626,17 +603,14 @@ impl<'a> RESREG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESTBS_A {
     #[doc = "0: Store results in the selected group result register"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Store results in the global result register"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RESTBS_A> for bool {
     #[inline(always)]
     fn from(variant: RESTBS_A) -> Self {
-        match variant {
-            RESTBS_A::VALUE1 => false,
-            RESTBS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RESTBS`"]
@@ -704,17 +678,14 @@ impl<'a> RESTBS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESPOS_A {
     #[doc = "0: Store results left-aligned"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Store results right-aligned"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RESPOS_A> for bool {
     #[inline(always)]
     fn from(variant: RESPOS_A) -> Self {
-        match variant {
-            RESPOS_A::VALUE1 => false,
-            RESPOS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RESPOS`"]
@@ -780,19 +751,17 @@ impl<'a> RESPOS_W<'a> {
 }
 #[doc = "Broken Wire Detection Channel\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BWDCH_A {
     #[doc = "0: Select VAGND"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Select VAREF"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BWDCH_A> for u8 {
     #[inline(always)]
     fn from(variant: BWDCH_A) -> Self {
-        match variant {
-            BWDCH_A::VALUE1 => 0,
-            BWDCH_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BWDCH`"]
@@ -850,17 +819,14 @@ impl<'a> BWDCH_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BWDEN_A {
     #[doc = "0: Normal operation"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Additional preparation phase is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BWDEN_A> for bool {
     #[inline(always)]
     fn from(variant: BWDEN_A) -> Self {
-        match variant {
-            BWDEN_A::VALUE1 => false,
-            BWDEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BWDEN`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SCTR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDIR_A {
     #[doc = "0: Shift LSB first. The first data bit of a data word is located at bit position 0."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Shift MSB first. The first data bit of a data word is located at the bit position given by bit field SCTR.WLE."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SDIR_A> for bool {
     #[inline(always)]
     fn from(variant: SDIR_A) -> Self {
-        match variant {
-            SDIR_A::VALUE1 => false,
-            SDIR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDIR`"]
@@ -92,17 +89,14 @@ impl<'a> SDIR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDL_A {
     #[doc = "0: The passive data level is 0."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The passive data level is 1."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDL_A> for bool {
     #[inline(always)]
     fn from(variant: PDL_A) -> Self {
-        match variant {
-            PDL_A::VALUE1 => false,
-            PDL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDL`"]
@@ -168,22 +162,21 @@ impl<'a> PDL_W<'a> {
 }
 #[doc = "Data Shift Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DSM_A {
     #[doc = "0: Receive and transmit data is shifted in and out one bit at a time through DX0 and DOUT0."]
-    VALUE1,
-    #[doc = "2: Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\] respectively."]
-    VALUE3,
-    #[doc = "3: Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\] respectively."]
-    VALUE4,
+    VALUE1 = 0,
+    #[doc = "2: Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\]
+respectively."]
+    VALUE3 = 2,
+    #[doc = "3: Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\]
+respectively."]
+    VALUE4 = 3,
 }
 impl From<DSM_A> for u8 {
     #[inline(always)]
     fn from(variant: DSM_A) -> Self {
-        match variant {
-            DSM_A::VALUE1 => 0,
-            DSM_A::VALUE3 => 2,
-            DSM_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DSM`"]
@@ -231,12 +224,14 @@ impl<'a> DSM_W<'a> {
     pub fn value1(self) -> &'a mut W {
         self.variant(DSM_A::VALUE1)
     }
-    #[doc = "Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\] respectively."]
+    #[doc = "Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\]
+respectively."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut W {
         self.variant(DSM_A::VALUE3)
     }
-    #[doc = "Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\] respectively."]
+    #[doc = "Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\]
+respectively."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut W {
         self.variant(DSM_A::VALUE4)
@@ -252,17 +247,14 @@ impl<'a> DSM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HPCDIR_A {
     #[doc = "0: The pin(s) with hardware pin control enabled are selected to be in input mode."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The pin(s) with hardware pin control enabled are selected to be in output mode."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HPCDIR_A> for bool {
     #[inline(always)]
     fn from(variant: HPCDIR_A) -> Self {
-        match variant {
-            HPCDIR_A::VALUE1 => false,
-            HPCDIR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HPCDIR`"]
@@ -328,19 +320,17 @@ impl<'a> HPCDIR_W<'a> {
 }
 #[doc = "Data Output Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DOCFG_A {
     #[doc = "0: DOUTx = shift data value"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: DOUTx = inverted shift data value"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DOCFG_A> for u8 {
     #[inline(always)]
     fn from(variant: DOCFG_A) -> Self {
-        match variant {
-            DOCFG_A::VALUE1 => 0,
-            DOCFG_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DOCFG`"]
@@ -396,25 +386,21 @@ impl<'a> DOCFG_W<'a> {
 }
 #[doc = "Transmission Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TRM_A {
     #[doc = "0: The shift control signal is considered as inactive and data frame transfers are not possible."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The shift control signal is considered active if it is at 1-level. This is the setting to be programmed to allow data transfers."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: The shift control signal is considered active if it is at 0-level. It is recommended to avoid this setting and to use the inversion in the DX2 stage in case of a low-active signal."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: The shift control signal is considered active without referring to the actual signal level. Data frame transfer is possible after each edge of the signal."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<TRM_A> for u8 {
     #[inline(always)]
     fn from(variant: TRM_A) -> Self {
-        match variant {
-            TRM_A::VALUE1 => 0,
-            TRM_A::VALUE2 => 1,
-            TRM_A::VALUE3 => 2,
-            TRM_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TRM`"]
@@ -507,25 +493,21 @@ impl<'a> FLE_W<'a> {
 }
 #[doc = "Word Length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WLE_A {
     #[doc = "0: The data word contains 1 data bit located at bit position 0."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The data word contains 2 data bits located at bit positions \\[1:0\\]."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "14: The data word contains 15 data bits located at bit positions \\[14:0\\]."]
-    VALUE3,
+    VALUE3 = 14,
     #[doc = "15: The data word contains 16 data bits located at bit positions \\[15:0\\]."]
-    VALUE4,
+    VALUE4 = 15,
 }
 impl From<WLE_A> for u8 {
     #[inline(always)]
     fn from(variant: WLE_A) -> Self {
-        match variant {
-            WLE_A::VALUE1 => 0,
-            WLE_A::VALUE2 => 1,
-            WLE_A::VALUE3 => 14,
-            WLE_A::VALUE4 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WLE`"]

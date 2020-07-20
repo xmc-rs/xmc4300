@@ -4,17 +4,14 @@ pub type R = crate::R<u16, super::FEATURE>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FMMU_A {
     #[doc = "0: Bit oriented"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Byte oriented"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FMMU_A> for bool {
     #[inline(always)]
     fn from(variant: FMMU_A) -> Self {
-        match variant {
-            FMMU_A::VALUE1 => false,
-            FMMU_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FMMU`"]
@@ -43,17 +40,14 @@ impl FMMU_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKS_A {
     #[doc = "0: Not available"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Available"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CLKS_A> for bool {
     #[inline(always)]
     fn from(variant: CLKS_A) -> Self {
-        match variant {
-            CLKS_A::VALUE1 => false,
-            CLKS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CLKS`"]
@@ -82,17 +76,14 @@ impl CLKS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKS_W_A {
     #[doc = "0: 32 bits"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 64 bits"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CLKS_W_A> for bool {
     #[inline(always)]
     fn from(variant: CLKS_W_A) -> Self {
-        match variant {
-            CLKS_W_A::VALUE1 => false,
-            CLKS_W_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CLKS_W`"]
@@ -121,17 +112,14 @@ impl CLKS_W_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LJ_EBUS_A {
     #[doc = "0: Not available, standard jitter"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Available, jitter minimized"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LJ_EBUS_A> for bool {
     #[inline(always)]
     fn from(variant: LJ_EBUS_A) -> Self {
-        match variant {
-            LJ_EBUS_A::VALUE1 => false,
-            LJ_EBUS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LJ_EBUS`"]
@@ -160,17 +148,14 @@ impl LJ_EBUS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ELD_EBUS_A {
     #[doc = "0: Not available"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Available"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ELD_EBUS_A> for bool {
     #[inline(always)]
     fn from(variant: ELD_EBUS_A) -> Self {
-        match variant {
-            ELD_EBUS_A::VALUE1 => false,
-            ELD_EBUS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ELD_EBUS`"]
@@ -199,17 +184,14 @@ impl ELD_EBUS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ELD_MII_A {
     #[doc = "0: Not available"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Available"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ELD_MII_A> for bool {
     #[inline(always)]
     fn from(variant: ELD_MII_A) -> Self {
-        match variant {
-            ELD_MII_A::VALUE1 => false,
-            ELD_MII_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ELD_MII`"]
@@ -238,17 +220,14 @@ impl ELD_MII_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SH_FCSE_A {
     #[doc = "0: Not supported"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Supported, frames with wrong FCS and additional nibble will be counted separately in Forwarded RX Error Counter"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SH_FCSE_A> for bool {
     #[inline(always)]
     fn from(variant: SH_FCSE_A) -> Self {
-        match variant {
-            SH_FCSE_A::VALUE1 => false,
-            SH_FCSE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SH_FCSE`"]
@@ -277,17 +256,14 @@ impl SH_FCSE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDC_SYNCA_A {
     #[doc = "0: Not available"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Available"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EDC_SYNCA_A> for bool {
     #[inline(always)]
     fn from(variant: EDC_SYNCA_A) -> Self {
-        match variant {
-            EDC_SYNCA_A::VALUE1 => false,
-            EDC_SYNCA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EDC_SYNCA`"]
@@ -316,17 +292,14 @@ impl EDC_SYNCA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LRW_CS_A {
     #[doc = "0: Supported"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Not supported"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LRW_CS_A> for bool {
     #[inline(always)]
     fn from(variant: LRW_CS_A) -> Self {
-        match variant {
-            LRW_CS_A::VALUE1 => false,
-            LRW_CS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LRW_CS`"]
@@ -355,17 +328,14 @@ impl LRW_CS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RW_CS_A {
     #[doc = "0: Supported"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Not supported"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RW_CS_A> for bool {
     #[inline(always)]
     fn from(variant: RW_CS_A) -> Self {
-        match variant {
-            RW_CS_A::VALUE1 => false,
-            RW_CS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RW_CS`"]
@@ -394,17 +364,14 @@ impl RW_CS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FX_CONF_A {
     #[doc = "0: Variable configuration"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Fixed configuration (refer to documentation of supporting ESCs)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FX_CONF_A> for bool {
     #[inline(always)]
     fn from(variant: FX_CONF_A) -> Self {
-        match variant {
-            FX_CONF_A::VALUE1 => false,
-            FX_CONF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FX_CONF`"]

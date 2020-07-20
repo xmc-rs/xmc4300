@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INT_STATUS_ERR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEATA_ERR_A {
     #[doc = "0: no error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: error"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEATA_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: CEATA_ERR_A) -> Self {
-        match variant {
-            CEATA_ERR_A::VALUE1 => false,
-            CEATA_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CEATA_ERR`"]
@@ -92,17 +89,14 @@ impl<'a> CEATA_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACMD_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Error"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACMD_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: ACMD_ERR_A) -> Self {
-        match variant {
-            ACMD_ERR_A::VALUE1 => false,
-            ACMD_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACMD_ERR`"]
@@ -170,17 +164,14 @@ impl<'a> ACMD_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CURRENT_LIMIT_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Power Fail"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CURRENT_LIMIT_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: CURRENT_LIMIT_ERR_A) -> Self {
-        match variant {
-            CURRENT_LIMIT_ERR_A::VALUE1 => false,
-            CURRENT_LIMIT_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CURRENT_LIMIT_ERR`"]
@@ -248,17 +239,14 @@ impl<'a> CURRENT_LIMIT_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATA_END_BIT_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Error"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DATA_END_BIT_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: DATA_END_BIT_ERR_A) -> Self {
-        match variant {
-            DATA_END_BIT_ERR_A::VALUE1 => false,
-            DATA_END_BIT_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATA_END_BIT_ERR`"]
@@ -326,17 +314,14 @@ impl<'a> DATA_END_BIT_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATA_CRC_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Error"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DATA_CRC_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: DATA_CRC_ERR_A) -> Self {
-        match variant {
-            DATA_CRC_ERR_A::VALUE1 => false,
-            DATA_CRC_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATA_CRC_ERR`"]
@@ -404,17 +389,14 @@ impl<'a> DATA_CRC_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATA_TIMEOUT_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Timeout"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DATA_TIMEOUT_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: DATA_TIMEOUT_ERR_A) -> Self {
-        match variant {
-            DATA_TIMEOUT_ERR_A::VALUE1 => false,
-            DATA_TIMEOUT_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATA_TIMEOUT_ERR`"]
@@ -482,17 +464,14 @@ impl<'a> DATA_TIMEOUT_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_IND_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Error"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMD_IND_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_IND_ERR_A) -> Self {
-        match variant {
-            CMD_IND_ERR_A::VALUE1 => false,
-            CMD_IND_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_IND_ERR`"]
@@ -560,17 +539,14 @@ impl<'a> CMD_IND_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_END_BIT_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: End Bit Error Generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMD_END_BIT_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_END_BIT_ERR_A) -> Self {
-        match variant {
-            CMD_END_BIT_ERR_A::VALUE1 => false,
-            CMD_END_BIT_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_END_BIT_ERR`"]
@@ -638,17 +614,14 @@ impl<'a> CMD_END_BIT_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_CRC_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CRC Error Generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMD_CRC_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_CRC_ERR_A) -> Self {
-        match variant {
-            CMD_CRC_ERR_A::VALUE1 => false,
-            CMD_CRC_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_CRC_ERR`"]
@@ -716,17 +689,14 @@ impl<'a> CMD_CRC_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_TIMEOUT_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Timeout"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMD_TIMEOUT_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_TIMEOUT_ERR_A) -> Self {
-        match variant {
-            CMD_TIMEOUT_ERR_A::VALUE1 => false,
-            CMD_TIMEOUT_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_TIMEOUT_ERR`"]

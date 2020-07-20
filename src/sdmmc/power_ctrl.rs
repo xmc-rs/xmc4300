@@ -36,16 +36,15 @@ impl<'a> HARDWARE_RESET_W<'a> {
 }
 #[doc = "SD Bus Voltage Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SD_BUS_VOLTAGE_SEL_A {
     #[doc = "7: 3.3V (Flattop.)"]
-    VALUE1,
+    VALUE1 = 7,
 }
 impl From<SD_BUS_VOLTAGE_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SD_BUS_VOLTAGE_SEL_A) -> Self {
-        match variant {
-            SD_BUS_VOLTAGE_SEL_A::VALUE1 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SD_BUS_VOLTAGE_SEL`"]
@@ -92,17 +91,14 @@ impl<'a> SD_BUS_VOLTAGE_SEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SD_BUS_POWER_A {
     #[doc = "0: Power off"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Power on"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SD_BUS_POWER_A> for bool {
     #[inline(always)]
     fn from(variant: SD_BUS_POWER_A) -> Self {
-        match variant {
-            SD_BUS_POWER_A::VALUE1 => false,
-            SD_BUS_POWER_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SD_BUS_POWER`"]

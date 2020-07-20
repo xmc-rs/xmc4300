@@ -30,7 +30,7 @@ pub struct RegisterBlock {
     #[doc = "0x21c - Device Endpoint DMA Buffer Address Register"]
     pub doepdmab0: DOEPDMAB0,
 }
-#[doc = "Device Control IN Endpoint Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [diepctl0](diepctl0) module"]
+#[doc = "Device Control IN Endpoint Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [diepctl0](diepctl0) module"]
 pub type DIEPCTL0 = crate::Reg<u32, _DIEPCTL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -41,7 +41,7 @@ impl crate::Readable for DIEPCTL0 {}
 impl crate::Writable for DIEPCTL0 {}
 #[doc = "Device Control IN Endpoint Control Register"]
 pub mod diepctl0;
-#[doc = "Device Endpoint Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [diepint0](diepint0) module"]
+#[doc = "Device Endpoint Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [diepint0](diepint0) module"]
 pub type DIEPINT0 = crate::Reg<u32, _DIEPINT0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -52,7 +52,7 @@ impl crate::Readable for DIEPINT0 {}
 impl crate::Writable for DIEPINT0 {}
 #[doc = "Device Endpoint Interrupt Register"]
 pub mod diepint0;
-#[doc = "Device IN Endpoint Transfer Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dieptsiz0](dieptsiz0) module"]
+#[doc = "Device IN Endpoint Transfer Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dieptsiz0](dieptsiz0) module"]
 pub type DIEPTSIZ0 = crate::Reg<u32, _DIEPTSIZ0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -63,7 +63,7 @@ impl crate::Readable for DIEPTSIZ0 {}
 impl crate::Writable for DIEPTSIZ0 {}
 #[doc = "Device IN Endpoint Transfer Size Register"]
 pub mod dieptsiz0;
-#[doc = "Device Endpoint DMA Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [diepdma0](diepdma0) module"]
+#[doc = "Device Endpoint DMA Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [diepdma0](diepdma0) module"]
 pub type DIEPDMA0 = crate::Reg<u32, _DIEPDMA0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -74,7 +74,7 @@ impl crate::Readable for DIEPDMA0 {}
 impl crate::Writable for DIEPDMA0 {}
 #[doc = "Device Endpoint DMA Address Register"]
 pub mod diepdma0;
-#[doc = "Device IN Endpoint Transmit FIFO Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dtxfsts0](dtxfsts0) module"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dtxfsts0](dtxfsts0) module"]
 pub type DTXFSTS0 = crate::Reg<u32, _DTXFSTS0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -83,7 +83,7 @@ pub struct _DTXFSTS0;
 impl crate::Readable for DTXFSTS0 {}
 #[doc = "Device IN Endpoint Transmit FIFO Status Register"]
 pub mod dtxfsts0;
-#[doc = "Device Endpoint DMA Buffer Address Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [diepdmab0](diepdmab0) module"]
+#[doc = "Device Endpoint DMA Buffer Address Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [diepdmab0](diepdmab0) module"]
 pub type DIEPDMAB0 = crate::Reg<u32, _DIEPDMAB0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -92,7 +92,7 @@ pub struct _DIEPDMAB0;
 impl crate::Readable for DIEPDMAB0 {}
 #[doc = "Device Endpoint DMA Buffer Address Register"]
 pub mod diepdmab0;
-#[doc = "Device Control OUT Endpoint Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [doepctl0](doepctl0) module"]
+#[doc = "Device Control OUT Endpoint Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [doepctl0](doepctl0) module"]
 pub type DOEPCTL0 = crate::Reg<u32, _DOEPCTL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -103,7 +103,7 @@ impl crate::Readable for DOEPCTL0 {}
 impl crate::Writable for DOEPCTL0 {}
 #[doc = "Device Control OUT Endpoint Control Register"]
 pub mod doepctl0;
-#[doc = "Device Endpoint Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [doepint0](doepint0) module"]
+#[doc = "Device Endpoint Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [doepint0](doepint0) module"]
 pub type DOEPINT0 = crate::Reg<u32, _DOEPINT0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -114,7 +114,7 @@ impl crate::Readable for DOEPINT0 {}
 impl crate::Writable for DOEPINT0 {}
 #[doc = "Device Endpoint Interrupt Register"]
 pub mod doepint0;
-#[doc = "Device OUT Endpoint Transfer Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [doeptsiz0](doeptsiz0) module"]
+#[doc = "Device OUT Endpoint Transfer Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [doeptsiz0](doeptsiz0) module"]
 pub type DOEPTSIZ0 = crate::Reg<u32, _DOEPTSIZ0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -125,7 +125,7 @@ impl crate::Readable for DOEPTSIZ0 {}
 impl crate::Writable for DOEPTSIZ0 {}
 #[doc = "Device OUT Endpoint Transfer Size Register"]
 pub mod doeptsiz0;
-#[doc = "Device Endpoint DMA Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [doepdma0](doepdma0) module"]
+#[doc = "Device Endpoint DMA Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [doepdma0](doepdma0) module"]
 pub type DOEPDMA0 = crate::Reg<u32, _DOEPDMA0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -136,7 +136,7 @@ impl crate::Readable for DOEPDMA0 {}
 impl crate::Writable for DOEPDMA0 {}
 #[doc = "Device Endpoint DMA Address Register"]
 pub mod doepdma0;
-#[doc = "Device Endpoint DMA Buffer Address Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [doepdmab0](doepdmab0) module"]
+#[doc = "Device Endpoint DMA Buffer Address Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [doepdmab0](doepdmab0) module"]
 pub type DOEPDMAB0 = crate::Reg<u32, _DOEPDMAB0>;
 #[allow(missing_docs)]
 #[doc(hidden)]

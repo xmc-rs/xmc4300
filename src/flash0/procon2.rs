@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::PROCON2>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S0ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<S0ROM_A> for bool {
     #[inline(always)]
     fn from(variant: S0ROM_A) -> Self {
-        match variant {
-            S0ROM_A::CONST_0 => false,
-            S0ROM_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S0ROM`"]
@@ -43,17 +40,14 @@ impl S0ROM_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S1ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<S1ROM_A> for bool {
     #[inline(always)]
     fn from(variant: S1ROM_A) -> Self {
-        match variant {
-            S1ROM_A::CONST_0 => false,
-            S1ROM_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S1ROM`"]
@@ -82,17 +76,14 @@ impl S1ROM_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S2ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<S2ROM_A> for bool {
     #[inline(always)]
     fn from(variant: S2ROM_A) -> Self {
-        match variant {
-            S2ROM_A::CONST_0 => false,
-            S2ROM_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S2ROM`"]
@@ -121,17 +112,14 @@ impl S2ROM_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S3ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<S3ROM_A> for bool {
     #[inline(always)]
     fn from(variant: S3ROM_A) -> Self {
-        match variant {
-            S3ROM_A::CONST_0 => false,
-            S3ROM_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S3ROM`"]
@@ -160,17 +148,14 @@ impl S3ROM_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S4ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<S4ROM_A> for bool {
     #[inline(always)]
     fn from(variant: S4ROM_A) -> Self {
-        match variant {
-            S4ROM_A::CONST_0 => false,
-            S4ROM_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S4ROM`"]
@@ -199,17 +184,14 @@ impl S4ROM_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S5ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<S5ROM_A> for bool {
     #[inline(always)]
     fn from(variant: S5ROM_A) -> Self {
-        match variant {
-            S5ROM_A::CONST_0 => false,
-            S5ROM_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S5ROM`"]
@@ -238,17 +220,14 @@ impl S5ROM_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S6ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<S6ROM_A> for bool {
     #[inline(always)]
     fn from(variant: S6ROM_A) -> Self {
-        match variant {
-            S6ROM_A::CONST_0 => false,
-            S6ROM_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S6ROM`"]
@@ -277,17 +256,14 @@ impl S6ROM_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S7ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<S7ROM_A> for bool {
     #[inline(always)]
     fn from(variant: S7ROM_A) -> Self {
-        match variant {
-            S7ROM_A::CONST_0 => false,
-            S7ROM_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S7ROM`"]
@@ -316,17 +292,14 @@ impl S7ROM_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S8ROM_A {
     #[doc = "0: No ROM functionality configured for sector n."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<S8ROM_A> for bool {
     #[inline(always)]
     fn from(variant: S8ROM_A) -> Self {
-        match variant {
-            S8ROM_A::CONST_0 => false,
-            S8ROM_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S8ROM`"]

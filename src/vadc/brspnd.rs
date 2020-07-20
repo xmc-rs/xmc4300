@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::BRSPND>;
 #[doc = "Writer for register BRSPND[%s]"]
 pub type W = crate::W<u32, super::BRSPND>;
-#[doc = "Register BRSPND[%s] `reset()`'s with value 0"]
+#[doc = "Register BRSPND[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::BRSPND {
     type Type = u32;
     #[inline(always)]
@@ -14,17 +15,14 @@ impl crate::ResetValue for super::BRSPND {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHPNDG0_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Request conversion of this channel"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHPNDG0_A> for bool {
     #[inline(always)]
     fn from(variant: CHPNDG0_A) -> Self {
-        match variant {
-            CHPNDG0_A::VALUE1 => false,
-            CHPNDG0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHPNDG0`"]
@@ -92,17 +90,14 @@ impl<'a> CHPNDG0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHPNDG1_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Request conversion of this channel"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHPNDG1_A> for bool {
     #[inline(always)]
     fn from(variant: CHPNDG1_A) -> Self {
-        match variant {
-            CHPNDG1_A::VALUE1 => false,
-            CHPNDG1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHPNDG1`"]
@@ -170,17 +165,14 @@ impl<'a> CHPNDG1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHPNDG2_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Request conversion of this channel"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHPNDG2_A> for bool {
     #[inline(always)]
     fn from(variant: CHPNDG2_A) -> Self {
-        match variant {
-            CHPNDG2_A::VALUE1 => false,
-            CHPNDG2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHPNDG2`"]
@@ -248,17 +240,14 @@ impl<'a> CHPNDG2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHPNDG3_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Request conversion of this channel"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHPNDG3_A> for bool {
     #[inline(always)]
     fn from(variant: CHPNDG3_A) -> Self {
-        match variant {
-            CHPNDG3_A::VALUE1 => false,
-            CHPNDG3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHPNDG3`"]
@@ -326,17 +315,14 @@ impl<'a> CHPNDG3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHPNDG4_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Request conversion of this channel"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHPNDG4_A> for bool {
     #[inline(always)]
     fn from(variant: CHPNDG4_A) -> Self {
-        match variant {
-            CHPNDG4_A::VALUE1 => false,
-            CHPNDG4_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHPNDG4`"]
@@ -404,17 +390,14 @@ impl<'a> CHPNDG4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHPNDG5_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Request conversion of this channel"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHPNDG5_A> for bool {
     #[inline(always)]
     fn from(variant: CHPNDG5_A) -> Self {
-        match variant {
-            CHPNDG5_A::VALUE1 => false,
-            CHPNDG5_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHPNDG5`"]
@@ -482,17 +465,14 @@ impl<'a> CHPNDG5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHPNDG6_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Request conversion of this channel"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHPNDG6_A> for bool {
     #[inline(always)]
     fn from(variant: CHPNDG6_A) -> Self {
-        match variant {
-            CHPNDG6_A::VALUE1 => false,
-            CHPNDG6_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHPNDG6`"]
@@ -560,17 +540,14 @@ impl<'a> CHPNDG6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHPNDG7_A {
     #[doc = "0: Ignore this channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Request conversion of this channel"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHPNDG7_A> for bool {
     #[inline(always)]
     fn from(variant: CHPNDG7_A) -> Self {
-        match variant {
-            CHPNDG7_A::VALUE1 => false,
-            CHPNDG7_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHPNDG7`"]

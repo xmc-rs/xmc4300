@@ -2,22 +2,19 @@
 pub type R = crate::R<u32, super::DTXFSTS>;
 #[doc = "IN Endpoint TxFIFO Space Avail\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum INEPTXFSPCAVAIL_A {
     #[doc = "0: Endpoint TxFIFO is full"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1 word available"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 2 words available"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<INEPTXFSPCAVAIL_A> for u16 {
     #[inline(always)]
     fn from(variant: INEPTXFSPCAVAIL_A) -> Self {
-        match variant {
-            INEPTXFSPCAVAIL_A::VALUE1 => 0,
-            INEPTXFSPCAVAIL_A::VALUE2 => 1,
-            INEPTXFSPCAVAIL_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INEPTxFSpcAvail`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::EEP_STATE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACCESS_A {
     #[doc = "0: PDI releases EEPROM access"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: PDI takes EEPROM access (PDI has EEPROM control)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACCESS_A> for bool {
     #[inline(always)]
     fn from(variant: ACCESS_A) -> Self {
-        match variant {
-            ACCESS_A::VALUE1 => false,
-            ACCESS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACCESS`"]

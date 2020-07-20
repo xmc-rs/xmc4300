@@ -12,17 +12,14 @@ pub type EXTR_R = crate::R<bool, bool>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum V_A {
     #[doc = "0: Backup register not valid"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Backup register contains a valid entry. This will be requested before a valid entry in queue register 0 (stage 0) will be requested."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<V_A> for bool {
     #[inline(always)]
     fn from(variant: V_A) -> Self {
-        match variant {
-            V_A::VALUE1 => false,
-            V_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `V`"]

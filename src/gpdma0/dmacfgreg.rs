@@ -14,17 +14,14 @@ impl crate::ResetValue for super::DMACFGREG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA_EN_A {
     #[doc = "0: GPDMA Disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: GPDMA Enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DMA_EN_A> for bool {
     #[inline(always)]
     fn from(variant: DMA_EN_A) -> Self {
-        match variant {
-            DMA_EN_A::VALUE1 => false,
-            DMA_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DMA_EN`"]

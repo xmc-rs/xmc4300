@@ -12,25 +12,21 @@ impl crate::ResetValue for super::DOEPCTL0 {
 }
 #[doc = "Maximum Packet Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MPS_A {
     #[doc = "0: 64 bytes"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 32 bytes"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 16 bytes"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 8 bytes"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<MPS_A> for u8 {
     #[inline(always)]
     fn from(variant: MPS_A) -> Self {
-        match variant {
-            MPS_A::VALUE1 => 0,
-            MPS_A::VALUE2 => 1,
-            MPS_A::VALUE3 => 2,
-            MPS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MPS`"]
@@ -74,17 +70,14 @@ pub type USBACTEP_R = crate::R<bool, bool>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NAKSTS_A {
     #[doc = "0: The core is transmitting non-NAK handshakes based on the FIFO status."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The core is transmitting NAK handshakes on this endpoint."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<NAKSTS_A> for bool {
     #[inline(always)]
     fn from(variant: NAKSTS_A) -> Self {
-        match variant {
-            NAKSTS_A::VALUE1 => false,
-            NAKSTS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NAKSts`"]

@@ -6,17 +6,14 @@ pub type REQCHNR_R = crate::R<u8, u8>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RF_A {
     #[doc = "0: The request is discarded after the conversion start."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The request is automatically refilled into the queue after the conversion start."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RF_A> for bool {
     #[inline(always)]
     fn from(variant: RF_A) -> Self {
-        match variant {
-            RF_A::VALUE1 => false,
-            RF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RF`"]
@@ -45,17 +42,14 @@ impl RF_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENSI_A {
     #[doc = "0: No request source interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A request source event interrupt is generated upon a request source event (related conversion is finished)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ENSI_A> for bool {
     #[inline(always)]
     fn from(variant: ENSI_A) -> Self {
-        match variant {
-            ENSI_A::VALUE1 => false,
-            ENSI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENSI`"]
@@ -84,17 +78,14 @@ impl ENSI_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTR_A {
     #[doc = "0: A valid queue entry immediately leads to a conversion request"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The request handler waits for a trigger event"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EXTR_A> for bool {
     #[inline(always)]
     fn from(variant: EXTR_A) -> Self {
-        match variant {
-            EXTR_A::VALUE1 => false,
-            EXTR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EXTR`"]
@@ -123,17 +114,14 @@ impl EXTR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum V_A {
     #[doc = "0: No valid queue entry"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The queue entry is valid and leads to a conversion request"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<V_A> for bool {
     #[inline(always)]
     fn from(variant: V_A) -> Self {
-        match variant {
-            V_A::VALUE1 => false,
-            V_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `V`"]

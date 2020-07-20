@@ -70,17 +70,14 @@ impl<'a> TSEG2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIV8_A {
     #[doc = "0: A time quantum lasts (BRP+1) clock cycles."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A time quantum lasts 8 (BRP+1) clock cycles."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DIV8_A> for bool {
     #[inline(always)]
     fn from(variant: DIV8_A) -> Self {
-        match variant {
-            DIV8_A::VALUE1 => false,
-            DIV8_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIV8`"]

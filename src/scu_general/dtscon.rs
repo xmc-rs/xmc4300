@@ -14,17 +14,14 @@ impl crate::ResetValue for super::DTSCON {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWD_A {
     #[doc = "0: The DTS is powered"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The DTS is not powered"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PWD_A> for bool {
     #[inline(always)]
     fn from(variant: PWD_A) -> Self {
-        match variant {
-            PWD_A::CONST_0 => false,
-            PWD_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PWD`"]
@@ -92,17 +89,14 @@ impl<'a> PWD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum START_AW {
     #[doc = "0: No DTS measurement is started"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: DTS measurement is started"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<START_AW> for bool {
     #[inline(always)]
     fn from(variant: START_AW) -> Self {
-        match variant {
-            START_AW::CONST_0 => false,
-            START_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `START`"]

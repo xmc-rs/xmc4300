@@ -14,17 +14,14 @@ impl crate::ResetValue for super::EN_INT_SIGNAL_ERR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEATA_ERR_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEATA_ERR_EN_A> for bool {
     #[inline(always)]
     fn from(variant: CEATA_ERR_EN_A) -> Self {
-        match variant {
-            CEATA_ERR_EN_A::VALUE1 => false,
-            CEATA_ERR_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CEATA_ERR_EN`"]
@@ -92,17 +89,14 @@ impl<'a> CEATA_ERR_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TARGET_RESP_ERR_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TARGET_RESP_ERR_EN_A> for bool {
     #[inline(always)]
     fn from(variant: TARGET_RESP_ERR_EN_A) -> Self {
-        match variant {
-            TARGET_RESP_ERR_EN_A::VALUE1 => false,
-            TARGET_RESP_ERR_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TARGET_RESP_ERR_EN`"]
@@ -170,17 +164,14 @@ impl<'a> TARGET_RESP_ERR_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACMD_ERR_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACMD_ERR_EN_A> for bool {
     #[inline(always)]
     fn from(variant: ACMD_ERR_EN_A) -> Self {
-        match variant {
-            ACMD_ERR_EN_A::VALUE1 => false,
-            ACMD_ERR_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACMD_ERR_EN`"]
@@ -248,17 +239,14 @@ impl<'a> ACMD_ERR_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CURRENT_LIMIT_ERR_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CURRENT_LIMIT_ERR_EN_A> for bool {
     #[inline(always)]
     fn from(variant: CURRENT_LIMIT_ERR_EN_A) -> Self {
-        match variant {
-            CURRENT_LIMIT_ERR_EN_A::VALUE1 => false,
-            CURRENT_LIMIT_ERR_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CURRENT_LIMIT_ERR_EN`"]
@@ -326,17 +314,14 @@ impl<'a> CURRENT_LIMIT_ERR_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATA_END_BIT_ERR_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DATA_END_BIT_ERR_EN_A> for bool {
     #[inline(always)]
     fn from(variant: DATA_END_BIT_ERR_EN_A) -> Self {
-        match variant {
-            DATA_END_BIT_ERR_EN_A::VALUE1 => false,
-            DATA_END_BIT_ERR_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATA_END_BIT_ERR_EN`"]
@@ -404,17 +389,14 @@ impl<'a> DATA_END_BIT_ERR_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATA_CRC_ERR_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DATA_CRC_ERR_EN_A> for bool {
     #[inline(always)]
     fn from(variant: DATA_CRC_ERR_EN_A) -> Self {
-        match variant {
-            DATA_CRC_ERR_EN_A::VALUE1 => false,
-            DATA_CRC_ERR_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATA_CRC_ERR_EN`"]
@@ -482,17 +464,14 @@ impl<'a> DATA_CRC_ERR_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATA_TIMEOUT_ERR_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DATA_TIMEOUT_ERR_EN_A> for bool {
     #[inline(always)]
     fn from(variant: DATA_TIMEOUT_ERR_EN_A) -> Self {
-        match variant {
-            DATA_TIMEOUT_ERR_EN_A::VALUE1 => false,
-            DATA_TIMEOUT_ERR_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATA_TIMEOUT_ERR_EN`"]
@@ -560,17 +539,14 @@ impl<'a> DATA_TIMEOUT_ERR_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_IND_ERR_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMD_IND_ERR_EN_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_IND_ERR_EN_A) -> Self {
-        match variant {
-            CMD_IND_ERR_EN_A::VALUE1 => false,
-            CMD_IND_ERR_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_IND_ERR_EN`"]
@@ -638,17 +614,14 @@ impl<'a> CMD_IND_ERR_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_END_BIT_ERR_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMD_END_BIT_ERR_EN_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_END_BIT_ERR_EN_A) -> Self {
-        match variant {
-            CMD_END_BIT_ERR_EN_A::VALUE1 => false,
-            CMD_END_BIT_ERR_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_END_BIT_ERR_EN`"]
@@ -716,17 +689,14 @@ impl<'a> CMD_END_BIT_ERR_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_CRC_ERR_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMD_CRC_ERR_EN_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_CRC_ERR_EN_A) -> Self {
-        match variant {
-            CMD_CRC_ERR_EN_A::VALUE1 => false,
-            CMD_CRC_ERR_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_CRC_ERR_EN`"]
@@ -794,17 +764,14 @@ impl<'a> CMD_CRC_ERR_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_TIMEOUT_ERR_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMD_TIMEOUT_ERR_EN_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_TIMEOUT_ERR_EN_A) -> Self {
-        match variant {
-            CMD_TIMEOUT_ERR_EN_A::VALUE1 => false,
-            CMD_TIMEOUT_ERR_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_TIMEOUT_ERR_EN`"]

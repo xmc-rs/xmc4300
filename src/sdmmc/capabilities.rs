@@ -2,16 +2,15 @@
 pub type R = crate::R<u32, super::CAPABILITIES>;
 #[doc = "Timeout Clock Frequency\n\nValue on reset: 48"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TIMEOUT_CLOCK_FREQ_A {
     #[doc = "48: 48 MHz"]
-    VALUE1,
+    VALUE1 = 48,
 }
 impl From<TIMEOUT_CLOCK_FREQ_A> for u8 {
     #[inline(always)]
     fn from(variant: TIMEOUT_CLOCK_FREQ_A) -> Self {
-        match variant {
-            TIMEOUT_CLOCK_FREQ_A::VALUE1 => 48,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TIMEOUT_CLOCK_FREQ`"]
@@ -36,14 +35,12 @@ impl TIMEOUT_CLOCK_FREQ_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMEOUT_CLOCK_UNIT_A {
     #[doc = "1: MHz"]
-    VALUE1,
+    VALUE1 = 1,
 }
 impl From<TIMEOUT_CLOCK_UNIT_A> for bool {
     #[inline(always)]
     fn from(variant: TIMEOUT_CLOCK_UNIT_A) -> Self {
-        match variant {
-            TIMEOUT_CLOCK_UNIT_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TIMEOUT_CLOCK_UNIT`"]
@@ -66,16 +63,15 @@ impl TIMEOUT_CLOCK_UNIT_R {
 }
 #[doc = "Base Clock Frequency for SD Clock\n\nValue on reset: 48"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BASE_SD_CLOCK_FREQ_A {
     #[doc = "48: 48 MHz"]
-    VALUE1,
+    VALUE1 = 48,
 }
 impl From<BASE_SD_CLOCK_FREQ_A> for u8 {
     #[inline(always)]
     fn from(variant: BASE_SD_CLOCK_FREQ_A) -> Self {
-        match variant {
-            BASE_SD_CLOCK_FREQ_A::VALUE1 => 48,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BASE_SD_CLOCK_FREQ`"]
@@ -98,16 +94,15 @@ impl BASE_SD_CLOCK_FREQ_R {
 }
 #[doc = "Max Block Length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MAX_BLOCK_LENGTH_A {
     #[doc = "0: 512 byte"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<MAX_BLOCK_LENGTH_A> for u8 {
     #[inline(always)]
     fn from(variant: MAX_BLOCK_LENGTH_A) -> Self {
-        match variant {
-            MAX_BLOCK_LENGTH_A::VALUE1 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MAX_BLOCK_LENGTH`"]
@@ -132,14 +127,12 @@ impl MAX_BLOCK_LENGTH_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXT_MEDIA_BUS_SUPPORT_A {
     #[doc = "0: Extended Media Bus not supported"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<EXT_MEDIA_BUS_SUPPORT_A> for bool {
     #[inline(always)]
     fn from(variant: EXT_MEDIA_BUS_SUPPORT_A) -> Self {
-        match variant {
-            EXT_MEDIA_BUS_SUPPORT_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EXT_MEDIA_BUS_SUPPORT`"]
@@ -164,14 +157,12 @@ impl EXT_MEDIA_BUS_SUPPORT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADMA2_SUPPORT_A {
     #[doc = "0: ADMA not supported"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<ADMA2_SUPPORT_A> for bool {
     #[inline(always)]
     fn from(variant: ADMA2_SUPPORT_A) -> Self {
-        match variant {
-            ADMA2_SUPPORT_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADMA2_SUPPORT`"]
@@ -196,14 +187,12 @@ impl ADMA2_SUPPORT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIGH_SPEED_SUPPORT_A {
     #[doc = "1: High Speed supported"]
-    VALUE1,
+    VALUE1 = 1,
 }
 impl From<HIGH_SPEED_SUPPORT_A> for bool {
     #[inline(always)]
     fn from(variant: HIGH_SPEED_SUPPORT_A) -> Self {
-        match variant {
-            HIGH_SPEED_SUPPORT_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HIGH_SPEED_SUPPORT`"]
@@ -228,14 +217,12 @@ impl HIGH_SPEED_SUPPORT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDMA_SUPPORT_A {
     #[doc = "0: SDMA not supported"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<SDMA_SUPPORT_A> for bool {
     #[inline(always)]
     fn from(variant: SDMA_SUPPORT_A) -> Self {
-        match variant {
-            SDMA_SUPPORT_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDMA_SUPPORT`"]
@@ -260,14 +247,12 @@ impl SDMA_SUPPORT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUSPEND_RESUME_SUPPORT_A {
     #[doc = "1: Supported"]
-    VALUE1,
+    VALUE1 = 1,
 }
 impl From<SUSPEND_RESUME_SUPPORT_A> for bool {
     #[inline(always)]
     fn from(variant: SUSPEND_RESUME_SUPPORT_A) -> Self {
-        match variant {
-            SUSPEND_RESUME_SUPPORT_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUSPEND_RESUME_SUPPORT`"]
@@ -292,14 +277,12 @@ impl SUSPEND_RESUME_SUPPORT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VOLTAGE_SUPPORT_3_3V_A {
     #[doc = "1: 3.3V supported"]
-    VALUE1,
+    VALUE1 = 1,
 }
 impl From<VOLTAGE_SUPPORT_3_3V_A> for bool {
     #[inline(always)]
     fn from(variant: VOLTAGE_SUPPORT_3_3V_A) -> Self {
-        match variant {
-            VOLTAGE_SUPPORT_3_3V_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VOLTAGE_SUPPORT_3_3V`"]
@@ -324,14 +307,12 @@ impl VOLTAGE_SUPPORT_3_3V_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VOLTAGE_SUPPORT_3V_A {
     #[doc = "0: 3.0V not supported"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<VOLTAGE_SUPPORT_3V_A> for bool {
     #[inline(always)]
     fn from(variant: VOLTAGE_SUPPORT_3V_A) -> Self {
-        match variant {
-            VOLTAGE_SUPPORT_3V_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VOLTAGE_SUPPORT_3V`"]
@@ -356,14 +337,12 @@ impl VOLTAGE_SUPPORT_3V_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VOLTAGE_SUPPORT_1_8V_A {
     #[doc = "0: 1.8V not supported"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<VOLTAGE_SUPPORT_1_8V_A> for bool {
     #[inline(always)]
     fn from(variant: VOLTAGE_SUPPORT_1_8V_A) -> Self {
-        match variant {
-            VOLTAGE_SUPPORT_1_8V_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VOLTAGE_SUPPORT_1_8V`"]
@@ -388,14 +367,12 @@ impl VOLTAGE_SUPPORT_1_8V_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYSBUS_64_SUPPORT_A {
     #[doc = "0: Does not support 64-bit system address"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<SYSBUS_64_SUPPORT_A> for bool {
     #[inline(always)]
     fn from(variant: SYSBUS_64_SUPPORT_A) -> Self {
-        match variant {
-            SYSBUS_64_SUPPORT_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYSBUS_64_SUPPORT`"]
@@ -420,14 +397,12 @@ impl SYSBUS_64_SUPPORT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASYNC_INT_SUPPORT_A {
     #[doc = "0: Asynchronous Interrupt not supported"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<ASYNC_INT_SUPPORT_A> for bool {
     #[inline(always)]
     fn from(variant: ASYNC_INT_SUPPORT_A) -> Self {
-        match variant {
-            ASYNC_INT_SUPPORT_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASYNC_INT_SUPPORT`"]
@@ -450,16 +425,15 @@ impl ASYNC_INT_SUPPORT_R {
 }
 #[doc = "Slot Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SLOT_TYPE_A {
     #[doc = "0: Removable Card Slot"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<SLOT_TYPE_A> for u8 {
     #[inline(always)]
     fn from(variant: SLOT_TYPE_A) -> Self {
-        match variant {
-            SLOT_TYPE_A::VALUE1 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SLOT_TYPE`"]

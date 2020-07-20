@@ -4,17 +4,14 @@ pub type R = crate::R<u8, super::SM_STATUS>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT_W_A {
     #[doc = "0: Interrupt cleared after first byte of buffer was read"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Interrupt after buffer was completely and successfully written"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<INT_W_A> for bool {
     #[inline(always)]
     fn from(variant: INT_W_A) -> Self {
-        match variant {
-            INT_W_A::VALUE1 => false,
-            INT_W_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INT_W`"]
@@ -43,17 +40,14 @@ impl INT_W_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT_R_A {
     #[doc = "0: Interrupt cleared after first byte of buffer was written"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Interrupt after buffer was completely and successful read"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<INT_R_A> for bool {
     #[inline(always)]
     fn from(variant: INT_R_A) -> Self {
-        match variant {
-            INT_R_A::VALUE1 => false,
-            INT_R_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INT_R`"]
@@ -82,17 +76,14 @@ impl INT_R_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MB_STATUS_A {
     #[doc = "0: Mailbox empty"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Mailbox full"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MB_STATUS_A> for bool {
     #[inline(always)]
     fn from(variant: MB_STATUS_A) -> Self {
-        match variant {
-            MB_STATUS_A::VALUE1 => false,
-            MB_STATUS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MB_STATUS`"]
@@ -119,25 +110,21 @@ impl MB_STATUS_R {
 }
 #[doc = "Buffered mode: buffer status (last written buffer)\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BUF_STATUS_A {
     #[doc = "0: 1. buffer"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 2. buffer"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 3. buffer"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: (no buffer written)"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<BUF_STATUS_A> for u8 {
     #[inline(always)]
     fn from(variant: BUF_STATUS_A) -> Self {
-        match variant {
-            BUF_STATUS_A::VALUE1 => 0,
-            BUF_STATUS_A::VALUE2 => 1,
-            BUF_STATUS_A::VALUE3 => 2,
-            BUF_STATUS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BUF_STATUS`"]
@@ -179,17 +166,14 @@ impl BUF_STATUS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R_BUF_IU_A {
     #[doc = "0: buffer not in use"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: buffer in use"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<R_BUF_IU_A> for bool {
     #[inline(always)]
     fn from(variant: R_BUF_IU_A) -> Self {
-        match variant {
-            R_BUF_IU_A::VALUE1 => false,
-            R_BUF_IU_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `R_BUF_IU`"]
@@ -218,17 +202,14 @@ impl R_BUF_IU_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum W_BUF_IU_A {
     #[doc = "0: buffer not in use"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: buffer in use"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<W_BUF_IU_A> for bool {
     #[inline(always)]
     fn from(variant: W_BUF_IU_A) -> Self {
-        match variant {
-            W_BUF_IU_A::VALUE1 => false,
-            W_BUF_IU_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `W_BUF_IU`"]

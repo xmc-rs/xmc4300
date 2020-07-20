@@ -12,37 +12,29 @@ impl crate::ResetValue for super::DAC0CFG1 {
 }
 #[doc = "Scale value for up- or downscale of the DAC0 input data in steps by the power of 2 (=shift operation)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SCALE_A {
     #[doc = "0: no shift = multiplication/division by 1"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: shift by 1 = multiplication/division by 2"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: shift by 2 = multiplication/division by 4"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: shift left by 3 = multiplication/division by 8"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: shift left by 4 = multiplication/division by 16"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: shift left by 5 = multiplication/division by 32"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: shift left by 6 = multiplication/division by 64"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: shift left by 7 = multiplication/division by 128"]
-    VALUE8,
+    VALUE8 = 7,
 }
 impl From<SCALE_A> for u8 {
     #[inline(always)]
     fn from(variant: SCALE_A) -> Self {
-        match variant {
-            SCALE_A::VALUE1 => 0,
-            SCALE_A::VALUE2 => 1,
-            SCALE_A::VALUE3 => 2,
-            SCALE_A::VALUE4 => 3,
-            SCALE_A::VALUE5 => 4,
-            SCALE_A::VALUE6 => 5,
-            SCALE_A::VALUE7 => 6,
-            SCALE_A::VALUE8 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SCALE`"]
@@ -167,17 +159,14 @@ impl<'a> SCALE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MULDIV_A {
     #[doc = "0: downscale = division (shift SCALE positions to the right)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: upscale = multiplication (shift SCALE positions to the left)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MULDIV_A> for bool {
     #[inline(always)]
     fn from(variant: MULDIV_A) -> Self {
-        match variant {
-            MULDIV_A::VALUE1 => false,
-            MULDIV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MULDIV`"]
@@ -273,17 +262,14 @@ impl<'a> TRIGSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATMOD_A {
     #[doc = "0: independent data handling - process data from DATA0 register (bits 11:0) to DAC0 and data from DATA1 register (bits 11:0) to DAC1"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: simultaneous data handling - process data from DAC01 register to both DACs (bits 11:0 to DAC0 and bits 23:12 to DAC1)."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DATMOD_A> for bool {
     #[inline(always)]
     fn from(variant: DATMOD_A) -> Self {
-        match variant {
-            DATMOD_A::VALUE1 => false,
-            DATMOD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATMOD`"]
@@ -373,22 +359,19 @@ impl<'a> SWTRIG_W<'a> {
 }
 #[doc = "Select the trigger source for channel 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TRIGMOD_A {
     #[doc = "0: internal Trigger (integer divided clock - see FREQ parameter)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: external Trigger (preselected trigger by TRIGSEL parameter)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: software Trigger (see SWTRIG parameter)"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<TRIGMOD_A> for u8 {
     #[inline(always)]
     fn from(variant: TRIGMOD_A) -> Self {
-        match variant {
-            TRIGMOD_A::VALUE1 => 0,
-            TRIGMOD_A::VALUE2 => 1,
-            TRIGMOD_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TRIGMOD`"]
@@ -471,17 +454,14 @@ impl<'a> ANACFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ANAEN_A {
     #[doc = "0: DAC0 is set to standby (analog output only)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: enable DAC0 (analog output only)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ANAEN_A> for bool {
     #[inline(always)]
     fn from(variant: ANAEN_A) -> Self {
-        match variant {
-            ANAEN_A::VALUE1 => false,
-            ANAEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ANAEN`"]

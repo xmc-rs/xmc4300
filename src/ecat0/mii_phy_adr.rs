@@ -24,21 +24,19 @@ impl<'a> PHY_ADDR_W<'a> {
         self.w
     }
 }
-#[doc = "Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\] of this register (valid values are 0-3)\n\nValue on reset: 0"]
+#[doc = "Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
+of this register (valid values are 0-3)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PHY_CADDR_A {
     #[doc = "0: Show address of port 0 (offset)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Show individual address of port x"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PHY_CADDR_A> for bool {
     #[inline(always)]
     fn from(variant: PHY_CADDR_A) -> Self {
-        match variant {
-            PHY_CADDR_A::VALUE1 => false,
-            PHY_CADDR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PHY_CADDR`"]
@@ -108,7 +106,8 @@ impl R {
     pub fn phy_addr(&self) -> PHY_ADDR_R {
         PHY_ADDR_R::new((self.bits & 0x1f) as u8)
     }
-    #[doc = "Bit 7 - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\] of this register (valid values are 0-3)"]
+    #[doc = "Bit 7 - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
+of this register (valid values are 0-3)"]
     #[inline(always)]
     pub fn phy_caddr(&self) -> PHY_CADDR_R {
         PHY_CADDR_R::new(((self.bits >> 7) & 0x01) != 0)
@@ -120,7 +119,8 @@ impl W {
     pub fn phy_addr(&mut self) -> PHY_ADDR_W {
         PHY_ADDR_W { w: self }
     }
-    #[doc = "Bit 7 - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\] of this register (valid values are 0-3)"]
+    #[doc = "Bit 7 - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
+of this register (valid values are 0-3)"]
     #[inline(always)]
     pub fn phy_caddr(&mut self) -> PHY_CADDR_W {
         PHY_CADDR_W { w: self }

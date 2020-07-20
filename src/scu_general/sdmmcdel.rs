@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SDMMCDEL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAPEN_A {
     #[doc = "0: Disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TAPEN_A> for bool {
     #[inline(always)]
     fn from(variant: TAPEN_A) -> Self {
-        match variant {
-            TAPEN_A::VALUE1 => false,
-            TAPEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TAPEN`"]

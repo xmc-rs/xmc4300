@@ -28,17 +28,14 @@ impl<'a> TENMS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SKEW_A {
     #[doc = "0: TENMS value is exact"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: TENMS value is inexact, or not given."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SKEW_A> for bool {
     #[inline(always)]
     fn from(variant: SKEW_A) -> Self {
-        match variant {
-            SKEW_A::VALUE1 => false,
-            SKEW_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SKEW`"]
@@ -106,17 +103,14 @@ impl<'a> SKEW_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NOREF_A {
     #[doc = "0: reference clock provided"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: no reference clock provided."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<NOREF_A> for bool {
     #[inline(always)]
     fn from(variant: NOREF_A) -> Self {
-        match variant {
-            NOREF_A::VALUE1 => false,
-            NOREF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NOREF`"]

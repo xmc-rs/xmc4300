@@ -14,17 +14,14 @@ impl crate::ResetValue for super::LNEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LN0_A {
     #[doc = "0: Disables the line"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enables the line and resets a pending request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<LN0_A> for bool {
     #[inline(always)]
     fn from(variant: LN0_A) -> Self {
-        match variant {
-            LN0_A::CONST_0 => false,
-            LN0_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LN0`"]
@@ -92,17 +89,14 @@ impl<'a> LN0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LN1_A {
     #[doc = "0: Disables the line"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enables the line and resets a pending request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<LN1_A> for bool {
     #[inline(always)]
     fn from(variant: LN1_A) -> Self {
-        match variant {
-            LN1_A::CONST_0 => false,
-            LN1_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LN1`"]
@@ -170,17 +164,14 @@ impl<'a> LN1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LN2_A {
     #[doc = "0: Disables the line"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enables the line and resets a pending request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<LN2_A> for bool {
     #[inline(always)]
     fn from(variant: LN2_A) -> Self {
-        match variant {
-            LN2_A::CONST_0 => false,
-            LN2_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LN2`"]
@@ -248,17 +239,14 @@ impl<'a> LN2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LN3_A {
     #[doc = "0: Disables the line"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enables the line and resets a pending request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<LN3_A> for bool {
     #[inline(always)]
     fn from(variant: LN3_A) -> Self {
-        match variant {
-            LN3_A::CONST_0 => false,
-            LN3_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LN3`"]
@@ -326,17 +314,14 @@ impl<'a> LN3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LN4_A {
     #[doc = "0: Disables the line"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enables the line and resets a pending request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<LN4_A> for bool {
     #[inline(always)]
     fn from(variant: LN4_A) -> Self {
-        match variant {
-            LN4_A::CONST_0 => false,
-            LN4_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LN4`"]
@@ -404,17 +389,14 @@ impl<'a> LN4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LN5_A {
     #[doc = "0: Disables the line"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enables the line and resets a pending request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<LN5_A> for bool {
     #[inline(always)]
     fn from(variant: LN5_A) -> Self {
-        match variant {
-            LN5_A::CONST_0 => false,
-            LN5_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LN5`"]
@@ -482,17 +464,14 @@ impl<'a> LN5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LN6_A {
     #[doc = "0: Disables the line"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enables the line and resets a pending request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<LN6_A> for bool {
     #[inline(always)]
     fn from(variant: LN6_A) -> Self {
-        match variant {
-            LN6_A::CONST_0 => false,
-            LN6_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LN6`"]
@@ -560,17 +539,14 @@ impl<'a> LN6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LN7_A {
     #[doc = "0: Disables the line"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enables the line and resets a pending request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<LN7_A> for bool {
     #[inline(always)]
     fn from(variant: LN7_A) -> Self {
-        match variant {
-            LN7_A::CONST_0 => false,
-            LN7_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LN7`"]

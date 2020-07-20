@@ -28,17 +28,14 @@ impl<'a> ID_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDE_A {
     #[doc = "0: Message object n handles standard frames with 11-bit identifier."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Message object n handles extended frames with 29-bit identifier."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IDE_A> for bool {
     #[inline(always)]
     fn from(variant: IDE_A) -> Self {
-        match variant {
-            IDE_A::VALUE1 => false,
-            IDE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IDE`"]
@@ -104,22 +101,19 @@ impl<'a> IDE_W<'a> {
 }
 #[doc = "Priority Class\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRI_A {
     #[doc = "1: Transmit acceptance filtering is based on the list order. This means that message object n is considered for transmission only if there is no other message object with valid transmit request (MSGVAL & TXEN0 & TXEN1 = 1) somewhere before this object in the list."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Transmit acceptance filtering is based on the CAN identifier. This means, message object n is considered for transmission only if there is no other message object with higher priority identifier + IDE + DIR (with respect to CAN arbitration rules) somewhere in the list (see )."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Transmit acceptance filtering is based on the list order (as PRI = 01B)."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<PRI_A> for u8 {
     #[inline(always)]
     fn from(variant: PRI_A) -> Self {
-        match variant {
-            PRI_A::VALUE2 => 1,
-            PRI_A::VALUE3 => 2,
-            PRI_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRI`"]

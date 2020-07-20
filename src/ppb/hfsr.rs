@@ -14,17 +14,14 @@ impl crate::ResetValue for super::HFSR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VECTTBL_A {
     #[doc = "0: no BusFault on vector table read"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: BusFault on vector table read"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VECTTBL_A> for bool {
     #[inline(always)]
     fn from(variant: VECTTBL_A) -> Self {
-        match variant {
-            VECTTBL_A::VALUE1 => false,
-            VECTTBL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VECTTBL`"]
@@ -92,17 +89,14 @@ impl<'a> VECTTBL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FORCED_A {
     #[doc = "0: no forced HardFault"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: forced HardFault."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FORCED_A> for bool {
     #[inline(always)]
     fn from(variant: FORCED_A) -> Self {
-        match variant {
-            FORCED_A::VALUE1 => false,
-            FORCED_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FORCED`"]

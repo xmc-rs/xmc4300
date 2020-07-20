@@ -40,22 +40,19 @@ impl<'a> PKTCNT_W<'a> {
 }
 #[doc = "SETUP Packet Count\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SUPCNT_A {
     #[doc = "1: 1 packet"]
-    VALUE1,
+    VALUE1 = 1,
     #[doc = "2: 2 packets"]
-    VALUE2,
+    VALUE2 = 2,
     #[doc = "3: 3 packets"]
-    VALUE3,
+    VALUE3 = 3,
 }
 impl From<SUPCNT_A> for u8 {
     #[inline(always)]
     fn from(variant: SUPCNT_A) -> Self {
-        match variant {
-            SUPCNT_A::VALUE1 => 1,
-            SUPCNT_A::VALUE2 => 2,
-            SUPCNT_A::VALUE3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SUPCnt`"]

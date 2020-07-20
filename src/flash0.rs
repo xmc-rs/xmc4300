@@ -19,7 +19,7 @@ pub struct RegisterBlock {
     #[doc = "0x1028 - Flash Protection Configuration Register User 2"]
     pub procon2: PROCON2,
 }
-#[doc = "Flash Module Identification Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [id](id) module"]
+#[doc = "Flash Module Identification Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [id](id) module"]
 pub type ID = crate::Reg<u32, _ID>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -28,7 +28,7 @@ pub struct _ID;
 impl crate::Readable for ID {}
 #[doc = "Flash Module Identification Register"]
 pub mod id;
-#[doc = "Flash Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fsr](fsr) module"]
+#[doc = "Flash Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fsr](fsr) module"]
 pub type FSR = crate::Reg<u32, _FSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -37,7 +37,7 @@ pub struct _FSR;
 impl crate::Readable for FSR {}
 #[doc = "Flash Status Register"]
 pub mod fsr;
-#[doc = "Flash Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fcon](fcon) module"]
+#[doc = "Flash Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fcon](fcon) module"]
 pub type FCON = crate::Reg<u32, _FCON>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -48,7 +48,7 @@ impl crate::Readable for FCON {}
 impl crate::Writable for FCON {}
 #[doc = "Flash Configuration Register"]
 pub mod fcon;
-#[doc = "Margin Control Register PFLASH\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [marp](marp) module"]
+#[doc = "Margin Control Register PFLASH\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [marp](marp) module"]
 pub type MARP = crate::Reg<u32, _MARP>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -59,7 +59,7 @@ impl crate::Readable for MARP {}
 impl crate::Writable for MARP {}
 #[doc = "Margin Control Register PFLASH"]
 pub mod marp;
-#[doc = "Flash Protection Configuration Register User 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [procon0](procon0) module"]
+#[doc = "Flash Protection Configuration Register User 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [procon0](procon0) module"]
 pub type PROCON0 = crate::Reg<u32, _PROCON0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -68,7 +68,7 @@ pub struct _PROCON0;
 impl crate::Readable for PROCON0 {}
 #[doc = "Flash Protection Configuration Register User 0"]
 pub mod procon0;
-#[doc = "Flash Protection Configuration Register User 1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [procon1](procon1) module"]
+#[doc = "Flash Protection Configuration Register User 1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [procon1](procon1) module"]
 pub type PROCON1 = crate::Reg<u32, _PROCON1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -77,7 +77,7 @@ pub struct _PROCON1;
 impl crate::Readable for PROCON1 {}
 #[doc = "Flash Protection Configuration Register User 1"]
 pub mod procon1;
-#[doc = "Flash Protection Configuration Register User 2\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [procon2](procon2) module"]
+#[doc = "Flash Protection Configuration Register User 2\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [procon2](procon2) module"]
 pub type PROCON2 = crate::Reg<u32, _PROCON2>;
 #[allow(missing_docs)]
 #[doc(hidden)]

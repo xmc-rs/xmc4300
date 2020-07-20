@@ -8,7 +8,7 @@ pub struct RegisterBlock {
     #[doc = "0x08 - EtherCAT 0 Port 1 Control Register"]
     pub conp1: CONP1,
 }
-#[doc = "EtherCAT 0 Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [con](con) module"]
+#[doc = "EtherCAT 0 Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [con](con) module"]
 pub type CON = crate::Reg<u32, _CON>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -19,7 +19,7 @@ impl crate::Readable for CON {}
 impl crate::Writable for CON {}
 #[doc = "EtherCAT 0 Control"]
 pub mod con;
-#[doc = "EtherCAT 0 Port 1 Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [conp0](conp0) module"]
+#[doc = "EtherCAT 0 Port 1 Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [conp0](conp0) module"]
 pub type CONP0 = crate::Reg<u32, _CONP0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -30,7 +30,7 @@ impl crate::Readable for CONP0 {}
 impl crate::Writable for CONP0 {}
 #[doc = "EtherCAT 0 Port 1 Control Register"]
 pub mod conp0;
-#[doc = "EtherCAT 0 Port 1 Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [conp1](conp1) module"]
+#[doc = "EtherCAT 0 Port 1 Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [conp1](conp1) module"]
 pub type CONP1 = crate::Reg<u32, _CONP1>;
 #[allow(missing_docs)]
 #[doc(hidden)]

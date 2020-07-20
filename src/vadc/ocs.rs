@@ -12,19 +12,17 @@ impl crate::ResetValue for super::OCS {
 }
 #[doc = "Trigger Set for OTGB0/1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TGS_A {
     #[doc = "0: No Trigger Set output"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Trigger Set 1: TS16_SSIG, input sample signals"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TGS_A> for u8 {
     #[inline(always)]
     fn from(variant: TGS_A) -> Self {
-        match variant {
-            TGS_A::VALUE1 => 0,
-            TGS_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TGS`"]
@@ -82,17 +80,14 @@ impl<'a> TGS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TGB_A {
     #[doc = "0: Trigger Set is output on OTGB0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Trigger Set is output on OTGB1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TGB_A> for bool {
     #[inline(always)]
     fn from(variant: TGB_A) -> Self {
-        match variant {
-            TGB_A::VALUE1 => false,
-            TGB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TGB`"]
@@ -180,25 +175,21 @@ impl<'a> TG_P_W<'a> {
 }
 #[doc = "OCDS Suspend Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SUS_A {
     #[doc = "0: Will not suspend"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Hard suspend: Clock is switched off immediately."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Soft suspend mode 0: Stop conversions after the currently running one is completed and its result has been stored. No change for the arbiter."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Soft suspend mode 1: Stop conversions after the currently running one is completed and its result has been stored. Stop arbiter after the current arbitration round."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<SUS_A> for u8 {
     #[inline(always)]
     fn from(variant: SUS_A) -> Self {
-        match variant {
-            SUS_A::VALUE1 => 0,
-            SUS_A::VALUE2 => 1,
-            SUS_A::VALUE3 => 2,
-            SUS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SUS`"]
@@ -300,17 +291,14 @@ impl<'a> SUS_P_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUSSTA_A {
     #[doc = "0: Module is not (yet) suspended"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Module is suspended"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SUSSTA_A> for bool {
     #[inline(always)]
     fn from(variant: SUSSTA_A) -> Self {
-        match variant {
-            SUSSTA_A::VALUE1 => false,
-            SUSSTA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUSSTA`"]

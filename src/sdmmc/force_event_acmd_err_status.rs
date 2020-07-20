@@ -12,17 +12,14 @@ impl crate::ResetValue for super::FORCE_EVENT_ACMD_ERR_STATUS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FE_CMD_NOT_ISSUED_ACMD12_ERR_AW {
     #[doc = "0: No interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Interrupt is generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FE_CMD_NOT_ISSUED_ACMD12_ERR_AW> for bool {
     #[inline(always)]
     fn from(variant: FE_CMD_NOT_ISSUED_ACMD12_ERR_AW) -> Self {
-        match variant {
-            FE_CMD_NOT_ISSUED_ACMD12_ERR_AW::VALUE1 => false,
-            FE_CMD_NOT_ISSUED_ACMD12_ERR_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `FE_CMD_NOT_ISSUED_ACMD12_ERR`"]
@@ -68,17 +65,14 @@ impl<'a> FE_CMD_NOT_ISSUED_ACMD12_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FE_ACMD_IND_ERR_AW {
     #[doc = "0: No interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Interrupt is generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FE_ACMD_IND_ERR_AW> for bool {
     #[inline(always)]
     fn from(variant: FE_ACMD_IND_ERR_AW) -> Self {
-        match variant {
-            FE_ACMD_IND_ERR_AW::VALUE1 => false,
-            FE_ACMD_IND_ERR_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `FE_ACMD_IND_ERR`"]
@@ -124,17 +118,14 @@ impl<'a> FE_ACMD_IND_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FE_ACMD_END_BIT_ERR_AW {
     #[doc = "0: No interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Interrupt is generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FE_ACMD_END_BIT_ERR_AW> for bool {
     #[inline(always)]
     fn from(variant: FE_ACMD_END_BIT_ERR_AW) -> Self {
-        match variant {
-            FE_ACMD_END_BIT_ERR_AW::VALUE1 => false,
-            FE_ACMD_END_BIT_ERR_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `FE_ACMD_END_BIT_ERR`"]
@@ -180,17 +171,14 @@ impl<'a> FE_ACMD_END_BIT_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FE_ACMD_CRC_ERR_AW {
     #[doc = "0: No interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Interrupt is generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FE_ACMD_CRC_ERR_AW> for bool {
     #[inline(always)]
     fn from(variant: FE_ACMD_CRC_ERR_AW) -> Self {
-        match variant {
-            FE_ACMD_CRC_ERR_AW::VALUE1 => false,
-            FE_ACMD_CRC_ERR_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `FE_ACMD_CRC_ERR`"]
@@ -236,17 +224,14 @@ impl<'a> FE_ACMD_CRC_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FE_ACMD_TIMEOUT_ERR_AW {
     #[doc = "0: No interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Interrupt is generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FE_ACMD_TIMEOUT_ERR_AW> for bool {
     #[inline(always)]
     fn from(variant: FE_ACMD_TIMEOUT_ERR_AW) -> Self {
-        match variant {
-            FE_ACMD_TIMEOUT_ERR_AW::VALUE1 => false,
-            FE_ACMD_TIMEOUT_ERR_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `FE_ACMD_TIMEOUT_ERR`"]
@@ -292,17 +277,14 @@ impl<'a> FE_ACMD_TIMEOUT_ERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FE_ACMD_NOT_EXEC_AW {
     #[doc = "0: No interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Interrupt is generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FE_ACMD_NOT_EXEC_AW> for bool {
     #[inline(always)]
     fn from(variant: FE_ACMD_NOT_EXEC_AW) -> Self {
-        match variant {
-            FE_ACMD_NOT_EXEC_AW::VALUE1 => false,
-            FE_ACMD_NOT_EXEC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `FE_ACMD_NOT_EXEC`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::G0ORCEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENORC6_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ENORC6_A> for bool {
     #[inline(always)]
     fn from(variant: ENORC6_A) -> Self {
-        match variant {
-            ENORC6_A::CONST_0 => false,
-            ENORC6_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENORC6`"]
@@ -92,17 +89,14 @@ impl<'a> ENORC6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENORC7_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ENORC7_A> for bool {
     #[inline(always)]
     fn from(variant: ENORC7_A) -> Self {
-        match variant {
-            ENORC7_A::CONST_0 => false,
-            ENORC7_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENORC7`"]

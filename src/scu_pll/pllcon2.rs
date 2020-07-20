@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PLLCON2 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PINSEL_A {
     #[doc = "0: PLL external oscillator selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Backup clock fofi selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PINSEL_A> for bool {
     #[inline(always)]
     fn from(variant: PINSEL_A) -> Self {
-        match variant {
-            PINSEL_A::CONST_0 => false,
-            PINSEL_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PINSEL`"]
@@ -92,17 +89,14 @@ impl<'a> PINSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum K1INSEL_A {
     #[doc = "0: PLL external oscillator selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Backup clock fofi selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<K1INSEL_A> for bool {
     #[inline(always)]
     fn from(variant: K1INSEL_A) -> Self {
-        match variant {
-            K1INSEL_A::CONST_0 => false,
-            K1INSEL_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `K1INSEL`"]

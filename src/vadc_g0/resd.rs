@@ -10,22 +10,19 @@ pub type CHNR_R = crate::R<u8, u8>;
 pub type EMUX_R = crate::R<u8, u8>;
 #[doc = "Converted Request Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CRS_A {
     #[doc = "0: Request source 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Request source 1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Request source 2"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<CRS_A> for u8 {
     #[inline(always)]
     fn from(variant: CRS_A) -> Self {
-        match variant {
-            CRS_A::VALUE1 => 0,
-            CRS_A::VALUE2 => 1,
-            CRS_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CRS`"]
@@ -62,17 +59,14 @@ impl CRS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FCR_A {
     #[doc = "0: Signal level was below compare value"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Signal level was above compare value"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FCR_A> for bool {
     #[inline(always)]
     fn from(variant: FCR_A) -> Self {
-        match variant {
-            FCR_A::VALUE1 => false,
-            FCR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FCR`"]
@@ -101,17 +95,14 @@ impl FCR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF_A {
     #[doc = "0: No new result available"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bitfield RESULT has been updated with new result value and has not yet been read, or bit FCR has been updated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF_A> for bool {
     #[inline(always)]
     fn from(variant: VF_A) -> Self {
-        match variant {
-            VF_A::VALUE1 => false,
-            VF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF`"]

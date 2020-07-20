@@ -6,25 +6,21 @@ pub type CAPV_R = crate::R<u16, u16>;
 pub type FPCV_R = crate::R<u8, u8>;
 #[doc = "Slice pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SPTR_A {
     #[doc = "0: CC40"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CC41"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: CC42"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: CC43"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<SPTR_A> for u8 {
     #[inline(always)]
     fn from(variant: SPTR_A) -> Self {
-        match variant {
-            SPTR_A::VALUE1 => 0,
-            SPTR_A::VALUE2 => 1,
-            SPTR_A::VALUE3 => 2,
-            SPTR_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SPTR`"]
@@ -64,25 +60,21 @@ impl SPTR_R {
 }
 #[doc = "Capture register pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum VPTR_A {
     #[doc = "0: Capture register 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Capture register 1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Capture register 2"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Capture register 3"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<VPTR_A> for u8 {
     #[inline(always)]
     fn from(variant: VPTR_A) -> Self {
-        match variant {
-            VPTR_A::VALUE1 => 0,
-            VPTR_A::VALUE2 => 1,
-            VPTR_A::VALUE3 => 2,
-            VPTR_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VPTR`"]
@@ -124,17 +116,14 @@ impl VPTR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FFL_A {
     #[doc = "0: No new value was captured into this register"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A new value has been captured into this register"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FFL_A> for bool {
     #[inline(always)]
     fn from(variant: FFL_A) -> Self {
-        match variant {
-            FFL_A::VALUE1 => false,
-            FFL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FFL`"]
@@ -163,17 +152,14 @@ impl FFL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCV_A {
     #[doc = "0: No capture was lost"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A capture was lost"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LCV_A> for bool {
     #[inline(always)]
     fn from(variant: LCV_A) -> Self {
-        match variant {
-            LCV_A::VALUE1 => false,
-            LCV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LCV`"]

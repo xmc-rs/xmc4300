@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::DC_SYS_TIME_OFFSET>;
 #[doc = "Writer for register DC_SYS_TIME_OFFSET[%s]"]
 pub type W = crate::W<u32, super::DC_SYS_TIME_OFFSET>;
-#[doc = "Register DC_SYS_TIME_OFFSET[%s] `reset()`'s with value 0"]
+#[doc = "Register DC_SYS_TIME_OFFSET[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::DC_SYS_TIME_OFFSET {
     type Type = u32;
     #[inline(always)]

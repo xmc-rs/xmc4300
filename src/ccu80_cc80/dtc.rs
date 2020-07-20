@@ -14,17 +14,14 @@ impl crate::ResetValue for super::DTC {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTE1_A {
     #[doc = "0: Dead Time for channel 1 is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dead Time for channel 1 is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DTE1_A> for bool {
     #[inline(always)]
     fn from(variant: DTE1_A) -> Self {
-        match variant {
-            DTE1_A::VALUE1 => false,
-            DTE1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DTE1`"]
@@ -92,17 +89,14 @@ impl<'a> DTE1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTE2_A {
     #[doc = "0: Dead Time for channel 2 is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dead Time for channel 2 is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DTE2_A> for bool {
     #[inline(always)]
     fn from(variant: DTE2_A) -> Self {
-        match variant {
-            DTE2_A::VALUE1 => false,
-            DTE2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DTE2`"]
@@ -170,17 +164,14 @@ impl<'a> DTE2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCEN1_A {
     #[doc = "0: Dead Time for CC8yST1 path is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dead Time for CC8yST1 path is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DCEN1_A> for bool {
     #[inline(always)]
     fn from(variant: DCEN1_A) -> Self {
-        match variant {
-            DCEN1_A::VALUE1 => false,
-            DCEN1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DCEN1`"]
@@ -248,17 +239,14 @@ impl<'a> DCEN1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCEN2_A {
     #[doc = "0: Dead Time for inverted CC8yST1 path is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dead Time for inverted CC8yST1 path is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DCEN2_A> for bool {
     #[inline(always)]
     fn from(variant: DCEN2_A) -> Self {
-        match variant {
-            DCEN2_A::VALUE1 => false,
-            DCEN2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DCEN2`"]
@@ -326,17 +314,14 @@ impl<'a> DCEN2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCEN3_A {
     #[doc = "0: Dead Time for CC8yST2 path is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dead Time for CC8yST2 path is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DCEN3_A> for bool {
     #[inline(always)]
     fn from(variant: DCEN3_A) -> Self {
-        match variant {
-            DCEN3_A::VALUE1 => false,
-            DCEN3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DCEN3`"]
@@ -404,17 +389,14 @@ impl<'a> DCEN3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCEN4_A {
     #[doc = "0: Dead Time for inverted CC8yST2 path is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dead Time for inverted CC8yST2 path is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DCEN4_A> for bool {
     #[inline(always)]
     fn from(variant: DCEN4_A) -> Self {
-        match variant {
-            DCEN4_A::VALUE1 => false,
-            DCEN4_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DCEN4`"]
@@ -480,25 +462,21 @@ impl<'a> DCEN4_W<'a> {
 }
 #[doc = "Dead Time clock control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DTCC_A {
     #[doc = "0: ftclk"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: ftclk/2"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: ftclk/4"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: ftclk/8"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<DTCC_A> for u8 {
     #[inline(always)]
     fn from(variant: DTCC_A) -> Self {
-        match variant {
-            DTCC_A::VALUE1 => 0,
-            DTCC_A::VALUE2 => 1,
-            DTCC_A::VALUE3 => 2,
-            DTCC_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DTCC`"]

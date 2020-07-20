@@ -14,17 +14,14 @@ impl crate::ResetValue for super::KSCFG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODEN_A {
     #[doc = "0: The module is switched off immediately (without respecting a stop condition). It does not react on mode control actions and the module clock is switched off. The module does not react on read accesses and ignores write accesses (except to KSCFG)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The module is switched on and can operate. After writing 1 to MODEN, it is recommended to read register KSCFG to avoid pipeline effects in the control block before accessing other Service Request Processing registers."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MODEN_A> for bool {
     #[inline(always)]
     fn from(variant: MODEN_A) -> Self {
-        match variant {
-            MODEN_A::VALUE1 => false,
-            MODEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MODEN`"]
@@ -92,17 +89,14 @@ impl<'a> MODEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BPMODEN_AW {
     #[doc = "0: MODEN is not changed."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: MODEN is updated with the written value."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BPMODEN_AW> for bool {
     #[inline(always)]
     fn from(variant: BPMODEN_AW) -> Self {
-        match variant {
-            BPMODEN_AW::VALUE1 => false,
-            BPMODEN_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BPMODEN`"]
@@ -146,25 +140,21 @@ impl<'a> BPMODEN_W<'a> {
 }
 #[doc = "Normal Operation Mode Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NOMCFG_A {
     #[doc = "0: Run mode 0 is selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Run mode 1 is selected."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Stop mode 0 is selected."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Stop mode 1 is selected."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<NOMCFG_A> for u8 {
     #[inline(always)]
     fn from(variant: NOMCFG_A) -> Self {
-        match variant {
-            NOMCFG_A::VALUE1 => 0,
-            NOMCFG_A::VALUE2 => 1,
-            NOMCFG_A::VALUE3 => 2,
-            NOMCFG_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NOMCFG`"]
@@ -245,17 +235,14 @@ impl<'a> NOMCFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BPNOM_AW {
     #[doc = "0: NOMCFG is not changed."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: NOMCFG is updated with the written value."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BPNOM_AW> for bool {
     #[inline(always)]
     fn from(variant: BPNOM_AW) -> Self {
-        match variant {
-            BPNOM_AW::VALUE1 => false,
-            BPNOM_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BPNOM`"]
@@ -315,17 +302,14 @@ impl<'a> SUMCFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BPSUM_AW {
     #[doc = "0: SUMCFG is not changed."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SUMCFG is updated with the written value."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BPSUM_AW> for bool {
     #[inline(always)]
     fn from(variant: BPSUM_AW) -> Self {
-        match variant {
-            BPSUM_AW::VALUE1 => false,
-            BPSUM_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BPSUM`"]

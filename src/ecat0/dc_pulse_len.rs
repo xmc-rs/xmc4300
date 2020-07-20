@@ -2,16 +2,16 @@
 pub type R = crate::R<u16, super::DC_PULSE_LEN>;
 #[doc = "Pulse length of SyncSignals\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum PULS_LENGTH_A {
-    #[doc = "0: Acknowledge mode: SyncSignal will be cleared by reading SYNC\\[1:0\\] Status register"]
-    VALUE1,
+    #[doc = "0: Acknowledge mode: SyncSignal will be cleared by reading SYNC\\[1:0\\]
+Status register"]
+    VALUE1 = 0,
 }
 impl From<PULS_LENGTH_A> for u16 {
     #[inline(always)]
     fn from(variant: PULS_LENGTH_A) -> Self {
-        match variant {
-            PULS_LENGTH_A::VALUE1 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PULS_LENGTH`"]

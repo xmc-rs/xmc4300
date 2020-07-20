@@ -4,16 +4,15 @@ pub type R = crate::R<u32, super::ID>;
 pub type MOD_REV_R = crate::R<u8, u8>;
 #[doc = "Module Type\n\nValue on reset: 192"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MOD_TYPE_A {
     #[doc = "192: Define the module as a 32-bit module."]
-    VALUE1,
+    VALUE1 = 192,
 }
 impl From<MOD_TYPE_A> for u8 {
     #[inline(always)]
     fn from(variant: MOD_TYPE_A) -> Self {
-        match variant {
-            MOD_TYPE_A::VALUE1 => 192,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MOD_TYPE`"]

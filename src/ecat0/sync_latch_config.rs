@@ -2,25 +2,21 @@
 pub type R = crate::R<u8, super::SYNC_LATCH_CONFIG>;
 #[doc = "SYNC0 output driver/polarity\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SYNC0_POL_A {
     #[doc = "0: Push-Pull active low"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Open Drain (active low)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Push-Pull active high"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Open Source (active high)"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<SYNC0_POL_A> for u8 {
     #[inline(always)]
     fn from(variant: SYNC0_POL_A) -> Self {
-        match variant {
-            SYNC0_POL_A::VALUE1 => 0,
-            SYNC0_POL_A::VALUE2 => 1,
-            SYNC0_POL_A::VALUE3 => 2,
-            SYNC0_POL_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SYNC0_POL`"]
@@ -62,17 +58,14 @@ impl SYNC0_POL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SL0_CNF_A {
     #[doc = "0: LATCH0 Input"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SYNC0 Output"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SL0_CNF_A> for bool {
     #[inline(always)]
     fn from(variant: SL0_CNF_A) -> Self {
-        match variant {
-            SL0_CNF_A::VALUE1 => false,
-            SL0_CNF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SL0_CNF`"]
@@ -101,17 +94,14 @@ impl SL0_CNF_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S0_MAP_A {
     #[doc = "0: Disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S0_MAP_A> for bool {
     #[inline(always)]
     fn from(variant: S0_MAP_A) -> Self {
-        match variant {
-            S0_MAP_A::VALUE1 => false,
-            S0_MAP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S0_MAP`"]
@@ -138,25 +128,21 @@ impl S0_MAP_R {
 }
 #[doc = "SYNC1 output driver/polarity\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SYNC1_POL_A {
     #[doc = "0: Push-Pull active low"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Open Drain (active low)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Push-Pull active high"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Open Source (active high)"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<SYNC1_POL_A> for u8 {
     #[inline(always)]
     fn from(variant: SYNC1_POL_A) -> Self {
-        match variant {
-            SYNC1_POL_A::VALUE1 => 0,
-            SYNC1_POL_A::VALUE2 => 1,
-            SYNC1_POL_A::VALUE3 => 2,
-            SYNC1_POL_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SYNC1_POL`"]
@@ -198,17 +184,14 @@ impl SYNC1_POL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SL1_CNF_A {
     #[doc = "0: LATCH1 Input"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SYNC1 Output"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SL1_CNF_A> for bool {
     #[inline(always)]
     fn from(variant: SL1_CNF_A) -> Self {
-        match variant {
-            SL1_CNF_A::VALUE1 => false,
-            SL1_CNF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SL1_CNF`"]
@@ -237,17 +220,14 @@ impl SL1_CNF_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S1_MAP_A {
     #[doc = "0: Disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S1_MAP_A> for bool {
     #[inline(always)]
     fn from(variant: S1_MAP_A) -> Self {
-        match variant {
-            S1_MAP_A::VALUE1 => false,
-            S1_MAP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S1_MAP`"]

@@ -12,25 +12,21 @@ impl crate::ResetValue for super::STCON {
 }
 #[doc = "HW Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HWCON_A {
     #[doc = "0: Normal mode, JTAG"]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: ASC BSL enabled"]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: BMI customized boot enabled"]
-    CONST_10,
+    CONST_10 = 2,
     #[doc = "3: CAN BSL enabled"]
-    CONST_11,
+    CONST_11 = 3,
 }
 impl From<HWCON_A> for u8 {
     #[inline(always)]
     fn from(variant: HWCON_A) -> Self {
-        match variant {
-            HWCON_A::CONST_00 => 0,
-            HWCON_A::CONST_01 => 1,
-            HWCON_A::CONST_10 => 2,
-            HWCON_A::CONST_11 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HWCON`"]
@@ -70,37 +66,29 @@ impl HWCON_R {
 }
 #[doc = "SW Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SWCON_A {
     #[doc = "0: Normal mode, boot from Boot ROM"]
-    CONST_0000,
+    CONST_0000 = 0,
     #[doc = "1: ASC BSL enabled"]
-    CONST_0001,
+    CONST_0001 = 1,
     #[doc = "2: BMI customized boot enabled"]
-    CONST_0010,
+    CONST_0010 = 2,
     #[doc = "3: CAN BSL enabled"]
-    CONST_0011,
+    CONST_0011 = 3,
     #[doc = "4: Boot from Code SRAM"]
-    CONST_0100,
+    CONST_0100 = 4,
     #[doc = "8: Boot from alternate Flash Address 0"]
-    CONST_1000,
+    CONST_1000 = 8,
     #[doc = "12: Boot from alternate Flash Address 1"]
-    CONST_1100,
+    CONST_1100 = 12,
     #[doc = "14: Enable fallback Alternate Boot Mode (ABM)"]
-    CONST_1110,
+    CONST_1110 = 14,
 }
 impl From<SWCON_A> for u8 {
     #[inline(always)]
     fn from(variant: SWCON_A) -> Self {
-        match variant {
-            SWCON_A::CONST_0000 => 0,
-            SWCON_A::CONST_0001 => 1,
-            SWCON_A::CONST_0010 => 2,
-            SWCON_A::CONST_0011 => 3,
-            SWCON_A::CONST_0100 => 4,
-            SWCON_A::CONST_1000 => 8,
-            SWCON_A::CONST_1100 => 12,
-            SWCON_A::CONST_1110 => 14,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SWCON`"]

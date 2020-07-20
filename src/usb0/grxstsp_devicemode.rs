@@ -6,25 +6,21 @@ pub type EPNUM_R = crate::R<u8, u8>;
 pub type BCNT_R = crate::R<u16, u16>;
 #[doc = "Data PID\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DPID_A {
     #[doc = "0: DATA0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "2: DATA1"]
-    VALUE2,
+    VALUE2 = 2,
     #[doc = "1: DATA2"]
-    VALUE3,
+    VALUE3 = 1,
     #[doc = "3: MDATA"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<DPID_A> for u8 {
     #[inline(always)]
     fn from(variant: DPID_A) -> Self {
-        match variant {
-            DPID_A::VALUE1 => 0,
-            DPID_A::VALUE2 => 2,
-            DPID_A::VALUE3 => 1,
-            DPID_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DPID`"]
@@ -64,28 +60,23 @@ impl DPID_R {
 }
 #[doc = "Packet Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PKTSTS_A {
     #[doc = "1: Global OUT NAK (triggers an interrupt)"]
-    VALUE1,
+    VALUE1 = 1,
     #[doc = "2: OUT data packet received"]
-    VALUE2,
+    VALUE2 = 2,
     #[doc = "3: OUT transfer completed (triggers an interrupt)"]
-    VALUE3,
+    VALUE3 = 3,
     #[doc = "4: SETUP transaction completed (triggers an interrupt)"]
-    VALUE4,
+    VALUE4 = 4,
     #[doc = "6: SETUP data packet received"]
-    VALUE5,
+    VALUE5 = 6,
 }
 impl From<PKTSTS_A> for u8 {
     #[inline(always)]
     fn from(variant: PKTSTS_A) -> Self {
-        match variant {
-            PKTSTS_A::VALUE1 => 1,
-            PKTSTS_A::VALUE2 => 2,
-            PKTSTS_A::VALUE3 => 3,
-            PKTSTS_A::VALUE4 => 4,
-            PKTSTS_A::VALUE5 => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PktSts`"]

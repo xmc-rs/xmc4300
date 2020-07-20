@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PME_A {
     #[doc = "0: Period Match interrupt is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Period Match interrupt is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PME_A> for bool {
     #[inline(always)]
     fn from(variant: PME_A) -> Self {
-        match variant {
-            PME_A::VALUE1 => false,
-            PME_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PME`"]
@@ -92,17 +89,14 @@ impl<'a> PME_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OME_A {
     #[doc = "0: One Match interrupt is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: One Match interrupt is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<OME_A> for bool {
     #[inline(always)]
     fn from(variant: OME_A) -> Self {
-        match variant {
-            OME_A::VALUE1 => false,
-            OME_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OME`"]
@@ -170,17 +164,14 @@ impl<'a> OME_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMUE_A {
     #[doc = "0: Compare Match while counting up interrupt is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Compare Match while counting up interrupt is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMUE_A> for bool {
     #[inline(always)]
     fn from(variant: CMUE_A) -> Self {
-        match variant {
-            CMUE_A::VALUE1 => false,
-            CMUE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMUE`"]
@@ -248,17 +239,14 @@ impl<'a> CMUE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMDE_A {
     #[doc = "0: Compare Match while counting down interrupt is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Compare Match while counting down interrupt is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMDE_A> for bool {
     #[inline(always)]
     fn from(variant: CMDE_A) -> Self {
-        match variant {
-            CMDE_A::VALUE1 => false,
-            CMDE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMDE`"]
@@ -326,17 +314,14 @@ impl<'a> CMDE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E0AE_A {
     #[doc = "0: Event 0 detection interrupt is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Event 0 detection interrupt is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<E0AE_A> for bool {
     #[inline(always)]
     fn from(variant: E0AE_A) -> Self {
-        match variant {
-            E0AE_A::VALUE1 => false,
-            E0AE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E0AE`"]
@@ -404,17 +389,14 @@ impl<'a> E0AE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E1AE_A {
     #[doc = "0: Event 1 detection interrupt is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Event 1 detection interrupt is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<E1AE_A> for bool {
     #[inline(always)]
     fn from(variant: E1AE_A) -> Self {
-        match variant {
-            E1AE_A::VALUE1 => false,
-            E1AE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E1AE`"]
@@ -482,17 +464,14 @@ impl<'a> E1AE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E2AE_A {
     #[doc = "0: Event 2 detection interrupt is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Event 2 detection interrupt is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<E2AE_A> for bool {
     #[inline(always)]
     fn from(variant: E2AE_A) -> Self {
-        match variant {
-            E2AE_A::VALUE1 => false,
-            E2AE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E2AE`"]

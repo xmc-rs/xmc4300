@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SM_PDI_CTR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DEACT_A {
     #[doc = "0: Read 0 for Normal operation, SyncManager activated, write 0 for Activate SyncManager"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read 1 for SyncManager deactivated and reset SyncManager locks access to Memory area, write 1 for Request SyncManager deactivation"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DEACT_A> for bool {
     #[inline(always)]
     fn from(variant: DEACT_A) -> Self {
-        match variant {
-            DEACT_A::VALUE1 => false,
-            DEACT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DEACT`"]

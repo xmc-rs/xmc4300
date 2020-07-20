@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PSL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PSL11_A {
     #[doc = "0: Passive Level is LOW"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Passive Level is HIGH"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PSL11_A> for bool {
     #[inline(always)]
     fn from(variant: PSL11_A) -> Self {
-        match variant {
-            PSL11_A::VALUE1 => false,
-            PSL11_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PSL11`"]
@@ -92,17 +89,14 @@ impl<'a> PSL11_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PSL12_A {
     #[doc = "0: Passive Level is LOW"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Passive Level is HIGH"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PSL12_A> for bool {
     #[inline(always)]
     fn from(variant: PSL12_A) -> Self {
-        match variant {
-            PSL12_A::VALUE1 => false,
-            PSL12_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PSL12`"]
@@ -170,17 +164,14 @@ impl<'a> PSL12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PSL21_A {
     #[doc = "0: Passive Level is LOW"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Passive Level is HIGH"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PSL21_A> for bool {
     #[inline(always)]
     fn from(variant: PSL21_A) -> Self {
-        match variant {
-            PSL21_A::VALUE1 => false,
-            PSL21_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PSL21`"]
@@ -248,17 +239,14 @@ impl<'a> PSL21_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PSL22_A {
     #[doc = "0: Passive Level is LOW"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Passive Level is HIGH"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PSL22_A> for bool {
     #[inline(always)]
     fn from(variant: PSL22_A) -> Self {
-        match variant {
-            PSL22_A::VALUE1 => false,
-            PSL22_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PSL22`"]

@@ -12,37 +12,29 @@ impl crate::ResetValue for super::DX1CR {
 }
 #[doc = "Data Selection for Input Signal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DSEL_A {
     #[doc = "0: The data input DX1A is selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The data input DX1B is selected."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: The data input DX1C is selected."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: The data input DX1D is selected."]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: The data input DX1E is selected."]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: The data input DX1F is selected."]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: The data input DX1G is selected."]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: The data input is always 1."]
-    VALUE8,
+    VALUE8 = 7,
 }
 impl From<DSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DSEL_A) -> Self {
-        match variant {
-            DSEL_A::VALUE1 => 0,
-            DSEL_A::VALUE2 => 1,
-            DSEL_A::VALUE3 => 2,
-            DSEL_A::VALUE4 => 3,
-            DSEL_A::VALUE5 => 4,
-            DSEL_A::VALUE6 => 5,
-            DSEL_A::VALUE7 => 6,
-            DSEL_A::VALUE8 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DSEL`"]
@@ -167,17 +159,14 @@ impl<'a> DSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCEN_A {
     #[doc = "0: The receive shift clock is dependent on INSW selection."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The receive shift clock is connected to the selected data input line. This setting is used if delay compensation is required in SSC and IIS protocols, else DCEN should always be 0."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DCEN_A> for bool {
     #[inline(always)]
     fn from(variant: DCEN_A) -> Self {
-        match variant {
-            DCEN_A::VALUE1 => false,
-            DCEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DCEN`"]
@@ -245,17 +234,14 @@ impl<'a> DCEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INSW_A {
     #[doc = "0: The input of the data shift unit is controlled by the protocol pre-processor."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The input of the data shift unit is connected to the selected data input line. This setting is used if the signals are directly derived from an input pin without treatment by the protocol pre-processor."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<INSW_A> for bool {
     #[inline(always)]
     fn from(variant: INSW_A) -> Self {
-        match variant {
-            INSW_A::VALUE1 => false,
-            INSW_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INSW`"]
@@ -323,17 +309,14 @@ impl<'a> INSW_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DFEN_A {
     #[doc = "0: The input signal is not digitally filtered."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The input signal is digitally filtered."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DFEN_A> for bool {
     #[inline(always)]
     fn from(variant: DFEN_A) -> Self {
-        match variant {
-            DFEN_A::VALUE1 => false,
-            DFEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DFEN`"]
@@ -401,17 +384,14 @@ impl<'a> DFEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DSEN_A {
     #[doc = "0: The un-synchronized signal can be taken as input for the data shift unit."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The synchronized signal can be taken as input for the data shift unit."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DSEN_A> for bool {
     #[inline(always)]
     fn from(variant: DSEN_A) -> Self {
-        match variant {
-            DSEN_A::VALUE1 => false,
-            DSEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DSEN`"]
@@ -479,17 +459,14 @@ impl<'a> DSEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DPOL_A {
     #[doc = "0: The input signal is not inverted."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The input signal is inverted."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DPOL_A> for bool {
     #[inline(always)]
     fn from(variant: DPOL_A) -> Self {
-        match variant {
-            DPOL_A::VALUE1 => false,
-            DPOL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DPOL`"]
@@ -557,17 +534,14 @@ impl<'a> DPOL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SFSEL_A {
     #[doc = "0: The sampling frequency is fPB."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The sampling frequency is fFD."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SFSEL_A> for bool {
     #[inline(always)]
     fn from(variant: SFSEL_A) -> Self {
-        match variant {
-            SFSEL_A::VALUE1 => false,
-            SFSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SFSEL`"]
@@ -633,25 +607,21 @@ impl<'a> SFSEL_W<'a> {
 }
 #[doc = "Combination Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CM_A {
     #[doc = "0: The trigger activation is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A rising edge activates DX1T."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: A falling edge activates DX1T."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Both edges activate DX1T."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CM_A> for u8 {
     #[inline(always)]
     fn from(variant: CM_A) -> Self {
-        match variant {
-            CM_A::VALUE1 => 0,
-            CM_A::VALUE2 => 1,
-            CM_A::VALUE3 => 2,
-            CM_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CM`"]
@@ -732,17 +702,14 @@ impl<'a> CM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DXS_A {
     #[doc = "0: The current value of DX1S is 0."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The current value of DX1S is 1."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DXS_A> for bool {
     #[inline(always)]
     fn from(variant: DXS_A) -> Self {
-        match variant {
-            DXS_A::VALUE1 => false,
-            DXS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DXS`"]

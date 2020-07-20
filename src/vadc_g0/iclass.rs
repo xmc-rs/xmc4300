@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::ICLASS>;
 #[doc = "Writer for register ICLASS[%s]"]
 pub type W = crate::W<u32, super::ICLASS>;
-#[doc = "Register ICLASS[%s] `reset()`'s with value 0"]
+#[doc = "Register ICLASS[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::ICLASS {
     type Type = u32;
     #[inline(always)]
@@ -26,25 +27,21 @@ impl<'a> STCS_W<'a> {
 }
 #[doc = "Conversion Mode for Standard Conversions\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CMS_A {
     #[doc = "0: 12-bit conversion"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 10-bit conversion"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 8-bit conversion"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "5: 10-bit fast compare mode"]
-    VALUE6,
+    VALUE6 = 5,
 }
 impl From<CMS_A> for u8 {
     #[inline(always)]
     fn from(variant: CMS_A) -> Self {
-        match variant {
-            CMS_A::VALUE1 => 0,
-            CMS_A::VALUE2 => 1,
-            CMS_A::VALUE3 => 2,
-            CMS_A::VALUE6 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CMS`"]
@@ -136,25 +133,21 @@ impl<'a> STCE_W<'a> {
 }
 #[doc = "Conversion Mode for EMUX Conversions\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CME_A {
     #[doc = "0: 12-bit conversion"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 10-bit conversion"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 8-bit conversion"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "5: 10-bit fast compare mode"]
-    VALUE6,
+    VALUE6 = 5,
 }
 impl From<CME_A> for u8 {
     #[inline(always)]
     fn from(variant: CME_A) -> Self {
-        match variant {
-            CME_A::VALUE1 => 0,
-            CME_A::VALUE2 => 1,
-            CME_A::VALUE3 => 2,
-            CME_A::VALUE6 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CME`"]

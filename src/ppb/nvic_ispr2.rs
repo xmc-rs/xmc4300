@@ -12,19 +12,17 @@ impl crate::ResetValue for super::NVIC_ISPR2 {
 }
 #[doc = "Interrupt set-pending bits.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum SETPEND_A {
     #[doc = "0: interrupt is not pending"]
-    VALUE3,
+    VALUE3 = 0,
     #[doc = "1: interrupt is pending."]
-    VALUE4,
+    VALUE4 = 1,
 }
 impl From<SETPEND_A> for u32 {
     #[inline(always)]
     fn from(variant: SETPEND_A) -> Self {
-        match variant {
-            SETPEND_A::VALUE3 => 0,
-            SETPEND_A::VALUE4 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETPEND`"]

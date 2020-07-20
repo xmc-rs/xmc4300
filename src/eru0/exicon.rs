@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::EXICON>;
 #[doc = "Writer for register EXICON[%s]"]
 pub type W = crate::W<u32, super::EXICON>;
-#[doc = "Register EXICON[%s] `reset()`'s with value 0"]
+#[doc = "Register EXICON[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::EXICON {
     type Type = u32;
     #[inline(always)]
@@ -14,17 +15,14 @@ impl crate::ResetValue for super::EXICON {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PE_A {
     #[doc = "0: The trigger pulse generation is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The trigger pulse generation is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PE_A> for bool {
     #[inline(always)]
     fn from(variant: PE_A) -> Self {
-        match variant {
-            PE_A::VALUE1 => false,
-            PE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PE`"]
@@ -92,17 +90,14 @@ impl<'a> PE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LD_A {
     #[doc = "0: The status flag FL is not cleared by hardware and is used as \"sticky\" bit. Once set, it is not influenced by any edge until it becomes cleared by software."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The status flag FL rebuilds a level detection of the desired event. It becomes automatically set with a rising edge if RE = 1 or with a falling edge if FE = 1. It becomes automatically cleared with a rising edge if RE = 0 or with a falling edge if FE = 0."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LD_A> for bool {
     #[inline(always)]
     fn from(variant: LD_A) -> Self {
-        match variant {
-            LD_A::VALUE1 => false,
-            LD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LD`"]
@@ -170,17 +165,14 @@ impl<'a> LD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RE_A {
     #[doc = "0: A rising edge is not considered as edge event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A rising edge is considered as edge event"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RE_A> for bool {
     #[inline(always)]
     fn from(variant: RE_A) -> Self {
-        match variant {
-            RE_A::VALUE1 => false,
-            RE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RE`"]
@@ -248,17 +240,14 @@ impl<'a> RE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FE_A {
     #[doc = "0: A falling edge is not considered as edge event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A falling edge is considered as edge event"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FE_A> for bool {
     #[inline(always)]
     fn from(variant: FE_A) -> Self {
-        match variant {
-            FE_A::VALUE1 => false,
-            FE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FE`"]
@@ -324,25 +313,21 @@ impl<'a> FE_W<'a> {
 }
 #[doc = "Output Channel Select for ETLx Output Trigger Pulse\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OCS_A {
     #[doc = "0: Trigger pulses are sent to OGU0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Trigger pulses are sent to OGU1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Trigger pulses are sent to OGU2"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Trigger pulses are sent to OGU3"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<OCS_A> for u8 {
     #[inline(always)]
     fn from(variant: OCS_A) -> Self {
-        match variant {
-            OCS_A::VALUE1 => 0,
-            OCS_A::VALUE2 => 1,
-            OCS_A::VALUE3 => 2,
-            OCS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OCS`"]
@@ -422,17 +407,14 @@ impl<'a> OCS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FL_A {
     #[doc = "0: The enabled edge event has not been detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The enabled edge event has been detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FL_A> for bool {
     #[inline(always)]
     fn from(variant: FL_A) -> Self {
-        match variant {
-            FL_A::VALUE1 => false,
-            FL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FL`"]
@@ -498,25 +480,21 @@ impl<'a> FL_W<'a> {
 }
 #[doc = "Input Source Select for ERSx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SS_A {
     #[doc = "0: Input A without additional combination"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input B without additional combination"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input A OR input B"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input A AND input B"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<SS_A> for u8 {
     #[inline(always)]
     fn from(variant: SS_A) -> Self {
-        match variant {
-            SS_A::VALUE1 => 0,
-            SS_A::VALUE2 => 1,
-            SS_A::VALUE3 => 2,
-            SS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SS`"]
@@ -597,17 +575,14 @@ impl<'a> SS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NA_A {
     #[doc = "0: Input A is used directly"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input A is inverted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<NA_A> for bool {
     #[inline(always)]
     fn from(variant: NA_A) -> Self {
-        match variant {
-            NA_A::VALUE1 => false,
-            NA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NA`"]
@@ -675,17 +650,14 @@ impl<'a> NA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NB_A {
     #[doc = "0: Input B is used directly"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input B is inverted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<NB_A> for bool {
     #[inline(always)]
     fn from(variant: NB_A) -> Self {
-        match variant {
-            NB_A::VALUE1 => false,
-            NB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NB`"]

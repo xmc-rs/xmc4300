@@ -12,17 +12,14 @@ impl crate::ResetValue for super::HDCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EPEV_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Clear wake-up event"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<EPEV_AW> for bool {
     #[inline(always)]
     fn from(variant: EPEV_AW) -> Self {
-        match variant {
-            EPEV_AW::CONST_0 => false,
-            EPEV_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `EPEV`"]
@@ -68,17 +65,14 @@ impl<'a> EPEV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENEV_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Clear wake-up event"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ENEV_AW> for bool {
     #[inline(always)]
     fn from(variant: ENEV_AW) -> Self {
-        match variant {
-            ENEV_AW::CONST_0 => false,
-            ENEV_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ENEV`"]
@@ -124,17 +118,14 @@ impl<'a> ENEV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTCEV_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Clear wake-up event"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<RTCEV_AW> for bool {
     #[inline(always)]
     fn from(variant: RTCEV_AW) -> Self {
-        match variant {
-            RTCEV_AW::CONST_0 => false,
-            RTCEV_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RTCEV`"]
@@ -180,17 +171,14 @@ impl<'a> RTCEV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ULPWDG_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Clear watchdog alarm"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ULPWDG_AW> for bool {
     #[inline(always)]
     fn from(variant: ULPWDG_AW) -> Self {
-        match variant {
-            ULPWDG_AW::CONST_0 => false,
-            ULPWDG_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ULPWDG`"]

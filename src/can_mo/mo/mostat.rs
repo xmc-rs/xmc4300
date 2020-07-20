@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::MOSTAT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXPND_A {
     #[doc = "0: No CAN message has been received."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A CAN message has been received by the message object n, either directly or via gateway copy action."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RXPND_A> for bool {
     #[inline(always)]
     fn from(variant: RXPND_A) -> Self {
-        match variant {
-            RXPND_A::VALUE1 => false,
-            RXPND_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXPND`"]
@@ -43,17 +40,14 @@ impl RXPND_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXPND_A {
     #[doc = "0: No CAN message has been transmitted."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A CAN message from message object n has been transmitted successfully over the CAN bus."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TXPND_A> for bool {
     #[inline(always)]
     fn from(variant: TXPND_A) -> Self {
-        match variant {
-            TXPND_A::VALUE1 => false,
-            TXPND_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXPND`"]
@@ -82,17 +76,14 @@ impl TXPND_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXUPD_A {
     #[doc = "0: No receive update ongoing."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Message identifier, DLC, and data of the message object are currently updated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RXUPD_A> for bool {
     #[inline(always)]
     fn from(variant: RXUPD_A) -> Self {
-        match variant {
-            RXUPD_A::VALUE1 => false,
-            RXUPD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXUPD`"]
@@ -121,17 +112,14 @@ impl RXUPD_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NEWDAT_A {
     #[doc = "0: No update of the message object n since last flag reset."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Message object n has been updated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<NEWDAT_A> for bool {
     #[inline(always)]
     fn from(variant: NEWDAT_A) -> Self {
-        match variant {
-            NEWDAT_A::VALUE1 => false,
-            NEWDAT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NEWDAT`"]
@@ -160,17 +148,14 @@ impl NEWDAT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSGLST_A {
     #[doc = "0: No CAN message is lost."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A CAN message is lost because NEWDAT has become set again when it has already been set."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MSGLST_A> for bool {
     #[inline(always)]
     fn from(variant: MSGLST_A) -> Self {
-        match variant {
-            MSGLST_A::VALUE1 => false,
-            MSGLST_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSGLST`"]
@@ -199,17 +184,14 @@ impl MSGLST_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSGVAL_A {
     #[doc = "0: Message object n is not valid."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Message object n is valid."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MSGVAL_A> for bool {
     #[inline(always)]
     fn from(variant: MSGVAL_A) -> Self {
-        match variant {
-            MSGVAL_A::VALUE1 => false,
-            MSGVAL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSGVAL`"]
@@ -238,17 +220,14 @@ impl MSGVAL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTSEL_A {
     #[doc = "0: Message object n is not selected for receive or transmit operation."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Message object n is selected for receive or transmit operation."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RTSEL_A> for bool {
     #[inline(always)]
     fn from(variant: RTSEL_A) -> Self {
-        match variant {
-            RTSEL_A::VALUE1 => false,
-            RTSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTSEL`"]
@@ -277,17 +256,14 @@ impl RTSEL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXEN_A {
     #[doc = "0: Message object n is not enabled for frame reception."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Message object n is enabled for frame reception."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RXEN_A> for bool {
     #[inline(always)]
     fn from(variant: RXEN_A) -> Self {
-        match variant {
-            RXEN_A::VALUE1 => false,
-            RXEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXEN`"]
@@ -316,17 +292,14 @@ impl RXEN_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXRQ_A {
     #[doc = "0: No transmission of message object n is requested."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Transmission of message object n on the CAN bus is requested."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TXRQ_A> for bool {
     #[inline(always)]
     fn from(variant: TXRQ_A) -> Self {
-        match variant {
-            TXRQ_A::VALUE1 => false,
-            TXRQ_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXRQ`"]
@@ -355,17 +328,14 @@ impl TXRQ_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXEN0_A {
     #[doc = "0: Message object n is not enabled for frame transmission."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Message object n is enabled for frame transmission."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TXEN0_A> for bool {
     #[inline(always)]
     fn from(variant: TXEN0_A) -> Self {
-        match variant {
-            TXEN0_A::VALUE1 => false,
-            TXEN0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXEN0`"]
@@ -394,17 +364,14 @@ impl TXEN0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXEN1_A {
     #[doc = "0: Message object n is not enabled for frame transmission."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Message object n is enabled for frame transmission."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TXEN1_A> for bool {
     #[inline(always)]
     fn from(variant: TXEN1_A) -> Self {
-        match variant {
-            TXEN1_A::VALUE1 => false,
-            TXEN1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXEN1`"]
@@ -433,17 +400,14 @@ impl TXEN1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIR_A {
     #[doc = "0: Receive Object selected: With TXRQ = 1, a Remote Frame with the identifier of message object n is scheduled for transmission. On reception of a Data Frame with matching identifier, the message is stored in message object n."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Transmit Object selected: If TXRQ = 1, message object n is scheduled for transmission of a Data Frame. On reception of a Remote Frame with matching identifier, bit TXRQ is set."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DIR_A> for bool {
     #[inline(always)]
     fn from(variant: DIR_A) -> Self {
-        match variant {
-            DIR_A::VALUE1 => false,
-            DIR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIR`"]

@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::HDSTAT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EPEV_A {
     #[doc = "0: Wake-up on positive edge pin event inactive"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Wake-up on positive edge pin event active"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<EPEV_A> for bool {
     #[inline(always)]
     fn from(variant: EPEV_A) -> Self {
-        match variant {
-            EPEV_A::CONST_0 => false,
-            EPEV_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EPEV`"]
@@ -43,17 +40,14 @@ impl EPEV_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENEV_A {
     #[doc = "0: Wake-up on negative edge pin event inactive"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Wake-up on negative edge pin event active"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ENEV_A> for bool {
     #[inline(always)]
     fn from(variant: ENEV_A) -> Self {
-        match variant {
-            ENEV_A::CONST_0 => false,
-            ENEV_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENEV`"]
@@ -82,17 +76,14 @@ impl ENEV_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTCEV_A {
     #[doc = "0: Wake-up on RTC event inactive"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Wake-up on RTC event active"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<RTCEV_A> for bool {
     #[inline(always)]
     fn from(variant: RTCEV_A) -> Self {
-        match variant {
-            RTCEV_A::CONST_0 => false,
-            RTCEV_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTCEV`"]
@@ -121,17 +112,14 @@ impl RTCEV_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ULPWDG_A {
     #[doc = "0: Watchdog alarm did not occur"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Watchdog alarm occurred"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ULPWDG_A> for bool {
     #[inline(always)]
     fn from(variant: ULPWDG_A) -> Self {
-        match variant {
-            ULPWDG_A::CONST_0 => false,
-            ULPWDG_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ULPWDG`"]
@@ -160,17 +148,14 @@ impl ULPWDG_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIBNOUT_A {
     #[doc = "0: Hibernate not driven active to pads"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Hibernate driven active to pads"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<HIBNOUT_A> for bool {
     #[inline(always)]
     fn from(variant: HIBNOUT_A) -> Self {
-        match variant {
-            HIBNOUT_A::CONST_0 => false,
-            HIBNOUT_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HIBNOUT`"]

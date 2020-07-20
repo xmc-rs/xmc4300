@@ -12,17 +12,14 @@ impl crate::ResetValue for super::TRBSCR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSRBI_AW {
     #[doc = "0: No effect."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear TRBSR.SRBI."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CSRBI_AW> for bool {
     #[inline(always)]
     fn from(variant: CSRBI_AW) -> Self {
-        match variant {
-            CSRBI_AW::VALUE1 => false,
-            CSRBI_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CSRBI`"]
@@ -68,17 +65,14 @@ impl<'a> CSRBI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRBERI_AW {
     #[doc = "0: No effect."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear TRBSR.RBERI."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CRBERI_AW> for bool {
     #[inline(always)]
     fn from(variant: CRBERI_AW) -> Self {
-        match variant {
-            CRBERI_AW::VALUE1 => false,
-            CRBERI_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CRBERI`"]
@@ -124,17 +118,14 @@ impl<'a> CRBERI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARBI_AW {
     #[doc = "0: No effect."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear TRBSR.ARBI."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CARBI_AW> for bool {
     #[inline(always)]
     fn from(variant: CARBI_AW) -> Self {
-        match variant {
-            CARBI_AW::VALUE1 => false,
-            CARBI_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CARBI`"]
@@ -180,17 +171,14 @@ impl<'a> CARBI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSTBI_AW {
     #[doc = "0: No effect."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear TRBSR.STBI."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CSTBI_AW> for bool {
     #[inline(always)]
     fn from(variant: CSTBI_AW) -> Self {
-        match variant {
-            CSTBI_AW::VALUE1 => false,
-            CSTBI_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CSTBI`"]
@@ -236,17 +224,14 @@ impl<'a> CSTBI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTBERI_AW {
     #[doc = "0: No effect."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear TRBSR.TBERI."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CTBERI_AW> for bool {
     #[inline(always)]
     fn from(variant: CTBERI_AW) -> Self {
-        match variant {
-            CTBERI_AW::VALUE1 => false,
-            CTBERI_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CTBERI`"]
@@ -292,17 +277,14 @@ impl<'a> CTBERI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CBDV_AW {
     #[doc = "0: No effect."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear BYPCR.BDV."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CBDV_AW> for bool {
     #[inline(always)]
     fn from(variant: CBDV_AW) -> Self {
-        match variant {
-            CBDV_AW::VALUE1 => false,
-            CBDV_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CBDV`"]
@@ -348,17 +330,14 @@ impl<'a> CBDV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLUSHRB_AW {
     #[doc = "0: No effect."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The receive FIFO buffer is cleared (filling level is cleared and output pointer is set to input pointer value). Should only be used while the FIFO buffer is not taking part in data traffic."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FLUSHRB_AW> for bool {
     #[inline(always)]
     fn from(variant: FLUSHRB_AW) -> Self {
-        match variant {
-            FLUSHRB_AW::VALUE1 => false,
-            FLUSHRB_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `FLUSHRB`"]
@@ -404,17 +383,14 @@ impl<'a> FLUSHRB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLUSHTB_AW {
     #[doc = "0: No effect."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The transmit FIFO buffer is cleared (filling level is cleared and output pointer is set to input pointer value). Should only be used while the FIFO buffer is not taking part in data traffic."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FLUSHTB_AW> for bool {
     #[inline(always)]
     fn from(variant: FLUSHTB_AW) -> Self {
-        match variant {
-            FLUSHTB_AW::VALUE1 => false,
-            FLUSHTB_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `FLUSHTB`"]

@@ -12,28 +12,23 @@ impl crate::ResetValue for super::GCTRL {
 }
 #[doc = "Prescaler Clear Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRBC_A {
     #[doc = "0: SW only"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC80 is cleared."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC81 is cleared."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC82 is cleared."]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: GSTATThe register contains the status of the prescaler and each timer slice (idle mode or running)..PRB and prescaler registers are cleared when the Run Bit of CC83 is cleared."]
-    VALUE5,
+    VALUE5 = 4,
 }
 impl From<PRBC_A> for u8 {
     #[inline(always)]
     fn from(variant: PRBC_A) -> Self {
-        match variant {
-            PRBC_A::VALUE1 => 0,
-            PRBC_A::VALUE2 => 1,
-            PRBC_A::VALUE3 => 2,
-            PRBC_A::VALUE4 => 3,
-            PRBC_A::VALUE5 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRBC`"]
@@ -122,25 +117,21 @@ impl<'a> PRBC_W<'a> {
 }
 #[doc = "Prescaler Input Clock Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PCIS_A {
     #[doc = "0: Module clock"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CCU8x.ECLKA"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: CCU8x.ECLKB"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: CCU8x.ECLKC"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<PCIS_A> for u8 {
     #[inline(always)]
     fn from(variant: PCIS_A) -> Self {
-        match variant {
-            PCIS_A::VALUE1 => 0,
-            PCIS_A::VALUE2 => 1,
-            PCIS_A::VALUE3 => 2,
-            PCIS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PCIS`"]
@@ -219,25 +210,21 @@ impl<'a> PCIS_W<'a> {
 }
 #[doc = "Suspend Mode Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SUSCFG_A {
     #[doc = "0: Suspend request ignored. The module never enters in suspend"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Stops all the running slices immediately. Safe stop is not applied."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Stops the block immediately and clamps all the outputs to PASSIVE state. Safe stop is applied."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Waits for the roll over of each slice to stop and clamp the slices outputs. Safe stop is applied."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<SUSCFG_A> for u8 {
     #[inline(always)]
     fn from(variant: SUSCFG_A) -> Self {
-        match variant {
-            SUSCFG_A::VALUE1 => 0,
-            SUSCFG_A::VALUE2 => 1,
-            SUSCFG_A::VALUE3 => 2,
-            SUSCFG_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SUSCFG`"]
@@ -318,17 +305,14 @@ impl<'a> SUSCFG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSE0_A {
     #[doc = "0: Shadow transfer can only be requested by SW"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Shadow transfer can be requested via SW and via the CCU8x.MCSS input."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MSE0_A> for bool {
     #[inline(always)]
     fn from(variant: MSE0_A) -> Self {
-        match variant {
-            MSE0_A::VALUE1 => false,
-            MSE0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSE0`"]
@@ -396,17 +380,14 @@ impl<'a> MSE0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSE1_A {
     #[doc = "0: Shadow transfer can only be requested by SW"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Shadow transfer can be requested via SW and via the CCU8x.MCSS input."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MSE1_A> for bool {
     #[inline(always)]
     fn from(variant: MSE1_A) -> Self {
-        match variant {
-            MSE1_A::VALUE1 => false,
-            MSE1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSE1`"]
@@ -474,17 +455,14 @@ impl<'a> MSE1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSE2_A {
     #[doc = "0: Shadow transfer can only be requested by SW"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Shadow transfer can be requested via SW and via the CCU8xMCSS input."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MSE2_A> for bool {
     #[inline(always)]
     fn from(variant: MSE2_A) -> Self {
-        match variant {
-            MSE2_A::VALUE1 => false,
-            MSE2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSE2`"]
@@ -552,17 +530,14 @@ impl<'a> MSE2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSE3_A {
     #[doc = "0: Shadow transfer can only be requested by SW"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Shadow transfer can be requested via SW and via the CCU8x.MCSS input."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MSE3_A> for bool {
     #[inline(always)]
     fn from(variant: MSE3_A) -> Self {
-        match variant {
-            MSE3_A::VALUE1 => false,
-            MSE3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSE3`"]
@@ -628,22 +603,19 @@ impl<'a> MSE3_W<'a> {
 }
 #[doc = "Multi Channel shadow transfer request configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MSDE_A {
     #[doc = "0: Only the shadow transfer for period and compare values is requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Shadow transfer for the compare, period and prescaler compare values is requested"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "3: Shadow transfer for the compare, period, prescaler and dither compare values is requested"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<MSDE_A> for u8 {
     #[inline(always)]
     fn from(variant: MSDE_A) -> Self {
-        match variant {
-            MSDE_A::VALUE1 => 0,
-            MSDE_A::VALUE2 => 1,
-            MSDE_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MSDE`"]

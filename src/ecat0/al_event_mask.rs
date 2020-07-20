@@ -14,17 +14,14 @@ impl crate::ResetValue for super::AL_EVENT_MASK {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AL_CE_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AL_CE_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: AL_CE_MASK_A) -> Self {
-        match variant {
-            AL_CE_MASK_A::VALUE1 => false,
-            AL_CE_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AL_CE_MASK`"]
@@ -92,17 +89,14 @@ impl<'a> AL_CE_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DC_LE_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DC_LE_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: DC_LE_MASK_A) -> Self {
-        match variant {
-            DC_LE_MASK_A::VALUE1 => false,
-            DC_LE_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DC_LE_MASK`"]
@@ -170,17 +164,14 @@ impl<'a> DC_LE_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ST_S0_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ST_S0_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: ST_S0_MASK_A) -> Self {
-        match variant {
-            ST_S0_MASK_A::VALUE1 => false,
-            ST_S0_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ST_S0_MASK`"]
@@ -248,17 +239,14 @@ impl<'a> ST_S0_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ST_S1_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ST_S1_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: ST_S1_MASK_A) -> Self {
-        match variant {
-            ST_S1_MASK_A::VALUE1 => false,
-            ST_S1_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ST_S1_MASK`"]
@@ -326,17 +314,14 @@ impl<'a> ST_S1_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SM_A_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SM_A_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SM_A_MASK_A) -> Self {
-        match variant {
-            SM_A_MASK_A::VALUE1 => false,
-            SM_A_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SM_A_MASK`"]
@@ -404,17 +389,14 @@ impl<'a> SM_A_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEP_E_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EEP_E_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: EEP_E_MASK_A) -> Self {
-        match variant {
-            EEP_E_MASK_A::VALUE1 => false,
-            EEP_E_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EEP_E_MASK`"]
@@ -482,17 +464,14 @@ impl<'a> EEP_E_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WP_D_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WP_D_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: WP_D_MASK_A) -> Self {
-        match variant {
-            WP_D_MASK_A::VALUE1 => false,
-            WP_D_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WP_D_MASK`"]
@@ -560,17 +539,14 @@ impl<'a> WP_D_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_0_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_0_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_0_MASK_A) -> Self {
-        match variant {
-            SMI_0_MASK_A::VALUE1 => false,
-            SMI_0_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_0_MASK`"]
@@ -638,17 +614,14 @@ impl<'a> SMI_0_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_1_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_1_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_1_MASK_A) -> Self {
-        match variant {
-            SMI_1_MASK_A::VALUE1 => false,
-            SMI_1_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_1_MASK`"]
@@ -716,17 +689,14 @@ impl<'a> SMI_1_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_2_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_2_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_2_MASK_A) -> Self {
-        match variant {
-            SMI_2_MASK_A::VALUE1 => false,
-            SMI_2_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_2_MASK`"]
@@ -794,17 +764,14 @@ impl<'a> SMI_2_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_3_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_3_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_3_MASK_A) -> Self {
-        match variant {
-            SMI_3_MASK_A::VALUE1 => false,
-            SMI_3_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_3_MASK`"]
@@ -872,17 +839,14 @@ impl<'a> SMI_3_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_4_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_4_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_4_MASK_A) -> Self {
-        match variant {
-            SMI_4_MASK_A::VALUE1 => false,
-            SMI_4_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_4_MASK`"]
@@ -950,17 +914,14 @@ impl<'a> SMI_4_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_5_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_5_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_5_MASK_A) -> Self {
-        match variant {
-            SMI_5_MASK_A::VALUE1 => false,
-            SMI_5_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_5_MASK`"]
@@ -1028,17 +989,14 @@ impl<'a> SMI_5_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_6_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_6_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_6_MASK_A) -> Self {
-        match variant {
-            SMI_6_MASK_A::VALUE1 => false,
-            SMI_6_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_6_MASK`"]
@@ -1106,17 +1064,14 @@ impl<'a> SMI_6_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_7_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_7_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_7_MASK_A) -> Self {
-        match variant {
-            SMI_7_MASK_A::VALUE1 => false,
-            SMI_7_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_7_MASK`"]
@@ -1184,17 +1139,14 @@ impl<'a> SMI_7_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_8_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_8_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_8_MASK_A) -> Self {
-        match variant {
-            SMI_8_MASK_A::VALUE1 => false,
-            SMI_8_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_8_MASK`"]
@@ -1262,17 +1214,14 @@ impl<'a> SMI_8_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_9_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_9_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_9_MASK_A) -> Self {
-        match variant {
-            SMI_9_MASK_A::VALUE1 => false,
-            SMI_9_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_9_MASK`"]
@@ -1340,17 +1289,14 @@ impl<'a> SMI_9_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_10_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_10_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_10_MASK_A) -> Self {
-        match variant {
-            SMI_10_MASK_A::VALUE1 => false,
-            SMI_10_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_10_MASK`"]
@@ -1418,17 +1364,14 @@ impl<'a> SMI_10_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_11_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_11_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_11_MASK_A) -> Self {
-        match variant {
-            SMI_11_MASK_A::VALUE1 => false,
-            SMI_11_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_11_MASK`"]
@@ -1496,17 +1439,14 @@ impl<'a> SMI_11_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_12_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_12_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_12_MASK_A) -> Self {
-        match variant {
-            SMI_12_MASK_A::VALUE1 => false,
-            SMI_12_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_12_MASK`"]
@@ -1574,17 +1514,14 @@ impl<'a> SMI_12_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_13_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_13_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_13_MASK_A) -> Self {
-        match variant {
-            SMI_13_MASK_A::VALUE1 => false,
-            SMI_13_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_13_MASK`"]
@@ -1652,17 +1589,14 @@ impl<'a> SMI_13_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_14_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_14_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_14_MASK_A) -> Self {
-        match variant {
-            SMI_14_MASK_A::VALUE1 => false,
-            SMI_14_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_14_MASK`"]
@@ -1730,17 +1664,14 @@ impl<'a> SMI_14_MASK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_15_MASK_A {
     #[doc = "0: Corresponding AL Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding AL Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_15_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_15_MASK_A) -> Self {
-        match variant {
-            SMI_15_MASK_A::VALUE1 => false,
-            SMI_15_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_15_MASK`"]

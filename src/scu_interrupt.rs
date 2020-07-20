@@ -14,7 +14,7 @@ pub struct RegisterBlock {
     #[doc = "0x14 - SCU Service Request Mask"]
     pub nmireqen: NMIREQEN,
 }
-#[doc = "SCU Service Request Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [srstat](srstat) module"]
+#[doc = "SCU Service Request Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srstat](srstat) module"]
 pub type SRSTAT = crate::Reg<u32, _SRSTAT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -23,7 +23,7 @@ pub struct _SRSTAT;
 impl crate::Readable for SRSTAT {}
 #[doc = "SCU Service Request Status"]
 pub mod srstat;
-#[doc = "SCU Raw Service Request Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [srraw](srraw) module"]
+#[doc = "SCU Raw Service Request Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srraw](srraw) module"]
 pub type SRRAW = crate::Reg<u32, _SRRAW>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -32,7 +32,7 @@ pub struct _SRRAW;
 impl crate::Readable for SRRAW {}
 #[doc = "SCU Raw Service Request Status"]
 pub mod srraw;
-#[doc = "SCU Service Request Mask\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [srmsk](srmsk) module"]
+#[doc = "SCU Service Request Mask\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srmsk](srmsk) module"]
 pub type SRMSK = crate::Reg<u32, _SRMSK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -43,7 +43,7 @@ impl crate::Readable for SRMSK {}
 impl crate::Writable for SRMSK {}
 #[doc = "SCU Service Request Mask"]
 pub mod srmsk;
-#[doc = "SCU Service Request Clear\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [srclr](srclr) module"]
+#[doc = "SCU Service Request Clear\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srclr](srclr) module"]
 pub type SRCLR = crate::Reg<u32, _SRCLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -52,7 +52,7 @@ pub struct _SRCLR;
 impl crate::Writable for SRCLR {}
 #[doc = "SCU Service Request Clear"]
 pub mod srclr;
-#[doc = "SCU Service Request Set\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [srset](srset) module"]
+#[doc = "SCU Service Request Set\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srset](srset) module"]
 pub type SRSET = crate::Reg<u32, _SRSET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -61,7 +61,7 @@ pub struct _SRSET;
 impl crate::Writable for SRSET {}
 #[doc = "SCU Service Request Set"]
 pub mod srset;
-#[doc = "SCU Service Request Mask\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [nmireqen](nmireqen) module"]
+#[doc = "SCU Service Request Mask\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nmireqen](nmireqen) module"]
 pub type NMIREQEN = crate::Reg<u32, _NMIREQEN>;
 #[allow(missing_docs)]
 #[doc(hidden)]

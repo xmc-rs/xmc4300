@@ -36,17 +36,14 @@ pub type CRS_R = crate::R<u8, u8>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FCR_A {
     #[doc = "0: Signal level was below compare value"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Signal level was above compare value"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FCR_A> for bool {
     #[inline(always)]
     fn from(variant: FCR_A) -> Self {
-        match variant {
-            FCR_A::VALUE1 => false,
-            FCR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FCR`"]
@@ -75,17 +72,14 @@ impl FCR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Bitfield RESULT contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and the data reduction counter (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF_A> for bool {
     #[inline(always)]
     fn from(variant: VF_A) -> Self {
-        match variant {
-            VF_A::VALUE1 => false,
-            VF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF`"]

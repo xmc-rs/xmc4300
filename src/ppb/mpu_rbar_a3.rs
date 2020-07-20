@@ -28,17 +28,14 @@ impl<'a> REGION_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VALID_A {
     #[doc = "0: MPU_RNR not changed, and the processor: - updates the base address for the region specified in the MPU_RNR - ignores the value of the REGION field"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: the processor: - updates the value of the MPU_RNR to the value of the REGION field - updates the base address for the region specified in the REGION field."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VALID_A> for bool {
     #[inline(always)]
     fn from(variant: VALID_A) -> Self {
-        match variant {
-            VALID_A::VALUE1 => false,
-            VALID_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VALID`"]

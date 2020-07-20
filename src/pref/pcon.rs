@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PCON {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IBYP_A {
     #[doc = "0: Instruction prefetch buffer not bypassed."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Instruction prefetch buffer bypassed."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<IBYP_A> for bool {
     #[inline(always)]
     fn from(variant: IBYP_A) -> Self {
-        match variant {
-            IBYP_A::CONST_0 => false,
-            IBYP_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IBYP`"]
@@ -92,17 +89,14 @@ impl<'a> IBYP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IINV_AW {
     #[doc = "0: No effect."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Initiate invalidation of entire instruction cache."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<IINV_AW> for bool {
     #[inline(always)]
     fn from(variant: IINV_AW) -> Self {
-        match variant {
-            IINV_AW::CONST_0 => false,
-            IINV_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `IINV`"]
@@ -148,17 +142,14 @@ impl<'a> IINV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBYP_A {
     #[doc = "0: Prefetch Data buffer not bypassed."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Prefetch Data buffer bypassed."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DBYP_A> for bool {
     #[inline(always)]
     fn from(variant: DBYP_A) -> Self {
-        match variant {
-            DBYP_A::VALUE1 => false,
-            DBYP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DBYP`"]

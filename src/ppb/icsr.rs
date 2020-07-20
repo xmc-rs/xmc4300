@@ -12,16 +12,15 @@ impl crate::ResetValue for super::ICSR {
 }
 #[doc = "Active exception number\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum VECTACTIVE_A {
     #[doc = "0: Thread mode"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<VECTACTIVE_A> for u16 {
     #[inline(always)]
     fn from(variant: VECTACTIVE_A) -> Self {
-        match variant {
-            VECTACTIVE_A::VALUE1 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VECTACTIVE`"]
@@ -46,17 +45,14 @@ impl VECTACTIVE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RETTOBASE_A {
     #[doc = "0: there are preempted active exceptions to execute"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: there are no active exceptions, or the currently-executing exception is the only active exception."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RETTOBASE_A> for bool {
     #[inline(always)]
     fn from(variant: RETTOBASE_A) -> Self {
-        match variant {
-            RETTOBASE_A::VALUE1 => false,
-            RETTOBASE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RETTOBASE`"]
@@ -83,16 +79,15 @@ impl RETTOBASE_R {
 }
 #[doc = "Vector Pending\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum VECTPENDING_A {
     #[doc = "0: no pending exceptions"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<VECTPENDING_A> for u8 {
     #[inline(always)]
     fn from(variant: VECTPENDING_A) -> Self {
-        match variant {
-            VECTPENDING_A::VALUE1 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VECTPENDING`"]
@@ -117,17 +112,14 @@ impl VECTPENDING_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ISRPENDING_A {
     #[doc = "0: interrupt not pending"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: interrupt pending."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ISRPENDING_A> for bool {
     #[inline(always)]
     fn from(variant: ISRPENDING_A) -> Self {
-        match variant {
-            ISRPENDING_A::VALUE1 => false,
-            ISRPENDING_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ISRPENDING`"]
@@ -156,17 +148,14 @@ impl ISRPENDING_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PENDSTCLR_AW {
     #[doc = "0: no effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: removes the pending state from the SysTick exception."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PENDSTCLR_AW> for bool {
     #[inline(always)]
     fn from(variant: PENDSTCLR_AW) -> Self {
-        match variant {
-            PENDSTCLR_AW::VALUE1 => false,
-            PENDSTCLR_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PENDSTCLR`"]
@@ -212,17 +201,14 @@ impl<'a> PENDSTCLR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PENDSTSET_A {
     #[doc = "0: no effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: changes SysTick exception state to pending."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PENDSTSET_A> for bool {
     #[inline(always)]
     fn from(variant: PENDSTSET_A) -> Self {
-        match variant {
-            PENDSTSET_A::VALUE1 => false,
-            PENDSTSET_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PENDSTSET`"]
@@ -290,17 +276,14 @@ impl<'a> PENDSTSET_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PENDSVCLR_AW {
     #[doc = "0: no effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: removes the pending state from the PendSV exception."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PENDSVCLR_AW> for bool {
     #[inline(always)]
     fn from(variant: PENDSVCLR_AW) -> Self {
-        match variant {
-            PENDSVCLR_AW::VALUE1 => false,
-            PENDSVCLR_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PENDSVCLR`"]

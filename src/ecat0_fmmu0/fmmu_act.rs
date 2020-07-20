@@ -4,17 +4,14 @@ pub type R = crate::R<u8, super::FMMU_ACT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACT_A {
     #[doc = "0: FMMU deactivated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: FMMU activated. FMMU checks logical addressed blocks to be mapped according to mapping configured"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACT_A> for bool {
     #[inline(always)]
     fn from(variant: ACT_A) -> Self {
-        match variant {
-            ACT_A::VALUE1 => false,
-            ACT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACT`"]

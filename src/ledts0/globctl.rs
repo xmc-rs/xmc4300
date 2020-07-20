@@ -62,17 +62,14 @@ impl<'a> LD_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMTR_A {
     #[doc = "0: Kernel generates its own clock for LEDTS-counter based on SFR setting"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: LEDTS-counter takes its clock from another master kernel"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMTR_A> for bool {
     #[inline(always)]
     fn from(variant: CMTR_A) -> Self {
-        match variant {
-            CMTR_A::VALUE1 => false,
-            CMTR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMTR`"]
@@ -140,17 +137,14 @@ impl<'a> CMTR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENSYNC_A {
     #[doc = "0: No synchronization"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Synchronization enabled on Kernel0 autoscan time period"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ENSYNC_A> for bool {
     #[inline(always)]
     fn from(variant: ENSYNC_A) -> Self {
-        match variant {
-            ENSYNC_A::VALUE1 => false,
-            ENSYNC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENSYNC`"]
@@ -218,17 +212,14 @@ impl<'a> ENSYNC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUSCFG_A {
     #[doc = "0: Ignore suspend request"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable suspend according to request"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SUSCFG_A> for bool {
     #[inline(always)]
     fn from(variant: SUSCFG_A) -> Self {
-        match variant {
-            SUSCFG_A::VALUE1 => false,
-            SUSCFG_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUSCFG`"]
@@ -294,22 +285,19 @@ impl<'a> SUSCFG_W<'a> {
 }
 #[doc = "Mask Number of LSB Bits for Event Validation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MASKVAL_A {
     #[doc = "0: Mask LSB bit"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Mask 2 LSB bits"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "7: Mask 8 LSB bits"]
-    VALUE3,
+    VALUE3 = 7,
 }
 impl From<MASKVAL_A> for u8 {
     #[inline(always)]
     fn from(variant: MASKVAL_A) -> Self {
-        match variant {
-            MASKVAL_A::VALUE1 => 0,
-            MASKVAL_A::VALUE2 => 1,
-            MASKVAL_A::VALUE3 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MASKVAL`"]
@@ -378,17 +366,14 @@ impl<'a> MASKVAL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FENVAL_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FENVAL_A> for bool {
     #[inline(always)]
     fn from(variant: FENVAL_A) -> Self {
-        match variant {
-            FENVAL_A::VALUE1 => false,
-            FENVAL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FENVAL`"]
@@ -456,17 +441,14 @@ impl<'a> FENVAL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ITS_EN_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ITS_EN_A> for bool {
     #[inline(always)]
     fn from(variant: ITS_EN_A) -> Self {
-        match variant {
-            ITS_EN_A::VALUE1 => false,
-            ITS_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ITS_EN`"]
@@ -534,17 +516,14 @@ impl<'a> ITS_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ITF_EN_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ITF_EN_A> for bool {
     #[inline(always)]
     fn from(variant: ITF_EN_A) -> Self {
-        match variant {
-            ITF_EN_A::VALUE1 => false,
-            ITF_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ITF_EN`"]
@@ -612,17 +591,14 @@ impl<'a> ITF_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ITP_EN_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable (valid only for case of hardware-enabled pad turn control)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ITP_EN_A> for bool {
     #[inline(always)]
     fn from(variant: ITP_EN_A) -> Self {
-        match variant {
-            ITP_EN_A::VALUE1 => false,
-            ITP_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ITP_EN`"]

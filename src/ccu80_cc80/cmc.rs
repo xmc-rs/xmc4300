@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CMC {
 }
 #[doc = "External Start Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STRTS_A {
     #[doc = "0: External Start Function deactivated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: External Start Function triggered by Event 0"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: External Start Function triggered by Event 1"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: External Start Function triggered by Event 2"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<STRTS_A> for u8 {
     #[inline(always)]
     fn from(variant: STRTS_A) -> Self {
-        match variant {
-            STRTS_A::VALUE1 => 0,
-            STRTS_A::VALUE2 => 1,
-            STRTS_A::VALUE3 => 2,
-            STRTS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STRTS`"]
@@ -109,25 +105,21 @@ impl<'a> STRTS_W<'a> {
 }
 #[doc = "External Stop Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ENDS_A {
     #[doc = "0: External Stop Function deactivated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: External Stop Function triggered by Event 0"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: External Stop Function triggered by Event 1"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: External Stop Function triggered by Event 2"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<ENDS_A> for u8 {
     #[inline(always)]
     fn from(variant: ENDS_A) -> Self {
-        match variant {
-            ENDS_A::VALUE1 => 0,
-            ENDS_A::VALUE2 => 1,
-            ENDS_A::VALUE3 => 2,
-            ENDS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ENDS`"]
@@ -206,25 +198,21 @@ impl<'a> ENDS_W<'a> {
 }
 #[doc = "External Capture 0 Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CAP0S_A {
     #[doc = "0: External Capture 0 Function deactivated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: External Capture 0 Function triggered by Event 0"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: External Capture 0 Function triggered by Event 1"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: External Capture 0 Function triggered by Event 2"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CAP0S_A> for u8 {
     #[inline(always)]
     fn from(variant: CAP0S_A) -> Self {
-        match variant {
-            CAP0S_A::VALUE1 => 0,
-            CAP0S_A::VALUE2 => 1,
-            CAP0S_A::VALUE3 => 2,
-            CAP0S_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CAP0S`"]
@@ -303,25 +291,21 @@ impl<'a> CAP0S_W<'a> {
 }
 #[doc = "External Capture 1 Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CAP1S_A {
     #[doc = "0: External Capture 1 Function deactivated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: External Capture 1 Function triggered by Event 0"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: External Capture 1 Function triggered by Event 1"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: External Capture 1 Function triggered by Event 2"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CAP1S_A> for u8 {
     #[inline(always)]
     fn from(variant: CAP1S_A) -> Self {
-        match variant {
-            CAP1S_A::VALUE1 => 0,
-            CAP1S_A::VALUE2 => 1,
-            CAP1S_A::VALUE3 => 2,
-            CAP1S_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CAP1S`"]
@@ -400,25 +384,21 @@ impl<'a> CAP1S_W<'a> {
 }
 #[doc = "External Gate Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum GATES_A {
     #[doc = "0: External Gating Function deactivated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: External Gating Function triggered by Event 0"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: External Gating Function triggered by Event 1"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: External Gating Function triggered by Event 2"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<GATES_A> for u8 {
     #[inline(always)]
     fn from(variant: GATES_A) -> Self {
-        match variant {
-            GATES_A::VALUE1 => 0,
-            GATES_A::VALUE2 => 1,
-            GATES_A::VALUE3 => 2,
-            GATES_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `GATES`"]
@@ -497,25 +477,21 @@ impl<'a> GATES_W<'a> {
 }
 #[doc = "External Up/Down Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UDS_A {
     #[doc = "0: External Up/Down Function deactivated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: External Up/Down Function triggered by Event 0"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: External Up/Down Function triggered by Event 1"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: External Up/Down Function triggered by Event 2"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<UDS_A> for u8 {
     #[inline(always)]
     fn from(variant: UDS_A) -> Self {
-        match variant {
-            UDS_A::VALUE1 => 0,
-            UDS_A::VALUE2 => 1,
-            UDS_A::VALUE3 => 2,
-            UDS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UDS`"]
@@ -608,25 +584,21 @@ impl<'a> LDS_W<'a> {
 }
 #[doc = "External Count Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CNTS_A {
     #[doc = "0: External Count Function deactivated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: External Count Function triggered by Event 0"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: External Count Function triggered by Event 1"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: External Count Function triggered by Event 2"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CNTS_A> for u8 {
     #[inline(always)]
     fn from(variant: CNTS_A) -> Self {
-        match variant {
-            CNTS_A::VALUE1 => 0,
-            CNTS_A::VALUE2 => 1,
-            CNTS_A::VALUE3 => 2,
-            CNTS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CNTS`"]
@@ -707,17 +679,14 @@ impl<'a> CNTS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OFS_A {
     #[doc = "0: Override functionality disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Status bit trigger override connected to Event 1; Status bit value override connected to Event 2"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<OFS_A> for bool {
     #[inline(always)]
     fn from(variant: OFS_A) -> Self {
-        match variant {
-            OFS_A::VALUE1 => false,
-            OFS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OFS`"]
@@ -785,17 +754,14 @@ impl<'a> OFS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TS_A {
     #[doc = "0: Trap function disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: TRAP function connected to Event 2"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TS_A> for bool {
     #[inline(always)]
     fn from(variant: TS_A) -> Self {
-        match variant {
-            TS_A::VALUE1 => false,
-            TS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TS`"]
@@ -877,17 +843,14 @@ impl<'a> MOS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCE_A {
     #[doc = "0: Timer concatenation is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Timer concatenation is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TCE_A> for bool {
     #[inline(always)]
     fn from(variant: TCE_A) -> Self {
-        match variant {
-            TCE_A::VALUE1 => false,
-            TCE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TCE`"]

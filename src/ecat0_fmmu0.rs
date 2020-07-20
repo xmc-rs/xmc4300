@@ -18,7 +18,7 @@ pub struct RegisterBlock {
     #[doc = "0x0c - Activate FMMU 0"]
     pub fmmu_act: FMMU_ACT,
 }
-#[doc = "Logical Start address FMMU\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fmmu_l_start_adr](fmmu_l_start_adr) module"]
+#[doc = "Logical Start address FMMU\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmmu_l_start_adr](fmmu_l_start_adr) module"]
 pub type FMMU_L_START_ADR = crate::Reg<u32, _FMMU_L_START_ADR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -27,7 +27,7 @@ pub struct _FMMU_L_START_ADR;
 impl crate::Readable for FMMU_L_START_ADR {}
 #[doc = "Logical Start address FMMU"]
 pub mod fmmu_l_start_adr;
-#[doc = "Length FMMU 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fmmu_len](fmmu_len) module"]
+#[doc = "Length FMMU 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmmu_len](fmmu_len) module"]
 pub type FMMU_LEN = crate::Reg<u16, _FMMU_LEN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -36,7 +36,7 @@ pub struct _FMMU_LEN;
 impl crate::Readable for FMMU_LEN {}
 #[doc = "Length FMMU 0"]
 pub mod fmmu_len;
-#[doc = "Start bit FMMU 0 in logical address space\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fmmu_l_start_bit](fmmu_l_start_bit) module"]
+#[doc = "Start bit FMMU 0 in logical address space\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmmu_l_start_bit](fmmu_l_start_bit) module"]
 pub type FMMU_L_START_BIT = crate::Reg<u8, _FMMU_L_START_BIT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -45,7 +45,7 @@ pub struct _FMMU_L_START_BIT;
 impl crate::Readable for FMMU_L_START_BIT {}
 #[doc = "Start bit FMMU 0 in logical address space"]
 pub mod fmmu_l_start_bit;
-#[doc = "Stop bit FMMU 0 in logical address space\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fmmu_l_stop_bit](fmmu_l_stop_bit) module"]
+#[doc = "Stop bit FMMU 0 in logical address space\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmmu_l_stop_bit](fmmu_l_stop_bit) module"]
 pub type FMMU_L_STOP_BIT = crate::Reg<u8, _FMMU_L_STOP_BIT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -54,7 +54,7 @@ pub struct _FMMU_L_STOP_BIT;
 impl crate::Readable for FMMU_L_STOP_BIT {}
 #[doc = "Stop bit FMMU 0 in logical address space"]
 pub mod fmmu_l_stop_bit;
-#[doc = "Ph0sical Start address FMMU y\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fmmu_p_start_adr](fmmu_p_start_adr) module"]
+#[doc = "Ph0sical Start address FMMU y\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmmu_p_start_adr](fmmu_p_start_adr) module"]
 pub type FMMU_P_START_ADR = crate::Reg<u16, _FMMU_P_START_ADR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -63,7 +63,7 @@ pub struct _FMMU_P_START_ADR;
 impl crate::Readable for FMMU_P_START_ADR {}
 #[doc = "Ph0sical Start address FMMU y"]
 pub mod fmmu_p_start_adr;
-#[doc = "Ph0sical Start bit FMMU y\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fmmu_p_start_bit](fmmu_p_start_bit) module"]
+#[doc = "Ph0sical Start bit FMMU y\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmmu_p_start_bit](fmmu_p_start_bit) module"]
 pub type FMMU_P_START_BIT = crate::Reg<u8, _FMMU_P_START_BIT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -72,7 +72,7 @@ pub struct _FMMU_P_START_BIT;
 impl crate::Readable for FMMU_P_START_BIT {}
 #[doc = "Ph0sical Start bit FMMU y"]
 pub mod fmmu_p_start_bit;
-#[doc = "T0pe FMMU y\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fmmu_type](fmmu_type) module"]
+#[doc = "T0pe FMMU y\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmmu_type](fmmu_type) module"]
 pub type FMMU_TYPE = crate::Reg<u8, _FMMU_TYPE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -81,7 +81,7 @@ pub struct _FMMU_TYPE;
 impl crate::Readable for FMMU_TYPE {}
 #[doc = "T0pe FMMU y"]
 pub mod fmmu_type;
-#[doc = "Activate FMMU 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fmmu_act](fmmu_act) module"]
+#[doc = "Activate FMMU 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmmu_act](fmmu_act) module"]
 pub type FMMU_ACT = crate::Reg<u8, _FMMU_ACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]

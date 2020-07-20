@@ -12,22 +12,19 @@ impl crate::ResetValue for super::TIMEOUT_CTRL {
 }
 #[doc = "Data Timeout Counter Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DAT_TIMEOUT_CNT_VAL_A {
     #[doc = "0: TMCLK * 2^13"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: TMCLK * 2^14"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "14: TMCLK * 2^27"]
-    VALUE3,
+    VALUE3 = 14,
 }
 impl From<DAT_TIMEOUT_CNT_VAL_A> for u8 {
     #[inline(always)]
     fn from(variant: DAT_TIMEOUT_CNT_VAL_A) -> Self {
-        match variant {
-            DAT_TIMEOUT_CNT_VAL_A::VALUE1 => 0,
-            DAT_TIMEOUT_CNT_VAL_A::VALUE2 => 1,
-            DAT_TIMEOUT_CNT_VAL_A::VALUE3 => 14,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DAT_TIMEOUT_CNT_VAL`"]

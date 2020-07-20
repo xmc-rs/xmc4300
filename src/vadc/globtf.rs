@@ -28,17 +28,14 @@ impl<'a> CDGR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CDEN_A {
     #[doc = "0: All diagnostic pull devices are disconnected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Diagnostic pull devices connected as selected by bitfield CDSEL"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CDEN_A> for bool {
     #[inline(always)]
     fn from(variant: CDEN_A) -> Self {
-        match variant {
-            CDEN_A::VALUE1 => false,
-            CDEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CDEN`"]
@@ -104,25 +101,21 @@ impl<'a> CDEN_W<'a> {
 }
 #[doc = "Converter Diagnostics Pull-Devices Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CDSEL_A {
     #[doc = "0: Connected to VAREF"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Connected to VAGND"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Connected to 1/3rd VAREF"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Connected to 2/3rd VAREF"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CDSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: CDSEL_A) -> Self {
-        match variant {
-            CDSEL_A::VALUE1 => 0,
-            CDSEL_A::VALUE2 => 1,
-            CDSEL_A::VALUE3 => 2,
-            CDSEL_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CDSEL`"]
@@ -203,17 +196,14 @@ impl<'a> CDSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CDWC_AW {
     #[doc = "0: No write access to parameters"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bitfields CDSEL, CDEN, CDGR can be written"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CDWC_AW> for bool {
     #[inline(always)]
     fn from(variant: CDWC_AW) -> Self {
-        match variant {
-            CDWC_AW::VALUE1 => false,
-            CDWC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CDWC`"]
@@ -259,17 +249,14 @@ impl<'a> CDWC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDD_A {
     #[doc = "0: Disconnected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The pull-down diagnostics device is active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDD_A> for bool {
     #[inline(always)]
     fn from(variant: PDD_A) -> Self {
-        match variant {
-            PDD_A::VALUE1 => false,
-            PDD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDD`"]
@@ -337,17 +324,14 @@ impl<'a> PDD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MDWC_AW {
     #[doc = "0: No write access to parameters"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bitfield PDD can be written"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MDWC_AW> for bool {
     #[inline(always)]
     fn from(variant: MDWC_AW) -> Self {
-        match variant {
-            MDWC_AW::VALUE1 => false,
-            MDWC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `MDWC`"]

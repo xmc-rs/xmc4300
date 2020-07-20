@@ -12,22 +12,19 @@ impl crate::ResetValue for super::CPACR {
 }
 #[doc = "Access privileges for coprocessor 10\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CP10_A {
     #[doc = "0: Access denied. Any attempted access generates a NOCP UsageFault."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Privileged access only. An unprivileged access generates a NOCP fault."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "3: Full access."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CP10_A> for u8 {
     #[inline(always)]
     fn from(variant: CP10_A) -> Self {
-        match variant {
-            CP10_A::VALUE1 => 0,
-            CP10_A::VALUE2 => 1,
-            CP10_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CP10`"]
@@ -94,22 +91,19 @@ impl<'a> CP10_W<'a> {
 }
 #[doc = "Access privileges for coprocessor 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CP11_A {
     #[doc = "0: Access denied. Any attempted access generates a NOCP UsageFault."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Privileged access only. An unprivileged access generates a NOCP fault."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "3: Full access."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CP11_A> for u8 {
     #[inline(always)]
     fn from(variant: CP11_A) -> Self {
-        match variant {
-            CP11_A::VALUE1 => 0,
-            CP11_A::VALUE2 => 1,
-            CP11_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CP11`"]

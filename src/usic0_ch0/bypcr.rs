@@ -28,17 +28,14 @@ impl<'a> BWLE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BDSSM_A {
     #[doc = "0: The bypass data is still considered as valid after it has been loaded into TBUF. The loading of the data into TBUF does not clear BDV."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The bypass data is considered as invalid after it has been loaded into TBUF. The loading of the data into TBUF clears BDV."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BDSSM_A> for bool {
     #[inline(always)]
     fn from(variant: BDSSM_A) -> Self {
-        match variant {
-            BDSSM_A::VALUE1 => false,
-            BDSSM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BDSSM`"]
@@ -104,25 +101,21 @@ impl<'a> BDSSM_W<'a> {
 }
 #[doc = "Bypass Data Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BDEN_A {
     #[doc = "0: The transfer of bypass data is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The transfer of bypass data to TBUF is possible. Bypass data will be transferred to TBUF according to its priority if BDV = 1."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Gated bypass data transfer is enabled. Bypass data will be transferred to TBUF according to its priority if BDV = 1 and while DX2S = 0."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Gated bypass data transfer is enabled. Bypass data will be transferred to TBUF according to its priority if BDV = 1 and while DX2S = 1."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<BDEN_A> for u8 {
     #[inline(always)]
     fn from(variant: BDEN_A) -> Self {
-        match variant {
-            BDEN_A::VALUE1 => 0,
-            BDEN_A::VALUE2 => 1,
-            BDEN_A::VALUE3 => 2,
-            BDEN_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BDEN`"]
@@ -203,17 +196,14 @@ impl<'a> BDEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BDVTR_A {
     #[doc = "0: Bit BDV is not influenced by DX2T."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bit BDV is set if DX2T is active."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BDVTR_A> for bool {
     #[inline(always)]
     fn from(variant: BDVTR_A) -> Self {
-        match variant {
-            BDVTR_A::VALUE1 => false,
-            BDVTR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BDVTR`"]
@@ -281,17 +271,14 @@ impl<'a> BDVTR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BPRIO_A {
     #[doc = "0: The transmit FIFO data has a higher priority than the bypass data."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The bypass data has a higher priority than the transmit FIFO data."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BPRIO_A> for bool {
     #[inline(always)]
     fn from(variant: BPRIO_A) -> Self {
-        match variant {
-            BPRIO_A::VALUE1 => false,
-            BPRIO_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BPRIO`"]
@@ -359,17 +346,14 @@ impl<'a> BPRIO_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BDV_A {
     #[doc = "0: The bypass data is not valid."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The bypass data is valid."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BDV_A> for bool {
     #[inline(always)]
     fn from(variant: BDV_A) -> Self {
-        match variant {
-            BDV_A::VALUE1 => false,
-            BDV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BDV`"]

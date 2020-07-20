@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::TCST>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRB_A {
     #[doc = "0: Timer is stopped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Timer is running"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TRB_A> for bool {
     #[inline(always)]
     fn from(variant: TRB_A) -> Self {
-        match variant {
-            TRB_A::VALUE1 => false,
-            TRB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRB`"]
@@ -43,17 +40,14 @@ impl TRB_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CDIR_A {
     #[doc = "0: Timer is counting up"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Timer is counting down"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CDIR_A> for bool {
     #[inline(always)]
     fn from(variant: CDIR_A) -> Self {
-        match variant {
-            CDIR_A::VALUE1 => false,
-            CDIR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CDIR`"]
@@ -82,17 +76,14 @@ impl CDIR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTR1_A {
     #[doc = "0: Dead Time counter is idle"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dead Time counter is running"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DTR1_A> for bool {
     #[inline(always)]
     fn from(variant: DTR1_A) -> Self {
-        match variant {
-            DTR1_A::VALUE1 => false,
-            DTR1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DTR1`"]
@@ -121,17 +112,14 @@ impl DTR1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTR2_A {
     #[doc = "0: Dead Time counter is idle"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dead Time counter is running"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DTR2_A> for bool {
     #[inline(always)]
     fn from(variant: DTR2_A) -> Self {
-        match variant {
-            DTR2_A::VALUE1 => false,
-            DTR2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DTR2`"]

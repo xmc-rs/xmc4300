@@ -2,25 +2,21 @@
 pub type R = crate::R<u8, super::PORT_DESC>;
 #[doc = "Port Configuration\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PORT0_A {
     #[doc = "0: Not implemented"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Not configured (SII EEPROM)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: EBUS"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: MII / RMII / RGMII"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<PORT0_A> for u8 {
     #[inline(always)]
     fn from(variant: PORT0_A) -> Self {
-        match variant {
-            PORT0_A::VALUE1 => 0,
-            PORT0_A::VALUE2 => 1,
-            PORT0_A::VALUE3 => 2,
-            PORT0_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `Port0`"]
@@ -60,25 +56,21 @@ impl PORT0_R {
 }
 #[doc = "Port Configuration\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PORT1_A {
     #[doc = "0: Not implemented"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Not configured (SII EEPROM)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: EBUS"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: MII / RMII / RGMII"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<PORT1_A> for u8 {
     #[inline(always)]
     fn from(variant: PORT1_A) -> Self {
-        match variant {
-            PORT1_A::VALUE1 => 0,
-            PORT1_A::VALUE2 => 1,
-            PORT1_A::VALUE3 => 2,
-            PORT1_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `Port1`"]
@@ -118,25 +110,21 @@ impl PORT1_R {
 }
 #[doc = "Port Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PORT2_A {
     #[doc = "0: Not implemented"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Not configured (SII EEPROM)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: EBUS"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: MII / RMII / RGMII"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<PORT2_A> for u8 {
     #[inline(always)]
     fn from(variant: PORT2_A) -> Self {
-        match variant {
-            PORT2_A::VALUE1 => 0,
-            PORT2_A::VALUE2 => 1,
-            PORT2_A::VALUE3 => 2,
-            PORT2_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `Port2`"]
@@ -176,25 +164,21 @@ impl PORT2_R {
 }
 #[doc = "Port Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PORT3_A {
     #[doc = "0: Not implemented"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Not configured (SII EEPROM)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: EBUS"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: MII / RMII / RGMII"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<PORT3_A> for u8 {
     #[inline(always)]
     fn from(variant: PORT3_A) -> Self {
-        match variant {
-            PORT3_A::VALUE1 => 0,
-            PORT3_A::VALUE2 => 1,
-            PORT3_A::VALUE3 => 2,
-            PORT3_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `Port3`"]

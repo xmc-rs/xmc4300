@@ -14,17 +14,14 @@ impl crate::ResetValue for super::TC {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCM_A {
     #[doc = "0: Edge aligned mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Center aligned mode"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TCM_A> for bool {
     #[inline(always)]
     fn from(variant: TCM_A) -> Self {
-        match variant {
-            TCM_A::VALUE1 => false,
-            TCM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TCM`"]
@@ -92,17 +89,14 @@ impl<'a> TCM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSSM_A {
     #[doc = "0: Single shot mode is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Single shot mode is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TSSM_A> for bool {
     #[inline(always)]
     fn from(variant: TSSM_A) -> Self {
-        match variant {
-            TSSM_A::VALUE1 => false,
-            TSSM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TSSM`"]
@@ -194,17 +188,14 @@ impl<'a> CLST_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMOD_A {
     #[doc = "0: Compare Mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Capture Mode"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMOD_A> for bool {
     #[inline(always)]
     fn from(variant: CMOD_A) -> Self {
-        match variant {
-            CMOD_A::VALUE1 => false,
-            CMOD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMOD`"]
@@ -233,17 +224,14 @@ impl CMOD_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECM_A {
     #[doc = "0: Normal Capture Mode. Clear of the Full Flag of each capture register is done by accessing the registers individually only."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Extended Capture Mode. Clear of the Full Flag of each capture register is done not only by accessing the individual registers but also by accessing the ECRD register. When reading the ECRD register, only the capture register register full flag pointed by the ECRD.VPTR is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ECM_A> for bool {
     #[inline(always)]
     fn from(variant: ECM_A) -> Self {
-        match variant {
-            ECM_A::VALUE1 => false,
-            ECM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ECM`"]
@@ -309,25 +297,21 @@ impl<'a> ECM_W<'a> {
 }
 #[doc = "Clear on Capture Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CAPC_A {
     #[doc = "0: Timer is never cleared on a capture event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Timer is cleared on a capture event into capture registers 2 and 3. (When SCE = 1#, Timer is always cleared in a capture event)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Timer is cleared on a capture event into capture registers 0 and 1. (When SCE = 1#, Timer is always cleared in a capture event)"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Timer is always cleared in a capture event."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CAPC_A> for u8 {
     #[inline(always)]
     fn from(variant: CAPC_A) -> Self {
-        match variant {
-            CAPC_A::VALUE1 => 0,
-            CAPC_A::VALUE2 => 1,
-            CAPC_A::VALUE3 => 2,
-            CAPC_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CAPC`"]
@@ -406,22 +390,19 @@ impl<'a> CAPC_W<'a> {
 }
 #[doc = "Extended Stop Function Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ENDM_A {
     #[doc = "0: Clears the timer run bit only (default stop)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clears the timer only (flush)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Clears the timer and run bit (flush/stop)"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<ENDM_A> for u8 {
     #[inline(always)]
     fn from(variant: ENDM_A) -> Self {
-        match variant {
-            ENDM_A::VALUE1 => 0,
-            ENDM_A::VALUE2 => 1,
-            ENDM_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ENDM`"]
@@ -490,17 +471,14 @@ impl<'a> ENDM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STRM_A {
     #[doc = "0: Sets run bit only (default start)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clears the timer and sets run bit (flush/start)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STRM_A> for bool {
     #[inline(always)]
     fn from(variant: STRM_A) -> Self {
-        match variant {
-            STRM_A::VALUE1 => false,
-            STRM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STRM`"]
@@ -568,17 +546,14 @@ impl<'a> STRM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SCE_A {
     #[doc = "0: Capture into CC4yC0VThis register contains the values associated with the Capture 0 field./CC4yC1VThis register contains the values associated with the Capture 1 field. registers control by CCycapt0 and capture into CC4yC3VThis register contains the values associated with the Capture 3 field./CC4yC2VThis register contains the values associated with the Capture 2 field. control by CCycapt1"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Capture into CC4yC0VThis register contains the values associated with the Capture 0 field./CC4yC1VThis register contains the values associated with the Capture 1 field. and CC4yC3VThis register contains the values associated with the Capture 3 field./CC4yC2VThis register contains the values associated with the Capture 2 field. control by CCycapt1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SCE_A> for bool {
     #[inline(always)]
     fn from(variant: SCE_A) -> Self {
-        match variant {
-            SCE_A::VALUE1 => false,
-            SCE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SCE`"]
@@ -646,17 +621,14 @@ impl<'a> SCE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCS_A {
     #[doc = "0: The capture into a specific capture register is done with the rules linked with the full flags, described at ."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The capture into the capture registers is always done regardless of the full flag status (even if the register has not been read back)."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CCS_A> for bool {
     #[inline(always)]
     fn from(variant: CCS_A) -> Self {
-        match variant {
-            CCS_A::VALUE1 => false,
-            CCS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CCS`"]
@@ -722,25 +694,21 @@ impl<'a> CCS_W<'a> {
 }
 #[doc = "Dither Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DITHE_A {
     #[doc = "0: Dither is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dither is applied to the Period"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Dither is applied to the Compare"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Dither is applied to the Period and Compare"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<DITHE_A> for u8 {
     #[inline(always)]
     fn from(variant: DITHE_A) -> Self {
-        match variant {
-            DITHE_A::VALUE1 => 0,
-            DITHE_A::VALUE2 => 1,
-            DITHE_A::VALUE3 => 2,
-            DITHE_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DITHE`"]
@@ -821,17 +789,14 @@ impl<'a> DITHE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIM_A {
     #[doc = "0: Slice is using its own dither unit"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Slice is connected to the dither unit of slice 0."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DIM_A> for bool {
     #[inline(always)]
     fn from(variant: DIM_A) -> Self {
-        match variant {
-            DIM_A::VALUE1 => false,
-            DIM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIM`"]
@@ -899,17 +864,14 @@ impl<'a> DIM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FPE_A {
     #[doc = "0: Floating prescaler mode is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Floating prescaler mode is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FPE_A> for bool {
     #[inline(always)]
     fn from(variant: FPE_A) -> Self {
-        match variant {
-            FPE_A::VALUE1 => false,
-            FPE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FPE`"]
@@ -977,17 +939,14 @@ impl<'a> FPE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRAPE_A {
     #[doc = "0: TRAP functionality has no effect on the output"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: TRAP functionality affects the output"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TRAPE_A> for bool {
     #[inline(always)]
     fn from(variant: TRAPE_A) -> Self {
-        match variant {
-            TRAPE_A::VALUE1 => false,
-            TRAPE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRAPE`"]
@@ -1055,17 +1014,14 @@ impl<'a> TRAPE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRPSE_A {
     #[doc = "0: Exiting from TRAP state isn't synchronized with the PWM signal"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Exiting from TRAP state is synchronized with the PWM signal"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TRPSE_A> for bool {
     #[inline(always)]
     fn from(variant: TRPSE_A) -> Self {
-        match variant {
-            TRPSE_A::VALUE1 => false,
-            TRPSE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRPSE`"]
@@ -1133,17 +1089,14 @@ impl<'a> TRPSE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRPSW_A {
     #[doc = "0: The slice exits the TRAP state automatically when the TRAP condition is not present"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The TRAP state can only be exited by a SW request."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TRPSW_A> for bool {
     #[inline(always)]
     fn from(variant: TRPSW_A) -> Self {
-        match variant {
-            TRPSW_A::VALUE1 => false,
-            TRPSW_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRPSW`"]
@@ -1211,17 +1164,14 @@ impl<'a> TRPSW_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMS_A {
     #[doc = "0: External Modulation functionality is not synchronized with the PWM signal"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: External Modulation functionality is synchronized with the PWM signal"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EMS_A> for bool {
     #[inline(always)]
     fn from(variant: EMS_A) -> Self {
-        match variant {
-            EMS_A::VALUE1 => false,
-            EMS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EMS`"]
@@ -1289,17 +1239,14 @@ impl<'a> EMS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMT_A {
     #[doc = "0: External Modulation functionality is clearing the CC4yST bit."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: External Modulation functionality is gating the outputs."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EMT_A> for bool {
     #[inline(always)]
     fn from(variant: EMT_A) -> Self {
-        match variant {
-            EMT_A::VALUE1 => false,
-            EMT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EMT`"]
@@ -1367,17 +1314,14 @@ impl<'a> EMT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCME_A {
     #[doc = "0: Multi Channel Mode is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Multi Channel Mode is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MCME_A> for bool {
     #[inline(always)]
     fn from(variant: MCME_A) -> Self {
-        match variant {
-            MCME_A::VALUE1 => false,
-            MCME_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MCME`"]

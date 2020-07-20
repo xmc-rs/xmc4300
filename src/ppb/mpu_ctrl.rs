@@ -14,17 +14,14 @@ impl crate::ResetValue for super::MPU_CTRL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENABLE_A {
     #[doc = "0: MPU disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: MPU enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: ENABLE_A) -> Self {
-        match variant {
-            ENABLE_A::VALUE1 => false,
-            ENABLE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENABLE`"]
@@ -92,17 +89,14 @@ impl<'a> ENABLE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HFNMIENA_A {
     #[doc = "0: MPU is disabled during hard fault, NMI, and FAULTMASK handlers, regardless of the value of the ENABLE bit"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: the MPU is enabled during hard fault, NMI, and FAULTMASK handlers."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HFNMIENA_A> for bool {
     #[inline(always)]
     fn from(variant: HFNMIENA_A) -> Self {
-        match variant {
-            HFNMIENA_A::VALUE1 => false,
-            HFNMIENA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HFNMIENA`"]
@@ -170,17 +164,14 @@ impl<'a> HFNMIENA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRIVDEFENA_A {
     #[doc = "0: If the MPU is enabled, disables use of the default memory map. Any memory access to a location not covered by any enabled region causes a fault."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: If the MPU is enabled, enables use of the default memory map as a background region for privileged software accesses."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PRIVDEFENA_A> for bool {
     #[inline(always)]
     fn from(variant: PRIVDEFENA_A) -> Self {
-        match variant {
-            PRIVDEFENA_A::VALUE1 => false,
-            PRIVDEFENA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PRIVDEFENA`"]

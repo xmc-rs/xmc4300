@@ -14,17 +14,14 @@ impl crate::ResetValue for super::NMIREQEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRWARN_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PRWARN_A> for bool {
     #[inline(always)]
     fn from(variant: PRWARN_A) -> Self {
-        match variant {
-            PRWARN_A::CONST_0 => false,
-            PRWARN_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PRWARN`"]
@@ -92,17 +89,14 @@ impl<'a> PRWARN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PI_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PI_A> for bool {
     #[inline(always)]
     fn from(variant: PI_A) -> Self {
-        match variant {
-            PI_A::CONST_0 => false,
-            PI_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PI`"]
@@ -170,17 +164,14 @@ impl<'a> PI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AI_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<AI_A> for bool {
     #[inline(always)]
     fn from(variant: AI_A) -> Self {
-        match variant {
-            AI_A::CONST_0 => false,
-            AI_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AI`"]
@@ -248,17 +239,14 @@ impl<'a> AI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERU00_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ERU00_A> for bool {
     #[inline(always)]
     fn from(variant: ERU00_A) -> Self {
-        match variant {
-            ERU00_A::CONST_0 => false,
-            ERU00_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERU00`"]
@@ -326,17 +314,14 @@ impl<'a> ERU00_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERU01_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ERU01_A> for bool {
     #[inline(always)]
     fn from(variant: ERU01_A) -> Self {
-        match variant {
-            ERU01_A::CONST_0 => false,
-            ERU01_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERU01`"]
@@ -404,17 +389,14 @@ impl<'a> ERU01_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERU02_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ERU02_A> for bool {
     #[inline(always)]
     fn from(variant: ERU02_A) -> Self {
-        match variant {
-            ERU02_A::CONST_0 => false,
-            ERU02_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERU02`"]
@@ -482,17 +464,14 @@ impl<'a> ERU02_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERU03_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ERU03_A> for bool {
     #[inline(always)]
     fn from(variant: ERU03_A) -> Self {
-        match variant {
-            ERU03_A::CONST_0 => false,
-            ERU03_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERU03`"]

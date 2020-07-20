@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::PRSTAT2>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDTRS_A {
     #[doc = "0: Reset de-asserted"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Reset asserted"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<WDTRS_A> for bool {
     #[inline(always)]
     fn from(variant: WDTRS_A) -> Self {
-        match variant {
-            WDTRS_A::CONST_0 => false,
-            WDTRS_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WDTRS`"]
@@ -43,17 +40,14 @@ impl WDTRS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ETH0RS_A {
     #[doc = "0: Reset de-asserted"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Reset asserted"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ETH0RS_A> for bool {
     #[inline(always)]
     fn from(variant: ETH0RS_A) -> Self {
-        match variant {
-            ETH0RS_A::CONST_0 => false,
-            ETH0RS_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ETH0RS`"]
@@ -82,17 +76,14 @@ impl ETH0RS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA0RS_A {
     #[doc = "0: Reset de-asserted"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Reset asserted"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<DMA0RS_A> for bool {
     #[inline(always)]
     fn from(variant: DMA0RS_A) -> Self {
-        match variant {
-            DMA0RS_A::CONST_0 => false,
-            DMA0RS_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DMA0RS`"]
@@ -121,17 +112,14 @@ impl DMA0RS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FCERS_A {
     #[doc = "0: Reset de-asserted"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Reset asserted"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<FCERS_A> for bool {
     #[inline(always)]
     fn from(variant: FCERS_A) -> Self {
-        match variant {
-            FCERS_A::CONST_0 => false,
-            FCERS_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FCERS`"]
@@ -160,17 +148,14 @@ impl FCERS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBRS_A {
     #[doc = "0: Reset de-asserted"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Reset asserted"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<USBRS_A> for bool {
     #[inline(always)]
     fn from(variant: USBRS_A) -> Self {
-        match variant {
-            USBRS_A::CONST_0 => false,
-            USBRS_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USBRS`"]
@@ -199,17 +184,14 @@ impl USBRS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECAT0RS_A {
     #[doc = "0: Reset de-asserted"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Reset asserted"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ECAT0RS_A> for bool {
     #[inline(always)]
     fn from(variant: ECAT0RS_A) -> Self {
-        match variant {
-            ECAT0RS_A::CONST_0 => false,
-            ECAT0RS_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ECAT0RS`"]

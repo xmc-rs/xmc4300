@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SDMMC_CON {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WPSEL_A {
     #[doc = "0: P1.1 input pin selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Software bit WPVAL is selected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WPSEL_A> for bool {
     #[inline(always)]
     fn from(variant: WPSEL_A) -> Self {
-        match variant {
-            WPSEL_A::VALUE1 => false,
-            WPSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WPSEL`"]
@@ -92,17 +89,14 @@ impl<'a> WPSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WPSVAL_A {
     #[doc = "0: No write protection"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WPSVAL_A> for bool {
     #[inline(always)]
     fn from(variant: WPSVAL_A) -> Self {
-        match variant {
-            WPSVAL_A::VALUE1 => false,
-            WPSVAL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WPSVAL`"]
@@ -170,17 +164,14 @@ impl<'a> WPSVAL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CDSEL_A {
     #[doc = "0: P1.10 input pin selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Software bit CDSVAL is selected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CDSEL_A> for bool {
     #[inline(always)]
     fn from(variant: CDSEL_A) -> Self {
-        match variant {
-            CDSEL_A::VALUE1 => false,
-            CDSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CDSEL`"]
@@ -248,17 +239,14 @@ impl<'a> CDSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CDSVAL_A {
     #[doc = "0: No card detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Card detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CDSVAL_A> for bool {
     #[inline(always)]
     fn from(variant: CDSVAL_A) -> Self {
-        match variant {
-            CDSVAL_A::VALUE1 => false,
-            CDSVAL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CDSVAL`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::DC_ACT {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNC_OUT_A {
     #[doc = "0: Deactivated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Activated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SYNC_OUT_A> for bool {
     #[inline(always)]
     fn from(variant: SYNC_OUT_A) -> Self {
-        match variant {
-            SYNC_OUT_A::VALUE1 => false,
-            SYNC_OUT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYNC_OUT`"]
@@ -92,17 +89,14 @@ impl<'a> SYNC_OUT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNC_0_A {
     #[doc = "0: Deactivated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SYNC0 pulse is generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SYNC_0_A> for bool {
     #[inline(always)]
     fn from(variant: SYNC_0_A) -> Self {
-        match variant {
-            SYNC_0_A::VALUE1 => false,
-            SYNC_0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYNC_0`"]
@@ -170,17 +164,14 @@ impl<'a> SYNC_0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNC_1_A {
     #[doc = "0: Deactivated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SYNC1 pulse is generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SYNC_1_A> for bool {
     #[inline(always)]
     fn from(variant: SYNC_1_A) -> Self {
-        match variant {
-            SYNC_1_A::VALUE1 => false,
-            SYNC_1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYNC_1`"]

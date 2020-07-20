@@ -24,19 +24,17 @@ impl<'a> WE_CH_W<'a> {
 }
 #[doc = "Enables/Disables the channel\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH_A {
     #[doc = "0: Disable the Channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable the Channel"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH_A> for u8 {
     #[inline(always)]
     fn from(variant: CH_A) -> Self {
-        match variant {
-            CH_A::VALUE1 => 0,
-            CH_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH`"]

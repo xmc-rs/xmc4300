@@ -14,17 +14,14 @@ impl crate::ResetValue for super::WAKEUP_CTRL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAKEUP_EVENT_EN_REM_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WAKEUP_EVENT_EN_REM_A> for bool {
     #[inline(always)]
     fn from(variant: WAKEUP_EVENT_EN_REM_A) -> Self {
-        match variant {
-            WAKEUP_EVENT_EN_REM_A::VALUE1 => false,
-            WAKEUP_EVENT_EN_REM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAKEUP_EVENT_EN_REM`"]
@@ -92,17 +89,14 @@ impl<'a> WAKEUP_EVENT_EN_REM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAKEUP_EVENT_EN_INS_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WAKEUP_EVENT_EN_INS_A> for bool {
     #[inline(always)]
     fn from(variant: WAKEUP_EVENT_EN_INS_A) -> Self {
-        match variant {
-            WAKEUP_EVENT_EN_INS_A::VALUE1 => false,
-            WAKEUP_EVENT_EN_INS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAKEUP_EVENT_EN_INS`"]
@@ -170,17 +164,14 @@ impl<'a> WAKEUP_EVENT_EN_INS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAKEUP_EVENT_EN_INT_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WAKEUP_EVENT_EN_INT_A> for bool {
     #[inline(always)]
     fn from(variant: WAKEUP_EVENT_EN_INT_A) -> Self {
-        match variant {
-            WAKEUP_EVENT_EN_INT_A::VALUE1 => false,
-            WAKEUP_EVENT_EN_INT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAKEUP_EVENT_EN_INT`"]

@@ -56,17 +56,14 @@ impl<'a> PROTCTL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIFO_MODE_A {
     #[doc = "0: Space/data available for single AHB transfer of the specified transfer width."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data available is greater than or equal to half the FIFO depth for destination transfers and space available is greater than half the fifo depth for source transfers. The exceptions are at the end of a burst transaction request or at the end of a block transfer."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FIFO_MODE_A> for bool {
     #[inline(always)]
     fn from(variant: FIFO_MODE_A) -> Self {
-        match variant {
-            FIFO_MODE_A::VALUE1 => false,
-            FIFO_MODE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FIFO_MODE`"]
@@ -134,17 +131,14 @@ impl<'a> FIFO_MODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FCMODE_A {
     #[doc = "0: Source transaction requests are serviced when they occur. Data pre-fetching is enabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Source transaction requests are not serviced until a destination transaction request occurs. In this mode, the amount of data transferred from the source is limited so that it is guaranteed to be transferred to the destination prior to block termination by the destination. Data pre-fetching is disabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FCMODE_A> for bool {
     #[inline(always)]
     fn from(variant: FCMODE_A) -> Self {
-        match variant {
-            FCMODE_A::VALUE1 => false,
-            FCMODE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FCMODE`"]

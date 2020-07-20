@@ -12,17 +12,14 @@ impl crate::ResetValue for super::BFLS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BFC0_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear bit BFLy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BFC0_AW> for bool {
     #[inline(always)]
     fn from(variant: BFC0_AW) -> Self {
-        match variant {
-            BFC0_AW::VALUE1 => false,
-            BFC0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BFC0`"]
@@ -68,17 +65,14 @@ impl<'a> BFC0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BFC1_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear bit BFLy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BFC1_AW> for bool {
     #[inline(always)]
     fn from(variant: BFC1_AW) -> Self {
-        match variant {
-            BFC1_AW::VALUE1 => false,
-            BFC1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BFC1`"]
@@ -124,17 +118,14 @@ impl<'a> BFC1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BFC2_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear bit BFLy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BFC2_AW> for bool {
     #[inline(always)]
     fn from(variant: BFC2_AW) -> Self {
-        match variant {
-            BFC2_AW::VALUE1 => false,
-            BFC2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BFC2`"]
@@ -180,17 +171,14 @@ impl<'a> BFC2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BFC3_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear bit BFLy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BFC3_AW> for bool {
     #[inline(always)]
     fn from(variant: BFC3_AW) -> Self {
-        match variant {
-            BFC3_AW::VALUE1 => false,
-            BFC3_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BFC3`"]
@@ -236,17 +224,14 @@ impl<'a> BFC3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BFS0_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Set bit BFLy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BFS0_AW> for bool {
     #[inline(always)]
     fn from(variant: BFS0_AW) -> Self {
-        match variant {
-            BFS0_AW::VALUE1 => false,
-            BFS0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BFS0`"]
@@ -292,17 +277,14 @@ impl<'a> BFS0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BFS1_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Set bit BFLy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BFS1_AW> for bool {
     #[inline(always)]
     fn from(variant: BFS1_AW) -> Self {
-        match variant {
-            BFS1_AW::VALUE1 => false,
-            BFS1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BFS1`"]
@@ -348,17 +330,14 @@ impl<'a> BFS1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BFS2_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Set bit BFLy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BFS2_AW> for bool {
     #[inline(always)]
     fn from(variant: BFS2_AW) -> Self {
-        match variant {
-            BFS2_AW::VALUE1 => false,
-            BFS2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BFS2`"]
@@ -404,17 +383,14 @@ impl<'a> BFS2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BFS3_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Set bit BFLy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BFS3_AW> for bool {
     #[inline(always)]
     fn from(variant: BFS3_AW) -> Self {
-        match variant {
-            BFS3_AW::VALUE1 => false,
-            BFS3_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BFS3`"]

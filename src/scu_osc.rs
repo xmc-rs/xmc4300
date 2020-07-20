@@ -9,7 +9,7 @@ pub struct RegisterBlock {
     #[doc = "0x0c - Clock Calibration Constant Register"]
     pub clkcalconst: CLKCALCONST,
 }
-#[doc = "OSC_HP Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [oschpstat](oschpstat) module"]
+#[doc = "OSC_HP Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [oschpstat](oschpstat) module"]
 pub type OSCHPSTAT = crate::Reg<u32, _OSCHPSTAT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -18,7 +18,7 @@ pub struct _OSCHPSTAT;
 impl crate::Readable for OSCHPSTAT {}
 #[doc = "OSC_HP Status Register"]
 pub mod oschpstat;
-#[doc = "OSC_HP Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [oschpctrl](oschpctrl) module"]
+#[doc = "OSC_HP Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [oschpctrl](oschpctrl) module"]
 pub type OSCHPCTRL = crate::Reg<u32, _OSCHPCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -29,7 +29,7 @@ impl crate::Readable for OSCHPCTRL {}
 impl crate::Writable for OSCHPCTRL {}
 #[doc = "OSC_HP Control Register"]
 pub mod oschpctrl;
-#[doc = "Clock Calibration Constant Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clkcalconst](clkcalconst) module"]
+#[doc = "Clock Calibration Constant Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clkcalconst](clkcalconst) module"]
 pub type CLKCALCONST = crate::Reg<u32, _CLKCALCONST>;
 #[allow(missing_docs)]
 #[doc(hidden)]

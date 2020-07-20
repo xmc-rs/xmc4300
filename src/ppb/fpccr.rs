@@ -14,17 +14,14 @@ impl crate::ResetValue for super::FPCCR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSPACT_A {
     #[doc = "0: Lazy state preservation is not active."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Lazy state preservation is active. floating-point stack frame has been allocated but saving state to it has been deferred."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LSPACT_A> for bool {
     #[inline(always)]
     fn from(variant: LSPACT_A) -> Self {
-        match variant {
-            LSPACT_A::VALUE1 => false,
-            LSPACT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LSPACT`"]
@@ -92,17 +89,14 @@ impl<'a> LSPACT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USER_A {
     #[doc = "0: Privilege level was not user when the floating-point stack frame was allocated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Privilege level was user when the floating-point stack frame was allocated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<USER_A> for bool {
     #[inline(always)]
     fn from(variant: USER_A) -> Self {
-        match variant {
-            USER_A::VALUE1 => false,
-            USER_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USER`"]
@@ -170,17 +164,14 @@ impl<'a> USER_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum THREAD_A {
     #[doc = "0: Mode was not Thread Mode when the floating-point stack frame was allocated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Mode was Thread Mode when the floating-point stack frame was allocated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<THREAD_A> for bool {
     #[inline(always)]
     fn from(variant: THREAD_A) -> Self {
-        match variant {
-            THREAD_A::VALUE1 => false,
-            THREAD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `THREAD`"]
@@ -248,17 +239,14 @@ impl<'a> THREAD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HFRDY_A {
     #[doc = "0: Priority did not permit setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Priority permitted setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HFRDY_A> for bool {
     #[inline(always)]
     fn from(variant: HFRDY_A) -> Self {
-        match variant {
-            HFRDY_A::VALUE1 => false,
-            HFRDY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HFRDY`"]
@@ -326,17 +314,14 @@ impl<'a> HFRDY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MMRDY_A {
     #[doc = "0: MemManage is disabled or priority did not permit setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: MemManage is enabled and priority permitted setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MMRDY_A> for bool {
     #[inline(always)]
     fn from(variant: MMRDY_A) -> Self {
-        match variant {
-            MMRDY_A::VALUE1 => false,
-            MMRDY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MMRDY`"]
@@ -404,17 +389,14 @@ impl<'a> MMRDY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BFRDY_A {
     #[doc = "0: BusFault is disabled or priority did not permit setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: BusFault is enabled and priority permitted setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BFRDY_A> for bool {
     #[inline(always)]
     fn from(variant: BFRDY_A) -> Self {
-        match variant {
-            BFRDY_A::VALUE1 => false,
-            BFRDY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BFRDY`"]
@@ -482,17 +464,14 @@ impl<'a> BFRDY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MONRDY_A {
     #[doc = "0: Debug Monitor is disabled or priority did not permit setting MON_PEND when the floating-point stack frame was allocated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Debug Monitor is enabled and priority permits setting MON_PEND when the floating-point stack frame was allocated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MONRDY_A> for bool {
     #[inline(always)]
     fn from(variant: MONRDY_A) -> Self {
-        match variant {
-            MONRDY_A::VALUE1 => false,
-            MONRDY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MONRDY`"]
@@ -560,17 +539,14 @@ impl<'a> MONRDY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSPEN_A {
     #[doc = "0: Disable automatic lazy state preservation for floating-point context."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable automatic lazy state preservation for floating-point context."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LSPEN_A> for bool {
     #[inline(always)]
     fn from(variant: LSPEN_A) -> Self {
-        match variant {
-            LSPEN_A::VALUE1 => false,
-            LSPEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LSPEN`"]
@@ -638,17 +614,14 @@ impl<'a> LSPEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASPEN_A {
     #[doc = "0: Disable CONTROL setting on execution of a floating-point instruction."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable CONTROL setting on execution of a floating-point instruction."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASPEN_A> for bool {
     #[inline(always)]
     fn from(variant: ASPEN_A) -> Self {
-        match variant {
-            ASPEN_A::VALUE1 => false,
-            ASPEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASPEN`"]

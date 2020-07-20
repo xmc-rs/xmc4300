@@ -40,25 +40,21 @@ impl<'a> PKTCNT_W<'a> {
 }
 #[doc = "Received Data PID\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RXDPID_A {
     #[doc = "0: DATA0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: DATA2"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: DATA1"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: MDATA"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<RXDPID_A> for u8 {
     #[inline(always)]
     fn from(variant: RXDPID_A) -> Self {
-        match variant {
-            RXDPID_A::VALUE1 => 0,
-            RXDPID_A::VALUE2 => 1,
-            RXDPID_A::VALUE3 => 2,
-            RXDPID_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RxDPID`"]

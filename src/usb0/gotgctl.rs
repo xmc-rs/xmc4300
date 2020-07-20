@@ -14,17 +14,14 @@ impl crate::ResetValue for super::GOTGCTL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SESREQSCS_A {
     #[doc = "0: Session request failure"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Session request success"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SESREQSCS_A> for bool {
     #[inline(always)]
     fn from(variant: SESREQSCS_A) -> Self {
-        match variant {
-            SESREQSCS_A::VALUE1 => false,
-            SESREQSCS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SesReqScs`"]
@@ -53,17 +50,14 @@ impl SESREQSCS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SESREQ_A {
     #[doc = "0: No session request"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Session request"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SESREQ_A> for bool {
     #[inline(always)]
     fn from(variant: SESREQ_A) -> Self {
-        match variant {
-            SESREQ_A::VALUE1 => false,
-            SESREQ_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SesReq`"]
@@ -131,17 +125,14 @@ impl<'a> SESREQ_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VBVALIDOVEN_A {
     #[doc = "0: Override is disabled and vbus valid signal from the PHY is used internally by the core."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Internally vbus valid received from the PHY is overridden with GOTGCTL.VbvalidOvVal."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VBVALIDOVEN_A> for bool {
     #[inline(always)]
     fn from(variant: VBVALIDOVEN_A) -> Self {
-        match variant {
-            VBVALIDOVEN_A::VALUE1 => false,
-            VBVALIDOVEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VbvalidOvEn`"]
@@ -209,17 +200,14 @@ impl<'a> VBVALIDOVEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VBVALIDOVVAL_A {
     #[doc = "0: vbusvalid value is 0# when GOTGCTL.VbvalidOvEn = 1"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: vbusvalid value is 1# when GOTGCTL.VbvalidOvEn = 1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VBVALIDOVVAL_A> for bool {
     #[inline(always)]
     fn from(variant: VBVALIDOVVAL_A) -> Self {
-        match variant {
-            VBVALIDOVVAL_A::VALUE1 => false,
-            VBVALIDOVVAL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VbvalidOvVal`"]
@@ -287,17 +275,14 @@ impl<'a> VBVALIDOVVAL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AVALIDOVEN_A {
     #[doc = "0: Override is disabled and Avalid signal from the PHY is used internally by the core."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Internally Avalid received from the PHY is overridden with GOTGCTL.AvalidOvVal."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AVALIDOVEN_A> for bool {
     #[inline(always)]
     fn from(variant: AVALIDOVEN_A) -> Self {
-        match variant {
-            AVALIDOVEN_A::VALUE1 => false,
-            AVALIDOVEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AvalidOvEn`"]
@@ -365,17 +350,14 @@ impl<'a> AVALIDOVEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AVALIDOVVAL_A {
     #[doc = "0: Avalid value is 0# when GOTGCTL.AvalidOvEn = 1"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Avalid value is 1# when GOTGCTL.AvalidOvEn = 1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AVALIDOVVAL_A> for bool {
     #[inline(always)]
     fn from(variant: AVALIDOVVAL_A) -> Self {
-        match variant {
-            AVALIDOVVAL_A::VALUE1 => false,
-            AVALIDOVVAL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AvalidOvVal`"]
@@ -443,17 +425,14 @@ impl<'a> AVALIDOVVAL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BVALIDOVEN_A {
     #[doc = "0: Override is disabled and Bvalid signal from the PHY is used internally by the core."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Internally Bvalid received from the PHY is overridden with GOTGCTL.BvalidOvVal."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BVALIDOVEN_A> for bool {
     #[inline(always)]
     fn from(variant: BVALIDOVEN_A) -> Self {
-        match variant {
-            BVALIDOVEN_A::VALUE1 => false,
-            BVALIDOVEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BvalidOvEn`"]
@@ -521,17 +500,14 @@ impl<'a> BVALIDOVEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BVALIDOVVAL_A {
     #[doc = "0: Bvalid value is 0# when GOTGCTL.BvalidOvEn = 1"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bvalid value is 1# when GOTGCTL.BvalidOvEn = 1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BVALIDOVVAL_A> for bool {
     #[inline(always)]
     fn from(variant: BVALIDOVVAL_A) -> Self {
-        match variant {
-            BVALIDOVVAL_A::VALUE1 => false,
-            BVALIDOVVAL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BvalidOvVal`"]
@@ -599,17 +575,14 @@ impl<'a> BVALIDOVVAL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSTNEGSCS_A {
     #[doc = "0: Host negotiation failure"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Host negotiation success"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HSTNEGSCS_A> for bool {
     #[inline(always)]
     fn from(variant: HSTNEGSCS_A) -> Self {
-        match variant {
-            HSTNEGSCS_A::VALUE1 => false,
-            HSTNEGSCS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HstNegScs`"]
@@ -638,17 +611,14 @@ impl HSTNEGSCS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HNPREQ_A {
     #[doc = "0: No HNP request"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: HNP request"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HNPREQ_A> for bool {
     #[inline(always)]
     fn from(variant: HNPREQ_A) -> Self {
-        match variant {
-            HNPREQ_A::VALUE1 => false,
-            HNPREQ_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HNPReq`"]
@@ -716,17 +686,14 @@ impl<'a> HNPREQ_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSTSETHNPEN_A {
     #[doc = "0: Host Set HNP is not enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Host Set HNP is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HSTSETHNPEN_A> for bool {
     #[inline(always)]
     fn from(variant: HSTSETHNPEN_A) -> Self {
-        match variant {
-            HSTSETHNPEN_A::VALUE1 => false,
-            HSTSETHNPEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HstSetHNPEn`"]
@@ -794,17 +761,14 @@ impl<'a> HSTSETHNPEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DEVHNPEN_A {
     #[doc = "0: HNP is not enabled in the application"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: HNP is enabled in the application"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DEVHNPEN_A> for bool {
     #[inline(always)]
     fn from(variant: DEVHNPEN_A) -> Self {
-        match variant {
-            DEVHNPEN_A::VALUE1 => false,
-            DEVHNPEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DevHNPEn`"]
@@ -872,17 +836,14 @@ impl<'a> DEVHNPEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CONLDSTS_A {
     #[doc = "0: The USB core is in A-Device mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The USB core is in B-Device mode"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CONLDSTS_A> for bool {
     #[inline(always)]
     fn from(variant: CONLDSTS_A) -> Self {
-        match variant {
-            CONLDSTS_A::VALUE1 => false,
-            CONLDSTS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ConlDSts`"]
@@ -911,17 +872,14 @@ impl CONLDSTS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBNCTIME_A {
     #[doc = "0: Long debounce time, used for physical connections (100 ms + 2.5 us)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Short debounce time, used for soft connections (2.5 us)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DBNCTIME_A> for bool {
     #[inline(always)]
     fn from(variant: DBNCTIME_A) -> Self {
-        match variant {
-            DBNCTIME_A::VALUE1 => false,
-            DBNCTIME_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DbncTime`"]
@@ -950,17 +908,14 @@ impl DBNCTIME_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASESVID_A {
     #[doc = "0: A-session is not valid"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A-session is valid"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASESVID_A> for bool {
     #[inline(always)]
     fn from(variant: ASESVID_A) -> Self {
-        match variant {
-            ASESVID_A::VALUE1 => false,
-            ASESVID_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASesVId`"]
@@ -989,17 +944,14 @@ impl ASESVID_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BSESVLD_A {
     #[doc = "0: B-session is not valid."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: B-session is valid."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BSESVLD_A> for bool {
     #[inline(always)]
     fn from(variant: BSESVLD_A) -> Self {
-        match variant {
-            BSESVLD_A::VALUE1 => false,
-            BSESVLD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BSesVld`"]
@@ -1028,17 +980,14 @@ impl BSESVLD_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OTGVER_A {
     #[doc = "0: OTG Version 1.3. In this version the core supports Data line pulsing and VBus pulsing for SRP."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: OTG Version 2.0. In this version the core supports only Data line pulsing for SRP."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<OTGVER_A> for bool {
     #[inline(always)]
     fn from(variant: OTGVER_A) -> Self {
-        match variant {
-            OTGVER_A::VALUE1 => false,
-            OTGVER_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OTGVer`"]

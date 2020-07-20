@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PPS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS0_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS0_A> for bool {
     #[inline(always)]
     fn from(variant: PPS0_A) -> Self {
-        match variant {
-            PPS0_A::CONST_0 => false,
-            PPS0_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS0`"]
@@ -92,17 +89,14 @@ impl<'a> PPS0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS1_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS1_A> for bool {
     #[inline(always)]
     fn from(variant: PPS1_A) -> Self {
-        match variant {
-            PPS1_A::CONST_0 => false,
-            PPS1_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS1`"]
@@ -170,17 +164,14 @@ impl<'a> PPS1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS2_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS2_A> for bool {
     #[inline(always)]
     fn from(variant: PPS2_A) -> Self {
-        match variant {
-            PPS2_A::CONST_0 => false,
-            PPS2_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS2`"]
@@ -248,17 +239,14 @@ impl<'a> PPS2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS3_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS3_A> for bool {
     #[inline(always)]
     fn from(variant: PPS3_A) -> Self {
-        match variant {
-            PPS3_A::CONST_0 => false,
-            PPS3_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS3`"]
@@ -326,17 +314,14 @@ impl<'a> PPS3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS4_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS4_A> for bool {
     #[inline(always)]
     fn from(variant: PPS4_A) -> Self {
-        match variant {
-            PPS4_A::CONST_0 => false,
-            PPS4_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS4`"]
@@ -404,17 +389,14 @@ impl<'a> PPS4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS5_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS5_A> for bool {
     #[inline(always)]
     fn from(variant: PPS5_A) -> Self {
-        match variant {
-            PPS5_A::CONST_0 => false,
-            PPS5_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS5`"]
@@ -482,17 +464,14 @@ impl<'a> PPS5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS6_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS6_A> for bool {
     #[inline(always)]
     fn from(variant: PPS6_A) -> Self {
-        match variant {
-            PPS6_A::CONST_0 => false,
-            PPS6_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS6`"]
@@ -560,17 +539,14 @@ impl<'a> PPS6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS7_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS7_A> for bool {
     #[inline(always)]
     fn from(variant: PPS7_A) -> Self {
-        match variant {
-            PPS7_A::CONST_0 => false,
-            PPS7_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS7`"]
@@ -638,17 +614,14 @@ impl<'a> PPS7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS8_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS8_A> for bool {
     #[inline(always)]
     fn from(variant: PPS8_A) -> Self {
-        match variant {
-            PPS8_A::CONST_0 => false,
-            PPS8_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS8`"]
@@ -716,17 +689,14 @@ impl<'a> PPS8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS9_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS9_A> for bool {
     #[inline(always)]
     fn from(variant: PPS9_A) -> Self {
-        match variant {
-            PPS9_A::CONST_0 => false,
-            PPS9_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS9`"]
@@ -794,17 +764,14 @@ impl<'a> PPS9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS10_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS10_A> for bool {
     #[inline(always)]
     fn from(variant: PPS10_A) -> Self {
-        match variant {
-            PPS10_A::CONST_0 => false,
-            PPS10_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS10`"]
@@ -872,17 +839,14 @@ impl<'a> PPS10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS11_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS11_A> for bool {
     #[inline(always)]
     fn from(variant: PPS11_A) -> Self {
-        match variant {
-            PPS11_A::CONST_0 => false,
-            PPS11_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS11`"]
@@ -950,17 +914,14 @@ impl<'a> PPS11_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS12_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS12_A> for bool {
     #[inline(always)]
     fn from(variant: PPS12_A) -> Self {
-        match variant {
-            PPS12_A::CONST_0 => false,
-            PPS12_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS12`"]
@@ -1028,17 +989,14 @@ impl<'a> PPS12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS13_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS13_A> for bool {
     #[inline(always)]
     fn from(variant: PPS13_A) -> Self {
-        match variant {
-            PPS13_A::CONST_0 => false,
-            PPS13_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS13`"]
@@ -1106,17 +1064,14 @@ impl<'a> PPS13_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS14_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS14_A> for bool {
     #[inline(always)]
     fn from(variant: PPS14_A) -> Self {
-        match variant {
-            PPS14_A::CONST_0 => false,
-            PPS14_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS14`"]
@@ -1184,17 +1139,14 @@ impl<'a> PPS14_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPS15_A {
     #[doc = "0: Pin Power Save of Pn.x is disabled."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Pin Power Save of Pn.x is enabled."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPS15_A> for bool {
     #[inline(always)]
     fn from(variant: PPS15_A) -> Self {
-        match variant {
-            PPS15_A::CONST_0 => false,
-            PPS15_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPS15`"]

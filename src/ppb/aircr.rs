@@ -58,17 +58,14 @@ impl<'a> VECTCLRACTIVE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYSRESETREQ_AW {
     #[doc = "0: no system reset request"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: asserts a signal to the outer system that requests a reset."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SYSRESETREQ_AW> for bool {
     #[inline(always)]
     fn from(variant: SYSRESETREQ_AW) -> Self {
-        match variant {
-            SYSRESETREQ_AW::VALUE1 => false,
-            SYSRESETREQ_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SYSRESETREQ`"]
@@ -128,17 +125,14 @@ impl<'a> PRIGROUP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDIANNESS_A {
     #[doc = "0: Little-endian"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Big-endian."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ENDIANNESS_A> for bool {
     #[inline(always)]
     fn from(variant: ENDIANNESS_A) -> Self {
-        match variant {
-            ENDIANNESS_A::VALUE1 => false,
-            ENDIANNESS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENDIANNESS`"]

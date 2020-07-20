@@ -12,16 +12,15 @@ impl crate::ResetValue for super::HCFG {
 }
 #[doc = "FS PHY Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FSLSPCLKSEL_A {
     #[doc = "1: PHY clock is running at 48 MHz"]
-    VALUE1,
+    VALUE1 = 1,
 }
 impl From<FSLSPCLKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: FSLSPCLKSEL_A) -> Self {
-        match variant {
-            FSLSPCLKSEL_A::VALUE1 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FSLSPclkSel`"]
@@ -68,17 +67,14 @@ impl<'a> FSLSPCLKSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FSLSSUPP_A {
     #[doc = "0: FS-only, connected device can supports also only FS."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: FS-only, even if the connected device can support HS"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FSLSSUPP_A> for bool {
     #[inline(always)]
     fn from(variant: FSLSSUPP_A) -> Self {
-        match variant {
-            FSLSSUPP_A::VALUE1 => false,
-            FSLSSUPP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FSLSSupp`"]
@@ -168,25 +164,21 @@ impl<'a> DESCDMA_W<'a> {
 }
 #[doc = "Frame List Entries\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FRLISTEN_A {
     #[doc = "0: 8 Entries"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 16 Entries"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 32 Entries"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 64 Entries"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<FRLISTEN_A> for u8 {
     #[inline(always)]
     fn from(variant: FRLISTEN_A) -> Self {
-        match variant {
-            FRLISTEN_A::VALUE1 => 0,
-            FRLISTEN_A::VALUE2 => 1,
-            FRLISTEN_A::VALUE3 => 2,
-            FRLISTEN_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FrListEn`"]

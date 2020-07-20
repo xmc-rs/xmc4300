@@ -190,7 +190,7 @@ impl RegisterBlock {
         unsafe { &mut *(((self as *const Self) as *mut u8).add(40usize) as *mut GNPTXFSIZ_HOSTMODE) }
     }
 }
-#[doc = "Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gotgctl](gotgctl) module"]
+#[doc = "Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gotgctl](gotgctl) module"]
 pub type GOTGCTL = crate::Reg<u32, _GOTGCTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -201,7 +201,7 @@ impl crate::Readable for GOTGCTL {}
 impl crate::Writable for GOTGCTL {}
 #[doc = "Control and Status Register"]
 pub mod gotgctl;
-#[doc = "OTG Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gotgint](gotgint) module"]
+#[doc = "OTG Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gotgint](gotgint) module"]
 pub type GOTGINT = crate::Reg<u32, _GOTGINT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -212,7 +212,7 @@ impl crate::Readable for GOTGINT {}
 impl crate::Writable for GOTGINT {}
 #[doc = "OTG Interrupt Register"]
 pub mod gotgint;
-#[doc = "AHB Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gahbcfg](gahbcfg) module"]
+#[doc = "AHB Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gahbcfg](gahbcfg) module"]
 pub type GAHBCFG = crate::Reg<u32, _GAHBCFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -223,7 +223,7 @@ impl crate::Readable for GAHBCFG {}
 impl crate::Writable for GAHBCFG {}
 #[doc = "AHB Configuration Register"]
 pub mod gahbcfg;
-#[doc = "USB Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gusbcfg](gusbcfg) module"]
+#[doc = "USB Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gusbcfg](gusbcfg) module"]
 pub type GUSBCFG = crate::Reg<u32, _GUSBCFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -234,7 +234,7 @@ impl crate::Readable for GUSBCFG {}
 impl crate::Writable for GUSBCFG {}
 #[doc = "USB Configuration Register"]
 pub mod gusbcfg;
-#[doc = "Reset Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [grstctl](grstctl) module"]
+#[doc = "Reset Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [grstctl](grstctl) module"]
 pub type GRSTCTL = crate::Reg<u32, _GRSTCTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -245,7 +245,7 @@ impl crate::Readable for GRSTCTL {}
 impl crate::Writable for GRSTCTL {}
 #[doc = "Reset Register"]
 pub mod grstctl;
-#[doc = "Interrupt Register \\[HOSTMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gintsts_hostmode](gintsts_hostmode) module"]
+#[doc = "Interrupt Register \\[HOSTMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gintsts_hostmode](gintsts_hostmode) module"]
 pub type GINTSTS_HOSTMODE = crate::Reg<u32, _GINTSTS_HOSTMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -256,7 +256,7 @@ impl crate::Readable for GINTSTS_HOSTMODE {}
 impl crate::Writable for GINTSTS_HOSTMODE {}
 #[doc = "Interrupt Register \\[HOSTMODE\\]"]
 pub mod gintsts_hostmode;
-#[doc = "Interrupt Register \\[DEVICEMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gintsts_devicemode](gintsts_devicemode) module"]
+#[doc = "Interrupt Register \\[DEVICEMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gintsts_devicemode](gintsts_devicemode) module"]
 pub type GINTSTS_DEVICEMODE = crate::Reg<u32, _GINTSTS_DEVICEMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -267,7 +267,7 @@ impl crate::Readable for GINTSTS_DEVICEMODE {}
 impl crate::Writable for GINTSTS_DEVICEMODE {}
 #[doc = "Interrupt Register \\[DEVICEMODE\\]"]
 pub mod gintsts_devicemode;
-#[doc = "Interrupt Mask Register \\[HOSTMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gintmsk_hostmode](gintmsk_hostmode) module"]
+#[doc = "Interrupt Mask Register \\[HOSTMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gintmsk_hostmode](gintmsk_hostmode) module"]
 pub type GINTMSK_HOSTMODE = crate::Reg<u32, _GINTMSK_HOSTMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -278,7 +278,7 @@ impl crate::Readable for GINTMSK_HOSTMODE {}
 impl crate::Writable for GINTMSK_HOSTMODE {}
 #[doc = "Interrupt Mask Register \\[HOSTMODE\\]"]
 pub mod gintmsk_hostmode;
-#[doc = "Interrupt Mask Register \\[DEVICEMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gintmsk_devicemode](gintmsk_devicemode) module"]
+#[doc = "Interrupt Mask Register \\[DEVICEMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gintmsk_devicemode](gintmsk_devicemode) module"]
 pub type GINTMSK_DEVICEMODE = crate::Reg<u32, _GINTMSK_DEVICEMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -289,7 +289,7 @@ impl crate::Readable for GINTMSK_DEVICEMODE {}
 impl crate::Writable for GINTMSK_DEVICEMODE {}
 #[doc = "Interrupt Mask Register \\[DEVICEMODE\\]"]
 pub mod gintmsk_devicemode;
-#[doc = "Receive Status Debug Read Register \\[HOSTMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [grxstsr_hostmode](grxstsr_hostmode) module"]
+#[doc = "Receive Status Debug Read Register \\[HOSTMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [grxstsr_hostmode](grxstsr_hostmode) module"]
 pub type GRXSTSR_HOSTMODE = crate::Reg<u32, _GRXSTSR_HOSTMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -298,7 +298,7 @@ pub struct _GRXSTSR_HOSTMODE;
 impl crate::Readable for GRXSTSR_HOSTMODE {}
 #[doc = "Receive Status Debug Read Register \\[HOSTMODE\\]"]
 pub mod grxstsr_hostmode;
-#[doc = "Receive Status Debug Read Register \\[DEVICEMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [grxstsr_devicemode](grxstsr_devicemode) module"]
+#[doc = "Receive Status Debug Read Register \\[DEVICEMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [grxstsr_devicemode](grxstsr_devicemode) module"]
 pub type GRXSTSR_DEVICEMODE = crate::Reg<u32, _GRXSTSR_DEVICEMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -307,7 +307,7 @@ pub struct _GRXSTSR_DEVICEMODE;
 impl crate::Readable for GRXSTSR_DEVICEMODE {}
 #[doc = "Receive Status Debug Read Register \\[DEVICEMODE\\]"]
 pub mod grxstsr_devicemode;
-#[doc = "Receive Status Read and Pop Register \\[DEVICEMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [grxstsp_devicemode](grxstsp_devicemode) module"]
+#[doc = "Receive Status Read and Pop Register \\[DEVICEMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [grxstsp_devicemode](grxstsp_devicemode) module"]
 pub type GRXSTSP_DEVICEMODE = crate::Reg<u32, _GRXSTSP_DEVICEMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -316,7 +316,7 @@ pub struct _GRXSTSP_DEVICEMODE;
 impl crate::Readable for GRXSTSP_DEVICEMODE {}
 #[doc = "Receive Status Read and Pop Register \\[DEVICEMODE\\]"]
 pub mod grxstsp_devicemode;
-#[doc = "Receive Status Read and Pop Register \\[HOSTMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [grxstsp_hostmode](grxstsp_hostmode) module"]
+#[doc = "Receive Status Read and Pop Register \\[HOSTMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [grxstsp_hostmode](grxstsp_hostmode) module"]
 pub type GRXSTSP_HOSTMODE = crate::Reg<u32, _GRXSTSP_HOSTMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -325,7 +325,7 @@ pub struct _GRXSTSP_HOSTMODE;
 impl crate::Readable for GRXSTSP_HOSTMODE {}
 #[doc = "Receive Status Read and Pop Register \\[HOSTMODE\\]"]
 pub mod grxstsp_hostmode;
-#[doc = "Receive FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [grxfsiz](grxfsiz) module"]
+#[doc = "Receive FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [grxfsiz](grxfsiz) module"]
 pub type GRXFSIZ = crate::Reg<u32, _GRXFSIZ>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -336,7 +336,7 @@ impl crate::Readable for GRXFSIZ {}
 impl crate::Writable for GRXFSIZ {}
 #[doc = "Receive FIFO Size Register"]
 pub mod grxfsiz;
-#[doc = "Non-Periodic Transmit FIFO Size Register \\[HOSTMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gnptxfsiz_hostmode](gnptxfsiz_hostmode) module"]
+#[doc = "Non-Periodic Transmit FIFO Size Register \\[HOSTMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gnptxfsiz_hostmode](gnptxfsiz_hostmode) module"]
 pub type GNPTXFSIZ_HOSTMODE = crate::Reg<u32, _GNPTXFSIZ_HOSTMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -347,7 +347,7 @@ impl crate::Readable for GNPTXFSIZ_HOSTMODE {}
 impl crate::Writable for GNPTXFSIZ_HOSTMODE {}
 #[doc = "Non-Periodic Transmit FIFO Size Register \\[HOSTMODE\\]"]
 pub mod gnptxfsiz_hostmode;
-#[doc = "Non-Periodic Transmit FIFO Size Register \\[DEVICEMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gnptxfsiz_devicemode](gnptxfsiz_devicemode) module"]
+#[doc = "Non-Periodic Transmit FIFO Size Register \\[DEVICEMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gnptxfsiz_devicemode](gnptxfsiz_devicemode) module"]
 pub type GNPTXFSIZ_DEVICEMODE = crate::Reg<u32, _GNPTXFSIZ_DEVICEMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -358,7 +358,7 @@ impl crate::Readable for GNPTXFSIZ_DEVICEMODE {}
 impl crate::Writable for GNPTXFSIZ_DEVICEMODE {}
 #[doc = "Non-Periodic Transmit FIFO Size Register \\[DEVICEMODE\\]"]
 pub mod gnptxfsiz_devicemode;
-#[doc = "Non-Periodic Transmit FIFO/Queue Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gnptxsts](gnptxsts) module"]
+#[doc = "Non-Periodic Transmit FIFO/Queue Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gnptxsts](gnptxsts) module"]
 pub type GNPTXSTS = crate::Reg<u32, _GNPTXSTS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -367,7 +367,7 @@ pub struct _GNPTXSTS;
 impl crate::Readable for GNPTXSTS {}
 #[doc = "Non-Periodic Transmit FIFO/Queue Status Register"]
 pub mod gnptxsts;
-#[doc = "USB Module Identification Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [guid](guid) module"]
+#[doc = "USB Module Identification Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [guid](guid) module"]
 pub type GUID = crate::Reg<u32, _GUID>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -378,7 +378,7 @@ impl crate::Readable for GUID {}
 impl crate::Writable for GUID {}
 #[doc = "USB Module Identification Register"]
 pub mod guid;
-#[doc = "Global DFIFO Software Config Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gdfifocfg](gdfifocfg) module"]
+#[doc = "Global DFIFO Software Config Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gdfifocfg](gdfifocfg) module"]
 pub type GDFIFOCFG = crate::Reg<u32, _GDFIFOCFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -389,7 +389,7 @@ impl crate::Readable for GDFIFOCFG {}
 impl crate::Writable for GDFIFOCFG {}
 #[doc = "Global DFIFO Software Config Register"]
 pub mod gdfifocfg;
-#[doc = "Host Periodic Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hptxfsiz](hptxfsiz) module"]
+#[doc = "Host Periodic Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hptxfsiz](hptxfsiz) module"]
 pub type HPTXFSIZ = crate::Reg<u32, _HPTXFSIZ>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -400,7 +400,7 @@ impl crate::Readable for HPTXFSIZ {}
 impl crate::Writable for HPTXFSIZ {}
 #[doc = "Host Periodic Transmit FIFO Size Register"]
 pub mod hptxfsiz;
-#[doc = "Device IN Endpoint Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dieptxf1](dieptxf1) module"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dieptxf1](dieptxf1) module"]
 pub type DIEPTXF1 = crate::Reg<u32, _DIEPTXF1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -411,7 +411,7 @@ impl crate::Readable for DIEPTXF1 {}
 impl crate::Writable for DIEPTXF1 {}
 #[doc = "Device IN Endpoint Transmit FIFO Size Register"]
 pub mod dieptxf1;
-#[doc = "Device IN Endpoint Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dieptxf2](dieptxf2) module"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dieptxf2](dieptxf2) module"]
 pub type DIEPTXF2 = crate::Reg<u32, _DIEPTXF2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -422,7 +422,7 @@ impl crate::Readable for DIEPTXF2 {}
 impl crate::Writable for DIEPTXF2 {}
 #[doc = "Device IN Endpoint Transmit FIFO Size Register"]
 pub mod dieptxf2;
-#[doc = "Device IN Endpoint Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dieptxf3](dieptxf3) module"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dieptxf3](dieptxf3) module"]
 pub type DIEPTXF3 = crate::Reg<u32, _DIEPTXF3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -433,7 +433,7 @@ impl crate::Readable for DIEPTXF3 {}
 impl crate::Writable for DIEPTXF3 {}
 #[doc = "Device IN Endpoint Transmit FIFO Size Register"]
 pub mod dieptxf3;
-#[doc = "Device IN Endpoint Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dieptxf4](dieptxf4) module"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dieptxf4](dieptxf4) module"]
 pub type DIEPTXF4 = crate::Reg<u32, _DIEPTXF4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -444,7 +444,7 @@ impl crate::Readable for DIEPTXF4 {}
 impl crate::Writable for DIEPTXF4 {}
 #[doc = "Device IN Endpoint Transmit FIFO Size Register"]
 pub mod dieptxf4;
-#[doc = "Device IN Endpoint Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dieptxf5](dieptxf5) module"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dieptxf5](dieptxf5) module"]
 pub type DIEPTXF5 = crate::Reg<u32, _DIEPTXF5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -455,7 +455,7 @@ impl crate::Readable for DIEPTXF5 {}
 impl crate::Writable for DIEPTXF5 {}
 #[doc = "Device IN Endpoint Transmit FIFO Size Register"]
 pub mod dieptxf5;
-#[doc = "Device IN Endpoint Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dieptxf6](dieptxf6) module"]
+#[doc = "Device IN Endpoint Transmit FIFO Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dieptxf6](dieptxf6) module"]
 pub type DIEPTXF6 = crate::Reg<u32, _DIEPTXF6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -466,7 +466,7 @@ impl crate::Readable for DIEPTXF6 {}
 impl crate::Writable for DIEPTXF6 {}
 #[doc = "Device IN Endpoint Transmit FIFO Size Register"]
 pub mod dieptxf6;
-#[doc = "Host Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcfg](hcfg) module"]
+#[doc = "Host Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcfg](hcfg) module"]
 pub type HCFG = crate::Reg<u32, _HCFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -477,7 +477,7 @@ impl crate::Readable for HCFG {}
 impl crate::Writable for HCFG {}
 #[doc = "Host Configuration Register"]
 pub mod hcfg;
-#[doc = "Host Frame Interval Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hfir](hfir) module"]
+#[doc = "Host Frame Interval Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hfir](hfir) module"]
 pub type HFIR = crate::Reg<u32, _HFIR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -488,7 +488,7 @@ impl crate::Readable for HFIR {}
 impl crate::Writable for HFIR {}
 #[doc = "Host Frame Interval Register"]
 pub mod hfir;
-#[doc = "Host Frame Number/Frame Time Remaining Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hfnum](hfnum) module"]
+#[doc = "Host Frame Number/Frame Time Remaining Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hfnum](hfnum) module"]
 pub type HFNUM = crate::Reg<u32, _HFNUM>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -499,7 +499,7 @@ impl crate::Readable for HFNUM {}
 impl crate::Writable for HFNUM {}
 #[doc = "Host Frame Number/Frame Time Remaining Register"]
 pub mod hfnum;
-#[doc = "Host Periodic Transmit FIFO/ Queue Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hptxsts](hptxsts) module"]
+#[doc = "Host Periodic Transmit FIFO/ Queue Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hptxsts](hptxsts) module"]
 pub type HPTXSTS = crate::Reg<u32, _HPTXSTS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -510,7 +510,7 @@ impl crate::Readable for HPTXSTS {}
 impl crate::Writable for HPTXSTS {}
 #[doc = "Host Periodic Transmit FIFO/ Queue Status Register"]
 pub mod hptxsts;
-#[doc = "Host All Channels Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [haint](haint) module"]
+#[doc = "Host All Channels Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [haint](haint) module"]
 pub type HAINT = crate::Reg<u32, _HAINT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -519,7 +519,7 @@ pub struct _HAINT;
 impl crate::Readable for HAINT {}
 #[doc = "Host All Channels Interrupt Register"]
 pub mod haint;
-#[doc = "Host All Channels Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [haintmsk](haintmsk) module"]
+#[doc = "Host All Channels Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [haintmsk](haintmsk) module"]
 pub type HAINTMSK = crate::Reg<u32, _HAINTMSK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -530,7 +530,7 @@ impl crate::Readable for HAINTMSK {}
 impl crate::Writable for HAINTMSK {}
 #[doc = "Host All Channels Interrupt Mask Register"]
 pub mod haintmsk;
-#[doc = "Host Frame List Base Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hflbaddr](hflbaddr) module"]
+#[doc = "Host Frame List Base Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hflbaddr](hflbaddr) module"]
 pub type HFLBADDR = crate::Reg<u32, _HFLBADDR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -541,7 +541,7 @@ impl crate::Readable for HFLBADDR {}
 impl crate::Writable for HFLBADDR {}
 #[doc = "Host Frame List Base Address Register"]
 pub mod hflbaddr;
-#[doc = "Host Port Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hprt](hprt) module"]
+#[doc = "Host Port Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hprt](hprt) module"]
 pub type HPRT = crate::Reg<u32, _HPRT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -552,7 +552,7 @@ impl crate::Readable for HPRT {}
 impl crate::Writable for HPRT {}
 #[doc = "Host Port Control and Status Register"]
 pub mod hprt;
-#[doc = "Device Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dcfg](dcfg) module"]
+#[doc = "Device Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dcfg](dcfg) module"]
 pub type DCFG = crate::Reg<u32, _DCFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -563,7 +563,7 @@ impl crate::Readable for DCFG {}
 impl crate::Writable for DCFG {}
 #[doc = "Device Configuration Register"]
 pub mod dcfg;
-#[doc = "Device Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dctl](dctl) module"]
+#[doc = "Device Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dctl](dctl) module"]
 pub type DCTL = crate::Reg<u32, _DCTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -574,7 +574,7 @@ impl crate::Readable for DCTL {}
 impl crate::Writable for DCTL {}
 #[doc = "Device Control Register"]
 pub mod dctl;
-#[doc = "Device Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dsts](dsts) module"]
+#[doc = "Device Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dsts](dsts) module"]
 pub type DSTS = crate::Reg<u32, _DSTS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -583,7 +583,7 @@ pub struct _DSTS;
 impl crate::Readable for DSTS {}
 #[doc = "Device Status Register"]
 pub mod dsts;
-#[doc = "Device IN Endpoint Common Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [diepmsk](diepmsk) module"]
+#[doc = "Device IN Endpoint Common Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [diepmsk](diepmsk) module"]
 pub type DIEPMSK = crate::Reg<u32, _DIEPMSK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -594,7 +594,7 @@ impl crate::Readable for DIEPMSK {}
 impl crate::Writable for DIEPMSK {}
 #[doc = "Device IN Endpoint Common Interrupt Mask Register"]
 pub mod diepmsk;
-#[doc = "Device OUT Endpoint Common Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [doepmsk](doepmsk) module"]
+#[doc = "Device OUT Endpoint Common Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [doepmsk](doepmsk) module"]
 pub type DOEPMSK = crate::Reg<u32, _DOEPMSK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -605,7 +605,7 @@ impl crate::Readable for DOEPMSK {}
 impl crate::Writable for DOEPMSK {}
 #[doc = "Device OUT Endpoint Common Interrupt Mask Register"]
 pub mod doepmsk;
-#[doc = "Device All Endpoints Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [daint](daint) module"]
+#[doc = "Device All Endpoints Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [daint](daint) module"]
 pub type DAINT = crate::Reg<u32, _DAINT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -614,7 +614,7 @@ pub struct _DAINT;
 impl crate::Readable for DAINT {}
 #[doc = "Device All Endpoints Interrupt Register"]
 pub mod daint;
-#[doc = "Device All Endpoints Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [daintmsk](daintmsk) module"]
+#[doc = "Device All Endpoints Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [daintmsk](daintmsk) module"]
 pub type DAINTMSK = crate::Reg<u32, _DAINTMSK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -625,7 +625,7 @@ impl crate::Readable for DAINTMSK {}
 impl crate::Writable for DAINTMSK {}
 #[doc = "Device All Endpoints Interrupt Mask Register"]
 pub mod daintmsk;
-#[doc = "Device VBUS Discharge Time Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dvbusdis](dvbusdis) module"]
+#[doc = "Device VBUS Discharge Time Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dvbusdis](dvbusdis) module"]
 pub type DVBUSDIS = crate::Reg<u32, _DVBUSDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -636,7 +636,7 @@ impl crate::Readable for DVBUSDIS {}
 impl crate::Writable for DVBUSDIS {}
 #[doc = "Device VBUS Discharge Time Register"]
 pub mod dvbusdis;
-#[doc = "Device VBUS Pulsing Time Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dvbuspulse](dvbuspulse) module"]
+#[doc = "Device VBUS Pulsing Time Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dvbuspulse](dvbuspulse) module"]
 pub type DVBUSPULSE = crate::Reg<u32, _DVBUSPULSE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -647,7 +647,7 @@ impl crate::Readable for DVBUSPULSE {}
 impl crate::Writable for DVBUSPULSE {}
 #[doc = "Device VBUS Pulsing Time Register"]
 pub mod dvbuspulse;
-#[doc = "Device IN Endpoint FIFO Empty Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [diepempmsk](diepempmsk) module"]
+#[doc = "Device IN Endpoint FIFO Empty Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [diepempmsk](diepempmsk) module"]
 pub type DIEPEMPMSK = crate::Reg<u32, _DIEPEMPMSK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -658,7 +658,7 @@ impl crate::Readable for DIEPEMPMSK {}
 impl crate::Writable for DIEPEMPMSK {}
 #[doc = "Device IN Endpoint FIFO Empty Interrupt Mask Register"]
 pub mod diepempmsk;
-#[doc = "Power and Clock Gating Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pcgcctl](pcgcctl) module"]
+#[doc = "Power and Clock Gating Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcgcctl](pcgcctl) module"]
 pub type PCGCCTL = crate::Reg<u32, _PCGCCTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]

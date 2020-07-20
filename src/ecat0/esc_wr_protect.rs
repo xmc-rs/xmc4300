@@ -4,17 +4,14 @@ pub type R = crate::R<u8, super::ESC_WR_PROTECT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ESC_WR_PROT_A {
     #[doc = "0: Protection disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Protection enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ESC_WR_PROT_A> for bool {
     #[inline(always)]
     fn from(variant: ESC_WR_PROT_A) -> Self {
-        match variant {
-            ESC_WR_PROT_A::VALUE1 => false,
-            ESC_WR_PROT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ESC_WR_PROT`"]

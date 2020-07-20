@@ -12,19 +12,17 @@ impl crate::ResetValue for super::ARBPR {
 }
 #[doc = "Priority of Request Source x\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRIO0_A {
     #[doc = "0: Lowest priority is selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Highest priority is selected."]
-    VALUE2,
+    VALUE2 = 3,
 }
 impl From<PRIO0_A> for u8 {
     #[inline(always)]
     fn from(variant: PRIO0_A) -> Self {
-        match variant {
-            PRIO0_A::VALUE1 => 0,
-            PRIO0_A::VALUE2 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRIO0`"]
@@ -80,19 +78,17 @@ impl<'a> PRIO0_W<'a> {
 }
 #[doc = "Priority of Request Source x\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRIO1_A {
     #[doc = "0: Lowest priority is selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Highest priority is selected."]
-    VALUE2,
+    VALUE2 = 3,
 }
 impl From<PRIO1_A> for u8 {
     #[inline(always)]
     fn from(variant: PRIO1_A) -> Self {
-        match variant {
-            PRIO1_A::VALUE1 => 0,
-            PRIO1_A::VALUE2 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRIO1`"]
@@ -148,19 +144,17 @@ impl<'a> PRIO1_W<'a> {
 }
 #[doc = "Priority of Request Source x\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRIO2_A {
     #[doc = "0: Lowest priority is selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Highest priority is selected."]
-    VALUE2,
+    VALUE2 = 3,
 }
 impl From<PRIO2_A> for u8 {
     #[inline(always)]
     fn from(variant: PRIO2_A) -> Self {
-        match variant {
-            PRIO2_A::VALUE1 => 0,
-            PRIO2_A::VALUE2 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRIO2`"]
@@ -218,17 +212,14 @@ impl<'a> PRIO2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSM0_A {
     #[doc = "0: Wait-for-start mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Cancel-inject-repeat mode, i.e. this source can cancel conversion of other sources."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CSM0_A> for bool {
     #[inline(always)]
     fn from(variant: CSM0_A) -> Self {
-        match variant {
-            CSM0_A::VALUE1 => false,
-            CSM0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CSM0`"]
@@ -296,17 +287,14 @@ impl<'a> CSM0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSM1_A {
     #[doc = "0: Wait-for-start mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Cancel-inject-repeat mode, i.e. this source can cancel conversion of other sources."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CSM1_A> for bool {
     #[inline(always)]
     fn from(variant: CSM1_A) -> Self {
-        match variant {
-            CSM1_A::VALUE1 => false,
-            CSM1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CSM1`"]
@@ -374,17 +362,14 @@ impl<'a> CSM1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSM2_A {
     #[doc = "0: Wait-for-start mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Cancel-inject-repeat mode, i.e. this source can cancel conversion of other sources."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CSM2_A> for bool {
     #[inline(always)]
     fn from(variant: CSM2_A) -> Self {
-        match variant {
-            CSM2_A::VALUE1 => false,
-            CSM2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CSM2`"]
@@ -452,17 +437,14 @@ impl<'a> CSM2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASEN0_A {
     #[doc = "0: The corresponding arbitration slot is disabled and considered as empty. Pending conversion requests from the associated request source are disregarded."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The corresponding arbitration slot is enabled. Pending conversion requests from the associated request source are arbitrated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASEN0_A> for bool {
     #[inline(always)]
     fn from(variant: ASEN0_A) -> Self {
-        match variant {
-            ASEN0_A::VALUE1 => false,
-            ASEN0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASEN0`"]
@@ -530,17 +512,14 @@ impl<'a> ASEN0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASEN1_A {
     #[doc = "0: The corresponding arbitration slot is disabled and considered as empty. Pending conversion requests from the associated request source are disregarded."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The corresponding arbitration slot is enabled. Pending conversion requests from the associated request source are arbitrated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASEN1_A> for bool {
     #[inline(always)]
     fn from(variant: ASEN1_A) -> Self {
-        match variant {
-            ASEN1_A::VALUE1 => false,
-            ASEN1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASEN1`"]
@@ -608,17 +587,14 @@ impl<'a> ASEN1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASEN2_A {
     #[doc = "0: The corresponding arbitration slot is disabled and considered as empty. Pending conversion requests from the associated request source are disregarded."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The corresponding arbitration slot is enabled. Pending conversion requests from the associated request source are arbitrated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASEN2_A> for bool {
     #[inline(always)]
     fn from(variant: ASEN2_A) -> Self {
-        match variant {
-            ASEN2_A::VALUE1 => false,
-            ASEN2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASEN2`"]

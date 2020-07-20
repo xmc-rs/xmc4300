@@ -26,7 +26,7 @@ pub struct RegisterBlock {
     #[doc = "0x2c - DAC1 Higher Pattern Register"]
     pub dac1path: DAC1PATH,
 }
-#[doc = "Module Identification Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [id](id) module"]
+#[doc = "Module Identification Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [id](id) module"]
 pub type ID = crate::Reg<u32, _ID>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -35,7 +35,7 @@ pub struct _ID;
 impl crate::Readable for ID {}
 #[doc = "Module Identification Register"]
 pub mod id;
-#[doc = "DAC0 Configuration Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dac0cfg0](dac0cfg0) module"]
+#[doc = "DAC0 Configuration Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac0cfg0](dac0cfg0) module"]
 pub type DAC0CFG0 = crate::Reg<u32, _DAC0CFG0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -46,7 +46,7 @@ impl crate::Readable for DAC0CFG0 {}
 impl crate::Writable for DAC0CFG0 {}
 #[doc = "DAC0 Configuration Register 0"]
 pub mod dac0cfg0;
-#[doc = "DAC0 Configuration Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dac0cfg1](dac0cfg1) module"]
+#[doc = "DAC0 Configuration Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac0cfg1](dac0cfg1) module"]
 pub type DAC0CFG1 = crate::Reg<u32, _DAC0CFG1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -57,7 +57,7 @@ impl crate::Readable for DAC0CFG1 {}
 impl crate::Writable for DAC0CFG1 {}
 #[doc = "DAC0 Configuration Register 1"]
 pub mod dac0cfg1;
-#[doc = "DAC1 Configuration Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dac1cfg0](dac1cfg0) module"]
+#[doc = "DAC1 Configuration Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac1cfg0](dac1cfg0) module"]
 pub type DAC1CFG0 = crate::Reg<u32, _DAC1CFG0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -68,7 +68,7 @@ impl crate::Readable for DAC1CFG0 {}
 impl crate::Writable for DAC1CFG0 {}
 #[doc = "DAC1 Configuration Register 0"]
 pub mod dac1cfg0;
-#[doc = "DAC1 Configuration Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dac1cfg1](dac1cfg1) module"]
+#[doc = "DAC1 Configuration Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac1cfg1](dac1cfg1) module"]
 pub type DAC1CFG1 = crate::Reg<u32, _DAC1CFG1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -79,7 +79,7 @@ impl crate::Readable for DAC1CFG1 {}
 impl crate::Writable for DAC1CFG1 {}
 #[doc = "DAC1 Configuration Register 1"]
 pub mod dac1cfg1;
-#[doc = "DAC0 Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dac0data](dac0data) module"]
+#[doc = "DAC0 Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac0data](dac0data) module"]
 pub type DAC0DATA = crate::Reg<u32, _DAC0DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -90,7 +90,7 @@ impl crate::Readable for DAC0DATA {}
 impl crate::Writable for DAC0DATA {}
 #[doc = "DAC0 Data Register"]
 pub mod dac0data;
-#[doc = "DAC1 Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dac1data](dac1data) module"]
+#[doc = "DAC1 Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac1data](dac1data) module"]
 pub type DAC1DATA = crate::Reg<u32, _DAC1DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -101,7 +101,7 @@ impl crate::Readable for DAC1DATA {}
 impl crate::Writable for DAC1DATA {}
 #[doc = "DAC1 Data Register"]
 pub mod dac1data;
-#[doc = "DAC01 Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dac01data](dac01data) module"]
+#[doc = "DAC01 Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac01data](dac01data) module"]
 pub type DAC01DATA = crate::Reg<u32, _DAC01DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -112,7 +112,7 @@ impl crate::Readable for DAC01DATA {}
 impl crate::Writable for DAC01DATA {}
 #[doc = "DAC01 Data Register"]
 pub mod dac01data;
-#[doc = "DAC0 Lower Pattern Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dac0patl](dac0patl) module"]
+#[doc = "DAC0 Lower Pattern Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac0patl](dac0patl) module"]
 pub type DAC0PATL = crate::Reg<u32, _DAC0PATL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -123,7 +123,7 @@ impl crate::Readable for DAC0PATL {}
 impl crate::Writable for DAC0PATL {}
 #[doc = "DAC0 Lower Pattern Register"]
 pub mod dac0patl;
-#[doc = "DAC0 Higher Pattern Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dac0path](dac0path) module"]
+#[doc = "DAC0 Higher Pattern Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac0path](dac0path) module"]
 pub type DAC0PATH = crate::Reg<u32, _DAC0PATH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -134,7 +134,7 @@ impl crate::Readable for DAC0PATH {}
 impl crate::Writable for DAC0PATH {}
 #[doc = "DAC0 Higher Pattern Register"]
 pub mod dac0path;
-#[doc = "DAC1 Lower Pattern Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dac1patl](dac1patl) module"]
+#[doc = "DAC1 Lower Pattern Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac1patl](dac1patl) module"]
 pub type DAC1PATL = crate::Reg<u32, _DAC1PATL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -145,7 +145,7 @@ impl crate::Readable for DAC1PATL {}
 impl crate::Writable for DAC1PATL {}
 #[doc = "DAC1 Lower Pattern Register"]
 pub mod dac1patl;
-#[doc = "DAC1 Higher Pattern Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dac1path](dac1path) module"]
+#[doc = "DAC1 Higher Pattern Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac1path](dac1path) module"]
 pub type DAC1PATH = crate::Reg<u32, _DAC1PATH>;
 #[allow(missing_docs)]
 #[doc(hidden)]

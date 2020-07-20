@@ -12,28 +12,23 @@ impl crate::ResetValue for super::CCR {
 }
 #[doc = "Operating Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: The USIC channel is disabled. All protocol-related state machines are set to an idle state."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The SSC (SPI) protocol is selected."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: The ASC (SCI, UART) protocol is selected."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: The IIS protocol is selected."]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: The IIC protocol is selected."]
-    VALUE5,
+    VALUE5 = 4,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::VALUE1 => 0,
-            MODE_A::VALUE2 => 1,
-            MODE_A::VALUE3 => 2,
-            MODE_A::VALUE4 => 3,
-            MODE_A::VALUE5 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -122,25 +117,22 @@ impl<'a> MODE_W<'a> {
 }
 #[doc = "Hardware Port Control Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HPCEN_A {
     #[doc = "0: The hardware port control is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The hardware port control is enabled for DX0 and DOUT0."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: The hardware port control is enabled for DX3, DX0 and DOUT\\[1:0\\]."]
-    VALUE3,
-    #[doc = "3: The hardware port control is enabled for DX0, DX\\[5:3\\] and DOUT\\[3:0\\]."]
-    VALUE4,
+    VALUE3 = 2,
+    #[doc = "3: The hardware port control is enabled for DX0, DX\\[5:3\\]
+and DOUT\\[3:0\\]."]
+    VALUE4 = 3,
 }
 impl From<HPCEN_A> for u8 {
     #[inline(always)]
     fn from(variant: HPCEN_A) -> Self {
-        match variant {
-            HPCEN_A::VALUE1 => 0,
-            HPCEN_A::VALUE2 => 1,
-            HPCEN_A::VALUE3 => 2,
-            HPCEN_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HPCEN`"]
@@ -205,7 +197,8 @@ impl<'a> HPCEN_W<'a> {
     pub fn value3(self) -> &'a mut W {
         self.variant(HPCEN_A::VALUE3)
     }
-    #[doc = "The hardware port control is enabled for DX0, DX\\[5:3\\] and DOUT\\[3:0\\]."]
+    #[doc = "The hardware port control is enabled for DX0, DX\\[5:3\\]
+and DOUT\\[3:0\\]."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut W {
         self.variant(HPCEN_A::VALUE4)
@@ -219,22 +212,19 @@ impl<'a> HPCEN_W<'a> {
 }
 #[doc = "Parity Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PM_A {
     #[doc = "0: The parity generation is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "2: Even parity is selected (parity bit = 1 on odd number of 1s in data, parity bit = 0 on even number of 1s in data)."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Odd parity is selected (parity bit = 0 on odd number of 1s in data, parity bit = 1 on even number of 1s in data)."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<PM_A> for u8 {
     #[inline(always)]
     fn from(variant: PM_A) -> Self {
-        match variant {
-            PM_A::VALUE1 => 0,
-            PM_A::VALUE3 => 2,
-            PM_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PM`"]
@@ -303,17 +293,14 @@ impl<'a> PM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSIEN_A {
     #[doc = "0: The receiver start interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The receiver start interrupt is enabled. In case of a receiver start event, the service request output SRx indicated by INPR.TBINP is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RSIEN_A> for bool {
     #[inline(always)]
     fn from(variant: RSIEN_A) -> Self {
-        match variant {
-            RSIEN_A::VALUE1 => false,
-            RSIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RSIEN`"]
@@ -381,17 +368,14 @@ impl<'a> RSIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DLIEN_A {
     #[doc = "0: The data lost interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The data lost interrupt is enabled. In case of a data lost event, the service request output SRx indicated by INPR.PINP is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DLIEN_A> for bool {
     #[inline(always)]
     fn from(variant: DLIEN_A) -> Self {
-        match variant {
-            DLIEN_A::VALUE1 => false,
-            DLIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DLIEN`"]
@@ -459,17 +443,14 @@ impl<'a> DLIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSIEN_A {
     #[doc = "0: The transmit shift interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The transmit shift interrupt is enabled. In case of a transmit shift interrupt event, the service request output SRx indicated by INPR.TSINP is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TSIEN_A> for bool {
     #[inline(always)]
     fn from(variant: TSIEN_A) -> Self {
-        match variant {
-            TSIEN_A::VALUE1 => false,
-            TSIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TSIEN`"]
@@ -537,17 +518,14 @@ impl<'a> TSIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TBIEN_A {
     #[doc = "0: The transmit buffer interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The transmit buffer interrupt is enabled. In case of a transmit buffer event, the service request output SRx indicated by INPR.TBINP is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TBIEN_A> for bool {
     #[inline(always)]
     fn from(variant: TBIEN_A) -> Self {
-        match variant {
-            TBIEN_A::VALUE1 => false,
-            TBIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TBIEN`"]
@@ -615,17 +593,14 @@ impl<'a> TBIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RIEN_A {
     #[doc = "0: The receive interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The receive interrupt is enabled. In case of a receive event, the service request output SRx indicated by INPR.RINP is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RIEN_A> for bool {
     #[inline(always)]
     fn from(variant: RIEN_A) -> Self {
-        match variant {
-            RIEN_A::VALUE1 => false,
-            RIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RIEN`"]
@@ -693,17 +668,14 @@ impl<'a> RIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AIEN_A {
     #[doc = "0: The alternative receive interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The alternative receive interrupt is enabled. In case of an alternative receive event, the service request output SRx indicated by INPR.AINP is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AIEN_A> for bool {
     #[inline(always)]
     fn from(variant: AIEN_A) -> Self {
-        match variant {
-            AIEN_A::VALUE1 => false,
-            AIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AIEN`"]
@@ -771,17 +743,14 @@ impl<'a> AIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BRGIEN_A {
     #[doc = "0: The baud rate generator interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The baud rate generator interrupt is enabled. In case of a baud rate generator event, the service request output SRx indicated by INPR.PINP is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BRGIEN_A> for bool {
     #[inline(always)]
     fn from(variant: BRGIEN_A) -> Self {
-        match variant {
-            BRGIEN_A::VALUE1 => false,
-            BRGIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BRGIEN`"]

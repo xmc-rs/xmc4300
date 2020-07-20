@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::CGATSTAT2>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDT_A {
     #[doc = "0: Gating de-asserted"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Gating asserted"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<WDT_A> for bool {
     #[inline(always)]
     fn from(variant: WDT_A) -> Self {
-        match variant {
-            WDT_A::CONST_0 => false,
-            WDT_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WDT`"]
@@ -43,17 +40,14 @@ impl WDT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ETH0_A {
     #[doc = "0: Gating de-asserted"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Gating asserted"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ETH0_A> for bool {
     #[inline(always)]
     fn from(variant: ETH0_A) -> Self {
-        match variant {
-            ETH0_A::CONST_0 => false,
-            ETH0_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ETH0`"]
@@ -82,17 +76,14 @@ impl ETH0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA0_A {
     #[doc = "0: Gating de-asserted"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Gating asserted"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<DMA0_A> for bool {
     #[inline(always)]
     fn from(variant: DMA0_A) -> Self {
-        match variant {
-            DMA0_A::CONST_0 => false,
-            DMA0_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DMA0`"]
@@ -121,17 +112,14 @@ impl DMA0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FCE_A {
     #[doc = "0: Gating de-asserted"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Gating asserted"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<FCE_A> for bool {
     #[inline(always)]
     fn from(variant: FCE_A) -> Self {
-        match variant {
-            FCE_A::CONST_0 => false,
-            FCE_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FCE`"]
@@ -160,17 +148,14 @@ impl FCE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USB_A {
     #[doc = "0: Gating de-asserted"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Gating asserted"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<USB_A> for bool {
     #[inline(always)]
     fn from(variant: USB_A) -> Self {
-        match variant {
-            USB_A::CONST_0 => false,
-            USB_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USB`"]
@@ -199,17 +184,14 @@ impl USB_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECAT0_A {
     #[doc = "0: Gating de-asserted"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Gating asserted"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ECAT0_A> for bool {
     #[inline(always)]
     fn from(variant: ECAT0_A) -> Self {
-        match variant {
-            ECAT0_A::CONST_0 => false,
-            ECAT0_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ECAT0`"]

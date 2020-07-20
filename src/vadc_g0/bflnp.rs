@@ -12,28 +12,23 @@ impl crate::ResetValue for super::BFLNP {
 }
 #[doc = "Boundary Flag y Node Pointer\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BFL0NP_A {
     #[doc = "0: Select common bondary flag output 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select common bondary flag output 3"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3"]
-    VALUE4,
+    VALUE4 = 7,
     #[doc = "15: Disabled, no common output signal"]
-    VALUE5,
+    VALUE5 = 15,
 }
 impl From<BFL0NP_A> for u8 {
     #[inline(always)]
     fn from(variant: BFL0NP_A) -> Self {
-        match variant {
-            BFL0NP_A::VALUE1 => 0,
-            BFL0NP_A::VALUE2 => 3,
-            BFL0NP_A::VALUE3 => 4,
-            BFL0NP_A::VALUE4 => 7,
-            BFL0NP_A::VALUE5 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BFL0NP`"]
@@ -122,28 +117,23 @@ impl<'a> BFL0NP_W<'a> {
 }
 #[doc = "Boundary Flag y Node Pointer\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BFL1NP_A {
     #[doc = "0: Select common bondary flag output 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select common bondary flag output 3"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3"]
-    VALUE4,
+    VALUE4 = 7,
     #[doc = "15: Disabled, no common output signal"]
-    VALUE5,
+    VALUE5 = 15,
 }
 impl From<BFL1NP_A> for u8 {
     #[inline(always)]
     fn from(variant: BFL1NP_A) -> Self {
-        match variant {
-            BFL1NP_A::VALUE1 => 0,
-            BFL1NP_A::VALUE2 => 3,
-            BFL1NP_A::VALUE3 => 4,
-            BFL1NP_A::VALUE4 => 7,
-            BFL1NP_A::VALUE5 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BFL1NP`"]
@@ -232,28 +222,23 @@ impl<'a> BFL1NP_W<'a> {
 }
 #[doc = "Boundary Flag y Node Pointer\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BFL2NP_A {
     #[doc = "0: Select common bondary flag output 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select common bondary flag output 3"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3"]
-    VALUE4,
+    VALUE4 = 7,
     #[doc = "15: Disabled, no common output signal"]
-    VALUE5,
+    VALUE5 = 15,
 }
 impl From<BFL2NP_A> for u8 {
     #[inline(always)]
     fn from(variant: BFL2NP_A) -> Self {
-        match variant {
-            BFL2NP_A::VALUE1 => 0,
-            BFL2NP_A::VALUE2 => 3,
-            BFL2NP_A::VALUE3 => 4,
-            BFL2NP_A::VALUE4 => 7,
-            BFL2NP_A::VALUE5 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BFL2NP`"]
@@ -342,28 +327,23 @@ impl<'a> BFL2NP_W<'a> {
 }
 #[doc = "Boundary Flag y Node Pointer\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BFL3NP_A {
     #[doc = "0: Select common bondary flag output 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select common bondary flag output 3"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3"]
-    VALUE4,
+    VALUE4 = 7,
     #[doc = "15: Disabled, no common output signal"]
-    VALUE5,
+    VALUE5 = 15,
 }
 impl From<BFL3NP_A> for u8 {
     #[inline(always)]
     fn from(variant: BFL3NP_A) -> Self {
-        match variant {
-            BFL3NP_A::VALUE1 => 0,
-            BFL3NP_A::VALUE2 => 3,
-            BFL3NP_A::VALUE3 => 4,
-            BFL3NP_A::VALUE4 => 7,
-            BFL3NP_A::VALUE5 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BFL3NP`"]

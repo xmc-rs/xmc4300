@@ -12,17 +12,14 @@ impl crate::ResetValue for super::PSCR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CST0_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CST0_AW> for bool {
     #[inline(always)]
     fn from(variant: CST0_AW) -> Self {
-        match variant {
-            CST0_AW::VALUE1 => false,
-            CST0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CST0`"]
@@ -68,17 +65,14 @@ impl<'a> CST0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CST1_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CST1_AW> for bool {
     #[inline(always)]
     fn from(variant: CST1_AW) -> Self {
-        match variant {
-            CST1_AW::VALUE1 => false,
-            CST1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CST1`"]
@@ -124,17 +118,14 @@ impl<'a> CST1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CST2_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CST2_AW> for bool {
     #[inline(always)]
     fn from(variant: CST2_AW) -> Self {
-        match variant {
-            CST2_AW::VALUE1 => false,
-            CST2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CST2`"]
@@ -180,17 +171,14 @@ impl<'a> CST2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CST3_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CST3_AW> for bool {
     #[inline(always)]
     fn from(variant: CST3_AW) -> Self {
-        match variant {
-            CST3_AW::VALUE1 => false,
-            CST3_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CST3`"]
@@ -236,17 +224,14 @@ impl<'a> CST3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CST4_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CST4_AW> for bool {
     #[inline(always)]
     fn from(variant: CST4_AW) -> Self {
-        match variant {
-            CST4_AW::VALUE1 => false,
-            CST4_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CST4`"]
@@ -292,17 +277,14 @@ impl<'a> CST4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CST5_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CST5_AW> for bool {
     #[inline(always)]
     fn from(variant: CST5_AW) -> Self {
-        match variant {
-            CST5_AW::VALUE1 => false,
-            CST5_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CST5`"]
@@ -348,17 +330,14 @@ impl<'a> CST5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CST6_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CST6_AW> for bool {
     #[inline(always)]
     fn from(variant: CST6_AW) -> Self {
-        match variant {
-            CST6_AW::VALUE1 => false,
-            CST6_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CST6`"]
@@ -404,17 +383,14 @@ impl<'a> CST6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CST7_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CST7_AW> for bool {
     #[inline(always)]
     fn from(variant: CST7_AW) -> Self {
-        match variant {
-            CST7_AW::VALUE1 => false,
-            CST7_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CST7`"]
@@ -460,17 +436,14 @@ impl<'a> CST7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CST8_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CST8_AW> for bool {
     #[inline(always)]
     fn from(variant: CST8_AW) -> Self {
-        match variant {
-            CST8_AW::VALUE1 => false,
-            CST8_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CST8`"]
@@ -516,17 +489,14 @@ impl<'a> CST8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CST9_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.STx is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CST9_AW> for bool {
     #[inline(always)]
     fn from(variant: CST9_AW) -> Self {
-        match variant {
-            CST9_AW::VALUE1 => false,
-            CST9_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CST9`"]
@@ -572,17 +542,14 @@ impl<'a> CST9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRSIF_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.RSIF is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CRSIF_AW> for bool {
     #[inline(always)]
     fn from(variant: CRSIF_AW) -> Self {
-        match variant {
-            CRSIF_AW::VALUE1 => false,
-            CRSIF_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CRSIF`"]
@@ -628,17 +595,14 @@ impl<'a> CRSIF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CDLIF_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.DLIF is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CDLIF_AW> for bool {
     #[inline(always)]
     fn from(variant: CDLIF_AW) -> Self {
-        match variant {
-            CDLIF_AW::VALUE1 => false,
-            CDLIF_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CDLIF`"]
@@ -684,17 +648,14 @@ impl<'a> CDLIF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTSIF_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.TSIF is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CTSIF_AW> for bool {
     #[inline(always)]
     fn from(variant: CTSIF_AW) -> Self {
-        match variant {
-            CTSIF_AW::VALUE1 => false,
-            CTSIF_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CTSIF`"]
@@ -740,17 +701,14 @@ impl<'a> CTSIF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTBIF_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.TBIF is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CTBIF_AW> for bool {
     #[inline(always)]
     fn from(variant: CTBIF_AW) -> Self {
-        match variant {
-            CTBIF_AW::VALUE1 => false,
-            CTBIF_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CTBIF`"]
@@ -796,17 +754,14 @@ impl<'a> CTBIF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRIF_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.RIF is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CRIF_AW> for bool {
     #[inline(always)]
     fn from(variant: CRIF_AW) -> Self {
-        match variant {
-            CRIF_AW::VALUE1 => false,
-            CRIF_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CRIF`"]
@@ -852,17 +807,14 @@ impl<'a> CRIF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CAIF_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.AIF is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CAIF_AW> for bool {
     #[inline(always)]
     fn from(variant: CAIF_AW) -> Self {
-        match variant {
-            CAIF_AW::VALUE1 => false,
-            CAIF_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CAIF`"]
@@ -908,17 +860,14 @@ impl<'a> CAIF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CBRGIF_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flag PSR.BRGIF is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CBRGIF_AW> for bool {
     #[inline(always)]
     fn from(variant: CBRGIF_AW) -> Self {
-        match variant {
-            CBRGIF_AW::VALUE1 => false,
-            CBRGIF_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CBRGIF`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::TRBSR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRBI_A {
     #[doc = "0: A standard receive buffer event has not been detected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A standard receive buffer event has been detected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SRBI_A> for bool {
     #[inline(always)]
     fn from(variant: SRBI_A) -> Self {
-        match variant {
-            SRBI_A::VALUE1 => false,
-            SRBI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRBI`"]
@@ -92,17 +89,14 @@ impl<'a> SRBI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RBERI_A {
     #[doc = "0: A receive buffer error event has not been detected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A receive buffer error event has been detected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RBERI_A> for bool {
     #[inline(always)]
     fn from(variant: RBERI_A) -> Self {
-        match variant {
-            RBERI_A::VALUE1 => false,
-            RBERI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RBERI`"]
@@ -170,17 +164,14 @@ impl<'a> RBERI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ARBI_A {
     #[doc = "0: An alternative receive buffer event has not been detected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: An alternative receive buffer event has been detected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ARBI_A> for bool {
     #[inline(always)]
     fn from(variant: ARBI_A) -> Self {
-        match variant {
-            ARBI_A::VALUE1 => false,
-            ARBI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ARBI`"]
@@ -248,17 +239,14 @@ impl<'a> ARBI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REMPTY_A {
     #[doc = "0: The receive buffer is not empty."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The receive buffer is empty."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REMPTY_A> for bool {
     #[inline(always)]
     fn from(variant: REMPTY_A) -> Self {
-        match variant {
-            REMPTY_A::VALUE1 => false,
-            REMPTY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REMPTY`"]
@@ -287,17 +275,14 @@ impl REMPTY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RFULL_A {
     #[doc = "0: The receive buffer is not full."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The receive buffer is full."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RFULL_A> for bool {
     #[inline(always)]
     fn from(variant: RFULL_A) -> Self {
-        match variant {
-            RFULL_A::VALUE1 => false,
-            RFULL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RFULL`"]
@@ -326,17 +311,14 @@ impl RFULL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RBUS_A {
     #[doc = "0: The receive buffer information has been completely updated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The OUTR update from the FIFO memory is ongoing. A read from OUTR will be delayed. FIFO pointers from the previous read are not yet updated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RBUS_A> for bool {
     #[inline(always)]
     fn from(variant: RBUS_A) -> Self {
-        match variant {
-            RBUS_A::VALUE1 => false,
-            RBUS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RBUS`"]
@@ -365,17 +347,14 @@ impl RBUS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRBT_A {
     #[doc = "0: A standard receive buffer event is not triggered using this bit."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A standard receive buffer event is triggered using this bit."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SRBT_A> for bool {
     #[inline(always)]
     fn from(variant: SRBT_A) -> Self {
-        match variant {
-            SRBT_A::VALUE1 => false,
-            SRBT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRBT`"]
@@ -404,17 +383,14 @@ impl SRBT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STBI_A {
     #[doc = "0: A standard transmit buffer event has not been detected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A standard transmit buffer event has been detected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STBI_A> for bool {
     #[inline(always)]
     fn from(variant: STBI_A) -> Self {
-        match variant {
-            STBI_A::VALUE1 => false,
-            STBI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STBI`"]
@@ -482,17 +458,14 @@ impl<'a> STBI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TBERI_A {
     #[doc = "0: A transmit buffer error event has not been detected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A transmit buffer error event has been detected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TBERI_A> for bool {
     #[inline(always)]
     fn from(variant: TBERI_A) -> Self {
-        match variant {
-            TBERI_A::VALUE1 => false,
-            TBERI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TBERI`"]
@@ -560,17 +533,14 @@ impl<'a> TBERI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TEMPTY_A {
     #[doc = "0: The transmit buffer is not empty."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The transmit buffer is empty."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TEMPTY_A> for bool {
     #[inline(always)]
     fn from(variant: TEMPTY_A) -> Self {
-        match variant {
-            TEMPTY_A::VALUE1 => false,
-            TEMPTY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TEMPTY`"]
@@ -599,17 +569,14 @@ impl TEMPTY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TFULL_A {
     #[doc = "0: The transmit buffer is not full."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The transmit buffer is full."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TFULL_A> for bool {
     #[inline(always)]
     fn from(variant: TFULL_A) -> Self {
-        match variant {
-            TFULL_A::VALUE1 => false,
-            TFULL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TFULL`"]
@@ -638,17 +605,14 @@ impl TFULL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TBUS_A {
     #[doc = "0: The transmit buffer information has been completely updated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The FIFO memory update after write to INx is ongoing. A write to INx will be delayed. FIFO pointers from the previous INx write are not yet updated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TBUS_A> for bool {
     #[inline(always)]
     fn from(variant: TBUS_A) -> Self {
-        match variant {
-            TBUS_A::VALUE1 => false,
-            TBUS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TBUS`"]
@@ -677,17 +641,14 @@ impl TBUS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STBT_A {
     #[doc = "0: A standard transmit buffer event is not triggered using this bit."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A standard transmit buffer event is triggered using this bit."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STBT_A> for bool {
     #[inline(always)]
     fn from(variant: STBT_A) -> Self {
-        match variant {
-            STBT_A::VALUE1 => false,
-            STBT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STBT`"]

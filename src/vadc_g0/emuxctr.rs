@@ -42,25 +42,21 @@ impl<'a> EMUXCH_W<'a> {
 }
 #[doc = "External Multiplexer Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EMUXMODE_A {
     #[doc = "0: Software control (no hardware action)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Steady mode (use EMUXSET value)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Single-step mode"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Sequence mode"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EMUXMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: EMUXMODE_A) -> Self {
-        match variant {
-            EMUXMODE_A::VALUE1 => 0,
-            EMUXMODE_A::VALUE2 => 1,
-            EMUXMODE_A::VALUE3 => 2,
-            EMUXMODE_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EMUXMODE`"]
@@ -141,17 +137,14 @@ impl<'a> EMUXMODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMXCOD_A {
     #[doc = "0: Output the channel number in binary code"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Output the channel number in Gray code"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EMXCOD_A> for bool {
     #[inline(always)]
     fn from(variant: EMXCOD_A) -> Self {
-        match variant {
-            EMXCOD_A::VALUE1 => false,
-            EMXCOD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EMXCOD`"]
@@ -219,17 +212,14 @@ impl<'a> EMXCOD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMXST_A {
     #[doc = "0: Use STCE whenever the setting changes"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Use STCE for each conversion of an external channel"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EMXST_A> for bool {
     #[inline(always)]
     fn from(variant: EMXST_A) -> Self {
-        match variant {
-            EMXST_A::VALUE1 => false,
-            EMXST_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EMXST`"]
@@ -297,17 +287,14 @@ impl<'a> EMXST_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMXCSS_A {
     #[doc = "0: Channel number: Bitfield EMUXCH selects an arbitrary channel"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Channel enable: Each bit of bitfield EMUXCH selects the associated channel for EMUX control"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EMXCSS_A> for bool {
     #[inline(always)]
     fn from(variant: EMXCSS_A) -> Self {
-        match variant {
-            EMXCSS_A::VALUE1 => false,
-            EMXCSS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EMXCSS`"]
@@ -336,17 +323,14 @@ impl EMXCSS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMXWC_AW {
     #[doc = "0: No write access to EMUX cfg."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bitfields EMXMODE, EMXCOD, EMXST, EMXCSS can be written"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EMXWC_AW> for bool {
     #[inline(always)]
     fn from(variant: EMXWC_AW) -> Self {
-        match variant {
-            EMXWC_AW::VALUE1 => false,
-            EMXWC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `EMXWC`"]

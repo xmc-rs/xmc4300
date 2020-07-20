@@ -10,22 +10,19 @@ impl crate::ResetValue for super::FMR {
 }
 #[doc = "Modify Transmit Data Valid\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MTDV_AW {
     #[doc = "0: No action."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bit TDV is set, TE is unchanged."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Bits TDV and TE are cleared."]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<MTDV_AW> for u8 {
     #[inline(always)]
     fn from(variant: MTDV_AW) -> Self {
-        match variant {
-            MTDV_AW::VALUE1 => 0,
-            MTDV_AW::VALUE2 => 1,
-            MTDV_AW::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Write proxy for field `MTDV`"]
@@ -64,17 +61,14 @@ impl<'a> MTDV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ATVC_AW {
     #[doc = "0: No action."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bit TCSR.TVC is set."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ATVC_AW> for bool {
     #[inline(always)]
     fn from(variant: ATVC_AW) -> Self {
-        match variant {
-            ATVC_AW::VALUE1 => false,
-            ATVC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ATVC`"]
@@ -120,17 +114,14 @@ impl<'a> ATVC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRDV0_AW {
     #[doc = "0: No action."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bits RBUF01SR.RDV00 and RBUF01SR.RDV10 are cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CRDV0_AW> for bool {
     #[inline(always)]
     fn from(variant: CRDV0_AW) -> Self {
-        match variant {
-            CRDV0_AW::VALUE1 => false,
-            CRDV0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CRDV0`"]
@@ -176,17 +167,14 @@ impl<'a> CRDV0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRDV1_AW {
     #[doc = "0: No action."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bits RBUF01SR.RDV01 and RBUF01SR.RDV11 are cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CRDV1_AW> for bool {
     #[inline(always)]
     fn from(variant: CRDV1_AW) -> Self {
-        match variant {
-            CRDV1_AW::VALUE1 => false,
-            CRDV1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CRDV1`"]
@@ -232,17 +220,14 @@ impl<'a> CRDV1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIO0_AW {
     #[doc = "0: No action."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The service request output SRx is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SIO0_AW> for bool {
     #[inline(always)]
     fn from(variant: SIO0_AW) -> Self {
-        match variant {
-            SIO0_AW::VALUE1 => false,
-            SIO0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SIO0`"]
@@ -288,17 +273,14 @@ impl<'a> SIO0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIO1_AW {
     #[doc = "0: No action."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The service request output SRx is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SIO1_AW> for bool {
     #[inline(always)]
     fn from(variant: SIO1_AW) -> Self {
-        match variant {
-            SIO1_AW::VALUE1 => false,
-            SIO1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SIO1`"]
@@ -344,17 +326,14 @@ impl<'a> SIO1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIO2_AW {
     #[doc = "0: No action."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The service request output SRx is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SIO2_AW> for bool {
     #[inline(always)]
     fn from(variant: SIO2_AW) -> Self {
-        match variant {
-            SIO2_AW::VALUE1 => false,
-            SIO2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SIO2`"]
@@ -400,17 +379,14 @@ impl<'a> SIO2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIO3_AW {
     #[doc = "0: No action."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The service request output SRx is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SIO3_AW> for bool {
     #[inline(always)]
     fn from(variant: SIO3_AW) -> Self {
-        match variant {
-            SIO3_AW::VALUE1 => false,
-            SIO3_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SIO3`"]
@@ -456,17 +432,14 @@ impl<'a> SIO3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIO4_AW {
     #[doc = "0: No action."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The service request output SRx is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SIO4_AW> for bool {
     #[inline(always)]
     fn from(variant: SIO4_AW) -> Self {
-        match variant {
-            SIO4_AW::VALUE1 => false,
-            SIO4_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SIO4`"]
@@ -512,17 +485,14 @@ impl<'a> SIO4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIO5_AW {
     #[doc = "0: No action."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The service request output SRx is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SIO5_AW> for bool {
     #[inline(always)]
     fn from(variant: SIO5_AW) -> Self {
-        match variant {
-            SIO5_AW::VALUE1 => false,
-            SIO5_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SIO5`"]

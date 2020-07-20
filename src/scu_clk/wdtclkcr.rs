@@ -26,22 +26,19 @@ impl<'a> WDTDIV_W<'a> {
 }
 #[doc = "WDT Clock Selection Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WDTSEL_A {
     #[doc = "0: fOFI clock"]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: fSTDBY clock"]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: fPLL clock"]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<WDTSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: WDTSEL_A) -> Self {
-        match variant {
-            WDTSEL_A::CONST_00 => 0,
-            WDTSEL_A::CONST_01 => 1,
-            WDTSEL_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WDTSEL`"]

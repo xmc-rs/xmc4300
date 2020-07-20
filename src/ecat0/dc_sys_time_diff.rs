@@ -6,17 +6,14 @@ pub type TIME_DIF_R = crate::R<u32, u32>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPY_A {
     #[doc = "0: Greater than or equal received System Time"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Smaller than received System Time"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CPY_A> for bool {
     #[inline(always)]
     fn from(variant: CPY_A) -> Self {
-        match variant {
-            CPY_A::VALUE1 => false,
-            CPY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPY`"]

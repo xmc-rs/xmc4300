@@ -14,17 +14,14 @@ impl crate::ResetValue for super::STS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WERR_A {
     #[doc = "0: no write error occurred."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: write error occurred, interrupt request is pending."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WERR_A> for bool {
     #[inline(always)]
     fn from(variant: WERR_A) -> Self {
-        match variant {
-            WERR_A::VALUE1 => false,
-            WERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WERR`"]

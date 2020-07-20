@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PDISC {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS0_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS0_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS0_A) -> Self {
-        match variant {
-            PDIS0_A::CONST_0 => false,
-            PDIS0_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS0`"]
@@ -92,17 +89,14 @@ impl<'a> PDIS0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS1_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS1_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS1_A) -> Self {
-        match variant {
-            PDIS1_A::CONST_0 => false,
-            PDIS1_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS1`"]
@@ -170,17 +164,14 @@ impl<'a> PDIS1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS2_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS2_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS2_A) -> Self {
-        match variant {
-            PDIS2_A::CONST_0 => false,
-            PDIS2_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS2`"]
@@ -248,17 +239,14 @@ impl<'a> PDIS2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS3_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS3_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS3_A) -> Self {
-        match variant {
-            PDIS3_A::CONST_0 => false,
-            PDIS3_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS3`"]
@@ -326,17 +314,14 @@ impl<'a> PDIS3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS4_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS4_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS4_A) -> Self {
-        match variant {
-            PDIS4_A::CONST_0 => false,
-            PDIS4_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS4`"]
@@ -404,17 +389,14 @@ impl<'a> PDIS4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS5_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS5_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS5_A) -> Self {
-        match variant {
-            PDIS5_A::CONST_0 => false,
-            PDIS5_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS5`"]
@@ -482,17 +464,14 @@ impl<'a> PDIS5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS6_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS6_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS6_A) -> Self {
-        match variant {
-            PDIS6_A::CONST_0 => false,
-            PDIS6_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS6`"]
@@ -560,17 +539,14 @@ impl<'a> PDIS6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS7_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS7_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS7_A) -> Self {
-        match variant {
-            PDIS7_A::CONST_0 => false,
-            PDIS7_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS7`"]
@@ -638,17 +614,14 @@ impl<'a> PDIS7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS8_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS8_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS8_A) -> Self {
-        match variant {
-            PDIS8_A::CONST_0 => false,
-            PDIS8_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS8`"]
@@ -716,17 +689,14 @@ impl<'a> PDIS8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS9_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS9_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS9_A) -> Self {
-        match variant {
-            PDIS9_A::CONST_0 => false,
-            PDIS9_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS9`"]
@@ -794,17 +764,14 @@ impl<'a> PDIS9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS10_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS10_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS10_A) -> Self {
-        match variant {
-            PDIS10_A::CONST_0 => false,
-            PDIS10_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS10`"]
@@ -872,17 +839,14 @@ impl<'a> PDIS10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS11_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS11_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS11_A) -> Self {
-        match variant {
-            PDIS11_A::CONST_0 => false,
-            PDIS11_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS11`"]
@@ -950,17 +914,14 @@ impl<'a> PDIS11_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS12_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS12_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS12_A) -> Self {
-        match variant {
-            PDIS12_A::CONST_0 => false,
-            PDIS12_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS12`"]
@@ -1028,17 +989,14 @@ impl<'a> PDIS12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS13_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS13_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS13_A) -> Self {
-        match variant {
-            PDIS13_A::CONST_0 => false,
-            PDIS13_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS13`"]
@@ -1106,17 +1064,14 @@ impl<'a> PDIS13_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS14_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS14_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS14_A) -> Self {
-        match variant {
-            PDIS14_A::CONST_0 => false,
-            PDIS14_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS14`"]
@@ -1184,17 +1139,14 @@ impl<'a> PDIS14_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS15_A {
     #[doc = "0: Digital Pad input is enabled. Analog and digital input path active."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Digital Pad input is disabled. Analog input path active. (default)"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PDIS15_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS15_A) -> Self {
-        match variant {
-            PDIS15_A::CONST_0 => false,
-            PDIS15_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS15`"]

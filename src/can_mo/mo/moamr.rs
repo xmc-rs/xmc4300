@@ -28,17 +28,14 @@ impl<'a> AM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIDE_A {
     #[doc = "0: Message object n accepts the reception of both, standard and extended frames."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Message object n receives frames only with matching IDE bit."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIDE_A> for bool {
     #[inline(always)]
     fn from(variant: MIDE_A) -> Self {
-        match variant {
-            MIDE_A::VALUE1 => false,
-            MIDE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIDE`"]

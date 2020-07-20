@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CHC {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASE_A {
     #[doc = "0: Asymmetric PWM is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Asymmetric PWM is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASE_A> for bool {
     #[inline(always)]
     fn from(variant: ASE_A) -> Self {
-        match variant {
-            ASE_A::VALUE1 => false,
-            ASE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASE`"]
@@ -92,17 +89,14 @@ impl<'a> ASE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OCS1_A {
     #[doc = "0: CC8yST1 signal path is connected to the CCU8x.OUTy0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Inverted CC8yST1 signal path is connected to the CCU8x.OUTy0"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<OCS1_A> for bool {
     #[inline(always)]
     fn from(variant: OCS1_A) -> Self {
-        match variant {
-            OCS1_A::VALUE1 => false,
-            OCS1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OCS1`"]
@@ -170,17 +164,14 @@ impl<'a> OCS1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OCS2_A {
     #[doc = "0: Inverted CC8yST1 signal path is connected to the CCU8x.OUTy1"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CC8yST1 signal path is connected to the CCU8x.OUTy1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<OCS2_A> for bool {
     #[inline(always)]
     fn from(variant: OCS2_A) -> Self {
-        match variant {
-            OCS2_A::VALUE1 => false,
-            OCS2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OCS2`"]
@@ -248,17 +239,14 @@ impl<'a> OCS2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OCS3_A {
     #[doc = "0: CC8yST2 signal path is connected to the CCU8x.OUTy2"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Inverted CCST2 signal path is connected to the CCU8x.OUTy2"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<OCS3_A> for bool {
     #[inline(always)]
     fn from(variant: OCS3_A) -> Self {
-        match variant {
-            OCS3_A::VALUE1 => false,
-            OCS3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OCS3`"]
@@ -326,17 +314,14 @@ impl<'a> OCS3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OCS4_A {
     #[doc = "0: Inverted CC8yST2 signal path is connected to the CCU8x.OUTy3"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CC8yST2 signal path is connected to the CCU8x.OUTy3"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<OCS4_A> for bool {
     #[inline(always)]
     fn from(variant: OCS4_A) -> Self {
-        match variant {
-            OCS4_A::VALUE1 => false,
-            OCS4_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OCS4`"]

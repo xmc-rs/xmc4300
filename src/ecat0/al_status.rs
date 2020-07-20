@@ -12,28 +12,23 @@ impl crate::ResetValue for super::AL_STATUS {
 }
 #[doc = "Actual State of the Device State Machine\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STATE_A {
     #[doc = "1: Init State"]
-    VALUE1,
+    VALUE1 = 1,
     #[doc = "2: Pre-Operational State"]
-    VALUE2,
+    VALUE2 = 2,
     #[doc = "3: Bootstrap State"]
-    VALUE3,
+    VALUE3 = 3,
     #[doc = "4: Safe-Operational State"]
-    VALUE4,
+    VALUE4 = 4,
     #[doc = "8: Operational State"]
-    VALUE5,
+    VALUE5 = 8,
 }
 impl From<STATE_A> for u8 {
     #[inline(always)]
     fn from(variant: STATE_A) -> Self {
-        match variant {
-            STATE_A::VALUE1 => 1,
-            STATE_A::VALUE2 => 2,
-            STATE_A::VALUE3 => 3,
-            STATE_A::VALUE4 => 4,
-            STATE_A::VALUE5 => 8,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STATE`"]
@@ -124,17 +119,14 @@ impl<'a> STATE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRI_A {
     #[doc = "0: Device is in State as requested or Flag cleared by command"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Device has not entered requested State or changed State as result of a local action"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ERRI_A> for bool {
     #[inline(always)]
     fn from(variant: ERRI_A) -> Self {
-        match variant {
-            ERRI_A::VALUE1 => false,
-            ERRI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERRI`"]
@@ -202,17 +194,14 @@ impl<'a> ERRI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DID_A {
     #[doc = "0: Device Identification not valid"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Device Identification loaded"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DID_A> for bool {
     #[inline(always)]
     fn from(variant: DID_A) -> Self {
-        match variant {
-            DID_A::VALUE1 => false,
-            DID_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DID`"]

@@ -12,17 +12,14 @@ impl crate::ResetValue for super::SEFCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEV0_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the source event flag in GxSEFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SEV0_AW> for bool {
     #[inline(always)]
     fn from(variant: SEV0_AW) -> Self {
-        match variant {
-            SEV0_AW::VALUE1 => false,
-            SEV0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SEV0`"]
@@ -68,17 +65,14 @@ impl<'a> SEV0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEV1_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the source event flag in GxSEFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SEV1_AW> for bool {
     #[inline(always)]
     fn from(variant: SEV1_AW) -> Self {
-        match variant {
-            SEV1_AW::VALUE1 => false,
-            SEV1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SEV1`"]

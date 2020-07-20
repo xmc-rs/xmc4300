@@ -4,17 +4,14 @@ pub type R = crate::R<u16, super::WD_STAT_PDATA>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WD_STAT_PD_A {
     #[doc = "0: Watchdog Process Data expired"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Watchdog Process Data is active or disabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WD_STAT_PD_A> for bool {
     #[inline(always)]
     fn from(variant: WD_STAT_PD_A) -> Self {
-        match variant {
-            WD_STAT_PD_A::VALUE1 => false,
-            WD_STAT_PD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WD_STAT_PD`"]

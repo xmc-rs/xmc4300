@@ -11,13 +11,13 @@ documentation = "https://docs.rs/xmc4300/"
 categories = ["embedded", "no-std"]
 
 [dependencies]
-cortex-m = "0.6.1"
+cortex-m = "0.6.3"
 bare-metal = "0.2.5"
 vcell = "0.1.2"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "0.6.10"
+version = "0.6.12"
 
 [features]
 rt = ["cortex-m-rt/device"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::OSCSICTRL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWD_A {
     #[doc = "0: Enabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Disabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PWD_A> for bool {
     #[inline(always)]
     fn from(variant: PWD_A) -> Self {
-        match variant {
-            PWD_A::CONST_0 => false,
-            PWD_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PWD`"]

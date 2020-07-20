@@ -4,17 +4,14 @@ pub type R = crate::R<u16, super::ESC_DL_STATUS>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDI_EEPROM_A {
     #[doc = "0: EEPROM not loaded, PDI not operational (no access to Process Data RAM)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: EEPROM loaded correctly, PDI operational (access to Process Data RAM)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDI_EEPROM_A> for bool {
     #[inline(always)]
     fn from(variant: PDI_EEPROM_A) -> Self {
-        match variant {
-            PDI_EEPROM_A::VALUE1 => false,
-            PDI_EEPROM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDI_EEPROM`"]
@@ -43,17 +40,14 @@ impl PDI_EEPROM_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDI_WDT_S_A {
     #[doc = "0: Watchdog expired"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Watchdog reloaded"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDI_WDT_S_A> for bool {
     #[inline(always)]
     fn from(variant: PDI_WDT_S_A) -> Self {
-        match variant {
-            PDI_WDT_S_A::VALUE1 => false,
-            PDI_WDT_S_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDI_WDT_S`"]
@@ -82,17 +76,14 @@ impl PDI_WDT_S_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ELD_A {
     #[doc = "0: Deactivated for all ports"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Activated for at least one port"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ELD_A> for bool {
     #[inline(always)]
     fn from(variant: ELD_A) -> Self {
-        match variant {
-            ELD_A::VALUE1 => false,
-            ELD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ELD`"]
@@ -121,17 +112,14 @@ impl ELD_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LINK_P0_A {
     #[doc = "0: No link"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Link detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LINK_P0_A> for bool {
     #[inline(always)]
     fn from(variant: LINK_P0_A) -> Self {
-        match variant {
-            LINK_P0_A::VALUE1 => false,
-            LINK_P0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LINK_P0`"]
@@ -160,17 +148,14 @@ impl LINK_P0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LINK_P1_A {
     #[doc = "0: No link"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Link detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LINK_P1_A> for bool {
     #[inline(always)]
     fn from(variant: LINK_P1_A) -> Self {
-        match variant {
-            LINK_P1_A::VALUE1 => false,
-            LINK_P1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LINK_P1`"]
@@ -199,17 +184,14 @@ impl LINK_P1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LINK_P2_A {
     #[doc = "0: No link"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Link detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LINK_P2_A> for bool {
     #[inline(always)]
     fn from(variant: LINK_P2_A) -> Self {
-        match variant {
-            LINK_P2_A::VALUE1 => false,
-            LINK_P2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LINK_P2`"]
@@ -238,17 +220,14 @@ impl LINK_P2_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LINK_P3_A {
     #[doc = "0: No link"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Link detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LINK_P3_A> for bool {
     #[inline(always)]
     fn from(variant: LINK_P3_A) -> Self {
-        match variant {
-            LINK_P3_A::VALUE1 => false,
-            LINK_P3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LINK_P3`"]
@@ -277,17 +256,14 @@ impl LINK_P3_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LP0_A {
     #[doc = "0: Open"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Closed"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LP0_A> for bool {
     #[inline(always)]
     fn from(variant: LP0_A) -> Self {
-        match variant {
-            LP0_A::VALUE1 => false,
-            LP0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LP0`"]
@@ -316,17 +292,14 @@ impl LP0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COM_P0_A {
     #[doc = "0: No stable communication"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Communication established"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<COM_P0_A> for bool {
     #[inline(always)]
     fn from(variant: COM_P0_A) -> Self {
-        match variant {
-            COM_P0_A::VALUE1 => false,
-            COM_P0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COM_P0`"]
@@ -355,17 +328,14 @@ impl COM_P0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LP1_A {
     #[doc = "0: Open"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Closed"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LP1_A> for bool {
     #[inline(always)]
     fn from(variant: LP1_A) -> Self {
-        match variant {
-            LP1_A::VALUE1 => false,
-            LP1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LP1`"]
@@ -394,17 +364,14 @@ impl LP1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COM_P1_A {
     #[doc = "0: No stable communication"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Communication established"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<COM_P1_A> for bool {
     #[inline(always)]
     fn from(variant: COM_P1_A) -> Self {
-        match variant {
-            COM_P1_A::VALUE1 => false,
-            COM_P1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COM_P1`"]
@@ -433,17 +400,14 @@ impl COM_P1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LP2_A {
     #[doc = "0: Open"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Closed"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LP2_A> for bool {
     #[inline(always)]
     fn from(variant: LP2_A) -> Self {
-        match variant {
-            LP2_A::VALUE1 => false,
-            LP2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LP2`"]
@@ -472,17 +436,14 @@ impl LP2_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COM_P2_A {
     #[doc = "0: No stable communication"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Communication established"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<COM_P2_A> for bool {
     #[inline(always)]
     fn from(variant: COM_P2_A) -> Self {
-        match variant {
-            COM_P2_A::VALUE1 => false,
-            COM_P2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COM_P2`"]
@@ -511,17 +472,14 @@ impl COM_P2_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LP3_A {
     #[doc = "0: Open"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Closed"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LP3_A> for bool {
     #[inline(always)]
     fn from(variant: LP3_A) -> Self {
-        match variant {
-            LP3_A::VALUE1 => false,
-            LP3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LP3`"]
@@ -550,17 +508,14 @@ impl LP3_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COM_P3_A {
     #[doc = "0: No stable communication"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Communication established"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<COM_P3_A> for bool {
     #[inline(always)]
     fn from(variant: COM_P3_A) -> Self {
-        match variant {
-            COM_P3_A::VALUE1 => false,
-            COM_P3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COM_P3`"]

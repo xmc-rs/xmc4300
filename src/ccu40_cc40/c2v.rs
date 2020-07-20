@@ -8,17 +8,14 @@ pub type FPCV_R = crate::R<u8, u8>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FFL_A {
     #[doc = "0: No new value was captured into the specific capture register"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A new value was captured into the specific register"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FFL_A> for bool {
     #[inline(always)]
     fn from(variant: FFL_A) -> Self {
-        match variant {
-            FFL_A::VALUE1 => false,
-            FFL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FFL`"]

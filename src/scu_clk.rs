@@ -50,7 +50,7 @@ pub struct RegisterBlock {
     #[doc = "0x60 - Peripheral 2 Clock Gating Clear"]
     pub cgatclr2: CGATCLR2,
 }
-#[doc = "Clock Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clkstat](clkstat) module"]
+#[doc = "Clock Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clkstat](clkstat) module"]
 pub type CLKSTAT = crate::Reg<u32, _CLKSTAT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -59,7 +59,7 @@ pub struct _CLKSTAT;
 impl crate::Readable for CLKSTAT {}
 #[doc = "Clock Status Register"]
 pub mod clkstat;
-#[doc = "CLK Set Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clkset](clkset) module"]
+#[doc = "CLK Set Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clkset](clkset) module"]
 pub type CLKSET = crate::Reg<u32, _CLKSET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -68,7 +68,7 @@ pub struct _CLKSET;
 impl crate::Writable for CLKSET {}
 #[doc = "CLK Set Register"]
 pub mod clkset;
-#[doc = "CLK Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clkclr](clkclr) module"]
+#[doc = "CLK Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clkclr](clkclr) module"]
 pub type CLKCLR = crate::Reg<u32, _CLKCLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -77,7 +77,7 @@ pub struct _CLKCLR;
 impl crate::Writable for CLKCLR {}
 #[doc = "CLK Clear Register"]
 pub mod clkclr;
-#[doc = "System Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sysclkcr](sysclkcr) module"]
+#[doc = "System Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sysclkcr](sysclkcr) module"]
 pub type SYSCLKCR = crate::Reg<u32, _SYSCLKCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -88,7 +88,7 @@ impl crate::Readable for SYSCLKCR {}
 impl crate::Writable for SYSCLKCR {}
 #[doc = "System Clock Control Register"]
 pub mod sysclkcr;
-#[doc = "CPU Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cpuclkcr](cpuclkcr) module"]
+#[doc = "CPU Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpuclkcr](cpuclkcr) module"]
 pub type CPUCLKCR = crate::Reg<u32, _CPUCLKCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -99,7 +99,7 @@ impl crate::Readable for CPUCLKCR {}
 impl crate::Writable for CPUCLKCR {}
 #[doc = "CPU Clock Control Register"]
 pub mod cpuclkcr;
-#[doc = "Peripheral Bus Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pbclkcr](pbclkcr) module"]
+#[doc = "Peripheral Bus Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbclkcr](pbclkcr) module"]
 pub type PBCLKCR = crate::Reg<u32, _PBCLKCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -110,7 +110,7 @@ impl crate::Readable for PBCLKCR {}
 impl crate::Writable for PBCLKCR {}
 #[doc = "Peripheral Bus Clock Control Register"]
 pub mod pbclkcr;
-#[doc = "USB Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usbclkcr](usbclkcr) module"]
+#[doc = "USB Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usbclkcr](usbclkcr) module"]
 pub type USBCLKCR = crate::Reg<u32, _USBCLKCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -121,7 +121,7 @@ impl crate::Readable for USBCLKCR {}
 impl crate::Writable for USBCLKCR {}
 #[doc = "USB Clock Control Register"]
 pub mod usbclkcr;
-#[doc = "CCU Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ccuclkcr](ccuclkcr) module"]
+#[doc = "CCU Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ccuclkcr](ccuclkcr) module"]
 pub type CCUCLKCR = crate::Reg<u32, _CCUCLKCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -132,7 +132,7 @@ impl crate::Readable for CCUCLKCR {}
 impl crate::Writable for CCUCLKCR {}
 #[doc = "CCU Clock Control Register"]
 pub mod ccuclkcr;
-#[doc = "WDT Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [wdtclkcr](wdtclkcr) module"]
+#[doc = "WDT Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdtclkcr](wdtclkcr) module"]
 pub type WDTCLKCR = crate::Reg<u32, _WDTCLKCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -143,7 +143,7 @@ impl crate::Readable for WDTCLKCR {}
 impl crate::Writable for WDTCLKCR {}
 #[doc = "WDT Clock Control Register"]
 pub mod wdtclkcr;
-#[doc = "External Clock Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [extclkcr](extclkcr) module"]
+#[doc = "External Clock Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [extclkcr](extclkcr) module"]
 pub type EXTCLKCR = crate::Reg<u32, _EXTCLKCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -154,7 +154,7 @@ impl crate::Readable for EXTCLKCR {}
 impl crate::Writable for EXTCLKCR {}
 #[doc = "External Clock Control"]
 pub mod extclkcr;
-#[doc = "Multi-Link Clock Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [mlinkclkcr](mlinkclkcr) module"]
+#[doc = "Multi-Link Clock Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mlinkclkcr](mlinkclkcr) module"]
 pub type MLINKCLKCR = crate::Reg<u32, _MLINKCLKCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -165,7 +165,7 @@ impl crate::Readable for MLINKCLKCR {}
 impl crate::Writable for MLINKCLKCR {}
 #[doc = "Multi-Link Clock Control"]
 pub mod mlinkclkcr;
-#[doc = "Sleep Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sleepcr](sleepcr) module"]
+#[doc = "Sleep Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sleepcr](sleepcr) module"]
 pub type SLEEPCR = crate::Reg<u32, _SLEEPCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -176,7 +176,7 @@ impl crate::Readable for SLEEPCR {}
 impl crate::Writable for SLEEPCR {}
 #[doc = "Sleep Control Register"]
 pub mod sleepcr;
-#[doc = "Deep Sleep Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dsleepcr](dsleepcr) module"]
+#[doc = "Deep Sleep Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dsleepcr](dsleepcr) module"]
 pub type DSLEEPCR = crate::Reg<u32, _DSLEEPCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -187,7 +187,7 @@ impl crate::Readable for DSLEEPCR {}
 impl crate::Writable for DSLEEPCR {}
 #[doc = "Deep Sleep Control Register"]
 pub mod dsleepcr;
-#[doc = "EtherCAT Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ecatclkcr](ecatclkcr) module"]
+#[doc = "EtherCAT Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ecatclkcr](ecatclkcr) module"]
 pub type ECATCLKCR = crate::Reg<u32, _ECATCLKCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -198,7 +198,7 @@ impl crate::Readable for ECATCLKCR {}
 impl crate::Writable for ECATCLKCR {}
 #[doc = "EtherCAT Clock Control Register"]
 pub mod ecatclkcr;
-#[doc = "Peripheral 0 Clock Gating Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cgatstat0](cgatstat0) module"]
+#[doc = "Peripheral 0 Clock Gating Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatstat0](cgatstat0) module"]
 pub type CGATSTAT0 = crate::Reg<u32, _CGATSTAT0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -207,7 +207,7 @@ pub struct _CGATSTAT0;
 impl crate::Readable for CGATSTAT0 {}
 #[doc = "Peripheral 0 Clock Gating Status"]
 pub mod cgatstat0;
-#[doc = "Peripheral 0 Clock Gating Set\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cgatset0](cgatset0) module"]
+#[doc = "Peripheral 0 Clock Gating Set\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatset0](cgatset0) module"]
 pub type CGATSET0 = crate::Reg<u32, _CGATSET0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -216,7 +216,7 @@ pub struct _CGATSET0;
 impl crate::Writable for CGATSET0 {}
 #[doc = "Peripheral 0 Clock Gating Set"]
 pub mod cgatset0;
-#[doc = "Peripheral 0 Clock Gating Clear\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cgatclr0](cgatclr0) module"]
+#[doc = "Peripheral 0 Clock Gating Clear\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatclr0](cgatclr0) module"]
 pub type CGATCLR0 = crate::Reg<u32, _CGATCLR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -225,7 +225,7 @@ pub struct _CGATCLR0;
 impl crate::Writable for CGATCLR0 {}
 #[doc = "Peripheral 0 Clock Gating Clear"]
 pub mod cgatclr0;
-#[doc = "Peripheral 1 Clock Gating Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cgatstat1](cgatstat1) module"]
+#[doc = "Peripheral 1 Clock Gating Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatstat1](cgatstat1) module"]
 pub type CGATSTAT1 = crate::Reg<u32, _CGATSTAT1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -234,7 +234,7 @@ pub struct _CGATSTAT1;
 impl crate::Readable for CGATSTAT1 {}
 #[doc = "Peripheral 1 Clock Gating Status"]
 pub mod cgatstat1;
-#[doc = "Peripheral 1 Clock Gating Set\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cgatset1](cgatset1) module"]
+#[doc = "Peripheral 1 Clock Gating Set\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatset1](cgatset1) module"]
 pub type CGATSET1 = crate::Reg<u32, _CGATSET1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -243,7 +243,7 @@ pub struct _CGATSET1;
 impl crate::Writable for CGATSET1 {}
 #[doc = "Peripheral 1 Clock Gating Set"]
 pub mod cgatset1;
-#[doc = "Peripheral 1 Clock Gating Clear\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cgatclr1](cgatclr1) module"]
+#[doc = "Peripheral 1 Clock Gating Clear\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatclr1](cgatclr1) module"]
 pub type CGATCLR1 = crate::Reg<u32, _CGATCLR1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -252,7 +252,7 @@ pub struct _CGATCLR1;
 impl crate::Writable for CGATCLR1 {}
 #[doc = "Peripheral 1 Clock Gating Clear"]
 pub mod cgatclr1;
-#[doc = "Peripheral 2 Clock Gating Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cgatstat2](cgatstat2) module"]
+#[doc = "Peripheral 2 Clock Gating Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatstat2](cgatstat2) module"]
 pub type CGATSTAT2 = crate::Reg<u32, _CGATSTAT2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -261,7 +261,7 @@ pub struct _CGATSTAT2;
 impl crate::Readable for CGATSTAT2 {}
 #[doc = "Peripheral 2 Clock Gating Status"]
 pub mod cgatstat2;
-#[doc = "Peripheral 2 Clock Gating Set\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cgatset2](cgatset2) module"]
+#[doc = "Peripheral 2 Clock Gating Set\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatset2](cgatset2) module"]
 pub type CGATSET2 = crate::Reg<u32, _CGATSET2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -270,7 +270,7 @@ pub struct _CGATSET2;
 impl crate::Writable for CGATSET2 {}
 #[doc = "Peripheral 2 Clock Gating Set"]
 pub mod cgatset2;
-#[doc = "Peripheral 2 Clock Gating Clear\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cgatclr2](cgatclr2) module"]
+#[doc = "Peripheral 2 Clock Gating Clear\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatclr2](cgatclr2) module"]
 pub type CGATCLR2 = crate::Reg<u32, _CGATCLR2>;
 #[allow(missing_docs)]
 #[doc(hidden)]

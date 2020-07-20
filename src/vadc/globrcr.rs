@@ -12,16 +12,15 @@ impl crate::ResetValue for super::GLOBRCR {
 }
 #[doc = "Data Reduction Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DRCTR_A {
     #[doc = "0: Data reduction disabled"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<DRCTR_A> for u8 {
     #[inline(always)]
     fn from(variant: DRCTR_A) -> Self {
-        match variant {
-            DRCTR_A::VALUE1 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DRCTR`"]
@@ -68,17 +67,14 @@ impl<'a> DRCTR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WFR_A {
     #[doc = "0: Overwrite mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Wait-for-read mode enabled for this register"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WFR_A> for bool {
     #[inline(always)]
     fn from(variant: WFR_A) -> Self {
-        match variant {
-            WFR_A::VALUE1 => false,
-            WFR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WFR`"]
@@ -146,17 +142,14 @@ impl<'a> WFR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRGEN_A {
     #[doc = "0: No service request"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Service request after a result event"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SRGEN_A> for bool {
     #[inline(always)]
     fn from(variant: SRGEN_A) -> Self {
-        match variant {
-            SRGEN_A::VALUE1 => false,
-            SRGEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRGEN`"]

@@ -17,7 +17,7 @@ pub struct RegisterBlock {
     #[doc = "0x1c - OSC_ULP Control Register"]
     pub osculctrl: OSCULCTRL,
 }
-#[doc = "Hibernate Domain Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hdstat](hdstat) module"]
+#[doc = "Hibernate Domain Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hdstat](hdstat) module"]
 pub type HDSTAT = crate::Reg<u32, _HDSTAT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -26,7 +26,7 @@ pub struct _HDSTAT;
 impl crate::Readable for HDSTAT {}
 #[doc = "Hibernate Domain Status Register"]
 pub mod hdstat;
-#[doc = "Hibernate Domain Status Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hdclr](hdclr) module"]
+#[doc = "Hibernate Domain Status Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hdclr](hdclr) module"]
 pub type HDCLR = crate::Reg<u32, _HDCLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -35,7 +35,7 @@ pub struct _HDCLR;
 impl crate::Writable for HDCLR {}
 #[doc = "Hibernate Domain Status Clear Register"]
 pub mod hdclr;
-#[doc = "Hibernate Domain Status Set Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hdset](hdset) module"]
+#[doc = "Hibernate Domain Status Set Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hdset](hdset) module"]
 pub type HDSET = crate::Reg<u32, _HDSET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -44,7 +44,7 @@ pub struct _HDSET;
 impl crate::Writable for HDSET {}
 #[doc = "Hibernate Domain Status Set Register"]
 pub mod hdset;
-#[doc = "Hibernate Domain Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hdcr](hdcr) module"]
+#[doc = "Hibernate Domain Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hdcr](hdcr) module"]
 pub type HDCR = crate::Reg<u32, _HDCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -55,7 +55,7 @@ impl crate::Readable for HDCR {}
 impl crate::Writable for HDCR {}
 #[doc = "Hibernate Domain Control Register"]
 pub mod hdcr;
-#[doc = "fOSI Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [oscsictrl](oscsictrl) module"]
+#[doc = "fOSI Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [oscsictrl](oscsictrl) module"]
 pub type OSCSICTRL = crate::Reg<u32, _OSCSICTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -66,7 +66,7 @@ impl crate::Readable for OSCSICTRL {}
 impl crate::Writable for OSCSICTRL {}
 #[doc = "fOSI Control Register"]
 pub mod oscsictrl;
-#[doc = "OSC_ULP Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [osculstat](osculstat) module"]
+#[doc = "OSC_ULP Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [osculstat](osculstat) module"]
 pub type OSCULSTAT = crate::Reg<u32, _OSCULSTAT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -75,7 +75,7 @@ pub struct _OSCULSTAT;
 impl crate::Readable for OSCULSTAT {}
 #[doc = "OSC_ULP Status Register"]
 pub mod osculstat;
-#[doc = "OSC_ULP Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [osculctrl](osculctrl) module"]
+#[doc = "OSC_ULP Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [osculctrl](osculctrl) module"]
 pub type OSCULCTRL = crate::Reg<u32, _OSCULCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]

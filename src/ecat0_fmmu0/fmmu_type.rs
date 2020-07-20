@@ -4,17 +4,14 @@ pub type R = crate::R<u8, super::FMMU_TYPE>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum R_ACC_A {
     #[doc = "0: Ignore mapping for read accesses"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Use mapping for read accesses"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<R_ACC_A> for bool {
     #[inline(always)]
     fn from(variant: R_ACC_A) -> Self {
-        match variant {
-            R_ACC_A::VALUE1 => false,
-            R_ACC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `R_ACC`"]
@@ -43,17 +40,14 @@ impl R_ACC_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum W_ACC_A {
     #[doc = "0: Ignore mapping for write accesses"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Use mapping for write accesses"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<W_ACC_A> for bool {
     #[inline(always)]
     fn from(variant: W_ACC_A) -> Self {
-        match variant {
-            W_ACC_A::VALUE1 => false,
-            W_ACC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `W_ACC`"]

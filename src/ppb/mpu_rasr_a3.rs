@@ -50,19 +50,17 @@ impl<'a> SIZE_W<'a> {
 }
 #[doc = "Subregion disable bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRD_A {
     #[doc = "0: corresponding sub-region is enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: corresponding sub-region is disabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SRD_A> for u8 {
     #[inline(always)]
     fn from(variant: SRD_A) -> Self {
-        match variant {
-            SRD_A::VALUE1 => 0,
-            SRD_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRD`"]
@@ -220,17 +218,14 @@ impl<'a> AP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum XN_A {
     #[doc = "0: instruction fetches enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: instruction fetches disabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<XN_A> for bool {
     #[inline(always)]
     fn from(variant: XN_A) -> Self {
-        match variant {
-            XN_A::VALUE1 => false,
-            XN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `XN`"]

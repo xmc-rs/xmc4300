@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::TCST>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRB_A {
     #[doc = "0: Timer is stopped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Timer is running"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TRB_A> for bool {
     #[inline(always)]
     fn from(variant: TRB_A) -> Self {
-        match variant {
-            TRB_A::VALUE1 => false,
-            TRB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRB`"]
@@ -43,17 +40,14 @@ impl TRB_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CDIR_A {
     #[doc = "0: Timer is counting up"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Timer is counting down"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CDIR_A> for bool {
     #[inline(always)]
     fn from(variant: CDIR_A) -> Self {
-        match variant {
-            CDIR_A::VALUE1 => false,
-            CDIR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CDIR`"]

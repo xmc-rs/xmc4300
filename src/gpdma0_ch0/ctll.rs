@@ -76,17 +76,14 @@ impl<'a> TT_FC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DST_SCATTER_EN_A {
     #[doc = "0: Scatter disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Scatter enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DST_SCATTER_EN_A> for bool {
     #[inline(always)]
     fn from(variant: DST_SCATTER_EN_A) -> Self {
-        match variant {
-            DST_SCATTER_EN_A::VALUE1 => false,
-            DST_SCATTER_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DST_SCATTER_EN`"]
@@ -154,17 +151,14 @@ impl<'a> DST_SCATTER_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRC_GATHER_EN_A {
     #[doc = "0: Gather disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Gather enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SRC_GATHER_EN_A> for bool {
     #[inline(always)]
     fn from(variant: SRC_GATHER_EN_A) -> Self {
-        match variant {
-            SRC_GATHER_EN_A::VALUE1 => false,
-            SRC_GATHER_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRC_GATHER_EN`"]
@@ -258,22 +252,19 @@ impl<'a> DEST_MSIZE_W<'a> {
 }
 #[doc = "Source Address Increment\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SINC_A {
     #[doc = "0: Increment"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Decrement"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: No change"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<SINC_A> for u8 {
     #[inline(always)]
     fn from(variant: SINC_A) -> Self {
-        match variant {
-            SINC_A::VALUE1 => 0,
-            SINC_A::VALUE2 => 1,
-            SINC_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SINC`"]
@@ -340,22 +331,19 @@ impl<'a> SINC_W<'a> {
 }
 #[doc = "Destination Address Increment\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DINC_A {
     #[doc = "0: Increment"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Decrement"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: No change"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<DINC_A> for u8 {
     #[inline(always)]
     fn from(variant: DINC_A) -> Self {
-        match variant {
-            DINC_A::VALUE1 => 0,
-            DINC_A::VALUE2 => 1,
-            DINC_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DINC`"]

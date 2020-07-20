@@ -12,17 +12,14 @@ impl crate::ResetValue for super::TRAPCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOSCWDGT_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Clear trap request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SOSCWDGT_AW> for bool {
     #[inline(always)]
     fn from(variant: SOSCWDGT_AW) -> Self {
-        match variant {
-            SOSCWDGT_AW::CONST_0 => false,
-            SOSCWDGT_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SOSCWDGT`"]
@@ -68,17 +65,14 @@ impl<'a> SOSCWDGT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SVCOLCKT_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Clear trap request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SVCOLCKT_AW> for bool {
     #[inline(always)]
     fn from(variant: SVCOLCKT_AW) -> Self {
-        match variant {
-            SVCOLCKT_AW::CONST_0 => false,
-            SVCOLCKT_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SVCOLCKT`"]
@@ -124,17 +118,14 @@ impl<'a> SVCOLCKT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UVCOLCKT_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Clear trap request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<UVCOLCKT_AW> for bool {
     #[inline(always)]
     fn from(variant: UVCOLCKT_AW) -> Self {
-        match variant {
-            UVCOLCKT_AW::CONST_0 => false,
-            UVCOLCKT_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `UVCOLCKT`"]
@@ -180,17 +171,14 @@ impl<'a> UVCOLCKT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PET_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Clear trap request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PET_AW> for bool {
     #[inline(always)]
     fn from(variant: PET_AW) -> Self {
-        match variant {
-            PET_AW::CONST_0 => false,
-            PET_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PET`"]
@@ -236,17 +224,14 @@ impl<'a> PET_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BRWNT_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Clear trap request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<BRWNT_AW> for bool {
     #[inline(always)]
     fn from(variant: BRWNT_AW) -> Self {
-        match variant {
-            BRWNT_AW::CONST_0 => false,
-            BRWNT_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BRWNT`"]
@@ -292,17 +277,14 @@ impl<'a> BRWNT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ULPWDGT_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Clear trap request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ULPWDGT_AW> for bool {
     #[inline(always)]
     fn from(variant: ULPWDGT_AW) -> Self {
-        match variant {
-            ULPWDGT_AW::CONST_0 => false,
-            ULPWDGT_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ULPWDGT`"]
@@ -348,17 +330,14 @@ impl<'a> ULPWDGT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BWERR0T_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Clear trap request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<BWERR0T_AW> for bool {
     #[inline(always)]
     fn from(variant: BWERR0T_AW) -> Self {
-        match variant {
-            BWERR0T_AW::CONST_0 => false,
-            BWERR0T_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BWERR0T`"]
@@ -404,17 +383,14 @@ impl<'a> BWERR0T_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BWERR1T_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Clear trap request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<BWERR1T_AW> for bool {
     #[inline(always)]
     fn from(variant: BWERR1T_AW) -> Self {
-        match variant {
-            BWERR1T_AW::CONST_0 => false,
-            BWERR1T_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `BWERR1T`"]
@@ -460,17 +436,14 @@ impl<'a> BWERR1T_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECAT0RST_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Set trap request"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ECAT0RST_AW> for bool {
     #[inline(always)]
     fn from(variant: ECAT0RST_AW) -> Self {
-        match variant {
-            ECAT0RST_AW::CONST_0 => false,
-            ECAT0RST_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ECAT0RST`"]

@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::CCFG>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSC_A {
     #[doc = "0: The SSC protocol is not available."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The SSC protocol is available."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SSC_A> for bool {
     #[inline(always)]
     fn from(variant: SSC_A) -> Self {
-        match variant {
-            SSC_A::VALUE1 => false,
-            SSC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SSC`"]
@@ -43,17 +40,14 @@ impl SSC_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASC_A {
     #[doc = "0: The ASC protocol is not available."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The ASC protocol is available."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASC_A> for bool {
     #[inline(always)]
     fn from(variant: ASC_A) -> Self {
-        match variant {
-            ASC_A::VALUE1 => false,
-            ASC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASC`"]
@@ -82,17 +76,14 @@ impl ASC_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IIC_A {
     #[doc = "0: The IIC protocol is not available."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The IIC protocol is available."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IIC_A> for bool {
     #[inline(always)]
     fn from(variant: IIC_A) -> Self {
-        match variant {
-            IIC_A::VALUE1 => false,
-            IIC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IIC`"]
@@ -121,17 +112,14 @@ impl IIC_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IIS_A {
     #[doc = "0: The IIS protocol is not available."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The IIS protocol is available."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IIS_A> for bool {
     #[inline(always)]
     fn from(variant: IIS_A) -> Self {
-        match variant {
-            IIS_A::VALUE1 => false,
-            IIS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IIS`"]
@@ -160,17 +148,14 @@ impl IIS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RB_A {
     #[doc = "0: A receive FIFO buffer is not available."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A receive FIFO buffer is available."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RB_A> for bool {
     #[inline(always)]
     fn from(variant: RB_A) -> Self {
-        match variant {
-            RB_A::VALUE1 => false,
-            RB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RB`"]
@@ -199,17 +184,14 @@ impl RB_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TB_A {
     #[doc = "0: A transmit FIFO buffer is not available."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A transmit FIFO buffer is available."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TB_A> for bool {
     #[inline(always)]
     fn from(variant: TB_A) -> Self {
-        match variant {
-            TB_A::VALUE1 => false,
-            TB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TB`"]

@@ -2,22 +2,19 @@
 pub type R = crate::R<u32, super::GNPTXSTS>;
 #[doc = "Non-periodic TxFIFO Space Avail\n\nValue on reset: 16"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum NPTXFSPCAVAIL_A {
     #[doc = "0: Non-periodic TxFIFO is full"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1 word available"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 2 words available"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<NPTXFSPCAVAIL_A> for u16 {
     #[inline(always)]
     fn from(variant: NPTXFSPCAVAIL_A) -> Self {
-        match variant {
-            NPTXFSPCAVAIL_A::VALUE1 => 0,
-            NPTXFSPCAVAIL_A::VALUE2 => 1,
-            NPTXFSPCAVAIL_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NPTxFSpcAvail`"]
@@ -52,22 +49,19 @@ impl NPTXFSPCAVAIL_R {
 }
 #[doc = "Non-periodic Transmit Request Queue Space Available\n\nValue on reset: 8"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NPTXQSPCAVAIL_A {
     #[doc = "0: Non-periodic Transmit Request Queue is full"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1 location available"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 2 locations available"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<NPTXQSPCAVAIL_A> for u8 {
     #[inline(always)]
     fn from(variant: NPTXQSPCAVAIL_A) -> Self {
-        match variant {
-            NPTXQSPCAVAIL_A::VALUE1 => 0,
-            NPTXQSPCAVAIL_A::VALUE2 => 1,
-            NPTXQSPCAVAIL_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NPTxQSpcAvail`"]
@@ -102,22 +96,19 @@ impl NPTXQSPCAVAIL_R {
 }
 #[doc = "Top of the Non-periodic Transmit Request Queue\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NPTXQTOP_A {
     #[doc = "0: IN/OUT token"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Zero-length transmit packet (device IN/host OUT)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "3: Channel halt command"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<NPTXQTOP_A> for u8 {
     #[inline(always)]
     fn from(variant: NPTXQTOP_A) -> Self {
-        match variant {
-            NPTXQTOP_A::VALUE1 => 0,
-            NPTXQTOP_A::VALUE2 => 1,
-            NPTXQTOP_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NPTxQTop`"]

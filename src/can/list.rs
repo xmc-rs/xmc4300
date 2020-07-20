@@ -10,17 +10,14 @@ pub type SIZE_R = crate::R<u8, u8>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMPTY_A {
     #[doc = "0: At least one message object is allocated to list i."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: No message object is allocated to the list i. List i is empty."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EMPTY_A> for bool {
     #[inline(always)]
     fn from(variant: EMPTY_A) -> Self {
-        match variant {
-            EMPTY_A::VALUE1 => false,
-            EMPTY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EMPTY`"]

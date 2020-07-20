@@ -26,25 +26,21 @@ impl<'a> ANONC_W<'a> {
 }
 #[doc = "Arbitration Round Length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ARBRND_A {
     #[doc = "0: 4 arbitration slots per round (tARB = 4 / fADCD)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 8 arbitration slots per round (tARB = 8 / fADCD)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 16 arbitration slots per round (tARB = 16 / fADCD)"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 20 arbitration slots per round (tARB = 20 / fADCD)"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<ARBRND_A> for u8 {
     #[inline(always)]
     fn from(variant: ARBRND_A) -> Self {
-        match variant {
-            ARBRND_A::VALUE1 => 0,
-            ARBRND_A::VALUE2 => 1,
-            ARBRND_A::VALUE3 => 2,
-            ARBRND_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ARBRND`"]
@@ -125,17 +121,14 @@ impl<'a> ARBRND_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ARBM_A {
     #[doc = "0: The arbiter runs permanently. This setting is required for a synchronization slave (see ) and for equidistant sampling using the signal ARBCNT (see )."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The arbiter only runs if at least one conversion request of an enabled request source is pending. This setting ensures a reproducible latency from an incoming request to the conversion start, if the converter is idle. Synchronized conversions are not supported."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ARBM_A> for bool {
     #[inline(always)]
     fn from(variant: ARBM_A) -> Self {
-        match variant {
-            ARBM_A::VALUE1 => false,
-            ARBM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ARBM`"]
@@ -201,19 +194,17 @@ impl<'a> ARBM_W<'a> {
 }
 #[doc = "Analog Converter Control Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ANONS_A {
     #[doc = "0: Analog converter off"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Normal operation (permanently on)"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<ANONS_A> for u8 {
     #[inline(always)]
     fn from(variant: ANONS_A) -> Self {
-        match variant {
-            ANONS_A::VALUE1 => 0,
-            ANONS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ANONS`"]
@@ -244,17 +235,14 @@ impl ANONS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CAL_A {
     #[doc = "0: Completed or not yet started"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Start-up calibration phase is active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CAL_A> for bool {
     #[inline(always)]
     fn from(variant: CAL_A) -> Self {
-        match variant {
-            CAL_A::VALUE1 => false,
-            CAL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CAL`"]
@@ -283,17 +271,14 @@ impl CAL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUSY_A {
     #[doc = "0: Not busy"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Converter is busy with a conversion"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BUSY_A> for bool {
     #[inline(always)]
     fn from(variant: BUSY_A) -> Self {
-        match variant {
-            BUSY_A::VALUE1 => false,
-            BUSY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BUSY`"]
@@ -322,17 +307,14 @@ impl BUSY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SAMPLE_A {
     #[doc = "0: Converting or idle"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input signal is currently sampled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SAMPLE_A> for bool {
     #[inline(always)]
     fn from(variant: SAMPLE_A) -> Self {
-        match variant {
-            SAMPLE_A::VALUE1 => false,
-            SAMPLE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SAMPLE`"]

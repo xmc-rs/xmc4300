@@ -14,17 +14,14 @@ impl crate::ResetValue for super::TCSR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WLEMD_A {
     #[doc = "0: The automatic update of SCTR.WLE and TCSR.EOF is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The automatic update of SCTR.WLE and TCSR.EOF is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WLEMD_A> for bool {
     #[inline(always)]
     fn from(variant: WLEMD_A) -> Self {
-        match variant {
-            WLEMD_A::VALUE1 => false,
-            WLEMD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WLEMD`"]
@@ -91,18 +88,17 @@ impl<'a> WLEMD_W<'a> {
 #[doc = "Select Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELMD_A {
-    #[doc = "0: The automatic update of PCR.CTR\\[23:16\\] is disabled."]
-    VALUE1,
-    #[doc = "1: The automatic update of PCR.CTR\\[23:16\\] is disabled."]
-    VALUE2,
+    #[doc = "0: The automatic update of PCR.CTR\\[23:16\\]
+is disabled."]
+    VALUE1 = 0,
+    #[doc = "1: The automatic update of PCR.CTR\\[23:16\\]
+is disabled."]
+    VALUE2 = 1,
 }
 impl From<SELMD_A> for bool {
     #[inline(always)]
     fn from(variant: SELMD_A) -> Self {
-        match variant {
-            SELMD_A::VALUE1 => false,
-            SELMD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SELMD`"]
@@ -139,12 +135,14 @@ impl<'a> SELMD_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "The automatic update of PCR.CTR\\[23:16\\] is disabled."]
+    #[doc = "The automatic update of PCR.CTR\\[23:16\\]
+is disabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
         self.variant(SELMD_A::VALUE1)
     }
-    #[doc = "The automatic update of PCR.CTR\\[23:16\\] is disabled."]
+    #[doc = "The automatic update of PCR.CTR\\[23:16\\]
+is disabled."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
         self.variant(SELMD_A::VALUE2)
@@ -170,17 +168,14 @@ impl<'a> SELMD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLEMD_A {
     #[doc = "0: The automatic update of FLE is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The automatic update of FLE is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FLEMD_A> for bool {
     #[inline(always)]
     fn from(variant: FLEMD_A) -> Self {
-        match variant {
-            FLEMD_A::VALUE1 => false,
-            FLEMD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FLEMD`"]
@@ -248,17 +243,14 @@ impl<'a> FLEMD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAMD_A {
     #[doc = "0: The automatic update of bit WA is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The automatic update of bit WA is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WAMD_A> for bool {
     #[inline(always)]
     fn from(variant: WAMD_A) -> Self {
-        match variant {
-            WAMD_A::VALUE1 => false,
-            WAMD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAMD`"]
@@ -326,17 +318,14 @@ impl<'a> WAMD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HPCMD_A {
     #[doc = "0: The automatic update of bits SCTR.DSM and SCTR.HPCDIR is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The automatic update of bits SCTR.DSM and SCTR.HPCDIR is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HPCMD_A> for bool {
     #[inline(always)]
     fn from(variant: HPCMD_A) -> Self {
-        match variant {
-            HPCMD_A::VALUE1 => false,
-            HPCMD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HPCMD`"]
@@ -404,17 +393,14 @@ impl<'a> HPCMD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOF_A {
     #[doc = "0: The data word in TBUF is not considered as first word of a frame."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The data word in TBUF is considered as first word of a frame. A currently running frame is finished and MSLS becomes deactivated (respecting the programmed delays)."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SOF_A> for bool {
     #[inline(always)]
     fn from(variant: SOF_A) -> Self {
-        match variant {
-            SOF_A::VALUE1 => false,
-            SOF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SOF`"]
@@ -482,17 +468,14 @@ impl<'a> SOF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EOF_A {
     #[doc = "0: The data word in TBUF is not considered as last word of an SSC frame."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The data word in TBUF is considered as last word of an SSC frame."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EOF_A> for bool {
     #[inline(always)]
     fn from(variant: EOF_A) -> Self {
-        match variant {
-            EOF_A::VALUE1 => false,
-            EOF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EOF`"]
@@ -560,17 +543,14 @@ impl<'a> EOF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDV_A {
     #[doc = "0: The data word in TBUF is not valid for transmission."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The data word in TBUF is valid for transmission and a transmission start is possible. New data should not be written to a TBUFx input location while TDV = 1."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TDV_A> for bool {
     #[inline(always)]
     fn from(variant: TDV_A) -> Self {
-        match variant {
-            TDV_A::VALUE1 => false,
-            TDV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TDV`"]
@@ -599,17 +579,14 @@ impl TDV_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDSSM_A {
     #[doc = "0: The data word in TBUF is not considered as invalid after it has been loaded into the transmit shift register. The loading of the TBUF data into the shift register does not clear TDV."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The data word in TBUF is considered as invalid after it has been loaded into the shift register. In ASC and IIC mode, TDV is cleared with the TBI event, whereas in SSC and IIS mode, it is cleared with the RSI event. TDSSM = 1 has to be programmed if an optional data buffer is used."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TDSSM_A> for bool {
     #[inline(always)]
     fn from(variant: TDSSM_A) -> Self {
-        match variant {
-            TDSSM_A::VALUE1 => false,
-            TDSSM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TDSSM`"]
@@ -675,25 +652,21 @@ impl<'a> TDSSM_W<'a> {
 }
 #[doc = "TBUF Data Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TDEN_A {
     #[doc = "0: A transmission start of the data word in TBUF is disabled. If a transmission is started, the passive data level is sent out."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A transmission of the data word in TBUF can be started if TDV = 1."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: A transmission of the data word in TBUF can be started if TDV = 1 while DX2S = 0."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: A transmission of the data word in TBUF can be started if TDV = 1 while DX2S = 1."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<TDEN_A> for u8 {
     #[inline(always)]
     fn from(variant: TDEN_A) -> Self {
-        match variant {
-            TDEN_A::VALUE1 => 0,
-            TDEN_A::VALUE2 => 1,
-            TDEN_A::VALUE3 => 2,
-            TDEN_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TDEN`"]
@@ -774,17 +747,14 @@ impl<'a> TDEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDVTR_A {
     #[doc = "0: Bit TCSR.TE is permanently set."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bit TCSR.TE is set if DX2T becomes active while TDV = 1."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TDVTR_A> for bool {
     #[inline(always)]
     fn from(variant: TDVTR_A) -> Self {
-        match variant {
-            TDVTR_A::VALUE1 => false,
-            TDVTR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TDVTR`"]
@@ -852,17 +822,14 @@ impl<'a> TDVTR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WA_A {
     #[doc = "0: The data word in TBUF will be transmitted after a falling edge of WA has been detected (referring to PSR.WA)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The data word in TBUF will be transmitted after a rising edge of WA has been detected (referring to PSR.WA)."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WA_A> for bool {
     #[inline(always)]
     fn from(variant: WA_A) -> Self {
-        match variant {
-            WA_A::VALUE1 => false,
-            WA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WA`"]
@@ -930,17 +897,14 @@ impl<'a> WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSOF_A {
     #[doc = "0: The latest data word transmission has not been started for the first word of a data frame."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The latest data word transmission has been started for the first word of a data frame."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TSOF_A> for bool {
     #[inline(always)]
     fn from(variant: TSOF_A) -> Self {
-        match variant {
-            TSOF_A::VALUE1 => false,
-            TSOF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TSOF`"]
@@ -969,17 +933,14 @@ impl TSOF_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TV_A {
     #[doc = "0: The latest start of a data word transmission has taken place while no valid data was available. As a result, the transmission of a data words with passive level (SCTR.PDL) has been started."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The latest start of a data word transmission has taken place with valid data from TBUF."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TV_A> for bool {
     #[inline(always)]
     fn from(variant: TV_A) -> Self {
-        match variant {
-            TV_A::VALUE1 => false,
-            TV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TV`"]
@@ -1008,17 +969,14 @@ impl TV_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TVC_A {
     #[doc = "0: Since TVC has been set, at least one data buffer underflow condition has occurred."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Since TVC has been set, no data buffer underflow condition has occurred."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TVC_A> for bool {
     #[inline(always)]
     fn from(variant: TVC_A) -> Self {
-        match variant {
-            TVC_A::VALUE1 => false,
-            TVC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TVC`"]
@@ -1047,17 +1005,14 @@ impl TVC_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TE_A {
     #[doc = "0: The trigger event has not yet been detected. A transmission of the data word in TBUF can not be started."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The trigger event has been detected (or the trigger mechanism is switched off) and a transmission of the data word in TBUF can not be started."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TE_A> for bool {
     #[inline(always)]
     fn from(variant: TE_A) -> Self {
-        match variant {
-            TE_A::VALUE1 => false,
-            TE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TE`"]

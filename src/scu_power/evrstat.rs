@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::EVRSTAT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OV13_A {
     #[doc = "0: No overvoltage condition"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Regulator is in overvoltage"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<OV13_A> for bool {
     #[inline(always)]
     fn from(variant: OV13_A) -> Self {
-        match variant {
-            OV13_A::CONST_0 => false,
-            OV13_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OV13`"]

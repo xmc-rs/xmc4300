@@ -12,22 +12,19 @@ impl crate::ResetValue for super::HPTXSTS {
 }
 #[doc = "Periodic Transmit Data FIFO Space Available\n\nValue on reset: 256"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum PTXFSPCAVAIL_A {
     #[doc = "0: Periodic TxFIFO is full"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1 word available"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 2 words available"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<PTXFSPCAVAIL_A> for u16 {
     #[inline(always)]
     fn from(variant: PTXFSPCAVAIL_A) -> Self {
-        match variant {
-            PTXFSPCAVAIL_A::VALUE1 => 0,
-            PTXFSPCAVAIL_A::VALUE2 => 1,
-            PTXFSPCAVAIL_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PTxFSpcAvail`"]
@@ -94,22 +91,19 @@ impl<'a> PTXFSPCAVAIL_W<'a> {
 }
 #[doc = "Periodic Transmit Request Queue Space Available\n\nValue on reset: 8"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PTXQSPCAVAIL_A {
     #[doc = "0: Periodic Transmit Request Queue is full"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1 location available"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 2 locations available"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<PTXQSPCAVAIL_A> for u8 {
     #[inline(always)]
     fn from(variant: PTXQSPCAVAIL_A) -> Self {
-        match variant {
-            PTXQSPCAVAIL_A::VALUE1 => 0,
-            PTXQSPCAVAIL_A::VALUE2 => 1,
-            PTXQSPCAVAIL_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PTxQSpcAvail`"]

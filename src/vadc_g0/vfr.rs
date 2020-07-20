@@ -14,17 +14,14 @@ impl crate::ResetValue for super::VFR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF0_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF0_A> for bool {
     #[inline(always)]
     fn from(variant: VF0_A) -> Self {
-        match variant {
-            VF0_A::VALUE1 => false,
-            VF0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF0`"]
@@ -92,17 +89,14 @@ impl<'a> VF0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF1_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF1_A> for bool {
     #[inline(always)]
     fn from(variant: VF1_A) -> Self {
-        match variant {
-            VF1_A::VALUE1 => false,
-            VF1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF1`"]
@@ -170,17 +164,14 @@ impl<'a> VF1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF2_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF2_A> for bool {
     #[inline(always)]
     fn from(variant: VF2_A) -> Self {
-        match variant {
-            VF2_A::VALUE1 => false,
-            VF2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF2`"]
@@ -248,17 +239,14 @@ impl<'a> VF2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF3_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF3_A> for bool {
     #[inline(always)]
     fn from(variant: VF3_A) -> Self {
-        match variant {
-            VF3_A::VALUE1 => false,
-            VF3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF3`"]
@@ -326,17 +314,14 @@ impl<'a> VF3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF4_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF4_A> for bool {
     #[inline(always)]
     fn from(variant: VF4_A) -> Self {
-        match variant {
-            VF4_A::VALUE1 => false,
-            VF4_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF4`"]
@@ -404,17 +389,14 @@ impl<'a> VF4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF5_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF5_A> for bool {
     #[inline(always)]
     fn from(variant: VF5_A) -> Self {
-        match variant {
-            VF5_A::VALUE1 => false,
-            VF5_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF5`"]
@@ -482,17 +464,14 @@ impl<'a> VF5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF6_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF6_A> for bool {
     #[inline(always)]
     fn from(variant: VF6_A) -> Self {
-        match variant {
-            VF6_A::VALUE1 => false,
-            VF6_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF6`"]
@@ -560,17 +539,14 @@ impl<'a> VF6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF7_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF7_A> for bool {
     #[inline(always)]
     fn from(variant: VF7_A) -> Self {
-        match variant {
-            VF7_A::VALUE1 => false,
-            VF7_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF7`"]
@@ -638,17 +614,14 @@ impl<'a> VF7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF8_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF8_A> for bool {
     #[inline(always)]
     fn from(variant: VF8_A) -> Self {
-        match variant {
-            VF8_A::VALUE1 => false,
-            VF8_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF8`"]
@@ -716,17 +689,14 @@ impl<'a> VF8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF9_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF9_A> for bool {
     #[inline(always)]
     fn from(variant: VF9_A) -> Self {
-        match variant {
-            VF9_A::VALUE1 => false,
-            VF9_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF9`"]
@@ -794,17 +764,14 @@ impl<'a> VF9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF10_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF10_A> for bool {
     #[inline(always)]
     fn from(variant: VF10_A) -> Self {
-        match variant {
-            VF10_A::VALUE1 => false,
-            VF10_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF10`"]
@@ -872,17 +839,14 @@ impl<'a> VF10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF11_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF11_A> for bool {
     #[inline(always)]
     fn from(variant: VF11_A) -> Self {
-        match variant {
-            VF11_A::VALUE1 => false,
-            VF11_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF11`"]
@@ -950,17 +914,14 @@ impl<'a> VF11_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF12_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF12_A> for bool {
     #[inline(always)]
     fn from(variant: VF12_A) -> Self {
-        match variant {
-            VF12_A::VALUE1 => false,
-            VF12_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF12`"]
@@ -1028,17 +989,14 @@ impl<'a> VF12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF13_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF13_A> for bool {
     #[inline(always)]
     fn from(variant: VF13_A) -> Self {
-        match variant {
-            VF13_A::VALUE1 => false,
-            VF13_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF13`"]
@@ -1106,17 +1064,14 @@ impl<'a> VF13_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF14_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF14_A> for bool {
     #[inline(always)]
     fn from(variant: VF14_A) -> Self {
-        match variant {
-            VF14_A::VALUE1 => false,
-            VF14_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF14`"]
@@ -1184,17 +1139,14 @@ impl<'a> VF14_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VF15_A {
     #[doc = "0: Read access: No new valid data available Write access: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VF15_A> for bool {
     #[inline(always)]
     fn from(variant: VF15_A) -> Self {
-        match variant {
-            VF15_A::VALUE1 => false,
-            VF15_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VF15`"]

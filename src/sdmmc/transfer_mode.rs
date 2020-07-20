@@ -14,17 +14,14 @@ impl crate::ResetValue for super::TRANSFER_MODE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_COMP_ATA_A {
     #[doc = "1: Device will send command completion Signal"]
-    VALUE1,
+    VALUE1 = 1,
     #[doc = "0: Device will not send command completion Signal"]
-    VALUE2,
+    VALUE2 = 0,
 }
 impl From<CMD_COMP_ATA_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_COMP_ATA_A) -> Self {
-        match variant {
-            CMD_COMP_ATA_A::VALUE1 => true,
-            CMD_COMP_ATA_A::VALUE2 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_COMP_ATA`"]
@@ -92,17 +89,14 @@ impl<'a> CMD_COMP_ATA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MULTI_BLOCK_SELECT_A {
     #[doc = "0: Single Block"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Multiple Block"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MULTI_BLOCK_SELECT_A> for bool {
     #[inline(always)]
     fn from(variant: MULTI_BLOCK_SELECT_A) -> Self {
-        match variant {
-            MULTI_BLOCK_SELECT_A::VALUE1 => false,
-            MULTI_BLOCK_SELECT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MULTI_BLOCK_SELECT`"]
@@ -170,17 +164,14 @@ impl<'a> MULTI_BLOCK_SELECT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TX_DIR_SELECT_A {
     #[doc = "0: Write (Host to Card)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read (Card to Host)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TX_DIR_SELECT_A> for bool {
     #[inline(always)]
     fn from(variant: TX_DIR_SELECT_A) -> Self {
-        match variant {
-            TX_DIR_SELECT_A::VALUE1 => false,
-            TX_DIR_SELECT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TX_DIR_SELECT`"]
@@ -246,19 +237,17 @@ impl<'a> TX_DIR_SELECT_W<'a> {
 }
 #[doc = "Auto CMD Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ACMD_EN_A {
     #[doc = "0: Auto Command Disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Auto CMD12 Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACMD_EN_A> for u8 {
     #[inline(always)]
     fn from(variant: ACMD_EN_A) -> Self {
-        match variant {
-            ACMD_EN_A::VALUE1 => 0,
-            ACMD_EN_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ACMD_EN`"]
@@ -316,17 +305,14 @@ impl<'a> ACMD_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BLOCK_COUNT_EN_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BLOCK_COUNT_EN_A> for bool {
     #[inline(always)]
     fn from(variant: BLOCK_COUNT_EN_A) -> Self {
-        match variant {
-            BLOCK_COUNT_EN_A::VALUE1 => false,
-            BLOCK_COUNT_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BLOCK_COUNT_EN`"]

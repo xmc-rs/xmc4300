@@ -28,17 +28,14 @@ impl<'a> SYSDIV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYSSEL_A {
     #[doc = "0: fOFI clock"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: fPLL clock"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SYSSEL_A> for bool {
     #[inline(always)]
     fn from(variant: SYSSEL_A) -> Self {
-        match variant {
-            SYSSEL_A::CONST_0 => false,
-            SYSSEL_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYSSEL`"]
@@ -106,17 +103,14 @@ impl<'a> SYSSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPUDIV_A {
     #[doc = "0: fCPU = fSYS"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: fCPU = fSYS / 2"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<CPUDIV_A> for bool {
     #[inline(always)]
     fn from(variant: CPUDIV_A) -> Self {
-        match variant {
-            CPUDIV_A::CONST_0 => false,
-            CPUDIV_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPUDIV`"]
@@ -184,17 +178,14 @@ impl<'a> CPUDIV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PBDIV_A {
     #[doc = "0: fPERIPH = fCPU"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: fPERIPH = fCPU / 2"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PBDIV_A> for bool {
     #[inline(always)]
     fn from(variant: PBDIV_A) -> Self {
-        match variant {
-            PBDIV_A::CONST_0 => false,
-            PBDIV_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PBDIV`"]
@@ -262,17 +253,14 @@ impl<'a> PBDIV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCUDIV_A {
     #[doc = "0: fCCU = fSYS"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: fCCU = fSYS / 2"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<CCUDIV_A> for bool {
     #[inline(always)]
     fn from(variant: CCUDIV_A) -> Self {
-        match variant {
-            CCUDIV_A::CONST_0 => false,
-            CCUDIV_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CCUDIV`"]
@@ -352,22 +340,19 @@ impl<'a> WDTDIV_W<'a> {
 }
 #[doc = "WDT Clock Selection Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WDTSEL_A {
     #[doc = "0: fOFI clock"]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: fSTDBY clock"]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: fPLL clock"]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<WDTSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: WDTSEL_A) -> Self {
-        match variant {
-            WDTSEL_A::CONST_00 => 0,
-            WDTSEL_A::CONST_01 => 1,
-            WDTSEL_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WDTSEL`"]

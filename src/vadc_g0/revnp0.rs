@@ -12,25 +12,21 @@ impl crate::ResetValue for super::REVNP0 {
 }
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REV0NP_A {
     #[doc = "0: Select service request line 0 of group x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select service request line 3 of group x"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3"]
-    VALUE4,
+    VALUE4 = 7,
 }
 impl From<REV0NP_A> for u8 {
     #[inline(always)]
     fn from(variant: REV0NP_A) -> Self {
-        match variant {
-            REV0NP_A::VALUE1 => 0,
-            REV0NP_A::VALUE2 => 3,
-            REV0NP_A::VALUE3 => 4,
-            REV0NP_A::VALUE4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REV0NP`"]
@@ -108,25 +104,21 @@ impl<'a> REV0NP_W<'a> {
 }
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REV1NP_A {
     #[doc = "0: Select service request line 0 of group x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select service request line 3 of group x"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3"]
-    VALUE4,
+    VALUE4 = 7,
 }
 impl From<REV1NP_A> for u8 {
     #[inline(always)]
     fn from(variant: REV1NP_A) -> Self {
-        match variant {
-            REV1NP_A::VALUE1 => 0,
-            REV1NP_A::VALUE2 => 3,
-            REV1NP_A::VALUE3 => 4,
-            REV1NP_A::VALUE4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REV1NP`"]
@@ -204,25 +196,21 @@ impl<'a> REV1NP_W<'a> {
 }
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REV2NP_A {
     #[doc = "0: Select service request line 0 of group x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select service request line 3 of group x"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3"]
-    VALUE4,
+    VALUE4 = 7,
 }
 impl From<REV2NP_A> for u8 {
     #[inline(always)]
     fn from(variant: REV2NP_A) -> Self {
-        match variant {
-            REV2NP_A::VALUE1 => 0,
-            REV2NP_A::VALUE2 => 3,
-            REV2NP_A::VALUE3 => 4,
-            REV2NP_A::VALUE4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REV2NP`"]
@@ -300,25 +288,21 @@ impl<'a> REV2NP_W<'a> {
 }
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REV3NP_A {
     #[doc = "0: Select service request line 0 of group x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select service request line 3 of group x"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3"]
-    VALUE4,
+    VALUE4 = 7,
 }
 impl From<REV3NP_A> for u8 {
     #[inline(always)]
     fn from(variant: REV3NP_A) -> Self {
-        match variant {
-            REV3NP_A::VALUE1 => 0,
-            REV3NP_A::VALUE2 => 3,
-            REV3NP_A::VALUE3 => 4,
-            REV3NP_A::VALUE4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REV3NP`"]
@@ -396,25 +380,21 @@ impl<'a> REV3NP_W<'a> {
 }
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REV4NP_A {
     #[doc = "0: Select service request line 0 of group x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select service request line 3 of group x"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3"]
-    VALUE4,
+    VALUE4 = 7,
 }
 impl From<REV4NP_A> for u8 {
     #[inline(always)]
     fn from(variant: REV4NP_A) -> Self {
-        match variant {
-            REV4NP_A::VALUE1 => 0,
-            REV4NP_A::VALUE2 => 3,
-            REV4NP_A::VALUE3 => 4,
-            REV4NP_A::VALUE4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REV4NP`"]
@@ -492,25 +472,21 @@ impl<'a> REV4NP_W<'a> {
 }
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REV5NP_A {
     #[doc = "0: Select service request line 0 of group x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select service request line 3 of group x"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3"]
-    VALUE4,
+    VALUE4 = 7,
 }
 impl From<REV5NP_A> for u8 {
     #[inline(always)]
     fn from(variant: REV5NP_A) -> Self {
-        match variant {
-            REV5NP_A::VALUE1 => 0,
-            REV5NP_A::VALUE2 => 3,
-            REV5NP_A::VALUE3 => 4,
-            REV5NP_A::VALUE4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REV5NP`"]
@@ -588,25 +564,21 @@ impl<'a> REV5NP_W<'a> {
 }
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REV6NP_A {
     #[doc = "0: Select service request line 0 of group x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select service request line 3 of group x"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3"]
-    VALUE4,
+    VALUE4 = 7,
 }
 impl From<REV6NP_A> for u8 {
     #[inline(always)]
     fn from(variant: REV6NP_A) -> Self {
-        match variant {
-            REV6NP_A::VALUE1 => 0,
-            REV6NP_A::VALUE2 => 3,
-            REV6NP_A::VALUE3 => 4,
-            REV6NP_A::VALUE4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REV6NP`"]
@@ -684,25 +656,21 @@ impl<'a> REV6NP_W<'a> {
 }
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REV7NP_A {
     #[doc = "0: Select service request line 0 of group x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Select service request line 3 of group x"]
-    VALUE2,
+    VALUE2 = 3,
     #[doc = "4: Select shared service request line 0"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "7: Select shared service request line 3"]
-    VALUE4,
+    VALUE4 = 7,
 }
 impl From<REV7NP_A> for u8 {
     #[inline(always)]
     fn from(variant: REV7NP_A) -> Self {
-        match variant {
-            REV7NP_A::VALUE1 => 0,
-            REV7NP_A::VALUE2 => 3,
-            REV7NP_A::VALUE3 => 4,
-            REV7NP_A::VALUE4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REV7NP`"]

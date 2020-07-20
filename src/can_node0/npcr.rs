@@ -28,17 +28,14 @@ impl<'a> RXSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LBM_A {
     #[doc = "0: Loop-Back Mode is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Loop-Back Mode is enabled. This node is connected to an internal (virtual) loop-back CAN bus. All CAN nodes which are in Loop-Back Mode are connected to this virtual CAN bus so that they can communicate with each other internally. The external transmit line is forced recessive in Loop-Back Mode."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LBM_A> for bool {
     #[inline(always)]
     fn from(variant: LBM_A) -> Self {
-        match variant {
-            LBM_A::VALUE1 => false,
-            LBM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LBM`"]

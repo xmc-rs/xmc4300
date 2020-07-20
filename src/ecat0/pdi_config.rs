@@ -2,19 +2,17 @@
 pub type R = crate::R<u8, super::PDI_CONFIG>;
 #[doc = "On-chip bus clock\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BUS_CLK_A {
     #[doc = "0: asyncronous"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: values 1-31 is used for synchronous multiplication factor (N*25Mhz)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BUS_CLK_A> for u8 {
     #[inline(always)]
     fn from(variant: BUS_CLK_A) -> Self {
-        match variant {
-            BUS_CLK_A::VALUE1 => 0,
-            BUS_CLK_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BUS_CLK`"]
@@ -43,25 +41,21 @@ impl BUS_CLK_R {
 }
 #[doc = "On-chip bus\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OC_BUS_A {
     #[doc = "0: Altera Avalon"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: AXI"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Xilinx PLB v4.6"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "4: Xilinx OPB"]
-    VALUE4,
+    VALUE4 = 4,
 }
 impl From<OC_BUS_A> for u8 {
     #[inline(always)]
     fn from(variant: OC_BUS_A) -> Self {
-        match variant {
-            OC_BUS_A::VALUE1 => 0,
-            OC_BUS_A::VALUE2 => 1,
-            OC_BUS_A::VALUE3 => 2,
-            OC_BUS_A::VALUE4 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OC_BUS`"]

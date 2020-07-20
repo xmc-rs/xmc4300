@@ -4,17 +4,14 @@ pub type R = crate::R<u8, super::DC_ACT_STAT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S0_ACK_STATE_A {
     #[doc = "0: First SYNC0 pulse is not pending"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: First SYNC0 pulse is pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S0_ACK_STATE_A> for bool {
     #[inline(always)]
     fn from(variant: S0_ACK_STATE_A) -> Self {
-        match variant {
-            S0_ACK_STATE_A::VALUE1 => false,
-            S0_ACK_STATE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S0_ACK_STATE`"]
@@ -43,17 +40,14 @@ impl S0_ACK_STATE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S1_ACK_STATE_A {
     #[doc = "0: First SYNC1 pulse is not pending"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: First SYNC1 pulse is pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S1_ACK_STATE_A> for bool {
     #[inline(always)]
     fn from(variant: S1_ACK_STATE_A) -> Self {
-        match variant {
-            S1_ACK_STATE_A::VALUE1 => false,
-            S1_ACK_STATE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S1_ACK_STATE`"]
@@ -82,17 +76,14 @@ impl S1_ACK_STATE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S_TIME_A {
     #[doc = "0: Start Time was within near future"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Start Time was out of near future (0x0981.6)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S_TIME_A> for bool {
     #[inline(always)]
     fn from(variant: S_TIME_A) -> Self {
-        match variant {
-            S_TIME_A::VALUE1 => false,
-            S_TIME_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S_TIME`"]

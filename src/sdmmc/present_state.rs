@@ -10,17 +10,14 @@ pub type DAT_3_0_PIN_LEVEL_R = crate::R<u8, u8>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WRITE_PROTECT_PIN_LEVEL_A {
     #[doc = "0: Write protected (SDWP = 1)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write enabled (SDWP = 0)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WRITE_PROTECT_PIN_LEVEL_A> for bool {
     #[inline(always)]
     fn from(variant: WRITE_PROTECT_PIN_LEVEL_A) -> Self {
-        match variant {
-            WRITE_PROTECT_PIN_LEVEL_A::VALUE1 => false,
-            WRITE_PROTECT_PIN_LEVEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WRITE_PROTECT_PIN_LEVEL`"]
@@ -49,17 +46,14 @@ impl WRITE_PROTECT_PIN_LEVEL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARD_DETECT_PIN_LEVEL_A {
     #[doc = "0: No Card present (SDCD = 1)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Card present (SDCD = 0)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CARD_DETECT_PIN_LEVEL_A> for bool {
     #[inline(always)]
     fn from(variant: CARD_DETECT_PIN_LEVEL_A) -> Self {
-        match variant {
-            CARD_DETECT_PIN_LEVEL_A::VALUE1 => false,
-            CARD_DETECT_PIN_LEVEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CARD_DETECT_PIN_LEVEL`"]
@@ -88,17 +82,14 @@ impl CARD_DETECT_PIN_LEVEL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARD_STATE_STABLE_A {
     #[doc = "0: Reset of Debouncing"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: No Card or Inserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CARD_STATE_STABLE_A> for bool {
     #[inline(always)]
     fn from(variant: CARD_STATE_STABLE_A) -> Self {
-        match variant {
-            CARD_STATE_STABLE_A::VALUE1 => false,
-            CARD_STATE_STABLE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CARD_STATE_STABLE`"]
@@ -127,17 +118,14 @@ impl CARD_STATE_STABLE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARD_INSERTED_A {
     #[doc = "0: Reset or Debouncing or No Card"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Card Inserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CARD_INSERTED_A> for bool {
     #[inline(always)]
     fn from(variant: CARD_INSERTED_A) -> Self {
-        match variant {
-            CARD_INSERTED_A::VALUE1 => false,
-            CARD_INSERTED_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CARD_INSERTED`"]
@@ -166,17 +154,14 @@ impl CARD_INSERTED_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUFFER_READ_ENABLE_A {
     #[doc = "0: Read Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read Enable."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BUFFER_READ_ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: BUFFER_READ_ENABLE_A) -> Self {
-        match variant {
-            BUFFER_READ_ENABLE_A::VALUE1 => false,
-            BUFFER_READ_ENABLE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BUFFER_READ_ENABLE`"]
@@ -205,17 +190,14 @@ impl BUFFER_READ_ENABLE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUFFER_WRITE_ENABLE_A {
     #[doc = "0: Write Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write Enable."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BUFFER_WRITE_ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: BUFFER_WRITE_ENABLE_A) -> Self {
-        match variant {
-            BUFFER_WRITE_ENABLE_A::VALUE1 => false,
-            BUFFER_WRITE_ENABLE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BUFFER_WRITE_ENABLE`"]
@@ -244,17 +226,14 @@ impl BUFFER_WRITE_ENABLE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READ_TRANSFER_ACTIVE_A {
     #[doc = "0: No valid data"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Transferring data"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<READ_TRANSFER_ACTIVE_A> for bool {
     #[inline(always)]
     fn from(variant: READ_TRANSFER_ACTIVE_A) -> Self {
-        match variant {
-            READ_TRANSFER_ACTIVE_A::VALUE1 => false,
-            READ_TRANSFER_ACTIVE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `READ_TRANSFER_ACTIVE`"]
@@ -283,17 +262,14 @@ impl READ_TRANSFER_ACTIVE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WRITE_TRANSFER_ACTIVE_A {
     #[doc = "0: No valid data"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Transferring data"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WRITE_TRANSFER_ACTIVE_A> for bool {
     #[inline(always)]
     fn from(variant: WRITE_TRANSFER_ACTIVE_A) -> Self {
-        match variant {
-            WRITE_TRANSFER_ACTIVE_A::VALUE1 => false,
-            WRITE_TRANSFER_ACTIVE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WRITE_TRANSFER_ACTIVE`"]
@@ -322,17 +298,14 @@ impl WRITE_TRANSFER_ACTIVE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DAT_LINE_ACTIVE_A {
     #[doc = "0: DAT line inactive"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: DAT line active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DAT_LINE_ACTIVE_A> for bool {
     #[inline(always)]
     fn from(variant: DAT_LINE_ACTIVE_A) -> Self {
-        match variant {
-            DAT_LINE_ACTIVE_A::VALUE1 => false,
-            DAT_LINE_ACTIVE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DAT_LINE_ACTIVE`"]
@@ -361,17 +334,14 @@ impl DAT_LINE_ACTIVE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMMAND_INHIBIT_DAT_A {
     #[doc = "0: Can issue command which uses the DAT line"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Cannot issue command which uses the DAT line"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<COMMAND_INHIBIT_DAT_A> for bool {
     #[inline(always)]
     fn from(variant: COMMAND_INHIBIT_DAT_A) -> Self {
-        match variant {
-            COMMAND_INHIBIT_DAT_A::VALUE1 => false,
-            COMMAND_INHIBIT_DAT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMMAND_INHIBIT_DAT`"]

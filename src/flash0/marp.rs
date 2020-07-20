@@ -12,22 +12,19 @@ impl crate::ResetValue for super::MARP {
 }
 #[doc = "PFLASH Margin Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MARGIN_A {
     #[doc = "0: Standard (default) margin."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Tight margin for 0 (low) level. Suboptimal 0-bits are read as 1s."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "4: Tight margin for 1 (high) level. Suboptimal 1-bits are read as 0s."]
-    VALUE3,
+    VALUE3 = 4,
 }
 impl From<MARGIN_A> for u8 {
     #[inline(always)]
     fn from(variant: MARGIN_A) -> Self {
-        match variant {
-            MARGIN_A::VALUE1 => 0,
-            MARGIN_A::VALUE2 => 1,
-            MARGIN_A::VALUE3 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MARGIN`"]
@@ -96,17 +93,14 @@ impl<'a> MARGIN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRAPDIS_A {
     #[doc = "0: If a double-bit error occurs in PFLASH, a bus error trap is generated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The double-bit error trap is disabled. Shall be used only during margin check"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TRAPDIS_A> for bool {
     #[inline(always)]
     fn from(variant: TRAPDIS_A) -> Self {
-        match variant {
-            TRAPDIS_A::VALUE1 => false,
-            TRAPDIS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRAPDIS`"]

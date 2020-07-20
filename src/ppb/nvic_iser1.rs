@@ -12,19 +12,17 @@ impl crate::ResetValue for super::NVIC_ISER1 {
 }
 #[doc = "Interrupt set-enable bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum SETENA_A {
     #[doc = "0: interrupt disabled"]
-    VALUE3,
+    VALUE3 = 0,
     #[doc = "1: interrupt enabled."]
-    VALUE4,
+    VALUE4 = 1,
 }
 impl From<SETENA_A> for u32 {
     #[inline(always)]
     fn from(variant: SETENA_A) -> Self {
-        match variant {
-            SETENA_A::VALUE3 => 0,
-            SETENA_A::VALUE4 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETENA`"]

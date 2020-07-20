@@ -42,17 +42,14 @@ impl<'a> EPNUM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EPDIR_A {
     #[doc = "0: OUT"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: IN"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EPDIR_A> for bool {
     #[inline(always)]
     fn from(variant: EPDIR_A) -> Self {
-        match variant {
-            EPDIR_A::VALUE1 => false,
-            EPDIR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EPDir`"]
@@ -118,25 +115,21 @@ impl<'a> EPDIR_W<'a> {
 }
 #[doc = "Endpoint Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EPTYPE_A {
     #[doc = "0: Control"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Isochronous"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Bulk"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Interrupt"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EPTYPE_A> for u8 {
     #[inline(always)]
     fn from(variant: EPTYPE_A) -> Self {
-        match variant {
-            EPTYPE_A::VALUE1 => 0,
-            EPTYPE_A::VALUE2 => 1,
-            EPTYPE_A::VALUE3 => 2,
-            EPTYPE_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EPType`"]
@@ -215,22 +208,19 @@ impl<'a> EPTYPE_W<'a> {
 }
 #[doc = "Multi Count / Error Count\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MC_EC_A {
     #[doc = "1: 1 transaction"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 2 transactions to be issued for this endpoint per frame"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 3 transactions to be issued for this endpoint per frame"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<MC_EC_A> for u8 {
     #[inline(always)]
     fn from(variant: MC_EC_A) -> Self {
-        match variant {
-            MC_EC_A::VALUE2 => 1,
-            MC_EC_A::VALUE3 => 2,
-            MC_EC_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MC_EC`"]
@@ -313,17 +303,14 @@ impl<'a> DEVADDR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ODDFRM_A {
     #[doc = "0: Even frame"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Odd frame"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ODDFRM_A> for bool {
     #[inline(always)]
     fn from(variant: ODDFRM_A) -> Self {
-        match variant {
-            ODDFRM_A::VALUE1 => false,
-            ODDFRM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OddFrm`"]
@@ -415,17 +402,14 @@ impl<'a> CHDIS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHENA_A {
     #[doc = "0: Scatter/Gather mode enabled: Indicates that the descriptor structure is not yet ready. Scatter/Gather mode disabled: Channel disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Scatter/Gather mode enabled: Indicates that the descriptor structure and data buffer with data is setup and this channel can access the descriptor. Scatter/Gather mode disabled: Channel enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHENA_A> for bool {
     #[inline(always)]
     fn from(variant: CHENA_A) -> Self {
-        match variant {
-            CHENA_A::VALUE1 => false,
-            CHENA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ChEna`"]

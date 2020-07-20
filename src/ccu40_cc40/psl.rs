@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PSL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PSL_A {
     #[doc = "0: Passive Level is LOW"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Passive Level is HIGH"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PSL_A> for bool {
     #[inline(always)]
     fn from(variant: PSL_A) -> Self {
-        match variant {
-            PSL_A::VALUE1 => false,
-            PSL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PSL`"]

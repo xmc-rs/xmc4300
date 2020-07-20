@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::ESC_DL_CONTROL>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FR_A {
     #[doc = "0: EtherCAT frames are processed, Non-EtherCAT frames are forwarded without processing"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: EtherCAT frames are processed, Non- EtherCAT frames are destroyed"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FR_A> for bool {
     #[inline(always)]
     fn from(variant: FR_A) -> Self {
-        match variant {
-            FR_A::VALUE1 => false,
-            FR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FR`"]
@@ -43,17 +40,14 @@ impl FR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TEMP_A {
     #[doc = "0: permanent use"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: use for about 1 second, then revert to previous settings"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TEMP_A> for bool {
     #[inline(always)]
     fn from(variant: TEMP_A) -> Self {
-        match variant {
-            TEMP_A::VALUE1 => false,
-            TEMP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TEMP`"]
@@ -80,25 +74,21 @@ impl TEMP_R {
 }
 #[doc = "Loop Port 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LP0_A {
     #[doc = "0: Auto"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Auto Close"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Open"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Closed"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<LP0_A> for u8 {
     #[inline(always)]
     fn from(variant: LP0_A) -> Self {
-        match variant {
-            LP0_A::VALUE1 => 0,
-            LP0_A::VALUE2 => 1,
-            LP0_A::VALUE3 => 2,
-            LP0_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LP0`"]
@@ -138,25 +128,21 @@ impl LP0_R {
 }
 #[doc = "Loop Port 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LP1_A {
     #[doc = "0: Auto"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Auto Close"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Open"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Closed"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<LP1_A> for u8 {
     #[inline(always)]
     fn from(variant: LP1_A) -> Self {
-        match variant {
-            LP1_A::VALUE1 => 0,
-            LP1_A::VALUE2 => 1,
-            LP1_A::VALUE3 => 2,
-            LP1_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LP1`"]
@@ -196,25 +182,21 @@ impl LP1_R {
 }
 #[doc = "Loop Port 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LP2_A {
     #[doc = "0: Auto"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Auto Close"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Open"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Closed"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<LP2_A> for u8 {
     #[inline(always)]
     fn from(variant: LP2_A) -> Self {
-        match variant {
-            LP2_A::VALUE1 => 0,
-            LP2_A::VALUE2 => 1,
-            LP2_A::VALUE3 => 2,
-            LP2_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LP2`"]
@@ -254,25 +236,21 @@ impl LP2_R {
 }
 #[doc = "Loop Port 3\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LP3_A {
     #[doc = "0: Auto"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Auto Close"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Open"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Closed"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<LP3_A> for u8 {
     #[inline(always)]
     fn from(variant: LP3_A) -> Self {
-        match variant {
-            LP3_A::VALUE1 => 0,
-            LP3_A::VALUE2 => 1,
-            LP3_A::VALUE3 => 2,
-            LP3_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LP3`"]
@@ -312,37 +290,29 @@ impl LP3_R {
 }
 #[doc = "RX FIFO Size\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RX_FIFO_SIZE_A {
     #[doc = "0: -40 ns (-80 ns)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: -40 ns (-80 ns)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: -40 ns"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: -40 ns"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: no change"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: no change"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: no change"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: default"]
-    VALUE8,
+    VALUE8 = 7,
 }
 impl From<RX_FIFO_SIZE_A> for u8 {
     #[inline(always)]
     fn from(variant: RX_FIFO_SIZE_A) -> Self {
-        match variant {
-            RX_FIFO_SIZE_A::VALUE1 => 0,
-            RX_FIFO_SIZE_A::VALUE2 => 1,
-            RX_FIFO_SIZE_A::VALUE3 => 2,
-            RX_FIFO_SIZE_A::VALUE4 => 3,
-            RX_FIFO_SIZE_A::VALUE5 => 4,
-            RX_FIFO_SIZE_A::VALUE6 => 5,
-            RX_FIFO_SIZE_A::VALUE7 => 6,
-            RX_FIFO_SIZE_A::VALUE8 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RX_FIFO_SIZE`"]
@@ -408,17 +378,14 @@ impl RX_FIFO_SIZE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LJ_A {
     #[doc = "0: Normal jitter"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Reduced jitter"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LJ_A> for bool {
     #[inline(always)]
     fn from(variant: LJ_A) -> Self {
-        match variant {
-            LJ_A::VALUE1 => false,
-            LJ_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LJ`"]
@@ -447,17 +414,14 @@ impl LJ_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RLD_ST_A {
     #[doc = "0: Default (~660 ms)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Reduced (~80 us)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RLD_ST_A> for bool {
     #[inline(always)]
     fn from(variant: RLD_ST_A) -> Self {
-        match variant {
-            RLD_ST_A::VALUE1 => false,
-            RLD_ST_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RLD_ST`"]
@@ -486,17 +450,14 @@ impl RLD_ST_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S_ALIAS_A {
     #[doc = "0: Ignore Station Alias"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Alias can be used for all configured address command types (FPRD,FPWR,...)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S_ALIAS_A> for bool {
     #[inline(always)]
     fn from(variant: S_ALIAS_A) -> Self {
-        match variant {
-            S_ALIAS_A::VALUE1 => false,
-            S_ALIAS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S_ALIAS`"]

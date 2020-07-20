@@ -12,25 +12,21 @@ impl crate::ResetValue for super::SYNCTR {
 }
 #[doc = "Start Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STSEL_A {
     #[doc = "0: Kernel is synchronization master: Use own bitfield GxARBCFG.ANONC"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Kernel is synchronization slave: Control information from input CI1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Kernel is synchronization slave: Control information from input CI2"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Kernel is synchronization slave: Control information from input CI3"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<STSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: STSEL_A) -> Self {
-        match variant {
-            STSEL_A::VALUE1 => 0,
-            STSEL_A::VALUE2 => 1,
-            STSEL_A::VALUE3 => 2,
-            STSEL_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STSEL`"]
@@ -111,17 +107,14 @@ impl<'a> STSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EVALR1_A {
     #[doc = "0: No ready input control"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EVALR1_A> for bool {
     #[inline(always)]
     fn from(variant: EVALR1_A) -> Self {
-        match variant {
-            EVALR1_A::VALUE1 => false,
-            EVALR1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EVALR1`"]
@@ -189,17 +182,14 @@ impl<'a> EVALR1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EVALR2_A {
     #[doc = "0: No ready input control"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EVALR2_A> for bool {
     #[inline(always)]
     fn from(variant: EVALR2_A) -> Self {
-        match variant {
-            EVALR2_A::VALUE1 => false,
-            EVALR2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EVALR2`"]
@@ -267,17 +257,14 @@ impl<'a> EVALR2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EVALR3_A {
     #[doc = "0: No ready input control"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Ready input Rx is considered for the start of a parallel conversion of this conversion group"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EVALR3_A> for bool {
     #[inline(always)]
     fn from(variant: EVALR3_A) -> Self {
-        match variant {
-            EVALR3_A::VALUE1 => false,
-            EVALR3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EVALR3`"]

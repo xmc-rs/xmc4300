@@ -20,17 +20,14 @@ pub type TPF_R = crate::R<bool, bool>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSCTROVF_A {
     #[doc = "0: No overflow has occurred."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The TS-counter has overflowed at least once."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TSCTROVF_A> for bool {
     #[inline(always)]
     fn from(variant: TSCTROVF_A) -> Self {
-        match variant {
-            TSCTROVF_A::VALUE1 => false,
-            TSCTROVF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TSCTROVF`"]
@@ -59,17 +56,14 @@ impl TSCTROVF_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTSF_AW {
     #[doc = "0: No action."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bit TSF is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CTSF_AW> for bool {
     #[inline(always)]
     fn from(variant: CTSF_AW) -> Self {
-        match variant {
-            CTSF_AW::VALUE1 => false,
-            CTSF_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CTSF`"]
@@ -115,17 +109,14 @@ impl<'a> CTSF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTFF_AW {
     #[doc = "0: No action."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bit TFF is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CTFF_AW> for bool {
     #[inline(always)]
     fn from(variant: CTFF_AW) -> Self {
-        match variant {
-            CTFF_AW::VALUE1 => false,
-            CTFF_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CTFF`"]
@@ -171,17 +162,14 @@ impl<'a> CTFF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTPF_AW {
     #[doc = "0: No action."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bit TPF is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CTPF_AW> for bool {
     #[inline(always)]
     fn from(variant: CTPF_AW) -> Self {
-        match variant {
-            CTPF_AW::VALUE1 => false,
-            CTPF_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CTPF`"]

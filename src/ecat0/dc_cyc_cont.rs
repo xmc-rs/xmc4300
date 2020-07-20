@@ -4,17 +4,14 @@ pub type R = crate::R<u8, super::DC_CYC_CONT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNC_A {
     #[doc = "0: ECAT controlled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: PDI controlled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SYNC_A> for bool {
     #[inline(always)]
     fn from(variant: SYNC_A) -> Self {
-        match variant {
-            SYNC_A::VALUE1 => false,
-            SYNC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYNC`"]
@@ -43,17 +40,14 @@ impl SYNC_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LATCH_U0_A {
     #[doc = "0: ECAT controlled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: PDI controlled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LATCH_U0_A> for bool {
     #[inline(always)]
     fn from(variant: LATCH_U0_A) -> Self {
-        match variant {
-            LATCH_U0_A::VALUE1 => false,
-            LATCH_U0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LATCH_U0`"]
@@ -82,17 +76,14 @@ impl LATCH_U0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LATCH_U1_A {
     #[doc = "0: ECAT controlled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: PDI controlled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LATCH_U1_A> for bool {
     #[inline(always)]
     fn from(variant: LATCH_U1_A) -> Self {
-        match variant {
-            LATCH_U1_A::VALUE1 => false,
-            LATCH_U1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LATCH_U1`"]

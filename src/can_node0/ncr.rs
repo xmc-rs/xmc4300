@@ -14,17 +14,14 @@ impl crate::ResetValue for super::NCR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INIT_A {
     #[doc = "0: Resetting bit INIT enables the participation of the node in the CAN traffic. If the CAN node is in the bus-off state, the ongoing bus-off recovery (which does not depend on the INIT bit) is continued. With the end of the bus-off recovery sequence the CAN node is allowed to take part in the CAN traffic. If the CAN node is not in the bus-off state, a sequence of 11 consecutive recessive bits must be detected before the node is allowed to take part in the CAN traffic."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Setting this bit terminates the participation of this node in the CAN traffic. Any ongoing frame transfer is cancelled and the transmit line goes recessive. If the CAN node is in the bus-off state, then the running bus-off recovery sequence is continued. If the INIT bit is still set after the successful completion of the bus-off recovery sequence, i.e. after detecting 128 sequences of 11 consecutive recessive bits (11 1), then the CAN node leaves the bus-off state but remains inactive as long as INIT remains set."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<INIT_A> for bool {
     #[inline(always)]
     fn from(variant: INIT_A) -> Self {
-        match variant {
-            INIT_A::VALUE1 => false,
-            INIT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INIT`"]
@@ -92,17 +89,14 @@ impl<'a> INIT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIE_A {
     #[doc = "0: Transfer interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Transfer interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TRIE_A> for bool {
     #[inline(always)]
     fn from(variant: TRIE_A) -> Self {
-        match variant {
-            TRIE_A::VALUE1 => false,
-            TRIE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIE`"]
@@ -170,17 +164,14 @@ impl<'a> TRIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LECIE_A {
     #[doc = "0: Last error code interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Last error code interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LECIE_A> for bool {
     #[inline(always)]
     fn from(variant: LECIE_A) -> Self {
-        match variant {
-            LECIE_A::VALUE1 => false,
-            LECIE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LECIE`"]
@@ -248,17 +239,14 @@ impl<'a> LECIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALIE_A {
     #[doc = "0: Alert interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Alert interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ALIE_A> for bool {
     #[inline(always)]
     fn from(variant: ALIE_A) -> Self {
-        match variant {
-            ALIE_A::VALUE1 => false,
-            ALIE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ALIE`"]
@@ -374,17 +362,14 @@ impl<'a> TXDIS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCE_A {
     #[doc = "0: The Bit Timing Register, the Port Control Register, Error Counter Register may only be read. All attempts to modify them are ignored."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The Bit Timing Register, the Port Control Register, Error Counter Register may be read and written."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CCE_A> for bool {
     #[inline(always)]
     fn from(variant: CCE_A) -> Self {
-        match variant {
-            CCE_A::VALUE1 => false,
-            CCE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CCE`"]

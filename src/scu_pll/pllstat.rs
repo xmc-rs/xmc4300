@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::PLLSTAT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCOBYST_A {
     #[doc = "0: Free-running / Normal Mode is entered"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Prescaler Mode is entered"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<VCOBYST_A> for bool {
     #[inline(always)]
     fn from(variant: VCOBYST_A) -> Self {
-        match variant {
-            VCOBYST_A::CONST_0 => false,
-            VCOBYST_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VCOBYST`"]
@@ -43,17 +40,14 @@ impl VCOBYST_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWDSTAT_A {
     #[doc = "0: PLL Power-saving Mode was not entered"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: PLL Power-saving Mode was entered"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PWDSTAT_A> for bool {
     #[inline(always)]
     fn from(variant: PWDSTAT_A) -> Self {
-        match variant {
-            PWDSTAT_A::CONST_0 => false,
-            PWDSTAT_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PWDSTAT`"]
@@ -82,17 +76,14 @@ impl PWDSTAT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCOLOCK_A {
     #[doc = "0: PLL not locked"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: PLL locked"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<VCOLOCK_A> for bool {
     #[inline(always)]
     fn from(variant: VCOLOCK_A) -> Self {
-        match variant {
-            VCOLOCK_A::CONST_0 => false,
-            VCOLOCK_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VCOLOCK`"]
@@ -121,17 +112,14 @@ impl VCOLOCK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum K1RDY_A {
     #[doc = "0: K1-Divider does not operate with the new value"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: K1-Divider operate with the new value"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<K1RDY_A> for bool {
     #[inline(always)]
     fn from(variant: K1RDY_A) -> Self {
-        match variant {
-            K1RDY_A::CONST_0 => false,
-            K1RDY_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `K1RDY`"]
@@ -160,17 +148,14 @@ impl K1RDY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum K2RDY_A {
     #[doc = "0: K2-Divider does not operate with the new value"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: K2-Divider operate with the new value"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<K2RDY_A> for bool {
     #[inline(always)]
     fn from(variant: K2RDY_A) -> Self {
-        match variant {
-            K2RDY_A::CONST_0 => false,
-            K2RDY_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `K2RDY`"]
@@ -199,17 +184,14 @@ impl K2RDY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BY_A {
     #[doc = "0: Bypass Mode is not entered"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Bypass Mode is entered. Input fOSC is selected as output fPLL."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<BY_A> for bool {
     #[inline(always)]
     fn from(variant: BY_A) -> Self {
-        match variant {
-            BY_A::CONST_0 => false,
-            BY_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BY`"]
@@ -238,17 +220,14 @@ impl BY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLLV_A {
     #[doc = "0: The OSC frequency is not usable. Frequency fREF is too low."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The OSC frequency is usable"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PLLLV_A> for bool {
     #[inline(always)]
     fn from(variant: PLLLV_A) -> Self {
-        match variant {
-            PLLLV_A::CONST_0 => false,
-            PLLLV_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PLLLV`"]
@@ -277,17 +256,14 @@ impl PLLLV_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLHV_A {
     #[doc = "0: The OSC frequency is not usable. Frequency fOSC is too high."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The OSC frequency is usable"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PLLHV_A> for bool {
     #[inline(always)]
     fn from(variant: PLLHV_A) -> Self {
-        match variant {
-            PLLHV_A::CONST_0 => false,
-            PLLHV_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PLLHV`"]
@@ -316,17 +292,14 @@ impl PLLHV_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLSP_A {
     #[doc = "0: The OSC frequency is not usable. Spikes are detected that disturb a locked operation"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The OSC frequency is usable"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PLLSP_A> for bool {
     #[inline(always)]
     fn from(variant: PLLSP_A) -> Self {
-        match variant {
-            PLLSP_A::CONST_0 => false,
-            PLLSP_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PLLSP`"]

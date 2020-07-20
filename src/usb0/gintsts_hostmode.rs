@@ -14,17 +14,14 @@ impl crate::ResetValue for super::GINTSTS_HOSTMODE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CURMOD_A {
     #[doc = "0: Device mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Host mode"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CURMOD_A> for bool {
     #[inline(always)]
     fn from(variant: CURMOD_A) -> Self {
-        match variant {
-            CURMOD_A::VALUE1 => false,
-            CURMOD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CurMod`"]
