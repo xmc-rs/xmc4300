@@ -26,37 +26,29 @@ impl<'a> FREQ_W<'a> {
 }
 #[doc = "Enables and Sets the Mode for DAC0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: disable/switch-off DAC"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Single Value Mode"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Data Mode"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Patgen Mode"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Noise Mode"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: Ramp Mode"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: na"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: na"]
-    VALUE8,
+    VALUE8 = 7,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::VALUE1 => 0,
-            MODE_A::VALUE2 => 1,
-            MODE_A::VALUE3 => 2,
-            MODE_A::VALUE4 => 3,
-            MODE_A::VALUE5 => 4,
-            MODE_A::VALUE6 => 5,
-            MODE_A::VALUE7 => 6,
-            MODE_A::VALUE8 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -181,17 +173,14 @@ impl<'a> MODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIGN_A {
     #[doc = "0: DAC expects unsigned input data"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: DAC expects signed input data"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SIGN_A> for bool {
     #[inline(always)]
     fn from(variant: SIGN_A) -> Self {
-        match variant {
-            SIGN_A::VALUE1 => false,
-            SIGN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SIGN`"]
@@ -261,17 +250,14 @@ pub type FIFOIND_R = crate::R<u8, u8>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIFOEMP_A {
     #[doc = "0: FIFO not empty"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: FIFO empty"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FIFOEMP_A> for bool {
     #[inline(always)]
     fn from(variant: FIFOEMP_A) -> Self {
-        match variant {
-            FIFOEMP_A::VALUE1 => false,
-            FIFOEMP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FIFOEMP`"]
@@ -300,17 +286,14 @@ impl FIFOEMP_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIFOFUL_A {
     #[doc = "0: FIFO not full"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: FIFO full"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FIFOFUL_A> for bool {
     #[inline(always)]
     fn from(variant: FIFOFUL_A) -> Self {
-        match variant {
-            FIFOFUL_A::VALUE1 => false,
-            FIFOFUL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FIFOFUL`"]
@@ -339,17 +322,14 @@ impl FIFOFUL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NEGATE_A {
     #[doc = "0: DAC output not negated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: DAC output negated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<NEGATE_A> for bool {
     #[inline(always)]
     fn from(variant: NEGATE_A) -> Self {
-        match variant {
-            NEGATE_A::VALUE1 => false,
-            NEGATE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NEGATE`"]
@@ -417,17 +397,14 @@ impl<'a> NEGATE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIGNEN_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SIGNEN_A> for bool {
     #[inline(always)]
     fn from(variant: SIGNEN_A) -> Self {
-        match variant {
-            SIGNEN_A::VALUE1 => false,
-            SIGNEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SIGNEN`"]
@@ -495,17 +472,14 @@ impl<'a> SIGNEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SREN_A {
     #[doc = "0: disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SREN_A> for bool {
     #[inline(always)]
     fn from(variant: SREN_A) -> Self {
-        match variant {
-            SREN_A::VALUE1 => false,
-            SREN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SREN`"]
@@ -573,17 +547,14 @@ impl<'a> SREN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RUN_A {
     #[doc = "0: DAC0 channel disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: DAC0 channel in operation"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RUN_A> for bool {
     #[inline(always)]
     fn from(variant: RUN_A) -> Self {
-        match variant {
-            RUN_A::VALUE1 => false,
-            RUN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RUN`"]

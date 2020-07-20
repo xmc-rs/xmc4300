@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CON {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECATRSTEN_A {
     #[doc = "0: Reset request by EtherCAT Master disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Reset request by EtherCAT Master enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ECATRSTEN_A> for bool {
     #[inline(always)]
     fn from(variant: ECATRSTEN_A) -> Self {
-        match variant {
-            ECATRSTEN_A::VALUE1 => false,
-            ECATRSTEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ECATRSTEN`"]
@@ -90,25 +87,21 @@ impl<'a> ECATRSTEN_W<'a> {
 }
 #[doc = "LATCHIN0 Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LATCHIN0SEL_A {
     #[doc = "0: Data input LATCHIN0A is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data input LATCHIN0B is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Data input LATCHIN0C is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Data input LATCHIN0D is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<LATCHIN0SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: LATCHIN0SEL_A) -> Self {
-        match variant {
-            LATCHIN0SEL_A::VALUE1 => 0,
-            LATCHIN0SEL_A::VALUE2 => 1,
-            LATCHIN0SEL_A::VALUE3 => 2,
-            LATCHIN0SEL_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LATCHIN0SEL`"]
@@ -189,25 +182,21 @@ impl<'a> LATCHIN0SEL_W<'a> {
 pub type LATCHIN0_R = crate::R<bool, bool>;
 #[doc = "LATCHIN1 Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LATCHIN1SEL_A {
     #[doc = "0: Data input LATCHIN1A is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data input LATCHIN1B is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Data input LATCHIN1C is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Data input LATCHIN1D is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<LATCHIN1SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: LATCHIN1SEL_A) -> Self {
-        match variant {
-            LATCHIN1SEL_A::VALUE1 => 0,
-            LATCHIN1SEL_A::VALUE2 => 1,
-            LATCHIN1SEL_A::VALUE3 => 2,
-            LATCHIN1SEL_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LATCHIN1SEL`"]
@@ -302,25 +291,21 @@ impl<'a> PHYOFFSET_W<'a> {
 }
 #[doc = "MDIO Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MDIO_A {
     #[doc = "0: Data input MDIA is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data input MDIB is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Data input MDIC is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Data input MDID is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<MDIO_A> for u8 {
     #[inline(always)]
     fn from(variant: MDIO_A) -> Self {
-        match variant {
-            MDIO_A::VALUE1 => 0,
-            MDIO_A::VALUE2 => 1,
-            MDIO_A::VALUE3 => 2,
-            MDIO_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MDIO`"]

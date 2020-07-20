@@ -2,16 +2,15 @@
 pub type R = crate::R<u16, super::SLOT_INT_STATUS>;
 #[doc = "Interrupt Signal for Card Slot\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SLOT_INT_STATUS_A {
     #[doc = "0: Slot 1"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<SLOT_INT_STATUS_A> for u8 {
     #[inline(always)]
     fn from(variant: SLOT_INT_STATUS_A) -> Self {
-        match variant {
-            SLOT_INT_STATUS_A::VALUE1 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SLOT_INT_STATUS`"]

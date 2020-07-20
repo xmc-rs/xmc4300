@@ -14,7 +14,7 @@ pub struct RegisterBlock {
     #[doc = "0x07 - PDI Control SyncManager 0"]
     pub sm_pdi_ctr: SM_PDI_CTR,
 }
-#[doc = "Physical Start Address SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sm_p_start_adr](sm_p_start_adr) module"]
+#[doc = "Physical Start Address SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sm_p_start_adr](sm_p_start_adr) module"]
 pub type SM_P_START_ADR = crate::Reg<u16, _SM_P_START_ADR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -23,7 +23,7 @@ pub struct _SM_P_START_ADR;
 impl crate::Readable for SM_P_START_ADR {}
 #[doc = "Physical Start Address SyncManager 0"]
 pub mod sm_p_start_adr;
-#[doc = "Length SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sm_len](sm_len) module"]
+#[doc = "Length SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sm_len](sm_len) module"]
 pub type SM_LEN = crate::Reg<u16, _SM_LEN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -32,7 +32,7 @@ pub struct _SM_LEN;
 impl crate::Readable for SM_LEN {}
 #[doc = "Length SyncManager 0"]
 pub mod sm_len;
-#[doc = "Control Register SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sm_control](sm_control) module"]
+#[doc = "Control Register SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sm_control](sm_control) module"]
 pub type SM_CONTROL = crate::Reg<u8, _SM_CONTROL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -41,7 +41,7 @@ pub struct _SM_CONTROL;
 impl crate::Readable for SM_CONTROL {}
 #[doc = "Control Register SyncManager 0"]
 pub mod sm_control;
-#[doc = "Status Register SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sm_status](sm_status) module"]
+#[doc = "Status Register SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sm_status](sm_status) module"]
 pub type SM_STATUS = crate::Reg<u8, _SM_STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -50,7 +50,7 @@ pub struct _SM_STATUS;
 impl crate::Readable for SM_STATUS {}
 #[doc = "Status Register SyncManager 0"]
 pub mod sm_status;
-#[doc = "Activate SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sm_act](sm_act) module"]
+#[doc = "Activate SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sm_act](sm_act) module"]
 pub type SM_ACT = crate::Reg<u8, _SM_ACT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -59,7 +59,7 @@ pub struct _SM_ACT;
 impl crate::Readable for SM_ACT {}
 #[doc = "Activate SyncManager 0"]
 pub mod sm_act;
-#[doc = "PDI Control SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sm_pdi_ctr](sm_pdi_ctr) module"]
+#[doc = "PDI Control SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sm_pdi_ctr](sm_pdi_ctr) module"]
 pub type SM_PDI_CTR = crate::Reg<u8, _SM_PDI_CTR>;
 #[allow(missing_docs)]
 #[doc(hidden)]

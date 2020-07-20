@@ -76,17 +76,14 @@ impl<'a> MAX_ABRST_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRC_HS_POL_A {
     #[doc = "0: Active high"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Active low"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SRC_HS_POL_A> for bool {
     #[inline(always)]
     fn from(variant: SRC_HS_POL_A) -> Self {
-        match variant {
-            SRC_HS_POL_A::VALUE1 => false,
-            SRC_HS_POL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRC_HS_POL`"]
@@ -154,17 +151,14 @@ impl<'a> SRC_HS_POL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DST_HS_POL_A {
     #[doc = "0: Active high"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Active low"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DST_HS_POL_A> for bool {
     #[inline(always)]
     fn from(variant: DST_HS_POL_A) -> Self {
-        match variant {
-            DST_HS_POL_A::VALUE1 => false,
-            DST_HS_POL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DST_HS_POL`"]
@@ -278,22 +272,19 @@ impl<'a> LOCK_CH_W<'a> {
 }
 #[doc = "Bus Lock Level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LOCK_B_L_A {
     #[doc = "0: Over complete DMA transfer"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Over complete DMA block transfer"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Over complete DMA transaction"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<LOCK_B_L_A> for u8 {
     #[inline(always)]
     fn from(variant: LOCK_B_L_A) -> Self {
-        match variant {
-            LOCK_B_L_A::VALUE1 => 0,
-            LOCK_B_L_A::VALUE2 => 1,
-            LOCK_B_L_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOCK_B_L`"]
@@ -360,22 +351,19 @@ impl<'a> LOCK_B_L_W<'a> {
 }
 #[doc = "Channel Lock Level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LOCK_CH_L_A {
     #[doc = "0: Over complete DMA transfer"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Over complete DMA block transfer"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Over complete DMA transaction"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<LOCK_CH_L_A> for u8 {
     #[inline(always)]
     fn from(variant: LOCK_CH_L_A) -> Self {
-        match variant {
-            LOCK_CH_L_A::VALUE1 => 0,
-            LOCK_CH_L_A::VALUE2 => 1,
-            LOCK_CH_L_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOCK_CH_L`"]
@@ -444,17 +432,14 @@ impl<'a> LOCK_CH_L_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HS_SEL_SRC_A {
     #[doc = "0: Hardware handshaking interface. Software-initiated transaction requests are ignored."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Software handshaking interface. Hardware-initiated transaction requests are ignored."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HS_SEL_SRC_A> for bool {
     #[inline(always)]
     fn from(variant: HS_SEL_SRC_A) -> Self {
-        match variant {
-            HS_SEL_SRC_A::VALUE1 => false,
-            HS_SEL_SRC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HS_SEL_SRC`"]
@@ -522,17 +507,14 @@ impl<'a> HS_SEL_SRC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HS_SEL_DST_A {
     #[doc = "0: Hardware handshaking interface. Software-initiated transaction requests are ignored."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Software handshaking interface. Hardware- initiated transaction requests are ignored."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HS_SEL_DST_A> for bool {
     #[inline(always)]
     fn from(variant: HS_SEL_DST_A) -> Self {
-        match variant {
-            HS_SEL_DST_A::VALUE1 => false,
-            HS_SEL_DST_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HS_SEL_DST`"]
@@ -600,17 +582,14 @@ impl<'a> HS_SEL_DST_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIFO_EMPTY_A {
     #[doc = "1: Channel FIFO empty"]
-    VALUE1,
+    VALUE1 = 1,
     #[doc = "0: Channel FIFO not empty"]
-    VALUE2,
+    VALUE2 = 0,
 }
 impl From<FIFO_EMPTY_A> for bool {
     #[inline(always)]
     fn from(variant: FIFO_EMPTY_A) -> Self {
-        match variant {
-            FIFO_EMPTY_A::VALUE1 => true,
-            FIFO_EMPTY_A::VALUE2 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FIFO_EMPTY`"]
@@ -639,17 +618,14 @@ impl FIFO_EMPTY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH_SUSP_A {
     #[doc = "0: Not suspended."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Suspend DMA transfer from the source."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH_SUSP_A> for bool {
     #[inline(always)]
     fn from(variant: CH_SUSP_A) -> Self {
-        match variant {
-            CH_SUSP_A::VALUE1 => false,
-            CH_SUSP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH_SUSP`"]

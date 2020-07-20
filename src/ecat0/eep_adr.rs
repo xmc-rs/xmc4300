@@ -12,19 +12,17 @@ impl crate::ResetValue for super::EEP_ADR {
 }
 #[doc = "EEPROM Address\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum EEPROM_ADDR_A {
     #[doc = "0: First word (= 16 bits)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Second word"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EEPROM_ADDR_A> for u32 {
     #[inline(always)]
     fn from(variant: EEPROM_ADDR_A) -> Self {
-        match variant {
-            EEPROM_ADDR_A::VALUE1 => 0,
-            EEPROM_ADDR_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EEPROM_ADDR`"]

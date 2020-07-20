@@ -12,17 +12,14 @@ impl crate::ResetValue for super::SRACT {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AGSR0_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Activate the associated service request line"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AGSR0_AW> for bool {
     #[inline(always)]
     fn from(variant: AGSR0_AW) -> Self {
-        match variant {
-            AGSR0_AW::VALUE1 => false,
-            AGSR0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `AGSR0`"]
@@ -68,17 +65,14 @@ impl<'a> AGSR0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AGSR1_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Activate the associated service request line"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AGSR1_AW> for bool {
     #[inline(always)]
     fn from(variant: AGSR1_AW) -> Self {
-        match variant {
-            AGSR1_AW::VALUE1 => false,
-            AGSR1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `AGSR1`"]
@@ -124,17 +118,14 @@ impl<'a> AGSR1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AGSR2_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Activate the associated service request line"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AGSR2_AW> for bool {
     #[inline(always)]
     fn from(variant: AGSR2_AW) -> Self {
-        match variant {
-            AGSR2_AW::VALUE1 => false,
-            AGSR2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `AGSR2`"]
@@ -180,17 +171,14 @@ impl<'a> AGSR2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AGSR3_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Activate the associated service request line"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AGSR3_AW> for bool {
     #[inline(always)]
     fn from(variant: AGSR3_AW) -> Self {
-        match variant {
-            AGSR3_AW::VALUE1 => false,
-            AGSR3_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `AGSR3`"]
@@ -236,17 +224,14 @@ impl<'a> AGSR3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASSR0_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Activate the associated service request line"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASSR0_AW> for bool {
     #[inline(always)]
     fn from(variant: ASSR0_AW) -> Self {
-        match variant {
-            ASSR0_AW::VALUE1 => false,
-            ASSR0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ASSR0`"]
@@ -292,17 +277,14 @@ impl<'a> ASSR0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASSR1_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Activate the associated service request line"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASSR1_AW> for bool {
     #[inline(always)]
     fn from(variant: ASSR1_AW) -> Self {
-        match variant {
-            ASSR1_AW::VALUE1 => false,
-            ASSR1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ASSR1`"]
@@ -348,17 +330,14 @@ impl<'a> ASSR1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASSR2_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Activate the associated service request line"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASSR2_AW> for bool {
     #[inline(always)]
     fn from(variant: ASSR2_AW) -> Self {
-        match variant {
-            ASSR2_AW::VALUE1 => false,
-            ASSR2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ASSR2`"]
@@ -404,17 +383,14 @@ impl<'a> ASSR2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASSR3_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Activate the associated service request line"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASSR3_AW> for bool {
     #[inline(always)]
     fn from(variant: ASSR3_AW) -> Self {
-        match variant {
-            ASSR3_AW::VALUE1 => false,
-            ASSR3_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ASSR3`"]

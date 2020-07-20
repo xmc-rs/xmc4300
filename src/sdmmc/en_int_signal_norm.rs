@@ -16,17 +16,14 @@ pub type FIXED_TO_0_R = crate::R<bool, bool>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARD_INT_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CARD_INT_EN_A> for bool {
     #[inline(always)]
     fn from(variant: CARD_INT_EN_A) -> Self {
-        match variant {
-            CARD_INT_EN_A::VALUE1 => false,
-            CARD_INT_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CARD_INT_EN`"]
@@ -94,17 +91,14 @@ impl<'a> CARD_INT_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARD_REMOVAL_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CARD_REMOVAL_EN_A> for bool {
     #[inline(always)]
     fn from(variant: CARD_REMOVAL_EN_A) -> Self {
-        match variant {
-            CARD_REMOVAL_EN_A::VALUE1 => false,
-            CARD_REMOVAL_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CARD_REMOVAL_EN`"]
@@ -172,17 +166,14 @@ impl<'a> CARD_REMOVAL_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARD_INS_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CARD_INS_EN_A> for bool {
     #[inline(always)]
     fn from(variant: CARD_INS_EN_A) -> Self {
-        match variant {
-            CARD_INS_EN_A::VALUE1 => false,
-            CARD_INS_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CARD_INS_EN`"]
@@ -250,17 +241,14 @@ impl<'a> CARD_INS_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUFF_READ_READY_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BUFF_READ_READY_EN_A> for bool {
     #[inline(always)]
     fn from(variant: BUFF_READ_READY_EN_A) -> Self {
-        match variant {
-            BUFF_READ_READY_EN_A::VALUE1 => false,
-            BUFF_READ_READY_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BUFF_READ_READY_EN`"]
@@ -328,17 +316,14 @@ impl<'a> BUFF_READ_READY_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUFF_WRITE_READY_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BUFF_WRITE_READY_EN_A> for bool {
     #[inline(always)]
     fn from(variant: BUFF_WRITE_READY_EN_A) -> Self {
-        match variant {
-            BUFF_WRITE_READY_EN_A::VALUE1 => false,
-            BUFF_WRITE_READY_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BUFF_WRITE_READY_EN`"]
@@ -406,17 +391,14 @@ impl<'a> BUFF_WRITE_READY_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BLOCK_GAP_EVENT_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BLOCK_GAP_EVENT_EN_A> for bool {
     #[inline(always)]
     fn from(variant: BLOCK_GAP_EVENT_EN_A) -> Self {
-        match variant {
-            BLOCK_GAP_EVENT_EN_A::VALUE1 => false,
-            BLOCK_GAP_EVENT_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BLOCK_GAP_EVENT_EN`"]
@@ -484,17 +466,14 @@ impl<'a> BLOCK_GAP_EVENT_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TX_COMPLETE_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TX_COMPLETE_EN_A> for bool {
     #[inline(always)]
     fn from(variant: TX_COMPLETE_EN_A) -> Self {
-        match variant {
-            TX_COMPLETE_EN_A::VALUE1 => false,
-            TX_COMPLETE_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TX_COMPLETE_EN`"]
@@ -562,17 +541,14 @@ impl<'a> TX_COMPLETE_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_COMPLETE_EN_A {
     #[doc = "0: Masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMD_COMPLETE_EN_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_COMPLETE_EN_A) -> Self {
-        match variant {
-            CMD_COMPLETE_EN_A::VALUE1 => false,
-            CMD_COMPLETE_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_COMPLETE_EN`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CLC {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DISR_A {
     #[doc = "0: On request: enable the module clock"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Off request: stop the module clock"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DISR_A> for bool {
     #[inline(always)]
     fn from(variant: DISR_A) -> Self {
-        match variant {
-            DISR_A::VALUE1 => false,
-            DISR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DISR`"]
@@ -92,17 +89,14 @@ impl<'a> DISR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DISS_A {
     #[doc = "0: Module clock is enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Off: module is not clocked"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DISS_A> for bool {
     #[inline(always)]
     fn from(variant: DISS_A) -> Self {
-        match variant {
-            DISS_A::VALUE1 => false,
-            DISS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DISS`"]
@@ -131,17 +125,14 @@ impl DISS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDIS_A {
     #[doc = "0: Sleep mode request is enabled and functional"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Module disregards the sleep mode control signal"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EDIS_A> for bool {
     #[inline(always)]
     fn from(variant: EDIS_A) -> Self {
-        match variant {
-            EDIS_A::VALUE1 => false,
-            EDIS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EDIS`"]

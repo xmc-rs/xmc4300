@@ -12,17 +12,14 @@ impl crate::ResetValue for super::REFCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV0_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV0_AW> for bool {
     #[inline(always)]
     fn from(variant: REV0_AW) -> Self {
-        match variant {
-            REV0_AW::VALUE1 => false,
-            REV0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV0`"]
@@ -68,17 +65,14 @@ impl<'a> REV0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV1_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV1_AW> for bool {
     #[inline(always)]
     fn from(variant: REV1_AW) -> Self {
-        match variant {
-            REV1_AW::VALUE1 => false,
-            REV1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV1`"]
@@ -124,17 +118,14 @@ impl<'a> REV1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV2_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV2_AW> for bool {
     #[inline(always)]
     fn from(variant: REV2_AW) -> Self {
-        match variant {
-            REV2_AW::VALUE1 => false,
-            REV2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV2`"]
@@ -180,17 +171,14 @@ impl<'a> REV2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV3_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV3_AW> for bool {
     #[inline(always)]
     fn from(variant: REV3_AW) -> Self {
-        match variant {
-            REV3_AW::VALUE1 => false,
-            REV3_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV3`"]
@@ -236,17 +224,14 @@ impl<'a> REV3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV4_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV4_AW> for bool {
     #[inline(always)]
     fn from(variant: REV4_AW) -> Self {
-        match variant {
-            REV4_AW::VALUE1 => false,
-            REV4_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV4`"]
@@ -292,17 +277,14 @@ impl<'a> REV4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV5_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV5_AW> for bool {
     #[inline(always)]
     fn from(variant: REV5_AW) -> Self {
-        match variant {
-            REV5_AW::VALUE1 => false,
-            REV5_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV5`"]
@@ -348,17 +330,14 @@ impl<'a> REV5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV6_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV6_AW> for bool {
     #[inline(always)]
     fn from(variant: REV6_AW) -> Self {
-        match variant {
-            REV6_AW::VALUE1 => false,
-            REV6_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV6`"]
@@ -404,17 +383,14 @@ impl<'a> REV6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV7_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV7_AW> for bool {
     #[inline(always)]
     fn from(variant: REV7_AW) -> Self {
-        match variant {
-            REV7_AW::VALUE1 => false,
-            REV7_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV7`"]
@@ -460,17 +436,14 @@ impl<'a> REV7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV8_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV8_AW> for bool {
     #[inline(always)]
     fn from(variant: REV8_AW) -> Self {
-        match variant {
-            REV8_AW::VALUE1 => false,
-            REV8_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV8`"]
@@ -516,17 +489,14 @@ impl<'a> REV8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV9_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV9_AW> for bool {
     #[inline(always)]
     fn from(variant: REV9_AW) -> Self {
-        match variant {
-            REV9_AW::VALUE1 => false,
-            REV9_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV9`"]
@@ -572,17 +542,14 @@ impl<'a> REV9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV10_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV10_AW> for bool {
     #[inline(always)]
     fn from(variant: REV10_AW) -> Self {
-        match variant {
-            REV10_AW::VALUE1 => false,
-            REV10_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV10`"]
@@ -628,17 +595,14 @@ impl<'a> REV10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV11_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV11_AW> for bool {
     #[inline(always)]
     fn from(variant: REV11_AW) -> Self {
-        match variant {
-            REV11_AW::VALUE1 => false,
-            REV11_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV11`"]
@@ -684,17 +648,14 @@ impl<'a> REV11_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV12_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV12_AW> for bool {
     #[inline(always)]
     fn from(variant: REV12_AW) -> Self {
-        match variant {
-            REV12_AW::VALUE1 => false,
-            REV12_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV12`"]
@@ -740,17 +701,14 @@ impl<'a> REV12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV13_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV13_AW> for bool {
     #[inline(always)]
     fn from(variant: REV13_AW) -> Self {
-        match variant {
-            REV13_AW::VALUE1 => false,
-            REV13_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV13`"]
@@ -796,17 +754,14 @@ impl<'a> REV13_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV14_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV14_AW> for bool {
     #[inline(always)]
     fn from(variant: REV14_AW) -> Self {
-        match variant {
-            REV14_AW::VALUE1 => false,
-            REV14_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV14`"]
@@ -852,17 +807,14 @@ impl<'a> REV14_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV15_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag in GxREFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV15_AW> for bool {
     #[inline(always)]
     fn from(variant: REV15_AW) -> Self {
-        match variant {
-            REV15_AW::VALUE1 => false,
-            REV15_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REV15`"]

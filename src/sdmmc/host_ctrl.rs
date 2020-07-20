@@ -14,17 +14,14 @@ impl crate::ResetValue for super::HOST_CTRL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARD_DET_SIGNAL_DETECT_A {
     #[doc = "0: SDCD is selected (for normal use)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The card detect test level is selected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CARD_DET_SIGNAL_DETECT_A> for bool {
     #[inline(always)]
     fn from(variant: CARD_DET_SIGNAL_DETECT_A) -> Self {
-        match variant {
-            CARD_DET_SIGNAL_DETECT_A::VALUE1 => false,
-            CARD_DET_SIGNAL_DETECT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CARD_DET_SIGNAL_DETECT`"]
@@ -92,17 +89,14 @@ impl<'a> CARD_DET_SIGNAL_DETECT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARD_DETECT_TEST_LEVEL_A {
     #[doc = "0: No Card"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Card Inserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CARD_DETECT_TEST_LEVEL_A> for bool {
     #[inline(always)]
     fn from(variant: CARD_DETECT_TEST_LEVEL_A) -> Self {
-        match variant {
-            CARD_DETECT_TEST_LEVEL_A::VALUE1 => false,
-            CARD_DETECT_TEST_LEVEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CARD_DETECT_TEST_LEVEL`"]
@@ -170,17 +164,14 @@ impl<'a> CARD_DETECT_TEST_LEVEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SD_8BIT_MODE_A {
     #[doc = "0: Bus Width is selected by Data Transfer Width"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 8-bit Bus Width"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SD_8BIT_MODE_A> for bool {
     #[inline(always)]
     fn from(variant: SD_8BIT_MODE_A) -> Self {
-        match variant {
-            SD_8BIT_MODE_A::VALUE1 => false,
-            SD_8BIT_MODE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SD_8BIT_MODE`"]
@@ -248,17 +239,14 @@ impl<'a> SD_8BIT_MODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIGH_SPEED_EN_A {
     #[doc = "0: Normal Speed Mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: High Speed Mode"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HIGH_SPEED_EN_A> for bool {
     #[inline(always)]
     fn from(variant: HIGH_SPEED_EN_A) -> Self {
-        match variant {
-            HIGH_SPEED_EN_A::VALUE1 => false,
-            HIGH_SPEED_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HIGH_SPEED_EN`"]
@@ -326,17 +314,14 @@ impl<'a> HIGH_SPEED_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATA_TX_WIDTH_A {
     #[doc = "0: 1 bit mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 4-bit mode"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DATA_TX_WIDTH_A> for bool {
     #[inline(always)]
     fn from(variant: DATA_TX_WIDTH_A) -> Self {
-        match variant {
-            DATA_TX_WIDTH_A::VALUE1 => false,
-            DATA_TX_WIDTH_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATA_TX_WIDTH`"]
@@ -404,17 +389,14 @@ impl<'a> DATA_TX_WIDTH_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LED_CTRL_A {
     #[doc = "0: LED off"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: LED on"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LED_CTRL_A> for bool {
     #[inline(always)]
     fn from(variant: LED_CTRL_A) -> Self {
-        match variant {
-            LED_CTRL_A::VALUE1 => false,
-            LED_CTRL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LED_CTRL`"]

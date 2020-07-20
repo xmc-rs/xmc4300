@@ -14,17 +14,14 @@ impl crate::ResetValue for super::MII_CONT_STAT {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum W_EN_A {
     #[doc = "0: Write disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<W_EN_A> for bool {
     #[inline(always)]
     fn from(variant: W_EN_A) -> Self {
-        match variant {
-            W_EN_A::VALUE1 => false,
-            W_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `W_EN`"]
@@ -53,17 +50,14 @@ impl W_EN_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIC_PDI_A {
     #[doc = "0: Only ECAT control"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: PDI control possible"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIC_PDI_A> for bool {
     #[inline(always)]
     fn from(variant: MIC_PDI_A) -> Self {
-        match variant {
-            MIC_PDI_A::VALUE1 => false,
-            MIC_PDI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIC_PDI`"]
@@ -92,17 +86,14 @@ impl MIC_PDI_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MI_LD_A {
     #[doc = "0: Not available"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: MI link detection active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MI_LD_A> for bool {
     #[inline(always)]
     fn from(variant: MI_LD_A) -> Self {
-        match variant {
-            MI_LD_A::VALUE1 => false,
-            MI_LD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MI_LD`"]
@@ -131,22 +122,19 @@ impl MI_LD_R {
 pub type PHY_ADDR_R = crate::R<u8, u8>;
 #[doc = "Command register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CMD_REG_A {
     #[doc = "0: No command/MII idle (clear error bits)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Write"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<CMD_REG_A> for u8 {
     #[inline(always)]
     fn from(variant: CMD_REG_A) -> Self {
-        match variant {
-            CMD_REG_A::VALUE1 => 0,
-            CMD_REG_A::VALUE2 => 1,
-            CMD_REG_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CMD_REG`"]
@@ -215,17 +203,14 @@ impl<'a> CMD_REG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROR_A {
     #[doc = "0: Last Command was successful"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Invalid command or write command without Write Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ERROR_A> for bool {
     #[inline(always)]
     fn from(variant: ERROR_A) -> Self {
-        match variant {
-            ERROR_A::VALUE1 => false,
-            ERROR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERROR`"]
@@ -254,17 +239,14 @@ impl ERROR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUSY_A {
     #[doc = "0: MI control state machine is idle"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: MI control state machine is active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BUSY_A> for bool {
     #[inline(always)]
     fn from(variant: BUSY_A) -> Self {
-        match variant {
-            BUSY_A::VALUE1 => false,
-            BUSY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BUSY`"]

@@ -12,25 +12,21 @@ impl crate::ResetValue for super::NIPR {
 }
 #[doc = "Alert Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ALINP_A {
     #[doc = "0: Interrupt output line INT_O0 is selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Interrupt output line INT_O1 is selected."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "14: Interrupt output line INT_O14 is selected."]
-    VALUE3,
+    VALUE3 = 14,
     #[doc = "15: Interrupt output line INT_O15 is selected."]
-    VALUE4,
+    VALUE4 = 15,
 }
 impl From<ALINP_A> for u8 {
     #[inline(always)]
     fn from(variant: ALINP_A) -> Self {
-        match variant {
-            ALINP_A::VALUE1 => 0,
-            ALINP_A::VALUE2 => 1,
-            ALINP_A::VALUE3 => 14,
-            ALINP_A::VALUE4 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ALINP`"]
@@ -108,25 +104,21 @@ impl<'a> ALINP_W<'a> {
 }
 #[doc = "Last Error Code Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LECINP_A {
     #[doc = "0: Interrupt output line INT_O0 is selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Interrupt output line INT_O1 is selected."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "14: Interrupt output line INT_O14 is selected."]
-    VALUE3,
+    VALUE3 = 14,
     #[doc = "15: Interrupt output line INT_O15 is selected."]
-    VALUE4,
+    VALUE4 = 15,
 }
 impl From<LECINP_A> for u8 {
     #[inline(always)]
     fn from(variant: LECINP_A) -> Self {
-        match variant {
-            LECINP_A::VALUE1 => 0,
-            LECINP_A::VALUE2 => 1,
-            LECINP_A::VALUE3 => 14,
-            LECINP_A::VALUE4 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LECINP`"]
@@ -204,25 +196,21 @@ impl<'a> LECINP_W<'a> {
 }
 #[doc = "Transfer OK Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TRINP_A {
     #[doc = "0: Interrupt output line INT_O0 is selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Interrupt output line INT_O1 is selected."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "14: Interrupt output line INT_O14 is selected."]
-    VALUE3,
+    VALUE3 = 14,
     #[doc = "15: Interrupt output line INT_O15 is selected."]
-    VALUE4,
+    VALUE4 = 15,
 }
 impl From<TRINP_A> for u8 {
     #[inline(always)]
     fn from(variant: TRINP_A) -> Self {
-        match variant {
-            TRINP_A::VALUE1 => 0,
-            TRINP_A::VALUE2 => 1,
-            TRINP_A::VALUE3 => 14,
-            TRINP_A::VALUE4 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TRINP`"]
@@ -300,25 +288,21 @@ impl<'a> TRINP_W<'a> {
 }
 #[doc = "Frame Counter Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CFCINP_A {
     #[doc = "0: Interrupt output line INT_O0 is selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Interrupt output line INT_O1 is selected."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "14: Interrupt output line INT_O14 is selected."]
-    VALUE3,
+    VALUE3 = 14,
     #[doc = "15: Interrupt output line INT_O15 is selected."]
-    VALUE4,
+    VALUE4 = 15,
 }
 impl From<CFCINP_A> for u8 {
     #[inline(always)]
     fn from(variant: CFCINP_A) -> Self {
-        match variant {
-            CFCINP_A::VALUE1 => 0,
-            CFCINP_A::VALUE2 => 1,
-            CFCINP_A::VALUE3 => 14,
-            CFCINP_A::VALUE4 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CFCINP`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CFSR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IACCVIOL_A {
     #[doc = "0: no instruction access violation fault"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: the processor attempted an instruction fetch from a location that does not permit execution."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IACCVIOL_A> for bool {
     #[inline(always)]
     fn from(variant: IACCVIOL_A) -> Self {
-        match variant {
-            IACCVIOL_A::VALUE1 => false,
-            IACCVIOL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IACCVIOL`"]
@@ -92,17 +89,14 @@ impl<'a> IACCVIOL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DACCVIOL_A {
     #[doc = "0: no data access violation fault"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: the processor attempted a load or store at a location that does not permit the operation."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DACCVIOL_A> for bool {
     #[inline(always)]
     fn from(variant: DACCVIOL_A) -> Self {
-        match variant {
-            DACCVIOL_A::VALUE1 => false,
-            DACCVIOL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DACCVIOL`"]
@@ -170,17 +164,14 @@ impl<'a> DACCVIOL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MUNSTKERR_A {
     #[doc = "0: no unstacking fault"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: unstack for an exception return has caused one or more access violations."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MUNSTKERR_A> for bool {
     #[inline(always)]
     fn from(variant: MUNSTKERR_A) -> Self {
-        match variant {
-            MUNSTKERR_A::VALUE1 => false,
-            MUNSTKERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MUNSTKERR`"]
@@ -248,17 +239,14 @@ impl<'a> MUNSTKERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSTKERR_A {
     #[doc = "0: no stacking fault"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: stacking for an exception entry has caused one or more access violations."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MSTKERR_A> for bool {
     #[inline(always)]
     fn from(variant: MSTKERR_A) -> Self {
-        match variant {
-            MSTKERR_A::VALUE1 => false,
-            MSTKERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSTKERR`"]
@@ -326,17 +314,14 @@ impl<'a> MSTKERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MLSPERR_A {
     #[doc = "0: No MemManage fault occurred during floating-point lazy state preservation"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A MemManage fault occurred during floating-point lazy state preservation"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MLSPERR_A> for bool {
     #[inline(always)]
     fn from(variant: MLSPERR_A) -> Self {
-        match variant {
-            MLSPERR_A::VALUE1 => false,
-            MLSPERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MLSPERR`"]
@@ -404,17 +389,14 @@ impl<'a> MLSPERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MMARVALID_A {
     #[doc = "0: value in MMAR is not a valid fault address"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: MMAR holds a valid fault address."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MMARVALID_A> for bool {
     #[inline(always)]
     fn from(variant: MMARVALID_A) -> Self {
-        match variant {
-            MMARVALID_A::VALUE1 => false,
-            MMARVALID_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MMARVALID`"]
@@ -482,17 +464,14 @@ impl<'a> MMARVALID_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IBUSERR_A {
     #[doc = "0: no instruction bus error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: instruction bus error."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IBUSERR_A> for bool {
     #[inline(always)]
     fn from(variant: IBUSERR_A) -> Self {
-        match variant {
-            IBUSERR_A::VALUE1 => false,
-            IBUSERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IBUSERR`"]
@@ -560,17 +539,14 @@ impl<'a> IBUSERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRECISERR_A {
     #[doc = "0: no precise data bus error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: a data bus error has occurred, and the PC value stacked for the exception return points to the instruction that caused the fault."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PRECISERR_A> for bool {
     #[inline(always)]
     fn from(variant: PRECISERR_A) -> Self {
-        match variant {
-            PRECISERR_A::VALUE1 => false,
-            PRECISERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PRECISERR`"]
@@ -638,17 +614,14 @@ impl<'a> PRECISERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IMPRECISERR_A {
     #[doc = "0: no imprecise data bus error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: a data bus error has occurred, but the return address in the stack frame is not related to the instruction that caused the error."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IMPRECISERR_A> for bool {
     #[inline(always)]
     fn from(variant: IMPRECISERR_A) -> Self {
-        match variant {
-            IMPRECISERR_A::VALUE1 => false,
-            IMPRECISERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IMPRECISERR`"]
@@ -716,17 +689,14 @@ impl<'a> IMPRECISERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UNSTKERR_A {
     #[doc = "0: no unstacking fault"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: stacking for an exception entry has caused one or more BusFaults."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<UNSTKERR_A> for bool {
     #[inline(always)]
     fn from(variant: UNSTKERR_A) -> Self {
-        match variant {
-            UNSTKERR_A::VALUE1 => false,
-            UNSTKERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UNSTKERR`"]
@@ -794,17 +764,14 @@ impl<'a> UNSTKERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STKERR_A {
     #[doc = "0: no stacking fault"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: stacking for an exception entry has caused one or more BusFaults."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STKERR_A> for bool {
     #[inline(always)]
     fn from(variant: STKERR_A) -> Self {
-        match variant {
-            STKERR_A::VALUE1 => false,
-            STKERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STKERR`"]
@@ -872,17 +839,14 @@ impl<'a> STKERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSPERR_A {
     #[doc = "0: No bus fault occurred during floating-point lazy state preservation."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A bus fault occurred during floating-point lazy state preservation"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LSPERR_A> for bool {
     #[inline(always)]
     fn from(variant: LSPERR_A) -> Self {
-        match variant {
-            LSPERR_A::VALUE1 => false,
-            LSPERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LSPERR`"]
@@ -950,17 +914,14 @@ impl<'a> LSPERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BFARVALID_A {
     #[doc = "0: value in BFAR is not a valid fault address"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: BFAR holds a valid fault address."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BFARVALID_A> for bool {
     #[inline(always)]
     fn from(variant: BFARVALID_A) -> Self {
-        match variant {
-            BFARVALID_A::VALUE1 => false,
-            BFARVALID_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BFARVALID`"]
@@ -1028,17 +989,14 @@ impl<'a> BFARVALID_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UNDEFINSTR_A {
     #[doc = "0: no undefined instruction UsageFault"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: the processor has attempted to execute an undefined instruction."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<UNDEFINSTR_A> for bool {
     #[inline(always)]
     fn from(variant: UNDEFINSTR_A) -> Self {
-        match variant {
-            UNDEFINSTR_A::VALUE1 => false,
-            UNDEFINSTR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UNDEFINSTR`"]
@@ -1106,17 +1064,14 @@ impl<'a> UNDEFINSTR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INVSTATE_A {
     #[doc = "0: no invalid state UsageFault"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: the processor has attempted to execute an instruction that makes illegal use of the EPSR."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<INVSTATE_A> for bool {
     #[inline(always)]
     fn from(variant: INVSTATE_A) -> Self {
-        match variant {
-            INVSTATE_A::VALUE1 => false,
-            INVSTATE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INVSTATE`"]
@@ -1184,17 +1139,14 @@ impl<'a> INVSTATE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INVPC_A {
     #[doc = "0: no invalid PC load UsageFault"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: the processor has attempted an illegal load of EXC_RETURN to the PC, as a result of an invalid context, or an invalid EXC_RETURN value."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<INVPC_A> for bool {
     #[inline(always)]
     fn from(variant: INVPC_A) -> Self {
-        match variant {
-            INVPC_A::VALUE1 => false,
-            INVPC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INVPC`"]
@@ -1262,17 +1214,14 @@ impl<'a> INVPC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NOCP_A {
     #[doc = "0: no UsageFault caused by attempting to access a coprocessor"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: the processor has attempted to access a coprocessor."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<NOCP_A> for bool {
     #[inline(always)]
     fn from(variant: NOCP_A) -> Self {
-        match variant {
-            NOCP_A::VALUE1 => false,
-            NOCP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NOCP`"]
@@ -1340,17 +1289,14 @@ impl<'a> NOCP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UNALIGNED_A {
     #[doc = "0: no unaligned access fault, or unaligned access trapping not enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: the processor has made an unaligned memory access."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<UNALIGNED_A> for bool {
     #[inline(always)]
     fn from(variant: UNALIGNED_A) -> Self {
-        match variant {
-            UNALIGNED_A::VALUE1 => false,
-            UNALIGNED_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UNALIGNED`"]
@@ -1418,17 +1364,14 @@ impl<'a> UNALIGNED_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIVBYZERO_A {
     #[doc = "0: no divide by zero fault, or divide by zero trapping not enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: the processor has executed an SDIV or UDIV instruction with a divisor of 0"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DIVBYZERO_A> for bool {
     #[inline(always)]
     fn from(variant: DIVBYZERO_A) -> Self {
-        match variant {
-            DIVBYZERO_A::VALUE1 => false,
-            DIVBYZERO_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIVBYZERO`"]

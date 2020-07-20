@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CEFLAG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV0_A {
     #[doc = "0: No channel event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A channel event has occurred"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV0_A> for bool {
     #[inline(always)]
     fn from(variant: CEV0_A) -> Self {
-        match variant {
-            CEV0_A::VALUE1 => false,
-            CEV0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CEV0`"]
@@ -92,17 +89,14 @@ impl<'a> CEV0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV1_A {
     #[doc = "0: No channel event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A channel event has occurred"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV1_A> for bool {
     #[inline(always)]
     fn from(variant: CEV1_A) -> Self {
-        match variant {
-            CEV1_A::VALUE1 => false,
-            CEV1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CEV1`"]
@@ -170,17 +164,14 @@ impl<'a> CEV1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV2_A {
     #[doc = "0: No channel event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A channel event has occurred"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV2_A> for bool {
     #[inline(always)]
     fn from(variant: CEV2_A) -> Self {
-        match variant {
-            CEV2_A::VALUE1 => false,
-            CEV2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CEV2`"]
@@ -248,17 +239,14 @@ impl<'a> CEV2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV3_A {
     #[doc = "0: No channel event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A channel event has occurred"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV3_A> for bool {
     #[inline(always)]
     fn from(variant: CEV3_A) -> Self {
-        match variant {
-            CEV3_A::VALUE1 => false,
-            CEV3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CEV3`"]
@@ -326,17 +314,14 @@ impl<'a> CEV3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV4_A {
     #[doc = "0: No channel event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A channel event has occurred"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV4_A> for bool {
     #[inline(always)]
     fn from(variant: CEV4_A) -> Self {
-        match variant {
-            CEV4_A::VALUE1 => false,
-            CEV4_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CEV4`"]
@@ -404,17 +389,14 @@ impl<'a> CEV4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV5_A {
     #[doc = "0: No channel event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A channel event has occurred"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV5_A> for bool {
     #[inline(always)]
     fn from(variant: CEV5_A) -> Self {
-        match variant {
-            CEV5_A::VALUE1 => false,
-            CEV5_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CEV5`"]
@@ -482,17 +464,14 @@ impl<'a> CEV5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV6_A {
     #[doc = "0: No channel event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A channel event has occurred"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV6_A> for bool {
     #[inline(always)]
     fn from(variant: CEV6_A) -> Self {
-        match variant {
-            CEV6_A::VALUE1 => false,
-            CEV6_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CEV6`"]
@@ -560,17 +539,14 @@ impl<'a> CEV6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV7_A {
     #[doc = "0: No channel event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A channel event has occurred"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV7_A> for bool {
     #[inline(always)]
     fn from(variant: CEV7_A) -> Self {
-        match variant {
-            CEV7_A::VALUE1 => false,
-            CEV7_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CEV7`"]

@@ -12,19 +12,17 @@ impl crate::ResetValue for super::FNCTL {
 }
 #[doc = "Touch-Sense TSIN Pad Turn\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PADT_A {
     #[doc = "0: TSIN0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "7: TSIN7"]
-    VALUE2,
+    VALUE2 = 7,
 }
 impl From<PADT_A> for u8 {
     #[inline(always)]
     fn from(variant: PADT_A) -> Self {
-        match variant {
-            PADT_A::VALUE1 => 0,
-            PADT_A::VALUE2 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PADT`"]
@@ -82,17 +80,14 @@ impl<'a> PADT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PADTSW_A {
     #[doc = "0: The hardware automatically enables the touch-sense inputs in sequence round-robin, starting from TSIN0."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Disable hardware control for software control only. The touch-sense input is configured in bit PADT."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PADTSW_A> for bool {
     #[inline(always)]
     fn from(variant: PADTSW_A) -> Self {
-        match variant {
-            PADTSW_A::VALUE1 => false,
-            PADTSW_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PADTSW`"]
@@ -159,18 +154,16 @@ impl<'a> PADTSW_W<'a> {
 #[doc = "Enable External Pull-up Configuration on Pin COLA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EPULL_A {
-    #[doc = "0: HW over-rule to enable internal pull-up is active on TSIN\\[x\\] for set duration in touch-sense time slice. With this setting, it is not specified to assign the COLA to any pin."]
-    VALUE1,
+    #[doc = "0: HW over-rule to enable internal pull-up is active on TSIN\\[x\\]
+for set duration in touch-sense time slice. With this setting, it is not specified to assign the COLA to any pin."]
+    VALUE1 = 0,
     #[doc = "1: Enable external pull-up: Output 1 on pin COLA for whole duration of touch-sense time slice."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EPULL_A> for bool {
     #[inline(always)]
     fn from(variant: EPULL_A) -> Self {
-        match variant {
-            EPULL_A::VALUE1 => false,
-            EPULL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EPULL`"]
@@ -207,7 +200,8 @@ impl<'a> EPULL_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "HW over-rule to enable internal pull-up is active on TSIN\\[x\\] for set duration in touch-sense time slice. With this setting, it is not specified to assign the COLA to any pin."]
+    #[doc = "HW over-rule to enable internal pull-up is active on TSIN\\[x\\]
+for set duration in touch-sense time slice. With this setting, it is not specified to assign the COLA to any pin."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
         self.variant(EPULL_A::VALUE1)
@@ -238,22 +232,19 @@ impl<'a> EPULL_W<'a> {
 pub type FNCOL_R = crate::R<u8, u8>;
 #[doc = "Accumulate Count on Touch-Sense Input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ACCCNT_A {
     #[doc = "0: 1 time"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 2 times"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "15: 16 times"]
-    VALUE3,
+    VALUE3 = 15,
 }
 impl From<ACCCNT_A> for u8 {
     #[inline(always)]
     fn from(variant: ACCCNT_A) -> Self {
-        match variant {
-            ACCCNT_A::VALUE1 => 0,
-            ACCCNT_A::VALUE2 => 1,
-            ACCCNT_A::VALUE3 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ACCCNT`"]
@@ -322,17 +313,14 @@ impl<'a> ACCCNT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSCCMP_A {
     #[doc = "0: Disable common compare for touch-sense"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable common compare for touch-sense"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TSCCMP_A> for bool {
     #[inline(always)]
     fn from(variant: TSCCMP_A) -> Self {
-        match variant {
-            TSCCMP_A::VALUE1 => false,
-            TSCCMP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TSCCMP`"]
@@ -398,25 +386,21 @@ impl<'a> TSCCMP_W<'a> {
 }
 #[doc = "Extension for Touch-Sense Output for Pin-Low-Level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TSOEXT_A {
     #[doc = "0: Extend by 1 ledts_clk"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Extend by 4 ledts_clk"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Extend by 8 ledts_clk"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Extend by 16 ledts_clk"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<TSOEXT_A> for u8 {
     #[inline(always)]
     fn from(variant: TSOEXT_A) -> Self {
-        match variant {
-            TSOEXT_A::VALUE1 => 0,
-            TSOEXT_A::VALUE2 => 1,
-            TSOEXT_A::VALUE3 => 2,
-            TSOEXT_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TSOEXT`"]
@@ -497,17 +481,14 @@ impl<'a> TSOEXT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSCTRR_A {
     #[doc = "0: Disable TS-counter automatic reset"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable TS-counter automatic reset to 00H on the first pad turn of a new TSIN\\[x\\]. Triggered on compare match in time slice."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TSCTRR_A> for bool {
     #[inline(always)]
     fn from(variant: TSCTRR_A) -> Self {
-        match variant {
-            TSCTRR_A::VALUE1 => false,
-            TSCTRR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TSCTRR`"]
@@ -575,17 +556,14 @@ impl<'a> TSCTRR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSCTRSAT_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable. TS-counter stops counting in the touch-sense time slice(s) of the same (extended) frame when it reaches FFH. Counter starts to count again on the first pad turn of a new TSIN\\[x\\], triggered on compare match."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TSCTRSAT_A> for bool {
     #[inline(always)]
     fn from(variant: TSCTRSAT_A) -> Self {
-        match variant {
-            TSCTRSAT_A::VALUE1 => false,
-            TSCTRSAT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TSCTRSAT`"]
@@ -651,19 +629,17 @@ impl<'a> TSCTRSAT_W<'a> {
 }
 #[doc = "Number of Touch-Sense Input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NR_TSIN_A {
     #[doc = "0: 1"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "7: 8"]
-    VALUE2,
+    VALUE2 = 7,
 }
 impl From<NR_TSIN_A> for u8 {
     #[inline(always)]
     fn from(variant: NR_TSIN_A) -> Self {
-        match variant {
-            NR_TSIN_A::VALUE1 => 0,
-            NR_TSIN_A::VALUE2 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NR_TSIN`"]
@@ -721,17 +697,14 @@ impl<'a> NR_TSIN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COLLEV_A {
     #[doc = "0: Active low"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Active high"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<COLLEV_A> for bool {
     #[inline(always)]
     fn from(variant: COLLEV_A) -> Self {
-        match variant {
-            COLLEV_A::VALUE1 => false,
-            COLLEV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COLLEV`"]
@@ -797,37 +770,29 @@ impl<'a> COLLEV_W<'a> {
 }
 #[doc = "Number of LED Columns\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NR_LEDCOL_A {
     #[doc = "0: 1 LED column"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 2 LED columns"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 3 LED columns"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 4 LED columns"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: 5 LED columns"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: 6 LED columns"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: 7 LED columns"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: 8 LED columns (max. LED columns = 7 if bit TS_EN = 1)"]
-    VALUE8,
+    VALUE8 = 7,
 }
 impl From<NR_LEDCOL_A> for u8 {
     #[inline(always)]
     fn from(variant: NR_LEDCOL_A) -> Self {
-        match variant {
-            NR_LEDCOL_A::VALUE1 => 0,
-            NR_LEDCOL_A::VALUE2 => 1,
-            NR_LEDCOL_A::VALUE3 => 2,
-            NR_LEDCOL_A::VALUE4 => 3,
-            NR_LEDCOL_A::VALUE5 => 4,
-            NR_LEDCOL_A::VALUE6 => 5,
-            NR_LEDCOL_A::VALUE7 => 6,
-            NR_LEDCOL_A::VALUE8 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NR_LEDCOL`"]

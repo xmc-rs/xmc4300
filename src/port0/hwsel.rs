@@ -12,22 +12,19 @@ impl crate::ResetValue for super::HWSEL {
 }
 #[doc = "Port n Pin Hardware Select Bit 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW0_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW0_A> for u8 {
     #[inline(always)]
     fn from(variant: HW0_A) -> Self {
-        match variant {
-            HW0_A::CONST_00 => 0,
-            HW0_A::CONST_01 => 1,
-            HW0_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW0`"]
@@ -94,22 +91,19 @@ impl<'a> HW0_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW1_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW1_A> for u8 {
     #[inline(always)]
     fn from(variant: HW1_A) -> Self {
-        match variant {
-            HW1_A::CONST_00 => 0,
-            HW1_A::CONST_01 => 1,
-            HW1_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW1`"]
@@ -176,22 +170,19 @@ impl<'a> HW1_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW2_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW2_A> for u8 {
     #[inline(always)]
     fn from(variant: HW2_A) -> Self {
-        match variant {
-            HW2_A::CONST_00 => 0,
-            HW2_A::CONST_01 => 1,
-            HW2_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW2`"]
@@ -258,22 +249,19 @@ impl<'a> HW2_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW3_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW3_A> for u8 {
     #[inline(always)]
     fn from(variant: HW3_A) -> Self {
-        match variant {
-            HW3_A::CONST_00 => 0,
-            HW3_A::CONST_01 => 1,
-            HW3_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW3`"]
@@ -340,22 +328,19 @@ impl<'a> HW3_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW4_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW4_A> for u8 {
     #[inline(always)]
     fn from(variant: HW4_A) -> Self {
-        match variant {
-            HW4_A::CONST_00 => 0,
-            HW4_A::CONST_01 => 1,
-            HW4_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW4`"]
@@ -422,22 +407,19 @@ impl<'a> HW4_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW5_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW5_A> for u8 {
     #[inline(always)]
     fn from(variant: HW5_A) -> Self {
-        match variant {
-            HW5_A::CONST_00 => 0,
-            HW5_A::CONST_01 => 1,
-            HW5_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW5`"]
@@ -504,22 +486,19 @@ impl<'a> HW5_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW6_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW6_A> for u8 {
     #[inline(always)]
     fn from(variant: HW6_A) -> Self {
-        match variant {
-            HW6_A::CONST_00 => 0,
-            HW6_A::CONST_01 => 1,
-            HW6_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW6`"]
@@ -586,22 +565,19 @@ impl<'a> HW6_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 7\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW7_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW7_A> for u8 {
     #[inline(always)]
     fn from(variant: HW7_A) -> Self {
-        match variant {
-            HW7_A::CONST_00 => 0,
-            HW7_A::CONST_01 => 1,
-            HW7_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW7`"]
@@ -668,22 +644,19 @@ impl<'a> HW7_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 8\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW8_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW8_A> for u8 {
     #[inline(always)]
     fn from(variant: HW8_A) -> Self {
-        match variant {
-            HW8_A::CONST_00 => 0,
-            HW8_A::CONST_01 => 1,
-            HW8_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW8`"]
@@ -750,22 +723,19 @@ impl<'a> HW8_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 9\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW9_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW9_A> for u8 {
     #[inline(always)]
     fn from(variant: HW9_A) -> Self {
-        match variant {
-            HW9_A::CONST_00 => 0,
-            HW9_A::CONST_01 => 1,
-            HW9_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW9`"]
@@ -832,22 +802,19 @@ impl<'a> HW9_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 10\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW10_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW10_A> for u8 {
     #[inline(always)]
     fn from(variant: HW10_A) -> Self {
-        match variant {
-            HW10_A::CONST_00 => 0,
-            HW10_A::CONST_01 => 1,
-            HW10_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW10`"]
@@ -914,22 +881,19 @@ impl<'a> HW10_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW11_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW11_A> for u8 {
     #[inline(always)]
     fn from(variant: HW11_A) -> Self {
-        match variant {
-            HW11_A::CONST_00 => 0,
-            HW11_A::CONST_01 => 1,
-            HW11_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW11`"]
@@ -996,22 +960,19 @@ impl<'a> HW11_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 12\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW12_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW12_A> for u8 {
     #[inline(always)]
     fn from(variant: HW12_A) -> Self {
-        match variant {
-            HW12_A::CONST_00 => 0,
-            HW12_A::CONST_01 => 1,
-            HW12_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW12`"]
@@ -1078,22 +1039,19 @@ impl<'a> HW12_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 13\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW13_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW13_A> for u8 {
     #[inline(always)]
     fn from(variant: HW13_A) -> Self {
-        match variant {
-            HW13_A::CONST_00 => 0,
-            HW13_A::CONST_01 => 1,
-            HW13_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW13`"]
@@ -1160,22 +1118,19 @@ impl<'a> HW13_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 14\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW14_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW14_A> for u8 {
     #[inline(always)]
     fn from(variant: HW14_A) -> Self {
-        match variant {
-            HW14_A::CONST_00 => 0,
-            HW14_A::CONST_01 => 1,
-            HW14_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW14`"]
@@ -1242,22 +1197,19 @@ impl<'a> HW14_W<'a> {
 }
 #[doc = "Port n Pin Hardware Select Bit 15\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HW15_A {
     #[doc = "0: Software control only."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: HWI0/HWO0 control path can override the software configuration."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: HWI1/HWO1 control path can override the software configuration."]
-    CONST_10,
+    CONST_10 = 2,
 }
 impl From<HW15_A> for u8 {
     #[inline(always)]
     fn from(variant: HW15_A) -> Self {
-        match variant {
-            HW15_A::CONST_00 => 0,
-            HW15_A::CONST_01 => 1,
-            HW15_A::CONST_10 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HW15`"]

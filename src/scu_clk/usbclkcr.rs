@@ -28,17 +28,14 @@ impl<'a> USBDIV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBSEL_A {
     #[doc = "0: USB PLL Clock"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: PLL Clock"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<USBSEL_A> for bool {
     #[inline(always)]
     fn from(variant: USBSEL_A) -> Self {
-        match variant {
-            USBSEL_A::CONST_0 => false,
-            USBSEL_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USBSEL`"]

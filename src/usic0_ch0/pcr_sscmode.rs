@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PCR_SSCMODE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSLSEN_A {
     #[doc = "0: The MSLS generation is disabled (MSLS = 0). This is the setting for SSC slave mode."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The MSLS generation is enabled. This is the setting for SSC master mode."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MSLSEN_A> for bool {
     #[inline(always)]
     fn from(variant: MSLSEN_A) -> Self {
-        match variant {
-            MSLSEN_A::VALUE1 => false,
-            MSLSEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSLSEN`"]
@@ -92,17 +89,14 @@ impl<'a> MSLSEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELCTR_A {
     #[doc = "0: The coded select mode is enabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The direct select mode is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SELCTR_A> for bool {
     #[inline(always)]
     fn from(variant: SELCTR_A) -> Self {
-        match variant {
-            SELCTR_A::VALUE1 => false,
-            SELCTR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SELCTR`"]
@@ -170,17 +164,14 @@ impl<'a> SELCTR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELINV_A {
     #[doc = "0: The SELO outputs have the same polarity as the MSLS signal (active high)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The SELO outputs have the inverted polarity to the MSLS signal (active low)."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SELINV_A> for bool {
     #[inline(always)]
     fn from(variant: SELINV_A) -> Self {
-        match variant {
-            SELINV_A::VALUE1 => false,
-            SELINV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SELINV`"]
@@ -248,17 +239,14 @@ impl<'a> SELINV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FEM_A {
     #[doc = "0: The current data frame is considered as finished when the last bit of a data word has been sent out and the transmit buffer TBUF does not contain new data (TDV = 0)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The MSLS signal is kept active also while no new data is available and no other end of frame condition is reached. In this case, the software can accept delays in delivering the data without automatic deactivation of MSLS in multi-word data frames."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FEM_A> for bool {
     #[inline(always)]
     fn from(variant: FEM_A) -> Self {
-        match variant {
-            FEM_A::VALUE1 => false,
-            FEM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FEM`"]
@@ -324,25 +312,21 @@ impl<'a> FEM_W<'a> {
 }
 #[doc = "Input Frequency Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CTQSEL1_A {
     #[doc = "0: fCTQIN = fPDIV"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: fCTQIN = fPPP"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: fCTQIN = fSCLK"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: fCTQIN = fMCLK"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CTQSEL1_A> for u8 {
     #[inline(always)]
     fn from(variant: CTQSEL1_A) -> Self {
-        match variant {
-            CTQSEL1_A::VALUE1 => 0,
-            CTQSEL1_A::VALUE2 => 1,
-            CTQSEL1_A::VALUE3 => 2,
-            CTQSEL1_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CTQSEL1`"]
@@ -451,17 +435,14 @@ impl<'a> DCTQ1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PARIEN_A {
     #[doc = "0: A protocol interrupt is not generated with the detection of a parity error."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A protocol interrupt is generated with the detection of a parity error."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PARIEN_A> for bool {
     #[inline(always)]
     fn from(variant: PARIEN_A) -> Self {
-        match variant {
-            PARIEN_A::VALUE1 => false,
-            PARIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PARIEN`"]
@@ -529,17 +510,14 @@ impl<'a> PARIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSLSIEN_A {
     #[doc = "0: A protocol interrupt is not generated if a change of signal MSLS is detected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A protocol interrupt is generated if a change of signal MSLS is detected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MSLSIEN_A> for bool {
     #[inline(always)]
     fn from(variant: MSLSIEN_A) -> Self {
-        match variant {
-            MSLSIEN_A::VALUE1 => false,
-            MSLSIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSLSIEN`"]
@@ -607,17 +585,14 @@ impl<'a> MSLSIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DX2TIEN_A {
     #[doc = "0: A protocol interrupt is not generated if DX2T is activated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A protocol interrupt is generated if DX2T is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DX2TIEN_A> for bool {
     #[inline(always)]
     fn from(variant: DX2TIEN_A) -> Self {
-        match variant {
-            DX2TIEN_A::VALUE1 => false,
-            DX2TIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DX2TIEN`"]
@@ -683,19 +658,17 @@ impl<'a> DX2TIEN_W<'a> {
 }
 #[doc = "Select Output\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SELO_A {
     #[doc = "0: The corresponding SELOx line cannot be activated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The corresponding SELOx line can be activated (according to the mode selected by SELCTR)."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SELO_A> for u8 {
     #[inline(always)]
     fn from(variant: SELO_A) -> Self {
-        match variant {
-            SELO_A::VALUE1 => 0,
-            SELO_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SELO`"]
@@ -753,17 +726,14 @@ impl<'a> SELO_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIWEN_A {
     #[doc = "0: No delay between data words of the same frame."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The inter-word delay Tiw is enabled and introduced between data words of the same frame."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TIWEN_A> for bool {
     #[inline(always)]
     fn from(variant: TIWEN_A) -> Self {
-        match variant {
-            TIWEN_A::VALUE1 => false,
-            TIWEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TIWEN`"]
@@ -831,17 +801,14 @@ impl<'a> TIWEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLPHSEL_A {
     #[doc = "0: Data bits are shifted out with the leading edge of the shift clock signal and latched in with the trailing edge."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The first data bit is shifted out when the data shift unit receives a low to high transition from the DX2 stage. Subsequent bits are shifted out with the trailing edge of the shift clock signal. Data bits are always latched in with the leading edge."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SLPHSEL_A> for bool {
     #[inline(always)]
     fn from(variant: SLPHSEL_A) -> Self {
-        match variant {
-            SLPHSEL_A::VALUE1 => false,
-            SLPHSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SLPHSEL`"]
@@ -909,17 +876,14 @@ impl<'a> SLPHSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCLK_A {
     #[doc = "0: The MCLK generation is disabled and output MCLK = 0."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The MCLK generation is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MCLK_A> for bool {
     #[inline(always)]
     fn from(variant: MCLK_A) -> Self {
-        match variant {
-            MCLK_A::VALUE1 => false,
-            MCLK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MCLK`"]

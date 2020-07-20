@@ -2,16 +2,15 @@
 pub type R = crate::R<u32, super::CPUID>;
 #[doc = "Revision number\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REVISION_A {
     #[doc = "1: Patch 1"]
-    VALUE1,
+    VALUE1 = 1,
 }
 impl From<REVISION_A> for u8 {
     #[inline(always)]
     fn from(variant: REVISION_A) -> Self {
-        match variant {
-            REVISION_A::VALUE1 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `Revision`"]
@@ -34,16 +33,15 @@ impl REVISION_R {
 }
 #[doc = "Part number of the processor\n\nValue on reset: 3108"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum PARTNO_A {
     #[doc = "3108: Cortex-M4"]
-    VALUE1,
+    VALUE1 = 3108,
 }
 impl From<PARTNO_A> for u16 {
     #[inline(always)]
     fn from(variant: PARTNO_A) -> Self {
-        match variant {
-            PARTNO_A::VALUE1 => 3108,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PartNo`"]
@@ -68,16 +66,15 @@ impl PARTNO_R {
 pub type CONSTANT_R = crate::R<u8, u8>;
 #[doc = "Variant number\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum VARIANT_A {
     #[doc = "0: Revision 0"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<VARIANT_A> for u8 {
     #[inline(always)]
     fn from(variant: VARIANT_A) -> Self {
-        match variant {
-            VARIANT_A::VALUE1 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `Variant`"]
@@ -100,16 +97,15 @@ impl VARIANT_R {
 }
 #[doc = "Implementer code\n\nValue on reset: 65"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IMPLEMENTER_A {
     #[doc = "65: ARM"]
-    VALUE1,
+    VALUE1 = 65,
 }
 impl From<IMPLEMENTER_A> for u8 {
     #[inline(always)]
     fn from(variant: IMPLEMENTER_A) -> Self {
-        match variant {
-            IMPLEMENTER_A::VALUE1 => 65,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `Implementer`"]

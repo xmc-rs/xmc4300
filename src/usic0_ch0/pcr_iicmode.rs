@@ -28,17 +28,14 @@ impl<'a> SLAD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACK00_A {
     #[doc = "0: The slave device is not sensitive to this address."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The slave device is sensitive to this address."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACK00_A> for bool {
     #[inline(always)]
     fn from(variant: ACK00_A) -> Self {
-        match variant {
-            ACK00_A::VALUE1 => false,
-            ACK00_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACK00`"]
@@ -106,17 +103,14 @@ impl<'a> ACK00_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STIM_A {
     #[doc = "0: A symbol contains 10 time quanta. The timing is adapted for standard mode (100 kBaud)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A symbol contains 25 time quanta. The timing is adapted for fast mode (400 kBaud)."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STIM_A> for bool {
     #[inline(always)]
     fn from(variant: STIM_A) -> Self {
-        match variant {
-            STIM_A::VALUE1 => false,
-            STIM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STIM`"]
@@ -184,17 +178,14 @@ impl<'a> STIM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SCRIEN_A {
     #[doc = "0: The start condition interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The start condition interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SCRIEN_A> for bool {
     #[inline(always)]
     fn from(variant: SCRIEN_A) -> Self {
-        match variant {
-            SCRIEN_A::VALUE1 => false,
-            SCRIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SCRIEN`"]
@@ -262,17 +253,14 @@ impl<'a> SCRIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSCRIEN_A {
     #[doc = "0: The repeated start condition interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The repeated start condition interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RSCRIEN_A> for bool {
     #[inline(always)]
     fn from(variant: RSCRIEN_A) -> Self {
-        match variant {
-            RSCRIEN_A::VALUE1 => false,
-            RSCRIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RSCRIEN`"]
@@ -340,17 +328,14 @@ impl<'a> RSCRIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCRIEN_A {
     #[doc = "0: The stop condition interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The stop condition interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PCRIEN_A> for bool {
     #[inline(always)]
     fn from(variant: PCRIEN_A) -> Self {
-        match variant {
-            PCRIEN_A::VALUE1 => false,
-            PCRIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PCRIEN`"]
@@ -418,17 +403,14 @@ impl<'a> PCRIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NACKIEN_A {
     #[doc = "0: The non-acknowledge interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The non-acknowledge interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<NACKIEN_A> for bool {
     #[inline(always)]
     fn from(variant: NACKIEN_A) -> Self {
-        match variant {
-            NACKIEN_A::VALUE1 => false,
-            NACKIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NACKIEN`"]
@@ -496,17 +478,14 @@ impl<'a> NACKIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ARLIEN_A {
     #[doc = "0: The arbitration lost interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The arbitration lost interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ARLIEN_A> for bool {
     #[inline(always)]
     fn from(variant: ARLIEN_A) -> Self {
-        match variant {
-            ARLIEN_A::VALUE1 => false,
-            ARLIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ARLIEN`"]
@@ -574,17 +553,14 @@ impl<'a> ARLIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRRIEN_A {
     #[doc = "0: The slave read request interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The slave read request interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SRRIEN_A> for bool {
     #[inline(always)]
     fn from(variant: SRRIEN_A) -> Self {
-        match variant {
-            SRRIEN_A::VALUE1 => false,
-            SRRIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRRIEN`"]
@@ -652,17 +628,14 @@ impl<'a> SRRIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRIEN_A {
     #[doc = "0: The error interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The error interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ERRIEN_A> for bool {
     #[inline(always)]
     fn from(variant: ERRIEN_A) -> Self {
-        match variant {
-            ERRIEN_A::VALUE1 => false,
-            ERRIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERRIEN`"]
@@ -730,17 +703,14 @@ impl<'a> ERRIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SACKDIS_A {
     #[doc = "0: The generation of an active slave acknowledge is enabled (slave acknowledge with 0 level = more bytes can be received)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The generation of an active slave acknowledge is disabled (slave acknowledge with 1 level = reception stopped)."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SACKDIS_A> for bool {
     #[inline(always)]
     fn from(variant: SACKDIS_A) -> Self {
-        match variant {
-            SACKDIS_A::VALUE1 => false,
-            SACKDIS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SACKDIS`"]
@@ -822,17 +792,14 @@ impl<'a> HDEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACKIEN_A {
     #[doc = "0: The acknowledge interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The acknowledge interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACKIEN_A> for bool {
     #[inline(always)]
     fn from(variant: ACKIEN_A) -> Self {
-        match variant {
-            ACKIEN_A::VALUE1 => false,
-            ACKIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACKIEN`"]
@@ -900,17 +867,14 @@ impl<'a> ACKIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCLK_A {
     #[doc = "0: The MCLK generation is disabled and MCLK is 0."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The MCLK generation is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MCLK_A> for bool {
     #[inline(always)]
     fn from(variant: MCLK_A) -> Self {
-        match variant {
-            MCLK_A::VALUE1 => false,
-            MCLK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MCLK`"]

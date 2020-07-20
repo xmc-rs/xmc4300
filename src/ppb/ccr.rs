@@ -14,17 +14,15 @@ impl crate::ResetValue for super::CCR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NONBASETHRDENA_A {
     #[doc = "0: processor can enter Thread mode only when no exception is active."]
-    VALUE1,
-    #[doc = "1: processor can enter Thread mode from any level under the control of an EXC_RETURN value, see Exception returnException return occurs when the processor is in Handler mode and executes one of the following instructions to load the EXC_RETURN value into the PC:an LDM or POP instruction that loads the PCan LDR instruction with PC as the destinationa BX instruction using any register.EXC_RETURN is the value loaded into the LR on exception entry. The exception mechanism relies on this value to detect when the processor has completed an exception handler. The lowest five bits of this value provide information on the return stack and processor mode. shows the EXC_RETURN values with a description of the exception return behavior. All EXC_RETURN values have bits\\[31:5\\] set to one. When this value is loaded into the PC it indicates to the processor that the exception is complete, and the processor initiates the appropriate exception return sequence.Exception return behaviorEXC_RETURN\\[31:0\\]Description 0xFFFFFFF1 Return to Handler mode, exception return uses non-floating-point state from the MSP and execution uses MSP after return. 0xFFFFFFF9 Return to Thread mode, exception return uses non-floating-point state from MSP and execution uses MSP after return. 0xFFFFFFFD Return to Thread mode, exception return uses non-floating-point state from the PSP and execution uses PSP after return. 0xFFFFFFE1 Return to Handler mode, exception return uses floating-point-state from MSP and execution uses MSP after return. 0xFFFFFFE9 Return to Thread mode, exception return uses floating-point state from MSP and execution uses MSP after return. 0xFFFFFFED Return to Thread mode, exception return uses floating-point state from PSP and execution uses PSP after return. ."]
-    VALUE2,
+    VALUE1 = 0,
+    #[doc = "1: processor can enter Thread mode from any level under the control of an EXC_RETURN value, see Exception returnException return occurs when the processor is in Handler mode and executes one of the following instructions to load the EXC_RETURN value into the PC:an LDM or POP instruction that loads the PCan LDR instruction with PC as the destinationa BX instruction using any register.EXC_RETURN is the value loaded into the LR on exception entry. The exception mechanism relies on this value to detect when the processor has completed an exception handler. The lowest five bits of this value provide information on the return stack and processor mode. shows the EXC_RETURN values with a description of the exception return behavior. All EXC_RETURN values have bits\\[31:5\\]
+set to one. When this value is loaded into the PC it indicates to the processor that the exception is complete, and the processor initiates the appropriate exception return sequence.Exception return behaviorEXC_RETURN\\[31:0\\]Description 0xFFFFFFF1 Return to Handler mode, exception return uses non-floating-point state from the MSP and execution uses MSP after return. 0xFFFFFFF9 Return to Thread mode, exception return uses non-floating-point state from MSP and execution uses MSP after return. 0xFFFFFFFD Return to Thread mode, exception return uses non-floating-point state from the PSP and execution uses PSP after return. 0xFFFFFFE1 Return to Handler mode, exception return uses floating-point-state from MSP and execution uses MSP after return. 0xFFFFFFE9 Return to Thread mode, exception return uses floating-point state from MSP and execution uses MSP after return. 0xFFFFFFED Return to Thread mode, exception return uses floating-point state from PSP and execution uses PSP after return. ."]
+    VALUE2 = 1,
 }
 impl From<NONBASETHRDENA_A> for bool {
     #[inline(always)]
     fn from(variant: NONBASETHRDENA_A) -> Self {
-        match variant {
-            NONBASETHRDENA_A::VALUE1 => false,
-            NONBASETHRDENA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NONBASETHRDENA`"]
@@ -66,7 +64,8 @@ impl<'a> NONBASETHRDENA_W<'a> {
     pub fn value1(self) -> &'a mut W {
         self.variant(NONBASETHRDENA_A::VALUE1)
     }
-    #[doc = "processor can enter Thread mode from any level under the control of an EXC_RETURN value, see Exception returnException return occurs when the processor is in Handler mode and executes one of the following instructions to load the EXC_RETURN value into the PC:an LDM or POP instruction that loads the PCan LDR instruction with PC as the destinationa BX instruction using any register.EXC_RETURN is the value loaded into the LR on exception entry. The exception mechanism relies on this value to detect when the processor has completed an exception handler. The lowest five bits of this value provide information on the return stack and processor mode. shows the EXC_RETURN values with a description of the exception return behavior. All EXC_RETURN values have bits\\[31:5\\] set to one. When this value is loaded into the PC it indicates to the processor that the exception is complete, and the processor initiates the appropriate exception return sequence.Exception return behaviorEXC_RETURN\\[31:0\\]Description 0xFFFFFFF1 Return to Handler mode, exception return uses non-floating-point state from the MSP and execution uses MSP after return. 0xFFFFFFF9 Return to Thread mode, exception return uses non-floating-point state from MSP and execution uses MSP after return. 0xFFFFFFFD Return to Thread mode, exception return uses non-floating-point state from the PSP and execution uses PSP after return. 0xFFFFFFE1 Return to Handler mode, exception return uses floating-point-state from MSP and execution uses MSP after return. 0xFFFFFFE9 Return to Thread mode, exception return uses floating-point state from MSP and execution uses MSP after return. 0xFFFFFFED Return to Thread mode, exception return uses floating-point state from PSP and execution uses PSP after return. ."]
+    #[doc = "processor can enter Thread mode from any level under the control of an EXC_RETURN value, see Exception returnException return occurs when the processor is in Handler mode and executes one of the following instructions to load the EXC_RETURN value into the PC:an LDM or POP instruction that loads the PCan LDR instruction with PC as the destinationa BX instruction using any register.EXC_RETURN is the value loaded into the LR on exception entry. The exception mechanism relies on this value to detect when the processor has completed an exception handler. The lowest five bits of this value provide information on the return stack and processor mode. shows the EXC_RETURN values with a description of the exception return behavior. All EXC_RETURN values have bits\\[31:5\\]
+set to one. When this value is loaded into the PC it indicates to the processor that the exception is complete, and the processor initiates the appropriate exception return sequence.Exception return behaviorEXC_RETURN\\[31:0\\]Description 0xFFFFFFF1 Return to Handler mode, exception return uses non-floating-point state from the MSP and execution uses MSP after return. 0xFFFFFFF9 Return to Thread mode, exception return uses non-floating-point state from MSP and execution uses MSP after return. 0xFFFFFFFD Return to Thread mode, exception return uses non-floating-point state from the PSP and execution uses PSP after return. 0xFFFFFFE1 Return to Handler mode, exception return uses floating-point-state from MSP and execution uses MSP after return. 0xFFFFFFE9 Return to Thread mode, exception return uses floating-point state from MSP and execution uses MSP after return. 0xFFFFFFED Return to Thread mode, exception return uses floating-point state from PSP and execution uses PSP after return. ."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
         self.variant(NONBASETHRDENA_A::VALUE2)
@@ -92,17 +91,14 @@ impl<'a> NONBASETHRDENA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USERSETMPEND_A {
     #[doc = "0: disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<USERSETMPEND_A> for bool {
     #[inline(always)]
     fn from(variant: USERSETMPEND_A) -> Self {
-        match variant {
-            USERSETMPEND_A::VALUE1 => false,
-            USERSETMPEND_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USERSETMPEND`"]
@@ -170,17 +166,14 @@ impl<'a> USERSETMPEND_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UNALIGN_TRP_A {
     #[doc = "0: do not trap unaligned halfword and word accesses"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: trap unaligned halfword and word accesses."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<UNALIGN_TRP_A> for bool {
     #[inline(always)]
     fn from(variant: UNALIGN_TRP_A) -> Self {
-        match variant {
-            UNALIGN_TRP_A::VALUE1 => false,
-            UNALIGN_TRP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UNALIGN_TRP`"]
@@ -248,17 +241,14 @@ impl<'a> UNALIGN_TRP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIV_0_TRP_A {
     #[doc = "0: do not trap divide by 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: trap divide by 0."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DIV_0_TRP_A> for bool {
     #[inline(always)]
     fn from(variant: DIV_0_TRP_A) -> Self {
-        match variant {
-            DIV_0_TRP_A::VALUE1 => false,
-            DIV_0_TRP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIV_0_TRP`"]
@@ -326,17 +316,14 @@ impl<'a> DIV_0_TRP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BFHFNMIGN_A {
     #[doc = "0: data bus faults caused by load and store instructions cause a lock-up"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: handlers running at priority -1 and -2 ignore data bus faults caused by load and store instructions."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BFHFNMIGN_A> for bool {
     #[inline(always)]
     fn from(variant: BFHFNMIGN_A) -> Self {
-        match variant {
-            BFHFNMIGN_A::VALUE1 => false,
-            BFHFNMIGN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BFHFNMIGN`"]
@@ -404,17 +391,14 @@ impl<'a> BFHFNMIGN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STKALIGN_A {
     #[doc = "0: 4-byte aligned"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 8-byte aligned."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STKALIGN_A> for bool {
     #[inline(always)]
     fn from(variant: STKALIGN_A) -> Self {
-        match variant {
-            STKALIGN_A::VALUE1 => false,
-            STKALIGN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STKALIGN`"]

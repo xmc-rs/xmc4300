@@ -12,31 +12,25 @@ impl crate::ResetValue for super::INPR {
 }
 #[doc = "Transmit Shift Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TSINP_A {
     #[doc = "0: Output SR0 becomes activated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Output SR1 becomes activated."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Output SR2 becomes activated."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Output SR3 becomes activated."]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Output SR4 becomes activated."]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: Output SR5 becomes activated."]
-    VALUE6,
+    VALUE6 = 5,
 }
 impl From<TSINP_A> for u8 {
     #[inline(always)]
     fn from(variant: TSINP_A) -> Self {
-        match variant {
-            TSINP_A::VALUE1 => 0,
-            TSINP_A::VALUE2 => 1,
-            TSINP_A::VALUE3 => 2,
-            TSINP_A::VALUE4 => 3,
-            TSINP_A::VALUE5 => 4,
-            TSINP_A::VALUE6 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TSINP`"]

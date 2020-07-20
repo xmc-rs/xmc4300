@@ -14,17 +14,14 @@ impl crate::ResetValue for super::REFLAG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV0_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV0_A> for bool {
     #[inline(always)]
     fn from(variant: REV0_A) -> Self {
-        match variant {
-            REV0_A::VALUE1 => false,
-            REV0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV0`"]
@@ -92,17 +89,14 @@ impl<'a> REV0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV1_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV1_A> for bool {
     #[inline(always)]
     fn from(variant: REV1_A) -> Self {
-        match variant {
-            REV1_A::VALUE1 => false,
-            REV1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV1`"]
@@ -170,17 +164,14 @@ impl<'a> REV1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV2_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV2_A> for bool {
     #[inline(always)]
     fn from(variant: REV2_A) -> Self {
-        match variant {
-            REV2_A::VALUE1 => false,
-            REV2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV2`"]
@@ -248,17 +239,14 @@ impl<'a> REV2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV3_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV3_A> for bool {
     #[inline(always)]
     fn from(variant: REV3_A) -> Self {
-        match variant {
-            REV3_A::VALUE1 => false,
-            REV3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV3`"]
@@ -326,17 +314,14 @@ impl<'a> REV3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV4_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV4_A> for bool {
     #[inline(always)]
     fn from(variant: REV4_A) -> Self {
-        match variant {
-            REV4_A::VALUE1 => false,
-            REV4_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV4`"]
@@ -404,17 +389,14 @@ impl<'a> REV4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV5_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV5_A> for bool {
     #[inline(always)]
     fn from(variant: REV5_A) -> Self {
-        match variant {
-            REV5_A::VALUE1 => false,
-            REV5_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV5`"]
@@ -482,17 +464,14 @@ impl<'a> REV5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV6_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV6_A> for bool {
     #[inline(always)]
     fn from(variant: REV6_A) -> Self {
-        match variant {
-            REV6_A::VALUE1 => false,
-            REV6_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV6`"]
@@ -560,17 +539,14 @@ impl<'a> REV6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV7_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV7_A> for bool {
     #[inline(always)]
     fn from(variant: REV7_A) -> Self {
-        match variant {
-            REV7_A::VALUE1 => false,
-            REV7_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV7`"]
@@ -638,17 +614,14 @@ impl<'a> REV7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV8_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV8_A> for bool {
     #[inline(always)]
     fn from(variant: REV8_A) -> Self {
-        match variant {
-            REV8_A::VALUE1 => false,
-            REV8_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV8`"]
@@ -716,17 +689,14 @@ impl<'a> REV8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV9_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV9_A> for bool {
     #[inline(always)]
     fn from(variant: REV9_A) -> Self {
-        match variant {
-            REV9_A::VALUE1 => false,
-            REV9_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV9`"]
@@ -794,17 +764,14 @@ impl<'a> REV9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV10_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV10_A> for bool {
     #[inline(always)]
     fn from(variant: REV10_A) -> Self {
-        match variant {
-            REV10_A::VALUE1 => false,
-            REV10_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV10`"]
@@ -872,17 +839,14 @@ impl<'a> REV10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV11_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV11_A> for bool {
     #[inline(always)]
     fn from(variant: REV11_A) -> Self {
-        match variant {
-            REV11_A::VALUE1 => false,
-            REV11_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV11`"]
@@ -950,17 +914,14 @@ impl<'a> REV11_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV12_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV12_A> for bool {
     #[inline(always)]
     fn from(variant: REV12_A) -> Self {
-        match variant {
-            REV12_A::VALUE1 => false,
-            REV12_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV12`"]
@@ -1028,17 +989,14 @@ impl<'a> REV12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV13_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV13_A> for bool {
     #[inline(always)]
     fn from(variant: REV13_A) -> Self {
-        match variant {
-            REV13_A::VALUE1 => false,
-            REV13_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV13`"]
@@ -1106,17 +1064,14 @@ impl<'a> REV13_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV14_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV14_A> for bool {
     #[inline(always)]
     fn from(variant: REV14_A) -> Self {
-        match variant {
-            REV14_A::VALUE1 => false,
-            REV14_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV14`"]
@@ -1184,17 +1139,14 @@ impl<'a> REV14_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REV15_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GxRESy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REV15_A> for bool {
     #[inline(always)]
     fn from(variant: REV15_A) -> Self {
-        match variant {
-            REV15_A::VALUE1 => false,
-            REV15_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REV15`"]

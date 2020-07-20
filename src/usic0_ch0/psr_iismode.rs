@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PSR_IISMODE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WA_A {
     #[doc = "0: WA has been sampled 0."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: WA has been sampled 1."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WA_A> for bool {
     #[inline(always)]
     fn from(variant: WA_A) -> Self {
-        match variant {
-            WA_A::VALUE1 => false,
-            WA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WA`"]
@@ -92,17 +89,14 @@ impl<'a> WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DX2S_A {
     #[doc = "0: DX2S is 0."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: DX2S is 1."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DX2S_A> for bool {
     #[inline(always)]
     fn from(variant: DX2S_A) -> Self {
-        match variant {
-            DX2S_A::VALUE1 => false,
-            DX2S_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DX2S`"]
@@ -170,17 +164,14 @@ impl<'a> DX2S_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DX2TEV_A {
     #[doc = "0: The DX2T signal has not been activated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The DX2T signal has been activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DX2TEV_A> for bool {
     #[inline(always)]
     fn from(variant: DX2TEV_A) -> Self {
-        match variant {
-            DX2TEV_A::VALUE1 => false,
-            DX2TEV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DX2TEV`"]
@@ -248,17 +239,14 @@ impl<'a> DX2TEV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAFE_A {
     #[doc = "0: A WA falling edge has not been generated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A WA falling edge has been generated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WAFE_A> for bool {
     #[inline(always)]
     fn from(variant: WAFE_A) -> Self {
-        match variant {
-            WAFE_A::VALUE1 => false,
-            WAFE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAFE`"]
@@ -326,17 +314,14 @@ impl<'a> WAFE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WARE_A {
     #[doc = "0: A WA rising edge has not been generated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A WA rising edge has been generated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WARE_A> for bool {
     #[inline(always)]
     fn from(variant: WARE_A) -> Self {
-        match variant {
-            WARE_A::VALUE1 => false,
-            WARE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WARE`"]
@@ -404,17 +389,14 @@ impl<'a> WARE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum END_A {
     #[doc = "0: The WA generation has not yet ended (if it is running and WAGEN has been cleared)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The WA generation has ended (if it has been running)."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<END_A> for bool {
     #[inline(always)]
     fn from(variant: END_A) -> Self {
-        match variant {
-            END_A::VALUE1 => false,
-            END_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `END`"]
@@ -482,17 +464,14 @@ impl<'a> END_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSIF_A {
     #[doc = "0: A receiver start event has not occurred."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A receiver start event has occurred."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RSIF_A> for bool {
     #[inline(always)]
     fn from(variant: RSIF_A) -> Self {
-        match variant {
-            RSIF_A::VALUE1 => false,
-            RSIF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RSIF`"]
@@ -560,17 +539,14 @@ impl<'a> RSIF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DLIF_A {
     #[doc = "0: A data lost event has not occurred."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A data lost event has occurred."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DLIF_A> for bool {
     #[inline(always)]
     fn from(variant: DLIF_A) -> Self {
-        match variant {
-            DLIF_A::VALUE1 => false,
-            DLIF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DLIF`"]
@@ -638,17 +614,14 @@ impl<'a> DLIF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSIF_A {
     #[doc = "0: A transmit shift event has not occurred."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A transmit shift event has occurred."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TSIF_A> for bool {
     #[inline(always)]
     fn from(variant: TSIF_A) -> Self {
-        match variant {
-            TSIF_A::VALUE1 => false,
-            TSIF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TSIF`"]
@@ -716,17 +689,14 @@ impl<'a> TSIF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TBIF_A {
     #[doc = "0: A transmit buffer event has not occurred."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A transmit buffer event has occurred."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TBIF_A> for bool {
     #[inline(always)]
     fn from(variant: TBIF_A) -> Self {
-        match variant {
-            TBIF_A::VALUE1 => false,
-            TBIF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TBIF`"]
@@ -794,17 +764,14 @@ impl<'a> TBIF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RIF_A {
     #[doc = "0: A receive event has not occurred."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A receive event has occurred."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RIF_A> for bool {
     #[inline(always)]
     fn from(variant: RIF_A) -> Self {
-        match variant {
-            RIF_A::VALUE1 => false,
-            RIF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RIF`"]
@@ -872,17 +839,14 @@ impl<'a> RIF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AIF_A {
     #[doc = "0: An alternative receive event has not occurred."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: An alternative receive event has occurred."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AIF_A> for bool {
     #[inline(always)]
     fn from(variant: AIF_A) -> Self {
-        match variant {
-            AIF_A::VALUE1 => false,
-            AIF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AIF`"]
@@ -950,17 +914,14 @@ impl<'a> AIF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BRGIF_A {
     #[doc = "0: A baud rate generator event has not occurred."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A baud rate generator event has occurred."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BRGIF_A> for bool {
     #[inline(always)]
     fn from(variant: BRGIF_A) -> Self {
-        match variant {
-            BRGIF_A::VALUE1 => false,
-            BRGIF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BRGIF`"]

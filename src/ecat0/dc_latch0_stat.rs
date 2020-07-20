@@ -4,17 +4,14 @@ pub type R = crate::R<u8, super::DC_LATCH0_STAT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EV_L0_POS_A {
     #[doc = "0: Positive edge not detected or continuous mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Positive edge detected in single event mode only"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EV_L0_POS_A> for bool {
     #[inline(always)]
     fn from(variant: EV_L0_POS_A) -> Self {
-        match variant {
-            EV_L0_POS_A::VALUE1 => false,
-            EV_L0_POS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EV_L0_POS`"]
@@ -43,17 +40,14 @@ impl EV_L0_POS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EV_L0_NEG_A {
     #[doc = "0: Negative edge not detected or continuous mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Negative edge detected in single event mode only"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EV_L0_NEG_A> for bool {
     #[inline(always)]
     fn from(variant: EV_L0_NEG_A) -> Self {
-        match variant {
-            EV_L0_NEG_A::VALUE1 => false,
-            EV_L0_NEG_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EV_L0_NEG`"]

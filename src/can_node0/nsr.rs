@@ -28,17 +28,14 @@ impl<'a> LEC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXOK_A {
     #[doc = "0: No successful transmission since last (most recent) flag reset."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A message has been transmitted successfully (error-free and acknowledged by at least another node)."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TXOK_A> for bool {
     #[inline(always)]
     fn from(variant: TXOK_A) -> Self {
-        match variant {
-            TXOK_A::VALUE1 => false,
-            TXOK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXOK`"]
@@ -106,17 +103,14 @@ impl<'a> TXOK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXOK_A {
     #[doc = "0: No successful reception since last (most recent) flag reset."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A message has been received successfully."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RXOK_A> for bool {
     #[inline(always)]
     fn from(variant: RXOK_A) -> Self {
-        match variant {
-            RXOK_A::VALUE1 => false,
-            RXOK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXOK`"]
@@ -208,17 +202,14 @@ impl<'a> ALERT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EWRN_A {
     #[doc = "0: No warning limit exceeded."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: One of the error counters REC or TEC reached the warning limit EWRNLVL."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EWRN_A> for bool {
     #[inline(always)]
     fn from(variant: EWRN_A) -> Self {
-        match variant {
-            EWRN_A::VALUE1 => false,
-            EWRN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EWRN`"]
@@ -247,17 +238,14 @@ impl EWRN_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BOFF_A {
     #[doc = "0: CAN controller is not in the bus-off state."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CAN controller is in the bus-off state."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BOFF_A> for bool {
     #[inline(always)]
     fn from(variant: BOFF_A) -> Self {
-        match variant {
-            BOFF_A::VALUE1 => false,
-            BOFF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BOFF`"]
@@ -286,17 +274,14 @@ impl BOFF_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LLE_A {
     #[doc = "0: No List Length Error since last (most recent) flag reset."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A List Length Error has been detected during message acceptance filtering. The number of elements in the list that belongs to this CAN node differs from the list SIZE given in the list termination pointer."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LLE_A> for bool {
     #[inline(always)]
     fn from(variant: LLE_A) -> Self {
-        match variant {
-            LLE_A::VALUE1 => false,
-            LLE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LLE`"]
@@ -364,17 +349,14 @@ impl<'a> LLE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOE_A {
     #[doc = "0: No List Object Error since last (most recent) flag reset."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A List Object Error has been detected during message acceptance filtering. A message object with wrong LIST index entry in the Message Object Status Register has been detected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LOE_A> for bool {
     #[inline(always)]
     fn from(variant: LOE_A) -> Self {
-        match variant {
-            LOE_A::VALUE1 => false,
-            LOE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOE`"]

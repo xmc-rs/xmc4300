@@ -40,17 +40,14 @@ impl<'a> LIMIT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRBTM_A {
     #[doc = "0: Trigger mode 0: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=RBCTR.LIMIT."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Trigger mode 1: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=0."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SRBTM_A> for bool {
     #[inline(always)]
     fn from(variant: SRBTM_A) -> Self {
-        match variant {
-            SRBTM_A::VALUE1 => false,
-            SRBTM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRBTM`"]
@@ -118,17 +115,14 @@ impl<'a> SRBTM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRBTEN_A {
     #[doc = "0: The standard receive buffer event trigger through bit TRBSR.SRBT is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The standard receive buffer event trigger through bit TRBSR.SRBT is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SRBTEN_A> for bool {
     #[inline(always)]
     fn from(variant: SRBTEN_A) -> Self {
-        match variant {
-            SRBTEN_A::VALUE1 => false,
-            SRBTEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRBTEN`"]
@@ -194,31 +188,25 @@ impl<'a> SRBTEN_W<'a> {
 }
 #[doc = "Standard Receive Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRBINP_A {
     #[doc = "0: Output SR0 becomes activated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Output SR1 becomes activated."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Output SR2 becomes activated."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Output SR3 becomes activated."]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Output SR4 becomes activated."]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: Output SR5 becomes activated."]
-    VALUE6,
+    VALUE6 = 5,
 }
 impl From<SRBINP_A> for u8 {
     #[inline(always)]
     fn from(variant: SRBINP_A) -> Self {
-        match variant {
-            SRBINP_A::VALUE1 => 0,
-            SRBINP_A::VALUE2 => 1,
-            SRBINP_A::VALUE3 => 2,
-            SRBINP_A::VALUE4 => 3,
-            SRBINP_A::VALUE5 => 4,
-            SRBINP_A::VALUE6 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRBINP`"]
@@ -318,31 +306,25 @@ impl<'a> SRBINP_W<'a> {
 }
 #[doc = "Alternative Receive Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ARBINP_A {
     #[doc = "0: Output SR0 becomes activated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Output SR1 becomes activated."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Output SR2 becomes activated."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Output SR3 becomes activated."]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Output SR4 becomes activated."]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: Output SR5 becomes activated."]
-    VALUE6,
+    VALUE6 = 5,
 }
 impl From<ARBINP_A> for u8 {
     #[inline(always)]
     fn from(variant: ARBINP_A) -> Self {
-        match variant {
-            ARBINP_A::VALUE1 => 0,
-            ARBINP_A::VALUE2 => 1,
-            ARBINP_A::VALUE3 => 2,
-            ARBINP_A::VALUE4 => 3,
-            ARBINP_A::VALUE5 => 4,
-            ARBINP_A::VALUE6 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ARBINP`"]
@@ -442,25 +424,31 @@ impl<'a> ARBINP_W<'a> {
 }
 #[doc = "Receiver Control Information Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RCIM_A {
-    #[doc = "0: RCI\\[4\\] = PERR, RCI\\[3:0\\] = WLEN"]
-    VALUE1,
-    #[doc = "1: RCI\\[4\\] = SOF, RCI\\[3:0\\] = WLEN"]
-    VALUE2,
-    #[doc = "2: RCI\\[4\\] = 0, RCI\\[3:0\\] = WLEN"]
-    VALUE3,
-    #[doc = "3: RCI\\[4\\] = PERR, RCI\\[3\\] = PAR, RCI\\[2:1\\] = 00B, RCI\\[0\\] = SOF"]
-    VALUE4,
+    #[doc = "0: RCI\\[4\\]
+= PERR, RCI\\[3:0\\]
+= WLEN"]
+    VALUE1 = 0,
+    #[doc = "1: RCI\\[4\\]
+= SOF, RCI\\[3:0\\]
+= WLEN"]
+    VALUE2 = 1,
+    #[doc = "2: RCI\\[4\\]
+= 0, RCI\\[3:0\\]
+= WLEN"]
+    VALUE3 = 2,
+    #[doc = "3: RCI\\[4\\]
+= PERR, RCI\\[3\\]
+= PAR, RCI\\[2:1\\]
+= 00B, RCI\\[0\\]
+= SOF"]
+    VALUE4 = 3,
 }
 impl From<RCIM_A> for u8 {
     #[inline(always)]
     fn from(variant: RCIM_A) -> Self {
-        match variant {
-            RCIM_A::VALUE1 => 0,
-            RCIM_A::VALUE2 => 1,
-            RCIM_A::VALUE3 => 2,
-            RCIM_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RCIM`"]
@@ -510,22 +498,32 @@ impl<'a> RCIM_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "RCI\\[4\\] = PERR, RCI\\[3:0\\] = WLEN"]
+    #[doc = "RCI\\[4\\]
+= PERR, RCI\\[3:0\\]
+= WLEN"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
         self.variant(RCIM_A::VALUE1)
     }
-    #[doc = "RCI\\[4\\] = SOF, RCI\\[3:0\\] = WLEN"]
+    #[doc = "RCI\\[4\\]
+= SOF, RCI\\[3:0\\]
+= WLEN"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
         self.variant(RCIM_A::VALUE2)
     }
-    #[doc = "RCI\\[4\\] = 0, RCI\\[3:0\\] = WLEN"]
+    #[doc = "RCI\\[4\\]
+= 0, RCI\\[3:0\\]
+= WLEN"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut W {
         self.variant(RCIM_A::VALUE3)
     }
-    #[doc = "RCI\\[4\\] = PERR, RCI\\[3\\] = PAR, RCI\\[2:1\\] = 00B, RCI\\[0\\] = SOF"]
+    #[doc = "RCI\\[4\\]
+= PERR, RCI\\[3\\]
+= PAR, RCI\\[2:1\\]
+= 00B, RCI\\[0\\]
+= SOF"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut W {
         self.variant(RCIM_A::VALUE4)
@@ -539,34 +537,27 @@ impl<'a> RCIM_W<'a> {
 }
 #[doc = "Buffer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SIZE_A {
     #[doc = "0: The FIFO mechanism is disabled. The buffer does not accept any request for data."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The FIFO buffer contains 2 entries."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: The FIFO buffer contains 4 entries."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: The FIFO buffer contains 8 entries."]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: The FIFO buffer contains 16 entries."]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: The FIFO buffer contains 32 entries."]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: The FIFO buffer contains 64 entries."]
-    VALUE7,
+    VALUE7 = 6,
 }
 impl From<SIZE_A> for u8 {
     #[inline(always)]
     fn from(variant: SIZE_A) -> Self {
-        match variant {
-            SIZE_A::VALUE1 => 0,
-            SIZE_A::VALUE2 => 1,
-            SIZE_A::VALUE3 => 2,
-            SIZE_A::VALUE4 => 3,
-            SIZE_A::VALUE5 => 4,
-            SIZE_A::VALUE6 => 5,
-            SIZE_A::VALUE7 => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SIZE`"]
@@ -679,17 +670,16 @@ impl<'a> SIZE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RNM_A {
     #[doc = "0: Filling level mode: A standard receive buffer event occurs when the filling level equals the limit value and changes, either due to a read access from OUTR (LOF = 0) or due to a new received data word (LOF = 1)."]
-    VALUE1,
-    #[doc = "1: RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\] = 0. If OUTR.RCI\\[4\\] = 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
-    VALUE2,
+    VALUE1 = 0,
+    #[doc = "1: RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\]
+= 0. If OUTR.RCI\\[4\\]
+= 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
+    VALUE2 = 1,
 }
 impl From<RNM_A> for bool {
     #[inline(always)]
     fn from(variant: RNM_A) -> Self {
-        match variant {
-            RNM_A::VALUE1 => false,
-            RNM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RNM`"]
@@ -731,7 +721,9 @@ impl<'a> RNM_W<'a> {
     pub fn value1(self) -> &'a mut W {
         self.variant(RNM_A::VALUE1)
     }
-    #[doc = "RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\] = 0. If OUTR.RCI\\[4\\] = 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
+    #[doc = "RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\]
+= 0. If OUTR.RCI\\[4\\]
+= 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
         self.variant(RNM_A::VALUE2)
@@ -757,17 +749,14 @@ impl<'a> RNM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOF_A {
     #[doc = "0: A standard receive buffer event occurs when the filling level equals the limit value and gets lower due to a read access from OUTR."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A standard receive buffer event occurs when the filling level equals the limit value and gets bigger due to the reception of a new data word."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LOF_A> for bool {
     #[inline(always)]
     fn from(variant: LOF_A) -> Self {
-        match variant {
-            LOF_A::VALUE1 => false,
-            LOF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOF`"]
@@ -835,17 +824,14 @@ impl<'a> LOF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ARBIEN_A {
     #[doc = "0: The alternative receive buffer interrupt generation is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The alternative receive buffer interrupt generation is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ARBIEN_A> for bool {
     #[inline(always)]
     fn from(variant: ARBIEN_A) -> Self {
-        match variant {
-            ARBIEN_A::VALUE1 => false,
-            ARBIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ARBIEN`"]
@@ -913,17 +899,14 @@ impl<'a> ARBIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRBIEN_A {
     #[doc = "0: The standard receive buffer interrupt generation is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The standard receive buffer interrupt generation is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SRBIEN_A> for bool {
     #[inline(always)]
     fn from(variant: SRBIEN_A) -> Self {
-        match variant {
-            SRBIEN_A::VALUE1 => false,
-            SRBIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRBIEN`"]
@@ -991,17 +974,14 @@ impl<'a> SRBIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RBERIEN_A {
     #[doc = "0: The receive buffer error interrupt generation is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The receive buffer error interrupt generation is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RBERIEN_A> for bool {
     #[inline(always)]
     fn from(variant: RBERIEN_A) -> Self {
-        match variant {
-            RBERIEN_A::VALUE1 => false,
-            RBERIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RBERIEN`"]

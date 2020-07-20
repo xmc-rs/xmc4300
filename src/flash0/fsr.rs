@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::FSR>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PBUSY_A {
     #[doc = "0: PFLASH ready, not busy; PFLASH in read mode."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: PFLASH busy; PFLASH not in read mode."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PBUSY_A> for bool {
     #[inline(always)]
     fn from(variant: PBUSY_A) -> Self {
-        match variant {
-            PBUSY_A::VALUE1 => false,
-            PBUSY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PBUSY`"]
@@ -45,17 +42,14 @@ pub type FABUSY_R = crate::R<bool, bool>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROG_A {
     #[doc = "0: There is no program operation requested or in progress or just finished."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Programming operation (write page) requested (from FIM) or in action or finished."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PROG_A> for bool {
     #[inline(always)]
     fn from(variant: PROG_A) -> Self {
-        match variant {
-            PROG_A::VALUE1 => false,
-            PROG_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PROG`"]
@@ -84,17 +78,14 @@ impl PROG_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERASE_A {
     #[doc = "0: There is no erase operation requested or in progress or just finished"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Erase operation requested (from FIM) or in action or finished."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ERASE_A> for bool {
     #[inline(always)]
     fn from(variant: ERASE_A) -> Self {
-        match variant {
-            ERASE_A::VALUE1 => false,
-            ERASE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERASE`"]
@@ -123,17 +114,14 @@ impl ERASE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PFPAGE_A {
     #[doc = "0: Program Flash not in page mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Program Flash in page mode; assembly buffer of PFLASH (256 byte) is in use (being filled up)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PFPAGE_A> for bool {
     #[inline(always)]
     fn from(variant: PFPAGE_A) -> Self {
-        match variant {
-            PFPAGE_A::VALUE1 => false,
-            PFPAGE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PFPAGE`"]
@@ -162,17 +150,14 @@ impl PFPAGE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PFOPER_A {
     #[doc = "0: No operation error reported by Program Flash"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flash array operation aborted, because of a Flash array failure, e.g. an ECC error in microcode."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PFOPER_A> for bool {
     #[inline(always)]
     fn from(variant: PFOPER_A) -> Self {
-        match variant {
-            PFOPER_A::VALUE1 => false,
-            PFOPER_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PFOPER`"]
@@ -201,17 +186,14 @@ impl PFOPER_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SQER_A {
     #[doc = "0: No sequence error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Command state machine operation unsuccessful because of improper address or command sequence."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SQER_A> for bool {
     #[inline(always)]
     fn from(variant: SQER_A) -> Self {
-        match variant {
-            SQER_A::VALUE1 => false,
-            SQER_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SQER`"]
@@ -240,17 +222,14 @@ impl SQER_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROER_A {
     #[doc = "0: No protection error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Protection error."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PROER_A> for bool {
     #[inline(always)]
     fn from(variant: PROER_A) -> Self {
-        match variant {
-            PROER_A::VALUE1 => false,
-            PROER_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PROER`"]
@@ -279,17 +258,14 @@ impl PROER_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PFSBER_A {
     #[doc = "0: No Single-Bit Error detected during read access to PFLASH"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Single-Bit Error detected and corrected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PFSBER_A> for bool {
     #[inline(always)]
     fn from(variant: PFSBER_A) -> Self {
-        match variant {
-            PFSBER_A::VALUE1 => false,
-            PFSBER_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PFSBER`"]
@@ -318,17 +294,14 @@ impl PFSBER_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PFDBER_A {
     #[doc = "0: No Double-Bit Error detected during read access to PFLASH"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Double-Bit Error detected in PFLASH"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PFDBER_A> for bool {
     #[inline(always)]
     fn from(variant: PFDBER_A) -> Self {
-        match variant {
-            PFDBER_A::VALUE1 => false,
-            PFDBER_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PFDBER`"]
@@ -357,17 +330,14 @@ impl PFDBER_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROIN_A {
     #[doc = "0: No protection is installed"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read or/and write protection for one or more users is configured and correctly confirmed in the User Configuration Block(s)."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PROIN_A> for bool {
     #[inline(always)]
     fn from(variant: PROIN_A) -> Self {
-        match variant {
-            PROIN_A::VALUE1 => false,
-            PROIN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PROIN`"]
@@ -396,17 +366,14 @@ impl PROIN_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RPROIN_A {
     #[doc = "0: No read protection installed"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read protection and global write protection is configured and correctly confirmed in the User Configuration Block 0."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RPROIN_A> for bool {
     #[inline(always)]
     fn from(variant: RPROIN_A) -> Self {
-        match variant {
-            RPROIN_A::VALUE1 => false,
-            RPROIN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RPROIN`"]
@@ -435,17 +402,14 @@ impl RPROIN_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RPRODIS_A {
     #[doc = "0: Read protection (if installed) is not disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read and global write protection is temporarily disabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RPRODIS_A> for bool {
     #[inline(always)]
     fn from(variant: RPRODIS_A) -> Self {
-        match variant {
-            RPRODIS_A::VALUE1 => false,
-            RPRODIS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RPRODIS`"]
@@ -474,17 +438,14 @@ impl RPRODIS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WPROIN0_A {
     #[doc = "0: No write protection installed for user 0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Sector write protection for user 0 is configured and correctly confirmed in the User Configuration Block 0."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WPROIN0_A> for bool {
     #[inline(always)]
     fn from(variant: WPROIN0_A) -> Self {
-        match variant {
-            WPROIN0_A::VALUE1 => false,
-            WPROIN0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WPROIN0`"]
@@ -513,17 +474,14 @@ impl WPROIN0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WPROIN1_A {
     #[doc = "0: No write protection installed for user 1"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Sector write protection for user 1 is configured and correctly confirmed in the User Configuration Block 1."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WPROIN1_A> for bool {
     #[inline(always)]
     fn from(variant: WPROIN1_A) -> Self {
-        match variant {
-            WPROIN1_A::VALUE1 => false,
-            WPROIN1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WPROIN1`"]
@@ -552,17 +510,14 @@ impl WPROIN1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WPROIN2_A {
     #[doc = "0: No OTP write protection installed for user 2"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Sector OTP write protection with ROM functionality is configured and correctly confirmed in the UCB2. The protection is locked for ever."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WPROIN2_A> for bool {
     #[inline(always)]
     fn from(variant: WPROIN2_A) -> Self {
-        match variant {
-            WPROIN2_A::VALUE1 => false,
-            WPROIN2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WPROIN2`"]
@@ -591,17 +546,14 @@ impl WPROIN2_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WPRODIS0_A {
     #[doc = "0: All protected sectors of user 0 are locked if write protection is installed"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: All write-protected sectors of user 0 are temporarily unlocked, if not coincidently locked by user 2 or via read protection."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WPRODIS0_A> for bool {
     #[inline(always)]
     fn from(variant: WPRODIS0_A) -> Self {
-        match variant {
-            WPRODIS0_A::VALUE1 => false,
-            WPRODIS0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WPRODIS0`"]
@@ -630,17 +582,14 @@ impl WPRODIS0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WPRODIS1_A {
     #[doc = "0: All protected sectors of user 1 are locked if write protection is installed"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: All write-protected sectors of user 1 are temporarily unlocked, if not coincidently locked by user 0 or user 2 or via read protection."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WPRODIS1_A> for bool {
     #[inline(always)]
     fn from(variant: WPRODIS1_A) -> Self {
-        match variant {
-            WPRODIS1_A::VALUE1 => false,
-            WPRODIS1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WPRODIS1`"]
@@ -669,17 +618,14 @@ impl WPRODIS1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLM_A {
     #[doc = "0: Flash not in sleep mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flash is in sleep or shut down mode"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SLM_A> for bool {
     #[inline(always)]
     fn from(variant: SLM_A) -> Self {
-        match variant {
-            SLM_A::VALUE1 => false,
-            SLM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SLM`"]
@@ -708,17 +654,14 @@ impl SLM_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VER_A {
     #[doc = "0: The page is correctly programmed or the sector correctly erased. All programmed or erased bits have full expected quality."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A program verify error or an erase verify error has been detected. Full quality (retention time) of all programmed (\"1\") or erased (\"0\") bits cannot be guaranteed."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VER_A> for bool {
     #[inline(always)]
     fn from(variant: VER_A) -> Self {
-        match variant {
-            VER_A::VALUE1 => false,
-            VER_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VER`"]

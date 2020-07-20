@@ -14,17 +14,14 @@ impl crate::ResetValue for super::OUT {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P0_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P0_A> for bool {
     #[inline(always)]
     fn from(variant: P0_A) -> Self {
-        match variant {
-            P0_A::CONST_0 => false,
-            P0_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P0`"]
@@ -92,17 +89,14 @@ impl<'a> P0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P1_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P1_A> for bool {
     #[inline(always)]
     fn from(variant: P1_A) -> Self {
-        match variant {
-            P1_A::CONST_0 => false,
-            P1_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P1`"]
@@ -170,17 +164,14 @@ impl<'a> P1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P2_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P2_A> for bool {
     #[inline(always)]
     fn from(variant: P2_A) -> Self {
-        match variant {
-            P2_A::CONST_0 => false,
-            P2_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P2`"]
@@ -248,17 +239,14 @@ impl<'a> P2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P3_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P3_A> for bool {
     #[inline(always)]
     fn from(variant: P3_A) -> Self {
-        match variant {
-            P3_A::CONST_0 => false,
-            P3_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P3`"]
@@ -326,17 +314,14 @@ impl<'a> P3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P4_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P4_A> for bool {
     #[inline(always)]
     fn from(variant: P4_A) -> Self {
-        match variant {
-            P4_A::CONST_0 => false,
-            P4_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P4`"]
@@ -404,17 +389,14 @@ impl<'a> P4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P5_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P5_A> for bool {
     #[inline(always)]
     fn from(variant: P5_A) -> Self {
-        match variant {
-            P5_A::CONST_0 => false,
-            P5_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P5`"]
@@ -482,17 +464,14 @@ impl<'a> P5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P6_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P6_A> for bool {
     #[inline(always)]
     fn from(variant: P6_A) -> Self {
-        match variant {
-            P6_A::CONST_0 => false,
-            P6_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P6`"]
@@ -560,17 +539,14 @@ impl<'a> P6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P7_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P7_A> for bool {
     #[inline(always)]
     fn from(variant: P7_A) -> Self {
-        match variant {
-            P7_A::CONST_0 => false,
-            P7_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P7`"]
@@ -638,17 +614,14 @@ impl<'a> P7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P8_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P8_A> for bool {
     #[inline(always)]
     fn from(variant: P8_A) -> Self {
-        match variant {
-            P8_A::CONST_0 => false,
-            P8_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P8`"]
@@ -716,17 +689,14 @@ impl<'a> P8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P9_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P9_A> for bool {
     #[inline(always)]
     fn from(variant: P9_A) -> Self {
-        match variant {
-            P9_A::CONST_0 => false,
-            P9_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P9`"]
@@ -794,17 +764,14 @@ impl<'a> P9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P10_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P10_A> for bool {
     #[inline(always)]
     fn from(variant: P10_A) -> Self {
-        match variant {
-            P10_A::CONST_0 => false,
-            P10_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P10`"]
@@ -872,17 +839,14 @@ impl<'a> P10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P11_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P11_A> for bool {
     #[inline(always)]
     fn from(variant: P11_A) -> Self {
-        match variant {
-            P11_A::CONST_0 => false,
-            P11_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P11`"]
@@ -950,17 +914,14 @@ impl<'a> P11_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P12_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P12_A> for bool {
     #[inline(always)]
     fn from(variant: P12_A) -> Self {
-        match variant {
-            P12_A::CONST_0 => false,
-            P12_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P12`"]
@@ -1028,17 +989,14 @@ impl<'a> P12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P13_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P13_A> for bool {
     #[inline(always)]
     fn from(variant: P13_A) -> Self {
-        match variant {
-            P13_A::CONST_0 => false,
-            P13_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P13`"]
@@ -1106,17 +1064,14 @@ impl<'a> P13_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P14_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P14_A> for bool {
     #[inline(always)]
     fn from(variant: P14_A) -> Self {
-        match variant {
-            P14_A::CONST_0 => false,
-            P14_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P14`"]
@@ -1184,17 +1139,14 @@ impl<'a> P14_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum P15_A {
     #[doc = "0: The output level of Pn.x is 0."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The output level of Pn.x is 1."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<P15_A> for bool {
     #[inline(always)]
     fn from(variant: P15_A) -> Self {
-        match variant {
-            P15_A::CONST_0 => false,
-            P15_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `P15`"]

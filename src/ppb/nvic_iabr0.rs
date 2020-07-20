@@ -12,19 +12,17 @@ impl crate::ResetValue for super::NVIC_IABR0 {
 }
 #[doc = "Interrupt active flags:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum ACTIVE_A {
     #[doc = "0: interrupt not active"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: interrupt active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACTIVE_A> for u32 {
     #[inline(always)]
     fn from(variant: ACTIVE_A) -> Self {
-        match variant {
-            ACTIVE_A::VALUE1 => 0,
-            ACTIVE_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ACTIVE`"]

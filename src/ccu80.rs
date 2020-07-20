@@ -21,7 +21,7 @@ pub struct RegisterBlock {
     #[doc = "0x80 - Module Identification"]
     pub midr: MIDR,
 }
-#[doc = "Global Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gctrl](gctrl) module"]
+#[doc = "Global Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gctrl](gctrl) module"]
 pub type GCTRL = crate::Reg<u32, _GCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -32,7 +32,7 @@ impl crate::Readable for GCTRL {}
 impl crate::Writable for GCTRL {}
 #[doc = "Global Control Register"]
 pub mod gctrl;
-#[doc = "Global Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gstat](gstat) module"]
+#[doc = "Global Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gstat](gstat) module"]
 pub type GSTAT = crate::Reg<u32, _GSTAT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -41,7 +41,7 @@ pub struct _GSTAT;
 impl crate::Readable for GSTAT {}
 #[doc = "Global Status Register"]
 pub mod gstat;
-#[doc = "Global Idle Set\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gidls](gidls) module"]
+#[doc = "Global Idle Set\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gidls](gidls) module"]
 pub type GIDLS = crate::Reg<u32, _GIDLS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -50,7 +50,7 @@ pub struct _GIDLS;
 impl crate::Writable for GIDLS {}
 #[doc = "Global Idle Set"]
 pub mod gidls;
-#[doc = "Global Idle Clear\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gidlc](gidlc) module"]
+#[doc = "Global Idle Clear\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gidlc](gidlc) module"]
 pub type GIDLC = crate::Reg<u32, _GIDLC>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -59,7 +59,7 @@ pub struct _GIDLC;
 impl crate::Writable for GIDLC {}
 #[doc = "Global Idle Clear"]
 pub mod gidlc;
-#[doc = "Global Channel Set\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gcss](gcss) module"]
+#[doc = "Global Channel Set\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gcss](gcss) module"]
 pub type GCSS = crate::Reg<u32, _GCSS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -68,7 +68,7 @@ pub struct _GCSS;
 impl crate::Writable for GCSS {}
 #[doc = "Global Channel Set"]
 pub mod gcss;
-#[doc = "Global Channel Clear\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gcsc](gcsc) module"]
+#[doc = "Global Channel Clear\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gcsc](gcsc) module"]
 pub type GCSC = crate::Reg<u32, _GCSC>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -77,7 +77,7 @@ pub struct _GCSC;
 impl crate::Writable for GCSC {}
 #[doc = "Global Channel Clear"]
 pub mod gcsc;
-#[doc = "Global Channel status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gcst](gcst) module"]
+#[doc = "Global Channel status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gcst](gcst) module"]
 pub type GCST = crate::Reg<u32, _GCST>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -86,7 +86,7 @@ pub struct _GCST;
 impl crate::Readable for GCST {}
 #[doc = "Global Channel status"]
 pub mod gcst;
-#[doc = "Parity Checker Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gpchk](gpchk) module"]
+#[doc = "Parity Checker Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gpchk](gpchk) module"]
 pub type GPCHK = crate::Reg<u32, _GPCHK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -97,7 +97,7 @@ impl crate::Readable for GPCHK {}
 impl crate::Writable for GPCHK {}
 #[doc = "Parity Checker Configuration"]
 pub mod gpchk;
-#[doc = "Module Identification\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [midr](midr) module"]
+#[doc = "Module Identification\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [midr](midr) module"]
 pub type MIDR = crate::Reg<u32, _MIDR>;
 #[allow(missing_docs)]
 #[doc(hidden)]

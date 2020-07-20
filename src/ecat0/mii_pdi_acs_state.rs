@@ -14,17 +14,14 @@ impl crate::ResetValue for super::MII_PDI_ACS_STATE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACS_MII_BY_PDI_A {
     #[doc = "0: ECAT has access to MII managment"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: PDI has access to MII managment"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACS_MII_BY_PDI_A> for bool {
     #[inline(always)]
     fn from(variant: ACS_MII_BY_PDI_A) -> Self {
-        match variant {
-            ACS_MII_BY_PDI_A::VALUE1 => false,
-            ACS_MII_BY_PDI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACS_MII_BY_PDI`"]
@@ -92,17 +89,14 @@ impl<'a> ACS_MII_BY_PDI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FORCE_PDI_ACS_S_A {
     #[doc = "0: no change"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Reset Bit ACS_MII_BY_PDI"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FORCE_PDI_ACS_S_A> for bool {
     #[inline(always)]
     fn from(variant: FORCE_PDI_ACS_S_A) -> Self {
-        match variant {
-            FORCE_PDI_ACS_S_A::VALUE1 => false,
-            FORCE_PDI_ACS_S_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FORCE_PDI_ACS_S`"]

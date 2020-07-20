@@ -4,17 +4,14 @@ pub type R = crate::R<u16, super::EVENT_REQ>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DC_LE_A {
     #[doc = "0: No change on DC Latch Inputs"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: At least one change on DC Latch Inputs"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DC_LE_A> for bool {
     #[inline(always)]
     fn from(variant: DC_LE_A) -> Self {
-        match variant {
-            DC_LE_A::VALUE1 => false,
-            DC_LE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DC_LE`"]
@@ -43,17 +40,14 @@ impl DC_LE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DL_SE_A {
     #[doc = "0: No change in DL Status"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: DL Status change"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DL_SE_A> for bool {
     #[inline(always)]
     fn from(variant: DL_SE_A) -> Self {
-        match variant {
-            DL_SE_A::VALUE1 => false,
-            DL_SE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DL_SE`"]
@@ -82,17 +76,14 @@ impl DL_SE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AL_SE_A {
     #[doc = "0: No change in AL Status"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: AL Status change"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AL_SE_A> for bool {
     #[inline(always)]
     fn from(variant: AL_SE_A) -> Self {
-        match variant {
-            AL_SE_A::VALUE1 => false,
-            AL_SE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AL_SE`"]
@@ -121,17 +112,14 @@ impl AL_SE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_0_A {
     #[doc = "0: No Sync Channel 0 event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Sync Channel 0 event pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_0_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_0_A) -> Self {
-        match variant {
-            MIR_0_A::VALUE1 => false,
-            MIR_0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_0`"]
@@ -160,17 +148,14 @@ impl MIR_0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_1_A {
     #[doc = "0: No Sync Channel 1 event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Sync Channel 1 event pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_1_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_1_A) -> Self {
-        match variant {
-            MIR_1_A::VALUE1 => false,
-            MIR_1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_1`"]
@@ -199,17 +184,14 @@ impl MIR_1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_2_A {
     #[doc = "0: No Sync Channel 2 event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Sync Channel 2 event pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_2_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_2_A) -> Self {
-        match variant {
-            MIR_2_A::VALUE1 => false,
-            MIR_2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_2`"]
@@ -238,17 +220,14 @@ impl MIR_2_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_3_A {
     #[doc = "0: No Sync Channel 3 event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Sync Channel 3event pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_3_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_3_A) -> Self {
-        match variant {
-            MIR_3_A::VALUE1 => false,
-            MIR_3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_3`"]
@@ -277,17 +256,14 @@ impl MIR_3_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_4_A {
     #[doc = "0: No Sync Channel 4 event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Sync Channel 4 event pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_4_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_4_A) -> Self {
-        match variant {
-            MIR_4_A::VALUE1 => false,
-            MIR_4_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_4`"]
@@ -316,17 +292,14 @@ impl MIR_4_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_5_A {
     #[doc = "0: No Sync Channel 5 event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Sync Channel 5 event pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_5_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_5_A) -> Self {
-        match variant {
-            MIR_5_A::VALUE1 => false,
-            MIR_5_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_5`"]
@@ -355,17 +328,14 @@ impl MIR_5_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_6_A {
     #[doc = "0: No Sync Channel 6 event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Sync Channel 6 event pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_6_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_6_A) -> Self {
-        match variant {
-            MIR_6_A::VALUE1 => false,
-            MIR_6_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_6`"]
@@ -394,17 +364,14 @@ impl MIR_6_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_7_A {
     #[doc = "0: No Sync Channel 7 event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Sync Channel 7 event pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_7_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_7_A) -> Self {
-        match variant {
-            MIR_7_A::VALUE1 => false,
-            MIR_7_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_7`"]

@@ -52,17 +52,14 @@ impl<'a> USBACTEP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EO_FRNUM_A {
     #[doc = "0: Even frame"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Odd rame"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EO_FRNUM_A> for bool {
     #[inline(always)]
     fn from(variant: EO_FRNUM_A) -> Self {
-        match variant {
-            EO_FRNUM_A::VALUE1 => false,
-            EO_FRNUM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EO_FrNum`"]
@@ -91,17 +88,14 @@ impl EO_FRNUM_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NAKSTS_A {
     #[doc = "0: The core is transmitting non-NAK handshakes based on the FIFO status."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The core is transmitting NAK handshakes on this endpoint."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<NAKSTS_A> for bool {
     #[inline(always)]
     fn from(variant: NAKSTS_A) -> Self {
-        match variant {
-            NAKSTS_A::VALUE1 => false,
-            NAKSTS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NAKSts`"]
@@ -128,25 +122,21 @@ impl NAKSTS_R {
 }
 #[doc = "Endpoint Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EPTYPE_A {
     #[doc = "0: Control"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Isochronous"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Bulk"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Interrupt"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EPTYPE_A> for u8 {
     #[inline(always)]
     fn from(variant: EPTYPE_A) -> Self {
-        match variant {
-            EPTYPE_A::VALUE1 => 0,
-            EPTYPE_A::VALUE2 => 1,
-            EPTYPE_A::VALUE3 => 2,
-            EPTYPE_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EPType`"]

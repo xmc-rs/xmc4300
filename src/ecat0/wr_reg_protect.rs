@@ -4,17 +4,14 @@ pub type R = crate::R<u8, super::WR_REG_PROTECT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WR_REG_P_A {
     #[doc = "0: Protection disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Protection enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WR_REG_P_A> for bool {
     #[inline(always)]
     fn from(variant: WR_REG_P_A) -> Self {
-        match variant {
-            WR_REG_P_A::VALUE1 => false,
-            WR_REG_P_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WR_REG_P`"]

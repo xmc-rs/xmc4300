@@ -18,7 +18,7 @@ pub struct RegisterBlock {
     #[doc = "0x1c - WDT Clear Register"]
     pub wdtclr: WDTCLR,
 }
-#[doc = "WDT ID Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [id](id) module"]
+#[doc = "WDT ID Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [id](id) module"]
 pub type ID = crate::Reg<u32, _ID>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -27,7 +27,7 @@ pub struct _ID;
 impl crate::Readable for ID {}
 #[doc = "WDT ID Register"]
 pub mod id;
-#[doc = "WDT Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctr](ctr) module"]
+#[doc = "WDT Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctr](ctr) module"]
 pub type CTR = crate::Reg<u32, _CTR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -38,7 +38,7 @@ impl crate::Readable for CTR {}
 impl crate::Writable for CTR {}
 #[doc = "WDT Control Register"]
 pub mod ctr;
-#[doc = "WDT Service Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [srv](srv) module"]
+#[doc = "WDT Service Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srv](srv) module"]
 pub type SRV = crate::Reg<u32, _SRV>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -47,7 +47,7 @@ pub struct _SRV;
 impl crate::Writable for SRV {}
 #[doc = "WDT Service Register"]
 pub mod srv;
-#[doc = "WDT Timer Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tim](tim) module"]
+#[doc = "WDT Timer Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tim](tim) module"]
 pub type TIM = crate::Reg<u32, _TIM>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -56,7 +56,7 @@ pub struct _TIM;
 impl crate::Readable for TIM {}
 #[doc = "WDT Timer Register"]
 pub mod tim;
-#[doc = "WDT Window Lower Bound Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [wlb](wlb) module"]
+#[doc = "WDT Window Lower Bound Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wlb](wlb) module"]
 pub type WLB = crate::Reg<u32, _WLB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -67,7 +67,7 @@ impl crate::Readable for WLB {}
 impl crate::Writable for WLB {}
 #[doc = "WDT Window Lower Bound Register"]
 pub mod wlb;
-#[doc = "WDT Window Upper Bound Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [wub](wub) module"]
+#[doc = "WDT Window Upper Bound Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wub](wub) module"]
 pub type WUB = crate::Reg<u32, _WUB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -78,7 +78,7 @@ impl crate::Readable for WUB {}
 impl crate::Writable for WUB {}
 #[doc = "WDT Window Upper Bound Register"]
 pub mod wub;
-#[doc = "WDT Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [wdtsts](wdtsts) module"]
+#[doc = "WDT Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdtsts](wdtsts) module"]
 pub type WDTSTS = crate::Reg<u32, _WDTSTS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -87,7 +87,7 @@ pub struct _WDTSTS;
 impl crate::Readable for WDTSTS {}
 #[doc = "WDT Status Register"]
 pub mod wdtsts;
-#[doc = "WDT Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [wdtclr](wdtclr) module"]
+#[doc = "WDT Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdtclr](wdtclr) module"]
 pub type WDTCLR = crate::Reg<u32, _WDTCLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]

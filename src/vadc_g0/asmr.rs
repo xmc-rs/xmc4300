@@ -12,25 +12,21 @@ impl crate::ResetValue for super::ASMR {
 }
 #[doc = "Enable Gate\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ENGT_A {
     #[doc = "0: No conversion requests are issued"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Conversion requests are issued if at least one pending bit is set"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Conversion requests are issued if at least one pending bit is set and REQGTx = 1."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Conversion requests are issued if at least one pending bit is set and REQGTx = 0."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<ENGT_A> for u8 {
     #[inline(always)]
     fn from(variant: ENGT_A) -> Self {
-        match variant {
-            ENGT_A::VALUE1 => 0,
-            ENGT_A::VALUE2 => 1,
-            ENGT_A::VALUE3 => 2,
-            ENGT_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ENGT`"]
@@ -111,17 +107,14 @@ impl<'a> ENGT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENTR_A {
     #[doc = "0: External trigger disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The selected edge at the selected trigger input signal REQTR generates the load event"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ENTR_A> for bool {
     #[inline(always)]
     fn from(variant: ENTR_A) -> Self {
-        match variant {
-            ENTR_A::VALUE1 => false,
-            ENTR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENTR`"]
@@ -189,17 +182,14 @@ impl<'a> ENTR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENSI_A {
     #[doc = "0: No request source interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A request source interrupt is generated upon a request source event (last pending conversion is finished)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ENSI_A> for bool {
     #[inline(always)]
     fn from(variant: ENSI_A) -> Self {
-        match variant {
-            ENSI_A::VALUE1 => false,
-            ENSI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENSI`"]
@@ -267,17 +257,14 @@ impl<'a> ENSI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SCAN_A {
     #[doc = "0: No autoscan"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Autoscan functionality enabled: a request source event automatically generates a load event"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SCAN_A> for bool {
     #[inline(always)]
     fn from(variant: SCAN_A) -> Self {
-        match variant {
-            SCAN_A::VALUE1 => false,
-            SCAN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SCAN`"]
@@ -345,17 +332,14 @@ impl<'a> SCAN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LDM_A {
     #[doc = "0: Overwrite mode: Copy all bits from the select registers to the pending registers upon a load event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Combine mode: Set all pending bits that are set in the select registers upon a load event (logic OR)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LDM_A> for bool {
     #[inline(always)]
     fn from(variant: LDM_A) -> Self {
-        match variant {
-            LDM_A::VALUE1 => false,
-            LDM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LDM`"]
@@ -423,17 +407,14 @@ impl<'a> LDM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REQGT_A {
     #[doc = "0: The gate input is low"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The gate input is high"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REQGT_A> for bool {
     #[inline(always)]
     fn from(variant: REQGT_A) -> Self {
-        match variant {
-            REQGT_A::VALUE1 => false,
-            REQGT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REQGT`"]
@@ -462,17 +443,14 @@ impl REQGT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLRPND_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The bits in register GxASPNDx are cleared"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CLRPND_AW> for bool {
     #[inline(always)]
     fn from(variant: CLRPND_AW) -> Self {
-        match variant {
-            CLRPND_AW::VALUE1 => false,
-            CLRPND_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CLRPND`"]
@@ -518,17 +496,14 @@ impl<'a> CLRPND_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LDEV_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A load event is generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LDEV_AW> for bool {
     #[inline(always)]
     fn from(variant: LDEV_AW) -> Self {
-        match variant {
-            LDEV_AW::VALUE1 => false,
-            LDEV_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `LDEV`"]
@@ -574,17 +549,14 @@ impl<'a> LDEV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RPTDIS_A {
     #[doc = "0: A cancelled conversion is repeated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A cancelled conversion is discarded"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RPTDIS_A> for bool {
     #[inline(always)]
     fn from(variant: RPTDIS_A) -> Self {
-        match variant {
-            RPTDIS_A::VALUE1 => false,
-            RPTDIS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RPTDIS`"]

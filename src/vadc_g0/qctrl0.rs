@@ -12,22 +12,19 @@ impl crate::ResetValue for super::QCTRL0 {
 }
 #[doc = "Source-specific Result Register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRCRESREG_A {
     #[doc = "0: Use GxCHCTRy.RESREG to select a group result register"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Store result in group result register GxRES1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "15: Store result in group result register GxRES15"]
-    VALUE3,
+    VALUE3 = 15,
 }
 impl From<SRCRESREG_A> for u8 {
     #[inline(always)]
     fn from(variant: SRCRESREG_A) -> Self {
-        match variant {
-            SRCRESREG_A::VALUE1 => 0,
-            SRCRESREG_A::VALUE2 => 1,
-            SRCRESREG_A::VALUE3 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRCRESREG`"]
@@ -110,25 +107,21 @@ impl<'a> XTSEL_W<'a> {
 pub type XTLVL_R = crate::R<bool, bool>;
 #[doc = "Trigger Operating Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum XTMODE_A {
     #[doc = "0: No external trigger"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Trigger event upon a falling edge"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Trigger event upon a rising edge"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Trigger event upon any edge"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<XTMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: XTMODE_A) -> Self {
-        match variant {
-            XTMODE_A::VALUE1 => 0,
-            XTMODE_A::VALUE2 => 1,
-            XTMODE_A::VALUE3 => 2,
-            XTMODE_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `XTMODE`"]
@@ -209,17 +202,14 @@ impl<'a> XTMODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum XTWC_AW {
     #[doc = "0: No write access to trigger configuration"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bitfields XTMODE and XTSEL can be written"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<XTWC_AW> for bool {
     #[inline(always)]
     fn from(variant: XTWC_AW) -> Self {
-        match variant {
-            XTWC_AW::VALUE1 => false,
-            XTWC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `XTWC`"]
@@ -281,17 +271,14 @@ pub type GTLVL_R = crate::R<bool, bool>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GTWC_AW {
     #[doc = "0: No write access to gate configuration"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bitfield GTSEL can be written"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<GTWC_AW> for bool {
     #[inline(always)]
     fn from(variant: GTWC_AW) -> Self {
-        match variant {
-            GTWC_AW::VALUE1 => false,
-            GTWC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `GTWC`"]
@@ -337,17 +324,14 @@ impl<'a> GTWC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TMEN_A {
     #[doc = "0: No timer mode: standard gating mechanism can be used"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Timer mode for equidistant sampling enabled: standard gating mechanism must be disabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TMEN_A> for bool {
     #[inline(always)]
     fn from(variant: TMEN_A) -> Self {
-        match variant {
-            TMEN_A::VALUE1 => false,
-            TMEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TMEN`"]
@@ -415,17 +399,14 @@ impl<'a> TMEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TMWC_AW {
     #[doc = "0: No write access to timer mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bitfield TMEN can be written"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TMWC_AW> for bool {
     #[inline(always)]
     fn from(variant: TMWC_AW) -> Self {
-        match variant {
-            TMWC_AW::VALUE1 => false,
-            TMWC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TMWC`"]

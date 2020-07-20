@@ -14,17 +14,14 @@ impl crate::ResetValue for super::AL_EVENT_REQ {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AL_CE_A {
     #[doc = "0: No AL Control Register change"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: AL Control Register has been written"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AL_CE_A> for bool {
     #[inline(always)]
     fn from(variant: AL_CE_A) -> Self {
-        match variant {
-            AL_CE_A::VALUE1 => false,
-            AL_CE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AL_CE`"]
@@ -53,17 +50,14 @@ impl AL_CE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DC_LE_A {
     #[doc = "0: No change on DC Latch Inputs"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: At least one change on DC Latch Inputs"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DC_LE_A> for bool {
     #[inline(always)]
     fn from(variant: DC_LE_A) -> Self {
-        match variant {
-            DC_LE_A::VALUE1 => false,
-            DC_LE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DC_LE`"]
@@ -96,17 +90,14 @@ pub type ST_S1_R = crate::R<bool, bool>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SM_A_A {
     #[doc = "0: No change in any SyncManager"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: At least one change on DC Latch Inputs"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SM_A_A> for bool {
     #[inline(always)]
     fn from(variant: SM_A_A) -> Self {
-        match variant {
-            SM_A_A::VALUE1 => false,
-            SM_A_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SM_A`"]
@@ -135,17 +126,14 @@ impl SM_A_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EEP_E_A {
     #[doc = "0: No command pending"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: EEPROM command pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EEP_E_A> for bool {
     #[inline(always)]
     fn from(variant: EEP_E_A) -> Self {
-        match variant {
-            EEP_E_A::VALUE1 => false,
-            EEP_E_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EEP_E`"]
@@ -174,17 +162,14 @@ impl EEP_E_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WP_D_A {
     #[doc = "0: Has not expired"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Has expired"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WP_D_A> for bool {
     #[inline(always)]
     fn from(variant: WP_D_A) -> Self {
-        match variant {
-            WP_D_A::VALUE1 => false,
-            WP_D_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WP_D`"]
@@ -213,17 +198,14 @@ impl WP_D_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_0_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_0_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_0_A) -> Self {
-        match variant {
-            SMI_0_A::VALUE1 => false,
-            SMI_0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_0`"]
@@ -252,17 +234,14 @@ impl SMI_0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_1_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_1_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_1_A) -> Self {
-        match variant {
-            SMI_1_A::VALUE1 => false,
-            SMI_1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_1`"]
@@ -291,17 +270,14 @@ impl SMI_1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_2_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_2_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_2_A) -> Self {
-        match variant {
-            SMI_2_A::VALUE1 => false,
-            SMI_2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_2`"]
@@ -369,17 +345,14 @@ impl<'a> SMI_2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_3_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_3_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_3_A) -> Self {
-        match variant {
-            SMI_3_A::VALUE1 => false,
-            SMI_3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_3`"]
@@ -447,17 +420,14 @@ impl<'a> SMI_3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_4_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_4_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_4_A) -> Self {
-        match variant {
-            SMI_4_A::VALUE1 => false,
-            SMI_4_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_4`"]
@@ -525,17 +495,14 @@ impl<'a> SMI_4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_5_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_5_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_5_A) -> Self {
-        match variant {
-            SMI_5_A::VALUE1 => false,
-            SMI_5_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_5`"]
@@ -603,17 +570,14 @@ impl<'a> SMI_5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_6_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_6_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_6_A) -> Self {
-        match variant {
-            SMI_6_A::VALUE1 => false,
-            SMI_6_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_6`"]
@@ -681,17 +645,14 @@ impl<'a> SMI_6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_7_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_7_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_7_A) -> Self {
-        match variant {
-            SMI_7_A::VALUE1 => false,
-            SMI_7_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_7`"]
@@ -759,17 +720,14 @@ impl<'a> SMI_7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_8_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_8_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_8_A) -> Self {
-        match variant {
-            SMI_8_A::VALUE1 => false,
-            SMI_8_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_8`"]
@@ -837,17 +795,14 @@ impl<'a> SMI_8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_9_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_9_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_9_A) -> Self {
-        match variant {
-            SMI_9_A::VALUE1 => false,
-            SMI_9_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_9`"]
@@ -915,17 +870,14 @@ impl<'a> SMI_9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_10_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_10_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_10_A) -> Self {
-        match variant {
-            SMI_10_A::VALUE1 => false,
-            SMI_10_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_10`"]
@@ -993,17 +945,14 @@ impl<'a> SMI_10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_11_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_11_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_11_A) -> Self {
-        match variant {
-            SMI_11_A::VALUE1 => false,
-            SMI_11_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_11`"]
@@ -1071,17 +1020,14 @@ impl<'a> SMI_11_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_12_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_12_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_12_A) -> Self {
-        match variant {
-            SMI_12_A::VALUE1 => false,
-            SMI_12_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_12`"]
@@ -1149,17 +1095,14 @@ impl<'a> SMI_12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_13_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_13_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_13_A) -> Self {
-        match variant {
-            SMI_13_A::VALUE1 => false,
-            SMI_13_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_13`"]
@@ -1227,17 +1170,14 @@ impl<'a> SMI_13_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_14_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_14_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_14_A) -> Self {
-        match variant {
-            SMI_14_A::VALUE1 => false,
-            SMI_14_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_14`"]
@@ -1305,17 +1245,14 @@ impl<'a> SMI_14_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMI_15_A {
     #[doc = "0: No SyncManager 0 interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SyncManager 0 interrupt pending"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMI_15_A> for bool {
     #[inline(always)]
     fn from(variant: SMI_15_A) -> Self {
-        match variant {
-            SMI_15_A::VALUE1 => false,
-            SMI_15_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMI_15`"]

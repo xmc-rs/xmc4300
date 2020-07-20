@@ -2,19 +2,17 @@
 pub type R = crate::R<u8, super::SM_CONTROL>;
 #[doc = "Operation Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OP_MODE_A {
     #[doc = "0: Buffered (3 buffer mode)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "2: Mailbox (Single buffer mode)"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<OP_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: OP_MODE_A) -> Self {
-        match variant {
-            OP_MODE_A::VALUE1 => 0,
-            OP_MODE_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OP_MODE`"]
@@ -43,19 +41,17 @@ impl OP_MODE_R {
 }
 #[doc = "Direction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DIR_A {
     #[doc = "0: Read: ECAT read access, PDI write access"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write: ECAT write access, PDI read access"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DIR_A> for u8 {
     #[inline(always)]
     fn from(variant: DIR_A) -> Self {
-        match variant {
-            DIR_A::VALUE1 => 0,
-            DIR_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DIR`"]
@@ -86,17 +82,14 @@ impl DIR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT_ECAT_A {
     #[doc = "0: Disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<INT_ECAT_A> for bool {
     #[inline(always)]
     fn from(variant: INT_ECAT_A) -> Self {
-        match variant {
-            INT_ECAT_A::VALUE1 => false,
-            INT_ECAT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INT_ECAT`"]
@@ -125,17 +118,14 @@ impl INT_ECAT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT_PDI_A {
     #[doc = "0: Disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<INT_PDI_A> for bool {
     #[inline(always)]
     fn from(variant: INT_PDI_A) -> Self {
-        match variant {
-            INT_PDI_A::VALUE1 => false,
-            INT_PDI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INT_PDI`"]
@@ -164,17 +154,14 @@ impl INT_PDI_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WD_TRG_A {
     #[doc = "0: Disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WD_TRG_A> for bool {
     #[inline(always)]
     fn from(variant: WD_TRG_A) -> Self {
-        match variant {
-            WD_TRG_A::VALUE1 => false,
-            WD_TRG_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WD_TRG`"]

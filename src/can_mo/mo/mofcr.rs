@@ -12,28 +12,23 @@ impl crate::ResetValue for super::MOFCR {
 }
 #[doc = "Message Mode Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MMC_A {
     #[doc = "0: Standard Message Object"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Receive FIFO Base Object"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Transmit FIFO Base Object"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Transmit FIFO Slave Object"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Gateway Source Object"]
-    VALUE5,
+    VALUE5 = 4,
 }
 impl From<MMC_A> for u8 {
     #[inline(always)]
     fn from(variant: MMC_A) -> Self {
-        match variant {
-            MMC_A::VALUE1 => 0,
-            MMC_A::VALUE2 => 1,
-            MMC_A::VALUE3 => 2,
-            MMC_A::VALUE4 => 3,
-            MMC_A::VALUE5 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MMC`"]
@@ -124,17 +119,14 @@ impl<'a> MMC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXTOE_A {
     #[doc = "0: Message does not take part in receive time-out check"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Message takes part in receive time-out check"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RXTOE_A> for bool {
     #[inline(always)]
     fn from(variant: RXTOE_A) -> Self {
-        match variant {
-            RXTOE_A::VALUE1 => false,
-            RXTOE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXTOE`"]
@@ -202,17 +194,14 @@ impl<'a> RXTOE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GDFS_A {
     #[doc = "0: TXRQ is unchanged in the destination object."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: TXRQ is set in the gateway destination object after the internal transfer from the gateway source to the gateway destination object."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<GDFS_A> for bool {
     #[inline(always)]
     fn from(variant: GDFS_A) -> Self {
-        match variant {
-            GDFS_A::VALUE1 => false,
-            GDFS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GDFS`"]
@@ -280,17 +269,14 @@ impl<'a> GDFS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDC_A {
     #[doc = "0: The identifier of the gateway source object is not copied."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The identifier of the gateway source object (after storing the received frame in the source) is copied to the gateway destination object."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IDC_A> for bool {
     #[inline(always)]
     fn from(variant: IDC_A) -> Self {
-        match variant {
-            IDC_A::VALUE1 => false,
-            IDC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IDC`"]
@@ -358,17 +344,14 @@ impl<'a> IDC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DLCC_A {
     #[doc = "0: Data length code is not copied."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data length code of the gateway source object (after storing the received frame in the source) is copied to the gateway destination object."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DLCC_A> for bool {
     #[inline(always)]
     fn from(variant: DLCC_A) -> Self {
-        match variant {
-            DLCC_A::VALUE1 => false,
-            DLCC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DLCC`"]
@@ -436,17 +419,14 @@ impl<'a> DLCC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATC_A {
     #[doc = "0: Data fields are not copied."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data fields in registers MODATALn and MODATAHn of the gateway source object (after storing the received frame in the source) are copied to the gateway destination."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DATC_A> for bool {
     #[inline(always)]
     fn from(variant: DATC_A) -> Self {
-        match variant {
-            DATC_A::VALUE1 => false,
-            DATC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATC`"]
@@ -514,17 +494,14 @@ impl<'a> DATC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXIE_A {
     #[doc = "0: Message receive interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Message receive interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RXIE_A> for bool {
     #[inline(always)]
     fn from(variant: RXIE_A) -> Self {
-        match variant {
-            RXIE_A::VALUE1 => false,
-            RXIE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXIE`"]
@@ -592,17 +569,14 @@ impl<'a> RXIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXIE_A {
     #[doc = "0: Message transmit interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Message transmit interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TXIE_A> for bool {
     #[inline(always)]
     fn from(variant: TXIE_A) -> Self {
-        match variant {
-            TXIE_A::VALUE1 => false,
-            TXIE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXIE`"]
@@ -670,17 +644,14 @@ impl<'a> TXIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVIE_A {
     #[doc = "0: FIFO full interrupt is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: FIFO full interrupt is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<OVIE_A> for bool {
     #[inline(always)]
     fn from(variant: OVIE_A) -> Self {
-        match variant {
-            OVIE_A::VALUE1 => false,
-            OVIE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OVIE`"]
@@ -748,17 +719,14 @@ impl<'a> OVIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRREN_A {
     #[doc = "0: TXRQ of message object n is set on reception of a matching Remote Frame."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: TXRQ of the message object referenced by the pointer CUR is set on reception of a matching Remote Frame."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FRREN_A> for bool {
     #[inline(always)]
     fn from(variant: FRREN_A) -> Self {
-        match variant {
-            FRREN_A::VALUE1 => false,
-            FRREN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FRREN`"]
@@ -826,17 +794,14 @@ impl<'a> FRREN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RMM_A {
     #[doc = "0: Remote monitoring is disabled: Identifier, IDE bit, and DLC of message object n remain unchanged upon the reception of a matching Remote Frame."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Remote monitoring is enabled: Identifier, IDE bit, and DLC of a matching Remote Frame are copied to transmit object n in order to monitor incoming Remote Frames."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RMM_A> for bool {
     #[inline(always)]
     fn from(variant: RMM_A) -> Self {
-        match variant {
-            RMM_A::VALUE1 => false,
-            RMM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RMM`"]

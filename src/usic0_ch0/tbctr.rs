@@ -40,17 +40,14 @@ impl<'a> LIMIT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STBTM_A {
     #[doc = "0: Trigger mode 0: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.LIMIT."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Trigger mode 1: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.SIZE."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STBTM_A> for bool {
     #[inline(always)]
     fn from(variant: STBTM_A) -> Self {
-        match variant {
-            STBTM_A::VALUE1 => false,
-            STBTM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STBTM`"]
@@ -118,17 +115,14 @@ impl<'a> STBTM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STBTEN_A {
     #[doc = "0: The standard transmit buffer event trigger through bit TRBSR.STBT is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The standard transmit buffer event trigger through bit TRBSR.STBT is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STBTEN_A> for bool {
     #[inline(always)]
     fn from(variant: STBTEN_A) -> Self {
-        match variant {
-            STBTEN_A::VALUE1 => false,
-            STBTEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STBTEN`"]
@@ -194,31 +188,25 @@ impl<'a> STBTEN_W<'a> {
 }
 #[doc = "Standard Transmit Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STBINP_A {
     #[doc = "0: Output SR0 becomes activated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Output SR1 becomes activated."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Output SR2 becomes activated."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Output SR3 becomes activated."]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Output SR4 becomes activated."]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: Output SR5 becomes activated."]
-    VALUE6,
+    VALUE6 = 5,
 }
 impl From<STBINP_A> for u8 {
     #[inline(always)]
     fn from(variant: STBINP_A) -> Self {
-        match variant {
-            STBINP_A::VALUE1 => 0,
-            STBINP_A::VALUE2 => 1,
-            STBINP_A::VALUE3 => 2,
-            STBINP_A::VALUE4 => 3,
-            STBINP_A::VALUE5 => 4,
-            STBINP_A::VALUE6 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STBINP`"]
@@ -318,31 +306,25 @@ impl<'a> STBINP_W<'a> {
 }
 #[doc = "Alternative Transmit Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ATBINP_A {
     #[doc = "0: Output SR0 becomes activated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Output SR1 becomes activated."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Output SR2 becomes activated."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Output SR3 becomes activated."]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Output SR4 becomes activated."]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: Output SR5 becomes activated."]
-    VALUE6,
+    VALUE6 = 5,
 }
 impl From<ATBINP_A> for u8 {
     #[inline(always)]
     fn from(variant: ATBINP_A) -> Self {
-        match variant {
-            ATBINP_A::VALUE1 => 0,
-            ATBINP_A::VALUE2 => 1,
-            ATBINP_A::VALUE3 => 2,
-            ATBINP_A::VALUE4 => 3,
-            ATBINP_A::VALUE5 => 4,
-            ATBINP_A::VALUE6 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ATBINP`"]
@@ -442,34 +424,27 @@ impl<'a> ATBINP_W<'a> {
 }
 #[doc = "Buffer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SIZE_A {
     #[doc = "0: The FIFO mechanism is disabled. The buffer does not accept any request for data."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The FIFO buffer contains 2 entries."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: The FIFO buffer contains 4 entries."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: The FIFO buffer contains 8 entries."]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: The FIFO buffer contains 16 entries."]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: The FIFO buffer contains 32 entries."]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: The FIFO buffer contains 64 entries."]
-    VALUE7,
+    VALUE7 = 6,
 }
 impl From<SIZE_A> for u8 {
     #[inline(always)]
     fn from(variant: SIZE_A) -> Self {
-        match variant {
-            SIZE_A::VALUE1 => 0,
-            SIZE_A::VALUE2 => 1,
-            SIZE_A::VALUE3 => 2,
-            SIZE_A::VALUE4 => 3,
-            SIZE_A::VALUE5 => 4,
-            SIZE_A::VALUE6 => 5,
-            SIZE_A::VALUE7 => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SIZE`"]
@@ -582,17 +557,14 @@ impl<'a> SIZE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOF_A {
     #[doc = "0: A standard transmit buffer event occurs when the filling level equals the limit value and gets lower due to transmission of a data word."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A standard transmit buffer interrupt event occurs when the filling level equals the limit value and gets bigger due to a write access to a data input location INx."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LOF_A> for bool {
     #[inline(always)]
     fn from(variant: LOF_A) -> Self {
-        match variant {
-            LOF_A::VALUE1 => false,
-            LOF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOF`"]
@@ -660,17 +632,14 @@ impl<'a> LOF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STBIEN_A {
     #[doc = "0: The standard transmit buffer interrupt generation is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The standard transmit buffer interrupt generation is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STBIEN_A> for bool {
     #[inline(always)]
     fn from(variant: STBIEN_A) -> Self {
-        match variant {
-            STBIEN_A::VALUE1 => false,
-            STBIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STBIEN`"]
@@ -738,17 +707,14 @@ impl<'a> STBIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TBERIEN_A {
     #[doc = "0: The transmit buffer error interrupt generation is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The transmit buffer error interrupt generation is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TBERIEN_A> for bool {
     #[inline(always)]
     fn from(variant: TBERIEN_A) -> Self {
-        match variant {
-            TBERIEN_A::VALUE1 => false,
-            TBERIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TBERIEN`"]

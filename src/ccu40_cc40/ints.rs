@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::INTS>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PMUS_A {
     #[doc = "0: Period match while counting up not detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Period match while counting up detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PMUS_A> for bool {
     #[inline(always)]
     fn from(variant: PMUS_A) -> Self {
-        match variant {
-            PMUS_A::VALUE1 => false,
-            PMUS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PMUS`"]
@@ -43,17 +40,14 @@ impl PMUS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OMDS_A {
     #[doc = "0: One match while counting down not detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: One match while counting down detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<OMDS_A> for bool {
     #[inline(always)]
     fn from(variant: OMDS_A) -> Self {
-        match variant {
-            OMDS_A::VALUE1 => false,
-            OMDS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OMDS`"]
@@ -82,17 +76,14 @@ impl OMDS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMUS_A {
     #[doc = "0: Compare match while counting up not detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Compare match while counting up detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMUS_A> for bool {
     #[inline(always)]
     fn from(variant: CMUS_A) -> Self {
-        match variant {
-            CMUS_A::VALUE1 => false,
-            CMUS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMUS`"]
@@ -121,17 +112,14 @@ impl CMUS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMDS_A {
     #[doc = "0: Compare match while counting down not detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Compare match while counting down detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMDS_A> for bool {
     #[inline(always)]
     fn from(variant: CMDS_A) -> Self {
-        match variant {
-            CMDS_A::VALUE1 => false,
-            CMDS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMDS`"]
@@ -160,17 +148,14 @@ impl CMDS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E0AS_A {
     #[doc = "0: Event 0 not detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Event 0 detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<E0AS_A> for bool {
     #[inline(always)]
     fn from(variant: E0AS_A) -> Self {
-        match variant {
-            E0AS_A::VALUE1 => false,
-            E0AS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E0AS`"]
@@ -199,17 +184,14 @@ impl E0AS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E1AS_A {
     #[doc = "0: Event 1 not detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Event 1 detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<E1AS_A> for bool {
     #[inline(always)]
     fn from(variant: E1AS_A) -> Self {
-        match variant {
-            E1AS_A::VALUE1 => false,
-            E1AS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E1AS`"]
@@ -238,17 +220,14 @@ impl E1AS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E2AS_A {
     #[doc = "0: Event 2 not detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Event 2 detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<E2AS_A> for bool {
     #[inline(always)]
     fn from(variant: E2AS_A) -> Self {
-        match variant {
-            E2AS_A::VALUE1 => false,
-            E2AS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E2AS`"]

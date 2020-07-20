@@ -56,7 +56,7 @@ impl RegisterBlock {
         unsafe { &mut *(((self as *const Self) as *mut u8).add(20usize) as *mut HCDMA_BUFFERMODE) }
     }
 }
-#[doc = "Host Channel Characteristics Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcchar](hcchar) module"]
+#[doc = "Host Channel Characteristics Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcchar](hcchar) module"]
 pub type HCCHAR = crate::Reg<u32, _HCCHAR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -67,7 +67,7 @@ impl crate::Readable for HCCHAR {}
 impl crate::Writable for HCCHAR {}
 #[doc = "Host Channel Characteristics Register"]
 pub mod hcchar;
-#[doc = "Host Channel Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcint](hcint) module"]
+#[doc = "Host Channel Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcint](hcint) module"]
 pub type HCINT = crate::Reg<u32, _HCINT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -78,7 +78,7 @@ impl crate::Readable for HCINT {}
 impl crate::Writable for HCINT {}
 #[doc = "Host Channel Interrupt Register"]
 pub mod hcint;
-#[doc = "Host Channel Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcintmsk](hcintmsk) module"]
+#[doc = "Host Channel Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcintmsk](hcintmsk) module"]
 pub type HCINTMSK = crate::Reg<u32, _HCINTMSK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -89,7 +89,7 @@ impl crate::Readable for HCINTMSK {}
 impl crate::Writable for HCINTMSK {}
 #[doc = "Host Channel Interrupt Mask Register"]
 pub mod hcintmsk;
-#[doc = "Host Channel Transfer Size Register \\[BUFFERMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hctsiz_buffermode](hctsiz_buffermode) module"]
+#[doc = "Host Channel Transfer Size Register \\[BUFFERMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hctsiz_buffermode](hctsiz_buffermode) module"]
 pub type HCTSIZ_BUFFERMODE = crate::Reg<u32, _HCTSIZ_BUFFERMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -100,7 +100,7 @@ impl crate::Readable for HCTSIZ_BUFFERMODE {}
 impl crate::Writable for HCTSIZ_BUFFERMODE {}
 #[doc = "Host Channel Transfer Size Register \\[BUFFERMODE\\]"]
 pub mod hctsiz_buffermode;
-#[doc = "Host Channel Transfer Size Register \\[SCATGATHER\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hctsiz_scatgather](hctsiz_scatgather) module"]
+#[doc = "Host Channel Transfer Size Register \\[SCATGATHER\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hctsiz_scatgather](hctsiz_scatgather) module"]
 pub type HCTSIZ_SCATGATHER = crate::Reg<u32, _HCTSIZ_SCATGATHER>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -111,7 +111,7 @@ impl crate::Readable for HCTSIZ_SCATGATHER {}
 impl crate::Writable for HCTSIZ_SCATGATHER {}
 #[doc = "Host Channel Transfer Size Register \\[SCATGATHER\\]"]
 pub mod hctsiz_scatgather;
-#[doc = "Host Channel DMA Address Register \\[BUFFERMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcdma_buffermode](hcdma_buffermode) module"]
+#[doc = "Host Channel DMA Address Register \\[BUFFERMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcdma_buffermode](hcdma_buffermode) module"]
 pub type HCDMA_BUFFERMODE = crate::Reg<u32, _HCDMA_BUFFERMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -122,7 +122,7 @@ impl crate::Readable for HCDMA_BUFFERMODE {}
 impl crate::Writable for HCDMA_BUFFERMODE {}
 #[doc = "Host Channel DMA Address Register \\[BUFFERMODE\\]"]
 pub mod hcdma_buffermode;
-#[doc = "Host Channel DMA Address Register \\[SCATGATHER\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcdma_scatgather](hcdma_scatgather) module"]
+#[doc = "Host Channel DMA Address Register \\[SCATGATHER\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcdma_scatgather](hcdma_scatgather) module"]
 pub type HCDMA_SCATGATHER = crate::Reg<u32, _HCDMA_SCATGATHER>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -133,7 +133,7 @@ impl crate::Readable for HCDMA_SCATGATHER {}
 impl crate::Writable for HCDMA_SCATGATHER {}
 #[doc = "Host Channel DMA Address Register \\[SCATGATHER\\]"]
 pub mod hcdma_scatgather;
-#[doc = "Host Channel DMA Buffer Address Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcdmab](hcdmab) module"]
+#[doc = "Host Channel DMA Buffer Address Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcdmab](hcdmab) module"]
 pub type HCDMAB = crate::Reg<u32, _HCDMAB>;
 #[allow(missing_docs)]
 #[doc(hidden)]

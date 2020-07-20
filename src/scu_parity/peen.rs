@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PEEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEENPS_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PEENPS_A> for bool {
     #[inline(always)]
     fn from(variant: PEENPS_A) -> Self {
-        match variant {
-            PEENPS_A::CONST_0 => false,
-            PEENPS_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PEENPS`"]
@@ -92,17 +89,14 @@ impl<'a> PEENPS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEENDS1_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PEENDS1_A> for bool {
     #[inline(always)]
     fn from(variant: PEENDS1_A) -> Self {
-        match variant {
-            PEENDS1_A::CONST_0 => false,
-            PEENDS1_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PEENDS1`"]
@@ -170,17 +164,14 @@ impl<'a> PEENDS1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEENU0_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PEENU0_A> for bool {
     #[inline(always)]
     fn from(variant: PEENU0_A) -> Self {
-        match variant {
-            PEENU0_A::CONST_0 => false,
-            PEENU0_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PEENU0`"]
@@ -248,17 +239,14 @@ impl<'a> PEENU0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEENU1_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PEENU1_A> for bool {
     #[inline(always)]
     fn from(variant: PEENU1_A) -> Self {
-        match variant {
-            PEENU1_A::CONST_0 => false,
-            PEENU1_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PEENU1`"]
@@ -326,17 +314,14 @@ impl<'a> PEENU1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEENMC_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PEENMC_A> for bool {
     #[inline(always)]
     fn from(variant: PEENMC_A) -> Self {
-        match variant {
-            PEENMC_A::CONST_0 => false,
-            PEENMC_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PEENMC`"]
@@ -404,17 +389,14 @@ impl<'a> PEENMC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEENPPRF_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PEENPPRF_A> for bool {
     #[inline(always)]
     fn from(variant: PEENPPRF_A) -> Self {
-        match variant {
-            PEENPPRF_A::CONST_0 => false,
-            PEENPPRF_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PEENPPRF`"]
@@ -482,17 +464,14 @@ impl<'a> PEENPPRF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEENUSB_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PEENUSB_A> for bool {
     #[inline(always)]
     fn from(variant: PEENUSB_A) -> Self {
-        match variant {
-            PEENUSB_A::CONST_0 => false,
-            PEENUSB_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PEENUSB`"]
@@ -560,17 +539,14 @@ impl<'a> PEENUSB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEENETH0TX_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PEENETH0TX_A> for bool {
     #[inline(always)]
     fn from(variant: PEENETH0TX_A) -> Self {
-        match variant {
-            PEENETH0TX_A::CONST_0 => false,
-            PEENETH0TX_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PEENETH0TX`"]
@@ -638,17 +614,14 @@ impl<'a> PEENETH0TX_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEENETH0RX_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PEENETH0RX_A> for bool {
     #[inline(always)]
     fn from(variant: PEENETH0RX_A) -> Self {
-        match variant {
-            PEENETH0RX_A::CONST_0 => false,
-            PEENETH0RX_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PEENETH0RX`"]
@@ -716,17 +689,14 @@ impl<'a> PEENETH0RX_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEENSD0_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PEENSD0_A> for bool {
     #[inline(always)]
     fn from(variant: PEENSD0_A) -> Self {
-        match variant {
-            PEENSD0_A::CONST_0 => false,
-            PEENSD0_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PEENSD0`"]
@@ -794,17 +764,14 @@ impl<'a> PEENSD0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEENSD1_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PEENSD1_A> for bool {
     #[inline(always)]
     fn from(variant: PEENSD1_A) -> Self {
-        match variant {
-            PEENSD1_A::CONST_0 => false,
-            PEENSD1_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PEENSD1`"]
@@ -872,17 +839,14 @@ impl<'a> PEENSD1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PEENECAT0_A {
     #[doc = "0: Disabled"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enabled"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PEENECAT0_A> for bool {
     #[inline(always)]
     fn from(variant: PEENECAT0_A) -> Self {
-        match variant {
-            PEENECAT0_A::CONST_0 => false,
-            PEENECAT0_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PEENECAT0`"]

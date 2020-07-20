@@ -4,16 +4,15 @@ pub type R = crate::R<u32, super::DSTS>;
 pub type SUSPSTS_R = crate::R<bool, bool>;
 #[doc = "Enumerated Speed\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ENUMSPD_A {
     #[doc = "3: Full speed (PHY clock is running at 48 MHz)"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<ENUMSPD_A> for u8 {
     #[inline(always)]
     fn from(variant: ENUMSPD_A) -> Self {
-        match variant {
-            ENUMSPD_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EnumSpd`"]

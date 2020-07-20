@@ -14,17 +14,14 @@ impl crate::ResetValue for super::STC {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSE_A {
     #[doc = "0: Cascaded shadow transfer disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Cascaded shadow transfer enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CSE_A> for bool {
     #[inline(always)]
     fn from(variant: CSE_A) -> Self {
-        match variant {
-            CSE_A::VALUE1 => false,
-            CSE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CSE`"]
@@ -90,22 +87,19 @@ impl<'a> CSE_W<'a> {
 }
 #[doc = "Shadow transfer mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STM_A {
     #[doc = "0: Shadow transfer is done in Period Match and One match."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Shadow transfer is done only in Period Match."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Shadow transfer is done only in One Match."]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<STM_A> for u8 {
     #[inline(always)]
     fn from(variant: STM_A) -> Self {
-        match variant {
-            STM_A::VALUE1 => 0,
-            STM_A::VALUE2 => 1,
-            STM_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STM`"]

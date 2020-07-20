@@ -2,19 +2,17 @@
 pub type R = crate::R<u8, super::PDI_CONTROL>;
 #[doc = "On-chip bus clock\n\nValue on reset: 128"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PDI_A {
     #[doc = "0: Interface deactivated (no PDI)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "128: On-chip Bus"]
-    VALUE2,
+    VALUE2 = 128,
 }
 impl From<PDI_A> for u8 {
     #[inline(always)]
     fn from(variant: PDI_A) -> Self {
-        match variant {
-            PDI_A::VALUE1 => 0,
-            PDI_A::VALUE2 => 128,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PDI`"]

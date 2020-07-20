@@ -14,17 +14,14 @@ impl crate::ResetValue for super::EEP_CONT_STAT {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum W_EN_A {
     #[doc = "0: Write requests are disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write requests are enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<W_EN_A> for bool {
     #[inline(always)]
     fn from(variant: W_EN_A) -> Self {
-        match variant {
-            W_EN_A::VALUE1 => false,
-            W_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `W_EN`"]
@@ -53,17 +50,14 @@ impl W_EN_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMUL_A {
     #[doc = "0: Normal operation (I2C interface used)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: PDI emulates EEPROM (I2C not used)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EMUL_A> for bool {
     #[inline(always)]
     fn from(variant: EMUL_A) -> Self {
-        match variant {
-            EMUL_A::VALUE1 => false,
-            EMUL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EMUL`"]
@@ -92,17 +86,14 @@ impl EMUL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BYTES_A {
     #[doc = "0: 4 Bytes"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 8 Bytes"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BYTES_A> for bool {
     #[inline(always)]
     fn from(variant: BYTES_A) -> Self {
-        match variant {
-            BYTES_A::VALUE1 => false,
-            BYTES_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BYTES`"]
@@ -131,17 +122,14 @@ impl BYTES_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALG_A {
     #[doc = "0: 1 address byte (1 KBit - 16 KBit EEPROMs)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 2 address bytes (32 KBit - 4 MBit EEPROMs)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ALG_A> for bool {
     #[inline(always)]
     fn from(variant: ALG_A) -> Self {
-        match variant {
-            ALG_A::VALUE1 => false,
-            ALG_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ALG`"]
@@ -168,25 +156,21 @@ impl ALG_R {
 }
 #[doc = "Command register\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CMD_REG_A {
     #[doc = "0: No command/EEPROM idle (clear error bits)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Write"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "4: Reload"]
-    VALUE4,
+    VALUE4 = 4,
 }
 impl From<CMD_REG_A> for u8 {
     #[inline(always)]
     fn from(variant: CMD_REG_A) -> Self {
-        match variant {
-            CMD_REG_A::VALUE1 => 0,
-            CMD_REG_A::VALUE2 => 1,
-            CMD_REG_A::VALUE3 => 2,
-            CMD_REG_A::VALUE4 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CMD_REG`"]
@@ -266,17 +250,14 @@ impl<'a> CMD_REG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROR_A {
     #[doc = "0: Checksum OK"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Checksum error"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ERROR_A> for bool {
     #[inline(always)]
     fn from(variant: ERROR_A) -> Self {
-        match variant {
-            ERROR_A::VALUE1 => false,
-            ERROR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERROR`"]
@@ -305,17 +286,14 @@ impl ERROR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum L_STAT_A {
     #[doc = "0: EEPROM loaded, device information OK"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: EEPROM not loaded, device information not available (EEPROM loading in progress or finished with a failure)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<L_STAT_A> for bool {
     #[inline(always)]
     fn from(variant: L_STAT_A) -> Self {
-        match variant {
-            L_STAT_A::VALUE1 => false,
-            L_STAT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `L_STAT`"]
@@ -344,17 +322,14 @@ impl L_STAT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROR_AC_A {
     #[doc = "0: No error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Missing EEPROM acknowledge or invalid command"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ERROR_AC_A> for bool {
     #[inline(always)]
     fn from(variant: ERROR_AC_A) -> Self {
-        match variant {
-            ERROR_AC_A::VALUE1 => false,
-            ERROR_AC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERROR_AC`"]
@@ -422,17 +397,14 @@ impl<'a> ERROR_AC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROR_WE_A {
     #[doc = "0: No error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write Command without Write enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ERROR_WE_A> for bool {
     #[inline(always)]
     fn from(variant: ERROR_WE_A) -> Self {
-        match variant {
-            ERROR_WE_A::VALUE1 => false,
-            ERROR_WE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERROR_WE`"]
@@ -461,17 +433,14 @@ impl ERROR_WE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUSY_A {
     #[doc = "0: EEPROM Interface is idle"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: EEPROM Interface is busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BUSY_A> for bool {
     #[inline(always)]
     fn from(variant: BUSY_A) -> Self {
-        match variant {
-            BUSY_A::VALUE1 => false,
-            BUSY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BUSY`"]

@@ -4,17 +4,14 @@ pub type R = crate::R<u8, super::MII_ECAT_ACS_STATE>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EN_ACS_MII_BY_PDI_A {
     #[doc = "0: ECAT enables PDI takeover of MII management control"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: ECAT claims exclusive access to MII management"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EN_ACS_MII_BY_PDI_A> for bool {
     #[inline(always)]
     fn from(variant: EN_ACS_MII_BY_PDI_A) -> Self {
-        match variant {
-            EN_ACS_MII_BY_PDI_A::VALUE1 => false,
-            EN_ACS_MII_BY_PDI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EN_ACS_MII_BY_PDI`"]

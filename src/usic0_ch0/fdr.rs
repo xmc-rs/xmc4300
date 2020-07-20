@@ -26,25 +26,21 @@ impl<'a> STEP_W<'a> {
 }
 #[doc = "Divider Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DM_A {
     #[doc = "0: The divider is switched off, fFD = 0."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Normal divider mode selected."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Fractional divider mode selected."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: The divider is switched off, fFD = 0."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<DM_A> for u8 {
     #[inline(always)]
     fn from(variant: DM_A) -> Self {
-        match variant {
-            DM_A::VALUE1 => 0,
-            DM_A::VALUE2 => 1,
-            DM_A::VALUE3 => 2,
-            DM_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DM`"]

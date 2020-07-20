@@ -14,17 +14,14 @@ impl crate::ResetValue for super::GAHBCFG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GLBLINTRMSK_A {
     #[doc = "0: Mask the interrupt assertion to the application."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Unmask the interrupt assertion to the application."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<GLBLINTRMSK_A> for bool {
     #[inline(always)]
     fn from(variant: GLBLINTRMSK_A) -> Self {
-        match variant {
-            GLBLINTRMSK_A::VALUE1 => false,
-            GLBLINTRMSK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GlblIntrMsk`"]
@@ -90,28 +87,23 @@ impl<'a> GLBLINTRMSK_W<'a> {
 }
 #[doc = "Burst Length/Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HBSTLEN_A {
     #[doc = "0: Single"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: INCR"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "3: INCR4"]
-    VALUE3,
+    VALUE3 = 3,
     #[doc = "5: INCR8"]
-    VALUE4,
+    VALUE4 = 5,
     #[doc = "7: INCR16"]
-    VALUE5,
+    VALUE5 = 7,
 }
 impl From<HBSTLEN_A> for u8 {
     #[inline(always)]
     fn from(variant: HBSTLEN_A) -> Self {
-        match variant {
-            HBSTLEN_A::VALUE1 => 0,
-            HBSTLEN_A::VALUE2 => 1,
-            HBSTLEN_A::VALUE3 => 3,
-            HBSTLEN_A::VALUE4 => 5,
-            HBSTLEN_A::VALUE5 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HBstLen`"]
@@ -202,17 +194,14 @@ impl<'a> HBSTLEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMAEN_A {
     #[doc = "0: Core operates in Slave mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Core operates in a DMA mode"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DMAEN_A> for bool {
     #[inline(always)]
     fn from(variant: DMAEN_A) -> Self {
-        match variant {
-            DMAEN_A::VALUE1 => false,
-            DMAEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DMAEn`"]
@@ -280,17 +269,14 @@ impl<'a> DMAEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NPTXFEMPLVL_A {
     #[doc = "0: DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is half empty"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is completely empty"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<NPTXFEMPLVL_A> for bool {
     #[inline(always)]
     fn from(variant: NPTXFEMPLVL_A) -> Self {
-        match variant {
-            NPTXFEMPLVL_A::VALUE1 => false,
-            NPTXFEMPLVL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NPTxFEmpLvl`"]
@@ -358,17 +344,14 @@ impl<'a> NPTXFEMPLVL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PTXFEMPLVL_A {
     #[doc = "0: GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is half empty"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is completely empty"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PTXFEMPLVL_A> for bool {
     #[inline(always)]
     fn from(variant: PTXFEMPLVL_A) -> Self {
-        match variant {
-            PTXFEMPLVL_A::VALUE1 => false,
-            PTXFEMPLVL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PTxFEmpLvl`"]
@@ -436,17 +419,14 @@ impl<'a> PTXFEMPLVL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AHBSINGLE_A {
     #[doc = "0: The remaining data in a transfer is sent using INCR burst size. This is the default mode."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The remaining data in a transfer is sent using single burst size."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AHBSINGLE_A> for bool {
     #[inline(always)]
     fn from(variant: AHBSINGLE_A) -> Self {
-        match variant {
-            AHBSINGLE_A::VALUE1 => false,
-            AHBSINGLE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AHBSingle`"]

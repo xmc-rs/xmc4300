@@ -38,17 +38,14 @@ impl<'a> RMTWKUPSIG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SFTDISCON_A {
     #[doc = "0: Normal operation. When this bit is cleared after a soft disconnect, the core drives a device connect event to the USB host. When the device is reconnected, the USB host restarts device enumeration."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The core drives a device disconnect event to the USB host."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SFTDISCON_A> for bool {
     #[inline(always)]
     fn from(variant: SFTDISCON_A) -> Self {
-        match variant {
-            SFTDISCON_A::VALUE1 => false,
-            SFTDISCON_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SftDiscon`"]
@@ -116,17 +113,14 @@ impl<'a> SFTDISCON_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GNPINNAKSTS_A {
     #[doc = "0: A handshake is sent out based on the data availability in the transmit FIFO."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A NAK handshake is sent out on all non-periodic IN endpoints, irrespective of the data availability in the transmit FIFO."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<GNPINNAKSTS_A> for bool {
     #[inline(always)]
     fn from(variant: GNPINNAKSTS_A) -> Self {
-        match variant {
-            GNPINNAKSTS_A::VALUE1 => false,
-            GNPINNAKSTS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GNPINNakSts`"]
@@ -155,17 +149,14 @@ impl GNPINNAKSTS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GOUTNAKSTS_A {
     #[doc = "0: A handshake is sent based on the FIFO Status and the NAK and STALL bit settings."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: No data is written to the RxFIFO, irrespective of space availability. Sends a NAK handshake on all packets, except on SETUP transactions. All isochronous OUT packets are dropped."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<GOUTNAKSTS_A> for bool {
     #[inline(always)]
     fn from(variant: GOUTNAKSTS_A) -> Self {
-        match variant {
-            GOUTNAKSTS_A::VALUE1 => false,
-            GOUTNAKSTS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GOUTNakSts`"]
@@ -280,25 +271,21 @@ impl<'a> CGOUTNAK_W<'a> {
 }
 #[doc = "Global Multi Count\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum GMC_A {
     #[doc = "0: Invalid."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1 packet."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 2 packets."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 3 packets."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<GMC_A> for u8 {
     #[inline(always)]
     fn from(variant: GMC_A) -> Self {
-        match variant {
-            GMC_A::VALUE1 => 0,
-            GMC_A::VALUE2 => 1,
-            GMC_A::VALUE3 => 2,
-            GMC_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `GMC`"]
@@ -379,17 +366,14 @@ impl<'a> GMC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IGNRFRMNUM_A {
     #[doc = "0: Scatter/Gather enabled: The core transmits the packets only in the frame number in which they are intended to be transmitted. Scatter/Gather disabled: Periodic transfer interrupt feature is disabled; the application must program transfers for periodic endpoints every frame"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Scatter/Gather enabled: The core ignores the frame number, sending packets immediately as the packets are ready. Scatter/Gather disabled: Periodic transfer interrupt feature is enabled; the application can program transfers for multiple frames for periodic endpoints."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IGNRFRMNUM_A> for bool {
     #[inline(always)]
     fn from(variant: IGNRFRMNUM_A) -> Self {
-        match variant {
-            IGNRFRMNUM_A::VALUE1 => false,
-            IGNRFRMNUM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IgnrFrmNum`"]
@@ -481,17 +465,14 @@ impl<'a> NAKONBBLE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENCONTONBNA_A {
     #[doc = "0: After receiving BNA interrupt, the core disables the endpoint. When the endpoint is re-enabled by the application, the core starts processing from the DOEPDMA descriptor."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: After receiving BNA interrupt, the core disables the endpoint. When the endpoint is re-enabled by the application, the core starts processing from the descriptor that received the BNA interrupt."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ENCONTONBNA_A> for bool {
     #[inline(always)]
     fn from(variant: ENCONTONBNA_A) -> Self {
-        match variant {
-            ENCONTONBNA_A::VALUE1 => false,
-            ENCONTONBNA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EnContOnBNA`"]

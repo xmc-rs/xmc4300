@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SEFLAG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEV0_A {
     #[doc = "0: No source event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A source event has occurred"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SEV0_A> for bool {
     #[inline(always)]
     fn from(variant: SEV0_A) -> Self {
-        match variant {
-            SEV0_A::VALUE1 => false,
-            SEV0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEV0`"]
@@ -92,17 +89,14 @@ impl<'a> SEV0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEV1_A {
     #[doc = "0: No source event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A source event has occurred"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SEV1_A> for bool {
     #[inline(always)]
     fn from(variant: SEV1_A) -> Self {
-        match variant {
-            SEV1_A::VALUE1 => false,
-            SEV1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEV1`"]

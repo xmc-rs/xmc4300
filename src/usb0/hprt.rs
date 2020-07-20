@@ -14,17 +14,14 @@ impl crate::ResetValue for super::HPRT {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRTCONNSTS_A {
     #[doc = "0: No device is attached to the port."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A device is attached to the port."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PRTCONNSTS_A> for bool {
     #[inline(always)]
     fn from(variant: PRTCONNSTS_A) -> Self {
-        match variant {
-            PRTCONNSTS_A::VALUE1 => false,
-            PRTCONNSTS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PrtConnSts`"]
@@ -77,17 +74,14 @@ impl<'a> PRTCONNDET_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRTENA_A {
     #[doc = "0: Port disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Port enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PRTENA_A> for bool {
     #[inline(always)]
     fn from(variant: PRTENA_A) -> Self {
-        match variant {
-            PRTENA_A::VALUE1 => false,
-            PRTENA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PrtEna`"]
@@ -179,17 +173,14 @@ impl<'a> PRTENCHNG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRTOVRCURRACT_A {
     #[doc = "0: No overcurrent condition"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Overcurrent condition"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PRTOVRCURRACT_A> for bool {
     #[inline(always)]
     fn from(variant: PRTOVRCURRACT_A) -> Self {
-        match variant {
-            PRTOVRCURRACT_A::VALUE1 => false,
-            PRTOVRCURRACT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PrtOvrCurrAct`"]
@@ -242,17 +233,14 @@ impl<'a> PRTOVRCURRCHNG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRTRES_A {
     #[doc = "0: No resume driven"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Resume driven"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PRTRES_A> for bool {
     #[inline(always)]
     fn from(variant: PRTRES_A) -> Self {
-        match variant {
-            PRTRES_A::VALUE1 => false,
-            PRTRES_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PrtRes`"]
@@ -320,17 +308,14 @@ impl<'a> PRTRES_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRTSUSP_A {
     #[doc = "0: Port not in Suspend mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Port in Suspend mode"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PRTSUSP_A> for bool {
     #[inline(always)]
     fn from(variant: PRTSUSP_A) -> Self {
-        match variant {
-            PRTSUSP_A::VALUE1 => false,
-            PRTSUSP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PrtSusp`"]
@@ -398,17 +383,14 @@ impl<'a> PRTSUSP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRTRST_A {
     #[doc = "0: Port not in reset"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Port in reset"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PRTRST_A> for bool {
     #[inline(always)]
     fn from(variant: PRTRST_A) -> Self {
-        match variant {
-            PRTRST_A::VALUE1 => false,
-            PRTRST_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PrtRst`"]
@@ -478,17 +460,14 @@ pub type PRTLNSTS_R = crate::R<u8, u8>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRTPWR_A {
     #[doc = "0: Power off"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Power on"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PRTPWR_A> for bool {
     #[inline(always)]
     fn from(variant: PRTPWR_A) -> Self {
-        match variant {
-            PRTPWR_A::VALUE1 => false,
-            PRTPWR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PrtPwr`"]
@@ -554,16 +533,15 @@ impl<'a> PRTPWR_W<'a> {
 }
 #[doc = "Port Speed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRTSPD_A {
     #[doc = "1: Full speed"]
-    VALUE1,
+    VALUE1 = 1,
 }
 impl From<PRTSPD_A> for u8 {
     #[inline(always)]
     fn from(variant: PRTSPD_A) -> Self {
-        match variant {
-            PRTSPD_A::VALUE1 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PrtSpd`"]

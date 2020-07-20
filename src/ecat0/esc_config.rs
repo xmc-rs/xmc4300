@@ -4,17 +4,14 @@ pub type R = crate::R<u8, super::ESC_CONFIG>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMUL_A {
     #[doc = "0: AL status register has to be set by PDI"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: AL status register will be set to value written to AL control register"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EMUL_A> for bool {
     #[inline(always)]
     fn from(variant: EMUL_A) -> Self {
-        match variant {
-            EMUL_A::VALUE1 => false,
-            EMUL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EMUL`"]
@@ -43,17 +40,14 @@ impl EMUL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EHLD_A {
     #[doc = "0: disabled (if bits \\[7:4\\]=0)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: enabled at all ports (overrides bits \\[7:4\\])"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EHLD_A> for bool {
     #[inline(always)]
     fn from(variant: EHLD_A) -> Self {
-        match variant {
-            EHLD_A::VALUE1 => false,
-            EHLD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EHLD`"]
@@ -82,17 +76,14 @@ impl EHLD_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKS_OUT_A {
     #[doc = "0: disabled (power saving)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CLKS_OUT_A> for bool {
     #[inline(always)]
     fn from(variant: CLKS_OUT_A) -> Self {
-        match variant {
-            CLKS_OUT_A::VALUE1 => false,
-            CLKS_OUT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CLKS_OUT`"]
@@ -121,17 +112,14 @@ impl CLKS_OUT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKS_IN_A {
     #[doc = "0: disabled (power saving)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CLKS_IN_A> for bool {
     #[inline(always)]
     fn from(variant: CLKS_IN_A) -> Self {
-        match variant {
-            CLKS_IN_A::VALUE1 => false,
-            CLKS_IN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CLKS_IN`"]
@@ -160,17 +148,14 @@ impl CLKS_IN_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EHLD_P0_A {
     #[doc = "0: disabled (if bit 1 = 0)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EHLD_P0_A> for bool {
     #[inline(always)]
     fn from(variant: EHLD_P0_A) -> Self {
-        match variant {
-            EHLD_P0_A::VALUE1 => false,
-            EHLD_P0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EHLD_P0`"]
@@ -199,17 +184,14 @@ impl EHLD_P0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EHLD_P1_A {
     #[doc = "0: disabled (if bit 1 = 0)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EHLD_P1_A> for bool {
     #[inline(always)]
     fn from(variant: EHLD_P1_A) -> Self {
-        match variant {
-            EHLD_P1_A::VALUE1 => false,
-            EHLD_P1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EHLD_P1`"]
@@ -238,17 +220,14 @@ impl EHLD_P1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EHLD_P2_A {
     #[doc = "0: disabled (if bit 1 = 0)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EHLD_P2_A> for bool {
     #[inline(always)]
     fn from(variant: EHLD_P2_A) -> Self {
-        match variant {
-            EHLD_P2_A::VALUE1 => false,
-            EHLD_P2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EHLD_P2`"]
@@ -277,17 +256,14 @@ impl EHLD_P2_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EHLD_P3_A {
     #[doc = "0: disabled (if bit 1 = 0)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EHLD_P3_A> for bool {
     #[inline(always)]
     fn from(variant: EHLD_P3_A) -> Self {
-        match variant {
-            EHLD_P3_A::VALUE1 => false,
-            EHLD_P3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EHLD_P3`"]

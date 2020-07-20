@@ -28,14 +28,12 @@ impl<'a> TOUTCAL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PHYSEL_A {
     #[doc = "1: USB 1.1 full-speed serial transceiver"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PHYSEL_A> for bool {
     #[inline(always)]
     fn from(variant: PHYSEL_A) -> Self {
-        match variant {
-            PHYSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PHYSel`"]
@@ -60,17 +58,14 @@ impl PHYSEL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRPCAP_A {
     #[doc = "0: SRP capability is not enabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SRP capability is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SRPCAP_A> for bool {
     #[inline(always)]
     fn from(variant: SRPCAP_A) -> Self {
-        match variant {
-            SRPCAP_A::VALUE1 => false,
-            SRPCAP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRPCap`"]
@@ -138,17 +133,14 @@ impl<'a> SRPCAP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HNPCAP_A {
     #[doc = "0: HNP capability is not enabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: HNP capability is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HNPCAP_A> for bool {
     #[inline(always)]
     fn from(variant: HNPCAP_A) -> Self {
-        match variant {
-            HNPCAP_A::VALUE1 => false,
-            HNPCAP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HNPCap`"]
@@ -230,14 +222,12 @@ impl<'a> USBTRDTIM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OTGI2CSEL_A {
     #[doc = "0: UTMI USB 1.1 Full-Speed interface for OTG signals"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<OTGI2CSEL_A> for bool {
     #[inline(always)]
     fn from(variant: OTGI2CSEL_A) -> Self {
-        match variant {
-            OTGI2CSEL_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OtgI2CSel`"]
@@ -296,17 +286,14 @@ impl<'a> OTGI2CSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXENDDELAY_A {
     #[doc = "0: Normal mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Introduce Tx end delay timers"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TXENDDELAY_A> for bool {
     #[inline(always)]
     fn from(variant: TXENDDELAY_A) -> Self {
-        match variant {
-            TXENDDELAY_A::VALUE1 => false,
-            TXENDDELAY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TxEndDelay`"]
@@ -374,17 +361,14 @@ impl<'a> TXENDDELAY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FORCEHSTMODE_A {
     #[doc = "0: Normal Mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Force Host Mode"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FORCEHSTMODE_A> for bool {
     #[inline(always)]
     fn from(variant: FORCEHSTMODE_A) -> Self {
-        match variant {
-            FORCEHSTMODE_A::VALUE1 => false,
-            FORCEHSTMODE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ForceHstMode`"]
@@ -452,17 +436,14 @@ impl<'a> FORCEHSTMODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FORCEDEVMODE_A {
     #[doc = "0: Normal Mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Force Device Mode"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FORCEDEVMODE_A> for bool {
     #[inline(always)]
     fn from(variant: FORCEDEVMODE_A) -> Self {
-        match variant {
-            FORCEDEVMODE_A::VALUE1 => false,
-            FORCEDEVMODE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ForceDevMode`"]

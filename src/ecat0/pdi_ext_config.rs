@@ -2,22 +2,19 @@
 pub type R = crate::R<u16, super::PDI_EXT_CONFIG>;
 #[doc = "Read Prefetch Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum R_PREF_A {
     #[doc = "0: 4 cycles"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1 cycle (typical)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 2 cycles"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<R_PREF_A> for u8 {
     #[inline(always)]
     fn from(variant: R_PREF_A) -> Self {
-        match variant {
-            R_PREF_A::VALUE1 => 0,
-            R_PREF_A::VALUE2 => 1,
-            R_PREF_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `R_Pref`"]
@@ -52,22 +49,19 @@ impl R_PREF_R {
 }
 #[doc = "On-chip Sub Type for AXI\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SUB_TYPE_A {
     #[doc = "0: AXI3"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: AXI4"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: AXI4 Lite"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<SUB_TYPE_A> for u8 {
     #[inline(always)]
     fn from(variant: SUB_TYPE_A) -> Self {
-        match variant {
-            SUB_TYPE_A::VALUE1 => 0,
-            SUB_TYPE_A::VALUE2 => 1,
-            SUB_TYPE_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SUB_TYPE`"]

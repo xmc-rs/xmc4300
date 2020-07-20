@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PCR_IISMODE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAGEN_A {
     #[doc = "0: The IIS can be used as slave. The generation of the word address signal is disabled. The output signal WA is 0. The MCLKO signal generation depends on PCR.MCLK."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The IIS can be used as master. The generation of the word address signal is enabled. The signal starts with a 0 after being enabled. The generation of MCLK is enabled, independent of PCR.MCLK. After clearing WAGEN, the USIC module stops the generation of the WA signal within the next 4 WA periods."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WAGEN_A> for bool {
     #[inline(always)]
     fn from(variant: WAGEN_A) -> Self {
-        match variant {
-            WAGEN_A::VALUE1 => false,
-            WAGEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAGEN`"]
@@ -92,17 +89,14 @@ impl<'a> WAGEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DTEN_A {
     #[doc = "0: The changes of the WA input signal are ignored and no transfers take place."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Transfers are enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DTEN_A> for bool {
     #[inline(always)]
     fn from(variant: DTEN_A) -> Self {
-        match variant {
-            DTEN_A::VALUE1 => false,
-            DTEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DTEN`"]
@@ -170,17 +164,14 @@ impl<'a> DTEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELINV_A {
     #[doc = "0: The SELOx outputs have the same polarity as the WA signal."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The SELOx outputs have the inverted polarity to the WA signal."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SELINV_A> for bool {
     #[inline(always)]
     fn from(variant: SELINV_A) -> Self {
-        match variant {
-            SELINV_A::VALUE1 => false,
-            SELINV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SELINV`"]
@@ -248,17 +239,14 @@ impl<'a> SELINV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAFEIEN_A {
     #[doc = "0: A protocol interrupt is not activated if a falling edge of WA is generated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A protocol interrupt is activated if a falling edge of WA is generated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WAFEIEN_A> for bool {
     #[inline(always)]
     fn from(variant: WAFEIEN_A) -> Self {
-        match variant {
-            WAFEIEN_A::VALUE1 => false,
-            WAFEIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAFEIEN`"]
@@ -326,17 +314,14 @@ impl<'a> WAFEIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAREIEN_A {
     #[doc = "0: A protocol interrupt is not activated if a rising edge of WA is generated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A protocol interrupt is activated if a rising edge of WA is generated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WAREIEN_A> for bool {
     #[inline(always)]
     fn from(variant: WAREIEN_A) -> Self {
-        match variant {
-            WAREIEN_A::VALUE1 => false,
-            WAREIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAREIEN`"]
@@ -404,17 +389,14 @@ impl<'a> WAREIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDIEN_A {
     #[doc = "0: A protocol interrupt is not activated."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A protocol interrupt is activated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ENDIEN_A> for bool {
     #[inline(always)]
     fn from(variant: ENDIEN_A) -> Self {
-        match variant {
-            ENDIEN_A::VALUE1 => false,
-            ENDIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENDIEN`"]
@@ -482,17 +464,14 @@ impl<'a> ENDIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DX2TIEN_A {
     #[doc = "0: A protocol interrupt is not generated if DX2T is active."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A protocol interrupt is generated if DX2T is active."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DX2TIEN_A> for bool {
     #[inline(always)]
     fn from(variant: DX2TIEN_A) -> Self {
-        match variant {
-            DX2TIEN_A::VALUE1 => false,
-            DX2TIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DX2TIEN`"]
@@ -574,17 +553,14 @@ impl<'a> TDEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCLK_A {
     #[doc = "0: The MCLK generation is disabled and MCLK is 0."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The MCLK generation is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MCLK_A> for bool {
     #[inline(always)]
     fn from(variant: MCLK_A) -> Self {
-        match variant {
-            MCLK_A::VALUE1 => false,
-            MCLK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MCLK`"]

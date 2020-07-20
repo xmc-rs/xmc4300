@@ -14,17 +14,14 @@ impl crate::ResetValue for super::GLOBEFLAG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEVGLB_A {
     #[doc = "0: No source event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A source event has occurred"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SEVGLB_A> for bool {
     #[inline(always)]
     fn from(variant: SEVGLB_A) -> Self {
-        match variant {
-            SEVGLB_A::VALUE1 => false,
-            SEVGLB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEVGLB`"]
@@ -92,17 +89,14 @@ impl<'a> SEVGLB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REVGLB_A {
     #[doc = "0: No result event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: New result was stored in register GLOBRES"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REVGLB_A> for bool {
     #[inline(always)]
     fn from(variant: REVGLB_A) -> Self {
-        match variant {
-            REVGLB_A::VALUE1 => false,
-            REVGLB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REVGLB`"]
@@ -170,17 +164,14 @@ impl<'a> REVGLB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEVGLBCLR_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the source event flag SEVGLB"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SEVGLBCLR_AW> for bool {
     #[inline(always)]
     fn from(variant: SEVGLBCLR_AW) -> Self {
-        match variant {
-            SEVGLBCLR_AW::VALUE1 => false,
-            SEVGLBCLR_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SEVGLBCLR`"]
@@ -226,17 +217,14 @@ impl<'a> SEVGLBCLR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REVGLBCLR_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the result event flag REVGLB"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REVGLBCLR_AW> for bool {
     #[inline(always)]
     fn from(variant: REVGLBCLR_AW) -> Self {
-        match variant {
-            REVGLBCLR_AW::VALUE1 => false,
-            REVGLBCLR_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REVGLBCLR`"]

@@ -12,16 +12,15 @@ impl crate::ResetValue for super::DCFG {
 }
 #[doc = "Device Speed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DEVSPD_A {
     #[doc = "3: Full speed (USB 1.1 transceiver clock is 48 MHz)"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<DEVSPD_A> for u8 {
     #[inline(always)]
     fn from(variant: DEVSPD_A) -> Self {
-        match variant {
-            DEVSPD_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DevSpd`"]
@@ -68,17 +67,14 @@ impl<'a> DEVSPD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NZSTSOUTHSHK_A {
     #[doc = "1: Send a STALL handshake on a nonzero-length status OUT transaction and do not send the received OUT packet to the application."]
-    VALUE1,
+    VALUE1 = 1,
     #[doc = "0: Send the received OUT packet to the application (zero-length or nonzero-length) and send a handshake based on the NAK and STALL bits for the endpoint in the Device Endpoint Control register."]
-    VALUE2,
+    VALUE2 = 0,
 }
 impl From<NZSTSOUTHSHK_A> for bool {
     #[inline(always)]
     fn from(variant: NZSTSOUTHSHK_A) -> Self {
-        match variant {
-            NZSTSOUTHSHK_A::VALUE1 => true,
-            NZSTSOUTHSHK_A::VALUE2 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NZStsOUTHShk`"]
@@ -158,25 +154,21 @@ impl<'a> DEVADDR_W<'a> {
 }
 #[doc = "Periodic Frame Interval\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PERFRINT_A {
     #[doc = "0: 80% of the frame interval"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 85%"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 90%"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 95%"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<PERFRINT_A> for u8 {
     #[inline(always)]
     fn from(variant: PERFRINT_A) -> Self {
-        match variant {
-            PERFRINT_A::VALUE1 => 0,
-            PERFRINT_A::VALUE2 => 1,
-            PERFRINT_A::VALUE3 => 2,
-            PERFRINT_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PerFrInt`"]
@@ -279,22 +271,19 @@ impl<'a> DESCDMA_W<'a> {
 }
 #[doc = "Periodic Scheduling Interval\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PERSCHINTVL_A {
     #[doc = "0: 25% of frame."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 50% of frame."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 75% of frame."]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<PERSCHINTVL_A> for u8 {
     #[inline(always)]
     fn from(variant: PERSCHINTVL_A) -> Self {
-        match variant {
-            PERSCHINTVL_A::VALUE1 => 0,
-            PERSCHINTVL_A::VALUE2 => 1,
-            PERSCHINTVL_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PerSchIntvl`"]

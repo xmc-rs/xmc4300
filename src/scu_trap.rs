@@ -12,7 +12,7 @@ pub struct RegisterBlock {
     #[doc = "0x10 - Trap Set Register"]
     pub trapset: TRAPSET,
 }
-#[doc = "Trap Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [trapstat](trapstat) module"]
+#[doc = "Trap Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trapstat](trapstat) module"]
 pub type TRAPSTAT = crate::Reg<u32, _TRAPSTAT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -21,7 +21,7 @@ pub struct _TRAPSTAT;
 impl crate::Readable for TRAPSTAT {}
 #[doc = "Trap Status Register"]
 pub mod trapstat;
-#[doc = "Trap Raw Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [trapraw](trapraw) module"]
+#[doc = "Trap Raw Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trapraw](trapraw) module"]
 pub type TRAPRAW = crate::Reg<u32, _TRAPRAW>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -30,7 +30,7 @@ pub struct _TRAPRAW;
 impl crate::Readable for TRAPRAW {}
 #[doc = "Trap Raw Status Register"]
 pub mod trapraw;
-#[doc = "Trap Disable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [trapdis](trapdis) module"]
+#[doc = "Trap Disable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trapdis](trapdis) module"]
 pub type TRAPDIS = crate::Reg<u32, _TRAPDIS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -41,7 +41,7 @@ impl crate::Readable for TRAPDIS {}
 impl crate::Writable for TRAPDIS {}
 #[doc = "Trap Disable Register"]
 pub mod trapdis;
-#[doc = "Trap Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [trapclr](trapclr) module"]
+#[doc = "Trap Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trapclr](trapclr) module"]
 pub type TRAPCLR = crate::Reg<u32, _TRAPCLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -50,7 +50,7 @@ pub struct _TRAPCLR;
 impl crate::Writable for TRAPCLR {}
 #[doc = "Trap Clear Register"]
 pub mod trapclr;
-#[doc = "Trap Set Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [trapset](trapset) module"]
+#[doc = "Trap Set Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trapset](trapset) module"]
 pub type TRAPSET = crate::Reg<u32, _TRAPSET>;
 #[allow(missing_docs)]
 #[doc(hidden)]

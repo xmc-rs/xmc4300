@@ -12,25 +12,21 @@ impl crate::ResetValue for super::SRS {
 }
 #[doc = "Period/One match Service request selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum POSR_A {
     #[doc = "0: Forward to CC4ySR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Forward to CC4ySR1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Forward to CC4ySR2"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Forward to CC4ySR3"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<POSR_A> for u8 {
     #[inline(always)]
     fn from(variant: POSR_A) -> Self {
-        match variant {
-            POSR_A::VALUE1 => 0,
-            POSR_A::VALUE2 => 1,
-            POSR_A::VALUE3 => 2,
-            POSR_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `POSR`"]
@@ -109,25 +105,21 @@ impl<'a> POSR_W<'a> {
 }
 #[doc = "Compare match Service request selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CMSR_A {
     #[doc = "0: Forward to CC4ySR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Forward to CC4ySR1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Forward to CC4ySR2"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Forward to CC4ySR3"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CMSR_A> for u8 {
     #[inline(always)]
     fn from(variant: CMSR_A) -> Self {
-        match variant {
-            CMSR_A::VALUE1 => 0,
-            CMSR_A::VALUE2 => 1,
-            CMSR_A::VALUE3 => 2,
-            CMSR_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CMSR`"]
@@ -206,25 +198,21 @@ impl<'a> CMSR_W<'a> {
 }
 #[doc = "Event 0 Service request selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum E0SR_A {
     #[doc = "0: Forward to CC4ySR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Forward to CC4ySR1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Forward to CC4ySR2"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Forward to CC4ySR3"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<E0SR_A> for u8 {
     #[inline(always)]
     fn from(variant: E0SR_A) -> Self {
-        match variant {
-            E0SR_A::VALUE1 => 0,
-            E0SR_A::VALUE2 => 1,
-            E0SR_A::VALUE3 => 2,
-            E0SR_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `E0SR`"]
@@ -303,25 +291,21 @@ impl<'a> E0SR_W<'a> {
 }
 #[doc = "Event 1 Service request selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum E1SR_A {
     #[doc = "0: Forward to CC4ySR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Forward to CC4ySR1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Forward to CC4ySR2"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Forward to CC4ySR3"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<E1SR_A> for u8 {
     #[inline(always)]
     fn from(variant: E1SR_A) -> Self {
-        match variant {
-            E1SR_A::VALUE1 => 0,
-            E1SR_A::VALUE2 => 1,
-            E1SR_A::VALUE3 => 2,
-            E1SR_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `E1SR`"]
@@ -400,25 +384,21 @@ impl<'a> E1SR_W<'a> {
 }
 #[doc = "Event 2 Service request selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum E2SR_A {
     #[doc = "0: Forward to CC4ySR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Forward to CC4ySR1"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Forward to CC4ySR2"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Forward to CC4ySR3"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<E2SR_A> for u8 {
     #[inline(always)]
     fn from(variant: E2SR_A) -> Self {
-        match variant {
-            E2SR_A::VALUE1 => 0,
-            E2SR_A::VALUE2 => 1,
-            E2SR_A::VALUE3 => 2,
-            E2SR_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `E2SR`"]

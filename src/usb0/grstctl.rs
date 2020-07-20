@@ -108,28 +108,23 @@ impl<'a> TXFFLSH_W<'a> {
 }
 #[doc = "TxFIFO Number\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TXFNUM_A {
     #[doc = "0: Non-periodic TxFIFO flush in Host mode or Tx FIFO 0 flush in device mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Periodic TxFIFO flush in Host mode or Tx FIFO 1 flush in device mode"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Tx FIFO 2 flush in device mode"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "15: Tx FIFO 15 flush in device mode"]
-    VALUE4,
+    VALUE4 = 15,
     #[doc = "16: Flush all the transmit FIFOs in device or host mode."]
-    VALUE5,
+    VALUE5 = 16,
 }
 impl From<TXFNUM_A> for u8 {
     #[inline(always)]
     fn from(variant: TXFNUM_A) -> Self {
-        match variant {
-            TXFNUM_A::VALUE1 => 0,
-            TXFNUM_A::VALUE2 => 1,
-            TXFNUM_A::VALUE3 => 2,
-            TXFNUM_A::VALUE4 => 15,
-            TXFNUM_A::VALUE5 => 16,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TxFNum`"]

@@ -12,17 +12,14 @@ impl crate::ResetValue for super::CLKSET {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBCEN_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enable"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<USBCEN_AW> for bool {
     #[inline(always)]
     fn from(variant: USBCEN_AW) -> Self {
-        match variant {
-            USBCEN_AW::CONST_0 => false,
-            USBCEN_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `USBCEN`"]
@@ -68,17 +65,14 @@ impl<'a> USBCEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MMCCEN_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enable"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<MMCCEN_AW> for bool {
     #[inline(always)]
     fn from(variant: MMCCEN_AW) -> Self {
-        match variant {
-            MMCCEN_AW::CONST_0 => false,
-            MMCCEN_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `MMCCEN`"]
@@ -124,17 +118,14 @@ impl<'a> MMCCEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ETH0CEN_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enable"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ETH0CEN_AW> for bool {
     #[inline(always)]
     fn from(variant: ETH0CEN_AW) -> Self {
-        match variant {
-            ETH0CEN_AW::CONST_0 => false,
-            ETH0CEN_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ETH0CEN`"]
@@ -180,17 +171,14 @@ impl<'a> ETH0CEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCUCEN_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enable"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<CCUCEN_AW> for bool {
     #[inline(always)]
     fn from(variant: CCUCEN_AW) -> Self {
-        match variant {
-            CCUCEN_AW::CONST_0 => false,
-            CCUCEN_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CCUCEN`"]
@@ -236,17 +224,14 @@ impl<'a> CCUCEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDTCEN_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enable"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<WDTCEN_AW> for bool {
     #[inline(always)]
     fn from(variant: WDTCEN_AW) -> Self {
-        match variant {
-            WDTCEN_AW::CONST_0 => false,
-            WDTCEN_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WDTCEN`"]

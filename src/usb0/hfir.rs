@@ -28,17 +28,14 @@ impl<'a> FRINT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HFIRRLDCTRL_A {
     #[doc = "0: HFIR cannot be reloaded dynamically"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: HFIR can be dynamically reloaded during runtime"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HFIRRLDCTRL_A> for bool {
     #[inline(always)]
     fn from(variant: HFIRRLDCTRL_A) -> Self {
-        match variant {
-            HFIRRLDCTRL_A::VALUE1 => false,
-            HFIRRLDCTRL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HFIRRldCtrl`"]

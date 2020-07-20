@@ -14,17 +14,14 @@ impl crate::ResetValue for super::OSCHPCTRL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum X1DEN_A {
     #[doc = "0: Bit X1D is not updated"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Bit X1D can be updated"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<X1DEN_A> for bool {
     #[inline(always)]
     fn from(variant: X1DEN_A) -> Self {
-        match variant {
-            X1DEN_A::CONST_0 => false,
-            X1DEN_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `X1DEN`"]
@@ -92,17 +89,14 @@ impl<'a> X1DEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SHBY_A {
     #[doc = "0: The shaper is not bypassed"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The shaper is bypassed"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SHBY_A> for bool {
     #[inline(always)]
     fn from(variant: SHBY_A) -> Self {
-        match variant {
-            SHBY_A::CONST_0 => false,
-            SHBY_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SHBY`"]
@@ -168,25 +162,21 @@ impl<'a> SHBY_W<'a> {
 }
 #[doc = "Oscillator Gain Selection\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum GAINSEL_A {
     #[doc = "0: The gain control is configured for frequencies from 4 MHz to 8 MHz"]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: The gain control is configured for frequencies from 4 MHz to 16 MHz"]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: The gain control is configured for frequencies from 4 MHz to 20 MHz"]
-    CONST_10,
+    CONST_10 = 2,
     #[doc = "3: The gain control is configured for frequencies from 4 MHz to 25 MHz"]
-    CONST_11,
+    CONST_11 = 3,
 }
 impl From<GAINSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: GAINSEL_A) -> Self {
-        match variant {
-            GAINSEL_A::CONST_00 => 0,
-            GAINSEL_A::CONST_01 => 1,
-            GAINSEL_A::CONST_10 => 2,
-            GAINSEL_A::CONST_11 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `GAINSEL`"]
@@ -265,25 +255,21 @@ impl<'a> GAINSEL_W<'a> {
 }
 #[doc = "Oscillator Mode\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: External Crystal Mode and External Input Clock Mode. The oscillator Power-Saving Mode is not entered."]
-    CONST_00,
+    CONST_00 = 0,
     #[doc = "1: OSC is disabled. The oscillator Power-Saving Mode is not entered."]
-    CONST_01,
+    CONST_01 = 1,
     #[doc = "2: External Input Clock Mode and the oscillator Power-Saving Mode is entered"]
-    CONST_10,
+    CONST_10 = 2,
     #[doc = "3: OSC is disabled. The oscillator Power-Saving Mode is entered."]
-    CONST_11,
+    CONST_11 = 3,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::CONST_00 => 0,
-            MODE_A::CONST_01 => 1,
-            MODE_A::CONST_10 => 2,
-            MODE_A::CONST_11 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]

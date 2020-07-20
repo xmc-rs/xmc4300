@@ -26,25 +26,21 @@ impl<'a> CMD_IND_W<'a> {
 }
 #[doc = "Command Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CMD_TYPE_A {
     #[doc = "0: Normal"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Suspend"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Resume"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Abort"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CMD_TYPE_A> for u8 {
     #[inline(always)]
     fn from(variant: CMD_TYPE_A) -> Self {
-        match variant {
-            CMD_TYPE_A::VALUE1 => 0,
-            CMD_TYPE_A::VALUE2 => 1,
-            CMD_TYPE_A::VALUE3 => 2,
-            CMD_TYPE_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CMD_TYPE`"]
@@ -125,17 +121,14 @@ impl<'a> CMD_TYPE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATA_PRESENT_SELECT_A {
     #[doc = "0: No Data Present"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data Present"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DATA_PRESENT_SELECT_A> for bool {
     #[inline(always)]
     fn from(variant: DATA_PRESENT_SELECT_A) -> Self {
-        match variant {
-            DATA_PRESENT_SELECT_A::VALUE1 => false,
-            DATA_PRESENT_SELECT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATA_PRESENT_SELECT`"]
@@ -203,17 +196,14 @@ impl<'a> DATA_PRESENT_SELECT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_IND_CHECK_EN_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMD_IND_CHECK_EN_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_IND_CHECK_EN_A) -> Self {
-        match variant {
-            CMD_IND_CHECK_EN_A::VALUE1 => false,
-            CMD_IND_CHECK_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_IND_CHECK_EN`"]
@@ -281,17 +271,14 @@ impl<'a> CMD_IND_CHECK_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_CRC_CHECK_EN_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMD_CRC_CHECK_EN_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_CRC_CHECK_EN_A) -> Self {
-        match variant {
-            CMD_CRC_CHECK_EN_A::VALUE1 => false,
-            CMD_CRC_CHECK_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_CRC_CHECK_EN`"]
@@ -357,25 +344,21 @@ impl<'a> CMD_CRC_CHECK_EN_W<'a> {
 }
 #[doc = "Response Type Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RESP_TYPE_SELECT_A {
     #[doc = "0: No Response"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Response length 136"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Response length 48"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Response length 48 check Busy after response"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<RESP_TYPE_SELECT_A> for u8 {
     #[inline(always)]
     fn from(variant: RESP_TYPE_SELECT_A) -> Self {
-        match variant {
-            RESP_TYPE_SELECT_A::VALUE1 => 0,
-            RESP_TYPE_SELECT_A::VALUE2 => 1,
-            RESP_TYPE_SELECT_A::VALUE3 => 2,
-            RESP_TYPE_SELECT_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RESP_TYPE_SELECT`"]

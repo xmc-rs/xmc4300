@@ -14,17 +14,14 @@ impl crate::ResetValue for super::USBPLLCON {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCOBYP_A {
     #[doc = "0: Normal operation, VCO is not bypassed"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Prescaler Mode, VCO is bypassed"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<VCOBYP_A> for bool {
     #[inline(always)]
     fn from(variant: VCOBYP_A) -> Self {
-        match variant {
-            VCOBYP_A::CONST_0 => false,
-            VCOBYP_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VCOBYP`"]
@@ -92,17 +89,14 @@ impl<'a> VCOBYP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCOPWD_A {
     #[doc = "0: Normal behavior"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The VCO is put into a Power Saving Mode"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<VCOPWD_A> for bool {
     #[inline(always)]
     fn from(variant: VCOPWD_A) -> Self {
-        match variant {
-            VCOPWD_A::CONST_0 => false,
-            VCOPWD_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VCOPWD`"]
@@ -170,17 +164,14 @@ impl<'a> VCOPWD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCOTR_A {
     #[doc = "0: VCO bandwidth is operating in the normal range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: VCO bandwidth is operating in the test range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<VCOTR_A> for bool {
     #[inline(always)]
     fn from(variant: VCOTR_A) -> Self {
-        match variant {
-            VCOTR_A::CONST_0 => false,
-            VCOTR_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VCOTR`"]
@@ -248,17 +239,14 @@ impl<'a> VCOTR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FINDIS_A {
     #[doc = "0: Connect oscillator to the VCO part"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Disconnect oscillator from the VCO part."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<FINDIS_A> for bool {
     #[inline(always)]
     fn from(variant: FINDIS_A) -> Self {
-        match variant {
-            FINDIS_A::CONST_0 => false,
-            FINDIS_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FINDIS`"]
@@ -326,17 +314,14 @@ impl<'a> FINDIS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OSCDISCDIS_A {
     #[doc = "0: In case of a PLL loss-of-lock bit FINDIS is set"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: In case of a PLL loss-of-lock bit FINDIS is cleared"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<OSCDISCDIS_A> for bool {
     #[inline(always)]
     fn from(variant: OSCDISCDIS_A) -> Self {
-        match variant {
-            OSCDISCDIS_A::CONST_0 => false,
-            OSCDISCDIS_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OSCDISCDIS`"]
@@ -418,17 +403,14 @@ impl<'a> NDIV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLPWD_A {
     #[doc = "0: Normal behavior"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The complete PLL block is put into a Power Saving Mode. Only the Bypass Mode is active if previously selected."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PLLPWD_A> for bool {
     #[inline(always)]
     fn from(variant: PLLPWD_A) -> Self {
-        match variant {
-            PLLPWD_A::CONST_0 => false,
-            PLLPWD_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PLLPWD`"]

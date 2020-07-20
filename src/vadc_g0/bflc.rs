@@ -12,25 +12,21 @@ impl crate::ResetValue for super::BFLC {
 }
 #[doc = "Boundary Flag y Mode Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BFM0_A {
     #[doc = "0: Disable boundary flag, BFLy is not changed"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Always enable boundary flag (follow compare results)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<BFM0_A> for u8 {
     #[inline(always)]
     fn from(variant: BFM0_A) -> Self {
-        match variant {
-            BFM0_A::VALUE1 => 0,
-            BFM0_A::VALUE2 => 1,
-            BFM0_A::VALUE3 => 2,
-            BFM0_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BFM0`"]
@@ -108,25 +104,21 @@ impl<'a> BFM0_W<'a> {
 }
 #[doc = "Boundary Flag y Mode Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BFM1_A {
     #[doc = "0: Disable boundary flag, BFLy is not changed"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Always enable boundary flag (follow compare results)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<BFM1_A> for u8 {
     #[inline(always)]
     fn from(variant: BFM1_A) -> Self {
-        match variant {
-            BFM1_A::VALUE1 => 0,
-            BFM1_A::VALUE2 => 1,
-            BFM1_A::VALUE3 => 2,
-            BFM1_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BFM1`"]
@@ -204,25 +196,21 @@ impl<'a> BFM1_W<'a> {
 }
 #[doc = "Boundary Flag y Mode Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BFM2_A {
     #[doc = "0: Disable boundary flag, BFLy is not changed"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Always enable boundary flag (follow compare results)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<BFM2_A> for u8 {
     #[inline(always)]
     fn from(variant: BFM2_A) -> Self {
-        match variant {
-            BFM2_A::VALUE1 => 0,
-            BFM2_A::VALUE2 => 1,
-            BFM2_A::VALUE3 => 2,
-            BFM2_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BFM2`"]
@@ -300,25 +288,21 @@ impl<'a> BFM2_W<'a> {
 }
 #[doc = "Boundary Flag y Mode Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BFM3_A {
     #[doc = "0: Disable boundary flag, BFLy is not changed"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Always enable boundary flag (follow compare results)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Enable boundary flag while gate of source 0 is active, clear BFLy while gate is inactive"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Enable boundary flag while gate of source 1 is active, clear BFLy while gate is inactive"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<BFM3_A> for u8 {
     #[inline(always)]
     fn from(variant: BFM3_A) -> Self {
-        match variant {
-            BFM3_A::VALUE1 => 0,
-            BFM3_A::VALUE2 => 1,
-            BFM3_A::VALUE3 => 2,
-            BFM3_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BFM3`"]

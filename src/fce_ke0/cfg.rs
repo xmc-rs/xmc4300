@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CFG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMI_A {
     #[doc = "0: CRC Mismatch Interrupt is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CRC Mismatch Interrupt is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMI_A> for bool {
     #[inline(always)]
     fn from(variant: CMI_A) -> Self {
-        match variant {
-            CMI_A::VALUE1 => false,
-            CMI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMI`"]
@@ -92,17 +89,14 @@ impl<'a> CMI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEI_A {
     #[doc = "0: Configuration Error Interrupt is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Configuration Error Interrupt is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEI_A> for bool {
     #[inline(always)]
     fn from(variant: CEI_A) -> Self {
-        match variant {
-            CEI_A::VALUE1 => false,
-            CEI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CEI`"]
@@ -170,17 +164,14 @@ impl<'a> CEI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LEI_A {
     #[doc = "0: Length Error Interrupt is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Length Error Interrupt is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LEI_A> for bool {
     #[inline(always)]
     fn from(variant: LEI_A) -> Self {
-        match variant {
-            LEI_A::VALUE1 => false,
-            LEI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LEI`"]
@@ -248,17 +239,14 @@ impl<'a> LEI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BEI_A {
     #[doc = "0: Bus Error Interrupt is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bus Error Interrupt is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BEI_A> for bool {
     #[inline(always)]
     fn from(variant: BEI_A) -> Self {
-        match variant {
-            BEI_A::VALUE1 => false,
-            BEI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BEI`"]
@@ -326,17 +314,14 @@ impl<'a> BEI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCE_A {
     #[doc = "0: CRC check comparison at the end of a message is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CRC check comparison at the end of a message is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CCE_A> for bool {
     #[inline(always)]
     fn from(variant: CCE_A) -> Self {
-        match variant {
-            CCE_A::VALUE1 => false,
-            CCE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CCE`"]
@@ -404,17 +389,14 @@ impl<'a> CCE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALR_A {
     #[doc = "0: Disables automatic reload of the LENGTH field."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enables automatic reload of the LENGTH field at the end of a message."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ALR_A> for bool {
     #[inline(always)]
     fn from(variant: ALR_A) -> Self {
-        match variant {
-            ALR_A::VALUE1 => false,
-            ALR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ALR`"]
@@ -482,17 +464,14 @@ impl<'a> ALR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REFIN_A {
     #[doc = "0: IR Byte Wise Reflection is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: IR Byte Wise Reflection is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REFIN_A> for bool {
     #[inline(always)]
     fn from(variant: REFIN_A) -> Self {
-        match variant {
-            REFIN_A::VALUE1 => false,
-            REFIN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REFIN`"]
@@ -560,17 +539,14 @@ impl<'a> REFIN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REFOUT_A {
     #[doc = "0: CRC 32-bit wise is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CRC 32-bit wise is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REFOUT_A> for bool {
     #[inline(always)]
     fn from(variant: REFOUT_A) -> Self {
-        match variant {
-            REFOUT_A::VALUE1 => false,
-            REFOUT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REFOUT`"]
@@ -638,17 +614,14 @@ impl<'a> REFOUT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum XSEL_A {
     #[doc = "0: 0x00000000"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 0xFFFFFFFF"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<XSEL_A> for bool {
     #[inline(always)]
     fn from(variant: XSEL_A) -> Self {
-        match variant {
-            XSEL_A::VALUE1 => false,
-            XSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `XSEL`"]

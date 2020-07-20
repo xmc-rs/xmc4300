@@ -12,28 +12,23 @@ impl crate::ResetValue for super::MCR {
 }
 #[doc = "Baud Rate Logic Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CLKSEL_A {
     #[doc = "0: No clock supplied"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: fPERIPH"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: fOHP"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "4: hard wired to 0"]
-    VALUE4,
+    VALUE4 = 4,
     #[doc = "8: hard wired to 0"]
-    VALUE5,
+    VALUE5 = 8,
 }
 impl From<CLKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: CLKSEL_A) -> Self {
-        match variant {
-            CLKSEL_A::VALUE1 => 0,
-            CLKSEL_A::VALUE2 => 1,
-            CLKSEL_A::VALUE3 => 2,
-            CLKSEL_A::VALUE4 => 4,
-            CLKSEL_A::VALUE5 => 8,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLKSEL`"]

@@ -12,17 +12,14 @@ impl crate::ResetValue for super::CGATSET1 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LEDTSCU0_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enable gating"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<LEDTSCU0_AW> for bool {
     #[inline(always)]
     fn from(variant: LEDTSCU0_AW) -> Self {
-        match variant {
-            LEDTSCU0_AW::CONST_0 => false,
-            LEDTSCU0_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `LEDTSCU0`"]
@@ -68,17 +65,14 @@ impl<'a> LEDTSCU0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCAN0_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enable gating"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<MCAN0_AW> for bool {
     #[inline(always)]
     fn from(variant: MCAN0_AW) -> Self {
-        match variant {
-            MCAN0_AW::CONST_0 => false,
-            MCAN0_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `MCAN0`"]
@@ -124,17 +118,14 @@ impl<'a> MCAN0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DAC_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enable gating"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<DAC_AW> for bool {
     #[inline(always)]
     fn from(variant: DAC_AW) -> Self {
-        match variant {
-            DAC_AW::CONST_0 => false,
-            DAC_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `DAC`"]
@@ -180,17 +171,14 @@ impl<'a> DAC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MMCI_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enable gating"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<MMCI_AW> for bool {
     #[inline(always)]
     fn from(variant: MMCI_AW) -> Self {
-        match variant {
-            MMCI_AW::CONST_0 => false,
-            MMCI_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `MMCI`"]
@@ -236,17 +224,14 @@ impl<'a> MMCI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USIC1_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enable gating"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<USIC1_AW> for bool {
     #[inline(always)]
     fn from(variant: USIC1_AW) -> Self {
-        match variant {
-            USIC1_AW::CONST_0 => false,
-            USIC1_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `USIC1`"]
@@ -292,17 +277,14 @@ impl<'a> USIC1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPORTS_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Enable gating"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPORTS_AW> for bool {
     #[inline(always)]
     fn from(variant: PPORTS_AW) -> Self {
-        match variant {
-            PPORTS_AW::CONST_0 => false,
-            PPORTS_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PPORTS`"]

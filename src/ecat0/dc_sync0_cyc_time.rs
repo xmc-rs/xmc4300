@@ -12,16 +12,15 @@ impl crate::ResetValue for super::DC_SYNC0_CYC_TIME {
 }
 #[doc = "Time between two consecutive SYNC0 pulses\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum TIME_BETWEEN_SYNC0_A {
     #[doc = "0: Single shot mode, generate only one SYNC0 pulse"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<TIME_BETWEEN_SYNC0_A> for u32 {
     #[inline(always)]
     fn from(variant: TIME_BETWEEN_SYNC0_A) -> Self {
-        match variant {
-            TIME_BETWEEN_SYNC0_A::VALUE1 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TIME_BETWEEN_SYNC0`"]

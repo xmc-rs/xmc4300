@@ -12,28 +12,23 @@ impl crate::ResetValue for super::FCON {
 }
 #[doc = "Wait States for read access to PFLASH\n\nValue on reset: 6"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WSPFLASH_A {
     #[doc = "0: PFLASH access in one clock cycle"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: PFLASH access in one clock cycle"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: PFLASH access in two clock cycles"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: PFLASH access in three clock cycles"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "15: PFLASH access in fifteen clock cycles."]
-    VALUE5,
+    VALUE5 = 15,
 }
 impl From<WSPFLASH_A> for u8 {
     #[inline(always)]
     fn from(variant: WSPFLASH_A) -> Self {
-        match variant {
-            WSPFLASH_A::VALUE1 => 0,
-            WSPFLASH_A::VALUE2 => 1,
-            WSPFLASH_A::VALUE3 => 2,
-            WSPFLASH_A::VALUE4 => 3,
-            WSPFLASH_A::VALUE5 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WSPFLASH`"]
@@ -124,17 +119,14 @@ impl<'a> WSPFLASH_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WSECPF_A {
     #[doc = "0: No additional wait state for error correction"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: One additional wait state for error correction during read access to Program Flash. If enabled, this wait state is only used for the first transfer of a burst transfer."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WSECPF_A> for bool {
     #[inline(always)]
     fn from(variant: WSECPF_A) -> Self {
-        match variant {
-            WSECPF_A::VALUE1 => false,
-            WSECPF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WSECPF`"]
@@ -202,17 +194,14 @@ impl<'a> WSECPF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDLE_A {
     #[doc = "0: Normal/standard Flash read operation"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dynamic idle of Program Flash enabled for power saving; static prefetching disabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IDLE_A> for bool {
     #[inline(always)]
     fn from(variant: IDLE_A) -> Self {
-        match variant {
-            IDLE_A::VALUE1 => false,
-            IDLE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IDLE`"]
@@ -280,17 +269,14 @@ impl<'a> IDLE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ESLDIS_A {
     #[doc = "0: External sleep request signal input is enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Externally requested Flash sleep is disabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ESLDIS_A> for bool {
     #[inline(always)]
     fn from(variant: ESLDIS_A) -> Self {
-        match variant {
-            ESLDIS_A::VALUE1 => false,
-            ESLDIS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ESLDIS`"]
@@ -358,17 +344,14 @@ impl<'a> ESLDIS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEEP_A {
     #[doc = "0: Normal state or wake-up"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flash sleep mode is requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SLEEP_A> for bool {
     #[inline(always)]
     fn from(variant: SLEEP_A) -> Self {
-        match variant {
-            SLEEP_A::VALUE1 => false,
-            SLEEP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SLEEP`"]
@@ -436,17 +419,14 @@ impl<'a> SLEEP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RPA_A {
     #[doc = "0: The Flash-internal read protection is not activated. Bits DCF, DDF are not taken into account. Bits DCF, DDFx can be cleared"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The Flash-internal read protection is activated. Bits DCF, DDF are enabled and evaluated."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RPA_A> for bool {
     #[inline(always)]
     fn from(variant: RPA_A) -> Self {
-        match variant {
-            RPA_A::VALUE1 => false,
-            RPA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RPA`"]
@@ -475,17 +455,14 @@ impl RPA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCF_A {
     #[doc = "0: Code fetching from the Flash memory area is allowed."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Code fetching from the Flash memory area is not allowed. This bit is not taken into account while RPA='0'."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DCF_A> for bool {
     #[inline(always)]
     fn from(variant: DCF_A) -> Self {
-        match variant {
-            DCF_A::VALUE1 => false,
-            DCF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DCF`"]
@@ -553,17 +530,14 @@ impl<'a> DCF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DDF_A {
     #[doc = "0: Data read access to the Flash memory area is allowed."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data read access to the Flash memory area is not allowed. This bit is not taken into account while RPA='0'."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DDF_A> for bool {
     #[inline(always)]
     fn from(variant: DDF_A) -> Self {
-        match variant {
-            DDF_A::VALUE1 => false,
-            DDF_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DDF`"]
@@ -631,17 +605,14 @@ impl<'a> DDF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VOPERM_A {
     #[doc = "0: Interrupt not enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flash interrupt because of Verify Error or Operation Error in Flash array (FSI) is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VOPERM_A> for bool {
     #[inline(always)]
     fn from(variant: VOPERM_A) -> Self {
-        match variant {
-            VOPERM_A::VALUE1 => false,
-            VOPERM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VOPERM`"]
@@ -709,17 +680,14 @@ impl<'a> VOPERM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SQERM_A {
     #[doc = "0: Interrupt not enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flash interrupt because of Sequence Error is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SQERM_A> for bool {
     #[inline(always)]
     fn from(variant: SQERM_A) -> Self {
-        match variant {
-            SQERM_A::VALUE1 => false,
-            SQERM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SQERM`"]
@@ -787,17 +755,14 @@ impl<'a> SQERM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROERM_A {
     #[doc = "0: Interrupt not enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flash interrupt because of Protection Error is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PROERM_A> for bool {
     #[inline(always)]
     fn from(variant: PROERM_A) -> Self {
-        match variant {
-            PROERM_A::VALUE1 => false,
-            PROERM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PROERM`"]
@@ -865,17 +830,14 @@ impl<'a> PROERM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PFSBERM_A {
     #[doc = "0: No Single-Bit Error interrupt enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Single-Bit Error interrupt enabled for PFLASH"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PFSBERM_A> for bool {
     #[inline(always)]
     fn from(variant: PFSBERM_A) -> Self {
-        match variant {
-            PFSBERM_A::VALUE1 => false,
-            PFSBERM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PFSBERM`"]
@@ -943,17 +905,14 @@ impl<'a> PFSBERM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PFDBERM_A {
     #[doc = "0: Double-Bit Error interrupt for PFLASH not enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Double-Bit Error interrupt for PFLASH enabled. Especially intended for margin check"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PFDBERM_A> for bool {
     #[inline(always)]
     fn from(variant: PFDBERM_A) -> Self {
-        match variant {
-            PFDBERM_A::VALUE1 => false,
-            PFDBERM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PFDBERM`"]
@@ -1021,17 +980,14 @@ impl<'a> PFDBERM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EOBM_A {
     #[doc = "0: Interrupt not enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: EOB interrupt is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EOBM_A> for bool {
     #[inline(always)]
     fn from(variant: EOBM_A) -> Self {
-        match variant {
-            EOBM_A::VALUE1 => false,
-            EOBM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EOBM`"]

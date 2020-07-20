@@ -12,25 +12,21 @@ impl crate::ResetValue for super::EXISEL {
 }
 #[doc = "Event Source Select for A0 (ERS0)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXS0A_A {
     #[doc = "0: Input ERU_0A0 is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input ERU_0A1 is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input ERU_0A2 is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input ERU_0A3 is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EXS0A_A> for u8 {
     #[inline(always)]
     fn from(variant: EXS0A_A) -> Self {
-        match variant {
-            EXS0A_A::VALUE1 => 0,
-            EXS0A_A::VALUE2 => 1,
-            EXS0A_A::VALUE3 => 2,
-            EXS0A_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXS0A`"]
@@ -109,25 +105,21 @@ impl<'a> EXS0A_W<'a> {
 }
 #[doc = "Event Source Select for B0 (ERS0)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXS0B_A {
     #[doc = "0: Input ERU_0B0 is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input ERU_0B1 is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input ERU_0B2 is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input ERU_0B3 is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EXS0B_A> for u8 {
     #[inline(always)]
     fn from(variant: EXS0B_A) -> Self {
-        match variant {
-            EXS0B_A::VALUE1 => 0,
-            EXS0B_A::VALUE2 => 1,
-            EXS0B_A::VALUE3 => 2,
-            EXS0B_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXS0B`"]
@@ -206,25 +198,21 @@ impl<'a> EXS0B_W<'a> {
 }
 #[doc = "Event Source Select for A1 (ERS1)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXS1A_A {
     #[doc = "0: Input ERU_1A0 is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input ERU_1A1 is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input ERU_1A2 is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input ERU_1A3 is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EXS1A_A> for u8 {
     #[inline(always)]
     fn from(variant: EXS1A_A) -> Self {
-        match variant {
-            EXS1A_A::VALUE1 => 0,
-            EXS1A_A::VALUE2 => 1,
-            EXS1A_A::VALUE3 => 2,
-            EXS1A_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXS1A`"]
@@ -303,25 +291,21 @@ impl<'a> EXS1A_W<'a> {
 }
 #[doc = "Event Source Select for B1 (ERS1)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXS1B_A {
     #[doc = "0: Input ERU_1B0 is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input ERU_1B1 is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input ERU_1B2 is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input ERU_1B3 is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EXS1B_A> for u8 {
     #[inline(always)]
     fn from(variant: EXS1B_A) -> Self {
-        match variant {
-            EXS1B_A::VALUE1 => 0,
-            EXS1B_A::VALUE2 => 1,
-            EXS1B_A::VALUE3 => 2,
-            EXS1B_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXS1B`"]
@@ -400,25 +384,21 @@ impl<'a> EXS1B_W<'a> {
 }
 #[doc = "Event Source Select for A2 (ERS2)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXS2A_A {
     #[doc = "0: Input ERU_2A0 is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input ERU_2A1 is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input ERU_2A2 is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input ERU_2A3 is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EXS2A_A> for u8 {
     #[inline(always)]
     fn from(variant: EXS2A_A) -> Self {
-        match variant {
-            EXS2A_A::VALUE1 => 0,
-            EXS2A_A::VALUE2 => 1,
-            EXS2A_A::VALUE3 => 2,
-            EXS2A_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXS2A`"]
@@ -497,25 +477,21 @@ impl<'a> EXS2A_W<'a> {
 }
 #[doc = "Event Source Select for B2 (ERS2)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXS2B_A {
     #[doc = "0: Input ERU_2B0 is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input ERU_2B1 is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input ERU_2B2 is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input ERU_2B3 is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EXS2B_A> for u8 {
     #[inline(always)]
     fn from(variant: EXS2B_A) -> Self {
-        match variant {
-            EXS2B_A::VALUE1 => 0,
-            EXS2B_A::VALUE2 => 1,
-            EXS2B_A::VALUE3 => 2,
-            EXS2B_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXS2B`"]
@@ -594,25 +570,21 @@ impl<'a> EXS2B_W<'a> {
 }
 #[doc = "Event Source Select for A3 (ERS3)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXS3A_A {
     #[doc = "0: Input ERU_3A0 is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input ERU_3A1 is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input ERU_3A2 is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input ERU_3A3 is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EXS3A_A> for u8 {
     #[inline(always)]
     fn from(variant: EXS3A_A) -> Self {
-        match variant {
-            EXS3A_A::VALUE1 => 0,
-            EXS3A_A::VALUE2 => 1,
-            EXS3A_A::VALUE3 => 2,
-            EXS3A_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXS3A`"]
@@ -691,25 +663,21 @@ impl<'a> EXS3A_W<'a> {
 }
 #[doc = "Event Source Select for B3 (ERS3)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXS3B_A {
     #[doc = "0: Input ERU_3B0 is selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input ERU_3B1 is selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input ERU_3B2 is selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input ERU_3B3 is selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EXS3B_A> for u8 {
     #[inline(always)]
     fn from(variant: EXS3B_A) -> Self {
-        match variant {
-            EXS3B_A::VALUE1 => 0,
-            EXS3B_A::VALUE2 => 1,
-            EXS3B_A::VALUE3 => 2,
-            EXS3B_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXS3B`"]

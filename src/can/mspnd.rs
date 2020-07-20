@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::MSPND>;
 #[doc = "Writer for register MSPND[%s]"]
 pub type W = crate::W<u32, super::MSPND>;
-#[doc = "Register MSPND[%s] `reset()`'s with value 0"]
+#[doc = "Register MSPND[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::MSPND {
     type Type = u32;
     #[inline(always)]

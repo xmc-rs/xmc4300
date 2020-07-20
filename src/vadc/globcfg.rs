@@ -12,25 +12,21 @@ impl crate::ResetValue for super::GLOBCFG {
 }
 #[doc = "Divider Factor for the Analog Internal Clock\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DIVA_A {
     #[doc = "0: fADCI = fADC / 2"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: fADCI = fADC / 2"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: fADCI = fADC / 3"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "31: fADCI = fADC / 32"]
-    VALUE4,
+    VALUE4 = 31,
 }
 impl From<DIVA_A> for u8 {
     #[inline(always)]
     fn from(variant: DIVA_A) -> Self {
-        match variant {
-            DIVA_A::VALUE1 => 0,
-            DIVA_A::VALUE2 => 1,
-            DIVA_A::VALUE3 => 2,
-            DIVA_A::VALUE4 => 31,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DIVA`"]
@@ -110,17 +106,14 @@ impl<'a> DIVA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCMSB_A {
     #[doc = "0: 1 clock cycles for the MSB (standard)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 2 clock cycles for the MSB (fADCI > 20 MHz)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DCMSB_A> for bool {
     #[inline(always)]
     fn from(variant: DCMSB_A) -> Self {
-        match variant {
-            DCMSB_A::VALUE1 => false,
-            DCMSB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DCMSB`"]
@@ -186,25 +179,21 @@ impl<'a> DCMSB_W<'a> {
 }
 #[doc = "Divider Factor for the Arbiter Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DIVD_A {
     #[doc = "0: fADCD = fADC"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: fADCD = fADC / 2"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: fADCD = fADC / 3"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: fADCD = fADC / 4"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<DIVD_A> for u8 {
     #[inline(always)]
     fn from(variant: DIVD_A) -> Self {
-        match variant {
-            DIVD_A::VALUE1 => 0,
-            DIVD_A::VALUE2 => 1,
-            DIVD_A::VALUE3 => 2,
-            DIVD_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DIVD`"]
@@ -285,17 +274,14 @@ impl<'a> DIVD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIVWC_AW {
     #[doc = "0: No write access to divider parameters"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bitfields DIVA, DCMSB, DIVD can be written"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DIVWC_AW> for bool {
     #[inline(always)]
     fn from(variant: DIVWC_AW) -> Self {
-        match variant {
-            DIVWC_AW::VALUE1 => false,
-            DIVWC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `DIVWC`"]
@@ -341,17 +327,14 @@ impl<'a> DIVWC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DPCAL0_A {
     #[doc = "0: Automatic post-calibration after each conversion of group x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: No post-calibration"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DPCAL0_A> for bool {
     #[inline(always)]
     fn from(variant: DPCAL0_A) -> Self {
-        match variant {
-            DPCAL0_A::VALUE1 => false,
-            DPCAL0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DPCAL0`"]
@@ -419,17 +402,14 @@ impl<'a> DPCAL0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DPCAL1_A {
     #[doc = "0: Automatic post-calibration after each conversion of group x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: No post-calibration"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DPCAL1_A> for bool {
     #[inline(always)]
     fn from(variant: DPCAL1_A) -> Self {
-        match variant {
-            DPCAL1_A::VALUE1 => false,
-            DPCAL1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DPCAL1`"]
@@ -497,17 +477,14 @@ impl<'a> DPCAL1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DPCAL2_A {
     #[doc = "0: Automatic post-calibration after each conversion of group x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: No post-calibration"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DPCAL2_A> for bool {
     #[inline(always)]
     fn from(variant: DPCAL2_A) -> Self {
-        match variant {
-            DPCAL2_A::VALUE1 => false,
-            DPCAL2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DPCAL2`"]
@@ -575,17 +552,14 @@ impl<'a> DPCAL2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DPCAL3_A {
     #[doc = "0: Automatic post-calibration after each conversion of group x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: No post-calibration"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DPCAL3_A> for bool {
     #[inline(always)]
     fn from(variant: DPCAL3_A) -> Self {
-        match variant {
-            DPCAL3_A::VALUE1 => false,
-            DPCAL3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DPCAL3`"]
@@ -653,17 +627,14 @@ impl<'a> DPCAL3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUCAL_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Initiate the start-up calibration phase (indication in bit GxARBCFG.CAL)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SUCAL_AW> for bool {
     #[inline(always)]
     fn from(variant: SUCAL_AW) -> Self {
-        match variant {
-            SUCAL_AW::VALUE1 => false,
-            SUCAL_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SUCAL`"]

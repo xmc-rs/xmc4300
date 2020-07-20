@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SCR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEEPONEXIT_A {
     #[doc = "0: do not sleep when returning to Thread mode."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: enter sleep, or deep sleep, on return from an ISR."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SLEEPONEXIT_A> for bool {
     #[inline(always)]
     fn from(variant: SLEEPONEXIT_A) -> Self {
-        match variant {
-            SLEEPONEXIT_A::VALUE1 => false,
-            SLEEPONEXIT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SLEEPONEXIT`"]
@@ -92,17 +89,14 @@ impl<'a> SLEEPONEXIT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEEPDEEP_A {
     #[doc = "0: sleep"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: deep sleep"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SLEEPDEEP_A> for bool {
     #[inline(always)]
     fn from(variant: SLEEPDEEP_A) -> Self {
-        match variant {
-            SLEEPDEEP_A::VALUE1 => false,
-            SLEEPDEEP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SLEEPDEEP`"]
@@ -170,17 +164,14 @@ impl<'a> SLEEPDEEP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEVONPEND_A {
     #[doc = "0: only enabled interrupts or events can wakeup the processor, disabled interrupts are excluded"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: enabled events and all interrupts, including disabled interrupts, can wakeup the processor."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SEVONPEND_A> for bool {
     #[inline(always)]
     fn from(variant: SEVONPEND_A) -> Self {
-        match variant {
-            SEVONPEND_A::VALUE1 => false,
-            SEVONPEND_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEVONPEND`"]

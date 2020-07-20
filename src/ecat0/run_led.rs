@@ -12,28 +12,23 @@ impl crate::ResetValue for super::RUN_LED {
 }
 #[doc = "LED Code\n\nValue on reset: 14"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LED_CODE_A {
     #[doc = "0: OFF - Init State"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Flash - SafeOp)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "13: Blinking - PreOp"]
-    VALUE3,
+    VALUE3 = 13,
     #[doc = "14: Flickering - Bootstrap"]
-    VALUE4,
+    VALUE4 = 14,
     #[doc = "15: On - Operational"]
-    VALUE5,
+    VALUE5 = 15,
 }
 impl From<LED_CODE_A> for u8 {
     #[inline(always)]
     fn from(variant: LED_CODE_A) -> Self {
-        match variant {
-            LED_CODE_A::VALUE1 => 0,
-            LED_CODE_A::VALUE2 => 1,
-            LED_CODE_A::VALUE3 => 13,
-            LED_CODE_A::VALUE4 => 14,
-            LED_CODE_A::VALUE5 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LED_CODE`"]
@@ -124,17 +119,14 @@ impl<'a> LED_CODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EN_OVERR_A {
     #[doc = "0: Override disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Override enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EN_OVERR_A> for bool {
     #[inline(always)]
     fn from(variant: EN_OVERR_A) -> Self {
-        match variant {
-            EN_OVERR_A::VALUE1 => false,
-            EN_OVERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EN_OVERR`"]

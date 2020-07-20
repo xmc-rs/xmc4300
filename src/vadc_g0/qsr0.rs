@@ -2,25 +2,21 @@
 pub type R = crate::R<u32, super::QSR0>;
 #[doc = "Filling Level for Queue 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FILL_A {
     #[doc = "0: There is 1 ( if EMPTY = 0) or no (if EMPTY = 1) valid entry in the queue"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: There are 2 valid entries in the queue"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: There are 3 valid entries in the queue"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "7: There are 8 valid entries in the queue"]
-    VALUE4,
+    VALUE4 = 7,
 }
 impl From<FILL_A> for u8 {
     #[inline(always)]
     fn from(variant: FILL_A) -> Self {
-        match variant {
-            FILL_A::VALUE1 => 0,
-            FILL_A::VALUE2 => 1,
-            FILL_A::VALUE3 => 2,
-            FILL_A::VALUE4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FILL`"]
@@ -63,17 +59,14 @@ impl FILL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMPTY_A {
     #[doc = "0: There are valid entries in the queue (see FILL)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: No valid entries (queue is empty)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EMPTY_A> for bool {
     #[inline(always)]
     fn from(variant: EMPTY_A) -> Self {
-        match variant {
-            EMPTY_A::VALUE1 => false,
-            EMPTY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EMPTY`"]
@@ -102,17 +95,14 @@ impl EMPTY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REQGT_A {
     #[doc = "0: The gate input is low"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The gate input is high"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REQGT_A> for bool {
     #[inline(always)]
     fn from(variant: REQGT_A) -> Self {
-        match variant {
-            REQGT_A::VALUE1 => false,
-            REQGT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REQGT`"]
@@ -141,17 +131,14 @@ impl REQGT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EV_A {
     #[doc = "0: No trigger event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A trigger event has been detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EV_A> for bool {
     #[inline(always)]
     fn from(variant: EV_A) -> Self {
-        match variant {
-            EV_A::VALUE1 => false,
-            EV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EV`"]

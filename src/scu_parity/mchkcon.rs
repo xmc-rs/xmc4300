@@ -14,17 +14,14 @@ impl crate::ResetValue for super::MCHKCON {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELPS_A {
     #[doc = "0: Not selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SELPS_A> for bool {
     #[inline(always)]
     fn from(variant: SELPS_A) -> Self {
-        match variant {
-            SELPS_A::CONST_0 => false,
-            SELPS_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SELPS`"]
@@ -92,17 +89,14 @@ impl<'a> SELPS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELDS1_A {
     #[doc = "0: Not selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SELDS1_A> for bool {
     #[inline(always)]
     fn from(variant: SELDS1_A) -> Self {
-        match variant {
-            SELDS1_A::CONST_0 => false,
-            SELDS1_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SELDS1`"]
@@ -170,17 +164,14 @@ impl<'a> SELDS1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USIC0DRA_A {
     #[doc = "0: Not selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<USIC0DRA_A> for bool {
     #[inline(always)]
     fn from(variant: USIC0DRA_A) -> Self {
-        match variant {
-            USIC0DRA_A::CONST_0 => false,
-            USIC0DRA_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USIC0DRA`"]
@@ -248,17 +239,14 @@ impl<'a> USIC0DRA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USIC1DRA_A {
     #[doc = "0: Not selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<USIC1DRA_A> for bool {
     #[inline(always)]
     fn from(variant: USIC1DRA_A) -> Self {
-        match variant {
-            USIC1DRA_A::CONST_0 => false,
-            USIC1DRA_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USIC1DRA`"]
@@ -326,17 +314,14 @@ impl<'a> USIC1DRA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCANDRA_A {
     #[doc = "0: Not selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<MCANDRA_A> for bool {
     #[inline(always)]
     fn from(variant: MCANDRA_A) -> Self {
-        match variant {
-            MCANDRA_A::CONST_0 => false,
-            MCANDRA_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MCANDRA`"]
@@ -404,17 +389,14 @@ impl<'a> MCANDRA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPRFDRA_A {
     #[doc = "0: Not selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PPRFDRA_A> for bool {
     #[inline(always)]
     fn from(variant: PPRFDRA_A) -> Self {
-        match variant {
-            PPRFDRA_A::CONST_0 => false,
-            PPRFDRA_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPRFDRA`"]
@@ -482,17 +464,14 @@ impl<'a> PPRFDRA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELUSB_A {
     #[doc = "0: Not selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SELUSB_A> for bool {
     #[inline(always)]
     fn from(variant: SELUSB_A) -> Self {
-        match variant {
-            SELUSB_A::CONST_0 => false,
-            SELUSB_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SELUSB`"]
@@ -560,17 +539,14 @@ impl<'a> SELUSB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELETH0TX_A {
     #[doc = "0: Not selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SELETH0TX_A> for bool {
     #[inline(always)]
     fn from(variant: SELETH0TX_A) -> Self {
-        match variant {
-            SELETH0TX_A::CONST_0 => false,
-            SELETH0TX_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SELETH0TX`"]
@@ -638,17 +614,14 @@ impl<'a> SELETH0TX_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELETH0RX_A {
     #[doc = "0: Not selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SELETH0RX_A> for bool {
     #[inline(always)]
     fn from(variant: SELETH0RX_A) -> Self {
-        match variant {
-            SELETH0RX_A::CONST_0 => false,
-            SELETH0RX_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SELETH0RX`"]
@@ -716,17 +689,14 @@ impl<'a> SELETH0RX_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELSD0_A {
     #[doc = "0: Not selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SELSD0_A> for bool {
     #[inline(always)]
     fn from(variant: SELSD0_A) -> Self {
-        match variant {
-            SELSD0_A::CONST_0 => false,
-            SELSD0_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SELSD0`"]
@@ -794,17 +764,14 @@ impl<'a> SELSD0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELSD1_A {
     #[doc = "0: Not selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SELSD1_A> for bool {
     #[inline(always)]
     fn from(variant: SELSD1_A) -> Self {
-        match variant {
-            SELSD1_A::CONST_0 => false,
-            SELSD1_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SELSD1`"]
@@ -872,17 +839,14 @@ impl<'a> SELSD1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELECAT0_A {
     #[doc = "0: Not selected"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Selected"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<SELECAT0_A> for bool {
     #[inline(always)]
     fn from(variant: SELECAT0_A) -> Self {
-        match variant {
-            SELECAT0_A::CONST_0 => false,
-            SELECAT0_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SELECAT0`"]

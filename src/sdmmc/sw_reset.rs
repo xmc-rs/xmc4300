@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SW_RESET {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SW_RST_DAT_LINE_A {
     #[doc = "0: Work"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Reset"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SW_RST_DAT_LINE_A> for bool {
     #[inline(always)]
     fn from(variant: SW_RST_DAT_LINE_A) -> Self {
-        match variant {
-            SW_RST_DAT_LINE_A::VALUE1 => false,
-            SW_RST_DAT_LINE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SW_RST_DAT_LINE`"]
@@ -92,17 +89,14 @@ impl<'a> SW_RST_DAT_LINE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SW_RST_CMD_LINE_A {
     #[doc = "0: Work"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Reset"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SW_RST_CMD_LINE_A> for bool {
     #[inline(always)]
     fn from(variant: SW_RST_CMD_LINE_A) -> Self {
-        match variant {
-            SW_RST_CMD_LINE_A::VALUE1 => false,
-            SW_RST_CMD_LINE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SW_RST_CMD_LINE`"]

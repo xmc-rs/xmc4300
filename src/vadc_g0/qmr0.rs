@@ -12,25 +12,21 @@ impl crate::ResetValue for super::QMR0 {
 }
 #[doc = "Enable Gate\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ENGT_A {
     #[doc = "0: No conversion requests are issued"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 1"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 0"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<ENGT_A> for u8 {
     #[inline(always)]
     fn from(variant: ENGT_A) -> Self {
-        match variant {
-            ENGT_A::VALUE1 => 0,
-            ENGT_A::VALUE2 => 1,
-            ENGT_A::VALUE3 => 2,
-            ENGT_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ENGT`"]
@@ -111,17 +107,14 @@ impl<'a> ENGT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENTR_A {
     #[doc = "0: External trigger disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The selected edge at the selected trigger input signal REQTR generates the trigger event"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ENTR_A> for bool {
     #[inline(always)]
     fn from(variant: ENTR_A) -> Self {
-        match variant {
-            ENTR_A::VALUE1 => false,
-            ENTR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENTR`"]
@@ -189,17 +182,14 @@ impl<'a> ENTR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLRV_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The next pending valid queue entry in the sequence and the event flag EV are cleared. If there is a valid entry in the queue backup register (QBUR.V = 1), this entry is cleared, otherwise the entry in queue register 0 is cleared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CLRV_AW> for bool {
     #[inline(always)]
     fn from(variant: CLRV_AW) -> Self {
-        match variant {
-            CLRV_AW::VALUE1 => false,
-            CLRV_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CLRV`"]
@@ -245,17 +235,14 @@ impl<'a> CLRV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TREV_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Generate a trigger event by software"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TREV_AW> for bool {
     #[inline(always)]
     fn from(variant: TREV_AW) -> Self {
-        match variant {
-            TREV_AW::VALUE1 => false,
-            TREV_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TREV`"]
@@ -301,17 +288,14 @@ impl<'a> TREV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLUSH_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear all queue entries (including backup stage) and the event flag EV. The queue contains no more valid entry."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FLUSH_AW> for bool {
     #[inline(always)]
     fn from(variant: FLUSH_AW) -> Self {
-        match variant {
-            FLUSH_AW::VALUE1 => false,
-            FLUSH_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `FLUSH`"]
@@ -357,17 +341,14 @@ impl<'a> FLUSH_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear bit EV"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV_AW> for bool {
     #[inline(always)]
     fn from(variant: CEV_AW) -> Self {
-        match variant {
-            CEV_AW::VALUE1 => false,
-            CEV_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CEV`"]
@@ -413,17 +394,14 @@ impl<'a> CEV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RPTDIS_A {
     #[doc = "0: A cancelled conversion is repeated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A cancelled conversion is discarded"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RPTDIS_A> for bool {
     #[inline(always)]
     fn from(variant: RPTDIS_A) -> Self {
-        match variant {
-            RPTDIS_A::VALUE1 => false,
-            RPTDIS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RPTDIS`"]

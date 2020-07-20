@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::USBPLLSTAT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCOBYST_A {
     #[doc = "0: Normal Mode is entered"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Prescaler Mode is entered"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<VCOBYST_A> for bool {
     #[inline(always)]
     fn from(variant: VCOBYST_A) -> Self {
-        match variant {
-            VCOBYST_A::CONST_0 => false,
-            VCOBYST_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VCOBYST`"]
@@ -43,17 +40,14 @@ impl VCOBYST_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWDSTAT_A {
     #[doc = "0: PLL Power-saving Mode was not entered"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: PLL Power-saving Mode was entered"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PWDSTAT_A> for bool {
     #[inline(always)]
     fn from(variant: PWDSTAT_A) -> Self {
-        match variant {
-            PWDSTAT_A::CONST_0 => false,
-            PWDSTAT_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PWDSTAT`"]
@@ -82,17 +76,14 @@ impl PWDSTAT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCOLOCK_A {
     #[doc = "0: The frequency difference of fREF and fDIV is greater than allowed. The VCO part of the PLL can not lock on a target frequency."]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: The frequency difference of fREF and fDIV is small enough to enable a stable VCO operation"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<VCOLOCK_A> for bool {
     #[inline(always)]
     fn from(variant: VCOLOCK_A) -> Self {
-        match variant {
-            VCOLOCK_A::CONST_0 => false,
-            VCOLOCK_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VCOLOCK`"]
@@ -121,17 +112,14 @@ impl VCOLOCK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BY_A {
     #[doc = "0: Bypass Mode is not entered"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: Bypass Mode is entered. Input fOSC is selected as output fPLL."]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<BY_A> for bool {
     #[inline(always)]
     fn from(variant: BY_A) -> Self {
-        match variant {
-            BY_A::CONST_0 => false,
-            BY_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BY`"]
@@ -160,17 +148,14 @@ impl BY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCOLOCKED_A {
     #[doc = "0: PLL not locked"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: PLL locked"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<VCOLOCKED_A> for bool {
     #[inline(always)]
     fn from(variant: VCOLOCKED_A) -> Self {
-        match variant {
-            VCOLOCKED_A::CONST_0 => false,
-            VCOLOCKED_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VCOLOCKED`"]

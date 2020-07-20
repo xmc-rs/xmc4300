@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PBCLKCR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PBDIV_A {
     #[doc = "0: fPERIPH = fCPU"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: fPERIPH = fCPU / 2"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<PBDIV_A> for bool {
     #[inline(always)]
     fn from(variant: PBDIV_A) -> Self {
-        match variant {
-            PBDIV_A::CONST_0 => false,
-            PBDIV_A::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PBDIV`"]

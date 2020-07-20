@@ -2,19 +2,17 @@
 pub type R = crate::R<u32, super::CLKMXSTAT>;
 #[doc = "Status of System Clock Multiplexing Upon Source Switching\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SYSCLKMUX_A {
     #[doc = "1: fOFI clock active"]
-    CONST_X1,
+    CONST_X1 = 1,
     #[doc = "2: fPLL clock active"]
-    CONST_1X,
+    CONST_1X = 2,
 }
 impl From<SYSCLKMUX_A> for u8 {
     #[inline(always)]
     fn from(variant: SYSCLKMUX_A) -> Self {
-        match variant {
-            SYSCLKMUX_A::CONST_X1 => 1,
-            SYSCLKMUX_A::CONST_1X => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SYSCLKMUX`"]

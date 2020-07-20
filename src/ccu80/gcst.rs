@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::GCST>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S0SS_A {
     #[doc = "0: Shadow transfer has not been requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Shadow transfer has been requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S0SS_A> for bool {
     #[inline(always)]
     fn from(variant: S0SS_A) -> Self {
-        match variant {
-            S0SS_A::VALUE1 => false,
-            S0SS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S0SS`"]
@@ -43,17 +40,14 @@ impl S0SS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S0DSS_A {
     #[doc = "0: Dither shadow transfer has not been requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dither shadow transfer has been requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S0DSS_A> for bool {
     #[inline(always)]
     fn from(variant: S0DSS_A) -> Self {
-        match variant {
-            S0DSS_A::VALUE1 => false,
-            S0DSS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S0DSS`"]
@@ -82,17 +76,14 @@ impl S0DSS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S0PSS_A {
     #[doc = "0: Prescaler shadow transfer has not been requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Prescaler shadow transfer has been requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S0PSS_A> for bool {
     #[inline(always)]
     fn from(variant: S0PSS_A) -> Self {
-        match variant {
-            S0PSS_A::VALUE1 => false,
-            S0PSS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S0PSS`"]
@@ -121,17 +112,14 @@ impl S0PSS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S1SS_A {
     #[doc = "0: Shadow transfer has not been requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Shadow transfer has been requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S1SS_A> for bool {
     #[inline(always)]
     fn from(variant: S1SS_A) -> Self {
-        match variant {
-            S1SS_A::VALUE1 => false,
-            S1SS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S1SS`"]
@@ -160,17 +148,14 @@ impl S1SS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S1DSS_A {
     #[doc = "0: Dither shadow transfer has not been requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dither shadow transfer has been requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S1DSS_A> for bool {
     #[inline(always)]
     fn from(variant: S1DSS_A) -> Self {
-        match variant {
-            S1DSS_A::VALUE1 => false,
-            S1DSS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S1DSS`"]
@@ -199,17 +184,14 @@ impl S1DSS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S1PSS_A {
     #[doc = "0: Prescaler shadow transfer has not been requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Prescaler shadow transfer has been requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S1PSS_A> for bool {
     #[inline(always)]
     fn from(variant: S1PSS_A) -> Self {
-        match variant {
-            S1PSS_A::VALUE1 => false,
-            S1PSS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S1PSS`"]
@@ -238,17 +220,14 @@ impl S1PSS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S2SS_A {
     #[doc = "0: Shadow transfer has not been requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Shadow transfer has been requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S2SS_A> for bool {
     #[inline(always)]
     fn from(variant: S2SS_A) -> Self {
-        match variant {
-            S2SS_A::VALUE1 => false,
-            S2SS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S2SS`"]
@@ -277,17 +256,14 @@ impl S2SS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S2DSS_A {
     #[doc = "0: Dither shadow transfer has not been requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dither shadow transfer has been requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S2DSS_A> for bool {
     #[inline(always)]
     fn from(variant: S2DSS_A) -> Self {
-        match variant {
-            S2DSS_A::VALUE1 => false,
-            S2DSS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S2DSS`"]
@@ -316,17 +292,14 @@ impl S2DSS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S2PSS_A {
     #[doc = "0: Prescaler shadow transfer has not been requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Prescaler shadow transfer has been requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S2PSS_A> for bool {
     #[inline(always)]
     fn from(variant: S2PSS_A) -> Self {
-        match variant {
-            S2PSS_A::VALUE1 => false,
-            S2PSS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S2PSS`"]
@@ -355,17 +328,14 @@ impl S2PSS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S3SS_A {
     #[doc = "0: Shadow transfer has not been requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Shadow transfer has been requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S3SS_A> for bool {
     #[inline(always)]
     fn from(variant: S3SS_A) -> Self {
-        match variant {
-            S3SS_A::VALUE1 => false,
-            S3SS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S3SS`"]
@@ -394,17 +364,14 @@ impl S3SS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S3DSS_A {
     #[doc = "0: Dither shadow transfer has not been requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Dither shadow transfer has been requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S3DSS_A> for bool {
     #[inline(always)]
     fn from(variant: S3DSS_A) -> Self {
-        match variant {
-            S3DSS_A::VALUE1 => false,
-            S3DSS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S3DSS`"]
@@ -433,17 +400,14 @@ impl S3DSS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S3PSS_A {
     #[doc = "0: Prescaler shadow transfer has not been requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Prescaler shadow transfer has been requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S3PSS_A> for bool {
     #[inline(always)]
     fn from(variant: S3PSS_A) -> Self {
-        match variant {
-            S3PSS_A::VALUE1 => false,
-            S3PSS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S3PSS`"]

@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::GSTAT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S0I_A {
     #[doc = "0: Running"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Idle"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S0I_A> for bool {
     #[inline(always)]
     fn from(variant: S0I_A) -> Self {
-        match variant {
-            S0I_A::VALUE1 => false,
-            S0I_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S0I`"]
@@ -43,17 +40,14 @@ impl S0I_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S1I_A {
     #[doc = "0: Running"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Idle"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S1I_A> for bool {
     #[inline(always)]
     fn from(variant: S1I_A) -> Self {
-        match variant {
-            S1I_A::VALUE1 => false,
-            S1I_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S1I`"]
@@ -82,17 +76,14 @@ impl S1I_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S2I_A {
     #[doc = "0: Running"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Idle"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S2I_A> for bool {
     #[inline(always)]
     fn from(variant: S2I_A) -> Self {
-        match variant {
-            S2I_A::VALUE1 => false,
-            S2I_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S2I`"]
@@ -121,17 +112,14 @@ impl S2I_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S3I_A {
     #[doc = "0: Running"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Idle"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S3I_A> for bool {
     #[inline(always)]
     fn from(variant: S3I_A) -> Self {
-        match variant {
-            S3I_A::VALUE1 => false,
-            S3I_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S3I`"]
@@ -160,17 +148,14 @@ impl S3I_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRB_A {
     #[doc = "0: Prescaler is stopped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Prescaler is running"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PRB_A> for bool {
     #[inline(always)]
     fn from(variant: PRB_A) -> Self {
-        match variant {
-            PRB_A::VALUE1 => false,
-            PRB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PRB`"]

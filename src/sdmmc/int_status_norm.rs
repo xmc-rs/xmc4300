@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INT_STATUS_NORM {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERR_INT_A {
     #[doc = "0: No Error."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Error."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ERR_INT_A> for bool {
     #[inline(always)]
     fn from(variant: ERR_INT_A) -> Self {
-        match variant {
-            ERR_INT_A::VALUE1 => false,
-            ERR_INT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERR_INT`"]
@@ -53,17 +50,14 @@ impl ERR_INT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARD_INT_A {
     #[doc = "0: No Card Interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Generate Card Interrupt"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CARD_INT_A> for bool {
     #[inline(always)]
     fn from(variant: CARD_INT_A) -> Self {
-        match variant {
-            CARD_INT_A::VALUE1 => false,
-            CARD_INT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CARD_INT`"]
@@ -92,17 +86,14 @@ impl CARD_INT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARD_REMOVAL_A {
     #[doc = "0: Card State Stable or Debouncing"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Card Removed"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CARD_REMOVAL_A> for bool {
     #[inline(always)]
     fn from(variant: CARD_REMOVAL_A) -> Self {
-        match variant {
-            CARD_REMOVAL_A::VALUE1 => false,
-            CARD_REMOVAL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CARD_REMOVAL`"]
@@ -170,17 +161,14 @@ impl<'a> CARD_REMOVAL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARD_INS_A {
     #[doc = "0: Card State Stable or Debouncing"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Card Inserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CARD_INS_A> for bool {
     #[inline(always)]
     fn from(variant: CARD_INS_A) -> Self {
-        match variant {
-            CARD_INS_A::VALUE1 => false,
-            CARD_INS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CARD_INS`"]
@@ -248,17 +236,14 @@ impl<'a> CARD_INS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUFF_READ_READY_A {
     #[doc = "0: Not Ready to read Buffer."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Ready to read Buffer."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BUFF_READ_READY_A> for bool {
     #[inline(always)]
     fn from(variant: BUFF_READ_READY_A) -> Self {
-        match variant {
-            BUFF_READ_READY_A::VALUE1 => false,
-            BUFF_READ_READY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BUFF_READ_READY`"]
@@ -326,17 +311,14 @@ impl<'a> BUFF_READ_READY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUFF_WRITE_READY_A {
     #[doc = "0: Not Ready to Write Buffer."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Ready to Write Buffer."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BUFF_WRITE_READY_A> for bool {
     #[inline(always)]
     fn from(variant: BUFF_WRITE_READY_A) -> Self {
-        match variant {
-            BUFF_WRITE_READY_A::VALUE1 => false,
-            BUFF_WRITE_READY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BUFF_WRITE_READY`"]
@@ -404,17 +386,14 @@ impl<'a> BUFF_WRITE_READY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BLOCK_GAP_EVENT_A {
     #[doc = "0: No Block Gap Event"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Transaction stopped at Block Gap"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BLOCK_GAP_EVENT_A> for bool {
     #[inline(always)]
     fn from(variant: BLOCK_GAP_EVENT_A) -> Self {
-        match variant {
-            BLOCK_GAP_EVENT_A::VALUE1 => false,
-            BLOCK_GAP_EVENT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BLOCK_GAP_EVENT`"]
@@ -482,17 +461,14 @@ impl<'a> BLOCK_GAP_EVENT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TX_COMPLETE_A {
     #[doc = "0: No Data Transfer Complete"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data Transfer Complete"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TX_COMPLETE_A> for bool {
     #[inline(always)]
     fn from(variant: TX_COMPLETE_A) -> Self {
-        match variant {
-            TX_COMPLETE_A::VALUE1 => false,
-            TX_COMPLETE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TX_COMPLETE`"]
@@ -560,17 +536,14 @@ impl<'a> TX_COMPLETE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_COMPLETE_A {
     #[doc = "0: No Command Complete"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Command Complete"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMD_COMPLETE_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_COMPLETE_A) -> Self {
-        match variant {
-            CMD_COMPLETE_A::VALUE1 => false,
-            CMD_COMPLETE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_COMPLETE`"]

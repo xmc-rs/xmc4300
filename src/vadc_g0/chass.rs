@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CHASS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASSCH0_A {
     #[doc = "0: Channel y can be a background channel converted with lowest priority"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Channel y is a priority channel within group x"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASSCH0_A> for bool {
     #[inline(always)]
     fn from(variant: ASSCH0_A) -> Self {
-        match variant {
-            ASSCH0_A::VALUE1 => false,
-            ASSCH0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASSCH0`"]
@@ -92,17 +89,14 @@ impl<'a> ASSCH0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASSCH1_A {
     #[doc = "0: Channel y can be a background channel converted with lowest priority"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Channel y is a priority channel within group x"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASSCH1_A> for bool {
     #[inline(always)]
     fn from(variant: ASSCH1_A) -> Self {
-        match variant {
-            ASSCH1_A::VALUE1 => false,
-            ASSCH1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASSCH1`"]
@@ -170,17 +164,14 @@ impl<'a> ASSCH1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASSCH2_A {
     #[doc = "0: Channel y can be a background channel converted with lowest priority"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Channel y is a priority channel within group x"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASSCH2_A> for bool {
     #[inline(always)]
     fn from(variant: ASSCH2_A) -> Self {
-        match variant {
-            ASSCH2_A::VALUE1 => false,
-            ASSCH2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASSCH2`"]
@@ -248,17 +239,14 @@ impl<'a> ASSCH2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASSCH3_A {
     #[doc = "0: Channel y can be a background channel converted with lowest priority"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Channel y is a priority channel within group x"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASSCH3_A> for bool {
     #[inline(always)]
     fn from(variant: ASSCH3_A) -> Self {
-        match variant {
-            ASSCH3_A::VALUE1 => false,
-            ASSCH3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASSCH3`"]
@@ -326,17 +314,14 @@ impl<'a> ASSCH3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASSCH4_A {
     #[doc = "0: Channel y can be a background channel converted with lowest priority"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Channel y is a priority channel within group x"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASSCH4_A> for bool {
     #[inline(always)]
     fn from(variant: ASSCH4_A) -> Self {
-        match variant {
-            ASSCH4_A::VALUE1 => false,
-            ASSCH4_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASSCH4`"]
@@ -404,17 +389,14 @@ impl<'a> ASSCH4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASSCH5_A {
     #[doc = "0: Channel y can be a background channel converted with lowest priority"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Channel y is a priority channel within group x"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASSCH5_A> for bool {
     #[inline(always)]
     fn from(variant: ASSCH5_A) -> Self {
-        match variant {
-            ASSCH5_A::VALUE1 => false,
-            ASSCH5_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASSCH5`"]
@@ -482,17 +464,14 @@ impl<'a> ASSCH5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASSCH6_A {
     #[doc = "0: Channel y can be a background channel converted with lowest priority"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Channel y is a priority channel within group x"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASSCH6_A> for bool {
     #[inline(always)]
     fn from(variant: ASSCH6_A) -> Self {
-        match variant {
-            ASSCH6_A::VALUE1 => false,
-            ASSCH6_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASSCH6`"]
@@ -560,17 +539,14 @@ impl<'a> ASSCH6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASSCH7_A {
     #[doc = "0: Channel y can be a background channel converted with lowest priority"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Channel y is a priority channel within group x"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ASSCH7_A> for bool {
     #[inline(always)]
     fn from(variant: ASSCH7_A) -> Self {
-        match variant {
-            ASSCH7_A::VALUE1 => false,
-            ASSCH7_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ASSCH7`"]

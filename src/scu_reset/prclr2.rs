@@ -12,17 +12,14 @@ impl crate::ResetValue for super::PRCLR2 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDTRS_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: De-assert reset"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<WDTRS_AW> for bool {
     #[inline(always)]
     fn from(variant: WDTRS_AW) -> Self {
-        match variant {
-            WDTRS_AW::CONST_0 => false,
-            WDTRS_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WDTRS`"]
@@ -68,17 +65,14 @@ impl<'a> WDTRS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ETH0RS_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: De-assert reset"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ETH0RS_AW> for bool {
     #[inline(always)]
     fn from(variant: ETH0RS_AW) -> Self {
-        match variant {
-            ETH0RS_AW::CONST_0 => false,
-            ETH0RS_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ETH0RS`"]
@@ -124,17 +118,14 @@ impl<'a> ETH0RS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA0RS_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: De-assert reset"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<DMA0RS_AW> for bool {
     #[inline(always)]
     fn from(variant: DMA0RS_AW) -> Self {
-        match variant {
-            DMA0RS_AW::CONST_0 => false,
-            DMA0RS_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `DMA0RS`"]
@@ -180,17 +171,14 @@ impl<'a> DMA0RS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FCERS_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: De-assert reset"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<FCERS_AW> for bool {
     #[inline(always)]
     fn from(variant: FCERS_AW) -> Self {
-        match variant {
-            FCERS_AW::CONST_0 => false,
-            FCERS_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `FCERS`"]
@@ -236,17 +224,14 @@ impl<'a> FCERS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBRS_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: De-assert reset"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<USBRS_AW> for bool {
     #[inline(always)]
     fn from(variant: USBRS_AW) -> Self {
-        match variant {
-            USBRS_AW::CONST_0 => false,
-            USBRS_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `USBRS`"]
@@ -292,17 +277,14 @@ impl<'a> USBRS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECAT0RS_AW {
     #[doc = "0: No effect"]
-    CONST_0,
+    CONST_0 = 0,
     #[doc = "1: De-assert reset"]
-    CONST_1,
+    CONST_1 = 1,
 }
 impl From<ECAT0RS_AW> for bool {
     #[inline(always)]
     fn from(variant: ECAT0RS_AW) -> Self {
-        match variant {
-            ECAT0RS_AW::CONST_0 => false,
-            ECAT0RS_AW::CONST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ECAT0RS`"]

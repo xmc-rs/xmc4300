@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::STATUS>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PARERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Parity Error in User or Process RAM"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PARERR_A> for bool {
     #[inline(always)]
     fn from(variant: PARERR_A) -> Self {
-        match variant {
-            PARERR_A::VALUE1 => false,
-            PARERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PARERR`"]

@@ -38,17 +38,14 @@ impl<'a> INT_AT_BLOCK_GAP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READ_WAIT_CTRL_A {
     #[doc = "0: Disable Read Wait Control"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable Read Wait Control"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<READ_WAIT_CTRL_A> for bool {
     #[inline(always)]
     fn from(variant: READ_WAIT_CTRL_A) -> Self {
-        match variant {
-            READ_WAIT_CTRL_A::VALUE1 => false,
-            READ_WAIT_CTRL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `READ_WAIT_CTRL`"]
@@ -116,17 +113,14 @@ impl<'a> READ_WAIT_CTRL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CONTINUE_REQ_A {
     #[doc = "0: Ignored"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Restart"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CONTINUE_REQ_A> for bool {
     #[inline(always)]
     fn from(variant: CONTINUE_REQ_A) -> Self {
-        match variant {
-            CONTINUE_REQ_A::VALUE1 => false,
-            CONTINUE_REQ_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CONTINUE_REQ`"]
@@ -194,17 +188,14 @@ impl<'a> CONTINUE_REQ_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOP_AT_BLOCK_GAP_A {
     #[doc = "0: Transfer"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Stop"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STOP_AT_BLOCK_GAP_A> for bool {
     #[inline(always)]
     fn from(variant: STOP_AT_BLOCK_GAP_A) -> Self {
-        match variant {
-            STOP_AT_BLOCK_GAP_A::VALUE1 => false,
-            STOP_AT_BLOCK_GAP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STOP_AT_BLOCK_GAP`"]

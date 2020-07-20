@@ -28,17 +28,14 @@ impl<'a> PANCMD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUSY_A {
     #[doc = "0: Panel has finished command and is ready to accept a new command."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Panel operation is in progress."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BUSY_A> for bool {
     #[inline(always)]
     fn from(variant: BUSY_A) -> Self {
-        match variant {
-            BUSY_A::VALUE1 => false,
-            BUSY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BUSY`"]
@@ -67,17 +64,14 @@ impl BUSY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RBUSY_A {
     #[doc = "0: No update of PANAR1 and PANAR2 is scheduled by the list controller."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A list command is running (BUSY = 1) that will write results to PANAR1 and PANAR2, but the results are not yet available."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RBUSY_A> for bool {
     #[inline(always)]
     fn from(variant: RBUSY_A) -> Self {
-        match variant {
-            RBUSY_A::VALUE1 => false,
-            RBUSY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RBUSY`"]

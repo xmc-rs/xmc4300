@@ -12,40 +12,31 @@ impl crate::ResetValue for super::CLOCK_CTRL {
 }
 #[doc = "SDCLK Frequency Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SDCLK_FREQ_SEL_A {
     #[doc = "0: base clock(10MHz-63MHz)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: base clock divided by 2"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "16: base clock divided by 32"]
-    VALUE3,
+    VALUE3 = 16,
     #[doc = "2: base clock divided by 4"]
-    VALUE4,
+    VALUE4 = 2,
     #[doc = "4: base clock divided by 8"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "8: base clock divided by 16"]
-    VALUE6,
+    VALUE6 = 8,
     #[doc = "32: base clock divided by 64"]
-    VALUE7,
+    VALUE7 = 32,
     #[doc = "64: base clock divided by 128"]
-    VALUE8,
+    VALUE8 = 64,
     #[doc = "128: base clock divided by 256"]
-    VALUE9,
+    VALUE9 = 128,
 }
 impl From<SDCLK_FREQ_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SDCLK_FREQ_SEL_A) -> Self {
-        match variant {
-            SDCLK_FREQ_SEL_A::VALUE1 => 0,
-            SDCLK_FREQ_SEL_A::VALUE2 => 1,
-            SDCLK_FREQ_SEL_A::VALUE3 => 16,
-            SDCLK_FREQ_SEL_A::VALUE4 => 2,
-            SDCLK_FREQ_SEL_A::VALUE5 => 4,
-            SDCLK_FREQ_SEL_A::VALUE6 => 8,
-            SDCLK_FREQ_SEL_A::VALUE7 => 32,
-            SDCLK_FREQ_SEL_A::VALUE8 => 64,
-            SDCLK_FREQ_SEL_A::VALUE9 => 128,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SDCLK_FREQ_SEL`"]
@@ -180,17 +171,14 @@ impl<'a> SDCLK_FREQ_SEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDCLOCK_EN_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SDCLOCK_EN_A> for bool {
     #[inline(always)]
     fn from(variant: SDCLOCK_EN_A) -> Self {
-        match variant {
-            SDCLOCK_EN_A::VALUE1 => false,
-            SDCLOCK_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDCLOCK_EN`"]
@@ -258,17 +246,14 @@ impl<'a> SDCLOCK_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INTERNAL_CLOCK_STABLE_A {
     #[doc = "0: Not Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Ready"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<INTERNAL_CLOCK_STABLE_A> for bool {
     #[inline(always)]
     fn from(variant: INTERNAL_CLOCK_STABLE_A) -> Self {
-        match variant {
-            INTERNAL_CLOCK_STABLE_A::VALUE1 => false,
-            INTERNAL_CLOCK_STABLE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INTERNAL_CLOCK_STABLE`"]
@@ -297,17 +282,14 @@ impl INTERNAL_CLOCK_STABLE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INTERNAL_CLOCK_EN_A {
     #[doc = "0: Stop"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Oscillate"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<INTERNAL_CLOCK_EN_A> for bool {
     #[inline(always)]
     fn from(variant: INTERNAL_CLOCK_EN_A) -> Self {
-        match variant {
-            INTERNAL_CLOCK_EN_A::VALUE1 => false,
-            INTERNAL_CLOCK_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INTERNAL_CLOCK_EN`"]

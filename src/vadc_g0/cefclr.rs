@@ -12,17 +12,14 @@ impl crate::ResetValue for super::CEFCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV0_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the channel event flag in GxCEFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV0_AW> for bool {
     #[inline(always)]
     fn from(variant: CEV0_AW) -> Self {
-        match variant {
-            CEV0_AW::VALUE1 => false,
-            CEV0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CEV0`"]
@@ -68,17 +65,14 @@ impl<'a> CEV0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV1_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the channel event flag in GxCEFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV1_AW> for bool {
     #[inline(always)]
     fn from(variant: CEV1_AW) -> Self {
-        match variant {
-            CEV1_AW::VALUE1 => false,
-            CEV1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CEV1`"]
@@ -124,17 +118,14 @@ impl<'a> CEV1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV2_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the channel event flag in GxCEFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV2_AW> for bool {
     #[inline(always)]
     fn from(variant: CEV2_AW) -> Self {
-        match variant {
-            CEV2_AW::VALUE1 => false,
-            CEV2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CEV2`"]
@@ -180,17 +171,14 @@ impl<'a> CEV2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV3_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the channel event flag in GxCEFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV3_AW> for bool {
     #[inline(always)]
     fn from(variant: CEV3_AW) -> Self {
-        match variant {
-            CEV3_AW::VALUE1 => false,
-            CEV3_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CEV3`"]
@@ -236,17 +224,14 @@ impl<'a> CEV3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV4_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the channel event flag in GxCEFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV4_AW> for bool {
     #[inline(always)]
     fn from(variant: CEV4_AW) -> Self {
-        match variant {
-            CEV4_AW::VALUE1 => false,
-            CEV4_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CEV4`"]
@@ -292,17 +277,14 @@ impl<'a> CEV4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV5_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the channel event flag in GxCEFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV5_AW> for bool {
     #[inline(always)]
     fn from(variant: CEV5_AW) -> Self {
-        match variant {
-            CEV5_AW::VALUE1 => false,
-            CEV5_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CEV5`"]
@@ -348,17 +330,14 @@ impl<'a> CEV5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV6_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the channel event flag in GxCEFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV6_AW> for bool {
     #[inline(always)]
     fn from(variant: CEV6_AW) -> Self {
-        match variant {
-            CEV6_AW::VALUE1 => false,
-            CEV6_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CEV6`"]
@@ -404,17 +383,14 @@ impl<'a> CEV6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEV7_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear the channel event flag in GxCEFLAG"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CEV7_AW> for bool {
     #[inline(always)]
     fn from(variant: CEV7_AW) -> Self {
-        match variant {
-            CEV7_AW::VALUE1 => false,
-            CEV7_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CEV7`"]

@@ -4,17 +4,14 @@ pub type R = crate::R<u8, super::EEP_CONF>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TO_PDI_A {
     #[doc = "0: No"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Yes (PDI has EEPROM control)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TO_PDI_A> for bool {
     #[inline(always)]
     fn from(variant: TO_PDI_A) -> Self {
-        match variant {
-            TO_PDI_A::VALUE1 => false,
-            TO_PDI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TO_PDI`"]
@@ -43,17 +40,14 @@ impl TO_PDI_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FORCE_A {
     #[doc = "0: Do not change Bit 501.0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Reset Bit 501.0 to 0"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FORCE_A> for bool {
     #[inline(always)]
     fn from(variant: FORCE_A) -> Self {
-        match variant {
-            FORCE_A::VALUE1 => false,
-            FORCE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FORCE`"]

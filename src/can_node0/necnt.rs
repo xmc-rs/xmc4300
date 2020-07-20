@@ -56,17 +56,14 @@ impl<'a> EWRNLVL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LETD_A {
     #[doc = "0: The last error occurred while the CAN node x was receiver (REC has been incremented)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The last error occurred while the CAN node x was transmitter (TEC has been incremented)."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LETD_A> for bool {
     #[inline(always)]
     fn from(variant: LETD_A) -> Self {
-        match variant {
-            LETD_A::VALUE1 => false,
-            LETD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LETD`"]
@@ -95,17 +92,14 @@ impl LETD_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LEINC_A {
     #[doc = "0: The last error led to an error counter increment of 1."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The last error led to an error counter increment of 8."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LEINC_A> for bool {
     #[inline(always)]
     fn from(variant: LEINC_A) -> Self {
-        match variant {
-            LEINC_A::VALUE1 => false,
-            LEINC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LEINC`"]

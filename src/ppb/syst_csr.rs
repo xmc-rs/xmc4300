@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SYST_CSR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENABLE_A {
     #[doc = "0: counter disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: counter enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: ENABLE_A) -> Self {
-        match variant {
-            ENABLE_A::VALUE1 => false,
-            ENABLE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENABLE`"]
@@ -92,17 +89,14 @@ impl<'a> ENABLE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TICKINT_A {
     #[doc = "0: counting down to zero does not assert the SysTick exception request"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: counting down to zero to asserts the SysTick exception request."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TICKINT_A> for bool {
     #[inline(always)]
     fn from(variant: TICKINT_A) -> Self {
-        match variant {
-            TICKINT_A::VALUE1 => false,
-            TICKINT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TICKINT`"]
@@ -170,17 +164,14 @@ impl<'a> TICKINT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKSOURCE_A {
     #[doc = "0: external clock"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: processor clock."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CLKSOURCE_A> for bool {
     #[inline(always)]
     fn from(variant: CLKSOURCE_A) -> Self {
-        match variant {
-            CLKSOURCE_A::VALUE1 => false,
-            CLKSOURCE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CLKSOURCE`"]

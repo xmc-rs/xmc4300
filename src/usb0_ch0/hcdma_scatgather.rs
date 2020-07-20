@@ -12,19 +12,17 @@ impl crate::ResetValue for super::HCDMA_SCATGATHER {
 }
 #[doc = "Current Transfer Desc:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CTD_A {
     #[doc = "0: 1 descriptor"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "63: 64 descriptors"]
-    VALUE2,
+    VALUE2 = 63,
 }
 impl From<CTD_A> for u8 {
     #[inline(always)]
     fn from(variant: CTD_A) -> Self {
-        match variant {
-            CTD_A::VALUE1 => 0,
-            CTD_A::VALUE2 => 63,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CTD`"]

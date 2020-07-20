@@ -54,22 +54,19 @@ impl<'a> DEST_MSIZE_W<'a> {
 }
 #[doc = "Source Address Increment\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SINC_A {
     #[doc = "0: Increment"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Decrement"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: No change"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<SINC_A> for u8 {
     #[inline(always)]
     fn from(variant: SINC_A) -> Self {
-        match variant {
-            SINC_A::VALUE1 => 0,
-            SINC_A::VALUE2 => 1,
-            SINC_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SINC`"]
@@ -136,22 +133,19 @@ impl<'a> SINC_W<'a> {
 }
 #[doc = "Destination Address Increment\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DINC_A {
     #[doc = "0: Increment"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Decrement"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: No change"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<DINC_A> for u8 {
     #[inline(always)]
     fn from(variant: DINC_A) -> Self {
-        match variant {
-            DINC_A::VALUE1 => 0,
-            DINC_A::VALUE2 => 1,
-            DINC_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DINC`"]

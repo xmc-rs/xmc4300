@@ -4,17 +4,14 @@ pub type R = crate::R<u8, super::SM_ACT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SM_EN_A {
     #[doc = "0: Disable: Access to Memory without SyncManager control"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable: SyncManager is active and controls Memory area set in configuration"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SM_EN_A> for bool {
     #[inline(always)]
     fn from(variant: SM_EN_A) -> Self {
-        match variant {
-            SM_EN_A::VALUE1 => false,
-            SM_EN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SM_EN`"]
@@ -45,17 +42,14 @@ pub type REP_REQ_R = crate::R<bool, bool>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LE_ECAT_A {
     #[doc = "0: No"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Generate Latch event if EtherCAT master issues a buffer exchange"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LE_ECAT_A> for bool {
     #[inline(always)]
     fn from(variant: LE_ECAT_A) -> Self {
-        match variant {
-            LE_ECAT_A::VALUE1 => false,
-            LE_ECAT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LE_ECAT`"]
@@ -84,17 +78,14 @@ impl LE_ECAT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LE_PDI_A {
     #[doc = "0: No"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Generate Latch events if PDI issues a buffer exchange or if PDI accesses buffer start address"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LE_PDI_A> for bool {
     #[inline(always)]
     fn from(variant: LE_PDI_A) -> Self {
-        match variant {
-            LE_PDI_A::VALUE1 => false,
-            LE_PDI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LE_PDI`"]

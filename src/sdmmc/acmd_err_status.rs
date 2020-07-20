@@ -4,17 +4,14 @@ pub type R = crate::R<u16, super::ACMD_ERR_STATUS>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_NOT_ISSUED_BY_ACMD12_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Not Issued"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CMD_NOT_ISSUED_BY_ACMD12_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: CMD_NOT_ISSUED_BY_ACMD12_ERR_A) -> Self {
-        match variant {
-            CMD_NOT_ISSUED_BY_ACMD12_ERR_A::VALUE1 => false,
-            CMD_NOT_ISSUED_BY_ACMD12_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMD_NOT_ISSUED_BY_ACMD12_ERR`"]
@@ -43,17 +40,14 @@ impl CMD_NOT_ISSUED_BY_ACMD12_ERR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACMD_IND_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Error"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACMD_IND_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: ACMD_IND_ERR_A) -> Self {
-        match variant {
-            ACMD_IND_ERR_A::VALUE1 => false,
-            ACMD_IND_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACMD_IND_ERR`"]
@@ -82,17 +76,14 @@ impl ACMD_IND_ERR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACMD_END_BIT_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: End Bit Error Generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACMD_END_BIT_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: ACMD_END_BIT_ERR_A) -> Self {
-        match variant {
-            ACMD_END_BIT_ERR_A::VALUE1 => false,
-            ACMD_END_BIT_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACMD_END_BIT_ERR`"]
@@ -121,17 +112,14 @@ impl ACMD_END_BIT_ERR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACMD_CRC_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CRC Error Generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACMD_CRC_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: ACMD_CRC_ERR_A) -> Self {
-        match variant {
-            ACMD_CRC_ERR_A::VALUE1 => false,
-            ACMD_CRC_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACMD_CRC_ERR`"]
@@ -160,17 +148,14 @@ impl ACMD_CRC_ERR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACMD_TIMEOUT_ERR_A {
     #[doc = "0: No Error"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Timeout"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACMD_TIMEOUT_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: ACMD_TIMEOUT_ERR_A) -> Self {
-        match variant {
-            ACMD_TIMEOUT_ERR_A::VALUE1 => false,
-            ACMD_TIMEOUT_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACMD_TIMEOUT_ERR`"]
@@ -199,17 +184,14 @@ impl ACMD_TIMEOUT_ERR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACMD12_NOT_EXEC_ERR_A {
     #[doc = "0: Executed"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Not Executed"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ACMD12_NOT_EXEC_ERR_A> for bool {
     #[inline(always)]
     fn from(variant: ACMD12_NOT_EXEC_ERR_A) -> Self {
-        match variant {
-            ACMD12_NOT_EXEC_ERR_A::VALUE1 => false,
-            ACMD12_NOT_EXEC_ERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACMD12_NOT_EXEC_ERR`"]

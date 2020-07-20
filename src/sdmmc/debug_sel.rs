@@ -12,17 +12,14 @@ impl crate::ResetValue for super::DEBUG_SEL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DEBUG_SEL_AW {
     #[doc = "0: receiver module and fifo_ctrl module signals are probed out"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: cmd register, Interrupt status, transmitter module and clk sdcard signals are probed out."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DEBUG_SEL_AW> for bool {
     #[inline(always)]
     fn from(variant: DEBUG_SEL_AW) -> Self {
-        match variant {
-            DEBUG_SEL_AW::VALUE1 => false,
-            DEBUG_SEL_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `DEBUG_SEL`"]

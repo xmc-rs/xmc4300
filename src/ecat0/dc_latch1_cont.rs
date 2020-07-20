@@ -14,17 +14,14 @@ impl crate::ResetValue for super::DC_LATCH1_CONT {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum L1_POS_A {
     #[doc = "0: Continuous Latch active"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Single event (only first event active)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<L1_POS_A> for bool {
     #[inline(always)]
     fn from(variant: L1_POS_A) -> Self {
-        match variant {
-            L1_POS_A::VALUE1 => false,
-            L1_POS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `L1_POS`"]
@@ -92,17 +89,14 @@ impl<'a> L1_POS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum L1_NEG_A {
     #[doc = "0: Continuous Latch active"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Single event (only first event active)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<L1_NEG_A> for bool {
     #[inline(always)]
     fn from(variant: L1_NEG_A) -> Self {
-        match variant {
-            L1_NEG_A::VALUE1 => false,
-            L1_NEG_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `L1_NEG`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PCR_ASCMODE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMD_A {
     #[doc = "0: Only one sample is taken per bit time. The current input value is sampled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Three samples are taken per bit time and a majority decision is made."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SMD_A> for bool {
     #[inline(always)]
     fn from(variant: SMD_A) -> Self {
-        match variant {
-            SMD_A::VALUE1 => false,
-            SMD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SMD`"]
@@ -92,17 +89,14 @@ impl<'a> SMD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STPB_A {
     #[doc = "0: The number of stop bits is 1."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The number of stop bits is 2."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STPB_A> for bool {
     #[inline(always)]
     fn from(variant: STPB_A) -> Self {
-        match variant {
-            STPB_A::VALUE1 => false,
-            STPB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STPB`"]
@@ -170,17 +164,14 @@ impl<'a> STPB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IDM_A {
     #[doc = "0: The bus idle detection is switched off and bits PSR.TXIDLE and PSR.RXIDLE are set automatically to enable data transfers without checking the inputs before."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The bus is considered as idle after a number of consecutive passive bit times defined by SCTR.FLE plus 2 (in the case without parity bit) or plus 3 (in the case with parity bit)."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IDM_A> for bool {
     #[inline(always)]
     fn from(variant: IDM_A) -> Self {
-        match variant {
-            IDM_A::VALUE1 => false,
-            IDM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IDM`"]
@@ -248,17 +239,14 @@ impl<'a> IDM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SBIEN_A {
     #[doc = "0: The interrupt generation is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The interrupt generation is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SBIEN_A> for bool {
     #[inline(always)]
     fn from(variant: SBIEN_A) -> Self {
-        match variant {
-            SBIEN_A::VALUE1 => false,
-            SBIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SBIEN`"]
@@ -326,17 +314,14 @@ impl<'a> SBIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CDEN_A {
     #[doc = "0: The collision detection is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: If a collision is detected, the transmitter stops its data transmission, outputs a 1, sets bit PSR.COL and generates a protocol interrupt. In order to allow data transmission again, PSR.COL has to be cleared by software."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CDEN_A> for bool {
     #[inline(always)]
     fn from(variant: CDEN_A) -> Self {
-        match variant {
-            CDEN_A::VALUE1 => false,
-            CDEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CDEN`"]
@@ -404,17 +389,14 @@ impl<'a> CDEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RNIEN_A {
     #[doc = "0: The interrupt generation is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The interrupt generation is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RNIEN_A> for bool {
     #[inline(always)]
     fn from(variant: RNIEN_A) -> Self {
-        match variant {
-            RNIEN_A::VALUE1 => false,
-            RNIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RNIEN`"]
@@ -482,17 +464,14 @@ impl<'a> RNIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FEIEN_A {
     #[doc = "0: The interrupt generation is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The interrupt generation is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FEIEN_A> for bool {
     #[inline(always)]
     fn from(variant: FEIEN_A) -> Self {
-        match variant {
-            FEIEN_A::VALUE1 => false,
-            FEIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FEIEN`"]
@@ -560,17 +539,14 @@ impl<'a> FEIEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FFIEN_A {
     #[doc = "0: The interrupt generation is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The interrupt generation is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FFIEN_A> for bool {
     #[inline(always)]
     fn from(variant: FFIEN_A) -> Self {
-        match variant {
-            FFIEN_A::VALUE1 => false,
-            FFIEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FFIEN`"]
@@ -650,25 +626,21 @@ impl<'a> SP_W<'a> {
 }
 #[doc = "Pulse Length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PL_A {
     #[doc = "0: The pulse length is equal to the bit length (no shortened 0)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The pulse length of a 0 bit is 2 time quanta."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: The pulse length of a 0 bit is 3 time quanta."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "7: The pulse length of a 0 bit is 8 time quanta."]
-    VALUE4,
+    VALUE4 = 7,
 }
 impl From<PL_A> for u8 {
     #[inline(always)]
     fn from(variant: PL_A) -> Self {
-        match variant {
-            PL_A::VALUE1 => 0,
-            PL_A::VALUE2 => 1,
-            PL_A::VALUE3 => 2,
-            PL_A::VALUE4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PL`"]
@@ -747,18 +719,17 @@ impl<'a> PL_W<'a> {
 #[doc = "Receiver Status Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSTEN_A {
-    #[doc = "0: Flag PSR\\[9\\] is not modified depending on the receiver status."]
-    VALUE1,
-    #[doc = "1: Flag PSR\\[9\\] is set during the complete reception of a frame."]
-    VALUE2,
+    #[doc = "0: Flag PSR\\[9\\]
+is not modified depending on the receiver status."]
+    VALUE1 = 0,
+    #[doc = "1: Flag PSR\\[9\\]
+is set during the complete reception of a frame."]
+    VALUE2 = 1,
 }
 impl From<RSTEN_A> for bool {
     #[inline(always)]
     fn from(variant: RSTEN_A) -> Self {
-        match variant {
-            RSTEN_A::VALUE1 => false,
-            RSTEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RSTEN`"]
@@ -795,12 +766,14 @@ impl<'a> RSTEN_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Flag PSR\\[9\\] is not modified depending on the receiver status."]
+    #[doc = "Flag PSR\\[9\\]
+is not modified depending on the receiver status."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
         self.variant(RSTEN_A::VALUE1)
     }
-    #[doc = "Flag PSR\\[9\\] is set during the complete reception of a frame."]
+    #[doc = "Flag PSR\\[9\\]
+is set during the complete reception of a frame."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
         self.variant(RSTEN_A::VALUE2)
@@ -825,18 +798,17 @@ impl<'a> RSTEN_W<'a> {
 #[doc = "Transmitter Status Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TSTEN_A {
-    #[doc = "0: Flag PSR\\[9\\] is not modified depending on the transmitter status."]
-    VALUE1,
-    #[doc = "1: Flag PSR\\[9\\] is set during the complete transmission of a frame."]
-    VALUE2,
+    #[doc = "0: Flag PSR\\[9\\]
+is not modified depending on the transmitter status."]
+    VALUE1 = 0,
+    #[doc = "1: Flag PSR\\[9\\]
+is set during the complete transmission of a frame."]
+    VALUE2 = 1,
 }
 impl From<TSTEN_A> for bool {
     #[inline(always)]
     fn from(variant: TSTEN_A) -> Self {
-        match variant {
-            TSTEN_A::VALUE1 => false,
-            TSTEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TSTEN`"]
@@ -873,12 +845,14 @@ impl<'a> TSTEN_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Flag PSR\\[9\\] is not modified depending on the transmitter status."]
+    #[doc = "Flag PSR\\[9\\]
+is not modified depending on the transmitter status."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
         self.variant(TSTEN_A::VALUE1)
     }
-    #[doc = "Flag PSR\\[9\\] is set during the complete transmission of a frame."]
+    #[doc = "Flag PSR\\[9\\]
+is set during the complete transmission of a frame."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
         self.variant(TSTEN_A::VALUE2)
@@ -904,17 +878,14 @@ impl<'a> TSTEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCLK_A {
     #[doc = "0: The MCLK generation is disabled and the MCLK signal is 0."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The MCLK generation is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MCLK_A> for bool {
     #[inline(always)]
     fn from(variant: MCLK_A) -> Self {
-        match variant {
-            MCLK_A::VALUE1 => false,
-            MCLK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MCLK`"]

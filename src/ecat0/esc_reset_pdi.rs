@@ -2,22 +2,19 @@
 pub type R = crate::R<u8, super::ESC_RESET_PDI>;
 #[doc = "Progress of the reset procedure\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RESET_CMD_STATE_A {
     #[doc = "1: after writing 0x52"]
-    VALUE1,
+    VALUE1 = 1,
     #[doc = "2: after writing 0x45 (if 0x52 was written before)"]
-    VALUE2,
+    VALUE2 = 2,
     #[doc = "0: default"]
-    VALUE3,
+    VALUE3 = 0,
 }
 impl From<RESET_CMD_STATE_A> for u8 {
     #[inline(always)]
     fn from(variant: RESET_CMD_STATE_A) -> Self {
-        match variant {
-            RESET_CMD_STATE_A::VALUE1 => 1,
-            RESET_CMD_STATE_A::VALUE2 => 2,
-            RESET_CMD_STATE_A::VALUE3 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RESET_CMD_STATE`"]

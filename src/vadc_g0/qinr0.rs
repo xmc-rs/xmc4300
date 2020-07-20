@@ -24,17 +24,14 @@ impl<'a> REQCHNR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RF_AW {
     #[doc = "0: No refill: this queue entry is converted once and then invalidated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Automatic refill: this queue entry is automatically reloaded into QINRx when the related conversion is started"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RF_AW> for bool {
     #[inline(always)]
     fn from(variant: RF_AW) -> Self {
-        match variant {
-            RF_AW::VALUE1 => false,
-            RF_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RF`"]
@@ -80,17 +77,14 @@ impl<'a> RF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENSI_AW {
     #[doc = "0: No request source interrupt"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A request source event interrupt is generated upon a request source event (related conversion is finished)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ENSI_AW> for bool {
     #[inline(always)]
     fn from(variant: ENSI_AW) -> Self {
-        match variant {
-            ENSI_AW::VALUE1 => false,
-            ENSI_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ENSI`"]
@@ -136,17 +130,14 @@ impl<'a> ENSI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTR_AW {
     #[doc = "0: A valid queue entry immediately leads to a conversion request."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: A valid queue entry waits for a trigger event to occur before issuing a conversion request."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EXTR_AW> for bool {
     #[inline(always)]
     fn from(variant: EXTR_AW) -> Self {
-        match variant {
-            EXTR_AW::VALUE1 => false,
-            EXTR_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `EXTR`"]

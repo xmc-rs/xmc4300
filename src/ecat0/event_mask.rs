@@ -4,17 +4,14 @@ pub type R = crate::R<u16, super::EVENT_MASK>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DC_LE_MASK_A {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DC_LE_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: DC_LE_MASK_A) -> Self {
-        match variant {
-            DC_LE_MASK_A::VALUE1 => false,
-            DC_LE_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DC_LE_MASK`"]
@@ -43,17 +40,14 @@ impl DC_LE_MASK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DL_SE_MASK_A {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DL_SE_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: DL_SE_MASK_A) -> Self {
-        match variant {
-            DL_SE_MASK_A::VALUE1 => false,
-            DL_SE_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DL_SE_MASK`"]
@@ -82,17 +76,14 @@ impl DL_SE_MASK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AL_SE_MASK_A {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AL_SE_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: AL_SE_MASK_A) -> Self {
-        match variant {
-            AL_SE_MASK_A::VALUE1 => false,
-            AL_SE_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AL_SE_MASK`"]
@@ -121,17 +112,14 @@ impl AL_SE_MASK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_0_MASK_A {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_0_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_0_MASK_A) -> Self {
-        match variant {
-            MIR_0_MASK_A::VALUE1 => false,
-            MIR_0_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_0_MASK`"]
@@ -160,17 +148,14 @@ impl MIR_0_MASK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_1_MASK_A {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_1_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_1_MASK_A) -> Self {
-        match variant {
-            MIR_1_MASK_A::VALUE1 => false,
-            MIR_1_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_1_MASK`"]
@@ -199,17 +184,14 @@ impl MIR_1_MASK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_2_MASK_A {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_2_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_2_MASK_A) -> Self {
-        match variant {
-            MIR_2_MASK_A::VALUE1 => false,
-            MIR_2_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_2_MASK`"]
@@ -238,17 +220,14 @@ impl MIR_2_MASK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_3_MASK_A {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_3_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_3_MASK_A) -> Self {
-        match variant {
-            MIR_3_MASK_A::VALUE1 => false,
-            MIR_3_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_3_MASK`"]
@@ -277,17 +256,14 @@ impl MIR_3_MASK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_4_MASK_A {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_4_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_4_MASK_A) -> Self {
-        match variant {
-            MIR_4_MASK_A::VALUE1 => false,
-            MIR_4_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_4_MASK`"]
@@ -316,17 +292,14 @@ impl MIR_4_MASK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_5_MASK_A {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_5_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_5_MASK_A) -> Self {
-        match variant {
-            MIR_5_MASK_A::VALUE1 => false,
-            MIR_5_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_5_MASK`"]
@@ -355,17 +328,14 @@ impl MIR_5_MASK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_6_MASK_A {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_6_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_6_MASK_A) -> Self {
-        match variant {
-            MIR_6_MASK_A::VALUE1 => false,
-            MIR_6_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_6_MASK`"]
@@ -394,17 +364,14 @@ impl MIR_6_MASK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MIR_7_MASK_A {
     #[doc = "0: Corresponding ECAT Event Request register bit is not mapped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Corresponding ECAT Event Request register bit is mapped"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MIR_7_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: MIR_7_MASK_A) -> Self {
-        match variant {
-            MIR_7_MASK_A::VALUE1 => false,
-            MIR_7_MASK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MIR_7_MASK`"]
