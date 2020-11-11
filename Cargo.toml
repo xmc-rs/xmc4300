@@ -11,7 +11,7 @@ documentation = "https://docs.rs/xmc4300/"
 categories = ["embedded", "no-std"]
 
 [dependencies]
-cortex-m = "0.6.3"
+cortex-m = "0.7.0"
 bare-metal = "0.2.5"
 vcell = "0.1.2"
 
