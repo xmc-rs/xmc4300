@@ -12,7 +12,7 @@ categories = ["embedded", "no-std"]
 
 [dependencies]
 cortex-m = "0.7.0"
-bare-metal = "0.2.5"
+bare-metal = "1.0.0"
 vcell = "0.1.2"
 
 [dependencies.cortex-m-rt]
