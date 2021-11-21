@@ -1,13 +1,37 @@
-#[doc = "Reader of register VFR"]
-pub type R = crate::R<u32, super::VFR>;
-#[doc = "Writer for register VFR"]
-pub type W = crate::W<u32, super::VFR>;
-#[doc = "Register VFR `reset()`'s with value 0"]
-impl crate::ResetValue for super::VFR {
-    type Type = u32;
+#[doc = "Register `VFR` reader"]
+pub struct R(crate::R<VFR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<VFR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<VFR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<VFR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `VFR` writer"]
+pub struct W(crate::W<VFR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<VFR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<VFR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<VFR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Valid Flag of Result Register x\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<VF0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF0`"]
-pub type VF0_R = crate::R<bool, VF0_A>;
+#[doc = "Field `VF0` reader - Valid Flag of Result Register x"]
+pub struct VF0_R(crate::FieldReader<bool, VF0_A>);
 impl VF0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF0_A {
@@ -38,15 +65,22 @@ impl VF0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF0_A::VALUE1
+        **self == VF0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF0_A::VALUE2
+        **self == VF0_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF0`"]
+impl core::ops::Deref for VF0_R {
+    type Target = crate::FieldReader<bool, VF0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF0` writer - Valid Flag of Result Register x"]
 pub struct VF0_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> VF0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> VF0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<VF1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF1`"]
-pub type VF1_R = crate::R<bool, VF1_A>;
+#[doc = "Field `VF1` reader - Valid Flag of Result Register x"]
+pub struct VF1_R(crate::FieldReader<bool, VF1_A>);
 impl VF1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF1_A {
@@ -113,15 +148,22 @@ impl VF1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF1_A::VALUE1
+        **self == VF1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF1_A::VALUE2
+        **self == VF1_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF1`"]
+impl core::ops::Deref for VF1_R {
+    type Target = crate::FieldReader<bool, VF1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF1` writer - Valid Flag of Result Register x"]
 pub struct VF1_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> VF1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> VF1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<VF2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF2`"]
-pub type VF2_R = crate::R<bool, VF2_A>;
+#[doc = "Field `VF2` reader - Valid Flag of Result Register x"]
+pub struct VF2_R(crate::FieldReader<bool, VF2_A>);
 impl VF2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF2_A {
@@ -188,15 +231,22 @@ impl VF2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF2_A::VALUE1
+        **self == VF2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF2_A::VALUE2
+        **self == VF2_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF2`"]
+impl core::ops::Deref for VF2_R {
+    type Target = crate::FieldReader<bool, VF2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF2` writer - Valid Flag of Result Register x"]
 pub struct VF2_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> VF2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> VF2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<VF3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF3`"]
-pub type VF3_R = crate::R<bool, VF3_A>;
+#[doc = "Field `VF3` reader - Valid Flag of Result Register x"]
+pub struct VF3_R(crate::FieldReader<bool, VF3_A>);
 impl VF3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF3_A {
@@ -263,15 +314,22 @@ impl VF3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF3_A::VALUE1
+        **self == VF3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF3_A::VALUE2
+        **self == VF3_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF3`"]
+impl core::ops::Deref for VF3_R {
+    type Target = crate::FieldReader<bool, VF3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF3` writer - Valid Flag of Result Register x"]
 pub struct VF3_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> VF3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> VF3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +380,12 @@ impl From<VF4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF4`"]
-pub type VF4_R = crate::R<bool, VF4_A>;
+#[doc = "Field `VF4` reader - Valid Flag of Result Register x"]
+pub struct VF4_R(crate::FieldReader<bool, VF4_A>);
 impl VF4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF4_A {
@@ -338,15 +397,22 @@ impl VF4_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF4_A::VALUE1
+        **self == VF4_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF4_A::VALUE2
+        **self == VF4_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF4`"]
+impl core::ops::Deref for VF4_R {
+    type Target = crate::FieldReader<bool, VF4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF4` writer - Valid Flag of Result Register x"]
 pub struct VF4_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +420,7 @@ impl<'a> VF4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -381,7 +445,7 @@ impl<'a> VF4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +463,12 @@ impl From<VF5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF5`"]
-pub type VF5_R = crate::R<bool, VF5_A>;
+#[doc = "Field `VF5` reader - Valid Flag of Result Register x"]
+pub struct VF5_R(crate::FieldReader<bool, VF5_A>);
 impl VF5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF5_A {
@@ -413,15 +480,22 @@ impl VF5_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF5_A::VALUE1
+        **self == VF5_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF5_A::VALUE2
+        **self == VF5_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF5`"]
+impl core::ops::Deref for VF5_R {
+    type Target = crate::FieldReader<bool, VF5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF5` writer - Valid Flag of Result Register x"]
 pub struct VF5_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +503,7 @@ impl<'a> VF5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -456,7 +528,7 @@ impl<'a> VF5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +546,12 @@ impl From<VF6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF6`"]
-pub type VF6_R = crate::R<bool, VF6_A>;
+#[doc = "Field `VF6` reader - Valid Flag of Result Register x"]
+pub struct VF6_R(crate::FieldReader<bool, VF6_A>);
 impl VF6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF6_A {
@@ -488,15 +563,22 @@ impl VF6_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF6_A::VALUE1
+        **self == VF6_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF6_A::VALUE2
+        **self == VF6_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF6`"]
+impl core::ops::Deref for VF6_R {
+    type Target = crate::FieldReader<bool, VF6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF6` writer - Valid Flag of Result Register x"]
 pub struct VF6_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +586,7 @@ impl<'a> VF6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -531,7 +611,7 @@ impl<'a> VF6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +629,12 @@ impl From<VF7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF7`"]
-pub type VF7_R = crate::R<bool, VF7_A>;
+#[doc = "Field `VF7` reader - Valid Flag of Result Register x"]
+pub struct VF7_R(crate::FieldReader<bool, VF7_A>);
 impl VF7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF7_A {
@@ -563,15 +646,22 @@ impl VF7_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF7_A::VALUE1
+        **self == VF7_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF7_A::VALUE2
+        **self == VF7_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF7`"]
+impl core::ops::Deref for VF7_R {
+    type Target = crate::FieldReader<bool, VF7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF7` writer - Valid Flag of Result Register x"]
 pub struct VF7_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +669,7 @@ impl<'a> VF7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -606,7 +694,7 @@ impl<'a> VF7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -624,9 +712,12 @@ impl From<VF8_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF8`"]
-pub type VF8_R = crate::R<bool, VF8_A>;
+#[doc = "Field `VF8` reader - Valid Flag of Result Register x"]
+pub struct VF8_R(crate::FieldReader<bool, VF8_A>);
 impl VF8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF8_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF8_A {
@@ -638,15 +729,22 @@ impl VF8_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF8_A::VALUE1
+        **self == VF8_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF8_A::VALUE2
+        **self == VF8_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF8`"]
+impl core::ops::Deref for VF8_R {
+    type Target = crate::FieldReader<bool, VF8_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF8` writer - Valid Flag of Result Register x"]
 pub struct VF8_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +752,7 @@ impl<'a> VF8_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF8_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -681,7 +777,7 @@ impl<'a> VF8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -699,9 +795,12 @@ impl From<VF9_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF9`"]
-pub type VF9_R = crate::R<bool, VF9_A>;
+#[doc = "Field `VF9` reader - Valid Flag of Result Register x"]
+pub struct VF9_R(crate::FieldReader<bool, VF9_A>);
 impl VF9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF9_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF9_A {
@@ -713,15 +812,22 @@ impl VF9_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF9_A::VALUE1
+        **self == VF9_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF9_A::VALUE2
+        **self == VF9_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF9`"]
+impl core::ops::Deref for VF9_R {
+    type Target = crate::FieldReader<bool, VF9_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF9` writer - Valid Flag of Result Register x"]
 pub struct VF9_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +835,7 @@ impl<'a> VF9_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF9_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -756,7 +860,7 @@ impl<'a> VF9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -774,9 +878,12 @@ impl From<VF10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF10`"]
-pub type VF10_R = crate::R<bool, VF10_A>;
+#[doc = "Field `VF10` reader - Valid Flag of Result Register x"]
+pub struct VF10_R(crate::FieldReader<bool, VF10_A>);
 impl VF10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF10_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF10_A {
@@ -788,15 +895,22 @@ impl VF10_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF10_A::VALUE1
+        **self == VF10_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF10_A::VALUE2
+        **self == VF10_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF10`"]
+impl core::ops::Deref for VF10_R {
+    type Target = crate::FieldReader<bool, VF10_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF10` writer - Valid Flag of Result Register x"]
 pub struct VF10_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +918,7 @@ impl<'a> VF10_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF10_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -831,7 +943,7 @@ impl<'a> VF10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -849,9 +961,12 @@ impl From<VF11_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF11`"]
-pub type VF11_R = crate::R<bool, VF11_A>;
+#[doc = "Field `VF11` reader - Valid Flag of Result Register x"]
+pub struct VF11_R(crate::FieldReader<bool, VF11_A>);
 impl VF11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF11_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF11_A {
@@ -863,15 +978,22 @@ impl VF11_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF11_A::VALUE1
+        **self == VF11_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF11_A::VALUE2
+        **self == VF11_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF11`"]
+impl core::ops::Deref for VF11_R {
+    type Target = crate::FieldReader<bool, VF11_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF11` writer - Valid Flag of Result Register x"]
 pub struct VF11_W<'a> {
     w: &'a mut W,
 }
@@ -879,9 +1001,7 @@ impl<'a> VF11_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF11_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -906,7 +1026,7 @@ impl<'a> VF11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -924,9 +1044,12 @@ impl From<VF12_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF12`"]
-pub type VF12_R = crate::R<bool, VF12_A>;
+#[doc = "Field `VF12` reader - Valid Flag of Result Register x"]
+pub struct VF12_R(crate::FieldReader<bool, VF12_A>);
 impl VF12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF12_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF12_A {
@@ -938,15 +1061,22 @@ impl VF12_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF12_A::VALUE1
+        **self == VF12_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF12_A::VALUE2
+        **self == VF12_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF12`"]
+impl core::ops::Deref for VF12_R {
+    type Target = crate::FieldReader<bool, VF12_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF12` writer - Valid Flag of Result Register x"]
 pub struct VF12_W<'a> {
     w: &'a mut W,
 }
@@ -954,9 +1084,7 @@ impl<'a> VF12_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF12_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -981,7 +1109,7 @@ impl<'a> VF12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -999,9 +1127,12 @@ impl From<VF13_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF13`"]
-pub type VF13_R = crate::R<bool, VF13_A>;
+#[doc = "Field `VF13` reader - Valid Flag of Result Register x"]
+pub struct VF13_R(crate::FieldReader<bool, VF13_A>);
 impl VF13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF13_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF13_A {
@@ -1013,15 +1144,22 @@ impl VF13_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF13_A::VALUE1
+        **self == VF13_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF13_A::VALUE2
+        **self == VF13_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF13`"]
+impl core::ops::Deref for VF13_R {
+    type Target = crate::FieldReader<bool, VF13_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF13` writer - Valid Flag of Result Register x"]
 pub struct VF13_W<'a> {
     w: &'a mut W,
 }
@@ -1029,9 +1167,7 @@ impl<'a> VF13_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF13_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -1056,7 +1192,7 @@ impl<'a> VF13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -1074,9 +1210,12 @@ impl From<VF14_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF14`"]
-pub type VF14_R = crate::R<bool, VF14_A>;
+#[doc = "Field `VF14` reader - Valid Flag of Result Register x"]
+pub struct VF14_R(crate::FieldReader<bool, VF14_A>);
 impl VF14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF14_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF14_A {
@@ -1088,15 +1227,22 @@ impl VF14_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF14_A::VALUE1
+        **self == VF14_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF14_A::VALUE2
+        **self == VF14_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF14`"]
+impl core::ops::Deref for VF14_R {
+    type Target = crate::FieldReader<bool, VF14_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF14` writer - Valid Flag of Result Register x"]
 pub struct VF14_W<'a> {
     w: &'a mut W,
 }
@@ -1104,9 +1250,7 @@ impl<'a> VF14_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF14_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -1131,7 +1275,7 @@ impl<'a> VF14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -1149,9 +1293,12 @@ impl From<VF15_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF15`"]
-pub type VF15_R = crate::R<bool, VF15_A>;
+#[doc = "Field `VF15` reader - Valid Flag of Result Register x"]
+pub struct VF15_R(crate::FieldReader<bool, VF15_A>);
 impl VF15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF15_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF15_A {
@@ -1163,15 +1310,22 @@ impl VF15_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF15_A::VALUE1
+        **self == VF15_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF15_A::VALUE2
+        **self == VF15_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF15`"]
+impl core::ops::Deref for VF15_R {
+    type Target = crate::FieldReader<bool, VF15_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF15` writer - Valid Flag of Result Register x"]
 pub struct VF15_W<'a> {
     w: &'a mut W,
 }
@@ -1179,9 +1333,7 @@ impl<'a> VF15_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF15_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -1206,7 +1358,7 @@ impl<'a> VF15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -1372,5 +1524,31 @@ impl W {
     #[inline(always)]
     pub fn vf15(&mut self) -> VF15_W {
         VF15_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Valid Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vfr](index.html) module"]
+pub struct VFR_SPEC;
+impl crate::RegisterSpec for VFR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [vfr::R](R) reader structure"]
+impl crate::Readable for VFR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [vfr::W](W) writer structure"]
+impl crate::Writable for VFR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets VFR to value 0"]
+impl crate::Resettable for VFR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

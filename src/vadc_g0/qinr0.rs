@@ -1,14 +1,25 @@
-#[doc = "Writer for register QINR0"]
-pub type W = crate::W<u32, super::QINR0>;
-#[doc = "Register QINR0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::QINR0 {
-    type Type = u32;
+#[doc = "Register `QINR0` writer"]
+pub struct W(crate::W<QINR0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<QINR0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `REQCHNR`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<QINR0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<QINR0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `REQCHNR` writer - Request Channel Number"]
 pub struct REQCHNR_W<'a> {
     w: &'a mut W,
 }
@@ -16,7 +27,7 @@ impl<'a> REQCHNR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
+        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
         self.w
     }
 }
@@ -34,7 +45,7 @@ impl From<RF_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `RF`"]
+#[doc = "Field `RF` writer - Refill"]
 pub struct RF_W<'a> {
     w: &'a mut W,
 }
@@ -42,9 +53,7 @@ impl<'a> RF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RF_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No refill: this queue entry is converted once and then invalidated"]
     #[inline(always)]
@@ -69,7 +78,7 @@ impl<'a> RF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -87,7 +96,7 @@ impl From<ENSI_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `ENSI`"]
+#[doc = "Field `ENSI` writer - Enable Source Interrupt"]
 pub struct ENSI_W<'a> {
     w: &'a mut W,
 }
@@ -95,9 +104,7 @@ impl<'a> ENSI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ENSI_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No request source interrupt"]
     #[inline(always)]
@@ -122,7 +129,7 @@ impl<'a> ENSI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -140,7 +147,7 @@ impl From<EXTR_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `EXTR`"]
+#[doc = "Field `EXTR` writer - External Trigger"]
 pub struct EXTR_W<'a> {
     w: &'a mut W,
 }
@@ -148,9 +155,7 @@ impl<'a> EXTR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXTR_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "A valid queue entry immediately leads to a conversion request."]
     #[inline(always)]
@@ -175,7 +180,7 @@ impl<'a> EXTR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -199,5 +204,27 @@ impl W {
     #[inline(always)]
     pub fn extr(&mut self) -> EXTR_W {
         EXTR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Queue 0 Input Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qinr0](index.html) module"]
+pub struct QINR0_SPEC;
+impl crate::RegisterSpec for QINR0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [qinr0::W](W) writer structure"]
+impl crate::Writable for QINR0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets QINR0 to value 0"]
+impl crate::Resettable for QINR0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

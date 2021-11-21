@@ -1,13 +1,37 @@
-#[doc = "Reader of register PSL"]
-pub type R = crate::R<u32, super::PSL>;
-#[doc = "Writer for register PSL"]
-pub type W = crate::W<u32, super::PSL>;
-#[doc = "Register PSL `reset()`'s with value 0"]
-impl crate::ResetValue for super::PSL {
-    type Type = u32;
+#[doc = "Register `PSL` reader"]
+pub struct R(crate::R<PSL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PSL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PSL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PSL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PSL` writer"]
+pub struct W(crate::W<PSL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PSL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PSL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PSL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Output Passive Level for CCU8x.OUTy0\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<PSL11_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PSL11`"]
-pub type PSL11_R = crate::R<bool, PSL11_A>;
+#[doc = "Field `PSL11` reader - Output Passive Level for CCU8x.OUTy0"]
+pub struct PSL11_R(crate::FieldReader<bool, PSL11_A>);
 impl PSL11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PSL11_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PSL11_A {
@@ -38,15 +65,22 @@ impl PSL11_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PSL11_A::VALUE1
+        **self == PSL11_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PSL11_A::VALUE2
+        **self == PSL11_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `PSL11`"]
+impl core::ops::Deref for PSL11_R {
+    type Target = crate::FieldReader<bool, PSL11_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PSL11` writer - Output Passive Level for CCU8x.OUTy0"]
 pub struct PSL11_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> PSL11_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PSL11_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Passive Level is LOW"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> PSL11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<PSL12_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PSL12`"]
-pub type PSL12_R = crate::R<bool, PSL12_A>;
+#[doc = "Field `PSL12` reader - Output Passive Level for CCU8x.OUTy1"]
+pub struct PSL12_R(crate::FieldReader<bool, PSL12_A>);
 impl PSL12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PSL12_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PSL12_A {
@@ -113,15 +148,22 @@ impl PSL12_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PSL12_A::VALUE1
+        **self == PSL12_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PSL12_A::VALUE2
+        **self == PSL12_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `PSL12`"]
+impl core::ops::Deref for PSL12_R {
+    type Target = crate::FieldReader<bool, PSL12_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PSL12` writer - Output Passive Level for CCU8x.OUTy1"]
 pub struct PSL12_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> PSL12_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PSL12_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Passive Level is LOW"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> PSL12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<PSL21_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PSL21`"]
-pub type PSL21_R = crate::R<bool, PSL21_A>;
+#[doc = "Field `PSL21` reader - Output Passive Level for CCU8x.OUTy2"]
+pub struct PSL21_R(crate::FieldReader<bool, PSL21_A>);
 impl PSL21_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PSL21_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PSL21_A {
@@ -188,15 +231,22 @@ impl PSL21_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PSL21_A::VALUE1
+        **self == PSL21_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PSL21_A::VALUE2
+        **self == PSL21_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `PSL21`"]
+impl core::ops::Deref for PSL21_R {
+    type Target = crate::FieldReader<bool, PSL21_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PSL21` writer - Output Passive Level for CCU8x.OUTy2"]
 pub struct PSL21_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> PSL21_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PSL21_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Passive Level is LOW"]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> PSL21_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<PSL22_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PSL22`"]
-pub type PSL22_R = crate::R<bool, PSL22_A>;
+#[doc = "Field `PSL22` reader - Output Passive Level for CCU8x.OUTy3"]
+pub struct PSL22_R(crate::FieldReader<bool, PSL22_A>);
 impl PSL22_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PSL22_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PSL22_A {
@@ -263,15 +314,22 @@ impl PSL22_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PSL22_A::VALUE1
+        **self == PSL22_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PSL22_A::VALUE2
+        **self == PSL22_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `PSL22`"]
+impl core::ops::Deref for PSL22_R {
+    type Target = crate::FieldReader<bool, PSL22_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PSL22` writer - Output Passive Level for CCU8x.OUTy3"]
 pub struct PSL22_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> PSL22_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PSL22_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Passive Level is LOW"]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> PSL22_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -352,5 +408,31 @@ impl W {
     #[inline(always)]
     pub fn psl22(&mut self) -> PSL22_W {
         PSL22_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Passive Level Config\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [psl](index.html) module"]
+pub struct PSL_SPEC;
+impl crate::RegisterSpec for PSL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [psl::R](R) reader structure"]
+impl crate::Readable for PSL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [psl::W](W) writer structure"]
+impl crate::Writable for PSL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PSL to value 0"]
+impl crate::Resettable for PSL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

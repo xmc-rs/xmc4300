@@ -1,18 +1,54 @@
-#[doc = "Reader of register EMUXCTR"]
-pub type R = crate::R<u32, super::EMUXCTR>;
-#[doc = "Writer for register EMUXCTR"]
-pub type W = crate::W<u32, super::EMUXCTR>;
-#[doc = "Register EMUXCTR `reset()`'s with value 0"]
-impl crate::ResetValue for super::EMUXCTR {
-    type Type = u32;
+#[doc = "Register `EMUXCTR` reader"]
+pub struct R(crate::R<EMUXCTR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<EMUXCTR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `EMUXSET`"]
-pub type EMUXSET_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `EMUXSET`"]
+impl From<crate::R<EMUXCTR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<EMUXCTR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `EMUXCTR` writer"]
+pub struct W(crate::W<EMUXCTR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<EMUXCTR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<EMUXCTR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<EMUXCTR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `EMUXSET` reader - External Multiplexer Start Selection"]
+pub struct EMUXSET_R(crate::FieldReader<u8, u8>);
+impl EMUXSET_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EMUXSET_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EMUXSET_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EMUXSET` writer - External Multiplexer Start Selection"]
 pub struct EMUXSET_W<'a> {
     w: &'a mut W,
 }
@@ -20,15 +56,39 @@ impl<'a> EMUXSET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
         self.w
     }
 }
-#[doc = "Reader of field `EMUXACT`"]
-pub type EMUXACT_R = crate::R<u8, u8>;
-#[doc = "Reader of field `EMUXCH`"]
-pub type EMUXCH_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `EMUXCH`"]
+#[doc = "Field `EMUXACT` reader - External Multiplexer Actual Selection"]
+pub struct EMUXACT_R(crate::FieldReader<u8, u8>);
+impl EMUXACT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EMUXACT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EMUXACT_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EMUXCH` reader - External Multiplexer Channel Select"]
+pub struct EMUXCH_R(crate::FieldReader<u16, u16>);
+impl EMUXCH_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        EMUXCH_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EMUXCH_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EMUXCH` writer - External Multiplexer Channel Select"]
 pub struct EMUXCH_W<'a> {
     w: &'a mut W,
 }
@@ -36,7 +96,7 @@ impl<'a> EMUXCH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03ff << 16)) | (((value as u32) & 0x03ff) << 16);
+        self.w.bits = (self.w.bits & !(0x03ff << 16)) | ((value as u32 & 0x03ff) << 16);
         self.w
     }
 }
@@ -59,9 +119,12 @@ impl From<EMUXMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EMUXMODE`"]
-pub type EMUXMODE_R = crate::R<u8, EMUXMODE_A>;
+#[doc = "Field `EMUXMODE` reader - External Multiplexer Mode"]
+pub struct EMUXMODE_R(crate::FieldReader<u8, EMUXMODE_A>);
 impl EMUXMODE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EMUXMODE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EMUXMODE_A {
@@ -76,25 +139,32 @@ impl EMUXMODE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EMUXMODE_A::VALUE1
+        **self == EMUXMODE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EMUXMODE_A::VALUE2
+        **self == EMUXMODE_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EMUXMODE_A::VALUE3
+        **self == EMUXMODE_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EMUXMODE_A::VALUE4
+        **self == EMUXMODE_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `EMUXMODE`"]
+impl core::ops::Deref for EMUXMODE_R {
+    type Target = crate::FieldReader<u8, EMUXMODE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EMUXMODE` writer - External Multiplexer Mode"]
 pub struct EMUXMODE_W<'a> {
     w: &'a mut W,
 }
@@ -102,9 +172,7 @@ impl<'a> EMUXMODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EMUXMODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Software control (no hardware action)"]
     #[inline(always)]
@@ -129,7 +197,7 @@ impl<'a> EMUXMODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 26)) | (((value as u32) & 0x03) << 26);
+        self.w.bits = (self.w.bits & !(0x03 << 26)) | ((value as u32 & 0x03) << 26);
         self.w
     }
 }
@@ -147,9 +215,12 @@ impl From<EMXCOD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `EMXCOD`"]
-pub type EMXCOD_R = crate::R<bool, EMXCOD_A>;
+#[doc = "Field `EMXCOD` reader - External Multiplexer Coding Scheme"]
+pub struct EMXCOD_R(crate::FieldReader<bool, EMXCOD_A>);
 impl EMXCOD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EMXCOD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EMXCOD_A {
@@ -161,15 +232,22 @@ impl EMXCOD_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EMXCOD_A::VALUE1
+        **self == EMXCOD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EMXCOD_A::VALUE2
+        **self == EMXCOD_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `EMXCOD`"]
+impl core::ops::Deref for EMXCOD_R {
+    type Target = crate::FieldReader<bool, EMXCOD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EMXCOD` writer - External Multiplexer Coding Scheme"]
 pub struct EMXCOD_W<'a> {
     w: &'a mut W,
 }
@@ -177,9 +255,7 @@ impl<'a> EMXCOD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EMXCOD_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Output the channel number in binary code"]
     #[inline(always)]
@@ -204,7 +280,7 @@ impl<'a> EMXCOD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
         self.w
     }
 }
@@ -222,9 +298,12 @@ impl From<EMXST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `EMXST`"]
-pub type EMXST_R = crate::R<bool, EMXST_A>;
+#[doc = "Field `EMXST` reader - External Multiplexer Sample Time Control"]
+pub struct EMXST_R(crate::FieldReader<bool, EMXST_A>);
 impl EMXST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EMXST_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EMXST_A {
@@ -236,15 +315,22 @@ impl EMXST_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EMXST_A::VALUE1
+        **self == EMXST_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EMXST_A::VALUE2
+        **self == EMXST_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `EMXST`"]
+impl core::ops::Deref for EMXST_R {
+    type Target = crate::FieldReader<bool, EMXST_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EMXST` writer - External Multiplexer Sample Time Control"]
 pub struct EMXST_W<'a> {
     w: &'a mut W,
 }
@@ -252,9 +338,7 @@ impl<'a> EMXST_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EMXST_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Use STCE whenever the setting changes"]
     #[inline(always)]
@@ -279,7 +363,7 @@ impl<'a> EMXST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
         self.w
     }
 }
@@ -297,9 +381,12 @@ impl From<EMXCSS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `EMXCSS`"]
-pub type EMXCSS_R = crate::R<bool, EMXCSS_A>;
+#[doc = "Field `EMXCSS` reader - External Multiplexer Channel Selection Style"]
+pub struct EMXCSS_R(crate::FieldReader<bool, EMXCSS_A>);
 impl EMXCSS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EMXCSS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EMXCSS_A {
@@ -311,12 +398,19 @@ impl EMXCSS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EMXCSS_A::VALUE1
+        **self == EMXCSS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EMXCSS_A::VALUE2
+        **self == EMXCSS_A::VALUE2
+    }
+}
+impl core::ops::Deref for EMXCSS_R {
+    type Target = crate::FieldReader<bool, EMXCSS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Write Control for EMUX Configuration\n\nValue on reset: 0"]
@@ -333,7 +427,7 @@ impl From<EMXWC_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `EMXWC`"]
+#[doc = "Field `EMXWC` writer - Write Control for EMUX Configuration"]
 pub struct EMXWC_W<'a> {
     w: &'a mut W,
 }
@@ -341,9 +435,7 @@ impl<'a> EMXWC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EMXWC_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No write access to EMUX cfg."]
     #[inline(always)]
@@ -368,7 +460,7 @@ impl<'a> EMXWC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -439,5 +531,31 @@ impl W {
     #[inline(always)]
     pub fn emxwc(&mut self) -> EMXWC_W {
         EMXWC_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "E0ternal Multiplexer Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [emuxctr](index.html) module"]
+pub struct EMUXCTR_SPEC;
+impl crate::RegisterSpec for EMUXCTR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [emuxctr::R](R) reader structure"]
+impl crate::Readable for EMUXCTR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [emuxctr::W](W) writer structure"]
+impl crate::Writable for EMUXCTR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets EMUXCTR to value 0"]
+impl crate::Resettable for EMUXCTR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

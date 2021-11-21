@@ -1,18 +1,54 @@
-#[doc = "Reader of register MAC_ADDRESS3_HIGH"]
-pub type R = crate::R<u32, super::MAC_ADDRESS3_HIGH>;
-#[doc = "Writer for register MAC_ADDRESS3_HIGH"]
-pub type W = crate::W<u32, super::MAC_ADDRESS3_HIGH>;
-#[doc = "Register MAC_ADDRESS3_HIGH `reset()`'s with value 0xffff"]
-impl crate::ResetValue for super::MAC_ADDRESS3_HIGH {
-    type Type = u32;
+#[doc = "Register `MAC_ADDRESS3_HIGH` reader"]
+pub struct R(crate::R<MAC_ADDRESS3_HIGH_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MAC_ADDRESS3_HIGH_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xffff
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ADDRHI`"]
-pub type ADDRHI_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `ADDRHI`"]
+impl From<crate::R<MAC_ADDRESS3_HIGH_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MAC_ADDRESS3_HIGH_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MAC_ADDRESS3_HIGH` writer"]
+pub struct W(crate::W<MAC_ADDRESS3_HIGH_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MAC_ADDRESS3_HIGH_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MAC_ADDRESS3_HIGH_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MAC_ADDRESS3_HIGH_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ADDRHI` reader - MAC Address3 \\[47:32\\]"]
+pub struct ADDRHI_R(crate::FieldReader<u16, u16>);
+impl ADDRHI_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        ADDRHI_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADDRHI_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADDRHI` writer - MAC Address3 \\[47:32\\]"]
 pub struct ADDRHI_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> ADDRHI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
         self.w
     }
 }
-#[doc = "Reader of field `MBC`"]
-pub type MBC_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `MBC`"]
+#[doc = "Field `MBC` reader - Mask Byte Control"]
+pub struct MBC_R(crate::FieldReader<u8, u8>);
+impl MBC_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MBC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MBC_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MBC` writer - Mask Byte Control"]
 pub struct MBC_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +82,25 @@ impl<'a> MBC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 24)) | (((value as u32) & 0x3f) << 24);
+        self.w.bits = (self.w.bits & !(0x3f << 24)) | ((value as u32 & 0x3f) << 24);
         self.w
     }
 }
-#[doc = "Reader of field `SA`"]
-pub type SA_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SA`"]
+#[doc = "Field `SA` reader - Source Address"]
+pub struct SA_R(crate::FieldReader<bool, bool>);
+impl SA_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SA_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SA_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SA` writer - Source Address"]
 pub struct SA_W<'a> {
     w: &'a mut W,
 }
@@ -58,13 +118,25 @@ impl<'a> SA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
         self.w
     }
 }
-#[doc = "Reader of field `AE`"]
-pub type AE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AE`"]
+#[doc = "Field `AE` reader - Address Enable"]
+pub struct AE_R(crate::FieldReader<bool, bool>);
+impl AE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AE` writer - Address Enable"]
 pub struct AE_W<'a> {
     w: &'a mut W,
 }
@@ -82,7 +154,7 @@ impl<'a> AE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -128,5 +200,31 @@ impl W {
     #[inline(always)]
     pub fn ae(&mut self) -> AE_W {
         AE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "MAC Address3 High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mac_address3_high](index.html) module"]
+pub struct MAC_ADDRESS3_HIGH_SPEC;
+impl crate::RegisterSpec for MAC_ADDRESS3_HIGH_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [mac_address3_high::R](R) reader structure"]
+impl crate::Readable for MAC_ADDRESS3_HIGH_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [mac_address3_high::W](W) writer structure"]
+impl crate::Writable for MAC_ADDRESS3_HIGH_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MAC_ADDRESS3_HIGH to value 0xffff"]
+impl crate::Resettable for MAC_ADDRESS3_HIGH_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xffff
     }
 }

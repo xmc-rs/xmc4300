@@ -1,13 +1,37 @@
-#[doc = "Reader of register HPTXSTS"]
-pub type R = crate::R<u32, super::HPTXSTS>;
-#[doc = "Writer for register HPTXSTS"]
-pub type W = crate::W<u32, super::HPTXSTS>;
-#[doc = "Register HPTXSTS `reset()`'s with value 0x0008_0100"]
-impl crate::ResetValue for super::HPTXSTS {
-    type Type = u32;
+#[doc = "Register `HPTXSTS` reader"]
+pub struct R(crate::R<HPTXSTS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<HPTXSTS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0008_0100
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<HPTXSTS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<HPTXSTS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `HPTXSTS` writer"]
+pub struct W(crate::W<HPTXSTS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<HPTXSTS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<HPTXSTS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<HPTXSTS_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Periodic Transmit Data FIFO Space Available\n\nValue on reset: 256"]
@@ -27,37 +51,46 @@ impl From<PTXFSPCAVAIL_A> for u16 {
         variant as _
     }
 }
-#[doc = "Reader of field `PTxFSpcAvail`"]
-pub type PTXFSPCAVAIL_R = crate::R<u16, PTXFSPCAVAIL_A>;
+#[doc = "Field `PTxFSpcAvail` reader - Periodic Transmit Data FIFO Space Available"]
+pub struct PTXFSPCAVAIL_R(crate::FieldReader<u16, PTXFSPCAVAIL_A>);
 impl PTXFSPCAVAIL_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        PTXFSPCAVAIL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u16, PTXFSPCAVAIL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PTXFSPCAVAIL_A> {
         match self.bits {
-            0 => Val(PTXFSPCAVAIL_A::VALUE1),
-            1 => Val(PTXFSPCAVAIL_A::VALUE2),
-            2 => Val(PTXFSPCAVAIL_A::VALUE3),
-            i => Res(i),
+            0 => Some(PTXFSPCAVAIL_A::VALUE1),
+            1 => Some(PTXFSPCAVAIL_A::VALUE2),
+            2 => Some(PTXFSPCAVAIL_A::VALUE3),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PTXFSPCAVAIL_A::VALUE1
+        **self == PTXFSPCAVAIL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PTXFSPCAVAIL_A::VALUE2
+        **self == PTXFSPCAVAIL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == PTXFSPCAVAIL_A::VALUE3
+        **self == PTXFSPCAVAIL_A::VALUE3
     }
 }
-#[doc = "Write proxy for field `PTxFSpcAvail`"]
+impl core::ops::Deref for PTXFSPCAVAIL_R {
+    type Target = crate::FieldReader<u16, PTXFSPCAVAIL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTxFSpcAvail` writer - Periodic Transmit Data FIFO Space Available"]
 pub struct PTXFSPCAVAIL_W<'a> {
     w: &'a mut W,
 }
@@ -85,7 +118,7 @@ impl<'a> PTXFSPCAVAIL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
         self.w
     }
 }
@@ -106,38 +139,59 @@ impl From<PTXQSPCAVAIL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PTxQSpcAvail`"]
-pub type PTXQSPCAVAIL_R = crate::R<u8, PTXQSPCAVAIL_A>;
+#[doc = "Field `PTxQSpcAvail` reader - Periodic Transmit Request Queue Space Available"]
+pub struct PTXQSPCAVAIL_R(crate::FieldReader<u8, PTXQSPCAVAIL_A>);
 impl PTXQSPCAVAIL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PTXQSPCAVAIL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PTXQSPCAVAIL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PTXQSPCAVAIL_A> {
         match self.bits {
-            0 => Val(PTXQSPCAVAIL_A::VALUE1),
-            1 => Val(PTXQSPCAVAIL_A::VALUE2),
-            2 => Val(PTXQSPCAVAIL_A::VALUE3),
-            i => Res(i),
+            0 => Some(PTXQSPCAVAIL_A::VALUE1),
+            1 => Some(PTXQSPCAVAIL_A::VALUE2),
+            2 => Some(PTXQSPCAVAIL_A::VALUE3),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PTXQSPCAVAIL_A::VALUE1
+        **self == PTXQSPCAVAIL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PTXQSPCAVAIL_A::VALUE2
+        **self == PTXQSPCAVAIL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == PTXQSPCAVAIL_A::VALUE3
+        **self == PTXQSPCAVAIL_A::VALUE3
     }
 }
-#[doc = "Reader of field `PTxQTop`"]
-pub type PTXQTOP_R = crate::R<u8, u8>;
+impl core::ops::Deref for PTXQSPCAVAIL_R {
+    type Target = crate::FieldReader<u8, PTXQSPCAVAIL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PTxQTop` reader - Top of the Periodic Transmit Request Queue"]
+pub struct PTXQTOP_R(crate::FieldReader<u8, u8>);
+impl PTXQTOP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PTXQTOP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PTXQTOP_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bits 0:15 - Periodic Transmit Data FIFO Space Available"]
     #[inline(always)]
@@ -160,5 +214,31 @@ impl W {
     #[inline(always)]
     pub fn ptx_fspc_avail(&mut self) -> PTXFSPCAVAIL_W {
         PTXFSPCAVAIL_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Host Periodic Transmit FIFO/ Queue Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hptxsts](index.html) module"]
+pub struct HPTXSTS_SPEC;
+impl crate::RegisterSpec for HPTXSTS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [hptxsts::R](R) reader structure"]
+impl crate::Readable for HPTXSTS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [hptxsts::W](W) writer structure"]
+impl crate::Writable for HPTXSTS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets HPTXSTS to value 0x0008_0100"]
+impl crate::Resettable for HPTXSTS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0008_0100
     }
 }

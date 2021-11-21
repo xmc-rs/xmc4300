@@ -1,18 +1,54 @@
-#[doc = "Reader of register MMC_TRANSMIT_INTERRUPT_MASK"]
-pub type R = crate::R<u32, super::MMC_TRANSMIT_INTERRUPT_MASK>;
-#[doc = "Writer for register MMC_TRANSMIT_INTERRUPT_MASK"]
-pub type W = crate::W<u32, super::MMC_TRANSMIT_INTERRUPT_MASK>;
-#[doc = "Register MMC_TRANSMIT_INTERRUPT_MASK `reset()`'s with value 0"]
-impl crate::ResetValue for super::MMC_TRANSMIT_INTERRUPT_MASK {
-    type Type = u32;
+#[doc = "Register `MMC_TRANSMIT_INTERRUPT_MASK` reader"]
+pub struct R(crate::R<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TXGBOCTIM`"]
-pub type TXGBOCTIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXGBOCTIM`"]
+impl From<crate::R<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MMC_TRANSMIT_INTERRUPT_MASK` writer"]
+pub struct W(crate::W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MMC_TRANSMIT_INTERRUPT_MASK_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TXGBOCTIM` reader - MMC Transmit Good Bad Octet Counter Interrupt Mask"]
+pub struct TXGBOCTIM_R(crate::FieldReader<bool, bool>);
+impl TXGBOCTIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXGBOCTIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXGBOCTIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXGBOCTIM` writer - MMC Transmit Good Bad Octet Counter Interrupt Mask"]
 pub struct TXGBOCTIM_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> TXGBOCTIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `TXGBFRMIM`"]
-pub type TXGBFRMIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXGBFRMIM`"]
+#[doc = "Field `TXGBFRMIM` reader - MMC Transmit Good Bad Frame Counter Interrupt Mask"]
+pub struct TXGBFRMIM_R(crate::FieldReader<bool, bool>);
+impl TXGBFRMIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXGBFRMIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXGBFRMIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXGBFRMIM` writer - MMC Transmit Good Bad Frame Counter Interrupt Mask"]
 pub struct TXGBFRMIM_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +102,25 @@ impl<'a> TXGBFRMIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `TXBCGFIM`"]
-pub type TXBCGFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXBCGFIM`"]
+#[doc = "Field `TXBCGFIM` reader - MMC Transmit Broadcast Good Frame Counter Interrupt Mask"]
+pub struct TXBCGFIM_R(crate::FieldReader<bool, bool>);
+impl TXBCGFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXBCGFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXBCGFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXBCGFIM` writer - MMC Transmit Broadcast Good Frame Counter Interrupt Mask"]
 pub struct TXBCGFIM_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +138,25 @@ impl<'a> TXBCGFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `TXMCGFIM`"]
-pub type TXMCGFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXMCGFIM`"]
+#[doc = "Field `TXMCGFIM` reader - MMC Transmit Multicast Good Frame Counter Interrupt Mask"]
+pub struct TXMCGFIM_R(crate::FieldReader<bool, bool>);
+impl TXMCGFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXMCGFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXMCGFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXMCGFIM` writer - MMC Transmit Multicast Good Frame Counter Interrupt Mask"]
 pub struct TXMCGFIM_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +174,25 @@ impl<'a> TXMCGFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `TX64OCTGBFIM`"]
-pub type TX64OCTGBFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TX64OCTGBFIM`"]
+#[doc = "Field `TX64OCTGBFIM` reader - MMC Transmit 64 Octet Good Bad Frame Counter Interrupt Mask"]
+pub struct TX64OCTGBFIM_R(crate::FieldReader<bool, bool>);
+impl TX64OCTGBFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TX64OCTGBFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TX64OCTGBFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX64OCTGBFIM` writer - MMC Transmit 64 Octet Good Bad Frame Counter Interrupt Mask"]
 pub struct TX64OCTGBFIM_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +210,25 @@ impl<'a> TX64OCTGBFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `TX65T127OCTGBFIM`"]
-pub type TX65T127OCTGBFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TX65T127OCTGBFIM`"]
+#[doc = "Field `TX65T127OCTGBFIM` reader - MMC Transmit 65 to 127 Octet Good Bad Frame Counter Interrupt Mask"]
+pub struct TX65T127OCTGBFIM_R(crate::FieldReader<bool, bool>);
+impl TX65T127OCTGBFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TX65T127OCTGBFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TX65T127OCTGBFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX65T127OCTGBFIM` writer - MMC Transmit 65 to 127 Octet Good Bad Frame Counter Interrupt Mask"]
 pub struct TX65T127OCTGBFIM_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +246,25 @@ impl<'a> TX65T127OCTGBFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `TX128T255OCTGBFIM`"]
-pub type TX128T255OCTGBFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TX128T255OCTGBFIM`"]
+#[doc = "Field `TX128T255OCTGBFIM` reader - MMC Transmit 128 to 255 Octet Good Bad Frame Counter Interrupt Mask"]
+pub struct TX128T255OCTGBFIM_R(crate::FieldReader<bool, bool>);
+impl TX128T255OCTGBFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TX128T255OCTGBFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TX128T255OCTGBFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX128T255OCTGBFIM` writer - MMC Transmit 128 to 255 Octet Good Bad Frame Counter Interrupt Mask"]
 pub struct TX128T255OCTGBFIM_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +282,25 @@ impl<'a> TX128T255OCTGBFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `TX256T511OCTGBFIM`"]
-pub type TX256T511OCTGBFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TX256T511OCTGBFIM`"]
+#[doc = "Field `TX256T511OCTGBFIM` reader - MMC Transmit 256 to 511 Octet Good Bad Frame Counter Interrupt Mask"]
+pub struct TX256T511OCTGBFIM_R(crate::FieldReader<bool, bool>);
+impl TX256T511OCTGBFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TX256T511OCTGBFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TX256T511OCTGBFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX256T511OCTGBFIM` writer - MMC Transmit 256 to 511 Octet Good Bad Frame Counter Interrupt Mask"]
 pub struct TX256T511OCTGBFIM_W<'a> {
     w: &'a mut W,
 }
@@ -198,13 +318,25 @@ impl<'a> TX256T511OCTGBFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `TX512T1023OCTGBFIM`"]
-pub type TX512T1023OCTGBFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TX512T1023OCTGBFIM`"]
+#[doc = "Field `TX512T1023OCTGBFIM` reader - MMC Transmit 512 to 1023 Octet Good Bad Frame Counter Interrupt Mask"]
+pub struct TX512T1023OCTGBFIM_R(crate::FieldReader<bool, bool>);
+impl TX512T1023OCTGBFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TX512T1023OCTGBFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TX512T1023OCTGBFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX512T1023OCTGBFIM` writer - MMC Transmit 512 to 1023 Octet Good Bad Frame Counter Interrupt Mask"]
 pub struct TX512T1023OCTGBFIM_W<'a> {
     w: &'a mut W,
 }
@@ -222,13 +354,25 @@ impl<'a> TX512T1023OCTGBFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `TX1024TMAXOCTGBFIM`"]
-pub type TX1024TMAXOCTGBFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TX1024TMAXOCTGBFIM`"]
+#[doc = "Field `TX1024TMAXOCTGBFIM` reader - MMC Transmit 1024 to Maximum Octet Good Bad Frame Counter Interrupt Mask"]
+pub struct TX1024TMAXOCTGBFIM_R(crate::FieldReader<bool, bool>);
+impl TX1024TMAXOCTGBFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TX1024TMAXOCTGBFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TX1024TMAXOCTGBFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX1024TMAXOCTGBFIM` writer - MMC Transmit 1024 to Maximum Octet Good Bad Frame Counter Interrupt Mask"]
 pub struct TX1024TMAXOCTGBFIM_W<'a> {
     w: &'a mut W,
 }
@@ -246,13 +390,25 @@ impl<'a> TX1024TMAXOCTGBFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `TXUCGBFIM`"]
-pub type TXUCGBFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXUCGBFIM`"]
+#[doc = "Field `TXUCGBFIM` reader - MMC Transmit Unicast Good Bad Frame Counter Interrupt Mask"]
+pub struct TXUCGBFIM_R(crate::FieldReader<bool, bool>);
+impl TXUCGBFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXUCGBFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXUCGBFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXUCGBFIM` writer - MMC Transmit Unicast Good Bad Frame Counter Interrupt Mask"]
 pub struct TXUCGBFIM_W<'a> {
     w: &'a mut W,
 }
@@ -270,13 +426,25 @@ impl<'a> TXUCGBFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `TXMCGBFIM`"]
-pub type TXMCGBFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXMCGBFIM`"]
+#[doc = "Field `TXMCGBFIM` reader - MMC Transmit Multicast Good Bad Frame Counter Interrupt Mask"]
+pub struct TXMCGBFIM_R(crate::FieldReader<bool, bool>);
+impl TXMCGBFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXMCGBFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXMCGBFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXMCGBFIM` writer - MMC Transmit Multicast Good Bad Frame Counter Interrupt Mask"]
 pub struct TXMCGBFIM_W<'a> {
     w: &'a mut W,
 }
@@ -294,13 +462,25 @@ impl<'a> TXMCGBFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Reader of field `TXBCGBFIM`"]
-pub type TXBCGBFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXBCGBFIM`"]
+#[doc = "Field `TXBCGBFIM` reader - MMC Transmit Broadcast Good Bad Frame Counter Interrupt Mask"]
+pub struct TXBCGBFIM_R(crate::FieldReader<bool, bool>);
+impl TXBCGBFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXBCGBFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXBCGBFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXBCGBFIM` writer - MMC Transmit Broadcast Good Bad Frame Counter Interrupt Mask"]
 pub struct TXBCGBFIM_W<'a> {
     w: &'a mut W,
 }
@@ -318,13 +498,25 @@ impl<'a> TXBCGBFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `TXUFLOWERFIM`"]
-pub type TXUFLOWERFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXUFLOWERFIM`"]
+#[doc = "Field `TXUFLOWERFIM` reader - MMC Transmit Underflow Error Frame Counter Interrupt Mask"]
+pub struct TXUFLOWERFIM_R(crate::FieldReader<bool, bool>);
+impl TXUFLOWERFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXUFLOWERFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXUFLOWERFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXUFLOWERFIM` writer - MMC Transmit Underflow Error Frame Counter Interrupt Mask"]
 pub struct TXUFLOWERFIM_W<'a> {
     w: &'a mut W,
 }
@@ -342,13 +534,25 @@ impl<'a> TXUFLOWERFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Reader of field `TXSCOLGFIM`"]
-pub type TXSCOLGFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXSCOLGFIM`"]
+#[doc = "Field `TXSCOLGFIM` reader - MMC Transmit Single Collision Good Frame Counter Interrupt Mask"]
+pub struct TXSCOLGFIM_R(crate::FieldReader<bool, bool>);
+impl TXSCOLGFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXSCOLGFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXSCOLGFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXSCOLGFIM` writer - MMC Transmit Single Collision Good Frame Counter Interrupt Mask"]
 pub struct TXSCOLGFIM_W<'a> {
     w: &'a mut W,
 }
@@ -366,13 +570,25 @@ impl<'a> TXSCOLGFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Reader of field `TXMCOLGFIM`"]
-pub type TXMCOLGFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXMCOLGFIM`"]
+#[doc = "Field `TXMCOLGFIM` reader - MMC Transmit Multiple Collision Good Frame Counter Interrupt Mask"]
+pub struct TXMCOLGFIM_R(crate::FieldReader<bool, bool>);
+impl TXMCOLGFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXMCOLGFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXMCOLGFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXMCOLGFIM` writer - MMC Transmit Multiple Collision Good Frame Counter Interrupt Mask"]
 pub struct TXMCOLGFIM_W<'a> {
     w: &'a mut W,
 }
@@ -390,13 +606,25 @@ impl<'a> TXMCOLGFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
-#[doc = "Reader of field `TXDEFFIM`"]
-pub type TXDEFFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXDEFFIM`"]
+#[doc = "Field `TXDEFFIM` reader - MMC Transmit Deferred Frame Counter Interrupt Mask"]
+pub struct TXDEFFIM_R(crate::FieldReader<bool, bool>);
+impl TXDEFFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXDEFFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXDEFFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXDEFFIM` writer - MMC Transmit Deferred Frame Counter Interrupt Mask"]
 pub struct TXDEFFIM_W<'a> {
     w: &'a mut W,
 }
@@ -414,13 +642,25 @@ impl<'a> TXDEFFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `TXLATCOLFIM`"]
-pub type TXLATCOLFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXLATCOLFIM`"]
+#[doc = "Field `TXLATCOLFIM` reader - MMC Transmit Late Collision Frame Counter Interrupt Mask"]
+pub struct TXLATCOLFIM_R(crate::FieldReader<bool, bool>);
+impl TXLATCOLFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXLATCOLFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXLATCOLFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXLATCOLFIM` writer - MMC Transmit Late Collision Frame Counter Interrupt Mask"]
 pub struct TXLATCOLFIM_W<'a> {
     w: &'a mut W,
 }
@@ -438,13 +678,25 @@ impl<'a> TXLATCOLFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Reader of field `TXEXCOLFIM`"]
-pub type TXEXCOLFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXEXCOLFIM`"]
+#[doc = "Field `TXEXCOLFIM` reader - MMC Transmit Excessive Collision Frame Counter Interrupt Mask"]
+pub struct TXEXCOLFIM_R(crate::FieldReader<bool, bool>);
+impl TXEXCOLFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXEXCOLFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXEXCOLFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXEXCOLFIM` writer - MMC Transmit Excessive Collision Frame Counter Interrupt Mask"]
 pub struct TXEXCOLFIM_W<'a> {
     w: &'a mut W,
 }
@@ -462,13 +714,25 @@ impl<'a> TXEXCOLFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Reader of field `TXCARERFIM`"]
-pub type TXCARERFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXCARERFIM`"]
+#[doc = "Field `TXCARERFIM` reader - MMC Transmit Carrier Error Frame Counter Interrupt Mask"]
+pub struct TXCARERFIM_R(crate::FieldReader<bool, bool>);
+impl TXCARERFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXCARERFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXCARERFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXCARERFIM` writer - MMC Transmit Carrier Error Frame Counter Interrupt Mask"]
 pub struct TXCARERFIM_W<'a> {
     w: &'a mut W,
 }
@@ -486,13 +750,25 @@ impl<'a> TXCARERFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
-#[doc = "Reader of field `TXGOCTIM`"]
-pub type TXGOCTIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXGOCTIM`"]
+#[doc = "Field `TXGOCTIM` reader - MMC Transmit Good Octet Counter Interrupt Mask"]
+pub struct TXGOCTIM_R(crate::FieldReader<bool, bool>);
+impl TXGOCTIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXGOCTIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXGOCTIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXGOCTIM` writer - MMC Transmit Good Octet Counter Interrupt Mask"]
 pub struct TXGOCTIM_W<'a> {
     w: &'a mut W,
 }
@@ -510,13 +786,25 @@ impl<'a> TXGOCTIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
-#[doc = "Reader of field `TXGFRMIM`"]
-pub type TXGFRMIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXGFRMIM`"]
+#[doc = "Field `TXGFRMIM` reader - MMC Transmit Good Frame Counter Interrupt Mask"]
+pub struct TXGFRMIM_R(crate::FieldReader<bool, bool>);
+impl TXGFRMIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXGFRMIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXGFRMIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXGFRMIM` writer - MMC Transmit Good Frame Counter Interrupt Mask"]
 pub struct TXGFRMIM_W<'a> {
     w: &'a mut W,
 }
@@ -534,13 +822,25 @@ impl<'a> TXGFRMIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
         self.w
     }
 }
-#[doc = "Reader of field `TXEXDEFFIM`"]
-pub type TXEXDEFFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXEXDEFFIM`"]
+#[doc = "Field `TXEXDEFFIM` reader - MMC Transmit Excessive Deferral Frame Counter Interrupt Mask"]
+pub struct TXEXDEFFIM_R(crate::FieldReader<bool, bool>);
+impl TXEXDEFFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXEXDEFFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXEXDEFFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXEXDEFFIM` writer - MMC Transmit Excessive Deferral Frame Counter Interrupt Mask"]
 pub struct TXEXDEFFIM_W<'a> {
     w: &'a mut W,
 }
@@ -558,13 +858,25 @@ impl<'a> TXEXDEFFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
         self.w
     }
 }
-#[doc = "Reader of field `TXPAUSFIM`"]
-pub type TXPAUSFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXPAUSFIM`"]
+#[doc = "Field `TXPAUSFIM` reader - MMC Transmit Pause Frame Counter Interrupt Mask"]
+pub struct TXPAUSFIM_R(crate::FieldReader<bool, bool>);
+impl TXPAUSFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXPAUSFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXPAUSFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXPAUSFIM` writer - MMC Transmit Pause Frame Counter Interrupt Mask"]
 pub struct TXPAUSFIM_W<'a> {
     w: &'a mut W,
 }
@@ -582,13 +894,25 @@ impl<'a> TXPAUSFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
-#[doc = "Reader of field `TXVLANGFIM`"]
-pub type TXVLANGFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXVLANGFIM`"]
+#[doc = "Field `TXVLANGFIM` reader - MMC Transmit VLAN Good Frame Counter Interrupt Mask"]
+pub struct TXVLANGFIM_R(crate::FieldReader<bool, bool>);
+impl TXVLANGFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXVLANGFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXVLANGFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXVLANGFIM` writer - MMC Transmit VLAN Good Frame Counter Interrupt Mask"]
 pub struct TXVLANGFIM_W<'a> {
     w: &'a mut W,
 }
@@ -606,13 +930,25 @@ impl<'a> TXVLANGFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Reader of field `TXOSIZEGFIM`"]
-pub type TXOSIZEGFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXOSIZEGFIM`"]
+#[doc = "Field `TXOSIZEGFIM` reader - MMC Transmit Oversize Good Frame Counter Interrupt Mask"]
+pub struct TXOSIZEGFIM_R(crate::FieldReader<bool, bool>);
+impl TXOSIZEGFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXOSIZEGFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXOSIZEGFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXOSIZEGFIM` writer - MMC Transmit Oversize Good Frame Counter Interrupt Mask"]
 pub struct TXOSIZEGFIM_W<'a> {
     w: &'a mut W,
 }
@@ -630,7 +966,7 @@ impl<'a> TXOSIZEGFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
         self.w
     }
 }
@@ -896,5 +1232,31 @@ impl W {
     #[inline(always)]
     pub fn txosizegfim(&mut self) -> TXOSIZEGFIM_W {
         TXOSIZEGFIM_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "MMC Transmit Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mmc_transmit_interrupt_mask](index.html) module"]
+pub struct MMC_TRANSMIT_INTERRUPT_MASK_SPEC;
+impl crate::RegisterSpec for MMC_TRANSMIT_INTERRUPT_MASK_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [mmc_transmit_interrupt_mask::R](R) reader structure"]
+impl crate::Readable for MMC_TRANSMIT_INTERRUPT_MASK_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [mmc_transmit_interrupt_mask::W](W) writer structure"]
+impl crate::Writable for MMC_TRANSMIT_INTERRUPT_MASK_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MMC_TRANSMIT_INTERRUPT_MASK to value 0"]
+impl crate::Resettable for MMC_TRANSMIT_INTERRUPT_MASK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

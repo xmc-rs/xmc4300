@@ -1,13 +1,37 @@
-#[doc = "Reader of register NMIREQEN"]
-pub type R = crate::R<u32, super::NMIREQEN>;
-#[doc = "Writer for register NMIREQEN"]
-pub type W = crate::W<u32, super::NMIREQEN>;
-#[doc = "Register NMIREQEN `reset()`'s with value 0"]
-impl crate::ResetValue for super::NMIREQEN {
-    type Type = u32;
+#[doc = "Register `NMIREQEN` reader"]
+pub struct R(crate::R<NMIREQEN_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<NMIREQEN_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<NMIREQEN_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<NMIREQEN_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `NMIREQEN` writer"]
+pub struct W(crate::W<NMIREQEN_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<NMIREQEN_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<NMIREQEN_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<NMIREQEN_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Promote Pre-Warning Interrupt Request to NMI Request\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<PRWARN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PRWARN`"]
-pub type PRWARN_R = crate::R<bool, PRWARN_A>;
+#[doc = "Field `PRWARN` reader - Promote Pre-Warning Interrupt Request to NMI Request"]
+pub struct PRWARN_R(crate::FieldReader<bool, PRWARN_A>);
 impl PRWARN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PRWARN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRWARN_A {
@@ -38,15 +65,22 @@ impl PRWARN_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PRWARN_A::CONST_0
+        **self == PRWARN_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PRWARN_A::CONST_1
+        **self == PRWARN_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PRWARN`"]
+impl core::ops::Deref for PRWARN_R {
+    type Target = crate::FieldReader<bool, PRWARN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRWARN` writer - Promote Pre-Warning Interrupt Request to NMI Request"]
 pub struct PRWARN_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> PRWARN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PRWARN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> PRWARN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<PI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PI`"]
-pub type PI_R = crate::R<bool, PI_A>;
+#[doc = "Field `PI` reader - Promote RTC Periodic Interrupt request to NMI Request"]
+pub struct PI_R(crate::FieldReader<bool, PI_A>);
 impl PI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PI_A {
@@ -113,15 +148,22 @@ impl PI_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PI_A::CONST_0
+        **self == PI_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PI_A::CONST_1
+        **self == PI_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PI`"]
+impl core::ops::Deref for PI_R {
+    type Target = crate::FieldReader<bool, PI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PI` writer - Promote RTC Periodic Interrupt request to NMI Request"]
 pub struct PI_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> PI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PI_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> PI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<AI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `AI`"]
-pub type AI_R = crate::R<bool, AI_A>;
+#[doc = "Field `AI` reader - Promote RTC Alarm Interrupt Request to NMI Request"]
+pub struct AI_R(crate::FieldReader<bool, AI_A>);
 impl AI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AI_A {
@@ -188,15 +231,22 @@ impl AI_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == AI_A::CONST_0
+        **self == AI_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == AI_A::CONST_1
+        **self == AI_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `AI`"]
+impl core::ops::Deref for AI_R {
+    type Target = crate::FieldReader<bool, AI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AI` writer - Promote RTC Alarm Interrupt Request to NMI Request"]
 pub struct AI_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> AI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AI_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> AI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<ERU00_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ERU00`"]
-pub type ERU00_R = crate::R<bool, ERU00_A>;
+#[doc = "Field `ERU00` reader - Promote Channel 0 Interrupt of ERU0 Request to NMI Request"]
+pub struct ERU00_R(crate::FieldReader<bool, ERU00_A>);
 impl ERU00_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ERU00_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ERU00_A {
@@ -263,15 +314,22 @@ impl ERU00_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ERU00_A::CONST_0
+        **self == ERU00_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ERU00_A::CONST_1
+        **self == ERU00_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `ERU00`"]
+impl core::ops::Deref for ERU00_R {
+    type Target = crate::FieldReader<bool, ERU00_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ERU00` writer - Promote Channel 0 Interrupt of ERU0 Request to NMI Request"]
 pub struct ERU00_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> ERU00_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ERU00_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> ERU00_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -324,9 +380,12 @@ impl From<ERU01_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ERU01`"]
-pub type ERU01_R = crate::R<bool, ERU01_A>;
+#[doc = "Field `ERU01` reader - Promote Channel 1 Interrupt of ERU0 Request to NMI Request"]
+pub struct ERU01_R(crate::FieldReader<bool, ERU01_A>);
 impl ERU01_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ERU01_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ERU01_A {
@@ -338,15 +397,22 @@ impl ERU01_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ERU01_A::CONST_0
+        **self == ERU01_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ERU01_A::CONST_1
+        **self == ERU01_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `ERU01`"]
+impl core::ops::Deref for ERU01_R {
+    type Target = crate::FieldReader<bool, ERU01_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ERU01` writer - Promote Channel 1 Interrupt of ERU0 Request to NMI Request"]
 pub struct ERU01_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +420,7 @@ impl<'a> ERU01_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ERU01_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -381,7 +445,7 @@ impl<'a> ERU01_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
@@ -399,9 +463,12 @@ impl From<ERU02_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ERU02`"]
-pub type ERU02_R = crate::R<bool, ERU02_A>;
+#[doc = "Field `ERU02` reader - Promote Channel 2 Interrupt of ERU0 Request to NMI Request"]
+pub struct ERU02_R(crate::FieldReader<bool, ERU02_A>);
 impl ERU02_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ERU02_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ERU02_A {
@@ -413,15 +480,22 @@ impl ERU02_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ERU02_A::CONST_0
+        **self == ERU02_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ERU02_A::CONST_1
+        **self == ERU02_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `ERU02`"]
+impl core::ops::Deref for ERU02_R {
+    type Target = crate::FieldReader<bool, ERU02_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ERU02` writer - Promote Channel 2 Interrupt of ERU0 Request to NMI Request"]
 pub struct ERU02_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +503,7 @@ impl<'a> ERU02_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ERU02_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -456,7 +528,7 @@ impl<'a> ERU02_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
@@ -474,9 +546,12 @@ impl From<ERU03_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ERU03`"]
-pub type ERU03_R = crate::R<bool, ERU03_A>;
+#[doc = "Field `ERU03` reader - Promote Channel 3 Interrupt of ERU0 Request to NMI Request"]
+pub struct ERU03_R(crate::FieldReader<bool, ERU03_A>);
 impl ERU03_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ERU03_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ERU03_A {
@@ -488,15 +563,22 @@ impl ERU03_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ERU03_A::CONST_0
+        **self == ERU03_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ERU03_A::CONST_1
+        **self == ERU03_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `ERU03`"]
+impl core::ops::Deref for ERU03_R {
+    type Target = crate::FieldReader<bool, ERU03_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ERU03` writer - Promote Channel 3 Interrupt of ERU0 Request to NMI Request"]
 pub struct ERU03_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +586,7 @@ impl<'a> ERU03_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ERU03_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -531,7 +611,7 @@ impl<'a> ERU03_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -607,5 +687,31 @@ impl W {
     #[inline(always)]
     pub fn eru03(&mut self) -> ERU03_W {
         ERU03_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "SCU Service Request Mask\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nmireqen](index.html) module"]
+pub struct NMIREQEN_SPEC;
+impl crate::RegisterSpec for NMIREQEN_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [nmireqen::R](R) reader structure"]
+impl crate::Readable for NMIREQEN_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [nmireqen::W](W) writer structure"]
+impl crate::Writable for NMIREQEN_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets NMIREQEN to value 0"]
+impl crate::Resettable for NMIREQEN_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

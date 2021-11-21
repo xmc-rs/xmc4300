@@ -1,18 +1,54 @@
-#[doc = "Reader of register IOCR12"]
-pub type R = crate::R<u32, super::IOCR12>;
-#[doc = "Writer for register IOCR12"]
-pub type W = crate::W<u32, super::IOCR12>;
-#[doc = "Register IOCR12 `reset()`'s with value 0"]
-impl crate::ResetValue for super::IOCR12 {
-    type Type = u32;
+#[doc = "Register `IOCR12` reader"]
+pub struct R(crate::R<IOCR12_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<IOCR12_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PC12`"]
-pub type PC12_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PC12`"]
+impl From<crate::R<IOCR12_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<IOCR12_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `IOCR12` writer"]
+pub struct W(crate::W<IOCR12_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<IOCR12_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<IOCR12_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<IOCR12_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PC12` reader - Port Control for Port n Pin 12 to 15"]
+pub struct PC12_R(crate::FieldReader<u8, u8>);
+impl PC12_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PC12_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PC12_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PC12` writer - Port Control for Port n Pin 12 to 15"]
 pub struct PC12_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> PC12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 3)) | (((value as u32) & 0x1f) << 3);
+        self.w.bits = (self.w.bits & !(0x1f << 3)) | ((value as u32 & 0x1f) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `PC13`"]
-pub type PC13_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PC13`"]
+#[doc = "Field `PC13` reader - Port Control for Port n Pin 12 to 15"]
+pub struct PC13_R(crate::FieldReader<u8, u8>);
+impl PC13_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PC13_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PC13_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PC13` writer - Port Control for Port n Pin 12 to 15"]
 pub struct PC13_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +82,25 @@ impl<'a> PC13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 11)) | (((value as u32) & 0x1f) << 11);
+        self.w.bits = (self.w.bits & !(0x1f << 11)) | ((value as u32 & 0x1f) << 11);
         self.w
     }
 }
-#[doc = "Reader of field `PC14`"]
-pub type PC14_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PC14`"]
+#[doc = "Field `PC14` reader - Port Control for Port n Pin 12 to 15"]
+pub struct PC14_R(crate::FieldReader<u8, u8>);
+impl PC14_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PC14_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PC14_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PC14` writer - Port Control for Port n Pin 12 to 15"]
 pub struct PC14_W<'a> {
     w: &'a mut W,
 }
@@ -48,13 +108,25 @@ impl<'a> PC14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 19)) | (((value as u32) & 0x1f) << 19);
+        self.w.bits = (self.w.bits & !(0x1f << 19)) | ((value as u32 & 0x1f) << 19);
         self.w
     }
 }
-#[doc = "Reader of field `PC15`"]
-pub type PC15_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PC15`"]
+#[doc = "Field `PC15` reader - Port Control for Port n Pin 12 to 15"]
+pub struct PC15_R(crate::FieldReader<u8, u8>);
+impl PC15_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PC15_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PC15_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PC15` writer - Port Control for Port n Pin 12 to 15"]
 pub struct PC15_W<'a> {
     w: &'a mut W,
 }
@@ -62,7 +134,7 @@ impl<'a> PC15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 27)) | (((value as u32) & 0x1f) << 27);
+        self.w.bits = (self.w.bits & !(0x1f << 27)) | ((value as u32 & 0x1f) << 27);
         self.w
     }
 }
@@ -108,5 +180,31 @@ impl W {
     #[inline(always)]
     pub fn pc15(&mut self) -> PC15_W {
         PC15_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port 14 Input/Output Control Register 12\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iocr12](index.html) module"]
+pub struct IOCR12_SPEC;
+impl crate::RegisterSpec for IOCR12_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [iocr12::R](R) reader structure"]
+impl crate::Readable for IOCR12_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [iocr12::W](W) writer structure"]
+impl crate::Writable for IOCR12_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets IOCR12 to value 0"]
+impl crate::Resettable for IOCR12_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

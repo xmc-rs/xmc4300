@@ -1,9 +1,46 @@
-#[doc = "Reader of register C0V"]
-pub type R = crate::R<u32, super::C0V>;
-#[doc = "Reader of field `CAPTV`"]
-pub type CAPTV_R = crate::R<u16, u16>;
-#[doc = "Reader of field `FPCV`"]
-pub type FPCV_R = crate::R<u8, u8>;
+#[doc = "Register `C0V` reader"]
+pub struct R(crate::R<C0V_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<C0V_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<C0V_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<C0V_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `CAPTV` reader - Capture Value"]
+pub struct CAPTV_R(crate::FieldReader<u16, u16>);
+impl CAPTV_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        CAPTV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CAPTV_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FPCV` reader - Prescaler Value"]
+pub struct FPCV_R(crate::FieldReader<u8, u8>);
+impl FPCV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FPCV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FPCV_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Full Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FFL_A {
@@ -18,9 +55,12 @@ impl From<FFL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FFL`"]
-pub type FFL_R = crate::R<bool, FFL_A>;
+#[doc = "Field `FFL` reader - Full Flag"]
+pub struct FFL_R(crate::FieldReader<bool, FFL_A>);
 impl FFL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FFL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FFL_A {
@@ -32,12 +72,19 @@ impl FFL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == FFL_A::VALUE1
+        **self == FFL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == FFL_A::VALUE2
+        **self == FFL_A::VALUE2
+    }
+}
+impl core::ops::Deref for FFL_R {
+    type Target = crate::FieldReader<bool, FFL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -55,5 +102,21 @@ impl R {
     #[inline(always)]
     pub fn ffl(&self) -> FFL_R {
         FFL_R::new(((self.bits >> 20) & 0x01) != 0)
+    }
+}
+#[doc = "Capture Register 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [c0v](index.html) module"]
+pub struct C0V_SPEC;
+impl crate::RegisterSpec for C0V_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [c0v::R](R) reader structure"]
+impl crate::Readable for C0V_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets C0V to value 0"]
+impl crate::Resettable for C0V_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,18 +1,54 @@
-#[doc = "Reader of register NFCR"]
-pub type R = crate::R<u32, super::NFCR>;
-#[doc = "Writer for register NFCR"]
-pub type W = crate::W<u32, super::NFCR>;
-#[doc = "Register NFCR `reset()`'s with value 0"]
-impl crate::ResetValue for super::NFCR {
-    type Type = u32;
+#[doc = "Register `NFCR` reader"]
+pub struct R(crate::R<NFCR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<NFCR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `CFC`"]
-pub type CFC_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `CFC`"]
+impl From<crate::R<NFCR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<NFCR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `NFCR` writer"]
+pub struct W(crate::W<NFCR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<NFCR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<NFCR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<NFCR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CFC` reader - CAN Frame Counter"]
+pub struct CFC_R(crate::FieldReader<u16, u16>);
+impl CFC_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        CFC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CFC_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CFC` writer - CAN Frame Counter"]
 pub struct CFC_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> CFC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
         self.w
     }
 }
-#[doc = "Reader of field `CFSEL`"]
-pub type CFSEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `CFSEL`"]
+#[doc = "Field `CFSEL` reader - CAN Frame Count Selection"]
+pub struct CFSEL_R(crate::FieldReader<u8, u8>);
+impl CFSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CFSEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CFSEL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CFSEL` writer - CAN Frame Count Selection"]
 pub struct CFSEL_W<'a> {
     w: &'a mut W,
 }
@@ -34,7 +82,7 @@ impl<'a> CFSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
         self.w
     }
 }
@@ -57,9 +105,12 @@ impl From<CFMOD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CFMOD`"]
-pub type CFMOD_R = crate::R<u8, CFMOD_A>;
+#[doc = "Field `CFMOD` reader - CAN Frame Counter Mode"]
+pub struct CFMOD_R(crate::FieldReader<u8, CFMOD_A>);
 impl CFMOD_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CFMOD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CFMOD_A {
@@ -74,25 +125,32 @@ impl CFMOD_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CFMOD_A::VALUE1
+        **self == CFMOD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CFMOD_A::VALUE2
+        **self == CFMOD_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CFMOD_A::VALUE3
+        **self == CFMOD_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == CFMOD_A::VALUE4
+        **self == CFMOD_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `CFMOD`"]
+impl core::ops::Deref for CFMOD_R {
+    type Target = crate::FieldReader<u8, CFMOD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CFMOD` writer - CAN Frame Counter Mode"]
 pub struct CFMOD_W<'a> {
     w: &'a mut W,
 }
@@ -100,9 +158,7 @@ impl<'a> CFMOD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CFMOD_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Frame Count Mode: The frame counter is incremented upon the reception and transmission of frames."]
     #[inline(always)]
@@ -127,7 +183,7 @@ impl<'a> CFMOD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 19)) | (((value as u32) & 0x03) << 19);
+        self.w.bits = (self.w.bits & !(0x03 << 19)) | ((value as u32 & 0x03) << 19);
         self.w
     }
 }
@@ -145,9 +201,12 @@ impl From<CFCIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CFCIE`"]
-pub type CFCIE_R = crate::R<bool, CFCIE_A>;
+#[doc = "Field `CFCIE` reader - CAN Frame Count Interrupt Enable"]
+pub struct CFCIE_R(crate::FieldReader<bool, CFCIE_A>);
 impl CFCIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CFCIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CFCIE_A {
@@ -159,15 +218,22 @@ impl CFCIE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CFCIE_A::VALUE1
+        **self == CFCIE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CFCIE_A::VALUE2
+        **self == CFCIE_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CFCIE`"]
+impl core::ops::Deref for CFCIE_R {
+    type Target = crate::FieldReader<bool, CFCIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CFCIE` writer - CAN Frame Count Interrupt Enable"]
 pub struct CFCIE_W<'a> {
     w: &'a mut W,
 }
@@ -175,9 +241,7 @@ impl<'a> CFCIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CFCIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "CAN frame counter overflow interrupt is disabled."]
     #[inline(always)]
@@ -202,7 +266,7 @@ impl<'a> CFCIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
         self.w
     }
 }
@@ -220,9 +284,12 @@ impl From<CFCOV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CFCOV`"]
-pub type CFCOV_R = crate::R<bool, CFCOV_A>;
+#[doc = "Field `CFCOV` reader - CAN Frame Counter Overflow Flag"]
+pub struct CFCOV_R(crate::FieldReader<bool, CFCOV_A>);
 impl CFCOV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CFCOV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CFCOV_A {
@@ -234,15 +301,22 @@ impl CFCOV_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CFCOV_A::VALUE1
+        **self == CFCOV_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CFCOV_A::VALUE2
+        **self == CFCOV_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CFCOV`"]
+impl core::ops::Deref for CFCOV_R {
+    type Target = crate::FieldReader<bool, CFCOV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CFCOV` writer - CAN Frame Counter Overflow Flag"]
 pub struct CFCOV_W<'a> {
     w: &'a mut W,
 }
@@ -250,9 +324,7 @@ impl<'a> CFCOV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CFCOV_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No overflow has occurred since last flag reset."]
     #[inline(always)]
@@ -277,7 +349,7 @@ impl<'a> CFCOV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
@@ -333,5 +405,31 @@ impl W {
     #[inline(always)]
     pub fn cfcov(&mut self) -> CFCOV_W {
         CFCOV_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Node Frame Counter Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nfcr](index.html) module"]
+pub struct NFCR_SPEC;
+impl crate::RegisterSpec for NFCR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [nfcr::R](R) reader structure"]
+impl crate::Readable for NFCR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [nfcr::W](W) writer structure"]
+impl crate::Writable for NFCR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets NFCR to value 0"]
+impl crate::Resettable for NFCR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

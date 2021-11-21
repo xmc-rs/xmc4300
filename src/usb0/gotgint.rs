@@ -1,18 +1,54 @@
-#[doc = "Reader of register GOTGINT"]
-pub type R = crate::R<u32, super::GOTGINT>;
-#[doc = "Writer for register GOTGINT"]
-pub type W = crate::W<u32, super::GOTGINT>;
-#[doc = "Register GOTGINT `reset()`'s with value 0"]
-impl crate::ResetValue for super::GOTGINT {
-    type Type = u32;
+#[doc = "Register `GOTGINT` reader"]
+pub struct R(crate::R<GOTGINT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GOTGINT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `SesEndDet`"]
-pub type SESENDDET_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SesEndDet`"]
+impl From<crate::R<GOTGINT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GOTGINT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `GOTGINT` writer"]
+pub struct W(crate::W<GOTGINT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<GOTGINT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<GOTGINT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<GOTGINT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SesEndDet` reader - Session End Detected"]
+pub struct SESENDDET_R(crate::FieldReader<bool, bool>);
+impl SESENDDET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SESENDDET_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SESENDDET_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SesEndDet` writer - Session End Detected"]
 pub struct SESENDDET_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> SESENDDET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `SesReqSucStsChng`"]
-pub type SESREQSUCSTSCHNG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SesReqSucStsChng`"]
+#[doc = "Field `SesReqSucStsChng` reader - Session Request Success Status Change"]
+pub struct SESREQSUCSTSCHNG_R(crate::FieldReader<bool, bool>);
+impl SESREQSUCSTSCHNG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SESREQSUCSTSCHNG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SESREQSUCSTSCHNG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SesReqSucStsChng` writer - Session Request Success Status Change"]
 pub struct SESREQSUCSTSCHNG_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +102,25 @@ impl<'a> SESREQSUCSTSCHNG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `HstNegSucStsChng`"]
-pub type HSTNEGSUCSTSCHNG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HstNegSucStsChng`"]
+#[doc = "Field `HstNegSucStsChng` reader - Host Negotiation Success Status Change"]
+pub struct HSTNEGSUCSTSCHNG_R(crate::FieldReader<bool, bool>);
+impl HSTNEGSUCSTSCHNG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HSTNEGSUCSTSCHNG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HSTNEGSUCSTSCHNG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HstNegSucStsChng` writer - Host Negotiation Success Status Change"]
 pub struct HSTNEGSUCSTSCHNG_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +138,25 @@ impl<'a> HSTNEGSUCSTSCHNG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `HstNegDet`"]
-pub type HSTNEGDET_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HstNegDet`"]
+#[doc = "Field `HstNegDet` reader - Host Negotiation Detected"]
+pub struct HSTNEGDET_R(crate::FieldReader<bool, bool>);
+impl HSTNEGDET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HSTNEGDET_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HSTNEGDET_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HstNegDet` writer - Host Negotiation Detected"]
 pub struct HSTNEGDET_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +174,25 @@ impl<'a> HSTNEGDET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Reader of field `ADevTOUTChg`"]
-pub type ADEVTOUTCHG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADevTOUTChg`"]
+#[doc = "Field `ADevTOUTChg` reader - A-Device Timeout Change"]
+pub struct ADEVTOUTCHG_R(crate::FieldReader<bool, bool>);
+impl ADEVTOUTCHG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADEVTOUTCHG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADEVTOUTCHG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADevTOUTChg` writer - A-Device Timeout Change"]
 pub struct ADEVTOUTCHG_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +210,25 @@ impl<'a> ADEVTOUTCHG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Reader of field `DbnceDone`"]
-pub type DBNCEDONE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DbnceDone`"]
+#[doc = "Field `DbnceDone` reader - Debounce Done"]
+pub struct DBNCEDONE_R(crate::FieldReader<bool, bool>);
+impl DBNCEDONE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DBNCEDONE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DBNCEDONE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DbnceDone` writer - Debounce Done"]
 pub struct DBNCEDONE_W<'a> {
     w: &'a mut W,
 }
@@ -150,7 +246,7 @@ impl<'a> DBNCEDONE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -216,5 +312,31 @@ impl W {
     #[inline(always)]
     pub fn dbnce_done(&mut self) -> DBNCEDONE_W {
         DBNCEDONE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "OTG Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gotgint](index.html) module"]
+pub struct GOTGINT_SPEC;
+impl crate::RegisterSpec for GOTGINT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [gotgint::R](R) reader structure"]
+impl crate::Readable for GOTGINT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [gotgint::W](W) writer structure"]
+impl crate::Writable for GOTGINT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets GOTGINT to value 0"]
+impl crate::Resettable for GOTGINT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

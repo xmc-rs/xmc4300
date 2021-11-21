@@ -1,18 +1,54 @@
-#[doc = "Reader of register BYPCR"]
-pub type R = crate::R<u32, super::BYPCR>;
-#[doc = "Writer for register BYPCR"]
-pub type W = crate::W<u32, super::BYPCR>;
-#[doc = "Register BYPCR `reset()`'s with value 0"]
-impl crate::ResetValue for super::BYPCR {
-    type Type = u32;
+#[doc = "Register `BYPCR` reader"]
+pub struct R(crate::R<BYPCR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<BYPCR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `BWLE`"]
-pub type BWLE_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `BWLE`"]
+impl From<crate::R<BYPCR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<BYPCR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `BYPCR` writer"]
+pub struct W(crate::W<BYPCR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<BYPCR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<BYPCR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<BYPCR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `BWLE` reader - Bypass Word Length"]
+pub struct BWLE_R(crate::FieldReader<u8, u8>);
+impl BWLE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BWLE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BWLE_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BWLE` writer - Bypass Word Length"]
 pub struct BWLE_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +56,7 @@ impl<'a> BWLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
         self.w
     }
 }
@@ -38,9 +74,12 @@ impl From<BDSSM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BDSSM`"]
-pub type BDSSM_R = crate::R<bool, BDSSM_A>;
+#[doc = "Field `BDSSM` reader - Bypass Data Single Shot Mode"]
+pub struct BDSSM_R(crate::FieldReader<bool, BDSSM_A>);
 impl BDSSM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BDSSM_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BDSSM_A {
@@ -52,15 +91,22 @@ impl BDSSM_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BDSSM_A::VALUE1
+        **self == BDSSM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BDSSM_A::VALUE2
+        **self == BDSSM_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `BDSSM`"]
+impl core::ops::Deref for BDSSM_R {
+    type Target = crate::FieldReader<bool, BDSSM_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BDSSM` writer - Bypass Data Single Shot Mode"]
 pub struct BDSSM_W<'a> {
     w: &'a mut W,
 }
@@ -68,9 +114,7 @@ impl<'a> BDSSM_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BDSSM_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The bypass data is still considered as valid after it has been loaded into TBUF. The loading of the data into TBUF does not clear BDV."]
     #[inline(always)]
@@ -95,7 +139,7 @@ impl<'a> BDSSM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -118,9 +162,12 @@ impl From<BDEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `BDEN`"]
-pub type BDEN_R = crate::R<u8, BDEN_A>;
+#[doc = "Field `BDEN` reader - Bypass Data Enable"]
+pub struct BDEN_R(crate::FieldReader<u8, BDEN_A>);
 impl BDEN_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BDEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BDEN_A {
@@ -135,25 +182,32 @@ impl BDEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BDEN_A::VALUE1
+        **self == BDEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BDEN_A::VALUE2
+        **self == BDEN_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == BDEN_A::VALUE3
+        **self == BDEN_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == BDEN_A::VALUE4
+        **self == BDEN_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `BDEN`"]
+impl core::ops::Deref for BDEN_R {
+    type Target = crate::FieldReader<u8, BDEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BDEN` writer - Bypass Data Enable"]
 pub struct BDEN_W<'a> {
     w: &'a mut W,
 }
@@ -161,9 +215,7 @@ impl<'a> BDEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BDEN_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "The transfer of bypass data is disabled."]
     #[inline(always)]
@@ -188,7 +240,7 @@ impl<'a> BDEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
         self.w
     }
 }
@@ -206,9 +258,12 @@ impl From<BDVTR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BDVTR`"]
-pub type BDVTR_R = crate::R<bool, BDVTR_A>;
+#[doc = "Field `BDVTR` reader - Bypass Data Valid Trigger"]
+pub struct BDVTR_R(crate::FieldReader<bool, BDVTR_A>);
 impl BDVTR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BDVTR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BDVTR_A {
@@ -220,15 +275,22 @@ impl BDVTR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BDVTR_A::VALUE1
+        **self == BDVTR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BDVTR_A::VALUE2
+        **self == BDVTR_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `BDVTR`"]
+impl core::ops::Deref for BDVTR_R {
+    type Target = crate::FieldReader<bool, BDVTR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BDVTR` writer - Bypass Data Valid Trigger"]
 pub struct BDVTR_W<'a> {
     w: &'a mut W,
 }
@@ -236,9 +298,7 @@ impl<'a> BDVTR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BDVTR_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Bit BDV is not influenced by DX2T."]
     #[inline(always)]
@@ -263,7 +323,7 @@ impl<'a> BDVTR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -281,9 +341,12 @@ impl From<BPRIO_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BPRIO`"]
-pub type BPRIO_R = crate::R<bool, BPRIO_A>;
+#[doc = "Field `BPRIO` reader - Bypass Priority"]
+pub struct BPRIO_R(crate::FieldReader<bool, BPRIO_A>);
 impl BPRIO_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BPRIO_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BPRIO_A {
@@ -295,15 +358,22 @@ impl BPRIO_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BPRIO_A::VALUE1
+        **self == BPRIO_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BPRIO_A::VALUE2
+        **self == BPRIO_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `BPRIO`"]
+impl core::ops::Deref for BPRIO_R {
+    type Target = crate::FieldReader<bool, BPRIO_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BPRIO` writer - Bypass Priority"]
 pub struct BPRIO_W<'a> {
     w: &'a mut W,
 }
@@ -311,9 +381,7 @@ impl<'a> BPRIO_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BPRIO_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The transmit FIFO data has a higher priority than the bypass data."]
     #[inline(always)]
@@ -338,7 +406,7 @@ impl<'a> BPRIO_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -356,9 +424,12 @@ impl From<BDV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BDV`"]
-pub type BDV_R = crate::R<bool, BDV_A>;
+#[doc = "Field `BDV` reader - Bypass Data Valid"]
+pub struct BDV_R(crate::FieldReader<bool, BDV_A>);
 impl BDV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BDV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BDV_A {
@@ -370,17 +441,36 @@ impl BDV_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BDV_A::VALUE1
+        **self == BDV_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BDV_A::VALUE2
+        **self == BDV_A::VALUE2
     }
 }
-#[doc = "Reader of field `BSELO`"]
-pub type BSELO_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `BSELO`"]
+impl core::ops::Deref for BDV_R {
+    type Target = crate::FieldReader<bool, BDV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BSELO` reader - Bypass Select Outputs"]
+pub struct BSELO_R(crate::FieldReader<u8, u8>);
+impl BSELO_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BSELO_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BSELO_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BSELO` writer - Bypass Select Outputs"]
 pub struct BSELO_W<'a> {
     w: &'a mut W,
 }
@@ -388,13 +478,25 @@ impl<'a> BSELO_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 16)) | (((value as u32) & 0x1f) << 16);
+        self.w.bits = (self.w.bits & !(0x1f << 16)) | ((value as u32 & 0x1f) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `BHPC`"]
-pub type BHPC_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `BHPC`"]
+#[doc = "Field `BHPC` reader - Bypass Hardware Port Control"]
+pub struct BHPC_R(crate::FieldReader<u8, u8>);
+impl BHPC_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BHPC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BHPC_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BHPC` writer - Bypass Hardware Port Control"]
 pub struct BHPC_W<'a> {
     w: &'a mut W,
 }
@@ -402,7 +504,7 @@ impl<'a> BHPC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 21)) | (((value as u32) & 0x07) << 21);
+        self.w.bits = (self.w.bits & !(0x07 << 21)) | ((value as u32 & 0x07) << 21);
         self.w
     }
 }
@@ -483,5 +585,31 @@ impl W {
     #[inline(always)]
     pub fn bhpc(&mut self) -> BHPC_W {
         BHPC_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Bypass Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bypcr](index.html) module"]
+pub struct BYPCR_SPEC;
+impl crate::RegisterSpec for BYPCR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [bypcr::R](R) reader structure"]
+impl crate::Readable for BYPCR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [bypcr::W](W) writer structure"]
+impl crate::Writable for BYPCR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets BYPCR to value 0"]
+impl crate::Resettable for BYPCR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

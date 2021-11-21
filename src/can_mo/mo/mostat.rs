@@ -1,5 +1,18 @@
-#[doc = "Reader of register MOSTAT"]
-pub type R = crate::R<u32, super::MOSTAT>;
+#[doc = "Register `MOSTAT` reader"]
+pub struct R(crate::R<MOSTAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MOSTAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<MOSTAT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MOSTAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Receive Pending\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXPND_A {
@@ -14,9 +27,12 @@ impl From<RXPND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RXPND`"]
-pub type RXPND_R = crate::R<bool, RXPND_A>;
+#[doc = "Field `RXPND` reader - Receive Pending"]
+pub struct RXPND_R(crate::FieldReader<bool, RXPND_A>);
 impl RXPND_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXPND_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXPND_A {
@@ -28,12 +44,19 @@ impl RXPND_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RXPND_A::VALUE1
+        **self == RXPND_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RXPND_A::VALUE2
+        **self == RXPND_A::VALUE2
+    }
+}
+impl core::ops::Deref for RXPND_R {
+    type Target = crate::FieldReader<bool, RXPND_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Transmit Pending\n\nValue on reset: 0"]
@@ -50,9 +73,12 @@ impl From<TXPND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TXPND`"]
-pub type TXPND_R = crate::R<bool, TXPND_A>;
+#[doc = "Field `TXPND` reader - Transmit Pending"]
+pub struct TXPND_R(crate::FieldReader<bool, TXPND_A>);
 impl TXPND_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXPND_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXPND_A {
@@ -64,12 +90,19 @@ impl TXPND_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TXPND_A::VALUE1
+        **self == TXPND_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TXPND_A::VALUE2
+        **self == TXPND_A::VALUE2
+    }
+}
+impl core::ops::Deref for TXPND_R {
+    type Target = crate::FieldReader<bool, TXPND_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Receive Updating\n\nValue on reset: 0"]
@@ -86,9 +119,12 @@ impl From<RXUPD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RXUPD`"]
-pub type RXUPD_R = crate::R<bool, RXUPD_A>;
+#[doc = "Field `RXUPD` reader - Receive Updating"]
+pub struct RXUPD_R(crate::FieldReader<bool, RXUPD_A>);
 impl RXUPD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXUPD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXUPD_A {
@@ -100,12 +136,19 @@ impl RXUPD_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RXUPD_A::VALUE1
+        **self == RXUPD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RXUPD_A::VALUE2
+        **self == RXUPD_A::VALUE2
+    }
+}
+impl core::ops::Deref for RXUPD_R {
+    type Target = crate::FieldReader<bool, RXUPD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "New Data\n\nValue on reset: 0"]
@@ -122,9 +165,12 @@ impl From<NEWDAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `NEWDAT`"]
-pub type NEWDAT_R = crate::R<bool, NEWDAT_A>;
+#[doc = "Field `NEWDAT` reader - New Data"]
+pub struct NEWDAT_R(crate::FieldReader<bool, NEWDAT_A>);
 impl NEWDAT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NEWDAT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NEWDAT_A {
@@ -136,12 +182,19 @@ impl NEWDAT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == NEWDAT_A::VALUE1
+        **self == NEWDAT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == NEWDAT_A::VALUE2
+        **self == NEWDAT_A::VALUE2
+    }
+}
+impl core::ops::Deref for NEWDAT_R {
+    type Target = crate::FieldReader<bool, NEWDAT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Message Lost\n\nValue on reset: 0"]
@@ -158,9 +211,12 @@ impl From<MSGLST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MSGLST`"]
-pub type MSGLST_R = crate::R<bool, MSGLST_A>;
+#[doc = "Field `MSGLST` reader - Message Lost"]
+pub struct MSGLST_R(crate::FieldReader<bool, MSGLST_A>);
 impl MSGLST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MSGLST_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MSGLST_A {
@@ -172,12 +228,19 @@ impl MSGLST_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MSGLST_A::VALUE1
+        **self == MSGLST_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MSGLST_A::VALUE2
+        **self == MSGLST_A::VALUE2
+    }
+}
+impl core::ops::Deref for MSGLST_R {
+    type Target = crate::FieldReader<bool, MSGLST_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Message Valid\n\nValue on reset: 0"]
@@ -194,9 +257,12 @@ impl From<MSGVAL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MSGVAL`"]
-pub type MSGVAL_R = crate::R<bool, MSGVAL_A>;
+#[doc = "Field `MSGVAL` reader - Message Valid"]
+pub struct MSGVAL_R(crate::FieldReader<bool, MSGVAL_A>);
 impl MSGVAL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MSGVAL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MSGVAL_A {
@@ -208,12 +274,19 @@ impl MSGVAL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MSGVAL_A::VALUE1
+        **self == MSGVAL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MSGVAL_A::VALUE2
+        **self == MSGVAL_A::VALUE2
+    }
+}
+impl core::ops::Deref for MSGVAL_R {
+    type Target = crate::FieldReader<bool, MSGVAL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Receive/Transmit Selected\n\nValue on reset: 0"]
@@ -230,9 +303,12 @@ impl From<RTSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTSEL`"]
-pub type RTSEL_R = crate::R<bool, RTSEL_A>;
+#[doc = "Field `RTSEL` reader - Receive/Transmit Selected"]
+pub struct RTSEL_R(crate::FieldReader<bool, RTSEL_A>);
 impl RTSEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTSEL_A {
@@ -244,12 +320,19 @@ impl RTSEL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RTSEL_A::VALUE1
+        **self == RTSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RTSEL_A::VALUE2
+        **self == RTSEL_A::VALUE2
+    }
+}
+impl core::ops::Deref for RTSEL_R {
+    type Target = crate::FieldReader<bool, RTSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Receive Enable\n\nValue on reset: 0"]
@@ -266,9 +349,12 @@ impl From<RXEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RXEN`"]
-pub type RXEN_R = crate::R<bool, RXEN_A>;
+#[doc = "Field `RXEN` reader - Receive Enable"]
+pub struct RXEN_R(crate::FieldReader<bool, RXEN_A>);
 impl RXEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXEN_A {
@@ -280,12 +366,19 @@ impl RXEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RXEN_A::VALUE1
+        **self == RXEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RXEN_A::VALUE2
+        **self == RXEN_A::VALUE2
+    }
+}
+impl core::ops::Deref for RXEN_R {
+    type Target = crate::FieldReader<bool, RXEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Transmit Request\n\nValue on reset: 0"]
@@ -302,9 +395,12 @@ impl From<TXRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TXRQ`"]
-pub type TXRQ_R = crate::R<bool, TXRQ_A>;
+#[doc = "Field `TXRQ` reader - Transmit Request"]
+pub struct TXRQ_R(crate::FieldReader<bool, TXRQ_A>);
 impl TXRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXRQ_A {
@@ -316,12 +412,19 @@ impl TXRQ_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TXRQ_A::VALUE1
+        **self == TXRQ_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TXRQ_A::VALUE2
+        **self == TXRQ_A::VALUE2
+    }
+}
+impl core::ops::Deref for TXRQ_R {
+    type Target = crate::FieldReader<bool, TXRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Transmit Enable 0\n\nValue on reset: 0"]
@@ -338,9 +441,12 @@ impl From<TXEN0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TXEN0`"]
-pub type TXEN0_R = crate::R<bool, TXEN0_A>;
+#[doc = "Field `TXEN0` reader - Transmit Enable 0"]
+pub struct TXEN0_R(crate::FieldReader<bool, TXEN0_A>);
 impl TXEN0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXEN0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXEN0_A {
@@ -352,12 +458,19 @@ impl TXEN0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TXEN0_A::VALUE1
+        **self == TXEN0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TXEN0_A::VALUE2
+        **self == TXEN0_A::VALUE2
+    }
+}
+impl core::ops::Deref for TXEN0_R {
+    type Target = crate::FieldReader<bool, TXEN0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Transmit Enable 1\n\nValue on reset: 0"]
@@ -374,9 +487,12 @@ impl From<TXEN1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TXEN1`"]
-pub type TXEN1_R = crate::R<bool, TXEN1_A>;
+#[doc = "Field `TXEN1` reader - Transmit Enable 1"]
+pub struct TXEN1_R(crate::FieldReader<bool, TXEN1_A>);
 impl TXEN1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXEN1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXEN1_A {
@@ -388,12 +504,19 @@ impl TXEN1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TXEN1_A::VALUE1
+        **self == TXEN1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TXEN1_A::VALUE2
+        **self == TXEN1_A::VALUE2
+    }
+}
+impl core::ops::Deref for TXEN1_R {
+    type Target = crate::FieldReader<bool, TXEN1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Message Direction\n\nValue on reset: 0"]
@@ -410,9 +533,12 @@ impl From<DIR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DIR`"]
-pub type DIR_R = crate::R<bool, DIR_A>;
+#[doc = "Field `DIR` reader - Message Direction"]
+pub struct DIR_R(crate::FieldReader<bool, DIR_A>);
 impl DIR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DIR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIR_A {
@@ -424,20 +550,63 @@ impl DIR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DIR_A::VALUE1
+        **self == DIR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DIR_A::VALUE2
+        **self == DIR_A::VALUE2
     }
 }
-#[doc = "Reader of field `LIST`"]
-pub type LIST_R = crate::R<u8, u8>;
-#[doc = "Reader of field `PPREV`"]
-pub type PPREV_R = crate::R<u8, u8>;
-#[doc = "Reader of field `PNEXT`"]
-pub type PNEXT_R = crate::R<u8, u8>;
+impl core::ops::Deref for DIR_R {
+    type Target = crate::FieldReader<bool, DIR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LIST` reader - List Allocation"]
+pub struct LIST_R(crate::FieldReader<u8, u8>);
+impl LIST_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LIST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LIST_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPREV` reader - Pointer to Previous Message Object"]
+pub struct PPREV_R(crate::FieldReader<u8, u8>);
+impl PPREV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PPREV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PPREV_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PNEXT` reader - Pointer to Next Message Object"]
+pub struct PNEXT_R(crate::FieldReader<u8, u8>);
+impl PNEXT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PNEXT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PNEXT_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Receive Pending"]
     #[inline(always)]
@@ -513,5 +682,21 @@ impl R {
     #[inline(always)]
     pub fn pnext(&self) -> PNEXT_R {
         PNEXT_R::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
+#[doc = "Message Object Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mostat](index.html) module"]
+pub struct MOSTAT_SPEC;
+impl crate::RegisterSpec for MOSTAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [mostat::R](R) reader structure"]
+impl crate::Readable for MOSTAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets MOSTAT to value 0"]
+impl crate::Resettable for MOSTAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

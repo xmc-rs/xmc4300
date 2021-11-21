@@ -1,11 +1,60 @@
-#[doc = "Reader of register ID"]
-pub type R = crate::R<u32, super::ID>;
-#[doc = "Reader of field `MODR`"]
-pub type MODR_R = crate::R<u8, u8>;
-#[doc = "Reader of field `MODT`"]
-pub type MODT_R = crate::R<u8, u8>;
-#[doc = "Reader of field `MODN`"]
-pub type MODN_R = crate::R<u16, u16>;
+#[doc = "Register `ID` reader"]
+pub struct R(crate::R<ID_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ID_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<ID_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ID_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `MODR` reader - Module Revision"]
+pub struct MODR_R(crate::FieldReader<u8, u8>);
+impl MODR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MODR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MODR_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MODT` reader - Module Type"]
+pub struct MODT_R(crate::FieldReader<u8, u8>);
+impl MODT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MODT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MODT_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MODN` reader - Module Number"]
+pub struct MODN_R(crate::FieldReader<u16, u16>);
+impl MODN_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        MODN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MODN_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bits 0:7 - Module Revision"]
     #[inline(always)]
@@ -21,5 +70,21 @@ impl R {
     #[inline(always)]
     pub fn modn(&self) -> MODN_R {
         MODN_R::new(((self.bits >> 16) & 0xffff) as u16)
+    }
+}
+#[doc = "Module Identification Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [id](index.html) module"]
+pub struct ID_SPEC;
+impl crate::RegisterSpec for ID_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [id::R](R) reader structure"]
+impl crate::Readable for ID_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets ID to value 0x00a5_c000"]
+impl crate::Resettable for ID_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x00a5_c000
     }
 }

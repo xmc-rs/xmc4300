@@ -1,18 +1,54 @@
-#[doc = "Reader of register GLOBRES"]
-pub type R = crate::R<u32, super::GLOBRES>;
-#[doc = "Writer for register GLOBRES"]
-pub type W = crate::W<u32, super::GLOBRES>;
-#[doc = "Register GLOBRES `reset()`'s with value 0"]
-impl crate::ResetValue for super::GLOBRES {
-    type Type = u32;
+#[doc = "Register `GLOBRES` reader"]
+pub struct R(crate::R<GLOBRES_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GLOBRES_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `RESULT`"]
-pub type RESULT_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `RESULT`"]
+impl From<crate::R<GLOBRES_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GLOBRES_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `GLOBRES` writer"]
+pub struct W(crate::W<GLOBRES_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<GLOBRES_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<GLOBRES_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<GLOBRES_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `RESULT` reader - Result of most recent conversion"]
+pub struct RESULT_R(crate::FieldReader<u16, u16>);
+impl RESULT_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        RESULT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RESULT_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RESULT` writer - Result of most recent conversion"]
 pub struct RESULT_W<'a> {
     w: &'a mut W,
 }
@@ -20,18 +56,66 @@ impl<'a> RESULT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
         self.w
     }
 }
-#[doc = "Reader of field `GNR`"]
-pub type GNR_R = crate::R<u8, u8>;
-#[doc = "Reader of field `CHNR`"]
-pub type CHNR_R = crate::R<u8, u8>;
-#[doc = "Reader of field `EMUX`"]
-pub type EMUX_R = crate::R<u8, u8>;
-#[doc = "Reader of field `CRS`"]
-pub type CRS_R = crate::R<u8, u8>;
+#[doc = "Field `GNR` reader - Group Number"]
+pub struct GNR_R(crate::FieldReader<u8, u8>);
+impl GNR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        GNR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GNR_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CHNR` reader - Channel Number"]
+pub struct CHNR_R(crate::FieldReader<u8, u8>);
+impl CHNR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CHNR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CHNR_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EMUX` reader - External Multiplexer Setting"]
+pub struct EMUX_R(crate::FieldReader<u8, u8>);
+impl EMUX_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EMUX_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EMUX_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CRS` reader - Converted Request Source"]
+pub struct CRS_R(crate::FieldReader<u8, u8>);
+impl CRS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CRS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CRS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Fast Compare Result\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FCR_A {
@@ -46,9 +130,12 @@ impl From<FCR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FCR`"]
-pub type FCR_R = crate::R<bool, FCR_A>;
+#[doc = "Field `FCR` reader - Fast Compare Result"]
+pub struct FCR_R(crate::FieldReader<bool, FCR_A>);
 impl FCR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FCR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FCR_A {
@@ -60,12 +147,19 @@ impl FCR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == FCR_A::VALUE1
+        **self == FCR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == FCR_A::VALUE2
+        **self == FCR_A::VALUE2
+    }
+}
+impl core::ops::Deref for FCR_R {
+    type Target = crate::FieldReader<bool, FCR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Valid Flag\n\nValue on reset: 0"]
@@ -82,9 +176,12 @@ impl From<VF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VF`"]
-pub type VF_R = crate::R<bool, VF_A>;
+#[doc = "Field `VF` reader - Valid Flag"]
+pub struct VF_R(crate::FieldReader<bool, VF_A>);
 impl VF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF_A {
@@ -96,15 +193,22 @@ impl VF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VF_A::VALUE1
+        **self == VF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VF_A::VALUE2
+        **self == VF_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VF`"]
+impl core::ops::Deref for VF_R {
+    type Target = crate::FieldReader<bool, VF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VF` writer - Valid Flag"]
 pub struct VF_W<'a> {
     w: &'a mut W,
 }
@@ -112,9 +216,7 @@ impl<'a> VF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VF_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -139,7 +241,7 @@ impl<'a> VF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -190,5 +292,31 @@ impl W {
     #[inline(always)]
     pub fn vf(&mut self) -> VF_W {
         VF_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Global Result Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [globres](index.html) module"]
+pub struct GLOBRES_SPEC;
+impl crate::RegisterSpec for GLOBRES_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [globres::R](R) reader structure"]
+impl crate::Readable for GLOBRES_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [globres::W](W) writer structure"]
+impl crate::Writable for GLOBRES_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets GLOBRES to value 0"]
+impl crate::Resettable for GLOBRES_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

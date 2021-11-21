@@ -1,5 +1,18 @@
-#[doc = "Reader of register SRRAW"]
-pub type R = crate::R<u32, super::SRRAW>;
+#[doc = "Register `SRRAW` reader"]
+pub struct R(crate::R<SRRAW_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SRRAW_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<SRRAW_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SRRAW_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "WDT pre-warning Interrupt Status Before Masking\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRWARN_A {
@@ -14,9 +27,12 @@ impl From<PRWARN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PRWARN`"]
-pub type PRWARN_R = crate::R<bool, PRWARN_A>;
+#[doc = "Field `PRWARN` reader - WDT pre-warning Interrupt Status Before Masking"]
+pub struct PRWARN_R(crate::FieldReader<bool, PRWARN_A>);
 impl PRWARN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PRWARN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRWARN_A {
@@ -28,20 +44,63 @@ impl PRWARN_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PRWARN_A::CONST_0
+        **self == PRWARN_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PRWARN_A::CONST_1
+        **self == PRWARN_A::CONST_1
     }
 }
-#[doc = "Reader of field `PI`"]
-pub type PI_R = crate::R<bool, bool>;
-#[doc = "Reader of field `AI`"]
-pub type AI_R = crate::R<bool, bool>;
-#[doc = "Reader of field `DLROVR`"]
-pub type DLROVR_R = crate::R<bool, bool>;
+impl core::ops::Deref for PRWARN_R {
+    type Target = crate::FieldReader<bool, PRWARN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PI` reader - RTC Raw Periodic Interrupt Status Before Masking"]
+pub struct PI_R(crate::FieldReader<bool, bool>);
+impl PI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PI_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PI_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AI` reader - RTC Raw Alarm Interrupt Status Before Masking"]
+pub struct AI_R(crate::FieldReader<bool, bool>);
+impl AI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AI_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AI_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DLROVR` reader - DLR Request Overrun Interrupt Status Before Masking"]
+pub struct DLROVR_R(crate::FieldReader<bool, bool>);
+impl DLROVR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DLROVR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DLROVR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "HDCLR Mirror Register Update Status Before Masking\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HDCLR_A {
@@ -56,9 +115,12 @@ impl From<HDCLR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `HDCLR`"]
-pub type HDCLR_R = crate::R<bool, HDCLR_A>;
+#[doc = "Field `HDCLR` reader - HDCLR Mirror Register Update Status Before Masking"]
+pub struct HDCLR_R(crate::FieldReader<bool, HDCLR_A>);
 impl HDCLR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HDCLR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HDCLR_A {
@@ -70,12 +132,19 @@ impl HDCLR_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == HDCLR_A::CONST_0
+        **self == HDCLR_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == HDCLR_A::CONST_1
+        **self == HDCLR_A::CONST_1
+    }
+}
+impl core::ops::Deref for HDCLR_R {
+    type Target = crate::FieldReader<bool, HDCLR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "HDSET Mirror Register Update Status Before Masking\n\nValue on reset: 0"]
@@ -92,9 +161,12 @@ impl From<HDSET_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `HDSET`"]
-pub type HDSET_R = crate::R<bool, HDSET_A>;
+#[doc = "Field `HDSET` reader - HDSET Mirror Register Update Status Before Masking"]
+pub struct HDSET_R(crate::FieldReader<bool, HDSET_A>);
 impl HDSET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HDSET_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HDSET_A {
@@ -106,12 +178,19 @@ impl HDSET_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == HDSET_A::CONST_0
+        **self == HDSET_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == HDSET_A::CONST_1
+        **self == HDSET_A::CONST_1
+    }
+}
+impl core::ops::Deref for HDSET_R {
+    type Target = crate::FieldReader<bool, HDSET_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "HDCR Mirror Register Update Status Before Masking\n\nValue on reset: 0"]
@@ -128,9 +207,12 @@ impl From<HDCR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `HDCR`"]
-pub type HDCR_R = crate::R<bool, HDCR_A>;
+#[doc = "Field `HDCR` reader - HDCR Mirror Register Update Status Before Masking"]
+pub struct HDCR_R(crate::FieldReader<bool, HDCR_A>);
 impl HDCR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HDCR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HDCR_A {
@@ -142,12 +224,19 @@ impl HDCR_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == HDCR_A::CONST_0
+        **self == HDCR_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == HDCR_A::CONST_1
+        **self == HDCR_A::CONST_1
+    }
+}
+impl core::ops::Deref for HDCR_R {
+    type Target = crate::FieldReader<bool, HDCR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "OSCSICTRL Mirror Register Update Status Before Masking\n\nValue on reset: 0"]
@@ -164,9 +253,12 @@ impl From<OSCSICTRL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `OSCSICTRL`"]
-pub type OSCSICTRL_R = crate::R<bool, OSCSICTRL_A>;
+#[doc = "Field `OSCSICTRL` reader - OSCSICTRL Mirror Register Update Status Before Masking"]
+pub struct OSCSICTRL_R(crate::FieldReader<bool, OSCSICTRL_A>);
 impl OSCSICTRL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OSCSICTRL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OSCSICTRL_A {
@@ -178,12 +270,19 @@ impl OSCSICTRL_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == OSCSICTRL_A::CONST_0
+        **self == OSCSICTRL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == OSCSICTRL_A::CONST_1
+        **self == OSCSICTRL_A::CONST_1
+    }
+}
+impl core::ops::Deref for OSCSICTRL_R {
+    type Target = crate::FieldReader<bool, OSCSICTRL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "OSCULCTRL Mirror Register Update Status Before Masking\n\nValue on reset: 0"]
@@ -200,9 +299,12 @@ impl From<OSCULCTRL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `OSCULCTRL`"]
-pub type OSCULCTRL_R = crate::R<bool, OSCULCTRL_A>;
+#[doc = "Field `OSCULCTRL` reader - OSCULCTRL Mirror Register Update Status Before Masking"]
+pub struct OSCULCTRL_R(crate::FieldReader<bool, OSCULCTRL_A>);
 impl OSCULCTRL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OSCULCTRL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OSCULCTRL_A {
@@ -214,12 +316,19 @@ impl OSCULCTRL_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == OSCULCTRL_A::CONST_0
+        **self == OSCULCTRL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == OSCULCTRL_A::CONST_1
+        **self == OSCULCTRL_A::CONST_1
+    }
+}
+impl core::ops::Deref for OSCULCTRL_R {
+    type Target = crate::FieldReader<bool, OSCULCTRL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "RTC CTR Mirror Register Update Status Before Masking\n\nValue on reset: 0"]
@@ -236,9 +345,12 @@ impl From<RTC_CTR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTC_CTR`"]
-pub type RTC_CTR_R = crate::R<bool, RTC_CTR_A>;
+#[doc = "Field `RTC_CTR` reader - RTC CTR Mirror Register Update Status Before Masking"]
+pub struct RTC_CTR_R(crate::FieldReader<bool, RTC_CTR_A>);
 impl RTC_CTR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTC_CTR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTC_CTR_A {
@@ -250,12 +362,19 @@ impl RTC_CTR_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RTC_CTR_A::CONST_0
+        **self == RTC_CTR_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RTC_CTR_A::CONST_1
+        **self == RTC_CTR_A::CONST_1
+    }
+}
+impl core::ops::Deref for RTC_CTR_R {
+    type Target = crate::FieldReader<bool, RTC_CTR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "RTC ATIM0 Mirror Register Update Status Before Masking\n\nValue on reset: 0"]
@@ -272,9 +391,12 @@ impl From<RTC_ATIM0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTC_ATIM0`"]
-pub type RTC_ATIM0_R = crate::R<bool, RTC_ATIM0_A>;
+#[doc = "Field `RTC_ATIM0` reader - RTC ATIM0 Mirror Register Update Status Before Masking"]
+pub struct RTC_ATIM0_R(crate::FieldReader<bool, RTC_ATIM0_A>);
 impl RTC_ATIM0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTC_ATIM0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTC_ATIM0_A {
@@ -286,12 +408,19 @@ impl RTC_ATIM0_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RTC_ATIM0_A::CONST_0
+        **self == RTC_ATIM0_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RTC_ATIM0_A::CONST_1
+        **self == RTC_ATIM0_A::CONST_1
+    }
+}
+impl core::ops::Deref for RTC_ATIM0_R {
+    type Target = crate::FieldReader<bool, RTC_ATIM0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "RTC ATIM1 Mirror Register Update Status Before Masking\n\nValue on reset: 0"]
@@ -308,9 +437,12 @@ impl From<RTC_ATIM1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTC_ATIM1`"]
-pub type RTC_ATIM1_R = crate::R<bool, RTC_ATIM1_A>;
+#[doc = "Field `RTC_ATIM1` reader - RTC ATIM1 Mirror Register Update Status Before Masking"]
+pub struct RTC_ATIM1_R(crate::FieldReader<bool, RTC_ATIM1_A>);
 impl RTC_ATIM1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTC_ATIM1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTC_ATIM1_A {
@@ -322,12 +454,19 @@ impl RTC_ATIM1_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RTC_ATIM1_A::CONST_0
+        **self == RTC_ATIM1_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RTC_ATIM1_A::CONST_1
+        **self == RTC_ATIM1_A::CONST_1
+    }
+}
+impl core::ops::Deref for RTC_ATIM1_R {
+    type Target = crate::FieldReader<bool, RTC_ATIM1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "RTC TIM0 Mirror Register Update Before Masking Status\n\nValue on reset: 0"]
@@ -344,9 +483,12 @@ impl From<RTC_TIM0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTC_TIM0`"]
-pub type RTC_TIM0_R = crate::R<bool, RTC_TIM0_A>;
+#[doc = "Field `RTC_TIM0` reader - RTC TIM0 Mirror Register Update Before Masking Status"]
+pub struct RTC_TIM0_R(crate::FieldReader<bool, RTC_TIM0_A>);
 impl RTC_TIM0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTC_TIM0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTC_TIM0_A {
@@ -358,12 +500,19 @@ impl RTC_TIM0_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RTC_TIM0_A::CONST_0
+        **self == RTC_TIM0_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RTC_TIM0_A::CONST_1
+        **self == RTC_TIM0_A::CONST_1
+    }
+}
+impl core::ops::Deref for RTC_TIM0_R {
+    type Target = crate::FieldReader<bool, RTC_TIM0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "RTC TIM1 Mirror Register Update Status Before Masking\n\nValue on reset: 0"]
@@ -380,9 +529,12 @@ impl From<RTC_TIM1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTC_TIM1`"]
-pub type RTC_TIM1_R = crate::R<bool, RTC_TIM1_A>;
+#[doc = "Field `RTC_TIM1` reader - RTC TIM1 Mirror Register Update Status Before Masking"]
+pub struct RTC_TIM1_R(crate::FieldReader<bool, RTC_TIM1_A>);
 impl RTC_TIM1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTC_TIM1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTC_TIM1_A {
@@ -394,12 +546,19 @@ impl RTC_TIM1_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RTC_TIM1_A::CONST_0
+        **self == RTC_TIM1_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RTC_TIM1_A::CONST_1
+        **self == RTC_TIM1_A::CONST_1
+    }
+}
+impl core::ops::Deref for RTC_TIM1_R {
+    type Target = crate::FieldReader<bool, RTC_TIM1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Retention Memory Mirror Register Update Status Before Masking\n\nValue on reset: 0"]
@@ -416,9 +575,12 @@ impl From<RMX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RMX`"]
-pub type RMX_R = crate::R<bool, RMX_A>;
+#[doc = "Field `RMX` reader - Retention Memory Mirror Register Update Status Before Masking"]
+pub struct RMX_R(crate::FieldReader<bool, RMX_A>);
 impl RMX_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RMX_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RMX_A {
@@ -430,12 +592,19 @@ impl RMX_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RMX_A::CONST_0
+        **self == RMX_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RMX_A::CONST_1
+        **self == RMX_A::CONST_1
+    }
+}
+impl core::ops::Deref for RMX_R {
+    type Target = crate::FieldReader<bool, RMX_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -513,5 +682,21 @@ impl R {
     #[inline(always)]
     pub fn rmx(&self) -> RMX_R {
         RMX_R::new(((self.bits >> 29) & 0x01) != 0)
+    }
+}
+#[doc = "SCU Raw Service Request Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srraw](index.html) module"]
+pub struct SRRAW_SPEC;
+impl crate::RegisterSpec for SRRAW_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [srraw::R](R) reader structure"]
+impl crate::Readable for SRRAW_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets SRRAW to value 0"]
+impl crate::Resettable for SRRAW_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

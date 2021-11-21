@@ -1,13 +1,37 @@
-#[doc = "Reader of register NIPR"]
-pub type R = crate::R<u32, super::NIPR>;
-#[doc = "Writer for register NIPR"]
-pub type W = crate::W<u32, super::NIPR>;
-#[doc = "Register NIPR `reset()`'s with value 0"]
-impl crate::ResetValue for super::NIPR {
-    type Type = u32;
+#[doc = "Register `NIPR` reader"]
+pub struct R(crate::R<NIPR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<NIPR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<NIPR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<NIPR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `NIPR` writer"]
+pub struct W(crate::W<NIPR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<NIPR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<NIPR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<NIPR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Alert Interrupt Node Pointer\n\nValue on reset: 0"]
@@ -29,43 +53,52 @@ impl From<ALINP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ALINP`"]
-pub type ALINP_R = crate::R<u8, ALINP_A>;
+#[doc = "Field `ALINP` reader - Alert Interrupt Node Pointer"]
+pub struct ALINP_R(crate::FieldReader<u8, ALINP_A>);
 impl ALINP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ALINP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ALINP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<ALINP_A> {
         match self.bits {
-            0 => Val(ALINP_A::VALUE1),
-            1 => Val(ALINP_A::VALUE2),
-            14 => Val(ALINP_A::VALUE3),
-            15 => Val(ALINP_A::VALUE4),
-            i => Res(i),
+            0 => Some(ALINP_A::VALUE1),
+            1 => Some(ALINP_A::VALUE2),
+            14 => Some(ALINP_A::VALUE3),
+            15 => Some(ALINP_A::VALUE4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ALINP_A::VALUE1
+        **self == ALINP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ALINP_A::VALUE2
+        **self == ALINP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == ALINP_A::VALUE3
+        **self == ALINP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == ALINP_A::VALUE4
+        **self == ALINP_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `ALINP`"]
+impl core::ops::Deref for ALINP_R {
+    type Target = crate::FieldReader<u8, ALINP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ALINP` writer - Alert Interrupt Node Pointer"]
 pub struct ALINP_W<'a> {
     w: &'a mut W,
 }
@@ -98,7 +131,7 @@ impl<'a> ALINP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
         self.w
     }
 }
@@ -121,43 +154,52 @@ impl From<LECINP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `LECINP`"]
-pub type LECINP_R = crate::R<u8, LECINP_A>;
+#[doc = "Field `LECINP` reader - Last Error Code Interrupt Node Pointer"]
+pub struct LECINP_R(crate::FieldReader<u8, LECINP_A>);
 impl LECINP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LECINP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, LECINP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<LECINP_A> {
         match self.bits {
-            0 => Val(LECINP_A::VALUE1),
-            1 => Val(LECINP_A::VALUE2),
-            14 => Val(LECINP_A::VALUE3),
-            15 => Val(LECINP_A::VALUE4),
-            i => Res(i),
+            0 => Some(LECINP_A::VALUE1),
+            1 => Some(LECINP_A::VALUE2),
+            14 => Some(LECINP_A::VALUE3),
+            15 => Some(LECINP_A::VALUE4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LECINP_A::VALUE1
+        **self == LECINP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LECINP_A::VALUE2
+        **self == LECINP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == LECINP_A::VALUE3
+        **self == LECINP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == LECINP_A::VALUE4
+        **self == LECINP_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `LECINP`"]
+impl core::ops::Deref for LECINP_R {
+    type Target = crate::FieldReader<u8, LECINP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LECINP` writer - Last Error Code Interrupt Node Pointer"]
 pub struct LECINP_W<'a> {
     w: &'a mut W,
 }
@@ -190,7 +232,7 @@ impl<'a> LECINP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
         self.w
     }
 }
@@ -213,43 +255,52 @@ impl From<TRINP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TRINP`"]
-pub type TRINP_R = crate::R<u8, TRINP_A>;
+#[doc = "Field `TRINP` reader - Transfer OK Interrupt Node Pointer"]
+pub struct TRINP_R(crate::FieldReader<u8, TRINP_A>);
 impl TRINP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TRINP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, TRINP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TRINP_A> {
         match self.bits {
-            0 => Val(TRINP_A::VALUE1),
-            1 => Val(TRINP_A::VALUE2),
-            14 => Val(TRINP_A::VALUE3),
-            15 => Val(TRINP_A::VALUE4),
-            i => Res(i),
+            0 => Some(TRINP_A::VALUE1),
+            1 => Some(TRINP_A::VALUE2),
+            14 => Some(TRINP_A::VALUE3),
+            15 => Some(TRINP_A::VALUE4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TRINP_A::VALUE1
+        **self == TRINP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TRINP_A::VALUE2
+        **self == TRINP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == TRINP_A::VALUE3
+        **self == TRINP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == TRINP_A::VALUE4
+        **self == TRINP_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `TRINP`"]
+impl core::ops::Deref for TRINP_R {
+    type Target = crate::FieldReader<u8, TRINP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TRINP` writer - Transfer OK Interrupt Node Pointer"]
 pub struct TRINP_W<'a> {
     w: &'a mut W,
 }
@@ -282,7 +333,7 @@ impl<'a> TRINP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
         self.w
     }
 }
@@ -305,43 +356,52 @@ impl From<CFCINP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CFCINP`"]
-pub type CFCINP_R = crate::R<u8, CFCINP_A>;
+#[doc = "Field `CFCINP` reader - Frame Counter Interrupt Node Pointer"]
+pub struct CFCINP_R(crate::FieldReader<u8, CFCINP_A>);
 impl CFCINP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CFCINP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CFCINP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CFCINP_A> {
         match self.bits {
-            0 => Val(CFCINP_A::VALUE1),
-            1 => Val(CFCINP_A::VALUE2),
-            14 => Val(CFCINP_A::VALUE3),
-            15 => Val(CFCINP_A::VALUE4),
-            i => Res(i),
+            0 => Some(CFCINP_A::VALUE1),
+            1 => Some(CFCINP_A::VALUE2),
+            14 => Some(CFCINP_A::VALUE3),
+            15 => Some(CFCINP_A::VALUE4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CFCINP_A::VALUE1
+        **self == CFCINP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CFCINP_A::VALUE2
+        **self == CFCINP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CFCINP_A::VALUE3
+        **self == CFCINP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == CFCINP_A::VALUE4
+        **self == CFCINP_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `CFCINP`"]
+impl core::ops::Deref for CFCINP_R {
+    type Target = crate::FieldReader<u8, CFCINP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CFCINP` writer - Frame Counter Interrupt Node Pointer"]
 pub struct CFCINP_W<'a> {
     w: &'a mut W,
 }
@@ -374,7 +434,7 @@ impl<'a> CFCINP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
+        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
         self.w
     }
 }
@@ -420,5 +480,31 @@ impl W {
     #[inline(always)]
     pub fn cfcinp(&mut self) -> CFCINP_W {
         CFCINP_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Node Interrupt Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nipr](index.html) module"]
+pub struct NIPR_SPEC;
+impl crate::RegisterSpec for NIPR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [nipr::R](R) reader structure"]
+impl crate::Readable for NIPR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [nipr::W](W) writer structure"]
+impl crate::Writable for NIPR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets NIPR to value 0"]
+impl crate::Resettable for NIPR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

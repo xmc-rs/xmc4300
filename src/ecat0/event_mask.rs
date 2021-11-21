@@ -1,5 +1,18 @@
-#[doc = "Reader of register EVENT_MASK"]
-pub type R = crate::R<u16, super::EVENT_MASK>;
+#[doc = "Register `EVENT_MASK` reader"]
+pub struct R(crate::R<EVENT_MASK_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<EVENT_MASK_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<EVENT_MASK_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<EVENT_MASK_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "DC Latch event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DC_LE_MASK_A {
@@ -14,9 +27,12 @@ impl From<DC_LE_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DC_LE_MASK`"]
-pub type DC_LE_MASK_R = crate::R<bool, DC_LE_MASK_A>;
+#[doc = "Field `DC_LE_MASK` reader - DC Latch event"]
+pub struct DC_LE_MASK_R(crate::FieldReader<bool, DC_LE_MASK_A>);
 impl DC_LE_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DC_LE_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DC_LE_MASK_A {
@@ -28,12 +44,19 @@ impl DC_LE_MASK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DC_LE_MASK_A::VALUE1
+        **self == DC_LE_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DC_LE_MASK_A::VALUE2
+        **self == DC_LE_MASK_A::VALUE2
+    }
+}
+impl core::ops::Deref for DC_LE_MASK_R {
+    type Target = crate::FieldReader<bool, DC_LE_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "DL Status event\n\nValue on reset: 0"]
@@ -50,9 +73,12 @@ impl From<DL_SE_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DL_SE_MASK`"]
-pub type DL_SE_MASK_R = crate::R<bool, DL_SE_MASK_A>;
+#[doc = "Field `DL_SE_MASK` reader - DL Status event"]
+pub struct DL_SE_MASK_R(crate::FieldReader<bool, DL_SE_MASK_A>);
 impl DL_SE_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DL_SE_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DL_SE_MASK_A {
@@ -64,12 +90,19 @@ impl DL_SE_MASK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DL_SE_MASK_A::VALUE1
+        **self == DL_SE_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DL_SE_MASK_A::VALUE2
+        **self == DL_SE_MASK_A::VALUE2
+    }
+}
+impl core::ops::Deref for DL_SE_MASK_R {
+    type Target = crate::FieldReader<bool, DL_SE_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "AL Status event\n\nValue on reset: 0"]
@@ -86,9 +119,12 @@ impl From<AL_SE_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `AL_SE_MASK`"]
-pub type AL_SE_MASK_R = crate::R<bool, AL_SE_MASK_A>;
+#[doc = "Field `AL_SE_MASK` reader - AL Status event"]
+pub struct AL_SE_MASK_R(crate::FieldReader<bool, AL_SE_MASK_A>);
 impl AL_SE_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AL_SE_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AL_SE_MASK_A {
@@ -100,12 +136,19 @@ impl AL_SE_MASK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == AL_SE_MASK_A::VALUE1
+        **self == AL_SE_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == AL_SE_MASK_A::VALUE2
+        **self == AL_SE_MASK_A::VALUE2
+    }
+}
+impl core::ops::Deref for AL_SE_MASK_R {
+    type Target = crate::FieldReader<bool, AL_SE_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
@@ -122,9 +165,12 @@ impl From<MIR_0_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MIR_0_MASK`"]
-pub type MIR_0_MASK_R = crate::R<bool, MIR_0_MASK_A>;
+#[doc = "Field `MIR_0_MASK` reader - Mirrors values of each SyncManager Status"]
+pub struct MIR_0_MASK_R(crate::FieldReader<bool, MIR_0_MASK_A>);
 impl MIR_0_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MIR_0_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MIR_0_MASK_A {
@@ -136,12 +182,19 @@ impl MIR_0_MASK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_0_MASK_A::VALUE1
+        **self == MIR_0_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_0_MASK_A::VALUE2
+        **self == MIR_0_MASK_A::VALUE2
+    }
+}
+impl core::ops::Deref for MIR_0_MASK_R {
+    type Target = crate::FieldReader<bool, MIR_0_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
@@ -158,9 +211,12 @@ impl From<MIR_1_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MIR_1_MASK`"]
-pub type MIR_1_MASK_R = crate::R<bool, MIR_1_MASK_A>;
+#[doc = "Field `MIR_1_MASK` reader - Mirrors values of each SyncManager Status"]
+pub struct MIR_1_MASK_R(crate::FieldReader<bool, MIR_1_MASK_A>);
 impl MIR_1_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MIR_1_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MIR_1_MASK_A {
@@ -172,12 +228,19 @@ impl MIR_1_MASK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_1_MASK_A::VALUE1
+        **self == MIR_1_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_1_MASK_A::VALUE2
+        **self == MIR_1_MASK_A::VALUE2
+    }
+}
+impl core::ops::Deref for MIR_1_MASK_R {
+    type Target = crate::FieldReader<bool, MIR_1_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
@@ -194,9 +257,12 @@ impl From<MIR_2_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MIR_2_MASK`"]
-pub type MIR_2_MASK_R = crate::R<bool, MIR_2_MASK_A>;
+#[doc = "Field `MIR_2_MASK` reader - Mirrors values of each SyncManager Status"]
+pub struct MIR_2_MASK_R(crate::FieldReader<bool, MIR_2_MASK_A>);
 impl MIR_2_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MIR_2_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MIR_2_MASK_A {
@@ -208,12 +274,19 @@ impl MIR_2_MASK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_2_MASK_A::VALUE1
+        **self == MIR_2_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_2_MASK_A::VALUE2
+        **self == MIR_2_MASK_A::VALUE2
+    }
+}
+impl core::ops::Deref for MIR_2_MASK_R {
+    type Target = crate::FieldReader<bool, MIR_2_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
@@ -230,9 +303,12 @@ impl From<MIR_3_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MIR_3_MASK`"]
-pub type MIR_3_MASK_R = crate::R<bool, MIR_3_MASK_A>;
+#[doc = "Field `MIR_3_MASK` reader - Mirrors values of each SyncManager Status"]
+pub struct MIR_3_MASK_R(crate::FieldReader<bool, MIR_3_MASK_A>);
 impl MIR_3_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MIR_3_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MIR_3_MASK_A {
@@ -244,12 +320,19 @@ impl MIR_3_MASK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_3_MASK_A::VALUE1
+        **self == MIR_3_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_3_MASK_A::VALUE2
+        **self == MIR_3_MASK_A::VALUE2
+    }
+}
+impl core::ops::Deref for MIR_3_MASK_R {
+    type Target = crate::FieldReader<bool, MIR_3_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
@@ -266,9 +349,12 @@ impl From<MIR_4_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MIR_4_MASK`"]
-pub type MIR_4_MASK_R = crate::R<bool, MIR_4_MASK_A>;
+#[doc = "Field `MIR_4_MASK` reader - Mirrors values of each SyncManager Status"]
+pub struct MIR_4_MASK_R(crate::FieldReader<bool, MIR_4_MASK_A>);
 impl MIR_4_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MIR_4_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MIR_4_MASK_A {
@@ -280,12 +366,19 @@ impl MIR_4_MASK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_4_MASK_A::VALUE1
+        **self == MIR_4_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_4_MASK_A::VALUE2
+        **self == MIR_4_MASK_A::VALUE2
+    }
+}
+impl core::ops::Deref for MIR_4_MASK_R {
+    type Target = crate::FieldReader<bool, MIR_4_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
@@ -302,9 +395,12 @@ impl From<MIR_5_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MIR_5_MASK`"]
-pub type MIR_5_MASK_R = crate::R<bool, MIR_5_MASK_A>;
+#[doc = "Field `MIR_5_MASK` reader - Mirrors values of each SyncManager Status"]
+pub struct MIR_5_MASK_R(crate::FieldReader<bool, MIR_5_MASK_A>);
 impl MIR_5_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MIR_5_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MIR_5_MASK_A {
@@ -316,12 +412,19 @@ impl MIR_5_MASK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_5_MASK_A::VALUE1
+        **self == MIR_5_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_5_MASK_A::VALUE2
+        **self == MIR_5_MASK_A::VALUE2
+    }
+}
+impl core::ops::Deref for MIR_5_MASK_R {
+    type Target = crate::FieldReader<bool, MIR_5_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
@@ -338,9 +441,12 @@ impl From<MIR_6_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MIR_6_MASK`"]
-pub type MIR_6_MASK_R = crate::R<bool, MIR_6_MASK_A>;
+#[doc = "Field `MIR_6_MASK` reader - Mirrors values of each SyncManager Status"]
+pub struct MIR_6_MASK_R(crate::FieldReader<bool, MIR_6_MASK_A>);
 impl MIR_6_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MIR_6_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MIR_6_MASK_A {
@@ -352,12 +458,19 @@ impl MIR_6_MASK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_6_MASK_A::VALUE1
+        **self == MIR_6_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_6_MASK_A::VALUE2
+        **self == MIR_6_MASK_A::VALUE2
+    }
+}
+impl core::ops::Deref for MIR_6_MASK_R {
+    type Target = crate::FieldReader<bool, MIR_6_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Mirrors values of each SyncManager Status\n\nValue on reset: 0"]
@@ -374,9 +487,12 @@ impl From<MIR_7_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MIR_7_MASK`"]
-pub type MIR_7_MASK_R = crate::R<bool, MIR_7_MASK_A>;
+#[doc = "Field `MIR_7_MASK` reader - Mirrors values of each SyncManager Status"]
+pub struct MIR_7_MASK_R(crate::FieldReader<bool, MIR_7_MASK_A>);
 impl MIR_7_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MIR_7_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MIR_7_MASK_A {
@@ -388,12 +504,19 @@ impl MIR_7_MASK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MIR_7_MASK_A::VALUE1
+        **self == MIR_7_MASK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MIR_7_MASK_A::VALUE2
+        **self == MIR_7_MASK_A::VALUE2
+    }
+}
+impl core::ops::Deref for MIR_7_MASK_R {
+    type Target = crate::FieldReader<bool, MIR_7_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -451,5 +574,21 @@ impl R {
     #[inline(always)]
     pub fn mir_7_mask(&self) -> MIR_7_MASK_R {
         MIR_7_MASK_R::new(((self.bits >> 11) & 0x01) != 0)
+    }
+}
+#[doc = "ECAT Event Mask\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [event_mask](index.html) module"]
+pub struct EVENT_MASK_SPEC;
+impl crate::RegisterSpec for EVENT_MASK_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [event_mask::R](R) reader structure"]
+impl crate::Readable for EVENT_MASK_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets EVENT_MASK to value 0"]
+impl crate::Resettable for EVENT_MASK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

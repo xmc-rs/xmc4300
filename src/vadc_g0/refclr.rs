@@ -1,11 +1,22 @@
-#[doc = "Writer for register REFCLR"]
-pub type W = crate::W<u32, super::REFCLR>;
-#[doc = "Register REFCLR `reset()`'s with value 0"]
-impl crate::ResetValue for super::REFCLR {
-    type Type = u32;
+#[doc = "Register `REFCLR` writer"]
+pub struct W(crate::W<REFCLR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<REFCLR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<REFCLR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<REFCLR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Clear Result Event for Result Register 0\n\nValue on reset: 0"]
@@ -22,7 +33,7 @@ impl From<REV0_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV0`"]
+#[doc = "Field `REV0` writer - Clear Result Event for Result Register 0"]
 pub struct REV0_W<'a> {
     w: &'a mut W,
 }
@@ -30,9 +41,7 @@ impl<'a> REV0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV0_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -57,7 +66,7 @@ impl<'a> REV0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -75,7 +84,7 @@ impl From<REV1_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV1`"]
+#[doc = "Field `REV1` writer - Clear Result Event for Result Register 1"]
 pub struct REV1_W<'a> {
     w: &'a mut W,
 }
@@ -83,9 +92,7 @@ impl<'a> REV1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV1_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -110,7 +117,7 @@ impl<'a> REV1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -128,7 +135,7 @@ impl From<REV2_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV2`"]
+#[doc = "Field `REV2` writer - Clear Result Event for Result Register 2"]
 pub struct REV2_W<'a> {
     w: &'a mut W,
 }
@@ -136,9 +143,7 @@ impl<'a> REV2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV2_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -163,7 +168,7 @@ impl<'a> REV2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -181,7 +186,7 @@ impl From<REV3_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV3`"]
+#[doc = "Field `REV3` writer - Clear Result Event for Result Register 3"]
 pub struct REV3_W<'a> {
     w: &'a mut W,
 }
@@ -189,9 +194,7 @@ impl<'a> REV3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV3_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -216,7 +219,7 @@ impl<'a> REV3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -234,7 +237,7 @@ impl From<REV4_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV4`"]
+#[doc = "Field `REV4` writer - Clear Result Event for Result Register 4"]
 pub struct REV4_W<'a> {
     w: &'a mut W,
 }
@@ -242,9 +245,7 @@ impl<'a> REV4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV4_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -269,7 +270,7 @@ impl<'a> REV4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -287,7 +288,7 @@ impl From<REV5_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV5`"]
+#[doc = "Field `REV5` writer - Clear Result Event for Result Register 5"]
 pub struct REV5_W<'a> {
     w: &'a mut W,
 }
@@ -295,9 +296,7 @@ impl<'a> REV5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV5_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -322,7 +321,7 @@ impl<'a> REV5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -340,7 +339,7 @@ impl From<REV6_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV6`"]
+#[doc = "Field `REV6` writer - Clear Result Event for Result Register 6"]
 pub struct REV6_W<'a> {
     w: &'a mut W,
 }
@@ -348,9 +347,7 @@ impl<'a> REV6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV6_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -375,7 +372,7 @@ impl<'a> REV6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -393,7 +390,7 @@ impl From<REV7_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV7`"]
+#[doc = "Field `REV7` writer - Clear Result Event for Result Register 7"]
 pub struct REV7_W<'a> {
     w: &'a mut W,
 }
@@ -401,9 +398,7 @@ impl<'a> REV7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV7_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -428,7 +423,7 @@ impl<'a> REV7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -446,7 +441,7 @@ impl From<REV8_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV8`"]
+#[doc = "Field `REV8` writer - Clear Result Event for Result Register 8"]
 pub struct REV8_W<'a> {
     w: &'a mut W,
 }
@@ -454,9 +449,7 @@ impl<'a> REV8_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV8_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -481,7 +474,7 @@ impl<'a> REV8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -499,7 +492,7 @@ impl From<REV9_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV9`"]
+#[doc = "Field `REV9` writer - Clear Result Event for Result Register 9"]
 pub struct REV9_W<'a> {
     w: &'a mut W,
 }
@@ -507,9 +500,7 @@ impl<'a> REV9_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV9_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -534,7 +525,7 @@ impl<'a> REV9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -552,7 +543,7 @@ impl From<REV10_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV10`"]
+#[doc = "Field `REV10` writer - Clear Result Event for Result Register 10"]
 pub struct REV10_W<'a> {
     w: &'a mut W,
 }
@@ -560,9 +551,7 @@ impl<'a> REV10_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV10_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -587,7 +576,7 @@ impl<'a> REV10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -605,7 +594,7 @@ impl From<REV11_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV11`"]
+#[doc = "Field `REV11` writer - Clear Result Event for Result Register 11"]
 pub struct REV11_W<'a> {
     w: &'a mut W,
 }
@@ -613,9 +602,7 @@ impl<'a> REV11_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV11_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -640,7 +627,7 @@ impl<'a> REV11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -658,7 +645,7 @@ impl From<REV12_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV12`"]
+#[doc = "Field `REV12` writer - Clear Result Event for Result Register 12"]
 pub struct REV12_W<'a> {
     w: &'a mut W,
 }
@@ -666,9 +653,7 @@ impl<'a> REV12_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV12_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -693,7 +678,7 @@ impl<'a> REV12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -711,7 +696,7 @@ impl From<REV13_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV13`"]
+#[doc = "Field `REV13` writer - Clear Result Event for Result Register 13"]
 pub struct REV13_W<'a> {
     w: &'a mut W,
 }
@@ -719,9 +704,7 @@ impl<'a> REV13_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV13_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -746,7 +729,7 @@ impl<'a> REV13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -764,7 +747,7 @@ impl From<REV14_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV14`"]
+#[doc = "Field `REV14` writer - Clear Result Event for Result Register 14"]
 pub struct REV14_W<'a> {
     w: &'a mut W,
 }
@@ -772,9 +755,7 @@ impl<'a> REV14_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV14_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -799,7 +780,7 @@ impl<'a> REV14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -817,7 +798,7 @@ impl From<REV15_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REV15`"]
+#[doc = "Field `REV15` writer - Clear Result Event for Result Register 15"]
 pub struct REV15_W<'a> {
     w: &'a mut W,
 }
@@ -825,9 +806,7 @@ impl<'a> REV15_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REV15_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -852,7 +831,7 @@ impl<'a> REV15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -936,5 +915,27 @@ impl W {
     #[inline(always)]
     pub fn rev15(&mut self) -> REV15_W {
         REV15_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Result Event Flag Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [refclr](index.html) module"]
+pub struct REFCLR_SPEC;
+impl crate::RegisterSpec for REFCLR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [refclr::W](W) writer structure"]
+impl crate::Writable for REFCLR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets REFCLR to value 0"]
+impl crate::Resettable for REFCLR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

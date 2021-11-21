@@ -1,7 +1,32 @@
-#[doc = "Reader of register DTSSTAT"]
-pub type R = crate::R<u32, super::DTSSTAT>;
-#[doc = "Reader of field `RESULT`"]
-pub type RESULT_R = crate::R<u16, u16>;
+#[doc = "Register `DTSSTAT` reader"]
+pub struct R(crate::R<DTSSTAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DTSSTAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DTSSTAT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DTSSTAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `RESULT` reader - Result of the DTS Measurement"]
+pub struct RESULT_R(crate::FieldReader<u16, u16>);
+impl RESULT_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        RESULT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RESULT_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Sensor Ready Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDY_A {
@@ -16,9 +41,12 @@ impl From<RDY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RDY`"]
-pub type RDY_R = crate::R<bool, RDY_A>;
+#[doc = "Field `RDY` reader - Sensor Ready Status"]
+pub struct RDY_R(crate::FieldReader<bool, RDY_A>);
 impl RDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RDY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RDY_A {
@@ -30,12 +58,19 @@ impl RDY_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == RDY_A::CONST_0
+        **self == RDY_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == RDY_A::CONST_1
+        **self == RDY_A::CONST_1
+    }
+}
+impl core::ops::Deref for RDY_R {
+    type Target = crate::FieldReader<bool, RDY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Sensor Busy Status\n\nValue on reset: 0"]
@@ -52,9 +87,12 @@ impl From<BUSY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BUSY`"]
-pub type BUSY_R = crate::R<bool, BUSY_A>;
+#[doc = "Field `BUSY` reader - Sensor Busy Status"]
+pub struct BUSY_R(crate::FieldReader<bool, BUSY_A>);
 impl BUSY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BUSY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BUSY_A {
@@ -66,12 +104,19 @@ impl BUSY_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == BUSY_A::CONST_0
+        **self == BUSY_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == BUSY_A::CONST_1
+        **self == BUSY_A::CONST_1
+    }
+}
+impl core::ops::Deref for BUSY_R {
+    type Target = crate::FieldReader<bool, BUSY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -89,5 +134,21 @@ impl R {
     #[inline(always)]
     pub fn busy(&self) -> BUSY_R {
         BUSY_R::new(((self.bits >> 15) & 0x01) != 0)
+    }
+}
+#[doc = "Die Temperature Sensor Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dtsstat](index.html) module"]
+pub struct DTSSTAT_SPEC;
+impl crate::RegisterSpec for DTSSTAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dtsstat::R](R) reader structure"]
+impl crate::Readable for DTSSTAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets DTSSTAT to value 0"]
+impl crate::Resettable for DTSSTAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

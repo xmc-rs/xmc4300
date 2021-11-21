@@ -1,18 +1,54 @@
-#[doc = "Reader of register ATIM1"]
-pub type R = crate::R<u32, super::ATIM1>;
-#[doc = "Writer for register ATIM1"]
-pub type W = crate::W<u32, super::ATIM1>;
-#[doc = "Register ATIM1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::ATIM1 {
-    type Type = u32;
+#[doc = "Register `ATIM1` reader"]
+pub struct R(crate::R<ATIM1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ATIM1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `AMO`"]
-pub type AMO_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `AMO`"]
+impl From<crate::R<ATIM1_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ATIM1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ATIM1` writer"]
+pub struct W(crate::W<ATIM1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ATIM1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ATIM1_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ATIM1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `AMO` reader - Alarm Month Compare Value"]
+pub struct AMO_R(crate::FieldReader<u8, u8>);
+impl AMO_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        AMO_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AMO_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AMO` writer - Alarm Month Compare Value"]
 pub struct AMO_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> AMO_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `AYE`"]
-pub type AYE_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `AYE`"]
+#[doc = "Field `AYE` reader - Alarm Year Compare Value"]
+pub struct AYE_R(crate::FieldReader<u16, u16>);
+impl AYE_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        AYE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AYE_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AYE` writer - Alarm Year Compare Value"]
 pub struct AYE_W<'a> {
     w: &'a mut W,
 }
@@ -34,7 +82,7 @@ impl<'a> AYE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | (((value as u32) & 0xffff) << 16);
+        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
         self.w
     }
 }
@@ -60,5 +108,31 @@ impl W {
     #[inline(always)]
     pub fn aye(&mut self) -> AYE_W {
         AYE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "RTC Alarm Time Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [atim1](index.html) module"]
+pub struct ATIM1_SPEC;
+impl crate::RegisterSpec for ATIM1_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [atim1::R](R) reader structure"]
+impl crate::Readable for ATIM1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [atim1::W](W) writer structure"]
+impl crate::Writable for ATIM1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ATIM1 to value 0"]
+impl crate::Resettable for ATIM1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,13 +1,37 @@
-#[doc = "Reader of register CHASS"]
-pub type R = crate::R<u32, super::CHASS>;
-#[doc = "Writer for register CHASS"]
-pub type W = crate::W<u32, super::CHASS>;
-#[doc = "Register CHASS `reset()`'s with value 0"]
-impl crate::ResetValue for super::CHASS {
-    type Type = u32;
+#[doc = "Register `CHASS` reader"]
+pub struct R(crate::R<CHASS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CHASS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CHASS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CHASS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CHASS` writer"]
+pub struct W(crate::W<CHASS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CHASS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CHASS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CHASS_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Assignment for Channel 0\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<ASSCH0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ASSCH0`"]
-pub type ASSCH0_R = crate::R<bool, ASSCH0_A>;
+#[doc = "Field `ASSCH0` reader - Assignment for Channel 0"]
+pub struct ASSCH0_R(crate::FieldReader<bool, ASSCH0_A>);
 impl ASSCH0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ASSCH0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ASSCH0_A {
@@ -38,15 +65,22 @@ impl ASSCH0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ASSCH0_A::VALUE1
+        **self == ASSCH0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ASSCH0_A::VALUE2
+        **self == ASSCH0_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `ASSCH0`"]
+impl core::ops::Deref for ASSCH0_R {
+    type Target = crate::FieldReader<bool, ASSCH0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ASSCH0` writer - Assignment for Channel 0"]
 pub struct ASSCH0_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> ASSCH0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ASSCH0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> ASSCH0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<ASSCH1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ASSCH1`"]
-pub type ASSCH1_R = crate::R<bool, ASSCH1_A>;
+#[doc = "Field `ASSCH1` reader - Assignment for Channel 1"]
+pub struct ASSCH1_R(crate::FieldReader<bool, ASSCH1_A>);
 impl ASSCH1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ASSCH1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ASSCH1_A {
@@ -113,15 +148,22 @@ impl ASSCH1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ASSCH1_A::VALUE1
+        **self == ASSCH1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ASSCH1_A::VALUE2
+        **self == ASSCH1_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `ASSCH1`"]
+impl core::ops::Deref for ASSCH1_R {
+    type Target = crate::FieldReader<bool, ASSCH1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ASSCH1` writer - Assignment for Channel 1"]
 pub struct ASSCH1_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> ASSCH1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ASSCH1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> ASSCH1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<ASSCH2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ASSCH2`"]
-pub type ASSCH2_R = crate::R<bool, ASSCH2_A>;
+#[doc = "Field `ASSCH2` reader - Assignment for Channel 2"]
+pub struct ASSCH2_R(crate::FieldReader<bool, ASSCH2_A>);
 impl ASSCH2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ASSCH2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ASSCH2_A {
@@ -188,15 +231,22 @@ impl ASSCH2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ASSCH2_A::VALUE1
+        **self == ASSCH2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ASSCH2_A::VALUE2
+        **self == ASSCH2_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `ASSCH2`"]
+impl core::ops::Deref for ASSCH2_R {
+    type Target = crate::FieldReader<bool, ASSCH2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ASSCH2` writer - Assignment for Channel 2"]
 pub struct ASSCH2_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> ASSCH2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ASSCH2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> ASSCH2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<ASSCH3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ASSCH3`"]
-pub type ASSCH3_R = crate::R<bool, ASSCH3_A>;
+#[doc = "Field `ASSCH3` reader - Assignment for Channel 3"]
+pub struct ASSCH3_R(crate::FieldReader<bool, ASSCH3_A>);
 impl ASSCH3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ASSCH3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ASSCH3_A {
@@ -263,15 +314,22 @@ impl ASSCH3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ASSCH3_A::VALUE1
+        **self == ASSCH3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ASSCH3_A::VALUE2
+        **self == ASSCH3_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `ASSCH3`"]
+impl core::ops::Deref for ASSCH3_R {
+    type Target = crate::FieldReader<bool, ASSCH3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ASSCH3` writer - Assignment for Channel 3"]
 pub struct ASSCH3_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> ASSCH3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ASSCH3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> ASSCH3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +380,12 @@ impl From<ASSCH4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ASSCH4`"]
-pub type ASSCH4_R = crate::R<bool, ASSCH4_A>;
+#[doc = "Field `ASSCH4` reader - Assignment for Channel 4"]
+pub struct ASSCH4_R(crate::FieldReader<bool, ASSCH4_A>);
 impl ASSCH4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ASSCH4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ASSCH4_A {
@@ -338,15 +397,22 @@ impl ASSCH4_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ASSCH4_A::VALUE1
+        **self == ASSCH4_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ASSCH4_A::VALUE2
+        **self == ASSCH4_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `ASSCH4`"]
+impl core::ops::Deref for ASSCH4_R {
+    type Target = crate::FieldReader<bool, ASSCH4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ASSCH4` writer - Assignment for Channel 4"]
 pub struct ASSCH4_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +420,7 @@ impl<'a> ASSCH4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ASSCH4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -381,7 +445,7 @@ impl<'a> ASSCH4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +463,12 @@ impl From<ASSCH5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ASSCH5`"]
-pub type ASSCH5_R = crate::R<bool, ASSCH5_A>;
+#[doc = "Field `ASSCH5` reader - Assignment for Channel 5"]
+pub struct ASSCH5_R(crate::FieldReader<bool, ASSCH5_A>);
 impl ASSCH5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ASSCH5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ASSCH5_A {
@@ -413,15 +480,22 @@ impl ASSCH5_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ASSCH5_A::VALUE1
+        **self == ASSCH5_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ASSCH5_A::VALUE2
+        **self == ASSCH5_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `ASSCH5`"]
+impl core::ops::Deref for ASSCH5_R {
+    type Target = crate::FieldReader<bool, ASSCH5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ASSCH5` writer - Assignment for Channel 5"]
 pub struct ASSCH5_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +503,7 @@ impl<'a> ASSCH5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ASSCH5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -456,7 +528,7 @@ impl<'a> ASSCH5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +546,12 @@ impl From<ASSCH6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ASSCH6`"]
-pub type ASSCH6_R = crate::R<bool, ASSCH6_A>;
+#[doc = "Field `ASSCH6` reader - Assignment for Channel 6"]
+pub struct ASSCH6_R(crate::FieldReader<bool, ASSCH6_A>);
 impl ASSCH6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ASSCH6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ASSCH6_A {
@@ -488,15 +563,22 @@ impl ASSCH6_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ASSCH6_A::VALUE1
+        **self == ASSCH6_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ASSCH6_A::VALUE2
+        **self == ASSCH6_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `ASSCH6`"]
+impl core::ops::Deref for ASSCH6_R {
+    type Target = crate::FieldReader<bool, ASSCH6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ASSCH6` writer - Assignment for Channel 6"]
 pub struct ASSCH6_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +586,7 @@ impl<'a> ASSCH6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ASSCH6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -531,7 +611,7 @@ impl<'a> ASSCH6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +629,12 @@ impl From<ASSCH7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ASSCH7`"]
-pub type ASSCH7_R = crate::R<bool, ASSCH7_A>;
+#[doc = "Field `ASSCH7` reader - Assignment for Channel 7"]
+pub struct ASSCH7_R(crate::FieldReader<bool, ASSCH7_A>);
 impl ASSCH7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ASSCH7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ASSCH7_A {
@@ -563,15 +646,22 @@ impl ASSCH7_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ASSCH7_A::VALUE1
+        **self == ASSCH7_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ASSCH7_A::VALUE2
+        **self == ASSCH7_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `ASSCH7`"]
+impl core::ops::Deref for ASSCH7_R {
+    type Target = crate::FieldReader<bool, ASSCH7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ASSCH7` writer - Assignment for Channel 7"]
 pub struct ASSCH7_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +669,7 @@ impl<'a> ASSCH7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ASSCH7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -606,7 +694,7 @@ impl<'a> ASSCH7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -692,5 +780,31 @@ impl W {
     #[inline(always)]
     pub fn assch7(&mut self) -> ASSCH7_W {
         ASSCH7_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Assignment Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chass](index.html) module"]
+pub struct CHASS_SPEC;
+impl crate::RegisterSpec for CHASS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [chass::R](R) reader structure"]
+impl crate::Readable for CHASS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [chass::W](W) writer structure"]
+impl crate::Writable for CHASS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CHASS to value 0"]
+impl crate::Resettable for CHASS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

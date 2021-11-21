@@ -1,11 +1,22 @@
-#[doc = "Writer for register PWRCLR"]
-pub type W = crate::W<u32, super::PWRCLR>;
-#[doc = "Register PWRCLR `reset()`'s with value 0"]
-impl crate::ResetValue for super::PWRCLR {
-    type Type = u32;
+#[doc = "Register `PWRCLR` writer"]
+pub struct W(crate::W<PWRCLR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PWRCLR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PWRCLR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PWRCLR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Clear Disable Hibernate Domain\n\nValue on reset: 0"]
@@ -22,7 +33,7 @@ impl From<HIB_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `HIB`"]
+#[doc = "Field `HIB` writer - Clear Disable Hibernate Domain"]
 pub struct HIB_W<'a> {
     w: &'a mut W,
 }
@@ -30,9 +41,7 @@ impl<'a> HIB_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: HIB_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -57,7 +66,7 @@ impl<'a> HIB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -75,7 +84,7 @@ impl From<USBPHYPDQ_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `USBPHYPDQ`"]
+#[doc = "Field `USBPHYPDQ` writer - Clear USB PHY Transceiver Disable"]
 pub struct USBPHYPDQ_W<'a> {
     w: &'a mut W,
 }
@@ -83,9 +92,7 @@ impl<'a> USBPHYPDQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: USBPHYPDQ_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -110,7 +117,7 @@ impl<'a> USBPHYPDQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -128,7 +135,7 @@ impl From<USBOTGEN_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `USBOTGEN`"]
+#[doc = "Field `USBOTGEN` writer - Clear USB On-The-Go Comparators Enable"]
 pub struct USBOTGEN_W<'a> {
     w: &'a mut W,
 }
@@ -136,9 +143,7 @@ impl<'a> USBOTGEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: USBOTGEN_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -163,7 +168,7 @@ impl<'a> USBOTGEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
@@ -181,7 +186,7 @@ impl From<USBPUWQ_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `USBPUWQ`"]
+#[doc = "Field `USBPUWQ` writer - Clear USB Weak Pull-Up at PADN Enable"]
 pub struct USBPUWQ_W<'a> {
     w: &'a mut W,
 }
@@ -189,9 +194,7 @@ impl<'a> USBPUWQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: USBPUWQ_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -216,7 +219,7 @@ impl<'a> USBPUWQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
@@ -240,5 +243,27 @@ impl W {
     #[inline(always)]
     pub fn usbpuwq(&mut self) -> USBPUWQ_W {
         USBPUWQ_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PCU Clear Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwrclr](index.html) module"]
+pub struct PWRCLR_SPEC;
+impl crate::RegisterSpec for PWRCLR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [pwrclr::W](W) writer structure"]
+impl crate::Writable for PWRCLR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PWRCLR to value 0"]
+impl crate::Resettable for PWRCLR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

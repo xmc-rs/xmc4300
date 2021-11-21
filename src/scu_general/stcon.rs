@@ -1,13 +1,37 @@
-#[doc = "Reader of register STCON"]
-pub type R = crate::R<u32, super::STCON>;
-#[doc = "Writer for register STCON"]
-pub type W = crate::W<u32, super::STCON>;
-#[doc = "Register STCON `reset()`'s with value 0"]
-impl crate::ResetValue for super::STCON {
-    type Type = u32;
+#[doc = "Register `STCON` reader"]
+pub struct R(crate::R<STCON_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<STCON_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<STCON_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<STCON_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `STCON` writer"]
+pub struct W(crate::W<STCON_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<STCON_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<STCON_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<STCON_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "HW Configuration\n\nValue on reset: 0"]
@@ -29,9 +53,12 @@ impl From<HWCON_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `HWCON`"]
-pub type HWCON_R = crate::R<u8, HWCON_A>;
+#[doc = "Field `HWCON` reader - HW Configuration"]
+pub struct HWCON_R(crate::FieldReader<u8, HWCON_A>);
 impl HWCON_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        HWCON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HWCON_A {
@@ -46,22 +73,29 @@ impl HWCON_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        *self == HWCON_A::CONST_00
+        **self == HWCON_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        *self == HWCON_A::CONST_01
+        **self == HWCON_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        *self == HWCON_A::CONST_10
+        **self == HWCON_A::CONST_10
     }
     #[doc = "Checks if the value of the field is `CONST_11`"]
     #[inline(always)]
     pub fn is_const_11(&self) -> bool {
-        *self == HWCON_A::CONST_11
+        **self == HWCON_A::CONST_11
+    }
+}
+impl core::ops::Deref for HWCON_R {
+    type Target = crate::FieldReader<u8, HWCON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "SW Configuration\n\nValue on reset: 0"]
@@ -91,67 +125,76 @@ impl From<SWCON_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SWCON`"]
-pub type SWCON_R = crate::R<u8, SWCON_A>;
+#[doc = "Field `SWCON` reader - SW Configuration"]
+pub struct SWCON_R(crate::FieldReader<u8, SWCON_A>);
 impl SWCON_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SWCON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, SWCON_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SWCON_A> {
         match self.bits {
-            0 => Val(SWCON_A::CONST_0000),
-            1 => Val(SWCON_A::CONST_0001),
-            2 => Val(SWCON_A::CONST_0010),
-            3 => Val(SWCON_A::CONST_0011),
-            4 => Val(SWCON_A::CONST_0100),
-            8 => Val(SWCON_A::CONST_1000),
-            12 => Val(SWCON_A::CONST_1100),
-            14 => Val(SWCON_A::CONST_1110),
-            i => Res(i),
+            0 => Some(SWCON_A::CONST_0000),
+            1 => Some(SWCON_A::CONST_0001),
+            2 => Some(SWCON_A::CONST_0010),
+            3 => Some(SWCON_A::CONST_0011),
+            4 => Some(SWCON_A::CONST_0100),
+            8 => Some(SWCON_A::CONST_1000),
+            12 => Some(SWCON_A::CONST_1100),
+            14 => Some(SWCON_A::CONST_1110),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `CONST_0000`"]
     #[inline(always)]
     pub fn is_const_0000(&self) -> bool {
-        *self == SWCON_A::CONST_0000
+        **self == SWCON_A::CONST_0000
     }
     #[doc = "Checks if the value of the field is `CONST_0001`"]
     #[inline(always)]
     pub fn is_const_0001(&self) -> bool {
-        *self == SWCON_A::CONST_0001
+        **self == SWCON_A::CONST_0001
     }
     #[doc = "Checks if the value of the field is `CONST_0010`"]
     #[inline(always)]
     pub fn is_const_0010(&self) -> bool {
-        *self == SWCON_A::CONST_0010
+        **self == SWCON_A::CONST_0010
     }
     #[doc = "Checks if the value of the field is `CONST_0011`"]
     #[inline(always)]
     pub fn is_const_0011(&self) -> bool {
-        *self == SWCON_A::CONST_0011
+        **self == SWCON_A::CONST_0011
     }
     #[doc = "Checks if the value of the field is `CONST_0100`"]
     #[inline(always)]
     pub fn is_const_0100(&self) -> bool {
-        *self == SWCON_A::CONST_0100
+        **self == SWCON_A::CONST_0100
     }
     #[doc = "Checks if the value of the field is `CONST_1000`"]
     #[inline(always)]
     pub fn is_const_1000(&self) -> bool {
-        *self == SWCON_A::CONST_1000
+        **self == SWCON_A::CONST_1000
     }
     #[doc = "Checks if the value of the field is `CONST_1100`"]
     #[inline(always)]
     pub fn is_const_1100(&self) -> bool {
-        *self == SWCON_A::CONST_1100
+        **self == SWCON_A::CONST_1100
     }
     #[doc = "Checks if the value of the field is `CONST_1110`"]
     #[inline(always)]
     pub fn is_const_1110(&self) -> bool {
-        *self == SWCON_A::CONST_1110
+        **self == SWCON_A::CONST_1110
     }
 }
-#[doc = "Write proxy for field `SWCON`"]
+impl core::ops::Deref for SWCON_R {
+    type Target = crate::FieldReader<u8, SWCON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SWCON` writer - SW Configuration"]
 pub struct SWCON_W<'a> {
     w: &'a mut W,
 }
@@ -204,7 +247,7 @@ impl<'a> SWCON_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
         self.w
     }
 }
@@ -225,5 +268,31 @@ impl W {
     #[inline(always)]
     pub fn swcon(&mut self) -> SWCON_W {
         SWCON_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Startup Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [stcon](index.html) module"]
+pub struct STCON_SPEC;
+impl crate::RegisterSpec for STCON_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [stcon::R](R) reader structure"]
+impl crate::Readable for STCON_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [stcon::W](W) writer structure"]
+impl crate::Writable for STCON_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets STCON to value 0"]
+impl crate::Resettable for STCON_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

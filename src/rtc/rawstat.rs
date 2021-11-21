@@ -1,19 +1,116 @@
-#[doc = "Reader of register RAWSTAT"]
-pub type R = crate::R<u32, super::RAWSTAT>;
-#[doc = "Reader of field `RPSE`"]
-pub type RPSE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RPMI`"]
-pub type RPMI_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RPHO`"]
-pub type RPHO_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RPDA`"]
-pub type RPDA_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RPMO`"]
-pub type RPMO_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RPYE`"]
-pub type RPYE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RAI`"]
-pub type RAI_R = crate::R<bool, bool>;
+#[doc = "Register `RAWSTAT` reader"]
+pub struct R(crate::R<RAWSTAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RAWSTAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<RAWSTAT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<RAWSTAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `RPSE` reader - Raw Periodic Seconds Service Request"]
+pub struct RPSE_R(crate::FieldReader<bool, bool>);
+impl RPSE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RPSE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RPSE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RPMI` reader - Raw Periodic Minutes Service Request"]
+pub struct RPMI_R(crate::FieldReader<bool, bool>);
+impl RPMI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RPMI_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RPMI_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RPHO` reader - Raw Periodic Hours Service Request"]
+pub struct RPHO_R(crate::FieldReader<bool, bool>);
+impl RPHO_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RPHO_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RPHO_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RPDA` reader - Raw Periodic Days Service Request"]
+pub struct RPDA_R(crate::FieldReader<bool, bool>);
+impl RPDA_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RPDA_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RPDA_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RPMO` reader - Raw Periodic Months Service Request"]
+pub struct RPMO_R(crate::FieldReader<bool, bool>);
+impl RPMO_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RPMO_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RPMO_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RPYE` reader - Raw Periodic Years Service Request"]
+pub struct RPYE_R(crate::FieldReader<bool, bool>);
+impl RPYE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RPYE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RPYE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RAI` reader - Raw Alarm Service Request"]
+pub struct RAI_R(crate::FieldReader<bool, bool>);
+impl RAI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RAI_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RAI_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Raw Periodic Seconds Service Request"]
     #[inline(always)]
@@ -49,5 +146,21 @@ impl R {
     #[inline(always)]
     pub fn rai(&self) -> RAI_R {
         RAI_R::new(((self.bits >> 8) & 0x01) != 0)
+    }
+}
+#[doc = "RTC Raw Service Request Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rawstat](index.html) module"]
+pub struct RAWSTAT_SPEC;
+impl crate::RegisterSpec for RAWSTAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [rawstat::R](R) reader structure"]
+impl crate::Readable for RAWSTAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets RAWSTAT to value 0"]
+impl crate::Resettable for RAWSTAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,13 +1,37 @@
-#[doc = "Reader of register OCS"]
-pub type R = crate::R<u32, super::OCS>;
-#[doc = "Writer for register OCS"]
-pub type W = crate::W<u32, super::OCS>;
-#[doc = "Register OCS `reset()`'s with value 0"]
-impl crate::ResetValue for super::OCS {
-    type Type = u32;
+#[doc = "Register `OCS` reader"]
+pub struct R(crate::R<OCS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<OCS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<OCS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<OCS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `OCS` writer"]
+pub struct W(crate::W<OCS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<OCS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<OCS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<OCS_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Trigger Set for OTGB0/1\n\nValue on reset: 0"]
@@ -25,31 +49,40 @@ impl From<TGS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TGS`"]
-pub type TGS_R = crate::R<u8, TGS_A>;
+#[doc = "Field `TGS` reader - Trigger Set for OTGB0/1"]
+pub struct TGS_R(crate::FieldReader<u8, TGS_A>);
 impl TGS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TGS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, TGS_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TGS_A> {
         match self.bits {
-            0 => Val(TGS_A::VALUE1),
-            1 => Val(TGS_A::VALUE2),
-            i => Res(i),
+            0 => Some(TGS_A::VALUE1),
+            1 => Some(TGS_A::VALUE2),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TGS_A::VALUE1
+        **self == TGS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TGS_A::VALUE2
+        **self == TGS_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `TGS`"]
+impl core::ops::Deref for TGS_R {
+    type Target = crate::FieldReader<u8, TGS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TGS` writer - Trigger Set for OTGB0/1"]
 pub struct TGS_W<'a> {
     w: &'a mut W,
 }
@@ -72,7 +105,7 @@ impl<'a> TGS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
@@ -90,9 +123,12 @@ impl From<TGB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TGB`"]
-pub type TGB_R = crate::R<bool, TGB_A>;
+#[doc = "Field `TGB` reader - OTGB0/1 Bus Select"]
+pub struct TGB_R(crate::FieldReader<bool, TGB_A>);
 impl TGB_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TGB_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TGB_A {
@@ -104,15 +140,22 @@ impl TGB_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TGB_A::VALUE1
+        **self == TGB_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == TGB_A::VALUE2
+        **self == TGB_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `TGB`"]
+impl core::ops::Deref for TGB_R {
+    type Target = crate::FieldReader<bool, TGB_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TGB` writer - OTGB0/1 Bus Select"]
 pub struct TGB_W<'a> {
     w: &'a mut W,
 }
@@ -120,9 +163,7 @@ impl<'a> TGB_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TGB_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Trigger Set is output on OTGB0"]
     #[inline(always)]
@@ -147,11 +188,11 @@ impl<'a> TGB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `TG_P`"]
+#[doc = "Field `TG_P` writer - TGS, TGB Write Protection"]
 pub struct TG_P_W<'a> {
     w: &'a mut W,
 }
@@ -169,7 +210,7 @@ impl<'a> TG_P_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -192,43 +233,52 @@ impl From<SUS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SUS`"]
-pub type SUS_R = crate::R<u8, SUS_A>;
+#[doc = "Field `SUS` reader - OCDS Suspend Control"]
+pub struct SUS_R(crate::FieldReader<u8, SUS_A>);
 impl SUS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SUS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, SUS_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SUS_A> {
         match self.bits {
-            0 => Val(SUS_A::VALUE1),
-            1 => Val(SUS_A::VALUE2),
-            2 => Val(SUS_A::VALUE3),
-            3 => Val(SUS_A::VALUE4),
-            i => Res(i),
+            0 => Some(SUS_A::VALUE1),
+            1 => Some(SUS_A::VALUE2),
+            2 => Some(SUS_A::VALUE3),
+            3 => Some(SUS_A::VALUE4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SUS_A::VALUE1
+        **self == SUS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SUS_A::VALUE2
+        **self == SUS_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == SUS_A::VALUE3
+        **self == SUS_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == SUS_A::VALUE4
+        **self == SUS_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `SUS`"]
+impl core::ops::Deref for SUS_R {
+    type Target = crate::FieldReader<u8, SUS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SUS` writer - OCDS Suspend Control"]
 pub struct SUS_W<'a> {
     w: &'a mut W,
 }
@@ -261,11 +311,11 @@ impl<'a> SUS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | (((value as u32) & 0x0f) << 24);
+        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
         self.w
     }
 }
-#[doc = "Write proxy for field `SUS_P`"]
+#[doc = "Field `SUS_P` writer - SUS Write Protection"]
 pub struct SUS_P_W<'a> {
     w: &'a mut W,
 }
@@ -283,7 +333,7 @@ impl<'a> SUS_P_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
         self.w
     }
 }
@@ -301,9 +351,12 @@ impl From<SUSSTA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SUSSTA`"]
-pub type SUSSTA_R = crate::R<bool, SUSSTA_A>;
+#[doc = "Field `SUSSTA` reader - Suspend State"]
+pub struct SUSSTA_R(crate::FieldReader<bool, SUSSTA_A>);
 impl SUSSTA_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUSSTA_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SUSSTA_A {
@@ -315,12 +368,19 @@ impl SUSSTA_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SUSSTA_A::VALUE1
+        **self == SUSSTA_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SUSSTA_A::VALUE2
+        **self == SUSSTA_A::VALUE2
+    }
+}
+impl core::ops::Deref for SUSSTA_R {
+    type Target = crate::FieldReader<bool, SUSSTA_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -370,5 +430,31 @@ impl W {
     #[inline(always)]
     pub fn sus_p(&mut self) -> SUS_P_W {
         SUS_P_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "OCDS Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ocs](index.html) module"]
+pub struct OCS_SPEC;
+impl crate::RegisterSpec for OCS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ocs::R](R) reader structure"]
+impl crate::Readable for OCS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ocs::W](W) writer structure"]
+impl crate::Writable for OCS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets OCS to value 0"]
+impl crate::Resettable for OCS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

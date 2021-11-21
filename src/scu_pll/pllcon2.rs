@@ -1,13 +1,37 @@
-#[doc = "Reader of register PLLCON2"]
-pub type R = crate::R<u32, super::PLLCON2>;
-#[doc = "Writer for register PLLCON2"]
-pub type W = crate::W<u32, super::PLLCON2>;
-#[doc = "Register PLLCON2 `reset()`'s with value 0x01"]
-impl crate::ResetValue for super::PLLCON2 {
-    type Type = u32;
+#[doc = "Register `PLLCON2` reader"]
+pub struct R(crate::R<PLLCON2_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PLLCON2_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x01
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PLLCON2_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PLLCON2_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PLLCON2` writer"]
+pub struct W(crate::W<PLLCON2_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PLLCON2_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PLLCON2_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PLLCON2_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "P-Divider Input Selection\n\nValue on reset: 1"]
@@ -24,9 +48,12 @@ impl From<PINSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PINSEL`"]
-pub type PINSEL_R = crate::R<bool, PINSEL_A>;
+#[doc = "Field `PINSEL` reader - P-Divider Input Selection"]
+pub struct PINSEL_R(crate::FieldReader<bool, PINSEL_A>);
 impl PINSEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PINSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PINSEL_A {
@@ -38,15 +65,22 @@ impl PINSEL_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PINSEL_A::CONST_0
+        **self == PINSEL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PINSEL_A::CONST_1
+        **self == PINSEL_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PINSEL`"]
+impl core::ops::Deref for PINSEL_R {
+    type Target = crate::FieldReader<bool, PINSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PINSEL` writer - P-Divider Input Selection"]
 pub struct PINSEL_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> PINSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PINSEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PLL external oscillator selected"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> PINSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<K1INSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `K1INSEL`"]
-pub type K1INSEL_R = crate::R<bool, K1INSEL_A>;
+#[doc = "Field `K1INSEL` reader - K1-Divider Input Selection"]
+pub struct K1INSEL_R(crate::FieldReader<bool, K1INSEL_A>);
 impl K1INSEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        K1INSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> K1INSEL_A {
@@ -113,15 +148,22 @@ impl K1INSEL_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == K1INSEL_A::CONST_0
+        **self == K1INSEL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == K1INSEL_A::CONST_1
+        **self == K1INSEL_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `K1INSEL`"]
+impl core::ops::Deref for K1INSEL_R {
+    type Target = crate::FieldReader<bool, K1INSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `K1INSEL` writer - K1-Divider Input Selection"]
 pub struct K1INSEL_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> K1INSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: K1INSEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PLL external oscillator selected"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> K1INSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -182,5 +222,31 @@ impl W {
     #[inline(always)]
     pub fn k1insel(&mut self) -> K1INSEL_W {
         K1INSEL_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PLL Configuration 2 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pllcon2](index.html) module"]
+pub struct PLLCON2_SPEC;
+impl crate::RegisterSpec for PLLCON2_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pllcon2::R](R) reader structure"]
+impl crate::Readable for PLLCON2_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pllcon2::W](W) writer structure"]
+impl crate::Writable for PLLCON2_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PLLCON2 to value 0x01"]
+impl crate::Resettable for PLLCON2_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x01
     }
 }

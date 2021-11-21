@@ -1,18 +1,54 @@
-#[doc = "Reader of register ECATCLKCR"]
-pub type R = crate::R<u32, super::ECATCLKCR>;
-#[doc = "Writer for register ECATCLKCR"]
-pub type W = crate::W<u32, super::ECATCLKCR>;
-#[doc = "Register ECATCLKCR `reset()`'s with value 0"]
-impl crate::ResetValue for super::ECATCLKCR {
-    type Type = u32;
+#[doc = "Register `ECATCLKCR` reader"]
+pub struct R(crate::R<ECATCLKCR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ECATCLKCR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ECADIV`"]
-pub type ECADIV_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `ECADIV`"]
+impl From<crate::R<ECATCLKCR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ECATCLKCR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ECATCLKCR` writer"]
+pub struct W(crate::W<ECATCLKCR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ECATCLKCR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ECATCLKCR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ECATCLKCR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ECADIV` reader - EtherCAT Clock Divider Value"]
+pub struct ECADIV_R(crate::FieldReader<u8, u8>);
+impl ECADIV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ECADIV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ECADIV_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECADIV` writer - EtherCAT Clock Divider Value"]
 pub struct ECADIV_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +56,7 @@ impl<'a> ECADIV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
@@ -38,9 +74,12 @@ impl From<ECATSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ECATSEL`"]
-pub type ECATSEL_R = crate::R<bool, ECATSEL_A>;
+#[doc = "Field `ECATSEL` reader - EtherCAT Clock Selection Value"]
+pub struct ECATSEL_R(crate::FieldReader<bool, ECATSEL_A>);
 impl ECATSEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECATSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ECATSEL_A {
@@ -52,15 +91,22 @@ impl ECATSEL_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ECATSEL_A::CONST_0
+        **self == ECATSEL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ECATSEL_A::CONST_1
+        **self == ECATSEL_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `ECATSEL`"]
+impl core::ops::Deref for ECATSEL_R {
+    type Target = crate::FieldReader<bool, ECATSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECATSEL` writer - EtherCAT Clock Selection Value"]
 pub struct ECATSEL_W<'a> {
     w: &'a mut W,
 }
@@ -68,9 +114,7 @@ impl<'a> ECATSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ECATSEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "fPLLUSB clock"]
     #[inline(always)]
@@ -95,7 +139,7 @@ impl<'a> ECATSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -121,5 +165,31 @@ impl W {
     #[inline(always)]
     pub fn ecatsel(&mut self) -> ECATSEL_W {
         ECATSEL_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "EtherCAT Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ecatclkcr](index.html) module"]
+pub struct ECATCLKCR_SPEC;
+impl crate::RegisterSpec for ECATCLKCR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ecatclkcr::R](R) reader structure"]
+impl crate::Readable for ECATCLKCR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ecatclkcr::W](W) writer structure"]
+impl crate::Writable for ECATCLKCR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ECATCLKCR to value 0"]
+impl crate::Resettable for ECATCLKCR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

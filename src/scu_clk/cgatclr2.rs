@@ -1,11 +1,22 @@
-#[doc = "Writer for register CGATCLR2"]
-pub type W = crate::W<u32, super::CGATCLR2>;
-#[doc = "Register CGATCLR2 `reset()`'s with value 0"]
-impl crate::ResetValue for super::CGATCLR2 {
-    type Type = u32;
+#[doc = "Register `CGATCLR2` writer"]
+pub struct W(crate::W<CGATCLR2_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CGATCLR2_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CGATCLR2_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CGATCLR2_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "WDT Gating Clear\n\nValue on reset: 0"]
@@ -22,7 +33,7 @@ impl From<WDT_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WDT`"]
+#[doc = "Field `WDT` writer - WDT Gating Clear"]
 pub struct WDT_W<'a> {
     w: &'a mut W,
 }
@@ -30,9 +41,7 @@ impl<'a> WDT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WDT_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -57,7 +66,7 @@ impl<'a> WDT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -75,7 +84,7 @@ impl From<ETH0_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `ETH0`"]
+#[doc = "Field `ETH0` writer - ETH0 Gating Clear"]
 pub struct ETH0_W<'a> {
     w: &'a mut W,
 }
@@ -83,9 +92,7 @@ impl<'a> ETH0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ETH0_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -110,7 +117,7 @@ impl<'a> ETH0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -128,7 +135,7 @@ impl From<DMA0_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `DMA0`"]
+#[doc = "Field `DMA0` writer - DMA0 Gating Clear"]
 pub struct DMA0_W<'a> {
     w: &'a mut W,
 }
@@ -136,9 +143,7 @@ impl<'a> DMA0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DMA0_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -163,7 +168,7 @@ impl<'a> DMA0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -181,7 +186,7 @@ impl From<FCE_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `FCE`"]
+#[doc = "Field `FCE` writer - FCE Gating Clear"]
 pub struct FCE_W<'a> {
     w: &'a mut W,
 }
@@ -189,9 +194,7 @@ impl<'a> FCE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FCE_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -216,7 +219,7 @@ impl<'a> FCE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -234,7 +237,7 @@ impl From<USB_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `USB`"]
+#[doc = "Field `USB` writer - USB Gating Clear"]
 pub struct USB_W<'a> {
     w: &'a mut W,
 }
@@ -242,9 +245,7 @@ impl<'a> USB_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: USB_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -269,7 +270,7 @@ impl<'a> USB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -287,7 +288,7 @@ impl From<ECAT0_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `ECAT0`"]
+#[doc = "Field `ECAT0` writer - ECAT0 Gating Clear"]
 pub struct ECAT0_W<'a> {
     w: &'a mut W,
 }
@@ -295,9 +296,7 @@ impl<'a> ECAT0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ECAT0_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -322,7 +321,7 @@ impl<'a> ECAT0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -356,5 +355,27 @@ impl W {
     #[inline(always)]
     pub fn ecat0(&mut self) -> ECAT0_W {
         ECAT0_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Peripheral 2 Clock Gating Clear\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatclr2](index.html) module"]
+pub struct CGATCLR2_SPEC;
+impl crate::RegisterSpec for CGATCLR2_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [cgatclr2::W](W) writer structure"]
+impl crate::Writable for CGATCLR2_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CGATCLR2 to value 0"]
+impl crate::Resettable for CGATCLR2_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

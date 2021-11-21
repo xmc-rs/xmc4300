@@ -1,13 +1,37 @@
-#[doc = "Reader of register DC_ACT"]
-pub type R = crate::R<u8, super::DC_ACT>;
-#[doc = "Writer for register DC_ACT"]
-pub type W = crate::W<u8, super::DC_ACT>;
-#[doc = "Register DC_ACT `reset()`'s with value 0"]
-impl crate::ResetValue for super::DC_ACT {
-    type Type = u8;
+#[doc = "Register `DC_ACT` reader"]
+pub struct R(crate::R<DC_ACT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DC_ACT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DC_ACT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DC_ACT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DC_ACT` writer"]
+pub struct W(crate::W<DC_ACT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DC_ACT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DC_ACT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DC_ACT_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Sync Out Unit activation\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<SYNC_OUT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SYNC_OUT`"]
-pub type SYNC_OUT_R = crate::R<bool, SYNC_OUT_A>;
+#[doc = "Field `SYNC_OUT` reader - Sync Out Unit activation"]
+pub struct SYNC_OUT_R(crate::FieldReader<bool, SYNC_OUT_A>);
 impl SYNC_OUT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SYNC_OUT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYNC_OUT_A {
@@ -38,15 +65,22 @@ impl SYNC_OUT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SYNC_OUT_A::VALUE1
+        **self == SYNC_OUT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SYNC_OUT_A::VALUE2
+        **self == SYNC_OUT_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `SYNC_OUT`"]
+impl core::ops::Deref for SYNC_OUT_R {
+    type Target = crate::FieldReader<bool, SYNC_OUT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SYNC_OUT` writer - Sync Out Unit activation"]
 pub struct SYNC_OUT_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> SYNC_OUT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SYNC_OUT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Deactivated"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> SYNC_OUT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u8) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<SYNC_0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SYNC_0`"]
-pub type SYNC_0_R = crate::R<bool, SYNC_0_A>;
+#[doc = "Field `SYNC_0` reader - SYNC0 generation"]
+pub struct SYNC_0_R(crate::FieldReader<bool, SYNC_0_A>);
 impl SYNC_0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SYNC_0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYNC_0_A {
@@ -113,15 +148,22 @@ impl SYNC_0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SYNC_0_A::VALUE1
+        **self == SYNC_0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SYNC_0_A::VALUE2
+        **self == SYNC_0_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `SYNC_0`"]
+impl core::ops::Deref for SYNC_0_R {
+    type Target = crate::FieldReader<bool, SYNC_0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SYNC_0` writer - SYNC0 generation"]
 pub struct SYNC_0_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> SYNC_0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SYNC_0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Deactivated"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> SYNC_0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u8) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<SYNC_1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SYNC_1`"]
-pub type SYNC_1_R = crate::R<bool, SYNC_1_A>;
+#[doc = "Field `SYNC_1` reader - SYNC1 generation"]
+pub struct SYNC_1_R(crate::FieldReader<bool, SYNC_1_A>);
 impl SYNC_1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SYNC_1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYNC_1_A {
@@ -188,15 +231,22 @@ impl SYNC_1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SYNC_1_A::VALUE1
+        **self == SYNC_1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SYNC_1_A::VALUE2
+        **self == SYNC_1_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `SYNC_1`"]
+impl core::ops::Deref for SYNC_1_R {
+    type Target = crate::FieldReader<bool, SYNC_1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SYNC_1` writer - SYNC1 generation"]
 pub struct SYNC_1_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> SYNC_1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SYNC_1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Deactivated"]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> SYNC_1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u8) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
         self.w
     }
 }
@@ -267,5 +315,31 @@ impl W {
     #[inline(always)]
     pub fn sync_1(&mut self) -> SYNC_1_W {
         SYNC_1_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Activation register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dc_act](index.html) module"]
+pub struct DC_ACT_SPEC;
+impl crate::RegisterSpec for DC_ACT_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [dc_act::R](R) reader structure"]
+impl crate::Readable for DC_ACT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dc_act::W](W) writer structure"]
+impl crate::Writable for DC_ACT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DC_ACT to value 0"]
+impl crate::Resettable for DC_ACT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

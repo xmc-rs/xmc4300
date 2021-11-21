@@ -1,14 +1,25 @@
-#[doc = "Writer for register GIDLC"]
-pub type W = crate::W<u32, super::GIDLC>;
-#[doc = "Register GIDLC `reset()`'s with value 0"]
-impl crate::ResetValue for super::GIDLC {
-    type Type = u32;
+#[doc = "Register `GIDLC` writer"]
+pub struct W(crate::W<GIDLC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<GIDLC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `CS0I`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<GIDLC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<GIDLC_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CS0I` writer - CC80 IDLE mode clear"]
 pub struct CS0I_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +37,11 @@ impl<'a> CS0I_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `CS1I`"]
+#[doc = "Field `CS1I` writer - CC81 IDLE mode clear"]
 pub struct CS1I_W<'a> {
     w: &'a mut W,
 }
@@ -48,11 +59,11 @@ impl<'a> CS1I_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `CS2I`"]
+#[doc = "Field `CS2I` writer - CC82 IDLE mode clear"]
 pub struct CS2I_W<'a> {
     w: &'a mut W,
 }
@@ -70,11 +81,11 @@ impl<'a> CS2I_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `CS3I`"]
+#[doc = "Field `CS3I` writer - CC83 IDLE mode clear"]
 pub struct CS3I_W<'a> {
     w: &'a mut W,
 }
@@ -92,11 +103,11 @@ impl<'a> CS3I_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Write proxy for field `SPRB`"]
+#[doc = "Field `SPRB` writer - Prescaler Run Bit Set"]
 pub struct SPRB_W<'a> {
     w: &'a mut W,
 }
@@ -114,11 +125,11 @@ impl<'a> SPRB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Write proxy for field `SPCH`"]
+#[doc = "Field `SPCH` writer - Parity Checker run bit set"]
 pub struct SPCH_W<'a> {
     w: &'a mut W,
 }
@@ -136,7 +147,7 @@ impl<'a> SPCH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -170,5 +181,27 @@ impl W {
     #[inline(always)]
     pub fn spch(&mut self) -> SPCH_W {
         SPCH_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Global Idle Clear\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gidlc](index.html) module"]
+pub struct GIDLC_SPEC;
+impl crate::RegisterSpec for GIDLC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [gidlc::W](W) writer structure"]
+impl crate::Writable for GIDLC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets GIDLC to value 0"]
+impl crate::Resettable for GIDLC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

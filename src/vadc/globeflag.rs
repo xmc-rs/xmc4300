@@ -1,13 +1,37 @@
-#[doc = "Reader of register GLOBEFLAG"]
-pub type R = crate::R<u32, super::GLOBEFLAG>;
-#[doc = "Writer for register GLOBEFLAG"]
-pub type W = crate::W<u32, super::GLOBEFLAG>;
-#[doc = "Register GLOBEFLAG `reset()`'s with value 0"]
-impl crate::ResetValue for super::GLOBEFLAG {
-    type Type = u32;
+#[doc = "Register `GLOBEFLAG` reader"]
+pub struct R(crate::R<GLOBEFLAG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GLOBEFLAG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<GLOBEFLAG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GLOBEFLAG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `GLOBEFLAG` writer"]
+pub struct W(crate::W<GLOBEFLAG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<GLOBEFLAG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<GLOBEFLAG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<GLOBEFLAG_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Source Event (Background)\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<SEVGLB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SEVGLB`"]
-pub type SEVGLB_R = crate::R<bool, SEVGLB_A>;
+#[doc = "Field `SEVGLB` reader - Source Event (Background)"]
+pub struct SEVGLB_R(crate::FieldReader<bool, SEVGLB_A>);
 impl SEVGLB_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SEVGLB_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SEVGLB_A {
@@ -38,15 +65,22 @@ impl SEVGLB_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SEVGLB_A::VALUE1
+        **self == SEVGLB_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SEVGLB_A::VALUE2
+        **self == SEVGLB_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `SEVGLB`"]
+impl core::ops::Deref for SEVGLB_R {
+    type Target = crate::FieldReader<bool, SEVGLB_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SEVGLB` writer - Source Event (Background)"]
 pub struct SEVGLB_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> SEVGLB_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SEVGLB_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No source event"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> SEVGLB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<REVGLB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REVGLB`"]
-pub type REVGLB_R = crate::R<bool, REVGLB_A>;
+#[doc = "Field `REVGLB` reader - Global Result Event"]
+pub struct REVGLB_R(crate::FieldReader<bool, REVGLB_A>);
 impl REVGLB_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REVGLB_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REVGLB_A {
@@ -113,15 +148,22 @@ impl REVGLB_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == REVGLB_A::VALUE1
+        **self == REVGLB_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == REVGLB_A::VALUE2
+        **self == REVGLB_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `REVGLB`"]
+impl core::ops::Deref for REVGLB_R {
+    type Target = crate::FieldReader<bool, REVGLB_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REVGLB` writer - Global Result Event"]
 pub struct REVGLB_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> REVGLB_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REVGLB_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No result event"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> REVGLB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -174,7 +214,7 @@ impl From<SEVGLBCLR_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `SEVGLBCLR`"]
+#[doc = "Field `SEVGLBCLR` writer - Clear Source Event (Background)"]
 pub struct SEVGLBCLR_W<'a> {
     w: &'a mut W,
 }
@@ -182,9 +222,7 @@ impl<'a> SEVGLBCLR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SEVGLBCLR_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -209,7 +247,7 @@ impl<'a> SEVGLBCLR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -227,7 +265,7 @@ impl From<REVGLBCLR_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `REVGLBCLR`"]
+#[doc = "Field `REVGLBCLR` writer - Clear Global Result Event"]
 pub struct REVGLBCLR_W<'a> {
     w: &'a mut W,
 }
@@ -235,9 +273,7 @@ impl<'a> REVGLBCLR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REVGLBCLR_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -262,7 +298,7 @@ impl<'a> REVGLBCLR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
@@ -298,5 +334,31 @@ impl W {
     #[inline(always)]
     pub fn revglbclr(&mut self) -> REVGLBCLR_W {
         REVGLBCLR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Global Event Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [globeflag](index.html) module"]
+pub struct GLOBEFLAG_SPEC;
+impl crate::RegisterSpec for GLOBEFLAG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [globeflag::R](R) reader structure"]
+impl crate::Readable for GLOBEFLAG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [globeflag::W](W) writer structure"]
+impl crate::Writable for GLOBEFLAG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets GLOBEFLAG to value 0"]
+impl crate::Resettable for GLOBEFLAG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

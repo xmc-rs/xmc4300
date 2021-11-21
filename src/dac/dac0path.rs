@@ -1,18 +1,54 @@
-#[doc = "Reader of register DAC0PATH"]
-pub type R = crate::R<u32, super::DAC0PATH>;
-#[doc = "Writer for register DAC0PATH"]
-pub type W = crate::W<u32, super::DAC0PATH>;
-#[doc = "Register DAC0PATH `reset()`'s with value 0x7fdd"]
-impl crate::ResetValue for super::DAC0PATH {
-    type Type = u32;
+#[doc = "Register `DAC0PATH` reader"]
+pub struct R(crate::R<DAC0PATH_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DAC0PATH_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x7fdd
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PAT6`"]
-pub type PAT6_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PAT6`"]
+impl From<crate::R<DAC0PATH_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DAC0PATH_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DAC0PATH` writer"]
+pub struct W(crate::W<DAC0PATH_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DAC0PATH_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DAC0PATH_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DAC0PATH_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PAT6` reader - Pattern Number 6 for PATGEN of DAC0"]
+pub struct PAT6_R(crate::FieldReader<u8, u8>);
+impl PAT6_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PAT6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PAT6_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PAT6` writer - Pattern Number 6 for PATGEN of DAC0"]
 pub struct PAT6_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> PAT6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
+        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
         self.w
     }
 }
-#[doc = "Reader of field `PAT7`"]
-pub type PAT7_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PAT7`"]
+#[doc = "Field `PAT7` reader - Pattern Number 7 for PATGEN of DAC0"]
+pub struct PAT7_R(crate::FieldReader<u8, u8>);
+impl PAT7_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PAT7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PAT7_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PAT7` writer - Pattern Number 7 for PATGEN of DAC0"]
 pub struct PAT7_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +82,25 @@ impl<'a> PAT7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 5)) | (((value as u32) & 0x1f) << 5);
+        self.w.bits = (self.w.bits & !(0x1f << 5)) | ((value as u32 & 0x1f) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `PAT8`"]
-pub type PAT8_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PAT8`"]
+#[doc = "Field `PAT8` reader - Pattern Number 8 for PATGEN of DAC0"]
+pub struct PAT8_R(crate::FieldReader<u8, u8>);
+impl PAT8_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PAT8_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PAT8_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PAT8` writer - Pattern Number 8 for PATGEN of DAC0"]
 pub struct PAT8_W<'a> {
     w: &'a mut W,
 }
@@ -48,7 +108,7 @@ impl<'a> PAT8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 10)) | (((value as u32) & 0x1f) << 10);
+        self.w.bits = (self.w.bits & !(0x1f << 10)) | ((value as u32 & 0x1f) << 10);
         self.w
     }
 }
@@ -84,5 +144,31 @@ impl W {
     #[inline(always)]
     pub fn pat8(&mut self) -> PAT8_W {
         PAT8_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "DAC0 Higher Pattern Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac0path](index.html) module"]
+pub struct DAC0PATH_SPEC;
+impl crate::RegisterSpec for DAC0PATH_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dac0path::R](R) reader structure"]
+impl crate::Readable for DAC0PATH_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dac0path::W](W) writer structure"]
+impl crate::Writable for DAC0PATH_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DAC0PATH to value 0x7fdd"]
+impl crate::Resettable for DAC0PATH_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x7fdd
     }
 }

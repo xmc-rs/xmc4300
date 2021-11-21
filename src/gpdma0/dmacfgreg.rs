@@ -1,13 +1,37 @@
-#[doc = "Reader of register DMACFGREG"]
-pub type R = crate::R<u32, super::DMACFGREG>;
-#[doc = "Writer for register DMACFGREG"]
-pub type W = crate::W<u32, super::DMACFGREG>;
-#[doc = "Register DMACFGREG `reset()`'s with value 0"]
-impl crate::ResetValue for super::DMACFGREG {
-    type Type = u32;
+#[doc = "Register `DMACFGREG` reader"]
+pub struct R(crate::R<DMACFGREG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DMACFGREG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DMACFGREG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DMACFGREG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DMACFGREG` writer"]
+pub struct W(crate::W<DMACFGREG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DMACFGREG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DMACFGREG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DMACFGREG_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "GPDMA Enable bit.\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<DMA_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DMA_EN`"]
-pub type DMA_EN_R = crate::R<bool, DMA_EN_A>;
+#[doc = "Field `DMA_EN` reader - GPDMA Enable bit."]
+pub struct DMA_EN_R(crate::FieldReader<bool, DMA_EN_A>);
 impl DMA_EN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DMA_EN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA_EN_A {
@@ -38,15 +65,22 @@ impl DMA_EN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DMA_EN_A::VALUE1
+        **self == DMA_EN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DMA_EN_A::VALUE2
+        **self == DMA_EN_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DMA_EN`"]
+impl core::ops::Deref for DMA_EN_R {
+    type Target = crate::FieldReader<bool, DMA_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DMA_EN` writer - GPDMA Enable bit."]
 pub struct DMA_EN_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> DMA_EN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DMA_EN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "GPDMA Disabled"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> DMA_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -97,5 +129,31 @@ impl W {
     #[inline(always)]
     pub fn dma_en(&mut self) -> DMA_EN_W {
         DMA_EN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "GPDMA Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dmacfgreg](index.html) module"]
+pub struct DMACFGREG_SPEC;
+impl crate::RegisterSpec for DMACFGREG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dmacfgreg::R](R) reader structure"]
+impl crate::Readable for DMACFGREG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dmacfgreg::W](W) writer structure"]
+impl crate::Writable for DMACFGREG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DMACFGREG to value 0"]
+impl crate::Resettable for DMACFGREG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

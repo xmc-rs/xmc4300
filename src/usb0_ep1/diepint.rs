@@ -1,18 +1,54 @@
-#[doc = "Reader of register DIEPINT"]
-pub type R = crate::R<u32, super::DIEPINT>;
-#[doc = "Writer for register DIEPINT"]
-pub type W = crate::W<u32, super::DIEPINT>;
-#[doc = "Register DIEPINT `reset()`'s with value 0x80"]
-impl crate::ResetValue for super::DIEPINT {
-    type Type = u32;
+#[doc = "Register `DIEPINT` reader"]
+pub struct R(crate::R<DIEPINT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DIEPINT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x80
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `XferCompl`"]
-pub type XFERCOMPL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `XferCompl`"]
+impl From<crate::R<DIEPINT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DIEPINT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DIEPINT` writer"]
+pub struct W(crate::W<DIEPINT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DIEPINT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DIEPINT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DIEPINT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `XferCompl` reader - Transfer Completed Interrupt"]
+pub struct XFERCOMPL_R(crate::FieldReader<bool, bool>);
+impl XFERCOMPL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        XFERCOMPL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for XFERCOMPL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `XferCompl` writer - Transfer Completed Interrupt"]
 pub struct XFERCOMPL_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> XFERCOMPL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `EPDisbld`"]
-pub type EPDISBLD_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EPDisbld`"]
+#[doc = "Field `EPDisbld` reader - Endpoint Disabled Interrupt"]
+pub struct EPDISBLD_R(crate::FieldReader<bool, bool>);
+impl EPDISBLD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EPDISBLD_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EPDISBLD_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EPDisbld` writer - Endpoint Disabled Interrupt"]
 pub struct EPDISBLD_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +102,25 @@ impl<'a> EPDISBLD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `AHBErr`"]
-pub type AHBERR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AHBErr`"]
+#[doc = "Field `AHBErr` reader - AHB Error"]
+pub struct AHBERR_R(crate::FieldReader<bool, bool>);
+impl AHBERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AHBERR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AHBERR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AHBErr` writer - AHB Error"]
 pub struct AHBERR_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +138,25 @@ impl<'a> AHBERR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `TimeOUT`"]
-pub type TIMEOUT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TimeOUT`"]
+#[doc = "Field `TimeOUT` reader - Timeout Condition"]
+pub struct TIMEOUT_R(crate::FieldReader<bool, bool>);
+impl TIMEOUT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TIMEOUT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TIMEOUT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TimeOUT` writer - Timeout Condition"]
 pub struct TIMEOUT_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +174,25 @@ impl<'a> TIMEOUT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `INTknTXFEmp`"]
-pub type INTKNTXFEMP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INTknTXFEmp`"]
+#[doc = "Field `INTknTXFEmp` reader - IN Token Received When TxFIFO is Empty"]
+pub struct INTKNTXFEMP_R(crate::FieldReader<bool, bool>);
+impl INTKNTXFEMP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INTKNTXFEMP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INTKNTXFEMP_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INTknTXFEmp` writer - IN Token Received When TxFIFO is Empty"]
 pub struct INTKNTXFEMP_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +210,25 @@ impl<'a> INTKNTXFEMP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `INEPNakEff`"]
-pub type INEPNAKEFF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INEPNakEff`"]
+#[doc = "Field `INEPNakEff` reader - IN Endpoint NAK Effective"]
+pub struct INEPNAKEFF_R(crate::FieldReader<bool, bool>);
+impl INEPNAKEFF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INEPNAKEFF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INEPNAKEFF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INEPNakEff` writer - IN Endpoint NAK Effective"]
 pub struct INEPNAKEFF_W<'a> {
     w: &'a mut W,
 }
@@ -150,15 +246,39 @@ impl<'a> INEPNAKEFF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `TxFEmp`"]
-pub type TXFEMP_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BNAIntr`"]
-pub type BNAINTR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BNAIntr`"]
+#[doc = "Field `TxFEmp` reader - Transmit FIFO Empty"]
+pub struct TXFEMP_R(crate::FieldReader<bool, bool>);
+impl TXFEMP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXFEMP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXFEMP_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BNAIntr` reader - BNA (Buffer Not Available) Interrupt"]
+pub struct BNAINTR_R(crate::FieldReader<bool, bool>);
+impl BNAINTR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BNAINTR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BNAINTR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BNAIntr` writer - BNA (Buffer Not Available) Interrupt"]
 pub struct BNAINTR_W<'a> {
     w: &'a mut W,
 }
@@ -176,7 +296,7 @@ impl<'a> BNAINTR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -257,5 +377,31 @@ impl W {
     #[inline(always)]
     pub fn bnaintr(&mut self) -> BNAINTR_W {
         BNAINTR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Device Endpoint Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [diepint](index.html) module"]
+pub struct DIEPINT_SPEC;
+impl crate::RegisterSpec for DIEPINT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [diepint::R](R) reader structure"]
+impl crate::Readable for DIEPINT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [diepint::W](W) writer structure"]
+impl crate::Writable for DIEPINT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DIEPINT to value 0x80"]
+impl crate::Resettable for DIEPINT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x80
     }
 }

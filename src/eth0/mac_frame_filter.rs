@@ -1,18 +1,54 @@
-#[doc = "Reader of register MAC_FRAME_FILTER"]
-pub type R = crate::R<u32, super::MAC_FRAME_FILTER>;
-#[doc = "Writer for register MAC_FRAME_FILTER"]
-pub type W = crate::W<u32, super::MAC_FRAME_FILTER>;
-#[doc = "Register MAC_FRAME_FILTER `reset()`'s with value 0"]
-impl crate::ResetValue for super::MAC_FRAME_FILTER {
-    type Type = u32;
+#[doc = "Register `MAC_FRAME_FILTER` reader"]
+pub struct R(crate::R<MAC_FRAME_FILTER_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MAC_FRAME_FILTER_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PR`"]
-pub type PR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PR`"]
+impl From<crate::R<MAC_FRAME_FILTER_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MAC_FRAME_FILTER_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MAC_FRAME_FILTER` writer"]
+pub struct W(crate::W<MAC_FRAME_FILTER_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MAC_FRAME_FILTER_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MAC_FRAME_FILTER_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MAC_FRAME_FILTER_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PR` reader - Promiscuous Mode"]
+pub struct PR_R(crate::FieldReader<bool, bool>);
+impl PR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PR` writer - Promiscuous Mode"]
 pub struct PR_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> PR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `HUC`"]
-pub type HUC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HUC`"]
+#[doc = "Field `HUC` reader - Hash Unicast"]
+pub struct HUC_R(crate::FieldReader<bool, bool>);
+impl HUC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HUC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HUC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HUC` writer - Hash Unicast"]
 pub struct HUC_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +102,25 @@ impl<'a> HUC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `HMC`"]
-pub type HMC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HMC`"]
+#[doc = "Field `HMC` reader - Hash Multicast"]
+pub struct HMC_R(crate::FieldReader<bool, bool>);
+impl HMC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HMC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HMC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HMC` writer - Hash Multicast"]
 pub struct HMC_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +138,25 @@ impl<'a> HMC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `DAIF`"]
-pub type DAIF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DAIF`"]
+#[doc = "Field `DAIF` reader - DA Inverse Filtering"]
+pub struct DAIF_R(crate::FieldReader<bool, bool>);
+impl DAIF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DAIF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DAIF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DAIF` writer - DA Inverse Filtering"]
 pub struct DAIF_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +174,25 @@ impl<'a> DAIF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `PM`"]
-pub type PM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PM`"]
+#[doc = "Field `PM` reader - Pass All Multicast"]
+pub struct PM_R(crate::FieldReader<bool, bool>);
+impl PM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PM` writer - Pass All Multicast"]
 pub struct PM_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +210,25 @@ impl<'a> PM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `DBF`"]
-pub type DBF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DBF`"]
+#[doc = "Field `DBF` reader - Disable Broadcast Frames"]
+pub struct DBF_R(crate::FieldReader<bool, bool>);
+impl DBF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DBF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DBF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DBF` writer - Disable Broadcast Frames"]
 pub struct DBF_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +246,25 @@ impl<'a> DBF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `PCF`"]
-pub type PCF_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PCF`"]
+#[doc = "Field `PCF` reader - Pass Control Frames"]
+pub struct PCF_R(crate::FieldReader<u8, u8>);
+impl PCF_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PCF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PCF_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PCF` writer - Pass Control Frames"]
 pub struct PCF_W<'a> {
     w: &'a mut W,
 }
@@ -164,13 +272,25 @@ impl<'a> PCF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `SAIF`"]
-pub type SAIF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SAIF`"]
+#[doc = "Field `SAIF` reader - SA Inverse Filtering"]
+pub struct SAIF_R(crate::FieldReader<bool, bool>);
+impl SAIF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SAIF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SAIF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SAIF` writer - SA Inverse Filtering"]
 pub struct SAIF_W<'a> {
     w: &'a mut W,
 }
@@ -188,13 +308,25 @@ impl<'a> SAIF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `SAF`"]
-pub type SAF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SAF`"]
+#[doc = "Field `SAF` reader - Source Address Filter Enable"]
+pub struct SAF_R(crate::FieldReader<bool, bool>);
+impl SAF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SAF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SAF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SAF` writer - Source Address Filter Enable"]
 pub struct SAF_W<'a> {
     w: &'a mut W,
 }
@@ -212,13 +344,25 @@ impl<'a> SAF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `HPF`"]
-pub type HPF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HPF`"]
+#[doc = "Field `HPF` reader - Hash or Perfect Filter"]
+pub struct HPF_R(crate::FieldReader<bool, bool>);
+impl HPF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HPF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HPF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HPF` writer - Hash or Perfect Filter"]
 pub struct HPF_W<'a> {
     w: &'a mut W,
 }
@@ -236,13 +380,25 @@ impl<'a> HPF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `VTFE`"]
-pub type VTFE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `VTFE`"]
+#[doc = "Field `VTFE` reader - VLAN Tag Filter Enable"]
+pub struct VTFE_R(crate::FieldReader<bool, bool>);
+impl VTFE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VTFE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for VTFE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VTFE` writer - VLAN Tag Filter Enable"]
 pub struct VTFE_W<'a> {
     w: &'a mut W,
 }
@@ -260,17 +416,53 @@ impl<'a> VTFE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `IPFE`"]
-pub type IPFE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `DNTU`"]
-pub type DNTU_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RA`"]
-pub type RA_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RA`"]
+#[doc = "Field `IPFE` reader - Layer 3 and Layer 4 Filter Enable"]
+pub struct IPFE_R(crate::FieldReader<bool, bool>);
+impl IPFE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        IPFE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for IPFE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DNTU` reader - Drop non-TCP/UDP over IP Frames"]
+pub struct DNTU_R(crate::FieldReader<bool, bool>);
+impl DNTU_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DNTU_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DNTU_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RA` reader - Receive All"]
+pub struct RA_R(crate::FieldReader<bool, bool>);
+impl RA_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RA_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RA_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RA` writer - Receive All"]
 pub struct RA_W<'a> {
     w: &'a mut W,
 }
@@ -288,7 +480,7 @@ impl<'a> RA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -424,5 +616,31 @@ impl W {
     #[inline(always)]
     pub fn ra(&mut self) -> RA_W {
         RA_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "MAC Frame Filter\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mac_frame_filter](index.html) module"]
+pub struct MAC_FRAME_FILTER_SPEC;
+impl crate::RegisterSpec for MAC_FRAME_FILTER_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [mac_frame_filter::R](R) reader structure"]
+impl crate::Readable for MAC_FRAME_FILTER_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [mac_frame_filter::W](W) writer structure"]
+impl crate::Writable for MAC_FRAME_FILTER_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MAC_FRAME_FILTER to value 0"]
+impl crate::Resettable for MAC_FRAME_FILTER_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

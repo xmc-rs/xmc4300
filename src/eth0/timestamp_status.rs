@@ -1,23 +1,144 @@
-#[doc = "Reader of register TIMESTAMP_STATUS"]
-pub type R = crate::R<u32, super::TIMESTAMP_STATUS>;
-#[doc = "Reader of field `TSSOVF`"]
-pub type TSSOVF_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TSTARGT`"]
-pub type TSTARGT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TSTRGTERR`"]
-pub type TSTRGTERR_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TSTARGT1`"]
-pub type TSTARGT1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TSTRGTERR1`"]
-pub type TSTRGTERR1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TSTARGT2`"]
-pub type TSTARGT2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TSTRGTERR2`"]
-pub type TSTRGTERR2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TSTARGT3`"]
-pub type TSTARGT3_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TSTRGTERR3`"]
-pub type TSTRGTERR3_R = crate::R<bool, bool>;
+#[doc = "Register `TIMESTAMP_STATUS` reader"]
+pub struct R(crate::R<TIMESTAMP_STATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TIMESTAMP_STATUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<TIMESTAMP_STATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<TIMESTAMP_STATUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `TSSOVF` reader - Timestamp Seconds Overflow"]
+pub struct TSSOVF_R(crate::FieldReader<bool, bool>);
+impl TSSOVF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TSSOVF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSSOVF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSTARGT` reader - Timestamp Target Time Reached"]
+pub struct TSTARGT_R(crate::FieldReader<bool, bool>);
+impl TSTARGT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TSTARGT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSTARGT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSTRGTERR` reader - Timestamp Target Time Error"]
+pub struct TSTRGTERR_R(crate::FieldReader<bool, bool>);
+impl TSTRGTERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TSTRGTERR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSTRGTERR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSTARGT1` reader - Timestamp Target Time Reached for Target Time PPS1"]
+pub struct TSTARGT1_R(crate::FieldReader<bool, bool>);
+impl TSTARGT1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TSTARGT1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSTARGT1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSTRGTERR1` reader - Timestamp Target Time Error"]
+pub struct TSTRGTERR1_R(crate::FieldReader<bool, bool>);
+impl TSTRGTERR1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TSTRGTERR1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSTRGTERR1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSTARGT2` reader - Timestamp Target Time Reached for Target Time PPS2"]
+pub struct TSTARGT2_R(crate::FieldReader<bool, bool>);
+impl TSTARGT2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TSTARGT2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSTARGT2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSTRGTERR2` reader - Timestamp Target Time Error"]
+pub struct TSTRGTERR2_R(crate::FieldReader<bool, bool>);
+impl TSTRGTERR2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TSTRGTERR2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSTRGTERR2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSTARGT3` reader - Timestamp Target Time Reached for Target Time PPS3"]
+pub struct TSTARGT3_R(crate::FieldReader<bool, bool>);
+impl TSTARGT3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TSTARGT3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSTARGT3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSTRGTERR3` reader - Timestamp Target Time Error"]
+pub struct TSTRGTERR3_R(crate::FieldReader<bool, bool>);
+impl TSTRGTERR3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TSTRGTERR3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSTRGTERR3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Timestamp Seconds Overflow"]
     #[inline(always)]
@@ -63,5 +184,21 @@ impl R {
     #[inline(always)]
     pub fn tstrgterr3(&self) -> TSTRGTERR3_R {
         TSTRGTERR3_R::new(((self.bits >> 9) & 0x01) != 0)
+    }
+}
+#[doc = "Timestamp Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timestamp_status](index.html) module"]
+pub struct TIMESTAMP_STATUS_SPEC;
+impl crate::RegisterSpec for TIMESTAMP_STATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [timestamp_status::R](R) reader structure"]
+impl crate::Readable for TIMESTAMP_STATUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets TIMESTAMP_STATUS to value 0"]
+impl crate::Resettable for TIMESTAMP_STATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

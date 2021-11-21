@@ -1,19 +1,54 @@
-#[doc = "Reader of register ICLASS[%s]"]
-pub type R = crate::R<u32, super::ICLASS>;
-#[doc = "Writer for register ICLASS[%s]"]
-pub type W = crate::W<u32, super::ICLASS>;
-#[doc = "Register ICLASS[%s]
-`reset()`'s with value 0"]
-impl crate::ResetValue for super::ICLASS {
-    type Type = u32;
+#[doc = "Register `ICLASS[%s]` reader"]
+pub struct R(crate::R<ICLASS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ICLASS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `STCS`"]
-pub type STCS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `STCS`"]
+impl From<crate::R<ICLASS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ICLASS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ICLASS[%s]` writer"]
+pub struct W(crate::W<ICLASS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ICLASS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ICLASS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ICLASS_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `STCS` reader - Sample Time Control for Standard Conversions"]
+pub struct STCS_R(crate::FieldReader<u8, u8>);
+impl STCS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        STCS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for STCS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `STCS` writer - Sample Time Control for Standard Conversions"]
 pub struct STCS_W<'a> {
     w: &'a mut W,
 }
@@ -21,7 +56,7 @@ impl<'a> STCS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
+        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
         self.w
     }
 }
@@ -44,43 +79,52 @@ impl From<CMS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CMS`"]
-pub type CMS_R = crate::R<u8, CMS_A>;
+#[doc = "Field `CMS` reader - Conversion Mode for Standard Conversions"]
+pub struct CMS_R(crate::FieldReader<u8, CMS_A>);
 impl CMS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CMS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CMS_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CMS_A> {
         match self.bits {
-            0 => Val(CMS_A::VALUE1),
-            1 => Val(CMS_A::VALUE2),
-            2 => Val(CMS_A::VALUE3),
-            5 => Val(CMS_A::VALUE6),
-            i => Res(i),
+            0 => Some(CMS_A::VALUE1),
+            1 => Some(CMS_A::VALUE2),
+            2 => Some(CMS_A::VALUE3),
+            5 => Some(CMS_A::VALUE6),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CMS_A::VALUE1
+        **self == CMS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CMS_A::VALUE2
+        **self == CMS_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CMS_A::VALUE3
+        **self == CMS_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == CMS_A::VALUE6
+        **self == CMS_A::VALUE6
     }
 }
-#[doc = "Write proxy for field `CMS`"]
+impl core::ops::Deref for CMS_R {
+    type Target = crate::FieldReader<u8, CMS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CMS` writer - Conversion Mode for Standard Conversions"]
 pub struct CMS_W<'a> {
     w: &'a mut W,
 }
@@ -113,13 +157,25 @@ impl<'a> CMS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `STCE`"]
-pub type STCE_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `STCE`"]
+#[doc = "Field `STCE` reader - Sample Time Control for EMUX Conversions"]
+pub struct STCE_R(crate::FieldReader<u8, u8>);
+impl STCE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        STCE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for STCE_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `STCE` writer - Sample Time Control for EMUX Conversions"]
 pub struct STCE_W<'a> {
     w: &'a mut W,
 }
@@ -127,7 +183,7 @@ impl<'a> STCE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 16)) | (((value as u32) & 0x1f) << 16);
+        self.w.bits = (self.w.bits & !(0x1f << 16)) | ((value as u32 & 0x1f) << 16);
         self.w
     }
 }
@@ -150,43 +206,52 @@ impl From<CME_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CME`"]
-pub type CME_R = crate::R<u8, CME_A>;
+#[doc = "Field `CME` reader - Conversion Mode for EMUX Conversions"]
+pub struct CME_R(crate::FieldReader<u8, CME_A>);
 impl CME_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CME_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CME_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CME_A> {
         match self.bits {
-            0 => Val(CME_A::VALUE1),
-            1 => Val(CME_A::VALUE2),
-            2 => Val(CME_A::VALUE3),
-            5 => Val(CME_A::VALUE6),
-            i => Res(i),
+            0 => Some(CME_A::VALUE1),
+            1 => Some(CME_A::VALUE2),
+            2 => Some(CME_A::VALUE3),
+            5 => Some(CME_A::VALUE6),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CME_A::VALUE1
+        **self == CME_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CME_A::VALUE2
+        **self == CME_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CME_A::VALUE3
+        **self == CME_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == CME_A::VALUE6
+        **self == CME_A::VALUE6
     }
 }
-#[doc = "Write proxy for field `CME`"]
+impl core::ops::Deref for CME_R {
+    type Target = crate::FieldReader<u8, CME_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CME` writer - Conversion Mode for EMUX Conversions"]
 pub struct CME_W<'a> {
     w: &'a mut W,
 }
@@ -219,7 +284,7 @@ impl<'a> CME_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | ((value as u32 & 0x07) << 24);
         self.w
     }
 }
@@ -265,5 +330,32 @@ impl W {
     #[inline(always)]
     pub fn cme(&mut self) -> CME_W {
         CME_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Input Class Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iclass](index.html) module"]
+pub struct ICLASS_SPEC;
+impl crate::RegisterSpec for ICLASS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [iclass::R](R) reader structure"]
+impl crate::Readable for ICLASS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [iclass::W](W) writer structure"]
+impl crate::Writable for ICLASS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ICLASS[%s]
+to value 0"]
+impl crate::Resettable for ICLASS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

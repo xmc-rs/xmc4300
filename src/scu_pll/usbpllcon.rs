@@ -1,13 +1,37 @@
-#[doc = "Reader of register USBPLLCON"]
-pub type R = crate::R<u32, super::USBPLLCON>;
-#[doc = "Writer for register USBPLLCON"]
-pub type W = crate::W<u32, super::USBPLLCON>;
-#[doc = "Register USBPLLCON `reset()`'s with value 0x0001_0003"]
-impl crate::ResetValue for super::USBPLLCON {
-    type Type = u32;
+#[doc = "Register `USBPLLCON` reader"]
+pub struct R(crate::R<USBPLLCON_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<USBPLLCON_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0001_0003
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<USBPLLCON_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<USBPLLCON_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `USBPLLCON` writer"]
+pub struct W(crate::W<USBPLLCON_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<USBPLLCON_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<USBPLLCON_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<USBPLLCON_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "VCO Bypass\n\nValue on reset: 1"]
@@ -24,9 +48,12 @@ impl From<VCOBYP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VCOBYP`"]
-pub type VCOBYP_R = crate::R<bool, VCOBYP_A>;
+#[doc = "Field `VCOBYP` reader - VCO Bypass"]
+pub struct VCOBYP_R(crate::FieldReader<bool, VCOBYP_A>);
 impl VCOBYP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VCOBYP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VCOBYP_A {
@@ -38,15 +65,22 @@ impl VCOBYP_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == VCOBYP_A::CONST_0
+        **self == VCOBYP_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == VCOBYP_A::CONST_1
+        **self == VCOBYP_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `VCOBYP`"]
+impl core::ops::Deref for VCOBYP_R {
+    type Target = crate::FieldReader<bool, VCOBYP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VCOBYP` writer - VCO Bypass"]
 pub struct VCOBYP_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> VCOBYP_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VCOBYP_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Normal operation, VCO is not bypassed"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> VCOBYP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<VCOPWD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VCOPWD`"]
-pub type VCOPWD_R = crate::R<bool, VCOPWD_A>;
+#[doc = "Field `VCOPWD` reader - VCO Power Saving Mode"]
+pub struct VCOPWD_R(crate::FieldReader<bool, VCOPWD_A>);
 impl VCOPWD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VCOPWD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VCOPWD_A {
@@ -113,15 +148,22 @@ impl VCOPWD_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == VCOPWD_A::CONST_0
+        **self == VCOPWD_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == VCOPWD_A::CONST_1
+        **self == VCOPWD_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `VCOPWD`"]
+impl core::ops::Deref for VCOPWD_R {
+    type Target = crate::FieldReader<bool, VCOPWD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VCOPWD` writer - VCO Power Saving Mode"]
 pub struct VCOPWD_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> VCOPWD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VCOPWD_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Normal behavior"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> VCOPWD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<VCOTR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VCOTR`"]
-pub type VCOTR_R = crate::R<bool, VCOTR_A>;
+#[doc = "Field `VCOTR` reader - VCO Trim Control"]
+pub struct VCOTR_R(crate::FieldReader<bool, VCOTR_A>);
 impl VCOTR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VCOTR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VCOTR_A {
@@ -188,15 +231,22 @@ impl VCOTR_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == VCOTR_A::CONST_0
+        **self == VCOTR_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == VCOTR_A::CONST_1
+        **self == VCOTR_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `VCOTR`"]
+impl core::ops::Deref for VCOTR_R {
+    type Target = crate::FieldReader<bool, VCOTR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VCOTR` writer - VCO Trim Control"]
 pub struct VCOTR_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> VCOTR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VCOTR_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "VCO bandwidth is operating in the normal range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> VCOTR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<FINDIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FINDIS`"]
-pub type FINDIS_R = crate::R<bool, FINDIS_A>;
+#[doc = "Field `FINDIS` reader - Disconnect Oscillator from VCO"]
+pub struct FINDIS_R(crate::FieldReader<bool, FINDIS_A>);
 impl FINDIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FINDIS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FINDIS_A {
@@ -263,15 +314,22 @@ impl FINDIS_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == FINDIS_A::CONST_0
+        **self == FINDIS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == FINDIS_A::CONST_1
+        **self == FINDIS_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `FINDIS`"]
+impl core::ops::Deref for FINDIS_R {
+    type Target = crate::FieldReader<bool, FINDIS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FINDIS` writer - Disconnect Oscillator from VCO"]
 pub struct FINDIS_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> FINDIS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FINDIS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Connect oscillator to the VCO part"]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> FINDIS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -324,9 +380,12 @@ impl From<OSCDISCDIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `OSCDISCDIS`"]
-pub type OSCDISCDIS_R = crate::R<bool, OSCDISCDIS_A>;
+#[doc = "Field `OSCDISCDIS` reader - Oscillator Disconnect Disable"]
+pub struct OSCDISCDIS_R(crate::FieldReader<bool, OSCDISCDIS_A>);
 impl OSCDISCDIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OSCDISCDIS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OSCDISCDIS_A {
@@ -338,15 +397,22 @@ impl OSCDISCDIS_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == OSCDISCDIS_A::CONST_0
+        **self == OSCDISCDIS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == OSCDISCDIS_A::CONST_1
+        **self == OSCDISCDIS_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `OSCDISCDIS`"]
+impl core::ops::Deref for OSCDISCDIS_R {
+    type Target = crate::FieldReader<bool, OSCDISCDIS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `OSCDISCDIS` writer - Oscillator Disconnect Disable"]
 pub struct OSCDISCDIS_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +420,7 @@ impl<'a> OSCDISCDIS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: OSCDISCDIS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "In case of a PLL loss-of-lock bit FINDIS is set"]
     #[inline(always)]
@@ -381,13 +445,25 @@ impl<'a> OSCDISCDIS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `NDIV`"]
-pub type NDIV_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `NDIV`"]
+#[doc = "Field `NDIV` reader - N-Divider Value"]
+pub struct NDIV_R(crate::FieldReader<u8, u8>);
+impl NDIV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        NDIV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for NDIV_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `NDIV` writer - N-Divider Value"]
 pub struct NDIV_W<'a> {
     w: &'a mut W,
 }
@@ -395,7 +471,7 @@ impl<'a> NDIV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | (((value as u32) & 0x7f) << 8);
+        self.w.bits = (self.w.bits & !(0x7f << 8)) | ((value as u32 & 0x7f) << 8);
         self.w
     }
 }
@@ -413,9 +489,12 @@ impl From<PLLPWD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PLLPWD`"]
-pub type PLLPWD_R = crate::R<bool, PLLPWD_A>;
+#[doc = "Field `PLLPWD` reader - PLL Power Saving Mode"]
+pub struct PLLPWD_R(crate::FieldReader<bool, PLLPWD_A>);
 impl PLLPWD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLLPWD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLLPWD_A {
@@ -427,15 +506,22 @@ impl PLLPWD_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PLLPWD_A::CONST_0
+        **self == PLLPWD_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PLLPWD_A::CONST_1
+        **self == PLLPWD_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PLLPWD`"]
+impl core::ops::Deref for PLLPWD_R {
+    type Target = crate::FieldReader<bool, PLLPWD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLLPWD` writer - PLL Power Saving Mode"]
 pub struct PLLPWD_W<'a> {
     w: &'a mut W,
 }
@@ -443,9 +529,7 @@ impl<'a> PLLPWD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PLLPWD_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Normal behavior"]
     #[inline(always)]
@@ -470,11 +554,11 @@ impl<'a> PLLPWD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Write proxy for field `RESLD`"]
+#[doc = "Field `RESLD` writer - Restart VCO Lock Detection"]
 pub struct RESLD_W<'a> {
     w: &'a mut W,
 }
@@ -492,13 +576,25 @@ impl<'a> RESLD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Reader of field `PDIV`"]
-pub type PDIV_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PDIV`"]
+#[doc = "Field `PDIV` reader - P-Divider Value"]
+pub struct PDIV_R(crate::FieldReader<u8, u8>);
+impl PDIV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PDIV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PDIV_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDIV` writer - P-Divider Value"]
 pub struct PDIV_W<'a> {
     w: &'a mut W,
 }
@@ -506,7 +602,7 @@ impl<'a> PDIV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | (((value as u32) & 0x0f) << 24);
+        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
         self.w
     }
 }
@@ -597,5 +693,31 @@ impl W {
     #[inline(always)]
     pub fn pdiv(&mut self) -> PDIV_W {
         PDIV_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USB PLL Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usbpllcon](index.html) module"]
+pub struct USBPLLCON_SPEC;
+impl crate::RegisterSpec for USBPLLCON_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [usbpllcon::R](R) reader structure"]
+impl crate::Readable for USBPLLCON_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [usbpllcon::W](W) writer structure"]
+impl crate::Writable for USBPLLCON_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets USBPLLCON to value 0x0001_0003"]
+impl crate::Resettable for USBPLLCON_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0001_0003
     }
 }

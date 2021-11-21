@@ -1,5 +1,18 @@
-#[doc = "Reader of register GCST"]
-pub type R = crate::R<u32, super::GCST>;
+#[doc = "Register `GCST` reader"]
+pub struct R(crate::R<GCST_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GCST_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<GCST_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GCST_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Slice 0 shadow transfer status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S0SS_A {
@@ -14,9 +27,12 @@ impl From<S0SS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `S0SS`"]
-pub type S0SS_R = crate::R<bool, S0SS_A>;
+#[doc = "Field `S0SS` reader - Slice 0 shadow transfer status"]
+pub struct S0SS_R(crate::FieldReader<bool, S0SS_A>);
 impl S0SS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        S0SS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S0SS_A {
@@ -28,12 +44,19 @@ impl S0SS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S0SS_A::VALUE1
+        **self == S0SS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S0SS_A::VALUE2
+        **self == S0SS_A::VALUE2
+    }
+}
+impl core::ops::Deref for S0SS_R {
+    type Target = crate::FieldReader<bool, S0SS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Slice 0 Dither shadow transfer status\n\nValue on reset: 0"]
@@ -50,9 +73,12 @@ impl From<S0DSS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `S0DSS`"]
-pub type S0DSS_R = crate::R<bool, S0DSS_A>;
+#[doc = "Field `S0DSS` reader - Slice 0 Dither shadow transfer status"]
+pub struct S0DSS_R(crate::FieldReader<bool, S0DSS_A>);
 impl S0DSS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        S0DSS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S0DSS_A {
@@ -64,12 +90,19 @@ impl S0DSS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S0DSS_A::VALUE1
+        **self == S0DSS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S0DSS_A::VALUE2
+        **self == S0DSS_A::VALUE2
+    }
+}
+impl core::ops::Deref for S0DSS_R {
+    type Target = crate::FieldReader<bool, S0DSS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Slice 0 Prescaler shadow transfer status\n\nValue on reset: 0"]
@@ -86,9 +119,12 @@ impl From<S0PSS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `S0PSS`"]
-pub type S0PSS_R = crate::R<bool, S0PSS_A>;
+#[doc = "Field `S0PSS` reader - Slice 0 Prescaler shadow transfer status"]
+pub struct S0PSS_R(crate::FieldReader<bool, S0PSS_A>);
 impl S0PSS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        S0PSS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S0PSS_A {
@@ -100,12 +136,19 @@ impl S0PSS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S0PSS_A::VALUE1
+        **self == S0PSS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S0PSS_A::VALUE2
+        **self == S0PSS_A::VALUE2
+    }
+}
+impl core::ops::Deref for S0PSS_R {
+    type Target = crate::FieldReader<bool, S0PSS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Slice 1 shadow transfer status\n\nValue on reset: 0"]
@@ -122,9 +165,12 @@ impl From<S1SS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `S1SS`"]
-pub type S1SS_R = crate::R<bool, S1SS_A>;
+#[doc = "Field `S1SS` reader - Slice 1 shadow transfer status"]
+pub struct S1SS_R(crate::FieldReader<bool, S1SS_A>);
 impl S1SS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        S1SS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S1SS_A {
@@ -136,12 +182,19 @@ impl S1SS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S1SS_A::VALUE1
+        **self == S1SS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S1SS_A::VALUE2
+        **self == S1SS_A::VALUE2
+    }
+}
+impl core::ops::Deref for S1SS_R {
+    type Target = crate::FieldReader<bool, S1SS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Slice 1 Dither shadow transfer status\n\nValue on reset: 0"]
@@ -158,9 +211,12 @@ impl From<S1DSS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `S1DSS`"]
-pub type S1DSS_R = crate::R<bool, S1DSS_A>;
+#[doc = "Field `S1DSS` reader - Slice 1 Dither shadow transfer status"]
+pub struct S1DSS_R(crate::FieldReader<bool, S1DSS_A>);
 impl S1DSS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        S1DSS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S1DSS_A {
@@ -172,12 +228,19 @@ impl S1DSS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S1DSS_A::VALUE1
+        **self == S1DSS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S1DSS_A::VALUE2
+        **self == S1DSS_A::VALUE2
+    }
+}
+impl core::ops::Deref for S1DSS_R {
+    type Target = crate::FieldReader<bool, S1DSS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Slice 1 Prescaler shadow transfer status\n\nValue on reset: 0"]
@@ -194,9 +257,12 @@ impl From<S1PSS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `S1PSS`"]
-pub type S1PSS_R = crate::R<bool, S1PSS_A>;
+#[doc = "Field `S1PSS` reader - Slice 1 Prescaler shadow transfer status"]
+pub struct S1PSS_R(crate::FieldReader<bool, S1PSS_A>);
 impl S1PSS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        S1PSS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S1PSS_A {
@@ -208,12 +274,19 @@ impl S1PSS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S1PSS_A::VALUE1
+        **self == S1PSS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S1PSS_A::VALUE2
+        **self == S1PSS_A::VALUE2
+    }
+}
+impl core::ops::Deref for S1PSS_R {
+    type Target = crate::FieldReader<bool, S1PSS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Slice 2 shadow transfer status\n\nValue on reset: 0"]
@@ -230,9 +303,12 @@ impl From<S2SS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `S2SS`"]
-pub type S2SS_R = crate::R<bool, S2SS_A>;
+#[doc = "Field `S2SS` reader - Slice 2 shadow transfer status"]
+pub struct S2SS_R(crate::FieldReader<bool, S2SS_A>);
 impl S2SS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        S2SS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S2SS_A {
@@ -244,12 +320,19 @@ impl S2SS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S2SS_A::VALUE1
+        **self == S2SS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S2SS_A::VALUE2
+        **self == S2SS_A::VALUE2
+    }
+}
+impl core::ops::Deref for S2SS_R {
+    type Target = crate::FieldReader<bool, S2SS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Slice 2 Dither shadow transfer status\n\nValue on reset: 0"]
@@ -266,9 +349,12 @@ impl From<S2DSS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `S2DSS`"]
-pub type S2DSS_R = crate::R<bool, S2DSS_A>;
+#[doc = "Field `S2DSS` reader - Slice 2 Dither shadow transfer status"]
+pub struct S2DSS_R(crate::FieldReader<bool, S2DSS_A>);
 impl S2DSS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        S2DSS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S2DSS_A {
@@ -280,12 +366,19 @@ impl S2DSS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S2DSS_A::VALUE1
+        **self == S2DSS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S2DSS_A::VALUE2
+        **self == S2DSS_A::VALUE2
+    }
+}
+impl core::ops::Deref for S2DSS_R {
+    type Target = crate::FieldReader<bool, S2DSS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Slice 2 Prescaler shadow transfer status\n\nValue on reset: 0"]
@@ -302,9 +395,12 @@ impl From<S2PSS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `S2PSS`"]
-pub type S2PSS_R = crate::R<bool, S2PSS_A>;
+#[doc = "Field `S2PSS` reader - Slice 2 Prescaler shadow transfer status"]
+pub struct S2PSS_R(crate::FieldReader<bool, S2PSS_A>);
 impl S2PSS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        S2PSS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S2PSS_A {
@@ -316,12 +412,19 @@ impl S2PSS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S2PSS_A::VALUE1
+        **self == S2PSS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S2PSS_A::VALUE2
+        **self == S2PSS_A::VALUE2
+    }
+}
+impl core::ops::Deref for S2PSS_R {
+    type Target = crate::FieldReader<bool, S2PSS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Slice 3 shadow transfer status\n\nValue on reset: 0"]
@@ -338,9 +441,12 @@ impl From<S3SS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `S3SS`"]
-pub type S3SS_R = crate::R<bool, S3SS_A>;
+#[doc = "Field `S3SS` reader - Slice 3 shadow transfer status"]
+pub struct S3SS_R(crate::FieldReader<bool, S3SS_A>);
 impl S3SS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        S3SS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S3SS_A {
@@ -352,12 +458,19 @@ impl S3SS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S3SS_A::VALUE1
+        **self == S3SS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S3SS_A::VALUE2
+        **self == S3SS_A::VALUE2
+    }
+}
+impl core::ops::Deref for S3SS_R {
+    type Target = crate::FieldReader<bool, S3SS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Slice 3 Dither shadow transfer status\n\nValue on reset: 0"]
@@ -374,9 +487,12 @@ impl From<S3DSS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `S3DSS`"]
-pub type S3DSS_R = crate::R<bool, S3DSS_A>;
+#[doc = "Field `S3DSS` reader - Slice 3 Dither shadow transfer status"]
+pub struct S3DSS_R(crate::FieldReader<bool, S3DSS_A>);
 impl S3DSS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        S3DSS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S3DSS_A {
@@ -388,12 +504,19 @@ impl S3DSS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S3DSS_A::VALUE1
+        **self == S3DSS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S3DSS_A::VALUE2
+        **self == S3DSS_A::VALUE2
+    }
+}
+impl core::ops::Deref for S3DSS_R {
+    type Target = crate::FieldReader<bool, S3DSS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Slice 3 Prescaler shadow transfer status\n\nValue on reset: 0"]
@@ -410,9 +533,12 @@ impl From<S3PSS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `S3PSS`"]
-pub type S3PSS_R = crate::R<bool, S3PSS_A>;
+#[doc = "Field `S3PSS` reader - Slice 3 Prescaler shadow transfer status"]
+pub struct S3PSS_R(crate::FieldReader<bool, S3PSS_A>);
 impl S3PSS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        S3PSS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S3PSS_A {
@@ -424,30 +550,133 @@ impl S3PSS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == S3PSS_A::VALUE1
+        **self == S3PSS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == S3PSS_A::VALUE2
+        **self == S3PSS_A::VALUE2
     }
 }
-#[doc = "Reader of field `CC80ST1`"]
-pub type CC80ST1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CC81ST1`"]
-pub type CC81ST1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CC82ST1`"]
-pub type CC82ST1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CC83ST1`"]
-pub type CC83ST1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CC80ST2`"]
-pub type CC80ST2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CC81ST2`"]
-pub type CC81ST2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CC82ST2`"]
-pub type CC82ST2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CC83ST2`"]
-pub type CC83ST2_R = crate::R<bool, bool>;
+impl core::ops::Deref for S3PSS_R {
+    type Target = crate::FieldReader<bool, S3PSS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CC80ST1` reader - Slice 0 compare channel 1 status bit"]
+pub struct CC80ST1_R(crate::FieldReader<bool, bool>);
+impl CC80ST1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CC80ST1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CC80ST1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CC81ST1` reader - Slice 1 compare channel 1 status bit"]
+pub struct CC81ST1_R(crate::FieldReader<bool, bool>);
+impl CC81ST1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CC81ST1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CC81ST1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CC82ST1` reader - Slice 2 compare channel 1 status bit"]
+pub struct CC82ST1_R(crate::FieldReader<bool, bool>);
+impl CC82ST1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CC82ST1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CC82ST1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CC83ST1` reader - Slice 3 compare channel 1 status bit"]
+pub struct CC83ST1_R(crate::FieldReader<bool, bool>);
+impl CC83ST1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CC83ST1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CC83ST1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CC80ST2` reader - Slice 0 compare channel 2 status bit"]
+pub struct CC80ST2_R(crate::FieldReader<bool, bool>);
+impl CC80ST2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CC80ST2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CC80ST2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CC81ST2` reader - Slice 1 compare channel 2 status bit"]
+pub struct CC81ST2_R(crate::FieldReader<bool, bool>);
+impl CC81ST2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CC81ST2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CC81ST2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CC82ST2` reader - Slice 2 compare channel 2 status bit"]
+pub struct CC82ST2_R(crate::FieldReader<bool, bool>);
+impl CC82ST2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CC82ST2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CC82ST2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CC83ST2` reader - Slice 3 compare channel 2 status bit"]
+pub struct CC83ST2_R(crate::FieldReader<bool, bool>);
+impl CC83ST2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CC83ST2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CC83ST2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Slice 0 shadow transfer status"]
     #[inline(always)]
@@ -548,5 +777,21 @@ impl R {
     #[inline(always)]
     pub fn cc83st2(&self) -> CC83ST2_R {
         CC83ST2_R::new(((self.bits >> 23) & 0x01) != 0)
+    }
+}
+#[doc = "Global Channel status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gcst](index.html) module"]
+pub struct GCST_SPEC;
+impl crate::RegisterSpec for GCST_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [gcst::R](R) reader structure"]
+impl crate::Readable for GCST_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets GCST to value 0"]
+impl crate::Resettable for GCST_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,11 +1,22 @@
-#[doc = "Writer for register CLKCLR"]
-pub type W = crate::W<u32, super::CLKCLR>;
-#[doc = "Register CLKCLR `reset()`'s with value 0"]
-impl crate::ResetValue for super::CLKCLR {
-    type Type = u32;
+#[doc = "Register `CLKCLR` writer"]
+pub struct W(crate::W<CLKCLR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CLKCLR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CLKCLR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CLKCLR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "USB Clock Disable\n\nValue on reset: 0"]
@@ -22,7 +33,7 @@ impl From<USBCDI_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `USBCDI`"]
+#[doc = "Field `USBCDI` writer - USB Clock Disable"]
 pub struct USBCDI_W<'a> {
     w: &'a mut W,
 }
@@ -30,9 +41,7 @@ impl<'a> USBCDI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: USBCDI_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -57,7 +66,7 @@ impl<'a> USBCDI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -75,7 +84,7 @@ impl From<MMCCDI_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `MMCCDI`"]
+#[doc = "Field `MMCCDI` writer - MMC Clock Disable"]
 pub struct MMCCDI_W<'a> {
     w: &'a mut W,
 }
@@ -83,9 +92,7 @@ impl<'a> MMCCDI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MMCCDI_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -110,7 +117,7 @@ impl<'a> MMCCDI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -128,7 +135,7 @@ impl From<ETH0CDI_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `ETH0CDI`"]
+#[doc = "Field `ETH0CDI` writer - Ethernet Clock Disable"]
 pub struct ETH0CDI_W<'a> {
     w: &'a mut W,
 }
@@ -136,9 +143,7 @@ impl<'a> ETH0CDI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ETH0CDI_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -163,7 +168,7 @@ impl<'a> ETH0CDI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -181,7 +186,7 @@ impl From<CCUCDI_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CCUCDI`"]
+#[doc = "Field `CCUCDI` writer - CCU Clock Disable"]
 pub struct CCUCDI_W<'a> {
     w: &'a mut W,
 }
@@ -189,9 +194,7 @@ impl<'a> CCUCDI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CCUCDI_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -216,7 +219,7 @@ impl<'a> CCUCDI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -234,7 +237,7 @@ impl From<WDTCDI_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WDTCDI`"]
+#[doc = "Field `WDTCDI` writer - WDT Clock Disable"]
 pub struct WDTCDI_W<'a> {
     w: &'a mut W,
 }
@@ -242,9 +245,7 @@ impl<'a> WDTCDI_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WDTCDI_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -269,7 +270,7 @@ impl<'a> WDTCDI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -298,5 +299,27 @@ impl W {
     #[inline(always)]
     pub fn wdtcdi(&mut self) -> WDTCDI_W {
         WDTCDI_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "CLK Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clkclr](index.html) module"]
+pub struct CLKCLR_SPEC;
+impl crate::RegisterSpec for CLKCLR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [clkclr::W](W) writer structure"]
+impl crate::Writable for CLKCLR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CLKCLR to value 0"]
+impl crate::Resettable for CLKCLR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

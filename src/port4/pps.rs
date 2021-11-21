@@ -1,13 +1,37 @@
-#[doc = "Reader of register PPS"]
-pub type R = crate::R<u32, super::PPS>;
-#[doc = "Writer for register PPS"]
-pub type W = crate::W<u32, super::PPS>;
-#[doc = "Register PPS `reset()`'s with value 0"]
-impl crate::ResetValue for super::PPS {
-    type Type = u32;
+#[doc = "Register `PPS` reader"]
+pub struct R(crate::R<PPS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PPS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PPS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PPS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PPS` writer"]
+pub struct W(crate::W<PPS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PPS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PPS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PPS_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Port n Pin Power Save Bit 0\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<PPS0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS0`"]
-pub type PPS0_R = crate::R<bool, PPS0_A>;
+#[doc = "Field `PPS0` reader - Port n Pin Power Save Bit 0"]
+pub struct PPS0_R(crate::FieldReader<bool, PPS0_A>);
 impl PPS0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS0_A {
@@ -38,15 +65,22 @@ impl PPS0_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS0_A::CONST_0
+        **self == PPS0_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS0_A::CONST_1
+        **self == PPS0_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS0`"]
+impl core::ops::Deref for PPS0_R {
+    type Target = crate::FieldReader<bool, PPS0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS0` writer - Port n Pin Power Save Bit 0"]
 pub struct PPS0_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> PPS0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> PPS0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<PPS1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS1`"]
-pub type PPS1_R = crate::R<bool, PPS1_A>;
+#[doc = "Field `PPS1` reader - Port n Pin Power Save Bit 1"]
+pub struct PPS1_R(crate::FieldReader<bool, PPS1_A>);
 impl PPS1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS1_A {
@@ -113,15 +148,22 @@ impl PPS1_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS1_A::CONST_0
+        **self == PPS1_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS1_A::CONST_1
+        **self == PPS1_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS1`"]
+impl core::ops::Deref for PPS1_R {
+    type Target = crate::FieldReader<bool, PPS1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS1` writer - Port n Pin Power Save Bit 1"]
 pub struct PPS1_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> PPS1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> PPS1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<PPS2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS2`"]
-pub type PPS2_R = crate::R<bool, PPS2_A>;
+#[doc = "Field `PPS2` reader - Port n Pin Power Save Bit 2"]
+pub struct PPS2_R(crate::FieldReader<bool, PPS2_A>);
 impl PPS2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS2_A {
@@ -188,15 +231,22 @@ impl PPS2_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS2_A::CONST_0
+        **self == PPS2_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS2_A::CONST_1
+        **self == PPS2_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS2`"]
+impl core::ops::Deref for PPS2_R {
+    type Target = crate::FieldReader<bool, PPS2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS2` writer - Port n Pin Power Save Bit 2"]
 pub struct PPS2_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> PPS2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> PPS2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<PPS3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS3`"]
-pub type PPS3_R = crate::R<bool, PPS3_A>;
+#[doc = "Field `PPS3` reader - Port n Pin Power Save Bit 3"]
+pub struct PPS3_R(crate::FieldReader<bool, PPS3_A>);
 impl PPS3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS3_A {
@@ -263,15 +314,22 @@ impl PPS3_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS3_A::CONST_0
+        **self == PPS3_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS3_A::CONST_1
+        **self == PPS3_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS3`"]
+impl core::ops::Deref for PPS3_R {
+    type Target = crate::FieldReader<bool, PPS3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS3` writer - Port n Pin Power Save Bit 3"]
 pub struct PPS3_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> PPS3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> PPS3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +380,12 @@ impl From<PPS4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS4`"]
-pub type PPS4_R = crate::R<bool, PPS4_A>;
+#[doc = "Field `PPS4` reader - Port n Pin Power Save Bit 4"]
+pub struct PPS4_R(crate::FieldReader<bool, PPS4_A>);
 impl PPS4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS4_A {
@@ -338,15 +397,22 @@ impl PPS4_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS4_A::CONST_0
+        **self == PPS4_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS4_A::CONST_1
+        **self == PPS4_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS4`"]
+impl core::ops::Deref for PPS4_R {
+    type Target = crate::FieldReader<bool, PPS4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS4` writer - Port n Pin Power Save Bit 4"]
 pub struct PPS4_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +420,7 @@ impl<'a> PPS4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -381,7 +445,7 @@ impl<'a> PPS4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +463,12 @@ impl From<PPS5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS5`"]
-pub type PPS5_R = crate::R<bool, PPS5_A>;
+#[doc = "Field `PPS5` reader - Port n Pin Power Save Bit 5"]
+pub struct PPS5_R(crate::FieldReader<bool, PPS5_A>);
 impl PPS5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS5_A {
@@ -413,15 +480,22 @@ impl PPS5_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS5_A::CONST_0
+        **self == PPS5_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS5_A::CONST_1
+        **self == PPS5_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS5`"]
+impl core::ops::Deref for PPS5_R {
+    type Target = crate::FieldReader<bool, PPS5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS5` writer - Port n Pin Power Save Bit 5"]
 pub struct PPS5_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +503,7 @@ impl<'a> PPS5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -456,7 +528,7 @@ impl<'a> PPS5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +546,12 @@ impl From<PPS6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS6`"]
-pub type PPS6_R = crate::R<bool, PPS6_A>;
+#[doc = "Field `PPS6` reader - Port n Pin Power Save Bit 6"]
+pub struct PPS6_R(crate::FieldReader<bool, PPS6_A>);
 impl PPS6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS6_A {
@@ -488,15 +563,22 @@ impl PPS6_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS6_A::CONST_0
+        **self == PPS6_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS6_A::CONST_1
+        **self == PPS6_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS6`"]
+impl core::ops::Deref for PPS6_R {
+    type Target = crate::FieldReader<bool, PPS6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS6` writer - Port n Pin Power Save Bit 6"]
 pub struct PPS6_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +586,7 @@ impl<'a> PPS6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -531,7 +611,7 @@ impl<'a> PPS6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +629,12 @@ impl From<PPS7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS7`"]
-pub type PPS7_R = crate::R<bool, PPS7_A>;
+#[doc = "Field `PPS7` reader - Port n Pin Power Save Bit 7"]
+pub struct PPS7_R(crate::FieldReader<bool, PPS7_A>);
 impl PPS7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS7_A {
@@ -563,15 +646,22 @@ impl PPS7_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS7_A::CONST_0
+        **self == PPS7_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS7_A::CONST_1
+        **self == PPS7_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS7`"]
+impl core::ops::Deref for PPS7_R {
+    type Target = crate::FieldReader<bool, PPS7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS7` writer - Port n Pin Power Save Bit 7"]
 pub struct PPS7_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +669,7 @@ impl<'a> PPS7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -606,7 +694,7 @@ impl<'a> PPS7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -624,9 +712,12 @@ impl From<PPS8_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS8`"]
-pub type PPS8_R = crate::R<bool, PPS8_A>;
+#[doc = "Field `PPS8` reader - Port n Pin Power Save Bit 8"]
+pub struct PPS8_R(crate::FieldReader<bool, PPS8_A>);
 impl PPS8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS8_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS8_A {
@@ -638,15 +729,22 @@ impl PPS8_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS8_A::CONST_0
+        **self == PPS8_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS8_A::CONST_1
+        **self == PPS8_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS8`"]
+impl core::ops::Deref for PPS8_R {
+    type Target = crate::FieldReader<bool, PPS8_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS8` writer - Port n Pin Power Save Bit 8"]
 pub struct PPS8_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +752,7 @@ impl<'a> PPS8_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS8_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -681,7 +777,7 @@ impl<'a> PPS8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -699,9 +795,12 @@ impl From<PPS9_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS9`"]
-pub type PPS9_R = crate::R<bool, PPS9_A>;
+#[doc = "Field `PPS9` reader - Port n Pin Power Save Bit 9"]
+pub struct PPS9_R(crate::FieldReader<bool, PPS9_A>);
 impl PPS9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS9_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS9_A {
@@ -713,15 +812,22 @@ impl PPS9_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS9_A::CONST_0
+        **self == PPS9_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS9_A::CONST_1
+        **self == PPS9_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS9`"]
+impl core::ops::Deref for PPS9_R {
+    type Target = crate::FieldReader<bool, PPS9_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS9` writer - Port n Pin Power Save Bit 9"]
 pub struct PPS9_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +835,7 @@ impl<'a> PPS9_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS9_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -756,7 +860,7 @@ impl<'a> PPS9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -774,9 +878,12 @@ impl From<PPS10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS10`"]
-pub type PPS10_R = crate::R<bool, PPS10_A>;
+#[doc = "Field `PPS10` reader - Port n Pin Power Save Bit 10"]
+pub struct PPS10_R(crate::FieldReader<bool, PPS10_A>);
 impl PPS10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS10_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS10_A {
@@ -788,15 +895,22 @@ impl PPS10_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS10_A::CONST_0
+        **self == PPS10_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS10_A::CONST_1
+        **self == PPS10_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS10`"]
+impl core::ops::Deref for PPS10_R {
+    type Target = crate::FieldReader<bool, PPS10_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS10` writer - Port n Pin Power Save Bit 10"]
 pub struct PPS10_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +918,7 @@ impl<'a> PPS10_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS10_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -831,7 +943,7 @@ impl<'a> PPS10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -849,9 +961,12 @@ impl From<PPS11_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS11`"]
-pub type PPS11_R = crate::R<bool, PPS11_A>;
+#[doc = "Field `PPS11` reader - Port n Pin Power Save Bit 11"]
+pub struct PPS11_R(crate::FieldReader<bool, PPS11_A>);
 impl PPS11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS11_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS11_A {
@@ -863,15 +978,22 @@ impl PPS11_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS11_A::CONST_0
+        **self == PPS11_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS11_A::CONST_1
+        **self == PPS11_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS11`"]
+impl core::ops::Deref for PPS11_R {
+    type Target = crate::FieldReader<bool, PPS11_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS11` writer - Port n Pin Power Save Bit 11"]
 pub struct PPS11_W<'a> {
     w: &'a mut W,
 }
@@ -879,9 +1001,7 @@ impl<'a> PPS11_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS11_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -906,7 +1026,7 @@ impl<'a> PPS11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -924,9 +1044,12 @@ impl From<PPS12_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS12`"]
-pub type PPS12_R = crate::R<bool, PPS12_A>;
+#[doc = "Field `PPS12` reader - Port n Pin Power Save Bit 12"]
+pub struct PPS12_R(crate::FieldReader<bool, PPS12_A>);
 impl PPS12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS12_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS12_A {
@@ -938,15 +1061,22 @@ impl PPS12_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS12_A::CONST_0
+        **self == PPS12_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS12_A::CONST_1
+        **self == PPS12_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS12`"]
+impl core::ops::Deref for PPS12_R {
+    type Target = crate::FieldReader<bool, PPS12_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS12` writer - Port n Pin Power Save Bit 12"]
 pub struct PPS12_W<'a> {
     w: &'a mut W,
 }
@@ -954,9 +1084,7 @@ impl<'a> PPS12_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS12_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -981,7 +1109,7 @@ impl<'a> PPS12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -999,9 +1127,12 @@ impl From<PPS13_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS13`"]
-pub type PPS13_R = crate::R<bool, PPS13_A>;
+#[doc = "Field `PPS13` reader - Port n Pin Power Save Bit 13"]
+pub struct PPS13_R(crate::FieldReader<bool, PPS13_A>);
 impl PPS13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS13_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS13_A {
@@ -1013,15 +1144,22 @@ impl PPS13_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS13_A::CONST_0
+        **self == PPS13_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS13_A::CONST_1
+        **self == PPS13_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS13`"]
+impl core::ops::Deref for PPS13_R {
+    type Target = crate::FieldReader<bool, PPS13_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS13` writer - Port n Pin Power Save Bit 13"]
 pub struct PPS13_W<'a> {
     w: &'a mut W,
 }
@@ -1029,9 +1167,7 @@ impl<'a> PPS13_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS13_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -1056,7 +1192,7 @@ impl<'a> PPS13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -1074,9 +1210,12 @@ impl From<PPS14_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS14`"]
-pub type PPS14_R = crate::R<bool, PPS14_A>;
+#[doc = "Field `PPS14` reader - Port n Pin Power Save Bit 14"]
+pub struct PPS14_R(crate::FieldReader<bool, PPS14_A>);
 impl PPS14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS14_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS14_A {
@@ -1088,15 +1227,22 @@ impl PPS14_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS14_A::CONST_0
+        **self == PPS14_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS14_A::CONST_1
+        **self == PPS14_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS14`"]
+impl core::ops::Deref for PPS14_R {
+    type Target = crate::FieldReader<bool, PPS14_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS14` writer - Port n Pin Power Save Bit 14"]
 pub struct PPS14_W<'a> {
     w: &'a mut W,
 }
@@ -1104,9 +1250,7 @@ impl<'a> PPS14_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS14_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -1131,7 +1275,7 @@ impl<'a> PPS14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -1149,9 +1293,12 @@ impl From<PPS15_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPS15`"]
-pub type PPS15_R = crate::R<bool, PPS15_A>;
+#[doc = "Field `PPS15` reader - Port n Pin Power Save Bit 15"]
+pub struct PPS15_R(crate::FieldReader<bool, PPS15_A>);
 impl PPS15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPS15_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPS15_A {
@@ -1163,15 +1310,22 @@ impl PPS15_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PPS15_A::CONST_0
+        **self == PPS15_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PPS15_A::CONST_1
+        **self == PPS15_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PPS15`"]
+impl core::ops::Deref for PPS15_R {
+    type Target = crate::FieldReader<bool, PPS15_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PPS15` writer - Port n Pin Power Save Bit 15"]
 pub struct PPS15_W<'a> {
     w: &'a mut W,
 }
@@ -1179,9 +1333,7 @@ impl<'a> PPS15_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PPS15_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -1206,7 +1358,7 @@ impl<'a> PPS15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -1372,5 +1524,31 @@ impl W {
     #[inline(always)]
     pub fn pps15(&mut self) -> PPS15_W {
         PPS15_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port 4 Pin Power Save Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pps](index.html) module"]
+pub struct PPS_SPEC;
+impl crate::RegisterSpec for PPS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pps::R](R) reader structure"]
+impl crate::Readable for PPS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pps::W](W) writer structure"]
+impl crate::Writable for PPS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PPS to value 0"]
+impl crate::Resettable for PPS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

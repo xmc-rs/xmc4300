@@ -1,13 +1,37 @@
-#[doc = "Reader of register GLOBCFG"]
-pub type R = crate::R<u32, super::GLOBCFG>;
-#[doc = "Writer for register GLOBCFG"]
-pub type W = crate::W<u32, super::GLOBCFG>;
-#[doc = "Register GLOBCFG `reset()`'s with value 0x0f"]
-impl crate::ResetValue for super::GLOBCFG {
-    type Type = u32;
+#[doc = "Register `GLOBCFG` reader"]
+pub struct R(crate::R<GLOBCFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GLOBCFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0f
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<GLOBCFG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GLOBCFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `GLOBCFG` writer"]
+pub struct W(crate::W<GLOBCFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<GLOBCFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<GLOBCFG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<GLOBCFG_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Divider Factor for the Analog Internal Clock\n\nValue on reset: 15"]
@@ -29,43 +53,52 @@ impl From<DIVA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DIVA`"]
-pub type DIVA_R = crate::R<u8, DIVA_A>;
+#[doc = "Field `DIVA` reader - Divider Factor for the Analog Internal Clock"]
+pub struct DIVA_R(crate::FieldReader<u8, DIVA_A>);
 impl DIVA_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DIVA_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DIVA_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DIVA_A> {
         match self.bits {
-            0 => Val(DIVA_A::VALUE1),
-            1 => Val(DIVA_A::VALUE2),
-            2 => Val(DIVA_A::VALUE3),
-            31 => Val(DIVA_A::VALUE4),
-            i => Res(i),
+            0 => Some(DIVA_A::VALUE1),
+            1 => Some(DIVA_A::VALUE2),
+            2 => Some(DIVA_A::VALUE3),
+            31 => Some(DIVA_A::VALUE4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DIVA_A::VALUE1
+        **self == DIVA_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DIVA_A::VALUE2
+        **self == DIVA_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == DIVA_A::VALUE3
+        **self == DIVA_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == DIVA_A::VALUE4
+        **self == DIVA_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `DIVA`"]
+impl core::ops::Deref for DIVA_R {
+    type Target = crate::FieldReader<u8, DIVA_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DIVA` writer - Divider Factor for the Analog Internal Clock"]
 pub struct DIVA_W<'a> {
     w: &'a mut W,
 }
@@ -98,7 +131,7 @@ impl<'a> DIVA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
+        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
         self.w
     }
 }
@@ -116,9 +149,12 @@ impl From<DCMSB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCMSB`"]
-pub type DCMSB_R = crate::R<bool, DCMSB_A>;
+#[doc = "Field `DCMSB` reader - Double Clock for the MSB Conversion"]
+pub struct DCMSB_R(crate::FieldReader<bool, DCMSB_A>);
 impl DCMSB_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCMSB_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCMSB_A {
@@ -130,15 +166,22 @@ impl DCMSB_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DCMSB_A::VALUE1
+        **self == DCMSB_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DCMSB_A::VALUE2
+        **self == DCMSB_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DCMSB`"]
+impl core::ops::Deref for DCMSB_R {
+    type Target = crate::FieldReader<bool, DCMSB_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DCMSB` writer - Double Clock for the MSB Conversion"]
 pub struct DCMSB_W<'a> {
     w: &'a mut W,
 }
@@ -146,9 +189,7 @@ impl<'a> DCMSB_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DCMSB_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "1 clock cycles for the MSB (standard)"]
     #[inline(always)]
@@ -173,7 +214,7 @@ impl<'a> DCMSB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -196,9 +237,12 @@ impl From<DIVD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DIVD`"]
-pub type DIVD_R = crate::R<u8, DIVD_A>;
+#[doc = "Field `DIVD` reader - Divider Factor for the Arbiter Clock"]
+pub struct DIVD_R(crate::FieldReader<u8, DIVD_A>);
 impl DIVD_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DIVD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIVD_A {
@@ -213,25 +257,32 @@ impl DIVD_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DIVD_A::VALUE1
+        **self == DIVD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DIVD_A::VALUE2
+        **self == DIVD_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == DIVD_A::VALUE3
+        **self == DIVD_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == DIVD_A::VALUE4
+        **self == DIVD_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `DIVD`"]
+impl core::ops::Deref for DIVD_R {
+    type Target = crate::FieldReader<u8, DIVD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DIVD` writer - Divider Factor for the Arbiter Clock"]
 pub struct DIVD_W<'a> {
     w: &'a mut W,
 }
@@ -239,9 +290,7 @@ impl<'a> DIVD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DIVD_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "fADCD = fADC"]
     #[inline(always)]
@@ -266,7 +315,7 @@ impl<'a> DIVD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
@@ -284,7 +333,7 @@ impl From<DIVWC_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `DIVWC`"]
+#[doc = "Field `DIVWC` writer - Write Control for Divider Parameters"]
 pub struct DIVWC_W<'a> {
     w: &'a mut W,
 }
@@ -292,9 +341,7 @@ impl<'a> DIVWC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DIVWC_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No write access to divider parameters"]
     #[inline(always)]
@@ -319,7 +366,7 @@ impl<'a> DIVWC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -337,9 +384,12 @@ impl From<DPCAL0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DPCAL0`"]
-pub type DPCAL0_R = crate::R<bool, DPCAL0_A>;
+#[doc = "Field `DPCAL0` reader - Disable Post-Calibration"]
+pub struct DPCAL0_R(crate::FieldReader<bool, DPCAL0_A>);
 impl DPCAL0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DPCAL0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DPCAL0_A {
@@ -351,15 +401,22 @@ impl DPCAL0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DPCAL0_A::VALUE1
+        **self == DPCAL0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DPCAL0_A::VALUE2
+        **self == DPCAL0_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DPCAL0`"]
+impl core::ops::Deref for DPCAL0_R {
+    type Target = crate::FieldReader<bool, DPCAL0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DPCAL0` writer - Disable Post-Calibration"]
 pub struct DPCAL0_W<'a> {
     w: &'a mut W,
 }
@@ -367,9 +424,7 @@ impl<'a> DPCAL0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DPCAL0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Automatic post-calibration after each conversion of group x"]
     #[inline(always)]
@@ -394,7 +449,7 @@ impl<'a> DPCAL0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -412,9 +467,12 @@ impl From<DPCAL1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DPCAL1`"]
-pub type DPCAL1_R = crate::R<bool, DPCAL1_A>;
+#[doc = "Field `DPCAL1` reader - Disable Post-Calibration"]
+pub struct DPCAL1_R(crate::FieldReader<bool, DPCAL1_A>);
 impl DPCAL1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DPCAL1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DPCAL1_A {
@@ -426,15 +484,22 @@ impl DPCAL1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DPCAL1_A::VALUE1
+        **self == DPCAL1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DPCAL1_A::VALUE2
+        **self == DPCAL1_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DPCAL1`"]
+impl core::ops::Deref for DPCAL1_R {
+    type Target = crate::FieldReader<bool, DPCAL1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DPCAL1` writer - Disable Post-Calibration"]
 pub struct DPCAL1_W<'a> {
     w: &'a mut W,
 }
@@ -442,9 +507,7 @@ impl<'a> DPCAL1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DPCAL1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Automatic post-calibration after each conversion of group x"]
     #[inline(always)]
@@ -469,7 +532,7 @@ impl<'a> DPCAL1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
@@ -487,9 +550,12 @@ impl From<DPCAL2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DPCAL2`"]
-pub type DPCAL2_R = crate::R<bool, DPCAL2_A>;
+#[doc = "Field `DPCAL2` reader - Disable Post-Calibration"]
+pub struct DPCAL2_R(crate::FieldReader<bool, DPCAL2_A>);
 impl DPCAL2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DPCAL2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DPCAL2_A {
@@ -501,15 +567,22 @@ impl DPCAL2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DPCAL2_A::VALUE1
+        **self == DPCAL2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DPCAL2_A::VALUE2
+        **self == DPCAL2_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DPCAL2`"]
+impl core::ops::Deref for DPCAL2_R {
+    type Target = crate::FieldReader<bool, DPCAL2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DPCAL2` writer - Disable Post-Calibration"]
 pub struct DPCAL2_W<'a> {
     w: &'a mut W,
 }
@@ -517,9 +590,7 @@ impl<'a> DPCAL2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DPCAL2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Automatic post-calibration after each conversion of group x"]
     #[inline(always)]
@@ -544,7 +615,7 @@ impl<'a> DPCAL2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
@@ -562,9 +633,12 @@ impl From<DPCAL3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DPCAL3`"]
-pub type DPCAL3_R = crate::R<bool, DPCAL3_A>;
+#[doc = "Field `DPCAL3` reader - Disable Post-Calibration"]
+pub struct DPCAL3_R(crate::FieldReader<bool, DPCAL3_A>);
 impl DPCAL3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DPCAL3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DPCAL3_A {
@@ -576,15 +650,22 @@ impl DPCAL3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DPCAL3_A::VALUE1
+        **self == DPCAL3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DPCAL3_A::VALUE2
+        **self == DPCAL3_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DPCAL3`"]
+impl core::ops::Deref for DPCAL3_R {
+    type Target = crate::FieldReader<bool, DPCAL3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DPCAL3` writer - Disable Post-Calibration"]
 pub struct DPCAL3_W<'a> {
     w: &'a mut W,
 }
@@ -592,9 +673,7 @@ impl<'a> DPCAL3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DPCAL3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Automatic post-calibration after each conversion of group x"]
     #[inline(always)]
@@ -619,7 +698,7 @@ impl<'a> DPCAL3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -637,7 +716,7 @@ impl From<SUCAL_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `SUCAL`"]
+#[doc = "Field `SUCAL` writer - Start-Up Calibration"]
 pub struct SUCAL_W<'a> {
     w: &'a mut W,
 }
@@ -645,9 +724,7 @@ impl<'a> SUCAL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SUCAL_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -672,7 +749,7 @@ impl<'a> SUCAL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -758,5 +835,31 @@ impl W {
     #[inline(always)]
     pub fn sucal(&mut self) -> SUCAL_W {
         SUCAL_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Global Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [globcfg](index.html) module"]
+pub struct GLOBCFG_SPEC;
+impl crate::RegisterSpec for GLOBCFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [globcfg::R](R) reader structure"]
+impl crate::Readable for GLOBCFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [globcfg::W](W) writer structure"]
+impl crate::Writable for GLOBCFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets GLOBCFG to value 0x0f"]
+impl crate::Resettable for GLOBCFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0f
     }
 }
