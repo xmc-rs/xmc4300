@@ -1,11 +1,22 @@
-#[doc = "Writer for register CEFCLR"]
-pub type W = crate::W<u32, super::CEFCLR>;
-#[doc = "Register CEFCLR `reset()`'s with value 0"]
-impl crate::ResetValue for super::CEFCLR {
-    type Type = u32;
+#[doc = "Register `CEFCLR` writer"]
+pub struct W(crate::W<CEFCLR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CEFCLR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CEFCLR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CEFCLR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Clear Channel Event for Channel 0\n\nValue on reset: 0"]
@@ -22,7 +33,7 @@ impl From<CEV0_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CEV0`"]
+#[doc = "Field `CEV0` writer - Clear Channel Event for Channel 0"]
 pub struct CEV0_W<'a> {
     w: &'a mut W,
 }
@@ -30,9 +41,7 @@ impl<'a> CEV0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEV0_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -57,7 +66,7 @@ impl<'a> CEV0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -75,7 +84,7 @@ impl From<CEV1_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CEV1`"]
+#[doc = "Field `CEV1` writer - Clear Channel Event for Channel 1"]
 pub struct CEV1_W<'a> {
     w: &'a mut W,
 }
@@ -83,9 +92,7 @@ impl<'a> CEV1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEV1_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -110,7 +117,7 @@ impl<'a> CEV1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -128,7 +135,7 @@ impl From<CEV2_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CEV2`"]
+#[doc = "Field `CEV2` writer - Clear Channel Event for Channel 2"]
 pub struct CEV2_W<'a> {
     w: &'a mut W,
 }
@@ -136,9 +143,7 @@ impl<'a> CEV2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEV2_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -163,7 +168,7 @@ impl<'a> CEV2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -181,7 +186,7 @@ impl From<CEV3_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CEV3`"]
+#[doc = "Field `CEV3` writer - Clear Channel Event for Channel 3"]
 pub struct CEV3_W<'a> {
     w: &'a mut W,
 }
@@ -189,9 +194,7 @@ impl<'a> CEV3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEV3_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -216,7 +219,7 @@ impl<'a> CEV3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -234,7 +237,7 @@ impl From<CEV4_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CEV4`"]
+#[doc = "Field `CEV4` writer - Clear Channel Event for Channel 4"]
 pub struct CEV4_W<'a> {
     w: &'a mut W,
 }
@@ -242,9 +245,7 @@ impl<'a> CEV4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEV4_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -269,7 +270,7 @@ impl<'a> CEV4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -287,7 +288,7 @@ impl From<CEV5_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CEV5`"]
+#[doc = "Field `CEV5` writer - Clear Channel Event for Channel 5"]
 pub struct CEV5_W<'a> {
     w: &'a mut W,
 }
@@ -295,9 +296,7 @@ impl<'a> CEV5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEV5_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -322,7 +321,7 @@ impl<'a> CEV5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -340,7 +339,7 @@ impl From<CEV6_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CEV6`"]
+#[doc = "Field `CEV6` writer - Clear Channel Event for Channel 6"]
 pub struct CEV6_W<'a> {
     w: &'a mut W,
 }
@@ -348,9 +347,7 @@ impl<'a> CEV6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEV6_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -375,7 +372,7 @@ impl<'a> CEV6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -393,7 +390,7 @@ impl From<CEV7_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CEV7`"]
+#[doc = "Field `CEV7` writer - Clear Channel Event for Channel 7"]
 pub struct CEV7_W<'a> {
     w: &'a mut W,
 }
@@ -401,9 +398,7 @@ impl<'a> CEV7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEV7_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -428,7 +423,7 @@ impl<'a> CEV7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -472,5 +467,27 @@ impl W {
     #[inline(always)]
     pub fn cev7(&mut self) -> CEV7_W {
         CEV7_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Event Flag Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cefclr](index.html) module"]
+pub struct CEFCLR_SPEC;
+impl crate::RegisterSpec for CEFCLR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [cefclr::W](W) writer structure"]
+impl crate::Writable for CEFCLR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CEFCLR to value 0"]
+impl crate::Resettable for CEFCLR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

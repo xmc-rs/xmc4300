@@ -1,13 +1,37 @@
-#[doc = "Reader of register REQSRCREG"]
-pub type R = crate::R<u32, super::REQSRCREG>;
-#[doc = "Writer for register REQSRCREG"]
-pub type W = crate::W<u32, super::REQSRCREG>;
-#[doc = "Register REQSRCREG `reset()`'s with value 0"]
-impl crate::ResetValue for super::REQSRCREG {
-    type Type = u32;
+#[doc = "Register `REQSRCREG` reader"]
+pub struct R(crate::R<REQSRCREG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<REQSRCREG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<REQSRCREG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<REQSRCREG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `REQSRCREG` writer"]
+pub struct W(crate::W<REQSRCREG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<REQSRCREG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<REQSRCREG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<REQSRCREG_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Source request write enable for channel 0\n\nValue on reset: 0"]
@@ -24,7 +48,7 @@ impl From<WE_CH0_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WE_CH0`"]
+#[doc = "Field `WE_CH0` writer - Source request write enable for channel 0"]
 pub struct WE_CH0_W<'a> {
     w: &'a mut W,
 }
@@ -32,9 +56,7 @@ impl<'a> WE_CH0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WE_CH0_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "write disabled"]
     #[inline(always)]
@@ -59,7 +81,7 @@ impl<'a> WE_CH0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -77,7 +99,7 @@ impl From<WE_CH1_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WE_CH1`"]
+#[doc = "Field `WE_CH1` writer - Source request write enable for channel 1"]
 pub struct WE_CH1_W<'a> {
     w: &'a mut W,
 }
@@ -85,9 +107,7 @@ impl<'a> WE_CH1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WE_CH1_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "write disabled"]
     #[inline(always)]
@@ -112,7 +132,7 @@ impl<'a> WE_CH1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -130,7 +150,7 @@ impl From<WE_CH2_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WE_CH2`"]
+#[doc = "Field `WE_CH2` writer - Source request write enable for channel 2"]
 pub struct WE_CH2_W<'a> {
     w: &'a mut W,
 }
@@ -138,9 +158,7 @@ impl<'a> WE_CH2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WE_CH2_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "write disabled"]
     #[inline(always)]
@@ -165,7 +183,7 @@ impl<'a> WE_CH2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -183,7 +201,7 @@ impl From<WE_CH3_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WE_CH3`"]
+#[doc = "Field `WE_CH3` writer - Source request write enable for channel 3"]
 pub struct WE_CH3_W<'a> {
     w: &'a mut W,
 }
@@ -191,9 +209,7 @@ impl<'a> WE_CH3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WE_CH3_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "write disabled"]
     #[inline(always)]
@@ -218,7 +234,7 @@ impl<'a> WE_CH3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -236,7 +252,7 @@ impl From<WE_CH4_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WE_CH4`"]
+#[doc = "Field `WE_CH4` writer - Source request write enable for channel 4"]
 pub struct WE_CH4_W<'a> {
     w: &'a mut W,
 }
@@ -244,9 +260,7 @@ impl<'a> WE_CH4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WE_CH4_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "write disabled"]
     #[inline(always)]
@@ -271,7 +285,7 @@ impl<'a> WE_CH4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -289,7 +303,7 @@ impl From<WE_CH5_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WE_CH5`"]
+#[doc = "Field `WE_CH5` writer - Source request write enable for channel 5"]
 pub struct WE_CH5_W<'a> {
     w: &'a mut W,
 }
@@ -297,9 +311,7 @@ impl<'a> WE_CH5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WE_CH5_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "write disabled"]
     #[inline(always)]
@@ -324,7 +336,7 @@ impl<'a> WE_CH5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -342,7 +354,7 @@ impl From<WE_CH6_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WE_CH6`"]
+#[doc = "Field `WE_CH6` writer - Source request write enable for channel 6"]
 pub struct WE_CH6_W<'a> {
     w: &'a mut W,
 }
@@ -350,9 +362,7 @@ impl<'a> WE_CH6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WE_CH6_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "write disabled"]
     #[inline(always)]
@@ -377,7 +387,7 @@ impl<'a> WE_CH6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -395,7 +405,7 @@ impl From<WE_CH7_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WE_CH7`"]
+#[doc = "Field `WE_CH7` writer - Source request write enable for channel 7"]
 pub struct WE_CH7_W<'a> {
     w: &'a mut W,
 }
@@ -403,9 +413,7 @@ impl<'a> WE_CH7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WE_CH7_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "write disabled"]
     #[inline(always)]
@@ -430,13 +438,25 @@ impl<'a> WE_CH7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
-#[doc = "Reader of field `CH0`"]
-pub type CH0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CH0`"]
+#[doc = "Field `CH0` reader - Source request for channel 0"]
+pub struct CH0_R(crate::FieldReader<bool, bool>);
+impl CH0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH0` writer - Source request for channel 0"]
 pub struct CH0_W<'a> {
     w: &'a mut W,
 }
@@ -454,13 +474,25 @@ impl<'a> CH0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `CH1`"]
-pub type CH1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CH1`"]
+#[doc = "Field `CH1` reader - Source request for channel 1"]
+pub struct CH1_R(crate::FieldReader<bool, bool>);
+impl CH1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH1` writer - Source request for channel 1"]
 pub struct CH1_W<'a> {
     w: &'a mut W,
 }
@@ -478,13 +510,25 @@ impl<'a> CH1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `CH2`"]
-pub type CH2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CH2`"]
+#[doc = "Field `CH2` reader - Source request for channel 2"]
+pub struct CH2_R(crate::FieldReader<bool, bool>);
+impl CH2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH2` writer - Source request for channel 2"]
 pub struct CH2_W<'a> {
     w: &'a mut W,
 }
@@ -502,13 +546,25 @@ impl<'a> CH2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `CH3`"]
-pub type CH3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CH3`"]
+#[doc = "Field `CH3` reader - Source request for channel 3"]
+pub struct CH3_R(crate::FieldReader<bool, bool>);
+impl CH3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH3` writer - Source request for channel 3"]
 pub struct CH3_W<'a> {
     w: &'a mut W,
 }
@@ -526,13 +582,25 @@ impl<'a> CH3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `CH4`"]
-pub type CH4_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CH4`"]
+#[doc = "Field `CH4` reader - Source request for channel 4"]
+pub struct CH4_R(crate::FieldReader<bool, bool>);
+impl CH4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH4` writer - Source request for channel 4"]
 pub struct CH4_W<'a> {
     w: &'a mut W,
 }
@@ -550,13 +618,25 @@ impl<'a> CH4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `CH5`"]
-pub type CH5_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CH5`"]
+#[doc = "Field `CH5` reader - Source request for channel 5"]
+pub struct CH5_R(crate::FieldReader<bool, bool>);
+impl CH5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH5` writer - Source request for channel 5"]
 pub struct CH5_W<'a> {
     w: &'a mut W,
 }
@@ -574,13 +654,25 @@ impl<'a> CH5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `CH6`"]
-pub type CH6_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CH6`"]
+#[doc = "Field `CH6` reader - Source request for channel 6"]
+pub struct CH6_R(crate::FieldReader<bool, bool>);
+impl CH6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH6` writer - Source request for channel 6"]
 pub struct CH6_W<'a> {
     w: &'a mut W,
 }
@@ -598,13 +690,25 @@ impl<'a> CH6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `CH7`"]
-pub type CH7_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CH7`"]
+#[doc = "Field `CH7` reader - Source request for channel 7"]
+pub struct CH7_R(crate::FieldReader<bool, bool>);
+impl CH7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH7` writer - Source request for channel 7"]
 pub struct CH7_W<'a> {
     w: &'a mut W,
 }
@@ -622,7 +726,7 @@ impl<'a> CH7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -748,5 +852,31 @@ impl W {
     #[inline(always)]
     pub fn ch7(&mut self) -> CH7_W {
         CH7_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Source Software Transaction Request Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [reqsrcreg](index.html) module"]
+pub struct REQSRCREG_SPEC;
+impl crate::RegisterSpec for REQSRCREG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [reqsrcreg::R](R) reader structure"]
+impl crate::Readable for REQSRCREG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [reqsrcreg::W](W) writer structure"]
+impl crate::Writable for REQSRCREG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets REQSRCREG to value 0"]
+impl crate::Resettable for REQSRCREG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

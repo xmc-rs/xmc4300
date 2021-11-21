@@ -1,5 +1,18 @@
-#[doc = "Reader of register DC_LATCH1_STAT"]
-pub type R = crate::R<u8, super::DC_LATCH1_STAT>;
+#[doc = "Register `DC_LATCH1_STAT` reader"]
+pub struct R(crate::R<DC_LATCH1_STAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DC_LATCH1_STAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DC_LATCH1_STAT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DC_LATCH1_STAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Event Latch1 positive edge\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EV_L1_POS_A {
@@ -14,9 +27,12 @@ impl From<EV_L1_POS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `EV_L1_POS`"]
-pub type EV_L1_POS_R = crate::R<bool, EV_L1_POS_A>;
+#[doc = "Field `EV_L1_POS` reader - Event Latch1 positive edge"]
+pub struct EV_L1_POS_R(crate::FieldReader<bool, EV_L1_POS_A>);
 impl EV_L1_POS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EV_L1_POS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EV_L1_POS_A {
@@ -28,12 +44,19 @@ impl EV_L1_POS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EV_L1_POS_A::VALUE1
+        **self == EV_L1_POS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EV_L1_POS_A::VALUE2
+        **self == EV_L1_POS_A::VALUE2
+    }
+}
+impl core::ops::Deref for EV_L1_POS_R {
+    type Target = crate::FieldReader<bool, EV_L1_POS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Event Latch1 negative edge\n\nValue on reset: 0"]
@@ -50,9 +73,12 @@ impl From<EV_L1_NEG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `EV_L1_NEG`"]
-pub type EV_L1_NEG_R = crate::R<bool, EV_L1_NEG_A>;
+#[doc = "Field `EV_L1_NEG` reader - Event Latch1 negative edge"]
+pub struct EV_L1_NEG_R(crate::FieldReader<bool, EV_L1_NEG_A>);
 impl EV_L1_NEG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EV_L1_NEG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EV_L1_NEG_A {
@@ -64,16 +90,35 @@ impl EV_L1_NEG_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EV_L1_NEG_A::VALUE1
+        **self == EV_L1_NEG_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EV_L1_NEG_A::VALUE2
+        **self == EV_L1_NEG_A::VALUE2
     }
 }
-#[doc = "Reader of field `L1_PIN`"]
-pub type L1_PIN_R = crate::R<bool, bool>;
+impl core::ops::Deref for EV_L1_NEG_R {
+    type Target = crate::FieldReader<bool, EV_L1_NEG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `L1_PIN` reader - Latch1 pin state"]
+pub struct L1_PIN_R(crate::FieldReader<bool, bool>);
+impl L1_PIN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        L1_PIN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for L1_PIN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Event Latch1 positive edge"]
     #[inline(always)]
@@ -89,5 +134,21 @@ impl R {
     #[inline(always)]
     pub fn l1_pin(&self) -> L1_PIN_R {
         L1_PIN_R::new(((self.bits >> 2) & 0x01) != 0)
+    }
+}
+#[doc = "Latch1 Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dc_latch1_stat](index.html) module"]
+pub struct DC_LATCH1_STAT_SPEC;
+impl crate::RegisterSpec for DC_LATCH1_STAT_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [dc_latch1_stat::R](R) reader structure"]
+impl crate::Readable for DC_LATCH1_STAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets DC_LATCH1_STAT to value 0"]
+impl crate::Resettable for DC_LATCH1_STAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

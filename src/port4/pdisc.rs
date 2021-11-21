@@ -1,5 +1,18 @@
-#[doc = "Reader of register PDISC"]
-pub type R = crate::R<u32, super::PDISC>;
+#[doc = "Register `PDISC` reader"]
+pub struct R(crate::R<PDISC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PDISC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PDISC_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PDISC_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Pad Disable for Port n Pin 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS0_A {
@@ -14,9 +27,12 @@ impl From<PDIS0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS0`"]
-pub type PDIS0_R = crate::R<bool, PDIS0_A>;
+#[doc = "Field `PDIS0` reader - Pad Disable for Port n Pin 0"]
+pub struct PDIS0_R(crate::FieldReader<bool, PDIS0_A>);
 impl PDIS0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS0_A {
@@ -28,12 +44,19 @@ impl PDIS0_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS0_A::CONST_0
+        **self == PDIS0_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS0_A::CONST_1
+        **self == PDIS0_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS0_R {
+    type Target = crate::FieldReader<bool, PDIS0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 1\n\nValue on reset: 0"]
@@ -50,9 +73,12 @@ impl From<PDIS1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS1`"]
-pub type PDIS1_R = crate::R<bool, PDIS1_A>;
+#[doc = "Field `PDIS1` reader - Pad Disable for Port n Pin 1"]
+pub struct PDIS1_R(crate::FieldReader<bool, PDIS1_A>);
 impl PDIS1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS1_A {
@@ -64,12 +90,19 @@ impl PDIS1_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS1_A::CONST_0
+        **self == PDIS1_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS1_A::CONST_1
+        **self == PDIS1_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS1_R {
+    type Target = crate::FieldReader<bool, PDIS1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 2\n\nValue on reset: 0"]
@@ -86,9 +119,12 @@ impl From<PDIS2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS2`"]
-pub type PDIS2_R = crate::R<bool, PDIS2_A>;
+#[doc = "Field `PDIS2` reader - Pad Disable for Port n Pin 2"]
+pub struct PDIS2_R(crate::FieldReader<bool, PDIS2_A>);
 impl PDIS2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS2_A {
@@ -100,12 +136,19 @@ impl PDIS2_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS2_A::CONST_0
+        **self == PDIS2_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS2_A::CONST_1
+        **self == PDIS2_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS2_R {
+    type Target = crate::FieldReader<bool, PDIS2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 3\n\nValue on reset: 0"]
@@ -122,9 +165,12 @@ impl From<PDIS3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS3`"]
-pub type PDIS3_R = crate::R<bool, PDIS3_A>;
+#[doc = "Field `PDIS3` reader - Pad Disable for Port n Pin 3"]
+pub struct PDIS3_R(crate::FieldReader<bool, PDIS3_A>);
 impl PDIS3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS3_A {
@@ -136,12 +182,19 @@ impl PDIS3_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS3_A::CONST_0
+        **self == PDIS3_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS3_A::CONST_1
+        **self == PDIS3_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS3_R {
+    type Target = crate::FieldReader<bool, PDIS3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 4\n\nValue on reset: 0"]
@@ -158,9 +211,12 @@ impl From<PDIS4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS4`"]
-pub type PDIS4_R = crate::R<bool, PDIS4_A>;
+#[doc = "Field `PDIS4` reader - Pad Disable for Port n Pin 4"]
+pub struct PDIS4_R(crate::FieldReader<bool, PDIS4_A>);
 impl PDIS4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS4_A {
@@ -172,12 +228,19 @@ impl PDIS4_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS4_A::CONST_0
+        **self == PDIS4_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS4_A::CONST_1
+        **self == PDIS4_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS4_R {
+    type Target = crate::FieldReader<bool, PDIS4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 5\n\nValue on reset: 0"]
@@ -194,9 +257,12 @@ impl From<PDIS5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS5`"]
-pub type PDIS5_R = crate::R<bool, PDIS5_A>;
+#[doc = "Field `PDIS5` reader - Pad Disable for Port n Pin 5"]
+pub struct PDIS5_R(crate::FieldReader<bool, PDIS5_A>);
 impl PDIS5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS5_A {
@@ -208,12 +274,19 @@ impl PDIS5_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS5_A::CONST_0
+        **self == PDIS5_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS5_A::CONST_1
+        **self == PDIS5_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS5_R {
+    type Target = crate::FieldReader<bool, PDIS5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 6\n\nValue on reset: 0"]
@@ -230,9 +303,12 @@ impl From<PDIS6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS6`"]
-pub type PDIS6_R = crate::R<bool, PDIS6_A>;
+#[doc = "Field `PDIS6` reader - Pad Disable for Port n Pin 6"]
+pub struct PDIS6_R(crate::FieldReader<bool, PDIS6_A>);
 impl PDIS6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS6_A {
@@ -244,12 +320,19 @@ impl PDIS6_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS6_A::CONST_0
+        **self == PDIS6_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS6_A::CONST_1
+        **self == PDIS6_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS6_R {
+    type Target = crate::FieldReader<bool, PDIS6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 7\n\nValue on reset: 0"]
@@ -266,9 +349,12 @@ impl From<PDIS7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS7`"]
-pub type PDIS7_R = crate::R<bool, PDIS7_A>;
+#[doc = "Field `PDIS7` reader - Pad Disable for Port n Pin 7"]
+pub struct PDIS7_R(crate::FieldReader<bool, PDIS7_A>);
 impl PDIS7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS7_A {
@@ -280,12 +366,19 @@ impl PDIS7_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS7_A::CONST_0
+        **self == PDIS7_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS7_A::CONST_1
+        **self == PDIS7_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS7_R {
+    type Target = crate::FieldReader<bool, PDIS7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 8\n\nValue on reset: 0"]
@@ -302,9 +395,12 @@ impl From<PDIS8_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS8`"]
-pub type PDIS8_R = crate::R<bool, PDIS8_A>;
+#[doc = "Field `PDIS8` reader - Pad Disable for Port n Pin 8"]
+pub struct PDIS8_R(crate::FieldReader<bool, PDIS8_A>);
 impl PDIS8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS8_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS8_A {
@@ -316,12 +412,19 @@ impl PDIS8_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS8_A::CONST_0
+        **self == PDIS8_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS8_A::CONST_1
+        **self == PDIS8_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS8_R {
+    type Target = crate::FieldReader<bool, PDIS8_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 9\n\nValue on reset: 0"]
@@ -338,9 +441,12 @@ impl From<PDIS9_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS9`"]
-pub type PDIS9_R = crate::R<bool, PDIS9_A>;
+#[doc = "Field `PDIS9` reader - Pad Disable for Port n Pin 9"]
+pub struct PDIS9_R(crate::FieldReader<bool, PDIS9_A>);
 impl PDIS9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS9_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS9_A {
@@ -352,12 +458,19 @@ impl PDIS9_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS9_A::CONST_0
+        **self == PDIS9_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS9_A::CONST_1
+        **self == PDIS9_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS9_R {
+    type Target = crate::FieldReader<bool, PDIS9_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 10\n\nValue on reset: 0"]
@@ -374,9 +487,12 @@ impl From<PDIS10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS10`"]
-pub type PDIS10_R = crate::R<bool, PDIS10_A>;
+#[doc = "Field `PDIS10` reader - Pad Disable for Port n Pin 10"]
+pub struct PDIS10_R(crate::FieldReader<bool, PDIS10_A>);
 impl PDIS10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS10_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS10_A {
@@ -388,12 +504,19 @@ impl PDIS10_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS10_A::CONST_0
+        **self == PDIS10_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS10_A::CONST_1
+        **self == PDIS10_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS10_R {
+    type Target = crate::FieldReader<bool, PDIS10_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 11\n\nValue on reset: 0"]
@@ -410,9 +533,12 @@ impl From<PDIS11_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS11`"]
-pub type PDIS11_R = crate::R<bool, PDIS11_A>;
+#[doc = "Field `PDIS11` reader - Pad Disable for Port n Pin 11"]
+pub struct PDIS11_R(crate::FieldReader<bool, PDIS11_A>);
 impl PDIS11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS11_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS11_A {
@@ -424,12 +550,19 @@ impl PDIS11_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS11_A::CONST_0
+        **self == PDIS11_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS11_A::CONST_1
+        **self == PDIS11_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS11_R {
+    type Target = crate::FieldReader<bool, PDIS11_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 12\n\nValue on reset: 0"]
@@ -446,9 +579,12 @@ impl From<PDIS12_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS12`"]
-pub type PDIS12_R = crate::R<bool, PDIS12_A>;
+#[doc = "Field `PDIS12` reader - Pad Disable for Port n Pin 12"]
+pub struct PDIS12_R(crate::FieldReader<bool, PDIS12_A>);
 impl PDIS12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS12_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS12_A {
@@ -460,12 +596,19 @@ impl PDIS12_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS12_A::CONST_0
+        **self == PDIS12_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS12_A::CONST_1
+        **self == PDIS12_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS12_R {
+    type Target = crate::FieldReader<bool, PDIS12_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 13\n\nValue on reset: 0"]
@@ -482,9 +625,12 @@ impl From<PDIS13_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS13`"]
-pub type PDIS13_R = crate::R<bool, PDIS13_A>;
+#[doc = "Field `PDIS13` reader - Pad Disable for Port n Pin 13"]
+pub struct PDIS13_R(crate::FieldReader<bool, PDIS13_A>);
 impl PDIS13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS13_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS13_A {
@@ -496,12 +642,19 @@ impl PDIS13_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS13_A::CONST_0
+        **self == PDIS13_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS13_A::CONST_1
+        **self == PDIS13_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS13_R {
+    type Target = crate::FieldReader<bool, PDIS13_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 14\n\nValue on reset: 0"]
@@ -518,9 +671,12 @@ impl From<PDIS14_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS14`"]
-pub type PDIS14_R = crate::R<bool, PDIS14_A>;
+#[doc = "Field `PDIS14` reader - Pad Disable for Port n Pin 14"]
+pub struct PDIS14_R(crate::FieldReader<bool, PDIS14_A>);
 impl PDIS14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS14_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS14_A {
@@ -532,12 +688,19 @@ impl PDIS14_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS14_A::CONST_0
+        **self == PDIS14_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS14_A::CONST_1
+        **self == PDIS14_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS14_R {
+    type Target = crate::FieldReader<bool, PDIS14_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Pad Disable for Port n Pin 15\n\nValue on reset: 0"]
@@ -554,9 +717,12 @@ impl From<PDIS15_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDIS15`"]
-pub type PDIS15_R = crate::R<bool, PDIS15_A>;
+#[doc = "Field `PDIS15` reader - Pad Disable for Port n Pin 15"]
+pub struct PDIS15_R(crate::FieldReader<bool, PDIS15_A>);
 impl PDIS15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDIS15_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDIS15_A {
@@ -568,12 +734,19 @@ impl PDIS15_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PDIS15_A::CONST_0
+        **self == PDIS15_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PDIS15_A::CONST_1
+        **self == PDIS15_A::CONST_1
+    }
+}
+impl core::ops::Deref for PDIS15_R {
+    type Target = crate::FieldReader<bool, PDIS15_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -656,5 +829,21 @@ impl R {
     #[inline(always)]
     pub fn pdis15(&self) -> PDIS15_R {
         PDIS15_R::new(((self.bits >> 15) & 0x01) != 0)
+    }
+}
+#[doc = "Port 4 Pin Function Decision Control Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdisc](index.html) module"]
+pub struct PDISC_SPEC;
+impl crate::RegisterSpec for PDISC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pdisc::R](R) reader structure"]
+impl crate::Readable for PDISC_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets PDISC to value 0"]
+impl crate::Resettable for PDISC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

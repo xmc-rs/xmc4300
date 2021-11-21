@@ -1,5 +1,18 @@
-#[doc = "Reader of register PLLSTAT"]
-pub type R = crate::R<u32, super::PLLSTAT>;
+#[doc = "Register `PLLSTAT` reader"]
+pub struct R(crate::R<PLLSTAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PLLSTAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PLLSTAT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PLLSTAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "VCO Bypass Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCOBYST_A {
@@ -14,9 +27,12 @@ impl From<VCOBYST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VCOBYST`"]
-pub type VCOBYST_R = crate::R<bool, VCOBYST_A>;
+#[doc = "Field `VCOBYST` reader - VCO Bypass Status"]
+pub struct VCOBYST_R(crate::FieldReader<bool, VCOBYST_A>);
 impl VCOBYST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VCOBYST_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VCOBYST_A {
@@ -28,12 +44,19 @@ impl VCOBYST_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == VCOBYST_A::CONST_0
+        **self == VCOBYST_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == VCOBYST_A::CONST_1
+        **self == VCOBYST_A::CONST_1
+    }
+}
+impl core::ops::Deref for VCOBYST_R {
+    type Target = crate::FieldReader<bool, VCOBYST_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "PLL Power-saving Mode Status\n\nValue on reset: 1"]
@@ -50,9 +73,12 @@ impl From<PWDSTAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PWDSTAT`"]
-pub type PWDSTAT_R = crate::R<bool, PWDSTAT_A>;
+#[doc = "Field `PWDSTAT` reader - PLL Power-saving Mode Status"]
+pub struct PWDSTAT_R(crate::FieldReader<bool, PWDSTAT_A>);
 impl PWDSTAT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PWDSTAT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PWDSTAT_A {
@@ -64,12 +90,19 @@ impl PWDSTAT_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PWDSTAT_A::CONST_0
+        **self == PWDSTAT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PWDSTAT_A::CONST_1
+        **self == PWDSTAT_A::CONST_1
+    }
+}
+impl core::ops::Deref for PWDSTAT_R {
+    type Target = crate::FieldReader<bool, PWDSTAT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "PLL LOCK Status\n\nValue on reset: 0"]
@@ -86,9 +119,12 @@ impl From<VCOLOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VCOLOCK`"]
-pub type VCOLOCK_R = crate::R<bool, VCOLOCK_A>;
+#[doc = "Field `VCOLOCK` reader - PLL LOCK Status"]
+pub struct VCOLOCK_R(crate::FieldReader<bool, VCOLOCK_A>);
 impl VCOLOCK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VCOLOCK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VCOLOCK_A {
@@ -100,12 +136,19 @@ impl VCOLOCK_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == VCOLOCK_A::CONST_0
+        **self == VCOLOCK_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == VCOLOCK_A::CONST_1
+        **self == VCOLOCK_A::CONST_1
+    }
+}
+impl core::ops::Deref for VCOLOCK_R {
+    type Target = crate::FieldReader<bool, VCOLOCK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "K1 Divider Ready Status\n\nValue on reset: 0"]
@@ -122,9 +165,12 @@ impl From<K1RDY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `K1RDY`"]
-pub type K1RDY_R = crate::R<bool, K1RDY_A>;
+#[doc = "Field `K1RDY` reader - K1 Divider Ready Status"]
+pub struct K1RDY_R(crate::FieldReader<bool, K1RDY_A>);
 impl K1RDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        K1RDY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> K1RDY_A {
@@ -136,12 +182,19 @@ impl K1RDY_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == K1RDY_A::CONST_0
+        **self == K1RDY_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == K1RDY_A::CONST_1
+        **self == K1RDY_A::CONST_1
+    }
+}
+impl core::ops::Deref for K1RDY_R {
+    type Target = crate::FieldReader<bool, K1RDY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "K2 Divider Ready Status\n\nValue on reset: 0"]
@@ -158,9 +211,12 @@ impl From<K2RDY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `K2RDY`"]
-pub type K2RDY_R = crate::R<bool, K2RDY_A>;
+#[doc = "Field `K2RDY` reader - K2 Divider Ready Status"]
+pub struct K2RDY_R(crate::FieldReader<bool, K2RDY_A>);
 impl K2RDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        K2RDY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> K2RDY_A {
@@ -172,12 +228,19 @@ impl K2RDY_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == K2RDY_A::CONST_0
+        **self == K2RDY_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == K2RDY_A::CONST_1
+        **self == K2RDY_A::CONST_1
+    }
+}
+impl core::ops::Deref for K2RDY_R {
+    type Target = crate::FieldReader<bool, K2RDY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Bypass Mode Status\n\nValue on reset: 0"]
@@ -194,9 +257,12 @@ impl From<BY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BY`"]
-pub type BY_R = crate::R<bool, BY_A>;
+#[doc = "Field `BY` reader - Bypass Mode Status"]
+pub struct BY_R(crate::FieldReader<bool, BY_A>);
 impl BY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BY_A {
@@ -208,12 +274,19 @@ impl BY_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == BY_A::CONST_0
+        **self == BY_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == BY_A::CONST_1
+        **self == BY_A::CONST_1
+    }
+}
+impl core::ops::Deref for BY_R {
+    type Target = crate::FieldReader<bool, BY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Oscillator for PLL Valid Low Status Bit\n\nValue on reset: 0"]
@@ -230,9 +303,12 @@ impl From<PLLLV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PLLLV`"]
-pub type PLLLV_R = crate::R<bool, PLLLV_A>;
+#[doc = "Field `PLLLV` reader - Oscillator for PLL Valid Low Status Bit"]
+pub struct PLLLV_R(crate::FieldReader<bool, PLLLV_A>);
 impl PLLLV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLLLV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLLLV_A {
@@ -244,12 +320,19 @@ impl PLLLV_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PLLLV_A::CONST_0
+        **self == PLLLV_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PLLLV_A::CONST_1
+        **self == PLLLV_A::CONST_1
+    }
+}
+impl core::ops::Deref for PLLLV_R {
+    type Target = crate::FieldReader<bool, PLLLV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Oscillator for PLL Valid High Status Bit\n\nValue on reset: 0"]
@@ -266,9 +349,12 @@ impl From<PLLHV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PLLHV`"]
-pub type PLLHV_R = crate::R<bool, PLLHV_A>;
+#[doc = "Field `PLLHV` reader - Oscillator for PLL Valid High Status Bit"]
+pub struct PLLHV_R(crate::FieldReader<bool, PLLHV_A>);
 impl PLLHV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLLHV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLLHV_A {
@@ -280,12 +366,19 @@ impl PLLHV_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PLLHV_A::CONST_0
+        **self == PLLHV_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PLLHV_A::CONST_1
+        **self == PLLHV_A::CONST_1
+    }
+}
+impl core::ops::Deref for PLLHV_R {
+    type Target = crate::FieldReader<bool, PLLHV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Oscillator for PLL Valid Spike Status Bit\n\nValue on reset: 0"]
@@ -302,9 +395,12 @@ impl From<PLLSP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PLLSP`"]
-pub type PLLSP_R = crate::R<bool, PLLSP_A>;
+#[doc = "Field `PLLSP` reader - Oscillator for PLL Valid Spike Status Bit"]
+pub struct PLLSP_R(crate::FieldReader<bool, PLLSP_A>);
 impl PLLSP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLLSP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLLSP_A {
@@ -316,12 +412,19 @@ impl PLLSP_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PLLSP_A::CONST_0
+        **self == PLLSP_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PLLSP_A::CONST_1
+        **self == PLLSP_A::CONST_1
+    }
+}
+impl core::ops::Deref for PLLSP_R {
+    type Target = crate::FieldReader<bool, PLLSP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -369,5 +472,21 @@ impl R {
     #[inline(always)]
     pub fn pllsp(&self) -> PLLSP_R {
         PLLSP_R::new(((self.bits >> 9) & 0x01) != 0)
+    }
+}
+#[doc = "PLL Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pllstat](index.html) module"]
+pub struct PLLSTAT_SPEC;
+impl crate::RegisterSpec for PLLSTAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pllstat::R](R) reader structure"]
+impl crate::Readable for PLLSTAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets PLLSTAT to value 0x02"]
+impl crate::Resettable for PLLSTAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x02
     }
 }

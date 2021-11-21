@@ -1,13 +1,37 @@
-#[doc = "Reader of register GLOBRCR"]
-pub type R = crate::R<u32, super::GLOBRCR>;
-#[doc = "Writer for register GLOBRCR"]
-pub type W = crate::W<u32, super::GLOBRCR>;
-#[doc = "Register GLOBRCR `reset()`'s with value 0"]
-impl crate::ResetValue for super::GLOBRCR {
-    type Type = u32;
+#[doc = "Register `GLOBRCR` reader"]
+pub struct R(crate::R<GLOBRCR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GLOBRCR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<GLOBRCR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GLOBRCR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `GLOBRCR` writer"]
+pub struct W(crate::W<GLOBRCR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<GLOBRCR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<GLOBRCR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<GLOBRCR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Data Reduction Control\n\nValue on reset: 0"]
@@ -23,25 +47,34 @@ impl From<DRCTR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DRCTR`"]
-pub type DRCTR_R = crate::R<u8, DRCTR_A>;
+#[doc = "Field `DRCTR` reader - Data Reduction Control"]
+pub struct DRCTR_R(crate::FieldReader<u8, DRCTR_A>);
 impl DRCTR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DRCTR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DRCTR_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DRCTR_A> {
         match self.bits {
-            0 => Val(DRCTR_A::VALUE1),
-            i => Res(i),
+            0 => Some(DRCTR_A::VALUE1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DRCTR_A::VALUE1
+        **self == DRCTR_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `DRCTR`"]
+impl core::ops::Deref for DRCTR_R {
+    type Target = crate::FieldReader<u8, DRCTR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DRCTR` writer - Data Reduction Control"]
 pub struct DRCTR_W<'a> {
     w: &'a mut W,
 }
@@ -59,7 +92,7 @@ impl<'a> DRCTR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
         self.w
     }
 }
@@ -77,9 +110,12 @@ impl From<WFR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `WFR`"]
-pub type WFR_R = crate::R<bool, WFR_A>;
+#[doc = "Field `WFR` reader - Wait-for-Read Mode Enable"]
+pub struct WFR_R(crate::FieldReader<bool, WFR_A>);
 impl WFR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        WFR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WFR_A {
@@ -91,15 +127,22 @@ impl WFR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WFR_A::VALUE1
+        **self == WFR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WFR_A::VALUE2
+        **self == WFR_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `WFR`"]
+impl core::ops::Deref for WFR_R {
+    type Target = crate::FieldReader<bool, WFR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WFR` writer - Wait-for-Read Mode Enable"]
 pub struct WFR_W<'a> {
     w: &'a mut W,
 }
@@ -107,9 +150,7 @@ impl<'a> WFR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WFR_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Overwrite mode"]
     #[inline(always)]
@@ -134,7 +175,7 @@ impl<'a> WFR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
@@ -152,9 +193,12 @@ impl From<SRGEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SRGEN`"]
-pub type SRGEN_R = crate::R<bool, SRGEN_A>;
+#[doc = "Field `SRGEN` reader - Service Request Generation Enable"]
+pub struct SRGEN_R(crate::FieldReader<bool, SRGEN_A>);
 impl SRGEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRGEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SRGEN_A {
@@ -166,15 +210,22 @@ impl SRGEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SRGEN_A::VALUE1
+        **self == SRGEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SRGEN_A::VALUE2
+        **self == SRGEN_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `SRGEN`"]
+impl core::ops::Deref for SRGEN_R {
+    type Target = crate::FieldReader<bool, SRGEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRGEN` writer - Service Request Generation Enable"]
 pub struct SRGEN_W<'a> {
     w: &'a mut W,
 }
@@ -182,9 +233,7 @@ impl<'a> SRGEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SRGEN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No service request"]
     #[inline(always)]
@@ -209,7 +258,7 @@ impl<'a> SRGEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -245,5 +294,31 @@ impl W {
     #[inline(always)]
     pub fn srgen(&mut self) -> SRGEN_W {
         SRGEN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Global Result Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [globrcr](index.html) module"]
+pub struct GLOBRCR_SPEC;
+impl crate::RegisterSpec for GLOBRCR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [globrcr::R](R) reader structure"]
+impl crate::Readable for GLOBRCR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [globrcr::W](W) writer structure"]
+impl crate::Writable for GLOBRCR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets GLOBRCR to value 0"]
+impl crate::Resettable for GLOBRCR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

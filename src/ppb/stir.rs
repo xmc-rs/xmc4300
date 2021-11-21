@@ -1,14 +1,25 @@
-#[doc = "Writer for register STIR"]
-pub type W = crate::W<u32, super::STIR>;
-#[doc = "Register STIR `reset()`'s with value 0"]
-impl crate::ResetValue for super::STIR {
-    type Type = u32;
+#[doc = "Register `STIR` writer"]
+pub struct W(crate::W<STIR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<STIR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `INTID`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<STIR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<STIR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `INTID` writer - Interrupt ID of the interrupt to trigger"]
 pub struct INTID_W<'a> {
     w: &'a mut W,
 }
@@ -16,7 +27,7 @@ impl<'a> INTID_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | ((value as u32) & 0x01ff);
+        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
         self.w
     }
 }
@@ -25,5 +36,27 @@ impl W {
     #[inline(always)]
     pub fn intid(&mut self) -> INTID_W {
         INTID_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Software Trigger Interrupt Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [stir](index.html) module"]
+pub struct STIR_SPEC;
+impl crate::RegisterSpec for STIR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [stir::W](W) writer structure"]
+impl crate::Writable for STIR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets STIR to value 0"]
+impl crate::Resettable for STIR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

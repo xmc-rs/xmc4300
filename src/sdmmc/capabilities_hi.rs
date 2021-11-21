@@ -1,5 +1,18 @@
-#[doc = "Reader of register CAPABILITIES_HI"]
-pub type R = crate::R<u32, super::CAPABILITIES_HI>;
+#[doc = "Register `CAPABILITIES_HI` reader"]
+pub struct R(crate::R<CAPABILITIES_HI_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CAPABILITIES_HI_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CAPABILITIES_HI_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CAPABILITIES_HI_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "SDR50 Support\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDR50_SUPPORT_A {
@@ -12,22 +25,31 @@ impl From<SDR50_SUPPORT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SDR50_SUPPORT`"]
-pub type SDR50_SUPPORT_R = crate::R<bool, SDR50_SUPPORT_A>;
+#[doc = "Field `SDR50_SUPPORT` reader - SDR50 Support"]
+pub struct SDR50_SUPPORT_R(crate::FieldReader<bool, SDR50_SUPPORT_A>);
 impl SDR50_SUPPORT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SDR50_SUPPORT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, SDR50_SUPPORT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SDR50_SUPPORT_A> {
         match self.bits {
-            false => Val(SDR50_SUPPORT_A::VALUE1),
-            i => Res(i),
+            false => Some(SDR50_SUPPORT_A::VALUE1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SDR50_SUPPORT_A::VALUE1
+        **self == SDR50_SUPPORT_A::VALUE1
+    }
+}
+impl core::ops::Deref for SDR50_SUPPORT_R {
+    type Target = crate::FieldReader<bool, SDR50_SUPPORT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "SDR104 Support\n\nValue on reset: 0"]
@@ -42,22 +64,31 @@ impl From<SDR104_SUPPORT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SDR104_SUPPORT`"]
-pub type SDR104_SUPPORT_R = crate::R<bool, SDR104_SUPPORT_A>;
+#[doc = "Field `SDR104_SUPPORT` reader - SDR104 Support"]
+pub struct SDR104_SUPPORT_R(crate::FieldReader<bool, SDR104_SUPPORT_A>);
 impl SDR104_SUPPORT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SDR104_SUPPORT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, SDR104_SUPPORT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SDR104_SUPPORT_A> {
         match self.bits {
-            false => Val(SDR104_SUPPORT_A::VALUE1),
-            i => Res(i),
+            false => Some(SDR104_SUPPORT_A::VALUE1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SDR104_SUPPORT_A::VALUE1
+        **self == SDR104_SUPPORT_A::VALUE1
+    }
+}
+impl core::ops::Deref for SDR104_SUPPORT_R {
+    type Target = crate::FieldReader<bool, SDR104_SUPPORT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "DDR50 Support\n\nValue on reset: 0"]
@@ -72,22 +103,31 @@ impl From<DDR50_SUPPORT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DDR50_SUPPORT`"]
-pub type DDR50_SUPPORT_R = crate::R<bool, DDR50_SUPPORT_A>;
+#[doc = "Field `DDR50_SUPPORT` reader - DDR50 Support"]
+pub struct DDR50_SUPPORT_R(crate::FieldReader<bool, DDR50_SUPPORT_A>);
 impl DDR50_SUPPORT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DDR50_SUPPORT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, DDR50_SUPPORT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DDR50_SUPPORT_A> {
         match self.bits {
-            false => Val(DDR50_SUPPORT_A::VALUE1),
-            i => Res(i),
+            false => Some(DDR50_SUPPORT_A::VALUE1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DDR50_SUPPORT_A::VALUE1
+        **self == DDR50_SUPPORT_A::VALUE1
+    }
+}
+impl core::ops::Deref for DDR50_SUPPORT_R {
+    type Target = crate::FieldReader<bool, DDR50_SUPPORT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Driver Type A Support\n\nValue on reset: 0"]
@@ -102,22 +142,31 @@ impl From<DRV_A_SUPPORT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DRV_A_SUPPORT`"]
-pub type DRV_A_SUPPORT_R = crate::R<bool, DRV_A_SUPPORT_A>;
+#[doc = "Field `DRV_A_SUPPORT` reader - Driver Type A Support"]
+pub struct DRV_A_SUPPORT_R(crate::FieldReader<bool, DRV_A_SUPPORT_A>);
 impl DRV_A_SUPPORT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DRV_A_SUPPORT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, DRV_A_SUPPORT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DRV_A_SUPPORT_A> {
         match self.bits {
-            false => Val(DRV_A_SUPPORT_A::VALUE1),
-            i => Res(i),
+            false => Some(DRV_A_SUPPORT_A::VALUE1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DRV_A_SUPPORT_A::VALUE1
+        **self == DRV_A_SUPPORT_A::VALUE1
+    }
+}
+impl core::ops::Deref for DRV_A_SUPPORT_R {
+    type Target = crate::FieldReader<bool, DRV_A_SUPPORT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Driver Type C Support\n\nValue on reset: 0"]
@@ -132,22 +181,31 @@ impl From<DRV_C_SUPPORT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DRV_C_SUPPORT`"]
-pub type DRV_C_SUPPORT_R = crate::R<bool, DRV_C_SUPPORT_A>;
+#[doc = "Field `DRV_C_SUPPORT` reader - Driver Type C Support"]
+pub struct DRV_C_SUPPORT_R(crate::FieldReader<bool, DRV_C_SUPPORT_A>);
 impl DRV_C_SUPPORT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DRV_C_SUPPORT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, DRV_C_SUPPORT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DRV_C_SUPPORT_A> {
         match self.bits {
-            false => Val(DRV_C_SUPPORT_A::VALUE1),
-            i => Res(i),
+            false => Some(DRV_C_SUPPORT_A::VALUE1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DRV_C_SUPPORT_A::VALUE1
+        **self == DRV_C_SUPPORT_A::VALUE1
+    }
+}
+impl core::ops::Deref for DRV_C_SUPPORT_R {
+    type Target = crate::FieldReader<bool, DRV_C_SUPPORT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Driver Type D Support\n\nValue on reset: 0"]
@@ -162,22 +220,31 @@ impl From<DRV_D_SUPPORT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DRV_D_SUPPORT`"]
-pub type DRV_D_SUPPORT_R = crate::R<bool, DRV_D_SUPPORT_A>;
+#[doc = "Field `DRV_D_SUPPORT` reader - Driver Type D Support"]
+pub struct DRV_D_SUPPORT_R(crate::FieldReader<bool, DRV_D_SUPPORT_A>);
 impl DRV_D_SUPPORT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DRV_D_SUPPORT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, DRV_D_SUPPORT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DRV_D_SUPPORT_A> {
         match self.bits {
-            false => Val(DRV_D_SUPPORT_A::VALUE1),
-            i => Res(i),
+            false => Some(DRV_D_SUPPORT_A::VALUE1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DRV_D_SUPPORT_A::VALUE1
+        **self == DRV_D_SUPPORT_A::VALUE1
+    }
+}
+impl core::ops::Deref for DRV_D_SUPPORT_R {
+    type Target = crate::FieldReader<bool, DRV_D_SUPPORT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Timer count for Re-Tuning\n\nValue on reset: 0"]
@@ -193,22 +260,31 @@ impl From<TIM_CNT_RETUNE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TIM_CNT_RETUNE`"]
-pub type TIM_CNT_RETUNE_R = crate::R<u8, TIM_CNT_RETUNE_A>;
+#[doc = "Field `TIM_CNT_RETUNE` reader - Timer count for Re-Tuning"]
+pub struct TIM_CNT_RETUNE_R(crate::FieldReader<u8, TIM_CNT_RETUNE_A>);
 impl TIM_CNT_RETUNE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TIM_CNT_RETUNE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, TIM_CNT_RETUNE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TIM_CNT_RETUNE_A> {
         match self.bits {
-            0 => Val(TIM_CNT_RETUNE_A::VALUE1),
-            i => Res(i),
+            0 => Some(TIM_CNT_RETUNE_A::VALUE1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TIM_CNT_RETUNE_A::VALUE1
+        **self == TIM_CNT_RETUNE_A::VALUE1
+    }
+}
+impl core::ops::Deref for TIM_CNT_RETUNE_R {
+    type Target = crate::FieldReader<u8, TIM_CNT_RETUNE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Use Tuning for SDR50\n\nValue on reset: 0"]
@@ -223,22 +299,31 @@ impl From<USE_TUNING_SDR50_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `USE_TUNING_SDR50`"]
-pub type USE_TUNING_SDR50_R = crate::R<bool, USE_TUNING_SDR50_A>;
+#[doc = "Field `USE_TUNING_SDR50` reader - Use Tuning for SDR50"]
+pub struct USE_TUNING_SDR50_R(crate::FieldReader<bool, USE_TUNING_SDR50_A>);
 impl USE_TUNING_SDR50_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USE_TUNING_SDR50_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, USE_TUNING_SDR50_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<USE_TUNING_SDR50_A> {
         match self.bits {
-            false => Val(USE_TUNING_SDR50_A::VALUE1),
-            i => Res(i),
+            false => Some(USE_TUNING_SDR50_A::VALUE1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == USE_TUNING_SDR50_A::VALUE1
+        **self == USE_TUNING_SDR50_A::VALUE1
+    }
+}
+impl core::ops::Deref for USE_TUNING_SDR50_R {
+    type Target = crate::FieldReader<bool, USE_TUNING_SDR50_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Re-tuning modes\n\nValue on reset: 0"]
@@ -254,22 +339,31 @@ impl From<RE_TUNING_MODES_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `RE_TUNING_MODES`"]
-pub type RE_TUNING_MODES_R = crate::R<u8, RE_TUNING_MODES_A>;
+#[doc = "Field `RE_TUNING_MODES` reader - Re-tuning modes"]
+pub struct RE_TUNING_MODES_R(crate::FieldReader<u8, RE_TUNING_MODES_A>);
 impl RE_TUNING_MODES_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RE_TUNING_MODES_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, RE_TUNING_MODES_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<RE_TUNING_MODES_A> {
         match self.bits {
-            0 => Val(RE_TUNING_MODES_A::VALUE1),
-            i => Res(i),
+            0 => Some(RE_TUNING_MODES_A::VALUE1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RE_TUNING_MODES_A::VALUE1
+        **self == RE_TUNING_MODES_A::VALUE1
+    }
+}
+impl core::ops::Deref for RE_TUNING_MODES_R {
+    type Target = crate::FieldReader<u8, RE_TUNING_MODES_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Clock Multiplier\n\nValue on reset: 0"]
@@ -285,22 +379,31 @@ impl From<CLK_MULT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CLK_MULT`"]
-pub type CLK_MULT_R = crate::R<u8, CLK_MULT_A>;
+#[doc = "Field `CLK_MULT` reader - Clock Multiplier"]
+pub struct CLK_MULT_R(crate::FieldReader<u8, CLK_MULT_A>);
 impl CLK_MULT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CLK_MULT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CLK_MULT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CLK_MULT_A> {
         match self.bits {
-            0 => Val(CLK_MULT_A::VALUE1),
-            i => Res(i),
+            0 => Some(CLK_MULT_A::VALUE1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CLK_MULT_A::VALUE1
+        **self == CLK_MULT_A::VALUE1
+    }
+}
+impl core::ops::Deref for CLK_MULT_R {
+    type Target = crate::FieldReader<u8, CLK_MULT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -353,5 +456,21 @@ impl R {
     #[inline(always)]
     pub fn clk_mult(&self) -> CLK_MULT_R {
         CLK_MULT_R::new(((self.bits >> 16) & 0xff) as u8)
+    }
+}
+#[doc = "Capabilities Register High\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capabilities_hi](index.html) module"]
+pub struct CAPABILITIES_HI_SPEC;
+impl crate::RegisterSpec for CAPABILITIES_HI_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [capabilities_hi::R](R) reader structure"]
+impl crate::Readable for CAPABILITIES_HI_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets CAPABILITIES_HI to value 0x0300_0000"]
+impl crate::Resettable for CAPABILITIES_HI_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0300_0000
     }
 }

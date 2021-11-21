@@ -1,18 +1,54 @@
-#[doc = "Reader of register DVBUSDIS"]
-pub type R = crate::R<u32, super::DVBUSDIS>;
-#[doc = "Writer for register DVBUSDIS"]
-pub type W = crate::W<u32, super::DVBUSDIS>;
-#[doc = "Register DVBUSDIS `reset()`'s with value 0x17d7"]
-impl crate::ResetValue for super::DVBUSDIS {
-    type Type = u32;
+#[doc = "Register `DVBUSDIS` reader"]
+pub struct R(crate::R<DVBUSDIS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DVBUSDIS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x17d7
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DVBUSDis`"]
-pub type DVBUSDIS_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `DVBUSDis`"]
+impl From<crate::R<DVBUSDIS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DVBUSDIS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DVBUSDIS` writer"]
+pub struct W(crate::W<DVBUSDIS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DVBUSDIS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DVBUSDIS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DVBUSDIS_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DVBUSDis` reader - Device Vbus Discharge Time"]
+pub struct DVBUSDIS_R(crate::FieldReader<u16, u16>);
+impl DVBUSDIS_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        DVBUSDIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DVBUSDIS_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DVBUSDis` writer - Device Vbus Discharge Time"]
 pub struct DVBUSDIS_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +56,7 @@ impl<'a> DVBUSDIS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
         self.w
     }
 }
@@ -36,5 +72,31 @@ impl W {
     #[inline(always)]
     pub fn dvbusdis(&mut self) -> DVBUSDIS_W {
         DVBUSDIS_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Device VBUS Discharge Time Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dvbusdis](index.html) module"]
+pub struct DVBUSDIS_SPEC;
+impl crate::RegisterSpec for DVBUSDIS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dvbusdis::R](R) reader structure"]
+impl crate::Readable for DVBUSDIS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dvbusdis::W](W) writer structure"]
+impl crate::Writable for DVBUSDIS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DVBUSDIS to value 0x17d7"]
+impl crate::Resettable for DVBUSDIS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x17d7
     }
 }

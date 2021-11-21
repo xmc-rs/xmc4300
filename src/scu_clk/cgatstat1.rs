@@ -1,5 +1,18 @@
-#[doc = "Reader of register CGATSTAT1"]
-pub type R = crate::R<u32, super::CGATSTAT1>;
+#[doc = "Register `CGATSTAT1` reader"]
+pub struct R(crate::R<CGATSTAT1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CGATSTAT1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CGATSTAT1_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CGATSTAT1_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "LEDTS Gating Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LEDTSCU0_A {
@@ -14,9 +27,12 @@ impl From<LEDTSCU0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LEDTSCU0`"]
-pub type LEDTSCU0_R = crate::R<bool, LEDTSCU0_A>;
+#[doc = "Field `LEDTSCU0` reader - LEDTS Gating Status"]
+pub struct LEDTSCU0_R(crate::FieldReader<bool, LEDTSCU0_A>);
 impl LEDTSCU0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LEDTSCU0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LEDTSCU0_A {
@@ -28,12 +44,19 @@ impl LEDTSCU0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LEDTSCU0_A::VALUE1
+        **self == LEDTSCU0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LEDTSCU0_A::VALUE2
+        **self == LEDTSCU0_A::VALUE2
+    }
+}
+impl core::ops::Deref for LEDTSCU0_R {
+    type Target = crate::FieldReader<bool, LEDTSCU0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "MultiCAN Gating Status\n\nValue on reset: 0"]
@@ -50,9 +73,12 @@ impl From<MCAN0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MCAN0`"]
-pub type MCAN0_R = crate::R<bool, MCAN0_A>;
+#[doc = "Field `MCAN0` reader - MultiCAN Gating Status"]
+pub struct MCAN0_R(crate::FieldReader<bool, MCAN0_A>);
 impl MCAN0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MCAN0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MCAN0_A {
@@ -64,12 +90,19 @@ impl MCAN0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MCAN0_A::VALUE1
+        **self == MCAN0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MCAN0_A::VALUE2
+        **self == MCAN0_A::VALUE2
+    }
+}
+impl core::ops::Deref for MCAN0_R {
+    type Target = crate::FieldReader<bool, MCAN0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "DAC Gating Status\n\nValue on reset: 0"]
@@ -86,9 +119,12 @@ impl From<DAC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DAC`"]
-pub type DAC_R = crate::R<bool, DAC_A>;
+#[doc = "Field `DAC` reader - DAC Gating Status"]
+pub struct DAC_R(crate::FieldReader<bool, DAC_A>);
 impl DAC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DAC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DAC_A {
@@ -100,12 +136,19 @@ impl DAC_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DAC_A::VALUE1
+        **self == DAC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DAC_A::VALUE2
+        **self == DAC_A::VALUE2
+    }
+}
+impl core::ops::Deref for DAC_R {
+    type Target = crate::FieldReader<bool, DAC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "MMC Interface Gating Status\n\nValue on reset: 0"]
@@ -122,9 +165,12 @@ impl From<MMCI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MMCI`"]
-pub type MMCI_R = crate::R<bool, MMCI_A>;
+#[doc = "Field `MMCI` reader - MMC Interface Gating Status"]
+pub struct MMCI_R(crate::FieldReader<bool, MMCI_A>);
 impl MMCI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MMCI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MMCI_A {
@@ -136,12 +182,19 @@ impl MMCI_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MMCI_A::VALUE1
+        **self == MMCI_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MMCI_A::VALUE2
+        **self == MMCI_A::VALUE2
+    }
+}
+impl core::ops::Deref for MMCI_R {
+    type Target = crate::FieldReader<bool, MMCI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "USIC1 Gating Status\n\nValue on reset: 0"]
@@ -158,9 +211,12 @@ impl From<USIC1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `USIC1`"]
-pub type USIC1_R = crate::R<bool, USIC1_A>;
+#[doc = "Field `USIC1` reader - USIC1 Gating Status"]
+pub struct USIC1_R(crate::FieldReader<bool, USIC1_A>);
 impl USIC1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USIC1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USIC1_A {
@@ -172,12 +228,19 @@ impl USIC1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == USIC1_A::VALUE1
+        **self == USIC1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == USIC1_A::VALUE2
+        **self == USIC1_A::VALUE2
+    }
+}
+impl core::ops::Deref for USIC1_R {
+    type Target = crate::FieldReader<bool, USIC1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "PORTS Gating Status\n\nValue on reset: 0"]
@@ -194,9 +257,12 @@ impl From<PPORTS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PPORTS`"]
-pub type PPORTS_R = crate::R<bool, PPORTS_A>;
+#[doc = "Field `PPORTS` reader - PORTS Gating Status"]
+pub struct PPORTS_R(crate::FieldReader<bool, PPORTS_A>);
 impl PPORTS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PPORTS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PPORTS_A {
@@ -208,12 +274,19 @@ impl PPORTS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PPORTS_A::VALUE1
+        **self == PPORTS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PPORTS_A::VALUE2
+        **self == PPORTS_A::VALUE2
+    }
+}
+impl core::ops::Deref for PPORTS_R {
+    type Target = crate::FieldReader<bool, PPORTS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -246,5 +319,21 @@ impl R {
     #[inline(always)]
     pub fn pports(&self) -> PPORTS_R {
         PPORTS_R::new(((self.bits >> 9) & 0x01) != 0)
+    }
+}
+#[doc = "Peripheral 1 Clock Gating Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatstat1](index.html) module"]
+pub struct CGATSTAT1_SPEC;
+impl crate::RegisterSpec for CGATSTAT1_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cgatstat1::R](R) reader structure"]
+impl crate::Readable for CGATSTAT1_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets CGATSTAT1 to value 0"]
+impl crate::Resettable for CGATSTAT1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

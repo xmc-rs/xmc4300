@@ -1,18 +1,54 @@
-#[doc = "Reader of register SYSTEM_TIME_NANOSECONDS_UPDATE"]
-pub type R = crate::R<u32, super::SYSTEM_TIME_NANOSECONDS_UPDATE>;
-#[doc = "Writer for register SYSTEM_TIME_NANOSECONDS_UPDATE"]
-pub type W = crate::W<u32, super::SYSTEM_TIME_NANOSECONDS_UPDATE>;
-#[doc = "Register SYSTEM_TIME_NANOSECONDS_UPDATE `reset()`'s with value 0"]
-impl crate::ResetValue for super::SYSTEM_TIME_NANOSECONDS_UPDATE {
-    type Type = u32;
+#[doc = "Register `SYSTEM_TIME_NANOSECONDS_UPDATE` reader"]
+pub struct R(crate::R<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TSSS`"]
-pub type TSSS_R = crate::R<u32, u32>;
-#[doc = "Write proxy for field `TSSS`"]
+impl From<crate::R<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SYSTEM_TIME_NANOSECONDS_UPDATE` writer"]
+pub struct W(crate::W<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TSSS` reader - Timestamp Sub Second"]
+pub struct TSSS_R(crate::FieldReader<u32, u32>);
+impl TSSS_R {
+    pub(crate) fn new(bits: u32) -> Self {
+        TSSS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSSS_R {
+    type Target = crate::FieldReader<u32, u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSSS` writer - Timestamp Sub Second"]
 pub struct TSSS_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> TSSS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7fff_ffff) | ((value as u32) & 0x7fff_ffff);
+        self.w.bits = (self.w.bits & !0x7fff_ffff) | (value as u32 & 0x7fff_ffff);
         self.w
     }
 }
-#[doc = "Reader of field `ADDSUB`"]
-pub type ADDSUB_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADDSUB`"]
+#[doc = "Field `ADDSUB` reader - Add or subtract time"]
+pub struct ADDSUB_R(crate::FieldReader<bool, bool>);
+impl ADDSUB_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADDSUB_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADDSUB_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADDSUB` writer - Add or subtract time"]
 pub struct ADDSUB_W<'a> {
     w: &'a mut W,
 }
@@ -44,7 +92,7 @@ impl<'a> ADDSUB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -70,5 +118,31 @@ impl W {
     #[inline(always)]
     pub fn addsub(&mut self) -> ADDSUB_W {
         ADDSUB_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "System Time Nanoseconds Update Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [system_time_nanoseconds_update](index.html) module"]
+pub struct SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC;
+impl crate::RegisterSpec for SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [system_time_nanoseconds_update::R](R) reader structure"]
+impl crate::Readable for SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [system_time_nanoseconds_update::W](W) writer structure"]
+impl crate::Writable for SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SYSTEM_TIME_NANOSECONDS_UPDATE to value 0"]
+impl crate::Resettable for SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

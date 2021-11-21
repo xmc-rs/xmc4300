@@ -1,13 +1,37 @@
-#[doc = "Reader of register OUT"]
-pub type R = crate::R<u32, super::OUT>;
-#[doc = "Writer for register OUT"]
-pub type W = crate::W<u32, super::OUT>;
-#[doc = "Register OUT `reset()`'s with value 0"]
-impl crate::ResetValue for super::OUT {
-    type Type = u32;
+#[doc = "Register `OUT` reader"]
+pub struct R(crate::R<OUT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<OUT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<OUT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<OUT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `OUT` writer"]
+pub struct W(crate::W<OUT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<OUT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<OUT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<OUT_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Port n Output Bit 0\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<P0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P0`"]
-pub type P0_R = crate::R<bool, P0_A>;
+#[doc = "Field `P0` reader - Port n Output Bit 0"]
+pub struct P0_R(crate::FieldReader<bool, P0_A>);
 impl P0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P0_A {
@@ -38,15 +65,22 @@ impl P0_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P0_A::CONST_0
+        **self == P0_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P0_A::CONST_1
+        **self == P0_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P0`"]
+impl core::ops::Deref for P0_R {
+    type Target = crate::FieldReader<bool, P0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P0` writer - Port n Output Bit 0"]
 pub struct P0_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> P0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> P0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<P1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P1`"]
-pub type P1_R = crate::R<bool, P1_A>;
+#[doc = "Field `P1` reader - Port n Output Bit 1"]
+pub struct P1_R(crate::FieldReader<bool, P1_A>);
 impl P1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P1_A {
@@ -113,15 +148,22 @@ impl P1_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P1_A::CONST_0
+        **self == P1_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P1_A::CONST_1
+        **self == P1_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P1`"]
+impl core::ops::Deref for P1_R {
+    type Target = crate::FieldReader<bool, P1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P1` writer - Port n Output Bit 1"]
 pub struct P1_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> P1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> P1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<P2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P2`"]
-pub type P2_R = crate::R<bool, P2_A>;
+#[doc = "Field `P2` reader - Port n Output Bit 2"]
+pub struct P2_R(crate::FieldReader<bool, P2_A>);
 impl P2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P2_A {
@@ -188,15 +231,22 @@ impl P2_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P2_A::CONST_0
+        **self == P2_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P2_A::CONST_1
+        **self == P2_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P2`"]
+impl core::ops::Deref for P2_R {
+    type Target = crate::FieldReader<bool, P2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P2` writer - Port n Output Bit 2"]
 pub struct P2_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> P2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> P2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<P3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P3`"]
-pub type P3_R = crate::R<bool, P3_A>;
+#[doc = "Field `P3` reader - Port n Output Bit 3"]
+pub struct P3_R(crate::FieldReader<bool, P3_A>);
 impl P3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P3_A {
@@ -263,15 +314,22 @@ impl P3_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P3_A::CONST_0
+        **self == P3_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P3_A::CONST_1
+        **self == P3_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P3`"]
+impl core::ops::Deref for P3_R {
+    type Target = crate::FieldReader<bool, P3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P3` writer - Port n Output Bit 3"]
 pub struct P3_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> P3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> P3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +380,12 @@ impl From<P4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P4`"]
-pub type P4_R = crate::R<bool, P4_A>;
+#[doc = "Field `P4` reader - Port n Output Bit 4"]
+pub struct P4_R(crate::FieldReader<bool, P4_A>);
 impl P4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P4_A {
@@ -338,15 +397,22 @@ impl P4_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P4_A::CONST_0
+        **self == P4_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P4_A::CONST_1
+        **self == P4_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P4`"]
+impl core::ops::Deref for P4_R {
+    type Target = crate::FieldReader<bool, P4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P4` writer - Port n Output Bit 4"]
 pub struct P4_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +420,7 @@ impl<'a> P4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -381,7 +445,7 @@ impl<'a> P4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +463,12 @@ impl From<P5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P5`"]
-pub type P5_R = crate::R<bool, P5_A>;
+#[doc = "Field `P5` reader - Port n Output Bit 5"]
+pub struct P5_R(crate::FieldReader<bool, P5_A>);
 impl P5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P5_A {
@@ -413,15 +480,22 @@ impl P5_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P5_A::CONST_0
+        **self == P5_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P5_A::CONST_1
+        **self == P5_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P5`"]
+impl core::ops::Deref for P5_R {
+    type Target = crate::FieldReader<bool, P5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P5` writer - Port n Output Bit 5"]
 pub struct P5_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +503,7 @@ impl<'a> P5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -456,7 +528,7 @@ impl<'a> P5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +546,12 @@ impl From<P6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P6`"]
-pub type P6_R = crate::R<bool, P6_A>;
+#[doc = "Field `P6` reader - Port n Output Bit 6"]
+pub struct P6_R(crate::FieldReader<bool, P6_A>);
 impl P6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P6_A {
@@ -488,15 +563,22 @@ impl P6_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P6_A::CONST_0
+        **self == P6_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P6_A::CONST_1
+        **self == P6_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P6`"]
+impl core::ops::Deref for P6_R {
+    type Target = crate::FieldReader<bool, P6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P6` writer - Port n Output Bit 6"]
 pub struct P6_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +586,7 @@ impl<'a> P6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -531,7 +611,7 @@ impl<'a> P6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +629,12 @@ impl From<P7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P7`"]
-pub type P7_R = crate::R<bool, P7_A>;
+#[doc = "Field `P7` reader - Port n Output Bit 7"]
+pub struct P7_R(crate::FieldReader<bool, P7_A>);
 impl P7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P7_A {
@@ -563,15 +646,22 @@ impl P7_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P7_A::CONST_0
+        **self == P7_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P7_A::CONST_1
+        **self == P7_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P7`"]
+impl core::ops::Deref for P7_R {
+    type Target = crate::FieldReader<bool, P7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P7` writer - Port n Output Bit 7"]
 pub struct P7_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +669,7 @@ impl<'a> P7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -606,7 +694,7 @@ impl<'a> P7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -624,9 +712,12 @@ impl From<P8_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P8`"]
-pub type P8_R = crate::R<bool, P8_A>;
+#[doc = "Field `P8` reader - Port n Output Bit 8"]
+pub struct P8_R(crate::FieldReader<bool, P8_A>);
 impl P8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P8_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P8_A {
@@ -638,15 +729,22 @@ impl P8_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P8_A::CONST_0
+        **self == P8_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P8_A::CONST_1
+        **self == P8_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P8`"]
+impl core::ops::Deref for P8_R {
+    type Target = crate::FieldReader<bool, P8_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P8` writer - Port n Output Bit 8"]
 pub struct P8_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +752,7 @@ impl<'a> P8_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P8_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -681,7 +777,7 @@ impl<'a> P8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -699,9 +795,12 @@ impl From<P9_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P9`"]
-pub type P9_R = crate::R<bool, P9_A>;
+#[doc = "Field `P9` reader - Port n Output Bit 9"]
+pub struct P9_R(crate::FieldReader<bool, P9_A>);
 impl P9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P9_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P9_A {
@@ -713,15 +812,22 @@ impl P9_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P9_A::CONST_0
+        **self == P9_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P9_A::CONST_1
+        **self == P9_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P9`"]
+impl core::ops::Deref for P9_R {
+    type Target = crate::FieldReader<bool, P9_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P9` writer - Port n Output Bit 9"]
 pub struct P9_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +835,7 @@ impl<'a> P9_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P9_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -756,7 +860,7 @@ impl<'a> P9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -774,9 +878,12 @@ impl From<P10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P10`"]
-pub type P10_R = crate::R<bool, P10_A>;
+#[doc = "Field `P10` reader - Port n Output Bit 10"]
+pub struct P10_R(crate::FieldReader<bool, P10_A>);
 impl P10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P10_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P10_A {
@@ -788,15 +895,22 @@ impl P10_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P10_A::CONST_0
+        **self == P10_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P10_A::CONST_1
+        **self == P10_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P10`"]
+impl core::ops::Deref for P10_R {
+    type Target = crate::FieldReader<bool, P10_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P10` writer - Port n Output Bit 10"]
 pub struct P10_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +918,7 @@ impl<'a> P10_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P10_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -831,7 +943,7 @@ impl<'a> P10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -849,9 +961,12 @@ impl From<P11_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P11`"]
-pub type P11_R = crate::R<bool, P11_A>;
+#[doc = "Field `P11` reader - Port n Output Bit 11"]
+pub struct P11_R(crate::FieldReader<bool, P11_A>);
 impl P11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P11_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P11_A {
@@ -863,15 +978,22 @@ impl P11_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P11_A::CONST_0
+        **self == P11_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P11_A::CONST_1
+        **self == P11_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P11`"]
+impl core::ops::Deref for P11_R {
+    type Target = crate::FieldReader<bool, P11_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P11` writer - Port n Output Bit 11"]
 pub struct P11_W<'a> {
     w: &'a mut W,
 }
@@ -879,9 +1001,7 @@ impl<'a> P11_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P11_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -906,7 +1026,7 @@ impl<'a> P11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -924,9 +1044,12 @@ impl From<P12_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P12`"]
-pub type P12_R = crate::R<bool, P12_A>;
+#[doc = "Field `P12` reader - Port n Output Bit 12"]
+pub struct P12_R(crate::FieldReader<bool, P12_A>);
 impl P12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P12_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P12_A {
@@ -938,15 +1061,22 @@ impl P12_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P12_A::CONST_0
+        **self == P12_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P12_A::CONST_1
+        **self == P12_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P12`"]
+impl core::ops::Deref for P12_R {
+    type Target = crate::FieldReader<bool, P12_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P12` writer - Port n Output Bit 12"]
 pub struct P12_W<'a> {
     w: &'a mut W,
 }
@@ -954,9 +1084,7 @@ impl<'a> P12_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P12_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -981,7 +1109,7 @@ impl<'a> P12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -999,9 +1127,12 @@ impl From<P13_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P13`"]
-pub type P13_R = crate::R<bool, P13_A>;
+#[doc = "Field `P13` reader - Port n Output Bit 13"]
+pub struct P13_R(crate::FieldReader<bool, P13_A>);
 impl P13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P13_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P13_A {
@@ -1013,15 +1144,22 @@ impl P13_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P13_A::CONST_0
+        **self == P13_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P13_A::CONST_1
+        **self == P13_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P13`"]
+impl core::ops::Deref for P13_R {
+    type Target = crate::FieldReader<bool, P13_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P13` writer - Port n Output Bit 13"]
 pub struct P13_W<'a> {
     w: &'a mut W,
 }
@@ -1029,9 +1167,7 @@ impl<'a> P13_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P13_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -1056,7 +1192,7 @@ impl<'a> P13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -1074,9 +1210,12 @@ impl From<P14_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P14`"]
-pub type P14_R = crate::R<bool, P14_A>;
+#[doc = "Field `P14` reader - Port n Output Bit 14"]
+pub struct P14_R(crate::FieldReader<bool, P14_A>);
 impl P14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P14_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P14_A {
@@ -1088,15 +1227,22 @@ impl P14_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P14_A::CONST_0
+        **self == P14_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P14_A::CONST_1
+        **self == P14_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P14`"]
+impl core::ops::Deref for P14_R {
+    type Target = crate::FieldReader<bool, P14_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P14` writer - Port n Output Bit 14"]
 pub struct P14_W<'a> {
     w: &'a mut W,
 }
@@ -1104,9 +1250,7 @@ impl<'a> P14_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P14_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -1131,7 +1275,7 @@ impl<'a> P14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -1149,9 +1293,12 @@ impl From<P15_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `P15`"]
-pub type P15_R = crate::R<bool, P15_A>;
+#[doc = "Field `P15` reader - Port n Output Bit 15"]
+pub struct P15_R(crate::FieldReader<bool, P15_A>);
 impl P15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        P15_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P15_A {
@@ -1163,15 +1310,22 @@ impl P15_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == P15_A::CONST_0
+        **self == P15_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == P15_A::CONST_1
+        **self == P15_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `P15`"]
+impl core::ops::Deref for P15_R {
+    type Target = crate::FieldReader<bool, P15_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P15` writer - Port n Output Bit 15"]
 pub struct P15_W<'a> {
     w: &'a mut W,
 }
@@ -1179,9 +1333,7 @@ impl<'a> P15_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P15_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -1206,7 +1358,7 @@ impl<'a> P15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -1372,5 +1524,31 @@ impl W {
     #[inline(always)]
     pub fn p15(&mut self) -> P15_W {
         P15_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port 14 Output Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [out](index.html) module"]
+pub struct OUT_SPEC;
+impl crate::RegisterSpec for OUT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [out::R](R) reader structure"]
+impl crate::Readable for OUT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [out::W](W) writer structure"]
+impl crate::Writable for OUT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets OUT to value 0"]
+impl crate::Resettable for OUT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

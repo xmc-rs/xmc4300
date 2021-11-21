@@ -1,18 +1,54 @@
-#[doc = "Reader of register SYST_CALIB"]
-pub type R = crate::R<u32, super::SYST_CALIB>;
-#[doc = "Writer for register SYST_CALIB"]
-pub type W = crate::W<u32, super::SYST_CALIB>;
-#[doc = "Register SYST_CALIB `reset()`'s with value 0xc000_0000"]
-impl crate::ResetValue for super::SYST_CALIB {
-    type Type = u32;
+#[doc = "Register `SYST_CALIB` reader"]
+pub struct R(crate::R<SYST_CALIB_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SYST_CALIB_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xc000_0000
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TENMS`"]
-pub type TENMS_R = crate::R<u32, u32>;
-#[doc = "Write proxy for field `TENMS`"]
+impl From<crate::R<SYST_CALIB_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SYST_CALIB_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SYST_CALIB` writer"]
+pub struct W(crate::W<SYST_CALIB_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SYST_CALIB_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SYST_CALIB_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SYST_CALIB_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TENMS` reader - Ten Milliseconds Reload Value"]
+pub struct TENMS_R(crate::FieldReader<u32, u32>);
+impl TENMS_R {
+    pub(crate) fn new(bits: u32) -> Self {
+        TENMS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TENMS_R {
+    type Target = crate::FieldReader<u32, u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TENMS` writer - Ten Milliseconds Reload Value"]
 pub struct TENMS_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +56,7 @@ impl<'a> TENMS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | ((value as u32) & 0x00ff_ffff);
+        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
         self.w
     }
 }
@@ -38,9 +74,12 @@ impl From<SKEW_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SKEW`"]
-pub type SKEW_R = crate::R<bool, SKEW_A>;
+#[doc = "Field `SKEW` reader - Ten Milliseconds Skewed"]
+pub struct SKEW_R(crate::FieldReader<bool, SKEW_A>);
 impl SKEW_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SKEW_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SKEW_A {
@@ -52,15 +91,22 @@ impl SKEW_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SKEW_A::VALUE1
+        **self == SKEW_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SKEW_A::VALUE2
+        **self == SKEW_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `SKEW`"]
+impl core::ops::Deref for SKEW_R {
+    type Target = crate::FieldReader<bool, SKEW_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SKEW` writer - Ten Milliseconds Skewed"]
 pub struct SKEW_W<'a> {
     w: &'a mut W,
 }
@@ -68,9 +114,7 @@ impl<'a> SKEW_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SKEW_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "TENMS value is exact"]
     #[inline(always)]
@@ -95,7 +139,7 @@ impl<'a> SKEW_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
         self.w
     }
 }
@@ -113,9 +157,12 @@ impl From<NOREF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `NOREF`"]
-pub type NOREF_R = crate::R<bool, NOREF_A>;
+#[doc = "Field `NOREF` reader - No Reference Clock"]
+pub struct NOREF_R(crate::FieldReader<bool, NOREF_A>);
 impl NOREF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NOREF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NOREF_A {
@@ -127,15 +174,22 @@ impl NOREF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == NOREF_A::VALUE1
+        **self == NOREF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == NOREF_A::VALUE2
+        **self == NOREF_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `NOREF`"]
+impl core::ops::Deref for NOREF_R {
+    type Target = crate::FieldReader<bool, NOREF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `NOREF` writer - No Reference Clock"]
 pub struct NOREF_W<'a> {
     w: &'a mut W,
 }
@@ -143,9 +197,7 @@ impl<'a> NOREF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: NOREF_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "reference clock provided"]
     #[inline(always)]
@@ -170,7 +222,7 @@ impl<'a> NOREF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -206,5 +258,31 @@ impl W {
     #[inline(always)]
     pub fn noref(&mut self) -> NOREF_W {
         NOREF_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "SysTick Calibration Value Register r\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [syst_calib](index.html) module"]
+pub struct SYST_CALIB_SPEC;
+impl crate::RegisterSpec for SYST_CALIB_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [syst_calib::R](R) reader structure"]
+impl crate::Readable for SYST_CALIB_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [syst_calib::W](W) writer structure"]
+impl crate::Writable for SYST_CALIB_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SYST_CALIB to value 0xc000_0000"]
+impl crate::Resettable for SYST_CALIB_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xc000_0000
     }
 }

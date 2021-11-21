@@ -1,13 +1,37 @@
-#[doc = "Reader of register PEFLAG"]
-pub type R = crate::R<u32, super::PEFLAG>;
-#[doc = "Writer for register PEFLAG"]
-pub type W = crate::W<u32, super::PEFLAG>;
-#[doc = "Register PEFLAG `reset()`'s with value 0"]
-impl crate::ResetValue for super::PEFLAG {
-    type Type = u32;
+#[doc = "Register `PEFLAG` reader"]
+pub struct R(crate::R<PEFLAG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PEFLAG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PEFLAG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PEFLAG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PEFLAG` writer"]
+pub struct W(crate::W<PEFLAG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PEFLAG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PEFLAG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PEFLAG_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Parity Error Flag for PSRAM\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<PEFPS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PEFPS`"]
-pub type PEFPS_R = crate::R<bool, PEFPS_A>;
+#[doc = "Field `PEFPS` reader - Parity Error Flag for PSRAM"]
+pub struct PEFPS_R(crate::FieldReader<bool, PEFPS_A>);
 impl PEFPS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PEFPS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PEFPS_A {
@@ -38,15 +65,22 @@ impl PEFPS_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PEFPS_A::CONST_0
+        **self == PEFPS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PEFPS_A::CONST_1
+        **self == PEFPS_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PEFPS`"]
+impl core::ops::Deref for PEFPS_R {
+    type Target = crate::FieldReader<bool, PEFPS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PEFPS` writer - Parity Error Flag for PSRAM"]
 pub struct PEFPS_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> PEFPS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PEFPS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> PEFPS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<PEFDS1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PEFDS1`"]
-pub type PEFDS1_R = crate::R<bool, PEFDS1_A>;
+#[doc = "Field `PEFDS1` reader - Parity Error Flag for DSRAM1"]
+pub struct PEFDS1_R(crate::FieldReader<bool, PEFDS1_A>);
 impl PEFDS1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PEFDS1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PEFDS1_A {
@@ -113,15 +148,22 @@ impl PEFDS1_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PEFDS1_A::CONST_0
+        **self == PEFDS1_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PEFDS1_A::CONST_1
+        **self == PEFDS1_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PEFDS1`"]
+impl core::ops::Deref for PEFDS1_R {
+    type Target = crate::FieldReader<bool, PEFDS1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PEFDS1` writer - Parity Error Flag for DSRAM1"]
 pub struct PEFDS1_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> PEFDS1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PEFDS1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> PEFDS1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<PEFU0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PEFU0`"]
-pub type PEFU0_R = crate::R<bool, PEFU0_A>;
+#[doc = "Field `PEFU0` reader - Parity Error Flag for USIC0 Memory"]
+pub struct PEFU0_R(crate::FieldReader<bool, PEFU0_A>);
 impl PEFU0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PEFU0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PEFU0_A {
@@ -188,15 +231,22 @@ impl PEFU0_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PEFU0_A::CONST_0
+        **self == PEFU0_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PEFU0_A::CONST_1
+        **self == PEFU0_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PEFU0`"]
+impl core::ops::Deref for PEFU0_R {
+    type Target = crate::FieldReader<bool, PEFU0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PEFU0` writer - Parity Error Flag for USIC0 Memory"]
 pub struct PEFU0_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> PEFU0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PEFU0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> PEFU0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<PEFU1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PEFU1`"]
-pub type PEFU1_R = crate::R<bool, PEFU1_A>;
+#[doc = "Field `PEFU1` reader - Parity Error Flag for USIC1 Memory"]
+pub struct PEFU1_R(crate::FieldReader<bool, PEFU1_A>);
 impl PEFU1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PEFU1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PEFU1_A {
@@ -263,15 +314,22 @@ impl PEFU1_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PEFU1_A::CONST_0
+        **self == PEFU1_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PEFU1_A::CONST_1
+        **self == PEFU1_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PEFU1`"]
+impl core::ops::Deref for PEFU1_R {
+    type Target = crate::FieldReader<bool, PEFU1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PEFU1` writer - Parity Error Flag for USIC1 Memory"]
 pub struct PEFU1_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> PEFU1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PEFU1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> PEFU1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -324,9 +380,12 @@ impl From<PEFMC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PEFMC`"]
-pub type PEFMC_R = crate::R<bool, PEFMC_A>;
+#[doc = "Field `PEFMC` reader - Parity Error Flag for MultiCAN Memory"]
+pub struct PEFMC_R(crate::FieldReader<bool, PEFMC_A>);
 impl PEFMC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PEFMC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PEFMC_A {
@@ -338,15 +397,22 @@ impl PEFMC_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PEFMC_A::CONST_0
+        **self == PEFMC_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PEFMC_A::CONST_1
+        **self == PEFMC_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PEFMC`"]
+impl core::ops::Deref for PEFMC_R {
+    type Target = crate::FieldReader<bool, PEFMC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PEFMC` writer - Parity Error Flag for MultiCAN Memory"]
 pub struct PEFMC_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +420,7 @@ impl<'a> PEFMC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PEFMC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -381,7 +445,7 @@ impl<'a> PEFMC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -399,9 +463,12 @@ impl From<PEFPPRF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PEFPPRF`"]
-pub type PEFPPRF_R = crate::R<bool, PEFPPRF_A>;
+#[doc = "Field `PEFPPRF` reader - Parity Error Flag for PMU Prefetch Memory"]
+pub struct PEFPPRF_R(crate::FieldReader<bool, PEFPPRF_A>);
 impl PEFPPRF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PEFPPRF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PEFPPRF_A {
@@ -413,15 +480,22 @@ impl PEFPPRF_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PEFPPRF_A::CONST_0
+        **self == PEFPPRF_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PEFPPRF_A::CONST_1
+        **self == PEFPPRF_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PEFPPRF`"]
+impl core::ops::Deref for PEFPPRF_R {
+    type Target = crate::FieldReader<bool, PEFPPRF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PEFPPRF` writer - Parity Error Flag for PMU Prefetch Memory"]
 pub struct PEFPPRF_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +503,7 @@ impl<'a> PEFPPRF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PEFPPRF_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -456,7 +528,7 @@ impl<'a> PEFPPRF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -474,9 +546,12 @@ impl From<PEUSB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PEUSB`"]
-pub type PEUSB_R = crate::R<bool, PEUSB_A>;
+#[doc = "Field `PEUSB` reader - Parity Error Flag for USB Memory"]
+pub struct PEUSB_R(crate::FieldReader<bool, PEUSB_A>);
 impl PEUSB_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PEUSB_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PEUSB_A {
@@ -488,15 +563,22 @@ impl PEUSB_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PEUSB_A::CONST_0
+        **self == PEUSB_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PEUSB_A::CONST_1
+        **self == PEUSB_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PEUSB`"]
+impl core::ops::Deref for PEUSB_R {
+    type Target = crate::FieldReader<bool, PEUSB_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PEUSB` writer - Parity Error Flag for USB Memory"]
 pub struct PEUSB_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +586,7 @@ impl<'a> PEUSB_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PEUSB_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -531,7 +611,7 @@ impl<'a> PEUSB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -549,9 +629,12 @@ impl From<PEETH0TX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PEETH0TX`"]
-pub type PEETH0TX_R = crate::R<bool, PEETH0TX_A>;
+#[doc = "Field `PEETH0TX` reader - Parity Error Flag for ETH TX Memory"]
+pub struct PEETH0TX_R(crate::FieldReader<bool, PEETH0TX_A>);
 impl PEETH0TX_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PEETH0TX_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PEETH0TX_A {
@@ -563,15 +646,22 @@ impl PEETH0TX_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PEETH0TX_A::CONST_0
+        **self == PEETH0TX_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PEETH0TX_A::CONST_1
+        **self == PEETH0TX_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PEETH0TX`"]
+impl core::ops::Deref for PEETH0TX_R {
+    type Target = crate::FieldReader<bool, PEETH0TX_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PEETH0TX` writer - Parity Error Flag for ETH TX Memory"]
 pub struct PEETH0TX_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +669,7 @@ impl<'a> PEETH0TX_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PEETH0TX_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -606,7 +694,7 @@ impl<'a> PEETH0TX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
@@ -624,9 +712,12 @@ impl From<PEETH0RX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PEETH0RX`"]
-pub type PEETH0RX_R = crate::R<bool, PEETH0RX_A>;
+#[doc = "Field `PEETH0RX` reader - Parity Error Flag for ETH RX Memory"]
+pub struct PEETH0RX_R(crate::FieldReader<bool, PEETH0RX_A>);
 impl PEETH0RX_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PEETH0RX_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PEETH0RX_A {
@@ -638,15 +729,22 @@ impl PEETH0RX_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PEETH0RX_A::CONST_0
+        **self == PEETH0RX_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PEETH0RX_A::CONST_1
+        **self == PEETH0RX_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PEETH0RX`"]
+impl core::ops::Deref for PEETH0RX_R {
+    type Target = crate::FieldReader<bool, PEETH0RX_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PEETH0RX` writer - Parity Error Flag for ETH RX Memory"]
 pub struct PEETH0RX_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +752,7 @@ impl<'a> PEETH0RX_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PEETH0RX_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -681,7 +777,7 @@ impl<'a> PEETH0RX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
@@ -699,9 +795,12 @@ impl From<PESD0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PESD0`"]
-pub type PESD0_R = crate::R<bool, PESD0_A>;
+#[doc = "Field `PESD0` reader - Parity Error Flag for SDMMC Memory 0"]
+pub struct PESD0_R(crate::FieldReader<bool, PESD0_A>);
 impl PESD0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PESD0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PESD0_A {
@@ -713,15 +812,22 @@ impl PESD0_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PESD0_A::CONST_0
+        **self == PESD0_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PESD0_A::CONST_1
+        **self == PESD0_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PESD0`"]
+impl core::ops::Deref for PESD0_R {
+    type Target = crate::FieldReader<bool, PESD0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PESD0` writer - Parity Error Flag for SDMMC Memory 0"]
 pub struct PESD0_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +835,7 @@ impl<'a> PESD0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PESD0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -756,7 +860,7 @@ impl<'a> PESD0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -774,9 +878,12 @@ impl From<PESD1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PESD1`"]
-pub type PESD1_R = crate::R<bool, PESD1_A>;
+#[doc = "Field `PESD1` reader - Parity Error Flag for SDMMC Memory 1"]
+pub struct PESD1_R(crate::FieldReader<bool, PESD1_A>);
 impl PESD1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PESD1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PESD1_A {
@@ -788,15 +895,22 @@ impl PESD1_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PESD1_A::CONST_0
+        **self == PESD1_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PESD1_A::CONST_1
+        **self == PESD1_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PESD1`"]
+impl core::ops::Deref for PESD1_R {
+    type Target = crate::FieldReader<bool, PESD1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PESD1` writer - Parity Error Flag for SDMMC Memory 1"]
 pub struct PESD1_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +918,7 @@ impl<'a> PESD1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PESD1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -831,7 +943,7 @@ impl<'a> PESD1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
@@ -849,9 +961,12 @@ impl From<PEECAT0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PEECAT0`"]
-pub type PEECAT0_R = crate::R<bool, PEECAT0_A>;
+#[doc = "Field `PEECAT0` reader - Parity Error Flag for ECAT0 Memory"]
+pub struct PEECAT0_R(crate::FieldReader<bool, PEECAT0_A>);
 impl PEECAT0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PEECAT0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PEECAT0_A {
@@ -863,15 +978,22 @@ impl PEECAT0_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PEECAT0_A::CONST_0
+        **self == PEECAT0_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PEECAT0_A::CONST_1
+        **self == PEECAT0_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PEECAT0`"]
+impl core::ops::Deref for PEECAT0_R {
+    type Target = crate::FieldReader<bool, PEECAT0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PEECAT0` writer - Parity Error Flag for ECAT0 Memory"]
 pub struct PEECAT0_W<'a> {
     w: &'a mut W,
 }
@@ -879,9 +1001,7 @@ impl<'a> PEECAT0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PEECAT0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -906,7 +1026,7 @@ impl<'a> PEECAT0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
@@ -1032,5 +1152,31 @@ impl W {
     #[inline(always)]
     pub fn peecat0(&mut self) -> PEECAT0_W {
         PEECAT0_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Parity Error Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [peflag](index.html) module"]
+pub struct PEFLAG_SPEC;
+impl crate::RegisterSpec for PEFLAG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [peflag::R](R) reader structure"]
+impl crate::Readable for PEFLAG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [peflag::W](W) writer structure"]
+impl crate::Writable for PEFLAG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PEFLAG to value 0"]
+impl crate::Resettable for PEFLAG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

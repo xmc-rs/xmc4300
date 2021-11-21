@@ -1,5 +1,18 @@
-#[doc = "Reader of register QSR0"]
-pub type R = crate::R<u32, super::QSR0>;
+#[doc = "Register `QSR0` reader"]
+pub struct R(crate::R<QSR0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<QSR0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<QSR0_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<QSR0_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Filling Level for Queue 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -19,40 +32,49 @@ impl From<FILL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `FILL`"]
-pub type FILL_R = crate::R<u8, FILL_A>;
+#[doc = "Field `FILL` reader - Filling Level for Queue 2"]
+pub struct FILL_R(crate::FieldReader<u8, FILL_A>);
 impl FILL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FILL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, FILL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<FILL_A> {
         match self.bits {
-            0 => Val(FILL_A::VALUE1),
-            1 => Val(FILL_A::VALUE2),
-            2 => Val(FILL_A::VALUE3),
-            7 => Val(FILL_A::VALUE4),
-            i => Res(i),
+            0 => Some(FILL_A::VALUE1),
+            1 => Some(FILL_A::VALUE2),
+            2 => Some(FILL_A::VALUE3),
+            7 => Some(FILL_A::VALUE4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == FILL_A::VALUE1
+        **self == FILL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == FILL_A::VALUE2
+        **self == FILL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == FILL_A::VALUE3
+        **self == FILL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == FILL_A::VALUE4
+        **self == FILL_A::VALUE4
+    }
+}
+impl core::ops::Deref for FILL_R {
+    type Target = crate::FieldReader<u8, FILL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Queue Empty\n\nValue on reset: 1"]
@@ -69,9 +91,12 @@ impl From<EMPTY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `EMPTY`"]
-pub type EMPTY_R = crate::R<bool, EMPTY_A>;
+#[doc = "Field `EMPTY` reader - Queue Empty"]
+pub struct EMPTY_R(crate::FieldReader<bool, EMPTY_A>);
 impl EMPTY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EMPTY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EMPTY_A {
@@ -83,12 +108,19 @@ impl EMPTY_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EMPTY_A::VALUE1
+        **self == EMPTY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EMPTY_A::VALUE2
+        **self == EMPTY_A::VALUE2
+    }
+}
+impl core::ops::Deref for EMPTY_R {
+    type Target = crate::FieldReader<bool, EMPTY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Request Gate Level\n\nValue on reset: 0"]
@@ -105,9 +137,12 @@ impl From<REQGT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REQGT`"]
-pub type REQGT_R = crate::R<bool, REQGT_A>;
+#[doc = "Field `REQGT` reader - Request Gate Level"]
+pub struct REQGT_R(crate::FieldReader<bool, REQGT_A>);
 impl REQGT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REQGT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REQGT_A {
@@ -119,12 +154,19 @@ impl REQGT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == REQGT_A::VALUE1
+        **self == REQGT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == REQGT_A::VALUE2
+        **self == REQGT_A::VALUE2
+    }
+}
+impl core::ops::Deref for REQGT_R {
+    type Target = crate::FieldReader<bool, REQGT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Event Detected\n\nValue on reset: 0"]
@@ -141,9 +183,12 @@ impl From<EV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `EV`"]
-pub type EV_R = crate::R<bool, EV_A>;
+#[doc = "Field `EV` reader - Event Detected"]
+pub struct EV_R(crate::FieldReader<bool, EV_A>);
 impl EV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EV_A {
@@ -155,12 +200,19 @@ impl EV_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EV_A::VALUE1
+        **self == EV_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EV_A::VALUE2
+        **self == EV_A::VALUE2
+    }
+}
+impl core::ops::Deref for EV_R {
+    type Target = crate::FieldReader<bool, EV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -183,5 +235,21 @@ impl R {
     #[inline(always)]
     pub fn ev(&self) -> EV_R {
         EV_R::new(((self.bits >> 8) & 0x01) != 0)
+    }
+}
+#[doc = "Queue 0 Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qsr0](index.html) module"]
+pub struct QSR0_SPEC;
+impl crate::RegisterSpec for QSR0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [qsr0::R](R) reader structure"]
+impl crate::Readable for QSR0_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets QSR0 to value 0x20"]
+impl crate::Resettable for QSR0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x20
     }
 }

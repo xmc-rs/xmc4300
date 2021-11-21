@@ -1,48 +1,38 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Message Object Registers"]
+    #[doc = "0x00..0x800 - Message Object Registers"]
     pub mo: [MO; 64],
 }
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct MO {
     #[doc = "0x00 - Message Object Function Control Register"]
-    pub mofcr: self::mo::MOFCR,
+    pub mofcr: crate::Reg<self::mo::mofcr::MOFCR_SPEC>,
     #[doc = "0x04 - Message Object FIFO/Gateway Pointer Register"]
-    pub mofgpr: self::mo::MOFGPR,
+    pub mofgpr: crate::Reg<self::mo::mofgpr::MOFGPR_SPEC>,
     #[doc = "0x08 - Message Object Interrupt Pointer Register"]
-    pub moipr: self::mo::MOIPR,
+    pub moipr: crate::Reg<self::mo::moipr::MOIPR_SPEC>,
     #[doc = "0x0c - Message Object Acceptance Mask Register"]
-    pub moamr: self::mo::MOAMR,
+    pub moamr: crate::Reg<self::mo::moamr::MOAMR_SPEC>,
     #[doc = "0x10 - Message Object Data Register Low"]
-    pub modatal: self::mo::MODATAL,
+    pub modatal: crate::Reg<self::mo::modatal::MODATAL_SPEC>,
     #[doc = "0x14 - Message Object Data Register High"]
-    pub modatah: self::mo::MODATAH,
+    pub modatah: crate::Reg<self::mo::modatah::MODATAH_SPEC>,
     #[doc = "0x18 - Message Object Arbitration Register"]
-    pub moar: self::mo::MOAR,
-    _reserved_7_moctr: [u8; 4usize],
+    pub moar: crate::Reg<self::mo::moar::MOAR_SPEC>,
+    _reserved_7_moctr: [u8; 0x04],
 }
 impl MO {
     #[doc = "0x1c - Message Object Status Register"]
     #[inline(always)]
-    pub fn mostat(&self) -> &self::mo::MOSTAT {
-        unsafe { &*(((self as *const Self) as *const u8).add(28usize) as *const self::mo::MOSTAT) }
-    }
-    #[doc = "0x1c - Message Object Status Register"]
-    #[inline(always)]
-    pub fn mostat_mut(&self) -> &mut self::mo::MOSTAT {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(28usize) as *mut self::mo::MOSTAT) }
+    pub fn mostat(&self) -> &crate::Reg<self::mo::mostat::MOSTAT_SPEC> {
+        unsafe { &*(((self as *const Self) as *const u8).add(28usize) as *const crate::Reg<self::mo::mostat::MOSTAT_SPEC>) }
     }
     #[doc = "0x1c - Message Object Control Register"]
     #[inline(always)]
-    pub fn moctr(&self) -> &self::mo::MOCTR {
-        unsafe { &*(((self as *const Self) as *const u8).add(28usize) as *const self::mo::MOCTR) }
-    }
-    #[doc = "0x1c - Message Object Control Register"]
-    #[inline(always)]
-    pub fn moctr_mut(&self) -> &mut self::mo::MOCTR {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(28usize) as *mut self::mo::MOCTR) }
+    pub fn moctr(&self) -> &crate::Reg<self::mo::moctr::MOCTR_SPEC> {
+        unsafe { &*(((self as *const Self) as *const u8).add(28usize) as *const crate::Reg<self::mo::moctr::MOCTR_SPEC>) }
     }
 }
 #[doc = r"Register block"]

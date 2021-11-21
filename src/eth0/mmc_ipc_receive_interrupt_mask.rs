@@ -1,18 +1,54 @@
-#[doc = "Reader of register MMC_IPC_RECEIVE_INTERRUPT_MASK"]
-pub type R = crate::R<u32, super::MMC_IPC_RECEIVE_INTERRUPT_MASK>;
-#[doc = "Writer for register MMC_IPC_RECEIVE_INTERRUPT_MASK"]
-pub type W = crate::W<u32, super::MMC_IPC_RECEIVE_INTERRUPT_MASK>;
-#[doc = "Register MMC_IPC_RECEIVE_INTERRUPT_MASK `reset()`'s with value 0"]
-impl crate::ResetValue for super::MMC_IPC_RECEIVE_INTERRUPT_MASK {
-    type Type = u32;
+#[doc = "Register `MMC_IPC_RECEIVE_INTERRUPT_MASK` reader"]
+pub struct R(crate::R<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `RXIPV4GFIM`"]
-pub type RXIPV4GFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV4GFIM`"]
+impl From<crate::R<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MMC_IPC_RECEIVE_INTERRUPT_MASK` writer"]
+pub struct W(crate::W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `RXIPV4GFIM` reader - MMC Receive IPV4 Good Frame Counter Interrupt Mask"]
+pub struct RXIPV4GFIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV4GFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV4GFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV4GFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV4GFIM` writer - MMC Receive IPV4 Good Frame Counter Interrupt Mask"]
 pub struct RXIPV4GFIM_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> RXIPV4GFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV4HERFIM`"]
-pub type RXIPV4HERFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV4HERFIM`"]
+#[doc = "Field `RXIPV4HERFIM` reader - MMC Receive IPV4 Header Error Frame Counter Interrupt Mask"]
+pub struct RXIPV4HERFIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV4HERFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV4HERFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV4HERFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV4HERFIM` writer - MMC Receive IPV4 Header Error Frame Counter Interrupt Mask"]
 pub struct RXIPV4HERFIM_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +102,25 @@ impl<'a> RXIPV4HERFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV4NOPAYFIM`"]
-pub type RXIPV4NOPAYFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV4NOPAYFIM`"]
+#[doc = "Field `RXIPV4NOPAYFIM` reader - MMC Receive IPV4 No Payload Frame Counter Interrupt Mask"]
+pub struct RXIPV4NOPAYFIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV4NOPAYFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV4NOPAYFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV4NOPAYFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV4NOPAYFIM` writer - MMC Receive IPV4 No Payload Frame Counter Interrupt Mask"]
 pub struct RXIPV4NOPAYFIM_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +138,25 @@ impl<'a> RXIPV4NOPAYFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV4FRAGFIM`"]
-pub type RXIPV4FRAGFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV4FRAGFIM`"]
+#[doc = "Field `RXIPV4FRAGFIM` reader - MMC Receive IPV4 Fragmented Frame Counter Interrupt Mask"]
+pub struct RXIPV4FRAGFIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV4FRAGFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV4FRAGFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV4FRAGFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV4FRAGFIM` writer - MMC Receive IPV4 Fragmented Frame Counter Interrupt Mask"]
 pub struct RXIPV4FRAGFIM_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +174,25 @@ impl<'a> RXIPV4FRAGFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV4UDSBLFIM`"]
-pub type RXIPV4UDSBLFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV4UDSBLFIM`"]
+#[doc = "Field `RXIPV4UDSBLFIM` reader - MMC Receive IPV4 UDP Checksum Disabled Frame Counter Interrupt Mask"]
+pub struct RXIPV4UDSBLFIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV4UDSBLFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV4UDSBLFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV4UDSBLFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV4UDSBLFIM` writer - MMC Receive IPV4 UDP Checksum Disabled Frame Counter Interrupt Mask"]
 pub struct RXIPV4UDSBLFIM_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +210,25 @@ impl<'a> RXIPV4UDSBLFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV6GFIM`"]
-pub type RXIPV6GFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV6GFIM`"]
+#[doc = "Field `RXIPV6GFIM` reader - MMC Receive IPV6 Good Frame Counter Interrupt Mask"]
+pub struct RXIPV6GFIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV6GFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV6GFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV6GFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV6GFIM` writer - MMC Receive IPV6 Good Frame Counter Interrupt Mask"]
 pub struct RXIPV6GFIM_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +246,25 @@ impl<'a> RXIPV6GFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV6HERFIM`"]
-pub type RXIPV6HERFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV6HERFIM`"]
+#[doc = "Field `RXIPV6HERFIM` reader - MMC Receive IPV6 Header Error Frame Counter Interrupt Mask"]
+pub struct RXIPV6HERFIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV6HERFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV6HERFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV6HERFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV6HERFIM` writer - MMC Receive IPV6 Header Error Frame Counter Interrupt Mask"]
 pub struct RXIPV6HERFIM_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +282,25 @@ impl<'a> RXIPV6HERFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV6NOPAYFIM`"]
-pub type RXIPV6NOPAYFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV6NOPAYFIM`"]
+#[doc = "Field `RXIPV6NOPAYFIM` reader - MMC Receive IPV6 No Payload Frame Counter Interrupt Mask"]
+pub struct RXIPV6NOPAYFIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV6NOPAYFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV6NOPAYFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV6NOPAYFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV6NOPAYFIM` writer - MMC Receive IPV6 No Payload Frame Counter Interrupt Mask"]
 pub struct RXIPV6NOPAYFIM_W<'a> {
     w: &'a mut W,
 }
@@ -198,13 +318,25 @@ impl<'a> RXIPV6NOPAYFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `RXUDPGFIM`"]
-pub type RXUDPGFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXUDPGFIM`"]
+#[doc = "Field `RXUDPGFIM` reader - MMC Receive UDP Good Frame Counter Interrupt Mask"]
+pub struct RXUDPGFIM_R(crate::FieldReader<bool, bool>);
+impl RXUDPGFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXUDPGFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXUDPGFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXUDPGFIM` writer - MMC Receive UDP Good Frame Counter Interrupt Mask"]
 pub struct RXUDPGFIM_W<'a> {
     w: &'a mut W,
 }
@@ -222,13 +354,25 @@ impl<'a> RXUDPGFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `RXUDPERFIM`"]
-pub type RXUDPERFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXUDPERFIM`"]
+#[doc = "Field `RXUDPERFIM` reader - MMC Receive UDP Error Frame Counter Interrupt Mask"]
+pub struct RXUDPERFIM_R(crate::FieldReader<bool, bool>);
+impl RXUDPERFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXUDPERFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXUDPERFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXUDPERFIM` writer - MMC Receive UDP Error Frame Counter Interrupt Mask"]
 pub struct RXUDPERFIM_W<'a> {
     w: &'a mut W,
 }
@@ -246,13 +390,25 @@ impl<'a> RXUDPERFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `RXTCPGFIM`"]
-pub type RXTCPGFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXTCPGFIM`"]
+#[doc = "Field `RXTCPGFIM` reader - MMC Receive TCP Good Frame Counter Interrupt Mask"]
+pub struct RXTCPGFIM_R(crate::FieldReader<bool, bool>);
+impl RXTCPGFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXTCPGFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXTCPGFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXTCPGFIM` writer - MMC Receive TCP Good Frame Counter Interrupt Mask"]
 pub struct RXTCPGFIM_W<'a> {
     w: &'a mut W,
 }
@@ -270,13 +426,25 @@ impl<'a> RXTCPGFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `RXTCPERFIM`"]
-pub type RXTCPERFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXTCPERFIM`"]
+#[doc = "Field `RXTCPERFIM` reader - MMC Receive TCP Error Frame Counter Interrupt Mask"]
+pub struct RXTCPERFIM_R(crate::FieldReader<bool, bool>);
+impl RXTCPERFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXTCPERFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXTCPERFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXTCPERFIM` writer - MMC Receive TCP Error Frame Counter Interrupt Mask"]
 pub struct RXTCPERFIM_W<'a> {
     w: &'a mut W,
 }
@@ -294,13 +462,25 @@ impl<'a> RXTCPERFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Reader of field `RXICMPGFIM`"]
-pub type RXICMPGFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXICMPGFIM`"]
+#[doc = "Field `RXICMPGFIM` reader - MMC Receive ICMP Good Frame Counter Interrupt Mask"]
+pub struct RXICMPGFIM_R(crate::FieldReader<bool, bool>);
+impl RXICMPGFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXICMPGFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXICMPGFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXICMPGFIM` writer - MMC Receive ICMP Good Frame Counter Interrupt Mask"]
 pub struct RXICMPGFIM_W<'a> {
     w: &'a mut W,
 }
@@ -318,13 +498,25 @@ impl<'a> RXICMPGFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `RXICMPERFIM`"]
-pub type RXICMPERFIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXICMPERFIM`"]
+#[doc = "Field `RXICMPERFIM` reader - MMC Receive ICMP Error Frame Counter Interrupt Mask"]
+pub struct RXICMPERFIM_R(crate::FieldReader<bool, bool>);
+impl RXICMPERFIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXICMPERFIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXICMPERFIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXICMPERFIM` writer - MMC Receive ICMP Error Frame Counter Interrupt Mask"]
 pub struct RXICMPERFIM_W<'a> {
     w: &'a mut W,
 }
@@ -342,13 +534,25 @@ impl<'a> RXICMPERFIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV4GOIM`"]
-pub type RXIPV4GOIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV4GOIM`"]
+#[doc = "Field `RXIPV4GOIM` reader - MMC Receive IPV4 Good Octet Counter Interrupt Mask"]
+pub struct RXIPV4GOIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV4GOIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV4GOIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV4GOIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV4GOIM` writer - MMC Receive IPV4 Good Octet Counter Interrupt Mask"]
 pub struct RXIPV4GOIM_W<'a> {
     w: &'a mut W,
 }
@@ -366,13 +570,25 @@ impl<'a> RXIPV4GOIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV4HEROIM`"]
-pub type RXIPV4HEROIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV4HEROIM`"]
+#[doc = "Field `RXIPV4HEROIM` reader - MMC Receive IPV4 Header Error Octet Counter Interrupt Mask"]
+pub struct RXIPV4HEROIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV4HEROIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV4HEROIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV4HEROIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV4HEROIM` writer - MMC Receive IPV4 Header Error Octet Counter Interrupt Mask"]
 pub struct RXIPV4HEROIM_W<'a> {
     w: &'a mut W,
 }
@@ -390,13 +606,25 @@ impl<'a> RXIPV4HEROIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV4NOPAYOIM`"]
-pub type RXIPV4NOPAYOIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV4NOPAYOIM`"]
+#[doc = "Field `RXIPV4NOPAYOIM` reader - MMC Receive IPV4 No Payload Octet Counter Interrupt Mask"]
+pub struct RXIPV4NOPAYOIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV4NOPAYOIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV4NOPAYOIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV4NOPAYOIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV4NOPAYOIM` writer - MMC Receive IPV4 No Payload Octet Counter Interrupt Mask"]
 pub struct RXIPV4NOPAYOIM_W<'a> {
     w: &'a mut W,
 }
@@ -414,13 +642,25 @@ impl<'a> RXIPV4NOPAYOIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV4FRAGOIM`"]
-pub type RXIPV4FRAGOIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV4FRAGOIM`"]
+#[doc = "Field `RXIPV4FRAGOIM` reader - MMC Receive IPV4 Fragmented Octet Counter Interrupt Mask"]
+pub struct RXIPV4FRAGOIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV4FRAGOIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV4FRAGOIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV4FRAGOIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV4FRAGOIM` writer - MMC Receive IPV4 Fragmented Octet Counter Interrupt Mask"]
 pub struct RXIPV4FRAGOIM_W<'a> {
     w: &'a mut W,
 }
@@ -438,13 +678,25 @@ impl<'a> RXIPV4FRAGOIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV4UDSBLOIM`"]
-pub type RXIPV4UDSBLOIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV4UDSBLOIM`"]
+#[doc = "Field `RXIPV4UDSBLOIM` reader - MMC Receive IPV4 UDP Checksum Disabled Octet Counter Interrupt Mask"]
+pub struct RXIPV4UDSBLOIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV4UDSBLOIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV4UDSBLOIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV4UDSBLOIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV4UDSBLOIM` writer - MMC Receive IPV4 UDP Checksum Disabled Octet Counter Interrupt Mask"]
 pub struct RXIPV4UDSBLOIM_W<'a> {
     w: &'a mut W,
 }
@@ -462,13 +714,25 @@ impl<'a> RXIPV4UDSBLOIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV6GOIM`"]
-pub type RXIPV6GOIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV6GOIM`"]
+#[doc = "Field `RXIPV6GOIM` reader - MMC Receive IPV6 Good Octet Counter Interrupt Mask"]
+pub struct RXIPV6GOIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV6GOIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV6GOIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV6GOIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV6GOIM` writer - MMC Receive IPV6 Good Octet Counter Interrupt Mask"]
 pub struct RXIPV6GOIM_W<'a> {
     w: &'a mut W,
 }
@@ -486,13 +750,25 @@ impl<'a> RXIPV6GOIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV6HEROIM`"]
-pub type RXIPV6HEROIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV6HEROIM`"]
+#[doc = "Field `RXIPV6HEROIM` reader - MMC Receive IPV6 Header Error Octet Counter Interrupt Mask"]
+pub struct RXIPV6HEROIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV6HEROIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV6HEROIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV6HEROIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV6HEROIM` writer - MMC Receive IPV6 Header Error Octet Counter Interrupt Mask"]
 pub struct RXIPV6HEROIM_W<'a> {
     w: &'a mut W,
 }
@@ -510,13 +786,25 @@ impl<'a> RXIPV6HEROIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
         self.w
     }
 }
-#[doc = "Reader of field `RXIPV6NOPAYOIM`"]
-pub type RXIPV6NOPAYOIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXIPV6NOPAYOIM`"]
+#[doc = "Field `RXIPV6NOPAYOIM` reader - MMC Receive IPV6 No Payload Octet Counter Interrupt Mask"]
+pub struct RXIPV6NOPAYOIM_R(crate::FieldReader<bool, bool>);
+impl RXIPV6NOPAYOIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXIPV6NOPAYOIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV6NOPAYOIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXIPV6NOPAYOIM` writer - MMC Receive IPV6 No Payload Octet Counter Interrupt Mask"]
 pub struct RXIPV6NOPAYOIM_W<'a> {
     w: &'a mut W,
 }
@@ -534,13 +822,25 @@ impl<'a> RXIPV6NOPAYOIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
-#[doc = "Reader of field `RXUDPGOIM`"]
-pub type RXUDPGOIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXUDPGOIM`"]
+#[doc = "Field `RXUDPGOIM` reader - MMC Receive UDP Good Octet Counter Interrupt Mask"]
+pub struct RXUDPGOIM_R(crate::FieldReader<bool, bool>);
+impl RXUDPGOIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXUDPGOIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXUDPGOIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXUDPGOIM` writer - MMC Receive UDP Good Octet Counter Interrupt Mask"]
 pub struct RXUDPGOIM_W<'a> {
     w: &'a mut W,
 }
@@ -558,13 +858,25 @@ impl<'a> RXUDPGOIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Reader of field `RXUDPEROIM`"]
-pub type RXUDPEROIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXUDPEROIM`"]
+#[doc = "Field `RXUDPEROIM` reader - MMC Receive UDP Error Octet Counter Interrupt Mask"]
+pub struct RXUDPEROIM_R(crate::FieldReader<bool, bool>);
+impl RXUDPEROIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXUDPEROIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXUDPEROIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXUDPEROIM` writer - MMC Receive UDP Error Octet Counter Interrupt Mask"]
 pub struct RXUDPEROIM_W<'a> {
     w: &'a mut W,
 }
@@ -582,13 +894,25 @@ impl<'a> RXUDPEROIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
         self.w
     }
 }
-#[doc = "Reader of field `RXTCPGOIM`"]
-pub type RXTCPGOIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXTCPGOIM`"]
+#[doc = "Field `RXTCPGOIM` reader - MMC Receive TCP Good Octet Counter Interrupt Mask"]
+pub struct RXTCPGOIM_R(crate::FieldReader<bool, bool>);
+impl RXTCPGOIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXTCPGOIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXTCPGOIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXTCPGOIM` writer - MMC Receive TCP Good Octet Counter Interrupt Mask"]
 pub struct RXTCPGOIM_W<'a> {
     w: &'a mut W,
 }
@@ -606,13 +930,25 @@ impl<'a> RXTCPGOIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
         self.w
     }
 }
-#[doc = "Reader of field `RXTCPEROIM`"]
-pub type RXTCPEROIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXTCPEROIM`"]
+#[doc = "Field `RXTCPEROIM` reader - MMC Receive TCP Error Octet Counter Interrupt Mask"]
+pub struct RXTCPEROIM_R(crate::FieldReader<bool, bool>);
+impl RXTCPEROIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXTCPEROIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXTCPEROIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXTCPEROIM` writer - MMC Receive TCP Error Octet Counter Interrupt Mask"]
 pub struct RXTCPEROIM_W<'a> {
     w: &'a mut W,
 }
@@ -630,13 +966,25 @@ impl<'a> RXTCPEROIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
         self.w
     }
 }
-#[doc = "Reader of field `RXICMPGOIM`"]
-pub type RXICMPGOIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXICMPGOIM`"]
+#[doc = "Field `RXICMPGOIM` reader - MMC Receive ICMP Good Octet Counter Interrupt Mask"]
+pub struct RXICMPGOIM_R(crate::FieldReader<bool, bool>);
+impl RXICMPGOIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXICMPGOIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXICMPGOIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXICMPGOIM` writer - MMC Receive ICMP Good Octet Counter Interrupt Mask"]
 pub struct RXICMPGOIM_W<'a> {
     w: &'a mut W,
 }
@@ -654,13 +1002,25 @@ impl<'a> RXICMPGOIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
         self.w
     }
 }
-#[doc = "Reader of field `RXICMPEROIM`"]
-pub type RXICMPEROIM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RXICMPEROIM`"]
+#[doc = "Field `RXICMPEROIM` reader - MMC Receive ICMP Error Octet Counter Interrupt Mask"]
+pub struct RXICMPEROIM_R(crate::FieldReader<bool, bool>);
+impl RXICMPEROIM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXICMPEROIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXICMPEROIM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXICMPEROIM` writer - MMC Receive ICMP Error Octet Counter Interrupt Mask"]
 pub struct RXICMPEROIM_W<'a> {
     w: &'a mut W,
 }
@@ -678,7 +1038,7 @@ impl<'a> RXICMPEROIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
         self.w
     }
 }
@@ -964,5 +1324,31 @@ impl W {
     #[inline(always)]
     pub fn rxicmperoim(&mut self) -> RXICMPEROIM_W {
         RXICMPEROIM_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "MMC Receive Checksum Offload Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mmc_ipc_receive_interrupt_mask](index.html) module"]
+pub struct MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC;
+impl crate::RegisterSpec for MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [mmc_ipc_receive_interrupt_mask::R](R) reader structure"]
+impl crate::Readable for MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [mmc_ipc_receive_interrupt_mask::W](W) writer structure"]
+impl crate::Writable for MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MMC_IPC_RECEIVE_INTERRUPT_MASK to value 0"]
+impl crate::Resettable for MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

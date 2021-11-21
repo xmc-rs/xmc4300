@@ -1,18 +1,54 @@
-#[doc = "Reader of register NBTR"]
-pub type R = crate::R<u32, super::NBTR>;
-#[doc = "Writer for register NBTR"]
-pub type W = crate::W<u32, super::NBTR>;
-#[doc = "Register NBTR `reset()`'s with value 0"]
-impl crate::ResetValue for super::NBTR {
-    type Type = u32;
+#[doc = "Register `NBTR` reader"]
+pub struct R(crate::R<NBTR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<NBTR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `BRP`"]
-pub type BRP_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `BRP`"]
+impl From<crate::R<NBTR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<NBTR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `NBTR` writer"]
+pub struct W(crate::W<NBTR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<NBTR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<NBTR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<NBTR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `BRP` reader - Baud Rate Prescaler"]
+pub struct BRP_R(crate::FieldReader<u8, u8>);
+impl BRP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BRP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BRP_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BRP` writer - Baud Rate Prescaler"]
 pub struct BRP_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> BRP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
         self.w
     }
 }
-#[doc = "Reader of field `SJW`"]
-pub type SJW_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SJW`"]
+#[doc = "Field `SJW` reader - (Re) Synchronization Jump Width"]
+pub struct SJW_R(crate::FieldReader<u8, u8>);
+impl SJW_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SJW_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SJW_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SJW` writer - (Re) Synchronization Jump Width"]
 pub struct SJW_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +82,25 @@ impl<'a> SJW_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `TSEG1`"]
-pub type TSEG1_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TSEG1`"]
+#[doc = "Field `TSEG1` reader - Time Segment Before Sample Point"]
+pub struct TSEG1_R(crate::FieldReader<u8, u8>);
+impl TSEG1_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TSEG1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSEG1_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSEG1` writer - Time Segment Before Sample Point"]
 pub struct TSEG1_W<'a> {
     w: &'a mut W,
 }
@@ -48,13 +108,25 @@ impl<'a> TSEG1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `TSEG2`"]
-pub type TSEG2_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TSEG2`"]
+#[doc = "Field `TSEG2` reader - Time Segment After Sample Point"]
+pub struct TSEG2_R(crate::FieldReader<u8, u8>);
+impl TSEG2_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TSEG2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSEG2_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSEG2` writer - Time Segment After Sample Point"]
 pub struct TSEG2_W<'a> {
     w: &'a mut W,
 }
@@ -62,7 +134,7 @@ impl<'a> TSEG2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u32) & 0x07) << 12);
+        self.w.bits = (self.w.bits & !(0x07 << 12)) | ((value as u32 & 0x07) << 12);
         self.w
     }
 }
@@ -80,9 +152,12 @@ impl From<DIV8_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DIV8`"]
-pub type DIV8_R = crate::R<bool, DIV8_A>;
+#[doc = "Field `DIV8` reader - Divide Prescaler Clock by 8"]
+pub struct DIV8_R(crate::FieldReader<bool, DIV8_A>);
 impl DIV8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DIV8_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIV8_A {
@@ -94,15 +169,22 @@ impl DIV8_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DIV8_A::VALUE1
+        **self == DIV8_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DIV8_A::VALUE2
+        **self == DIV8_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DIV8`"]
+impl core::ops::Deref for DIV8_R {
+    type Target = crate::FieldReader<bool, DIV8_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DIV8` writer - Divide Prescaler Clock by 8"]
 pub struct DIV8_W<'a> {
     w: &'a mut W,
 }
@@ -110,9 +192,7 @@ impl<'a> DIV8_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DIV8_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "A time quantum lasts (BRP+1) clock cycles."]
     #[inline(always)]
@@ -137,7 +217,7 @@ impl<'a> DIV8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -193,5 +273,31 @@ impl W {
     #[inline(always)]
     pub fn div8(&mut self) -> DIV8_W {
         DIV8_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Node Bit Timing Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nbtr](index.html) module"]
+pub struct NBTR_SPEC;
+impl crate::RegisterSpec for NBTR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [nbtr::R](R) reader structure"]
+impl crate::Readable for NBTR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [nbtr::W](W) writer structure"]
+impl crate::Writable for NBTR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets NBTR to value 0"]
+impl crate::Resettable for NBTR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

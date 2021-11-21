@@ -1,13 +1,37 @@
-#[doc = "Reader of register DTC"]
-pub type R = crate::R<u32, super::DTC>;
-#[doc = "Writer for register DTC"]
-pub type W = crate::W<u32, super::DTC>;
-#[doc = "Register DTC `reset()`'s with value 0"]
-impl crate::ResetValue for super::DTC {
-    type Type = u32;
+#[doc = "Register `DTC` reader"]
+pub struct R(crate::R<DTC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DTC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DTC_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DTC_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DTC` writer"]
+pub struct W(crate::W<DTC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DTC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DTC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DTC_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Dead Time Enable for Channel 1\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<DTE1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DTE1`"]
-pub type DTE1_R = crate::R<bool, DTE1_A>;
+#[doc = "Field `DTE1` reader - Dead Time Enable for Channel 1"]
+pub struct DTE1_R(crate::FieldReader<bool, DTE1_A>);
 impl DTE1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DTE1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DTE1_A {
@@ -38,15 +65,22 @@ impl DTE1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DTE1_A::VALUE1
+        **self == DTE1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DTE1_A::VALUE2
+        **self == DTE1_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DTE1`"]
+impl core::ops::Deref for DTE1_R {
+    type Target = crate::FieldReader<bool, DTE1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DTE1` writer - Dead Time Enable for Channel 1"]
 pub struct DTE1_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> DTE1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DTE1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Dead Time for channel 1 is disabled"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> DTE1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<DTE2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DTE2`"]
-pub type DTE2_R = crate::R<bool, DTE2_A>;
+#[doc = "Field `DTE2` reader - Dead Time Enable for Channel 2"]
+pub struct DTE2_R(crate::FieldReader<bool, DTE2_A>);
 impl DTE2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DTE2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DTE2_A {
@@ -113,15 +148,22 @@ impl DTE2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DTE2_A::VALUE1
+        **self == DTE2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DTE2_A::VALUE2
+        **self == DTE2_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DTE2`"]
+impl core::ops::Deref for DTE2_R {
+    type Target = crate::FieldReader<bool, DTE2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DTE2` writer - Dead Time Enable for Channel 2"]
 pub struct DTE2_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> DTE2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DTE2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Dead Time for channel 2 is disabled"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> DTE2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<DCEN1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCEN1`"]
-pub type DCEN1_R = crate::R<bool, DCEN1_A>;
+#[doc = "Field `DCEN1` reader - Dead Time Enable for CC8yST1"]
+pub struct DCEN1_R(crate::FieldReader<bool, DCEN1_A>);
 impl DCEN1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCEN1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCEN1_A {
@@ -188,15 +231,22 @@ impl DCEN1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DCEN1_A::VALUE1
+        **self == DCEN1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DCEN1_A::VALUE2
+        **self == DCEN1_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DCEN1`"]
+impl core::ops::Deref for DCEN1_R {
+    type Target = crate::FieldReader<bool, DCEN1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DCEN1` writer - Dead Time Enable for CC8yST1"]
 pub struct DCEN1_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> DCEN1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DCEN1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Dead Time for CC8yST1 path is disabled"]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> DCEN1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<DCEN2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCEN2`"]
-pub type DCEN2_R = crate::R<bool, DCEN2_A>;
+#[doc = "Field `DCEN2` reader - Dead Time Enable for inverted CC8yST1"]
+pub struct DCEN2_R(crate::FieldReader<bool, DCEN2_A>);
 impl DCEN2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCEN2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCEN2_A {
@@ -263,15 +314,22 @@ impl DCEN2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DCEN2_A::VALUE1
+        **self == DCEN2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DCEN2_A::VALUE2
+        **self == DCEN2_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DCEN2`"]
+impl core::ops::Deref for DCEN2_R {
+    type Target = crate::FieldReader<bool, DCEN2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DCEN2` writer - Dead Time Enable for inverted CC8yST1"]
 pub struct DCEN2_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> DCEN2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DCEN2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Dead Time for inverted CC8yST1 path is disabled"]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> DCEN2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +380,12 @@ impl From<DCEN3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCEN3`"]
-pub type DCEN3_R = crate::R<bool, DCEN3_A>;
+#[doc = "Field `DCEN3` reader - Dead Time Enable for CC8yST2"]
+pub struct DCEN3_R(crate::FieldReader<bool, DCEN3_A>);
 impl DCEN3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCEN3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCEN3_A {
@@ -338,15 +397,22 @@ impl DCEN3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DCEN3_A::VALUE1
+        **self == DCEN3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DCEN3_A::VALUE2
+        **self == DCEN3_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DCEN3`"]
+impl core::ops::Deref for DCEN3_R {
+    type Target = crate::FieldReader<bool, DCEN3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DCEN3` writer - Dead Time Enable for CC8yST2"]
 pub struct DCEN3_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +420,7 @@ impl<'a> DCEN3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DCEN3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Dead Time for CC8yST2 path is disabled"]
     #[inline(always)]
@@ -381,7 +445,7 @@ impl<'a> DCEN3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +463,12 @@ impl From<DCEN4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCEN4`"]
-pub type DCEN4_R = crate::R<bool, DCEN4_A>;
+#[doc = "Field `DCEN4` reader - Dead Time Enable for inverted CC8yST2"]
+pub struct DCEN4_R(crate::FieldReader<bool, DCEN4_A>);
 impl DCEN4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCEN4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCEN4_A {
@@ -413,15 +480,22 @@ impl DCEN4_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DCEN4_A::VALUE1
+        **self == DCEN4_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DCEN4_A::VALUE2
+        **self == DCEN4_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DCEN4`"]
+impl core::ops::Deref for DCEN4_R {
+    type Target = crate::FieldReader<bool, DCEN4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DCEN4` writer - Dead Time Enable for inverted CC8yST2"]
 pub struct DCEN4_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +503,7 @@ impl<'a> DCEN4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DCEN4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Dead Time for inverted CC8yST2 path is disabled"]
     #[inline(always)]
@@ -456,7 +528,7 @@ impl<'a> DCEN4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -479,9 +551,12 @@ impl From<DTCC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DTCC`"]
-pub type DTCC_R = crate::R<u8, DTCC_A>;
+#[doc = "Field `DTCC` reader - Dead Time clock control"]
+pub struct DTCC_R(crate::FieldReader<u8, DTCC_A>);
 impl DTCC_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DTCC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DTCC_A {
@@ -496,25 +571,32 @@ impl DTCC_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DTCC_A::VALUE1
+        **self == DTCC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DTCC_A::VALUE2
+        **self == DTCC_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == DTCC_A::VALUE3
+        **self == DTCC_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == DTCC_A::VALUE4
+        **self == DTCC_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `DTCC`"]
+impl core::ops::Deref for DTCC_R {
+    type Target = crate::FieldReader<u8, DTCC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DTCC` writer - Dead Time clock control"]
 pub struct DTCC_W<'a> {
     w: &'a mut W,
 }
@@ -522,9 +604,7 @@ impl<'a> DTCC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DTCC_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "ftclk"]
     #[inline(always)]
@@ -549,7 +629,7 @@ impl<'a> DTCC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
         self.w
     }
 }
@@ -625,5 +705,31 @@ impl W {
     #[inline(always)]
     pub fn dtcc(&mut self) -> DTCC_W {
         DTCC_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Dead Time Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dtc](index.html) module"]
+pub struct DTC_SPEC;
+impl crate::RegisterSpec for DTC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dtc::R](R) reader structure"]
+impl crate::Readable for DTC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dtc::W](W) writer structure"]
+impl crate::Writable for DTC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DTC to value 0"]
+impl crate::Resettable for DTC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

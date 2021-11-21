@@ -1,29 +1,186 @@
-#[doc = "Reader of register DEBUG"]
-pub type R = crate::R<u32, super::DEBUG>;
-#[doc = "Reader of field `RPESTS`"]
-pub type RPESTS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RFCFCSTS`"]
-pub type RFCFCSTS_R = crate::R<u8, u8>;
-#[doc = "Reader of field `RWCSTS`"]
-pub type RWCSTS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RRCSTS`"]
-pub type RRCSTS_R = crate::R<u8, u8>;
-#[doc = "Reader of field `RXFSTS`"]
-pub type RXFSTS_R = crate::R<u8, u8>;
-#[doc = "Reader of field `TPESTS`"]
-pub type TPESTS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TFCSTS`"]
-pub type TFCSTS_R = crate::R<u8, u8>;
-#[doc = "Reader of field `TXPAUSED`"]
-pub type TXPAUSED_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TRCSTS`"]
-pub type TRCSTS_R = crate::R<u8, u8>;
-#[doc = "Reader of field `TWCSTS`"]
-pub type TWCSTS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXFSTS`"]
-pub type TXFSTS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXSTSFSTS`"]
-pub type TXSTSFSTS_R = crate::R<bool, bool>;
+#[doc = "Register `DEBUG` reader"]
+pub struct R(crate::R<DEBUG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DEBUG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DEBUG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DEBUG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `RPESTS` reader - MAC MII Receive Protocol Engine Status"]
+pub struct RPESTS_R(crate::FieldReader<bool, bool>);
+impl RPESTS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RPESTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RPESTS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RFCFCSTS` reader - MAC Receive Frame Controller FIFO Status"]
+pub struct RFCFCSTS_R(crate::FieldReader<u8, u8>);
+impl RFCFCSTS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RFCFCSTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RFCFCSTS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RWCSTS` reader - MTL Rx FIFO Write Controller Active Status"]
+pub struct RWCSTS_R(crate::FieldReader<bool, bool>);
+impl RWCSTS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RWCSTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RWCSTS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RRCSTS` reader - MTL Rx FIFO Read Controller State"]
+pub struct RRCSTS_R(crate::FieldReader<u8, u8>);
+impl RRCSTS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RRCSTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RRCSTS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXFSTS` reader - MTL Rx FIFO Fill-level Status"]
+pub struct RXFSTS_R(crate::FieldReader<u8, u8>);
+impl RXFSTS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RXFSTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXFSTS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TPESTS` reader - MAC MII Transmit Protocol Engine Status"]
+pub struct TPESTS_R(crate::FieldReader<bool, bool>);
+impl TPESTS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TPESTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TPESTS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TFCSTS` reader - MAC Transmit Frame Controller Status"]
+pub struct TFCSTS_R(crate::FieldReader<u8, u8>);
+impl TFCSTS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TFCSTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TFCSTS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXPAUSED` reader - MAC transmitter in PAUSE"]
+pub struct TXPAUSED_R(crate::FieldReader<bool, bool>);
+impl TXPAUSED_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXPAUSED_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXPAUSED_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TRCSTS` reader - MTL Tx FIFO Read Controller Status"]
+pub struct TRCSTS_R(crate::FieldReader<u8, u8>);
+impl TRCSTS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TRCSTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TRCSTS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TWCSTS` reader - MTL Tx FIFO Write Controller Active Status"]
+pub struct TWCSTS_R(crate::FieldReader<bool, bool>);
+impl TWCSTS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TWCSTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TWCSTS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXFSTS` reader - MTL Tx FIFO Not Empty Status"]
+pub struct TXFSTS_R(crate::FieldReader<bool, bool>);
+impl TXFSTS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXFSTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXFSTS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXSTSFSTS` reader - MTL TxStatus FIFO Full Status"]
+pub struct TXSTSFSTS_R(crate::FieldReader<bool, bool>);
+impl TXSTSFSTS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXSTSFSTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXSTSFSTS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - MAC MII Receive Protocol Engine Status"]
     #[inline(always)]
@@ -84,5 +241,21 @@ impl R {
     #[inline(always)]
     pub fn txstsfsts(&self) -> TXSTSFSTS_R {
         TXSTSFSTS_R::new(((self.bits >> 25) & 0x01) != 0)
+    }
+}
+#[doc = "Debug Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [debug](index.html) module"]
+pub struct DEBUG_SPEC;
+impl crate::RegisterSpec for DEBUG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [debug::R](R) reader structure"]
+impl crate::Readable for DEBUG_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets DEBUG to value 0"]
+impl crate::Resettable for DEBUG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

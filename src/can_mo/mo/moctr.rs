@@ -1,14 +1,25 @@
-#[doc = "Writer for register MOCTR"]
-pub type W = crate::W<u32, super::MOCTR>;
-#[doc = "Register MOCTR `reset()`'s with value 0"]
-impl crate::ResetValue for super::MOCTR {
-    type Type = u32;
+#[doc = "Register `MOCTR` writer"]
+pub struct W(crate::W<MOCTR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MOCTR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `RESRXPND`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MOCTR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MOCTR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `RESRXPND` writer - Reset/Set Receive Pending"]
 pub struct RESRXPND_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +37,11 @@ impl<'a> RESRXPND_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `SETRXPND`"]
+#[doc = "Field `SETRXPND` writer - Reset/Set Receive Pending"]
 pub struct SETRXPND_W<'a> {
     w: &'a mut W,
 }
@@ -48,11 +59,11 @@ impl<'a> SETRXPND_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Write proxy for field `RESTXPND`"]
+#[doc = "Field `RESTXPND` writer - Reset/Set Transmit Pending"]
 pub struct RESTXPND_W<'a> {
     w: &'a mut W,
 }
@@ -70,11 +81,11 @@ impl<'a> RESTXPND_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `SETTXPND`"]
+#[doc = "Field `SETTXPND` writer - Reset/Set Transmit Pending"]
 pub struct SETTXPND_W<'a> {
     w: &'a mut W,
 }
@@ -92,11 +103,11 @@ impl<'a> SETTXPND_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Write proxy for field `RESRXUPD`"]
+#[doc = "Field `RESRXUPD` writer - Reset/Set Receive Updating"]
 pub struct RESRXUPD_W<'a> {
     w: &'a mut W,
 }
@@ -114,11 +125,11 @@ impl<'a> RESRXUPD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `SETRXUPD`"]
+#[doc = "Field `SETRXUPD` writer - Reset/Set Receive Updating"]
 pub struct SETRXUPD_W<'a> {
     w: &'a mut W,
 }
@@ -136,11 +147,11 @@ impl<'a> SETRXUPD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Write proxy for field `RESNEWDAT`"]
+#[doc = "Field `RESNEWDAT` writer - Reset/Set New Data"]
 pub struct RESNEWDAT_W<'a> {
     w: &'a mut W,
 }
@@ -158,11 +169,11 @@ impl<'a> RESNEWDAT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Write proxy for field `SETNEWDAT`"]
+#[doc = "Field `SETNEWDAT` writer - Reset/Set New Data"]
 pub struct SETNEWDAT_W<'a> {
     w: &'a mut W,
 }
@@ -180,11 +191,11 @@ impl<'a> SETNEWDAT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
-#[doc = "Write proxy for field `RESMSGLST`"]
+#[doc = "Field `RESMSGLST` writer - Reset/Set Message Lost"]
 pub struct RESMSGLST_W<'a> {
     w: &'a mut W,
 }
@@ -202,11 +213,11 @@ impl<'a> RESMSGLST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Write proxy for field `SETMSGLST`"]
+#[doc = "Field `SETMSGLST` writer - Reset/Set Message Lost"]
 pub struct SETMSGLST_W<'a> {
     w: &'a mut W,
 }
@@ -224,11 +235,11 @@ impl<'a> SETMSGLST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
-#[doc = "Write proxy for field `RESMSGVAL`"]
+#[doc = "Field `RESMSGVAL` writer - Reset/Set Message Valid"]
 pub struct RESMSGVAL_W<'a> {
     w: &'a mut W,
 }
@@ -246,11 +257,11 @@ impl<'a> RESMSGVAL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Write proxy for field `SETMSGVAL`"]
+#[doc = "Field `SETMSGVAL` writer - Reset/Set Message Valid"]
 pub struct SETMSGVAL_W<'a> {
     w: &'a mut W,
 }
@@ -268,11 +279,11 @@ impl<'a> SETMSGVAL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
         self.w
     }
 }
-#[doc = "Write proxy for field `RESRTSEL`"]
+#[doc = "Field `RESRTSEL` writer - Reset/Set Receive/Transmit Selected"]
 pub struct RESRTSEL_W<'a> {
     w: &'a mut W,
 }
@@ -290,11 +301,11 @@ impl<'a> RESRTSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Write proxy for field `SETRTSEL`"]
+#[doc = "Field `SETRTSEL` writer - Reset/Set Receive/Transmit Selected"]
 pub struct SETRTSEL_W<'a> {
     w: &'a mut W,
 }
@@ -312,11 +323,11 @@ impl<'a> SETRTSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
         self.w
     }
 }
-#[doc = "Write proxy for field `RESRXEN`"]
+#[doc = "Field `RESRXEN` writer - Reset/Set Receive Enable"]
 pub struct RESRXEN_W<'a> {
     w: &'a mut W,
 }
@@ -334,11 +345,11 @@ impl<'a> RESRXEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Write proxy for field `SETRXEN`"]
+#[doc = "Field `SETRXEN` writer - Reset/Set Receive Enable"]
 pub struct SETRXEN_W<'a> {
     w: &'a mut W,
 }
@@ -356,11 +367,11 @@ impl<'a> SETRXEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
-#[doc = "Write proxy for field `RESTXRQ`"]
+#[doc = "Field `RESTXRQ` writer - Reset/Set Transmit Request"]
 pub struct RESTXRQ_W<'a> {
     w: &'a mut W,
 }
@@ -378,11 +389,11 @@ impl<'a> RESTXRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Write proxy for field `SETTXRQ`"]
+#[doc = "Field `SETTXRQ` writer - Reset/Set Transmit Request"]
 pub struct SETTXRQ_W<'a> {
     w: &'a mut W,
 }
@@ -400,11 +411,11 @@ impl<'a> SETTXRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Write proxy for field `RESTXEN0`"]
+#[doc = "Field `RESTXEN0` writer - Reset/Set Transmit Enable 0"]
 pub struct RESTXEN0_W<'a> {
     w: &'a mut W,
 }
@@ -422,11 +433,11 @@ impl<'a> RESTXEN0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Write proxy for field `SETTXEN0`"]
+#[doc = "Field `SETTXEN0` writer - Reset/Set Transmit Enable 0"]
 pub struct SETTXEN0_W<'a> {
     w: &'a mut W,
 }
@@ -444,11 +455,11 @@ impl<'a> SETTXEN0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
         self.w
     }
 }
-#[doc = "Write proxy for field `RESTXEN1`"]
+#[doc = "Field `RESTXEN1` writer - Reset/Set Transmit Enable 1"]
 pub struct RESTXEN1_W<'a> {
     w: &'a mut W,
 }
@@ -466,11 +477,11 @@ impl<'a> RESTXEN1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Write proxy for field `SETTXEN1`"]
+#[doc = "Field `SETTXEN1` writer - Reset/Set Transmit Enable 1"]
 pub struct SETTXEN1_W<'a> {
     w: &'a mut W,
 }
@@ -488,11 +499,11 @@ impl<'a> SETTXEN1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
         self.w
     }
 }
-#[doc = "Write proxy for field `RESDIR`"]
+#[doc = "Field `RESDIR` writer - Reset/Set Message Direction"]
 pub struct RESDIR_W<'a> {
     w: &'a mut W,
 }
@@ -510,11 +521,11 @@ impl<'a> RESDIR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Write proxy for field `SETDIR`"]
+#[doc = "Field `SETDIR` writer - Reset/Set Message Direction"]
 pub struct SETDIR_W<'a> {
     w: &'a mut W,
 }
@@ -532,7 +543,7 @@ impl<'a> SETDIR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
         self.w
     }
 }
@@ -656,5 +667,27 @@ impl W {
     #[inline(always)]
     pub fn setdir(&mut self) -> SETDIR_W {
         SETDIR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Message Object Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [moctr](index.html) module"]
+pub struct MOCTR_SPEC;
+impl crate::RegisterSpec for MOCTR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [moctr::W](W) writer structure"]
+impl crate::Writable for MOCTR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MOCTR to value 0"]
+impl crate::Resettable for MOCTR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

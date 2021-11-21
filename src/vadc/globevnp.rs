@@ -1,13 +1,37 @@
-#[doc = "Reader of register GLOBEVNP"]
-pub type R = crate::R<u32, super::GLOBEVNP>;
-#[doc = "Writer for register GLOBEVNP"]
-pub type W = crate::W<u32, super::GLOBEVNP>;
-#[doc = "Register GLOBEVNP `reset()`'s with value 0"]
-impl crate::ResetValue for super::GLOBEVNP {
-    type Type = u32;
+#[doc = "Register `GLOBEVNP` reader"]
+pub struct R(crate::R<GLOBEVNP_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GLOBEVNP_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<GLOBEVNP_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GLOBEVNP_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `GLOBEVNP` writer"]
+pub struct W(crate::W<GLOBEVNP_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<GLOBEVNP_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<GLOBEVNP_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<GLOBEVNP_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Service Request Node Pointer Backgr. Source\n\nValue on reset: 0"]
@@ -29,43 +53,52 @@ impl From<SEV0NP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SEV0NP`"]
-pub type SEV0NP_R = crate::R<u8, SEV0NP_A>;
+#[doc = "Field `SEV0NP` reader - Service Request Node Pointer Backgr. Source"]
+pub struct SEV0NP_R(crate::FieldReader<u8, SEV0NP_A>);
 impl SEV0NP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SEV0NP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, SEV0NP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SEV0NP_A> {
         match self.bits {
-            0 => Val(SEV0NP_A::VALUE1),
-            3 => Val(SEV0NP_A::VALUE2),
-            4 => Val(SEV0NP_A::VALUE3),
-            7 => Val(SEV0NP_A::VALUE4),
-            i => Res(i),
+            0 => Some(SEV0NP_A::VALUE1),
+            3 => Some(SEV0NP_A::VALUE2),
+            4 => Some(SEV0NP_A::VALUE3),
+            7 => Some(SEV0NP_A::VALUE4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SEV0NP_A::VALUE1
+        **self == SEV0NP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SEV0NP_A::VALUE2
+        **self == SEV0NP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == SEV0NP_A::VALUE3
+        **self == SEV0NP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == SEV0NP_A::VALUE4
+        **self == SEV0NP_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `SEV0NP`"]
+impl core::ops::Deref for SEV0NP_R {
+    type Target = crate::FieldReader<u8, SEV0NP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SEV0NP` writer - Service Request Node Pointer Backgr. Source"]
 pub struct SEV0NP_W<'a> {
     w: &'a mut W,
 }
@@ -98,7 +131,7 @@ impl<'a> SEV0NP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
         self.w
     }
 }
@@ -121,43 +154,52 @@ impl From<REV0NP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `REV0NP`"]
-pub type REV0NP_R = crate::R<u8, REV0NP_A>;
+#[doc = "Field `REV0NP` reader - Service Request Node Pointer Backgr. Result"]
+pub struct REV0NP_R(crate::FieldReader<u8, REV0NP_A>);
 impl REV0NP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        REV0NP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, REV0NP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<REV0NP_A> {
         match self.bits {
-            0 => Val(REV0NP_A::VALUE1),
-            3 => Val(REV0NP_A::VALUE2),
-            4 => Val(REV0NP_A::VALUE3),
-            7 => Val(REV0NP_A::VALUE4),
-            i => Res(i),
+            0 => Some(REV0NP_A::VALUE1),
+            3 => Some(REV0NP_A::VALUE2),
+            4 => Some(REV0NP_A::VALUE3),
+            7 => Some(REV0NP_A::VALUE4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == REV0NP_A::VALUE1
+        **self == REV0NP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == REV0NP_A::VALUE2
+        **self == REV0NP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == REV0NP_A::VALUE3
+        **self == REV0NP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == REV0NP_A::VALUE4
+        **self == REV0NP_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `REV0NP`"]
+impl core::ops::Deref for REV0NP_R {
+    type Target = crate::FieldReader<u8, REV0NP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REV0NP` writer - Service Request Node Pointer Backgr. Result"]
 pub struct REV0NP_W<'a> {
     w: &'a mut W,
 }
@@ -190,7 +232,7 @@ impl<'a> REV0NP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
         self.w
     }
 }
@@ -216,5 +258,31 @@ impl W {
     #[inline(always)]
     pub fn rev0np(&mut self) -> REV0NP_W {
         REV0NP_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Global Event Node Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [globevnp](index.html) module"]
+pub struct GLOBEVNP_SPEC;
+impl crate::RegisterSpec for GLOBEVNP_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [globevnp::R](R) reader structure"]
+impl crate::Readable for GLOBEVNP_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [globevnp::W](W) writer structure"]
+impl crate::Writable for GLOBEVNP_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets GLOBEVNP to value 0"]
+impl crate::Resettable for GLOBEVNP_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

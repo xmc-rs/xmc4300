@@ -1,5 +1,18 @@
-#[doc = "Reader of register PWRSTAT"]
-pub type R = crate::R<u32, super::PWRSTAT>;
+#[doc = "Register `PWRSTAT` reader"]
+pub struct R(crate::R<PWRSTAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PWRSTAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PWRSTAT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PWRSTAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Hibernate Domain Enable Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIBEN_A {
@@ -14,9 +27,12 @@ impl From<HIBEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `HIBEN`"]
-pub type HIBEN_R = crate::R<bool, HIBEN_A>;
+#[doc = "Field `HIBEN` reader - Hibernate Domain Enable Status"]
+pub struct HIBEN_R(crate::FieldReader<bool, HIBEN_A>);
 impl HIBEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HIBEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HIBEN_A {
@@ -28,12 +44,19 @@ impl HIBEN_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == HIBEN_A::CONST_0
+        **self == HIBEN_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == HIBEN_A::CONST_1
+        **self == HIBEN_A::CONST_1
+    }
+}
+impl core::ops::Deref for HIBEN_R {
+    type Target = crate::FieldReader<bool, HIBEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "USB PHY Transceiver State\n\nValue on reset: 0"]
@@ -50,9 +73,12 @@ impl From<USBPHYPDQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `USBPHYPDQ`"]
-pub type USBPHYPDQ_R = crate::R<bool, USBPHYPDQ_A>;
+#[doc = "Field `USBPHYPDQ` reader - USB PHY Transceiver State"]
+pub struct USBPHYPDQ_R(crate::FieldReader<bool, USBPHYPDQ_A>);
 impl USBPHYPDQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USBPHYPDQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USBPHYPDQ_A {
@@ -64,12 +90,19 @@ impl USBPHYPDQ_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == USBPHYPDQ_A::CONST_0
+        **self == USBPHYPDQ_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == USBPHYPDQ_A::CONST_1
+        **self == USBPHYPDQ_A::CONST_1
+    }
+}
+impl core::ops::Deref for USBPHYPDQ_R {
+    type Target = crate::FieldReader<bool, USBPHYPDQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "USB On-The-Go Comparators State\n\nValue on reset: 0"]
@@ -86,9 +119,12 @@ impl From<USBOTGEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `USBOTGEN`"]
-pub type USBOTGEN_R = crate::R<bool, USBOTGEN_A>;
+#[doc = "Field `USBOTGEN` reader - USB On-The-Go Comparators State"]
+pub struct USBOTGEN_R(crate::FieldReader<bool, USBOTGEN_A>);
 impl USBOTGEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USBOTGEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USBOTGEN_A {
@@ -100,12 +136,19 @@ impl USBOTGEN_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == USBOTGEN_A::CONST_0
+        **self == USBOTGEN_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == USBOTGEN_A::CONST_1
+        **self == USBOTGEN_A::CONST_1
+    }
+}
+impl core::ops::Deref for USBOTGEN_R {
+    type Target = crate::FieldReader<bool, USBOTGEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "USB Weak Pull-Up at PADN State\n\nValue on reset: 0"]
@@ -122,9 +165,12 @@ impl From<USBPUWQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `USBPUWQ`"]
-pub type USBPUWQ_R = crate::R<bool, USBPUWQ_A>;
+#[doc = "Field `USBPUWQ` reader - USB Weak Pull-Up at PADN State"]
+pub struct USBPUWQ_R(crate::FieldReader<bool, USBPUWQ_A>);
 impl USBPUWQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USBPUWQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USBPUWQ_A {
@@ -136,12 +182,19 @@ impl USBPUWQ_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == USBPUWQ_A::CONST_0
+        **self == USBPUWQ_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == USBPUWQ_A::CONST_1
+        **self == USBPUWQ_A::CONST_1
+    }
+}
+impl core::ops::Deref for USBPUWQ_R {
+    type Target = crate::FieldReader<bool, USBPUWQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -164,5 +217,21 @@ impl R {
     #[inline(always)]
     pub fn usbpuwq(&self) -> USBPUWQ_R {
         USBPUWQ_R::new(((self.bits >> 18) & 0x01) != 0)
+    }
+}
+#[doc = "PCU Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwrstat](index.html) module"]
+pub struct PWRSTAT_SPEC;
+impl crate::RegisterSpec for PWRSTAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pwrstat::R](R) reader structure"]
+impl crate::Readable for PWRSTAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets PWRSTAT to value 0"]
+impl crate::Resettable for PWRSTAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

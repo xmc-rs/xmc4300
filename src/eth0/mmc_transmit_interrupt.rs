@@ -1,57 +1,382 @@
-#[doc = "Reader of register MMC_TRANSMIT_INTERRUPT"]
-pub type R = crate::R<u32, super::MMC_TRANSMIT_INTERRUPT>;
-#[doc = "Reader of field `TXGBOCTIS`"]
-pub type TXGBOCTIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXGBFRMIS`"]
-pub type TXGBFRMIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXBCGFIS`"]
-pub type TXBCGFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXMCGFIS`"]
-pub type TXMCGFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TX64OCTGBFIS`"]
-pub type TX64OCTGBFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TX65T127OCTGBFIS`"]
-pub type TX65T127OCTGBFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TX128T255OCTGBFIS`"]
-pub type TX128T255OCTGBFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TX256T511OCTGBFIS`"]
-pub type TX256T511OCTGBFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TX512T1023OCTGBFIS`"]
-pub type TX512T1023OCTGBFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TX1024TMAXOCTGBFIS`"]
-pub type TX1024TMAXOCTGBFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXUCGBFIS`"]
-pub type TXUCGBFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXMCGBFIS`"]
-pub type TXMCGBFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXBCGBFIS`"]
-pub type TXBCGBFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXUFLOWERFIS`"]
-pub type TXUFLOWERFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXSCOLGFIS`"]
-pub type TXSCOLGFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXMCOLGFIS`"]
-pub type TXMCOLGFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXDEFFIS`"]
-pub type TXDEFFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXLATCOLFIS`"]
-pub type TXLATCOLFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXEXCOLFIS`"]
-pub type TXEXCOLFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXCARERFIS`"]
-pub type TXCARERFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXGOCTIS`"]
-pub type TXGOCTIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXGFRMIS`"]
-pub type TXGFRMIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXEXDEFFIS`"]
-pub type TXEXDEFFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXPAUSFIS`"]
-pub type TXPAUSFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXVLANGFIS`"]
-pub type TXVLANGFIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXOSIZEGFIS`"]
-pub type TXOSIZEGFIS_R = crate::R<bool, bool>;
+#[doc = "Register `MMC_TRANSMIT_INTERRUPT` reader"]
+pub struct R(crate::R<MMC_TRANSMIT_INTERRUPT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MMC_TRANSMIT_INTERRUPT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<MMC_TRANSMIT_INTERRUPT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MMC_TRANSMIT_INTERRUPT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `TXGBOCTIS` reader - MMC Transmit Good Bad Octet Counter Interrupt Status"]
+pub struct TXGBOCTIS_R(crate::FieldReader<bool, bool>);
+impl TXGBOCTIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXGBOCTIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXGBOCTIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXGBFRMIS` reader - MMC Transmit Good Bad Frame Counter Interrupt Status"]
+pub struct TXGBFRMIS_R(crate::FieldReader<bool, bool>);
+impl TXGBFRMIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXGBFRMIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXGBFRMIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXBCGFIS` reader - MMC Transmit Broadcast Good Frame Counter Interrupt Status"]
+pub struct TXBCGFIS_R(crate::FieldReader<bool, bool>);
+impl TXBCGFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXBCGFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXBCGFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXMCGFIS` reader - MMC Transmit Multicast Good Frame Counter Interrupt Status"]
+pub struct TXMCGFIS_R(crate::FieldReader<bool, bool>);
+impl TXMCGFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXMCGFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXMCGFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX64OCTGBFIS` reader - MMC Transmit 64 Octet Good Bad Frame Counter Interrupt Status."]
+pub struct TX64OCTGBFIS_R(crate::FieldReader<bool, bool>);
+impl TX64OCTGBFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TX64OCTGBFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TX64OCTGBFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX65T127OCTGBFIS` reader - MMC Transmit 65 to 127 Octet Good Bad Frame Counter Interrupt Status"]
+pub struct TX65T127OCTGBFIS_R(crate::FieldReader<bool, bool>);
+impl TX65T127OCTGBFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TX65T127OCTGBFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TX65T127OCTGBFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX128T255OCTGBFIS` reader - MMC Transmit 128 to 255 Octet Good Bad Frame Counter Interrupt Status"]
+pub struct TX128T255OCTGBFIS_R(crate::FieldReader<bool, bool>);
+impl TX128T255OCTGBFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TX128T255OCTGBFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TX128T255OCTGBFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX256T511OCTGBFIS` reader - MMC Transmit 256 to 511 Octet Good Bad Frame Counter Interrupt Status"]
+pub struct TX256T511OCTGBFIS_R(crate::FieldReader<bool, bool>);
+impl TX256T511OCTGBFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TX256T511OCTGBFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TX256T511OCTGBFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX512T1023OCTGBFIS` reader - MMC Transmit 512 to 1023 Octet Good Bad Frame Counter Interrupt Status"]
+pub struct TX512T1023OCTGBFIS_R(crate::FieldReader<bool, bool>);
+impl TX512T1023OCTGBFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TX512T1023OCTGBFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TX512T1023OCTGBFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX1024TMAXOCTGBFIS` reader - MMC Transmit 1024 to Maximum Octet Good Bad Frame Counter Interrupt Status"]
+pub struct TX1024TMAXOCTGBFIS_R(crate::FieldReader<bool, bool>);
+impl TX1024TMAXOCTGBFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TX1024TMAXOCTGBFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TX1024TMAXOCTGBFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXUCGBFIS` reader - MMC Transmit Unicast Good Bad Frame Counter Interrupt Status"]
+pub struct TXUCGBFIS_R(crate::FieldReader<bool, bool>);
+impl TXUCGBFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXUCGBFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXUCGBFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXMCGBFIS` reader - MMC Transmit Multicast Good Bad Frame Counter Interrupt Status"]
+pub struct TXMCGBFIS_R(crate::FieldReader<bool, bool>);
+impl TXMCGBFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXMCGBFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXMCGBFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXBCGBFIS` reader - MMC Transmit Broadcast Good Bad Frame Counter Interrupt Status"]
+pub struct TXBCGBFIS_R(crate::FieldReader<bool, bool>);
+impl TXBCGBFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXBCGBFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXBCGBFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXUFLOWERFIS` reader - MMC Transmit Underflow Error Frame Counter Interrupt Status"]
+pub struct TXUFLOWERFIS_R(crate::FieldReader<bool, bool>);
+impl TXUFLOWERFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXUFLOWERFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXUFLOWERFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXSCOLGFIS` reader - MMC Transmit Single Collision Good Frame Counter Interrupt Status"]
+pub struct TXSCOLGFIS_R(crate::FieldReader<bool, bool>);
+impl TXSCOLGFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXSCOLGFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXSCOLGFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXMCOLGFIS` reader - MMC Transmit Multiple Collision Good Frame Counter Interrupt Status"]
+pub struct TXMCOLGFIS_R(crate::FieldReader<bool, bool>);
+impl TXMCOLGFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXMCOLGFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXMCOLGFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXDEFFIS` reader - MMC Transmit Deferred Frame Counter Interrupt Status"]
+pub struct TXDEFFIS_R(crate::FieldReader<bool, bool>);
+impl TXDEFFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXDEFFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXDEFFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXLATCOLFIS` reader - MMC Transmit Late Collision Frame Counter Interrupt Status"]
+pub struct TXLATCOLFIS_R(crate::FieldReader<bool, bool>);
+impl TXLATCOLFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXLATCOLFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXLATCOLFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXEXCOLFIS` reader - MMC Transmit Excessive Collision Frame Counter Interrupt Status"]
+pub struct TXEXCOLFIS_R(crate::FieldReader<bool, bool>);
+impl TXEXCOLFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXEXCOLFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXEXCOLFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXCARERFIS` reader - MMC Transmit Carrier Error Frame Counter Interrupt Status"]
+pub struct TXCARERFIS_R(crate::FieldReader<bool, bool>);
+impl TXCARERFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXCARERFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXCARERFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXGOCTIS` reader - MMC Transmit Good Octet Counter Interrupt Status"]
+pub struct TXGOCTIS_R(crate::FieldReader<bool, bool>);
+impl TXGOCTIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXGOCTIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXGOCTIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXGFRMIS` reader - MMC Transmit Good Frame Counter Interrupt Status"]
+pub struct TXGFRMIS_R(crate::FieldReader<bool, bool>);
+impl TXGFRMIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXGFRMIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXGFRMIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXEXDEFFIS` reader - MMC Transmit Excessive Deferral Frame Counter Interrupt Status"]
+pub struct TXEXDEFFIS_R(crate::FieldReader<bool, bool>);
+impl TXEXDEFFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXEXDEFFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXEXDEFFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXPAUSFIS` reader - MMC Transmit Pause Frame Counter Interrupt Status"]
+pub struct TXPAUSFIS_R(crate::FieldReader<bool, bool>);
+impl TXPAUSFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXPAUSFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXPAUSFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXVLANGFIS` reader - MMC Transmit VLAN Good Frame Counter Interrupt Status"]
+pub struct TXVLANGFIS_R(crate::FieldReader<bool, bool>);
+impl TXVLANGFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXVLANGFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXVLANGFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXOSIZEGFIS` reader - MMC Transmit Oversize Good Frame Counter Interrupt Status"]
+pub struct TXOSIZEGFIS_R(crate::FieldReader<bool, bool>);
+impl TXOSIZEGFIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXOSIZEGFIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXOSIZEGFIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - MMC Transmit Good Bad Octet Counter Interrupt Status"]
     #[inline(always)]
@@ -182,5 +507,21 @@ impl R {
     #[inline(always)]
     pub fn txosizegfis(&self) -> TXOSIZEGFIS_R {
         TXOSIZEGFIS_R::new(((self.bits >> 25) & 0x01) != 0)
+    }
+}
+#[doc = "MMC Transmit Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mmc_transmit_interrupt](index.html) module"]
+pub struct MMC_TRANSMIT_INTERRUPT_SPEC;
+impl crate::RegisterSpec for MMC_TRANSMIT_INTERRUPT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [mmc_transmit_interrupt::R](R) reader structure"]
+impl crate::Readable for MMC_TRANSMIT_INTERRUPT_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets MMC_TRANSMIT_INTERRUPT to value 0"]
+impl crate::Resettable for MMC_TRANSMIT_INTERRUPT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,5 +1,18 @@
-#[doc = "Reader of register WD_STAT_PDATA"]
-pub type R = crate::R<u16, super::WD_STAT_PDATA>;
+#[doc = "Register `WD_STAT_PDATA` reader"]
+pub struct R(crate::R<WD_STAT_PDATA_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<WD_STAT_PDATA_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<WD_STAT_PDATA_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<WD_STAT_PDATA_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Watchdog Status of Process Data\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WD_STAT_PD_A {
@@ -14,9 +27,12 @@ impl From<WD_STAT_PD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `WD_STAT_PD`"]
-pub type WD_STAT_PD_R = crate::R<bool, WD_STAT_PD_A>;
+#[doc = "Field `WD_STAT_PD` reader - Watchdog Status of Process Data"]
+pub struct WD_STAT_PD_R(crate::FieldReader<bool, WD_STAT_PD_A>);
 impl WD_STAT_PD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        WD_STAT_PD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WD_STAT_PD_A {
@@ -28,12 +44,19 @@ impl WD_STAT_PD_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WD_STAT_PD_A::VALUE1
+        **self == WD_STAT_PD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WD_STAT_PD_A::VALUE2
+        **self == WD_STAT_PD_A::VALUE2
+    }
+}
+impl core::ops::Deref for WD_STAT_PD_R {
+    type Target = crate::FieldReader<bool, WD_STAT_PD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -41,5 +64,21 @@ impl R {
     #[inline(always)]
     pub fn wd_stat_pd(&self) -> WD_STAT_PD_R {
         WD_STAT_PD_R::new((self.bits & 0x01) != 0)
+    }
+}
+#[doc = "Watchdog Status Process Data\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wd_stat_pdata](index.html) module"]
+pub struct WD_STAT_PDATA_SPEC;
+impl crate::RegisterSpec for WD_STAT_PDATA_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [wd_stat_pdata::R](R) reader structure"]
+impl crate::Readable for WD_STAT_PDATA_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets WD_STAT_PDATA to value 0"]
+impl crate::Resettable for WD_STAT_PDATA_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

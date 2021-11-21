@@ -1,11 +1,22 @@
-#[doc = "Writer for register PSCR"]
-pub type W = crate::W<u32, super::PSCR>;
-#[doc = "Register PSCR `reset()`'s with value 0"]
-impl crate::ResetValue for super::PSCR {
-    type Type = u32;
+#[doc = "Register `PSCR` writer"]
+pub struct W(crate::W<PSCR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PSCR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PSCR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PSCR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Clear Status Flag 0 in PSR\n\nValue on reset: 0"]
@@ -22,7 +33,7 @@ impl From<CST0_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CST0`"]
+#[doc = "Field `CST0` writer - Clear Status Flag 0 in PSR"]
 pub struct CST0_W<'a> {
     w: &'a mut W,
 }
@@ -30,9 +41,7 @@ impl<'a> CST0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CST0_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -57,7 +66,7 @@ impl<'a> CST0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -75,7 +84,7 @@ impl From<CST1_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CST1`"]
+#[doc = "Field `CST1` writer - Clear Status Flag 1 in PSR"]
 pub struct CST1_W<'a> {
     w: &'a mut W,
 }
@@ -83,9 +92,7 @@ impl<'a> CST1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CST1_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -110,7 +117,7 @@ impl<'a> CST1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -128,7 +135,7 @@ impl From<CST2_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CST2`"]
+#[doc = "Field `CST2` writer - Clear Status Flag 2 in PSR"]
 pub struct CST2_W<'a> {
     w: &'a mut W,
 }
@@ -136,9 +143,7 @@ impl<'a> CST2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CST2_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -163,7 +168,7 @@ impl<'a> CST2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -181,7 +186,7 @@ impl From<CST3_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CST3`"]
+#[doc = "Field `CST3` writer - Clear Status Flag 3 in PSR"]
 pub struct CST3_W<'a> {
     w: &'a mut W,
 }
@@ -189,9 +194,7 @@ impl<'a> CST3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CST3_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -216,7 +219,7 @@ impl<'a> CST3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -234,7 +237,7 @@ impl From<CST4_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CST4`"]
+#[doc = "Field `CST4` writer - Clear Status Flag 4 in PSR"]
 pub struct CST4_W<'a> {
     w: &'a mut W,
 }
@@ -242,9 +245,7 @@ impl<'a> CST4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CST4_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -269,7 +270,7 @@ impl<'a> CST4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -287,7 +288,7 @@ impl From<CST5_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CST5`"]
+#[doc = "Field `CST5` writer - Clear Status Flag 5 in PSR"]
 pub struct CST5_W<'a> {
     w: &'a mut W,
 }
@@ -295,9 +296,7 @@ impl<'a> CST5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CST5_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -322,7 +321,7 @@ impl<'a> CST5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -340,7 +339,7 @@ impl From<CST6_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CST6`"]
+#[doc = "Field `CST6` writer - Clear Status Flag 6 in PSR"]
 pub struct CST6_W<'a> {
     w: &'a mut W,
 }
@@ -348,9 +347,7 @@ impl<'a> CST6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CST6_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -375,7 +372,7 @@ impl<'a> CST6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -393,7 +390,7 @@ impl From<CST7_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CST7`"]
+#[doc = "Field `CST7` writer - Clear Status Flag 7 in PSR"]
 pub struct CST7_W<'a> {
     w: &'a mut W,
 }
@@ -401,9 +398,7 @@ impl<'a> CST7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CST7_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -428,7 +423,7 @@ impl<'a> CST7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -446,7 +441,7 @@ impl From<CST8_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CST8`"]
+#[doc = "Field `CST8` writer - Clear Status Flag 8 in PSR"]
 pub struct CST8_W<'a> {
     w: &'a mut W,
 }
@@ -454,9 +449,7 @@ impl<'a> CST8_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CST8_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -481,7 +474,7 @@ impl<'a> CST8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -499,7 +492,7 @@ impl From<CST9_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CST9`"]
+#[doc = "Field `CST9` writer - Clear Status Flag 9 in PSR"]
 pub struct CST9_W<'a> {
     w: &'a mut W,
 }
@@ -507,9 +500,7 @@ impl<'a> CST9_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CST9_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -534,7 +525,7 @@ impl<'a> CST9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -552,7 +543,7 @@ impl From<CRSIF_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CRSIF`"]
+#[doc = "Field `CRSIF` writer - Clear Receiver Start Indication Flag"]
 pub struct CRSIF_W<'a> {
     w: &'a mut W,
 }
@@ -560,9 +551,7 @@ impl<'a> CRSIF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CRSIF_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -587,7 +576,7 @@ impl<'a> CRSIF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -605,7 +594,7 @@ impl From<CDLIF_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CDLIF`"]
+#[doc = "Field `CDLIF` writer - Clear Data Lost Indication Flag"]
 pub struct CDLIF_W<'a> {
     w: &'a mut W,
 }
@@ -613,9 +602,7 @@ impl<'a> CDLIF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CDLIF_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -640,7 +627,7 @@ impl<'a> CDLIF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -658,7 +645,7 @@ impl From<CTSIF_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CTSIF`"]
+#[doc = "Field `CTSIF` writer - Clear Transmit Shift Indication Flag"]
 pub struct CTSIF_W<'a> {
     w: &'a mut W,
 }
@@ -666,9 +653,7 @@ impl<'a> CTSIF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CTSIF_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -693,7 +678,7 @@ impl<'a> CTSIF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -711,7 +696,7 @@ impl From<CTBIF_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CTBIF`"]
+#[doc = "Field `CTBIF` writer - Clear Transmit Buffer Indication Flag"]
 pub struct CTBIF_W<'a> {
     w: &'a mut W,
 }
@@ -719,9 +704,7 @@ impl<'a> CTBIF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CTBIF_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -746,7 +729,7 @@ impl<'a> CTBIF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -764,7 +747,7 @@ impl From<CRIF_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CRIF`"]
+#[doc = "Field `CRIF` writer - Clear Receive Indication Flag"]
 pub struct CRIF_W<'a> {
     w: &'a mut W,
 }
@@ -772,9 +755,7 @@ impl<'a> CRIF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CRIF_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -799,7 +780,7 @@ impl<'a> CRIF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -817,7 +798,7 @@ impl From<CAIF_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CAIF`"]
+#[doc = "Field `CAIF` writer - Clear Alternative Receive Indication Flag"]
 pub struct CAIF_W<'a> {
     w: &'a mut W,
 }
@@ -825,9 +806,7 @@ impl<'a> CAIF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CAIF_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -852,7 +831,7 @@ impl<'a> CAIF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -870,7 +849,7 @@ impl From<CBRGIF_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CBRGIF`"]
+#[doc = "Field `CBRGIF` writer - Clear Baud Rate Generator Indication Flag"]
 pub struct CBRGIF_W<'a> {
     w: &'a mut W,
 }
@@ -878,9 +857,7 @@ impl<'a> CBRGIF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CBRGIF_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -905,7 +882,7 @@ impl<'a> CBRGIF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -994,5 +971,27 @@ impl W {
     #[inline(always)]
     pub fn cbrgif(&mut self) -> CBRGIF_W {
         CBRGIF_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Protocol Status Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pscr](index.html) module"]
+pub struct PSCR_SPEC;
+impl crate::RegisterSpec for PSCR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [pscr::W](W) writer structure"]
+impl crate::Writable for PSCR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PSCR to value 0"]
+impl crate::Resettable for PSCR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

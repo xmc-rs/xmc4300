@@ -1,11 +1,22 @@
-#[doc = "Writer for register CLEARBLOCK"]
-pub type W = crate::W<u32, super::CLEARBLOCK>;
-#[doc = "Register CLEARBLOCK `reset()`'s with value 0"]
-impl crate::ResetValue for super::CLEARBLOCK {
-    type Type = u32;
+#[doc = "Register `CLEARBLOCK` writer"]
+pub struct W(crate::W<CLEARBLOCK_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CLEARBLOCK_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CLEARBLOCK_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CLEARBLOCK_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Clear Interrupt Status and Raw Status for channel 0\n\nValue on reset: 0"]
@@ -22,7 +33,7 @@ impl From<CH0_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CH0`"]
+#[doc = "Field `CH0` writer - Clear Interrupt Status and Raw Status for channel 0"]
 pub struct CH0_W<'a> {
     w: &'a mut W,
 }
@@ -30,9 +41,7 @@ impl<'a> CH0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH0_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -57,7 +66,7 @@ impl<'a> CH0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -75,7 +84,7 @@ impl From<CH1_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CH1`"]
+#[doc = "Field `CH1` writer - Clear Interrupt Status and Raw Status for channel 1"]
 pub struct CH1_W<'a> {
     w: &'a mut W,
 }
@@ -83,9 +92,7 @@ impl<'a> CH1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH1_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -110,7 +117,7 @@ impl<'a> CH1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -128,7 +135,7 @@ impl From<CH2_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CH2`"]
+#[doc = "Field `CH2` writer - Clear Interrupt Status and Raw Status for channel 2"]
 pub struct CH2_W<'a> {
     w: &'a mut W,
 }
@@ -136,9 +143,7 @@ impl<'a> CH2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH2_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -163,7 +168,7 @@ impl<'a> CH2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -181,7 +186,7 @@ impl From<CH3_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CH3`"]
+#[doc = "Field `CH3` writer - Clear Interrupt Status and Raw Status for channel 3"]
 pub struct CH3_W<'a> {
     w: &'a mut W,
 }
@@ -189,9 +194,7 @@ impl<'a> CH3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH3_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -216,7 +219,7 @@ impl<'a> CH3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -234,7 +237,7 @@ impl From<CH4_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CH4`"]
+#[doc = "Field `CH4` writer - Clear Interrupt Status and Raw Status for channel 4"]
 pub struct CH4_W<'a> {
     w: &'a mut W,
 }
@@ -242,9 +245,7 @@ impl<'a> CH4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH4_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -269,7 +270,7 @@ impl<'a> CH4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -287,7 +288,7 @@ impl From<CH5_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CH5`"]
+#[doc = "Field `CH5` writer - Clear Interrupt Status and Raw Status for channel 5"]
 pub struct CH5_W<'a> {
     w: &'a mut W,
 }
@@ -295,9 +296,7 @@ impl<'a> CH5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH5_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -322,7 +321,7 @@ impl<'a> CH5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -340,7 +339,7 @@ impl From<CH6_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CH6`"]
+#[doc = "Field `CH6` writer - Clear Interrupt Status and Raw Status for channel 6"]
 pub struct CH6_W<'a> {
     w: &'a mut W,
 }
@@ -348,9 +347,7 @@ impl<'a> CH6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH6_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -375,7 +372,7 @@ impl<'a> CH6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -393,7 +390,7 @@ impl From<CH7_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CH7`"]
+#[doc = "Field `CH7` writer - Clear Interrupt Status and Raw Status for channel 7"]
 pub struct CH7_W<'a> {
     w: &'a mut W,
 }
@@ -401,9 +398,7 @@ impl<'a> CH7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH7_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -428,7 +423,7 @@ impl<'a> CH7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -472,5 +467,27 @@ impl W {
     #[inline(always)]
     pub fn ch7(&mut self) -> CH7_W {
         CH7_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "IntBlock Status\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clearblock](index.html) module"]
+pub struct CLEARBLOCK_SPEC;
+impl crate::RegisterSpec for CLEARBLOCK_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [clearblock::W](W) writer structure"]
+impl crate::Writable for CLEARBLOCK_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CLEARBLOCK to value 0"]
+impl crate::Resettable for CLEARBLOCK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

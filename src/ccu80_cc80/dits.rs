@@ -1,18 +1,54 @@
-#[doc = "Reader of register DITS"]
-pub type R = crate::R<u32, super::DITS>;
-#[doc = "Writer for register DITS"]
-pub type W = crate::W<u32, super::DITS>;
-#[doc = "Register DITS `reset()`'s with value 0"]
-impl crate::ResetValue for super::DITS {
-    type Type = u32;
+#[doc = "Register `DITS` reader"]
+pub struct R(crate::R<DITS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DITS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DCVS`"]
-pub type DCVS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DCVS`"]
+impl From<crate::R<DITS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DITS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DITS` writer"]
+pub struct W(crate::W<DITS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DITS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DITS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DITS_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DCVS` reader - Dither Shadow Compare Value"]
+pub struct DCVS_R(crate::FieldReader<u8, u8>);
+impl DCVS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DCVS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DCVS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DCVS` writer - Dither Shadow Compare Value"]
 pub struct DCVS_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +56,7 @@ impl<'a> DCVS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
         self.w
     }
 }
@@ -36,5 +72,31 @@ impl W {
     #[inline(always)]
     pub fn dcvs(&mut self) -> DCVS_W {
         DCVS_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Dither Shadow Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dits](index.html) module"]
+pub struct DITS_SPEC;
+impl crate::RegisterSpec for DITS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dits::R](R) reader structure"]
+impl crate::Readable for DITS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dits::W](W) writer structure"]
+impl crate::Writable for DITS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DITS to value 0"]
+impl crate::Resettable for DITS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

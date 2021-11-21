@@ -1,13 +1,37 @@
-#[doc = "Reader of register QMR0"]
-pub type R = crate::R<u32, super::QMR0>;
-#[doc = "Writer for register QMR0"]
-pub type W = crate::W<u32, super::QMR0>;
-#[doc = "Register QMR0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::QMR0 {
-    type Type = u32;
+#[doc = "Register `QMR0` reader"]
+pub struct R(crate::R<QMR0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<QMR0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<QMR0_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<QMR0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `QMR0` writer"]
+pub struct W(crate::W<QMR0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<QMR0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<QMR0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<QMR0_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Enable Gate\n\nValue on reset: 0"]
@@ -29,9 +53,12 @@ impl From<ENGT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ENGT`"]
-pub type ENGT_R = crate::R<u8, ENGT_A>;
+#[doc = "Field `ENGT` reader - Enable Gate"]
+pub struct ENGT_R(crate::FieldReader<u8, ENGT_A>);
 impl ENGT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ENGT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENGT_A {
@@ -46,25 +73,32 @@ impl ENGT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ENGT_A::VALUE1
+        **self == ENGT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ENGT_A::VALUE2
+        **self == ENGT_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == ENGT_A::VALUE3
+        **self == ENGT_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == ENGT_A::VALUE4
+        **self == ENGT_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `ENGT`"]
+impl core::ops::Deref for ENGT_R {
+    type Target = crate::FieldReader<u8, ENGT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ENGT` writer - Enable Gate"]
 pub struct ENGT_W<'a> {
     w: &'a mut W,
 }
@@ -72,9 +106,7 @@ impl<'a> ENGT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ENGT_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "No conversion requests are issued"]
     #[inline(always)]
@@ -99,7 +131,7 @@ impl<'a> ENGT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
@@ -117,9 +149,12 @@ impl From<ENTR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ENTR`"]
-pub type ENTR_R = crate::R<bool, ENTR_A>;
+#[doc = "Field `ENTR` reader - Enable External Trigger"]
+pub struct ENTR_R(crate::FieldReader<bool, ENTR_A>);
 impl ENTR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ENTR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENTR_A {
@@ -131,15 +166,22 @@ impl ENTR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ENTR_A::VALUE1
+        **self == ENTR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ENTR_A::VALUE2
+        **self == ENTR_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `ENTR`"]
+impl core::ops::Deref for ENTR_R {
+    type Target = crate::FieldReader<bool, ENTR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ENTR` writer - Enable External Trigger"]
 pub struct ENTR_W<'a> {
     w: &'a mut W,
 }
@@ -147,9 +189,7 @@ impl<'a> ENTR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ENTR_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "External trigger disabled"]
     #[inline(always)]
@@ -174,7 +214,7 @@ impl<'a> ENTR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -192,7 +232,7 @@ impl From<CLRV_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLRV`"]
+#[doc = "Field `CLRV` writer - Clear Valid Bit"]
 pub struct CLRV_W<'a> {
     w: &'a mut W,
 }
@@ -200,9 +240,7 @@ impl<'a> CLRV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLRV_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -227,7 +265,7 @@ impl<'a> CLRV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -245,7 +283,7 @@ impl From<TREV_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `TREV`"]
+#[doc = "Field `TREV` writer - Trigger Event"]
 pub struct TREV_W<'a> {
     w: &'a mut W,
 }
@@ -253,9 +291,7 @@ impl<'a> TREV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TREV_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -280,7 +316,7 @@ impl<'a> TREV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -298,7 +334,7 @@ impl From<FLUSH_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `FLUSH`"]
+#[doc = "Field `FLUSH` writer - Flush Queue"]
 pub struct FLUSH_W<'a> {
     w: &'a mut W,
 }
@@ -306,9 +342,7 @@ impl<'a> FLUSH_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FLUSH_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -333,7 +367,7 @@ impl<'a> FLUSH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -351,7 +385,7 @@ impl From<CEV_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CEV`"]
+#[doc = "Field `CEV` writer - Clear Event Flag"]
 pub struct CEV_W<'a> {
     w: &'a mut W,
 }
@@ -359,9 +393,7 @@ impl<'a> CEV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEV_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action"]
     #[inline(always)]
@@ -386,7 +418,7 @@ impl<'a> CEV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -404,9 +436,12 @@ impl From<RPTDIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RPTDIS`"]
-pub type RPTDIS_R = crate::R<bool, RPTDIS_A>;
+#[doc = "Field `RPTDIS` reader - Repeat Disable"]
+pub struct RPTDIS_R(crate::FieldReader<bool, RPTDIS_A>);
 impl RPTDIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RPTDIS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RPTDIS_A {
@@ -418,15 +453,22 @@ impl RPTDIS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RPTDIS_A::VALUE1
+        **self == RPTDIS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RPTDIS_A::VALUE2
+        **self == RPTDIS_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `RPTDIS`"]
+impl core::ops::Deref for RPTDIS_R {
+    type Target = crate::FieldReader<bool, RPTDIS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RPTDIS` writer - Repeat Disable"]
 pub struct RPTDIS_W<'a> {
     w: &'a mut W,
 }
@@ -434,9 +476,7 @@ impl<'a> RPTDIS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RPTDIS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "A cancelled conversion is repeated"]
     #[inline(always)]
@@ -461,7 +501,7 @@ impl<'a> RPTDIS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -517,5 +557,31 @@ impl W {
     #[inline(always)]
     pub fn rptdis(&mut self) -> RPTDIS_W {
         RPTDIS_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Queue 0 Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qmr0](index.html) module"]
+pub struct QMR0_SPEC;
+impl crate::RegisterSpec for QMR0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [qmr0::R](R) reader structure"]
+impl crate::Readable for QMR0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [qmr0::W](W) writer structure"]
+impl crate::Writable for QMR0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets QMR0 to value 0"]
+impl crate::Resettable for QMR0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

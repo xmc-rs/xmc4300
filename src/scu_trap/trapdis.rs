@@ -1,13 +1,37 @@
-#[doc = "Reader of register TRAPDIS"]
-pub type R = crate::R<u32, super::TRAPDIS>;
-#[doc = "Writer for register TRAPDIS"]
-pub type W = crate::W<u32, super::TRAPDIS>;
-#[doc = "Register TRAPDIS `reset()`'s with value 0x0001_01fd"]
-impl crate::ResetValue for super::TRAPDIS {
-    type Type = u32;
+#[doc = "Register `TRAPDIS` reader"]
+pub struct R(crate::R<TRAPDIS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TRAPDIS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0001_01fd
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<TRAPDIS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<TRAPDIS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `TRAPDIS` writer"]
+pub struct W(crate::W<TRAPDIS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TRAPDIS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TRAPDIS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TRAPDIS_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "OSC_HP Oscillator Watchdog Trap Disable\n\nValue on reset: 1"]
@@ -24,9 +48,12 @@ impl From<SOSCWDGT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SOSCWDGT`"]
-pub type SOSCWDGT_R = crate::R<bool, SOSCWDGT_A>;
+#[doc = "Field `SOSCWDGT` reader - OSC_HP Oscillator Watchdog Trap Disable"]
+pub struct SOSCWDGT_R(crate::FieldReader<bool, SOSCWDGT_A>);
 impl SOSCWDGT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SOSCWDGT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SOSCWDGT_A {
@@ -38,15 +65,22 @@ impl SOSCWDGT_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == SOSCWDGT_A::CONST_0
+        **self == SOSCWDGT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == SOSCWDGT_A::CONST_1
+        **self == SOSCWDGT_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `SOSCWDGT`"]
+impl core::ops::Deref for SOSCWDGT_R {
+    type Target = crate::FieldReader<bool, SOSCWDGT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SOSCWDGT` writer - OSC_HP Oscillator Watchdog Trap Disable"]
 pub struct SOSCWDGT_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> SOSCWDGT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SOSCWDGT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> SOSCWDGT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<SVCOLCKT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SVCOLCKT`"]
-pub type SVCOLCKT_R = crate::R<bool, SVCOLCKT_A>;
+#[doc = "Field `SVCOLCKT` reader - System VCO Lock Trap Disable"]
+pub struct SVCOLCKT_R(crate::FieldReader<bool, SVCOLCKT_A>);
 impl SVCOLCKT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SVCOLCKT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SVCOLCKT_A {
@@ -113,15 +148,22 @@ impl SVCOLCKT_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == SVCOLCKT_A::CONST_0
+        **self == SVCOLCKT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == SVCOLCKT_A::CONST_1
+        **self == SVCOLCKT_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `SVCOLCKT`"]
+impl core::ops::Deref for SVCOLCKT_R {
+    type Target = crate::FieldReader<bool, SVCOLCKT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SVCOLCKT` writer - System VCO Lock Trap Disable"]
 pub struct SVCOLCKT_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> SVCOLCKT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SVCOLCKT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> SVCOLCKT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<UVCOLCKT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UVCOLCKT`"]
-pub type UVCOLCKT_R = crate::R<bool, UVCOLCKT_A>;
+#[doc = "Field `UVCOLCKT` reader - USB VCO Lock Trap Disable"]
+pub struct UVCOLCKT_R(crate::FieldReader<bool, UVCOLCKT_A>);
 impl UVCOLCKT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UVCOLCKT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UVCOLCKT_A {
@@ -188,15 +231,22 @@ impl UVCOLCKT_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == UVCOLCKT_A::CONST_0
+        **self == UVCOLCKT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == UVCOLCKT_A::CONST_1
+        **self == UVCOLCKT_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `UVCOLCKT`"]
+impl core::ops::Deref for UVCOLCKT_R {
+    type Target = crate::FieldReader<bool, UVCOLCKT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UVCOLCKT` writer - USB VCO Lock Trap Disable"]
 pub struct UVCOLCKT_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> UVCOLCKT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: UVCOLCKT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> UVCOLCKT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<PET_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PET`"]
-pub type PET_R = crate::R<bool, PET_A>;
+#[doc = "Field `PET` reader - Parity Error Trap Disable"]
+pub struct PET_R(crate::FieldReader<bool, PET_A>);
 impl PET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PET_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PET_A {
@@ -263,15 +314,22 @@ impl PET_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PET_A::CONST_0
+        **self == PET_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PET_A::CONST_1
+        **self == PET_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PET`"]
+impl core::ops::Deref for PET_R {
+    type Target = crate::FieldReader<bool, PET_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PET` writer - Parity Error Trap Disable"]
 pub struct PET_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> PET_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PET_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> PET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -324,9 +380,12 @@ impl From<BRWNT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BRWNT`"]
-pub type BRWNT_R = crate::R<bool, BRWNT_A>;
+#[doc = "Field `BRWNT` reader - Brown Out Trap Disable"]
+pub struct BRWNT_R(crate::FieldReader<bool, BRWNT_A>);
 impl BRWNT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BRWNT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BRWNT_A {
@@ -338,15 +397,22 @@ impl BRWNT_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == BRWNT_A::CONST_0
+        **self == BRWNT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == BRWNT_A::CONST_1
+        **self == BRWNT_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `BRWNT`"]
+impl core::ops::Deref for BRWNT_R {
+    type Target = crate::FieldReader<bool, BRWNT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BRWNT` writer - Brown Out Trap Disable"]
 pub struct BRWNT_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +420,7 @@ impl<'a> BRWNT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BRWNT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -381,7 +445,7 @@ impl<'a> BRWNT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -399,9 +463,12 @@ impl From<ULPWDGT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ULPWDGT`"]
-pub type ULPWDGT_R = crate::R<bool, ULPWDGT_A>;
+#[doc = "Field `ULPWDGT` reader - OSC_ULP Oscillator Watchdog Trap Disable"]
+pub struct ULPWDGT_R(crate::FieldReader<bool, ULPWDGT_A>);
 impl ULPWDGT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ULPWDGT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ULPWDGT_A {
@@ -413,15 +480,22 @@ impl ULPWDGT_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ULPWDGT_A::CONST_0
+        **self == ULPWDGT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ULPWDGT_A::CONST_1
+        **self == ULPWDGT_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `ULPWDGT`"]
+impl core::ops::Deref for ULPWDGT_R {
+    type Target = crate::FieldReader<bool, ULPWDGT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ULPWDGT` writer - OSC_ULP Oscillator Watchdog Trap Disable"]
 pub struct ULPWDGT_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +503,7 @@ impl<'a> ULPWDGT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ULPWDGT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -456,7 +528,7 @@ impl<'a> ULPWDGT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -474,9 +546,12 @@ impl From<BWERR0T_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BWERR0T`"]
-pub type BWERR0T_R = crate::R<bool, BWERR0T_A>;
+#[doc = "Field `BWERR0T` reader - Peripheral Bridge 0 Trap Disable"]
+pub struct BWERR0T_R(crate::FieldReader<bool, BWERR0T_A>);
 impl BWERR0T_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BWERR0T_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BWERR0T_A {
@@ -488,15 +563,22 @@ impl BWERR0T_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == BWERR0T_A::CONST_0
+        **self == BWERR0T_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == BWERR0T_A::CONST_1
+        **self == BWERR0T_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `BWERR0T`"]
+impl core::ops::Deref for BWERR0T_R {
+    type Target = crate::FieldReader<bool, BWERR0T_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BWERR0T` writer - Peripheral Bridge 0 Trap Disable"]
 pub struct BWERR0T_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +586,7 @@ impl<'a> BWERR0T_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BWERR0T_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -531,7 +611,7 @@ impl<'a> BWERR0T_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -549,9 +629,12 @@ impl From<BWERR1T_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BWERR1T`"]
-pub type BWERR1T_R = crate::R<bool, BWERR1T_A>;
+#[doc = "Field `BWERR1T` reader - Peripheral Bridge 1 Trap Disable"]
+pub struct BWERR1T_R(crate::FieldReader<bool, BWERR1T_A>);
 impl BWERR1T_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BWERR1T_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BWERR1T_A {
@@ -563,15 +646,22 @@ impl BWERR1T_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == BWERR1T_A::CONST_0
+        **self == BWERR1T_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == BWERR1T_A::CONST_1
+        **self == BWERR1T_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `BWERR1T`"]
+impl core::ops::Deref for BWERR1T_R {
+    type Target = crate::FieldReader<bool, BWERR1T_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BWERR1T` writer - Peripheral Bridge 1 Trap Disable"]
 pub struct BWERR1T_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +669,7 @@ impl<'a> BWERR1T_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BWERR1T_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -606,7 +694,7 @@ impl<'a> BWERR1T_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -624,9 +712,12 @@ impl From<ECAT0RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ECAT0RST`"]
-pub type ECAT0RST_R = crate::R<bool, ECAT0RST_A>;
+#[doc = "Field `ECAT0RST` reader - EtherCat Reset 0 Trap Disable"]
+pub struct ECAT0RST_R(crate::FieldReader<bool, ECAT0RST_A>);
 impl ECAT0RST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECAT0RST_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ECAT0RST_A {
@@ -638,15 +729,22 @@ impl ECAT0RST_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ECAT0RST_A::CONST_0
+        **self == ECAT0RST_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ECAT0RST_A::CONST_1
+        **self == ECAT0RST_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `ECAT0RST`"]
+impl core::ops::Deref for ECAT0RST_R {
+    type Target = crate::FieldReader<bool, ECAT0RST_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECAT0RST` writer - EtherCat Reset 0 Trap Disable"]
 pub struct ECAT0RST_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +752,7 @@ impl<'a> ECAT0RST_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ECAT0RST_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -681,7 +777,7 @@ impl<'a> ECAT0RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -777,5 +873,31 @@ impl W {
     #[inline(always)]
     pub fn ecat0rst(&mut self) -> ECAT0RST_W {
         ECAT0RST_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Trap Disable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trapdis](index.html) module"]
+pub struct TRAPDIS_SPEC;
+impl crate::RegisterSpec for TRAPDIS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [trapdis::R](R) reader structure"]
+impl crate::Readable for TRAPDIS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [trapdis::W](W) writer structure"]
+impl crate::Writable for TRAPDIS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets TRAPDIS to value 0x0001_01fd"]
+impl crate::Resettable for TRAPDIS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0001_01fd
     }
 }

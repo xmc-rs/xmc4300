@@ -1,18 +1,54 @@
-#[doc = "Reader of register LINE1"]
-pub type R = crate::R<u32, super::LINE1>;
-#[doc = "Writer for register LINE1"]
-pub type W = crate::W<u32, super::LINE1>;
-#[doc = "Register LINE1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::LINE1 {
-    type Type = u32;
+#[doc = "Register `LINE1` reader"]
+pub struct R(crate::R<LINE1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LINE1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `LINE_4`"]
-pub type LINE_4_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `LINE_4`"]
+impl From<crate::R<LINE1_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<LINE1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `LINE1` writer"]
+pub struct W(crate::W<LINE1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LINE1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<LINE1_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<LINE1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `LINE_4` reader - Output on LINE\\[x\\]"]
+pub struct LINE_4_R(crate::FieldReader<u8, u8>);
+impl LINE_4_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LINE_4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LINE_4_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE_4` writer - Output on LINE\\[x\\]"]
 pub struct LINE_4_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> LINE_4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
-#[doc = "Reader of field `LINE_5`"]
-pub type LINE_5_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `LINE_5`"]
+#[doc = "Field `LINE_5` reader - Output on LINE\\[x\\]"]
+pub struct LINE_5_R(crate::FieldReader<u8, u8>);
+impl LINE_5_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LINE_5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LINE_5_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE_5` writer - Output on LINE\\[x\\]"]
 pub struct LINE_5_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +82,25 @@ impl<'a> LINE_5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
+        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `LINE_6`"]
-pub type LINE_6_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `LINE_6`"]
+#[doc = "Field `LINE_6` reader - Output on LINE\\[x\\]"]
+pub struct LINE_6_R(crate::FieldReader<u8, u8>);
+impl LINE_6_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LINE_6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LINE_6_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE_6` writer - Output on LINE\\[x\\]"]
 pub struct LINE_6_W<'a> {
     w: &'a mut W,
 }
@@ -48,13 +108,25 @@ impl<'a> LINE_6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
+        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `LINE_A`"]
-pub type LINE_A_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `LINE_A`"]
+#[doc = "Field `LINE_A` reader - Output on LINE\\[x\\]"]
+pub struct LINE_A_R(crate::FieldReader<u8, u8>);
+impl LINE_A_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LINE_A_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LINE_A_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE_A` writer - Output on LINE\\[x\\]"]
 pub struct LINE_A_W<'a> {
     w: &'a mut W,
 }
@@ -62,7 +134,7 @@ impl<'a> LINE_A_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | (((value as u32) & 0xff) << 24);
+        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
         self.w
     }
 }
@@ -108,5 +180,31 @@ impl W {
     #[inline(always)]
     pub fn line_a(&mut self) -> LINE_A_W {
         LINE_A_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Line Pattern Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [line1](index.html) module"]
+pub struct LINE1_SPEC;
+impl crate::RegisterSpec for LINE1_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [line1::R](R) reader structure"]
+impl crate::Readable for LINE1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [line1::W](W) writer structure"]
+impl crate::Writable for LINE1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets LINE1 to value 0"]
+impl crate::Resettable for LINE1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

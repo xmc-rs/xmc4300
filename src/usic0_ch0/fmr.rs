@@ -1,11 +1,22 @@
-#[doc = "Writer for register FMR"]
-pub type W = crate::W<u32, super::FMR>;
-#[doc = "Register FMR `reset()`'s with value 0"]
-impl crate::ResetValue for super::FMR {
-    type Type = u32;
+#[doc = "Register `FMR` writer"]
+pub struct W(crate::W<FMR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FMR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<FMR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<FMR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Modify Transmit Data Valid\n\nValue on reset: 0"]
@@ -25,7 +36,7 @@ impl From<MTDV_AW> for u8 {
         variant as _
     }
 }
-#[doc = "Write proxy for field `MTDV`"]
+#[doc = "Field `MTDV` writer - Modify Transmit Data Valid"]
 pub struct MTDV_W<'a> {
     w: &'a mut W,
 }
@@ -53,7 +64,7 @@ impl<'a> MTDV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
@@ -71,7 +82,7 @@ impl From<ATVC_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `ATVC`"]
+#[doc = "Field `ATVC` writer - Activate Bit TVC"]
 pub struct ATVC_W<'a> {
     w: &'a mut W,
 }
@@ -79,9 +90,7 @@ impl<'a> ATVC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ATVC_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action."]
     #[inline(always)]
@@ -106,7 +115,7 @@ impl<'a> ATVC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -124,7 +133,7 @@ impl From<CRDV0_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CRDV0`"]
+#[doc = "Field `CRDV0` writer - Clear Bits RDV for RBUF0"]
 pub struct CRDV0_W<'a> {
     w: &'a mut W,
 }
@@ -132,9 +141,7 @@ impl<'a> CRDV0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CRDV0_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action."]
     #[inline(always)]
@@ -159,7 +166,7 @@ impl<'a> CRDV0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -177,7 +184,7 @@ impl From<CRDV1_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CRDV1`"]
+#[doc = "Field `CRDV1` writer - Clear Bit RDV for RBUF1"]
 pub struct CRDV1_W<'a> {
     w: &'a mut W,
 }
@@ -185,9 +192,7 @@ impl<'a> CRDV1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CRDV1_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action."]
     #[inline(always)]
@@ -212,7 +217,7 @@ impl<'a> CRDV1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -230,7 +235,7 @@ impl From<SIO0_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `SIO0`"]
+#[doc = "Field `SIO0` writer - Set Interrupt Output SRx"]
 pub struct SIO0_W<'a> {
     w: &'a mut W,
 }
@@ -238,9 +243,7 @@ impl<'a> SIO0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SIO0_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action."]
     #[inline(always)]
@@ -265,7 +268,7 @@ impl<'a> SIO0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -283,7 +286,7 @@ impl From<SIO1_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `SIO1`"]
+#[doc = "Field `SIO1` writer - Set Interrupt Output SRx"]
 pub struct SIO1_W<'a> {
     w: &'a mut W,
 }
@@ -291,9 +294,7 @@ impl<'a> SIO1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SIO1_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action."]
     #[inline(always)]
@@ -318,7 +319,7 @@ impl<'a> SIO1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
@@ -336,7 +337,7 @@ impl From<SIO2_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `SIO2`"]
+#[doc = "Field `SIO2` writer - Set Interrupt Output SRx"]
 pub struct SIO2_W<'a> {
     w: &'a mut W,
 }
@@ -344,9 +345,7 @@ impl<'a> SIO2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SIO2_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action."]
     #[inline(always)]
@@ -371,7 +370,7 @@ impl<'a> SIO2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
@@ -389,7 +388,7 @@ impl From<SIO3_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `SIO3`"]
+#[doc = "Field `SIO3` writer - Set Interrupt Output SRx"]
 pub struct SIO3_W<'a> {
     w: &'a mut W,
 }
@@ -397,9 +396,7 @@ impl<'a> SIO3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SIO3_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action."]
     #[inline(always)]
@@ -424,7 +421,7 @@ impl<'a> SIO3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -442,7 +439,7 @@ impl From<SIO4_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `SIO4`"]
+#[doc = "Field `SIO4` writer - Set Interrupt Output SRx"]
 pub struct SIO4_W<'a> {
     w: &'a mut W,
 }
@@ -450,9 +447,7 @@ impl<'a> SIO4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SIO4_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action."]
     #[inline(always)]
@@ -477,7 +472,7 @@ impl<'a> SIO4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
@@ -495,7 +490,7 @@ impl From<SIO5_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `SIO5`"]
+#[doc = "Field `SIO5` writer - Set Interrupt Output SRx"]
 pub struct SIO5_W<'a> {
     w: &'a mut W,
 }
@@ -503,9 +498,7 @@ impl<'a> SIO5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SIO5_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No action."]
     #[inline(always)]
@@ -530,7 +523,7 @@ impl<'a> SIO5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
         self.w
     }
 }
@@ -584,5 +577,27 @@ impl W {
     #[inline(always)]
     pub fn sio5(&mut self) -> SIO5_W {
         SIO5_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Flag Modification Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmr](index.html) module"]
+pub struct FMR_SPEC;
+impl crate::RegisterSpec for FMR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [fmr::W](W) writer structure"]
+impl crate::Writable for FMR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets FMR to value 0"]
+impl crate::Resettable for FMR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

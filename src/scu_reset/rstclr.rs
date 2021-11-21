@@ -1,11 +1,22 @@
-#[doc = "Writer for register RSTCLR"]
-pub type W = crate::W<u32, super::RSTCLR>;
-#[doc = "Register RSTCLR `reset()`'s with value 0"]
-impl crate::ResetValue for super::RSTCLR {
-    type Type = u32;
+#[doc = "Register `RSTCLR` writer"]
+pub struct W(crate::W<RSTCLR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RSTCLR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<RSTCLR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<RSTCLR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Clear Reset Status\n\nValue on reset: 0"]
@@ -22,7 +33,7 @@ impl From<RSCLR_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `RSCLR`"]
+#[doc = "Field `RSCLR` writer - Clear Reset Status"]
 pub struct RSCLR_W<'a> {
     w: &'a mut W,
 }
@@ -30,9 +41,7 @@ impl<'a> RSCLR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RSCLR_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -57,7 +66,7 @@ impl<'a> RSCLR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -75,7 +84,7 @@ impl From<HIBWK_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `HIBWK`"]
+#[doc = "Field `HIBWK` writer - Clear Hibernate Wake-up Reset Status"]
 pub struct HIBWK_W<'a> {
     w: &'a mut W,
 }
@@ -83,9 +92,7 @@ impl<'a> HIBWK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: HIBWK_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -110,7 +117,7 @@ impl<'a> HIBWK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -128,7 +135,7 @@ impl From<HIBRS_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `HIBRS`"]
+#[doc = "Field `HIBRS` writer - Clear Hibernate Reset"]
 pub struct HIBRS_W<'a> {
     w: &'a mut W,
 }
@@ -136,9 +143,7 @@ impl<'a> HIBRS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: HIBRS_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -163,7 +168,7 @@ impl<'a> HIBRS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -181,7 +186,7 @@ impl From<LCKEN_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `LCKEN`"]
+#[doc = "Field `LCKEN` writer - Enable Lockup Reset"]
 pub struct LCKEN_W<'a> {
     w: &'a mut W,
 }
@@ -189,9 +194,7 @@ impl<'a> LCKEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LCKEN_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -216,7 +219,7 @@ impl<'a> LCKEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -234,7 +237,7 @@ impl From<ECAT0RS_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `ECAT0RS`"]
+#[doc = "Field `ECAT0RS` writer - ECAT0 Reset Status Information"]
 pub struct ECAT0RS_W<'a> {
     w: &'a mut W,
 }
@@ -242,9 +245,7 @@ impl<'a> ECAT0RS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ECAT0RS_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -269,7 +270,7 @@ impl<'a> ECAT0RS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -298,5 +299,27 @@ impl W {
     #[inline(always)]
     pub fn ecat0rs(&mut self) -> ECAT0RS_W {
         ECAT0RS_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "RCU Reset Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rstclr](index.html) module"]
+pub struct RSTCLR_SPEC;
+impl crate::RegisterSpec for RSTCLR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [rstclr::W](W) writer structure"]
+impl crate::Writable for RSTCLR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RSTCLR to value 0"]
+impl crate::Resettable for RSTCLR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

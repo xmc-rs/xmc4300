@@ -1,5 +1,18 @@
-#[doc = "Reader of register PRSTAT2"]
-pub type R = crate::R<u32, super::PRSTAT2>;
+#[doc = "Register `PRSTAT2` reader"]
+pub struct R(crate::R<PRSTAT2_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PRSTAT2_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PRSTAT2_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PRSTAT2_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "WDT Reset Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDTRS_A {
@@ -14,9 +27,12 @@ impl From<WDTRS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `WDTRS`"]
-pub type WDTRS_R = crate::R<bool, WDTRS_A>;
+#[doc = "Field `WDTRS` reader - WDT Reset Status"]
+pub struct WDTRS_R(crate::FieldReader<bool, WDTRS_A>);
 impl WDTRS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        WDTRS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WDTRS_A {
@@ -28,12 +44,19 @@ impl WDTRS_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == WDTRS_A::CONST_0
+        **self == WDTRS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == WDTRS_A::CONST_1
+        **self == WDTRS_A::CONST_1
+    }
+}
+impl core::ops::Deref for WDTRS_R {
+    type Target = crate::FieldReader<bool, WDTRS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "ETH0 Reset Status\n\nValue on reset: 1"]
@@ -50,9 +73,12 @@ impl From<ETH0RS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ETH0RS`"]
-pub type ETH0RS_R = crate::R<bool, ETH0RS_A>;
+#[doc = "Field `ETH0RS` reader - ETH0 Reset Status"]
+pub struct ETH0RS_R(crate::FieldReader<bool, ETH0RS_A>);
 impl ETH0RS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ETH0RS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ETH0RS_A {
@@ -64,12 +90,19 @@ impl ETH0RS_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ETH0RS_A::CONST_0
+        **self == ETH0RS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ETH0RS_A::CONST_1
+        **self == ETH0RS_A::CONST_1
+    }
+}
+impl core::ops::Deref for ETH0RS_R {
+    type Target = crate::FieldReader<bool, ETH0RS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "DMA0 Reset Status\n\nValue on reset: 1"]
@@ -86,9 +119,12 @@ impl From<DMA0RS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DMA0RS`"]
-pub type DMA0RS_R = crate::R<bool, DMA0RS_A>;
+#[doc = "Field `DMA0RS` reader - DMA0 Reset Status"]
+pub struct DMA0RS_R(crate::FieldReader<bool, DMA0RS_A>);
 impl DMA0RS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DMA0RS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA0RS_A {
@@ -100,12 +136,19 @@ impl DMA0RS_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == DMA0RS_A::CONST_0
+        **self == DMA0RS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == DMA0RS_A::CONST_1
+        **self == DMA0RS_A::CONST_1
+    }
+}
+impl core::ops::Deref for DMA0RS_R {
+    type Target = crate::FieldReader<bool, DMA0RS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "FCE Reset Status\n\nValue on reset: 1"]
@@ -122,9 +165,12 @@ impl From<FCERS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FCERS`"]
-pub type FCERS_R = crate::R<bool, FCERS_A>;
+#[doc = "Field `FCERS` reader - FCE Reset Status"]
+pub struct FCERS_R(crate::FieldReader<bool, FCERS_A>);
 impl FCERS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FCERS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FCERS_A {
@@ -136,12 +182,19 @@ impl FCERS_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == FCERS_A::CONST_0
+        **self == FCERS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == FCERS_A::CONST_1
+        **self == FCERS_A::CONST_1
+    }
+}
+impl core::ops::Deref for FCERS_R {
+    type Target = crate::FieldReader<bool, FCERS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "USB Reset Status\n\nValue on reset: 1"]
@@ -158,9 +211,12 @@ impl From<USBRS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `USBRS`"]
-pub type USBRS_R = crate::R<bool, USBRS_A>;
+#[doc = "Field `USBRS` reader - USB Reset Status"]
+pub struct USBRS_R(crate::FieldReader<bool, USBRS_A>);
 impl USBRS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USBRS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USBRS_A {
@@ -172,12 +228,19 @@ impl USBRS_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == USBRS_A::CONST_0
+        **self == USBRS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == USBRS_A::CONST_1
+        **self == USBRS_A::CONST_1
+    }
+}
+impl core::ops::Deref for USBRS_R {
+    type Target = crate::FieldReader<bool, USBRS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "ECAT0 Reset Status\n\nValue on reset: 1"]
@@ -194,9 +257,12 @@ impl From<ECAT0RS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ECAT0RS`"]
-pub type ECAT0RS_R = crate::R<bool, ECAT0RS_A>;
+#[doc = "Field `ECAT0RS` reader - ECAT0 Reset Status"]
+pub struct ECAT0RS_R(crate::FieldReader<bool, ECAT0RS_A>);
 impl ECAT0RS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECAT0RS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ECAT0RS_A {
@@ -208,12 +274,19 @@ impl ECAT0RS_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ECAT0RS_A::CONST_0
+        **self == ECAT0RS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ECAT0RS_A::CONST_1
+        **self == ECAT0RS_A::CONST_1
+    }
+}
+impl core::ops::Deref for ECAT0RS_R {
+    type Target = crate::FieldReader<bool, ECAT0RS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -246,5 +319,21 @@ impl R {
     #[inline(always)]
     pub fn ecat0rs(&self) -> ECAT0RS_R {
         ECAT0RS_R::new(((self.bits >> 10) & 0x01) != 0)
+    }
+}
+#[doc = "RCU Peripheral 2 Reset Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prstat2](index.html) module"]
+pub struct PRSTAT2_SPEC;
+impl crate::RegisterSpec for PRSTAT2_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [prstat2::R](R) reader structure"]
+impl crate::Readable for PRSTAT2_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets PRSTAT2 to value 0x04f6"]
+impl crate::Resettable for PRSTAT2_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x04f6
     }
 }

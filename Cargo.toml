@@ -9,10 +9,10 @@ license = "MIT"
 keywords = ["cortex-m", "xmc4x", "embedded", "svd2rust", "no_std"]
 documentation = "https://docs.rs/xmc4300/"
 categories = ["embedded", "no-std"]
+edition = "2018"
 
 [dependencies]
 cortex-m = "0.7.0"
-bare-metal = "0.2.5"
 vcell = "0.1.2"
 
 [dependencies.cortex-m-rt]

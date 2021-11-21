@@ -1,13 +1,37 @@
-#[doc = "Reader of register BFL"]
-pub type R = crate::R<u32, super::BFL>;
-#[doc = "Writer for register BFL"]
-pub type W = crate::W<u32, super::BFL>;
-#[doc = "Register BFL `reset()`'s with value 0"]
-impl crate::ResetValue for super::BFL {
-    type Type = u32;
+#[doc = "Register `BFL` reader"]
+pub struct R(crate::R<BFL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<BFL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<BFL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<BFL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `BFL` writer"]
+pub struct W(crate::W<BFL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<BFL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<BFL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<BFL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Boundary Flag 0\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<BFL0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BFL0`"]
-pub type BFL0_R = crate::R<bool, BFL0_A>;
+#[doc = "Field `BFL0` reader - Boundary Flag 0"]
+pub struct BFL0_R(crate::FieldReader<bool, BFL0_A>);
 impl BFL0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BFL0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFL0_A {
@@ -38,12 +65,19 @@ impl BFL0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFL0_A::VALUE1
+        **self == BFL0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFL0_A::VALUE2
+        **self == BFL0_A::VALUE2
+    }
+}
+impl core::ops::Deref for BFL0_R {
+    type Target = crate::FieldReader<bool, BFL0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Boundary Flag 1\n\nValue on reset: 0"]
@@ -60,9 +94,12 @@ impl From<BFL1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BFL1`"]
-pub type BFL1_R = crate::R<bool, BFL1_A>;
+#[doc = "Field `BFL1` reader - Boundary Flag 1"]
+pub struct BFL1_R(crate::FieldReader<bool, BFL1_A>);
 impl BFL1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BFL1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFL1_A {
@@ -74,12 +111,19 @@ impl BFL1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFL1_A::VALUE1
+        **self == BFL1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFL1_A::VALUE2
+        **self == BFL1_A::VALUE2
+    }
+}
+impl core::ops::Deref for BFL1_R {
+    type Target = crate::FieldReader<bool, BFL1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Boundary Flag 2\n\nValue on reset: 0"]
@@ -96,9 +140,12 @@ impl From<BFL2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BFL2`"]
-pub type BFL2_R = crate::R<bool, BFL2_A>;
+#[doc = "Field `BFL2` reader - Boundary Flag 2"]
+pub struct BFL2_R(crate::FieldReader<bool, BFL2_A>);
 impl BFL2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BFL2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFL2_A {
@@ -110,12 +157,19 @@ impl BFL2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFL2_A::VALUE1
+        **self == BFL2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFL2_A::VALUE2
+        **self == BFL2_A::VALUE2
+    }
+}
+impl core::ops::Deref for BFL2_R {
+    type Target = crate::FieldReader<bool, BFL2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Boundary Flag 3\n\nValue on reset: 0"]
@@ -132,9 +186,12 @@ impl From<BFL3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BFL3`"]
-pub type BFL3_R = crate::R<bool, BFL3_A>;
+#[doc = "Field `BFL3` reader - Boundary Flag 3"]
+pub struct BFL3_R(crate::FieldReader<bool, BFL3_A>);
 impl BFL3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BFL3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFL3_A {
@@ -146,12 +203,19 @@ impl BFL3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFL3_A::VALUE1
+        **self == BFL3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFL3_A::VALUE2
+        **self == BFL3_A::VALUE2
+    }
+}
+impl core::ops::Deref for BFL3_R {
+    type Target = crate::FieldReader<bool, BFL3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Boundary Flag 0 Activation Select\n\nValue on reset: 0"]
@@ -168,9 +232,12 @@ impl From<BFA0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BFA0`"]
-pub type BFA0_R = crate::R<bool, BFA0_A>;
+#[doc = "Field `BFA0` reader - Boundary Flag 0 Activation Select"]
+pub struct BFA0_R(crate::FieldReader<bool, BFA0_A>);
 impl BFA0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BFA0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFA0_A {
@@ -182,15 +249,22 @@ impl BFA0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFA0_A::VALUE1
+        **self == BFA0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFA0_A::VALUE2
+        **self == BFA0_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `BFA0`"]
+impl core::ops::Deref for BFA0_R {
+    type Target = crate::FieldReader<bool, BFA0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BFA0` writer - Boundary Flag 0 Activation Select"]
 pub struct BFA0_W<'a> {
     w: &'a mut W,
 }
@@ -198,9 +272,7 @@ impl<'a> BFA0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BFA0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
@@ -225,7 +297,7 @@ impl<'a> BFA0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -243,9 +315,12 @@ impl From<BFA1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BFA1`"]
-pub type BFA1_R = crate::R<bool, BFA1_A>;
+#[doc = "Field `BFA1` reader - Boundary Flag 1 Activation Select"]
+pub struct BFA1_R(crate::FieldReader<bool, BFA1_A>);
 impl BFA1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BFA1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFA1_A {
@@ -257,15 +332,22 @@ impl BFA1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFA1_A::VALUE1
+        **self == BFA1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFA1_A::VALUE2
+        **self == BFA1_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `BFA1`"]
+impl core::ops::Deref for BFA1_R {
+    type Target = crate::FieldReader<bool, BFA1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BFA1` writer - Boundary Flag 1 Activation Select"]
 pub struct BFA1_W<'a> {
     w: &'a mut W,
 }
@@ -273,9 +355,7 @@ impl<'a> BFA1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BFA1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
@@ -300,7 +380,7 @@ impl<'a> BFA1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -318,9 +398,12 @@ impl From<BFA2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BFA2`"]
-pub type BFA2_R = crate::R<bool, BFA2_A>;
+#[doc = "Field `BFA2` reader - Boundary Flag 2 Activation Select"]
+pub struct BFA2_R(crate::FieldReader<bool, BFA2_A>);
 impl BFA2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BFA2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFA2_A {
@@ -332,15 +415,22 @@ impl BFA2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFA2_A::VALUE1
+        **self == BFA2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFA2_A::VALUE2
+        **self == BFA2_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `BFA2`"]
+impl core::ops::Deref for BFA2_R {
+    type Target = crate::FieldReader<bool, BFA2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BFA2` writer - Boundary Flag 2 Activation Select"]
 pub struct BFA2_W<'a> {
     w: &'a mut W,
 }
@@ -348,9 +438,7 @@ impl<'a> BFA2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BFA2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
@@ -375,7 +463,7 @@ impl<'a> BFA2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -393,9 +481,12 @@ impl From<BFA3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BFA3`"]
-pub type BFA3_R = crate::R<bool, BFA3_A>;
+#[doc = "Field `BFA3` reader - Boundary Flag 3 Activation Select"]
+pub struct BFA3_R(crate::FieldReader<bool, BFA3_A>);
 impl BFA3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BFA3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFA3_A {
@@ -407,15 +498,22 @@ impl BFA3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFA3_A::VALUE1
+        **self == BFA3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFA3_A::VALUE2
+        **self == BFA3_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `BFA3`"]
+impl core::ops::Deref for BFA3_R {
+    type Target = crate::FieldReader<bool, BFA3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BFA3` writer - Boundary Flag 3 Activation Select"]
 pub struct BFA3_W<'a> {
     w: &'a mut W,
 }
@@ -423,9 +521,7 @@ impl<'a> BFA3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BFA3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
@@ -450,7 +546,7 @@ impl<'a> BFA3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -468,9 +564,12 @@ impl From<BFI0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BFI0`"]
-pub type BFI0_R = crate::R<bool, BFI0_A>;
+#[doc = "Field `BFI0` reader - Boundary Flag 0 Inversion Control"]
+pub struct BFI0_R(crate::FieldReader<bool, BFI0_A>);
 impl BFI0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BFI0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFI0_A {
@@ -482,15 +581,22 @@ impl BFI0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFI0_A::VALUE1
+        **self == BFI0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFI0_A::VALUE2
+        **self == BFI0_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `BFI0`"]
+impl core::ops::Deref for BFI0_R {
+    type Target = crate::FieldReader<bool, BFI0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BFI0` writer - Boundary Flag 0 Inversion Control"]
 pub struct BFI0_W<'a> {
     w: &'a mut W,
 }
@@ -498,9 +604,7 @@ impl<'a> BFI0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BFI0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Use BFLy directly"]
     #[inline(always)]
@@ -525,7 +629,7 @@ impl<'a> BFI0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -543,9 +647,12 @@ impl From<BFI1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BFI1`"]
-pub type BFI1_R = crate::R<bool, BFI1_A>;
+#[doc = "Field `BFI1` reader - Boundary Flag 1 Inversion Control"]
+pub struct BFI1_R(crate::FieldReader<bool, BFI1_A>);
 impl BFI1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BFI1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFI1_A {
@@ -557,15 +664,22 @@ impl BFI1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFI1_A::VALUE1
+        **self == BFI1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFI1_A::VALUE2
+        **self == BFI1_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `BFI1`"]
+impl core::ops::Deref for BFI1_R {
+    type Target = crate::FieldReader<bool, BFI1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BFI1` writer - Boundary Flag 1 Inversion Control"]
 pub struct BFI1_W<'a> {
     w: &'a mut W,
 }
@@ -573,9 +687,7 @@ impl<'a> BFI1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BFI1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Use BFLy directly"]
     #[inline(always)]
@@ -600,7 +712,7 @@ impl<'a> BFI1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
@@ -618,9 +730,12 @@ impl From<BFI2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BFI2`"]
-pub type BFI2_R = crate::R<bool, BFI2_A>;
+#[doc = "Field `BFI2` reader - Boundary Flag 2 Inversion Control"]
+pub struct BFI2_R(crate::FieldReader<bool, BFI2_A>);
 impl BFI2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BFI2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFI2_A {
@@ -632,15 +747,22 @@ impl BFI2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFI2_A::VALUE1
+        **self == BFI2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFI2_A::VALUE2
+        **self == BFI2_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `BFI2`"]
+impl core::ops::Deref for BFI2_R {
+    type Target = crate::FieldReader<bool, BFI2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BFI2` writer - Boundary Flag 2 Inversion Control"]
 pub struct BFI2_W<'a> {
     w: &'a mut W,
 }
@@ -648,9 +770,7 @@ impl<'a> BFI2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BFI2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Use BFLy directly"]
     #[inline(always)]
@@ -675,7 +795,7 @@ impl<'a> BFI2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
@@ -693,9 +813,12 @@ impl From<BFI3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BFI3`"]
-pub type BFI3_R = crate::R<bool, BFI3_A>;
+#[doc = "Field `BFI3` reader - Boundary Flag 3 Inversion Control"]
+pub struct BFI3_R(crate::FieldReader<bool, BFI3_A>);
 impl BFI3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BFI3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFI3_A {
@@ -707,15 +830,22 @@ impl BFI3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFI3_A::VALUE1
+        **self == BFI3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFI3_A::VALUE2
+        **self == BFI3_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `BFI3`"]
+impl core::ops::Deref for BFI3_R {
+    type Target = crate::FieldReader<bool, BFI3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BFI3` writer - Boundary Flag 3 Inversion Control"]
 pub struct BFI3_W<'a> {
     w: &'a mut W,
 }
@@ -723,9 +853,7 @@ impl<'a> BFI3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BFI3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Use BFLy directly"]
     #[inline(always)]
@@ -750,7 +878,7 @@ impl<'a> BFI3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -856,5 +984,31 @@ impl W {
     #[inline(always)]
     pub fn bfi3(&mut self) -> BFI3_W {
         BFI3_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Boundary Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bfl](index.html) module"]
+pub struct BFL_SPEC;
+impl crate::RegisterSpec for BFL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [bfl::R](R) reader structure"]
+impl crate::Readable for BFL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [bfl::W](W) writer structure"]
+impl crate::Writable for BFL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets BFL to value 0"]
+impl crate::Resettable for BFL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -2,42 +2,21 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - EtherCAT 0 Control"]
-    pub con: CON,
+    pub con: crate::Reg<con::CON_SPEC>,
     #[doc = "0x04 - EtherCAT 0 Port 1 Control Register"]
-    pub conp0: CONP0,
+    pub conp0: crate::Reg<conp0::CONP0_SPEC>,
     #[doc = "0x08 - EtherCAT 0 Port 1 Control Register"]
-    pub conp1: CONP1,
+    pub conp1: crate::Reg<conp1::CONP1_SPEC>,
 }
-#[doc = "EtherCAT 0 Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [con](con) module"]
-pub type CON = crate::Reg<u32, _CON>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CON;
-#[doc = "`read()` method returns [con::R](con::R) reader structure"]
-impl crate::Readable for CON {}
-#[doc = "`write(|w| ..)` method takes [con::W](con::W) writer structure"]
-impl crate::Writable for CON {}
+#[doc = "CON register accessor: an alias for `Reg<CON_SPEC>`"]
+pub type CON = crate::Reg<con::CON_SPEC>;
 #[doc = "EtherCAT 0 Control"]
 pub mod con;
-#[doc = "EtherCAT 0 Port 1 Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [conp0](conp0) module"]
-pub type CONP0 = crate::Reg<u32, _CONP0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CONP0;
-#[doc = "`read()` method returns [conp0::R](conp0::R) reader structure"]
-impl crate::Readable for CONP0 {}
-#[doc = "`write(|w| ..)` method takes [conp0::W](conp0::W) writer structure"]
-impl crate::Writable for CONP0 {}
+#[doc = "CONP0 register accessor: an alias for `Reg<CONP0_SPEC>`"]
+pub type CONP0 = crate::Reg<conp0::CONP0_SPEC>;
 #[doc = "EtherCAT 0 Port 1 Control Register"]
 pub mod conp0;
-#[doc = "EtherCAT 0 Port 1 Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [conp1](conp1) module"]
-pub type CONP1 = crate::Reg<u32, _CONP1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CONP1;
-#[doc = "`read()` method returns [conp1::R](conp1::R) reader structure"]
-impl crate::Readable for CONP1 {}
-#[doc = "`write(|w| ..)` method takes [conp1::W](conp1::W) writer structure"]
-impl crate::Writable for CONP1 {}
+#[doc = "CONP1 register accessor: an alias for `Reg<CONP1_SPEC>`"]
+pub type CONP1 = crate::Reg<conp1::CONP1_SPEC>;
 #[doc = "EtherCAT 0 Port 1 Control Register"]
 pub mod conp1;

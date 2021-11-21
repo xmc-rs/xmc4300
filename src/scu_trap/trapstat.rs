@@ -1,5 +1,18 @@
-#[doc = "Reader of register TRAPSTAT"]
-pub type R = crate::R<u32, super::TRAPSTAT>;
+#[doc = "Register `TRAPSTAT` reader"]
+pub struct R(crate::R<TRAPSTAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TRAPSTAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<TRAPSTAT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<TRAPSTAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "OSC_HP Oscillator Watchdog Trap Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOSCWDGT_A {
@@ -14,9 +27,12 @@ impl From<SOSCWDGT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SOSCWDGT`"]
-pub type SOSCWDGT_R = crate::R<bool, SOSCWDGT_A>;
+#[doc = "Field `SOSCWDGT` reader - OSC_HP Oscillator Watchdog Trap Status"]
+pub struct SOSCWDGT_R(crate::FieldReader<bool, SOSCWDGT_A>);
 impl SOSCWDGT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SOSCWDGT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SOSCWDGT_A {
@@ -28,12 +44,19 @@ impl SOSCWDGT_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == SOSCWDGT_A::CONST_0
+        **self == SOSCWDGT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == SOSCWDGT_A::CONST_1
+        **self == SOSCWDGT_A::CONST_1
+    }
+}
+impl core::ops::Deref for SOSCWDGT_R {
+    type Target = crate::FieldReader<bool, SOSCWDGT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "System VCO Lock Trap Status\n\nValue on reset: 0"]
@@ -50,9 +73,12 @@ impl From<SVCOLCKT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SVCOLCKT`"]
-pub type SVCOLCKT_R = crate::R<bool, SVCOLCKT_A>;
+#[doc = "Field `SVCOLCKT` reader - System VCO Lock Trap Status"]
+pub struct SVCOLCKT_R(crate::FieldReader<bool, SVCOLCKT_A>);
 impl SVCOLCKT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SVCOLCKT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SVCOLCKT_A {
@@ -64,12 +90,19 @@ impl SVCOLCKT_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == SVCOLCKT_A::CONST_0
+        **self == SVCOLCKT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == SVCOLCKT_A::CONST_1
+        **self == SVCOLCKT_A::CONST_1
+    }
+}
+impl core::ops::Deref for SVCOLCKT_R {
+    type Target = crate::FieldReader<bool, SVCOLCKT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "USB VCO Lock Trap Status\n\nValue on reset: 0"]
@@ -86,9 +119,12 @@ impl From<UVCOLCKT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UVCOLCKT`"]
-pub type UVCOLCKT_R = crate::R<bool, UVCOLCKT_A>;
+#[doc = "Field `UVCOLCKT` reader - USB VCO Lock Trap Status"]
+pub struct UVCOLCKT_R(crate::FieldReader<bool, UVCOLCKT_A>);
 impl UVCOLCKT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UVCOLCKT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UVCOLCKT_A {
@@ -100,12 +136,19 @@ impl UVCOLCKT_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == UVCOLCKT_A::CONST_0
+        **self == UVCOLCKT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == UVCOLCKT_A::CONST_1
+        **self == UVCOLCKT_A::CONST_1
+    }
+}
+impl core::ops::Deref for UVCOLCKT_R {
+    type Target = crate::FieldReader<bool, UVCOLCKT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Parity Error Trap Status\n\nValue on reset: 0"]
@@ -122,9 +165,12 @@ impl From<PET_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PET`"]
-pub type PET_R = crate::R<bool, PET_A>;
+#[doc = "Field `PET` reader - Parity Error Trap Status"]
+pub struct PET_R(crate::FieldReader<bool, PET_A>);
 impl PET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PET_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PET_A {
@@ -136,12 +182,19 @@ impl PET_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PET_A::CONST_0
+        **self == PET_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PET_A::CONST_1
+        **self == PET_A::CONST_1
+    }
+}
+impl core::ops::Deref for PET_R {
+    type Target = crate::FieldReader<bool, PET_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Brown Out Trap Status\n\nValue on reset: 0"]
@@ -158,9 +211,12 @@ impl From<BRWNT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BRWNT`"]
-pub type BRWNT_R = crate::R<bool, BRWNT_A>;
+#[doc = "Field `BRWNT` reader - Brown Out Trap Status"]
+pub struct BRWNT_R(crate::FieldReader<bool, BRWNT_A>);
 impl BRWNT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BRWNT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BRWNT_A {
@@ -172,12 +228,19 @@ impl BRWNT_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == BRWNT_A::CONST_0
+        **self == BRWNT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == BRWNT_A::CONST_1
+        **self == BRWNT_A::CONST_1
+    }
+}
+impl core::ops::Deref for BRWNT_R {
+    type Target = crate::FieldReader<bool, BRWNT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "OSC_ULP Oscillator Watchdog Trap Status\n\nValue on reset: 0"]
@@ -194,9 +257,12 @@ impl From<ULPWDGT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ULPWDGT`"]
-pub type ULPWDGT_R = crate::R<bool, ULPWDGT_A>;
+#[doc = "Field `ULPWDGT` reader - OSC_ULP Oscillator Watchdog Trap Status"]
+pub struct ULPWDGT_R(crate::FieldReader<bool, ULPWDGT_A>);
 impl ULPWDGT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ULPWDGT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ULPWDGT_A {
@@ -208,12 +274,19 @@ impl ULPWDGT_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ULPWDGT_A::CONST_0
+        **self == ULPWDGT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ULPWDGT_A::CONST_1
+        **self == ULPWDGT_A::CONST_1
+    }
+}
+impl core::ops::Deref for ULPWDGT_R {
+    type Target = crate::FieldReader<bool, ULPWDGT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Peripheral Bridge 0 Trap Status\n\nValue on reset: 0"]
@@ -230,9 +303,12 @@ impl From<BWERR0T_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BWERR0T`"]
-pub type BWERR0T_R = crate::R<bool, BWERR0T_A>;
+#[doc = "Field `BWERR0T` reader - Peripheral Bridge 0 Trap Status"]
+pub struct BWERR0T_R(crate::FieldReader<bool, BWERR0T_A>);
 impl BWERR0T_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BWERR0T_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BWERR0T_A {
@@ -244,12 +320,19 @@ impl BWERR0T_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == BWERR0T_A::CONST_0
+        **self == BWERR0T_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == BWERR0T_A::CONST_1
+        **self == BWERR0T_A::CONST_1
+    }
+}
+impl core::ops::Deref for BWERR0T_R {
+    type Target = crate::FieldReader<bool, BWERR0T_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Peripheral Bridge 1 Trap Status\n\nValue on reset: 0"]
@@ -266,9 +349,12 @@ impl From<BWERR1T_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BWERR1T`"]
-pub type BWERR1T_R = crate::R<bool, BWERR1T_A>;
+#[doc = "Field `BWERR1T` reader - Peripheral Bridge 1 Trap Status"]
+pub struct BWERR1T_R(crate::FieldReader<bool, BWERR1T_A>);
 impl BWERR1T_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BWERR1T_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BWERR1T_A {
@@ -280,12 +366,19 @@ impl BWERR1T_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == BWERR1T_A::CONST_0
+        **self == BWERR1T_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == BWERR1T_A::CONST_1
+        **self == BWERR1T_A::CONST_1
+    }
+}
+impl core::ops::Deref for BWERR1T_R {
+    type Target = crate::FieldReader<bool, BWERR1T_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "EtherCat Reset 0 Trap Status\n\nValue on reset: 0"]
@@ -302,9 +395,12 @@ impl From<ECAT0RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ECAT0RST`"]
-pub type ECAT0RST_R = crate::R<bool, ECAT0RST_A>;
+#[doc = "Field `ECAT0RST` reader - EtherCat Reset 0 Trap Status"]
+pub struct ECAT0RST_R(crate::FieldReader<bool, ECAT0RST_A>);
 impl ECAT0RST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECAT0RST_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ECAT0RST_A {
@@ -316,12 +412,19 @@ impl ECAT0RST_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == ECAT0RST_A::CONST_0
+        **self == ECAT0RST_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == ECAT0RST_A::CONST_1
+        **self == ECAT0RST_A::CONST_1
+    }
+}
+impl core::ops::Deref for ECAT0RST_R {
+    type Target = crate::FieldReader<bool, ECAT0RST_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -369,5 +472,21 @@ impl R {
     #[inline(always)]
     pub fn ecat0rst(&self) -> ECAT0RST_R {
         ECAT0RST_R::new(((self.bits >> 16) & 0x01) != 0)
+    }
+}
+#[doc = "Trap Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trapstat](index.html) module"]
+pub struct TRAPSTAT_SPEC;
+impl crate::RegisterSpec for TRAPSTAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [trapstat::R](R) reader structure"]
+impl crate::Readable for TRAPSTAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets TRAPSTAT to value 0"]
+impl crate::Resettable for TRAPSTAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

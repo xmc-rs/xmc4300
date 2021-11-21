@@ -1,13 +1,37 @@
-#[doc = "Reader of register BFLNP"]
-pub type R = crate::R<u32, super::BFLNP>;
-#[doc = "Writer for register BFLNP"]
-pub type W = crate::W<u32, super::BFLNP>;
-#[doc = "Register BFLNP `reset()`'s with value 0xffff"]
-impl crate::ResetValue for super::BFLNP {
-    type Type = u32;
+#[doc = "Register `BFLNP` reader"]
+pub struct R(crate::R<BFLNP_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<BFLNP_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xffff
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<BFLNP_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<BFLNP_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `BFLNP` writer"]
+pub struct W(crate::W<BFLNP_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<BFLNP_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<BFLNP_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<BFLNP_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Boundary Flag y Node Pointer\n\nValue on reset: 15"]
@@ -31,49 +55,58 @@ impl From<BFL0NP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `BFL0NP`"]
-pub type BFL0NP_R = crate::R<u8, BFL0NP_A>;
+#[doc = "Field `BFL0NP` reader - Boundary Flag y Node Pointer"]
+pub struct BFL0NP_R(crate::FieldReader<u8, BFL0NP_A>);
 impl BFL0NP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BFL0NP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, BFL0NP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<BFL0NP_A> {
         match self.bits {
-            0 => Val(BFL0NP_A::VALUE1),
-            3 => Val(BFL0NP_A::VALUE2),
-            4 => Val(BFL0NP_A::VALUE3),
-            7 => Val(BFL0NP_A::VALUE4),
-            15 => Val(BFL0NP_A::VALUE5),
-            i => Res(i),
+            0 => Some(BFL0NP_A::VALUE1),
+            3 => Some(BFL0NP_A::VALUE2),
+            4 => Some(BFL0NP_A::VALUE3),
+            7 => Some(BFL0NP_A::VALUE4),
+            15 => Some(BFL0NP_A::VALUE5),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFL0NP_A::VALUE1
+        **self == BFL0NP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFL0NP_A::VALUE2
+        **self == BFL0NP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == BFL0NP_A::VALUE3
+        **self == BFL0NP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == BFL0NP_A::VALUE4
+        **self == BFL0NP_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == BFL0NP_A::VALUE5
+        **self == BFL0NP_A::VALUE5
     }
 }
-#[doc = "Write proxy for field `BFL0NP`"]
+impl core::ops::Deref for BFL0NP_R {
+    type Target = crate::FieldReader<u8, BFL0NP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BFL0NP` writer - Boundary Flag y Node Pointer"]
 pub struct BFL0NP_W<'a> {
     w: &'a mut W,
 }
@@ -111,7 +144,7 @@ impl<'a> BFL0NP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
         self.w
     }
 }
@@ -136,49 +169,58 @@ impl From<BFL1NP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `BFL1NP`"]
-pub type BFL1NP_R = crate::R<u8, BFL1NP_A>;
+#[doc = "Field `BFL1NP` reader - Boundary Flag y Node Pointer"]
+pub struct BFL1NP_R(crate::FieldReader<u8, BFL1NP_A>);
 impl BFL1NP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BFL1NP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, BFL1NP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<BFL1NP_A> {
         match self.bits {
-            0 => Val(BFL1NP_A::VALUE1),
-            3 => Val(BFL1NP_A::VALUE2),
-            4 => Val(BFL1NP_A::VALUE3),
-            7 => Val(BFL1NP_A::VALUE4),
-            15 => Val(BFL1NP_A::VALUE5),
-            i => Res(i),
+            0 => Some(BFL1NP_A::VALUE1),
+            3 => Some(BFL1NP_A::VALUE2),
+            4 => Some(BFL1NP_A::VALUE3),
+            7 => Some(BFL1NP_A::VALUE4),
+            15 => Some(BFL1NP_A::VALUE5),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFL1NP_A::VALUE1
+        **self == BFL1NP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFL1NP_A::VALUE2
+        **self == BFL1NP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == BFL1NP_A::VALUE3
+        **self == BFL1NP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == BFL1NP_A::VALUE4
+        **self == BFL1NP_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == BFL1NP_A::VALUE5
+        **self == BFL1NP_A::VALUE5
     }
 }
-#[doc = "Write proxy for field `BFL1NP`"]
+impl core::ops::Deref for BFL1NP_R {
+    type Target = crate::FieldReader<u8, BFL1NP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BFL1NP` writer - Boundary Flag y Node Pointer"]
 pub struct BFL1NP_W<'a> {
     w: &'a mut W,
 }
@@ -216,7 +258,7 @@ impl<'a> BFL1NP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
         self.w
     }
 }
@@ -241,49 +283,58 @@ impl From<BFL2NP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `BFL2NP`"]
-pub type BFL2NP_R = crate::R<u8, BFL2NP_A>;
+#[doc = "Field `BFL2NP` reader - Boundary Flag y Node Pointer"]
+pub struct BFL2NP_R(crate::FieldReader<u8, BFL2NP_A>);
 impl BFL2NP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BFL2NP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, BFL2NP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<BFL2NP_A> {
         match self.bits {
-            0 => Val(BFL2NP_A::VALUE1),
-            3 => Val(BFL2NP_A::VALUE2),
-            4 => Val(BFL2NP_A::VALUE3),
-            7 => Val(BFL2NP_A::VALUE4),
-            15 => Val(BFL2NP_A::VALUE5),
-            i => Res(i),
+            0 => Some(BFL2NP_A::VALUE1),
+            3 => Some(BFL2NP_A::VALUE2),
+            4 => Some(BFL2NP_A::VALUE3),
+            7 => Some(BFL2NP_A::VALUE4),
+            15 => Some(BFL2NP_A::VALUE5),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFL2NP_A::VALUE1
+        **self == BFL2NP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFL2NP_A::VALUE2
+        **self == BFL2NP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == BFL2NP_A::VALUE3
+        **self == BFL2NP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == BFL2NP_A::VALUE4
+        **self == BFL2NP_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == BFL2NP_A::VALUE5
+        **self == BFL2NP_A::VALUE5
     }
 }
-#[doc = "Write proxy for field `BFL2NP`"]
+impl core::ops::Deref for BFL2NP_R {
+    type Target = crate::FieldReader<u8, BFL2NP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BFL2NP` writer - Boundary Flag y Node Pointer"]
 pub struct BFL2NP_W<'a> {
     w: &'a mut W,
 }
@@ -321,7 +372,7 @@ impl<'a> BFL2NP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
         self.w
     }
 }
@@ -346,49 +397,58 @@ impl From<BFL3NP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `BFL3NP`"]
-pub type BFL3NP_R = crate::R<u8, BFL3NP_A>;
+#[doc = "Field `BFL3NP` reader - Boundary Flag y Node Pointer"]
+pub struct BFL3NP_R(crate::FieldReader<u8, BFL3NP_A>);
 impl BFL3NP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BFL3NP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, BFL3NP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<BFL3NP_A> {
         match self.bits {
-            0 => Val(BFL3NP_A::VALUE1),
-            3 => Val(BFL3NP_A::VALUE2),
-            4 => Val(BFL3NP_A::VALUE3),
-            7 => Val(BFL3NP_A::VALUE4),
-            15 => Val(BFL3NP_A::VALUE5),
-            i => Res(i),
+            0 => Some(BFL3NP_A::VALUE1),
+            3 => Some(BFL3NP_A::VALUE2),
+            4 => Some(BFL3NP_A::VALUE3),
+            7 => Some(BFL3NP_A::VALUE4),
+            15 => Some(BFL3NP_A::VALUE5),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BFL3NP_A::VALUE1
+        **self == BFL3NP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BFL3NP_A::VALUE2
+        **self == BFL3NP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == BFL3NP_A::VALUE3
+        **self == BFL3NP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == BFL3NP_A::VALUE4
+        **self == BFL3NP_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == BFL3NP_A::VALUE5
+        **self == BFL3NP_A::VALUE5
     }
 }
-#[doc = "Write proxy for field `BFL3NP`"]
+impl core::ops::Deref for BFL3NP_R {
+    type Target = crate::FieldReader<u8, BFL3NP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BFL3NP` writer - Boundary Flag y Node Pointer"]
 pub struct BFL3NP_W<'a> {
     w: &'a mut W,
 }
@@ -426,7 +486,7 @@ impl<'a> BFL3NP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
+        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
         self.w
     }
 }
@@ -472,5 +532,31 @@ impl W {
     #[inline(always)]
     pub fn bfl3np(&mut self) -> BFL3NP_W {
         BFL3NP_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Boundary Flag Node Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bflnp](index.html) module"]
+pub struct BFLNP_SPEC;
+impl crate::RegisterSpec for BFLNP_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [bflnp::R](R) reader structure"]
+impl crate::Readable for BFLNP_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [bflnp::W](W) writer structure"]
+impl crate::Writable for BFLNP_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets BFLNP to value 0xffff"]
+impl crate::Resettable for BFLNP_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xffff
     }
 }

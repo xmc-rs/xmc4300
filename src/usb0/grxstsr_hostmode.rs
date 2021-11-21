@@ -1,9 +1,46 @@
-#[doc = "Reader of register GRXSTSR_HOSTMODE"]
-pub type R = crate::R<u32, super::GRXSTSR_HOSTMODE>;
-#[doc = "Reader of field `ChNum`"]
-pub type CHNUM_R = crate::R<u8, u8>;
-#[doc = "Reader of field `BCnt`"]
-pub type BCNT_R = crate::R<u16, u16>;
+#[doc = "Register `GRXSTSR_HOSTMODE` reader"]
+pub struct R(crate::R<GRXSTSR_HOSTMODE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GRXSTSR_HOSTMODE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<GRXSTSR_HOSTMODE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GRXSTSR_HOSTMODE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `ChNum` reader - Channel Number"]
+pub struct CHNUM_R(crate::FieldReader<u8, u8>);
+impl CHNUM_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CHNUM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CHNUM_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BCnt` reader - Byte Count"]
+pub struct BCNT_R(crate::FieldReader<u16, u16>);
+impl BCNT_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        BCNT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BCNT_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Data PID\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -23,9 +60,12 @@ impl From<DPID_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DPID`"]
-pub type DPID_R = crate::R<u8, DPID_A>;
+#[doc = "Field `DPID` reader - Data PID"]
+pub struct DPID_R(crate::FieldReader<u8, DPID_A>);
 impl DPID_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DPID_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DPID_A {
@@ -40,22 +80,29 @@ impl DPID_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DPID_A::VALUE1
+        **self == DPID_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DPID_A::VALUE2
+        **self == DPID_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == DPID_A::VALUE3
+        **self == DPID_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == DPID_A::VALUE4
+        **self == DPID_A::VALUE4
+    }
+}
+impl core::ops::Deref for DPID_R {
+    type Target = crate::FieldReader<u8, DPID_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Packet Status\n\nValue on reset: 0"]
@@ -77,40 +124,49 @@ impl From<PKTSTS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PktSts`"]
-pub type PKTSTS_R = crate::R<u8, PKTSTS_A>;
+#[doc = "Field `PktSts` reader - Packet Status"]
+pub struct PKTSTS_R(crate::FieldReader<u8, PKTSTS_A>);
 impl PKTSTS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PKTSTS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PKTSTS_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PKTSTS_A> {
         match self.bits {
-            2 => Val(PKTSTS_A::VALUE1),
-            3 => Val(PKTSTS_A::VALUE2),
-            5 => Val(PKTSTS_A::VALUE3),
-            7 => Val(PKTSTS_A::VALUE4),
-            i => Res(i),
+            2 => Some(PKTSTS_A::VALUE1),
+            3 => Some(PKTSTS_A::VALUE2),
+            5 => Some(PKTSTS_A::VALUE3),
+            7 => Some(PKTSTS_A::VALUE4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PKTSTS_A::VALUE1
+        **self == PKTSTS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PKTSTS_A::VALUE2
+        **self == PKTSTS_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == PKTSTS_A::VALUE3
+        **self == PKTSTS_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == PKTSTS_A::VALUE4
+        **self == PKTSTS_A::VALUE4
+    }
+}
+impl core::ops::Deref for PKTSTS_R {
+    type Target = crate::FieldReader<u8, PKTSTS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -133,5 +189,21 @@ impl R {
     #[inline(always)]
     pub fn pkt_sts(&self) -> PKTSTS_R {
         PKTSTS_R::new(((self.bits >> 17) & 0x0f) as u8)
+    }
+}
+#[doc = "Receive Status Debug Read Register \\[HOSTMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [grxstsr_hostmode](index.html) module"]
+pub struct GRXSTSR_HOSTMODE_SPEC;
+impl crate::RegisterSpec for GRXSTSR_HOSTMODE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [grxstsr_hostmode::R](R) reader structure"]
+impl crate::Readable for GRXSTSR_HOSTMODE_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets GRXSTSR_HOSTMODE to value 0"]
+impl crate::Resettable for GRXSTSR_HOSTMODE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,13 +1,37 @@
-#[doc = "Reader of register ASPND"]
-pub type R = crate::R<u32, super::ASPND>;
-#[doc = "Writer for register ASPND"]
-pub type W = crate::W<u32, super::ASPND>;
-#[doc = "Register ASPND `reset()`'s with value 0"]
-impl crate::ResetValue for super::ASPND {
-    type Type = u32;
+#[doc = "Register `ASPND` reader"]
+pub struct R(crate::R<ASPND_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ASPND_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<ASPND_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ASPND_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ASPND` writer"]
+pub struct W(crate::W<ASPND_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ASPND_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ASPND_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ASPND_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Channels Pending\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<CHPND0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CHPND0`"]
-pub type CHPND0_R = crate::R<bool, CHPND0_A>;
+#[doc = "Field `CHPND0` reader - Channels Pending"]
+pub struct CHPND0_R(crate::FieldReader<bool, CHPND0_A>);
 impl CHPND0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CHPND0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHPND0_A {
@@ -38,15 +65,22 @@ impl CHPND0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CHPND0_A::VALUE1
+        **self == CHPND0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CHPND0_A::VALUE2
+        **self == CHPND0_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CHPND0`"]
+impl core::ops::Deref for CHPND0_R {
+    type Target = crate::FieldReader<bool, CHPND0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CHPND0` writer - Channels Pending"]
 pub struct CHPND0_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> CHPND0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CHPND0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> CHPND0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<CHPND1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CHPND1`"]
-pub type CHPND1_R = crate::R<bool, CHPND1_A>;
+#[doc = "Field `CHPND1` reader - Channels Pending"]
+pub struct CHPND1_R(crate::FieldReader<bool, CHPND1_A>);
 impl CHPND1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CHPND1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHPND1_A {
@@ -113,15 +148,22 @@ impl CHPND1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CHPND1_A::VALUE1
+        **self == CHPND1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CHPND1_A::VALUE2
+        **self == CHPND1_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CHPND1`"]
+impl core::ops::Deref for CHPND1_R {
+    type Target = crate::FieldReader<bool, CHPND1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CHPND1` writer - Channels Pending"]
 pub struct CHPND1_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> CHPND1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CHPND1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> CHPND1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<CHPND2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CHPND2`"]
-pub type CHPND2_R = crate::R<bool, CHPND2_A>;
+#[doc = "Field `CHPND2` reader - Channels Pending"]
+pub struct CHPND2_R(crate::FieldReader<bool, CHPND2_A>);
 impl CHPND2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CHPND2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHPND2_A {
@@ -188,15 +231,22 @@ impl CHPND2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CHPND2_A::VALUE1
+        **self == CHPND2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CHPND2_A::VALUE2
+        **self == CHPND2_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CHPND2`"]
+impl core::ops::Deref for CHPND2_R {
+    type Target = crate::FieldReader<bool, CHPND2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CHPND2` writer - Channels Pending"]
 pub struct CHPND2_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> CHPND2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CHPND2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> CHPND2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<CHPND3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CHPND3`"]
-pub type CHPND3_R = crate::R<bool, CHPND3_A>;
+#[doc = "Field `CHPND3` reader - Channels Pending"]
+pub struct CHPND3_R(crate::FieldReader<bool, CHPND3_A>);
 impl CHPND3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CHPND3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHPND3_A {
@@ -263,15 +314,22 @@ impl CHPND3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CHPND3_A::VALUE1
+        **self == CHPND3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CHPND3_A::VALUE2
+        **self == CHPND3_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CHPND3`"]
+impl core::ops::Deref for CHPND3_R {
+    type Target = crate::FieldReader<bool, CHPND3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CHPND3` writer - Channels Pending"]
 pub struct CHPND3_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> CHPND3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CHPND3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> CHPND3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +380,12 @@ impl From<CHPND4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CHPND4`"]
-pub type CHPND4_R = crate::R<bool, CHPND4_A>;
+#[doc = "Field `CHPND4` reader - Channels Pending"]
+pub struct CHPND4_R(crate::FieldReader<bool, CHPND4_A>);
 impl CHPND4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CHPND4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHPND4_A {
@@ -338,15 +397,22 @@ impl CHPND4_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CHPND4_A::VALUE1
+        **self == CHPND4_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CHPND4_A::VALUE2
+        **self == CHPND4_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CHPND4`"]
+impl core::ops::Deref for CHPND4_R {
+    type Target = crate::FieldReader<bool, CHPND4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CHPND4` writer - Channels Pending"]
 pub struct CHPND4_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +420,7 @@ impl<'a> CHPND4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CHPND4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -381,7 +445,7 @@ impl<'a> CHPND4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +463,12 @@ impl From<CHPND5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CHPND5`"]
-pub type CHPND5_R = crate::R<bool, CHPND5_A>;
+#[doc = "Field `CHPND5` reader - Channels Pending"]
+pub struct CHPND5_R(crate::FieldReader<bool, CHPND5_A>);
 impl CHPND5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CHPND5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHPND5_A {
@@ -413,15 +480,22 @@ impl CHPND5_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CHPND5_A::VALUE1
+        **self == CHPND5_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CHPND5_A::VALUE2
+        **self == CHPND5_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CHPND5`"]
+impl core::ops::Deref for CHPND5_R {
+    type Target = crate::FieldReader<bool, CHPND5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CHPND5` writer - Channels Pending"]
 pub struct CHPND5_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +503,7 @@ impl<'a> CHPND5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CHPND5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -456,7 +528,7 @@ impl<'a> CHPND5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +546,12 @@ impl From<CHPND6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CHPND6`"]
-pub type CHPND6_R = crate::R<bool, CHPND6_A>;
+#[doc = "Field `CHPND6` reader - Channels Pending"]
+pub struct CHPND6_R(crate::FieldReader<bool, CHPND6_A>);
 impl CHPND6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CHPND6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHPND6_A {
@@ -488,15 +563,22 @@ impl CHPND6_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CHPND6_A::VALUE1
+        **self == CHPND6_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CHPND6_A::VALUE2
+        **self == CHPND6_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CHPND6`"]
+impl core::ops::Deref for CHPND6_R {
+    type Target = crate::FieldReader<bool, CHPND6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CHPND6` writer - Channels Pending"]
 pub struct CHPND6_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +586,7 @@ impl<'a> CHPND6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CHPND6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -531,7 +611,7 @@ impl<'a> CHPND6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +629,12 @@ impl From<CHPND7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CHPND7`"]
-pub type CHPND7_R = crate::R<bool, CHPND7_A>;
+#[doc = "Field `CHPND7` reader - Channels Pending"]
+pub struct CHPND7_R(crate::FieldReader<bool, CHPND7_A>);
 impl CHPND7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CHPND7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHPND7_A {
@@ -563,15 +646,22 @@ impl CHPND7_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CHPND7_A::VALUE1
+        **self == CHPND7_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CHPND7_A::VALUE2
+        **self == CHPND7_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CHPND7`"]
+impl core::ops::Deref for CHPND7_R {
+    type Target = crate::FieldReader<bool, CHPND7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CHPND7` writer - Channels Pending"]
 pub struct CHPND7_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +669,7 @@ impl<'a> CHPND7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CHPND7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -606,7 +694,7 @@ impl<'a> CHPND7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -692,5 +780,31 @@ impl W {
     #[inline(always)]
     pub fn chpnd7(&mut self) -> CHPND7_W {
         CHPND7_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Autoscan Source Pending Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [aspnd](index.html) module"]
+pub struct ASPND_SPEC;
+impl crate::RegisterSpec for ASPND_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [aspnd::R](R) reader structure"]
+impl crate::Readable for ASPND_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [aspnd::W](W) writer structure"]
+impl crate::Writable for ASPND_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ASPND to value 0"]
+impl crate::Resettable for ASPND_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

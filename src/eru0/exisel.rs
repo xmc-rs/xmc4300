@@ -1,13 +1,37 @@
-#[doc = "Reader of register EXISEL"]
-pub type R = crate::R<u32, super::EXISEL>;
-#[doc = "Writer for register EXISEL"]
-pub type W = crate::W<u32, super::EXISEL>;
-#[doc = "Register EXISEL `reset()`'s with value 0"]
-impl crate::ResetValue for super::EXISEL {
-    type Type = u32;
+#[doc = "Register `EXISEL` reader"]
+pub struct R(crate::R<EXISEL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<EXISEL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<EXISEL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<EXISEL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `EXISEL` writer"]
+pub struct W(crate::W<EXISEL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<EXISEL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<EXISEL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<EXISEL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Event Source Select for A0 (ERS0)\n\nValue on reset: 0"]
@@ -29,9 +53,12 @@ impl From<EXS0A_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EXS0A`"]
-pub type EXS0A_R = crate::R<u8, EXS0A_A>;
+#[doc = "Field `EXS0A` reader - Event Source Select for A0 (ERS0)"]
+pub struct EXS0A_R(crate::FieldReader<u8, EXS0A_A>);
 impl EXS0A_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EXS0A_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EXS0A_A {
@@ -46,25 +73,32 @@ impl EXS0A_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EXS0A_A::VALUE1
+        **self == EXS0A_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EXS0A_A::VALUE2
+        **self == EXS0A_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EXS0A_A::VALUE3
+        **self == EXS0A_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EXS0A_A::VALUE4
+        **self == EXS0A_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `EXS0A`"]
+impl core::ops::Deref for EXS0A_R {
+    type Target = crate::FieldReader<u8, EXS0A_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EXS0A` writer - Event Source Select for A0 (ERS0)"]
 pub struct EXS0A_W<'a> {
     w: &'a mut W,
 }
@@ -72,9 +106,7 @@ impl<'a> EXS0A_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXS0A_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Input ERU_0A0 is selected"]
     #[inline(always)]
@@ -99,7 +131,7 @@ impl<'a> EXS0A_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
@@ -122,9 +154,12 @@ impl From<EXS0B_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EXS0B`"]
-pub type EXS0B_R = crate::R<u8, EXS0B_A>;
+#[doc = "Field `EXS0B` reader - Event Source Select for B0 (ERS0)"]
+pub struct EXS0B_R(crate::FieldReader<u8, EXS0B_A>);
 impl EXS0B_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EXS0B_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EXS0B_A {
@@ -139,25 +174,32 @@ impl EXS0B_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EXS0B_A::VALUE1
+        **self == EXS0B_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EXS0B_A::VALUE2
+        **self == EXS0B_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EXS0B_A::VALUE3
+        **self == EXS0B_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EXS0B_A::VALUE4
+        **self == EXS0B_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `EXS0B`"]
+impl core::ops::Deref for EXS0B_R {
+    type Target = crate::FieldReader<u8, EXS0B_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EXS0B` writer - Event Source Select for B0 (ERS0)"]
 pub struct EXS0B_W<'a> {
     w: &'a mut W,
 }
@@ -165,9 +207,7 @@ impl<'a> EXS0B_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXS0B_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Input ERU_0B0 is selected"]
     #[inline(always)]
@@ -192,7 +232,7 @@ impl<'a> EXS0B_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
         self.w
     }
 }
@@ -215,9 +255,12 @@ impl From<EXS1A_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EXS1A`"]
-pub type EXS1A_R = crate::R<u8, EXS1A_A>;
+#[doc = "Field `EXS1A` reader - Event Source Select for A1 (ERS1)"]
+pub struct EXS1A_R(crate::FieldReader<u8, EXS1A_A>);
 impl EXS1A_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EXS1A_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EXS1A_A {
@@ -232,25 +275,32 @@ impl EXS1A_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EXS1A_A::VALUE1
+        **self == EXS1A_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EXS1A_A::VALUE2
+        **self == EXS1A_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EXS1A_A::VALUE3
+        **self == EXS1A_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EXS1A_A::VALUE4
+        **self == EXS1A_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `EXS1A`"]
+impl core::ops::Deref for EXS1A_R {
+    type Target = crate::FieldReader<u8, EXS1A_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EXS1A` writer - Event Source Select for A1 (ERS1)"]
 pub struct EXS1A_W<'a> {
     w: &'a mut W,
 }
@@ -258,9 +308,7 @@ impl<'a> EXS1A_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXS1A_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Input ERU_1A0 is selected"]
     #[inline(always)]
@@ -285,7 +333,7 @@ impl<'a> EXS1A_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
         self.w
     }
 }
@@ -308,9 +356,12 @@ impl From<EXS1B_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EXS1B`"]
-pub type EXS1B_R = crate::R<u8, EXS1B_A>;
+#[doc = "Field `EXS1B` reader - Event Source Select for B1 (ERS1)"]
+pub struct EXS1B_R(crate::FieldReader<u8, EXS1B_A>);
 impl EXS1B_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EXS1B_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EXS1B_A {
@@ -325,25 +376,32 @@ impl EXS1B_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EXS1B_A::VALUE1
+        **self == EXS1B_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EXS1B_A::VALUE2
+        **self == EXS1B_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EXS1B_A::VALUE3
+        **self == EXS1B_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EXS1B_A::VALUE4
+        **self == EXS1B_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `EXS1B`"]
+impl core::ops::Deref for EXS1B_R {
+    type Target = crate::FieldReader<u8, EXS1B_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EXS1B` writer - Event Source Select for B1 (ERS1)"]
 pub struct EXS1B_W<'a> {
     w: &'a mut W,
 }
@@ -351,9 +409,7 @@ impl<'a> EXS1B_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXS1B_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Input ERU_1B0 is selected"]
     #[inline(always)]
@@ -378,7 +434,7 @@ impl<'a> EXS1B_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
         self.w
     }
 }
@@ -401,9 +457,12 @@ impl From<EXS2A_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EXS2A`"]
-pub type EXS2A_R = crate::R<u8, EXS2A_A>;
+#[doc = "Field `EXS2A` reader - Event Source Select for A2 (ERS2)"]
+pub struct EXS2A_R(crate::FieldReader<u8, EXS2A_A>);
 impl EXS2A_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EXS2A_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EXS2A_A {
@@ -418,25 +477,32 @@ impl EXS2A_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EXS2A_A::VALUE1
+        **self == EXS2A_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EXS2A_A::VALUE2
+        **self == EXS2A_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EXS2A_A::VALUE3
+        **self == EXS2A_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EXS2A_A::VALUE4
+        **self == EXS2A_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `EXS2A`"]
+impl core::ops::Deref for EXS2A_R {
+    type Target = crate::FieldReader<u8, EXS2A_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EXS2A` writer - Event Source Select for A2 (ERS2)"]
 pub struct EXS2A_W<'a> {
     w: &'a mut W,
 }
@@ -444,9 +510,7 @@ impl<'a> EXS2A_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXS2A_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Input ERU_2A0 is selected"]
     #[inline(always)]
@@ -471,7 +535,7 @@ impl<'a> EXS2A_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
@@ -494,9 +558,12 @@ impl From<EXS2B_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EXS2B`"]
-pub type EXS2B_R = crate::R<u8, EXS2B_A>;
+#[doc = "Field `EXS2B` reader - Event Source Select for B2 (ERS2)"]
+pub struct EXS2B_R(crate::FieldReader<u8, EXS2B_A>);
 impl EXS2B_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EXS2B_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EXS2B_A {
@@ -511,25 +578,32 @@ impl EXS2B_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EXS2B_A::VALUE1
+        **self == EXS2B_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EXS2B_A::VALUE2
+        **self == EXS2B_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EXS2B_A::VALUE3
+        **self == EXS2B_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EXS2B_A::VALUE4
+        **self == EXS2B_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `EXS2B`"]
+impl core::ops::Deref for EXS2B_R {
+    type Target = crate::FieldReader<u8, EXS2B_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EXS2B` writer - Event Source Select for B2 (ERS2)"]
 pub struct EXS2B_W<'a> {
     w: &'a mut W,
 }
@@ -537,9 +611,7 @@ impl<'a> EXS2B_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXS2B_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Input ERU_2B0 is selected"]
     #[inline(always)]
@@ -564,7 +636,7 @@ impl<'a> EXS2B_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
         self.w
     }
 }
@@ -587,9 +659,12 @@ impl From<EXS3A_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EXS3A`"]
-pub type EXS3A_R = crate::R<u8, EXS3A_A>;
+#[doc = "Field `EXS3A` reader - Event Source Select for A3 (ERS3)"]
+pub struct EXS3A_R(crate::FieldReader<u8, EXS3A_A>);
 impl EXS3A_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EXS3A_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EXS3A_A {
@@ -604,25 +679,32 @@ impl EXS3A_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EXS3A_A::VALUE1
+        **self == EXS3A_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EXS3A_A::VALUE2
+        **self == EXS3A_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EXS3A_A::VALUE3
+        **self == EXS3A_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EXS3A_A::VALUE4
+        **self == EXS3A_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `EXS3A`"]
+impl core::ops::Deref for EXS3A_R {
+    type Target = crate::FieldReader<u8, EXS3A_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EXS3A` writer - Event Source Select for A3 (ERS3)"]
 pub struct EXS3A_W<'a> {
     w: &'a mut W,
 }
@@ -630,9 +712,7 @@ impl<'a> EXS3A_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXS3A_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Input ERU_3A0 is selected"]
     #[inline(always)]
@@ -657,7 +737,7 @@ impl<'a> EXS3A_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
         self.w
     }
 }
@@ -680,9 +760,12 @@ impl From<EXS3B_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EXS3B`"]
-pub type EXS3B_R = crate::R<u8, EXS3B_A>;
+#[doc = "Field `EXS3B` reader - Event Source Select for B3 (ERS3)"]
+pub struct EXS3B_R(crate::FieldReader<u8, EXS3B_A>);
 impl EXS3B_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EXS3B_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EXS3B_A {
@@ -697,25 +780,32 @@ impl EXS3B_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EXS3B_A::VALUE1
+        **self == EXS3B_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EXS3B_A::VALUE2
+        **self == EXS3B_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == EXS3B_A::VALUE3
+        **self == EXS3B_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == EXS3B_A::VALUE4
+        **self == EXS3B_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `EXS3B`"]
+impl core::ops::Deref for EXS3B_R {
+    type Target = crate::FieldReader<u8, EXS3B_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EXS3B` writer - Event Source Select for B3 (ERS3)"]
 pub struct EXS3B_W<'a> {
     w: &'a mut W,
 }
@@ -723,9 +813,7 @@ impl<'a> EXS3B_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXS3B_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Input ERU_3B0 is selected"]
     #[inline(always)]
@@ -750,7 +838,7 @@ impl<'a> EXS3B_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | ((value as u32 & 0x03) << 14);
         self.w
     }
 }
@@ -836,5 +924,31 @@ impl W {
     #[inline(always)]
     pub fn exs3b(&mut self) -> EXS3B_W {
         EXS3B_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Event Input Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [exisel](index.html) module"]
+pub struct EXISEL_SPEC;
+impl crate::RegisterSpec for EXISEL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [exisel::R](R) reader structure"]
+impl crate::Readable for EXISEL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [exisel::W](W) writer structure"]
+impl crate::Writable for EXISEL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets EXISEL to value 0"]
+impl crate::Resettable for EXISEL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

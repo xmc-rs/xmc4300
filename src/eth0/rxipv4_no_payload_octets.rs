@@ -1,11 +1,52 @@
-#[doc = "Reader of register RXIPV4_NO_PAYLOAD_OCTETS"]
-pub type R = crate::R<u32, super::RXIPV4_NO_PAYLOAD_OCTETS>;
-#[doc = "Reader of field `RXIPV4NOPAYOCT`"]
-pub type RXIPV4NOPAYOCT_R = crate::R<u32, u32>;
+#[doc = "Register `RXIPV4_NO_PAYLOAD_OCTETS` reader"]
+pub struct R(crate::R<RXIPV4_NO_PAYLOAD_OCTETS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RXIPV4_NO_PAYLOAD_OCTETS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<RXIPV4_NO_PAYLOAD_OCTETS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<RXIPV4_NO_PAYLOAD_OCTETS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `RXIPV4NOPAYOCT` reader - This field indicates the number of bytes received in IPv4 datagrams that did not have a TCP, UDP, or ICMP payload. The value in the IPv4 headers Length field is used to update this counter."]
+pub struct RXIPV4NOPAYOCT_R(crate::FieldReader<u32, u32>);
+impl RXIPV4NOPAYOCT_R {
+    pub(crate) fn new(bits: u32) -> Self {
+        RXIPV4NOPAYOCT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXIPV4NOPAYOCT_R {
+    type Target = crate::FieldReader<u32, u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of bytes received in IPv4 datagrams that did not have a TCP, UDP, or ICMP payload. The value in the IPv4 headers Length field is used to update this counter."]
     #[inline(always)]
     pub fn rxipv4nopayoct(&self) -> RXIPV4NOPAYOCT_R {
         RXIPV4NOPAYOCT_R::new((self.bits & 0xffff_ffff) as u32)
+    }
+}
+#[doc = "Receive IPV4 No Payload Octet Counter Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxipv4_no_payload_octets](index.html) module"]
+pub struct RXIPV4_NO_PAYLOAD_OCTETS_SPEC;
+impl crate::RegisterSpec for RXIPV4_NO_PAYLOAD_OCTETS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [rxipv4_no_payload_octets::R](R) reader structure"]
+impl crate::Readable for RXIPV4_NO_PAYLOAD_OCTETS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets RXIPV4_NO_PAYLOAD_OCTETS to value 0"]
+impl crate::Resettable for RXIPV4_NO_PAYLOAD_OCTETS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

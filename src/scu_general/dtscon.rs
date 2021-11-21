@@ -1,13 +1,37 @@
-#[doc = "Reader of register DTSCON"]
-pub type R = crate::R<u32, super::DTSCON>;
-#[doc = "Writer for register DTSCON"]
-pub type W = crate::W<u32, super::DTSCON>;
-#[doc = "Register DTSCON `reset()`'s with value 0x01"]
-impl crate::ResetValue for super::DTSCON {
-    type Type = u32;
+#[doc = "Register `DTSCON` reader"]
+pub struct R(crate::R<DTSCON_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DTSCON_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x01
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DTSCON_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DTSCON_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DTSCON` writer"]
+pub struct W(crate::W<DTSCON_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DTSCON_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DTSCON_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DTSCON_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Sensor Power Down\n\nValue on reset: 1"]
@@ -24,9 +48,12 @@ impl From<PWD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PWD`"]
-pub type PWD_R = crate::R<bool, PWD_A>;
+#[doc = "Field `PWD` reader - Sensor Power Down"]
+pub struct PWD_R(crate::FieldReader<bool, PWD_A>);
 impl PWD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PWD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PWD_A {
@@ -38,15 +65,22 @@ impl PWD_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        *self == PWD_A::CONST_0
+        **self == PWD_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        *self == PWD_A::CONST_1
+        **self == PWD_A::CONST_1
     }
 }
-#[doc = "Write proxy for field `PWD`"]
+impl core::ops::Deref for PWD_R {
+    type Target = crate::FieldReader<bool, PWD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PWD` writer - Sensor Power Down"]
 pub struct PWD_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> PWD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PWD_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The DTS is powered"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> PWD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,7 +131,7 @@ impl From<START_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `START`"]
+#[doc = "Field `START` writer - Sensor Measurement Start"]
 pub struct START_W<'a> {
     w: &'a mut W,
 }
@@ -107,9 +139,7 @@ impl<'a> START_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: START_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No DTS measurement is started"]
     #[inline(always)]
@@ -134,13 +164,25 @@ impl<'a> START_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `OFFSET`"]
-pub type OFFSET_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `OFFSET`"]
+#[doc = "Field `OFFSET` reader - Offset Calibration Value"]
+pub struct OFFSET_R(crate::FieldReader<u8, u8>);
+impl OFFSET_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        OFFSET_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for OFFSET_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `OFFSET` writer - Offset Calibration Value"]
 pub struct OFFSET_W<'a> {
     w: &'a mut W,
 }
@@ -148,13 +190,25 @@ impl<'a> OFFSET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 4)) | (((value as u32) & 0x7f) << 4);
+        self.w.bits = (self.w.bits & !(0x7f << 4)) | ((value as u32 & 0x7f) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `GAIN`"]
-pub type GAIN_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `GAIN`"]
+#[doc = "Field `GAIN` reader - Gain Calibration Value"]
+pub struct GAIN_R(crate::FieldReader<u8, u8>);
+impl GAIN_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        GAIN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GAIN_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GAIN` writer - Gain Calibration Value"]
 pub struct GAIN_W<'a> {
     w: &'a mut W,
 }
@@ -162,13 +216,25 @@ impl<'a> GAIN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 11)) | (((value as u32) & 0x3f) << 11);
+        self.w.bits = (self.w.bits & !(0x3f << 11)) | ((value as u32 & 0x3f) << 11);
         self.w
     }
 }
-#[doc = "Reader of field `REFTRIM`"]
-pub type REFTRIM_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `REFTRIM`"]
+#[doc = "Field `REFTRIM` reader - Reference Trim Calibration Value"]
+pub struct REFTRIM_R(crate::FieldReader<u8, u8>);
+impl REFTRIM_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        REFTRIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for REFTRIM_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REFTRIM` writer - Reference Trim Calibration Value"]
 pub struct REFTRIM_W<'a> {
     w: &'a mut W,
 }
@@ -176,13 +242,25 @@ impl<'a> REFTRIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 17)) | (((value as u32) & 0x07) << 17);
+        self.w.bits = (self.w.bits & !(0x07 << 17)) | ((value as u32 & 0x07) << 17);
         self.w
     }
 }
-#[doc = "Reader of field `BGTRIM`"]
-pub type BGTRIM_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `BGTRIM`"]
+#[doc = "Field `BGTRIM` reader - Bandgap Trim Calibration Value"]
+pub struct BGTRIM_R(crate::FieldReader<u8, u8>);
+impl BGTRIM_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BGTRIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BGTRIM_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BGTRIM` writer - Bandgap Trim Calibration Value"]
 pub struct BGTRIM_W<'a> {
     w: &'a mut W,
 }
@@ -190,7 +268,7 @@ impl<'a> BGTRIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 20)) | (((value as u32) & 0x0f) << 20);
+        self.w.bits = (self.w.bits & !(0x0f << 20)) | ((value as u32 & 0x0f) << 20);
         self.w
     }
 }
@@ -251,5 +329,31 @@ impl W {
     #[inline(always)]
     pub fn bgtrim(&mut self) -> BGTRIM_W {
         BGTRIM_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Die Temperature Sensor Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dtscon](index.html) module"]
+pub struct DTSCON_SPEC;
+impl crate::RegisterSpec for DTSCON_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dtscon::R](R) reader structure"]
+impl crate::Readable for DTSCON_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dtscon::W](W) writer structure"]
+impl crate::Writable for DTSCON_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DTSCON to value 0x01"]
+impl crate::Resettable for DTSCON_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x01
     }
 }

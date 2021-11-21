@@ -1,13 +1,37 @@
-#[doc = "Reader of register SM_PDI_CTR"]
-pub type R = crate::R<u8, super::SM_PDI_CTR>;
-#[doc = "Writer for register SM_PDI_CTR"]
-pub type W = crate::W<u8, super::SM_PDI_CTR>;
-#[doc = "Register SM_PDI_CTR `reset()`'s with value 0"]
-impl crate::ResetValue for super::SM_PDI_CTR {
-    type Type = u8;
+#[doc = "Register `SM_PDI_CTR` reader"]
+pub struct R(crate::R<SM_PDI_CTR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SM_PDI_CTR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<SM_PDI_CTR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SM_PDI_CTR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SM_PDI_CTR` writer"]
+pub struct W(crate::W<SM_PDI_CTR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SM_PDI_CTR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SM_PDI_CTR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SM_PDI_CTR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Deactivate SyncManager\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<DEACT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DEACT`"]
-pub type DEACT_R = crate::R<bool, DEACT_A>;
+#[doc = "Field `DEACT` reader - Deactivate SyncManager"]
+pub struct DEACT_R(crate::FieldReader<bool, DEACT_A>);
 impl DEACT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DEACT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DEACT_A {
@@ -38,15 +65,22 @@ impl DEACT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DEACT_A::VALUE1
+        **self == DEACT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DEACT_A::VALUE2
+        **self == DEACT_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `DEACT`"]
+impl core::ops::Deref for DEACT_R {
+    type Target = crate::FieldReader<bool, DEACT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DEACT` writer - Deactivate SyncManager"]
 pub struct DEACT_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> DEACT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DEACT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Read 0 for Normal operation, SyncManager activated, write 0 for Activate SyncManager"]
     #[inline(always)]
@@ -81,13 +113,25 @@ impl<'a> DEACT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u8) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `REP_ACK`"]
-pub type REP_ACK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `REP_ACK`"]
+#[doc = "Field `REP_ACK` reader - Repeat Ack"]
+pub struct REP_ACK_R(crate::FieldReader<bool, bool>);
+impl REP_ACK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REP_ACK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for REP_ACK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REP_ACK` writer - Repeat Ack"]
 pub struct REP_ACK_W<'a> {
     w: &'a mut W,
 }
@@ -105,7 +149,7 @@ impl<'a> REP_ACK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u8) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
         self.w
     }
 }
@@ -131,5 +175,31 @@ impl W {
     #[inline(always)]
     pub fn rep_ack(&mut self) -> REP_ACK_W {
         REP_ACK_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PDI Control SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sm_pdi_ctr](index.html) module"]
+pub struct SM_PDI_CTR_SPEC;
+impl crate::RegisterSpec for SM_PDI_CTR_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [sm_pdi_ctr::R](R) reader structure"]
+impl crate::Readable for SM_PDI_CTR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sm_pdi_ctr::W](W) writer structure"]
+impl crate::Writable for SM_PDI_CTR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SM_PDI_CTR to value 0"]
+impl crate::Resettable for SM_PDI_CTR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,18 +1,54 @@
-#[doc = "Reader of register CTR"]
-pub type R = crate::R<u32, super::CTR>;
-#[doc = "Writer for register CTR"]
-pub type W = crate::W<u32, super::CTR>;
-#[doc = "Register CTR `reset()`'s with value 0"]
-impl crate::ResetValue for super::CTR {
-    type Type = u32;
+#[doc = "Register `CTR` reader"]
+pub struct R(crate::R<CTR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CTR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `FCM`"]
-pub type FCM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FCM`"]
+impl From<crate::R<CTR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CTR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CTR` writer"]
+pub struct W(crate::W<CTR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CTR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CTR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CTR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `FCM` reader - Force CRC Mismatch"]
+pub struct FCM_R(crate::FieldReader<bool, bool>);
+impl FCM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FCM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FCM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FCM` writer - Force CRC Mismatch"]
 pub struct FCM_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> FCM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `FRM_CFG`"]
-pub type FRM_CFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FRM_CFG`"]
+#[doc = "Field `FRM_CFG` reader - Force CFG Register Mismatch"]
+pub struct FRM_CFG_R(crate::FieldReader<bool, bool>);
+impl FRM_CFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FRM_CFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FRM_CFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FRM_CFG` writer - Force CFG Register Mismatch"]
 pub struct FRM_CFG_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +102,25 @@ impl<'a> FRM_CFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `FRM_CHECK`"]
-pub type FRM_CHECK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FRM_CHECK`"]
+#[doc = "Field `FRM_CHECK` reader - Force Check Register Mismatch"]
+pub struct FRM_CHECK_R(crate::FieldReader<bool, bool>);
+impl FRM_CHECK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FRM_CHECK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FRM_CHECK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FRM_CHECK` writer - Force Check Register Mismatch"]
 pub struct FRM_CHECK_W<'a> {
     w: &'a mut W,
 }
@@ -78,7 +138,7 @@ impl<'a> FRM_CHECK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -114,5 +174,31 @@ impl W {
     #[inline(always)]
     pub fn frm_check(&mut self) -> FRM_CHECK_W {
         FRM_CHECK_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "CRC Test Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctr](index.html) module"]
+pub struct CTR_SPEC;
+impl crate::RegisterSpec for CTR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ctr::R](R) reader structure"]
+impl crate::Readable for CTR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ctr::W](W) writer structure"]
+impl crate::Writable for CTR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CTR to value 0"]
+impl crate::Resettable for CTR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

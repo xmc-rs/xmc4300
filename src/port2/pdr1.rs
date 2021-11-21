@@ -1,18 +1,54 @@
-#[doc = "Reader of register PDR1"]
-pub type R = crate::R<u32, super::PDR1>;
-#[doc = "Writer for register PDR1"]
-pub type W = crate::W<u32, super::PDR1>;
-#[doc = "Register PDR1 `reset()`'s with value 0x2222_2222"]
-impl crate::ResetValue for super::PDR1 {
-    type Type = u32;
+#[doc = "Register `PDR1` reader"]
+pub struct R(crate::R<PDR1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PDR1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x2222_2222
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PD8`"]
-pub type PD8_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PD8`"]
+impl From<crate::R<PDR1_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PDR1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PDR1` writer"]
+pub struct W(crate::W<PDR1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PDR1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PDR1_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PDR1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PD8` reader - Pad Driver Mode for Pn.8"]
+pub struct PD8_R(crate::FieldReader<u8, u8>);
+impl PD8_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PD8_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PD8_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PD8` writer - Pad Driver Mode for Pn.8"]
 pub struct PD8_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> PD8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
         self.w
     }
 }
-#[doc = "Reader of field `PD9`"]
-pub type PD9_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PD9`"]
+#[doc = "Field `PD9` reader - Pad Driver Mode for Pn.9"]
+pub struct PD9_R(crate::FieldReader<u8, u8>);
+impl PD9_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PD9_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PD9_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PD9` writer - Pad Driver Mode for Pn.9"]
 pub struct PD9_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +82,25 @@ impl<'a> PD9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `PD10`"]
-pub type PD10_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PD10`"]
+#[doc = "Field `PD10` reader - Pad Driver Mode for Pn.10"]
+pub struct PD10_R(crate::FieldReader<u8, u8>);
+impl PD10_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PD10_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PD10_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PD10` writer - Pad Driver Mode for Pn.10"]
 pub struct PD10_W<'a> {
     w: &'a mut W,
 }
@@ -48,13 +108,25 @@ impl<'a> PD10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `PD11`"]
-pub type PD11_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PD11`"]
+#[doc = "Field `PD11` reader - Pad Driver Mode for Pn.11"]
+pub struct PD11_R(crate::FieldReader<u8, u8>);
+impl PD11_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PD11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PD11_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PD11` writer - Pad Driver Mode for Pn.11"]
 pub struct PD11_W<'a> {
     w: &'a mut W,
 }
@@ -62,13 +134,25 @@ impl<'a> PD11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u32) & 0x07) << 12);
+        self.w.bits = (self.w.bits & !(0x07 << 12)) | ((value as u32 & 0x07) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `PD12`"]
-pub type PD12_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PD12`"]
+#[doc = "Field `PD12` reader - Pad Driver Mode for Pn.12"]
+pub struct PD12_R(crate::FieldReader<u8, u8>);
+impl PD12_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PD12_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PD12_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PD12` writer - Pad Driver Mode for Pn.12"]
 pub struct PD12_W<'a> {
     w: &'a mut W,
 }
@@ -76,13 +160,25 @@ impl<'a> PD12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `PD13`"]
-pub type PD13_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PD13`"]
+#[doc = "Field `PD13` reader - Pad Driver Mode for Pn.13"]
+pub struct PD13_R(crate::FieldReader<u8, u8>);
+impl PD13_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PD13_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PD13_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PD13` writer - Pad Driver Mode for Pn.13"]
 pub struct PD13_W<'a> {
     w: &'a mut W,
 }
@@ -90,13 +186,25 @@ impl<'a> PD13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
+        self.w.bits = (self.w.bits & !(0x07 << 20)) | ((value as u32 & 0x07) << 20);
         self.w
     }
 }
-#[doc = "Reader of field `PD14`"]
-pub type PD14_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PD14`"]
+#[doc = "Field `PD14` reader - Pad Driver Mode for Pn.14"]
+pub struct PD14_R(crate::FieldReader<u8, u8>);
+impl PD14_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PD14_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PD14_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PD14` writer - Pad Driver Mode for Pn.14"]
 pub struct PD14_W<'a> {
     w: &'a mut W,
 }
@@ -104,13 +212,25 @@ impl<'a> PD14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | ((value as u32 & 0x07) << 24);
         self.w
     }
 }
-#[doc = "Reader of field `PD15`"]
-pub type PD15_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PD15`"]
+#[doc = "Field `PD15` reader - Pad Driver Mode for Pn.15"]
+pub struct PD15_R(crate::FieldReader<u8, u8>);
+impl PD15_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PD15_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PD15_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PD15` writer - Pad Driver Mode for Pn.15"]
 pub struct PD15_W<'a> {
     w: &'a mut W,
 }
@@ -118,7 +238,7 @@ impl<'a> PD15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | (((value as u32) & 0x07) << 28);
+        self.w.bits = (self.w.bits & !(0x07 << 28)) | ((value as u32 & 0x07) << 28);
         self.w
     }
 }
@@ -204,5 +324,31 @@ impl W {
     #[inline(always)]
     pub fn pd15(&mut self) -> PD15_W {
         PD15_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port 2 Pad Driver Mode 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdr1](index.html) module"]
+pub struct PDR1_SPEC;
+impl crate::RegisterSpec for PDR1_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pdr1::R](R) reader structure"]
+impl crate::Readable for PDR1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pdr1::W](W) writer structure"]
+impl crate::Writable for PDR1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PDR1 to value 0x2222_2222"]
+impl crate::Resettable for PDR1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x2222_2222
     }
 }

@@ -1,11 +1,22 @@
-#[doc = "Writer for register FORCE_EVENT_ACMD_ERR_STATUS"]
-pub type W = crate::W<u16, super::FORCE_EVENT_ACMD_ERR_STATUS>;
-#[doc = "Register FORCE_EVENT_ACMD_ERR_STATUS `reset()`'s with value 0"]
-impl crate::ResetValue for super::FORCE_EVENT_ACMD_ERR_STATUS {
-    type Type = u16;
+#[doc = "Register `FORCE_EVENT_ACMD_ERR_STATUS` writer"]
+pub struct W(crate::W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<FORCE_EVENT_ACMD_ERR_STATUS_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Force Event for CMD not issued by Auto CMD12 Error\n\nValue on reset: 0"]
@@ -22,7 +33,7 @@ impl From<FE_CMD_NOT_ISSUED_ACMD12_ERR_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `FE_CMD_NOT_ISSUED_ACMD12_ERR`"]
+#[doc = "Field `FE_CMD_NOT_ISSUED_ACMD12_ERR` writer - Force Event for CMD not issued by Auto CMD12 Error"]
 pub struct FE_CMD_NOT_ISSUED_ACMD12_ERR_W<'a> {
     w: &'a mut W,
 }
@@ -30,9 +41,7 @@ impl<'a> FE_CMD_NOT_ISSUED_ACMD12_ERR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FE_CMD_NOT_ISSUED_ACMD12_ERR_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -57,7 +66,7 @@ impl<'a> FE_CMD_NOT_ISSUED_ACMD12_ERR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
@@ -75,7 +84,7 @@ impl From<FE_ACMD_IND_ERR_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `FE_ACMD_IND_ERR`"]
+#[doc = "Field `FE_ACMD_IND_ERR` writer - Force Event for Auto CMD Index Error"]
 pub struct FE_ACMD_IND_ERR_W<'a> {
     w: &'a mut W,
 }
@@ -83,9 +92,7 @@ impl<'a> FE_ACMD_IND_ERR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FE_ACMD_IND_ERR_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -110,7 +117,7 @@ impl<'a> FE_ACMD_IND_ERR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
@@ -128,7 +135,7 @@ impl From<FE_ACMD_END_BIT_ERR_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `FE_ACMD_END_BIT_ERR`"]
+#[doc = "Field `FE_ACMD_END_BIT_ERR` writer - Force Event for Auto CMD End bit Error"]
 pub struct FE_ACMD_END_BIT_ERR_W<'a> {
     w: &'a mut W,
 }
@@ -136,9 +143,7 @@ impl<'a> FE_ACMD_END_BIT_ERR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FE_ACMD_END_BIT_ERR_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -163,7 +168,7 @@ impl<'a> FE_ACMD_END_BIT_ERR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
@@ -181,7 +186,7 @@ impl From<FE_ACMD_CRC_ERR_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `FE_ACMD_CRC_ERR`"]
+#[doc = "Field `FE_ACMD_CRC_ERR` writer - Force Event for Auto CMD CRC Error"]
 pub struct FE_ACMD_CRC_ERR_W<'a> {
     w: &'a mut W,
 }
@@ -189,9 +194,7 @@ impl<'a> FE_ACMD_CRC_ERR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FE_ACMD_CRC_ERR_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -216,7 +219,7 @@ impl<'a> FE_ACMD_CRC_ERR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
@@ -234,7 +237,7 @@ impl From<FE_ACMD_TIMEOUT_ERR_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `FE_ACMD_TIMEOUT_ERR`"]
+#[doc = "Field `FE_ACMD_TIMEOUT_ERR` writer - Force Event for Auto CMD timeout Error"]
 pub struct FE_ACMD_TIMEOUT_ERR_W<'a> {
     w: &'a mut W,
 }
@@ -242,9 +245,7 @@ impl<'a> FE_ACMD_TIMEOUT_ERR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FE_ACMD_TIMEOUT_ERR_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -269,7 +270,7 @@ impl<'a> FE_ACMD_TIMEOUT_ERR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
@@ -287,7 +288,7 @@ impl From<FE_ACMD_NOT_EXEC_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `FE_ACMD_NOT_EXEC`"]
+#[doc = "Field `FE_ACMD_NOT_EXEC` writer - Force Event for Auto CMD12 NOT Executed"]
 pub struct FE_ACMD_NOT_EXEC_W<'a> {
     w: &'a mut W,
 }
@@ -295,9 +296,7 @@ impl<'a> FE_ACMD_NOT_EXEC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FE_ACMD_NOT_EXEC_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -322,7 +321,7 @@ impl<'a> FE_ACMD_NOT_EXEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
@@ -356,5 +355,27 @@ impl W {
     #[inline(always)]
     pub fn fe_acmd_not_exec(&mut self) -> FE_ACMD_NOT_EXEC_W {
         FE_ACMD_NOT_EXEC_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Force Event Register for Auto CMD Error Status\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [force_event_acmd_err_status](index.html) module"]
+pub struct FORCE_EVENT_ACMD_ERR_STATUS_SPEC;
+impl crate::RegisterSpec for FORCE_EVENT_ACMD_ERR_STATUS_SPEC {
+    type Ux = u16;
+}
+#[doc = "`write(|w| ..)` method takes [force_event_acmd_err_status::W](W) writer structure"]
+impl crate::Writable for FORCE_EVENT_ACMD_ERR_STATUS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets FORCE_EVENT_ACMD_ERR_STATUS to value 0"]
+impl crate::Resettable for FORCE_EVENT_ACMD_ERR_STATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

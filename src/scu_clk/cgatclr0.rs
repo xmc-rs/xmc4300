@@ -1,11 +1,22 @@
-#[doc = "Writer for register CGATCLR0"]
-pub type W = crate::W<u32, super::CGATCLR0>;
-#[doc = "Register CGATCLR0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::CGATCLR0 {
-    type Type = u32;
+#[doc = "Register `CGATCLR0` writer"]
+pub struct W(crate::W<CGATCLR0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CGATCLR0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CGATCLR0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CGATCLR0_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "VADC Gating Clear\n\nValue on reset: 0"]
@@ -22,7 +33,7 @@ impl From<VADC_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `VADC`"]
+#[doc = "Field `VADC` writer - VADC Gating Clear"]
 pub struct VADC_W<'a> {
     w: &'a mut W,
 }
@@ -30,9 +41,7 @@ impl<'a> VADC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VADC_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -57,7 +66,7 @@ impl<'a> VADC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -75,7 +84,7 @@ impl From<CCU40_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CCU40`"]
+#[doc = "Field `CCU40` writer - CCU40 Gating Clear"]
 pub struct CCU40_W<'a> {
     w: &'a mut W,
 }
@@ -83,9 +92,7 @@ impl<'a> CCU40_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CCU40_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -110,7 +117,7 @@ impl<'a> CCU40_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -128,7 +135,7 @@ impl From<CCU41_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CCU41`"]
+#[doc = "Field `CCU41` writer - CCU41 Gating Clear"]
 pub struct CCU41_W<'a> {
     w: &'a mut W,
 }
@@ -136,9 +143,7 @@ impl<'a> CCU41_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CCU41_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -163,7 +168,7 @@ impl<'a> CCU41_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -181,7 +186,7 @@ impl From<CCU80_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CCU80`"]
+#[doc = "Field `CCU80` writer - CCU80 Gating Clear"]
 pub struct CCU80_W<'a> {
     w: &'a mut W,
 }
@@ -189,9 +194,7 @@ impl<'a> CCU80_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CCU80_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -216,7 +219,7 @@ impl<'a> CCU80_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -234,7 +237,7 @@ impl From<POSIF0_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `POSIF0`"]
+#[doc = "Field `POSIF0` writer - POSIF0 Gating Clear"]
 pub struct POSIF0_W<'a> {
     w: &'a mut W,
 }
@@ -242,9 +245,7 @@ impl<'a> POSIF0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: POSIF0_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -269,7 +270,7 @@ impl<'a> POSIF0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -287,7 +288,7 @@ impl From<USIC0_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `USIC0`"]
+#[doc = "Field `USIC0` writer - USIC0 Gating Clear"]
 pub struct USIC0_W<'a> {
     w: &'a mut W,
 }
@@ -295,9 +296,7 @@ impl<'a> USIC0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: USIC0_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -322,7 +321,7 @@ impl<'a> USIC0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -340,7 +339,7 @@ impl From<ERU1_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `ERU1`"]
+#[doc = "Field `ERU1` writer - ERU1 Gating Clear"]
 pub struct ERU1_W<'a> {
     w: &'a mut W,
 }
@@ -348,9 +347,7 @@ impl<'a> ERU1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ERU1_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -375,7 +372,7 @@ impl<'a> ERU1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -414,5 +411,27 @@ impl W {
     #[inline(always)]
     pub fn eru1(&mut self) -> ERU1_W {
         ERU1_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Peripheral 0 Clock Gating Clear\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatclr0](index.html) module"]
+pub struct CGATCLR0_SPEC;
+impl crate::RegisterSpec for CGATCLR0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [cgatclr0::W](W) writer structure"]
+impl crate::Writable for CGATCLR0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CGATCLR0 to value 0"]
+impl crate::Resettable for CGATCLR0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

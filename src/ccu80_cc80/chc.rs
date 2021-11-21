@@ -1,13 +1,37 @@
-#[doc = "Reader of register CHC"]
-pub type R = crate::R<u32, super::CHC>;
-#[doc = "Writer for register CHC"]
-pub type W = crate::W<u32, super::CHC>;
-#[doc = "Register CHC `reset()`'s with value 0"]
-impl crate::ResetValue for super::CHC {
-    type Type = u32;
+#[doc = "Register `CHC` reader"]
+pub struct R(crate::R<CHC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CHC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CHC_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CHC_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CHC` writer"]
+pub struct W(crate::W<CHC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CHC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CHC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CHC_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Asymmetric PWM mode Enable\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<ASE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ASE`"]
-pub type ASE_R = crate::R<bool, ASE_A>;
+#[doc = "Field `ASE` reader - Asymmetric PWM mode Enable"]
+pub struct ASE_R(crate::FieldReader<bool, ASE_A>);
 impl ASE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ASE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ASE_A {
@@ -38,15 +65,22 @@ impl ASE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ASE_A::VALUE1
+        **self == ASE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ASE_A::VALUE2
+        **self == ASE_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `ASE`"]
+impl core::ops::Deref for ASE_R {
+    type Target = crate::FieldReader<bool, ASE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ASE` writer - Asymmetric PWM mode Enable"]
 pub struct ASE_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> ASE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ASE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Asymmetric PWM is disabled"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> ASE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<OCS1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `OCS1`"]
-pub type OCS1_R = crate::R<bool, OCS1_A>;
+#[doc = "Field `OCS1` reader - Output selector for CCU8x.OUTy0"]
+pub struct OCS1_R(crate::FieldReader<bool, OCS1_A>);
 impl OCS1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OCS1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OCS1_A {
@@ -113,15 +148,22 @@ impl OCS1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == OCS1_A::VALUE1
+        **self == OCS1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == OCS1_A::VALUE2
+        **self == OCS1_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `OCS1`"]
+impl core::ops::Deref for OCS1_R {
+    type Target = crate::FieldReader<bool, OCS1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `OCS1` writer - Output selector for CCU8x.OUTy0"]
 pub struct OCS1_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> OCS1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: OCS1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "CC8yST1 signal path is connected to the CCU8x.OUTy0"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> OCS1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<OCS2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `OCS2`"]
-pub type OCS2_R = crate::R<bool, OCS2_A>;
+#[doc = "Field `OCS2` reader - Output selector for CCU8x.OUTy1"]
+pub struct OCS2_R(crate::FieldReader<bool, OCS2_A>);
 impl OCS2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OCS2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OCS2_A {
@@ -188,15 +231,22 @@ impl OCS2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == OCS2_A::VALUE1
+        **self == OCS2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == OCS2_A::VALUE2
+        **self == OCS2_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `OCS2`"]
+impl core::ops::Deref for OCS2_R {
+    type Target = crate::FieldReader<bool, OCS2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `OCS2` writer - Output selector for CCU8x.OUTy1"]
 pub struct OCS2_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> OCS2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: OCS2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Inverted CC8yST1 signal path is connected to the CCU8x.OUTy1"]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> OCS2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<OCS3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `OCS3`"]
-pub type OCS3_R = crate::R<bool, OCS3_A>;
+#[doc = "Field `OCS3` reader - Output selector for CCU8x.OUTy2"]
+pub struct OCS3_R(crate::FieldReader<bool, OCS3_A>);
 impl OCS3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OCS3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OCS3_A {
@@ -263,15 +314,22 @@ impl OCS3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == OCS3_A::VALUE1
+        **self == OCS3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == OCS3_A::VALUE2
+        **self == OCS3_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `OCS3`"]
+impl core::ops::Deref for OCS3_R {
+    type Target = crate::FieldReader<bool, OCS3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `OCS3` writer - Output selector for CCU8x.OUTy2"]
 pub struct OCS3_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> OCS3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: OCS3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "CC8yST2 signal path is connected to the CCU8x.OUTy2"]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> OCS3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +380,12 @@ impl From<OCS4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `OCS4`"]
-pub type OCS4_R = crate::R<bool, OCS4_A>;
+#[doc = "Field `OCS4` reader - Output selector for CCU8x.OUTy3"]
+pub struct OCS4_R(crate::FieldReader<bool, OCS4_A>);
 impl OCS4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OCS4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OCS4_A {
@@ -338,15 +397,22 @@ impl OCS4_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == OCS4_A::VALUE1
+        **self == OCS4_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == OCS4_A::VALUE2
+        **self == OCS4_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `OCS4`"]
+impl core::ops::Deref for OCS4_R {
+    type Target = crate::FieldReader<bool, OCS4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `OCS4` writer - Output selector for CCU8x.OUTy3"]
 pub struct OCS4_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +420,7 @@ impl<'a> OCS4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: OCS4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Inverted CC8yST2 signal path is connected to the CCU8x.OUTy3"]
     #[inline(always)]
@@ -381,7 +445,7 @@ impl<'a> OCS4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -437,5 +501,31 @@ impl W {
     #[inline(always)]
     pub fn ocs4(&mut self) -> OCS4_W {
         OCS4_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chc](index.html) module"]
+pub struct CHC_SPEC;
+impl crate::RegisterSpec for CHC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [chc::R](R) reader structure"]
+impl crate::Readable for CHC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [chc::W](W) writer structure"]
+impl crate::Writable for CHC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CHC to value 0"]
+impl crate::Resettable for CHC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

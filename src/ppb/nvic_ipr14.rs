@@ -1,18 +1,54 @@
-#[doc = "Reader of register NVIC_IPR14"]
-pub type R = crate::R<u32, super::NVIC_IPR14>;
-#[doc = "Writer for register NVIC_IPR14"]
-pub type W = crate::W<u32, super::NVIC_IPR14>;
-#[doc = "Register NVIC_IPR14 `reset()`'s with value 0"]
-impl crate::ResetValue for super::NVIC_IPR14 {
-    type Type = u32;
+#[doc = "Register `NVIC_IPR14` reader"]
+pub struct R(crate::R<NVIC_IPR14_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<NVIC_IPR14_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PRI_0`"]
-pub type PRI_0_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_0`"]
+impl From<crate::R<NVIC_IPR14_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<NVIC_IPR14_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `NVIC_IPR14` writer"]
+pub struct W(crate::W<NVIC_IPR14_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<NVIC_IPR14_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<NVIC_IPR14_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<NVIC_IPR14_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PRI_0` reader - Priority value 0"]
+pub struct PRI_0_R(crate::FieldReader<u8, u8>);
+impl PRI_0_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_0_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_0` writer - Priority value 0"]
 pub struct PRI_0_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> PRI_0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
-#[doc = "Reader of field `PRI_1`"]
-pub type PRI_1_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_1`"]
+#[doc = "Field `PRI_1` reader - Priority value 1"]
+pub struct PRI_1_R(crate::FieldReader<u8, u8>);
+impl PRI_1_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_1_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_1` writer - Priority value 1"]
 pub struct PRI_1_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +82,25 @@ impl<'a> PRI_1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
+        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `PRI_2`"]
-pub type PRI_2_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_2`"]
+#[doc = "Field `PRI_2` reader - Priority value 2"]
+pub struct PRI_2_R(crate::FieldReader<u8, u8>);
+impl PRI_2_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_2_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_2` writer - Priority value 2"]
 pub struct PRI_2_W<'a> {
     w: &'a mut W,
 }
@@ -48,13 +108,25 @@ impl<'a> PRI_2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
+        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `PRI_3`"]
-pub type PRI_3_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_3`"]
+#[doc = "Field `PRI_3` reader - Priority value 3"]
+pub struct PRI_3_R(crate::FieldReader<u8, u8>);
+impl PRI_3_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_3_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_3` writer - Priority value 3"]
 pub struct PRI_3_W<'a> {
     w: &'a mut W,
 }
@@ -62,7 +134,7 @@ impl<'a> PRI_3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | (((value as u32) & 0xff) << 24);
+        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
         self.w
     }
 }
@@ -108,5 +180,31 @@ impl W {
     #[inline(always)]
     pub fn pri_3(&mut self) -> PRI_3_W {
         PRI_3_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt Priority Register 14\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nvic_ipr14](index.html) module"]
+pub struct NVIC_IPR14_SPEC;
+impl crate::RegisterSpec for NVIC_IPR14_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [nvic_ipr14::R](R) reader structure"]
+impl crate::Readable for NVIC_IPR14_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [nvic_ipr14::W](W) writer structure"]
+impl crate::Writable for NVIC_IPR14_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets NVIC_IPR14 to value 0"]
+impl crate::Resettable for NVIC_IPR14_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }
