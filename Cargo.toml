@@ -13,7 +13,7 @@ edition = "2018"
 
 [dependencies]
 cortex-m = "0.7.4"
-vcell = "0.1.2"
+vcell = "0.1.3"
 
 [dependencies.cortex-m-rt]
 optional = true
