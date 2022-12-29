@@ -13,44 +13,20 @@ impl From<crate::R<RESPONSE6_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `RESPONSE7` reader - Response7"]
-pub struct RESPONSE7_R(crate::FieldReader<u16, u16>);
-impl RESPONSE7_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RESPONSE7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESPONSE7_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
 #[doc = "Field `RESPONSE6` reader - Response6"]
-pub struct RESPONSE6_R(crate::FieldReader<u16, u16>);
-impl RESPONSE6_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RESPONSE6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESPONSE6_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RESPONSE6_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `RESPONSE7` reader - Response7"]
+pub type RESPONSE7_R = crate::FieldReader<u16, u16>;
 impl R {
-    #[doc = "Bits 16:31 - Response7"]
-    #[inline(always)]
-    pub fn response7(&self) -> RESPONSE7_R {
-        RESPONSE7_R::new(((self.bits >> 16) & 0xffff) as u16)
-    }
     #[doc = "Bits 0:15 - Response6"]
     #[inline(always)]
     pub fn response6(&self) -> RESPONSE6_R {
         RESPONSE6_R::new((self.bits & 0xffff) as u16)
+    }
+    #[doc = "Bits 16:31 - Response7"]
+    #[inline(always)]
+    pub fn response7(&self) -> RESPONSE7_R {
+        RESPONSE7_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 #[doc = "Response 6 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [response6](index.html) module"]
@@ -64,8 +40,5 @@ impl crate::Readable for RESPONSE6_SPEC {
 }
 #[doc = "`reset()` method sets RESPONSE6 to value 0"]
 impl crate::Resettable for RESPONSE6_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

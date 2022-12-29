@@ -34,8 +34,10 @@ impl From<crate::W<DC_ACT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SYNC_OUT` reader - Sync Out Unit activation"]
+pub type SYNC_OUT_R = crate::BitReader<SYNC_OUT_A>;
 #[doc = "Sync Out Unit activation\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYNC_OUT_A {
     #[doc = "0: Deactivated"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<SYNC_OUT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SYNC_OUT` reader - Sync Out Unit activation"]
-pub struct SYNC_OUT_R(crate::FieldReader<bool, SYNC_OUT_A>);
 impl SYNC_OUT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SYNC_OUT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYNC_OUT_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl SYNC_OUT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SYNC_OUT_A::VALUE1
+        *self == SYNC_OUT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SYNC_OUT_A::VALUE2
-    }
-}
-impl core::ops::Deref for SYNC_OUT_R {
-    type Target = crate::FieldReader<bool, SYNC_OUT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SYNC_OUT_A::VALUE2
     }
 }
 #[doc = "Field `SYNC_OUT` writer - Sync Out Unit activation"]
-pub struct SYNC_OUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYNC_OUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SYNC_OUT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SYNC_OUT_W<'a, const O: u8> = crate::BitWriter<'a, u8, DC_ACT_SPEC, SYNC_OUT_A, O>;
+impl<'a, const O: u8> SYNC_OUT_W<'a, O> {
     #[doc = "Deactivated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> SYNC_OUT_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(SYNC_OUT_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `SYNC_0` reader - SYNC0 generation"]
+pub type SYNC_0_R = crate::BitReader<SYNC_0_A>;
 #[doc = "SYNC0 generation\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYNC_0_A {
     #[doc = "0: Deactivated"]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<SYNC_0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SYNC_0` reader - SYNC0 generation"]
-pub struct SYNC_0_R(crate::FieldReader<bool, SYNC_0_A>);
 impl SYNC_0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SYNC_0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYNC_0_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl SYNC_0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SYNC_0_A::VALUE1
+        *self == SYNC_0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SYNC_0_A::VALUE2
-    }
-}
-impl core::ops::Deref for SYNC_0_R {
-    type Target = crate::FieldReader<bool, SYNC_0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SYNC_0_A::VALUE2
     }
 }
 #[doc = "Field `SYNC_0` writer - SYNC0 generation"]
-pub struct SYNC_0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYNC_0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SYNC_0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SYNC_0_W<'a, const O: u8> = crate::BitWriter<'a, u8, DC_ACT_SPEC, SYNC_0_A, O>;
+impl<'a, const O: u8> SYNC_0_W<'a, O> {
     #[doc = "Deactivated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -183,25 +133,11 @@ impl<'a> SYNC_0_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(SYNC_0_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `SYNC_1` reader - SYNC1 generation"]
+pub type SYNC_1_R = crate::BitReader<SYNC_1_A>;
 #[doc = "SYNC1 generation\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYNC_1_A {
     #[doc = "0: Deactivated"]
     VALUE1 = 0,
@@ -214,13 +150,8 @@ impl From<SYNC_1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SYNC_1` reader - SYNC1 generation"]
-pub struct SYNC_1_R(crate::FieldReader<bool, SYNC_1_A>);
 impl SYNC_1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SYNC_1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYNC_1_A {
         match self.bits {
@@ -231,31 +162,17 @@ impl SYNC_1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SYNC_1_A::VALUE1
+        *self == SYNC_1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SYNC_1_A::VALUE2
-    }
-}
-impl core::ops::Deref for SYNC_1_R {
-    type Target = crate::FieldReader<bool, SYNC_1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SYNC_1_A::VALUE2
     }
 }
 #[doc = "Field `SYNC_1` writer - SYNC1 generation"]
-pub struct SYNC_1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYNC_1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SYNC_1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SYNC_1_W<'a, const O: u8> = crate::BitWriter<'a, u8, DC_ACT_SPEC, SYNC_1_A, O>;
+impl<'a, const O: u8> SYNC_1_W<'a, O> {
     #[doc = "Deactivated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -266,55 +183,42 @@ impl<'a> SYNC_1_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(SYNC_1_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Sync Out Unit activation"]
     #[inline(always)]
     pub fn sync_out(&self) -> SYNC_OUT_R {
-        SYNC_OUT_R::new((self.bits & 0x01) != 0)
+        SYNC_OUT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - SYNC0 generation"]
     #[inline(always)]
     pub fn sync_0(&self) -> SYNC_0_R {
-        SYNC_0_R::new(((self.bits >> 1) & 0x01) != 0)
+        SYNC_0_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - SYNC1 generation"]
     #[inline(always)]
     pub fn sync_1(&self) -> SYNC_1_R {
-        SYNC_1_R::new(((self.bits >> 2) & 0x01) != 0)
+        SYNC_1_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Sync Out Unit activation"]
     #[inline(always)]
-    pub fn sync_out(&mut self) -> SYNC_OUT_W {
-        SYNC_OUT_W { w: self }
+    #[must_use]
+    pub fn sync_out(&mut self) -> SYNC_OUT_W<0> {
+        SYNC_OUT_W::new(self)
     }
     #[doc = "Bit 1 - SYNC0 generation"]
     #[inline(always)]
-    pub fn sync_0(&mut self) -> SYNC_0_W {
-        SYNC_0_W { w: self }
+    #[must_use]
+    pub fn sync_0(&mut self) -> SYNC_0_W<1> {
+        SYNC_0_W::new(self)
     }
     #[doc = "Bit 2 - SYNC1 generation"]
     #[inline(always)]
-    pub fn sync_1(&mut self) -> SYNC_1_W {
-        SYNC_1_W { w: self }
+    #[must_use]
+    pub fn sync_1(&mut self) -> SYNC_1_W<2> {
+        SYNC_1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -335,11 +239,10 @@ impl crate::Readable for DC_ACT_SPEC {
 #[doc = "`write(|w| ..)` method takes [dc_act::W](W) writer structure"]
 impl crate::Writable for DC_ACT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DC_ACT to value 0"]
 impl crate::Resettable for DC_ACT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

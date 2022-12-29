@@ -13,8 +13,10 @@ impl From<crate::R<EEP_CONF_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `TO_PDI` reader - EEPROM control is offered to PDI"]
+pub type TO_PDI_R = crate::BitReader<TO_PDI_A>;
 #[doc = "EEPROM control is offered to PDI\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TO_PDI_A {
     #[doc = "0: No"]
     VALUE1 = 0,
@@ -27,13 +29,8 @@ impl From<TO_PDI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TO_PDI` reader - EEPROM control is offered to PDI"]
-pub struct TO_PDI_R(crate::FieldReader<bool, TO_PDI_A>);
 impl TO_PDI_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TO_PDI_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TO_PDI_A {
         match self.bits {
@@ -44,23 +41,18 @@ impl TO_PDI_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TO_PDI_A::VALUE1
+        *self == TO_PDI_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TO_PDI_A::VALUE2
+        *self == TO_PDI_A::VALUE2
     }
 }
-impl core::ops::Deref for TO_PDI_R {
-    type Target = crate::FieldReader<bool, TO_PDI_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `FORCE` reader - Force ECAT access"]
+pub type FORCE_R = crate::BitReader<FORCE_A>;
 #[doc = "Force ECAT access\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FORCE_A {
     #[doc = "0: Do not change Bit 501.0"]
     VALUE1 = 0,
@@ -73,13 +65,8 @@ impl From<FORCE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FORCE` reader - Force ECAT access"]
-pub struct FORCE_R(crate::FieldReader<bool, FORCE_A>);
 impl FORCE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FORCE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FORCE_A {
         match self.bits {
@@ -90,31 +77,24 @@ impl FORCE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == FORCE_A::VALUE1
+        *self == FORCE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == FORCE_A::VALUE2
-    }
-}
-impl core::ops::Deref for FORCE_R {
-    type Target = crate::FieldReader<bool, FORCE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FORCE_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - EEPROM control is offered to PDI"]
     #[inline(always)]
     pub fn to_pdi(&self) -> TO_PDI_R {
-        TO_PDI_R::new((self.bits & 0x01) != 0)
+        TO_PDI_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Force ECAT access"]
     #[inline(always)]
     pub fn force(&self) -> FORCE_R {
-        FORCE_R::new(((self.bits >> 1) & 0x01) != 0)
+        FORCE_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[doc = "EEPROM Configuration\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [eep_conf](index.html) module"]
@@ -128,8 +108,5 @@ impl crate::Readable for EEP_CONF_SPEC {
 }
 #[doc = "`reset()` method sets EEP_CONF to value 0"]
 impl crate::Resettable for EEP_CONF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

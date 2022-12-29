@@ -35,57 +35,13 @@ impl From<crate::W<GLOBBOUND_SPEC>> for W {
     }
 }
 #[doc = "Field `BOUNDARY0` reader - Boundary Value 0 for Limit Checking"]
-pub struct BOUNDARY0_R(crate::FieldReader<u16, u16>);
-impl BOUNDARY0_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        BOUNDARY0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BOUNDARY0_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BOUNDARY0_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BOUNDARY0` writer - Boundary Value 0 for Limit Checking"]
-pub struct BOUNDARY0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BOUNDARY0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type BOUNDARY0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBBOUND_SPEC, u16, u16, 12, O>;
 #[doc = "Field `BOUNDARY1` reader - Boundary Value 1 for Limit Checking"]
-pub struct BOUNDARY1_R(crate::FieldReader<u16, u16>);
-impl BOUNDARY1_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        BOUNDARY1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BOUNDARY1_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BOUNDARY1_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BOUNDARY1` writer - Boundary Value 1 for Limit Checking"]
-pub struct BOUNDARY1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BOUNDARY1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff << 16)) | ((value as u32 & 0x0fff) << 16);
-        self.w
-    }
-}
+pub type BOUNDARY1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBBOUND_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:11 - Boundary Value 0 for Limit Checking"]
     #[inline(always)]
@@ -101,13 +57,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Boundary Value 0 for Limit Checking"]
     #[inline(always)]
-    pub fn boundary0(&mut self) -> BOUNDARY0_W {
-        BOUNDARY0_W { w: self }
+    #[must_use]
+    pub fn boundary0(&mut self) -> BOUNDARY0_W<0> {
+        BOUNDARY0_W::new(self)
     }
     #[doc = "Bits 16:27 - Boundary Value 1 for Limit Checking"]
     #[inline(always)]
-    pub fn boundary1(&mut self) -> BOUNDARY1_W {
-        BOUNDARY1_W { w: self }
+    #[must_use]
+    pub fn boundary1(&mut self) -> BOUNDARY1_W<16> {
+        BOUNDARY1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for GLOBBOUND_SPEC {
 #[doc = "`write(|w| ..)` method takes [globbound::W](W) writer structure"]
 impl crate::Writable for GLOBBOUND_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GLOBBOUND to value 0"]
 impl crate::Resettable for GLOBBOUND_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

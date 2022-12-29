@@ -13,8 +13,10 @@ impl From<crate::R<ESC_DL_CONTROL_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `FR` reader - Forwarding rule"]
+pub type FR_R = crate::BitReader<FR_A>;
 #[doc = "Forwarding rule\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FR_A {
     #[doc = "0: EtherCAT frames are processed, Non-EtherCAT frames are forwarded without processing"]
     VALUE1 = 0,
@@ -27,13 +29,8 @@ impl From<FR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FR` reader - Forwarding rule"]
-pub struct FR_R(crate::FieldReader<bool, FR_A>);
 impl FR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FR_A {
         match self.bits {
@@ -44,23 +41,18 @@ impl FR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == FR_A::VALUE1
+        *self == FR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == FR_A::VALUE2
+        *self == FR_A::VALUE2
     }
 }
-impl core::ops::Deref for FR_R {
-    type Target = crate::FieldReader<bool, FR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `TEMP` reader - Temporary use of settings in LP1-LP3"]
+pub type TEMP_R = crate::BitReader<TEMP_A>;
 #[doc = "Temporary use of settings in LP1-LP3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TEMP_A {
     #[doc = "0: permanent use"]
     VALUE1 = 0,
@@ -73,13 +65,8 @@ impl From<TEMP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TEMP` reader - Temporary use of settings in LP1-LP3"]
-pub struct TEMP_R(crate::FieldReader<bool, TEMP_A>);
 impl TEMP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TEMP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TEMP_A {
         match self.bits {
@@ -90,23 +77,18 @@ impl TEMP_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TEMP_A::VALUE1
+        *self == TEMP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TEMP_A::VALUE2
+        *self == TEMP_A::VALUE2
     }
 }
-impl core::ops::Deref for TEMP_R {
-    type Target = crate::FieldReader<bool, TEMP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LP0` reader - Loop Port 0"]
+pub type LP0_R = crate::FieldReader<u8, LP0_A>;
 #[doc = "Loop Port 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LP0_A {
     #[doc = "0: Auto"]
@@ -124,13 +106,8 @@ impl From<LP0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LP0` reader - Loop Port 0"]
-pub struct LP0_R(crate::FieldReader<u8, LP0_A>);
 impl LP0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LP0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LP0_A {
         match self.bits {
@@ -144,33 +121,28 @@ impl LP0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LP0_A::VALUE1
+        *self == LP0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LP0_A::VALUE2
+        *self == LP0_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == LP0_A::VALUE3
+        *self == LP0_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == LP0_A::VALUE4
+        *self == LP0_A::VALUE4
     }
 }
-impl core::ops::Deref for LP0_R {
-    type Target = crate::FieldReader<u8, LP0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LP1` reader - Loop Port 1"]
+pub type LP1_R = crate::FieldReader<u8, LP1_A>;
 #[doc = "Loop Port 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LP1_A {
     #[doc = "0: Auto"]
@@ -188,13 +160,8 @@ impl From<LP1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LP1` reader - Loop Port 1"]
-pub struct LP1_R(crate::FieldReader<u8, LP1_A>);
 impl LP1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LP1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LP1_A {
         match self.bits {
@@ -208,33 +175,28 @@ impl LP1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LP1_A::VALUE1
+        *self == LP1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LP1_A::VALUE2
+        *self == LP1_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == LP1_A::VALUE3
+        *self == LP1_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == LP1_A::VALUE4
+        *self == LP1_A::VALUE4
     }
 }
-impl core::ops::Deref for LP1_R {
-    type Target = crate::FieldReader<u8, LP1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LP2` reader - Loop Port 2"]
+pub type LP2_R = crate::FieldReader<u8, LP2_A>;
 #[doc = "Loop Port 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LP2_A {
     #[doc = "0: Auto"]
@@ -252,13 +214,8 @@ impl From<LP2_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LP2` reader - Loop Port 2"]
-pub struct LP2_R(crate::FieldReader<u8, LP2_A>);
 impl LP2_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LP2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LP2_A {
         match self.bits {
@@ -272,33 +229,28 @@ impl LP2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LP2_A::VALUE1
+        *self == LP2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LP2_A::VALUE2
+        *self == LP2_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == LP2_A::VALUE3
+        *self == LP2_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == LP2_A::VALUE4
+        *self == LP2_A::VALUE4
     }
 }
-impl core::ops::Deref for LP2_R {
-    type Target = crate::FieldReader<u8, LP2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LP3` reader - Loop Port 3"]
+pub type LP3_R = crate::FieldReader<u8, LP3_A>;
 #[doc = "Loop Port 3\n\nValue on reset: 3"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LP3_A {
     #[doc = "0: Auto"]
@@ -316,13 +268,8 @@ impl From<LP3_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LP3` reader - Loop Port 3"]
-pub struct LP3_R(crate::FieldReader<u8, LP3_A>);
 impl LP3_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LP3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LP3_A {
         match self.bits {
@@ -336,33 +283,28 @@ impl LP3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LP3_A::VALUE1
+        *self == LP3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LP3_A::VALUE2
+        *self == LP3_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == LP3_A::VALUE3
+        *self == LP3_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == LP3_A::VALUE4
+        *self == LP3_A::VALUE4
     }
 }
-impl core::ops::Deref for LP3_R {
-    type Target = crate::FieldReader<u8, LP3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `RX_FIFO_SIZE` reader - RX FIFO Size"]
+pub type RX_FIFO_SIZE_R = crate::FieldReader<u8, RX_FIFO_SIZE_A>;
 #[doc = "RX FIFO Size\n\nValue on reset: 7"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RX_FIFO_SIZE_A {
     #[doc = "0: -40 ns (-80 ns)"]
@@ -388,13 +330,8 @@ impl From<RX_FIFO_SIZE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RX_FIFO_SIZE` reader - RX FIFO Size"]
-pub struct RX_FIFO_SIZE_R(crate::FieldReader<u8, RX_FIFO_SIZE_A>);
 impl RX_FIFO_SIZE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RX_FIFO_SIZE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_FIFO_SIZE_A {
         match self.bits {
@@ -412,53 +349,48 @@ impl RX_FIFO_SIZE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RX_FIFO_SIZE_A::VALUE1
+        *self == RX_FIFO_SIZE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RX_FIFO_SIZE_A::VALUE2
+        *self == RX_FIFO_SIZE_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == RX_FIFO_SIZE_A::VALUE3
+        *self == RX_FIFO_SIZE_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == RX_FIFO_SIZE_A::VALUE4
+        *self == RX_FIFO_SIZE_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        **self == RX_FIFO_SIZE_A::VALUE5
+        *self == RX_FIFO_SIZE_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        **self == RX_FIFO_SIZE_A::VALUE6
+        *self == RX_FIFO_SIZE_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        **self == RX_FIFO_SIZE_A::VALUE7
+        *self == RX_FIFO_SIZE_A::VALUE7
     }
     #[doc = "Checks if the value of the field is `VALUE8`"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        **self == RX_FIFO_SIZE_A::VALUE8
+        *self == RX_FIFO_SIZE_A::VALUE8
     }
 }
-impl core::ops::Deref for RX_FIFO_SIZE_R {
-    type Target = crate::FieldReader<u8, RX_FIFO_SIZE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LJ` reader - EBUS Low Jitter"]
+pub type LJ_R = crate::BitReader<LJ_A>;
 #[doc = "EBUS Low Jitter\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LJ_A {
     #[doc = "0: Normal jitter"]
     VALUE1 = 0,
@@ -471,13 +403,8 @@ impl From<LJ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LJ` reader - EBUS Low Jitter"]
-pub struct LJ_R(crate::FieldReader<bool, LJ_A>);
 impl LJ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LJ_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LJ_A {
         match self.bits {
@@ -488,23 +415,18 @@ impl LJ_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LJ_A::VALUE1
+        *self == LJ_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LJ_A::VALUE2
+        *self == LJ_A::VALUE2
     }
 }
-impl core::ops::Deref for LJ_R {
-    type Target = crate::FieldReader<bool, LJ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `RLD_ST` reader - EBUS remote link down signaling time"]
+pub type RLD_ST_R = crate::BitReader<RLD_ST_A>;
 #[doc = "EBUS remote link down signaling time\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RLD_ST_A {
     #[doc = "0: Default (~660 ms)"]
     VALUE1 = 0,
@@ -517,13 +439,8 @@ impl From<RLD_ST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RLD_ST` reader - EBUS remote link down signaling time"]
-pub struct RLD_ST_R(crate::FieldReader<bool, RLD_ST_A>);
 impl RLD_ST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RLD_ST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RLD_ST_A {
         match self.bits {
@@ -534,23 +451,18 @@ impl RLD_ST_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RLD_ST_A::VALUE1
+        *self == RLD_ST_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RLD_ST_A::VALUE2
+        *self == RLD_ST_A::VALUE2
     }
 }
-impl core::ops::Deref for RLD_ST_R {
-    type Target = crate::FieldReader<bool, RLD_ST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `S_ALIAS` reader - Station alias"]
+pub type S_ALIAS_R = crate::BitReader<S_ALIAS_A>;
 #[doc = "Station alias\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum S_ALIAS_A {
     #[doc = "0: Ignore Station Alias"]
     VALUE1 = 0,
@@ -563,13 +475,8 @@ impl From<S_ALIAS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `S_ALIAS` reader - Station alias"]
-pub struct S_ALIAS_R(crate::FieldReader<bool, S_ALIAS_A>);
 impl S_ALIAS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        S_ALIAS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S_ALIAS_A {
         match self.bits {
@@ -580,71 +487,64 @@ impl S_ALIAS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == S_ALIAS_A::VALUE1
+        *self == S_ALIAS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == S_ALIAS_A::VALUE2
-    }
-}
-impl core::ops::Deref for S_ALIAS_R {
-    type Target = crate::FieldReader<bool, S_ALIAS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == S_ALIAS_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - Forwarding rule"]
     #[inline(always)]
     pub fn fr(&self) -> FR_R {
-        FR_R::new((self.bits & 0x01) != 0)
+        FR_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Temporary use of settings in LP1-LP3"]
     #[inline(always)]
     pub fn temp(&self) -> TEMP_R {
-        TEMP_R::new(((self.bits >> 1) & 0x01) != 0)
+        TEMP_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Loop Port 0"]
     #[inline(always)]
     pub fn lp0(&self) -> LP0_R {
-        LP0_R::new(((self.bits >> 8) & 0x03) as u8)
+        LP0_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - Loop Port 1"]
     #[inline(always)]
     pub fn lp1(&self) -> LP1_R {
-        LP1_R::new(((self.bits >> 10) & 0x03) as u8)
+        LP1_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - Loop Port 2"]
     #[inline(always)]
     pub fn lp2(&self) -> LP2_R {
-        LP2_R::new(((self.bits >> 12) & 0x03) as u8)
+        LP2_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 14:15 - Loop Port 3"]
     #[inline(always)]
     pub fn lp3(&self) -> LP3_R {
-        LP3_R::new(((self.bits >> 14) & 0x03) as u8)
+        LP3_R::new(((self.bits >> 14) & 3) as u8)
     }
     #[doc = "Bits 16:18 - RX FIFO Size"]
     #[inline(always)]
     pub fn rx_fifo_size(&self) -> RX_FIFO_SIZE_R {
-        RX_FIFO_SIZE_R::new(((self.bits >> 16) & 0x07) as u8)
+        RX_FIFO_SIZE_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bit 19 - EBUS Low Jitter"]
     #[inline(always)]
     pub fn lj(&self) -> LJ_R {
-        LJ_R::new(((self.bits >> 19) & 0x01) != 0)
+        LJ_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 22 - EBUS remote link down signaling time"]
     #[inline(always)]
     pub fn rld_st(&self) -> RLD_ST_R {
-        RLD_ST_R::new(((self.bits >> 22) & 0x01) != 0)
+        RLD_ST_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 24 - Station alias"]
     #[inline(always)]
     pub fn s_alias(&self) -> S_ALIAS_R {
-        S_ALIAS_R::new(((self.bits >> 24) & 0x01) != 0)
+        S_ALIAS_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
 #[doc = "ESC DL Control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [esc_dl_control](index.html) module"]
@@ -658,8 +558,5 @@ impl crate::Readable for ESC_DL_CONTROL_SPEC {
 }
 #[doc = "`reset()` method sets ESC_DL_CONTROL to value 0x0007_c001"]
 impl crate::Resettable for ESC_DL_CONTROL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0007_c001
-    }
+    const RESET_VALUE: Self::Ux = 0x0007_c001;
 }

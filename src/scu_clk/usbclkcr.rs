@@ -35,33 +35,13 @@ impl From<crate::W<USBCLKCR_SPEC>> for W {
     }
 }
 #[doc = "Field `USBDIV` reader - USB Clock Divider Value"]
-pub struct USBDIV_R(crate::FieldReader<u8, u8>);
-impl USBDIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        USBDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USBDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USBDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `USBDIV` writer - USB Clock Divider Value"]
-pub struct USBDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USBDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type USBDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, USBCLKCR_SPEC, u8, u8, 3, O>;
+#[doc = "Field `USBSEL` reader - USB Clock Selection Value"]
+pub type USBSEL_R = crate::BitReader<USBSEL_A>;
 #[doc = "USB Clock Selection Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum USBSEL_A {
     #[doc = "0: USB PLL Clock"]
     CONST_0 = 0,
@@ -74,13 +54,8 @@ impl From<USBSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `USBSEL` reader - USB Clock Selection Value"]
-pub struct USBSEL_R(crate::FieldReader<bool, USBSEL_A>);
 impl USBSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        USBSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USBSEL_A {
         match self.bits {
@@ -91,31 +66,17 @@ impl USBSEL_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == USBSEL_A::CONST_0
+        *self == USBSEL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == USBSEL_A::CONST_1
-    }
-}
-impl core::ops::Deref for USBSEL_R {
-    type Target = crate::FieldReader<bool, USBSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == USBSEL_A::CONST_1
     }
 }
 #[doc = "Field `USBSEL` writer - USB Clock Selection Value"]
-pub struct USBSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USBSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USBSEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type USBSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBCLKCR_SPEC, USBSEL_A, O>;
+impl<'a, const O: u8> USBSEL_W<'a, O> {
     #[doc = "USB PLL Clock"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -126,45 +87,31 @@ impl<'a> USBSEL_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(USBSEL_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - USB Clock Divider Value"]
     #[inline(always)]
     pub fn usbdiv(&self) -> USBDIV_R {
-        USBDIV_R::new((self.bits & 0x07) as u8)
+        USBDIV_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 16 - USB Clock Selection Value"]
     #[inline(always)]
     pub fn usbsel(&self) -> USBSEL_R {
-        USBSEL_R::new(((self.bits >> 16) & 0x01) != 0)
+        USBSEL_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - USB Clock Divider Value"]
     #[inline(always)]
-    pub fn usbdiv(&mut self) -> USBDIV_W {
-        USBDIV_W { w: self }
+    #[must_use]
+    pub fn usbdiv(&mut self) -> USBDIV_W<0> {
+        USBDIV_W::new(self)
     }
     #[doc = "Bit 16 - USB Clock Selection Value"]
     #[inline(always)]
-    pub fn usbsel(&mut self) -> USBSEL_W {
-        USBSEL_W { w: self }
+    #[must_use]
+    pub fn usbsel(&mut self) -> USBSEL_W<16> {
+        USBSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -185,11 +132,10 @@ impl crate::Readable for USBCLKCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [usbclkcr::W](W) writer structure"]
 impl crate::Writable for USBCLKCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets USBCLKCR to value 0"]
 impl crate::Resettable for USBCLKCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

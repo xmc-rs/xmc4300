@@ -34,8 +34,10 @@ impl From<crate::W<TIMEOUT_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DAT_TIMEOUT_CNT_VAL` reader - Data Timeout Counter Value"]
+pub type DAT_TIMEOUT_CNT_VAL_R = crate::FieldReader<u8, DAT_TIMEOUT_CNT_VAL_A>;
 #[doc = "Data Timeout Counter Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DAT_TIMEOUT_CNT_VAL_A {
     #[doc = "0: TMCLK * 2^13"]
@@ -51,13 +53,8 @@ impl From<DAT_TIMEOUT_CNT_VAL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DAT_TIMEOUT_CNT_VAL` reader - Data Timeout Counter Value"]
-pub struct DAT_TIMEOUT_CNT_VAL_R(crate::FieldReader<u8, DAT_TIMEOUT_CNT_VAL_A>);
 impl DAT_TIMEOUT_CNT_VAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DAT_TIMEOUT_CNT_VAL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DAT_TIMEOUT_CNT_VAL_A> {
         match self.bits {
@@ -70,36 +67,22 @@ impl DAT_TIMEOUT_CNT_VAL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DAT_TIMEOUT_CNT_VAL_A::VALUE1
+        *self == DAT_TIMEOUT_CNT_VAL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DAT_TIMEOUT_CNT_VAL_A::VALUE2
+        *self == DAT_TIMEOUT_CNT_VAL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == DAT_TIMEOUT_CNT_VAL_A::VALUE3
-    }
-}
-impl core::ops::Deref for DAT_TIMEOUT_CNT_VAL_R {
-    type Target = crate::FieldReader<u8, DAT_TIMEOUT_CNT_VAL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DAT_TIMEOUT_CNT_VAL_A::VALUE3
     }
 }
 #[doc = "Field `DAT_TIMEOUT_CNT_VAL` writer - Data Timeout Counter Value"]
-pub struct DAT_TIMEOUT_CNT_VAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAT_TIMEOUT_CNT_VAL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DAT_TIMEOUT_CNT_VAL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type DAT_TIMEOUT_CNT_VAL_W<'a, const O: u8> = crate::FieldWriter<'a, u8, TIMEOUT_CTRL_SPEC, u8, DAT_TIMEOUT_CNT_VAL_A, 4, O>;
+impl<'a, const O: u8> DAT_TIMEOUT_CNT_VAL_W<'a, O> {
     #[doc = "TMCLK * 2^13"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -115,25 +98,20 @@ impl<'a> DAT_TIMEOUT_CNT_VAL_W<'a> {
     pub fn value3(self) -> &'a mut W {
         self.variant(DAT_TIMEOUT_CNT_VAL_A::VALUE3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u8 & 0x0f);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:3 - Data Timeout Counter Value"]
     #[inline(always)]
     pub fn dat_timeout_cnt_val(&self) -> DAT_TIMEOUT_CNT_VAL_R {
-        DAT_TIMEOUT_CNT_VAL_R::new((self.bits & 0x0f) as u8)
+        DAT_TIMEOUT_CNT_VAL_R::new(self.bits & 0x0f)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Data Timeout Counter Value"]
     #[inline(always)]
-    pub fn dat_timeout_cnt_val(&mut self) -> DAT_TIMEOUT_CNT_VAL_W {
-        DAT_TIMEOUT_CNT_VAL_W { w: self }
+    #[must_use]
+    pub fn dat_timeout_cnt_val(&mut self) -> DAT_TIMEOUT_CNT_VAL_W<0> {
+        DAT_TIMEOUT_CNT_VAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -154,11 +132,10 @@ impl crate::Readable for TIMEOUT_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [timeout_ctrl::W](W) writer structure"]
 impl crate::Writable for TIMEOUT_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TIMEOUT_CTRL to value 0"]
 impl crate::Resettable for TIMEOUT_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

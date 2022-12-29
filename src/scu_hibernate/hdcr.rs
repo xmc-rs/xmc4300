@@ -34,8 +34,10 @@ impl From<crate::W<HDCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `WKPEP` reader - Wake-Up on Pin Event Positive Edge Enable"]
+pub type WKPEP_R = crate::BitReader<WKPEP_A>;
 #[doc = "Wake-Up on Pin Event Positive Edge Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKPEP_A {
     #[doc = "0: Wake-up event disabled"]
     CONST_0 = 0,
@@ -48,13 +50,8 @@ impl From<WKPEP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKPEP` reader - Wake-Up on Pin Event Positive Edge Enable"]
-pub struct WKPEP_R(crate::FieldReader<bool, WKPEP_A>);
 impl WKPEP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WKPEP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKPEP_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl WKPEP_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == WKPEP_A::CONST_0
+        *self == WKPEP_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == WKPEP_A::CONST_1
-    }
-}
-impl core::ops::Deref for WKPEP_R {
-    type Target = crate::FieldReader<bool, WKPEP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WKPEP_A::CONST_1
     }
 }
 #[doc = "Field `WKPEP` writer - Wake-Up on Pin Event Positive Edge Enable"]
-pub struct WKPEP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WKPEP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WKPEP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WKPEP_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, WKPEP_A, O>;
+impl<'a, const O: u8> WKPEP_W<'a, O> {
     #[doc = "Wake-up event disabled"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> WKPEP_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(WKPEP_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `WKPEN` reader - Wake-up on Pin Event Negative Edge Enable"]
+pub type WKPEN_R = crate::BitReader<WKPEN_A>;
 #[doc = "Wake-up on Pin Event Negative Edge Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKPEN_A {
     #[doc = "0: Wake-up event disabled"]
     CONST_0 = 0,
@@ -131,13 +100,8 @@ impl From<WKPEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKPEN` reader - Wake-up on Pin Event Negative Edge Enable"]
-pub struct WKPEN_R(crate::FieldReader<bool, WKPEN_A>);
 impl WKPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WKPEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKPEN_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl WKPEN_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == WKPEN_A::CONST_0
+        *self == WKPEN_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == WKPEN_A::CONST_1
-    }
-}
-impl core::ops::Deref for WKPEN_R {
-    type Target = crate::FieldReader<bool, WKPEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WKPEN_A::CONST_1
     }
 }
 #[doc = "Field `WKPEN` writer - Wake-up on Pin Event Negative Edge Enable"]
-pub struct WKPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WKPEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WKPEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, WKPEN_A, O>;
+impl<'a, const O: u8> WKPEN_W<'a, O> {
     #[doc = "Wake-up event disabled"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -183,25 +133,11 @@ impl<'a> WKPEN_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(WKPEN_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `RTCE` reader - Wake-up on RTC Event Enable"]
+pub type RTCE_R = crate::BitReader<RTCE_A>;
 #[doc = "Wake-up on RTC Event Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RTCE_A {
     #[doc = "0: Wake-up event disabled"]
     CONST_0 = 0,
@@ -214,13 +150,8 @@ impl From<RTCE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RTCE` reader - Wake-up on RTC Event Enable"]
-pub struct RTCE_R(crate::FieldReader<bool, RTCE_A>);
 impl RTCE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RTCE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCE_A {
         match self.bits {
@@ -231,31 +162,17 @@ impl RTCE_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == RTCE_A::CONST_0
+        *self == RTCE_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == RTCE_A::CONST_1
-    }
-}
-impl core::ops::Deref for RTCE_R {
-    type Target = crate::FieldReader<bool, RTCE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RTCE_A::CONST_1
     }
 }
 #[doc = "Field `RTCE` writer - Wake-up on RTC Event Enable"]
-pub struct RTCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RTCE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RTCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, RTCE_A, O>;
+impl<'a, const O: u8> RTCE_W<'a, O> {
     #[doc = "Wake-up event disabled"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -266,25 +183,11 @@ impl<'a> RTCE_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(RTCE_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `ULPWDGEN` reader - ULP WDG Alarm Enable"]
+pub type ULPWDGEN_R = crate::BitReader<ULPWDGEN_A>;
 #[doc = "ULP WDG Alarm Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ULPWDGEN_A {
     #[doc = "0: Wake-up event disabled"]
     CONST_0 = 0,
@@ -297,13 +200,8 @@ impl From<ULPWDGEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ULPWDGEN` reader - ULP WDG Alarm Enable"]
-pub struct ULPWDGEN_R(crate::FieldReader<bool, ULPWDGEN_A>);
 impl ULPWDGEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ULPWDGEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ULPWDGEN_A {
         match self.bits {
@@ -314,31 +212,17 @@ impl ULPWDGEN_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == ULPWDGEN_A::CONST_0
+        *self == ULPWDGEN_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == ULPWDGEN_A::CONST_1
-    }
-}
-impl core::ops::Deref for ULPWDGEN_R {
-    type Target = crate::FieldReader<bool, ULPWDGEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ULPWDGEN_A::CONST_1
     }
 }
 #[doc = "Field `ULPWDGEN` writer - ULP WDG Alarm Enable"]
-pub struct ULPWDGEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ULPWDGEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ULPWDGEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ULPWDGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, ULPWDGEN_A, O>;
+impl<'a, const O: u8> ULPWDGEN_W<'a, O> {
     #[doc = "Wake-up event disabled"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -349,25 +233,11 @@ impl<'a> ULPWDGEN_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(ULPWDGEN_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `HIB` reader - Hibernate Request Value Set"]
+pub type HIB_R = crate::BitReader<HIB_A>;
 #[doc = "Hibernate Request Value Set\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HIB_A {
     #[doc = "0: External hibernate request inactive"]
     CONST_0 = 0,
@@ -380,13 +250,8 @@ impl From<HIB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HIB` reader - Hibernate Request Value Set"]
-pub struct HIB_R(crate::FieldReader<bool, HIB_A>);
 impl HIB_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HIB_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HIB_A {
         match self.bits {
@@ -397,31 +262,17 @@ impl HIB_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == HIB_A::CONST_0
+        *self == HIB_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == HIB_A::CONST_1
-    }
-}
-impl core::ops::Deref for HIB_R {
-    type Target = crate::FieldReader<bool, HIB_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HIB_A::CONST_1
     }
 }
 #[doc = "Field `HIB` writer - Hibernate Request Value Set"]
-pub struct HIB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIB_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HIB_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HIB_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, HIB_A, O>;
+impl<'a, const O: u8> HIB_W<'a, O> {
     #[doc = "External hibernate request inactive"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -432,25 +283,11 @@ impl<'a> HIB_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(HIB_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `RCS` reader - fRTC Clock Selection"]
+pub type RCS_R = crate::BitReader<RCS_A>;
 #[doc = "fRTC Clock Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RCS_A {
     #[doc = "0: fOSI selected"]
     CONST_0 = 0,
@@ -463,13 +300,8 @@ impl From<RCS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RCS` reader - fRTC Clock Selection"]
-pub struct RCS_R(crate::FieldReader<bool, RCS_A>);
 impl RCS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RCS_A {
         match self.bits {
@@ -480,31 +312,17 @@ impl RCS_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == RCS_A::CONST_0
+        *self == RCS_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == RCS_A::CONST_1
-    }
-}
-impl core::ops::Deref for RCS_R {
-    type Target = crate::FieldReader<bool, RCS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCS_A::CONST_1
     }
 }
 #[doc = "Field `RCS` writer - fRTC Clock Selection"]
-pub struct RCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, RCS_A, O>;
+impl<'a, const O: u8> RCS_W<'a, O> {
     #[doc = "fOSI selected"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -515,25 +333,11 @@ impl<'a> RCS_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(RCS_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `STDBYSEL` reader - fSTDBY Clock Selection"]
+pub type STDBYSEL_R = crate::BitReader<STDBYSEL_A>;
 #[doc = "fSTDBY Clock Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum STDBYSEL_A {
     #[doc = "0: fOSI selected"]
     CONST_0 = 0,
@@ -546,13 +350,8 @@ impl From<STDBYSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STDBYSEL` reader - fSTDBY Clock Selection"]
-pub struct STDBYSEL_R(crate::FieldReader<bool, STDBYSEL_A>);
 impl STDBYSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        STDBYSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STDBYSEL_A {
         match self.bits {
@@ -563,31 +362,17 @@ impl STDBYSEL_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == STDBYSEL_A::CONST_0
+        *self == STDBYSEL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == STDBYSEL_A::CONST_1
-    }
-}
-impl core::ops::Deref for STDBYSEL_R {
-    type Target = crate::FieldReader<bool, STDBYSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STDBYSEL_A::CONST_1
     }
 }
 #[doc = "Field `STDBYSEL` writer - fSTDBY Clock Selection"]
-pub struct STDBYSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STDBYSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STDBYSEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type STDBYSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, STDBYSEL_A, O>;
+impl<'a, const O: u8> STDBYSEL_W<'a, O> {
     #[doc = "fOSI selected"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -598,25 +383,11 @@ impl<'a> STDBYSEL_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(STDBYSEL_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
+#[doc = "Field `WKUPSEL` reader - Wake-Up from Hibernate Trigger Input Selection"]
+pub type WKUPSEL_R = crate::BitReader<WKUPSEL_A>;
 #[doc = "Wake-Up from Hibernate Trigger Input Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WKUPSEL_A {
     #[doc = "0: HIB_IO_1 pin selected"]
     CONST_0 = 0,
@@ -629,13 +400,8 @@ impl From<WKUPSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WKUPSEL` reader - Wake-Up from Hibernate Trigger Input Selection"]
-pub struct WKUPSEL_R(crate::FieldReader<bool, WKUPSEL_A>);
 impl WKUPSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WKUPSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WKUPSEL_A {
         match self.bits {
@@ -646,31 +412,17 @@ impl WKUPSEL_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == WKUPSEL_A::CONST_0
+        *self == WKUPSEL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == WKUPSEL_A::CONST_1
-    }
-}
-impl core::ops::Deref for WKUPSEL_R {
-    type Target = crate::FieldReader<bool, WKUPSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WKUPSEL_A::CONST_1
     }
 }
 #[doc = "Field `WKUPSEL` writer - Wake-Up from Hibernate Trigger Input Selection"]
-pub struct WKUPSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WKUPSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WKUPSEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WKUPSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, WKUPSEL_A, O>;
+impl<'a, const O: u8> WKUPSEL_W<'a, O> {
     #[doc = "HIB_IO_1 pin selected"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -681,25 +433,11 @@ impl<'a> WKUPSEL_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(WKUPSEL_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `GPI0SEL` reader - General Purpose Input 0 Selection"]
+pub type GPI0SEL_R = crate::BitReader<GPI0SEL_A>;
 #[doc = "General Purpose Input 0 Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GPI0SEL_A {
     #[doc = "0: #0"]
     CONST_0 = 0,
@@ -712,13 +450,8 @@ impl From<GPI0SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GPI0SEL` reader - General Purpose Input 0 Selection"]
-pub struct GPI0SEL_R(crate::FieldReader<bool, GPI0SEL_A>);
 impl GPI0SEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GPI0SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GPI0SEL_A {
         match self.bits {
@@ -729,31 +462,17 @@ impl GPI0SEL_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == GPI0SEL_A::CONST_0
+        *self == GPI0SEL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == GPI0SEL_A::CONST_1
-    }
-}
-impl core::ops::Deref for GPI0SEL_R {
-    type Target = crate::FieldReader<bool, GPI0SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GPI0SEL_A::CONST_1
     }
 }
 #[doc = "Field `GPI0SEL` writer - General Purpose Input 0 Selection"]
-pub struct GPI0SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPI0SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GPI0SEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type GPI0SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, GPI0SEL_A, O>;
+impl<'a, const O: u8> GPI0SEL_W<'a, O> {
     #[doc = "#0"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -764,25 +483,11 @@ impl<'a> GPI0SEL_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(GPI0SEL_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
 }
+#[doc = "Field `HIBIO0POL` reader - HIBIO0 Polarity Set"]
+pub type HIBIO0POL_R = crate::BitReader<HIBIO0POL_A>;
 #[doc = "HIBIO0 Polarity Set\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HIBIO0POL_A {
     #[doc = "0: Direct value"]
     CONST_0 = 0,
@@ -795,13 +500,8 @@ impl From<HIBIO0POL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HIBIO0POL` reader - HIBIO0 Polarity Set"]
-pub struct HIBIO0POL_R(crate::FieldReader<bool, HIBIO0POL_A>);
 impl HIBIO0POL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HIBIO0POL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HIBIO0POL_A {
         match self.bits {
@@ -812,31 +512,17 @@ impl HIBIO0POL_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == HIBIO0POL_A::CONST_0
+        *self == HIBIO0POL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == HIBIO0POL_A::CONST_1
-    }
-}
-impl core::ops::Deref for HIBIO0POL_R {
-    type Target = crate::FieldReader<bool, HIBIO0POL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HIBIO0POL_A::CONST_1
     }
 }
 #[doc = "Field `HIBIO0POL` writer - HIBIO0 Polarity Set"]
-pub struct HIBIO0POL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIBIO0POL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HIBIO0POL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HIBIO0POL_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, HIBIO0POL_A, O>;
+impl<'a, const O: u8> HIBIO0POL_W<'a, O> {
     #[doc = "Direct value"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -847,25 +533,11 @@ impl<'a> HIBIO0POL_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(HIBIO0POL_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
+#[doc = "Field `HIBIO1POL` reader - HIBIO1 Polarity Set"]
+pub type HIBIO1POL_R = crate::BitReader<HIBIO1POL_A>;
 #[doc = "HIBIO1 Polarity Set\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HIBIO1POL_A {
     #[doc = "0: Direct value"]
     CONST_0 = 0,
@@ -878,13 +550,8 @@ impl From<HIBIO1POL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HIBIO1POL` reader - HIBIO1 Polarity Set"]
-pub struct HIBIO1POL_R(crate::FieldReader<bool, HIBIO1POL_A>);
 impl HIBIO1POL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HIBIO1POL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HIBIO1POL_A {
         match self.bits {
@@ -895,31 +562,17 @@ impl HIBIO1POL_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == HIBIO1POL_A::CONST_0
+        *self == HIBIO1POL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == HIBIO1POL_A::CONST_1
-    }
-}
-impl core::ops::Deref for HIBIO1POL_R {
-    type Target = crate::FieldReader<bool, HIBIO1POL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HIBIO1POL_A::CONST_1
     }
 }
 #[doc = "Field `HIBIO1POL` writer - HIBIO1 Polarity Set"]
-pub struct HIBIO1POL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIBIO1POL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HIBIO1POL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HIBIO1POL_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, HIBIO1POL_A, O>;
+impl<'a, const O: u8> HIBIO1POL_W<'a, O> {
     #[doc = "Direct value"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -930,25 +583,11 @@ impl<'a> HIBIO1POL_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(HIBIO1POL_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
 }
+#[doc = "Field `HIBIO0SEL` reader - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
+pub type HIBIO0SEL_R = crate::FieldReader<u8, HIBIO0SEL_A>;
 #[doc = "HIB_IO_0 Pin I/O Control (default HIBOUT)\n\nValue on reset: 12"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HIBIO0SEL_A {
     #[doc = "0: Direct input, No input pull device connected"]
@@ -978,13 +617,8 @@ impl From<HIBIO0SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HIBIO0SEL` reader - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
-pub struct HIBIO0SEL_R(crate::FieldReader<u8, HIBIO0SEL_A>);
 impl HIBIO0SEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HIBIO0SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HIBIO0SEL_A> {
         match self.bits {
@@ -1004,71 +638,57 @@ impl HIBIO0SEL_R {
     #[doc = "Checks if the value of the field is `CONST_0000`"]
     #[inline(always)]
     pub fn is_const_0000(&self) -> bool {
-        **self == HIBIO0SEL_A::CONST_0000
+        *self == HIBIO0SEL_A::CONST_0000
     }
     #[doc = "Checks if the value of the field is `CONST_0001`"]
     #[inline(always)]
     pub fn is_const_0001(&self) -> bool {
-        **self == HIBIO0SEL_A::CONST_0001
+        *self == HIBIO0SEL_A::CONST_0001
     }
     #[doc = "Checks if the value of the field is `CONST_0010`"]
     #[inline(always)]
     pub fn is_const_0010(&self) -> bool {
-        **self == HIBIO0SEL_A::CONST_0010
+        *self == HIBIO0SEL_A::CONST_0010
     }
     #[doc = "Checks if the value of the field is `CONST_1000`"]
     #[inline(always)]
     pub fn is_const_1000(&self) -> bool {
-        **self == HIBIO0SEL_A::CONST_1000
+        *self == HIBIO0SEL_A::CONST_1000
     }
     #[doc = "Checks if the value of the field is `CONST_1001`"]
     #[inline(always)]
     pub fn is_const_1001(&self) -> bool {
-        **self == HIBIO0SEL_A::CONST_1001
+        *self == HIBIO0SEL_A::CONST_1001
     }
     #[doc = "Checks if the value of the field is `CONST_1010`"]
     #[inline(always)]
     pub fn is_const_1010(&self) -> bool {
-        **self == HIBIO0SEL_A::CONST_1010
+        *self == HIBIO0SEL_A::CONST_1010
     }
     #[doc = "Checks if the value of the field is `CONST_1100`"]
     #[inline(always)]
     pub fn is_const_1100(&self) -> bool {
-        **self == HIBIO0SEL_A::CONST_1100
+        *self == HIBIO0SEL_A::CONST_1100
     }
     #[doc = "Checks if the value of the field is `CONST_1101`"]
     #[inline(always)]
     pub fn is_const_1101(&self) -> bool {
-        **self == HIBIO0SEL_A::CONST_1101
+        *self == HIBIO0SEL_A::CONST_1101
     }
     #[doc = "Checks if the value of the field is `CONST_1110`"]
     #[inline(always)]
     pub fn is_const_1110(&self) -> bool {
-        **self == HIBIO0SEL_A::CONST_1110
+        *self == HIBIO0SEL_A::CONST_1110
     }
     #[doc = "Checks if the value of the field is `CONST_1111`"]
     #[inline(always)]
     pub fn is_const_1111(&self) -> bool {
-        **self == HIBIO0SEL_A::CONST_1111
-    }
-}
-impl core::ops::Deref for HIBIO0SEL_R {
-    type Target = crate::FieldReader<u8, HIBIO0SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HIBIO0SEL_A::CONST_1111
     }
 }
 #[doc = "Field `HIBIO0SEL` writer - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
-pub struct HIBIO0SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIBIO0SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HIBIO0SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HIBIO0SEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HDCR_SPEC, u8, HIBIO0SEL_A, 4, O>;
+impl<'a, const O: u8> HIBIO0SEL_W<'a, O> {
     #[doc = "Direct input, No input pull device connected"]
     #[inline(always)]
     pub fn const_0000(self) -> &'a mut W {
@@ -1119,15 +739,11 @@ impl<'a> HIBIO0SEL_W<'a> {
     pub fn const_1111(self) -> &'a mut W {
         self.variant(HIBIO0SEL_A::CONST_1111)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
 }
+#[doc = "Field `HIBIO1SEL` reader - HIB_IO_1 Pin I/O Control (Default WKUP)"]
+pub type HIBIO1SEL_R = crate::FieldReader<u8, HIBIO1SEL_A>;
 #[doc = "HIB_IO_1 Pin I/O Control (Default WKUP)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HIBIO1SEL_A {
     #[doc = "0: Direct input, No input pull device connected"]
@@ -1157,13 +773,8 @@ impl From<HIBIO1SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HIBIO1SEL` reader - HIB_IO_1 Pin I/O Control (Default WKUP)"]
-pub struct HIBIO1SEL_R(crate::FieldReader<u8, HIBIO1SEL_A>);
 impl HIBIO1SEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HIBIO1SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HIBIO1SEL_A> {
         match self.bits {
@@ -1183,71 +794,57 @@ impl HIBIO1SEL_R {
     #[doc = "Checks if the value of the field is `CONST_0000`"]
     #[inline(always)]
     pub fn is_const_0000(&self) -> bool {
-        **self == HIBIO1SEL_A::CONST_0000
+        *self == HIBIO1SEL_A::CONST_0000
     }
     #[doc = "Checks if the value of the field is `CONST_0001`"]
     #[inline(always)]
     pub fn is_const_0001(&self) -> bool {
-        **self == HIBIO1SEL_A::CONST_0001
+        *self == HIBIO1SEL_A::CONST_0001
     }
     #[doc = "Checks if the value of the field is `CONST_0010`"]
     #[inline(always)]
     pub fn is_const_0010(&self) -> bool {
-        **self == HIBIO1SEL_A::CONST_0010
+        *self == HIBIO1SEL_A::CONST_0010
     }
     #[doc = "Checks if the value of the field is `CONST_1000`"]
     #[inline(always)]
     pub fn is_const_1000(&self) -> bool {
-        **self == HIBIO1SEL_A::CONST_1000
+        *self == HIBIO1SEL_A::CONST_1000
     }
     #[doc = "Checks if the value of the field is `CONST_1001`"]
     #[inline(always)]
     pub fn is_const_1001(&self) -> bool {
-        **self == HIBIO1SEL_A::CONST_1001
+        *self == HIBIO1SEL_A::CONST_1001
     }
     #[doc = "Checks if the value of the field is `CONST_1010`"]
     #[inline(always)]
     pub fn is_const_1010(&self) -> bool {
-        **self == HIBIO1SEL_A::CONST_1010
+        *self == HIBIO1SEL_A::CONST_1010
     }
     #[doc = "Checks if the value of the field is `CONST_1100`"]
     #[inline(always)]
     pub fn is_const_1100(&self) -> bool {
-        **self == HIBIO1SEL_A::CONST_1100
+        *self == HIBIO1SEL_A::CONST_1100
     }
     #[doc = "Checks if the value of the field is `CONST_1101`"]
     #[inline(always)]
     pub fn is_const_1101(&self) -> bool {
-        **self == HIBIO1SEL_A::CONST_1101
+        *self == HIBIO1SEL_A::CONST_1101
     }
     #[doc = "Checks if the value of the field is `CONST_1110`"]
     #[inline(always)]
     pub fn is_const_1110(&self) -> bool {
-        **self == HIBIO1SEL_A::CONST_1110
+        *self == HIBIO1SEL_A::CONST_1110
     }
     #[doc = "Checks if the value of the field is `CONST_1111`"]
     #[inline(always)]
     pub fn is_const_1111(&self) -> bool {
-        **self == HIBIO1SEL_A::CONST_1111
-    }
-}
-impl core::ops::Deref for HIBIO1SEL_R {
-    type Target = crate::FieldReader<u8, HIBIO1SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HIBIO1SEL_A::CONST_1111
     }
 }
 #[doc = "Field `HIBIO1SEL` writer - HIB_IO_1 Pin I/O Control (Default WKUP)"]
-pub struct HIBIO1SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIBIO1SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HIBIO1SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HIBIO1SEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HDCR_SPEC, u8, HIBIO1SEL_A, 4, O>;
+impl<'a, const O: u8> HIBIO1SEL_W<'a, O> {
     #[doc = "Direct input, No input pull device connected"]
     #[inline(always)]
     pub fn const_0000(self) -> &'a mut W {
@@ -1298,68 +895,62 @@ impl<'a> HIBIO1SEL_W<'a> {
     pub fn const_1111(self) -> &'a mut W {
         self.variant(HIBIO1SEL_A::CONST_1111)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 20)) | ((value as u32 & 0x0f) << 20);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Wake-Up on Pin Event Positive Edge Enable"]
     #[inline(always)]
     pub fn wkpep(&self) -> WKPEP_R {
-        WKPEP_R::new((self.bits & 0x01) != 0)
+        WKPEP_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Wake-up on Pin Event Negative Edge Enable"]
     #[inline(always)]
     pub fn wkpen(&self) -> WKPEN_R {
-        WKPEN_R::new(((self.bits >> 1) & 0x01) != 0)
+        WKPEN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Wake-up on RTC Event Enable"]
     #[inline(always)]
     pub fn rtce(&self) -> RTCE_R {
-        RTCE_R::new(((self.bits >> 2) & 0x01) != 0)
+        RTCE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - ULP WDG Alarm Enable"]
     #[inline(always)]
     pub fn ulpwdgen(&self) -> ULPWDGEN_R {
-        ULPWDGEN_R::new(((self.bits >> 3) & 0x01) != 0)
+        ULPWDGEN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Hibernate Request Value Set"]
     #[inline(always)]
     pub fn hib(&self) -> HIB_R {
-        HIB_R::new(((self.bits >> 4) & 0x01) != 0)
+        HIB_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 6 - fRTC Clock Selection"]
     #[inline(always)]
     pub fn rcs(&self) -> RCS_R {
-        RCS_R::new(((self.bits >> 6) & 0x01) != 0)
+        RCS_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - fSTDBY Clock Selection"]
     #[inline(always)]
     pub fn stdbysel(&self) -> STDBYSEL_R {
-        STDBYSEL_R::new(((self.bits >> 7) & 0x01) != 0)
+        STDBYSEL_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Wake-Up from Hibernate Trigger Input Selection"]
     #[inline(always)]
     pub fn wkupsel(&self) -> WKUPSEL_R {
-        WKUPSEL_R::new(((self.bits >> 8) & 0x01) != 0)
+        WKUPSEL_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 10 - General Purpose Input 0 Selection"]
     #[inline(always)]
     pub fn gpi0sel(&self) -> GPI0SEL_R {
-        GPI0SEL_R::new(((self.bits >> 10) & 0x01) != 0)
+        GPI0SEL_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 12 - HIBIO0 Polarity Set"]
     #[inline(always)]
     pub fn hibio0pol(&self) -> HIBIO0POL_R {
-        HIBIO0POL_R::new(((self.bits >> 12) & 0x01) != 0)
+        HIBIO0POL_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - HIBIO1 Polarity Set"]
     #[inline(always)]
     pub fn hibio1pol(&self) -> HIBIO1POL_R {
-        HIBIO1POL_R::new(((self.bits >> 13) & 0x01) != 0)
+        HIBIO1POL_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bits 16:19 - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
     #[inline(always)]
@@ -1375,68 +966,81 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Wake-Up on Pin Event Positive Edge Enable"]
     #[inline(always)]
-    pub fn wkpep(&mut self) -> WKPEP_W {
-        WKPEP_W { w: self }
+    #[must_use]
+    pub fn wkpep(&mut self) -> WKPEP_W<0> {
+        WKPEP_W::new(self)
     }
     #[doc = "Bit 1 - Wake-up on Pin Event Negative Edge Enable"]
     #[inline(always)]
-    pub fn wkpen(&mut self) -> WKPEN_W {
-        WKPEN_W { w: self }
+    #[must_use]
+    pub fn wkpen(&mut self) -> WKPEN_W<1> {
+        WKPEN_W::new(self)
     }
     #[doc = "Bit 2 - Wake-up on RTC Event Enable"]
     #[inline(always)]
-    pub fn rtce(&mut self) -> RTCE_W {
-        RTCE_W { w: self }
+    #[must_use]
+    pub fn rtce(&mut self) -> RTCE_W<2> {
+        RTCE_W::new(self)
     }
     #[doc = "Bit 3 - ULP WDG Alarm Enable"]
     #[inline(always)]
-    pub fn ulpwdgen(&mut self) -> ULPWDGEN_W {
-        ULPWDGEN_W { w: self }
+    #[must_use]
+    pub fn ulpwdgen(&mut self) -> ULPWDGEN_W<3> {
+        ULPWDGEN_W::new(self)
     }
     #[doc = "Bit 4 - Hibernate Request Value Set"]
     #[inline(always)]
-    pub fn hib(&mut self) -> HIB_W {
-        HIB_W { w: self }
+    #[must_use]
+    pub fn hib(&mut self) -> HIB_W<4> {
+        HIB_W::new(self)
     }
     #[doc = "Bit 6 - fRTC Clock Selection"]
     #[inline(always)]
-    pub fn rcs(&mut self) -> RCS_W {
-        RCS_W { w: self }
+    #[must_use]
+    pub fn rcs(&mut self) -> RCS_W<6> {
+        RCS_W::new(self)
     }
     #[doc = "Bit 7 - fSTDBY Clock Selection"]
     #[inline(always)]
-    pub fn stdbysel(&mut self) -> STDBYSEL_W {
-        STDBYSEL_W { w: self }
+    #[must_use]
+    pub fn stdbysel(&mut self) -> STDBYSEL_W<7> {
+        STDBYSEL_W::new(self)
     }
     #[doc = "Bit 8 - Wake-Up from Hibernate Trigger Input Selection"]
     #[inline(always)]
-    pub fn wkupsel(&mut self) -> WKUPSEL_W {
-        WKUPSEL_W { w: self }
+    #[must_use]
+    pub fn wkupsel(&mut self) -> WKUPSEL_W<8> {
+        WKUPSEL_W::new(self)
     }
     #[doc = "Bit 10 - General Purpose Input 0 Selection"]
     #[inline(always)]
-    pub fn gpi0sel(&mut self) -> GPI0SEL_W {
-        GPI0SEL_W { w: self }
+    #[must_use]
+    pub fn gpi0sel(&mut self) -> GPI0SEL_W<10> {
+        GPI0SEL_W::new(self)
     }
     #[doc = "Bit 12 - HIBIO0 Polarity Set"]
     #[inline(always)]
-    pub fn hibio0pol(&mut self) -> HIBIO0POL_W {
-        HIBIO0POL_W { w: self }
+    #[must_use]
+    pub fn hibio0pol(&mut self) -> HIBIO0POL_W<12> {
+        HIBIO0POL_W::new(self)
     }
     #[doc = "Bit 13 - HIBIO1 Polarity Set"]
     #[inline(always)]
-    pub fn hibio1pol(&mut self) -> HIBIO1POL_W {
-        HIBIO1POL_W { w: self }
+    #[must_use]
+    pub fn hibio1pol(&mut self) -> HIBIO1POL_W<13> {
+        HIBIO1POL_W::new(self)
     }
     #[doc = "Bits 16:19 - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
     #[inline(always)]
-    pub fn hibio0sel(&mut self) -> HIBIO0SEL_W {
-        HIBIO0SEL_W { w: self }
+    #[must_use]
+    pub fn hibio0sel(&mut self) -> HIBIO0SEL_W<16> {
+        HIBIO0SEL_W::new(self)
     }
     #[doc = "Bits 20:23 - HIB_IO_1 Pin I/O Control (Default WKUP)"]
     #[inline(always)]
-    pub fn hibio1sel(&mut self) -> HIBIO1SEL_W {
-        HIBIO1SEL_W { w: self }
+    #[must_use]
+    pub fn hibio1sel(&mut self) -> HIBIO1SEL_W<20> {
+        HIBIO1SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -1457,11 +1061,10 @@ impl crate::Readable for HDCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [hdcr::W](W) writer structure"]
 impl crate::Writable for HDCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HDCR to value 0x000c_2000"]
 impl crate::Resettable for HDCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x000c_2000
-    }
+    const RESET_VALUE: Self::Ux = 0x000c_2000;
 }

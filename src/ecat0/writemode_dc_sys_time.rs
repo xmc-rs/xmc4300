@@ -20,22 +20,13 @@ impl From<crate::W<WRITEMODE_DC_SYS_TIME_SPEC>> for W {
     }
 }
 #[doc = "Field `WRITE_ACCESS` writer - Write access"]
-pub struct WRITE_ACCESS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRITE_ACCESS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type WRITE_ACCESS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WRITEMODE_DC_SYS_TIME_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Write access"]
     #[inline(always)]
-    pub fn write_access(&mut self) -> WRITE_ACCESS_W {
-        WRITE_ACCESS_W { w: self }
+    #[must_use]
+    pub fn write_access(&mut self) -> WRITE_ACCESS_W<0> {
+        WRITE_ACCESS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,11 +43,10 @@ impl crate::RegisterSpec for WRITEMODE_DC_SYS_TIME_SPEC {
 #[doc = "`write(|w| ..)` method takes [writemode_dc_sys_time::W](W) writer structure"]
 impl crate::Writable for WRITEMODE_DC_SYS_TIME_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DC_SYS_TIME to value 0"]
 impl crate::Resettable for WRITEMODE_DC_SYS_TIME_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

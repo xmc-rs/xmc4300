@@ -14,24 +14,12 @@ impl From<crate::R<RX_CRC_ERROR_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXCRCERR` reader - This field indicates the number of frames received with CRC error."]
-pub struct RXCRCERR_R(crate::FieldReader<u32, u32>);
-impl RXCRCERR_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        RXCRCERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXCRCERR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXCRCERR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of frames received with CRC error."]
     #[inline(always)]
     pub fn rxcrcerr(&self) -> RXCRCERR_R {
-        RXCRCERR_R::new((self.bits & 0xffff_ffff) as u32)
+        RXCRCERR_R::new(self.bits)
     }
 }
 #[doc = "Receive Frame Count for CRC Error Frames\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_crc_error_frames](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for RX_CRC_ERROR_FRAMES_SPEC {
 }
 #[doc = "`reset()` method sets RX_CRC_ERROR_FRAMES to value 0"]
 impl crate::Resettable for RX_CRC_ERROR_FRAMES_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

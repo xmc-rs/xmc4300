@@ -20,7 +20,7 @@ impl From<crate::W<PSCR_SPEC>> for W {
     }
 }
 #[doc = "Clear Status Flag 0 in PSR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CST0_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -34,15 +34,8 @@ impl From<CST0_AW> for bool {
     }
 }
 #[doc = "Field `CST0` writer - Clear Status Flag 0 in PSR"]
-pub struct CST0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CST0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CST0_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CST0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST0_AW, O>;
+impl<'a, const O: u8> CST0_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -53,25 +46,9 @@ impl<'a> CST0_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CST0_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 #[doc = "Clear Status Flag 1 in PSR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CST1_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -85,15 +62,8 @@ impl From<CST1_AW> for bool {
     }
 }
 #[doc = "Field `CST1` writer - Clear Status Flag 1 in PSR"]
-pub struct CST1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CST1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CST1_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CST1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST1_AW, O>;
+impl<'a, const O: u8> CST1_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -104,25 +74,9 @@ impl<'a> CST1_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CST1_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 #[doc = "Clear Status Flag 2 in PSR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CST2_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -136,15 +90,8 @@ impl From<CST2_AW> for bool {
     }
 }
 #[doc = "Field `CST2` writer - Clear Status Flag 2 in PSR"]
-pub struct CST2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CST2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CST2_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CST2_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST2_AW, O>;
+impl<'a, const O: u8> CST2_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -155,25 +102,9 @@ impl<'a> CST2_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CST2_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
 #[doc = "Clear Status Flag 3 in PSR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CST3_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -187,15 +118,8 @@ impl From<CST3_AW> for bool {
     }
 }
 #[doc = "Field `CST3` writer - Clear Status Flag 3 in PSR"]
-pub struct CST3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CST3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CST3_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CST3_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST3_AW, O>;
+impl<'a, const O: u8> CST3_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -206,25 +130,9 @@ impl<'a> CST3_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CST3_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
 #[doc = "Clear Status Flag 4 in PSR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CST4_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -238,15 +146,8 @@ impl From<CST4_AW> for bool {
     }
 }
 #[doc = "Field `CST4` writer - Clear Status Flag 4 in PSR"]
-pub struct CST4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CST4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CST4_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CST4_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST4_AW, O>;
+impl<'a, const O: u8> CST4_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -257,25 +158,9 @@ impl<'a> CST4_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CST4_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
 #[doc = "Clear Status Flag 5 in PSR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CST5_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -289,15 +174,8 @@ impl From<CST5_AW> for bool {
     }
 }
 #[doc = "Field `CST5` writer - Clear Status Flag 5 in PSR"]
-pub struct CST5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CST5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CST5_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CST5_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST5_AW, O>;
+impl<'a, const O: u8> CST5_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -308,25 +186,9 @@ impl<'a> CST5_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CST5_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
 #[doc = "Clear Status Flag 6 in PSR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CST6_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -340,15 +202,8 @@ impl From<CST6_AW> for bool {
     }
 }
 #[doc = "Field `CST6` writer - Clear Status Flag 6 in PSR"]
-pub struct CST6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CST6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CST6_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CST6_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST6_AW, O>;
+impl<'a, const O: u8> CST6_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -359,25 +214,9 @@ impl<'a> CST6_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CST6_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
 #[doc = "Clear Status Flag 7 in PSR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CST7_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -391,15 +230,8 @@ impl From<CST7_AW> for bool {
     }
 }
 #[doc = "Field `CST7` writer - Clear Status Flag 7 in PSR"]
-pub struct CST7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CST7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CST7_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CST7_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST7_AW, O>;
+impl<'a, const O: u8> CST7_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -410,25 +242,9 @@ impl<'a> CST7_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CST7_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
 #[doc = "Clear Status Flag 8 in PSR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CST8_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -442,15 +258,8 @@ impl From<CST8_AW> for bool {
     }
 }
 #[doc = "Field `CST8` writer - Clear Status Flag 8 in PSR"]
-pub struct CST8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CST8_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CST8_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CST8_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST8_AW, O>;
+impl<'a, const O: u8> CST8_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -461,25 +270,9 @@ impl<'a> CST8_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CST8_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
 #[doc = "Clear Status Flag 9 in PSR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CST9_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -493,15 +286,8 @@ impl From<CST9_AW> for bool {
     }
 }
 #[doc = "Field `CST9` writer - Clear Status Flag 9 in PSR"]
-pub struct CST9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CST9_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CST9_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CST9_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST9_AW, O>;
+impl<'a, const O: u8> CST9_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -512,25 +298,9 @@ impl<'a> CST9_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CST9_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
 }
 #[doc = "Clear Receiver Start Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CRSIF_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -544,15 +314,8 @@ impl From<CRSIF_AW> for bool {
     }
 }
 #[doc = "Field `CRSIF` writer - Clear Receiver Start Indication Flag"]
-pub struct CRSIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRSIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CRSIF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CRSIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CRSIF_AW, O>;
+impl<'a, const O: u8> CRSIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -563,25 +326,9 @@ impl<'a> CRSIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CRSIF_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
 }
 #[doc = "Clear Data Lost Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CDLIF_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -595,15 +342,8 @@ impl From<CDLIF_AW> for bool {
     }
 }
 #[doc = "Field `CDLIF` writer - Clear Data Lost Indication Flag"]
-pub struct CDLIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDLIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CDLIF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CDLIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CDLIF_AW, O>;
+impl<'a, const O: u8> CDLIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -614,25 +354,9 @@ impl<'a> CDLIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CDLIF_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
 }
 #[doc = "Clear Transmit Shift Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CTSIF_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -646,15 +370,8 @@ impl From<CTSIF_AW> for bool {
     }
 }
 #[doc = "Field `CTSIF` writer - Clear Transmit Shift Indication Flag"]
-pub struct CTSIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTSIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTSIF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CTSIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CTSIF_AW, O>;
+impl<'a, const O: u8> CTSIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -665,25 +382,9 @@ impl<'a> CTSIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CTSIF_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
 #[doc = "Clear Transmit Buffer Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CTBIF_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -697,15 +398,8 @@ impl From<CTBIF_AW> for bool {
     }
 }
 #[doc = "Field `CTBIF` writer - Clear Transmit Buffer Indication Flag"]
-pub struct CTBIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTBIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTBIF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CTBIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CTBIF_AW, O>;
+impl<'a, const O: u8> CTBIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -716,25 +410,9 @@ impl<'a> CTBIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CTBIF_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
 }
 #[doc = "Clear Receive Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CRIF_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -748,15 +426,8 @@ impl From<CRIF_AW> for bool {
     }
 }
 #[doc = "Field `CRIF` writer - Clear Receive Indication Flag"]
-pub struct CRIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CRIF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CRIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CRIF_AW, O>;
+impl<'a, const O: u8> CRIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -767,25 +438,9 @@ impl<'a> CRIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CRIF_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
 }
 #[doc = "Clear Alternative Receive Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CAIF_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -799,15 +454,8 @@ impl From<CAIF_AW> for bool {
     }
 }
 #[doc = "Field `CAIF` writer - Clear Alternative Receive Indication Flag"]
-pub struct CAIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CAIF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CAIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CAIF_AW, O>;
+impl<'a, const O: u8> CAIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -818,25 +466,9 @@ impl<'a> CAIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CAIF_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
 }
 #[doc = "Clear Baud Rate Generator Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CBRGIF_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -850,15 +482,8 @@ impl From<CBRGIF_AW> for bool {
     }
 }
 #[doc = "Field `CBRGIF` writer - Clear Baud Rate Generator Indication Flag"]
-pub struct CBRGIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CBRGIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CBRGIF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CBRGIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CBRGIF_AW, O>;
+impl<'a, const O: u8> CBRGIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -869,108 +494,109 @@ impl<'a> CBRGIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CBRGIF_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Clear Status Flag 0 in PSR"]
     #[inline(always)]
-    pub fn cst0(&mut self) -> CST0_W {
-        CST0_W { w: self }
+    #[must_use]
+    pub fn cst0(&mut self) -> CST0_W<0> {
+        CST0_W::new(self)
     }
     #[doc = "Bit 1 - Clear Status Flag 1 in PSR"]
     #[inline(always)]
-    pub fn cst1(&mut self) -> CST1_W {
-        CST1_W { w: self }
+    #[must_use]
+    pub fn cst1(&mut self) -> CST1_W<1> {
+        CST1_W::new(self)
     }
     #[doc = "Bit 2 - Clear Status Flag 2 in PSR"]
     #[inline(always)]
-    pub fn cst2(&mut self) -> CST2_W {
-        CST2_W { w: self }
+    #[must_use]
+    pub fn cst2(&mut self) -> CST2_W<2> {
+        CST2_W::new(self)
     }
     #[doc = "Bit 3 - Clear Status Flag 3 in PSR"]
     #[inline(always)]
-    pub fn cst3(&mut self) -> CST3_W {
-        CST3_W { w: self }
+    #[must_use]
+    pub fn cst3(&mut self) -> CST3_W<3> {
+        CST3_W::new(self)
     }
     #[doc = "Bit 4 - Clear Status Flag 4 in PSR"]
     #[inline(always)]
-    pub fn cst4(&mut self) -> CST4_W {
-        CST4_W { w: self }
+    #[must_use]
+    pub fn cst4(&mut self) -> CST4_W<4> {
+        CST4_W::new(self)
     }
     #[doc = "Bit 5 - Clear Status Flag 5 in PSR"]
     #[inline(always)]
-    pub fn cst5(&mut self) -> CST5_W {
-        CST5_W { w: self }
+    #[must_use]
+    pub fn cst5(&mut self) -> CST5_W<5> {
+        CST5_W::new(self)
     }
     #[doc = "Bit 6 - Clear Status Flag 6 in PSR"]
     #[inline(always)]
-    pub fn cst6(&mut self) -> CST6_W {
-        CST6_W { w: self }
+    #[must_use]
+    pub fn cst6(&mut self) -> CST6_W<6> {
+        CST6_W::new(self)
     }
     #[doc = "Bit 7 - Clear Status Flag 7 in PSR"]
     #[inline(always)]
-    pub fn cst7(&mut self) -> CST7_W {
-        CST7_W { w: self }
+    #[must_use]
+    pub fn cst7(&mut self) -> CST7_W<7> {
+        CST7_W::new(self)
     }
     #[doc = "Bit 8 - Clear Status Flag 8 in PSR"]
     #[inline(always)]
-    pub fn cst8(&mut self) -> CST8_W {
-        CST8_W { w: self }
+    #[must_use]
+    pub fn cst8(&mut self) -> CST8_W<8> {
+        CST8_W::new(self)
     }
     #[doc = "Bit 9 - Clear Status Flag 9 in PSR"]
     #[inline(always)]
-    pub fn cst9(&mut self) -> CST9_W {
-        CST9_W { w: self }
+    #[must_use]
+    pub fn cst9(&mut self) -> CST9_W<9> {
+        CST9_W::new(self)
     }
     #[doc = "Bit 10 - Clear Receiver Start Indication Flag"]
     #[inline(always)]
-    pub fn crsif(&mut self) -> CRSIF_W {
-        CRSIF_W { w: self }
+    #[must_use]
+    pub fn crsif(&mut self) -> CRSIF_W<10> {
+        CRSIF_W::new(self)
     }
     #[doc = "Bit 11 - Clear Data Lost Indication Flag"]
     #[inline(always)]
-    pub fn cdlif(&mut self) -> CDLIF_W {
-        CDLIF_W { w: self }
+    #[must_use]
+    pub fn cdlif(&mut self) -> CDLIF_W<11> {
+        CDLIF_W::new(self)
     }
     #[doc = "Bit 12 - Clear Transmit Shift Indication Flag"]
     #[inline(always)]
-    pub fn ctsif(&mut self) -> CTSIF_W {
-        CTSIF_W { w: self }
+    #[must_use]
+    pub fn ctsif(&mut self) -> CTSIF_W<12> {
+        CTSIF_W::new(self)
     }
     #[doc = "Bit 13 - Clear Transmit Buffer Indication Flag"]
     #[inline(always)]
-    pub fn ctbif(&mut self) -> CTBIF_W {
-        CTBIF_W { w: self }
+    #[must_use]
+    pub fn ctbif(&mut self) -> CTBIF_W<13> {
+        CTBIF_W::new(self)
     }
     #[doc = "Bit 14 - Clear Receive Indication Flag"]
     #[inline(always)]
-    pub fn crif(&mut self) -> CRIF_W {
-        CRIF_W { w: self }
+    #[must_use]
+    pub fn crif(&mut self) -> CRIF_W<14> {
+        CRIF_W::new(self)
     }
     #[doc = "Bit 15 - Clear Alternative Receive Indication Flag"]
     #[inline(always)]
-    pub fn caif(&mut self) -> CAIF_W {
-        CAIF_W { w: self }
+    #[must_use]
+    pub fn caif(&mut self) -> CAIF_W<15> {
+        CAIF_W::new(self)
     }
     #[doc = "Bit 16 - Clear Baud Rate Generator Indication Flag"]
     #[inline(always)]
-    pub fn cbrgif(&mut self) -> CBRGIF_W {
-        CBRGIF_W { w: self }
+    #[must_use]
+    pub fn cbrgif(&mut self) -> CBRGIF_W<16> {
+        CBRGIF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -987,11 +613,10 @@ impl crate::RegisterSpec for PSCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pscr::W](W) writer structure"]
 impl crate::Writable for PSCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PSCR to value 0"]
 impl crate::Resettable for PSCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

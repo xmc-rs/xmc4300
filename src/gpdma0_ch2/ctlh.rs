@@ -34,90 +34,38 @@ impl From<crate::W<CTLH_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DONE` reader - Done bit"]
-pub struct DONE_R(crate::FieldReader<bool, bool>);
-impl DONE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DONE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `DONE` writer - Done bit"]
-pub struct DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
 #[doc = "Field `BLOCK_TS` reader - Block Transfer Size"]
-pub struct BLOCK_TS_R(crate::FieldReader<u16, u16>);
-impl BLOCK_TS_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        BLOCK_TS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BLOCK_TS_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BLOCK_TS_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BLOCK_TS` writer - Block Transfer Size"]
-pub struct BLOCK_TS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BLOCK_TS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type BLOCK_TS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTLH_SPEC, u16, u16, 12, O>;
+#[doc = "Field `DONE` reader - Done bit"]
+pub type DONE_R = crate::BitReader<bool>;
+#[doc = "Field `DONE` writer - Done bit"]
+pub type DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTLH_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 12 - Done bit"]
-    #[inline(always)]
-    pub fn done(&self) -> DONE_R {
-        DONE_R::new(((self.bits >> 12) & 0x01) != 0)
-    }
     #[doc = "Bits 0:11 - Block Transfer Size"]
     #[inline(always)]
     pub fn block_ts(&self) -> BLOCK_TS_R {
         BLOCK_TS_R::new((self.bits & 0x0fff) as u16)
     }
-}
-impl W {
     #[doc = "Bit 12 - Done bit"]
     #[inline(always)]
-    pub fn done(&mut self) -> DONE_W {
-        DONE_W { w: self }
+    pub fn done(&self) -> DONE_R {
+        DONE_R::new(((self.bits >> 12) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 0:11 - Block Transfer Size"]
     #[inline(always)]
-    pub fn block_ts(&mut self) -> BLOCK_TS_W {
-        BLOCK_TS_W { w: self }
+    #[must_use]
+    pub fn block_ts(&mut self) -> BLOCK_TS_W<0> {
+        BLOCK_TS_W::new(self)
+    }
+    #[doc = "Bit 12 - Done bit"]
+    #[inline(always)]
+    #[must_use]
+    pub fn done(&mut self) -> DONE_W<12> {
+        DONE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -138,11 +86,10 @@ impl crate::Readable for CTLH_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctlh::W](W) writer structure"]
 impl crate::Writable for CTLH_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTLH to value 0x02"]
 impl crate::Resettable for CTLH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02
-    }
+    const RESET_VALUE: Self::Ux = 0x02;
 }

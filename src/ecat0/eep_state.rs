@@ -34,8 +34,10 @@ impl From<crate::W<EEP_STATE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ACCESS` reader - Access to EEPROM"]
+pub type ACCESS_R = crate::BitReader<ACCESS_A>;
 #[doc = "Access to EEPROM\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ACCESS_A {
     #[doc = "0: PDI releases EEPROM access"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<ACCESS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ACCESS` reader - Access to EEPROM"]
-pub struct ACCESS_R(crate::FieldReader<bool, ACCESS_A>);
 impl ACCESS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACCESS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ACCESS_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl ACCESS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ACCESS_A::VALUE1
+        *self == ACCESS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ACCESS_A::VALUE2
-    }
-}
-impl core::ops::Deref for ACCESS_R {
-    type Target = crate::FieldReader<bool, ACCESS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ACCESS_A::VALUE2
     }
 }
 #[doc = "Field `ACCESS` writer - Access to EEPROM"]
-pub struct ACCESS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACCESS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ACCESS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ACCESS_W<'a, const O: u8> = crate::BitWriter<'a, u8, EEP_STATE_SPEC, ACCESS_A, O>;
+impl<'a, const O: u8> ACCESS_W<'a, O> {
     #[doc = "PDI releases EEPROM access"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,35 +83,20 @@ impl<'a> ACCESS_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ACCESS_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Access to EEPROM"]
     #[inline(always)]
     pub fn access(&self) -> ACCESS_R {
-        ACCESS_R::new((self.bits & 0x01) != 0)
+        ACCESS_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Access to EEPROM"]
     #[inline(always)]
-    pub fn access(&mut self) -> ACCESS_W {
-        ACCESS_W { w: self }
+    #[must_use]
+    pub fn access(&mut self) -> ACCESS_W<0> {
+        ACCESS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -149,11 +117,10 @@ impl crate::Readable for EEP_STATE_SPEC {
 #[doc = "`write(|w| ..)` method takes [eep_state::W](W) writer structure"]
 impl crate::Writable for EEP_STATE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EEP_STATE to value 0"]
 impl crate::Resettable for EEP_STATE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

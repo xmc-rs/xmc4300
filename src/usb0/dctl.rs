@@ -35,306 +35,143 @@ impl From<crate::W<DCTL_SPEC>> for W {
     }
 }
 #[doc = "Field `RmtWkUpSig` reader - Remote Wakeup Signaling"]
-pub struct RMTWKUPSIG_R(crate::FieldReader<bool, bool>);
-impl RMTWKUPSIG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RMTWKUPSIG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RMTWKUPSIG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RMT_WK_UP_SIG_R = crate::BitReader<bool>;
 #[doc = "Field `RmtWkUpSig` writer - Remote Wakeup Signaling"]
-pub struct RMTWKUPSIG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RMTWKUPSIG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RMT_WK_UP_SIG_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, bool, O>;
+#[doc = "Field `SftDiscon` reader - Soft Disconnect"]
+pub type SFT_DISCON_R = crate::BitReader<SFT_DISCON_A>;
 #[doc = "Soft Disconnect\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SFTDISCON_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum SFT_DISCON_A {
     #[doc = "0: Normal operation. When this bit is cleared after a soft disconnect, the core drives a device connect event to the USB host. When the device is reconnected, the USB host restarts device enumeration."]
     VALUE1 = 0,
     #[doc = "1: The core drives a device disconnect event to the USB host."]
     VALUE2 = 1,
 }
-impl From<SFTDISCON_A> for bool {
+impl From<SFT_DISCON_A> for bool {
     #[inline(always)]
-    fn from(variant: SFTDISCON_A) -> Self {
+    fn from(variant: SFT_DISCON_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SftDiscon` reader - Soft Disconnect"]
-pub struct SFTDISCON_R(crate::FieldReader<bool, SFTDISCON_A>);
-impl SFTDISCON_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SFTDISCON_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl SFT_DISCON_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SFTDISCON_A {
+    pub fn variant(&self) -> SFT_DISCON_A {
         match self.bits {
-            false => SFTDISCON_A::VALUE1,
-            true => SFTDISCON_A::VALUE2,
+            false => SFT_DISCON_A::VALUE1,
+            true => SFT_DISCON_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SFTDISCON_A::VALUE1
+        *self == SFT_DISCON_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SFTDISCON_A::VALUE2
-    }
-}
-impl core::ops::Deref for SFTDISCON_R {
-    type Target = crate::FieldReader<bool, SFTDISCON_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SFT_DISCON_A::VALUE2
     }
 }
 #[doc = "Field `SftDiscon` writer - Soft Disconnect"]
-pub struct SFTDISCON_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SFTDISCON_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SFTDISCON_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SFT_DISCON_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, SFT_DISCON_A, O>;
+impl<'a, const O: u8> SFT_DISCON_W<'a, O> {
     #[doc = "Normal operation. When this bit is cleared after a soft disconnect, the core drives a device connect event to the USB host. When the device is reconnected, the USB host restarts device enumeration."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(SFTDISCON_A::VALUE1)
+        self.variant(SFT_DISCON_A::VALUE1)
     }
     #[doc = "The core drives a device disconnect event to the USB host."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(SFTDISCON_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(SFT_DISCON_A::VALUE2)
     }
 }
+#[doc = "Field `GNPINNakSts` reader - Global Non-periodic IN NAK Status"]
+pub type GNPINNAK_STS_R = crate::BitReader<GNPINNAK_STS_A>;
 #[doc = "Global Non-periodic IN NAK Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GNPINNAKSTS_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum GNPINNAK_STS_A {
     #[doc = "0: A handshake is sent out based on the data availability in the transmit FIFO."]
     VALUE1 = 0,
     #[doc = "1: A NAK handshake is sent out on all non-periodic IN endpoints, irrespective of the data availability in the transmit FIFO."]
     VALUE2 = 1,
 }
-impl From<GNPINNAKSTS_A> for bool {
+impl From<GNPINNAK_STS_A> for bool {
     #[inline(always)]
-    fn from(variant: GNPINNAKSTS_A) -> Self {
+    fn from(variant: GNPINNAK_STS_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GNPINNakSts` reader - Global Non-periodic IN NAK Status"]
-pub struct GNPINNAKSTS_R(crate::FieldReader<bool, GNPINNAKSTS_A>);
-impl GNPINNAKSTS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GNPINNAKSTS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl GNPINNAK_STS_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GNPINNAKSTS_A {
+    pub fn variant(&self) -> GNPINNAK_STS_A {
         match self.bits {
-            false => GNPINNAKSTS_A::VALUE1,
-            true => GNPINNAKSTS_A::VALUE2,
+            false => GNPINNAK_STS_A::VALUE1,
+            true => GNPINNAK_STS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == GNPINNAKSTS_A::VALUE1
+        *self == GNPINNAK_STS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == GNPINNAKSTS_A::VALUE2
+        *self == GNPINNAK_STS_A::VALUE2
     }
 }
-impl core::ops::Deref for GNPINNAKSTS_R {
-    type Target = crate::FieldReader<bool, GNPINNAKSTS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `GOUTNakSts` reader - Global OUT NAK Status"]
+pub type GOUTNAK_STS_R = crate::BitReader<GOUTNAK_STS_A>;
 #[doc = "Global OUT NAK Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GOUTNAKSTS_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum GOUTNAK_STS_A {
     #[doc = "0: A handshake is sent based on the FIFO Status and the NAK and STALL bit settings."]
     VALUE1 = 0,
     #[doc = "1: No data is written to the RxFIFO, irrespective of space availability. Sends a NAK handshake on all packets, except on SETUP transactions. All isochronous OUT packets are dropped."]
     VALUE2 = 1,
 }
-impl From<GOUTNAKSTS_A> for bool {
+impl From<GOUTNAK_STS_A> for bool {
     #[inline(always)]
-    fn from(variant: GOUTNAKSTS_A) -> Self {
+    fn from(variant: GOUTNAK_STS_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GOUTNakSts` reader - Global OUT NAK Status"]
-pub struct GOUTNAKSTS_R(crate::FieldReader<bool, GOUTNAKSTS_A>);
-impl GOUTNAKSTS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GOUTNAKSTS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl GOUTNAK_STS_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GOUTNAKSTS_A {
+    pub fn variant(&self) -> GOUTNAK_STS_A {
         match self.bits {
-            false => GOUTNAKSTS_A::VALUE1,
-            true => GOUTNAKSTS_A::VALUE2,
+            false => GOUTNAK_STS_A::VALUE1,
+            true => GOUTNAK_STS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == GOUTNAKSTS_A::VALUE1
+        *self == GOUTNAK_STS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == GOUTNAKSTS_A::VALUE2
-    }
-}
-impl core::ops::Deref for GOUTNAKSTS_R {
-    type Target = crate::FieldReader<bool, GOUTNAKSTS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GOUTNAK_STS_A::VALUE2
     }
 }
 #[doc = "Field `SGNPInNak` writer - Set Global Non-periodic IN NAK"]
-pub struct SGNPINNAK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SGNPINNAK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type SGNPIN_NAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, bool, O>;
 #[doc = "Field `CGNPInNak` writer - Clear Global Non-periodic IN NAK"]
-pub struct CGNPINNAK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CGNPINNAK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type CGNPIN_NAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, bool, O>;
 #[doc = "Field `SGOUTNak` writer - Set Global OUT NAK"]
-pub struct SGOUTNAK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SGOUTNAK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type SGOUTNAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, bool, O>;
 #[doc = "Field `CGOUTNak` writer - Clear Global OUT NAK"]
-pub struct CGOUTNAK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CGOUTNAK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type CGOUTNAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, bool, O>;
+#[doc = "Field `GMC` reader - Global Multi Count"]
+pub type GMC_R = crate::FieldReader<u8, GMC_A>;
 #[doc = "Global Multi Count\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum GMC_A {
     #[doc = "0: Invalid."]
@@ -352,13 +189,8 @@ impl From<GMC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `GMC` reader - Global Multi Count"]
-pub struct GMC_R(crate::FieldReader<u8, GMC_A>);
 impl GMC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        GMC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GMC_A {
         match self.bits {
@@ -372,41 +204,27 @@ impl GMC_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == GMC_A::VALUE1
+        *self == GMC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == GMC_A::VALUE2
+        *self == GMC_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == GMC_A::VALUE3
+        *self == GMC_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == GMC_A::VALUE4
-    }
-}
-impl core::ops::Deref for GMC_R {
-    type Target = crate::FieldReader<u8, GMC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GMC_A::VALUE4
     }
 }
 #[doc = "Field `GMC` writer - Global Multi Count"]
-pub struct GMC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GMC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GMC_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type GMC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DCTL_SPEC, u8, GMC_A, 2, O>;
+impl<'a, const O: u8> GMC_W<'a, O> {
     #[doc = "Invalid."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -427,307 +245,213 @@ impl<'a> GMC_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(GMC_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 13)) | ((value as u32 & 0x03) << 13);
-        self.w
-    }
 }
+#[doc = "Field `IgnrFrmNum` reader - Ignore frame number for isochronous endpoints in case of Scatter/Gather DMA"]
+pub type IGNR_FRM_NUM_R = crate::BitReader<IGNR_FRM_NUM_A>;
 #[doc = "Ignore frame number for isochronous endpoints in case of Scatter/Gather DMA\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IGNRFRMNUM_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum IGNR_FRM_NUM_A {
     #[doc = "0: Scatter/Gather enabled: The core transmits the packets only in the frame number in which they are intended to be transmitted. Scatter/Gather disabled: Periodic transfer interrupt feature is disabled; the application must program transfers for periodic endpoints every frame"]
     VALUE1 = 0,
     #[doc = "1: Scatter/Gather enabled: The core ignores the frame number, sending packets immediately as the packets are ready. Scatter/Gather disabled: Periodic transfer interrupt feature is enabled; the application can program transfers for multiple frames for periodic endpoints."]
     VALUE2 = 1,
 }
-impl From<IGNRFRMNUM_A> for bool {
+impl From<IGNR_FRM_NUM_A> for bool {
     #[inline(always)]
-    fn from(variant: IGNRFRMNUM_A) -> Self {
+    fn from(variant: IGNR_FRM_NUM_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IgnrFrmNum` reader - Ignore frame number for isochronous endpoints in case of Scatter/Gather DMA"]
-pub struct IGNRFRMNUM_R(crate::FieldReader<bool, IGNRFRMNUM_A>);
-impl IGNRFRMNUM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IGNRFRMNUM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl IGNR_FRM_NUM_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IGNRFRMNUM_A {
+    pub fn variant(&self) -> IGNR_FRM_NUM_A {
         match self.bits {
-            false => IGNRFRMNUM_A::VALUE1,
-            true => IGNRFRMNUM_A::VALUE2,
+            false => IGNR_FRM_NUM_A::VALUE1,
+            true => IGNR_FRM_NUM_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == IGNRFRMNUM_A::VALUE1
+        *self == IGNR_FRM_NUM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == IGNRFRMNUM_A::VALUE2
-    }
-}
-impl core::ops::Deref for IGNRFRMNUM_R {
-    type Target = crate::FieldReader<bool, IGNRFRMNUM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IGNR_FRM_NUM_A::VALUE2
     }
 }
 #[doc = "Field `IgnrFrmNum` writer - Ignore frame number for isochronous endpoints in case of Scatter/Gather DMA"]
-pub struct IGNRFRMNUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IGNRFRMNUM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IGNRFRMNUM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IGNR_FRM_NUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, IGNR_FRM_NUM_A, O>;
+impl<'a, const O: u8> IGNR_FRM_NUM_W<'a, O> {
     #[doc = "Scatter/Gather enabled: The core transmits the packets only in the frame number in which they are intended to be transmitted. Scatter/Gather disabled: Periodic transfer interrupt feature is disabled; the application must program transfers for periodic endpoints every frame"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(IGNRFRMNUM_A::VALUE1)
+        self.variant(IGNR_FRM_NUM_A::VALUE1)
     }
     #[doc = "Scatter/Gather enabled: The core ignores the frame number, sending packets immediately as the packets are ready. Scatter/Gather disabled: Periodic transfer interrupt feature is enabled; the application can program transfers for multiple frames for periodic endpoints."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(IGNRFRMNUM_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
+        self.variant(IGNR_FRM_NUM_A::VALUE2)
     }
 }
 #[doc = "Field `NakOnBble` reader - Set NAK automatically on babble"]
-pub struct NAKONBBLE_R(crate::FieldReader<bool, bool>);
-impl NAKONBBLE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NAKONBBLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NAKONBBLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NAK_ON_BBLE_R = crate::BitReader<bool>;
 #[doc = "Field `NakOnBble` writer - Set NAK automatically on babble"]
-pub struct NAKONBBLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NAKONBBLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type NAK_ON_BBLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, bool, O>;
+#[doc = "Field `EnContOnBNA` reader - Enable continue on BNA"]
+pub type EN_CONT_ON_BNA_R = crate::BitReader<EN_CONT_ON_BNA_A>;
 #[doc = "Enable continue on BNA\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENCONTONBNA_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum EN_CONT_ON_BNA_A {
     #[doc = "0: After receiving BNA interrupt, the core disables the endpoint. When the endpoint is re-enabled by the application, the core starts processing from the DOEPDMA descriptor."]
     VALUE1 = 0,
     #[doc = "1: After receiving BNA interrupt, the core disables the endpoint. When the endpoint is re-enabled by the application, the core starts processing from the descriptor that received the BNA interrupt."]
     VALUE2 = 1,
 }
-impl From<ENCONTONBNA_A> for bool {
+impl From<EN_CONT_ON_BNA_A> for bool {
     #[inline(always)]
-    fn from(variant: ENCONTONBNA_A) -> Self {
+    fn from(variant: EN_CONT_ON_BNA_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EnContOnBNA` reader - Enable continue on BNA"]
-pub struct ENCONTONBNA_R(crate::FieldReader<bool, ENCONTONBNA_A>);
-impl ENCONTONBNA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ENCONTONBNA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl EN_CONT_ON_BNA_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENCONTONBNA_A {
+    pub fn variant(&self) -> EN_CONT_ON_BNA_A {
         match self.bits {
-            false => ENCONTONBNA_A::VALUE1,
-            true => ENCONTONBNA_A::VALUE2,
+            false => EN_CONT_ON_BNA_A::VALUE1,
+            true => EN_CONT_ON_BNA_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ENCONTONBNA_A::VALUE1
+        *self == EN_CONT_ON_BNA_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ENCONTONBNA_A::VALUE2
-    }
-}
-impl core::ops::Deref for ENCONTONBNA_R {
-    type Target = crate::FieldReader<bool, ENCONTONBNA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EN_CONT_ON_BNA_A::VALUE2
     }
 }
 #[doc = "Field `EnContOnBNA` writer - Enable continue on BNA"]
-pub struct ENCONTONBNA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENCONTONBNA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENCONTONBNA_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EN_CONT_ON_BNA_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, EN_CONT_ON_BNA_A, O>;
+impl<'a, const O: u8> EN_CONT_ON_BNA_W<'a, O> {
     #[doc = "After receiving BNA interrupt, the core disables the endpoint. When the endpoint is re-enabled by the application, the core starts processing from the DOEPDMA descriptor."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ENCONTONBNA_A::VALUE1)
+        self.variant(EN_CONT_ON_BNA_A::VALUE1)
     }
     #[doc = "After receiving BNA interrupt, the core disables the endpoint. When the endpoint is re-enabled by the application, the core starts processing from the descriptor that received the BNA interrupt."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ENCONTONBNA_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
+        self.variant(EN_CONT_ON_BNA_A::VALUE2)
     }
 }
 impl R {
     #[doc = "Bit 0 - Remote Wakeup Signaling"]
     #[inline(always)]
-    pub fn rmt_wk_up_sig(&self) -> RMTWKUPSIG_R {
-        RMTWKUPSIG_R::new((self.bits & 0x01) != 0)
+    pub fn rmt_wk_up_sig(&self) -> RMT_WK_UP_SIG_R {
+        RMT_WK_UP_SIG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Soft Disconnect"]
     #[inline(always)]
-    pub fn sft_discon(&self) -> SFTDISCON_R {
-        SFTDISCON_R::new(((self.bits >> 1) & 0x01) != 0)
+    pub fn sft_discon(&self) -> SFT_DISCON_R {
+        SFT_DISCON_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Global Non-periodic IN NAK Status"]
     #[inline(always)]
-    pub fn gnpinnak_sts(&self) -> GNPINNAKSTS_R {
-        GNPINNAKSTS_R::new(((self.bits >> 2) & 0x01) != 0)
+    pub fn gnpinnak_sts(&self) -> GNPINNAK_STS_R {
+        GNPINNAK_STS_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Global OUT NAK Status"]
     #[inline(always)]
-    pub fn goutnak_sts(&self) -> GOUTNAKSTS_R {
-        GOUTNAKSTS_R::new(((self.bits >> 3) & 0x01) != 0)
+    pub fn goutnak_sts(&self) -> GOUTNAK_STS_R {
+        GOUTNAK_STS_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 13:14 - Global Multi Count"]
     #[inline(always)]
     pub fn gmc(&self) -> GMC_R {
-        GMC_R::new(((self.bits >> 13) & 0x03) as u8)
+        GMC_R::new(((self.bits >> 13) & 3) as u8)
     }
     #[doc = "Bit 15 - Ignore frame number for isochronous endpoints in case of Scatter/Gather DMA"]
     #[inline(always)]
-    pub fn ignr_frm_num(&self) -> IGNRFRMNUM_R {
-        IGNRFRMNUM_R::new(((self.bits >> 15) & 0x01) != 0)
+    pub fn ignr_frm_num(&self) -> IGNR_FRM_NUM_R {
+        IGNR_FRM_NUM_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Set NAK automatically on babble"]
     #[inline(always)]
-    pub fn nak_on_bble(&self) -> NAKONBBLE_R {
-        NAKONBBLE_R::new(((self.bits >> 16) & 0x01) != 0)
+    pub fn nak_on_bble(&self) -> NAK_ON_BBLE_R {
+        NAK_ON_BBLE_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Enable continue on BNA"]
     #[inline(always)]
-    pub fn en_cont_on_bna(&self) -> ENCONTONBNA_R {
-        ENCONTONBNA_R::new(((self.bits >> 17) & 0x01) != 0)
+    pub fn en_cont_on_bna(&self) -> EN_CONT_ON_BNA_R {
+        EN_CONT_ON_BNA_R::new(((self.bits >> 17) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Remote Wakeup Signaling"]
     #[inline(always)]
-    pub fn rmt_wk_up_sig(&mut self) -> RMTWKUPSIG_W {
-        RMTWKUPSIG_W { w: self }
+    #[must_use]
+    pub fn rmt_wk_up_sig(&mut self) -> RMT_WK_UP_SIG_W<0> {
+        RMT_WK_UP_SIG_W::new(self)
     }
     #[doc = "Bit 1 - Soft Disconnect"]
     #[inline(always)]
-    pub fn sft_discon(&mut self) -> SFTDISCON_W {
-        SFTDISCON_W { w: self }
+    #[must_use]
+    pub fn sft_discon(&mut self) -> SFT_DISCON_W<1> {
+        SFT_DISCON_W::new(self)
     }
     #[doc = "Bit 7 - Set Global Non-periodic IN NAK"]
     #[inline(always)]
-    pub fn sgnpin_nak(&mut self) -> SGNPINNAK_W {
-        SGNPINNAK_W { w: self }
+    #[must_use]
+    pub fn sgnpin_nak(&mut self) -> SGNPIN_NAK_W<7> {
+        SGNPIN_NAK_W::new(self)
     }
     #[doc = "Bit 8 - Clear Global Non-periodic IN NAK"]
     #[inline(always)]
-    pub fn cgnpin_nak(&mut self) -> CGNPINNAK_W {
-        CGNPINNAK_W { w: self }
+    #[must_use]
+    pub fn cgnpin_nak(&mut self) -> CGNPIN_NAK_W<8> {
+        CGNPIN_NAK_W::new(self)
     }
     #[doc = "Bit 9 - Set Global OUT NAK"]
     #[inline(always)]
-    pub fn sgoutnak(&mut self) -> SGOUTNAK_W {
-        SGOUTNAK_W { w: self }
+    #[must_use]
+    pub fn sgoutnak(&mut self) -> SGOUTNAK_W<9> {
+        SGOUTNAK_W::new(self)
     }
     #[doc = "Bit 10 - Clear Global OUT NAK"]
     #[inline(always)]
-    pub fn cgoutnak(&mut self) -> CGOUTNAK_W {
-        CGOUTNAK_W { w: self }
+    #[must_use]
+    pub fn cgoutnak(&mut self) -> CGOUTNAK_W<10> {
+        CGOUTNAK_W::new(self)
     }
     #[doc = "Bits 13:14 - Global Multi Count"]
     #[inline(always)]
-    pub fn gmc(&mut self) -> GMC_W {
-        GMC_W { w: self }
+    #[must_use]
+    pub fn gmc(&mut self) -> GMC_W<13> {
+        GMC_W::new(self)
     }
     #[doc = "Bit 15 - Ignore frame number for isochronous endpoints in case of Scatter/Gather DMA"]
     #[inline(always)]
-    pub fn ignr_frm_num(&mut self) -> IGNRFRMNUM_W {
-        IGNRFRMNUM_W { w: self }
+    #[must_use]
+    pub fn ignr_frm_num(&mut self) -> IGNR_FRM_NUM_W<15> {
+        IGNR_FRM_NUM_W::new(self)
     }
     #[doc = "Bit 16 - Set NAK automatically on babble"]
     #[inline(always)]
-    pub fn nak_on_bble(&mut self) -> NAKONBBLE_W {
-        NAKONBBLE_W { w: self }
+    #[must_use]
+    pub fn nak_on_bble(&mut self) -> NAK_ON_BBLE_W<16> {
+        NAK_ON_BBLE_W::new(self)
     }
     #[doc = "Bit 17 - Enable continue on BNA"]
     #[inline(always)]
-    pub fn en_cont_on_bna(&mut self) -> ENCONTONBNA_W {
-        ENCONTONBNA_W { w: self }
+    #[must_use]
+    pub fn en_cont_on_bna(&mut self) -> EN_CONT_ON_BNA_W<17> {
+        EN_CONT_ON_BNA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -748,11 +472,10 @@ impl crate::Readable for DCTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dctl::W](W) writer structure"]
 impl crate::Writable for DCTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DCTL to value 0x02"]
 impl crate::Resettable for DCTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02
-    }
+    const RESET_VALUE: Self::Ux = 0x02;
 }

@@ -35,43 +35,22 @@ impl From<crate::W<BLOCK_COUNT_SPEC>> for W {
     }
 }
 #[doc = "Field `BLOCK_COUNT` reader - Blocks Count for Current Transfer"]
-pub struct BLOCK_COUNT_R(crate::FieldReader<u16, u16>);
-impl BLOCK_COUNT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        BLOCK_COUNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BLOCK_COUNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BLOCK_COUNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BLOCK_COUNT` writer - Blocks Count for Current Transfer"]
-pub struct BLOCK_COUNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BLOCK_COUNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u16 & 0xffff);
-        self.w
-    }
-}
+pub type BLOCK_COUNT_W<'a, const O: u8> = crate::FieldWriter<'a, u16, BLOCK_COUNT_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Blocks Count for Current Transfer"]
     #[inline(always)]
     pub fn block_count(&self) -> BLOCK_COUNT_R {
-        BLOCK_COUNT_R::new((self.bits & 0xffff) as u16)
+        BLOCK_COUNT_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Blocks Count for Current Transfer"]
     #[inline(always)]
-    pub fn block_count(&mut self) -> BLOCK_COUNT_W {
-        BLOCK_COUNT_W { w: self }
+    #[must_use]
+    pub fn block_count(&mut self) -> BLOCK_COUNT_W<0> {
+        BLOCK_COUNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for BLOCK_COUNT_SPEC {
 #[doc = "`write(|w| ..)` method takes [block_count::W](W) writer structure"]
 impl crate::Writable for BLOCK_COUNT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BLOCK_COUNT to value 0"]
 impl crate::Resettable for BLOCK_COUNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<SDMMCDEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TAPEN` reader - Enable delay on the CMD/DAT out lines"]
+pub type TAPEN_R = crate::BitReader<TAPEN_A>;
 #[doc = "Enable delay on the CMD/DAT out lines\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TAPEN_A {
     #[doc = "0: Disabled"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<TAPEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TAPEN` reader - Enable delay on the CMD/DAT out lines"]
-pub struct TAPEN_R(crate::FieldReader<bool, TAPEN_A>);
 impl TAPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TAPEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TAPEN_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl TAPEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TAPEN_A::VALUE1
+        *self == TAPEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TAPEN_A::VALUE2
-    }
-}
-impl core::ops::Deref for TAPEN_R {
-    type Target = crate::FieldReader<bool, TAPEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TAPEN_A::VALUE2
     }
 }
 #[doc = "Field `TAPEN` writer - Enable delay on the CMD/DAT out lines"]
-pub struct TAPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAPEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TAPEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TAPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SDMMCDEL_SPEC, TAPEN_A, O>;
+impl<'a, const O: u8> TAPEN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,54 +83,16 @@ impl<'a> TAPEN_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(TAPEN_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 #[doc = "Field `TAPDEL` reader - Number of Delay Elements Select"]
-pub struct TAPDEL_R(crate::FieldReader<u8, u8>);
-impl TAPDEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TAPDEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TAPDEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TAPDEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TAPDEL` writer - Number of Delay Elements Select"]
-pub struct TAPDEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAPDEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
-}
+pub type TAPDEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDMMCDEL_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bit 0 - Enable delay on the CMD/DAT out lines"]
     #[inline(always)]
     pub fn tapen(&self) -> TAPEN_R {
-        TAPEN_R::new((self.bits & 0x01) != 0)
+        TAPEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:7 - Number of Delay Elements Select"]
     #[inline(always)]
@@ -158,13 +103,15 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable delay on the CMD/DAT out lines"]
     #[inline(always)]
-    pub fn tapen(&mut self) -> TAPEN_W {
-        TAPEN_W { w: self }
+    #[must_use]
+    pub fn tapen(&mut self) -> TAPEN_W<0> {
+        TAPEN_W::new(self)
     }
     #[doc = "Bits 4:7 - Number of Delay Elements Select"]
     #[inline(always)]
-    pub fn tapdel(&mut self) -> TAPDEL_W {
-        TAPDEL_W { w: self }
+    #[must_use]
+    pub fn tapdel(&mut self) -> TAPDEL_W<4> {
+        TAPDEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -185,11 +132,10 @@ impl crate::Readable for SDMMCDEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [sdmmcdel::W](W) writer structure"]
 impl crate::Writable for SDMMCDEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SDMMCDEL to value 0"]
 impl crate::Resettable for SDMMCDEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

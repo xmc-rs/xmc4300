@@ -14,24 +14,12 @@ impl From<crate::R<READMODE_DC_SYS_TIME_SPEC>> for R {
     }
 }
 #[doc = "Field `READ_ACCESS` reader - Read access"]
-pub struct READ_ACCESS_R(crate::FieldReader<u32, u32>);
-impl READ_ACCESS_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        READ_ACCESS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for READ_ACCESS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type READ_ACCESS_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Read access"]
     #[inline(always)]
     pub fn read_access(&self) -> READ_ACCESS_R {
-        READ_ACCESS_R::new((self.bits & 0xffff_ffff) as u32)
+        READ_ACCESS_R::new(self.bits)
     }
 }
 #[doc = "System Time read access\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [readmode_dc_sys_time](index.html) module"]
@@ -46,8 +34,5 @@ impl crate::Readable for READMODE_DC_SYS_TIME_SPEC {
 #[doc = "`reset()` method sets DC_SYS_TIME[%s]
 to value 0"]
 impl crate::Resettable for READMODE_DC_SYS_TIME_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

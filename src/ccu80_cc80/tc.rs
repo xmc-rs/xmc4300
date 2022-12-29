@@ -34,8 +34,10 @@ impl From<crate::W<TC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TCM` reader - Timer Counting Mode"]
+pub type TCM_R = crate::BitReader<TCM_A>;
 #[doc = "Timer Counting Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TCM_A {
     #[doc = "0: Edge aligned mode"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<TCM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TCM` reader - Timer Counting Mode"]
-pub struct TCM_R(crate::FieldReader<bool, TCM_A>);
 impl TCM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TCM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TCM_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl TCM_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TCM_A::VALUE1
+        *self == TCM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TCM_A::VALUE2
-    }
-}
-impl core::ops::Deref for TCM_R {
-    type Target = crate::FieldReader<bool, TCM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TCM_A::VALUE2
     }
 }
 #[doc = "Field `TCM` writer - Timer Counting Mode"]
-pub struct TCM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TCM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TCM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, TCM_A, O>;
+impl<'a, const O: u8> TCM_W<'a, O> {
     #[doc = "Edge aligned mode"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> TCM_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(TCM_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `TSSM` reader - Timer Single Shot Mode"]
+pub type TSSM_R = crate::BitReader<TSSM_A>;
 #[doc = "Timer Single Shot Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TSSM_A {
     #[doc = "0: Single shot mode is disabled"]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<TSSM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TSSM` reader - Timer Single Shot Mode"]
-pub struct TSSM_R(crate::FieldReader<bool, TSSM_A>);
 impl TSSM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TSSM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TSSM_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl TSSM_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TSSM_A::VALUE1
+        *self == TSSM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TSSM_A::VALUE2
-    }
-}
-impl core::ops::Deref for TSSM_R {
-    type Target = crate::FieldReader<bool, TSSM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TSSM_A::VALUE2
     }
 }
 #[doc = "Field `TSSM` writer - Timer Single Shot Mode"]
-pub struct TSSM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSSM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TSSM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TSSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, TSSM_A, O>;
+impl<'a, const O: u8> TSSM_W<'a, O> {
     #[doc = "Single shot mode is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -183,61 +133,15 @@ impl<'a> TSSM_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(TSSM_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 #[doc = "Field `CLST` reader - Shadow Transfer on Clear"]
-pub struct CLST_R(crate::FieldReader<bool, bool>);
-impl CLST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CLST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLST_R = crate::BitReader<bool>;
 #[doc = "Field `CLST` writer - Shadow Transfer on Clear"]
-pub struct CLST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CLST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, bool, O>;
+#[doc = "Field `CMOD` reader - Capture Compare Mode"]
+pub type CMOD_R = crate::BitReader<CMOD_A>;
 #[doc = "Capture Compare Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CMOD_A {
     #[doc = "0: Compare Mode"]
     VALUE1 = 0,
@@ -250,13 +154,8 @@ impl From<CMOD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CMOD` reader - Capture Compare Mode"]
-pub struct CMOD_R(crate::FieldReader<bool, CMOD_A>);
 impl CMOD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CMOD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CMOD_A {
         match self.bits {
@@ -267,23 +166,18 @@ impl CMOD_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CMOD_A::VALUE1
+        *self == CMOD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CMOD_A::VALUE2
+        *self == CMOD_A::VALUE2
     }
 }
-impl core::ops::Deref for CMOD_R {
-    type Target = crate::FieldReader<bool, CMOD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `ECM` reader - Extended Capture Mode"]
+pub type ECM_R = crate::BitReader<ECM_A>;
 #[doc = "Extended Capture Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ECM_A {
     #[doc = "0: Normal Capture Mode. Clear of the Full Flag of each capture register is done by accessing the registers individually only."]
     VALUE1 = 0,
@@ -296,13 +190,8 @@ impl From<ECM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ECM` reader - Extended Capture Mode"]
-pub struct ECM_R(crate::FieldReader<bool, ECM_A>);
 impl ECM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ECM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ECM_A {
         match self.bits {
@@ -313,31 +202,17 @@ impl ECM_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ECM_A::VALUE1
+        *self == ECM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ECM_A::VALUE2
-    }
-}
-impl core::ops::Deref for ECM_R {
-    type Target = crate::FieldReader<bool, ECM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ECM_A::VALUE2
     }
 }
 #[doc = "Field `ECM` writer - Extended Capture Mode"]
-pub struct ECM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ECM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ECM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ECM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, ECM_A, O>;
+impl<'a, const O: u8> ECM_W<'a, O> {
     #[doc = "Normal Capture Mode. Clear of the Full Flag of each capture register is done by accessing the registers individually only."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -348,25 +223,11 @@ impl<'a> ECM_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ECM_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `CAPC` reader - Clear on Capture Control"]
+pub type CAPC_R = crate::FieldReader<u8, CAPC_A>;
 #[doc = "Clear on Capture Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CAPC_A {
     #[doc = "0: Timer is never cleared on a capture event"]
@@ -384,13 +245,8 @@ impl From<CAPC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CAPC` reader - Clear on Capture Control"]
-pub struct CAPC_R(crate::FieldReader<u8, CAPC_A>);
 impl CAPC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CAPC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CAPC_A {
         match self.bits {
@@ -404,41 +260,27 @@ impl CAPC_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CAPC_A::VALUE1
+        *self == CAPC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CAPC_A::VALUE2
+        *self == CAPC_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == CAPC_A::VALUE3
+        *self == CAPC_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == CAPC_A::VALUE4
-    }
-}
-impl core::ops::Deref for CAPC_R {
-    type Target = crate::FieldReader<u8, CAPC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CAPC_A::VALUE4
     }
 }
 #[doc = "Field `CAPC` writer - Clear on Capture Control"]
-pub struct CAPC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CAPC_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CAPC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TC_SPEC, u8, CAPC_A, 2, O>;
+impl<'a, const O: u8> CAPC_W<'a, O> {
     #[doc = "Timer is never cleared on a capture event"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -459,15 +301,11 @@ impl<'a> CAPC_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(CAPC_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 5)) | ((value as u32 & 0x03) << 5);
-        self.w
-    }
 }
+#[doc = "Field `TLS` reader - Timer Load selector"]
+pub type TLS_R = crate::BitReader<TLS_A>;
 #[doc = "Timer Load selector\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TLS_A {
     #[doc = "0: Timer is loaded with the value of CR1"]
     VALUE1 = 0,
@@ -480,13 +318,8 @@ impl From<TLS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TLS` reader - Timer Load selector"]
-pub struct TLS_R(crate::FieldReader<bool, TLS_A>);
 impl TLS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TLS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TLS_A {
         match self.bits {
@@ -497,31 +330,17 @@ impl TLS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TLS_A::VALUE1
+        *self == TLS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TLS_A::VALUE2
-    }
-}
-impl core::ops::Deref for TLS_R {
-    type Target = crate::FieldReader<bool, TLS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TLS_A::VALUE2
     }
 }
 #[doc = "Field `TLS` writer - Timer Load selector"]
-pub struct TLS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TLS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TLS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TLS_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, TLS_A, O>;
+impl<'a, const O: u8> TLS_W<'a, O> {
     #[doc = "Timer is loaded with the value of CR1"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -532,25 +351,11 @@ impl<'a> TLS_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(TLS_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
+#[doc = "Field `ENDM` reader - Extended Stop Function Control"]
+pub type ENDM_R = crate::FieldReader<u8, ENDM_A>;
 #[doc = "Extended Stop Function Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ENDM_A {
     #[doc = "0: Clears the timer run bit only (default stop)"]
@@ -566,13 +371,8 @@ impl From<ENDM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ENDM` reader - Extended Stop Function Control"]
-pub struct ENDM_R(crate::FieldReader<u8, ENDM_A>);
 impl ENDM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ENDM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<ENDM_A> {
         match self.bits {
@@ -585,36 +385,22 @@ impl ENDM_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ENDM_A::VALUE1
+        *self == ENDM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ENDM_A::VALUE2
+        *self == ENDM_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == ENDM_A::VALUE3
-    }
-}
-impl core::ops::Deref for ENDM_R {
-    type Target = crate::FieldReader<u8, ENDM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENDM_A::VALUE3
     }
 }
 #[doc = "Field `ENDM` writer - Extended Stop Function Control"]
-pub struct ENDM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENDM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENDM_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type ENDM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TC_SPEC, u8, ENDM_A, 2, O>;
+impl<'a, const O: u8> ENDM_W<'a, O> {
     #[doc = "Clears the timer run bit only (default stop)"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -630,15 +416,11 @@ impl<'a> ENDM_W<'a> {
     pub fn value3(self) -> &'a mut W {
         self.variant(ENDM_A::VALUE3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
 }
+#[doc = "Field `STRM` reader - Extended Start Function Control"]
+pub type STRM_R = crate::BitReader<STRM_A>;
 #[doc = "Extended Start Function Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum STRM_A {
     #[doc = "0: Sets run bit only (default start)"]
     VALUE1 = 0,
@@ -651,13 +433,8 @@ impl From<STRM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STRM` reader - Extended Start Function Control"]
-pub struct STRM_R(crate::FieldReader<bool, STRM_A>);
 impl STRM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        STRM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STRM_A {
         match self.bits {
@@ -668,31 +445,17 @@ impl STRM_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == STRM_A::VALUE1
+        *self == STRM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == STRM_A::VALUE2
-    }
-}
-impl core::ops::Deref for STRM_R {
-    type Target = crate::FieldReader<bool, STRM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STRM_A::VALUE2
     }
 }
 #[doc = "Field `STRM` writer - Extended Start Function Control"]
-pub struct STRM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STRM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STRM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type STRM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, STRM_A, O>;
+impl<'a, const O: u8> STRM_W<'a, O> {
     #[doc = "Sets run bit only (default start)"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -703,25 +466,11 @@ impl<'a> STRM_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(STRM_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
 }
+#[doc = "Field `SCE` reader - Equal Capture Event enable"]
+pub type SCE_R = crate::BitReader<SCE_A>;
 #[doc = "Equal Capture Event enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SCE_A {
     #[doc = "0: Capture into CC8yC0VThis register contains the values associated with the Capture 0 field./CC8yC1VThis register contains the values associated with the Capture 1 field. registers control by CCycapt0 and capture into CC8yC3VThis register contains the values associated with the Capture 3 field./CC8yC2VThis register contains the values associated with the Capture 2 field. control by CCycapt1"]
     VALUE1 = 0,
@@ -734,13 +483,8 @@ impl From<SCE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SCE` reader - Equal Capture Event enable"]
-pub struct SCE_R(crate::FieldReader<bool, SCE_A>);
 impl SCE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SCE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SCE_A {
         match self.bits {
@@ -751,31 +495,17 @@ impl SCE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SCE_A::VALUE1
+        *self == SCE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SCE_A::VALUE2
-    }
-}
-impl core::ops::Deref for SCE_R {
-    type Target = crate::FieldReader<bool, SCE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SCE_A::VALUE2
     }
 }
 #[doc = "Field `SCE` writer - Equal Capture Event enable"]
-pub struct SCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SCE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, SCE_A, O>;
+impl<'a, const O: u8> SCE_W<'a, O> {
     #[doc = "Capture into CC8yC0VThis register contains the values associated with the Capture 0 field./CC8yC1VThis register contains the values associated with the Capture 1 field. registers control by CCycapt0 and capture into CC8yC3VThis register contains the values associated with the Capture 3 field./CC8yC2VThis register contains the values associated with the Capture 2 field. control by CCycapt1"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -786,25 +516,11 @@ impl<'a> SCE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(SCE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
 }
+#[doc = "Field `CCS` reader - Continuous Capture Enable"]
+pub type CCS_R = crate::BitReader<CCS_A>;
 #[doc = "Continuous Capture Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCS_A {
     #[doc = "0: The capture into a specific capture register is done with the rules linked with the full flags, described at ."]
     VALUE1 = 0,
@@ -817,13 +533,8 @@ impl From<CCS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCS` reader - Continuous Capture Enable"]
-pub struct CCS_R(crate::FieldReader<bool, CCS_A>);
 impl CCS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CCS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CCS_A {
         match self.bits {
@@ -834,31 +545,17 @@ impl CCS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CCS_A::VALUE1
+        *self == CCS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CCS_A::VALUE2
-    }
-}
-impl core::ops::Deref for CCS_R {
-    type Target = crate::FieldReader<bool, CCS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CCS_A::VALUE2
     }
 }
 #[doc = "Field `CCS` writer - Continuous Capture Enable"]
-pub struct CCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CCS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, CCS_A, O>;
+impl<'a, const O: u8> CCS_W<'a, O> {
     #[doc = "The capture into a specific capture register is done with the rules linked with the full flags, described at ."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -869,25 +566,11 @@ impl<'a> CCS_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CCS_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
+#[doc = "Field `DITHE` reader - Dither Enable"]
+pub type DITHE_R = crate::FieldReader<u8, DITHE_A>;
 #[doc = "Dither Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DITHE_A {
     #[doc = "0: Dither is disabled"]
@@ -905,13 +588,8 @@ impl From<DITHE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DITHE` reader - Dither Enable"]
-pub struct DITHE_R(crate::FieldReader<u8, DITHE_A>);
 impl DITHE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DITHE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DITHE_A {
         match self.bits {
@@ -925,41 +603,27 @@ impl DITHE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DITHE_A::VALUE1
+        *self == DITHE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DITHE_A::VALUE2
+        *self == DITHE_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == DITHE_A::VALUE3
+        *self == DITHE_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == DITHE_A::VALUE4
-    }
-}
-impl core::ops::Deref for DITHE_R {
-    type Target = crate::FieldReader<u8, DITHE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DITHE_A::VALUE4
     }
 }
 #[doc = "Field `DITHE` writer - Dither Enable"]
-pub struct DITHE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DITHE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DITHE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type DITHE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TC_SPEC, u8, DITHE_A, 2, O>;
+impl<'a, const O: u8> DITHE_W<'a, O> {
     #[doc = "Dither is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -980,15 +644,11 @@ impl<'a> DITHE_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(DITHE_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 13)) | ((value as u32 & 0x03) << 13);
-        self.w
-    }
 }
+#[doc = "Field `DIM` reader - Dither input selector"]
+pub type DIM_R = crate::BitReader<DIM_A>;
 #[doc = "Dither input selector\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DIM_A {
     #[doc = "0: Slice is using it own dither unit"]
     VALUE1 = 0,
@@ -1001,13 +661,8 @@ impl From<DIM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DIM` reader - Dither input selector"]
-pub struct DIM_R(crate::FieldReader<bool, DIM_A>);
 impl DIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIM_A {
         match self.bits {
@@ -1018,31 +673,17 @@ impl DIM_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DIM_A::VALUE1
+        *self == DIM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DIM_A::VALUE2
-    }
-}
-impl core::ops::Deref for DIM_R {
-    type Target = crate::FieldReader<bool, DIM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DIM_A::VALUE2
     }
 }
 #[doc = "Field `DIM` writer - Dither input selector"]
-pub struct DIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DIM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, DIM_A, O>;
+impl<'a, const O: u8> DIM_W<'a, O> {
     #[doc = "Slice is using it own dither unit"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1053,25 +694,11 @@ impl<'a> DIM_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(DIM_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
 }
+#[doc = "Field `FPE` reader - Floating Prescaler enable"]
+pub type FPE_R = crate::BitReader<FPE_A>;
 #[doc = "Floating Prescaler enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FPE_A {
     #[doc = "0: Floating prescaler mode is disabled"]
     VALUE1 = 0,
@@ -1084,13 +711,8 @@ impl From<FPE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FPE` reader - Floating Prescaler enable"]
-pub struct FPE_R(crate::FieldReader<bool, FPE_A>);
 impl FPE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FPE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FPE_A {
         match self.bits {
@@ -1101,31 +723,17 @@ impl FPE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == FPE_A::VALUE1
+        *self == FPE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == FPE_A::VALUE2
-    }
-}
-impl core::ops::Deref for FPE_R {
-    type Target = crate::FieldReader<bool, FPE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FPE_A::VALUE2
     }
 }
 #[doc = "Field `FPE` writer - Floating Prescaler enable"]
-pub struct FPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FPE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FPE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, FPE_A, O>;
+impl<'a, const O: u8> FPE_W<'a, O> {
     #[doc = "Floating prescaler mode is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1136,25 +744,11 @@ impl<'a> FPE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(FPE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
+#[doc = "Field `TRAPE0` reader - TRAP enable for CCU8x.OUTy0"]
+pub type TRAPE0_R = crate::BitReader<TRAPE0_A>;
 #[doc = "TRAP enable for CCU8x.OUTy0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRAPE0_A {
     #[doc = "0: TRAP functionality has no effect on the CCU8x.OUTy0 output"]
     VALUE1 = 0,
@@ -1167,13 +761,8 @@ impl From<TRAPE0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TRAPE0` reader - TRAP enable for CCU8x.OUTy0"]
-pub struct TRAPE0_R(crate::FieldReader<bool, TRAPE0_A>);
 impl TRAPE0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TRAPE0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRAPE0_A {
         match self.bits {
@@ -1184,31 +773,17 @@ impl TRAPE0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TRAPE0_A::VALUE1
+        *self == TRAPE0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TRAPE0_A::VALUE2
-    }
-}
-impl core::ops::Deref for TRAPE0_R {
-    type Target = crate::FieldReader<bool, TRAPE0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TRAPE0_A::VALUE2
     }
 }
 #[doc = "Field `TRAPE0` writer - TRAP enable for CCU8x.OUTy0"]
-pub struct TRAPE0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRAPE0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRAPE0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TRAPE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, TRAPE0_A, O>;
+impl<'a, const O: u8> TRAPE0_W<'a, O> {
     #[doc = "TRAP functionality has no effect on the CCU8x.OUTy0 output"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1219,133 +794,23 @@ impl<'a> TRAPE0_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(TRAPE0_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
 }
 #[doc = "Field `TRAPE1` reader - TRAP enable for CCU8x.OUTy1"]
-pub struct TRAPE1_R(crate::FieldReader<bool, bool>);
-impl TRAPE1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TRAPE1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRAPE1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRAPE1_R = crate::BitReader<bool>;
 #[doc = "Field `TRAPE1` writer - TRAP enable for CCU8x.OUTy1"]
-pub struct TRAPE1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRAPE1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type TRAPE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, bool, O>;
 #[doc = "Field `TRAPE2` reader - TRAP enable for CCU8x.OUTy2"]
-pub struct TRAPE2_R(crate::FieldReader<bool, bool>);
-impl TRAPE2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TRAPE2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRAPE2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRAPE2_R = crate::BitReader<bool>;
 #[doc = "Field `TRAPE2` writer - TRAP enable for CCU8x.OUTy2"]
-pub struct TRAPE2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRAPE2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type TRAPE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, bool, O>;
 #[doc = "Field `TRAPE3` reader - TRAP enable for CCU8x.OUTy3"]
-pub struct TRAPE3_R(crate::FieldReader<bool, bool>);
-impl TRAPE3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TRAPE3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRAPE3_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRAPE3_R = crate::BitReader<bool>;
 #[doc = "Field `TRAPE3` writer - TRAP enable for CCU8x.OUTy3"]
-pub struct TRAPE3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRAPE3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
-}
+pub type TRAPE3_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, bool, O>;
+#[doc = "Field `TRPSE` reader - TRAP Synchronization Enable"]
+pub type TRPSE_R = crate::BitReader<TRPSE_A>;
 #[doc = "TRAP Synchronization Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRPSE_A {
     #[doc = "0: Exiting from TRAP state isn't synchronized with the PWM signal"]
     VALUE1 = 0,
@@ -1358,13 +823,8 @@ impl From<TRPSE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TRPSE` reader - TRAP Synchronization Enable"]
-pub struct TRPSE_R(crate::FieldReader<bool, TRPSE_A>);
 impl TRPSE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TRPSE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRPSE_A {
         match self.bits {
@@ -1375,31 +835,17 @@ impl TRPSE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TRPSE_A::VALUE1
+        *self == TRPSE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TRPSE_A::VALUE2
-    }
-}
-impl core::ops::Deref for TRPSE_R {
-    type Target = crate::FieldReader<bool, TRPSE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TRPSE_A::VALUE2
     }
 }
 #[doc = "Field `TRPSE` writer - TRAP Synchronization Enable"]
-pub struct TRPSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRPSE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRPSE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TRPSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, TRPSE_A, O>;
+impl<'a, const O: u8> TRPSE_W<'a, O> {
     #[doc = "Exiting from TRAP state isn't synchronized with the PWM signal"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1410,25 +856,11 @@ impl<'a> TRPSE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(TRPSE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
-        self.w
-    }
 }
+#[doc = "Field `TRPSW` reader - TRAP State Clear Control"]
+pub type TRPSW_R = crate::BitReader<TRPSW_A>;
 #[doc = "TRAP State Clear Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRPSW_A {
     #[doc = "0: The slice exits the TRAP state automatically when the TRAP condition is not present (Trap state cleared by HW and SW)"]
     VALUE1 = 0,
@@ -1441,13 +873,8 @@ impl From<TRPSW_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TRPSW` reader - TRAP State Clear Control"]
-pub struct TRPSW_R(crate::FieldReader<bool, TRPSW_A>);
 impl TRPSW_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TRPSW_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRPSW_A {
         match self.bits {
@@ -1458,31 +885,17 @@ impl TRPSW_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TRPSW_A::VALUE1
+        *self == TRPSW_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TRPSW_A::VALUE2
-    }
-}
-impl core::ops::Deref for TRPSW_R {
-    type Target = crate::FieldReader<bool, TRPSW_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TRPSW_A::VALUE2
     }
 }
 #[doc = "Field `TRPSW` writer - TRAP State Clear Control"]
-pub struct TRPSW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRPSW_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRPSW_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TRPSW_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, TRPSW_A, O>;
+impl<'a, const O: u8> TRPSW_W<'a, O> {
     #[doc = "The slice exits the TRAP state automatically when the TRAP condition is not present (Trap state cleared by HW and SW)"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1493,25 +906,11 @@ impl<'a> TRPSW_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(TRPSW_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
-    }
 }
+#[doc = "Field `EMS` reader - External Modulation Synchronization"]
+pub type EMS_R = crate::BitReader<EMS_A>;
 #[doc = "External Modulation Synchronization\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EMS_A {
     #[doc = "0: External Modulation functionality is not synchronized with the PWM signal"]
     VALUE1 = 0,
@@ -1524,13 +923,8 @@ impl From<EMS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EMS` reader - External Modulation Synchronization"]
-pub struct EMS_R(crate::FieldReader<bool, EMS_A>);
 impl EMS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EMS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EMS_A {
         match self.bits {
@@ -1541,31 +935,17 @@ impl EMS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == EMS_A::VALUE1
+        *self == EMS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == EMS_A::VALUE2
-    }
-}
-impl core::ops::Deref for EMS_R {
-    type Target = crate::FieldReader<bool, EMS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EMS_A::VALUE2
     }
 }
 #[doc = "Field `EMS` writer - External Modulation Synchronization"]
-pub struct EMS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EMS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EMS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EMS_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, EMS_A, O>;
+impl<'a, const O: u8> EMS_W<'a, O> {
     #[doc = "External Modulation functionality is not synchronized with the PWM signal"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1576,25 +956,11 @@ impl<'a> EMS_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(EMS_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
 }
+#[doc = "Field `EMT` reader - External Modulation Type"]
+pub type EMT_R = crate::BitReader<EMT_A>;
 #[doc = "External Modulation Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EMT_A {
     #[doc = "0: External Modulation functionality is clearing the CC8ySTx bits."]
     VALUE1 = 0,
@@ -1607,13 +973,8 @@ impl From<EMT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EMT` reader - External Modulation Type"]
-pub struct EMT_R(crate::FieldReader<bool, EMT_A>);
 impl EMT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EMT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EMT_A {
         match self.bits {
@@ -1624,31 +985,17 @@ impl EMT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == EMT_A::VALUE1
+        *self == EMT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == EMT_A::VALUE2
-    }
-}
-impl core::ops::Deref for EMT_R {
-    type Target = crate::FieldReader<bool, EMT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EMT_A::VALUE2
     }
 }
 #[doc = "Field `EMT` writer - External Modulation Type"]
-pub struct EMT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EMT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EMT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EMT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, EMT_A, O>;
+impl<'a, const O: u8> EMT_W<'a, O> {
     #[doc = "External Modulation functionality is clearing the CC8ySTx bits."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1659,25 +1006,11 @@ impl<'a> EMT_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(EMT_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
 }
+#[doc = "Field `MCME1` reader - Multi Channel Mode Enable for Channel 1"]
+pub type MCME1_R = crate::BitReader<MCME1_A>;
 #[doc = "Multi Channel Mode Enable for Channel 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MCME1_A {
     #[doc = "0: Multi Channel Mode in Channel 1 is disabled"]
     VALUE1 = 0,
@@ -1690,13 +1023,8 @@ impl From<MCME1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MCME1` reader - Multi Channel Mode Enable for Channel 1"]
-pub struct MCME1_R(crate::FieldReader<bool, MCME1_A>);
 impl MCME1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MCME1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MCME1_A {
         match self.bits {
@@ -1707,31 +1035,17 @@ impl MCME1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == MCME1_A::VALUE1
+        *self == MCME1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == MCME1_A::VALUE2
-    }
-}
-impl core::ops::Deref for MCME1_R {
-    type Target = crate::FieldReader<bool, MCME1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MCME1_A::VALUE2
     }
 }
 #[doc = "Field `MCME1` writer - Multi Channel Mode Enable for Channel 1"]
-pub struct MCME1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MCME1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MCME1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MCME1_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, MCME1_A, O>;
+impl<'a, const O: u8> MCME1_W<'a, O> {
     #[doc = "Multi Channel Mode in Channel 1 is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1742,25 +1056,11 @@ impl<'a> MCME1_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(MCME1_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
 }
+#[doc = "Field `MCME2` reader - Multi Channel Mode Enable for Channel 2"]
+pub type MCME2_R = crate::BitReader<MCME2_A>;
 #[doc = "Multi Channel Mode Enable for Channel 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MCME2_A {
     #[doc = "0: Multi Channel Mode in Channel 2 is disabled"]
     VALUE1 = 0,
@@ -1773,13 +1073,8 @@ impl From<MCME2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MCME2` reader - Multi Channel Mode Enable for Channel 2"]
-pub struct MCME2_R(crate::FieldReader<bool, MCME2_A>);
 impl MCME2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MCME2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MCME2_A {
         match self.bits {
@@ -1790,31 +1085,17 @@ impl MCME2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == MCME2_A::VALUE1
+        *self == MCME2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == MCME2_A::VALUE2
-    }
-}
-impl core::ops::Deref for MCME2_R {
-    type Target = crate::FieldReader<bool, MCME2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MCME2_A::VALUE2
     }
 }
 #[doc = "Field `MCME2` writer - Multi Channel Mode Enable for Channel 2"]
-pub struct MCME2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MCME2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MCME2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MCME2_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, MCME2_A, O>;
+impl<'a, const O: u8> MCME2_W<'a, O> {
     #[doc = "Multi Channel Mode in Channel 2 is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1825,25 +1106,11 @@ impl<'a> MCME2_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(MCME2_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
-    }
 }
+#[doc = "Field `EME` reader - External Modulation Channel enable"]
+pub type EME_R = crate::FieldReader<u8, EME_A>;
 #[doc = "External Modulation Channel enable\n\nValue on reset: 3"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EME_A {
     #[doc = "0: External Modulation functionality doesn't affect any channel"]
@@ -1861,13 +1128,8 @@ impl From<EME_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EME` reader - External Modulation Channel enable"]
-pub struct EME_R(crate::FieldReader<u8, EME_A>);
 impl EME_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EME_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EME_A {
         match self.bits {
@@ -1881,41 +1143,27 @@ impl EME_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == EME_A::VALUE1
+        *self == EME_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == EME_A::VALUE2
+        *self == EME_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == EME_A::VALUE3
+        *self == EME_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == EME_A::VALUE4
-    }
-}
-impl core::ops::Deref for EME_R {
-    type Target = crate::FieldReader<u8, EME_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EME_A::VALUE4
     }
 }
 #[doc = "Field `EME` writer - External Modulation Channel enable"]
-pub struct EME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EME_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EME_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type EME_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TC_SPEC, u8, EME_A, 2, O>;
+impl<'a, const O: u8> EME_W<'a, O> {
     #[doc = "External Modulation functionality doesn't affect any channel"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1936,15 +1184,11 @@ impl<'a> EME_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(EME_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 27)) | ((value as u32 & 0x03) << 27);
-        self.w
-    }
 }
+#[doc = "Field `STOS` reader - Status bit output selector"]
+pub type STOS_R = crate::FieldReader<u8, STOS_A>;
 #[doc = "Status bit output selector\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STOS_A {
     #[doc = "0: CC8yST1 forward to CCU8x.STy"]
@@ -1962,13 +1206,8 @@ impl From<STOS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `STOS` reader - Status bit output selector"]
-pub struct STOS_R(crate::FieldReader<u8, STOS_A>);
 impl STOS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        STOS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STOS_A {
         match self.bits {
@@ -1982,41 +1221,27 @@ impl STOS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == STOS_A::VALUE1
+        *self == STOS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == STOS_A::VALUE2
+        *self == STOS_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == STOS_A::VALUE3
+        *self == STOS_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == STOS_A::VALUE4
-    }
-}
-impl core::ops::Deref for STOS_R {
-    type Target = crate::FieldReader<u8, STOS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STOS_A::VALUE4
     }
 }
 #[doc = "Field `STOS` writer - Status bit output selector"]
-pub struct STOS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STOS_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type STOS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TC_SPEC, u8, STOS_A, 2, O>;
+impl<'a, const O: u8> STOS_W<'a, O> {
     #[doc = "CC8yST1 forward to CCU8x.STy"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -2037,270 +1262,289 @@ impl<'a> STOS_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(STOS_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 29)) | ((value as u32 & 0x03) << 29);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Timer Counting Mode"]
     #[inline(always)]
     pub fn tcm(&self) -> TCM_R {
-        TCM_R::new((self.bits & 0x01) != 0)
+        TCM_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Timer Single Shot Mode"]
     #[inline(always)]
     pub fn tssm(&self) -> TSSM_R {
-        TSSM_R::new(((self.bits >> 1) & 0x01) != 0)
+        TSSM_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Shadow Transfer on Clear"]
     #[inline(always)]
     pub fn clst(&self) -> CLST_R {
-        CLST_R::new(((self.bits >> 2) & 0x01) != 0)
+        CLST_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Capture Compare Mode"]
     #[inline(always)]
     pub fn cmod(&self) -> CMOD_R {
-        CMOD_R::new(((self.bits >> 3) & 0x01) != 0)
+        CMOD_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Extended Capture Mode"]
     #[inline(always)]
     pub fn ecm(&self) -> ECM_R {
-        ECM_R::new(((self.bits >> 4) & 0x01) != 0)
+        ECM_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 5:6 - Clear on Capture Control"]
     #[inline(always)]
     pub fn capc(&self) -> CAPC_R {
-        CAPC_R::new(((self.bits >> 5) & 0x03) as u8)
+        CAPC_R::new(((self.bits >> 5) & 3) as u8)
     }
     #[doc = "Bit 7 - Timer Load selector"]
     #[inline(always)]
     pub fn tls(&self) -> TLS_R {
-        TLS_R::new(((self.bits >> 7) & 0x01) != 0)
+        TLS_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Extended Stop Function Control"]
     #[inline(always)]
     pub fn endm(&self) -> ENDM_R {
-        ENDM_R::new(((self.bits >> 8) & 0x03) as u8)
+        ENDM_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bit 10 - Extended Start Function Control"]
     #[inline(always)]
     pub fn strm(&self) -> STRM_R {
-        STRM_R::new(((self.bits >> 10) & 0x01) != 0)
+        STRM_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Equal Capture Event enable"]
     #[inline(always)]
     pub fn sce(&self) -> SCE_R {
-        SCE_R::new(((self.bits >> 11) & 0x01) != 0)
+        SCE_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Continuous Capture Enable"]
     #[inline(always)]
     pub fn ccs(&self) -> CCS_R {
-        CCS_R::new(((self.bits >> 12) & 0x01) != 0)
+        CCS_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bits 13:14 - Dither Enable"]
     #[inline(always)]
     pub fn dithe(&self) -> DITHE_R {
-        DITHE_R::new(((self.bits >> 13) & 0x03) as u8)
+        DITHE_R::new(((self.bits >> 13) & 3) as u8)
     }
     #[doc = "Bit 15 - Dither input selector"]
     #[inline(always)]
     pub fn dim(&self) -> DIM_R {
-        DIM_R::new(((self.bits >> 15) & 0x01) != 0)
+        DIM_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Floating Prescaler enable"]
     #[inline(always)]
     pub fn fpe(&self) -> FPE_R {
-        FPE_R::new(((self.bits >> 16) & 0x01) != 0)
+        FPE_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - TRAP enable for CCU8x.OUTy0"]
     #[inline(always)]
     pub fn trape0(&self) -> TRAPE0_R {
-        TRAPE0_R::new(((self.bits >> 17) & 0x01) != 0)
+        TRAPE0_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - TRAP enable for CCU8x.OUTy1"]
     #[inline(always)]
     pub fn trape1(&self) -> TRAPE1_R {
-        TRAPE1_R::new(((self.bits >> 18) & 0x01) != 0)
+        TRAPE1_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - TRAP enable for CCU8x.OUTy2"]
     #[inline(always)]
     pub fn trape2(&self) -> TRAPE2_R {
-        TRAPE2_R::new(((self.bits >> 19) & 0x01) != 0)
+        TRAPE2_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - TRAP enable for CCU8x.OUTy3"]
     #[inline(always)]
     pub fn trape3(&self) -> TRAPE3_R {
-        TRAPE3_R::new(((self.bits >> 20) & 0x01) != 0)
+        TRAPE3_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - TRAP Synchronization Enable"]
     #[inline(always)]
     pub fn trpse(&self) -> TRPSE_R {
-        TRPSE_R::new(((self.bits >> 21) & 0x01) != 0)
+        TRPSE_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - TRAP State Clear Control"]
     #[inline(always)]
     pub fn trpsw(&self) -> TRPSW_R {
-        TRPSW_R::new(((self.bits >> 22) & 0x01) != 0)
+        TRPSW_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - External Modulation Synchronization"]
     #[inline(always)]
     pub fn ems(&self) -> EMS_R {
-        EMS_R::new(((self.bits >> 23) & 0x01) != 0)
+        EMS_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - External Modulation Type"]
     #[inline(always)]
     pub fn emt(&self) -> EMT_R {
-        EMT_R::new(((self.bits >> 24) & 0x01) != 0)
+        EMT_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Multi Channel Mode Enable for Channel 1"]
     #[inline(always)]
     pub fn mcme1(&self) -> MCME1_R {
-        MCME1_R::new(((self.bits >> 25) & 0x01) != 0)
+        MCME1_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - Multi Channel Mode Enable for Channel 2"]
     #[inline(always)]
     pub fn mcme2(&self) -> MCME2_R {
-        MCME2_R::new(((self.bits >> 26) & 0x01) != 0)
+        MCME2_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bits 27:28 - External Modulation Channel enable"]
     #[inline(always)]
     pub fn eme(&self) -> EME_R {
-        EME_R::new(((self.bits >> 27) & 0x03) as u8)
+        EME_R::new(((self.bits >> 27) & 3) as u8)
     }
     #[doc = "Bits 29:30 - Status bit output selector"]
     #[inline(always)]
     pub fn stos(&self) -> STOS_R {
-        STOS_R::new(((self.bits >> 29) & 0x03) as u8)
+        STOS_R::new(((self.bits >> 29) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Timer Counting Mode"]
     #[inline(always)]
-    pub fn tcm(&mut self) -> TCM_W {
-        TCM_W { w: self }
+    #[must_use]
+    pub fn tcm(&mut self) -> TCM_W<0> {
+        TCM_W::new(self)
     }
     #[doc = "Bit 1 - Timer Single Shot Mode"]
     #[inline(always)]
-    pub fn tssm(&mut self) -> TSSM_W {
-        TSSM_W { w: self }
+    #[must_use]
+    pub fn tssm(&mut self) -> TSSM_W<1> {
+        TSSM_W::new(self)
     }
     #[doc = "Bit 2 - Shadow Transfer on Clear"]
     #[inline(always)]
-    pub fn clst(&mut self) -> CLST_W {
-        CLST_W { w: self }
+    #[must_use]
+    pub fn clst(&mut self) -> CLST_W<2> {
+        CLST_W::new(self)
     }
     #[doc = "Bit 4 - Extended Capture Mode"]
     #[inline(always)]
-    pub fn ecm(&mut self) -> ECM_W {
-        ECM_W { w: self }
+    #[must_use]
+    pub fn ecm(&mut self) -> ECM_W<4> {
+        ECM_W::new(self)
     }
     #[doc = "Bits 5:6 - Clear on Capture Control"]
     #[inline(always)]
-    pub fn capc(&mut self) -> CAPC_W {
-        CAPC_W { w: self }
+    #[must_use]
+    pub fn capc(&mut self) -> CAPC_W<5> {
+        CAPC_W::new(self)
     }
     #[doc = "Bit 7 - Timer Load selector"]
     #[inline(always)]
-    pub fn tls(&mut self) -> TLS_W {
-        TLS_W { w: self }
+    #[must_use]
+    pub fn tls(&mut self) -> TLS_W<7> {
+        TLS_W::new(self)
     }
     #[doc = "Bits 8:9 - Extended Stop Function Control"]
     #[inline(always)]
-    pub fn endm(&mut self) -> ENDM_W {
-        ENDM_W { w: self }
+    #[must_use]
+    pub fn endm(&mut self) -> ENDM_W<8> {
+        ENDM_W::new(self)
     }
     #[doc = "Bit 10 - Extended Start Function Control"]
     #[inline(always)]
-    pub fn strm(&mut self) -> STRM_W {
-        STRM_W { w: self }
+    #[must_use]
+    pub fn strm(&mut self) -> STRM_W<10> {
+        STRM_W::new(self)
     }
     #[doc = "Bit 11 - Equal Capture Event enable"]
     #[inline(always)]
-    pub fn sce(&mut self) -> SCE_W {
-        SCE_W { w: self }
+    #[must_use]
+    pub fn sce(&mut self) -> SCE_W<11> {
+        SCE_W::new(self)
     }
     #[doc = "Bit 12 - Continuous Capture Enable"]
     #[inline(always)]
-    pub fn ccs(&mut self) -> CCS_W {
-        CCS_W { w: self }
+    #[must_use]
+    pub fn ccs(&mut self) -> CCS_W<12> {
+        CCS_W::new(self)
     }
     #[doc = "Bits 13:14 - Dither Enable"]
     #[inline(always)]
-    pub fn dithe(&mut self) -> DITHE_W {
-        DITHE_W { w: self }
+    #[must_use]
+    pub fn dithe(&mut self) -> DITHE_W<13> {
+        DITHE_W::new(self)
     }
     #[doc = "Bit 15 - Dither input selector"]
     #[inline(always)]
-    pub fn dim(&mut self) -> DIM_W {
-        DIM_W { w: self }
+    #[must_use]
+    pub fn dim(&mut self) -> DIM_W<15> {
+        DIM_W::new(self)
     }
     #[doc = "Bit 16 - Floating Prescaler enable"]
     #[inline(always)]
-    pub fn fpe(&mut self) -> FPE_W {
-        FPE_W { w: self }
+    #[must_use]
+    pub fn fpe(&mut self) -> FPE_W<16> {
+        FPE_W::new(self)
     }
     #[doc = "Bit 17 - TRAP enable for CCU8x.OUTy0"]
     #[inline(always)]
-    pub fn trape0(&mut self) -> TRAPE0_W {
-        TRAPE0_W { w: self }
+    #[must_use]
+    pub fn trape0(&mut self) -> TRAPE0_W<17> {
+        TRAPE0_W::new(self)
     }
     #[doc = "Bit 18 - TRAP enable for CCU8x.OUTy1"]
     #[inline(always)]
-    pub fn trape1(&mut self) -> TRAPE1_W {
-        TRAPE1_W { w: self }
+    #[must_use]
+    pub fn trape1(&mut self) -> TRAPE1_W<18> {
+        TRAPE1_W::new(self)
     }
     #[doc = "Bit 19 - TRAP enable for CCU8x.OUTy2"]
     #[inline(always)]
-    pub fn trape2(&mut self) -> TRAPE2_W {
-        TRAPE2_W { w: self }
+    #[must_use]
+    pub fn trape2(&mut self) -> TRAPE2_W<19> {
+        TRAPE2_W::new(self)
     }
     #[doc = "Bit 20 - TRAP enable for CCU8x.OUTy3"]
     #[inline(always)]
-    pub fn trape3(&mut self) -> TRAPE3_W {
-        TRAPE3_W { w: self }
+    #[must_use]
+    pub fn trape3(&mut self) -> TRAPE3_W<20> {
+        TRAPE3_W::new(self)
     }
     #[doc = "Bit 21 - TRAP Synchronization Enable"]
     #[inline(always)]
-    pub fn trpse(&mut self) -> TRPSE_W {
-        TRPSE_W { w: self }
+    #[must_use]
+    pub fn trpse(&mut self) -> TRPSE_W<21> {
+        TRPSE_W::new(self)
     }
     #[doc = "Bit 22 - TRAP State Clear Control"]
     #[inline(always)]
-    pub fn trpsw(&mut self) -> TRPSW_W {
-        TRPSW_W { w: self }
+    #[must_use]
+    pub fn trpsw(&mut self) -> TRPSW_W<22> {
+        TRPSW_W::new(self)
     }
     #[doc = "Bit 23 - External Modulation Synchronization"]
     #[inline(always)]
-    pub fn ems(&mut self) -> EMS_W {
-        EMS_W { w: self }
+    #[must_use]
+    pub fn ems(&mut self) -> EMS_W<23> {
+        EMS_W::new(self)
     }
     #[doc = "Bit 24 - External Modulation Type"]
     #[inline(always)]
-    pub fn emt(&mut self) -> EMT_W {
-        EMT_W { w: self }
+    #[must_use]
+    pub fn emt(&mut self) -> EMT_W<24> {
+        EMT_W::new(self)
     }
     #[doc = "Bit 25 - Multi Channel Mode Enable for Channel 1"]
     #[inline(always)]
-    pub fn mcme1(&mut self) -> MCME1_W {
-        MCME1_W { w: self }
+    #[must_use]
+    pub fn mcme1(&mut self) -> MCME1_W<25> {
+        MCME1_W::new(self)
     }
     #[doc = "Bit 26 - Multi Channel Mode Enable for Channel 2"]
     #[inline(always)]
-    pub fn mcme2(&mut self) -> MCME2_W {
-        MCME2_W { w: self }
+    #[must_use]
+    pub fn mcme2(&mut self) -> MCME2_W<26> {
+        MCME2_W::new(self)
     }
     #[doc = "Bits 27:28 - External Modulation Channel enable"]
     #[inline(always)]
-    pub fn eme(&mut self) -> EME_W {
-        EME_W { w: self }
+    #[must_use]
+    pub fn eme(&mut self) -> EME_W<27> {
+        EME_W::new(self)
     }
     #[doc = "Bits 29:30 - Status bit output selector"]
     #[inline(always)]
-    pub fn stos(&mut self) -> STOS_W {
-        STOS_W { w: self }
+    #[must_use]
+    pub fn stos(&mut self) -> STOS_W<29> {
+        STOS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -2321,11 +1565,10 @@ impl crate::Readable for TC_SPEC {
 #[doc = "`write(|w| ..)` method takes [tc::W](W) writer structure"]
 impl crate::Writable for TC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TC to value 0x1800_0000"]
 impl crate::Resettable for TC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1800_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x1800_0000;
 }

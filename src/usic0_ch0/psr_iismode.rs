@@ -34,8 +34,10 @@ impl From<crate::W<PSR_IISMODE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `WA` reader - Word Address"]
+pub type WA_R = crate::BitReader<WA_A>;
 #[doc = "Word Address\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WA_A {
     #[doc = "0: WA has been sampled 0."]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<WA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WA` reader - Word Address"]
-pub struct WA_R(crate::FieldReader<bool, WA_A>);
 impl WA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WA_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl WA_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == WA_A::VALUE1
+        *self == WA_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == WA_A::VALUE2
-    }
-}
-impl core::ops::Deref for WA_R {
-    type Target = crate::FieldReader<bool, WA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WA_A::VALUE2
     }
 }
 #[doc = "Field `WA` writer - Word Address"]
-pub struct WA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WA_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WA_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, WA_A, O>;
+impl<'a, const O: u8> WA_W<'a, O> {
     #[doc = "WA has been sampled 0."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> WA_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(WA_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `DX2S` reader - DX2S Status"]
+pub type DX2S_R = crate::BitReader<DX2S_A>;
 #[doc = "DX2S Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DX2S_A {
     #[doc = "0: DX2S is 0."]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<DX2S_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DX2S` reader - DX2S Status"]
-pub struct DX2S_R(crate::FieldReader<bool, DX2S_A>);
 impl DX2S_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DX2S_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DX2S_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl DX2S_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DX2S_A::VALUE1
+        *self == DX2S_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DX2S_A::VALUE2
-    }
-}
-impl core::ops::Deref for DX2S_R {
-    type Target = crate::FieldReader<bool, DX2S_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DX2S_A::VALUE2
     }
 }
 #[doc = "Field `DX2S` writer - DX2S Status"]
-pub struct DX2S_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DX2S_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DX2S_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DX2S_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, DX2S_A, O>;
+impl<'a, const O: u8> DX2S_W<'a, O> {
     #[doc = "DX2S is 0."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -183,25 +133,11 @@ impl<'a> DX2S_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(DX2S_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `DX2TEV` reader - DX2T Event Detected"]
+pub type DX2TEV_R = crate::BitReader<DX2TEV_A>;
 #[doc = "DX2T Event Detected\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DX2TEV_A {
     #[doc = "0: The DX2T signal has not been activated."]
     VALUE1 = 0,
@@ -214,13 +150,8 @@ impl From<DX2TEV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DX2TEV` reader - DX2T Event Detected"]
-pub struct DX2TEV_R(crate::FieldReader<bool, DX2TEV_A>);
 impl DX2TEV_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DX2TEV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DX2TEV_A {
         match self.bits {
@@ -231,31 +162,17 @@ impl DX2TEV_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DX2TEV_A::VALUE1
+        *self == DX2TEV_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DX2TEV_A::VALUE2
-    }
-}
-impl core::ops::Deref for DX2TEV_R {
-    type Target = crate::FieldReader<bool, DX2TEV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DX2TEV_A::VALUE2
     }
 }
 #[doc = "Field `DX2TEV` writer - DX2T Event Detected"]
-pub struct DX2TEV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DX2TEV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DX2TEV_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DX2TEV_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, DX2TEV_A, O>;
+impl<'a, const O: u8> DX2TEV_W<'a, O> {
     #[doc = "The DX2T signal has not been activated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -266,25 +183,11 @@ impl<'a> DX2TEV_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(DX2TEV_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `WAFE` reader - WA Falling Edge Event"]
+pub type WAFE_R = crate::BitReader<WAFE_A>;
 #[doc = "WA Falling Edge Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WAFE_A {
     #[doc = "0: A WA falling edge has not been generated."]
     VALUE1 = 0,
@@ -297,13 +200,8 @@ impl From<WAFE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WAFE` reader - WA Falling Edge Event"]
-pub struct WAFE_R(crate::FieldReader<bool, WAFE_A>);
 impl WAFE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WAFE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WAFE_A {
         match self.bits {
@@ -314,31 +212,17 @@ impl WAFE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == WAFE_A::VALUE1
+        *self == WAFE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == WAFE_A::VALUE2
-    }
-}
-impl core::ops::Deref for WAFE_R {
-    type Target = crate::FieldReader<bool, WAFE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WAFE_A::VALUE2
     }
 }
 #[doc = "Field `WAFE` writer - WA Falling Edge Event"]
-pub struct WAFE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAFE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WAFE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WAFE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, WAFE_A, O>;
+impl<'a, const O: u8> WAFE_W<'a, O> {
     #[doc = "A WA falling edge has not been generated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -349,25 +233,11 @@ impl<'a> WAFE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(WAFE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `WARE` reader - WA Rising Edge Event"]
+pub type WARE_R = crate::BitReader<WARE_A>;
 #[doc = "WA Rising Edge Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WARE_A {
     #[doc = "0: A WA rising edge has not been generated."]
     VALUE1 = 0,
@@ -380,13 +250,8 @@ impl From<WARE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WARE` reader - WA Rising Edge Event"]
-pub struct WARE_R(crate::FieldReader<bool, WARE_A>);
 impl WARE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WARE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WARE_A {
         match self.bits {
@@ -397,31 +262,17 @@ impl WARE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == WARE_A::VALUE1
+        *self == WARE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == WARE_A::VALUE2
-    }
-}
-impl core::ops::Deref for WARE_R {
-    type Target = crate::FieldReader<bool, WARE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WARE_A::VALUE2
     }
 }
 #[doc = "Field `WARE` writer - WA Rising Edge Event"]
-pub struct WARE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WARE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WARE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WARE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, WARE_A, O>;
+impl<'a, const O: u8> WARE_W<'a, O> {
     #[doc = "A WA rising edge has not been generated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -432,25 +283,11 @@ impl<'a> WARE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(WARE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `END` reader - WA Generation End"]
+pub type END_R = crate::BitReader<END_A>;
 #[doc = "WA Generation End\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum END_A {
     #[doc = "0: The WA generation has not yet ended (if it is running and WAGEN has been cleared)."]
     VALUE1 = 0,
@@ -463,13 +300,8 @@ impl From<END_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `END` reader - WA Generation End"]
-pub struct END_R(crate::FieldReader<bool, END_A>);
 impl END_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        END_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> END_A {
         match self.bits {
@@ -480,31 +312,17 @@ impl END_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == END_A::VALUE1
+        *self == END_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == END_A::VALUE2
-    }
-}
-impl core::ops::Deref for END_R {
-    type Target = crate::FieldReader<bool, END_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == END_A::VALUE2
     }
 }
 #[doc = "Field `END` writer - WA Generation End"]
-pub struct END_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> END_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: END_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type END_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, END_A, O>;
+impl<'a, const O: u8> END_W<'a, O> {
     #[doc = "The WA generation has not yet ended (if it is running and WAGEN has been cleared)."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -515,25 +333,11 @@ impl<'a> END_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(END_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `RSIF` reader - Receiver Start Indication Flag"]
+pub type RSIF_R = crate::BitReader<RSIF_A>;
 #[doc = "Receiver Start Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RSIF_A {
     #[doc = "0: A receiver start event has not occurred."]
     VALUE1 = 0,
@@ -546,13 +350,8 @@ impl From<RSIF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RSIF` reader - Receiver Start Indication Flag"]
-pub struct RSIF_R(crate::FieldReader<bool, RSIF_A>);
 impl RSIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RSIF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RSIF_A {
         match self.bits {
@@ -563,31 +362,17 @@ impl RSIF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RSIF_A::VALUE1
+        *self == RSIF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RSIF_A::VALUE2
-    }
-}
-impl core::ops::Deref for RSIF_R {
-    type Target = crate::FieldReader<bool, RSIF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RSIF_A::VALUE2
     }
 }
 #[doc = "Field `RSIF` writer - Receiver Start Indication Flag"]
-pub struct RSIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RSIF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RSIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, RSIF_A, O>;
+impl<'a, const O: u8> RSIF_W<'a, O> {
     #[doc = "A receiver start event has not occurred."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -598,25 +383,11 @@ impl<'a> RSIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(RSIF_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
 }
+#[doc = "Field `DLIF` reader - Data Lost Indication Flag"]
+pub type DLIF_R = crate::BitReader<DLIF_A>;
 #[doc = "Data Lost Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DLIF_A {
     #[doc = "0: A data lost event has not occurred."]
     VALUE1 = 0,
@@ -629,13 +400,8 @@ impl From<DLIF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DLIF` reader - Data Lost Indication Flag"]
-pub struct DLIF_R(crate::FieldReader<bool, DLIF_A>);
 impl DLIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DLIF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DLIF_A {
         match self.bits {
@@ -646,31 +412,17 @@ impl DLIF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DLIF_A::VALUE1
+        *self == DLIF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DLIF_A::VALUE2
-    }
-}
-impl core::ops::Deref for DLIF_R {
-    type Target = crate::FieldReader<bool, DLIF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DLIF_A::VALUE2
     }
 }
 #[doc = "Field `DLIF` writer - Data Lost Indication Flag"]
-pub struct DLIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DLIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DLIF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DLIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, DLIF_A, O>;
+impl<'a, const O: u8> DLIF_W<'a, O> {
     #[doc = "A data lost event has not occurred."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -681,25 +433,11 @@ impl<'a> DLIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(DLIF_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
 }
+#[doc = "Field `TSIF` reader - Transmit Shift Indication Flag"]
+pub type TSIF_R = crate::BitReader<TSIF_A>;
 #[doc = "Transmit Shift Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TSIF_A {
     #[doc = "0: A transmit shift event has not occurred."]
     VALUE1 = 0,
@@ -712,13 +450,8 @@ impl From<TSIF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TSIF` reader - Transmit Shift Indication Flag"]
-pub struct TSIF_R(crate::FieldReader<bool, TSIF_A>);
 impl TSIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TSIF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TSIF_A {
         match self.bits {
@@ -729,31 +462,17 @@ impl TSIF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TSIF_A::VALUE1
+        *self == TSIF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TSIF_A::VALUE2
-    }
-}
-impl core::ops::Deref for TSIF_R {
-    type Target = crate::FieldReader<bool, TSIF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TSIF_A::VALUE2
     }
 }
 #[doc = "Field `TSIF` writer - Transmit Shift Indication Flag"]
-pub struct TSIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TSIF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TSIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, TSIF_A, O>;
+impl<'a, const O: u8> TSIF_W<'a, O> {
     #[doc = "A transmit shift event has not occurred."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -764,25 +483,11 @@ impl<'a> TSIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(TSIF_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
+#[doc = "Field `TBIF` reader - Transmit Buffer Indication Flag"]
+pub type TBIF_R = crate::BitReader<TBIF_A>;
 #[doc = "Transmit Buffer Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TBIF_A {
     #[doc = "0: A transmit buffer event has not occurred."]
     VALUE1 = 0,
@@ -795,13 +500,8 @@ impl From<TBIF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TBIF` reader - Transmit Buffer Indication Flag"]
-pub struct TBIF_R(crate::FieldReader<bool, TBIF_A>);
 impl TBIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TBIF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TBIF_A {
         match self.bits {
@@ -812,31 +512,17 @@ impl TBIF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TBIF_A::VALUE1
+        *self == TBIF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TBIF_A::VALUE2
-    }
-}
-impl core::ops::Deref for TBIF_R {
-    type Target = crate::FieldReader<bool, TBIF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TBIF_A::VALUE2
     }
 }
 #[doc = "Field `TBIF` writer - Transmit Buffer Indication Flag"]
-pub struct TBIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TBIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TBIF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TBIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, TBIF_A, O>;
+impl<'a, const O: u8> TBIF_W<'a, O> {
     #[doc = "A transmit buffer event has not occurred."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -847,25 +533,11 @@ impl<'a> TBIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(TBIF_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
 }
+#[doc = "Field `RIF` reader - Receive Indication Flag"]
+pub type RIF_R = crate::BitReader<RIF_A>;
 #[doc = "Receive Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RIF_A {
     #[doc = "0: A receive event has not occurred."]
     VALUE1 = 0,
@@ -878,13 +550,8 @@ impl From<RIF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RIF` reader - Receive Indication Flag"]
-pub struct RIF_R(crate::FieldReader<bool, RIF_A>);
 impl RIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RIF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RIF_A {
         match self.bits {
@@ -895,31 +562,17 @@ impl RIF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RIF_A::VALUE1
+        *self == RIF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RIF_A::VALUE2
-    }
-}
-impl core::ops::Deref for RIF_R {
-    type Target = crate::FieldReader<bool, RIF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RIF_A::VALUE2
     }
 }
 #[doc = "Field `RIF` writer - Receive Indication Flag"]
-pub struct RIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RIF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, RIF_A, O>;
+impl<'a, const O: u8> RIF_W<'a, O> {
     #[doc = "A receive event has not occurred."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -930,25 +583,11 @@ impl<'a> RIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(RIF_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
 }
+#[doc = "Field `AIF` reader - Alternative Receive Indication Flag"]
+pub type AIF_R = crate::BitReader<AIF_A>;
 #[doc = "Alternative Receive Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AIF_A {
     #[doc = "0: An alternative receive event has not occurred."]
     VALUE1 = 0,
@@ -961,13 +600,8 @@ impl From<AIF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AIF` reader - Alternative Receive Indication Flag"]
-pub struct AIF_R(crate::FieldReader<bool, AIF_A>);
 impl AIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AIF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AIF_A {
         match self.bits {
@@ -978,31 +612,17 @@ impl AIF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == AIF_A::VALUE1
+        *self == AIF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == AIF_A::VALUE2
-    }
-}
-impl core::ops::Deref for AIF_R {
-    type Target = crate::FieldReader<bool, AIF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == AIF_A::VALUE2
     }
 }
 #[doc = "Field `AIF` writer - Alternative Receive Indication Flag"]
-pub struct AIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AIF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type AIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, AIF_A, O>;
+impl<'a, const O: u8> AIF_W<'a, O> {
     #[doc = "An alternative receive event has not occurred."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1013,25 +633,11 @@ impl<'a> AIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(AIF_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
 }
+#[doc = "Field `BRGIF` reader - Baud Rate Generator Indication Flag"]
+pub type BRGIF_R = crate::BitReader<BRGIF_A>;
 #[doc = "Baud Rate Generator Indication Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BRGIF_A {
     #[doc = "0: A baud rate generator event has not occurred."]
     VALUE1 = 0,
@@ -1044,13 +650,8 @@ impl From<BRGIF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BRGIF` reader - Baud Rate Generator Indication Flag"]
-pub struct BRGIF_R(crate::FieldReader<bool, BRGIF_A>);
 impl BRGIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BRGIF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BRGIF_A {
         match self.bits {
@@ -1061,31 +662,17 @@ impl BRGIF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == BRGIF_A::VALUE1
+        *self == BRGIF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == BRGIF_A::VALUE2
-    }
-}
-impl core::ops::Deref for BRGIF_R {
-    type Target = crate::FieldReader<bool, BRGIF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BRGIF_A::VALUE2
     }
 }
 #[doc = "Field `BRGIF` writer - Baud Rate Generator Indication Flag"]
-pub struct BRGIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BRGIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BRGIF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type BRGIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, BRGIF_A, O>;
+impl<'a, const O: u8> BRGIF_W<'a, O> {
     #[doc = "A baud rate generator event has not occurred."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1096,155 +683,152 @@ impl<'a> BRGIF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(BRGIF_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Word Address"]
     #[inline(always)]
     pub fn wa(&self) -> WA_R {
-        WA_R::new((self.bits & 0x01) != 0)
+        WA_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - DX2S Status"]
     #[inline(always)]
     pub fn dx2s(&self) -> DX2S_R {
-        DX2S_R::new(((self.bits >> 1) & 0x01) != 0)
+        DX2S_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 3 - DX2T Event Detected"]
     #[inline(always)]
     pub fn dx2tev(&self) -> DX2TEV_R {
-        DX2TEV_R::new(((self.bits >> 3) & 0x01) != 0)
+        DX2TEV_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - WA Falling Edge Event"]
     #[inline(always)]
     pub fn wafe(&self) -> WAFE_R {
-        WAFE_R::new(((self.bits >> 4) & 0x01) != 0)
+        WAFE_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - WA Rising Edge Event"]
     #[inline(always)]
     pub fn ware(&self) -> WARE_R {
-        WARE_R::new(((self.bits >> 5) & 0x01) != 0)
+        WARE_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - WA Generation End"]
     #[inline(always)]
     pub fn end(&self) -> END_R {
-        END_R::new(((self.bits >> 6) & 0x01) != 0)
+        END_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 10 - Receiver Start Indication Flag"]
     #[inline(always)]
     pub fn rsif(&self) -> RSIF_R {
-        RSIF_R::new(((self.bits >> 10) & 0x01) != 0)
+        RSIF_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Data Lost Indication Flag"]
     #[inline(always)]
     pub fn dlif(&self) -> DLIF_R {
-        DLIF_R::new(((self.bits >> 11) & 0x01) != 0)
+        DLIF_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Transmit Shift Indication Flag"]
     #[inline(always)]
     pub fn tsif(&self) -> TSIF_R {
-        TSIF_R::new(((self.bits >> 12) & 0x01) != 0)
+        TSIF_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Transmit Buffer Indication Flag"]
     #[inline(always)]
     pub fn tbif(&self) -> TBIF_R {
-        TBIF_R::new(((self.bits >> 13) & 0x01) != 0)
+        TBIF_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Receive Indication Flag"]
     #[inline(always)]
     pub fn rif(&self) -> RIF_R {
-        RIF_R::new(((self.bits >> 14) & 0x01) != 0)
+        RIF_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Alternative Receive Indication Flag"]
     #[inline(always)]
     pub fn aif(&self) -> AIF_R {
-        AIF_R::new(((self.bits >> 15) & 0x01) != 0)
+        AIF_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Baud Rate Generator Indication Flag"]
     #[inline(always)]
     pub fn brgif(&self) -> BRGIF_R {
-        BRGIF_R::new(((self.bits >> 16) & 0x01) != 0)
+        BRGIF_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Word Address"]
     #[inline(always)]
-    pub fn wa(&mut self) -> WA_W {
-        WA_W { w: self }
+    #[must_use]
+    pub fn wa(&mut self) -> WA_W<0> {
+        WA_W::new(self)
     }
     #[doc = "Bit 1 - DX2S Status"]
     #[inline(always)]
-    pub fn dx2s(&mut self) -> DX2S_W {
-        DX2S_W { w: self }
+    #[must_use]
+    pub fn dx2s(&mut self) -> DX2S_W<1> {
+        DX2S_W::new(self)
     }
     #[doc = "Bit 3 - DX2T Event Detected"]
     #[inline(always)]
-    pub fn dx2tev(&mut self) -> DX2TEV_W {
-        DX2TEV_W { w: self }
+    #[must_use]
+    pub fn dx2tev(&mut self) -> DX2TEV_W<3> {
+        DX2TEV_W::new(self)
     }
     #[doc = "Bit 4 - WA Falling Edge Event"]
     #[inline(always)]
-    pub fn wafe(&mut self) -> WAFE_W {
-        WAFE_W { w: self }
+    #[must_use]
+    pub fn wafe(&mut self) -> WAFE_W<4> {
+        WAFE_W::new(self)
     }
     #[doc = "Bit 5 - WA Rising Edge Event"]
     #[inline(always)]
-    pub fn ware(&mut self) -> WARE_W {
-        WARE_W { w: self }
+    #[must_use]
+    pub fn ware(&mut self) -> WARE_W<5> {
+        WARE_W::new(self)
     }
     #[doc = "Bit 6 - WA Generation End"]
     #[inline(always)]
-    pub fn end(&mut self) -> END_W {
-        END_W { w: self }
+    #[must_use]
+    pub fn end(&mut self) -> END_W<6> {
+        END_W::new(self)
     }
     #[doc = "Bit 10 - Receiver Start Indication Flag"]
     #[inline(always)]
-    pub fn rsif(&mut self) -> RSIF_W {
-        RSIF_W { w: self }
+    #[must_use]
+    pub fn rsif(&mut self) -> RSIF_W<10> {
+        RSIF_W::new(self)
     }
     #[doc = "Bit 11 - Data Lost Indication Flag"]
     #[inline(always)]
-    pub fn dlif(&mut self) -> DLIF_W {
-        DLIF_W { w: self }
+    #[must_use]
+    pub fn dlif(&mut self) -> DLIF_W<11> {
+        DLIF_W::new(self)
     }
     #[doc = "Bit 12 - Transmit Shift Indication Flag"]
     #[inline(always)]
-    pub fn tsif(&mut self) -> TSIF_W {
-        TSIF_W { w: self }
+    #[must_use]
+    pub fn tsif(&mut self) -> TSIF_W<12> {
+        TSIF_W::new(self)
     }
     #[doc = "Bit 13 - Transmit Buffer Indication Flag"]
     #[inline(always)]
-    pub fn tbif(&mut self) -> TBIF_W {
-        TBIF_W { w: self }
+    #[must_use]
+    pub fn tbif(&mut self) -> TBIF_W<13> {
+        TBIF_W::new(self)
     }
     #[doc = "Bit 14 - Receive Indication Flag"]
     #[inline(always)]
-    pub fn rif(&mut self) -> RIF_W {
-        RIF_W { w: self }
+    #[must_use]
+    pub fn rif(&mut self) -> RIF_W<14> {
+        RIF_W::new(self)
     }
     #[doc = "Bit 15 - Alternative Receive Indication Flag"]
     #[inline(always)]
-    pub fn aif(&mut self) -> AIF_W {
-        AIF_W { w: self }
+    #[must_use]
+    pub fn aif(&mut self) -> AIF_W<15> {
+        AIF_W::new(self)
     }
     #[doc = "Bit 16 - Baud Rate Generator Indication Flag"]
     #[inline(always)]
-    pub fn brgif(&mut self) -> BRGIF_W {
-        BRGIF_W { w: self }
+    #[must_use]
+    pub fn brgif(&mut self) -> BRGIF_W<16> {
+        BRGIF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -1265,11 +849,10 @@ impl crate::Readable for PSR_IISMODE_SPEC {
 #[doc = "`write(|w| ..)` method takes [psr_iismode::W](W) writer structure"]
 impl crate::Writable for PSR_IISMODE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PSR_IISMode to value 0"]
 impl crate::Resettable for PSR_IISMODE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

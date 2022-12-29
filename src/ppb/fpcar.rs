@@ -35,43 +35,22 @@ impl From<crate::W<FPCAR_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDRESS` reader - Address"]
-pub struct ADDRESS_R(crate::FieldReader<u32, u32>);
-impl ADDRESS_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        ADDRESS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADDRESS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADDRESS_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `ADDRESS` writer - Address"]
-pub struct ADDRESS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDRESS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1fff_ffff << 3)) | ((value as u32 & 0x1fff_ffff) << 3);
-        self.w
-    }
-}
+pub type ADDRESS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPCAR_SPEC, u32, u32, 29, O>;
 impl R {
     #[doc = "Bits 3:31 - Address"]
     #[inline(always)]
     pub fn address(&self) -> ADDRESS_R {
-        ADDRESS_R::new(((self.bits >> 3) & 0x1fff_ffff) as u32)
+        ADDRESS_R::new((self.bits >> 3) & 0x1fff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 3:31 - Address"]
     #[inline(always)]
-    pub fn address(&mut self) -> ADDRESS_W {
-        ADDRESS_W { w: self }
+    #[must_use]
+    pub fn address(&mut self) -> ADDRESS_W<3> {
+        ADDRESS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for FPCAR_SPEC {
 #[doc = "`write(|w| ..)` method takes [fpcar::W](W) writer structure"]
 impl crate::Writable for FPCAR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FPCAR to value 0"]
 impl crate::Resettable for FPCAR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

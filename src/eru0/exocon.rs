@@ -34,8 +34,10 @@ impl From<crate::W<EXOCON_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ISS` reader - Internal Trigger Source Selection"]
+pub type ISS_R = crate::FieldReader<u8, ISS_A>;
 #[doc = "Internal Trigger Source Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ISS_A {
     #[doc = "0: The peripheral trigger function is disabled"]
@@ -53,13 +55,8 @@ impl From<ISS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ISS` reader - Internal Trigger Source Selection"]
-pub struct ISS_R(crate::FieldReader<u8, ISS_A>);
 impl ISS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ISS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ISS_A {
         match self.bits {
@@ -73,41 +70,27 @@ impl ISS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ISS_A::VALUE1
+        *self == ISS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ISS_A::VALUE2
+        *self == ISS_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == ISS_A::VALUE3
+        *self == ISS_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == ISS_A::VALUE4
-    }
-}
-impl core::ops::Deref for ISS_R {
-    type Target = crate::FieldReader<u8, ISS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ISS_A::VALUE4
     }
 }
 #[doc = "Field `ISS` writer - Internal Trigger Source Selection"]
-pub struct ISS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ISS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ISS_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type ISS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EXOCON_SPEC, u8, ISS_A, 2, O>;
+impl<'a, const O: u8> ISS_W<'a, O> {
     #[doc = "The peripheral trigger function is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -128,15 +111,11 @@ impl<'a> ISS_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(ISS_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
+#[doc = "Field `GEEN` reader - Gating Event Enable"]
+pub type GEEN_R = crate::BitReader<GEEN_A>;
 #[doc = "Gating Event Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GEEN_A {
     #[doc = "0: The event detection is disabled"]
     VALUE1 = 0,
@@ -149,13 +128,8 @@ impl From<GEEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GEEN` reader - Gating Event Enable"]
-pub struct GEEN_R(crate::FieldReader<bool, GEEN_A>);
 impl GEEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GEEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GEEN_A {
         match self.bits {
@@ -166,31 +140,17 @@ impl GEEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == GEEN_A::VALUE1
+        *self == GEEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == GEEN_A::VALUE2
-    }
-}
-impl core::ops::Deref for GEEN_R {
-    type Target = crate::FieldReader<bool, GEEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GEEN_A::VALUE2
     }
 }
 #[doc = "Field `GEEN` writer - Gating Event Enable"]
-pub struct GEEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GEEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GEEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type GEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXOCON_SPEC, GEEN_A, O>;
+impl<'a, const O: u8> GEEN_W<'a, O> {
     #[doc = "The event detection is disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -201,25 +161,11 @@ impl<'a> GEEN_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(GEEN_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `PDR` reader - Pattern Detection Result Flag"]
+pub type PDR_R = crate::BitReader<PDR_A>;
 #[doc = "Pattern Detection Result Flag\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PDR_A {
     #[doc = "0: A pattern miss is detected"]
     VALUE1 = 0,
@@ -232,13 +178,8 @@ impl From<PDR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PDR` reader - Pattern Detection Result Flag"]
-pub struct PDR_R(crate::FieldReader<bool, PDR_A>);
 impl PDR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PDR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDR_A {
         match self.bits {
@@ -249,23 +190,18 @@ impl PDR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PDR_A::VALUE1
+        *self == PDR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PDR_A::VALUE2
+        *self == PDR_A::VALUE2
     }
 }
-impl core::ops::Deref for PDR_R {
-    type Target = crate::FieldReader<bool, PDR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `GP` reader - Gating Selection for Pattern Detection Result"]
+pub type GP_R = crate::FieldReader<u8, GP_A>;
 #[doc = "Gating Selection for Pattern Detection Result\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum GP_A {
     #[doc = "0: ERU_GOUTy is always disabled and ERU_IOUTy can not be activated"]
@@ -283,13 +219,8 @@ impl From<GP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `GP` reader - Gating Selection for Pattern Detection Result"]
-pub struct GP_R(crate::FieldReader<u8, GP_A>);
 impl GP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        GP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GP_A {
         match self.bits {
@@ -303,41 +234,27 @@ impl GP_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == GP_A::VALUE1
+        *self == GP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == GP_A::VALUE2
+        *self == GP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == GP_A::VALUE3
+        *self == GP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == GP_A::VALUE4
-    }
-}
-impl core::ops::Deref for GP_R {
-    type Target = crate::FieldReader<u8, GP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GP_A::VALUE4
     }
 }
 #[doc = "Field `GP` writer - Gating Selection for Pattern Detection Result"]
-pub struct GP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GP_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type GP_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EXOCON_SPEC, u8, GP_A, 2, O>;
+impl<'a, const O: u8> GP_W<'a, O> {
     #[doc = "ERU_GOUTy is always disabled and ERU_IOUTy can not be activated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -358,15 +275,11 @@ impl<'a> GP_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(GP_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
 }
+#[doc = "Field `IPEN0` reader - Pattern Detection Enable for ETL0"]
+pub type IPEN0_R = crate::BitReader<IPEN0_A>;
 #[doc = "Pattern Detection Enable for ETL0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IPEN0_A {
     #[doc = "0: Flag EXICONx.FL is excluded from the pattern detection"]
     VALUE1 = 0,
@@ -379,13 +292,8 @@ impl From<IPEN0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IPEN0` reader - Pattern Detection Enable for ETL0"]
-pub struct IPEN0_R(crate::FieldReader<bool, IPEN0_A>);
 impl IPEN0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IPEN0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IPEN0_A {
         match self.bits {
@@ -396,31 +304,17 @@ impl IPEN0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == IPEN0_A::VALUE1
+        *self == IPEN0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == IPEN0_A::VALUE2
-    }
-}
-impl core::ops::Deref for IPEN0_R {
-    type Target = crate::FieldReader<bool, IPEN0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IPEN0_A::VALUE2
     }
 }
 #[doc = "Field `IPEN0` writer - Pattern Detection Enable for ETL0"]
-pub struct IPEN0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IPEN0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IPEN0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IPEN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXOCON_SPEC, IPEN0_A, O>;
+impl<'a, const O: u8> IPEN0_W<'a, O> {
     #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -431,25 +325,11 @@ impl<'a> IPEN0_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(IPEN0_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
+#[doc = "Field `IPEN1` reader - Pattern Detection Enable for ETL1"]
+pub type IPEN1_R = crate::BitReader<IPEN1_A>;
 #[doc = "Pattern Detection Enable for ETL1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IPEN1_A {
     #[doc = "0: Flag EXICONx.FL is excluded from the pattern detection"]
     VALUE1 = 0,
@@ -462,13 +342,8 @@ impl From<IPEN1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IPEN1` reader - Pattern Detection Enable for ETL1"]
-pub struct IPEN1_R(crate::FieldReader<bool, IPEN1_A>);
 impl IPEN1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IPEN1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IPEN1_A {
         match self.bits {
@@ -479,31 +354,17 @@ impl IPEN1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == IPEN1_A::VALUE1
+        *self == IPEN1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == IPEN1_A::VALUE2
-    }
-}
-impl core::ops::Deref for IPEN1_R {
-    type Target = crate::FieldReader<bool, IPEN1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IPEN1_A::VALUE2
     }
 }
 #[doc = "Field `IPEN1` writer - Pattern Detection Enable for ETL1"]
-pub struct IPEN1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IPEN1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IPEN1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IPEN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXOCON_SPEC, IPEN1_A, O>;
+impl<'a, const O: u8> IPEN1_W<'a, O> {
     #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -514,25 +375,11 @@ impl<'a> IPEN1_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(IPEN1_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
 }
+#[doc = "Field `IPEN2` reader - Pattern Detection Enable for ETL2"]
+pub type IPEN2_R = crate::BitReader<IPEN2_A>;
 #[doc = "Pattern Detection Enable for ETL2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IPEN2_A {
     #[doc = "0: Flag EXICONx.FL is excluded from the pattern detection"]
     VALUE1 = 0,
@@ -545,13 +392,8 @@ impl From<IPEN2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IPEN2` reader - Pattern Detection Enable for ETL2"]
-pub struct IPEN2_R(crate::FieldReader<bool, IPEN2_A>);
 impl IPEN2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IPEN2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IPEN2_A {
         match self.bits {
@@ -562,31 +404,17 @@ impl IPEN2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == IPEN2_A::VALUE1
+        *self == IPEN2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == IPEN2_A::VALUE2
-    }
-}
-impl core::ops::Deref for IPEN2_R {
-    type Target = crate::FieldReader<bool, IPEN2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IPEN2_A::VALUE2
     }
 }
 #[doc = "Field `IPEN2` writer - Pattern Detection Enable for ETL2"]
-pub struct IPEN2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IPEN2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IPEN2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IPEN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXOCON_SPEC, IPEN2_A, O>;
+impl<'a, const O: u8> IPEN2_W<'a, O> {
     #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -597,25 +425,11 @@ impl<'a> IPEN2_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(IPEN2_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
 }
+#[doc = "Field `IPEN3` reader - Pattern Detection Enable for ETL3"]
+pub type IPEN3_R = crate::BitReader<IPEN3_A>;
 #[doc = "Pattern Detection Enable for ETL3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IPEN3_A {
     #[doc = "0: Flag EXICONx.FL is excluded from the pattern detection"]
     VALUE1 = 0,
@@ -628,13 +442,8 @@ impl From<IPEN3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IPEN3` reader - Pattern Detection Enable for ETL3"]
-pub struct IPEN3_R(crate::FieldReader<bool, IPEN3_A>);
 impl IPEN3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IPEN3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IPEN3_A {
         match self.bits {
@@ -645,31 +454,17 @@ impl IPEN3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == IPEN3_A::VALUE1
+        *self == IPEN3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == IPEN3_A::VALUE2
-    }
-}
-impl core::ops::Deref for IPEN3_R {
-    type Target = crate::FieldReader<bool, IPEN3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IPEN3_A::VALUE2
     }
 }
 #[doc = "Field `IPEN3` writer - Pattern Detection Enable for ETL3"]
-pub struct IPEN3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IPEN3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IPEN3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IPEN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXOCON_SPEC, IPEN3_A, O>;
+impl<'a, const O: u8> IPEN3_W<'a, O> {
     #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -680,100 +475,91 @@ impl<'a> IPEN3_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(IPEN3_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Internal Trigger Source Selection"]
     #[inline(always)]
     pub fn iss(&self) -> ISS_R {
-        ISS_R::new((self.bits & 0x03) as u8)
+        ISS_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - Gating Event Enable"]
     #[inline(always)]
     pub fn geen(&self) -> GEEN_R {
-        GEEN_R::new(((self.bits >> 2) & 0x01) != 0)
+        GEEN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Pattern Detection Result Flag"]
     #[inline(always)]
     pub fn pdr(&self) -> PDR_R {
-        PDR_R::new(((self.bits >> 3) & 0x01) != 0)
+        PDR_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:5 - Gating Selection for Pattern Detection Result"]
     #[inline(always)]
     pub fn gp(&self) -> GP_R {
-        GP_R::new(((self.bits >> 4) & 0x03) as u8)
+        GP_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 12 - Pattern Detection Enable for ETL0"]
     #[inline(always)]
     pub fn ipen0(&self) -> IPEN0_R {
-        IPEN0_R::new(((self.bits >> 12) & 0x01) != 0)
+        IPEN0_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Pattern Detection Enable for ETL1"]
     #[inline(always)]
     pub fn ipen1(&self) -> IPEN1_R {
-        IPEN1_R::new(((self.bits >> 13) & 0x01) != 0)
+        IPEN1_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Pattern Detection Enable for ETL2"]
     #[inline(always)]
     pub fn ipen2(&self) -> IPEN2_R {
-        IPEN2_R::new(((self.bits >> 14) & 0x01) != 0)
+        IPEN2_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Pattern Detection Enable for ETL3"]
     #[inline(always)]
     pub fn ipen3(&self) -> IPEN3_R {
-        IPEN3_R::new(((self.bits >> 15) & 0x01) != 0)
+        IPEN3_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Internal Trigger Source Selection"]
     #[inline(always)]
-    pub fn iss(&mut self) -> ISS_W {
-        ISS_W { w: self }
+    #[must_use]
+    pub fn iss(&mut self) -> ISS_W<0> {
+        ISS_W::new(self)
     }
     #[doc = "Bit 2 - Gating Event Enable"]
     #[inline(always)]
-    pub fn geen(&mut self) -> GEEN_W {
-        GEEN_W { w: self }
+    #[must_use]
+    pub fn geen(&mut self) -> GEEN_W<2> {
+        GEEN_W::new(self)
     }
     #[doc = "Bits 4:5 - Gating Selection for Pattern Detection Result"]
     #[inline(always)]
-    pub fn gp(&mut self) -> GP_W {
-        GP_W { w: self }
+    #[must_use]
+    pub fn gp(&mut self) -> GP_W<4> {
+        GP_W::new(self)
     }
     #[doc = "Bit 12 - Pattern Detection Enable for ETL0"]
     #[inline(always)]
-    pub fn ipen0(&mut self) -> IPEN0_W {
-        IPEN0_W { w: self }
+    #[must_use]
+    pub fn ipen0(&mut self) -> IPEN0_W<12> {
+        IPEN0_W::new(self)
     }
     #[doc = "Bit 13 - Pattern Detection Enable for ETL1"]
     #[inline(always)]
-    pub fn ipen1(&mut self) -> IPEN1_W {
-        IPEN1_W { w: self }
+    #[must_use]
+    pub fn ipen1(&mut self) -> IPEN1_W<13> {
+        IPEN1_W::new(self)
     }
     #[doc = "Bit 14 - Pattern Detection Enable for ETL2"]
     #[inline(always)]
-    pub fn ipen2(&mut self) -> IPEN2_W {
-        IPEN2_W { w: self }
+    #[must_use]
+    pub fn ipen2(&mut self) -> IPEN2_W<14> {
+        IPEN2_W::new(self)
     }
     #[doc = "Bit 15 - Pattern Detection Enable for ETL3"]
     #[inline(always)]
-    pub fn ipen3(&mut self) -> IPEN3_W {
-        IPEN3_W { w: self }
+    #[must_use]
+    pub fn ipen3(&mut self) -> IPEN3_W<15> {
+        IPEN3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -794,12 +580,11 @@ impl crate::Readable for EXOCON_SPEC {
 #[doc = "`write(|w| ..)` method takes [exocon::W](W) writer structure"]
 impl crate::Writable for EXOCON_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EXOCON[%s]
 to value 0x08"]
 impl crate::Resettable for EXOCON_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x08
-    }
+    const RESET_VALUE: Self::Ux = 0x08;
 }

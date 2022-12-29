@@ -34,8 +34,10 @@ impl From<crate::W<CONP1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RXD0` reader - Port1 Receive Input 0 Select"]
+pub type RXD0_R = crate::FieldReader<u8, RXD0_A>;
 #[doc = "Port1 Receive Input 0 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RXD0_A {
     #[doc = "0: Data input RXD0A is selected"]
@@ -53,13 +55,8 @@ impl From<RXD0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RXD0` reader - Port1 Receive Input 0 Select"]
-pub struct RXD0_R(crate::FieldReader<u8, RXD0_A>);
 impl RXD0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RXD0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXD0_A {
         match self.bits {
@@ -73,41 +70,27 @@ impl RXD0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RXD0_A::VALUE1
+        *self == RXD0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RXD0_A::VALUE2
+        *self == RXD0_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == RXD0_A::VALUE3
+        *self == RXD0_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == RXD0_A::VALUE4
-    }
-}
-impl core::ops::Deref for RXD0_R {
-    type Target = crate::FieldReader<u8, RXD0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RXD0_A::VALUE4
     }
 }
 #[doc = "Field `RXD0` writer - Port1 Receive Input 0 Select"]
-pub struct RXD0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXD0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXD0_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RXD0_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CONP1_SPEC, u8, RXD0_A, 2, O>;
+impl<'a, const O: u8> RXD0_W<'a, O> {
     #[doc = "Data input RXD0A is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -128,15 +111,11 @@ impl<'a> RXD0_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(RXD0_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
+#[doc = "Field `RXD1` reader - Port1 Receive Input 1 Select"]
+pub type RXD1_R = crate::FieldReader<u8, RXD1_A>;
 #[doc = "Port1 Receive Input 1 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RXD1_A {
     #[doc = "0: Data input RXD1A is selected"]
@@ -154,13 +133,8 @@ impl From<RXD1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RXD1` reader - Port1 Receive Input 1 Select"]
-pub struct RXD1_R(crate::FieldReader<u8, RXD1_A>);
 impl RXD1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RXD1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXD1_A {
         match self.bits {
@@ -174,41 +148,27 @@ impl RXD1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RXD1_A::VALUE1
+        *self == RXD1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RXD1_A::VALUE2
+        *self == RXD1_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == RXD1_A::VALUE3
+        *self == RXD1_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == RXD1_A::VALUE4
-    }
-}
-impl core::ops::Deref for RXD1_R {
-    type Target = crate::FieldReader<u8, RXD1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RXD1_A::VALUE4
     }
 }
 #[doc = "Field `RXD1` writer - Port1 Receive Input 1 Select"]
-pub struct RXD1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXD1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXD1_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RXD1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CONP1_SPEC, u8, RXD1_A, 2, O>;
+impl<'a, const O: u8> RXD1_W<'a, O> {
     #[doc = "Data input RXD1A is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -229,15 +189,11 @@ impl<'a> RXD1_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(RXD1_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
-    }
 }
+#[doc = "Field `RXD2` reader - Port1 Receive Input 2 Select"]
+pub type RXD2_R = crate::FieldReader<u8, RXD2_A>;
 #[doc = "Port1 Receive Input 2 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RXD2_A {
     #[doc = "0: Data input RXD2A is selected"]
@@ -255,13 +211,8 @@ impl From<RXD2_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RXD2` reader - Port1 Receive Input 2 Select"]
-pub struct RXD2_R(crate::FieldReader<u8, RXD2_A>);
 impl RXD2_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RXD2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXD2_A {
         match self.bits {
@@ -275,41 +226,27 @@ impl RXD2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RXD2_A::VALUE1
+        *self == RXD2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RXD2_A::VALUE2
+        *self == RXD2_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == RXD2_A::VALUE3
+        *self == RXD2_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == RXD2_A::VALUE4
-    }
-}
-impl core::ops::Deref for RXD2_R {
-    type Target = crate::FieldReader<u8, RXD2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RXD2_A::VALUE4
     }
 }
 #[doc = "Field `RXD2` writer - Port1 Receive Input 2 Select"]
-pub struct RXD2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXD2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXD2_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RXD2_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CONP1_SPEC, u8, RXD2_A, 2, O>;
+impl<'a, const O: u8> RXD2_W<'a, O> {
     #[doc = "Data input RXD2A is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -330,15 +267,11 @@ impl<'a> RXD2_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(RXD2_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
 }
+#[doc = "Field `RXD3` reader - Port1 Receive Input 3 Select"]
+pub type RXD3_R = crate::FieldReader<u8, RXD3_A>;
 #[doc = "Port1 Receive Input 3 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RXD3_A {
     #[doc = "0: Data input RXD3A is selected"]
@@ -356,13 +289,8 @@ impl From<RXD3_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RXD3` reader - Port1 Receive Input 3 Select"]
-pub struct RXD3_R(crate::FieldReader<u8, RXD3_A>);
 impl RXD3_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RXD3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXD3_A {
         match self.bits {
@@ -376,41 +304,27 @@ impl RXD3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RXD3_A::VALUE1
+        *self == RXD3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RXD3_A::VALUE2
+        *self == RXD3_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == RXD3_A::VALUE3
+        *self == RXD3_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == RXD3_A::VALUE4
-    }
-}
-impl core::ops::Deref for RXD3_R {
-    type Target = crate::FieldReader<u8, RXD3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RXD3_A::VALUE4
     }
 }
 #[doc = "Field `RXD3` writer - Port1 Receive Input 3 Select"]
-pub struct RXD3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXD3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXD3_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RXD3_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CONP1_SPEC, u8, RXD3_A, 2, O>;
+impl<'a, const O: u8> RXD3_W<'a, O> {
     #[doc = "Data input RXD3A is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -431,15 +345,11 @@ impl<'a> RXD3_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(RXD3_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
-        self.w
-    }
 }
+#[doc = "Field `RX_ERR` reader - Port1 MII RX ERROR Input Select"]
+pub type RX_ERR_R = crate::FieldReader<u8, RX_ERR_A>;
 #[doc = "Port1 MII RX ERROR Input Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RX_ERR_A {
     #[doc = "0: Data input RX_ERRA is selected"]
@@ -457,13 +367,8 @@ impl From<RX_ERR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RX_ERR` reader - Port1 MII RX ERROR Input Select"]
-pub struct RX_ERR_R(crate::FieldReader<u8, RX_ERR_A>);
 impl RX_ERR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RX_ERR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_ERR_A {
         match self.bits {
@@ -477,41 +382,27 @@ impl RX_ERR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RX_ERR_A::VALUE1
+        *self == RX_ERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RX_ERR_A::VALUE2
+        *self == RX_ERR_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == RX_ERR_A::VALUE3
+        *self == RX_ERR_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == RX_ERR_A::VALUE4
-    }
-}
-impl core::ops::Deref for RX_ERR_R {
-    type Target = crate::FieldReader<u8, RX_ERR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_ERR_A::VALUE4
     }
 }
 #[doc = "Field `RX_ERR` writer - Port1 MII RX ERROR Input Select"]
-pub struct RX_ERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_ERR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_ERR_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RX_ERR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CONP1_SPEC, u8, RX_ERR_A, 2, O>;
+impl<'a, const O: u8> RX_ERR_W<'a, O> {
     #[doc = "Data input RX_ERRA is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -532,15 +423,11 @@ impl<'a> RX_ERR_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(RX_ERR_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
 }
+#[doc = "Field `RX_DV` reader - Port1 MII RX DV Input Select"]
+pub type RX_DV_R = crate::FieldReader<u8, RX_DV_A>;
 #[doc = "Port1 MII RX DV Input Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RX_DV_A {
     #[doc = "0: Data input RX_DVA is selected"]
@@ -558,13 +445,8 @@ impl From<RX_DV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RX_DV` reader - Port1 MII RX DV Input Select"]
-pub struct RX_DV_R(crate::FieldReader<u8, RX_DV_A>);
 impl RX_DV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RX_DV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_DV_A {
         match self.bits {
@@ -578,41 +460,27 @@ impl RX_DV_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RX_DV_A::VALUE1
+        *self == RX_DV_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RX_DV_A::VALUE2
+        *self == RX_DV_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == RX_DV_A::VALUE3
+        *self == RX_DV_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == RX_DV_A::VALUE4
-    }
-}
-impl core::ops::Deref for RX_DV_R {
-    type Target = crate::FieldReader<u8, RX_DV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_DV_A::VALUE4
     }
 }
 #[doc = "Field `RX_DV` writer - Port1 MII RX DV Input Select"]
-pub struct RX_DV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_DV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_DV_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RX_DV_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CONP1_SPEC, u8, RX_DV_A, 2, O>;
+impl<'a, const O: u8> RX_DV_W<'a, O> {
     #[doc = "Data input RX_DVA is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -633,15 +501,11 @@ impl<'a> RX_DV_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(RX_DV_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
-        self.w
-    }
 }
+#[doc = "Field `RX_CLK` reader - Port1 MII RX Clock Input Select"]
+pub type RX_CLK_R = crate::FieldReader<u8, RX_CLK_A>;
 #[doc = "Port1 MII RX Clock Input Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RX_CLK_A {
     #[doc = "0: Clock input RX_CLKA"]
@@ -659,13 +523,8 @@ impl From<RX_CLK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RX_CLK` reader - Port1 MII RX Clock Input Select"]
-pub struct RX_CLK_R(crate::FieldReader<u8, RX_CLK_A>);
 impl RX_CLK_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RX_CLK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_CLK_A {
         match self.bits {
@@ -679,41 +538,27 @@ impl RX_CLK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RX_CLK_A::VALUE1
+        *self == RX_CLK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RX_CLK_A::VALUE2
+        *self == RX_CLK_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == RX_CLK_A::VALUE3
+        *self == RX_CLK_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == RX_CLK_A::VALUE4
-    }
-}
-impl core::ops::Deref for RX_CLK_R {
-    type Target = crate::FieldReader<u8, RX_CLK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_CLK_A::VALUE4
     }
 }
 #[doc = "Field `RX_CLK` writer - Port1 MII RX Clock Input Select"]
-pub struct RX_CLK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_CLK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_CLK_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RX_CLK_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CONP1_SPEC, u8, RX_CLK_A, 2, O>;
+impl<'a, const O: u8> RX_CLK_W<'a, O> {
     #[doc = "Clock input RX_CLKA"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -734,15 +579,11 @@ impl<'a> RX_CLK_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(RX_CLK_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
-    }
 }
+#[doc = "Field `LINK` reader - Port1 PHY Link Input Select"]
+pub type LINK_R = crate::FieldReader<u8, LINK_A>;
 #[doc = "Port1 PHY Link Input Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LINK_A {
     #[doc = "0: PHY LINKA"]
@@ -760,13 +601,8 @@ impl From<LINK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LINK` reader - Port1 PHY Link Input Select"]
-pub struct LINK_R(crate::FieldReader<u8, LINK_A>);
 impl LINK_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LINK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINK_A {
         match self.bits {
@@ -780,41 +616,27 @@ impl LINK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LINK_A::VALUE1
+        *self == LINK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LINK_A::VALUE2
+        *self == LINK_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == LINK_A::VALUE3
+        *self == LINK_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == LINK_A::VALUE4
-    }
-}
-impl core::ops::Deref for LINK_R {
-    type Target = crate::FieldReader<u8, LINK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LINK_A::VALUE4
     }
 }
 #[doc = "Field `LINK` writer - Port1 PHY Link Input Select"]
-pub struct LINK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LINK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LINK_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type LINK_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CONP1_SPEC, u8, LINK_A, 2, O>;
+impl<'a, const O: u8> LINK_W<'a, O> {
     #[doc = "PHY LINKA"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -835,15 +657,11 @@ impl<'a> LINK_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(LINK_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
-    }
 }
+#[doc = "Field `TX_CLK` reader - Port1 MII TX Clock Input Select"]
+pub type TX_CLK_R = crate::FieldReader<u8, TX_CLK_A>;
 #[doc = "Port1 MII TX Clock Input Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TX_CLK_A {
     #[doc = "0: Clock input TX_CLKA"]
@@ -861,13 +679,8 @@ impl From<TX_CLK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TX_CLK` reader - Port1 MII TX Clock Input Select"]
-pub struct TX_CLK_R(crate::FieldReader<u8, TX_CLK_A>);
 impl TX_CLK_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TX_CLK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TX_CLK_A {
         match self.bits {
@@ -881,41 +694,27 @@ impl TX_CLK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TX_CLK_A::VALUE1
+        *self == TX_CLK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TX_CLK_A::VALUE2
+        *self == TX_CLK_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == TX_CLK_A::VALUE3
+        *self == TX_CLK_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == TX_CLK_A::VALUE4
-    }
-}
-impl core::ops::Deref for TX_CLK_R {
-    type Target = crate::FieldReader<u8, TX_CLK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TX_CLK_A::VALUE4
     }
 }
 #[doc = "Field `TX_CLK` writer - Port1 MII TX Clock Input Select"]
-pub struct TX_CLK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_CLK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TX_CLK_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type TX_CLK_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CONP1_SPEC, u8, TX_CLK_A, 2, O>;
+impl<'a, const O: u8> TX_CLK_W<'a, O> {
     #[doc = "Clock input TX_CLKA"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -936,15 +735,11 @@ impl<'a> TX_CLK_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(TX_CLK_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 28)) | ((value as u32 & 0x03) << 28);
-        self.w
-    }
 }
+#[doc = "Field `TX_SHIFT` reader - Port1 Manual TX Shift configuration"]
+pub type TX_SHIFT_R = crate::FieldReader<u8, TX_SHIFT_A>;
 #[doc = "Port1 Manual TX Shift configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TX_SHIFT_A {
     #[doc = "0: 0 ns"]
@@ -962,13 +757,8 @@ impl From<TX_SHIFT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TX_SHIFT` reader - Port1 Manual TX Shift configuration"]
-pub struct TX_SHIFT_R(crate::FieldReader<u8, TX_SHIFT_A>);
 impl TX_SHIFT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TX_SHIFT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TX_SHIFT_A {
         match self.bits {
@@ -982,41 +772,27 @@ impl TX_SHIFT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TX_SHIFT_A::VALUE1
+        *self == TX_SHIFT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TX_SHIFT_A::VALUE2
+        *self == TX_SHIFT_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == TX_SHIFT_A::VALUE3
+        *self == TX_SHIFT_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == TX_SHIFT_A::VALUE4
-    }
-}
-impl core::ops::Deref for TX_SHIFT_R {
-    type Target = crate::FieldReader<u8, TX_SHIFT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TX_SHIFT_A::VALUE4
     }
 }
 #[doc = "Field `TX_SHIFT` writer - Port1 Manual TX Shift configuration"]
-pub struct TX_SHIFT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_SHIFT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TX_SHIFT_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type TX_SHIFT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CONP1_SPEC, u8, TX_SHIFT_A, 2, O>;
+impl<'a, const O: u8> TX_SHIFT_W<'a, O> {
     #[doc = "0 ns"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1037,115 +813,119 @@ impl<'a> TX_SHIFT_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(TX_SHIFT_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 30)) | ((value as u32 & 0x03) << 30);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Port1 Receive Input 0 Select"]
     #[inline(always)]
     pub fn rxd0(&self) -> RXD0_R {
-        RXD0_R::new((self.bits & 0x03) as u8)
+        RXD0_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - Port1 Receive Input 1 Select"]
     #[inline(always)]
     pub fn rxd1(&self) -> RXD1_R {
-        RXD1_R::new(((self.bits >> 2) & 0x03) as u8)
+        RXD1_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - Port1 Receive Input 2 Select"]
     #[inline(always)]
     pub fn rxd2(&self) -> RXD2_R {
-        RXD2_R::new(((self.bits >> 4) & 0x03) as u8)
+        RXD2_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - Port1 Receive Input 3 Select"]
     #[inline(always)]
     pub fn rxd3(&self) -> RXD3_R {
-        RXD3_R::new(((self.bits >> 6) & 0x03) as u8)
+        RXD3_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:9 - Port1 MII RX ERROR Input Select"]
     #[inline(always)]
     pub fn rx_err(&self) -> RX_ERR_R {
-        RX_ERR_R::new(((self.bits >> 8) & 0x03) as u8)
+        RX_ERR_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - Port1 MII RX DV Input Select"]
     #[inline(always)]
     pub fn rx_dv(&self) -> RX_DV_R {
-        RX_DV_R::new(((self.bits >> 10) & 0x03) as u8)
+        RX_DV_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - Port1 MII RX Clock Input Select"]
     #[inline(always)]
     pub fn rx_clk(&self) -> RX_CLK_R {
-        RX_CLK_R::new(((self.bits >> 12) & 0x03) as u8)
+        RX_CLK_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 16:17 - Port1 PHY Link Input Select"]
     #[inline(always)]
     pub fn link(&self) -> LINK_R {
-        LINK_R::new(((self.bits >> 16) & 0x03) as u8)
+        LINK_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 28:29 - Port1 MII TX Clock Input Select"]
     #[inline(always)]
     pub fn tx_clk(&self) -> TX_CLK_R {
-        TX_CLK_R::new(((self.bits >> 28) & 0x03) as u8)
+        TX_CLK_R::new(((self.bits >> 28) & 3) as u8)
     }
     #[doc = "Bits 30:31 - Port1 Manual TX Shift configuration"]
     #[inline(always)]
     pub fn tx_shift(&self) -> TX_SHIFT_R {
-        TX_SHIFT_R::new(((self.bits >> 30) & 0x03) as u8)
+        TX_SHIFT_R::new(((self.bits >> 30) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Port1 Receive Input 0 Select"]
     #[inline(always)]
-    pub fn rxd0(&mut self) -> RXD0_W {
-        RXD0_W { w: self }
+    #[must_use]
+    pub fn rxd0(&mut self) -> RXD0_W<0> {
+        RXD0_W::new(self)
     }
     #[doc = "Bits 2:3 - Port1 Receive Input 1 Select"]
     #[inline(always)]
-    pub fn rxd1(&mut self) -> RXD1_W {
-        RXD1_W { w: self }
+    #[must_use]
+    pub fn rxd1(&mut self) -> RXD1_W<2> {
+        RXD1_W::new(self)
     }
     #[doc = "Bits 4:5 - Port1 Receive Input 2 Select"]
     #[inline(always)]
-    pub fn rxd2(&mut self) -> RXD2_W {
-        RXD2_W { w: self }
+    #[must_use]
+    pub fn rxd2(&mut self) -> RXD2_W<4> {
+        RXD2_W::new(self)
     }
     #[doc = "Bits 6:7 - Port1 Receive Input 3 Select"]
     #[inline(always)]
-    pub fn rxd3(&mut self) -> RXD3_W {
-        RXD3_W { w: self }
+    #[must_use]
+    pub fn rxd3(&mut self) -> RXD3_W<6> {
+        RXD3_W::new(self)
     }
     #[doc = "Bits 8:9 - Port1 MII RX ERROR Input Select"]
     #[inline(always)]
-    pub fn rx_err(&mut self) -> RX_ERR_W {
-        RX_ERR_W { w: self }
+    #[must_use]
+    pub fn rx_err(&mut self) -> RX_ERR_W<8> {
+        RX_ERR_W::new(self)
     }
     #[doc = "Bits 10:11 - Port1 MII RX DV Input Select"]
     #[inline(always)]
-    pub fn rx_dv(&mut self) -> RX_DV_W {
-        RX_DV_W { w: self }
+    #[must_use]
+    pub fn rx_dv(&mut self) -> RX_DV_W<10> {
+        RX_DV_W::new(self)
     }
     #[doc = "Bits 12:13 - Port1 MII RX Clock Input Select"]
     #[inline(always)]
-    pub fn rx_clk(&mut self) -> RX_CLK_W {
-        RX_CLK_W { w: self }
+    #[must_use]
+    pub fn rx_clk(&mut self) -> RX_CLK_W<12> {
+        RX_CLK_W::new(self)
     }
     #[doc = "Bits 16:17 - Port1 PHY Link Input Select"]
     #[inline(always)]
-    pub fn link(&mut self) -> LINK_W {
-        LINK_W { w: self }
+    #[must_use]
+    pub fn link(&mut self) -> LINK_W<16> {
+        LINK_W::new(self)
     }
     #[doc = "Bits 28:29 - Port1 MII TX Clock Input Select"]
     #[inline(always)]
-    pub fn tx_clk(&mut self) -> TX_CLK_W {
-        TX_CLK_W { w: self }
+    #[must_use]
+    pub fn tx_clk(&mut self) -> TX_CLK_W<28> {
+        TX_CLK_W::new(self)
     }
     #[doc = "Bits 30:31 - Port1 Manual TX Shift configuration"]
     #[inline(always)]
-    pub fn tx_shift(&mut self) -> TX_SHIFT_W {
-        TX_SHIFT_W { w: self }
+    #[must_use]
+    pub fn tx_shift(&mut self) -> TX_SHIFT_W<30> {
+        TX_SHIFT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -1166,11 +946,10 @@ impl crate::Readable for CONP1_SPEC {
 #[doc = "`write(|w| ..)` method takes [conp1::W](W) writer structure"]
 impl crate::Writable for CONP1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CONP1 to value 0"]
 impl crate::Resettable for CONP1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

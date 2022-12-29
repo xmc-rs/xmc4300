@@ -34,80 +34,38 @@ impl From<crate::W<DSR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DSC` reader - Destination scatter count"]
-pub struct DSC_R(crate::FieldReader<u16, u16>);
-impl DSC_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        DSC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DSC_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `DSC` writer - Destination scatter count"]
-pub struct DSC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff << 20)) | ((value as u32 & 0x0fff) << 20);
-        self.w
-    }
-}
 #[doc = "Field `DSI` reader - Destination scatter interval"]
-pub struct DSI_R(crate::FieldReader<u32, u32>);
-impl DSI_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        DSI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DSI_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DSI_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DSI` writer - Destination scatter interval"]
-pub struct DSI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSI_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x000f_ffff) | (value as u32 & 0x000f_ffff);
-        self.w
-    }
-}
+pub type DSI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DSR_SPEC, u32, u32, 20, O>;
+#[doc = "Field `DSC` reader - Destination scatter count"]
+pub type DSC_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `DSC` writer - Destination scatter count"]
+pub type DSC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DSR_SPEC, u16, u16, 12, O>;
 impl R {
+    #[doc = "Bits 0:19 - Destination scatter interval"]
+    #[inline(always)]
+    pub fn dsi(&self) -> DSI_R {
+        DSI_R::new(self.bits & 0x000f_ffff)
+    }
     #[doc = "Bits 20:31 - Destination scatter count"]
     #[inline(always)]
     pub fn dsc(&self) -> DSC_R {
         DSC_R::new(((self.bits >> 20) & 0x0fff) as u16)
     }
-    #[doc = "Bits 0:19 - Destination scatter interval"]
-    #[inline(always)]
-    pub fn dsi(&self) -> DSI_R {
-        DSI_R::new((self.bits & 0x000f_ffff) as u32)
-    }
 }
 impl W {
-    #[doc = "Bits 20:31 - Destination scatter count"]
-    #[inline(always)]
-    pub fn dsc(&mut self) -> DSC_W {
-        DSC_W { w: self }
-    }
     #[doc = "Bits 0:19 - Destination scatter interval"]
     #[inline(always)]
-    pub fn dsi(&mut self) -> DSI_W {
-        DSI_W { w: self }
+    #[must_use]
+    pub fn dsi(&mut self) -> DSI_W<0> {
+        DSI_W::new(self)
+    }
+    #[doc = "Bits 20:31 - Destination scatter count"]
+    #[inline(always)]
+    #[must_use]
+    pub fn dsc(&mut self) -> DSC_W<20> {
+        DSC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for DSR_SPEC {
 #[doc = "`write(|w| ..)` method takes [dsr::W](W) writer structure"]
 impl crate::Writable for DSR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DSR to value 0"]
 impl crate::Resettable for DSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

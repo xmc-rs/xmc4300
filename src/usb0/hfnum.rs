@@ -35,62 +35,29 @@ impl From<crate::W<HFNUM_SPEC>> for W {
     }
 }
 #[doc = "Field `FrNum` reader - Frame Number"]
-pub struct FRNUM_R(crate::FieldReader<u16, u16>);
-impl FRNUM_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        FRNUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRNUM_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FR_NUM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `FrNum` writer - Frame Number"]
-pub struct FRNUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRNUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type FR_NUM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFNUM_SPEC, u16, u16, 16, O>;
 #[doc = "Field `FrRem` reader - Frame Time Remaining"]
-pub struct FRREM_R(crate::FieldReader<u16, u16>);
-impl FRREM_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        FRREM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRREM_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FR_REM_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Frame Number"]
     #[inline(always)]
-    pub fn fr_num(&self) -> FRNUM_R {
-        FRNUM_R::new((self.bits & 0xffff) as u16)
+    pub fn fr_num(&self) -> FR_NUM_R {
+        FR_NUM_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:31 - Frame Time Remaining"]
     #[inline(always)]
-    pub fn fr_rem(&self) -> FRREM_R {
-        FRREM_R::new(((self.bits >> 16) & 0xffff) as u16)
+    pub fn fr_rem(&self) -> FR_REM_R {
+        FR_REM_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Frame Number"]
     #[inline(always)]
-    pub fn fr_num(&mut self) -> FRNUM_W {
-        FRNUM_W { w: self }
+    #[must_use]
+    pub fn fr_num(&mut self) -> FR_NUM_W<0> {
+        FR_NUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -111,11 +78,10 @@ impl crate::Readable for HFNUM_SPEC {
 #[doc = "`write(|w| ..)` method takes [hfnum::W](W) writer structure"]
 impl crate::Writable for HFNUM_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HFNUM to value 0x3fff"]
 impl crate::Resettable for HFNUM_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x3fff
-    }
+    const RESET_VALUE: Self::Ux = 0x3fff;
 }

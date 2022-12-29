@@ -14,24 +14,12 @@ impl From<crate::R<TX_BROADCAST_FRAMES_GOOD_BAD_SPEC>> for R {
     }
 }
 #[doc = "Field `TXBCASTGB` reader - This field indicates the number of transmitted good and bad broadcast frames."]
-pub struct TXBCASTGB_R(crate::FieldReader<u32, u32>);
-impl TXBCASTGB_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        TXBCASTGB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXBCASTGB_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXBCASTGB_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of transmitted good and bad broadcast frames."]
     #[inline(always)]
     pub fn txbcastgb(&self) -> TXBCASTGB_R {
-        TXBCASTGB_R::new((self.bits & 0xffff_ffff) as u32)
+        TXBCASTGB_R::new(self.bits)
     }
 }
 #[doc = "Transmit Frame Count for Good and Bad Broadcast Frames\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_broadcast_frames_good_bad](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for TX_BROADCAST_FRAMES_GOOD_BAD_SPEC {
 }
 #[doc = "`reset()` method sets TX_BROADCAST_FRAMES_GOOD_BAD to value 0"]
 impl crate::Resettable for TX_BROADCAST_FRAMES_GOOD_BAD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

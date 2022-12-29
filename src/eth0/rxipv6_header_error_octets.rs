@@ -14,24 +14,12 @@ impl From<crate::R<RXIPV6_HEADER_ERROR_OCTETS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV6HDRERROCT` reader - This field indicates the number of bytes received in IPv6 datagrams with header errors (length or version mismatch). The value in the IPv6 headers Length field is used to update this counter."]
-pub struct RXIPV6HDRERROCT_R(crate::FieldReader<u32, u32>);
-impl RXIPV6HDRERROCT_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        RXIPV6HDRERROCT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXIPV6HDRERROCT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXIPV6HDRERROCT_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of bytes received in IPv6 datagrams with header errors (length or version mismatch). The value in the IPv6 headers Length field is used to update this counter."]
     #[inline(always)]
     pub fn rxipv6hdrerroct(&self) -> RXIPV6HDRERROCT_R {
-        RXIPV6HDRERROCT_R::new((self.bits & 0xffff_ffff) as u32)
+        RXIPV6HDRERROCT_R::new(self.bits)
     }
 }
 #[doc = "Receive IPV6 Header Error Octet Counter Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxipv6_header_error_octets](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for RXIPV6_HEADER_ERROR_OCTETS_SPEC {
 }
 #[doc = "`reset()` method sets RXIPV6_HEADER_ERROR_OCTETS to value 0"]
 impl crate::Resettable for RXIPV6_HEADER_ERROR_OCTETS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,33 +35,13 @@ impl From<crate::W<PANCTR_SPEC>> for W {
     }
 }
 #[doc = "Field `PANCMD` reader - Panel Command"]
-pub struct PANCMD_R(crate::FieldReader<u8, u8>);
-impl PANCMD_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PANCMD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PANCMD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PANCMD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PANCMD` writer - Panel Command"]
-pub struct PANCMD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PANCMD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type PANCMD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PANCTR_SPEC, u8, u8, 8, O>;
+#[doc = "Field `BUSY` reader - Panel Busy Flag"]
+pub type BUSY_R = crate::BitReader<BUSY_A>;
 #[doc = "Panel Busy Flag\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BUSY_A {
     #[doc = "0: Panel has finished command and is ready to accept a new command."]
     VALUE1 = 0,
@@ -74,13 +54,8 @@ impl From<BUSY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BUSY` reader - Panel Busy Flag"]
-pub struct BUSY_R(crate::FieldReader<bool, BUSY_A>);
 impl BUSY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BUSY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BUSY_A {
         match self.bits {
@@ -91,23 +66,18 @@ impl BUSY_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == BUSY_A::VALUE1
+        *self == BUSY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == BUSY_A::VALUE2
+        *self == BUSY_A::VALUE2
     }
 }
-impl core::ops::Deref for BUSY_R {
-    type Target = crate::FieldReader<bool, BUSY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `RBUSY` reader - Result Busy Flag"]
+pub type RBUSY_R = crate::BitReader<RBUSY_A>;
 #[doc = "Result Busy Flag\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RBUSY_A {
     #[doc = "0: No update of PANAR1 and PANAR2 is scheduled by the list controller."]
     VALUE1 = 0,
@@ -120,13 +90,8 @@ impl From<RBUSY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RBUSY` reader - Result Busy Flag"]
-pub struct RBUSY_R(crate::FieldReader<bool, RBUSY_A>);
 impl RBUSY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RBUSY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RBUSY_A {
         match self.bits {
@@ -137,73 +102,22 @@ impl RBUSY_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RBUSY_A::VALUE1
+        *self == RBUSY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RBUSY_A::VALUE2
-    }
-}
-impl core::ops::Deref for RBUSY_R {
-    type Target = crate::FieldReader<bool, RBUSY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RBUSY_A::VALUE2
     }
 }
 #[doc = "Field `PANAR1` reader - Panel Argument 1"]
-pub struct PANAR1_R(crate::FieldReader<u8, u8>);
-impl PANAR1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PANAR1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PANAR1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PANAR1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PANAR1` writer - Panel Argument 1"]
-pub struct PANAR1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PANAR1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type PANAR1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PANCTR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `PANAR2` reader - Panel Argument 2"]
-pub struct PANAR2_R(crate::FieldReader<u8, u8>);
-impl PANAR2_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PANAR2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PANAR2_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PANAR2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PANAR2` writer - Panel Argument 2"]
-pub struct PANAR2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PANAR2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type PANAR2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PANCTR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Panel Command"]
     #[inline(always)]
@@ -213,12 +127,12 @@ impl R {
     #[doc = "Bit 8 - Panel Busy Flag"]
     #[inline(always)]
     pub fn busy(&self) -> BUSY_R {
-        BUSY_R::new(((self.bits >> 8) & 0x01) != 0)
+        BUSY_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Result Busy Flag"]
     #[inline(always)]
     pub fn rbusy(&self) -> RBUSY_R {
-        RBUSY_R::new(((self.bits >> 9) & 0x01) != 0)
+        RBUSY_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bits 16:23 - Panel Argument 1"]
     #[inline(always)]
@@ -234,18 +148,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Panel Command"]
     #[inline(always)]
-    pub fn pancmd(&mut self) -> PANCMD_W {
-        PANCMD_W { w: self }
+    #[must_use]
+    pub fn pancmd(&mut self) -> PANCMD_W<0> {
+        PANCMD_W::new(self)
     }
     #[doc = "Bits 16:23 - Panel Argument 1"]
     #[inline(always)]
-    pub fn panar1(&mut self) -> PANAR1_W {
-        PANAR1_W { w: self }
+    #[must_use]
+    pub fn panar1(&mut self) -> PANAR1_W<16> {
+        PANAR1_W::new(self)
     }
     #[doc = "Bits 24:31 - Panel Argument 2"]
     #[inline(always)]
-    pub fn panar2(&mut self) -> PANAR2_W {
-        PANAR2_W { w: self }
+    #[must_use]
+    pub fn panar2(&mut self) -> PANAR2_W<24> {
+        PANAR2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -266,11 +183,10 @@ impl crate::Readable for PANCTR_SPEC {
 #[doc = "`write(|w| ..)` method takes [panctr::W](W) writer structure"]
 impl crate::Writable for PANCTR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PANCTR to value 0x0301"]
 impl crate::Resettable for PANCTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0301
-    }
+    const RESET_VALUE: Self::Ux = 0x0301;
 }

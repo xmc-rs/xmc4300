@@ -34,8 +34,10 @@ impl From<crate::W<RMACR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RDWR` reader - Hibernate Retention Memory Register Update Control"]
+pub type RDWR_R = crate::BitReader<RDWR_A>;
 #[doc = "Hibernate Retention Memory Register Update Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RDWR_A {
     #[doc = "0: transfer data from Retention Memory in Hibernate domain to RMDATA register"]
     CONST_0 = 0,
@@ -48,13 +50,8 @@ impl From<RDWR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RDWR` reader - Hibernate Retention Memory Register Update Control"]
-pub struct RDWR_R(crate::FieldReader<bool, RDWR_A>);
 impl RDWR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RDWR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RDWR_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl RDWR_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == RDWR_A::CONST_0
+        *self == RDWR_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == RDWR_A::CONST_1
-    }
-}
-impl core::ops::Deref for RDWR_R {
-    type Target = crate::FieldReader<bool, RDWR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RDWR_A::CONST_1
     }
 }
 #[doc = "Field `RDWR` writer - Hibernate Retention Memory Register Update Control"]
-pub struct RDWR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RDWR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RDWR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RDWR_W<'a, const O: u8> = crate::BitWriter<'a, u32, RMACR_SPEC, RDWR_A, O>;
+impl<'a, const O: u8> RDWR_W<'a, O> {
     #[doc = "transfer data from Retention Memory in Hibernate domain to RMDATA register"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -100,54 +83,16 @@ impl<'a> RDWR_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(RDWR_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 #[doc = "Field `ADDR` reader - Hibernate Retention Memory Register Address Select"]
-pub struct ADDR_R(crate::FieldReader<u8, u8>);
-impl ADDR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADDR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ADDR` writer - Hibernate Retention Memory Register Address Select"]
-pub struct ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
-}
+pub type ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RMACR_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bit 0 - Hibernate Retention Memory Register Update Control"]
     #[inline(always)]
     pub fn rdwr(&self) -> RDWR_R {
-        RDWR_R::new((self.bits & 0x01) != 0)
+        RDWR_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 16:19 - Hibernate Retention Memory Register Address Select"]
     #[inline(always)]
@@ -158,13 +103,15 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Hibernate Retention Memory Register Update Control"]
     #[inline(always)]
-    pub fn rdwr(&mut self) -> RDWR_W {
-        RDWR_W { w: self }
+    #[must_use]
+    pub fn rdwr(&mut self) -> RDWR_W<0> {
+        RDWR_W::new(self)
     }
     #[doc = "Bits 16:19 - Hibernate Retention Memory Register Address Select"]
     #[inline(always)]
-    pub fn addr(&mut self) -> ADDR_W {
-        ADDR_W { w: self }
+    #[must_use]
+    pub fn addr(&mut self) -> ADDR_W<16> {
+        ADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -185,11 +132,10 @@ impl crate::Readable for RMACR_SPEC {
 #[doc = "`write(|w| ..)` method takes [rmacr::W](W) writer structure"]
 impl crate::Writable for RMACR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RMACR to value 0"]
 impl crate::Resettable for RMACR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -14,33 +14,9 @@ impl From<crate::R<EVRVADCSTAT_SPEC>> for R {
     }
 }
 #[doc = "Field `VADC13V` reader - VADC 1.3 V Conversion Result"]
-pub struct VADC13V_R(crate::FieldReader<u8, u8>);
-impl VADC13V_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        VADC13V_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VADC13V_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VADC13V_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `VADC33V` reader - VADC 3.3 V Conversion Result"]
-pub struct VADC33V_R(crate::FieldReader<u8, u8>);
-impl VADC33V_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        VADC33V_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VADC33V_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VADC33V_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - VADC 1.3 V Conversion Result"]
     #[inline(always)]
@@ -64,8 +40,5 @@ impl crate::Readable for EVRVADCSTAT_SPEC {
 }
 #[doc = "`reset()` method sets EVRVADCSTAT to value 0"]
 impl crate::Resettable for EVRVADCSTAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -14,24 +14,12 @@ impl From<crate::R<DC_SYNC1_STAT_SPEC>> for R {
     }
 }
 #[doc = "Field `S1_STATE` reader - SYNC1 state for Acknowledge mode"]
-pub struct S1_STATE_R(crate::FieldReader<bool, bool>);
-impl S1_STATE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        S1_STATE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for S1_STATE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type S1_STATE_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - SYNC1 state for Acknowledge mode"]
     #[inline(always)]
     pub fn s1_state(&self) -> S1_STATE_R {
-        S1_STATE_R::new((self.bits & 0x01) != 0)
+        S1_STATE_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "SYNC1 Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dc_sync1_stat](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for DC_SYNC1_STAT_SPEC {
 }
 #[doc = "`reset()` method sets DC_SYNC1_STAT to value 0"]
 impl crate::Resettable for DC_SYNC1_STAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

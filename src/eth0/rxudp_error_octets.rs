@@ -14,24 +14,12 @@ impl From<crate::R<RXUDP_ERROR_OCTETS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXUDPERROCT` reader - This field indicates the number of bytes received in a UDP segment with checksum errors. This counter does not count the IP Header bytes. The Ethernet header, FCS, pad, or IP pad bytes are not included in this counter."]
-pub struct RXUDPERROCT_R(crate::FieldReader<u32, u32>);
-impl RXUDPERROCT_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        RXUDPERROCT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXUDPERROCT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXUDPERROCT_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of bytes received in a UDP segment with checksum errors. This counter does not count the IP Header bytes. The Ethernet header, FCS, pad, or IP pad bytes are not included in this counter."]
     #[inline(always)]
     pub fn rxudperroct(&self) -> RXUDPERROCT_R {
-        RXUDPERROCT_R::new((self.bits & 0xffff_ffff) as u32)
+        RXUDPERROCT_R::new(self.bits)
     }
 }
 #[doc = "Receive UDP Error Octets Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxudp_error_octets](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for RXUDP_ERROR_OCTETS_SPEC {
 }
 #[doc = "`reset()` method sets RXUDP_ERROR_OCTETS to value 0"]
 impl crate::Resettable for RXUDP_ERROR_OCTETS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

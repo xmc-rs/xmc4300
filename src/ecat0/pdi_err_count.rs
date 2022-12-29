@@ -14,24 +14,12 @@ impl From<crate::R<PDI_ERR_COUNT_SPEC>> for R {
     }
 }
 #[doc = "Field `PDI_ERROR_COUNTER` reader - PDI Error counter"]
-pub struct PDI_ERROR_COUNTER_R(crate::FieldReader<u8, u8>);
-impl PDI_ERROR_COUNTER_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PDI_ERROR_COUNTER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PDI_ERROR_COUNTER_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PDI_ERROR_COUNTER_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - PDI Error counter"]
     #[inline(always)]
     pub fn pdi_error_counter(&self) -> PDI_ERROR_COUNTER_R {
-        PDI_ERROR_COUNTER_R::new((self.bits & 0xff) as u8)
+        PDI_ERROR_COUNTER_R::new(self.bits)
     }
 }
 #[doc = "PDI Error Counter\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdi_err_count](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for PDI_ERR_COUNT_SPEC {
 }
 #[doc = "`reset()` method sets PDI_ERR_COUNT to value 0"]
 impl crate::Resettable for PDI_ERR_COUNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

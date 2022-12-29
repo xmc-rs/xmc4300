@@ -35,145 +35,52 @@ impl From<crate::W<CTR_SPEC>> for W {
     }
 }
 #[doc = "Field `FCM` reader - Force CRC Mismatch"]
-pub struct FCM_R(crate::FieldReader<bool, bool>);
-impl FCM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FCM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FCM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FCM_R = crate::BitReader<bool>;
 #[doc = "Field `FCM` writer - Force CRC Mismatch"]
-pub struct FCM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type FCM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTR_SPEC, bool, O>;
 #[doc = "Field `FRM_CFG` reader - Force CFG Register Mismatch"]
-pub struct FRM_CFG_R(crate::FieldReader<bool, bool>);
-impl FRM_CFG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FRM_CFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRM_CFG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FRM_CFG_R = crate::BitReader<bool>;
 #[doc = "Field `FRM_CFG` writer - Force CFG Register Mismatch"]
-pub struct FRM_CFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRM_CFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type FRM_CFG_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTR_SPEC, bool, O>;
 #[doc = "Field `FRM_CHECK` reader - Force Check Register Mismatch"]
-pub struct FRM_CHECK_R(crate::FieldReader<bool, bool>);
-impl FRM_CHECK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FRM_CHECK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRM_CHECK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FRM_CHECK_R = crate::BitReader<bool>;
 #[doc = "Field `FRM_CHECK` writer - Force Check Register Mismatch"]
-pub struct FRM_CHECK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRM_CHECK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type FRM_CHECK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Force CRC Mismatch"]
     #[inline(always)]
     pub fn fcm(&self) -> FCM_R {
-        FCM_R::new((self.bits & 0x01) != 0)
+        FCM_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Force CFG Register Mismatch"]
     #[inline(always)]
     pub fn frm_cfg(&self) -> FRM_CFG_R {
-        FRM_CFG_R::new(((self.bits >> 1) & 0x01) != 0)
+        FRM_CFG_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Force Check Register Mismatch"]
     #[inline(always)]
     pub fn frm_check(&self) -> FRM_CHECK_R {
-        FRM_CHECK_R::new(((self.bits >> 2) & 0x01) != 0)
+        FRM_CHECK_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Force CRC Mismatch"]
     #[inline(always)]
-    pub fn fcm(&mut self) -> FCM_W {
-        FCM_W { w: self }
+    #[must_use]
+    pub fn fcm(&mut self) -> FCM_W<0> {
+        FCM_W::new(self)
     }
     #[doc = "Bit 1 - Force CFG Register Mismatch"]
     #[inline(always)]
-    pub fn frm_cfg(&mut self) -> FRM_CFG_W {
-        FRM_CFG_W { w: self }
+    #[must_use]
+    pub fn frm_cfg(&mut self) -> FRM_CFG_W<1> {
+        FRM_CFG_W::new(self)
     }
     #[doc = "Bit 2 - Force Check Register Mismatch"]
     #[inline(always)]
-    pub fn frm_check(&mut self) -> FRM_CHECK_W {
-        FRM_CHECK_W { w: self }
+    #[must_use]
+    pub fn frm_check(&mut self) -> FRM_CHECK_W<2> {
+        FRM_CHECK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -194,11 +101,10 @@ impl crate::Readable for CTR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctr::W](W) writer structure"]
 impl crate::Writable for CTR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTR to value 0"]
 impl crate::Resettable for CTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

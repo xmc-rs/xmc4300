@@ -35,49 +35,15 @@ impl From<crate::W<EVFR_SPEC>> for W {
     }
 }
 #[doc = "Field `TSF` reader - Time Slice Interrupt Flag"]
-pub struct TSF_R(crate::FieldReader<bool, bool>);
-impl TSF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TSF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TSF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TSF_R = crate::BitReader<bool>;
 #[doc = "Field `TFF` reader - (Extended) Time Frame Interrupt Flag"]
-pub struct TFF_R(crate::FieldReader<bool, bool>);
-impl TFF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TFF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TFF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TFF_R = crate::BitReader<bool>;
 #[doc = "Field `TPF` reader - Autoscan Time Period Interrupt Flag"]
-pub struct TPF_R(crate::FieldReader<bool, bool>);
-impl TPF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TPF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TPF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TPF_R = crate::BitReader<bool>;
+#[doc = "Field `TSCTROVF` reader - TS-Counter Overflow Indication"]
+pub type TSCTROVF_R = crate::BitReader<TSCTROVF_A>;
 #[doc = "TS-Counter Overflow Indication\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TSCTROVF_A {
     #[doc = "0: No overflow has occurred."]
     VALUE1 = 0,
@@ -90,13 +56,8 @@ impl From<TSCTROVF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TSCTROVF` reader - TS-Counter Overflow Indication"]
-pub struct TSCTROVF_R(crate::FieldReader<bool, TSCTROVF_A>);
 impl TSCTROVF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TSCTROVF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TSCTROVF_A {
         match self.bits {
@@ -107,23 +68,16 @@ impl TSCTROVF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TSCTROVF_A::VALUE1
+        *self == TSCTROVF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TSCTROVF_A::VALUE2
-    }
-}
-impl core::ops::Deref for TSCTROVF_R {
-    type Target = crate::FieldReader<bool, TSCTROVF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TSCTROVF_A::VALUE2
     }
 }
 #[doc = "Clear Time Slice Interrupt Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CTSF_AW {
     #[doc = "0: No action."]
     VALUE1 = 0,
@@ -137,15 +91,8 @@ impl From<CTSF_AW> for bool {
     }
 }
 #[doc = "Field `CTSF` writer - Clear Time Slice Interrupt Flag"]
-pub struct CTSF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTSF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTSF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CTSF_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFR_SPEC, CTSF_AW, O>;
+impl<'a, const O: u8> CTSF_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -156,25 +103,9 @@ impl<'a> CTSF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CTSF_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
 #[doc = "Clear (Extended) Time Frame Interrupt Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CTFF_AW {
     #[doc = "0: No action."]
     VALUE1 = 0,
@@ -188,15 +119,8 @@ impl From<CTFF_AW> for bool {
     }
 }
 #[doc = "Field `CTFF` writer - Clear (Extended) Time Frame Interrupt Flag"]
-pub struct CTFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTFF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTFF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CTFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFR_SPEC, CTFF_AW, O>;
+impl<'a, const O: u8> CTFF_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -207,25 +131,9 @@ impl<'a> CTFF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CTFF_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
 }
 #[doc = "Clear Autoscan Time Period Interrupt Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CTPF_AW {
     #[doc = "0: No action."]
     VALUE1 = 0,
@@ -239,15 +147,8 @@ impl From<CTPF_AW> for bool {
     }
 }
 #[doc = "Field `CTPF` writer - Clear Autoscan Time Period Interrupt Flag"]
-pub struct CTPF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTPF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTPF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CTPF_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFR_SPEC, CTPF_AW, O>;
+impl<'a, const O: u8> CTPF_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -258,60 +159,47 @@ impl<'a> CTPF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CTPF_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Time Slice Interrupt Flag"]
     #[inline(always)]
     pub fn tsf(&self) -> TSF_R {
-        TSF_R::new((self.bits & 0x01) != 0)
+        TSF_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - (Extended) Time Frame Interrupt Flag"]
     #[inline(always)]
     pub fn tff(&self) -> TFF_R {
-        TFF_R::new(((self.bits >> 1) & 0x01) != 0)
+        TFF_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Autoscan Time Period Interrupt Flag"]
     #[inline(always)]
     pub fn tpf(&self) -> TPF_R {
-        TPF_R::new(((self.bits >> 2) & 0x01) != 0)
+        TPF_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - TS-Counter Overflow Indication"]
     #[inline(always)]
     pub fn tsctrovf(&self) -> TSCTROVF_R {
-        TSCTROVF_R::new(((self.bits >> 3) & 0x01) != 0)
+        TSCTROVF_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 16 - Clear Time Slice Interrupt Flag"]
     #[inline(always)]
-    pub fn ctsf(&mut self) -> CTSF_W {
-        CTSF_W { w: self }
+    #[must_use]
+    pub fn ctsf(&mut self) -> CTSF_W<16> {
+        CTSF_W::new(self)
     }
     #[doc = "Bit 17 - Clear (Extended) Time Frame Interrupt Flag"]
     #[inline(always)]
-    pub fn ctff(&mut self) -> CTFF_W {
-        CTFF_W { w: self }
+    #[must_use]
+    pub fn ctff(&mut self) -> CTFF_W<17> {
+        CTFF_W::new(self)
     }
     #[doc = "Bit 18 - Clear Autoscan Time Period Interrupt Flag"]
     #[inline(always)]
-    pub fn ctpf(&mut self) -> CTPF_W {
-        CTPF_W { w: self }
+    #[must_use]
+    pub fn ctpf(&mut self) -> CTPF_W<18> {
+        CTPF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -332,11 +220,10 @@ impl crate::Readable for EVFR_SPEC {
 #[doc = "`write(|w| ..)` method takes [evfr::W](W) writer structure"]
 impl crate::Writable for EVFR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EVFR to value 0"]
 impl crate::Resettable for EVFR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -14,19 +14,7 @@ impl From<crate::R<RBUFD_SPEC>> for R {
     }
 }
 #[doc = "Field `DSR` reader - Data from Shift Register"]
-pub struct DSR_R(crate::FieldReader<u16, u16>);
-impl DSR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        DSR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DSR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DSR_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Data from Shift Register"]
     #[inline(always)]
@@ -45,8 +33,5 @@ impl crate::Readable for RBUFD_SPEC {
 }
 #[doc = "`reset()` method sets RBUFD to value 0"]
 impl crate::Resettable for RBUFD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

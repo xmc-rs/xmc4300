@@ -20,7 +20,7 @@ impl From<crate::W<PRCLR1_SPEC>> for W {
     }
 }
 #[doc = "LEDTS Reset Clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LEDTSCU0RS_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -34,15 +34,8 @@ impl From<LEDTSCU0RS_AW> for bool {
     }
 }
 #[doc = "Field `LEDTSCU0RS` writer - LEDTS Reset Clear"]
-pub struct LEDTSCU0RS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEDTSCU0RS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LEDTSCU0RS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LEDTSCU0RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR1_SPEC, LEDTSCU0RS_AW, O>;
+impl<'a, const O: u8> LEDTSCU0RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -53,25 +46,9 @@ impl<'a> LEDTSCU0RS_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(LEDTSCU0RS_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
 #[doc = "MultiCAN Reset Clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MCAN0RS_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -85,15 +62,8 @@ impl From<MCAN0RS_AW> for bool {
     }
 }
 #[doc = "Field `MCAN0RS` writer - MultiCAN Reset Clear"]
-pub struct MCAN0RS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MCAN0RS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MCAN0RS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MCAN0RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR1_SPEC, MCAN0RS_AW, O>;
+impl<'a, const O: u8> MCAN0RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -104,25 +74,9 @@ impl<'a> MCAN0RS_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(MCAN0RS_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
 #[doc = "DAC Reset Clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DACRS_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -136,15 +90,8 @@ impl From<DACRS_AW> for bool {
     }
 }
 #[doc = "Field `DACRS` writer - DAC Reset Clear"]
-pub struct DACRS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DACRS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DACRS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DACRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR1_SPEC, DACRS_AW, O>;
+impl<'a, const O: u8> DACRS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -155,25 +102,9 @@ impl<'a> DACRS_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(DACRS_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
 #[doc = "MMC Interface Reset Clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MMCIRS_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -187,15 +118,8 @@ impl From<MMCIRS_AW> for bool {
     }
 }
 #[doc = "Field `MMCIRS` writer - MMC Interface Reset Clear"]
-pub struct MMCIRS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MMCIRS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MMCIRS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MMCIRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR1_SPEC, MMCIRS_AW, O>;
+impl<'a, const O: u8> MMCIRS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -206,25 +130,9 @@ impl<'a> MMCIRS_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(MMCIRS_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
 #[doc = "USIC1 Reset Clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum USIC1RS_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -238,15 +146,8 @@ impl From<USIC1RS_AW> for bool {
     }
 }
 #[doc = "Field `USIC1RS` writer - USIC1 Reset Clear"]
-pub struct USIC1RS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USIC1RS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USIC1RS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type USIC1RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR1_SPEC, USIC1RS_AW, O>;
+impl<'a, const O: u8> USIC1RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -257,25 +158,9 @@ impl<'a> USIC1RS_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(USIC1RS_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
 #[doc = "PORTS Reset Clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PPORTSRS_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -289,15 +174,8 @@ impl From<PPORTSRS_AW> for bool {
     }
 }
 #[doc = "Field `PPORTSRS` writer - PORTS Reset Clear"]
-pub struct PPORTSRS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PPORTSRS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PPORTSRS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PPORTSRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR1_SPEC, PPORTSRS_AW, O>;
+impl<'a, const O: u8> PPORTSRS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -308,53 +186,43 @@ impl<'a> PPORTSRS_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(PPORTSRS_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 3 - LEDTS Reset Clear"]
     #[inline(always)]
-    pub fn ledtscu0rs(&mut self) -> LEDTSCU0RS_W {
-        LEDTSCU0RS_W { w: self }
+    #[must_use]
+    pub fn ledtscu0rs(&mut self) -> LEDTSCU0RS_W<3> {
+        LEDTSCU0RS_W::new(self)
     }
     #[doc = "Bit 4 - MultiCAN Reset Clear"]
     #[inline(always)]
-    pub fn mcan0rs(&mut self) -> MCAN0RS_W {
-        MCAN0RS_W { w: self }
+    #[must_use]
+    pub fn mcan0rs(&mut self) -> MCAN0RS_W<4> {
+        MCAN0RS_W::new(self)
     }
     #[doc = "Bit 5 - DAC Reset Clear"]
     #[inline(always)]
-    pub fn dacrs(&mut self) -> DACRS_W {
-        DACRS_W { w: self }
+    #[must_use]
+    pub fn dacrs(&mut self) -> DACRS_W<5> {
+        DACRS_W::new(self)
     }
     #[doc = "Bit 6 - MMC Interface Reset Clear"]
     #[inline(always)]
-    pub fn mmcirs(&mut self) -> MMCIRS_W {
-        MMCIRS_W { w: self }
+    #[must_use]
+    pub fn mmcirs(&mut self) -> MMCIRS_W<6> {
+        MMCIRS_W::new(self)
     }
     #[doc = "Bit 7 - USIC1 Reset Clear"]
     #[inline(always)]
-    pub fn usic1rs(&mut self) -> USIC1RS_W {
-        USIC1RS_W { w: self }
+    #[must_use]
+    pub fn usic1rs(&mut self) -> USIC1RS_W<7> {
+        USIC1RS_W::new(self)
     }
     #[doc = "Bit 9 - PORTS Reset Clear"]
     #[inline(always)]
-    pub fn pportsrs(&mut self) -> PPORTSRS_W {
-        PPORTSRS_W { w: self }
+    #[must_use]
+    pub fn pportsrs(&mut self) -> PPORTSRS_W<9> {
+        PPORTSRS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -371,11 +239,10 @@ impl crate::RegisterSpec for PRCLR1_SPEC {
 #[doc = "`write(|w| ..)` method takes [prclr1::W](W) writer structure"]
 impl crate::Writable for PRCLR1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PRCLR1 to value 0"]
 impl crate::Resettable for PRCLR1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

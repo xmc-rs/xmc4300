@@ -35,33 +35,13 @@ impl From<crate::W<MLINKCLKCR_SPEC>> for W {
     }
 }
 #[doc = "Field `SYSDIV` reader - System Clock Division Value"]
-pub struct SYSDIV_R(crate::FieldReader<u8, u8>);
-impl SYSDIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SYSDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SYSDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SYSDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SYSDIV` writer - System Clock Division Value"]
-pub struct SYSDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYSDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type SYSDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MLINKCLKCR_SPEC, u8, u8, 8, O>;
+#[doc = "Field `SYSSEL` reader - System Clock Selection Value"]
+pub type SYSSEL_R = crate::BitReader<SYSSEL_A>;
 #[doc = "System Clock Selection Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYSSEL_A {
     #[doc = "0: fOFI clock"]
     CONST_0 = 0,
@@ -74,13 +54,8 @@ impl From<SYSSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SYSSEL` reader - System Clock Selection Value"]
-pub struct SYSSEL_R(crate::FieldReader<bool, SYSSEL_A>);
 impl SYSSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SYSSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYSSEL_A {
         match self.bits {
@@ -91,31 +66,17 @@ impl SYSSEL_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == SYSSEL_A::CONST_0
+        *self == SYSSEL_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == SYSSEL_A::CONST_1
-    }
-}
-impl core::ops::Deref for SYSSEL_R {
-    type Target = crate::FieldReader<bool, SYSSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SYSSEL_A::CONST_1
     }
 }
 #[doc = "Field `SYSSEL` writer - System Clock Selection Value"]
-pub struct SYSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYSSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SYSSEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SYSSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, MLINKCLKCR_SPEC, SYSSEL_A, O>;
+impl<'a, const O: u8> SYSSEL_W<'a, O> {
     #[doc = "fOFI clock"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -126,25 +87,11 @@ impl<'a> SYSSEL_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(SYSSEL_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `CPUDIV` reader - CPU Clock Divider Enable"]
+pub type CPUDIV_R = crate::BitReader<CPUDIV_A>;
 #[doc = "CPU Clock Divider Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CPUDIV_A {
     #[doc = "0: fCPU = fSYS"]
     CONST_0 = 0,
@@ -157,13 +104,8 @@ impl From<CPUDIV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CPUDIV` reader - CPU Clock Divider Enable"]
-pub struct CPUDIV_R(crate::FieldReader<bool, CPUDIV_A>);
 impl CPUDIV_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CPUDIV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPUDIV_A {
         match self.bits {
@@ -174,31 +116,17 @@ impl CPUDIV_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == CPUDIV_A::CONST_0
+        *self == CPUDIV_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == CPUDIV_A::CONST_1
-    }
-}
-impl core::ops::Deref for CPUDIV_R {
-    type Target = crate::FieldReader<bool, CPUDIV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CPUDIV_A::CONST_1
     }
 }
 #[doc = "Field `CPUDIV` writer - CPU Clock Divider Enable"]
-pub struct CPUDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPUDIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPUDIV_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CPUDIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, MLINKCLKCR_SPEC, CPUDIV_A, O>;
+impl<'a, const O: u8> CPUDIV_W<'a, O> {
     #[doc = "fCPU = fSYS"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -209,25 +137,11 @@ impl<'a> CPUDIV_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(CPUDIV_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
 }
+#[doc = "Field `PBDIV` reader - PB Clock Divider Enable"]
+pub type PBDIV_R = crate::BitReader<PBDIV_A>;
 #[doc = "PB Clock Divider Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PBDIV_A {
     #[doc = "0: fPERIPH = fCPU"]
     CONST_0 = 0,
@@ -240,13 +154,8 @@ impl From<PBDIV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PBDIV` reader - PB Clock Divider Enable"]
-pub struct PBDIV_R(crate::FieldReader<bool, PBDIV_A>);
 impl PBDIV_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PBDIV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PBDIV_A {
         match self.bits {
@@ -257,31 +166,17 @@ impl PBDIV_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == PBDIV_A::CONST_0
+        *self == PBDIV_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == PBDIV_A::CONST_1
-    }
-}
-impl core::ops::Deref for PBDIV_R {
-    type Target = crate::FieldReader<bool, PBDIV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PBDIV_A::CONST_1
     }
 }
 #[doc = "Field `PBDIV` writer - PB Clock Divider Enable"]
-pub struct PBDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PBDIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PBDIV_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PBDIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, MLINKCLKCR_SPEC, PBDIV_A, O>;
+impl<'a, const O: u8> PBDIV_W<'a, O> {
     #[doc = "fPERIPH = fCPU"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -292,25 +187,11 @@ impl<'a> PBDIV_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(PBDIV_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
+#[doc = "Field `CCUDIV` reader - CCU Clock Divider Enable"]
+pub type CCUDIV_R = crate::BitReader<CCUDIV_A>;
 #[doc = "CCU Clock Divider Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCUDIV_A {
     #[doc = "0: fCCU = fSYS"]
     CONST_0 = 0,
@@ -323,13 +204,8 @@ impl From<CCUDIV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCUDIV` reader - CCU Clock Divider Enable"]
-pub struct CCUDIV_R(crate::FieldReader<bool, CCUDIV_A>);
 impl CCUDIV_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CCUDIV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CCUDIV_A {
         match self.bits {
@@ -340,31 +216,17 @@ impl CCUDIV_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == CCUDIV_A::CONST_0
+        *self == CCUDIV_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == CCUDIV_A::CONST_1
-    }
-}
-impl core::ops::Deref for CCUDIV_R {
-    type Target = crate::FieldReader<bool, CCUDIV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CCUDIV_A::CONST_1
     }
 }
 #[doc = "Field `CCUDIV` writer - CCU Clock Divider Enable"]
-pub struct CCUDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCUDIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CCUDIV_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CCUDIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, MLINKCLKCR_SPEC, CCUDIV_A, O>;
+impl<'a, const O: u8> CCUDIV_W<'a, O> {
     #[doc = "fCCU = fSYS"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -375,51 +237,15 @@ impl<'a> CCUDIV_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(CCUDIV_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
 }
 #[doc = "Field `WDTDIV` reader - WDT Clock Divider Value"]
-pub struct WDTDIV_R(crate::FieldReader<u8, u8>);
-impl WDTDIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WDTDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDTDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDTDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WDTDIV` writer - WDT Clock Divider Value"]
-pub struct WDTDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDTDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type WDTDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MLINKCLKCR_SPEC, u8, u8, 8, O>;
+#[doc = "Field `WDTSEL` reader - WDT Clock Selection Value"]
+pub type WDTSEL_R = crate::FieldReader<u8, WDTSEL_A>;
 #[doc = "WDT Clock Selection Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WDTSEL_A {
     #[doc = "0: fOFI clock"]
@@ -435,13 +261,8 @@ impl From<WDTSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WDTSEL` reader - WDT Clock Selection Value"]
-pub struct WDTSEL_R(crate::FieldReader<u8, WDTSEL_A>);
 impl WDTSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WDTSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<WDTSEL_A> {
         match self.bits {
@@ -454,36 +275,22 @@ impl WDTSEL_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == WDTSEL_A::CONST_00
+        *self == WDTSEL_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == WDTSEL_A::CONST_01
+        *self == WDTSEL_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == WDTSEL_A::CONST_10
-    }
-}
-impl core::ops::Deref for WDTSEL_R {
-    type Target = crate::FieldReader<u8, WDTSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WDTSEL_A::CONST_10
     }
 }
 #[doc = "Field `WDTSEL` writer - WDT Clock Selection Value"]
-pub struct WDTSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDTSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WDTSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type WDTSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MLINKCLKCR_SPEC, u8, WDTSEL_A, 2, O>;
+impl<'a, const O: u8> WDTSEL_W<'a, O> {
     #[doc = "fOFI clock"]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -499,12 +306,6 @@ impl<'a> WDTSEL_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(WDTSEL_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:7 - System Clock Division Value"]
@@ -515,22 +316,22 @@ impl R {
     #[doc = "Bit 8 - System Clock Selection Value"]
     #[inline(always)]
     pub fn syssel(&self) -> SYSSEL_R {
-        SYSSEL_R::new(((self.bits >> 8) & 0x01) != 0)
+        SYSSEL_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 10 - CPU Clock Divider Enable"]
     #[inline(always)]
     pub fn cpudiv(&self) -> CPUDIV_R {
-        CPUDIV_R::new(((self.bits >> 10) & 0x01) != 0)
+        CPUDIV_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 12 - PB Clock Divider Enable"]
     #[inline(always)]
     pub fn pbdiv(&self) -> PBDIV_R {
-        PBDIV_R::new(((self.bits >> 12) & 0x01) != 0)
+        PBDIV_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 14 - CCU Clock Divider Enable"]
     #[inline(always)]
     pub fn ccudiv(&self) -> CCUDIV_R {
-        CCUDIV_R::new(((self.bits >> 14) & 0x01) != 0)
+        CCUDIV_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bits 16:23 - WDT Clock Divider Value"]
     #[inline(always)]
@@ -540,44 +341,51 @@ impl R {
     #[doc = "Bits 24:25 - WDT Clock Selection Value"]
     #[inline(always)]
     pub fn wdtsel(&self) -> WDTSEL_R {
-        WDTSEL_R::new(((self.bits >> 24) & 0x03) as u8)
+        WDTSEL_R::new(((self.bits >> 24) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - System Clock Division Value"]
     #[inline(always)]
-    pub fn sysdiv(&mut self) -> SYSDIV_W {
-        SYSDIV_W { w: self }
+    #[must_use]
+    pub fn sysdiv(&mut self) -> SYSDIV_W<0> {
+        SYSDIV_W::new(self)
     }
     #[doc = "Bit 8 - System Clock Selection Value"]
     #[inline(always)]
-    pub fn syssel(&mut self) -> SYSSEL_W {
-        SYSSEL_W { w: self }
+    #[must_use]
+    pub fn syssel(&mut self) -> SYSSEL_W<8> {
+        SYSSEL_W::new(self)
     }
     #[doc = "Bit 10 - CPU Clock Divider Enable"]
     #[inline(always)]
-    pub fn cpudiv(&mut self) -> CPUDIV_W {
-        CPUDIV_W { w: self }
+    #[must_use]
+    pub fn cpudiv(&mut self) -> CPUDIV_W<10> {
+        CPUDIV_W::new(self)
     }
     #[doc = "Bit 12 - PB Clock Divider Enable"]
     #[inline(always)]
-    pub fn pbdiv(&mut self) -> PBDIV_W {
-        PBDIV_W { w: self }
+    #[must_use]
+    pub fn pbdiv(&mut self) -> PBDIV_W<12> {
+        PBDIV_W::new(self)
     }
     #[doc = "Bit 14 - CCU Clock Divider Enable"]
     #[inline(always)]
-    pub fn ccudiv(&mut self) -> CCUDIV_W {
-        CCUDIV_W { w: self }
+    #[must_use]
+    pub fn ccudiv(&mut self) -> CCUDIV_W<14> {
+        CCUDIV_W::new(self)
     }
     #[doc = "Bits 16:23 - WDT Clock Divider Value"]
     #[inline(always)]
-    pub fn wdtdiv(&mut self) -> WDTDIV_W {
-        WDTDIV_W { w: self }
+    #[must_use]
+    pub fn wdtdiv(&mut self) -> WDTDIV_W<16> {
+        WDTDIV_W::new(self)
     }
     #[doc = "Bits 24:25 - WDT Clock Selection Value"]
     #[inline(always)]
-    pub fn wdtsel(&mut self) -> WDTSEL_W {
-        WDTSEL_W { w: self }
+    #[must_use]
+    pub fn wdtsel(&mut self) -> WDTSEL_W<24> {
+        WDTSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -598,11 +406,10 @@ impl crate::Readable for MLINKCLKCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mlinkclkcr::W](W) writer structure"]
 impl crate::Writable for MLINKCLKCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MLINKCLKCR to value 0"]
 impl crate::Resettable for MLINKCLKCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

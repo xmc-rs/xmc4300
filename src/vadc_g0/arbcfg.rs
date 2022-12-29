@@ -35,33 +35,13 @@ impl From<crate::W<ARBCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `ANONC` reader - Analog Converter Control"]
-pub struct ANONC_R(crate::FieldReader<u8, u8>);
-impl ANONC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ANONC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ANONC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ANONC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ANONC` writer - Analog Converter Control"]
-pub struct ANONC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ANONC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type ANONC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ARBCFG_SPEC, u8, u8, 2, O>;
+#[doc = "Field `ARBRND` reader - Arbitration Round Length"]
+pub type ARBRND_R = crate::FieldReader<u8, ARBRND_A>;
 #[doc = "Arbitration Round Length\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ARBRND_A {
     #[doc = "0: 4 arbitration slots per round (tARB = 4 / fADCD)"]
@@ -79,13 +59,8 @@ impl From<ARBRND_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ARBRND` reader - Arbitration Round Length"]
-pub struct ARBRND_R(crate::FieldReader<u8, ARBRND_A>);
 impl ARBRND_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ARBRND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ARBRND_A {
         match self.bits {
@@ -99,41 +74,27 @@ impl ARBRND_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ARBRND_A::VALUE1
+        *self == ARBRND_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ARBRND_A::VALUE2
+        *self == ARBRND_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == ARBRND_A::VALUE3
+        *self == ARBRND_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == ARBRND_A::VALUE4
-    }
-}
-impl core::ops::Deref for ARBRND_R {
-    type Target = crate::FieldReader<u8, ARBRND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ARBRND_A::VALUE4
     }
 }
 #[doc = "Field `ARBRND` writer - Arbitration Round Length"]
-pub struct ARBRND_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ARBRND_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ARBRND_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type ARBRND_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ARBCFG_SPEC, u8, ARBRND_A, 2, O>;
+impl<'a, const O: u8> ARBRND_W<'a, O> {
     #[doc = "4 arbitration slots per round (tARB = 4 / fADCD)"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -154,15 +115,11 @@ impl<'a> ARBRND_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(ARBRND_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
 }
+#[doc = "Field `ARBM` reader - Arbitration Mode"]
+pub type ARBM_R = crate::BitReader<ARBM_A>;
 #[doc = "Arbitration Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ARBM_A {
     #[doc = "0: The arbiter runs permanently. This setting is required for a synchronization slave (see ) and for equidistant sampling using the signal ARBCNT (see )."]
     VALUE1 = 0,
@@ -175,13 +132,8 @@ impl From<ARBM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ARBM` reader - Arbitration Mode"]
-pub struct ARBM_R(crate::FieldReader<bool, ARBM_A>);
 impl ARBM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ARBM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ARBM_A {
         match self.bits {
@@ -192,31 +144,17 @@ impl ARBM_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ARBM_A::VALUE1
+        *self == ARBM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ARBM_A::VALUE2
-    }
-}
-impl core::ops::Deref for ARBM_R {
-    type Target = crate::FieldReader<bool, ARBM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ARBM_A::VALUE2
     }
 }
 #[doc = "Field `ARBM` writer - Arbitration Mode"]
-pub struct ARBM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ARBM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ARBM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ARBM_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBCFG_SPEC, ARBM_A, O>;
+impl<'a, const O: u8> ARBM_W<'a, O> {
     #[doc = "The arbiter runs permanently. This setting is required for a synchronization slave (see ) and for equidistant sampling using the signal ARBCNT (see )."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -227,25 +165,11 @@ impl<'a> ARBM_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ARBM_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
+#[doc = "Field `ANONS` reader - Analog Converter Control Status"]
+pub type ANONS_R = crate::FieldReader<u8, ANONS_A>;
 #[doc = "Analog Converter Control Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ANONS_A {
     #[doc = "0: Analog converter off"]
@@ -259,13 +183,8 @@ impl From<ANONS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ANONS` reader - Analog Converter Control Status"]
-pub struct ANONS_R(crate::FieldReader<u8, ANONS_A>);
 impl ANONS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ANONS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<ANONS_A> {
         match self.bits {
@@ -277,23 +196,18 @@ impl ANONS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ANONS_A::VALUE1
+        *self == ANONS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == ANONS_A::VALUE4
+        *self == ANONS_A::VALUE4
     }
 }
-impl core::ops::Deref for ANONS_R {
-    type Target = crate::FieldReader<u8, ANONS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `CAL` reader - Start-Up Calibration Active Indication"]
+pub type CAL_R = crate::BitReader<CAL_A>;
 #[doc = "Start-Up Calibration Active Indication\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CAL_A {
     #[doc = "0: Completed or not yet started"]
     VALUE1 = 0,
@@ -306,13 +220,8 @@ impl From<CAL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CAL` reader - Start-Up Calibration Active Indication"]
-pub struct CAL_R(crate::FieldReader<bool, CAL_A>);
 impl CAL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CAL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CAL_A {
         match self.bits {
@@ -323,23 +232,18 @@ impl CAL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CAL_A::VALUE1
+        *self == CAL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CAL_A::VALUE2
+        *self == CAL_A::VALUE2
     }
 }
-impl core::ops::Deref for CAL_R {
-    type Target = crate::FieldReader<bool, CAL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `BUSY` reader - Converter Busy Flag"]
+pub type BUSY_R = crate::BitReader<BUSY_A>;
 #[doc = "Converter Busy Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BUSY_A {
     #[doc = "0: Not busy"]
     VALUE1 = 0,
@@ -352,13 +256,8 @@ impl From<BUSY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BUSY` reader - Converter Busy Flag"]
-pub struct BUSY_R(crate::FieldReader<bool, BUSY_A>);
 impl BUSY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BUSY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BUSY_A {
         match self.bits {
@@ -369,23 +268,18 @@ impl BUSY_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == BUSY_A::VALUE1
+        *self == BUSY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == BUSY_A::VALUE2
+        *self == BUSY_A::VALUE2
     }
 }
-impl core::ops::Deref for BUSY_R {
-    type Target = crate::FieldReader<bool, BUSY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SAMPLE` reader - Sample Phase Flag"]
+pub type SAMPLE_R = crate::BitReader<SAMPLE_A>;
 #[doc = "Sample Phase Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SAMPLE_A {
     #[doc = "0: Converting or idle"]
     VALUE1 = 0,
@@ -398,13 +292,8 @@ impl From<SAMPLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SAMPLE` reader - Sample Phase Flag"]
-pub struct SAMPLE_R(crate::FieldReader<bool, SAMPLE_A>);
 impl SAMPLE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SAMPLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SAMPLE_A {
         match self.bits {
@@ -415,73 +304,69 @@ impl SAMPLE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SAMPLE_A::VALUE1
+        *self == SAMPLE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SAMPLE_A::VALUE2
-    }
-}
-impl core::ops::Deref for SAMPLE_R {
-    type Target = crate::FieldReader<bool, SAMPLE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SAMPLE_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Analog Converter Control"]
     #[inline(always)]
     pub fn anonc(&self) -> ANONC_R {
-        ANONC_R::new((self.bits & 0x03) as u8)
+        ANONC_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:5 - Arbitration Round Length"]
     #[inline(always)]
     pub fn arbrnd(&self) -> ARBRND_R {
-        ARBRND_R::new(((self.bits >> 4) & 0x03) as u8)
+        ARBRND_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 7 - Arbitration Mode"]
     #[inline(always)]
     pub fn arbm(&self) -> ARBM_R {
-        ARBM_R::new(((self.bits >> 7) & 0x01) != 0)
+        ARBM_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 16:17 - Analog Converter Control Status"]
     #[inline(always)]
     pub fn anons(&self) -> ANONS_R {
-        ANONS_R::new(((self.bits >> 16) & 0x03) as u8)
+        ANONS_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bit 28 - Start-Up Calibration Active Indication"]
     #[inline(always)]
     pub fn cal(&self) -> CAL_R {
-        CAL_R::new(((self.bits >> 28) & 0x01) != 0)
+        CAL_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 30 - Converter Busy Flag"]
     #[inline(always)]
     pub fn busy(&self) -> BUSY_R {
-        BUSY_R::new(((self.bits >> 30) & 0x01) != 0)
+        BUSY_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Sample Phase Flag"]
     #[inline(always)]
     pub fn sample(&self) -> SAMPLE_R {
-        SAMPLE_R::new(((self.bits >> 31) & 0x01) != 0)
+        SAMPLE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Analog Converter Control"]
     #[inline(always)]
-    pub fn anonc(&mut self) -> ANONC_W {
-        ANONC_W { w: self }
+    #[must_use]
+    pub fn anonc(&mut self) -> ANONC_W<0> {
+        ANONC_W::new(self)
     }
     #[doc = "Bits 4:5 - Arbitration Round Length"]
     #[inline(always)]
-    pub fn arbrnd(&mut self) -> ARBRND_W {
-        ARBRND_W { w: self }
+    #[must_use]
+    pub fn arbrnd(&mut self) -> ARBRND_W<4> {
+        ARBRND_W::new(self)
     }
     #[doc = "Bit 7 - Arbitration Mode"]
     #[inline(always)]
-    pub fn arbm(&mut self) -> ARBM_W {
-        ARBM_W { w: self }
+    #[must_use]
+    pub fn arbm(&mut self) -> ARBM_W<7> {
+        ARBM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -502,11 +387,10 @@ impl crate::Readable for ARBCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [arbcfg::W](W) writer structure"]
 impl crate::Writable for ARBCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ARBCFG to value 0"]
 impl crate::Resettable for ARBCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

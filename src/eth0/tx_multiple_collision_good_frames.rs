@@ -14,24 +14,12 @@ impl From<crate::R<TX_MULTIPLE_COLLISION_GOOD_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `TXMULTCOLG` reader - This field indicates the number of successfully transmitted frames after multiple collisions in the half-duplex mode."]
-pub struct TXMULTCOLG_R(crate::FieldReader<u32, u32>);
-impl TXMULTCOLG_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        TXMULTCOLG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXMULTCOLG_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXMULTCOLG_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of successfully transmitted frames after multiple collisions in the half-duplex mode."]
     #[inline(always)]
     pub fn txmultcolg(&self) -> TXMULTCOLG_R {
-        TXMULTCOLG_R::new((self.bits & 0xffff_ffff) as u32)
+        TXMULTCOLG_R::new(self.bits)
     }
 }
 #[doc = "Transmit Frame Count for Frames Transmitted after Multiple Collision\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_multiple_collision_good_frames](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for TX_MULTIPLE_COLLISION_GOOD_FRAMES_SPEC {
 }
 #[doc = "`reset()` method sets TX_MULTIPLE_COLLISION_GOOD_FRAMES to value 0"]
 impl crate::Resettable for TX_MULTIPLE_COLLISION_GOOD_FRAMES_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

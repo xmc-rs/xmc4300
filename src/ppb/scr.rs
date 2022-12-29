@@ -34,8 +34,10 @@ impl From<crate::W<SCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SLEEPONEXIT` reader - Sleep on Exit"]
+pub type SLEEPONEXIT_R = crate::BitReader<SLEEPONEXIT_A>;
 #[doc = "Sleep on Exit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SLEEPONEXIT_A {
     #[doc = "0: do not sleep when returning to Thread mode."]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<SLEEPONEXIT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SLEEPONEXIT` reader - Sleep on Exit"]
-pub struct SLEEPONEXIT_R(crate::FieldReader<bool, SLEEPONEXIT_A>);
 impl SLEEPONEXIT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SLEEPONEXIT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SLEEPONEXIT_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl SLEEPONEXIT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SLEEPONEXIT_A::VALUE1
+        *self == SLEEPONEXIT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SLEEPONEXIT_A::VALUE2
-    }
-}
-impl core::ops::Deref for SLEEPONEXIT_R {
-    type Target = crate::FieldReader<bool, SLEEPONEXIT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SLEEPONEXIT_A::VALUE2
     }
 }
 #[doc = "Field `SLEEPONEXIT` writer - Sleep on Exit"]
-pub struct SLEEPONEXIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLEEPONEXIT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SLEEPONEXIT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SLEEPONEXIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, SLEEPONEXIT_A, O>;
+impl<'a, const O: u8> SLEEPONEXIT_W<'a, O> {
     #[doc = "do not sleep when returning to Thread mode."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> SLEEPONEXIT_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(SLEEPONEXIT_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `SLEEPDEEP` reader - Sleep or Deep Sleep"]
+pub type SLEEPDEEP_R = crate::BitReader<SLEEPDEEP_A>;
 #[doc = "Sleep or Deep Sleep\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SLEEPDEEP_A {
     #[doc = "0: sleep"]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<SLEEPDEEP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SLEEPDEEP` reader - Sleep or Deep Sleep"]
-pub struct SLEEPDEEP_R(crate::FieldReader<bool, SLEEPDEEP_A>);
 impl SLEEPDEEP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SLEEPDEEP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SLEEPDEEP_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl SLEEPDEEP_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SLEEPDEEP_A::VALUE1
+        *self == SLEEPDEEP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SLEEPDEEP_A::VALUE2
-    }
-}
-impl core::ops::Deref for SLEEPDEEP_R {
-    type Target = crate::FieldReader<bool, SLEEPDEEP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SLEEPDEEP_A::VALUE2
     }
 }
 #[doc = "Field `SLEEPDEEP` writer - Sleep or Deep Sleep"]
-pub struct SLEEPDEEP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLEEPDEEP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SLEEPDEEP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SLEEPDEEP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, SLEEPDEEP_A, O>;
+impl<'a, const O: u8> SLEEPDEEP_W<'a, O> {
     #[doc = "sleep"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -183,25 +133,11 @@ impl<'a> SLEEPDEEP_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(SLEEPDEEP_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `SEVONPEND` reader - Send Event on Pending bit:"]
+pub type SEVONPEND_R = crate::BitReader<SEVONPEND_A>;
 #[doc = "Send Event on Pending bit:\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SEVONPEND_A {
     #[doc = "0: only enabled interrupts or events can wakeup the processor, disabled interrupts are excluded"]
     VALUE1 = 0,
@@ -214,13 +150,8 @@ impl From<SEVONPEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SEVONPEND` reader - Send Event on Pending bit:"]
-pub struct SEVONPEND_R(crate::FieldReader<bool, SEVONPEND_A>);
 impl SEVONPEND_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SEVONPEND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SEVONPEND_A {
         match self.bits {
@@ -231,31 +162,17 @@ impl SEVONPEND_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SEVONPEND_A::VALUE1
+        *self == SEVONPEND_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SEVONPEND_A::VALUE2
-    }
-}
-impl core::ops::Deref for SEVONPEND_R {
-    type Target = crate::FieldReader<bool, SEVONPEND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SEVONPEND_A::VALUE2
     }
 }
 #[doc = "Field `SEVONPEND` writer - Send Event on Pending bit:"]
-pub struct SEVONPEND_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEVONPEND_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SEVONPEND_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SEVONPEND_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, SEVONPEND_A, O>;
+impl<'a, const O: u8> SEVONPEND_W<'a, O> {
     #[doc = "only enabled interrupts or events can wakeup the processor, disabled interrupts are excluded"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -266,55 +183,42 @@ impl<'a> SEVONPEND_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(SEVONPEND_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 1 - Sleep on Exit"]
     #[inline(always)]
     pub fn sleeponexit(&self) -> SLEEPONEXIT_R {
-        SLEEPONEXIT_R::new(((self.bits >> 1) & 0x01) != 0)
+        SLEEPONEXIT_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Sleep or Deep Sleep"]
     #[inline(always)]
     pub fn sleepdeep(&self) -> SLEEPDEEP_R {
-        SLEEPDEEP_R::new(((self.bits >> 2) & 0x01) != 0)
+        SLEEPDEEP_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 4 - Send Event on Pending bit:"]
     #[inline(always)]
     pub fn sevonpend(&self) -> SEVONPEND_R {
-        SEVONPEND_R::new(((self.bits >> 4) & 0x01) != 0)
+        SEVONPEND_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 1 - Sleep on Exit"]
     #[inline(always)]
-    pub fn sleeponexit(&mut self) -> SLEEPONEXIT_W {
-        SLEEPONEXIT_W { w: self }
+    #[must_use]
+    pub fn sleeponexit(&mut self) -> SLEEPONEXIT_W<1> {
+        SLEEPONEXIT_W::new(self)
     }
     #[doc = "Bit 2 - Sleep or Deep Sleep"]
     #[inline(always)]
-    pub fn sleepdeep(&mut self) -> SLEEPDEEP_W {
-        SLEEPDEEP_W { w: self }
+    #[must_use]
+    pub fn sleepdeep(&mut self) -> SLEEPDEEP_W<2> {
+        SLEEPDEEP_W::new(self)
     }
     #[doc = "Bit 4 - Send Event on Pending bit:"]
     #[inline(always)]
-    pub fn sevonpend(&mut self) -> SEVONPEND_W {
-        SEVONPEND_W { w: self }
+    #[must_use]
+    pub fn sevonpend(&mut self) -> SEVONPEND_W<4> {
+        SEVONPEND_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -335,11 +239,10 @@ impl crate::Readable for SCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [scr::W](W) writer structure"]
 impl crate::Writable for SCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCR to value 0"]
 impl crate::Resettable for SCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

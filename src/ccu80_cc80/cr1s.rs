@@ -35,31 +35,9 @@ impl From<crate::W<CR1S_SPEC>> for W {
     }
 }
 #[doc = "Field `CR1S` reader - Shadow Compare Register for Channel 1"]
-pub struct CR1S_R(crate::FieldReader<u16, u16>);
-impl CR1S_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CR1S_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CR1S_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CR1S_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CR1S` writer - Shadow Compare Register for Channel 1"]
-pub struct CR1S_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CR1S_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type CR1S_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR1S_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Shadow Compare Register for Channel 1"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Shadow Compare Register for Channel 1"]
     #[inline(always)]
-    pub fn cr1s(&mut self) -> CR1S_W {
-        CR1S_W { w: self }
+    #[must_use]
+    pub fn cr1s(&mut self) -> CR1S_W<0> {
+        CR1S_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for CR1S_SPEC {
 #[doc = "`write(|w| ..)` method takes [cr1s::W](W) writer structure"]
 impl crate::Writable for CR1S_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CR1S to value 0"]
 impl crate::Resettable for CR1S_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

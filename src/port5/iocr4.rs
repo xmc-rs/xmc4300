@@ -35,109 +35,21 @@ impl From<crate::W<IOCR4_SPEC>> for W {
     }
 }
 #[doc = "Field `PC4` reader - Port Control for Port n Pin 4 to 7"]
-pub struct PC4_R(crate::FieldReader<u8, u8>);
-impl PC4_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PC4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PC4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PC4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PC4` writer - Port Control for Port n Pin 4 to 7"]
-pub struct PC4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PC4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 3)) | ((value as u32 & 0x1f) << 3);
-        self.w
-    }
-}
+pub type PC4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR4_SPEC, u8, u8, 5, O>;
 #[doc = "Field `PC5` reader - Port Control for Port n Pin 4 to 7"]
-pub struct PC5_R(crate::FieldReader<u8, u8>);
-impl PC5_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PC5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PC5_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PC5_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PC5` writer - Port Control for Port n Pin 4 to 7"]
-pub struct PC5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PC5_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 11)) | ((value as u32 & 0x1f) << 11);
-        self.w
-    }
-}
+pub type PC5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR4_SPEC, u8, u8, 5, O>;
 #[doc = "Field `PC6` reader - Port Control for Port n Pin 4 to 7"]
-pub struct PC6_R(crate::FieldReader<u8, u8>);
-impl PC6_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PC6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PC6_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PC6_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PC6` writer - Port Control for Port n Pin 4 to 7"]
-pub struct PC6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PC6_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 19)) | ((value as u32 & 0x1f) << 19);
-        self.w
-    }
-}
+pub type PC6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR4_SPEC, u8, u8, 5, O>;
 #[doc = "Field `PC7` reader - Port Control for Port n Pin 4 to 7"]
-pub struct PC7_R(crate::FieldReader<u8, u8>);
-impl PC7_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PC7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PC7_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PC7_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PC7` writer - Port Control for Port n Pin 4 to 7"]
-pub struct PC7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PC7_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 27)) | ((value as u32 & 0x1f) << 27);
-        self.w
-    }
-}
+pub type PC7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR4_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 3:7 - Port Control for Port n Pin 4 to 7"]
     #[inline(always)]
@@ -163,23 +75,27 @@ impl R {
 impl W {
     #[doc = "Bits 3:7 - Port Control for Port n Pin 4 to 7"]
     #[inline(always)]
-    pub fn pc4(&mut self) -> PC4_W {
-        PC4_W { w: self }
+    #[must_use]
+    pub fn pc4(&mut self) -> PC4_W<3> {
+        PC4_W::new(self)
     }
     #[doc = "Bits 11:15 - Port Control for Port n Pin 4 to 7"]
     #[inline(always)]
-    pub fn pc5(&mut self) -> PC5_W {
-        PC5_W { w: self }
+    #[must_use]
+    pub fn pc5(&mut self) -> PC5_W<11> {
+        PC5_W::new(self)
     }
     #[doc = "Bits 19:23 - Port Control for Port n Pin 4 to 7"]
     #[inline(always)]
-    pub fn pc6(&mut self) -> PC6_W {
-        PC6_W { w: self }
+    #[must_use]
+    pub fn pc6(&mut self) -> PC6_W<19> {
+        PC6_W::new(self)
     }
     #[doc = "Bits 27:31 - Port Control for Port n Pin 4 to 7"]
     #[inline(always)]
-    pub fn pc7(&mut self) -> PC7_W {
-        PC7_W { w: self }
+    #[must_use]
+    pub fn pc7(&mut self) -> PC7_W<27> {
+        PC7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -200,11 +116,10 @@ impl crate::Readable for IOCR4_SPEC {
 #[doc = "`write(|w| ..)` method takes [iocr4::W](W) writer structure"]
 impl crate::Writable for IOCR4_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IOCR4 to value 0"]
 impl crate::Resettable for IOCR4_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

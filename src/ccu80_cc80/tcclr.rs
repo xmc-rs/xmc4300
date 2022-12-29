@@ -20,140 +20,45 @@ impl From<crate::W<TCCLR_SPEC>> for W {
     }
 }
 #[doc = "Field `TRBC` writer - Timer Run Bit Clear"]
-pub struct TRBC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRBC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type TRBC_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCCLR_SPEC, bool, O>;
 #[doc = "Field `TCC` writer - Timer Clear"]
-pub struct TCC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type TCC_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCCLR_SPEC, bool, O>;
 #[doc = "Field `DITC` writer - Dither Counter Clear"]
-pub struct DITC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DITC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type DITC_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCCLR_SPEC, bool, O>;
 #[doc = "Field `DTC1C` writer - Dead Time Counter 1 Clear"]
-pub struct DTC1C_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTC1C_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type DTC1C_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCCLR_SPEC, bool, O>;
 #[doc = "Field `DTC2C` writer - Dead Time Counter 2 Clear"]
-pub struct DTC2C_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTC2C_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type DTC2C_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCCLR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Timer Run Bit Clear"]
     #[inline(always)]
-    pub fn trbc(&mut self) -> TRBC_W {
-        TRBC_W { w: self }
+    #[must_use]
+    pub fn trbc(&mut self) -> TRBC_W<0> {
+        TRBC_W::new(self)
     }
     #[doc = "Bit 1 - Timer Clear"]
     #[inline(always)]
-    pub fn tcc(&mut self) -> TCC_W {
-        TCC_W { w: self }
+    #[must_use]
+    pub fn tcc(&mut self) -> TCC_W<1> {
+        TCC_W::new(self)
     }
     #[doc = "Bit 2 - Dither Counter Clear"]
     #[inline(always)]
-    pub fn ditc(&mut self) -> DITC_W {
-        DITC_W { w: self }
+    #[must_use]
+    pub fn ditc(&mut self) -> DITC_W<2> {
+        DITC_W::new(self)
     }
     #[doc = "Bit 3 - Dead Time Counter 1 Clear"]
     #[inline(always)]
-    pub fn dtc1c(&mut self) -> DTC1C_W {
-        DTC1C_W { w: self }
+    #[must_use]
+    pub fn dtc1c(&mut self) -> DTC1C_W<3> {
+        DTC1C_W::new(self)
     }
     #[doc = "Bit 4 - Dead Time Counter 2 Clear"]
     #[inline(always)]
-    pub fn dtc2c(&mut self) -> DTC2C_W {
-        DTC2C_W { w: self }
+    #[must_use]
+    pub fn dtc2c(&mut self) -> DTC2C_W<4> {
+        DTC2C_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -170,11 +75,10 @@ impl crate::RegisterSpec for TCCLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tcclr::W](W) writer structure"]
 impl crate::Writable for TCCLR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TCCLR to value 0"]
 impl crate::Resettable for TCCLR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

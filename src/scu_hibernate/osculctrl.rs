@@ -34,8 +34,10 @@ impl From<crate::W<OSCULCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `X1DEN` reader - XTAL1 Data General Purpose Input Enable"]
+pub type X1DEN_R = crate::BitReader<X1DEN_A>;
 #[doc = "XTAL1 Data General Purpose Input Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum X1DEN_A {
     #[doc = "0: Data input inactivated, power down"]
     CONST_0 = 0,
@@ -48,13 +50,8 @@ impl From<X1DEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `X1DEN` reader - XTAL1 Data General Purpose Input Enable"]
-pub struct X1DEN_R(crate::FieldReader<bool, X1DEN_A>);
 impl X1DEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        X1DEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> X1DEN_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl X1DEN_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == X1DEN_A::CONST_0
+        *self == X1DEN_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == X1DEN_A::CONST_1
-    }
-}
-impl core::ops::Deref for X1DEN_R {
-    type Target = crate::FieldReader<bool, X1DEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == X1DEN_A::CONST_1
     }
 }
 #[doc = "Field `X1DEN` writer - XTAL1 Data General Purpose Input Enable"]
-pub struct X1DEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> X1DEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: X1DEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type X1DEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCULCTRL_SPEC, X1DEN_A, O>;
+impl<'a, const O: u8> X1DEN_W<'a, O> {
     #[doc = "Data input inactivated, power down"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> X1DEN_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(X1DEN_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `MODE` reader - Oscillator Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "Oscillator Mode\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Oscillator is enabled, in operation"]
@@ -136,13 +105,8 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - Oscillator Mode"]
-pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE_A {
         match self.bits {
@@ -156,41 +120,27 @@ impl MODE_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == MODE_A::CONST_00
+        *self == MODE_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == MODE_A::CONST_01
+        *self == MODE_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == MODE_A::CONST_10
+        *self == MODE_A::CONST_10
     }
     #[doc = "Checks if the value of the field is `CONST_11`"]
     #[inline(always)]
     pub fn is_const_11(&self) -> bool {
-        **self == MODE_A::CONST_11
-    }
-}
-impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<u8, MODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE_A::CONST_11
     }
 }
 #[doc = "Field `MODE` writer - Oscillator Mode"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, OSCULCTRL_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Oscillator is enabled, in operation"]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -211,35 +161,31 @@ impl<'a> MODE_W<'a> {
     pub fn const_11(self) -> &'a mut W {
         self.variant(MODE_A::CONST_11)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - XTAL1 Data General Purpose Input Enable"]
     #[inline(always)]
     pub fn x1den(&self) -> X1DEN_R {
-        X1DEN_R::new((self.bits & 0x01) != 0)
+        X1DEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 4) & 0x03) as u8)
+        MODE_R::new(((self.bits >> 4) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - XTAL1 Data General Purpose Input Enable"]
     #[inline(always)]
-    pub fn x1den(&mut self) -> X1DEN_W {
-        X1DEN_W { w: self }
+    #[must_use]
+    pub fn x1den(&mut self) -> X1DEN_W<0> {
+        X1DEN_W::new(self)
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<4> {
+        MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -260,11 +206,10 @@ impl crate::Readable for OSCULCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [osculctrl::W](W) writer structure"]
 impl crate::Writable for OSCULCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets OSCULCTRL to value 0x20"]
 impl crate::Resettable for OSCULCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x20
-    }
+    const RESET_VALUE: Self::Ux = 0x20;
 }

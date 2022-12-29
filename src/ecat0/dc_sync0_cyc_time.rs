@@ -34,8 +34,10 @@ impl From<crate::W<DC_SYNC0_CYC_TIME_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TIME_BETWEEN_SYNC0` reader - Time between two consecutive SYNC0 pulses"]
+pub type TIME_BETWEEN_SYNC0_R = crate::FieldReader<u32, TIME_BETWEEN_SYNC0_A>;
 #[doc = "Time between two consecutive SYNC0 pulses\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum TIME_BETWEEN_SYNC0_A {
     #[doc = "0: Single shot mode, generate only one SYNC0 pulse"]
@@ -47,13 +49,8 @@ impl From<TIME_BETWEEN_SYNC0_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `TIME_BETWEEN_SYNC0` reader - Time between two consecutive SYNC0 pulses"]
-pub struct TIME_BETWEEN_SYNC0_R(crate::FieldReader<u32, TIME_BETWEEN_SYNC0_A>);
 impl TIME_BETWEEN_SYNC0_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        TIME_BETWEEN_SYNC0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TIME_BETWEEN_SYNC0_A> {
         match self.bits {
@@ -64,50 +61,31 @@ impl TIME_BETWEEN_SYNC0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TIME_BETWEEN_SYNC0_A::VALUE1
-    }
-}
-impl core::ops::Deref for TIME_BETWEEN_SYNC0_R {
-    type Target = crate::FieldReader<u32, TIME_BETWEEN_SYNC0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TIME_BETWEEN_SYNC0_A::VALUE1
     }
 }
 #[doc = "Field `TIME_BETWEEN_SYNC0` writer - Time between two consecutive SYNC0 pulses"]
-pub struct TIME_BETWEEN_SYNC0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIME_BETWEEN_SYNC0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TIME_BETWEEN_SYNC0_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type TIME_BETWEEN_SYNC0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DC_SYNC0_CYC_TIME_SPEC, u32, TIME_BETWEEN_SYNC0_A, 32, O>;
+impl<'a, const O: u8> TIME_BETWEEN_SYNC0_W<'a, O> {
     #[doc = "Single shot mode, generate only one SYNC0 pulse"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
         self.variant(TIME_BETWEEN_SYNC0_A::VALUE1)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
     }
 }
 impl R {
     #[doc = "Bits 0:31 - Time between two consecutive SYNC0 pulses"]
     #[inline(always)]
     pub fn time_between_sync0(&self) -> TIME_BETWEEN_SYNC0_R {
-        TIME_BETWEEN_SYNC0_R::new((self.bits & 0xffff_ffff) as u32)
+        TIME_BETWEEN_SYNC0_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Time between two consecutive SYNC0 pulses"]
     #[inline(always)]
-    pub fn time_between_sync0(&mut self) -> TIME_BETWEEN_SYNC0_W {
-        TIME_BETWEEN_SYNC0_W { w: self }
+    #[must_use]
+    pub fn time_between_sync0(&mut self) -> TIME_BETWEEN_SYNC0_W<0> {
+        TIME_BETWEEN_SYNC0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +106,10 @@ impl crate::Readable for DC_SYNC0_CYC_TIME_SPEC {
 #[doc = "`write(|w| ..)` method takes [dc_sync0_cyc_time::W](W) writer structure"]
 impl crate::Writable for DC_SYNC0_CYC_TIME_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DC_SYNC0_CYC_TIME to value 0"]
 impl crate::Resettable for DC_SYNC0_CYC_TIME_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

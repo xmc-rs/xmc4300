@@ -34,8 +34,10 @@ impl From<crate::W<EEP_ADR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EEPROM_ADDR` reader - EEPROM Address"]
+pub type EEPROM_ADDR_R = crate::FieldReader<u32, EEPROM_ADDR_A>;
 #[doc = "EEPROM Address\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum EEPROM_ADDR_A {
     #[doc = "0: First word (= 16 bits)"]
@@ -49,13 +51,8 @@ impl From<EEPROM_ADDR_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `EEPROM_ADDR` reader - EEPROM Address"]
-pub struct EEPROM_ADDR_R(crate::FieldReader<u32, EEPROM_ADDR_A>);
 impl EEPROM_ADDR_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        EEPROM_ADDR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<EEPROM_ADDR_A> {
         match self.bits {
@@ -67,31 +64,17 @@ impl EEPROM_ADDR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == EEPROM_ADDR_A::VALUE1
+        *self == EEPROM_ADDR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == EEPROM_ADDR_A::VALUE2
-    }
-}
-impl core::ops::Deref for EEPROM_ADDR_R {
-    type Target = crate::FieldReader<u32, EEPROM_ADDR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EEPROM_ADDR_A::VALUE2
     }
 }
 #[doc = "Field `EEPROM_ADDR` writer - EEPROM Address"]
-pub struct EEPROM_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EEPROM_ADDR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EEPROM_ADDR_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type EEPROM_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EEP_ADR_SPEC, u32, EEPROM_ADDR_A, 32, O>;
+impl<'a, const O: u8> EEPROM_ADDR_W<'a, O> {
     #[doc = "First word (= 16 bits)"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -102,25 +85,20 @@ impl<'a> EEPROM_ADDR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(EEPROM_ADDR_A::VALUE2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:31 - EEPROM Address"]
     #[inline(always)]
     pub fn eeprom_addr(&self) -> EEPROM_ADDR_R {
-        EEPROM_ADDR_R::new((self.bits & 0xffff_ffff) as u32)
+        EEPROM_ADDR_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - EEPROM Address"]
     #[inline(always)]
-    pub fn eeprom_addr(&mut self) -> EEPROM_ADDR_W {
-        EEPROM_ADDR_W { w: self }
+    #[must_use]
+    pub fn eeprom_addr(&mut self) -> EEPROM_ADDR_W<0> {
+        EEPROM_ADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -141,11 +119,10 @@ impl crate::Readable for EEP_ADR_SPEC {
 #[doc = "`write(|w| ..)` method takes [eep_adr::W](W) writer structure"]
 impl crate::Writable for EEP_ADR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EEP_ADR to value 0"]
 impl crate::Resettable for EEP_ADR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

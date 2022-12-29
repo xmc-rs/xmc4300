@@ -35,559 +35,187 @@ impl From<crate::W<DOEPINT0_SPEC>> for W {
     }
 }
 #[doc = "Field `XferCompl` reader - Transfer Completed Interrupt"]
-pub struct XFERCOMPL_R(crate::FieldReader<bool, bool>);
-impl XFERCOMPL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        XFERCOMPL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for XFERCOMPL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type XFER_COMPL_R = crate::BitReader<bool>;
 #[doc = "Field `XferCompl` writer - Transfer Completed Interrupt"]
-pub struct XFERCOMPL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XFERCOMPL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type XFER_COMPL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPINT0_SPEC, bool, O>;
 #[doc = "Field `EPDisbld` reader - Endpoint Disabled Interrupt"]
-pub struct EPDISBLD_R(crate::FieldReader<bool, bool>);
-impl EPDISBLD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EPDISBLD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPDISBLD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPDISBLD_R = crate::BitReader<bool>;
 #[doc = "Field `EPDisbld` writer - Endpoint Disabled Interrupt"]
-pub struct EPDISBLD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPDISBLD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type EPDISBLD_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPINT0_SPEC, bool, O>;
 #[doc = "Field `AHBErr` reader - AHB Error"]
-pub struct AHBERR_R(crate::FieldReader<bool, bool>);
-impl AHBERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AHBERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AHBERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AHBERR_R = crate::BitReader<bool>;
 #[doc = "Field `AHBErr` writer - AHB Error"]
-pub struct AHBERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AHBERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type AHBERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPINT0_SPEC, bool, O>;
 #[doc = "Field `SetUp` reader - SETUP Phase Done"]
-pub struct SETUP_R(crate::FieldReader<bool, bool>);
-impl SETUP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SETUP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SETUP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SET_UP_R = crate::BitReader<bool>;
 #[doc = "Field `SetUp` writer - SETUP Phase Done"]
-pub struct SETUP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SETUP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type SET_UP_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPINT0_SPEC, bool, O>;
 #[doc = "Field `OUTTknEPdis` reader - OUT Token Received When Endpoint Disabled"]
-pub struct OUTTKNEPDIS_R(crate::FieldReader<bool, bool>);
-impl OUTTKNEPDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OUTTKNEPDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OUTTKNEPDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OUTTKN_EPDIS_R = crate::BitReader<bool>;
 #[doc = "Field `OUTTknEPdis` writer - OUT Token Received When Endpoint Disabled"]
-pub struct OUTTKNEPDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUTTKNEPDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type OUTTKN_EPDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPINT0_SPEC, bool, O>;
 #[doc = "Field `StsPhseRcvd` reader - Status Phase Received For Control Write"]
-pub struct STSPHSERCVD_R(crate::FieldReader<bool, bool>);
-impl STSPHSERCVD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        STSPHSERCVD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STSPHSERCVD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STS_PHSE_RCVD_R = crate::BitReader<bool>;
 #[doc = "Field `StsPhseRcvd` writer - Status Phase Received For Control Write"]
-pub struct STSPHSERCVD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STSPHSERCVD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type STS_PHSE_RCVD_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPINT0_SPEC, bool, O>;
 #[doc = "Field `Back2BackSETup` reader - Back-to-Back SETUP Packets Received"]
-pub struct BACK2BACKSETUP_R(crate::FieldReader<bool, bool>);
-impl BACK2BACKSETUP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BACK2BACKSETUP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BACK2BACKSETUP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BACK2BACK_SETUP_R = crate::BitReader<bool>;
 #[doc = "Field `Back2BackSETup` writer - Back-to-Back SETUP Packets Received"]
-pub struct BACK2BACKSETUP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BACK2BACKSETUP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type BACK2BACK_SETUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPINT0_SPEC, bool, O>;
 #[doc = "Field `BNAIntr` reader - BNA (Buffer Not Available) Interrupt"]
-pub struct BNAINTR_R(crate::FieldReader<bool, bool>);
-impl BNAINTR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BNAINTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BNAINTR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BNAINTR_R = crate::BitReader<bool>;
 #[doc = "Field `BNAIntr` writer - BNA (Buffer Not Available) Interrupt"]
-pub struct BNAINTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BNAINTR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type BNAINTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPINT0_SPEC, bool, O>;
 #[doc = "Field `PktDrpSts` reader - Packet Dropped Status"]
-pub struct PKTDRPSTS_R(crate::FieldReader<bool, bool>);
-impl PKTDRPSTS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PKTDRPSTS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PKTDRPSTS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PKT_DRP_STS_R = crate::BitReader<bool>;
 #[doc = "Field `PktDrpSts` writer - Packet Dropped Status"]
-pub struct PKTDRPSTS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PKTDRPSTS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type PKT_DRP_STS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPINT0_SPEC, bool, O>;
 #[doc = "Field `BbleErrIntrpt` reader - BbleErr (Babble Error) interrupt"]
-pub struct BBLEERRINTRPT_R(crate::FieldReader<bool, bool>);
-impl BBLEERRINTRPT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BBLEERRINTRPT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BBLEERRINTRPT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BBLE_ERR_INTRPT_R = crate::BitReader<bool>;
 #[doc = "Field `BbleErrIntrpt` writer - BbleErr (Babble Error) interrupt"]
-pub struct BBLEERRINTRPT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BBLEERRINTRPT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type BBLE_ERR_INTRPT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPINT0_SPEC, bool, O>;
 #[doc = "Field `NAKIntrpt` reader - NAK interrupt"]
-pub struct NAKINTRPT_R(crate::FieldReader<bool, bool>);
-impl NAKINTRPT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NAKINTRPT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NAKINTRPT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NAKINTRPT_R = crate::BitReader<bool>;
 #[doc = "Field `NAKIntrpt` writer - NAK interrupt"]
-pub struct NAKINTRPT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NAKINTRPT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type NAKINTRPT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPINT0_SPEC, bool, O>;
 #[doc = "Field `NYETIntrpt` reader - NYET interrupt"]
-pub struct NYETINTRPT_R(crate::FieldReader<bool, bool>);
-impl NYETINTRPT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NYETINTRPT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NYETINTRPT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NYETINTRPT_R = crate::BitReader<bool>;
 #[doc = "Field `NYETIntrpt` writer - NYET interrupt"]
-pub struct NYETINTRPT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NYETINTRPT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type NYETINTRPT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPINT0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Transfer Completed Interrupt"]
     #[inline(always)]
-    pub fn xfer_compl(&self) -> XFERCOMPL_R {
-        XFERCOMPL_R::new((self.bits & 0x01) != 0)
+    pub fn xfer_compl(&self) -> XFER_COMPL_R {
+        XFER_COMPL_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Endpoint Disabled Interrupt"]
     #[inline(always)]
     pub fn epdisbld(&self) -> EPDISBLD_R {
-        EPDISBLD_R::new(((self.bits >> 1) & 0x01) != 0)
+        EPDISBLD_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
     pub fn ahberr(&self) -> AHBERR_R {
-        AHBERR_R::new(((self.bits >> 2) & 0x01) != 0)
+        AHBERR_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - SETUP Phase Done"]
     #[inline(always)]
-    pub fn set_up(&self) -> SETUP_R {
-        SETUP_R::new(((self.bits >> 3) & 0x01) != 0)
+    pub fn set_up(&self) -> SET_UP_R {
+        SET_UP_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - OUT Token Received When Endpoint Disabled"]
     #[inline(always)]
-    pub fn outtkn_epdis(&self) -> OUTTKNEPDIS_R {
-        OUTTKNEPDIS_R::new(((self.bits >> 4) & 0x01) != 0)
+    pub fn outtkn_epdis(&self) -> OUTTKN_EPDIS_R {
+        OUTTKN_EPDIS_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Status Phase Received For Control Write"]
     #[inline(always)]
-    pub fn sts_phse_rcvd(&self) -> STSPHSERCVD_R {
-        STSPHSERCVD_R::new(((self.bits >> 5) & 0x01) != 0)
+    pub fn sts_phse_rcvd(&self) -> STS_PHSE_RCVD_R {
+        STS_PHSE_RCVD_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Back-to-Back SETUP Packets Received"]
     #[inline(always)]
-    pub fn back2back_setup(&self) -> BACK2BACKSETUP_R {
-        BACK2BACKSETUP_R::new(((self.bits >> 6) & 0x01) != 0)
+    pub fn back2back_setup(&self) -> BACK2BACK_SETUP_R {
+        BACK2BACK_SETUP_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 9 - BNA (Buffer Not Available) Interrupt"]
     #[inline(always)]
     pub fn bnaintr(&self) -> BNAINTR_R {
-        BNAINTR_R::new(((self.bits >> 9) & 0x01) != 0)
+        BNAINTR_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 11 - Packet Dropped Status"]
     #[inline(always)]
-    pub fn pkt_drp_sts(&self) -> PKTDRPSTS_R {
-        PKTDRPSTS_R::new(((self.bits >> 11) & 0x01) != 0)
+    pub fn pkt_drp_sts(&self) -> PKT_DRP_STS_R {
+        PKT_DRP_STS_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - BbleErr (Babble Error) interrupt"]
     #[inline(always)]
-    pub fn bble_err_intrpt(&self) -> BBLEERRINTRPT_R {
-        BBLEERRINTRPT_R::new(((self.bits >> 12) & 0x01) != 0)
+    pub fn bble_err_intrpt(&self) -> BBLE_ERR_INTRPT_R {
+        BBLE_ERR_INTRPT_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - NAK interrupt"]
     #[inline(always)]
     pub fn nakintrpt(&self) -> NAKINTRPT_R {
-        NAKINTRPT_R::new(((self.bits >> 13) & 0x01) != 0)
+        NAKINTRPT_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - NYET interrupt"]
     #[inline(always)]
     pub fn nyetintrpt(&self) -> NYETINTRPT_R {
-        NYETINTRPT_R::new(((self.bits >> 14) & 0x01) != 0)
+        NYETINTRPT_R::new(((self.bits >> 14) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Transfer Completed Interrupt"]
     #[inline(always)]
-    pub fn xfer_compl(&mut self) -> XFERCOMPL_W {
-        XFERCOMPL_W { w: self }
+    #[must_use]
+    pub fn xfer_compl(&mut self) -> XFER_COMPL_W<0> {
+        XFER_COMPL_W::new(self)
     }
     #[doc = "Bit 1 - Endpoint Disabled Interrupt"]
     #[inline(always)]
-    pub fn epdisbld(&mut self) -> EPDISBLD_W {
-        EPDISBLD_W { w: self }
+    #[must_use]
+    pub fn epdisbld(&mut self) -> EPDISBLD_W<1> {
+        EPDISBLD_W::new(self)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
-    pub fn ahberr(&mut self) -> AHBERR_W {
-        AHBERR_W { w: self }
+    #[must_use]
+    pub fn ahberr(&mut self) -> AHBERR_W<2> {
+        AHBERR_W::new(self)
     }
     #[doc = "Bit 3 - SETUP Phase Done"]
     #[inline(always)]
-    pub fn set_up(&mut self) -> SETUP_W {
-        SETUP_W { w: self }
+    #[must_use]
+    pub fn set_up(&mut self) -> SET_UP_W<3> {
+        SET_UP_W::new(self)
     }
     #[doc = "Bit 4 - OUT Token Received When Endpoint Disabled"]
     #[inline(always)]
-    pub fn outtkn_epdis(&mut self) -> OUTTKNEPDIS_W {
-        OUTTKNEPDIS_W { w: self }
+    #[must_use]
+    pub fn outtkn_epdis(&mut self) -> OUTTKN_EPDIS_W<4> {
+        OUTTKN_EPDIS_W::new(self)
     }
     #[doc = "Bit 5 - Status Phase Received For Control Write"]
     #[inline(always)]
-    pub fn sts_phse_rcvd(&mut self) -> STSPHSERCVD_W {
-        STSPHSERCVD_W { w: self }
+    #[must_use]
+    pub fn sts_phse_rcvd(&mut self) -> STS_PHSE_RCVD_W<5> {
+        STS_PHSE_RCVD_W::new(self)
     }
     #[doc = "Bit 6 - Back-to-Back SETUP Packets Received"]
     #[inline(always)]
-    pub fn back2back_setup(&mut self) -> BACK2BACKSETUP_W {
-        BACK2BACKSETUP_W { w: self }
+    #[must_use]
+    pub fn back2back_setup(&mut self) -> BACK2BACK_SETUP_W<6> {
+        BACK2BACK_SETUP_W::new(self)
     }
     #[doc = "Bit 9 - BNA (Buffer Not Available) Interrupt"]
     #[inline(always)]
-    pub fn bnaintr(&mut self) -> BNAINTR_W {
-        BNAINTR_W { w: self }
+    #[must_use]
+    pub fn bnaintr(&mut self) -> BNAINTR_W<9> {
+        BNAINTR_W::new(self)
     }
     #[doc = "Bit 11 - Packet Dropped Status"]
     #[inline(always)]
-    pub fn pkt_drp_sts(&mut self) -> PKTDRPSTS_W {
-        PKTDRPSTS_W { w: self }
+    #[must_use]
+    pub fn pkt_drp_sts(&mut self) -> PKT_DRP_STS_W<11> {
+        PKT_DRP_STS_W::new(self)
     }
     #[doc = "Bit 12 - BbleErr (Babble Error) interrupt"]
     #[inline(always)]
-    pub fn bble_err_intrpt(&mut self) -> BBLEERRINTRPT_W {
-        BBLEERRINTRPT_W { w: self }
+    #[must_use]
+    pub fn bble_err_intrpt(&mut self) -> BBLE_ERR_INTRPT_W<12> {
+        BBLE_ERR_INTRPT_W::new(self)
     }
     #[doc = "Bit 13 - NAK interrupt"]
     #[inline(always)]
-    pub fn nakintrpt(&mut self) -> NAKINTRPT_W {
-        NAKINTRPT_W { w: self }
+    #[must_use]
+    pub fn nakintrpt(&mut self) -> NAKINTRPT_W<13> {
+        NAKINTRPT_W::new(self)
     }
     #[doc = "Bit 14 - NYET interrupt"]
     #[inline(always)]
-    pub fn nyetintrpt(&mut self) -> NYETINTRPT_W {
-        NYETINTRPT_W { w: self }
+    #[must_use]
+    pub fn nyetintrpt(&mut self) -> NYETINTRPT_W<14> {
+        NYETINTRPT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -608,11 +236,10 @@ impl crate::Readable for DOEPINT0_SPEC {
 #[doc = "`write(|w| ..)` method takes [doepint0::W](W) writer structure"]
 impl crate::Writable for DOEPINT0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DOEPINT0 to value 0x80"]
 impl crate::Resettable for DOEPINT0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x80
-    }
+    const RESET_VALUE: Self::Ux = 0x80;
 }

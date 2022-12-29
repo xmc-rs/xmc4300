@@ -14,19 +14,7 @@ impl From<crate::R<CR1_SPEC>> for R {
     }
 }
 #[doc = "Field `CR1` reader - Compare Register for Channel 1"]
-pub struct CR1_R(crate::FieldReader<u16, u16>);
-impl CR1_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CR1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CR1_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CR1_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Compare Register for Channel 1"]
     #[inline(always)]
@@ -45,8 +33,5 @@ impl crate::Readable for CR1_SPEC {
 }
 #[doc = "`reset()` method sets CR1 to value 0"]
 impl crate::Resettable for CR1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

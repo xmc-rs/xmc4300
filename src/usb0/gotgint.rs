@@ -35,283 +35,97 @@ impl From<crate::W<GOTGINT_SPEC>> for W {
     }
 }
 #[doc = "Field `SesEndDet` reader - Session End Detected"]
-pub struct SESENDDET_R(crate::FieldReader<bool, bool>);
-impl SESENDDET_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SESENDDET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SESENDDET_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SES_END_DET_R = crate::BitReader<bool>;
 #[doc = "Field `SesEndDet` writer - Session End Detected"]
-pub struct SESENDDET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SESENDDET_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type SES_END_DET_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGINT_SPEC, bool, O>;
 #[doc = "Field `SesReqSucStsChng` reader - Session Request Success Status Change"]
-pub struct SESREQSUCSTSCHNG_R(crate::FieldReader<bool, bool>);
-impl SESREQSUCSTSCHNG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SESREQSUCSTSCHNG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SESREQSUCSTSCHNG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SES_REQ_SUC_STS_CHNG_R = crate::BitReader<bool>;
 #[doc = "Field `SesReqSucStsChng` writer - Session Request Success Status Change"]
-pub struct SESREQSUCSTSCHNG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SESREQSUCSTSCHNG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type SES_REQ_SUC_STS_CHNG_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGINT_SPEC, bool, O>;
 #[doc = "Field `HstNegSucStsChng` reader - Host Negotiation Success Status Change"]
-pub struct HSTNEGSUCSTSCHNG_R(crate::FieldReader<bool, bool>);
-impl HSTNEGSUCSTSCHNG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HSTNEGSUCSTSCHNG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HSTNEGSUCSTSCHNG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HST_NEG_SUC_STS_CHNG_R = crate::BitReader<bool>;
 #[doc = "Field `HstNegSucStsChng` writer - Host Negotiation Success Status Change"]
-pub struct HSTNEGSUCSTSCHNG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSTNEGSUCSTSCHNG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type HST_NEG_SUC_STS_CHNG_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGINT_SPEC, bool, O>;
 #[doc = "Field `HstNegDet` reader - Host Negotiation Detected"]
-pub struct HSTNEGDET_R(crate::FieldReader<bool, bool>);
-impl HSTNEGDET_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HSTNEGDET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HSTNEGDET_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HST_NEG_DET_R = crate::BitReader<bool>;
 #[doc = "Field `HstNegDet` writer - Host Negotiation Detected"]
-pub struct HSTNEGDET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSTNEGDET_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type HST_NEG_DET_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGINT_SPEC, bool, O>;
 #[doc = "Field `ADevTOUTChg` reader - A-Device Timeout Change"]
-pub struct ADEVTOUTCHG_R(crate::FieldReader<bool, bool>);
-impl ADEVTOUTCHG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADEVTOUTCHG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADEVTOUTCHG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADEV_TOUTCHG_R = crate::BitReader<bool>;
 #[doc = "Field `ADevTOUTChg` writer - A-Device Timeout Change"]
-pub struct ADEVTOUTCHG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADEVTOUTCHG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type ADEV_TOUTCHG_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGINT_SPEC, bool, O>;
 #[doc = "Field `DbnceDone` reader - Debounce Done"]
-pub struct DBNCEDONE_R(crate::FieldReader<bool, bool>);
-impl DBNCEDONE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DBNCEDONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBNCEDONE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBNCE_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `DbnceDone` writer - Debounce Done"]
-pub struct DBNCEDONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBNCEDONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type DBNCE_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGINT_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 2 - Session End Detected"]
     #[inline(always)]
-    pub fn ses_end_det(&self) -> SESENDDET_R {
-        SESENDDET_R::new(((self.bits >> 2) & 0x01) != 0)
+    pub fn ses_end_det(&self) -> SES_END_DET_R {
+        SES_END_DET_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 8 - Session Request Success Status Change"]
     #[inline(always)]
-    pub fn ses_req_suc_sts_chng(&self) -> SESREQSUCSTSCHNG_R {
-        SESREQSUCSTSCHNG_R::new(((self.bits >> 8) & 0x01) != 0)
+    pub fn ses_req_suc_sts_chng(&self) -> SES_REQ_SUC_STS_CHNG_R {
+        SES_REQ_SUC_STS_CHNG_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Host Negotiation Success Status Change"]
     #[inline(always)]
-    pub fn hst_neg_suc_sts_chng(&self) -> HSTNEGSUCSTSCHNG_R {
-        HSTNEGSUCSTSCHNG_R::new(((self.bits >> 9) & 0x01) != 0)
+    pub fn hst_neg_suc_sts_chng(&self) -> HST_NEG_SUC_STS_CHNG_R {
+        HST_NEG_SUC_STS_CHNG_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 17 - Host Negotiation Detected"]
     #[inline(always)]
-    pub fn hst_neg_det(&self) -> HSTNEGDET_R {
-        HSTNEGDET_R::new(((self.bits >> 17) & 0x01) != 0)
+    pub fn hst_neg_det(&self) -> HST_NEG_DET_R {
+        HST_NEG_DET_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - A-Device Timeout Change"]
     #[inline(always)]
-    pub fn adev_toutchg(&self) -> ADEVTOUTCHG_R {
-        ADEVTOUTCHG_R::new(((self.bits >> 18) & 0x01) != 0)
+    pub fn adev_toutchg(&self) -> ADEV_TOUTCHG_R {
+        ADEV_TOUTCHG_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Debounce Done"]
     #[inline(always)]
-    pub fn dbnce_done(&self) -> DBNCEDONE_R {
-        DBNCEDONE_R::new(((self.bits >> 19) & 0x01) != 0)
+    pub fn dbnce_done(&self) -> DBNCE_DONE_R {
+        DBNCE_DONE_R::new(((self.bits >> 19) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 2 - Session End Detected"]
     #[inline(always)]
-    pub fn ses_end_det(&mut self) -> SESENDDET_W {
-        SESENDDET_W { w: self }
+    #[must_use]
+    pub fn ses_end_det(&mut self) -> SES_END_DET_W<2> {
+        SES_END_DET_W::new(self)
     }
     #[doc = "Bit 8 - Session Request Success Status Change"]
     #[inline(always)]
-    pub fn ses_req_suc_sts_chng(&mut self) -> SESREQSUCSTSCHNG_W {
-        SESREQSUCSTSCHNG_W { w: self }
+    #[must_use]
+    pub fn ses_req_suc_sts_chng(&mut self) -> SES_REQ_SUC_STS_CHNG_W<8> {
+        SES_REQ_SUC_STS_CHNG_W::new(self)
     }
     #[doc = "Bit 9 - Host Negotiation Success Status Change"]
     #[inline(always)]
-    pub fn hst_neg_suc_sts_chng(&mut self) -> HSTNEGSUCSTSCHNG_W {
-        HSTNEGSUCSTSCHNG_W { w: self }
+    #[must_use]
+    pub fn hst_neg_suc_sts_chng(&mut self) -> HST_NEG_SUC_STS_CHNG_W<9> {
+        HST_NEG_SUC_STS_CHNG_W::new(self)
     }
     #[doc = "Bit 17 - Host Negotiation Detected"]
     #[inline(always)]
-    pub fn hst_neg_det(&mut self) -> HSTNEGDET_W {
-        HSTNEGDET_W { w: self }
+    #[must_use]
+    pub fn hst_neg_det(&mut self) -> HST_NEG_DET_W<17> {
+        HST_NEG_DET_W::new(self)
     }
     #[doc = "Bit 18 - A-Device Timeout Change"]
     #[inline(always)]
-    pub fn adev_toutchg(&mut self) -> ADEVTOUTCHG_W {
-        ADEVTOUTCHG_W { w: self }
+    #[must_use]
+    pub fn adev_toutchg(&mut self) -> ADEV_TOUTCHG_W<18> {
+        ADEV_TOUTCHG_W::new(self)
     }
     #[doc = "Bit 19 - Debounce Done"]
     #[inline(always)]
-    pub fn dbnce_done(&mut self) -> DBNCEDONE_W {
-        DBNCEDONE_W { w: self }
+    #[must_use]
+    pub fn dbnce_done(&mut self) -> DBNCE_DONE_W<19> {
+        DBNCE_DONE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -332,11 +146,10 @@ impl crate::Readable for GOTGINT_SPEC {
 #[doc = "`write(|w| ..)` method takes [gotgint::W](W) writer structure"]
 impl crate::Writable for GOTGINT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GOTGINT to value 0"]
 impl crate::Resettable for GOTGINT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

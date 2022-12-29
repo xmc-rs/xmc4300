@@ -35,43 +35,22 @@ impl From<crate::W<STATION_ALIAS_SPEC>> for W {
     }
 }
 #[doc = "Field `ALIAS_ADDR` reader - Alias Address used for node addressing(FPxx commands)"]
-pub struct ALIAS_ADDR_R(crate::FieldReader<u16, u16>);
-impl ALIAS_ADDR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        ALIAS_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ALIAS_ADDR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ALIAS_ADDR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ALIAS_ADDR` writer - Alias Address used for node addressing(FPxx commands)"]
-pub struct ALIAS_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALIAS_ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u16 & 0xffff);
-        self.w
-    }
-}
+pub type ALIAS_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u16, STATION_ALIAS_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Alias Address used for node addressing(FPxx commands)"]
     #[inline(always)]
     pub fn alias_addr(&self) -> ALIAS_ADDR_R {
-        ALIAS_ADDR_R::new((self.bits & 0xffff) as u16)
+        ALIAS_ADDR_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Alias Address used for node addressing(FPxx commands)"]
     #[inline(always)]
-    pub fn alias_addr(&mut self) -> ALIAS_ADDR_W {
-        ALIAS_ADDR_W { w: self }
+    #[must_use]
+    pub fn alias_addr(&mut self) -> ALIAS_ADDR_W<0> {
+        ALIAS_ADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for STATION_ALIAS_SPEC {
 #[doc = "`write(|w| ..)` method takes [station_alias::W](W) writer structure"]
 impl crate::Writable for STATION_ALIAS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets STATION_ALIAS to value 0"]
 impl crate::Resettable for STATION_ALIAS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

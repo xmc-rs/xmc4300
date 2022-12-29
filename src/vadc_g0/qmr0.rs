@@ -34,8 +34,10 @@ impl From<crate::W<QMR0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ENGT` reader - Enable Gate"]
+pub type ENGT_R = crate::FieldReader<u8, ENGT_A>;
 #[doc = "Enable Gate\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ENGT_A {
     #[doc = "0: No conversion requests are issued"]
@@ -53,13 +55,8 @@ impl From<ENGT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ENGT` reader - Enable Gate"]
-pub struct ENGT_R(crate::FieldReader<u8, ENGT_A>);
 impl ENGT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ENGT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENGT_A {
         match self.bits {
@@ -73,41 +70,27 @@ impl ENGT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ENGT_A::VALUE1
+        *self == ENGT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ENGT_A::VALUE2
+        *self == ENGT_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == ENGT_A::VALUE3
+        *self == ENGT_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == ENGT_A::VALUE4
-    }
-}
-impl core::ops::Deref for ENGT_R {
-    type Target = crate::FieldReader<u8, ENGT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENGT_A::VALUE4
     }
 }
 #[doc = "Field `ENGT` writer - Enable Gate"]
-pub struct ENGT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENGT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENGT_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type ENGT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, QMR0_SPEC, u8, ENGT_A, 2, O>;
+impl<'a, const O: u8> ENGT_W<'a, O> {
     #[doc = "No conversion requests are issued"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -128,15 +111,11 @@ impl<'a> ENGT_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(ENGT_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
+#[doc = "Field `ENTR` reader - Enable External Trigger"]
+pub type ENTR_R = crate::BitReader<ENTR_A>;
 #[doc = "Enable External Trigger\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ENTR_A {
     #[doc = "0: External trigger disabled"]
     VALUE1 = 0,
@@ -149,13 +128,8 @@ impl From<ENTR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ENTR` reader - Enable External Trigger"]
-pub struct ENTR_R(crate::FieldReader<bool, ENTR_A>);
 impl ENTR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ENTR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENTR_A {
         match self.bits {
@@ -166,31 +140,17 @@ impl ENTR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ENTR_A::VALUE1
+        *self == ENTR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ENTR_A::VALUE2
-    }
-}
-impl core::ops::Deref for ENTR_R {
-    type Target = crate::FieldReader<bool, ENTR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENTR_A::VALUE2
     }
 }
 #[doc = "Field `ENTR` writer - Enable External Trigger"]
-pub struct ENTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENTR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENTR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ENTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, QMR0_SPEC, ENTR_A, O>;
+impl<'a, const O: u8> ENTR_W<'a, O> {
     #[doc = "External trigger disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -201,25 +161,9 @@ impl<'a> ENTR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ENTR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
 #[doc = "Clear Valid Bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLRV_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -233,15 +177,8 @@ impl From<CLRV_AW> for bool {
     }
 }
 #[doc = "Field `CLRV` writer - Clear Valid Bit"]
-pub struct CLRV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLRV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLRV_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CLRV_W<'a, const O: u8> = crate::BitWriter<'a, u32, QMR0_SPEC, CLRV_AW, O>;
+impl<'a, const O: u8> CLRV_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -252,25 +189,9 @@ impl<'a> CLRV_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CLRV_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
 #[doc = "Trigger Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TREV_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -284,15 +205,8 @@ impl From<TREV_AW> for bool {
     }
 }
 #[doc = "Field `TREV` writer - Trigger Event"]
-pub struct TREV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TREV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TREV_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TREV_W<'a, const O: u8> = crate::BitWriter<'a, u32, QMR0_SPEC, TREV_AW, O>;
+impl<'a, const O: u8> TREV_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -303,25 +217,9 @@ impl<'a> TREV_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(TREV_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
 }
 #[doc = "Flush Queue\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FLUSH_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -335,15 +233,8 @@ impl From<FLUSH_AW> for bool {
     }
 }
 #[doc = "Field `FLUSH` writer - Flush Queue"]
-pub struct FLUSH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLUSH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FLUSH_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FLUSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, QMR0_SPEC, FLUSH_AW, O>;
+impl<'a, const O: u8> FLUSH_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -354,25 +245,9 @@ impl<'a> FLUSH_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(FLUSH_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
 }
 #[doc = "Clear Event Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CEV_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -386,15 +261,8 @@ impl From<CEV_AW> for bool {
     }
 }
 #[doc = "Field `CEV` writer - Clear Event Flag"]
-pub struct CEV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEV_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CEV_W<'a, const O: u8> = crate::BitWriter<'a, u32, QMR0_SPEC, CEV_AW, O>;
+impl<'a, const O: u8> CEV_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -405,25 +273,11 @@ impl<'a> CEV_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CEV_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
 }
+#[doc = "Field `RPTDIS` reader - Repeat Disable"]
+pub type RPTDIS_R = crate::BitReader<RPTDIS_A>;
 #[doc = "Repeat Disable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RPTDIS_A {
     #[doc = "0: A cancelled conversion is repeated"]
     VALUE1 = 0,
@@ -436,13 +290,8 @@ impl From<RPTDIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RPTDIS` reader - Repeat Disable"]
-pub struct RPTDIS_R(crate::FieldReader<bool, RPTDIS_A>);
 impl RPTDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RPTDIS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RPTDIS_A {
         match self.bits {
@@ -453,31 +302,17 @@ impl RPTDIS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RPTDIS_A::VALUE1
+        *self == RPTDIS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RPTDIS_A::VALUE2
-    }
-}
-impl core::ops::Deref for RPTDIS_R {
-    type Target = crate::FieldReader<bool, RPTDIS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RPTDIS_A::VALUE2
     }
 }
 #[doc = "Field `RPTDIS` writer - Repeat Disable"]
-pub struct RPTDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RPTDIS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RPTDIS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RPTDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, QMR0_SPEC, RPTDIS_A, O>;
+impl<'a, const O: u8> RPTDIS_W<'a, O> {
     #[doc = "A cancelled conversion is repeated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -488,75 +323,66 @@ impl<'a> RPTDIS_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(RPTDIS_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Enable Gate"]
     #[inline(always)]
     pub fn engt(&self) -> ENGT_R {
-        ENGT_R::new((self.bits & 0x03) as u8)
+        ENGT_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - Enable External Trigger"]
     #[inline(always)]
     pub fn entr(&self) -> ENTR_R {
-        ENTR_R::new(((self.bits >> 2) & 0x01) != 0)
+        ENTR_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 16 - Repeat Disable"]
     #[inline(always)]
     pub fn rptdis(&self) -> RPTDIS_R {
-        RPTDIS_R::new(((self.bits >> 16) & 0x01) != 0)
+        RPTDIS_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Enable Gate"]
     #[inline(always)]
-    pub fn engt(&mut self) -> ENGT_W {
-        ENGT_W { w: self }
+    #[must_use]
+    pub fn engt(&mut self) -> ENGT_W<0> {
+        ENGT_W::new(self)
     }
     #[doc = "Bit 2 - Enable External Trigger"]
     #[inline(always)]
-    pub fn entr(&mut self) -> ENTR_W {
-        ENTR_W { w: self }
+    #[must_use]
+    pub fn entr(&mut self) -> ENTR_W<2> {
+        ENTR_W::new(self)
     }
     #[doc = "Bit 8 - Clear Valid Bit"]
     #[inline(always)]
-    pub fn clrv(&mut self) -> CLRV_W {
-        CLRV_W { w: self }
+    #[must_use]
+    pub fn clrv(&mut self) -> CLRV_W<8> {
+        CLRV_W::new(self)
     }
     #[doc = "Bit 9 - Trigger Event"]
     #[inline(always)]
-    pub fn trev(&mut self) -> TREV_W {
-        TREV_W { w: self }
+    #[must_use]
+    pub fn trev(&mut self) -> TREV_W<9> {
+        TREV_W::new(self)
     }
     #[doc = "Bit 10 - Flush Queue"]
     #[inline(always)]
-    pub fn flush(&mut self) -> FLUSH_W {
-        FLUSH_W { w: self }
+    #[must_use]
+    pub fn flush(&mut self) -> FLUSH_W<10> {
+        FLUSH_W::new(self)
     }
     #[doc = "Bit 11 - Clear Event Flag"]
     #[inline(always)]
-    pub fn cev(&mut self) -> CEV_W {
-        CEV_W { w: self }
+    #[must_use]
+    pub fn cev(&mut self) -> CEV_W<11> {
+        CEV_W::new(self)
     }
     #[doc = "Bit 16 - Repeat Disable"]
     #[inline(always)]
-    pub fn rptdis(&mut self) -> RPTDIS_W {
-        RPTDIS_W { w: self }
+    #[must_use]
+    pub fn rptdis(&mut self) -> RPTDIS_W<16> {
+        RPTDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -577,11 +403,10 @@ impl crate::Readable for QMR0_SPEC {
 #[doc = "`write(|w| ..)` method takes [qmr0::W](W) writer structure"]
 impl crate::Writable for QMR0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets QMR0 to value 0"]
 impl crate::Resettable for QMR0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

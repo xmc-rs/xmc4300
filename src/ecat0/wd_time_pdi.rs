@@ -35,43 +35,22 @@ impl From<crate::W<WD_TIME_PDI_SPEC>> for W {
     }
 }
 #[doc = "Field `WD_TIME_PDI` reader - Watchdog Time PDI"]
-pub struct WD_TIME_PDI_R(crate::FieldReader<u16, u16>);
-impl WD_TIME_PDI_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        WD_TIME_PDI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WD_TIME_PDI_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WD_TIME_PDI_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `WD_TIME_PDI` writer - Watchdog Time PDI"]
-pub struct WD_TIME_PDI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WD_TIME_PDI_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u16 & 0xffff);
-        self.w
-    }
-}
+pub type WD_TIME_PDI_W<'a, const O: u8> = crate::FieldWriter<'a, u16, WD_TIME_PDI_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Watchdog Time PDI"]
     #[inline(always)]
     pub fn wd_time_pdi(&self) -> WD_TIME_PDI_R {
-        WD_TIME_PDI_R::new((self.bits & 0xffff) as u16)
+        WD_TIME_PDI_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Watchdog Time PDI"]
     #[inline(always)]
-    pub fn wd_time_pdi(&mut self) -> WD_TIME_PDI_W {
-        WD_TIME_PDI_W { w: self }
+    #[must_use]
+    pub fn wd_time_pdi(&mut self) -> WD_TIME_PDI_W<0> {
+        WD_TIME_PDI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for WD_TIME_PDI_SPEC {
 #[doc = "`write(|w| ..)` method takes [wd_time_pdi::W](W) writer structure"]
 impl crate::Writable for WD_TIME_PDI_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets WD_TIME_PDI to value 0x03e8"]
 impl crate::Resettable for WD_TIME_PDI_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x03e8
-    }
+    const RESET_VALUE: Self::Ux = 0x03e8;
 }

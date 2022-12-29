@@ -35,129 +35,21 @@ impl From<crate::W<MAC_ADDRESS3_HIGH_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDRHI` reader - MAC Address3 \\[47:32\\]"]
-pub struct ADDRHI_R(crate::FieldReader<u16, u16>);
-impl ADDRHI_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        ADDRHI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADDRHI_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADDRHI_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ADDRHI` writer - MAC Address3 \\[47:32\\]"]
-pub struct ADDRHI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDRHI_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type ADDRHI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAC_ADDRESS3_HIGH_SPEC, u16, u16, 16, O>;
 #[doc = "Field `MBC` reader - Mask Byte Control"]
-pub struct MBC_R(crate::FieldReader<u8, u8>);
-impl MBC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MBC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MBC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MBC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MBC` writer - Mask Byte Control"]
-pub struct MBC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MBC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 24)) | ((value as u32 & 0x3f) << 24);
-        self.w
-    }
-}
+pub type MBC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAC_ADDRESS3_HIGH_SPEC, u8, u8, 6, O>;
 #[doc = "Field `SA` reader - Source Address"]
-pub struct SA_R(crate::FieldReader<bool, bool>);
-impl SA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SA_R = crate::BitReader<bool>;
 #[doc = "Field `SA` writer - Source Address"]
-pub struct SA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
-}
+pub type SA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MAC_ADDRESS3_HIGH_SPEC, bool, O>;
 #[doc = "Field `AE` reader - Address Enable"]
-pub struct AE_R(crate::FieldReader<bool, bool>);
-impl AE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AE_R = crate::BitReader<bool>;
 #[doc = "Field `AE` writer - Address Enable"]
-pub struct AE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type AE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MAC_ADDRESS3_HIGH_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:15 - MAC Address3 \\[47:32\\]"]
     #[inline(always)]
@@ -172,34 +64,38 @@ impl R {
     #[doc = "Bit 30 - Source Address"]
     #[inline(always)]
     pub fn sa(&self) -> SA_R {
-        SA_R::new(((self.bits >> 30) & 0x01) != 0)
+        SA_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Address Enable"]
     #[inline(always)]
     pub fn ae(&self) -> AE_R {
-        AE_R::new(((self.bits >> 31) & 0x01) != 0)
+        AE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - MAC Address3 \\[47:32\\]"]
     #[inline(always)]
-    pub fn addrhi(&mut self) -> ADDRHI_W {
-        ADDRHI_W { w: self }
+    #[must_use]
+    pub fn addrhi(&mut self) -> ADDRHI_W<0> {
+        ADDRHI_W::new(self)
     }
     #[doc = "Bits 24:29 - Mask Byte Control"]
     #[inline(always)]
-    pub fn mbc(&mut self) -> MBC_W {
-        MBC_W { w: self }
+    #[must_use]
+    pub fn mbc(&mut self) -> MBC_W<24> {
+        MBC_W::new(self)
     }
     #[doc = "Bit 30 - Source Address"]
     #[inline(always)]
-    pub fn sa(&mut self) -> SA_W {
-        SA_W { w: self }
+    #[must_use]
+    pub fn sa(&mut self) -> SA_W<30> {
+        SA_W::new(self)
     }
     #[doc = "Bit 31 - Address Enable"]
     #[inline(always)]
-    pub fn ae(&mut self) -> AE_W {
-        AE_W { w: self }
+    #[must_use]
+    pub fn ae(&mut self) -> AE_W<31> {
+        AE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -220,11 +116,10 @@ impl crate::Readable for MAC_ADDRESS3_HIGH_SPEC {
 #[doc = "`write(|w| ..)` method takes [mac_address3_high::W](W) writer structure"]
 impl crate::Writable for MAC_ADDRESS3_HIGH_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MAC_ADDRESS3_HIGH to value 0xffff"]
 impl crate::Resettable for MAC_ADDRESS3_HIGH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xffff
-    }
+    const RESET_VALUE: Self::Ux = 0xffff;
 }

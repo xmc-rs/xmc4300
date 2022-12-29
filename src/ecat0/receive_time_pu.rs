@@ -14,24 +14,12 @@ impl From<crate::R<RECEIVE_TIME_PU_SPEC>> for R {
     }
 }
 #[doc = "Field `RECEIVE_TIME_PU` reader - Local time of the beginning of a frame"]
-pub struct RECEIVE_TIME_PU_R(crate::FieldReader<u32, u32>);
-impl RECEIVE_TIME_PU_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        RECEIVE_TIME_PU_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RECEIVE_TIME_PU_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RECEIVE_TIME_PU_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Local time of the beginning of a frame"]
     #[inline(always)]
     pub fn receive_time_pu(&self) -> RECEIVE_TIME_PU_R {
-        RECEIVE_TIME_PU_R::new((self.bits & 0xffff_ffff) as u32)
+        RECEIVE_TIME_PU_R::new(self.bits)
     }
 }
 #[doc = "Local time of the beginning of a frame\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [receive_time_pu](index.html) module"]
@@ -46,8 +34,5 @@ impl crate::Readable for RECEIVE_TIME_PU_SPEC {
 #[doc = "`reset()` method sets RECEIVE_TIME_PU[%s]
 to value 0"]
 impl crate::Resettable for RECEIVE_TIME_PU_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

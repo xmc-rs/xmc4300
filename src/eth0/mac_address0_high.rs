@@ -35,45 +35,11 @@ impl From<crate::W<MAC_ADDRESS0_HIGH_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDRHI` reader - MAC Address0 \\[47:32\\]"]
-pub struct ADDRHI_R(crate::FieldReader<u16, u16>);
-impl ADDRHI_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        ADDRHI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADDRHI_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADDRHI_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ADDRHI` writer - MAC Address0 \\[47:32\\]"]
-pub struct ADDRHI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDRHI_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type ADDRHI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAC_ADDRESS0_HIGH_SPEC, u16, u16, 16, O>;
 #[doc = "Field `AE` reader - Address Enable"]
-pub struct AE_R(crate::FieldReader<bool, bool>);
-impl AE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AE_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:15 - MAC Address0 \\[47:32\\]"]
     #[inline(always)]
@@ -83,14 +49,15 @@ impl R {
     #[doc = "Bit 31 - Address Enable"]
     #[inline(always)]
     pub fn ae(&self) -> AE_R {
-        AE_R::new(((self.bits >> 31) & 0x01) != 0)
+        AE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - MAC Address0 \\[47:32\\]"]
     #[inline(always)]
-    pub fn addrhi(&mut self) -> ADDRHI_W {
-        ADDRHI_W { w: self }
+    #[must_use]
+    pub fn addrhi(&mut self) -> ADDRHI_W<0> {
+        ADDRHI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -111,11 +78,10 @@ impl crate::Readable for MAC_ADDRESS0_HIGH_SPEC {
 #[doc = "`write(|w| ..)` method takes [mac_address0_high::W](W) writer structure"]
 impl crate::Writable for MAC_ADDRESS0_HIGH_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MAC_ADDRESS0_HIGH to value 0x8000_ffff"]
 impl crate::Resettable for MAC_ADDRESS0_HIGH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x8000_ffff
-    }
+    const RESET_VALUE: Self::Ux = 0x8000_ffff;
 }

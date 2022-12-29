@@ -13,8 +13,10 @@ impl From<crate::R<FMMU_TYPE_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `R_ACC` reader - Read Access"]
+pub type R_ACC_R = crate::BitReader<R_ACC_A>;
 #[doc = "Read Access\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_ACC_A {
     #[doc = "0: Ignore mapping for read accesses"]
     VALUE1 = 0,
@@ -27,13 +29,8 @@ impl From<R_ACC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `R_ACC` reader - Read Access"]
-pub struct R_ACC_R(crate::FieldReader<bool, R_ACC_A>);
 impl R_ACC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        R_ACC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> R_ACC_A {
         match self.bits {
@@ -44,23 +41,18 @@ impl R_ACC_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == R_ACC_A::VALUE1
+        *self == R_ACC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == R_ACC_A::VALUE2
+        *self == R_ACC_A::VALUE2
     }
 }
-impl core::ops::Deref for R_ACC_R {
-    type Target = crate::FieldReader<bool, R_ACC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `W_ACC` reader - Write Access"]
+pub type W_ACC_R = crate::BitReader<W_ACC_A>;
 #[doc = "Write Access\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum W_ACC_A {
     #[doc = "0: Ignore mapping for write accesses"]
     VALUE1 = 0,
@@ -73,13 +65,8 @@ impl From<W_ACC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `W_ACC` reader - Write Access"]
-pub struct W_ACC_R(crate::FieldReader<bool, W_ACC_A>);
 impl W_ACC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        W_ACC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> W_ACC_A {
         match self.bits {
@@ -90,31 +77,24 @@ impl W_ACC_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == W_ACC_A::VALUE1
+        *self == W_ACC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == W_ACC_A::VALUE2
-    }
-}
-impl core::ops::Deref for W_ACC_R {
-    type Target = crate::FieldReader<bool, W_ACC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == W_ACC_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - Read Access"]
     #[inline(always)]
     pub fn r_acc(&self) -> R_ACC_R {
-        R_ACC_R::new((self.bits & 0x01) != 0)
+        R_ACC_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Write Access"]
     #[inline(always)]
     pub fn w_acc(&self) -> W_ACC_R {
-        W_ACC_R::new(((self.bits >> 1) & 0x01) != 0)
+        W_ACC_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[doc = "T0pe FMMU y\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmmu_type](index.html) module"]
@@ -128,8 +108,5 @@ impl crate::Readable for FMMU_TYPE_SPEC {
 }
 #[doc = "`reset()` method sets FMMU_TYPE to value 0"]
 impl crate::Resettable for FMMU_TYPE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,165 +35,35 @@ impl From<crate::W<GMII_ADDRESS_SPEC>> for W {
     }
 }
 #[doc = "Field `MB` reader - MII Busy"]
-pub struct MB_R(crate::FieldReader<bool, bool>);
-impl MB_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MB_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MB_R = crate::BitReader<bool>;
 #[doc = "Field `MB` writer - MII Busy"]
-pub struct MB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type MB_W<'a, const O: u8> = crate::BitWriter<'a, u32, GMII_ADDRESS_SPEC, bool, O>;
 #[doc = "Field `MW` reader - MII Write"]
-pub struct MW_R(crate::FieldReader<bool, bool>);
-impl MW_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MW_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MW_R = crate::BitReader<bool>;
 #[doc = "Field `MW` writer - MII Write"]
-pub struct MW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MW_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type MW_W<'a, const O: u8> = crate::BitWriter<'a, u32, GMII_ADDRESS_SPEC, bool, O>;
 #[doc = "Field `CR` reader - CSR Clock Range"]
-pub struct CR_R(crate::FieldReader<u8, u8>);
-impl CR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CR` writer - CSR Clock Range"]
-pub struct CR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 2)) | ((value as u32 & 0x0f) << 2);
-        self.w
-    }
-}
+pub type CR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GMII_ADDRESS_SPEC, u8, u8, 4, O>;
 #[doc = "Field `MR` reader - MII Register"]
-pub struct MR_R(crate::FieldReader<u8, u8>);
-impl MR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MR` writer - MII Register"]
-pub struct MR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 6)) | ((value as u32 & 0x1f) << 6);
-        self.w
-    }
-}
+pub type MR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GMII_ADDRESS_SPEC, u8, u8, 5, O>;
 #[doc = "Field `PA` reader - Physical Layer Address"]
-pub struct PA_R(crate::FieldReader<u8, u8>);
-impl PA_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PA` writer - Physical Layer Address"]
-pub struct PA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 11)) | ((value as u32 & 0x1f) << 11);
-        self.w
-    }
-}
+pub type PA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GMII_ADDRESS_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bit 0 - MII Busy"]
     #[inline(always)]
     pub fn mb(&self) -> MB_R {
-        MB_R::new((self.bits & 0x01) != 0)
+        MB_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - MII Write"]
     #[inline(always)]
     pub fn mw(&self) -> MW_R {
-        MW_R::new(((self.bits >> 1) & 0x01) != 0)
+        MW_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:5 - CSR Clock Range"]
     #[inline(always)]
@@ -214,28 +84,33 @@ impl R {
 impl W {
     #[doc = "Bit 0 - MII Busy"]
     #[inline(always)]
-    pub fn mb(&mut self) -> MB_W {
-        MB_W { w: self }
+    #[must_use]
+    pub fn mb(&mut self) -> MB_W<0> {
+        MB_W::new(self)
     }
     #[doc = "Bit 1 - MII Write"]
     #[inline(always)]
-    pub fn mw(&mut self) -> MW_W {
-        MW_W { w: self }
+    #[must_use]
+    pub fn mw(&mut self) -> MW_W<1> {
+        MW_W::new(self)
     }
     #[doc = "Bits 2:5 - CSR Clock Range"]
     #[inline(always)]
-    pub fn cr(&mut self) -> CR_W {
-        CR_W { w: self }
+    #[must_use]
+    pub fn cr(&mut self) -> CR_W<2> {
+        CR_W::new(self)
     }
     #[doc = "Bits 6:10 - MII Register"]
     #[inline(always)]
-    pub fn mr(&mut self) -> MR_W {
-        MR_W { w: self }
+    #[must_use]
+    pub fn mr(&mut self) -> MR_W<6> {
+        MR_W::new(self)
     }
     #[doc = "Bits 11:15 - Physical Layer Address"]
     #[inline(always)]
-    pub fn pa(&mut self) -> PA_W {
-        PA_W { w: self }
+    #[must_use]
+    pub fn pa(&mut self) -> PA_W<11> {
+        PA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -256,11 +131,10 @@ impl crate::Readable for GMII_ADDRESS_SPEC {
 #[doc = "`write(|w| ..)` method takes [gmii_address::W](W) writer structure"]
 impl crate::Writable for GMII_ADDRESS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GMII_ADDRESS to value 0"]
 impl crate::Resettable for GMII_ADDRESS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

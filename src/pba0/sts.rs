@@ -34,8 +34,10 @@ impl From<crate::W<STS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `WERR` reader - Bufferable Write Access Error"]
+pub type WERR_R = crate::BitReader<WERR_A>;
 #[doc = "Bufferable Write Access Error\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WERR_A {
     #[doc = "0: no write error occurred."]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<WERR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WERR` reader - Bufferable Write Access Error"]
-pub struct WERR_R(crate::FieldReader<bool, WERR_A>);
 impl WERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WERR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WERR_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl WERR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == WERR_A::VALUE1
+        *self == WERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == WERR_A::VALUE2
-    }
-}
-impl core::ops::Deref for WERR_R {
-    type Target = crate::FieldReader<bool, WERR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WERR_A::VALUE2
     }
 }
 #[doc = "Field `WERR` writer - Bufferable Write Access Error"]
-pub struct WERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WERR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WERR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, STS_SPEC, WERR_A, O>;
+impl<'a, const O: u8> WERR_W<'a, O> {
     #[doc = "no write error occurred."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,35 +83,20 @@ impl<'a> WERR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(WERR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Bufferable Write Access Error"]
     #[inline(always)]
     pub fn werr(&self) -> WERR_R {
-        WERR_R::new((self.bits & 0x01) != 0)
+        WERR_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Bufferable Write Access Error"]
     #[inline(always)]
-    pub fn werr(&mut self) -> WERR_W {
-        WERR_W { w: self }
+    #[must_use]
+    pub fn werr(&mut self) -> WERR_W<0> {
+        WERR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -149,11 +117,10 @@ impl crate::Readable for STS_SPEC {
 #[doc = "`write(|w| ..)` method takes [sts::W](W) writer structure"]
 impl crate::Writable for STS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets STS to value 0"]
 impl crate::Resettable for STS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

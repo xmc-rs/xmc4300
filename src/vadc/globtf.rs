@@ -35,33 +35,13 @@ impl From<crate::W<GLOBTF_SPEC>> for W {
     }
 }
 #[doc = "Field `CDGR` reader - Converter Diagnostics Group"]
-pub struct CDGR_R(crate::FieldReader<u8, u8>);
-impl CDGR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CDGR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CDGR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CDGR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CDGR` writer - Converter Diagnostics Group"]
-pub struct CDGR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDGR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
-}
+pub type CDGR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBTF_SPEC, u8, u8, 4, O>;
+#[doc = "Field `CDEN` reader - Converter Diagnostics Enable"]
+pub type CDEN_R = crate::BitReader<CDEN_A>;
 #[doc = "Converter Diagnostics Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CDEN_A {
     #[doc = "0: All diagnostic pull devices are disconnected"]
     VALUE1 = 0,
@@ -74,13 +54,8 @@ impl From<CDEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CDEN` reader - Converter Diagnostics Enable"]
-pub struct CDEN_R(crate::FieldReader<bool, CDEN_A>);
 impl CDEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CDEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CDEN_A {
         match self.bits {
@@ -91,31 +66,17 @@ impl CDEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CDEN_A::VALUE1
+        *self == CDEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CDEN_A::VALUE2
-    }
-}
-impl core::ops::Deref for CDEN_R {
-    type Target = crate::FieldReader<bool, CDEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CDEN_A::VALUE2
     }
 }
 #[doc = "Field `CDEN` writer - Converter Diagnostics Enable"]
-pub struct CDEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CDEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CDEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBTF_SPEC, CDEN_A, O>;
+impl<'a, const O: u8> CDEN_W<'a, O> {
     #[doc = "All diagnostic pull devices are disconnected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -126,25 +87,11 @@ impl<'a> CDEN_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CDEN_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `CDSEL` reader - Converter Diagnostics Pull-Devices Select"]
+pub type CDSEL_R = crate::FieldReader<u8, CDSEL_A>;
 #[doc = "Converter Diagnostics Pull-Devices Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CDSEL_A {
     #[doc = "0: Connected to VAREF"]
@@ -162,13 +109,8 @@ impl From<CDSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CDSEL` reader - Converter Diagnostics Pull-Devices Select"]
-pub struct CDSEL_R(crate::FieldReader<u8, CDSEL_A>);
 impl CDSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CDSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CDSEL_A {
         match self.bits {
@@ -182,41 +124,27 @@ impl CDSEL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CDSEL_A::VALUE1
+        *self == CDSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CDSEL_A::VALUE2
+        *self == CDSEL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == CDSEL_A::VALUE3
+        *self == CDSEL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == CDSEL_A::VALUE4
-    }
-}
-impl core::ops::Deref for CDSEL_R {
-    type Target = crate::FieldReader<u8, CDSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CDSEL_A::VALUE4
     }
 }
 #[doc = "Field `CDSEL` writer - Converter Diagnostics Pull-Devices Select"]
-pub struct CDSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CDSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CDSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, GLOBTF_SPEC, u8, CDSEL_A, 2, O>;
+impl<'a, const O: u8> CDSEL_W<'a, O> {
     #[doc = "Connected to VAREF"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -237,15 +165,9 @@ impl<'a> CDSEL_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(CDSEL_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 9)) | ((value as u32 & 0x03) << 9);
-        self.w
-    }
 }
 #[doc = "Write Control for Conversion Diagnostics\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CDWC_AW {
     #[doc = "0: No write access to parameters"]
     VALUE1 = 0,
@@ -259,15 +181,8 @@ impl From<CDWC_AW> for bool {
     }
 }
 #[doc = "Field `CDWC` writer - Write Control for Conversion Diagnostics"]
-pub struct CDWC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDWC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CDWC_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CDWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBTF_SPEC, CDWC_AW, O>;
+impl<'a, const O: u8> CDWC_W<'a, O> {
     #[doc = "No write access to parameters"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -278,25 +193,11 @@ impl<'a> CDWC_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CDWC_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
 }
+#[doc = "Field `PDD` reader - Pull-Down Diagnostics Enable"]
+pub type PDD_R = crate::BitReader<PDD_A>;
 #[doc = "Pull-Down Diagnostics Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PDD_A {
     #[doc = "0: Disconnected"]
     VALUE1 = 0,
@@ -309,13 +210,8 @@ impl From<PDD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PDD` reader - Pull-Down Diagnostics Enable"]
-pub struct PDD_R(crate::FieldReader<bool, PDD_A>);
 impl PDD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PDD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDD_A {
         match self.bits {
@@ -326,31 +222,17 @@ impl PDD_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PDD_A::VALUE1
+        *self == PDD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PDD_A::VALUE2
-    }
-}
-impl core::ops::Deref for PDD_R {
-    type Target = crate::FieldReader<bool, PDD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PDD_A::VALUE2
     }
 }
 #[doc = "Field `PDD` writer - Pull-Down Diagnostics Enable"]
-pub struct PDD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PDD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PDD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PDD_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBTF_SPEC, PDD_A, O>;
+impl<'a, const O: u8> PDD_W<'a, O> {
     #[doc = "Disconnected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -361,25 +243,9 @@ impl<'a> PDD_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(PDD_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
 #[doc = "Write Control for Multiplexer Diagnostics\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MDWC_AW {
     #[doc = "0: No write access to parameters"]
     VALUE1 = 0,
@@ -393,15 +259,8 @@ impl From<MDWC_AW> for bool {
     }
 }
 #[doc = "Field `MDWC` writer - Write Control for Multiplexer Diagnostics"]
-pub struct MDWC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MDWC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MDWC_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MDWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBTF_SPEC, MDWC_AW, O>;
+impl<'a, const O: u8> MDWC_W<'a, O> {
     #[doc = "No write access to parameters"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -411,22 +270,6 @@ impl<'a> MDWC_W<'a> {
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
         self.variant(MDWC_AW::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
     }
 }
 impl R {
@@ -438,49 +281,55 @@ impl R {
     #[doc = "Bit 8 - Converter Diagnostics Enable"]
     #[inline(always)]
     pub fn cden(&self) -> CDEN_R {
-        CDEN_R::new(((self.bits >> 8) & 0x01) != 0)
+        CDEN_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 9:10 - Converter Diagnostics Pull-Devices Select"]
     #[inline(always)]
     pub fn cdsel(&self) -> CDSEL_R {
-        CDSEL_R::new(((self.bits >> 9) & 0x03) as u8)
+        CDSEL_R::new(((self.bits >> 9) & 3) as u8)
     }
     #[doc = "Bit 16 - Pull-Down Diagnostics Enable"]
     #[inline(always)]
     pub fn pdd(&self) -> PDD_R {
-        PDD_R::new(((self.bits >> 16) & 0x01) != 0)
+        PDD_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 4:7 - Converter Diagnostics Group"]
     #[inline(always)]
-    pub fn cdgr(&mut self) -> CDGR_W {
-        CDGR_W { w: self }
+    #[must_use]
+    pub fn cdgr(&mut self) -> CDGR_W<4> {
+        CDGR_W::new(self)
     }
     #[doc = "Bit 8 - Converter Diagnostics Enable"]
     #[inline(always)]
-    pub fn cden(&mut self) -> CDEN_W {
-        CDEN_W { w: self }
+    #[must_use]
+    pub fn cden(&mut self) -> CDEN_W<8> {
+        CDEN_W::new(self)
     }
     #[doc = "Bits 9:10 - Converter Diagnostics Pull-Devices Select"]
     #[inline(always)]
-    pub fn cdsel(&mut self) -> CDSEL_W {
-        CDSEL_W { w: self }
+    #[must_use]
+    pub fn cdsel(&mut self) -> CDSEL_W<9> {
+        CDSEL_W::new(self)
     }
     #[doc = "Bit 15 - Write Control for Conversion Diagnostics"]
     #[inline(always)]
-    pub fn cdwc(&mut self) -> CDWC_W {
-        CDWC_W { w: self }
+    #[must_use]
+    pub fn cdwc(&mut self) -> CDWC_W<15> {
+        CDWC_W::new(self)
     }
     #[doc = "Bit 16 - Pull-Down Diagnostics Enable"]
     #[inline(always)]
-    pub fn pdd(&mut self) -> PDD_W {
-        PDD_W { w: self }
+    #[must_use]
+    pub fn pdd(&mut self) -> PDD_W<16> {
+        PDD_W::new(self)
     }
     #[doc = "Bit 23 - Write Control for Multiplexer Diagnostics"]
     #[inline(always)]
-    pub fn mdwc(&mut self) -> MDWC_W {
-        MDWC_W { w: self }
+    #[must_use]
+    pub fn mdwc(&mut self) -> MDWC_W<23> {
+        MDWC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -501,11 +350,10 @@ impl crate::Readable for GLOBTF_SPEC {
 #[doc = "`write(|w| ..)` method takes [globtf::W](W) writer structure"]
 impl crate::Writable for GLOBTF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GLOBTF to value 0"]
 impl crate::Resettable for GLOBTF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

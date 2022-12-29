@@ -34,8 +34,10 @@ impl From<crate::W<PERSTEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RSEN` reader - System Reset Enable upon Parity Error Trap"]
+pub type RSEN_R = crate::BitReader<RSEN_A>;
 #[doc = "System Reset Enable upon Parity Error Trap\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RSEN_A {
     #[doc = "0: Reset request disabled"]
     CONST_0 = 0,
@@ -48,13 +50,8 @@ impl From<RSEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RSEN` reader - System Reset Enable upon Parity Error Trap"]
-pub struct RSEN_R(crate::FieldReader<bool, RSEN_A>);
 impl RSEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RSEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RSEN_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl RSEN_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == RSEN_A::CONST_0
+        *self == RSEN_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == RSEN_A::CONST_1
-    }
-}
-impl core::ops::Deref for RSEN_R {
-    type Target = crate::FieldReader<bool, RSEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RSEN_A::CONST_1
     }
 }
 #[doc = "Field `RSEN` writer - System Reset Enable upon Parity Error Trap"]
-pub struct RSEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RSEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERSTEN_SPEC, RSEN_A, O>;
+impl<'a, const O: u8> RSEN_W<'a, O> {
     #[doc = "Reset request disabled"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -100,35 +83,20 @@ impl<'a> RSEN_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(RSEN_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - System Reset Enable upon Parity Error Trap"]
     #[inline(always)]
     pub fn rsen(&self) -> RSEN_R {
-        RSEN_R::new((self.bits & 0x01) != 0)
+        RSEN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - System Reset Enable upon Parity Error Trap"]
     #[inline(always)]
-    pub fn rsen(&mut self) -> RSEN_W {
-        RSEN_W { w: self }
+    #[must_use]
+    pub fn rsen(&mut self) -> RSEN_W<0> {
+        RSEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -149,11 +117,10 @@ impl crate::Readable for PERSTEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [persten::W](W) writer structure"]
 impl crate::Writable for PERSTEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PERSTEN to value 0"]
 impl crate::Resettable for PERSTEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

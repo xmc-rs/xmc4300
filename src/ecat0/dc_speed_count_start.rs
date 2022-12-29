@@ -35,43 +35,22 @@ impl From<crate::W<DC_SPEED_COUNT_START_SPEC>> for W {
     }
 }
 #[doc = "Field `COUNT_START` reader - Bandwidth for adjustment of local copy of System Time"]
-pub struct COUNT_START_R(crate::FieldReader<u16, u16>);
-impl COUNT_START_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        COUNT_START_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COUNT_START_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COUNT_START_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `COUNT_START` writer - Bandwidth for adjustment of local copy of System Time"]
-pub struct COUNT_START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COUNT_START_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7fff) | (value as u16 & 0x7fff);
-        self.w
-    }
-}
+pub type COUNT_START_W<'a, const O: u8> = crate::FieldWriter<'a, u16, DC_SPEED_COUNT_START_SPEC, u16, u16, 15, O>;
 impl R {
     #[doc = "Bits 0:14 - Bandwidth for adjustment of local copy of System Time"]
     #[inline(always)]
     pub fn count_start(&self) -> COUNT_START_R {
-        COUNT_START_R::new((self.bits & 0x7fff) as u16)
+        COUNT_START_R::new(self.bits & 0x7fff)
     }
 }
 impl W {
     #[doc = "Bits 0:14 - Bandwidth for adjustment of local copy of System Time"]
     #[inline(always)]
-    pub fn count_start(&mut self) -> COUNT_START_W {
-        COUNT_START_W { w: self }
+    #[must_use]
+    pub fn count_start(&mut self) -> COUNT_START_W<0> {
+        COUNT_START_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for DC_SPEED_COUNT_START_SPEC {
 #[doc = "`write(|w| ..)` method takes [dc_speed_count_start::W](W) writer structure"]
 impl crate::Writable for DC_SPEED_COUNT_START_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DC_SPEED_COUNT_START to value 0x1000"]
 impl crate::Resettable for DC_SPEED_COUNT_START_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1000
-    }
+    const RESET_VALUE: Self::Ux = 0x1000;
 }

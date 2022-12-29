@@ -35,109 +35,21 @@ impl From<crate::W<NVIC_IPR1_SPEC>> for W {
     }
 }
 #[doc = "Field `PRI_0` reader - Priority value 0"]
-pub struct PRI_0_R(crate::FieldReader<u8, u8>);
-impl PRI_0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PRI_0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRI_0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRI_0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PRI_0` writer - Priority value 0"]
-pub struct PRI_0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRI_0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type PRI_0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_IPR1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `PRI_1` reader - Priority value 1"]
-pub struct PRI_1_R(crate::FieldReader<u8, u8>);
-impl PRI_1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PRI_1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRI_1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRI_1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PRI_1` writer - Priority value 1"]
-pub struct PRI_1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRI_1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type PRI_1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_IPR1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `PRI_2` reader - Priority value 2"]
-pub struct PRI_2_R(crate::FieldReader<u8, u8>);
-impl PRI_2_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PRI_2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRI_2_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRI_2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PRI_2` writer - Priority value 2"]
-pub struct PRI_2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRI_2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type PRI_2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_IPR1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `PRI_3` reader - Priority value 3"]
-pub struct PRI_3_R(crate::FieldReader<u8, u8>);
-impl PRI_3_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PRI_3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRI_3_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRI_3_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PRI_3` writer - Priority value 3"]
-pub struct PRI_3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRI_3_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type PRI_3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_IPR1_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Priority value 0"]
     #[inline(always)]
@@ -163,23 +75,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Priority value 0"]
     #[inline(always)]
-    pub fn pri_0(&mut self) -> PRI_0_W {
-        PRI_0_W { w: self }
+    #[must_use]
+    pub fn pri_0(&mut self) -> PRI_0_W<0> {
+        PRI_0_W::new(self)
     }
     #[doc = "Bits 8:15 - Priority value 1"]
     #[inline(always)]
-    pub fn pri_1(&mut self) -> PRI_1_W {
-        PRI_1_W { w: self }
+    #[must_use]
+    pub fn pri_1(&mut self) -> PRI_1_W<8> {
+        PRI_1_W::new(self)
     }
     #[doc = "Bits 16:23 - Priority value 2"]
     #[inline(always)]
-    pub fn pri_2(&mut self) -> PRI_2_W {
-        PRI_2_W { w: self }
+    #[must_use]
+    pub fn pri_2(&mut self) -> PRI_2_W<16> {
+        PRI_2_W::new(self)
     }
     #[doc = "Bits 24:31 - Priority value 3"]
     #[inline(always)]
-    pub fn pri_3(&mut self) -> PRI_3_W {
-        PRI_3_W { w: self }
+    #[must_use]
+    pub fn pri_3(&mut self) -> PRI_3_W<24> {
+        PRI_3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -200,11 +116,10 @@ impl crate::Readable for NVIC_IPR1_SPEC {
 #[doc = "`write(|w| ..)` method takes [nvic_ipr1::W](W) writer structure"]
 impl crate::Writable for NVIC_IPR1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets NVIC_IPR1 to value 0"]
 impl crate::Resettable for NVIC_IPR1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

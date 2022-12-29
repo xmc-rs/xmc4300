@@ -34,90 +34,38 @@ impl From<crate::W<BLOCK_SIZE_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TX_BLOCK_SIZE_12` reader - Transfer Block Size 12th bit."]
-pub struct TX_BLOCK_SIZE_12_R(crate::FieldReader<bool, bool>);
-impl TX_BLOCK_SIZE_12_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_BLOCK_SIZE_12_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TX_BLOCK_SIZE_12_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `TX_BLOCK_SIZE_12` writer - Transfer Block Size 12th bit."]
-pub struct TX_BLOCK_SIZE_12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_BLOCK_SIZE_12_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
-        self.w
-    }
-}
 #[doc = "Field `TX_BLOCK_SIZE` reader - Transfer Block Size"]
-pub struct TX_BLOCK_SIZE_R(crate::FieldReader<u16, u16>);
-impl TX_BLOCK_SIZE_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TX_BLOCK_SIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TX_BLOCK_SIZE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TX_BLOCK_SIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TX_BLOCK_SIZE` writer - Transfer Block Size"]
-pub struct TX_BLOCK_SIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_BLOCK_SIZE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u16 & 0x0fff);
-        self.w
-    }
-}
+pub type TX_BLOCK_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u16, BLOCK_SIZE_SPEC, u16, u16, 12, O>;
+#[doc = "Field `TX_BLOCK_SIZE_12` reader - Transfer Block Size 12th bit."]
+pub type TX_BLOCK_SIZE_12_R = crate::BitReader<bool>;
+#[doc = "Field `TX_BLOCK_SIZE_12` writer - Transfer Block Size 12th bit."]
+pub type TX_BLOCK_SIZE_12_W<'a, const O: u8> = crate::BitWriter<'a, u16, BLOCK_SIZE_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 15 - Transfer Block Size 12th bit."]
-    #[inline(always)]
-    pub fn tx_block_size_12(&self) -> TX_BLOCK_SIZE_12_R {
-        TX_BLOCK_SIZE_12_R::new(((self.bits >> 15) & 0x01) != 0)
-    }
     #[doc = "Bits 0:11 - Transfer Block Size"]
     #[inline(always)]
     pub fn tx_block_size(&self) -> TX_BLOCK_SIZE_R {
-        TX_BLOCK_SIZE_R::new((self.bits & 0x0fff) as u16)
+        TX_BLOCK_SIZE_R::new(self.bits & 0x0fff)
+    }
+    #[doc = "Bit 15 - Transfer Block Size 12th bit."]
+    #[inline(always)]
+    pub fn tx_block_size_12(&self) -> TX_BLOCK_SIZE_12_R {
+        TX_BLOCK_SIZE_12_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 15 - Transfer Block Size 12th bit."]
-    #[inline(always)]
-    pub fn tx_block_size_12(&mut self) -> TX_BLOCK_SIZE_12_W {
-        TX_BLOCK_SIZE_12_W { w: self }
-    }
     #[doc = "Bits 0:11 - Transfer Block Size"]
     #[inline(always)]
-    pub fn tx_block_size(&mut self) -> TX_BLOCK_SIZE_W {
-        TX_BLOCK_SIZE_W { w: self }
+    #[must_use]
+    pub fn tx_block_size(&mut self) -> TX_BLOCK_SIZE_W<0> {
+        TX_BLOCK_SIZE_W::new(self)
+    }
+    #[doc = "Bit 15 - Transfer Block Size 12th bit."]
+    #[inline(always)]
+    #[must_use]
+    pub fn tx_block_size_12(&mut self) -> TX_BLOCK_SIZE_12_W<15> {
+        TX_BLOCK_SIZE_12_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -138,11 +86,10 @@ impl crate::Readable for BLOCK_SIZE_SPEC {
 #[doc = "`write(|w| ..)` method takes [block_size::W](W) writer structure"]
 impl crate::Writable for BLOCK_SIZE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BLOCK_SIZE to value 0"]
 impl crate::Resettable for BLOCK_SIZE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

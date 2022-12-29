@@ -35,33 +35,13 @@ impl From<crate::W<MOAMR_SPEC>> for W {
     }
 }
 #[doc = "Field `AM` reader - Acceptance Mask for Message Identifier"]
-pub struct AM_R(crate::FieldReader<u32, u32>);
-impl AM_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        AM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AM_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AM_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `AM` writer - Acceptance Mask for Message Identifier"]
-pub struct AM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1fff_ffff) | (value as u32 & 0x1fff_ffff);
-        self.w
-    }
-}
+pub type AM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOAMR_SPEC, u32, u32, 29, O>;
+#[doc = "Field `MIDE` reader - Acceptance Mask Bit for Message IDE Bit"]
+pub type MIDE_R = crate::BitReader<MIDE_A>;
 #[doc = "Acceptance Mask Bit for Message IDE Bit\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MIDE_A {
     #[doc = "0: Message object n accepts the reception of both, standard and extended frames."]
     VALUE1 = 0,
@@ -74,13 +54,8 @@ impl From<MIDE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MIDE` reader - Acceptance Mask Bit for Message IDE Bit"]
-pub struct MIDE_R(crate::FieldReader<bool, MIDE_A>);
 impl MIDE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MIDE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MIDE_A {
         match self.bits {
@@ -91,31 +66,17 @@ impl MIDE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == MIDE_A::VALUE1
+        *self == MIDE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == MIDE_A::VALUE2
-    }
-}
-impl core::ops::Deref for MIDE_R {
-    type Target = crate::FieldReader<bool, MIDE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MIDE_A::VALUE2
     }
 }
 #[doc = "Field `MIDE` writer - Acceptance Mask Bit for Message IDE Bit"]
-pub struct MIDE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MIDE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MIDE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MIDE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOAMR_SPEC, MIDE_A, O>;
+impl<'a, const O: u8> MIDE_W<'a, O> {
     #[doc = "Message object n accepts the reception of both, standard and extended frames."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -126,45 +87,31 @@ impl<'a> MIDE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(MIDE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:28 - Acceptance Mask for Message Identifier"]
     #[inline(always)]
     pub fn am(&self) -> AM_R {
-        AM_R::new((self.bits & 0x1fff_ffff) as u32)
+        AM_R::new(self.bits & 0x1fff_ffff)
     }
     #[doc = "Bit 29 - Acceptance Mask Bit for Message IDE Bit"]
     #[inline(always)]
     pub fn mide(&self) -> MIDE_R {
-        MIDE_R::new(((self.bits >> 29) & 0x01) != 0)
+        MIDE_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:28 - Acceptance Mask for Message Identifier"]
     #[inline(always)]
-    pub fn am(&mut self) -> AM_W {
-        AM_W { w: self }
+    #[must_use]
+    pub fn am(&mut self) -> AM_W<0> {
+        AM_W::new(self)
     }
     #[doc = "Bit 29 - Acceptance Mask Bit for Message IDE Bit"]
     #[inline(always)]
-    pub fn mide(&mut self) -> MIDE_W {
-        MIDE_W { w: self }
+    #[must_use]
+    pub fn mide(&mut self) -> MIDE_W<29> {
+        MIDE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -185,11 +132,10 @@ impl crate::Readable for MOAMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [moamr::W](W) writer structure"]
 impl crate::Writable for MOAMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MOAMR to value 0x3fff_ffff"]
 impl crate::Resettable for MOAMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x3fff_ffff
-    }
+    const RESET_VALUE: Self::Ux = 0x3fff_ffff;
 }

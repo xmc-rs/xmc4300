@@ -35,79 +35,37 @@ impl From<crate::W<GNPTXFSIZ_HOSTMODE_SPEC>> for W {
     }
 }
 #[doc = "Field `NPTxFStAddr` reader - Non-periodic Transmit RAM Start Address"]
-pub struct NPTXFSTADDR_R(crate::FieldReader<u16, u16>);
-impl NPTXFSTADDR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        NPTXFSTADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NPTXFSTADDR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NPTX_FST_ADDR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `NPTxFStAddr` writer - Non-periodic Transmit RAM Start Address"]
-pub struct NPTXFSTADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NPTXFSTADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type NPTX_FST_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GNPTXFSIZ_HOSTMODE_SPEC, u16, u16, 16, O>;
 #[doc = "Field `NPTxFDep` reader - Non-periodic TxFIFO Depth"]
-pub struct NPTXFDEP_R(crate::FieldReader<u16, u16>);
-impl NPTXFDEP_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        NPTXFDEP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NPTXFDEP_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NPTX_FDEP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `NPTxFDep` writer - Non-periodic TxFIFO Depth"]
-pub struct NPTXFDEP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NPTXFDEP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type NPTX_FDEP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GNPTXFSIZ_HOSTMODE_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Non-periodic Transmit RAM Start Address"]
     #[inline(always)]
-    pub fn nptx_fst_addr(&self) -> NPTXFSTADDR_R {
-        NPTXFSTADDR_R::new((self.bits & 0xffff) as u16)
+    pub fn nptx_fst_addr(&self) -> NPTX_FST_ADDR_R {
+        NPTX_FST_ADDR_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:31 - Non-periodic TxFIFO Depth"]
     #[inline(always)]
-    pub fn nptx_fdep(&self) -> NPTXFDEP_R {
-        NPTXFDEP_R::new(((self.bits >> 16) & 0xffff) as u16)
+    pub fn nptx_fdep(&self) -> NPTX_FDEP_R {
+        NPTX_FDEP_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Non-periodic Transmit RAM Start Address"]
     #[inline(always)]
-    pub fn nptx_fst_addr(&mut self) -> NPTXFSTADDR_W {
-        NPTXFSTADDR_W { w: self }
+    #[must_use]
+    pub fn nptx_fst_addr(&mut self) -> NPTX_FST_ADDR_W<0> {
+        NPTX_FST_ADDR_W::new(self)
     }
     #[doc = "Bits 16:31 - Non-periodic TxFIFO Depth"]
     #[inline(always)]
-    pub fn nptx_fdep(&mut self) -> NPTXFDEP_W {
-        NPTXFDEP_W { w: self }
+    #[must_use]
+    pub fn nptx_fdep(&mut self) -> NPTX_FDEP_W<16> {
+        NPTX_FDEP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for GNPTXFSIZ_HOSTMODE_SPEC {
 #[doc = "`write(|w| ..)` method takes [gnptxfsiz_hostmode::W](W) writer structure"]
 impl crate::Writable for GNPTXFSIZ_HOSTMODE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GNPTXFSIZ_HOSTMODE to value 0x0010_011a"]
 impl crate::Resettable for GNPTXFSIZ_HOSTMODE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0010_011a
-    }
+    const RESET_VALUE: Self::Ux = 0x0010_011a;
 }

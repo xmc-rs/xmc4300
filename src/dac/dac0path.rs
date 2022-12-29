@@ -35,83 +35,17 @@ impl From<crate::W<DAC0PATH_SPEC>> for W {
     }
 }
 #[doc = "Field `PAT6` reader - Pattern Number 6 for PATGEN of DAC0"]
-pub struct PAT6_R(crate::FieldReader<u8, u8>);
-impl PAT6_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PAT6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PAT6_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PAT6_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PAT6` writer - Pattern Number 6 for PATGEN of DAC0"]
-pub struct PAT6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PAT6_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type PAT6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC0PATH_SPEC, u8, u8, 5, O>;
 #[doc = "Field `PAT7` reader - Pattern Number 7 for PATGEN of DAC0"]
-pub struct PAT7_R(crate::FieldReader<u8, u8>);
-impl PAT7_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PAT7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PAT7_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PAT7_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PAT7` writer - Pattern Number 7 for PATGEN of DAC0"]
-pub struct PAT7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PAT7_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 5)) | ((value as u32 & 0x1f) << 5);
-        self.w
-    }
-}
+pub type PAT7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC0PATH_SPEC, u8, u8, 5, O>;
 #[doc = "Field `PAT8` reader - Pattern Number 8 for PATGEN of DAC0"]
-pub struct PAT8_R(crate::FieldReader<u8, u8>);
-impl PAT8_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PAT8_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PAT8_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PAT8_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PAT8` writer - Pattern Number 8 for PATGEN of DAC0"]
-pub struct PAT8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PAT8_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 10)) | ((value as u32 & 0x1f) << 10);
-        self.w
-    }
-}
+pub type PAT8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC0PATH_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 0:4 - Pattern Number 6 for PATGEN of DAC0"]
     #[inline(always)]
@@ -132,18 +66,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Pattern Number 6 for PATGEN of DAC0"]
     #[inline(always)]
-    pub fn pat6(&mut self) -> PAT6_W {
-        PAT6_W { w: self }
+    #[must_use]
+    pub fn pat6(&mut self) -> PAT6_W<0> {
+        PAT6_W::new(self)
     }
     #[doc = "Bits 5:9 - Pattern Number 7 for PATGEN of DAC0"]
     #[inline(always)]
-    pub fn pat7(&mut self) -> PAT7_W {
-        PAT7_W { w: self }
+    #[must_use]
+    pub fn pat7(&mut self) -> PAT7_W<5> {
+        PAT7_W::new(self)
     }
     #[doc = "Bits 10:14 - Pattern Number 8 for PATGEN of DAC0"]
     #[inline(always)]
-    pub fn pat8(&mut self) -> PAT8_W {
-        PAT8_W { w: self }
+    #[must_use]
+    pub fn pat8(&mut self) -> PAT8_W<10> {
+        PAT8_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -164,11 +101,10 @@ impl crate::Readable for DAC0PATH_SPEC {
 #[doc = "`write(|w| ..)` method takes [dac0path::W](W) writer structure"]
 impl crate::Writable for DAC0PATH_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DAC0PATH to value 0x7fdd"]
 impl crate::Resettable for DAC0PATH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x7fdd
-    }
+    const RESET_VALUE: Self::Ux = 0x7fdd;
 }

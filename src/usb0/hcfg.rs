@@ -34,70 +34,49 @@ impl From<crate::W<HCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FSLSPclkSel` reader - FS PHY Clock Select"]
+pub type FSLSPCLK_SEL_R = crate::FieldReader<u8, FSLSPCLK_SEL_A>;
 #[doc = "FS PHY Clock Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum FSLSPCLKSEL_A {
+pub enum FSLSPCLK_SEL_A {
     #[doc = "1: PHY clock is running at 48 MHz"]
     VALUE1 = 1,
 }
-impl From<FSLSPCLKSEL_A> for u8 {
+impl From<FSLSPCLK_SEL_A> for u8 {
     #[inline(always)]
-    fn from(variant: FSLSPCLKSEL_A) -> Self {
+    fn from(variant: FSLSPCLK_SEL_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `FSLSPclkSel` reader - FS PHY Clock Select"]
-pub struct FSLSPCLKSEL_R(crate::FieldReader<u8, FSLSPCLKSEL_A>);
-impl FSLSPCLKSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FSLSPCLKSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl FSLSPCLK_SEL_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FSLSPCLKSEL_A> {
+    pub fn variant(&self) -> Option<FSLSPCLK_SEL_A> {
         match self.bits {
-            1 => Some(FSLSPCLKSEL_A::VALUE1),
+            1 => Some(FSLSPCLK_SEL_A::VALUE1),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == FSLSPCLKSEL_A::VALUE1
-    }
-}
-impl core::ops::Deref for FSLSPCLKSEL_R {
-    type Target = crate::FieldReader<u8, FSLSPCLKSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FSLSPCLK_SEL_A::VALUE1
     }
 }
 #[doc = "Field `FSLSPclkSel` writer - FS PHY Clock Select"]
-pub struct FSLSPCLKSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FSLSPCLKSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FSLSPCLKSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type FSLSPCLK_SEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCFG_SPEC, u8, FSLSPCLK_SEL_A, 2, O>;
+impl<'a, const O: u8> FSLSPCLK_SEL_W<'a, O> {
     #[doc = "PHY clock is running at 48 MHz"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(FSLSPCLKSEL_A::VALUE1)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
+        self.variant(FSLSPCLK_SEL_A::VALUE1)
     }
 }
+#[doc = "Field `FSLSSupp` reader - FS-Only Support"]
+pub type FSLSSUPP_R = crate::BitReader<FSLSSUPP_A>;
 #[doc = "FS-Only Support\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FSLSSUPP_A {
     #[doc = "0: FS-only, connected device can supports also only FS."]
     VALUE1 = 0,
@@ -110,13 +89,8 @@ impl From<FSLSSUPP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FSLSSupp` reader - FS-Only Support"]
-pub struct FSLSSUPP_R(crate::FieldReader<bool, FSLSSUPP_A>);
 impl FSLSSUPP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FSLSSUPP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FSLSSUPP_A {
         match self.bits {
@@ -127,31 +101,17 @@ impl FSLSSUPP_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == FSLSSUPP_A::VALUE1
+        *self == FSLSSUPP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == FSLSSUPP_A::VALUE2
-    }
-}
-impl core::ops::Deref for FSLSSUPP_R {
-    type Target = crate::FieldReader<bool, FSLSSUPP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FSLSSUPP_A::VALUE2
     }
 }
 #[doc = "Field `FSLSSupp` writer - FS-Only Support"]
-pub struct FSLSSUPP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FSLSSUPP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FSLSSUPP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FSLSSUPP_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCFG_SPEC, FSLSSUPP_A, O>;
+impl<'a, const O: u8> FSLSSUPP_W<'a, O> {
     #[doc = "FS-only, connected device can supports also only FS."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -162,63 +122,17 @@ impl<'a> FSLSSUPP_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(FSLSSUPP_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
 #[doc = "Field `DescDMA` reader - Enable Scatter/gather DMA in Host mode"]
-pub struct DESCDMA_R(crate::FieldReader<bool, bool>);
-impl DESCDMA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DESCDMA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DESCDMA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DESC_DMA_R = crate::BitReader<bool>;
 #[doc = "Field `DescDMA` writer - Enable Scatter/gather DMA in Host mode"]
-pub struct DESCDMA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DESCDMA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
-}
+pub type DESC_DMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCFG_SPEC, bool, O>;
+#[doc = "Field `FrListEn` reader - Frame List Entries"]
+pub type FR_LIST_EN_R = crate::FieldReader<u8, FR_LIST_EN_A>;
 #[doc = "Frame List Entries\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum FRLISTEN_A {
+pub enum FR_LIST_EN_A {
     #[doc = "0: 8 Entries"]
     VALUE1 = 0,
     #[doc = "1: 16 Entries"]
@@ -228,182 +142,130 @@ pub enum FRLISTEN_A {
     #[doc = "3: 64 Entries"]
     VALUE4 = 3,
 }
-impl From<FRLISTEN_A> for u8 {
+impl From<FR_LIST_EN_A> for u8 {
     #[inline(always)]
-    fn from(variant: FRLISTEN_A) -> Self {
+    fn from(variant: FR_LIST_EN_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `FrListEn` reader - Frame List Entries"]
-pub struct FRLISTEN_R(crate::FieldReader<u8, FRLISTEN_A>);
-impl FRLISTEN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FRLISTEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl FR_LIST_EN_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FRLISTEN_A {
+    pub fn variant(&self) -> FR_LIST_EN_A {
         match self.bits {
-            0 => FRLISTEN_A::VALUE1,
-            1 => FRLISTEN_A::VALUE2,
-            2 => FRLISTEN_A::VALUE3,
-            3 => FRLISTEN_A::VALUE4,
+            0 => FR_LIST_EN_A::VALUE1,
+            1 => FR_LIST_EN_A::VALUE2,
+            2 => FR_LIST_EN_A::VALUE3,
+            3 => FR_LIST_EN_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == FRLISTEN_A::VALUE1
+        *self == FR_LIST_EN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == FRLISTEN_A::VALUE2
+        *self == FR_LIST_EN_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == FRLISTEN_A::VALUE3
+        *self == FR_LIST_EN_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == FRLISTEN_A::VALUE4
-    }
-}
-impl core::ops::Deref for FRLISTEN_R {
-    type Target = crate::FieldReader<u8, FRLISTEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FR_LIST_EN_A::VALUE4
     }
 }
 #[doc = "Field `FrListEn` writer - Frame List Entries"]
-pub struct FRLISTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRLISTEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FRLISTEN_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type FR_LIST_EN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, HCFG_SPEC, u8, FR_LIST_EN_A, 2, O>;
+impl<'a, const O: u8> FR_LIST_EN_W<'a, O> {
     #[doc = "8 Entries"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(FRLISTEN_A::VALUE1)
+        self.variant(FR_LIST_EN_A::VALUE1)
     }
     #[doc = "16 Entries"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(FRLISTEN_A::VALUE2)
+        self.variant(FR_LIST_EN_A::VALUE2)
     }
     #[doc = "32 Entries"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(FRLISTEN_A::VALUE3)
+        self.variant(FR_LIST_EN_A::VALUE3)
     }
     #[doc = "64 Entries"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(FRLISTEN_A::VALUE4)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
-        self.w
+        self.variant(FR_LIST_EN_A::VALUE4)
     }
 }
 #[doc = "Field `PerSchedEna` reader - Enable Periodic Scheduling"]
-pub struct PERSCHEDENA_R(crate::FieldReader<bool, bool>);
-impl PERSCHEDENA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PERSCHEDENA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PERSCHEDENA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PER_SCHED_ENA_R = crate::BitReader<bool>;
 #[doc = "Field `PerSchedEna` writer - Enable Periodic Scheduling"]
-pub struct PERSCHEDENA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PERSCHEDENA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
-    }
-}
+pub type PER_SCHED_ENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - FS PHY Clock Select"]
     #[inline(always)]
-    pub fn fslspclk_sel(&self) -> FSLSPCLKSEL_R {
-        FSLSPCLKSEL_R::new((self.bits & 0x03) as u8)
+    pub fn fslspclk_sel(&self) -> FSLSPCLK_SEL_R {
+        FSLSPCLK_SEL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - FS-Only Support"]
     #[inline(always)]
     pub fn fslssupp(&self) -> FSLSSUPP_R {
-        FSLSSUPP_R::new(((self.bits >> 2) & 0x01) != 0)
+        FSLSSUPP_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 23 - Enable Scatter/gather DMA in Host mode"]
     #[inline(always)]
-    pub fn desc_dma(&self) -> DESCDMA_R {
-        DESCDMA_R::new(((self.bits >> 23) & 0x01) != 0)
+    pub fn desc_dma(&self) -> DESC_DMA_R {
+        DESC_DMA_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bits 24:25 - Frame List Entries"]
     #[inline(always)]
-    pub fn fr_list_en(&self) -> FRLISTEN_R {
-        FRLISTEN_R::new(((self.bits >> 24) & 0x03) as u8)
+    pub fn fr_list_en(&self) -> FR_LIST_EN_R {
+        FR_LIST_EN_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bit 26 - Enable Periodic Scheduling"]
     #[inline(always)]
-    pub fn per_sched_ena(&self) -> PERSCHEDENA_R {
-        PERSCHEDENA_R::new(((self.bits >> 26) & 0x01) != 0)
+    pub fn per_sched_ena(&self) -> PER_SCHED_ENA_R {
+        PER_SCHED_ENA_R::new(((self.bits >> 26) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - FS PHY Clock Select"]
     #[inline(always)]
-    pub fn fslspclk_sel(&mut self) -> FSLSPCLKSEL_W {
-        FSLSPCLKSEL_W { w: self }
+    #[must_use]
+    pub fn fslspclk_sel(&mut self) -> FSLSPCLK_SEL_W<0> {
+        FSLSPCLK_SEL_W::new(self)
     }
     #[doc = "Bit 2 - FS-Only Support"]
     #[inline(always)]
-    pub fn fslssupp(&mut self) -> FSLSSUPP_W {
-        FSLSSUPP_W { w: self }
+    #[must_use]
+    pub fn fslssupp(&mut self) -> FSLSSUPP_W<2> {
+        FSLSSUPP_W::new(self)
     }
     #[doc = "Bit 23 - Enable Scatter/gather DMA in Host mode"]
     #[inline(always)]
-    pub fn desc_dma(&mut self) -> DESCDMA_W {
-        DESCDMA_W { w: self }
+    #[must_use]
+    pub fn desc_dma(&mut self) -> DESC_DMA_W<23> {
+        DESC_DMA_W::new(self)
     }
     #[doc = "Bits 24:25 - Frame List Entries"]
     #[inline(always)]
-    pub fn fr_list_en(&mut self) -> FRLISTEN_W {
-        FRLISTEN_W { w: self }
+    #[must_use]
+    pub fn fr_list_en(&mut self) -> FR_LIST_EN_W<24> {
+        FR_LIST_EN_W::new(self)
     }
     #[doc = "Bit 26 - Enable Periodic Scheduling"]
     #[inline(always)]
-    pub fn per_sched_ena(&mut self) -> PERSCHEDENA_W {
-        PERSCHEDENA_W { w: self }
+    #[must_use]
+    pub fn per_sched_ena(&mut self) -> PER_SCHED_ENA_W<26> {
+        PER_SCHED_ENA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -424,11 +286,10 @@ impl crate::Readable for HCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [hcfg::W](W) writer structure"]
 impl crate::Writable for HCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HCFG to value 0x0200"]
 impl crate::Resettable for HCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0200
-    }
+    const RESET_VALUE: Self::Ux = 0x0200;
 }

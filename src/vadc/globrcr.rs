@@ -34,8 +34,10 @@ impl From<crate::W<GLOBRCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DRCTR` reader - Data Reduction Control"]
+pub type DRCTR_R = crate::FieldReader<u8, DRCTR_A>;
 #[doc = "Data Reduction Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DRCTR_A {
     #[doc = "0: Data reduction disabled"]
@@ -47,13 +49,8 @@ impl From<DRCTR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DRCTR` reader - Data Reduction Control"]
-pub struct DRCTR_R(crate::FieldReader<u8, DRCTR_A>);
 impl DRCTR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DRCTR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DRCTR_A> {
         match self.bits {
@@ -64,40 +61,22 @@ impl DRCTR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DRCTR_A::VALUE1
-    }
-}
-impl core::ops::Deref for DRCTR_R {
-    type Target = crate::FieldReader<u8, DRCTR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DRCTR_A::VALUE1
     }
 }
 #[doc = "Field `DRCTR` writer - Data Reduction Control"]
-pub struct DRCTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DRCTR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DRCTR_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type DRCTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBRCR_SPEC, u8, DRCTR_A, 4, O>;
+impl<'a, const O: u8> DRCTR_W<'a, O> {
     #[doc = "Data reduction disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
         self.variant(DRCTR_A::VALUE1)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
 }
+#[doc = "Field `WFR` reader - Wait-for-Read Mode Enable"]
+pub type WFR_R = crate::BitReader<WFR_A>;
 #[doc = "Wait-for-Read Mode Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WFR_A {
     #[doc = "0: Overwrite mode"]
     VALUE1 = 0,
@@ -110,13 +89,8 @@ impl From<WFR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WFR` reader - Wait-for-Read Mode Enable"]
-pub struct WFR_R(crate::FieldReader<bool, WFR_A>);
 impl WFR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WFR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WFR_A {
         match self.bits {
@@ -127,31 +101,17 @@ impl WFR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == WFR_A::VALUE1
+        *self == WFR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == WFR_A::VALUE2
-    }
-}
-impl core::ops::Deref for WFR_R {
-    type Target = crate::FieldReader<bool, WFR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WFR_A::VALUE2
     }
 }
 #[doc = "Field `WFR` writer - Wait-for-Read Mode Enable"]
-pub struct WFR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WFR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WFR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WFR_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBRCR_SPEC, WFR_A, O>;
+impl<'a, const O: u8> WFR_W<'a, O> {
     #[doc = "Overwrite mode"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -162,25 +122,11 @@ impl<'a> WFR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(WFR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
 }
+#[doc = "Field `SRGEN` reader - Service Request Generation Enable"]
+pub type SRGEN_R = crate::BitReader<SRGEN_A>;
 #[doc = "Service Request Generation Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SRGEN_A {
     #[doc = "0: No service request"]
     VALUE1 = 0,
@@ -193,13 +139,8 @@ impl From<SRGEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SRGEN` reader - Service Request Generation Enable"]
-pub struct SRGEN_R(crate::FieldReader<bool, SRGEN_A>);
 impl SRGEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SRGEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SRGEN_A {
         match self.bits {
@@ -210,31 +151,17 @@ impl SRGEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SRGEN_A::VALUE1
+        *self == SRGEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SRGEN_A::VALUE2
-    }
-}
-impl core::ops::Deref for SRGEN_R {
-    type Target = crate::FieldReader<bool, SRGEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SRGEN_A::VALUE2
     }
 }
 #[doc = "Field `SRGEN` writer - Service Request Generation Enable"]
-pub struct SRGEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRGEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SRGEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SRGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBRCR_SPEC, SRGEN_A, O>;
+impl<'a, const O: u8> SRGEN_W<'a, O> {
     #[doc = "No service request"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -244,22 +171,6 @@ impl<'a> SRGEN_W<'a> {
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
         self.variant(SRGEN_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
     }
 }
 impl R {
@@ -271,29 +182,32 @@ impl R {
     #[doc = "Bit 24 - Wait-for-Read Mode Enable"]
     #[inline(always)]
     pub fn wfr(&self) -> WFR_R {
-        WFR_R::new(((self.bits >> 24) & 0x01) != 0)
+        WFR_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 31 - Service Request Generation Enable"]
     #[inline(always)]
     pub fn srgen(&self) -> SRGEN_R {
-        SRGEN_R::new(((self.bits >> 31) & 0x01) != 0)
+        SRGEN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 16:19 - Data Reduction Control"]
     #[inline(always)]
-    pub fn drctr(&mut self) -> DRCTR_W {
-        DRCTR_W { w: self }
+    #[must_use]
+    pub fn drctr(&mut self) -> DRCTR_W<16> {
+        DRCTR_W::new(self)
     }
     #[doc = "Bit 24 - Wait-for-Read Mode Enable"]
     #[inline(always)]
-    pub fn wfr(&mut self) -> WFR_W {
-        WFR_W { w: self }
+    #[must_use]
+    pub fn wfr(&mut self) -> WFR_W<24> {
+        WFR_W::new(self)
     }
     #[doc = "Bit 31 - Service Request Generation Enable"]
     #[inline(always)]
-    pub fn srgen(&mut self) -> SRGEN_W {
-        SRGEN_W { w: self }
+    #[must_use]
+    pub fn srgen(&mut self) -> SRGEN_W<31> {
+        SRGEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -314,11 +228,10 @@ impl crate::Readable for GLOBRCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [globrcr::W](W) writer structure"]
 impl crate::Writable for GLOBRCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GLOBRCR to value 0"]
 impl crate::Resettable for GLOBRCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

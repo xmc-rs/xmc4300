@@ -34,8 +34,10 @@ impl From<crate::W<MPU_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ENABLE` reader - Enable MPU"]
+pub type ENABLE_R = crate::BitReader<ENABLE_A>;
 #[doc = "Enable MPU\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ENABLE_A {
     #[doc = "0: MPU disabled"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ENABLE` reader - Enable MPU"]
-pub struct ENABLE_R(crate::FieldReader<bool, ENABLE_A>);
 impl ENABLE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ENABLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENABLE_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl ENABLE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ENABLE_A::VALUE1
+        *self == ENABLE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ENABLE_A::VALUE2
-    }
-}
-impl core::ops::Deref for ENABLE_R {
-    type Target = crate::FieldReader<bool, ENABLE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENABLE_A::VALUE2
     }
 }
 #[doc = "Field `ENABLE` writer - Enable MPU"]
-pub struct ENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENABLE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_CTRL_SPEC, ENABLE_A, O>;
+impl<'a, const O: u8> ENABLE_W<'a, O> {
     #[doc = "MPU disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> ENABLE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ENABLE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `HFNMIENA` reader - Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers"]
+pub type HFNMIENA_R = crate::BitReader<HFNMIENA_A>;
 #[doc = "Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HFNMIENA_A {
     #[doc = "0: MPU is disabled during hard fault, NMI, and FAULTMASK handlers, regardless of the value of the ENABLE bit"]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<HFNMIENA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HFNMIENA` reader - Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers"]
-pub struct HFNMIENA_R(crate::FieldReader<bool, HFNMIENA_A>);
 impl HFNMIENA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HFNMIENA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFNMIENA_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl HFNMIENA_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == HFNMIENA_A::VALUE1
+        *self == HFNMIENA_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == HFNMIENA_A::VALUE2
-    }
-}
-impl core::ops::Deref for HFNMIENA_R {
-    type Target = crate::FieldReader<bool, HFNMIENA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HFNMIENA_A::VALUE2
     }
 }
 #[doc = "Field `HFNMIENA` writer - Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers"]
-pub struct HFNMIENA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFNMIENA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HFNMIENA_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HFNMIENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_CTRL_SPEC, HFNMIENA_A, O>;
+impl<'a, const O: u8> HFNMIENA_W<'a, O> {
     #[doc = "MPU is disabled during hard fault, NMI, and FAULTMASK handlers, regardless of the value of the ENABLE bit"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -183,25 +133,11 @@ impl<'a> HFNMIENA_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(HFNMIENA_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `PRIVDEFENA` reader - Enables privileged software access to the default memory map"]
+pub type PRIVDEFENA_R = crate::BitReader<PRIVDEFENA_A>;
 #[doc = "Enables privileged software access to the default memory map\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PRIVDEFENA_A {
     #[doc = "0: If the MPU is enabled, disables use of the default memory map. Any memory access to a location not covered by any enabled region causes a fault."]
     VALUE1 = 0,
@@ -214,13 +150,8 @@ impl From<PRIVDEFENA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PRIVDEFENA` reader - Enables privileged software access to the default memory map"]
-pub struct PRIVDEFENA_R(crate::FieldReader<bool, PRIVDEFENA_A>);
 impl PRIVDEFENA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PRIVDEFENA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRIVDEFENA_A {
         match self.bits {
@@ -231,31 +162,17 @@ impl PRIVDEFENA_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PRIVDEFENA_A::VALUE1
+        *self == PRIVDEFENA_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PRIVDEFENA_A::VALUE2
-    }
-}
-impl core::ops::Deref for PRIVDEFENA_R {
-    type Target = crate::FieldReader<bool, PRIVDEFENA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PRIVDEFENA_A::VALUE2
     }
 }
 #[doc = "Field `PRIVDEFENA` writer - Enables privileged software access to the default memory map"]
-pub struct PRIVDEFENA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRIVDEFENA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRIVDEFENA_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PRIVDEFENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_CTRL_SPEC, PRIVDEFENA_A, O>;
+impl<'a, const O: u8> PRIVDEFENA_W<'a, O> {
     #[doc = "If the MPU is enabled, disables use of the default memory map. Any memory access to a location not covered by any enabled region causes a fault."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -266,55 +183,42 @@ impl<'a> PRIVDEFENA_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(PRIVDEFENA_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enable MPU"]
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
-        ENABLE_R::new((self.bits & 0x01) != 0)
+        ENABLE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers"]
     #[inline(always)]
     pub fn hfnmiena(&self) -> HFNMIENA_R {
-        HFNMIENA_R::new(((self.bits >> 1) & 0x01) != 0)
+        HFNMIENA_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enables privileged software access to the default memory map"]
     #[inline(always)]
     pub fn privdefena(&self) -> PRIVDEFENA_R {
-        PRIVDEFENA_R::new(((self.bits >> 2) & 0x01) != 0)
+        PRIVDEFENA_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable MPU"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W {
-        ENABLE_W { w: self }
+    #[must_use]
+    pub fn enable(&mut self) -> ENABLE_W<0> {
+        ENABLE_W::new(self)
     }
     #[doc = "Bit 1 - Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers"]
     #[inline(always)]
-    pub fn hfnmiena(&mut self) -> HFNMIENA_W {
-        HFNMIENA_W { w: self }
+    #[must_use]
+    pub fn hfnmiena(&mut self) -> HFNMIENA_W<1> {
+        HFNMIENA_W::new(self)
     }
     #[doc = "Bit 2 - Enables privileged software access to the default memory map"]
     #[inline(always)]
-    pub fn privdefena(&mut self) -> PRIVDEFENA_W {
-        PRIVDEFENA_W { w: self }
+    #[must_use]
+    pub fn privdefena(&mut self) -> PRIVDEFENA_W<2> {
+        PRIVDEFENA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -335,11 +239,10 @@ impl crate::Readable for MPU_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [mpu_ctrl::W](W) writer structure"]
 impl crate::Writable for MPU_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MPU_CTRL to value 0"]
 impl crate::Resettable for MPU_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

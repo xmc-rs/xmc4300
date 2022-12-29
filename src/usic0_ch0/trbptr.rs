@@ -14,61 +14,13 @@ impl From<crate::R<TRBPTR_SPEC>> for R {
     }
 }
 #[doc = "Field `TDIPTR` reader - Transmitter Data Input Pointer"]
-pub struct TDIPTR_R(crate::FieldReader<u8, u8>);
-impl TDIPTR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TDIPTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TDIPTR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TDIPTR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TDOPTR` reader - Transmitter Data Output Pointer"]
-pub struct TDOPTR_R(crate::FieldReader<u8, u8>);
-impl TDOPTR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TDOPTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TDOPTR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TDOPTR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RDIPTR` reader - Receiver Data Input Pointer"]
-pub struct RDIPTR_R(crate::FieldReader<u8, u8>);
-impl RDIPTR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RDIPTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RDIPTR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RDIPTR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RDOPTR` reader - Receiver Data Output Pointer"]
-pub struct RDOPTR_R(crate::FieldReader<u8, u8>);
-impl RDOPTR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RDOPTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RDOPTR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RDOPTR_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:5 - Transmitter Data Input Pointer"]
     #[inline(always)]
@@ -102,8 +54,5 @@ impl crate::Readable for TRBPTR_SPEC {
 }
 #[doc = "`reset()` method sets TRBPTR to value 0"]
 impl crate::Resettable for TRBPTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

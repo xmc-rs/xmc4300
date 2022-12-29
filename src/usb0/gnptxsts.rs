@@ -13,10 +13,12 @@ impl From<crate::R<GNPTXSTS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `NPTxFSpcAvail` reader - Non-periodic TxFIFO Space Avail"]
+pub type NPTX_FSPC_AVAIL_R = crate::FieldReader<u16, NPTX_FSPC_AVAIL_A>;
 #[doc = "Non-periodic TxFIFO Space Avail\n\nValue on reset: 16"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
-pub enum NPTXFSPCAVAIL_A {
+pub enum NPTX_FSPC_AVAIL_A {
     #[doc = "0: Non-periodic TxFIFO is full"]
     VALUE1 = 0,
     #[doc = "1: 1 word available"]
@@ -24,55 +26,45 @@ pub enum NPTXFSPCAVAIL_A {
     #[doc = "2: 2 words available"]
     VALUE3 = 2,
 }
-impl From<NPTXFSPCAVAIL_A> for u16 {
+impl From<NPTX_FSPC_AVAIL_A> for u16 {
     #[inline(always)]
-    fn from(variant: NPTXFSPCAVAIL_A) -> Self {
+    fn from(variant: NPTX_FSPC_AVAIL_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `NPTxFSpcAvail` reader - Non-periodic TxFIFO Space Avail"]
-pub struct NPTXFSPCAVAIL_R(crate::FieldReader<u16, NPTXFSPCAVAIL_A>);
-impl NPTXFSPCAVAIL_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        NPTXFSPCAVAIL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl NPTX_FSPC_AVAIL_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NPTXFSPCAVAIL_A> {
+    pub fn variant(&self) -> Option<NPTX_FSPC_AVAIL_A> {
         match self.bits {
-            0 => Some(NPTXFSPCAVAIL_A::VALUE1),
-            1 => Some(NPTXFSPCAVAIL_A::VALUE2),
-            2 => Some(NPTXFSPCAVAIL_A::VALUE3),
+            0 => Some(NPTX_FSPC_AVAIL_A::VALUE1),
+            1 => Some(NPTX_FSPC_AVAIL_A::VALUE2),
+            2 => Some(NPTX_FSPC_AVAIL_A::VALUE3),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == NPTXFSPCAVAIL_A::VALUE1
+        *self == NPTX_FSPC_AVAIL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == NPTXFSPCAVAIL_A::VALUE2
+        *self == NPTX_FSPC_AVAIL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == NPTXFSPCAVAIL_A::VALUE3
+        *self == NPTX_FSPC_AVAIL_A::VALUE3
     }
 }
-impl core::ops::Deref for NPTXFSPCAVAIL_R {
-    type Target = crate::FieldReader<u16, NPTXFSPCAVAIL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `NPTxQSpcAvail` reader - Non-periodic Transmit Request Queue Space Available"]
+pub type NPTX_QSPC_AVAIL_R = crate::FieldReader<u8, NPTX_QSPC_AVAIL_A>;
 #[doc = "Non-periodic Transmit Request Queue Space Available\n\nValue on reset: 8"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum NPTXQSPCAVAIL_A {
+pub enum NPTX_QSPC_AVAIL_A {
     #[doc = "0: Non-periodic Transmit Request Queue is full"]
     VALUE1 = 0,
     #[doc = "1: 1 location available"]
@@ -80,55 +72,45 @@ pub enum NPTXQSPCAVAIL_A {
     #[doc = "2: 2 locations available"]
     VALUE3 = 2,
 }
-impl From<NPTXQSPCAVAIL_A> for u8 {
+impl From<NPTX_QSPC_AVAIL_A> for u8 {
     #[inline(always)]
-    fn from(variant: NPTXQSPCAVAIL_A) -> Self {
+    fn from(variant: NPTX_QSPC_AVAIL_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `NPTxQSpcAvail` reader - Non-periodic Transmit Request Queue Space Available"]
-pub struct NPTXQSPCAVAIL_R(crate::FieldReader<u8, NPTXQSPCAVAIL_A>);
-impl NPTXQSPCAVAIL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NPTXQSPCAVAIL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl NPTX_QSPC_AVAIL_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NPTXQSPCAVAIL_A> {
+    pub fn variant(&self) -> Option<NPTX_QSPC_AVAIL_A> {
         match self.bits {
-            0 => Some(NPTXQSPCAVAIL_A::VALUE1),
-            1 => Some(NPTXQSPCAVAIL_A::VALUE2),
-            2 => Some(NPTXQSPCAVAIL_A::VALUE3),
+            0 => Some(NPTX_QSPC_AVAIL_A::VALUE1),
+            1 => Some(NPTX_QSPC_AVAIL_A::VALUE2),
+            2 => Some(NPTX_QSPC_AVAIL_A::VALUE3),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == NPTXQSPCAVAIL_A::VALUE1
+        *self == NPTX_QSPC_AVAIL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == NPTXQSPCAVAIL_A::VALUE2
+        *self == NPTX_QSPC_AVAIL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == NPTXQSPCAVAIL_A::VALUE3
+        *self == NPTX_QSPC_AVAIL_A::VALUE3
     }
 }
-impl core::ops::Deref for NPTXQSPCAVAIL_R {
-    type Target = crate::FieldReader<u8, NPTXQSPCAVAIL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `NPTxQTop` reader - Top of the Non-periodic Transmit Request Queue"]
+pub type NPTX_QTOP_R = crate::FieldReader<u8, NPTX_QTOP_A>;
 #[doc = "Top of the Non-periodic Transmit Request Queue\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum NPTXQTOP_A {
+pub enum NPTX_QTOP_A {
     #[doc = "0: IN/OUT token"]
     VALUE1 = 0,
     #[doc = "1: Zero-length transmit packet (device IN/host OUT)"]
@@ -136,66 +118,54 @@ pub enum NPTXQTOP_A {
     #[doc = "3: Channel halt command"]
     VALUE4 = 3,
 }
-impl From<NPTXQTOP_A> for u8 {
+impl From<NPTX_QTOP_A> for u8 {
     #[inline(always)]
-    fn from(variant: NPTXQTOP_A) -> Self {
+    fn from(variant: NPTX_QTOP_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `NPTxQTop` reader - Top of the Non-periodic Transmit Request Queue"]
-pub struct NPTXQTOP_R(crate::FieldReader<u8, NPTXQTOP_A>);
-impl NPTXQTOP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NPTXQTOP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl NPTX_QTOP_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NPTXQTOP_A> {
+    pub fn variant(&self) -> Option<NPTX_QTOP_A> {
         match self.bits {
-            0 => Some(NPTXQTOP_A::VALUE1),
-            1 => Some(NPTXQTOP_A::VALUE2),
-            3 => Some(NPTXQTOP_A::VALUE4),
+            0 => Some(NPTX_QTOP_A::VALUE1),
+            1 => Some(NPTX_QTOP_A::VALUE2),
+            3 => Some(NPTX_QTOP_A::VALUE4),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == NPTXQTOP_A::VALUE1
+        *self == NPTX_QTOP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == NPTXQTOP_A::VALUE2
+        *self == NPTX_QTOP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == NPTXQTOP_A::VALUE4
-    }
-}
-impl core::ops::Deref for NPTXQTOP_R {
-    type Target = crate::FieldReader<u8, NPTXQTOP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == NPTX_QTOP_A::VALUE4
     }
 }
 impl R {
     #[doc = "Bits 0:15 - Non-periodic TxFIFO Space Avail"]
     #[inline(always)]
-    pub fn nptx_fspc_avail(&self) -> NPTXFSPCAVAIL_R {
-        NPTXFSPCAVAIL_R::new((self.bits & 0xffff) as u16)
+    pub fn nptx_fspc_avail(&self) -> NPTX_FSPC_AVAIL_R {
+        NPTX_FSPC_AVAIL_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:23 - Non-periodic Transmit Request Queue Space Available"]
     #[inline(always)]
-    pub fn nptx_qspc_avail(&self) -> NPTXQSPCAVAIL_R {
-        NPTXQSPCAVAIL_R::new(((self.bits >> 16) & 0xff) as u8)
+    pub fn nptx_qspc_avail(&self) -> NPTX_QSPC_AVAIL_R {
+        NPTX_QSPC_AVAIL_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:30 - Top of the Non-periodic Transmit Request Queue"]
     #[inline(always)]
-    pub fn nptx_qtop(&self) -> NPTXQTOP_R {
-        NPTXQTOP_R::new(((self.bits >> 24) & 0x7f) as u8)
+    pub fn nptx_qtop(&self) -> NPTX_QTOP_R {
+        NPTX_QTOP_R::new(((self.bits >> 24) & 0x7f) as u8)
     }
 }
 #[doc = "Non-Periodic Transmit FIFO/Queue Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gnptxsts](index.html) module"]
@@ -209,8 +179,5 @@ impl crate::Readable for GNPTXSTS_SPEC {
 }
 #[doc = "`reset()` method sets GNPTXSTS to value 0x0008_0010"]
 impl crate::Resettable for GNPTXSTS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0008_0010
-    }
+    const RESET_VALUE: Self::Ux = 0x0008_0010;
 }

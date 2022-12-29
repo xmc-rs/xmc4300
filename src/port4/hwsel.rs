@@ -34,8 +34,10 @@ impl From<crate::W<HWSEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `HW0` reader - Port n Pin Hardware Select Bit 0"]
+pub type HW0_R = crate::FieldReader<u8, HW0_A>;
 #[doc = "Port n Pin Hardware Select Bit 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW0_A {
     #[doc = "0: Software control only."]
@@ -51,13 +53,8 @@ impl From<HW0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW0` reader - Port n Pin Hardware Select Bit 0"]
-pub struct HW0_R(crate::FieldReader<u8, HW0_A>);
 impl HW0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW0_A> {
         match self.bits {
@@ -70,36 +67,22 @@ impl HW0_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW0_A::CONST_00
+        *self == HW0_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW0_A::CONST_01
+        *self == HW0_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW0_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW0_R {
-    type Target = crate::FieldReader<u8, HW0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW0_A::CONST_10
     }
 }
 #[doc = "Field `HW0` writer - Port n Pin Hardware Select Bit 0"]
-pub struct HW0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW0_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW0_A, 2, O>;
+impl<'a, const O: u8> HW0_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -115,15 +98,11 @@ impl<'a> HW0_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW0_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
+#[doc = "Field `HW1` reader - Port n Pin Hardware Select Bit 1"]
+pub type HW1_R = crate::FieldReader<u8, HW1_A>;
 #[doc = "Port n Pin Hardware Select Bit 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW1_A {
     #[doc = "0: Software control only."]
@@ -139,13 +118,8 @@ impl From<HW1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW1` reader - Port n Pin Hardware Select Bit 1"]
-pub struct HW1_R(crate::FieldReader<u8, HW1_A>);
 impl HW1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW1_A> {
         match self.bits {
@@ -158,36 +132,22 @@ impl HW1_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW1_A::CONST_00
+        *self == HW1_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW1_A::CONST_01
+        *self == HW1_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW1_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW1_R {
-    type Target = crate::FieldReader<u8, HW1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW1_A::CONST_10
     }
 }
 #[doc = "Field `HW1` writer - Port n Pin Hardware Select Bit 1"]
-pub struct HW1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW1_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW1_A, 2, O>;
+impl<'a, const O: u8> HW1_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -203,15 +163,11 @@ impl<'a> HW1_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW1_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
-    }
 }
+#[doc = "Field `HW2` reader - Port n Pin Hardware Select Bit 2"]
+pub type HW2_R = crate::FieldReader<u8, HW2_A>;
 #[doc = "Port n Pin Hardware Select Bit 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW2_A {
     #[doc = "0: Software control only."]
@@ -227,13 +183,8 @@ impl From<HW2_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW2` reader - Port n Pin Hardware Select Bit 2"]
-pub struct HW2_R(crate::FieldReader<u8, HW2_A>);
 impl HW2_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW2_A> {
         match self.bits {
@@ -246,36 +197,22 @@ impl HW2_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW2_A::CONST_00
+        *self == HW2_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW2_A::CONST_01
+        *self == HW2_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW2_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW2_R {
-    type Target = crate::FieldReader<u8, HW2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW2_A::CONST_10
     }
 }
 #[doc = "Field `HW2` writer - Port n Pin Hardware Select Bit 2"]
-pub struct HW2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW2_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW2_A, 2, O>;
+impl<'a, const O: u8> HW2_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -291,15 +228,11 @@ impl<'a> HW2_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW2_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
 }
+#[doc = "Field `HW3` reader - Port n Pin Hardware Select Bit 3"]
+pub type HW3_R = crate::FieldReader<u8, HW3_A>;
 #[doc = "Port n Pin Hardware Select Bit 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW3_A {
     #[doc = "0: Software control only."]
@@ -315,13 +248,8 @@ impl From<HW3_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW3` reader - Port n Pin Hardware Select Bit 3"]
-pub struct HW3_R(crate::FieldReader<u8, HW3_A>);
 impl HW3_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW3_A> {
         match self.bits {
@@ -334,36 +262,22 @@ impl HW3_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW3_A::CONST_00
+        *self == HW3_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW3_A::CONST_01
+        *self == HW3_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW3_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW3_R {
-    type Target = crate::FieldReader<u8, HW3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW3_A::CONST_10
     }
 }
 #[doc = "Field `HW3` writer - Port n Pin Hardware Select Bit 3"]
-pub struct HW3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW3_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW3_A, 2, O>;
+impl<'a, const O: u8> HW3_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -379,15 +293,11 @@ impl<'a> HW3_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW3_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
-        self.w
-    }
 }
+#[doc = "Field `HW4` reader - Port n Pin Hardware Select Bit 4"]
+pub type HW4_R = crate::FieldReader<u8, HW4_A>;
 #[doc = "Port n Pin Hardware Select Bit 4\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW4_A {
     #[doc = "0: Software control only."]
@@ -403,13 +313,8 @@ impl From<HW4_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW4` reader - Port n Pin Hardware Select Bit 4"]
-pub struct HW4_R(crate::FieldReader<u8, HW4_A>);
 impl HW4_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW4_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW4_A> {
         match self.bits {
@@ -422,36 +327,22 @@ impl HW4_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW4_A::CONST_00
+        *self == HW4_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW4_A::CONST_01
+        *self == HW4_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW4_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW4_R {
-    type Target = crate::FieldReader<u8, HW4_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW4_A::CONST_10
     }
 }
 #[doc = "Field `HW4` writer - Port n Pin Hardware Select Bit 4"]
-pub struct HW4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW4_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW4_A, 2, O>;
+impl<'a, const O: u8> HW4_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -467,15 +358,11 @@ impl<'a> HW4_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW4_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
 }
+#[doc = "Field `HW5` reader - Port n Pin Hardware Select Bit 5"]
+pub type HW5_R = crate::FieldReader<u8, HW5_A>;
 #[doc = "Port n Pin Hardware Select Bit 5\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW5_A {
     #[doc = "0: Software control only."]
@@ -491,13 +378,8 @@ impl From<HW5_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW5` reader - Port n Pin Hardware Select Bit 5"]
-pub struct HW5_R(crate::FieldReader<u8, HW5_A>);
 impl HW5_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW5_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW5_A> {
         match self.bits {
@@ -510,36 +392,22 @@ impl HW5_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW5_A::CONST_00
+        *self == HW5_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW5_A::CONST_01
+        *self == HW5_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW5_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW5_R {
-    type Target = crate::FieldReader<u8, HW5_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW5_A::CONST_10
     }
 }
 #[doc = "Field `HW5` writer - Port n Pin Hardware Select Bit 5"]
-pub struct HW5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW5_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW5_A, 2, O>;
+impl<'a, const O: u8> HW5_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -555,15 +423,11 @@ impl<'a> HW5_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW5_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
-        self.w
-    }
 }
+#[doc = "Field `HW6` reader - Port n Pin Hardware Select Bit 6"]
+pub type HW6_R = crate::FieldReader<u8, HW6_A>;
 #[doc = "Port n Pin Hardware Select Bit 6\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW6_A {
     #[doc = "0: Software control only."]
@@ -579,13 +443,8 @@ impl From<HW6_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW6` reader - Port n Pin Hardware Select Bit 6"]
-pub struct HW6_R(crate::FieldReader<u8, HW6_A>);
 impl HW6_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW6_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW6_A> {
         match self.bits {
@@ -598,36 +457,22 @@ impl HW6_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW6_A::CONST_00
+        *self == HW6_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW6_A::CONST_01
+        *self == HW6_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW6_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW6_R {
-    type Target = crate::FieldReader<u8, HW6_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW6_A::CONST_10
     }
 }
 #[doc = "Field `HW6` writer - Port n Pin Hardware Select Bit 6"]
-pub struct HW6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW6_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW6_A, 2, O>;
+impl<'a, const O: u8> HW6_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -643,15 +488,11 @@ impl<'a> HW6_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW6_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
-    }
 }
+#[doc = "Field `HW7` reader - Port n Pin Hardware Select Bit 7"]
+pub type HW7_R = crate::FieldReader<u8, HW7_A>;
 #[doc = "Port n Pin Hardware Select Bit 7\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW7_A {
     #[doc = "0: Software control only."]
@@ -667,13 +508,8 @@ impl From<HW7_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW7` reader - Port n Pin Hardware Select Bit 7"]
-pub struct HW7_R(crate::FieldReader<u8, HW7_A>);
 impl HW7_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW7_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW7_A> {
         match self.bits {
@@ -686,36 +522,22 @@ impl HW7_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW7_A::CONST_00
+        *self == HW7_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW7_A::CONST_01
+        *self == HW7_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW7_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW7_R {
-    type Target = crate::FieldReader<u8, HW7_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW7_A::CONST_10
     }
 }
 #[doc = "Field `HW7` writer - Port n Pin Hardware Select Bit 7"]
-pub struct HW7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW7_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW7_A, 2, O>;
+impl<'a, const O: u8> HW7_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -731,15 +553,11 @@ impl<'a> HW7_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW7_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 14)) | ((value as u32 & 0x03) << 14);
-        self.w
-    }
 }
+#[doc = "Field `HW8` reader - Port n Pin Hardware Select Bit 8"]
+pub type HW8_R = crate::FieldReader<u8, HW8_A>;
 #[doc = "Port n Pin Hardware Select Bit 8\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW8_A {
     #[doc = "0: Software control only."]
@@ -755,13 +573,8 @@ impl From<HW8_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW8` reader - Port n Pin Hardware Select Bit 8"]
-pub struct HW8_R(crate::FieldReader<u8, HW8_A>);
 impl HW8_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW8_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW8_A> {
         match self.bits {
@@ -774,36 +587,22 @@ impl HW8_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW8_A::CONST_00
+        *self == HW8_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW8_A::CONST_01
+        *self == HW8_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW8_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW8_R {
-    type Target = crate::FieldReader<u8, HW8_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW8_A::CONST_10
     }
 }
 #[doc = "Field `HW8` writer - Port n Pin Hardware Select Bit 8"]
-pub struct HW8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW8_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW8_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW8_A, 2, O>;
+impl<'a, const O: u8> HW8_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -819,15 +618,11 @@ impl<'a> HW8_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW8_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
-    }
 }
+#[doc = "Field `HW9` reader - Port n Pin Hardware Select Bit 9"]
+pub type HW9_R = crate::FieldReader<u8, HW9_A>;
 #[doc = "Port n Pin Hardware Select Bit 9\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW9_A {
     #[doc = "0: Software control only."]
@@ -843,13 +638,8 @@ impl From<HW9_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW9` reader - Port n Pin Hardware Select Bit 9"]
-pub struct HW9_R(crate::FieldReader<u8, HW9_A>);
 impl HW9_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW9_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW9_A> {
         match self.bits {
@@ -862,36 +652,22 @@ impl HW9_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW9_A::CONST_00
+        *self == HW9_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW9_A::CONST_01
+        *self == HW9_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW9_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW9_R {
-    type Target = crate::FieldReader<u8, HW9_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW9_A::CONST_10
     }
 }
 #[doc = "Field `HW9` writer - Port n Pin Hardware Select Bit 9"]
-pub struct HW9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW9_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW9_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW9_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW9_A, 2, O>;
+impl<'a, const O: u8> HW9_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -907,15 +683,11 @@ impl<'a> HW9_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW9_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 18)) | ((value as u32 & 0x03) << 18);
-        self.w
-    }
 }
+#[doc = "Field `HW10` reader - Port n Pin Hardware Select Bit 10"]
+pub type HW10_R = crate::FieldReader<u8, HW10_A>;
 #[doc = "Port n Pin Hardware Select Bit 10\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW10_A {
     #[doc = "0: Software control only."]
@@ -931,13 +703,8 @@ impl From<HW10_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW10` reader - Port n Pin Hardware Select Bit 10"]
-pub struct HW10_R(crate::FieldReader<u8, HW10_A>);
 impl HW10_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW10_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW10_A> {
         match self.bits {
@@ -950,36 +717,22 @@ impl HW10_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW10_A::CONST_00
+        *self == HW10_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW10_A::CONST_01
+        *self == HW10_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW10_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW10_R {
-    type Target = crate::FieldReader<u8, HW10_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW10_A::CONST_10
     }
 }
 #[doc = "Field `HW10` writer - Port n Pin Hardware Select Bit 10"]
-pub struct HW10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW10_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW10_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW10_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW10_A, 2, O>;
+impl<'a, const O: u8> HW10_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -995,15 +748,11 @@ impl<'a> HW10_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW10_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | ((value as u32 & 0x03) << 20);
-        self.w
-    }
 }
+#[doc = "Field `HW11` reader - Port n Pin Hardware Select Bit 11"]
+pub type HW11_R = crate::FieldReader<u8, HW11_A>;
 #[doc = "Port n Pin Hardware Select Bit 11\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW11_A {
     #[doc = "0: Software control only."]
@@ -1019,13 +768,8 @@ impl From<HW11_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW11` reader - Port n Pin Hardware Select Bit 11"]
-pub struct HW11_R(crate::FieldReader<u8, HW11_A>);
 impl HW11_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW11_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW11_A> {
         match self.bits {
@@ -1038,36 +782,22 @@ impl HW11_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW11_A::CONST_00
+        *self == HW11_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW11_A::CONST_01
+        *self == HW11_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW11_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW11_R {
-    type Target = crate::FieldReader<u8, HW11_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW11_A::CONST_10
     }
 }
 #[doc = "Field `HW11` writer - Port n Pin Hardware Select Bit 11"]
-pub struct HW11_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW11_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW11_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW11_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW11_A, 2, O>;
+impl<'a, const O: u8> HW11_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -1083,15 +813,11 @@ impl<'a> HW11_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW11_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | ((value as u32 & 0x03) << 22);
-        self.w
-    }
 }
+#[doc = "Field `HW12` reader - Port n Pin Hardware Select Bit 12"]
+pub type HW12_R = crate::FieldReader<u8, HW12_A>;
 #[doc = "Port n Pin Hardware Select Bit 12\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW12_A {
     #[doc = "0: Software control only."]
@@ -1107,13 +833,8 @@ impl From<HW12_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW12` reader - Port n Pin Hardware Select Bit 12"]
-pub struct HW12_R(crate::FieldReader<u8, HW12_A>);
 impl HW12_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW12_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW12_A> {
         match self.bits {
@@ -1126,36 +847,22 @@ impl HW12_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW12_A::CONST_00
+        *self == HW12_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW12_A::CONST_01
+        *self == HW12_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW12_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW12_R {
-    type Target = crate::FieldReader<u8, HW12_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW12_A::CONST_10
     }
 }
 #[doc = "Field `HW12` writer - Port n Pin Hardware Select Bit 12"]
-pub struct HW12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW12_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW12_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW12_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW12_A, 2, O>;
+impl<'a, const O: u8> HW12_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -1171,15 +878,11 @@ impl<'a> HW12_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW12_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
-        self.w
-    }
 }
+#[doc = "Field `HW13` reader - Port n Pin Hardware Select Bit 13"]
+pub type HW13_R = crate::FieldReader<u8, HW13_A>;
 #[doc = "Port n Pin Hardware Select Bit 13\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW13_A {
     #[doc = "0: Software control only."]
@@ -1195,13 +898,8 @@ impl From<HW13_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW13` reader - Port n Pin Hardware Select Bit 13"]
-pub struct HW13_R(crate::FieldReader<u8, HW13_A>);
 impl HW13_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW13_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW13_A> {
         match self.bits {
@@ -1214,36 +912,22 @@ impl HW13_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW13_A::CONST_00
+        *self == HW13_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW13_A::CONST_01
+        *self == HW13_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW13_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW13_R {
-    type Target = crate::FieldReader<u8, HW13_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW13_A::CONST_10
     }
 }
 #[doc = "Field `HW13` writer - Port n Pin Hardware Select Bit 13"]
-pub struct HW13_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW13_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW13_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW13_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW13_A, 2, O>;
+impl<'a, const O: u8> HW13_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -1259,15 +943,11 @@ impl<'a> HW13_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW13_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 26)) | ((value as u32 & 0x03) << 26);
-        self.w
-    }
 }
+#[doc = "Field `HW14` reader - Port n Pin Hardware Select Bit 14"]
+pub type HW14_R = crate::FieldReader<u8, HW14_A>;
 #[doc = "Port n Pin Hardware Select Bit 14\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW14_A {
     #[doc = "0: Software control only."]
@@ -1283,13 +963,8 @@ impl From<HW14_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW14` reader - Port n Pin Hardware Select Bit 14"]
-pub struct HW14_R(crate::FieldReader<u8, HW14_A>);
 impl HW14_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW14_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW14_A> {
         match self.bits {
@@ -1302,36 +977,22 @@ impl HW14_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW14_A::CONST_00
+        *self == HW14_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW14_A::CONST_01
+        *self == HW14_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW14_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW14_R {
-    type Target = crate::FieldReader<u8, HW14_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW14_A::CONST_10
     }
 }
 #[doc = "Field `HW14` writer - Port n Pin Hardware Select Bit 14"]
-pub struct HW14_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW14_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW14_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW14_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW14_A, 2, O>;
+impl<'a, const O: u8> HW14_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -1347,15 +1008,11 @@ impl<'a> HW14_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW14_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 28)) | ((value as u32 & 0x03) << 28);
-        self.w
-    }
 }
+#[doc = "Field `HW15` reader - Port n Pin Hardware Select Bit 15"]
+pub type HW15_R = crate::FieldReader<u8, HW15_A>;
 #[doc = "Port n Pin Hardware Select Bit 15\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HW15_A {
     #[doc = "0: Software control only."]
@@ -1371,13 +1028,8 @@ impl From<HW15_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HW15` reader - Port n Pin Hardware Select Bit 15"]
-pub struct HW15_R(crate::FieldReader<u8, HW15_A>);
 impl HW15_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HW15_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HW15_A> {
         match self.bits {
@@ -1390,36 +1042,22 @@ impl HW15_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == HW15_A::CONST_00
+        *self == HW15_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == HW15_A::CONST_01
+        *self == HW15_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == HW15_A::CONST_10
-    }
-}
-impl core::ops::Deref for HW15_R {
-    type Target = crate::FieldReader<u8, HW15_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW15_A::CONST_10
     }
 }
 #[doc = "Field `HW15` writer - Port n Pin Hardware Select Bit 15"]
-pub struct HW15_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HW15_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW15_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HW15_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW15_A, 2, O>;
+impl<'a, const O: u8> HW15_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -1435,175 +1073,185 @@ impl<'a> HW15_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(HW15_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 30)) | ((value as u32 & 0x03) << 30);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Port n Pin Hardware Select Bit 0"]
     #[inline(always)]
     pub fn hw0(&self) -> HW0_R {
-        HW0_R::new((self.bits & 0x03) as u8)
+        HW0_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - Port n Pin Hardware Select Bit 1"]
     #[inline(always)]
     pub fn hw1(&self) -> HW1_R {
-        HW1_R::new(((self.bits >> 2) & 0x03) as u8)
+        HW1_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - Port n Pin Hardware Select Bit 2"]
     #[inline(always)]
     pub fn hw2(&self) -> HW2_R {
-        HW2_R::new(((self.bits >> 4) & 0x03) as u8)
+        HW2_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - Port n Pin Hardware Select Bit 3"]
     #[inline(always)]
     pub fn hw3(&self) -> HW3_R {
-        HW3_R::new(((self.bits >> 6) & 0x03) as u8)
+        HW3_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:9 - Port n Pin Hardware Select Bit 4"]
     #[inline(always)]
     pub fn hw4(&self) -> HW4_R {
-        HW4_R::new(((self.bits >> 8) & 0x03) as u8)
+        HW4_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - Port n Pin Hardware Select Bit 5"]
     #[inline(always)]
     pub fn hw5(&self) -> HW5_R {
-        HW5_R::new(((self.bits >> 10) & 0x03) as u8)
+        HW5_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - Port n Pin Hardware Select Bit 6"]
     #[inline(always)]
     pub fn hw6(&self) -> HW6_R {
-        HW6_R::new(((self.bits >> 12) & 0x03) as u8)
+        HW6_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 14:15 - Port n Pin Hardware Select Bit 7"]
     #[inline(always)]
     pub fn hw7(&self) -> HW7_R {
-        HW7_R::new(((self.bits >> 14) & 0x03) as u8)
+        HW7_R::new(((self.bits >> 14) & 3) as u8)
     }
     #[doc = "Bits 16:17 - Port n Pin Hardware Select Bit 8"]
     #[inline(always)]
     pub fn hw8(&self) -> HW8_R {
-        HW8_R::new(((self.bits >> 16) & 0x03) as u8)
+        HW8_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 18:19 - Port n Pin Hardware Select Bit 9"]
     #[inline(always)]
     pub fn hw9(&self) -> HW9_R {
-        HW9_R::new(((self.bits >> 18) & 0x03) as u8)
+        HW9_R::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bits 20:21 - Port n Pin Hardware Select Bit 10"]
     #[inline(always)]
     pub fn hw10(&self) -> HW10_R {
-        HW10_R::new(((self.bits >> 20) & 0x03) as u8)
+        HW10_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 22:23 - Port n Pin Hardware Select Bit 11"]
     #[inline(always)]
     pub fn hw11(&self) -> HW11_R {
-        HW11_R::new(((self.bits >> 22) & 0x03) as u8)
+        HW11_R::new(((self.bits >> 22) & 3) as u8)
     }
     #[doc = "Bits 24:25 - Port n Pin Hardware Select Bit 12"]
     #[inline(always)]
     pub fn hw12(&self) -> HW12_R {
-        HW12_R::new(((self.bits >> 24) & 0x03) as u8)
+        HW12_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 26:27 - Port n Pin Hardware Select Bit 13"]
     #[inline(always)]
     pub fn hw13(&self) -> HW13_R {
-        HW13_R::new(((self.bits >> 26) & 0x03) as u8)
+        HW13_R::new(((self.bits >> 26) & 3) as u8)
     }
     #[doc = "Bits 28:29 - Port n Pin Hardware Select Bit 14"]
     #[inline(always)]
     pub fn hw14(&self) -> HW14_R {
-        HW14_R::new(((self.bits >> 28) & 0x03) as u8)
+        HW14_R::new(((self.bits >> 28) & 3) as u8)
     }
     #[doc = "Bits 30:31 - Port n Pin Hardware Select Bit 15"]
     #[inline(always)]
     pub fn hw15(&self) -> HW15_R {
-        HW15_R::new(((self.bits >> 30) & 0x03) as u8)
+        HW15_R::new(((self.bits >> 30) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Port n Pin Hardware Select Bit 0"]
     #[inline(always)]
-    pub fn hw0(&mut self) -> HW0_W {
-        HW0_W { w: self }
+    #[must_use]
+    pub fn hw0(&mut self) -> HW0_W<0> {
+        HW0_W::new(self)
     }
     #[doc = "Bits 2:3 - Port n Pin Hardware Select Bit 1"]
     #[inline(always)]
-    pub fn hw1(&mut self) -> HW1_W {
-        HW1_W { w: self }
+    #[must_use]
+    pub fn hw1(&mut self) -> HW1_W<2> {
+        HW1_W::new(self)
     }
     #[doc = "Bits 4:5 - Port n Pin Hardware Select Bit 2"]
     #[inline(always)]
-    pub fn hw2(&mut self) -> HW2_W {
-        HW2_W { w: self }
+    #[must_use]
+    pub fn hw2(&mut self) -> HW2_W<4> {
+        HW2_W::new(self)
     }
     #[doc = "Bits 6:7 - Port n Pin Hardware Select Bit 3"]
     #[inline(always)]
-    pub fn hw3(&mut self) -> HW3_W {
-        HW3_W { w: self }
+    #[must_use]
+    pub fn hw3(&mut self) -> HW3_W<6> {
+        HW3_W::new(self)
     }
     #[doc = "Bits 8:9 - Port n Pin Hardware Select Bit 4"]
     #[inline(always)]
-    pub fn hw4(&mut self) -> HW4_W {
-        HW4_W { w: self }
+    #[must_use]
+    pub fn hw4(&mut self) -> HW4_W<8> {
+        HW4_W::new(self)
     }
     #[doc = "Bits 10:11 - Port n Pin Hardware Select Bit 5"]
     #[inline(always)]
-    pub fn hw5(&mut self) -> HW5_W {
-        HW5_W { w: self }
+    #[must_use]
+    pub fn hw5(&mut self) -> HW5_W<10> {
+        HW5_W::new(self)
     }
     #[doc = "Bits 12:13 - Port n Pin Hardware Select Bit 6"]
     #[inline(always)]
-    pub fn hw6(&mut self) -> HW6_W {
-        HW6_W { w: self }
+    #[must_use]
+    pub fn hw6(&mut self) -> HW6_W<12> {
+        HW6_W::new(self)
     }
     #[doc = "Bits 14:15 - Port n Pin Hardware Select Bit 7"]
     #[inline(always)]
-    pub fn hw7(&mut self) -> HW7_W {
-        HW7_W { w: self }
+    #[must_use]
+    pub fn hw7(&mut self) -> HW7_W<14> {
+        HW7_W::new(self)
     }
     #[doc = "Bits 16:17 - Port n Pin Hardware Select Bit 8"]
     #[inline(always)]
-    pub fn hw8(&mut self) -> HW8_W {
-        HW8_W { w: self }
+    #[must_use]
+    pub fn hw8(&mut self) -> HW8_W<16> {
+        HW8_W::new(self)
     }
     #[doc = "Bits 18:19 - Port n Pin Hardware Select Bit 9"]
     #[inline(always)]
-    pub fn hw9(&mut self) -> HW9_W {
-        HW9_W { w: self }
+    #[must_use]
+    pub fn hw9(&mut self) -> HW9_W<18> {
+        HW9_W::new(self)
     }
     #[doc = "Bits 20:21 - Port n Pin Hardware Select Bit 10"]
     #[inline(always)]
-    pub fn hw10(&mut self) -> HW10_W {
-        HW10_W { w: self }
+    #[must_use]
+    pub fn hw10(&mut self) -> HW10_W<20> {
+        HW10_W::new(self)
     }
     #[doc = "Bits 22:23 - Port n Pin Hardware Select Bit 11"]
     #[inline(always)]
-    pub fn hw11(&mut self) -> HW11_W {
-        HW11_W { w: self }
+    #[must_use]
+    pub fn hw11(&mut self) -> HW11_W<22> {
+        HW11_W::new(self)
     }
     #[doc = "Bits 24:25 - Port n Pin Hardware Select Bit 12"]
     #[inline(always)]
-    pub fn hw12(&mut self) -> HW12_W {
-        HW12_W { w: self }
+    #[must_use]
+    pub fn hw12(&mut self) -> HW12_W<24> {
+        HW12_W::new(self)
     }
     #[doc = "Bits 26:27 - Port n Pin Hardware Select Bit 13"]
     #[inline(always)]
-    pub fn hw13(&mut self) -> HW13_W {
-        HW13_W { w: self }
+    #[must_use]
+    pub fn hw13(&mut self) -> HW13_W<26> {
+        HW13_W::new(self)
     }
     #[doc = "Bits 28:29 - Port n Pin Hardware Select Bit 14"]
     #[inline(always)]
-    pub fn hw14(&mut self) -> HW14_W {
-        HW14_W { w: self }
+    #[must_use]
+    pub fn hw14(&mut self) -> HW14_W<28> {
+        HW14_W::new(self)
     }
     #[doc = "Bits 30:31 - Port n Pin Hardware Select Bit 15"]
     #[inline(always)]
-    pub fn hw15(&mut self) -> HW15_W {
-        HW15_W { w: self }
+    #[must_use]
+    pub fn hw15(&mut self) -> HW15_W<30> {
+        HW15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -1624,11 +1272,10 @@ impl crate::Readable for HWSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [hwsel::W](W) writer structure"]
 impl crate::Writable for HWSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HWSEL to value 0"]
 impl crate::Resettable for HWSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

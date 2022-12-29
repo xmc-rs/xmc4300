@@ -35,34 +35,15 @@ impl From<crate::W<MII_PHY_ADR_SPEC>> for W {
     }
 }
 #[doc = "Field `PHY_ADDR` reader - PHY Address"]
-pub struct PHY_ADDR_R(crate::FieldReader<u8, u8>);
-impl PHY_ADDR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PHY_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PHY_ADDR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PHY_ADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PHY_ADDR` writer - PHY Address"]
-pub struct PHY_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PHY_ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u8 & 0x1f);
-        self.w
-    }
-}
+pub type PHY_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u8, MII_PHY_ADR_SPEC, u8, u8, 5, O>;
+#[doc = "Field `PHY_CADDR` reader - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
+of this register (valid values are 0-3)"]
+pub type PHY_CADDR_R = crate::BitReader<PHY_CADDR_A>;
 #[doc = "Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
 of this register (valid values are 0-3)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PHY_CADDR_A {
     #[doc = "0: Show address of port 0 (offset)"]
     VALUE1 = 0,
@@ -75,14 +56,8 @@ impl From<PHY_CADDR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PHY_CADDR` reader - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
-of this register (valid values are 0-3)"]
-pub struct PHY_CADDR_R(crate::FieldReader<bool, PHY_CADDR_A>);
 impl PHY_CADDR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PHY_CADDR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PHY_CADDR_A {
         match self.bits {
@@ -93,32 +68,18 @@ impl PHY_CADDR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PHY_CADDR_A::VALUE1
+        *self == PHY_CADDR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PHY_CADDR_A::VALUE2
-    }
-}
-impl core::ops::Deref for PHY_CADDR_R {
-    type Target = crate::FieldReader<bool, PHY_CADDR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PHY_CADDR_A::VALUE2
     }
 }
 #[doc = "Field `PHY_CADDR` writer - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
 of this register (valid values are 0-3)"]
-pub struct PHY_CADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PHY_CADDR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PHY_CADDR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PHY_CADDR_W<'a, const O: u8> = crate::BitWriter<'a, u8, MII_PHY_ADR_SPEC, PHY_CADDR_A, O>;
+impl<'a, const O: u8> PHY_CADDR_W<'a, O> {
     #[doc = "Show address of port 0 (offset)"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -129,47 +90,33 @@ impl<'a> PHY_CADDR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(PHY_CADDR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u8 & 0x01) << 7);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:4 - PHY Address"]
     #[inline(always)]
     pub fn phy_addr(&self) -> PHY_ADDR_R {
-        PHY_ADDR_R::new((self.bits & 0x1f) as u8)
+        PHY_ADDR_R::new(self.bits & 0x1f)
     }
     #[doc = "Bit 7 - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
 of this register (valid values are 0-3)"]
     #[inline(always)]
     pub fn phy_caddr(&self) -> PHY_CADDR_R {
-        PHY_CADDR_R::new(((self.bits >> 7) & 0x01) != 0)
+        PHY_CADDR_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - PHY Address"]
     #[inline(always)]
-    pub fn phy_addr(&mut self) -> PHY_ADDR_W {
-        PHY_ADDR_W { w: self }
+    #[must_use]
+    pub fn phy_addr(&mut self) -> PHY_ADDR_W<0> {
+        PHY_ADDR_W::new(self)
     }
     #[doc = "Bit 7 - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
 of this register (valid values are 0-3)"]
     #[inline(always)]
-    pub fn phy_caddr(&mut self) -> PHY_CADDR_W {
-        PHY_CADDR_W { w: self }
+    #[must_use]
+    pub fn phy_caddr(&mut self) -> PHY_CADDR_W<7> {
+        PHY_CADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -190,11 +137,10 @@ impl crate::Readable for MII_PHY_ADR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mii_phy_adr::W](W) writer structure"]
 impl crate::Writable for MII_PHY_ADR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MII_PHY_ADR to value 0"]
 impl crate::Resettable for MII_PHY_ADR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

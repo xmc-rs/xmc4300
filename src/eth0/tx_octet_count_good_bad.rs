@@ -14,24 +14,12 @@ impl From<crate::R<TX_OCTET_COUNT_GOOD_BAD_SPEC>> for R {
     }
 }
 #[doc = "Field `TXOCTGB` reader - This field indicates the number of bytes transmitted in good and bad frames exclusive of preamble and retried bytes."]
-pub struct TXOCTGB_R(crate::FieldReader<u32, u32>);
-impl TXOCTGB_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        TXOCTGB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXOCTGB_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXOCTGB_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of bytes transmitted in good and bad frames exclusive of preamble and retried bytes."]
     #[inline(always)]
     pub fn txoctgb(&self) -> TXOCTGB_R {
-        TXOCTGB_R::new((self.bits & 0xffff_ffff) as u32)
+        TXOCTGB_R::new(self.bits)
     }
 }
 #[doc = "Transmit Octet Count for Good and Bad Frames Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_octet_count_good_bad](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for TX_OCTET_COUNT_GOOD_BAD_SPEC {
 }
 #[doc = "`reset()` method sets TX_OCTET_COUNT_GOOD_BAD to value 0"]
 impl crate::Resettable for TX_OCTET_COUNT_GOOD_BAD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

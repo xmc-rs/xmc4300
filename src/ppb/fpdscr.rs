@@ -35,181 +35,67 @@ impl From<crate::W<FPDSCR_SPEC>> for W {
     }
 }
 #[doc = "Field `RMode` reader - Default value for FPSCR.RMode"]
-pub struct RMODE_R(crate::FieldReader<u8, u8>);
-impl RMODE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RMODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RMODE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RMODE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RMode` writer - Default value for FPSCR.RMode"]
-pub struct RMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RMODE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | ((value as u32 & 0x03) << 22);
-        self.w
-    }
-}
+pub type RMODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPDSCR_SPEC, u8, u8, 2, O>;
 #[doc = "Field `FZ` reader - Default value for FPSCR.FZ"]
-pub struct FZ_R(crate::FieldReader<bool, bool>);
-impl FZ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FZ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FZ_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FZ_R = crate::BitReader<bool>;
 #[doc = "Field `FZ` writer - Default value for FPSCR.FZ"]
-pub struct FZ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FZ_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type FZ_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPDSCR_SPEC, bool, O>;
 #[doc = "Field `DN` reader - Default value for FPSCR.DN"]
-pub struct DN_R(crate::FieldReader<bool, bool>);
-impl DN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DN_R = crate::BitReader<bool>;
 #[doc = "Field `DN` writer - Default value for FPSCR.DN"]
-pub struct DN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
+pub type DN_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPDSCR_SPEC, bool, O>;
 #[doc = "Field `AHP` reader - Default value for FPSCR.AHP"]
-pub struct AHP_R(crate::FieldReader<bool, bool>);
-impl AHP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AHP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AHP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AHP_R = crate::BitReader<bool>;
 #[doc = "Field `AHP` writer - Default value for FPSCR.AHP"]
-pub struct AHP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AHP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
-    }
-}
+pub type AHP_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPDSCR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 22:23 - Default value for FPSCR.RMode"]
     #[inline(always)]
     pub fn rmode(&self) -> RMODE_R {
-        RMODE_R::new(((self.bits >> 22) & 0x03) as u8)
+        RMODE_R::new(((self.bits >> 22) & 3) as u8)
     }
     #[doc = "Bit 24 - Default value for FPSCR.FZ"]
     #[inline(always)]
     pub fn fz(&self) -> FZ_R {
-        FZ_R::new(((self.bits >> 24) & 0x01) != 0)
+        FZ_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Default value for FPSCR.DN"]
     #[inline(always)]
     pub fn dn(&self) -> DN_R {
-        DN_R::new(((self.bits >> 25) & 0x01) != 0)
+        DN_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - Default value for FPSCR.AHP"]
     #[inline(always)]
     pub fn ahp(&self) -> AHP_R {
-        AHP_R::new(((self.bits >> 26) & 0x01) != 0)
+        AHP_R::new(((self.bits >> 26) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 22:23 - Default value for FPSCR.RMode"]
     #[inline(always)]
-    pub fn rmode(&mut self) -> RMODE_W {
-        RMODE_W { w: self }
+    #[must_use]
+    pub fn rmode(&mut self) -> RMODE_W<22> {
+        RMODE_W::new(self)
     }
     #[doc = "Bit 24 - Default value for FPSCR.FZ"]
     #[inline(always)]
-    pub fn fz(&mut self) -> FZ_W {
-        FZ_W { w: self }
+    #[must_use]
+    pub fn fz(&mut self) -> FZ_W<24> {
+        FZ_W::new(self)
     }
     #[doc = "Bit 25 - Default value for FPSCR.DN"]
     #[inline(always)]
-    pub fn dn(&mut self) -> DN_W {
-        DN_W { w: self }
+    #[must_use]
+    pub fn dn(&mut self) -> DN_W<25> {
+        DN_W::new(self)
     }
     #[doc = "Bit 26 - Default value for FPSCR.AHP"]
     #[inline(always)]
-    pub fn ahp(&mut self) -> AHP_W {
-        AHP_W { w: self }
+    #[must_use]
+    pub fn ahp(&mut self) -> AHP_W<26> {
+        AHP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -230,11 +116,10 @@ impl crate::Readable for FPDSCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [fpdscr::W](W) writer structure"]
 impl crate::Writable for FPDSCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FPDSCR to value 0"]
 impl crate::Resettable for FPDSCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

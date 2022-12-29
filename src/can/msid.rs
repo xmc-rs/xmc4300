@@ -14,19 +14,7 @@ impl From<crate::R<MSID_SPEC>> for R {
     }
 }
 #[doc = "Field `INDEX` reader - Message Pending Index"]
-pub struct INDEX_R(crate::FieldReader<u8, u8>);
-impl INDEX_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        INDEX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INDEX_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INDEX_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:5 - Message Pending Index"]
     #[inline(always)]
@@ -46,8 +34,5 @@ impl crate::Readable for MSID_SPEC {
 #[doc = "`reset()` method sets MSID[%s]
 to value 0x20"]
 impl crate::Resettable for MSID_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x20
-    }
+    const RESET_VALUE: Self::Ux = 0x20;
 }

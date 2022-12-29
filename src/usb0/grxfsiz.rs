@@ -35,43 +35,22 @@ impl From<crate::W<GRXFSIZ_SPEC>> for W {
     }
 }
 #[doc = "Field `RxFDep` reader - RxFIFO Depth"]
-pub struct RXFDEP_R(crate::FieldReader<u16, u16>);
-impl RXFDEP_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RXFDEP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXFDEP_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_FDEP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `RxFDep` writer - RxFIFO Depth"]
-pub struct RXFDEP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXFDEP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type RX_FDEP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GRXFSIZ_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - RxFIFO Depth"]
     #[inline(always)]
-    pub fn rx_fdep(&self) -> RXFDEP_R {
-        RXFDEP_R::new((self.bits & 0xffff) as u16)
+    pub fn rx_fdep(&self) -> RX_FDEP_R {
+        RX_FDEP_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - RxFIFO Depth"]
     #[inline(always)]
-    pub fn rx_fdep(&mut self) -> RXFDEP_W {
-        RXFDEP_W { w: self }
+    #[must_use]
+    pub fn rx_fdep(&mut self) -> RX_FDEP_W<0> {
+        RX_FDEP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for GRXFSIZ_SPEC {
 #[doc = "`write(|w| ..)` method takes [grxfsiz::W](W) writer structure"]
 impl crate::Writable for GRXFSIZ_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GRXFSIZ to value 0x011a"]
 impl crate::Resettable for GRXFSIZ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x011a
-    }
+    const RESET_VALUE: Self::Ux = 0x011a;
 }

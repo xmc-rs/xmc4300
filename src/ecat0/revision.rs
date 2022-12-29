@@ -14,24 +14,12 @@ impl From<crate::R<REVISION_SPEC>> for R {
     }
 }
 #[doc = "Field `Revision` reader - Revision of EtherCAT controller"]
-pub struct REVISION_R(crate::FieldReader<u8, u8>);
-impl REVISION_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        REVISION_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REVISION_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REVISION_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Revision of EtherCAT controller"]
     #[inline(always)]
     pub fn revision(&self) -> REVISION_R {
-        REVISION_R::new((self.bits & 0xff) as u8)
+        REVISION_R::new(self.bits)
     }
 }
 #[doc = "Revision of EtherCAT Controller\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [revision](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for REVISION_SPEC {
 }
 #[doc = "`reset()` method sets REVISION to value 0x01"]
 impl crate::Resettable for REVISION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

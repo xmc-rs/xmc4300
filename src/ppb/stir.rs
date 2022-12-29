@@ -20,22 +20,13 @@ impl From<crate::W<STIR_SPEC>> for W {
     }
 }
 #[doc = "Field `INTID` writer - Interrupt ID of the interrupt to trigger"]
-pub struct INTID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INTID_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
-        self.w
-    }
-}
+pub type INTID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STIR_SPEC, u16, u16, 9, O>;
 impl W {
     #[doc = "Bits 0:8 - Interrupt ID of the interrupt to trigger"]
     #[inline(always)]
-    pub fn intid(&mut self) -> INTID_W {
-        INTID_W { w: self }
+    #[must_use]
+    pub fn intid(&mut self) -> INTID_W<0> {
+        INTID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,11 +43,10 @@ impl crate::RegisterSpec for STIR_SPEC {
 #[doc = "`write(|w| ..)` method takes [stir::W](W) writer structure"]
 impl crate::Writable for STIR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets STIR to value 0"]
 impl crate::Resettable for STIR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -13,8 +13,10 @@ impl From<crate::R<WD_STAT_PDATA_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `WD_STAT_PD` reader - Watchdog Status of Process Data"]
+pub type WD_STAT_PD_R = crate::BitReader<WD_STAT_PD_A>;
 #[doc = "Watchdog Status of Process Data\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WD_STAT_PD_A {
     #[doc = "0: Watchdog Process Data expired"]
     VALUE1 = 0,
@@ -27,13 +29,8 @@ impl From<WD_STAT_PD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WD_STAT_PD` reader - Watchdog Status of Process Data"]
-pub struct WD_STAT_PD_R(crate::FieldReader<bool, WD_STAT_PD_A>);
 impl WD_STAT_PD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WD_STAT_PD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WD_STAT_PD_A {
         match self.bits {
@@ -44,26 +41,19 @@ impl WD_STAT_PD_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == WD_STAT_PD_A::VALUE1
+        *self == WD_STAT_PD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == WD_STAT_PD_A::VALUE2
-    }
-}
-impl core::ops::Deref for WD_STAT_PD_R {
-    type Target = crate::FieldReader<bool, WD_STAT_PD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WD_STAT_PD_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - Watchdog Status of Process Data"]
     #[inline(always)]
     pub fn wd_stat_pd(&self) -> WD_STAT_PD_R {
-        WD_STAT_PD_R::new((self.bits & 0x01) != 0)
+        WD_STAT_PD_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Watchdog Status Process Data\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wd_stat_pdata](index.html) module"]
@@ -77,8 +67,5 @@ impl crate::Readable for WD_STAT_PDATA_SPEC {
 }
 #[doc = "`reset()` method sets WD_STAT_PDATA to value 0"]
 impl crate::Resettable for WD_STAT_PDATA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

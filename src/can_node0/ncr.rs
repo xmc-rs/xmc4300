@@ -34,8 +34,10 @@ impl From<crate::W<NCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `INIT` reader - Node Initialization"]
+pub type INIT_R = crate::BitReader<INIT_A>;
 #[doc = "Node Initialization\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum INIT_A {
     #[doc = "0: Resetting bit INIT enables the participation of the node in the CAN traffic. If the CAN node is in the bus-off state, the ongoing bus-off recovery (which does not depend on the INIT bit) is continued. With the end of the bus-off recovery sequence the CAN node is allowed to take part in the CAN traffic. If the CAN node is not in the bus-off state, a sequence of 11 consecutive recessive bits must be detected before the node is allowed to take part in the CAN traffic."]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<INIT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INIT` reader - Node Initialization"]
-pub struct INIT_R(crate::FieldReader<bool, INIT_A>);
 impl INIT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        INIT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INIT_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl INIT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == INIT_A::VALUE1
+        *self == INIT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == INIT_A::VALUE2
-    }
-}
-impl core::ops::Deref for INIT_R {
-    type Target = crate::FieldReader<bool, INIT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == INIT_A::VALUE2
     }
 }
 #[doc = "Field `INIT` writer - Node Initialization"]
-pub struct INIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INIT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: INIT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type INIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCR_SPEC, INIT_A, O>;
+impl<'a, const O: u8> INIT_W<'a, O> {
     #[doc = "Resetting bit INIT enables the participation of the node in the CAN traffic. If the CAN node is in the bus-off state, the ongoing bus-off recovery (which does not depend on the INIT bit) is continued. With the end of the bus-off recovery sequence the CAN node is allowed to take part in the CAN traffic. If the CAN node is not in the bus-off state, a sequence of 11 consecutive recessive bits must be detected before the node is allowed to take part in the CAN traffic."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> INIT_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(INIT_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `TRIE` reader - Transfer Interrupt Enable"]
+pub type TRIE_R = crate::BitReader<TRIE_A>;
 #[doc = "Transfer Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRIE_A {
     #[doc = "0: Transfer interrupt is disabled."]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<TRIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TRIE` reader - Transfer Interrupt Enable"]
-pub struct TRIE_R(crate::FieldReader<bool, TRIE_A>);
 impl TRIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TRIE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRIE_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl TRIE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TRIE_A::VALUE1
+        *self == TRIE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TRIE_A::VALUE2
-    }
-}
-impl core::ops::Deref for TRIE_R {
-    type Target = crate::FieldReader<bool, TRIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TRIE_A::VALUE2
     }
 }
 #[doc = "Field `TRIE` writer - Transfer Interrupt Enable"]
-pub struct TRIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TRIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCR_SPEC, TRIE_A, O>;
+impl<'a, const O: u8> TRIE_W<'a, O> {
     #[doc = "Transfer interrupt is disabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -183,25 +133,11 @@ impl<'a> TRIE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(TRIE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `LECIE` reader - LEC Indicated Error Interrupt Enable"]
+pub type LECIE_R = crate::BitReader<LECIE_A>;
 #[doc = "LEC Indicated Error Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LECIE_A {
     #[doc = "0: Last error code interrupt is disabled."]
     VALUE1 = 0,
@@ -214,13 +150,8 @@ impl From<LECIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LECIE` reader - LEC Indicated Error Interrupt Enable"]
-pub struct LECIE_R(crate::FieldReader<bool, LECIE_A>);
 impl LECIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LECIE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LECIE_A {
         match self.bits {
@@ -231,31 +162,17 @@ impl LECIE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LECIE_A::VALUE1
+        *self == LECIE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LECIE_A::VALUE2
-    }
-}
-impl core::ops::Deref for LECIE_R {
-    type Target = crate::FieldReader<bool, LECIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LECIE_A::VALUE2
     }
 }
 #[doc = "Field `LECIE` writer - LEC Indicated Error Interrupt Enable"]
-pub struct LECIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LECIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LECIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LECIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCR_SPEC, LECIE_A, O>;
+impl<'a, const O: u8> LECIE_W<'a, O> {
     #[doc = "Last error code interrupt is disabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -266,25 +183,11 @@ impl<'a> LECIE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(LECIE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `ALIE` reader - Alert Interrupt Enable"]
+pub type ALIE_R = crate::BitReader<ALIE_A>;
 #[doc = "Alert Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALIE_A {
     #[doc = "0: Alert interrupt is disabled."]
     VALUE1 = 0,
@@ -297,13 +200,8 @@ impl From<ALIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALIE` reader - Alert Interrupt Enable"]
-pub struct ALIE_R(crate::FieldReader<bool, ALIE_A>);
 impl ALIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ALIE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ALIE_A {
         match self.bits {
@@ -314,31 +212,17 @@ impl ALIE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ALIE_A::VALUE1
+        *self == ALIE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ALIE_A::VALUE2
-    }
-}
-impl core::ops::Deref for ALIE_R {
-    type Target = crate::FieldReader<bool, ALIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ALIE_A::VALUE2
     }
 }
 #[doc = "Field `ALIE` writer - Alert Interrupt Enable"]
-pub struct ALIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ALIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ALIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCR_SPEC, ALIE_A, O>;
+impl<'a, const O: u8> ALIE_W<'a, O> {
     #[doc = "Alert interrupt is disabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -349,97 +233,19 @@ impl<'a> ALIE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ALIE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
 #[doc = "Field `CANDIS` reader - CAN Disable"]
-pub struct CANDIS_R(crate::FieldReader<bool, bool>);
-impl CANDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CANDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CANDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CANDIS_R = crate::BitReader<bool>;
 #[doc = "Field `CANDIS` writer - CAN Disable"]
-pub struct CANDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CANDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CANDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCR_SPEC, bool, O>;
 #[doc = "Field `TXDIS` reader - Transmit Disable"]
-pub struct TXDIS_R(crate::FieldReader<bool, bool>);
-impl TXDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXDIS_R = crate::BitReader<bool>;
 #[doc = "Field `TXDIS` writer - Transmit Disable"]
-pub struct TXDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type TXDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCR_SPEC, bool, O>;
+#[doc = "Field `CCE` reader - Configuration Change Enable"]
+pub type CCE_R = crate::BitReader<CCE_A>;
 #[doc = "Configuration Change Enable\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCE_A {
     #[doc = "0: The Bit Timing Register, the Port Control Register, Error Counter Register may only be read. All attempts to modify them are ignored."]
     VALUE1 = 0,
@@ -452,13 +258,8 @@ impl From<CCE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCE` reader - Configuration Change Enable"]
-pub struct CCE_R(crate::FieldReader<bool, CCE_A>);
 impl CCE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CCE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CCE_A {
         match self.bits {
@@ -469,31 +270,17 @@ impl CCE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CCE_A::VALUE1
+        *self == CCE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CCE_A::VALUE2
-    }
-}
-impl core::ops::Deref for CCE_R {
-    type Target = crate::FieldReader<bool, CCE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CCE_A::VALUE2
     }
 }
 #[doc = "Field `CCE` writer - Configuration Change Enable"]
-pub struct CCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CCE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCR_SPEC, CCE_A, O>;
+impl<'a, const O: u8> CCE_W<'a, O> {
     #[doc = "The Bit Timing Register, the Port Control Register, Error Counter Register may only be read. All attempts to modify them are ignored."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -504,141 +291,101 @@ impl<'a> CCE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CCE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
 #[doc = "Field `CALM` reader - CAN Analyzer Mode"]
-pub struct CALM_R(crate::FieldReader<bool, bool>);
-impl CALM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CALM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CALM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CALM_R = crate::BitReader<bool>;
 #[doc = "Field `CALM` writer - CAN Analyzer Mode"]
-pub struct CALM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type CALM_W<'a, const O: u8> = crate::BitWriter<'a, u32, NCR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Node Initialization"]
     #[inline(always)]
     pub fn init(&self) -> INIT_R {
-        INIT_R::new((self.bits & 0x01) != 0)
+        INIT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Transfer Interrupt Enable"]
     #[inline(always)]
     pub fn trie(&self) -> TRIE_R {
-        TRIE_R::new(((self.bits >> 1) & 0x01) != 0)
+        TRIE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - LEC Indicated Error Interrupt Enable"]
     #[inline(always)]
     pub fn lecie(&self) -> LECIE_R {
-        LECIE_R::new(((self.bits >> 2) & 0x01) != 0)
+        LECIE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Alert Interrupt Enable"]
     #[inline(always)]
     pub fn alie(&self) -> ALIE_R {
-        ALIE_R::new(((self.bits >> 3) & 0x01) != 0)
+        ALIE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - CAN Disable"]
     #[inline(always)]
     pub fn candis(&self) -> CANDIS_R {
-        CANDIS_R::new(((self.bits >> 4) & 0x01) != 0)
+        CANDIS_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Transmit Disable"]
     #[inline(always)]
     pub fn txdis(&self) -> TXDIS_R {
-        TXDIS_R::new(((self.bits >> 5) & 0x01) != 0)
+        TXDIS_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Configuration Change Enable"]
     #[inline(always)]
     pub fn cce(&self) -> CCE_R {
-        CCE_R::new(((self.bits >> 6) & 0x01) != 0)
+        CCE_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - CAN Analyzer Mode"]
     #[inline(always)]
     pub fn calm(&self) -> CALM_R {
-        CALM_R::new(((self.bits >> 7) & 0x01) != 0)
+        CALM_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Node Initialization"]
     #[inline(always)]
-    pub fn init(&mut self) -> INIT_W {
-        INIT_W { w: self }
+    #[must_use]
+    pub fn init(&mut self) -> INIT_W<0> {
+        INIT_W::new(self)
     }
     #[doc = "Bit 1 - Transfer Interrupt Enable"]
     #[inline(always)]
-    pub fn trie(&mut self) -> TRIE_W {
-        TRIE_W { w: self }
+    #[must_use]
+    pub fn trie(&mut self) -> TRIE_W<1> {
+        TRIE_W::new(self)
     }
     #[doc = "Bit 2 - LEC Indicated Error Interrupt Enable"]
     #[inline(always)]
-    pub fn lecie(&mut self) -> LECIE_W {
-        LECIE_W { w: self }
+    #[must_use]
+    pub fn lecie(&mut self) -> LECIE_W<2> {
+        LECIE_W::new(self)
     }
     #[doc = "Bit 3 - Alert Interrupt Enable"]
     #[inline(always)]
-    pub fn alie(&mut self) -> ALIE_W {
-        ALIE_W { w: self }
+    #[must_use]
+    pub fn alie(&mut self) -> ALIE_W<3> {
+        ALIE_W::new(self)
     }
     #[doc = "Bit 4 - CAN Disable"]
     #[inline(always)]
-    pub fn candis(&mut self) -> CANDIS_W {
-        CANDIS_W { w: self }
+    #[must_use]
+    pub fn candis(&mut self) -> CANDIS_W<4> {
+        CANDIS_W::new(self)
     }
     #[doc = "Bit 5 - Transmit Disable"]
     #[inline(always)]
-    pub fn txdis(&mut self) -> TXDIS_W {
-        TXDIS_W { w: self }
+    #[must_use]
+    pub fn txdis(&mut self) -> TXDIS_W<5> {
+        TXDIS_W::new(self)
     }
     #[doc = "Bit 6 - Configuration Change Enable"]
     #[inline(always)]
-    pub fn cce(&mut self) -> CCE_W {
-        CCE_W { w: self }
+    #[must_use]
+    pub fn cce(&mut self) -> CCE_W<6> {
+        CCE_W::new(self)
     }
     #[doc = "Bit 7 - CAN Analyzer Mode"]
     #[inline(always)]
-    pub fn calm(&mut self) -> CALM_W {
-        CALM_W { w: self }
+    #[must_use]
+    pub fn calm(&mut self) -> CALM_W<7> {
+        CALM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -659,11 +406,10 @@ impl crate::Readable for NCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ncr::W](W) writer structure"]
 impl crate::Writable for NCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets NCR to value 0x41"]
 impl crate::Resettable for NCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x41
-    }
+    const RESET_VALUE: Self::Ux = 0x41;
 }

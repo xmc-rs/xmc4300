@@ -35,89 +35,37 @@ impl From<crate::W<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC>> for W {
     }
 }
 #[doc = "Field `TSSS` reader - Timestamp Sub Second"]
-pub struct TSSS_R(crate::FieldReader<u32, u32>);
-impl TSSS_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        TSSS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TSSS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TSSS_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TSSS` writer - Timestamp Sub Second"]
-pub struct TSSS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSSS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7fff_ffff) | (value as u32 & 0x7fff_ffff);
-        self.w
-    }
-}
+pub type TSSS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC, u32, u32, 31, O>;
 #[doc = "Field `ADDSUB` reader - Add or subtract time"]
-pub struct ADDSUB_R(crate::FieldReader<bool, bool>);
-impl ADDSUB_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADDSUB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADDSUB_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADDSUB_R = crate::BitReader<bool>;
 #[doc = "Field `ADDSUB` writer - Add or subtract time"]
-pub struct ADDSUB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDSUB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type ADDSUB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:30 - Timestamp Sub Second"]
     #[inline(always)]
     pub fn tsss(&self) -> TSSS_R {
-        TSSS_R::new((self.bits & 0x7fff_ffff) as u32)
+        TSSS_R::new(self.bits & 0x7fff_ffff)
     }
     #[doc = "Bit 31 - Add or subtract time"]
     #[inline(always)]
     pub fn addsub(&self) -> ADDSUB_R {
-        ADDSUB_R::new(((self.bits >> 31) & 0x01) != 0)
+        ADDSUB_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:30 - Timestamp Sub Second"]
     #[inline(always)]
-    pub fn tsss(&mut self) -> TSSS_W {
-        TSSS_W { w: self }
+    #[must_use]
+    pub fn tsss(&mut self) -> TSSS_W<0> {
+        TSSS_W::new(self)
     }
     #[doc = "Bit 31 - Add or subtract time"]
     #[inline(always)]
-    pub fn addsub(&mut self) -> ADDSUB_W {
-        ADDSUB_W { w: self }
+    #[must_use]
+    pub fn addsub(&mut self) -> ADDSUB_W<31> {
+        ADDSUB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -138,11 +86,10 @@ impl crate::Readable for SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC {
 #[doc = "`write(|w| ..)` method takes [system_time_nanoseconds_update::W](W) writer structure"]
 impl crate::Writable for SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SYSTEM_TIME_NANOSECONDS_UPDATE to value 0"]
 impl crate::Resettable for SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

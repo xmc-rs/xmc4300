@@ -34,93 +34,62 @@ impl From<crate::W<GAHBCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `GlblIntrMsk` reader - Global Interrupt Mask"]
+pub type GLBL_INTR_MSK_R = crate::BitReader<GLBL_INTR_MSK_A>;
 #[doc = "Global Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GLBLINTRMSK_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum GLBL_INTR_MSK_A {
     #[doc = "0: Mask the interrupt assertion to the application."]
     VALUE1 = 0,
     #[doc = "1: Unmask the interrupt assertion to the application."]
     VALUE2 = 1,
 }
-impl From<GLBLINTRMSK_A> for bool {
+impl From<GLBL_INTR_MSK_A> for bool {
     #[inline(always)]
-    fn from(variant: GLBLINTRMSK_A) -> Self {
+    fn from(variant: GLBL_INTR_MSK_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GlblIntrMsk` reader - Global Interrupt Mask"]
-pub struct GLBLINTRMSK_R(crate::FieldReader<bool, GLBLINTRMSK_A>);
-impl GLBLINTRMSK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GLBLINTRMSK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl GLBL_INTR_MSK_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GLBLINTRMSK_A {
+    pub fn variant(&self) -> GLBL_INTR_MSK_A {
         match self.bits {
-            false => GLBLINTRMSK_A::VALUE1,
-            true => GLBLINTRMSK_A::VALUE2,
+            false => GLBL_INTR_MSK_A::VALUE1,
+            true => GLBL_INTR_MSK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == GLBLINTRMSK_A::VALUE1
+        *self == GLBL_INTR_MSK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == GLBLINTRMSK_A::VALUE2
-    }
-}
-impl core::ops::Deref for GLBLINTRMSK_R {
-    type Target = crate::FieldReader<bool, GLBLINTRMSK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GLBL_INTR_MSK_A::VALUE2
     }
 }
 #[doc = "Field `GlblIntrMsk` writer - Global Interrupt Mask"]
-pub struct GLBLINTRMSK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GLBLINTRMSK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GLBLINTRMSK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type GLBL_INTR_MSK_W<'a, const O: u8> = crate::BitWriter<'a, u32, GAHBCFG_SPEC, GLBL_INTR_MSK_A, O>;
+impl<'a, const O: u8> GLBL_INTR_MSK_W<'a, O> {
     #[doc = "Mask the interrupt assertion to the application."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(GLBLINTRMSK_A::VALUE1)
+        self.variant(GLBL_INTR_MSK_A::VALUE1)
     }
     #[doc = "Unmask the interrupt assertion to the application."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(GLBLINTRMSK_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(GLBL_INTR_MSK_A::VALUE2)
     }
 }
+#[doc = "Field `HBstLen` reader - Burst Length/Type"]
+pub type HBST_LEN_R = crate::FieldReader<u8, HBST_LEN_A>;
 #[doc = "Burst Length/Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum HBSTLEN_A {
+pub enum HBST_LEN_A {
     #[doc = "0: Single"]
     VALUE1 = 0,
     #[doc = "1: INCR"]
@@ -132,107 +101,84 @@ pub enum HBSTLEN_A {
     #[doc = "7: INCR16"]
     VALUE5 = 7,
 }
-impl From<HBSTLEN_A> for u8 {
+impl From<HBST_LEN_A> for u8 {
     #[inline(always)]
-    fn from(variant: HBSTLEN_A) -> Self {
+    fn from(variant: HBST_LEN_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `HBstLen` reader - Burst Length/Type"]
-pub struct HBSTLEN_R(crate::FieldReader<u8, HBSTLEN_A>);
-impl HBSTLEN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HBSTLEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl HBST_LEN_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HBSTLEN_A> {
+    pub fn variant(&self) -> Option<HBST_LEN_A> {
         match self.bits {
-            0 => Some(HBSTLEN_A::VALUE1),
-            1 => Some(HBSTLEN_A::VALUE2),
-            3 => Some(HBSTLEN_A::VALUE3),
-            5 => Some(HBSTLEN_A::VALUE4),
-            7 => Some(HBSTLEN_A::VALUE5),
+            0 => Some(HBST_LEN_A::VALUE1),
+            1 => Some(HBST_LEN_A::VALUE2),
+            3 => Some(HBST_LEN_A::VALUE3),
+            5 => Some(HBST_LEN_A::VALUE4),
+            7 => Some(HBST_LEN_A::VALUE5),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == HBSTLEN_A::VALUE1
+        *self == HBST_LEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == HBSTLEN_A::VALUE2
+        *self == HBST_LEN_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == HBSTLEN_A::VALUE3
+        *self == HBST_LEN_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == HBSTLEN_A::VALUE4
+        *self == HBST_LEN_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        **self == HBSTLEN_A::VALUE5
-    }
-}
-impl core::ops::Deref for HBSTLEN_R {
-    type Target = crate::FieldReader<u8, HBSTLEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HBST_LEN_A::VALUE5
     }
 }
 #[doc = "Field `HBstLen` writer - Burst Length/Type"]
-pub struct HBSTLEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HBSTLEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HBSTLEN_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HBST_LEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GAHBCFG_SPEC, u8, HBST_LEN_A, 4, O>;
+impl<'a, const O: u8> HBST_LEN_W<'a, O> {
     #[doc = "Single"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(HBSTLEN_A::VALUE1)
+        self.variant(HBST_LEN_A::VALUE1)
     }
     #[doc = "INCR"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(HBSTLEN_A::VALUE2)
+        self.variant(HBST_LEN_A::VALUE2)
     }
     #[doc = "INCR4"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(HBSTLEN_A::VALUE3)
+        self.variant(HBST_LEN_A::VALUE3)
     }
     #[doc = "INCR8"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(HBSTLEN_A::VALUE4)
+        self.variant(HBST_LEN_A::VALUE4)
     }
     #[doc = "INCR16"]
     #[inline(always)]
     pub fn value5(self) -> &'a mut W {
-        self.variant(HBSTLEN_A::VALUE5)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 1)) | ((value as u32 & 0x0f) << 1);
-        self.w
+        self.variant(HBST_LEN_A::VALUE5)
     }
 }
+#[doc = "Field `DMAEn` reader - DMA Enable"]
+pub type DMAEN_R = crate::BitReader<DMAEN_A>;
 #[doc = "DMA Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMAEN_A {
     #[doc = "0: Core operates in Slave mode"]
     VALUE1 = 0,
@@ -245,13 +191,8 @@ impl From<DMAEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMAEn` reader - DMA Enable"]
-pub struct DMAEN_R(crate::FieldReader<bool, DMAEN_A>);
 impl DMAEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DMAEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMAEN_A {
         match self.bits {
@@ -262,31 +203,17 @@ impl DMAEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DMAEN_A::VALUE1
+        *self == DMAEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DMAEN_A::VALUE2
-    }
-}
-impl core::ops::Deref for DMAEN_R {
-    type Target = crate::FieldReader<bool, DMAEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DMAEN_A::VALUE2
     }
 }
 #[doc = "Field `DMAEn` writer - DMA Enable"]
-pub struct DMAEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMAEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DMAEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DMAEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GAHBCFG_SPEC, DMAEN_A, O>;
+impl<'a, const O: u8> DMAEN_W<'a, O> {
     #[doc = "Core operates in Slave mode"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -297,191 +224,111 @@ impl<'a> DMAEN_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(DMAEN_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `NPTxFEmpLvl` reader - Non-Periodic TxFIFO Empty Level"]
+pub type NPTX_FEMP_LVL_R = crate::BitReader<NPTX_FEMP_LVL_A>;
 #[doc = "Non-Periodic TxFIFO Empty Level\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NPTXFEMPLVL_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum NPTX_FEMP_LVL_A {
     #[doc = "0: DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is half empty"]
     VALUE1 = 0,
     #[doc = "1: DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is completely empty"]
     VALUE2 = 1,
 }
-impl From<NPTXFEMPLVL_A> for bool {
+impl From<NPTX_FEMP_LVL_A> for bool {
     #[inline(always)]
-    fn from(variant: NPTXFEMPLVL_A) -> Self {
+    fn from(variant: NPTX_FEMP_LVL_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NPTxFEmpLvl` reader - Non-Periodic TxFIFO Empty Level"]
-pub struct NPTXFEMPLVL_R(crate::FieldReader<bool, NPTXFEMPLVL_A>);
-impl NPTXFEMPLVL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NPTXFEMPLVL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl NPTX_FEMP_LVL_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NPTXFEMPLVL_A {
+    pub fn variant(&self) -> NPTX_FEMP_LVL_A {
         match self.bits {
-            false => NPTXFEMPLVL_A::VALUE1,
-            true => NPTXFEMPLVL_A::VALUE2,
+            false => NPTX_FEMP_LVL_A::VALUE1,
+            true => NPTX_FEMP_LVL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == NPTXFEMPLVL_A::VALUE1
+        *self == NPTX_FEMP_LVL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == NPTXFEMPLVL_A::VALUE2
-    }
-}
-impl core::ops::Deref for NPTXFEMPLVL_R {
-    type Target = crate::FieldReader<bool, NPTXFEMPLVL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == NPTX_FEMP_LVL_A::VALUE2
     }
 }
 #[doc = "Field `NPTxFEmpLvl` writer - Non-Periodic TxFIFO Empty Level"]
-pub struct NPTXFEMPLVL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NPTXFEMPLVL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NPTXFEMPLVL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type NPTX_FEMP_LVL_W<'a, const O: u8> = crate::BitWriter<'a, u32, GAHBCFG_SPEC, NPTX_FEMP_LVL_A, O>;
+impl<'a, const O: u8> NPTX_FEMP_LVL_W<'a, O> {
     #[doc = "DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is half empty"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(NPTXFEMPLVL_A::VALUE1)
+        self.variant(NPTX_FEMP_LVL_A::VALUE1)
     }
     #[doc = "DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is completely empty"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(NPTXFEMPLVL_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
+        self.variant(NPTX_FEMP_LVL_A::VALUE2)
     }
 }
+#[doc = "Field `PTxFEmpLvl` reader - Periodic TxFIFO Empty Level"]
+pub type PTX_FEMP_LVL_R = crate::BitReader<PTX_FEMP_LVL_A>;
 #[doc = "Periodic TxFIFO Empty Level\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PTXFEMPLVL_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum PTX_FEMP_LVL_A {
     #[doc = "0: GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is half empty"]
     VALUE1 = 0,
     #[doc = "1: GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is completely empty"]
     VALUE2 = 1,
 }
-impl From<PTXFEMPLVL_A> for bool {
+impl From<PTX_FEMP_LVL_A> for bool {
     #[inline(always)]
-    fn from(variant: PTXFEMPLVL_A) -> Self {
+    fn from(variant: PTX_FEMP_LVL_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PTxFEmpLvl` reader - Periodic TxFIFO Empty Level"]
-pub struct PTXFEMPLVL_R(crate::FieldReader<bool, PTXFEMPLVL_A>);
-impl PTXFEMPLVL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PTXFEMPLVL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl PTX_FEMP_LVL_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PTXFEMPLVL_A {
+    pub fn variant(&self) -> PTX_FEMP_LVL_A {
         match self.bits {
-            false => PTXFEMPLVL_A::VALUE1,
-            true => PTXFEMPLVL_A::VALUE2,
+            false => PTX_FEMP_LVL_A::VALUE1,
+            true => PTX_FEMP_LVL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PTXFEMPLVL_A::VALUE1
+        *self == PTX_FEMP_LVL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PTXFEMPLVL_A::VALUE2
-    }
-}
-impl core::ops::Deref for PTXFEMPLVL_R {
-    type Target = crate::FieldReader<bool, PTXFEMPLVL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PTX_FEMP_LVL_A::VALUE2
     }
 }
 #[doc = "Field `PTxFEmpLvl` writer - Periodic TxFIFO Empty Level"]
-pub struct PTXFEMPLVL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PTXFEMPLVL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PTXFEMPLVL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PTX_FEMP_LVL_W<'a, const O: u8> = crate::BitWriter<'a, u32, GAHBCFG_SPEC, PTX_FEMP_LVL_A, O>;
+impl<'a, const O: u8> PTX_FEMP_LVL_W<'a, O> {
     #[doc = "GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is half empty"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(PTXFEMPLVL_A::VALUE1)
+        self.variant(PTX_FEMP_LVL_A::VALUE1)
     }
     #[doc = "GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is completely empty"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(PTXFEMPLVL_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
+        self.variant(PTX_FEMP_LVL_A::VALUE2)
     }
 }
+#[doc = "Field `AHBSingle` reader - AHB Single Support"]
+pub type AHBSINGLE_R = crate::BitReader<AHBSINGLE_A>;
 #[doc = "AHB Single Support\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AHBSINGLE_A {
     #[doc = "0: The remaining data in a transfer is sent using INCR burst size. This is the default mode."]
     VALUE1 = 0,
@@ -494,13 +341,8 @@ impl From<AHBSINGLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AHBSingle` reader - AHB Single Support"]
-pub struct AHBSINGLE_R(crate::FieldReader<bool, AHBSINGLE_A>);
 impl AHBSINGLE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AHBSINGLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AHBSINGLE_A {
         match self.bits {
@@ -511,31 +353,17 @@ impl AHBSINGLE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == AHBSINGLE_A::VALUE1
+        *self == AHBSINGLE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == AHBSINGLE_A::VALUE2
-    }
-}
-impl core::ops::Deref for AHBSINGLE_R {
-    type Target = crate::FieldReader<bool, AHBSINGLE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == AHBSINGLE_A::VALUE2
     }
 }
 #[doc = "Field `AHBSingle` writer - AHB Single Support"]
-pub struct AHBSINGLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AHBSINGLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AHBSINGLE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type AHBSINGLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GAHBCFG_SPEC, AHBSINGLE_A, O>;
+impl<'a, const O: u8> AHBSINGLE_W<'a, O> {
     #[doc = "The remaining data in a transfer is sent using INCR burst size. This is the default mode."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -546,85 +374,75 @@ impl<'a> AHBSINGLE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(AHBSINGLE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Global Interrupt Mask"]
     #[inline(always)]
-    pub fn glbl_intr_msk(&self) -> GLBLINTRMSK_R {
-        GLBLINTRMSK_R::new((self.bits & 0x01) != 0)
+    pub fn glbl_intr_msk(&self) -> GLBL_INTR_MSK_R {
+        GLBL_INTR_MSK_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:4 - Burst Length/Type"]
     #[inline(always)]
-    pub fn hbst_len(&self) -> HBSTLEN_R {
-        HBSTLEN_R::new(((self.bits >> 1) & 0x0f) as u8)
+    pub fn hbst_len(&self) -> HBST_LEN_R {
+        HBST_LEN_R::new(((self.bits >> 1) & 0x0f) as u8)
     }
     #[doc = "Bit 5 - DMA Enable"]
     #[inline(always)]
     pub fn dmaen(&self) -> DMAEN_R {
-        DMAEN_R::new(((self.bits >> 5) & 0x01) != 0)
+        DMAEN_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 7 - Non-Periodic TxFIFO Empty Level"]
     #[inline(always)]
-    pub fn nptx_femp_lvl(&self) -> NPTXFEMPLVL_R {
-        NPTXFEMPLVL_R::new(((self.bits >> 7) & 0x01) != 0)
+    pub fn nptx_femp_lvl(&self) -> NPTX_FEMP_LVL_R {
+        NPTX_FEMP_LVL_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Periodic TxFIFO Empty Level"]
     #[inline(always)]
-    pub fn ptx_femp_lvl(&self) -> PTXFEMPLVL_R {
-        PTXFEMPLVL_R::new(((self.bits >> 8) & 0x01) != 0)
+    pub fn ptx_femp_lvl(&self) -> PTX_FEMP_LVL_R {
+        PTX_FEMP_LVL_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 23 - AHB Single Support"]
     #[inline(always)]
     pub fn ahbsingle(&self) -> AHBSINGLE_R {
-        AHBSINGLE_R::new(((self.bits >> 23) & 0x01) != 0)
+        AHBSINGLE_R::new(((self.bits >> 23) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Global Interrupt Mask"]
     #[inline(always)]
-    pub fn glbl_intr_msk(&mut self) -> GLBLINTRMSK_W {
-        GLBLINTRMSK_W { w: self }
+    #[must_use]
+    pub fn glbl_intr_msk(&mut self) -> GLBL_INTR_MSK_W<0> {
+        GLBL_INTR_MSK_W::new(self)
     }
     #[doc = "Bits 1:4 - Burst Length/Type"]
     #[inline(always)]
-    pub fn hbst_len(&mut self) -> HBSTLEN_W {
-        HBSTLEN_W { w: self }
+    #[must_use]
+    pub fn hbst_len(&mut self) -> HBST_LEN_W<1> {
+        HBST_LEN_W::new(self)
     }
     #[doc = "Bit 5 - DMA Enable"]
     #[inline(always)]
-    pub fn dmaen(&mut self) -> DMAEN_W {
-        DMAEN_W { w: self }
+    #[must_use]
+    pub fn dmaen(&mut self) -> DMAEN_W<5> {
+        DMAEN_W::new(self)
     }
     #[doc = "Bit 7 - Non-Periodic TxFIFO Empty Level"]
     #[inline(always)]
-    pub fn nptx_femp_lvl(&mut self) -> NPTXFEMPLVL_W {
-        NPTXFEMPLVL_W { w: self }
+    #[must_use]
+    pub fn nptx_femp_lvl(&mut self) -> NPTX_FEMP_LVL_W<7> {
+        NPTX_FEMP_LVL_W::new(self)
     }
     #[doc = "Bit 8 - Periodic TxFIFO Empty Level"]
     #[inline(always)]
-    pub fn ptx_femp_lvl(&mut self) -> PTXFEMPLVL_W {
-        PTXFEMPLVL_W { w: self }
+    #[must_use]
+    pub fn ptx_femp_lvl(&mut self) -> PTX_FEMP_LVL_W<8> {
+        PTX_FEMP_LVL_W::new(self)
     }
     #[doc = "Bit 23 - AHB Single Support"]
     #[inline(always)]
-    pub fn ahbsingle(&mut self) -> AHBSINGLE_W {
-        AHBSINGLE_W { w: self }
+    #[must_use]
+    pub fn ahbsingle(&mut self) -> AHBSINGLE_W<23> {
+        AHBSINGLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -645,11 +463,10 @@ impl crate::Readable for GAHBCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [gahbcfg::W](W) writer structure"]
 impl crate::Writable for GAHBCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GAHBCFG to value 0"]
 impl crate::Resettable for GAHBCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,99 +35,37 @@ impl From<crate::W<PCGCCTL_SPEC>> for W {
     }
 }
 #[doc = "Field `StopPclk` reader - Stop Pclk"]
-pub struct STOPPCLK_R(crate::FieldReader<bool, bool>);
-impl STOPPCLK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        STOPPCLK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STOPPCLK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STOP_PCLK_R = crate::BitReader<bool>;
 #[doc = "Field `StopPclk` writer - Stop Pclk"]
-pub struct STOPPCLK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOPPCLK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type STOP_PCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCGCCTL_SPEC, bool, O>;
 #[doc = "Field `GateHclk` reader - Gate Hclk"]
-pub struct GATEHCLK_R(crate::FieldReader<bool, bool>);
-impl GATEHCLK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GATEHCLK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GATEHCLK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GATE_HCLK_R = crate::BitReader<bool>;
 #[doc = "Field `GateHclk` writer - Gate Hclk"]
-pub struct GATEHCLK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GATEHCLK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type GATE_HCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCGCCTL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Stop Pclk"]
     #[inline(always)]
-    pub fn stop_pclk(&self) -> STOPPCLK_R {
-        STOPPCLK_R::new((self.bits & 0x01) != 0)
+    pub fn stop_pclk(&self) -> STOP_PCLK_R {
+        STOP_PCLK_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Gate Hclk"]
     #[inline(always)]
-    pub fn gate_hclk(&self) -> GATEHCLK_R {
-        GATEHCLK_R::new(((self.bits >> 1) & 0x01) != 0)
+    pub fn gate_hclk(&self) -> GATE_HCLK_R {
+        GATE_HCLK_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Stop Pclk"]
     #[inline(always)]
-    pub fn stop_pclk(&mut self) -> STOPPCLK_W {
-        STOPPCLK_W { w: self }
+    #[must_use]
+    pub fn stop_pclk(&mut self) -> STOP_PCLK_W<0> {
+        STOP_PCLK_W::new(self)
     }
     #[doc = "Bit 1 - Gate Hclk"]
     #[inline(always)]
-    pub fn gate_hclk(&mut self) -> GATEHCLK_W {
-        GATEHCLK_W { w: self }
+    #[must_use]
+    pub fn gate_hclk(&mut self) -> GATE_HCLK_W<1> {
+        GATE_HCLK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -148,11 +86,10 @@ impl crate::Readable for PCGCCTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pcgcctl::W](W) writer structure"]
 impl crate::Writable for PCGCCTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PCGCCTL to value 0x0100"]
 impl crate::Resettable for PCGCCTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0100
-    }
+    const RESET_VALUE: Self::Ux = 0x0100;
 }

@@ -35,43 +35,22 @@ impl From<crate::W<SAR_SPEC>> for W {
     }
 }
 #[doc = "Field `SAR` reader - Current Source Address of DMA transfer"]
-pub struct SAR_R(crate::FieldReader<u32, u32>);
-impl SAR_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        SAR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SAR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SAR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SAR` writer - Current Source Address of DMA transfer"]
-pub struct SAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SAR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type SAR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SAR_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Current Source Address of DMA transfer"]
     #[inline(always)]
     pub fn sar(&self) -> SAR_R {
-        SAR_R::new((self.bits & 0xffff_ffff) as u32)
+        SAR_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Current Source Address of DMA transfer"]
     #[inline(always)]
-    pub fn sar(&mut self) -> SAR_W {
-        SAR_W { w: self }
+    #[must_use]
+    pub fn sar(&mut self) -> SAR_W<0> {
+        SAR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for SAR_SPEC {
 #[doc = "`write(|w| ..)` method takes [sar::W](W) writer structure"]
 impl crate::Writable for SAR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SAR to value 0"]
 impl crate::Resettable for SAR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,43 +35,22 @@ impl From<crate::W<DSTATAR_SPEC>> for W {
     }
 }
 #[doc = "Field `DSTATAR` reader - Destination Status Address"]
-pub struct DSTATAR_R(crate::FieldReader<u32, u32>);
-impl DSTATAR_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        DSTATAR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DSTATAR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DSTATAR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DSTATAR` writer - Destination Status Address"]
-pub struct DSTATAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSTATAR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type DSTATAR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DSTATAR_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Destination Status Address"]
     #[inline(always)]
     pub fn dstatar(&self) -> DSTATAR_R {
-        DSTATAR_R::new((self.bits & 0xffff_ffff) as u32)
+        DSTATAR_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Destination Status Address"]
     #[inline(always)]
-    pub fn dstatar(&mut self) -> DSTATAR_W {
-        DSTATAR_W { w: self }
+    #[must_use]
+    pub fn dstatar(&mut self) -> DSTATAR_W<0> {
+        DSTATAR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for DSTATAR_SPEC {
 #[doc = "`write(|w| ..)` method takes [dstatar::W](W) writer structure"]
 impl crate::Writable for DSTATAR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DSTATAR to value 0"]
 impl crate::Resettable for DSTATAR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

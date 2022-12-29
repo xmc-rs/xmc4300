@@ -34,8 +34,10 @@ impl From<crate::W<CFSR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `IACCVIOL` reader - Instruction access violation flag"]
+pub type IACCVIOL_R = crate::BitReader<IACCVIOL_A>;
 #[doc = "Instruction access violation flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IACCVIOL_A {
     #[doc = "0: no instruction access violation fault"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<IACCVIOL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IACCVIOL` reader - Instruction access violation flag"]
-pub struct IACCVIOL_R(crate::FieldReader<bool, IACCVIOL_A>);
 impl IACCVIOL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IACCVIOL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IACCVIOL_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl IACCVIOL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == IACCVIOL_A::VALUE1
+        *self == IACCVIOL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == IACCVIOL_A::VALUE2
-    }
-}
-impl core::ops::Deref for IACCVIOL_R {
-    type Target = crate::FieldReader<bool, IACCVIOL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IACCVIOL_A::VALUE2
     }
 }
 #[doc = "Field `IACCVIOL` writer - Instruction access violation flag"]
-pub struct IACCVIOL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IACCVIOL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IACCVIOL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IACCVIOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, IACCVIOL_A, O>;
+impl<'a, const O: u8> IACCVIOL_W<'a, O> {
     #[doc = "no instruction access violation fault"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> IACCVIOL_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(IACCVIOL_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `DACCVIOL` reader - Data access violation flag"]
+pub type DACCVIOL_R = crate::BitReader<DACCVIOL_A>;
 #[doc = "Data access violation flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DACCVIOL_A {
     #[doc = "0: no data access violation fault"]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<DACCVIOL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DACCVIOL` reader - Data access violation flag"]
-pub struct DACCVIOL_R(crate::FieldReader<bool, DACCVIOL_A>);
 impl DACCVIOL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DACCVIOL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DACCVIOL_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl DACCVIOL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DACCVIOL_A::VALUE1
+        *self == DACCVIOL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DACCVIOL_A::VALUE2
-    }
-}
-impl core::ops::Deref for DACCVIOL_R {
-    type Target = crate::FieldReader<bool, DACCVIOL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DACCVIOL_A::VALUE2
     }
 }
 #[doc = "Field `DACCVIOL` writer - Data access violation flag"]
-pub struct DACCVIOL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DACCVIOL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DACCVIOL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DACCVIOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, DACCVIOL_A, O>;
+impl<'a, const O: u8> DACCVIOL_W<'a, O> {
     #[doc = "no data access violation fault"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -183,25 +133,11 @@ impl<'a> DACCVIOL_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(DACCVIOL_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `MUNSTKERR` reader - MemManage fault on unstacking for a return from exception"]
+pub type MUNSTKERR_R = crate::BitReader<MUNSTKERR_A>;
 #[doc = "MemManage fault on unstacking for a return from exception\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MUNSTKERR_A {
     #[doc = "0: no unstacking fault"]
     VALUE1 = 0,
@@ -214,13 +150,8 @@ impl From<MUNSTKERR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MUNSTKERR` reader - MemManage fault on unstacking for a return from exception"]
-pub struct MUNSTKERR_R(crate::FieldReader<bool, MUNSTKERR_A>);
 impl MUNSTKERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MUNSTKERR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MUNSTKERR_A {
         match self.bits {
@@ -231,31 +162,17 @@ impl MUNSTKERR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == MUNSTKERR_A::VALUE1
+        *self == MUNSTKERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == MUNSTKERR_A::VALUE2
-    }
-}
-impl core::ops::Deref for MUNSTKERR_R {
-    type Target = crate::FieldReader<bool, MUNSTKERR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MUNSTKERR_A::VALUE2
     }
 }
 #[doc = "Field `MUNSTKERR` writer - MemManage fault on unstacking for a return from exception"]
-pub struct MUNSTKERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MUNSTKERR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MUNSTKERR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MUNSTKERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, MUNSTKERR_A, O>;
+impl<'a, const O: u8> MUNSTKERR_W<'a, O> {
     #[doc = "no unstacking fault"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -266,25 +183,11 @@ impl<'a> MUNSTKERR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(MUNSTKERR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `MSTKERR` reader - MemManage fault on stacking for exception entry"]
+pub type MSTKERR_R = crate::BitReader<MSTKERR_A>;
 #[doc = "MemManage fault on stacking for exception entry\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MSTKERR_A {
     #[doc = "0: no stacking fault"]
     VALUE1 = 0,
@@ -297,13 +200,8 @@ impl From<MSTKERR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MSTKERR` reader - MemManage fault on stacking for exception entry"]
-pub struct MSTKERR_R(crate::FieldReader<bool, MSTKERR_A>);
 impl MSTKERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MSTKERR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MSTKERR_A {
         match self.bits {
@@ -314,31 +212,17 @@ impl MSTKERR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == MSTKERR_A::VALUE1
+        *self == MSTKERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == MSTKERR_A::VALUE2
-    }
-}
-impl core::ops::Deref for MSTKERR_R {
-    type Target = crate::FieldReader<bool, MSTKERR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MSTKERR_A::VALUE2
     }
 }
 #[doc = "Field `MSTKERR` writer - MemManage fault on stacking for exception entry"]
-pub struct MSTKERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MSTKERR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MSTKERR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MSTKERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, MSTKERR_A, O>;
+impl<'a, const O: u8> MSTKERR_W<'a, O> {
     #[doc = "no stacking fault"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -349,25 +233,11 @@ impl<'a> MSTKERR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(MSTKERR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `MLSPERR` reader - MemManage fault during floating point lazy state preservation"]
+pub type MLSPERR_R = crate::BitReader<MLSPERR_A>;
 #[doc = "MemManage fault during floating point lazy state preservation\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MLSPERR_A {
     #[doc = "0: No MemManage fault occurred during floating-point lazy state preservation"]
     VALUE1 = 0,
@@ -380,13 +250,8 @@ impl From<MLSPERR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MLSPERR` reader - MemManage fault during floating point lazy state preservation"]
-pub struct MLSPERR_R(crate::FieldReader<bool, MLSPERR_A>);
 impl MLSPERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MLSPERR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MLSPERR_A {
         match self.bits {
@@ -397,31 +262,17 @@ impl MLSPERR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == MLSPERR_A::VALUE1
+        *self == MLSPERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == MLSPERR_A::VALUE2
-    }
-}
-impl core::ops::Deref for MLSPERR_R {
-    type Target = crate::FieldReader<bool, MLSPERR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MLSPERR_A::VALUE2
     }
 }
 #[doc = "Field `MLSPERR` writer - MemManage fault during floating point lazy state preservation"]
-pub struct MLSPERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MLSPERR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MLSPERR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MLSPERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, MLSPERR_A, O>;
+impl<'a, const O: u8> MLSPERR_W<'a, O> {
     #[doc = "No MemManage fault occurred during floating-point lazy state preservation"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -432,25 +283,11 @@ impl<'a> MLSPERR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(MLSPERR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `MMARVALID` reader - MemManage Fault Address Register (MMFAR) valid flag"]
+pub type MMARVALID_R = crate::BitReader<MMARVALID_A>;
 #[doc = "MemManage Fault Address Register (MMFAR) valid flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MMARVALID_A {
     #[doc = "0: value in MMAR is not a valid fault address"]
     VALUE1 = 0,
@@ -463,13 +300,8 @@ impl From<MMARVALID_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MMARVALID` reader - MemManage Fault Address Register (MMFAR) valid flag"]
-pub struct MMARVALID_R(crate::FieldReader<bool, MMARVALID_A>);
 impl MMARVALID_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MMARVALID_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MMARVALID_A {
         match self.bits {
@@ -480,31 +312,17 @@ impl MMARVALID_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == MMARVALID_A::VALUE1
+        *self == MMARVALID_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == MMARVALID_A::VALUE2
-    }
-}
-impl core::ops::Deref for MMARVALID_R {
-    type Target = crate::FieldReader<bool, MMARVALID_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MMARVALID_A::VALUE2
     }
 }
 #[doc = "Field `MMARVALID` writer - MemManage Fault Address Register (MMFAR) valid flag"]
-pub struct MMARVALID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MMARVALID_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MMARVALID_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MMARVALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, MMARVALID_A, O>;
+impl<'a, const O: u8> MMARVALID_W<'a, O> {
     #[doc = "value in MMAR is not a valid fault address"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -515,25 +333,11 @@ impl<'a> MMARVALID_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(MMARVALID_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
+#[doc = "Field `IBUSERR` reader - Instruction bus error"]
+pub type IBUSERR_R = crate::BitReader<IBUSERR_A>;
 #[doc = "Instruction bus error\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IBUSERR_A {
     #[doc = "0: no instruction bus error"]
     VALUE1 = 0,
@@ -546,13 +350,8 @@ impl From<IBUSERR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IBUSERR` reader - Instruction bus error"]
-pub struct IBUSERR_R(crate::FieldReader<bool, IBUSERR_A>);
 impl IBUSERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IBUSERR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IBUSERR_A {
         match self.bits {
@@ -563,31 +362,17 @@ impl IBUSERR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == IBUSERR_A::VALUE1
+        *self == IBUSERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == IBUSERR_A::VALUE2
-    }
-}
-impl core::ops::Deref for IBUSERR_R {
-    type Target = crate::FieldReader<bool, IBUSERR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IBUSERR_A::VALUE2
     }
 }
 #[doc = "Field `IBUSERR` writer - Instruction bus error"]
-pub struct IBUSERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IBUSERR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IBUSERR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IBUSERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, IBUSERR_A, O>;
+impl<'a, const O: u8> IBUSERR_W<'a, O> {
     #[doc = "no instruction bus error"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -598,25 +383,11 @@ impl<'a> IBUSERR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(IBUSERR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `PRECISERR` reader - Precise data bus error"]
+pub type PRECISERR_R = crate::BitReader<PRECISERR_A>;
 #[doc = "Precise data bus error\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PRECISERR_A {
     #[doc = "0: no precise data bus error"]
     VALUE1 = 0,
@@ -629,13 +400,8 @@ impl From<PRECISERR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PRECISERR` reader - Precise data bus error"]
-pub struct PRECISERR_R(crate::FieldReader<bool, PRECISERR_A>);
 impl PRECISERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PRECISERR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRECISERR_A {
         match self.bits {
@@ -646,31 +412,17 @@ impl PRECISERR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PRECISERR_A::VALUE1
+        *self == PRECISERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PRECISERR_A::VALUE2
-    }
-}
-impl core::ops::Deref for PRECISERR_R {
-    type Target = crate::FieldReader<bool, PRECISERR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PRECISERR_A::VALUE2
     }
 }
 #[doc = "Field `PRECISERR` writer - Precise data bus error"]
-pub struct PRECISERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRECISERR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRECISERR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PRECISERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, PRECISERR_A, O>;
+impl<'a, const O: u8> PRECISERR_W<'a, O> {
     #[doc = "no precise data bus error"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -681,25 +433,11 @@ impl<'a> PRECISERR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(PRECISERR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
 }
+#[doc = "Field `IMPRECISERR` reader - Imprecise data bus error"]
+pub type IMPRECISERR_R = crate::BitReader<IMPRECISERR_A>;
 #[doc = "Imprecise data bus error\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IMPRECISERR_A {
     #[doc = "0: no imprecise data bus error"]
     VALUE1 = 0,
@@ -712,13 +450,8 @@ impl From<IMPRECISERR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IMPRECISERR` reader - Imprecise data bus error"]
-pub struct IMPRECISERR_R(crate::FieldReader<bool, IMPRECISERR_A>);
 impl IMPRECISERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IMPRECISERR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IMPRECISERR_A {
         match self.bits {
@@ -729,31 +462,17 @@ impl IMPRECISERR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == IMPRECISERR_A::VALUE1
+        *self == IMPRECISERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == IMPRECISERR_A::VALUE2
-    }
-}
-impl core::ops::Deref for IMPRECISERR_R {
-    type Target = crate::FieldReader<bool, IMPRECISERR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IMPRECISERR_A::VALUE2
     }
 }
 #[doc = "Field `IMPRECISERR` writer - Imprecise data bus error"]
-pub struct IMPRECISERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMPRECISERR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IMPRECISERR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IMPRECISERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, IMPRECISERR_A, O>;
+impl<'a, const O: u8> IMPRECISERR_W<'a, O> {
     #[doc = "no imprecise data bus error"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -764,25 +483,11 @@ impl<'a> IMPRECISERR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(IMPRECISERR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
 }
+#[doc = "Field `UNSTKERR` reader - BusFault on unstacking for a return from exception"]
+pub type UNSTKERR_R = crate::BitReader<UNSTKERR_A>;
 #[doc = "BusFault on unstacking for a return from exception\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UNSTKERR_A {
     #[doc = "0: no unstacking fault"]
     VALUE1 = 0,
@@ -795,13 +500,8 @@ impl From<UNSTKERR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UNSTKERR` reader - BusFault on unstacking for a return from exception"]
-pub struct UNSTKERR_R(crate::FieldReader<bool, UNSTKERR_A>);
 impl UNSTKERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UNSTKERR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UNSTKERR_A {
         match self.bits {
@@ -812,31 +512,17 @@ impl UNSTKERR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == UNSTKERR_A::VALUE1
+        *self == UNSTKERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == UNSTKERR_A::VALUE2
-    }
-}
-impl core::ops::Deref for UNSTKERR_R {
-    type Target = crate::FieldReader<bool, UNSTKERR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UNSTKERR_A::VALUE2
     }
 }
 #[doc = "Field `UNSTKERR` writer - BusFault on unstacking for a return from exception"]
-pub struct UNSTKERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UNSTKERR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UNSTKERR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type UNSTKERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, UNSTKERR_A, O>;
+impl<'a, const O: u8> UNSTKERR_W<'a, O> {
     #[doc = "no unstacking fault"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -847,25 +533,11 @@ impl<'a> UNSTKERR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(UNSTKERR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
 }
+#[doc = "Field `STKERR` reader - BusFault on stacking for exception entry"]
+pub type STKERR_R = crate::BitReader<STKERR_A>;
 #[doc = "BusFault on stacking for exception entry\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum STKERR_A {
     #[doc = "0: no stacking fault"]
     VALUE1 = 0,
@@ -878,13 +550,8 @@ impl From<STKERR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STKERR` reader - BusFault on stacking for exception entry"]
-pub struct STKERR_R(crate::FieldReader<bool, STKERR_A>);
 impl STKERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        STKERR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STKERR_A {
         match self.bits {
@@ -895,31 +562,17 @@ impl STKERR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == STKERR_A::VALUE1
+        *self == STKERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == STKERR_A::VALUE2
-    }
-}
-impl core::ops::Deref for STKERR_R {
-    type Target = crate::FieldReader<bool, STKERR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STKERR_A::VALUE2
     }
 }
 #[doc = "Field `STKERR` writer - BusFault on stacking for exception entry"]
-pub struct STKERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STKERR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STKERR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type STKERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, STKERR_A, O>;
+impl<'a, const O: u8> STKERR_W<'a, O> {
     #[doc = "no stacking fault"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -930,25 +583,11 @@ impl<'a> STKERR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(STKERR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
+#[doc = "Field `LSPERR` reader - BusFault during floating point lazy state preservation"]
+pub type LSPERR_R = crate::BitReader<LSPERR_A>;
 #[doc = "BusFault during floating point lazy state preservation\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LSPERR_A {
     #[doc = "0: No bus fault occurred during floating-point lazy state preservation."]
     VALUE1 = 0,
@@ -961,13 +600,8 @@ impl From<LSPERR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LSPERR` reader - BusFault during floating point lazy state preservation"]
-pub struct LSPERR_R(crate::FieldReader<bool, LSPERR_A>);
 impl LSPERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSPERR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSPERR_A {
         match self.bits {
@@ -978,31 +612,17 @@ impl LSPERR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LSPERR_A::VALUE1
+        *self == LSPERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LSPERR_A::VALUE2
-    }
-}
-impl core::ops::Deref for LSPERR_R {
-    type Target = crate::FieldReader<bool, LSPERR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LSPERR_A::VALUE2
     }
 }
 #[doc = "Field `LSPERR` writer - BusFault during floating point lazy state preservation"]
-pub struct LSPERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LSPERR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LSPERR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LSPERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, LSPERR_A, O>;
+impl<'a, const O: u8> LSPERR_W<'a, O> {
     #[doc = "No bus fault occurred during floating-point lazy state preservation."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1013,25 +633,11 @@ impl<'a> LSPERR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(LSPERR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
 }
+#[doc = "Field `BFARVALID` reader - BusFault Address Register (BFAR) valid flag"]
+pub type BFARVALID_R = crate::BitReader<BFARVALID_A>;
 #[doc = "BusFault Address Register (BFAR) valid flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BFARVALID_A {
     #[doc = "0: value in BFAR is not a valid fault address"]
     VALUE1 = 0,
@@ -1044,13 +650,8 @@ impl From<BFARVALID_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BFARVALID` reader - BusFault Address Register (BFAR) valid flag"]
-pub struct BFARVALID_R(crate::FieldReader<bool, BFARVALID_A>);
 impl BFARVALID_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BFARVALID_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFARVALID_A {
         match self.bits {
@@ -1061,31 +662,17 @@ impl BFARVALID_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == BFARVALID_A::VALUE1
+        *self == BFARVALID_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == BFARVALID_A::VALUE2
-    }
-}
-impl core::ops::Deref for BFARVALID_R {
-    type Target = crate::FieldReader<bool, BFARVALID_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BFARVALID_A::VALUE2
     }
 }
 #[doc = "Field `BFARVALID` writer - BusFault Address Register (BFAR) valid flag"]
-pub struct BFARVALID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BFARVALID_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BFARVALID_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type BFARVALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, BFARVALID_A, O>;
+impl<'a, const O: u8> BFARVALID_W<'a, O> {
     #[doc = "value in BFAR is not a valid fault address"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1096,25 +683,11 @@ impl<'a> BFARVALID_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(BFARVALID_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
 }
+#[doc = "Field `UNDEFINSTR` reader - Undefined instruction UsageFault"]
+pub type UNDEFINSTR_R = crate::BitReader<UNDEFINSTR_A>;
 #[doc = "Undefined instruction UsageFault\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UNDEFINSTR_A {
     #[doc = "0: no undefined instruction UsageFault"]
     VALUE1 = 0,
@@ -1127,13 +700,8 @@ impl From<UNDEFINSTR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UNDEFINSTR` reader - Undefined instruction UsageFault"]
-pub struct UNDEFINSTR_R(crate::FieldReader<bool, UNDEFINSTR_A>);
 impl UNDEFINSTR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UNDEFINSTR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UNDEFINSTR_A {
         match self.bits {
@@ -1144,31 +712,17 @@ impl UNDEFINSTR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == UNDEFINSTR_A::VALUE1
+        *self == UNDEFINSTR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == UNDEFINSTR_A::VALUE2
-    }
-}
-impl core::ops::Deref for UNDEFINSTR_R {
-    type Target = crate::FieldReader<bool, UNDEFINSTR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UNDEFINSTR_A::VALUE2
     }
 }
 #[doc = "Field `UNDEFINSTR` writer - Undefined instruction UsageFault"]
-pub struct UNDEFINSTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UNDEFINSTR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UNDEFINSTR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type UNDEFINSTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, UNDEFINSTR_A, O>;
+impl<'a, const O: u8> UNDEFINSTR_W<'a, O> {
     #[doc = "no undefined instruction UsageFault"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1179,25 +733,11 @@ impl<'a> UNDEFINSTR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(UNDEFINSTR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
+#[doc = "Field `INVSTATE` reader - Invalid state UsageFault"]
+pub type INVSTATE_R = crate::BitReader<INVSTATE_A>;
 #[doc = "Invalid state UsageFault\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum INVSTATE_A {
     #[doc = "0: no invalid state UsageFault"]
     VALUE1 = 0,
@@ -1210,13 +750,8 @@ impl From<INVSTATE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INVSTATE` reader - Invalid state UsageFault"]
-pub struct INVSTATE_R(crate::FieldReader<bool, INVSTATE_A>);
 impl INVSTATE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        INVSTATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INVSTATE_A {
         match self.bits {
@@ -1227,31 +762,17 @@ impl INVSTATE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == INVSTATE_A::VALUE1
+        *self == INVSTATE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == INVSTATE_A::VALUE2
-    }
-}
-impl core::ops::Deref for INVSTATE_R {
-    type Target = crate::FieldReader<bool, INVSTATE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == INVSTATE_A::VALUE2
     }
 }
 #[doc = "Field `INVSTATE` writer - Invalid state UsageFault"]
-pub struct INVSTATE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INVSTATE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: INVSTATE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type INVSTATE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, INVSTATE_A, O>;
+impl<'a, const O: u8> INVSTATE_W<'a, O> {
     #[doc = "no invalid state UsageFault"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1262,25 +783,11 @@ impl<'a> INVSTATE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(INVSTATE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
 }
+#[doc = "Field `INVPC` reader - Invalid PC load UsageFault"]
+pub type INVPC_R = crate::BitReader<INVPC_A>;
 #[doc = "Invalid PC load UsageFault\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum INVPC_A {
     #[doc = "0: no invalid PC load UsageFault"]
     VALUE1 = 0,
@@ -1293,13 +800,8 @@ impl From<INVPC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INVPC` reader - Invalid PC load UsageFault"]
-pub struct INVPC_R(crate::FieldReader<bool, INVPC_A>);
 impl INVPC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        INVPC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INVPC_A {
         match self.bits {
@@ -1310,31 +812,17 @@ impl INVPC_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == INVPC_A::VALUE1
+        *self == INVPC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == INVPC_A::VALUE2
-    }
-}
-impl core::ops::Deref for INVPC_R {
-    type Target = crate::FieldReader<bool, INVPC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == INVPC_A::VALUE2
     }
 }
 #[doc = "Field `INVPC` writer - Invalid PC load UsageFault"]
-pub struct INVPC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INVPC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: INVPC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type INVPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, INVPC_A, O>;
+impl<'a, const O: u8> INVPC_W<'a, O> {
     #[doc = "no invalid PC load UsageFault"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1345,25 +833,11 @@ impl<'a> INVPC_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(INVPC_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
 }
+#[doc = "Field `NOCP` reader - No coprocessor UsageFault"]
+pub type NOCP_R = crate::BitReader<NOCP_A>;
 #[doc = "No coprocessor UsageFault\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NOCP_A {
     #[doc = "0: no UsageFault caused by attempting to access a coprocessor"]
     VALUE1 = 0,
@@ -1376,13 +850,8 @@ impl From<NOCP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NOCP` reader - No coprocessor UsageFault"]
-pub struct NOCP_R(crate::FieldReader<bool, NOCP_A>);
 impl NOCP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NOCP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NOCP_A {
         match self.bits {
@@ -1393,31 +862,17 @@ impl NOCP_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == NOCP_A::VALUE1
+        *self == NOCP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == NOCP_A::VALUE2
-    }
-}
-impl core::ops::Deref for NOCP_R {
-    type Target = crate::FieldReader<bool, NOCP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == NOCP_A::VALUE2
     }
 }
 #[doc = "Field `NOCP` writer - No coprocessor UsageFault"]
-pub struct NOCP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NOCP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NOCP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type NOCP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, NOCP_A, O>;
+impl<'a, const O: u8> NOCP_W<'a, O> {
     #[doc = "no UsageFault caused by attempting to access a coprocessor"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1428,25 +883,11 @@ impl<'a> NOCP_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(NOCP_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
 }
+#[doc = "Field `UNALIGNED` reader - Unaligned access UsageFault"]
+pub type UNALIGNED_R = crate::BitReader<UNALIGNED_A>;
 #[doc = "Unaligned access UsageFault\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UNALIGNED_A {
     #[doc = "0: no unaligned access fault, or unaligned access trapping not enabled"]
     VALUE1 = 0,
@@ -1459,13 +900,8 @@ impl From<UNALIGNED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UNALIGNED` reader - Unaligned access UsageFault"]
-pub struct UNALIGNED_R(crate::FieldReader<bool, UNALIGNED_A>);
 impl UNALIGNED_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UNALIGNED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UNALIGNED_A {
         match self.bits {
@@ -1476,31 +912,17 @@ impl UNALIGNED_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == UNALIGNED_A::VALUE1
+        *self == UNALIGNED_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == UNALIGNED_A::VALUE2
-    }
-}
-impl core::ops::Deref for UNALIGNED_R {
-    type Target = crate::FieldReader<bool, UNALIGNED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UNALIGNED_A::VALUE2
     }
 }
 #[doc = "Field `UNALIGNED` writer - Unaligned access UsageFault"]
-pub struct UNALIGNED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UNALIGNED_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UNALIGNED_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type UNALIGNED_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, UNALIGNED_A, O>;
+impl<'a, const O: u8> UNALIGNED_W<'a, O> {
     #[doc = "no unaligned access fault, or unaligned access trapping not enabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1511,25 +933,11 @@ impl<'a> UNALIGNED_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(UNALIGNED_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
 }
+#[doc = "Field `DIVBYZERO` reader - Divide by zero UsageFault"]
+pub type DIVBYZERO_R = crate::BitReader<DIVBYZERO_A>;
 #[doc = "Divide by zero UsageFault\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DIVBYZERO_A {
     #[doc = "0: no divide by zero fault, or divide by zero trapping not enabled"]
     VALUE1 = 0,
@@ -1542,13 +950,8 @@ impl From<DIVBYZERO_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DIVBYZERO` reader - Divide by zero UsageFault"]
-pub struct DIVBYZERO_R(crate::FieldReader<bool, DIVBYZERO_A>);
 impl DIVBYZERO_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIVBYZERO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIVBYZERO_A {
         match self.bits {
@@ -1559,31 +962,17 @@ impl DIVBYZERO_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DIVBYZERO_A::VALUE1
+        *self == DIVBYZERO_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DIVBYZERO_A::VALUE2
-    }
-}
-impl core::ops::Deref for DIVBYZERO_R {
-    type Target = crate::FieldReader<bool, DIVBYZERO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DIVBYZERO_A::VALUE2
     }
 }
 #[doc = "Field `DIVBYZERO` writer - Divide by zero UsageFault"]
-pub struct DIVBYZERO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIVBYZERO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DIVBYZERO_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DIVBYZERO_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, DIVBYZERO_A, O>;
+impl<'a, const O: u8> DIVBYZERO_W<'a, O> {
     #[doc = "no divide by zero fault, or divide by zero trapping not enabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1594,215 +983,218 @@ impl<'a> DIVBYZERO_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(DIVBYZERO_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Instruction access violation flag"]
     #[inline(always)]
     pub fn iaccviol(&self) -> IACCVIOL_R {
-        IACCVIOL_R::new((self.bits & 0x01) != 0)
+        IACCVIOL_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Data access violation flag"]
     #[inline(always)]
     pub fn daccviol(&self) -> DACCVIOL_R {
-        DACCVIOL_R::new(((self.bits >> 1) & 0x01) != 0)
+        DACCVIOL_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 3 - MemManage fault on unstacking for a return from exception"]
     #[inline(always)]
     pub fn munstkerr(&self) -> MUNSTKERR_R {
-        MUNSTKERR_R::new(((self.bits >> 3) & 0x01) != 0)
+        MUNSTKERR_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - MemManage fault on stacking for exception entry"]
     #[inline(always)]
     pub fn mstkerr(&self) -> MSTKERR_R {
-        MSTKERR_R::new(((self.bits >> 4) & 0x01) != 0)
+        MSTKERR_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - MemManage fault during floating point lazy state preservation"]
     #[inline(always)]
     pub fn mlsperr(&self) -> MLSPERR_R {
-        MLSPERR_R::new(((self.bits >> 5) & 0x01) != 0)
+        MLSPERR_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 7 - MemManage Fault Address Register (MMFAR) valid flag"]
     #[inline(always)]
     pub fn mmarvalid(&self) -> MMARVALID_R {
-        MMARVALID_R::new(((self.bits >> 7) & 0x01) != 0)
+        MMARVALID_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Instruction bus error"]
     #[inline(always)]
     pub fn ibuserr(&self) -> IBUSERR_R {
-        IBUSERR_R::new(((self.bits >> 8) & 0x01) != 0)
+        IBUSERR_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Precise data bus error"]
     #[inline(always)]
     pub fn preciserr(&self) -> PRECISERR_R {
-        PRECISERR_R::new(((self.bits >> 9) & 0x01) != 0)
+        PRECISERR_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Imprecise data bus error"]
     #[inline(always)]
     pub fn impreciserr(&self) -> IMPRECISERR_R {
-        IMPRECISERR_R::new(((self.bits >> 10) & 0x01) != 0)
+        IMPRECISERR_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - BusFault on unstacking for a return from exception"]
     #[inline(always)]
     pub fn unstkerr(&self) -> UNSTKERR_R {
-        UNSTKERR_R::new(((self.bits >> 11) & 0x01) != 0)
+        UNSTKERR_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - BusFault on stacking for exception entry"]
     #[inline(always)]
     pub fn stkerr(&self) -> STKERR_R {
-        STKERR_R::new(((self.bits >> 12) & 0x01) != 0)
+        STKERR_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - BusFault during floating point lazy state preservation"]
     #[inline(always)]
     pub fn lsperr(&self) -> LSPERR_R {
-        LSPERR_R::new(((self.bits >> 13) & 0x01) != 0)
+        LSPERR_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 15 - BusFault Address Register (BFAR) valid flag"]
     #[inline(always)]
     pub fn bfarvalid(&self) -> BFARVALID_R {
-        BFARVALID_R::new(((self.bits >> 15) & 0x01) != 0)
+        BFARVALID_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Undefined instruction UsageFault"]
     #[inline(always)]
     pub fn undefinstr(&self) -> UNDEFINSTR_R {
-        UNDEFINSTR_R::new(((self.bits >> 16) & 0x01) != 0)
+        UNDEFINSTR_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Invalid state UsageFault"]
     #[inline(always)]
     pub fn invstate(&self) -> INVSTATE_R {
-        INVSTATE_R::new(((self.bits >> 17) & 0x01) != 0)
+        INVSTATE_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Invalid PC load UsageFault"]
     #[inline(always)]
     pub fn invpc(&self) -> INVPC_R {
-        INVPC_R::new(((self.bits >> 18) & 0x01) != 0)
+        INVPC_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - No coprocessor UsageFault"]
     #[inline(always)]
     pub fn nocp(&self) -> NOCP_R {
-        NOCP_R::new(((self.bits >> 19) & 0x01) != 0)
+        NOCP_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 24 - Unaligned access UsageFault"]
     #[inline(always)]
     pub fn unaligned(&self) -> UNALIGNED_R {
-        UNALIGNED_R::new(((self.bits >> 24) & 0x01) != 0)
+        UNALIGNED_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Divide by zero UsageFault"]
     #[inline(always)]
     pub fn divbyzero(&self) -> DIVBYZERO_R {
-        DIVBYZERO_R::new(((self.bits >> 25) & 0x01) != 0)
+        DIVBYZERO_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Instruction access violation flag"]
     #[inline(always)]
-    pub fn iaccviol(&mut self) -> IACCVIOL_W {
-        IACCVIOL_W { w: self }
+    #[must_use]
+    pub fn iaccviol(&mut self) -> IACCVIOL_W<0> {
+        IACCVIOL_W::new(self)
     }
     #[doc = "Bit 1 - Data access violation flag"]
     #[inline(always)]
-    pub fn daccviol(&mut self) -> DACCVIOL_W {
-        DACCVIOL_W { w: self }
+    #[must_use]
+    pub fn daccviol(&mut self) -> DACCVIOL_W<1> {
+        DACCVIOL_W::new(self)
     }
     #[doc = "Bit 3 - MemManage fault on unstacking for a return from exception"]
     #[inline(always)]
-    pub fn munstkerr(&mut self) -> MUNSTKERR_W {
-        MUNSTKERR_W { w: self }
+    #[must_use]
+    pub fn munstkerr(&mut self) -> MUNSTKERR_W<3> {
+        MUNSTKERR_W::new(self)
     }
     #[doc = "Bit 4 - MemManage fault on stacking for exception entry"]
     #[inline(always)]
-    pub fn mstkerr(&mut self) -> MSTKERR_W {
-        MSTKERR_W { w: self }
+    #[must_use]
+    pub fn mstkerr(&mut self) -> MSTKERR_W<4> {
+        MSTKERR_W::new(self)
     }
     #[doc = "Bit 5 - MemManage fault during floating point lazy state preservation"]
     #[inline(always)]
-    pub fn mlsperr(&mut self) -> MLSPERR_W {
-        MLSPERR_W { w: self }
+    #[must_use]
+    pub fn mlsperr(&mut self) -> MLSPERR_W<5> {
+        MLSPERR_W::new(self)
     }
     #[doc = "Bit 7 - MemManage Fault Address Register (MMFAR) valid flag"]
     #[inline(always)]
-    pub fn mmarvalid(&mut self) -> MMARVALID_W {
-        MMARVALID_W { w: self }
+    #[must_use]
+    pub fn mmarvalid(&mut self) -> MMARVALID_W<7> {
+        MMARVALID_W::new(self)
     }
     #[doc = "Bit 8 - Instruction bus error"]
     #[inline(always)]
-    pub fn ibuserr(&mut self) -> IBUSERR_W {
-        IBUSERR_W { w: self }
+    #[must_use]
+    pub fn ibuserr(&mut self) -> IBUSERR_W<8> {
+        IBUSERR_W::new(self)
     }
     #[doc = "Bit 9 - Precise data bus error"]
     #[inline(always)]
-    pub fn preciserr(&mut self) -> PRECISERR_W {
-        PRECISERR_W { w: self }
+    #[must_use]
+    pub fn preciserr(&mut self) -> PRECISERR_W<9> {
+        PRECISERR_W::new(self)
     }
     #[doc = "Bit 10 - Imprecise data bus error"]
     #[inline(always)]
-    pub fn impreciserr(&mut self) -> IMPRECISERR_W {
-        IMPRECISERR_W { w: self }
+    #[must_use]
+    pub fn impreciserr(&mut self) -> IMPRECISERR_W<10> {
+        IMPRECISERR_W::new(self)
     }
     #[doc = "Bit 11 - BusFault on unstacking for a return from exception"]
     #[inline(always)]
-    pub fn unstkerr(&mut self) -> UNSTKERR_W {
-        UNSTKERR_W { w: self }
+    #[must_use]
+    pub fn unstkerr(&mut self) -> UNSTKERR_W<11> {
+        UNSTKERR_W::new(self)
     }
     #[doc = "Bit 12 - BusFault on stacking for exception entry"]
     #[inline(always)]
-    pub fn stkerr(&mut self) -> STKERR_W {
-        STKERR_W { w: self }
+    #[must_use]
+    pub fn stkerr(&mut self) -> STKERR_W<12> {
+        STKERR_W::new(self)
     }
     #[doc = "Bit 13 - BusFault during floating point lazy state preservation"]
     #[inline(always)]
-    pub fn lsperr(&mut self) -> LSPERR_W {
-        LSPERR_W { w: self }
+    #[must_use]
+    pub fn lsperr(&mut self) -> LSPERR_W<13> {
+        LSPERR_W::new(self)
     }
     #[doc = "Bit 15 - BusFault Address Register (BFAR) valid flag"]
     #[inline(always)]
-    pub fn bfarvalid(&mut self) -> BFARVALID_W {
-        BFARVALID_W { w: self }
+    #[must_use]
+    pub fn bfarvalid(&mut self) -> BFARVALID_W<15> {
+        BFARVALID_W::new(self)
     }
     #[doc = "Bit 16 - Undefined instruction UsageFault"]
     #[inline(always)]
-    pub fn undefinstr(&mut self) -> UNDEFINSTR_W {
-        UNDEFINSTR_W { w: self }
+    #[must_use]
+    pub fn undefinstr(&mut self) -> UNDEFINSTR_W<16> {
+        UNDEFINSTR_W::new(self)
     }
     #[doc = "Bit 17 - Invalid state UsageFault"]
     #[inline(always)]
-    pub fn invstate(&mut self) -> INVSTATE_W {
-        INVSTATE_W { w: self }
+    #[must_use]
+    pub fn invstate(&mut self) -> INVSTATE_W<17> {
+        INVSTATE_W::new(self)
     }
     #[doc = "Bit 18 - Invalid PC load UsageFault"]
     #[inline(always)]
-    pub fn invpc(&mut self) -> INVPC_W {
-        INVPC_W { w: self }
+    #[must_use]
+    pub fn invpc(&mut self) -> INVPC_W<18> {
+        INVPC_W::new(self)
     }
     #[doc = "Bit 19 - No coprocessor UsageFault"]
     #[inline(always)]
-    pub fn nocp(&mut self) -> NOCP_W {
-        NOCP_W { w: self }
+    #[must_use]
+    pub fn nocp(&mut self) -> NOCP_W<19> {
+        NOCP_W::new(self)
     }
     #[doc = "Bit 24 - Unaligned access UsageFault"]
     #[inline(always)]
-    pub fn unaligned(&mut self) -> UNALIGNED_W {
-        UNALIGNED_W { w: self }
+    #[must_use]
+    pub fn unaligned(&mut self) -> UNALIGNED_W<24> {
+        UNALIGNED_W::new(self)
     }
     #[doc = "Bit 25 - Divide by zero UsageFault"]
     #[inline(always)]
-    pub fn divbyzero(&mut self) -> DIVBYZERO_W {
-        DIVBYZERO_W { w: self }
+    #[must_use]
+    pub fn divbyzero(&mut self) -> DIVBYZERO_W<25> {
+        DIVBYZERO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -1823,11 +1215,10 @@ impl crate::Readable for CFSR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfsr::W](W) writer structure"]
 impl crate::Writable for CFSR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFSR to value 0"]
 impl crate::Resettable for CFSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

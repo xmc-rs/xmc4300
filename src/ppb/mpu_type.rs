@@ -14,52 +14,16 @@ impl From<crate::R<MPU_TYPE_SPEC>> for R {
     }
 }
 #[doc = "Field `SEPARATE` reader - Support for unified or separate instruction and date memory maps"]
-pub struct SEPARATE_R(crate::FieldReader<bool, bool>);
-impl SEPARATE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SEPARATE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SEPARATE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SEPARATE_R = crate::BitReader<bool>;
 #[doc = "Field `DREGION` reader - Number of supported MPU data regions"]
-pub struct DREGION_R(crate::FieldReader<u8, u8>);
-impl DREGION_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DREGION_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DREGION_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DREGION_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IREGION` reader - Number of supported MPU instruction regions"]
-pub struct IREGION_R(crate::FieldReader<u8, u8>);
-impl IREGION_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        IREGION_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IREGION_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IREGION_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 0 - Support for unified or separate instruction and date memory maps"]
     #[inline(always)]
     pub fn separate(&self) -> SEPARATE_R {
-        SEPARATE_R::new((self.bits & 0x01) != 0)
+        SEPARATE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 8:15 - Number of supported MPU data regions"]
     #[inline(always)]
@@ -83,8 +47,5 @@ impl crate::Readable for MPU_TYPE_SPEC {
 }
 #[doc = "`reset()` method sets MPU_TYPE to value 0x0800"]
 impl crate::Resettable for MPU_TYPE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0800
-    }
+    const RESET_VALUE: Self::Ux = 0x0800;
 }

@@ -35,109 +35,21 @@ impl From<crate::W<MODATAH_SPEC>> for W {
     }
 }
 #[doc = "Field `DB4` reader - Data Byte 4 of Message Object n"]
-pub struct DB4_R(crate::FieldReader<u8, u8>);
-impl DB4_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DB4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DB4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DB4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DB4` writer - Data Byte 4 of Message Object n"]
-pub struct DB4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DB4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type DB4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODATAH_SPEC, u8, u8, 8, O>;
 #[doc = "Field `DB5` reader - Data Byte 5 of Message Object n"]
-pub struct DB5_R(crate::FieldReader<u8, u8>);
-impl DB5_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DB5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DB5_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DB5_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DB5` writer - Data Byte 5 of Message Object n"]
-pub struct DB5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DB5_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type DB5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODATAH_SPEC, u8, u8, 8, O>;
 #[doc = "Field `DB6` reader - Data Byte 6 of Message Object n"]
-pub struct DB6_R(crate::FieldReader<u8, u8>);
-impl DB6_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DB6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DB6_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DB6_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DB6` writer - Data Byte 6 of Message Object n"]
-pub struct DB6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DB6_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type DB6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODATAH_SPEC, u8, u8, 8, O>;
 #[doc = "Field `DB7` reader - Data Byte 7 of Message Object n"]
-pub struct DB7_R(crate::FieldReader<u8, u8>);
-impl DB7_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DB7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DB7_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DB7_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DB7` writer - Data Byte 7 of Message Object n"]
-pub struct DB7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DB7_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type DB7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODATAH_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Data Byte 4 of Message Object n"]
     #[inline(always)]
@@ -163,23 +75,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Data Byte 4 of Message Object n"]
     #[inline(always)]
-    pub fn db4(&mut self) -> DB4_W {
-        DB4_W { w: self }
+    #[must_use]
+    pub fn db4(&mut self) -> DB4_W<0> {
+        DB4_W::new(self)
     }
     #[doc = "Bits 8:15 - Data Byte 5 of Message Object n"]
     #[inline(always)]
-    pub fn db5(&mut self) -> DB5_W {
-        DB5_W { w: self }
+    #[must_use]
+    pub fn db5(&mut self) -> DB5_W<8> {
+        DB5_W::new(self)
     }
     #[doc = "Bits 16:23 - Data Byte 6 of Message Object n"]
     #[inline(always)]
-    pub fn db6(&mut self) -> DB6_W {
-        DB6_W { w: self }
+    #[must_use]
+    pub fn db6(&mut self) -> DB6_W<16> {
+        DB6_W::new(self)
     }
     #[doc = "Bits 24:31 - Data Byte 7 of Message Object n"]
     #[inline(always)]
-    pub fn db7(&mut self) -> DB7_W {
-        DB7_W { w: self }
+    #[must_use]
+    pub fn db7(&mut self) -> DB7_W<24> {
+        DB7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -200,11 +116,10 @@ impl crate::Readable for MODATAH_SPEC {
 #[doc = "`write(|w| ..)` method takes [modatah::W](W) writer structure"]
 impl crate::Writable for MODATAH_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MODATAH to value 0"]
 impl crate::Resettable for MODATAH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

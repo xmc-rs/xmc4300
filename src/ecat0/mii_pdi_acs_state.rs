@@ -34,8 +34,10 @@ impl From<crate::W<MII_PDI_ACS_STATE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ACS_MII_BY_PDI` reader - Access to MII management"]
+pub type ACS_MII_BY_PDI_R = crate::BitReader<ACS_MII_BY_PDI_A>;
 #[doc = "Access to MII management\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ACS_MII_BY_PDI_A {
     #[doc = "0: ECAT has access to MII managment"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<ACS_MII_BY_PDI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ACS_MII_BY_PDI` reader - Access to MII management"]
-pub struct ACS_MII_BY_PDI_R(crate::FieldReader<bool, ACS_MII_BY_PDI_A>);
 impl ACS_MII_BY_PDI_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACS_MII_BY_PDI_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ACS_MII_BY_PDI_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl ACS_MII_BY_PDI_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ACS_MII_BY_PDI_A::VALUE1
+        *self == ACS_MII_BY_PDI_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ACS_MII_BY_PDI_A::VALUE2
-    }
-}
-impl core::ops::Deref for ACS_MII_BY_PDI_R {
-    type Target = crate::FieldReader<bool, ACS_MII_BY_PDI_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ACS_MII_BY_PDI_A::VALUE2
     }
 }
 #[doc = "Field `ACS_MII_BY_PDI` writer - Access to MII management"]
-pub struct ACS_MII_BY_PDI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACS_MII_BY_PDI_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ACS_MII_BY_PDI_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ACS_MII_BY_PDI_W<'a, const O: u8> = crate::BitWriter<'a, u8, MII_PDI_ACS_STATE_SPEC, ACS_MII_BY_PDI_A, O>;
+impl<'a, const O: u8> ACS_MII_BY_PDI_W<'a, O> {
     #[doc = "ECAT has access to MII managment"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> ACS_MII_BY_PDI_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ACS_MII_BY_PDI_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `FORCE_PDI_ACS_S` reader - Force PDI Access State by ECAT master"]
+pub type FORCE_PDI_ACS_S_R = crate::BitReader<FORCE_PDI_ACS_S_A>;
 #[doc = "Force PDI Access State by ECAT master\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FORCE_PDI_ACS_S_A {
     #[doc = "0: no change"]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<FORCE_PDI_ACS_S_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FORCE_PDI_ACS_S` reader - Force PDI Access State by ECAT master"]
-pub struct FORCE_PDI_ACS_S_R(crate::FieldReader<bool, FORCE_PDI_ACS_S_A>);
 impl FORCE_PDI_ACS_S_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FORCE_PDI_ACS_S_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FORCE_PDI_ACS_S_A {
         match self.bits {
@@ -148,38 +112,32 @@ impl FORCE_PDI_ACS_S_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == FORCE_PDI_ACS_S_A::VALUE1
+        *self == FORCE_PDI_ACS_S_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == FORCE_PDI_ACS_S_A::VALUE2
-    }
-}
-impl core::ops::Deref for FORCE_PDI_ACS_S_R {
-    type Target = crate::FieldReader<bool, FORCE_PDI_ACS_S_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FORCE_PDI_ACS_S_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - Access to MII management"]
     #[inline(always)]
     pub fn acs_mii_by_pdi(&self) -> ACS_MII_BY_PDI_R {
-        ACS_MII_BY_PDI_R::new((self.bits & 0x01) != 0)
+        ACS_MII_BY_PDI_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Force PDI Access State by ECAT master"]
     #[inline(always)]
     pub fn force_pdi_acs_s(&self) -> FORCE_PDI_ACS_S_R {
-        FORCE_PDI_ACS_S_R::new(((self.bits >> 1) & 0x01) != 0)
+        FORCE_PDI_ACS_S_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Access to MII management"]
     #[inline(always)]
-    pub fn acs_mii_by_pdi(&mut self) -> ACS_MII_BY_PDI_W {
-        ACS_MII_BY_PDI_W { w: self }
+    #[must_use]
+    pub fn acs_mii_by_pdi(&mut self) -> ACS_MII_BY_PDI_W<0> {
+        ACS_MII_BY_PDI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -200,11 +158,10 @@ impl crate::Readable for MII_PDI_ACS_STATE_SPEC {
 #[doc = "`write(|w| ..)` method takes [mii_pdi_acs_state::W](W) writer structure"]
 impl crate::Writable for MII_PDI_ACS_STATE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MII_PDI_ACS_STATE to value 0"]
 impl crate::Resettable for MII_PDI_ACS_STATE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

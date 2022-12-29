@@ -34,8 +34,10 @@ impl From<crate::W<HCDMA_SCATGATHER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CTD` reader - Current Transfer Desc:"]
+pub type CTD_R = crate::FieldReader<u8, CTD_A>;
 #[doc = "Current Transfer Desc:\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CTD_A {
     #[doc = "0: 1 descriptor"]
@@ -49,13 +51,8 @@ impl From<CTD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CTD` reader - Current Transfer Desc:"]
-pub struct CTD_R(crate::FieldReader<u8, CTD_A>);
 impl CTD_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CTD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CTD_A> {
         match self.bits {
@@ -67,31 +64,17 @@ impl CTD_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CTD_A::VALUE1
+        *self == CTD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CTD_A::VALUE2
-    }
-}
-impl core::ops::Deref for CTD_R {
-    type Target = crate::FieldReader<u8, CTD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CTD_A::VALUE2
     }
 }
 #[doc = "Field `CTD` writer - Current Transfer Desc:"]
-pub struct CTD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTD_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CTD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCDMA_SCATGATHER_SPEC, u8, CTD_A, 6, O>;
+impl<'a, const O: u8> CTD_W<'a, O> {
     #[doc = "1 descriptor"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -102,39 +85,11 @@ impl<'a> CTD_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CTD_A::VALUE2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 3)) | ((value as u32 & 0x3f) << 3);
-        self.w
-    }
 }
 #[doc = "Field `DMAAddr` reader - DMA Address"]
-pub struct DMAADDR_R(crate::FieldReader<u32, u32>);
-impl DMAADDR_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        DMAADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMAADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMAADDR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DMAAddr` writer - DMA Address"]
-pub struct DMAADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMAADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x007f_ffff << 9)) | ((value as u32 & 0x007f_ffff) << 9);
-        self.w
-    }
-}
+pub type DMAADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCDMA_SCATGATHER_SPEC, u32, u32, 23, O>;
 impl R {
     #[doc = "Bits 3:8 - Current Transfer Desc:"]
     #[inline(always)]
@@ -144,19 +99,21 @@ impl R {
     #[doc = "Bits 9:31 - DMA Address"]
     #[inline(always)]
     pub fn dmaaddr(&self) -> DMAADDR_R {
-        DMAADDR_R::new(((self.bits >> 9) & 0x007f_ffff) as u32)
+        DMAADDR_R::new((self.bits >> 9) & 0x007f_ffff)
     }
 }
 impl W {
     #[doc = "Bits 3:8 - Current Transfer Desc:"]
     #[inline(always)]
-    pub fn ctd(&mut self) -> CTD_W {
-        CTD_W { w: self }
+    #[must_use]
+    pub fn ctd(&mut self) -> CTD_W<3> {
+        CTD_W::new(self)
     }
     #[doc = "Bits 9:31 - DMA Address"]
     #[inline(always)]
-    pub fn dmaaddr(&mut self) -> DMAADDR_W {
-        DMAADDR_W { w: self }
+    #[must_use]
+    pub fn dmaaddr(&mut self) -> DMAADDR_W<9> {
+        DMAADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -165,7 +122,7 @@ impl W {
         self
     }
 }
-#[doc = "Host Channel DMA Address Register \\[SCATGATHER\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcdma_scatgather](index.html) module"]
+#[doc = "Host Channel DMA Address Register \\[SCATGATHER\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcdma_scatgather](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
 pub struct HCDMA_SCATGATHER_SPEC;
 impl crate::RegisterSpec for HCDMA_SCATGATHER_SPEC {
     type Ux = u32;
@@ -177,11 +134,10 @@ impl crate::Readable for HCDMA_SCATGATHER_SPEC {
 #[doc = "`write(|w| ..)` method takes [hcdma_scatgather::W](W) writer structure"]
 impl crate::Writable for HCDMA_SCATGATHER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HCDMA_SCATGATHER to value 0"]
 impl crate::Resettable for HCDMA_SCATGATHER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

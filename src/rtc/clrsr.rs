@@ -20,194 +20,61 @@ impl From<crate::W<CLRSR_SPEC>> for W {
     }
 }
 #[doc = "Field `RPSE` writer - Periodic Seconds Interrupt Clear"]
-pub struct RPSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RPSE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RPSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
 #[doc = "Field `RPMI` writer - Periodic Minutes Interrupt Clear"]
-pub struct RPMI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RPMI_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type RPMI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
 #[doc = "Field `RPHO` writer - Periodic Hours Interrupt Clear"]
-pub struct RPHO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RPHO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type RPHO_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
 #[doc = "Field `RPDA` writer - Periodic Days Interrupt Clear"]
-pub struct RPDA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RPDA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type RPDA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
 #[doc = "Field `RPMO` writer - Periodic Months Interrupt Clear"]
-pub struct RPMO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RPMO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type RPMO_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
 #[doc = "Field `RPYE` writer - Periodic Years Interrupt Clear"]
-pub struct RPYE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RPYE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type RPYE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
 #[doc = "Field `RAI` writer - Alarm Interrupt Clear"]
-pub struct RAI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RAI_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type RAI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Periodic Seconds Interrupt Clear"]
     #[inline(always)]
-    pub fn rpse(&mut self) -> RPSE_W {
-        RPSE_W { w: self }
+    #[must_use]
+    pub fn rpse(&mut self) -> RPSE_W<0> {
+        RPSE_W::new(self)
     }
     #[doc = "Bit 1 - Periodic Minutes Interrupt Clear"]
     #[inline(always)]
-    pub fn rpmi(&mut self) -> RPMI_W {
-        RPMI_W { w: self }
+    #[must_use]
+    pub fn rpmi(&mut self) -> RPMI_W<1> {
+        RPMI_W::new(self)
     }
     #[doc = "Bit 2 - Periodic Hours Interrupt Clear"]
     #[inline(always)]
-    pub fn rpho(&mut self) -> RPHO_W {
-        RPHO_W { w: self }
+    #[must_use]
+    pub fn rpho(&mut self) -> RPHO_W<2> {
+        RPHO_W::new(self)
     }
     #[doc = "Bit 3 - Periodic Days Interrupt Clear"]
     #[inline(always)]
-    pub fn rpda(&mut self) -> RPDA_W {
-        RPDA_W { w: self }
+    #[must_use]
+    pub fn rpda(&mut self) -> RPDA_W<3> {
+        RPDA_W::new(self)
     }
     #[doc = "Bit 5 - Periodic Months Interrupt Clear"]
     #[inline(always)]
-    pub fn rpmo(&mut self) -> RPMO_W {
-        RPMO_W { w: self }
+    #[must_use]
+    pub fn rpmo(&mut self) -> RPMO_W<5> {
+        RPMO_W::new(self)
     }
     #[doc = "Bit 6 - Periodic Years Interrupt Clear"]
     #[inline(always)]
-    pub fn rpye(&mut self) -> RPYE_W {
-        RPYE_W { w: self }
+    #[must_use]
+    pub fn rpye(&mut self) -> RPYE_W<6> {
+        RPYE_W::new(self)
     }
     #[doc = "Bit 8 - Alarm Interrupt Clear"]
     #[inline(always)]
-    pub fn rai(&mut self) -> RAI_W {
-        RAI_W { w: self }
+    #[must_use]
+    pub fn rai(&mut self) -> RAI_W<8> {
+        RAI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -224,11 +91,10 @@ impl crate::RegisterSpec for CLRSR_SPEC {
 #[doc = "`write(|w| ..)` method takes [clrsr::W](W) writer structure"]
 impl crate::Writable for CLRSR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLRSR to value 0"]
 impl crate::Resettable for CLRSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

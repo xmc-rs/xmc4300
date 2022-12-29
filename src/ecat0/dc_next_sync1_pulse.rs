@@ -14,24 +14,12 @@ impl From<crate::R<DC_NEXT_SYNC1_PULSE_SPEC>> for R {
     }
 }
 #[doc = "Field `DC_NEXT_SYNC1_PULSE` reader - System time of next SYNC1 pulse in ns"]
-pub struct DC_NEXT_SYNC1_PULSE_R(crate::FieldReader<u32, u32>);
-impl DC_NEXT_SYNC1_PULSE_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        DC_NEXT_SYNC1_PULSE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DC_NEXT_SYNC1_PULSE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DC_NEXT_SYNC1_PULSE_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - System time of next SYNC1 pulse in ns"]
     #[inline(always)]
     pub fn dc_next_sync1_pulse(&self) -> DC_NEXT_SYNC1_PULSE_R {
-        DC_NEXT_SYNC1_PULSE_R::new((self.bits & 0xffff_ffff) as u32)
+        DC_NEXT_SYNC1_PULSE_R::new(self.bits)
     }
 }
 #[doc = "System time of next SYNC1 pulse in ns\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dc_next_sync1_pulse](index.html) module"]
@@ -46,8 +34,5 @@ impl crate::Readable for DC_NEXT_SYNC1_PULSE_SPEC {
 #[doc = "`reset()` method sets DC_NEXT_SYNC1_PULSE[%s]
 to value 0"]
 impl crate::Resettable for DC_NEXT_SYNC1_PULSE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

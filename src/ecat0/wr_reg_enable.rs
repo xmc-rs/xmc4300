@@ -14,24 +14,12 @@ impl From<crate::R<WR_REG_ENABLE_SPEC>> for R {
     }
 }
 #[doc = "Field `WR_REG_EN` reader - Write register protection enabled"]
-pub struct WR_REG_EN_R(crate::FieldReader<bool, bool>);
-impl WR_REG_EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WR_REG_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WR_REG_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WR_REG_EN_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Write register protection enabled"]
     #[inline(always)]
     pub fn wr_reg_en(&self) -> WR_REG_EN_R {
-        WR_REG_EN_R::new((self.bits & 0x01) != 0)
+        WR_REG_EN_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Write Register Enable\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wr_reg_enable](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for WR_REG_ENABLE_SPEC {
 }
 #[doc = "`reset()` method sets WR_REG_ENABLE to value 0"]
 impl crate::Resettable for WR_REG_ENABLE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

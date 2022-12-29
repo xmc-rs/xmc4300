@@ -35,79 +35,37 @@ impl From<crate::W<GNPTXFSIZ_DEVICEMODE_SPEC>> for W {
     }
 }
 #[doc = "Field `INEPTxF0StAddr` reader - IN Endpoint FIFO0 Transmit RAM Start Address"]
-pub struct INEPTXF0STADDR_R(crate::FieldReader<u16, u16>);
-impl INEPTXF0STADDR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        INEPTXF0STADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INEPTXF0STADDR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INEPTX_F0ST_ADDR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `INEPTxF0StAddr` writer - IN Endpoint FIFO0 Transmit RAM Start Address"]
-pub struct INEPTXF0STADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INEPTXF0STADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type INEPTX_F0ST_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GNPTXFSIZ_DEVICEMODE_SPEC, u16, u16, 16, O>;
 #[doc = "Field `INEPTxF0Dep` reader - IN Endpoint TxFIFO 0 Depth"]
-pub struct INEPTXF0DEP_R(crate::FieldReader<u16, u16>);
-impl INEPTXF0DEP_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        INEPTXF0DEP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INEPTXF0DEP_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INEPTX_F0DEP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `INEPTxF0Dep` writer - IN Endpoint TxFIFO 0 Depth"]
-pub struct INEPTXF0DEP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INEPTXF0DEP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type INEPTX_F0DEP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GNPTXFSIZ_DEVICEMODE_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - IN Endpoint FIFO0 Transmit RAM Start Address"]
     #[inline(always)]
-    pub fn ineptx_f0st_addr(&self) -> INEPTXF0STADDR_R {
-        INEPTXF0STADDR_R::new((self.bits & 0xffff) as u16)
+    pub fn ineptx_f0st_addr(&self) -> INEPTX_F0ST_ADDR_R {
+        INEPTX_F0ST_ADDR_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:31 - IN Endpoint TxFIFO 0 Depth"]
     #[inline(always)]
-    pub fn ineptx_f0dep(&self) -> INEPTXF0DEP_R {
-        INEPTXF0DEP_R::new(((self.bits >> 16) & 0xffff) as u16)
+    pub fn ineptx_f0dep(&self) -> INEPTX_F0DEP_R {
+        INEPTX_F0DEP_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - IN Endpoint FIFO0 Transmit RAM Start Address"]
     #[inline(always)]
-    pub fn ineptx_f0st_addr(&mut self) -> INEPTXF0STADDR_W {
-        INEPTXF0STADDR_W { w: self }
+    #[must_use]
+    pub fn ineptx_f0st_addr(&mut self) -> INEPTX_F0ST_ADDR_W<0> {
+        INEPTX_F0ST_ADDR_W::new(self)
     }
     #[doc = "Bits 16:31 - IN Endpoint TxFIFO 0 Depth"]
     #[inline(always)]
-    pub fn ineptx_f0dep(&mut self) -> INEPTXF0DEP_W {
-        INEPTXF0DEP_W { w: self }
+    #[must_use]
+    pub fn ineptx_f0dep(&mut self) -> INEPTX_F0DEP_W<16> {
+        INEPTX_F0DEP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for GNPTXFSIZ_DEVICEMODE_SPEC {
 #[doc = "`write(|w| ..)` method takes [gnptxfsiz_devicemode::W](W) writer structure"]
 impl crate::Writable for GNPTXFSIZ_DEVICEMODE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GNPTXFSIZ_DEVICEMODE to value 0x0010_0000"]
 impl crate::Resettable for GNPTXFSIZ_DEVICEMODE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0010_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0010_0000;
 }

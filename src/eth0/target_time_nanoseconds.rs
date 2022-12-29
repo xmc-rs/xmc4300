@@ -35,62 +35,29 @@ impl From<crate::W<TARGET_TIME_NANOSECONDS_SPEC>> for W {
     }
 }
 #[doc = "Field `TTSLO` reader - Target Timestamp Low Register"]
-pub struct TTSLO_R(crate::FieldReader<u32, u32>);
-impl TTSLO_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        TTSLO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TTSLO_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TTSLO_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TTSLO` writer - Target Timestamp Low Register"]
-pub struct TTSLO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TTSLO_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7fff_ffff) | (value as u32 & 0x7fff_ffff);
-        self.w
-    }
-}
+pub type TTSLO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TARGET_TIME_NANOSECONDS_SPEC, u32, u32, 31, O>;
 #[doc = "Field `TRGTBUSY` reader - Target Time Register Busy"]
-pub struct TRGTBUSY_R(crate::FieldReader<bool, bool>);
-impl TRGTBUSY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TRGTBUSY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRGTBUSY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRGTBUSY_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:30 - Target Timestamp Low Register"]
     #[inline(always)]
     pub fn ttslo(&self) -> TTSLO_R {
-        TTSLO_R::new((self.bits & 0x7fff_ffff) as u32)
+        TTSLO_R::new(self.bits & 0x7fff_ffff)
     }
     #[doc = "Bit 31 - Target Time Register Busy"]
     #[inline(always)]
     pub fn trgtbusy(&self) -> TRGTBUSY_R {
-        TRGTBUSY_R::new(((self.bits >> 31) & 0x01) != 0)
+        TRGTBUSY_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:30 - Target Timestamp Low Register"]
     #[inline(always)]
-    pub fn ttslo(&mut self) -> TTSLO_W {
-        TTSLO_W { w: self }
+    #[must_use]
+    pub fn ttslo(&mut self) -> TTSLO_W<0> {
+        TTSLO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -111,11 +78,10 @@ impl crate::Readable for TARGET_TIME_NANOSECONDS_SPEC {
 #[doc = "`write(|w| ..)` method takes [target_time_nanoseconds::W](W) writer structure"]
 impl crate::Writable for TARGET_TIME_NANOSECONDS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TARGET_TIME_NANOSECONDS to value 0"]
 impl crate::Resettable for TARGET_TIME_NANOSECONDS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

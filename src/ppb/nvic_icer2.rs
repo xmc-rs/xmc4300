@@ -34,8 +34,10 @@ impl From<crate::W<NVIC_ICER2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CLRENA` reader - Interrupt clear-enable bits."]
+pub type CLRENA_R = crate::FieldReader<u32, CLRENA_A>;
 #[doc = "Interrupt clear-enable bits.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum CLRENA_A {
     #[doc = "0: interrupt disabled"]
@@ -49,13 +51,8 @@ impl From<CLRENA_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `CLRENA` reader - Interrupt clear-enable bits."]
-pub struct CLRENA_R(crate::FieldReader<u32, CLRENA_A>);
 impl CLRENA_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        CLRENA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CLRENA_A> {
         match self.bits {
@@ -67,31 +64,17 @@ impl CLRENA_R {
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == CLRENA_A::VALUE3
+        *self == CLRENA_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == CLRENA_A::VALUE4
-    }
-}
-impl core::ops::Deref for CLRENA_R {
-    type Target = crate::FieldReader<u32, CLRENA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLRENA_A::VALUE4
     }
 }
 #[doc = "Field `CLRENA` writer - Interrupt clear-enable bits."]
-pub struct CLRENA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLRENA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLRENA_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CLRENA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_ICER2_SPEC, u32, CLRENA_A, 32, O>;
+impl<'a, const O: u8> CLRENA_W<'a, O> {
     #[doc = "interrupt disabled"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut W {
@@ -102,25 +85,20 @@ impl<'a> CLRENA_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(CLRENA_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:31 - Interrupt clear-enable bits."]
     #[inline(always)]
     pub fn clrena(&self) -> CLRENA_R {
-        CLRENA_R::new((self.bits & 0xffff_ffff) as u32)
+        CLRENA_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Interrupt clear-enable bits."]
     #[inline(always)]
-    pub fn clrena(&mut self) -> CLRENA_W {
-        CLRENA_W { w: self }
+    #[must_use]
+    pub fn clrena(&mut self) -> CLRENA_W<0> {
+        CLRENA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -141,11 +119,10 @@ impl crate::Readable for NVIC_ICER2_SPEC {
 #[doc = "`write(|w| ..)` method takes [nvic_icer2::W](W) writer structure"]
 impl crate::Writable for NVIC_ICER2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets NVIC_ICER2 to value 0"]
 impl crate::Resettable for NVIC_ICER2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

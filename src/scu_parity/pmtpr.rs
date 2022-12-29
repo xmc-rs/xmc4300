@@ -34,63 +34,30 @@ impl From<crate::W<PMTPR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `PRD` reader - Parity Read Values for Memory Test"]
-pub struct PRD_R(crate::FieldReader<u8, u8>);
-impl PRD_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PRD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
 #[doc = "Field `PWR` reader - Parity Write Values for Memory Test"]
-pub struct PWR_R(crate::FieldReader<u8, u8>);
-impl PWR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PWR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PWR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PWR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PWR` writer - Parity Write Values for Memory Test"]
-pub struct PWR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PWR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type PWR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PMTPR_SPEC, u8, u8, 8, O>;
+#[doc = "Field `PRD` reader - Parity Read Values for Memory Test"]
+pub type PRD_R = crate::FieldReader<u8, u8>;
 impl R {
-    #[doc = "Bits 8:15 - Parity Read Values for Memory Test"]
-    #[inline(always)]
-    pub fn prd(&self) -> PRD_R {
-        PRD_R::new(((self.bits >> 8) & 0xff) as u8)
-    }
     #[doc = "Bits 0:7 - Parity Write Values for Memory Test"]
     #[inline(always)]
     pub fn pwr(&self) -> PWR_R {
         PWR_R::new((self.bits & 0xff) as u8)
     }
+    #[doc = "Bits 8:15 - Parity Read Values for Memory Test"]
+    #[inline(always)]
+    pub fn prd(&self) -> PRD_R {
+        PRD_R::new(((self.bits >> 8) & 0xff) as u8)
+    }
 }
 impl W {
     #[doc = "Bits 0:7 - Parity Write Values for Memory Test"]
     #[inline(always)]
-    pub fn pwr(&mut self) -> PWR_W {
-        PWR_W { w: self }
+    #[must_use]
+    pub fn pwr(&mut self) -> PWR_W<0> {
+        PWR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -111,11 +78,10 @@ impl crate::Readable for PMTPR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pmtpr::W](W) writer structure"]
 impl crate::Writable for PMTPR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PMTPR to value 0"]
 impl crate::Resettable for PMTPR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

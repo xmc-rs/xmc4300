@@ -34,8 +34,10 @@ impl From<crate::W<CON_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ECATRSTEN` reader - Enable EtherCAT Reset Request"]
+pub type ECATRSTEN_R = crate::BitReader<ECATRSTEN_A>;
 #[doc = "Enable EtherCAT Reset Request\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ECATRSTEN_A {
     #[doc = "0: Reset request by EtherCAT Master disabled"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<ECATRSTEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ECATRSTEN` reader - Enable EtherCAT Reset Request"]
-pub struct ECATRSTEN_R(crate::FieldReader<bool, ECATRSTEN_A>);
 impl ECATRSTEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ECATRSTEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ECATRSTEN_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl ECATRSTEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ECATRSTEN_A::VALUE1
+        *self == ECATRSTEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ECATRSTEN_A::VALUE2
-    }
-}
-impl core::ops::Deref for ECATRSTEN_R {
-    type Target = crate::FieldReader<bool, ECATRSTEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ECATRSTEN_A::VALUE2
     }
 }
 #[doc = "Field `ECATRSTEN` writer - Enable EtherCAT Reset Request"]
-pub struct ECATRSTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ECATRSTEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ECATRSTEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ECATRSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CON_SPEC, ECATRSTEN_A, O>;
+impl<'a, const O: u8> ECATRSTEN_W<'a, O> {
     #[doc = "Reset request by EtherCAT Master disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> ECATRSTEN_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ECATRSTEN_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `LATCHIN0SEL` reader - LATCHIN0 Input Select"]
+pub type LATCHIN0SEL_R = crate::FieldReader<u8, LATCHIN0SEL_A>;
 #[doc = "LATCHIN0 Input Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LATCHIN0SEL_A {
     #[doc = "0: Data input LATCHIN0A is selected"]
@@ -136,13 +105,8 @@ impl From<LATCHIN0SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LATCHIN0SEL` reader - LATCHIN0 Input Select"]
-pub struct LATCHIN0SEL_R(crate::FieldReader<u8, LATCHIN0SEL_A>);
 impl LATCHIN0SEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LATCHIN0SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LATCHIN0SEL_A {
         match self.bits {
@@ -156,41 +120,27 @@ impl LATCHIN0SEL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LATCHIN0SEL_A::VALUE1
+        *self == LATCHIN0SEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LATCHIN0SEL_A::VALUE2
+        *self == LATCHIN0SEL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == LATCHIN0SEL_A::VALUE3
+        *self == LATCHIN0SEL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == LATCHIN0SEL_A::VALUE4
-    }
-}
-impl core::ops::Deref for LATCHIN0SEL_R {
-    type Target = crate::FieldReader<u8, LATCHIN0SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LATCHIN0SEL_A::VALUE4
     }
 }
 #[doc = "Field `LATCHIN0SEL` writer - LATCHIN0 Input Select"]
-pub struct LATCHIN0SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LATCHIN0SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LATCHIN0SEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type LATCHIN0SEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CON_SPEC, u8, LATCHIN0SEL_A, 2, O>;
+impl<'a, const O: u8> LATCHIN0SEL_W<'a, O> {
     #[doc = "Data input LATCHIN0A is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -211,29 +161,13 @@ impl<'a> LATCHIN0SEL_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(LATCHIN0SEL_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
 }
 #[doc = "Field `LATCHIN0` reader - EtherCAT LATCH_IN0 Input Signal"]
-pub struct LATCHIN0_R(crate::FieldReader<bool, bool>);
-impl LATCHIN0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LATCHIN0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LATCHIN0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LATCHIN0_R = crate::BitReader<bool>;
+#[doc = "Field `LATCHIN1SEL` reader - LATCHIN1 Input Select"]
+pub type LATCHIN1SEL_R = crate::FieldReader<u8, LATCHIN1SEL_A>;
 #[doc = "LATCHIN1 Input Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LATCHIN1SEL_A {
     #[doc = "0: Data input LATCHIN1A is selected"]
@@ -251,13 +185,8 @@ impl From<LATCHIN1SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LATCHIN1SEL` reader - LATCHIN1 Input Select"]
-pub struct LATCHIN1SEL_R(crate::FieldReader<u8, LATCHIN1SEL_A>);
 impl LATCHIN1SEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LATCHIN1SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LATCHIN1SEL_A {
         match self.bits {
@@ -271,41 +200,27 @@ impl LATCHIN1SEL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LATCHIN1SEL_A::VALUE1
+        *self == LATCHIN1SEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LATCHIN1SEL_A::VALUE2
+        *self == LATCHIN1SEL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == LATCHIN1SEL_A::VALUE3
+        *self == LATCHIN1SEL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == LATCHIN1SEL_A::VALUE4
-    }
-}
-impl core::ops::Deref for LATCHIN1SEL_R {
-    type Target = crate::FieldReader<u8, LATCHIN1SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LATCHIN1SEL_A::VALUE4
     }
 }
 #[doc = "Field `LATCHIN1SEL` writer - LATCHIN1 Input Select"]
-pub struct LATCHIN1SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LATCHIN1SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LATCHIN1SEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type LATCHIN1SEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CON_SPEC, u8, LATCHIN1SEL_A, 2, O>;
+impl<'a, const O: u8> LATCHIN1SEL_W<'a, O> {
     #[doc = "Data input LATCHIN1A is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -326,55 +241,17 @@ impl<'a> LATCHIN1SEL_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(LATCHIN1SEL_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
-    }
 }
 #[doc = "Field `LATCHIN1` reader - EtherCAT LATCH_IN1 Input Signal"]
-pub struct LATCHIN1_R(crate::FieldReader<bool, bool>);
-impl LATCHIN1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LATCHIN1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LATCHIN1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LATCHIN1_R = crate::BitReader<bool>;
 #[doc = "Field `PHYOFFSET` reader - Ethernet PHY Address Offset"]
-pub struct PHYOFFSET_R(crate::FieldReader<u8, u8>);
-impl PHYOFFSET_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PHYOFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PHYOFFSET_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PHYOFFSET_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PHYOFFSET` writer - Ethernet PHY Address Offset"]
-pub struct PHYOFFSET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PHYOFFSET_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 16)) | ((value as u32 & 0x1f) << 16);
-        self.w
-    }
-}
+pub type PHYOFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CON_SPEC, u8, u8, 5, O>;
+#[doc = "Field `MDIO` reader - MDIO Input Select"]
+pub type MDIO_R = crate::FieldReader<u8, MDIO_A>;
 #[doc = "MDIO Input Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MDIO_A {
     #[doc = "0: Data input MDIA is selected"]
@@ -392,13 +269,8 @@ impl From<MDIO_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MDIO` reader - MDIO Input Select"]
-pub struct MDIO_R(crate::FieldReader<u8, MDIO_A>);
 impl MDIO_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MDIO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MDIO_A {
         match self.bits {
@@ -412,41 +284,27 @@ impl MDIO_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == MDIO_A::VALUE1
+        *self == MDIO_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == MDIO_A::VALUE2
+        *self == MDIO_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == MDIO_A::VALUE3
+        *self == MDIO_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == MDIO_A::VALUE4
-    }
-}
-impl core::ops::Deref for MDIO_R {
-    type Target = crate::FieldReader<u8, MDIO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MDIO_A::VALUE4
     }
 }
 #[doc = "Field `MDIO` writer - MDIO Input Select"]
-pub struct MDIO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MDIO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MDIO_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type MDIO_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CON_SPEC, u8, MDIO_A, 2, O>;
+impl<'a, const O: u8> MDIO_W<'a, O> {
     #[doc = "Data input MDIA is selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -467,38 +325,32 @@ impl<'a> MDIO_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(MDIO_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | ((value as u32 & 0x03) << 22);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Enable EtherCAT Reset Request"]
     #[inline(always)]
     pub fn ecatrsten(&self) -> ECATRSTEN_R {
-        ECATRSTEN_R::new((self.bits & 0x01) != 0)
+        ECATRSTEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 8:9 - LATCHIN0 Input Select"]
     #[inline(always)]
     pub fn latchin0sel(&self) -> LATCHIN0SEL_R {
-        LATCHIN0SEL_R::new(((self.bits >> 8) & 0x03) as u8)
+        LATCHIN0SEL_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bit 11 - EtherCAT LATCH_IN0 Input Signal"]
     #[inline(always)]
     pub fn latchin0(&self) -> LATCHIN0_R {
-        LATCHIN0_R::new(((self.bits >> 11) & 0x01) != 0)
+        LATCHIN0_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bits 12:13 - LATCHIN1 Input Select"]
     #[inline(always)]
     pub fn latchin1sel(&self) -> LATCHIN1SEL_R {
-        LATCHIN1SEL_R::new(((self.bits >> 12) & 0x03) as u8)
+        LATCHIN1SEL_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bit 15 - EtherCAT LATCH_IN1 Input Signal"]
     #[inline(always)]
     pub fn latchin1(&self) -> LATCHIN1_R {
-        LATCHIN1_R::new(((self.bits >> 15) & 0x01) != 0)
+        LATCHIN1_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:20 - Ethernet PHY Address Offset"]
     #[inline(always)]
@@ -508,34 +360,39 @@ impl R {
     #[doc = "Bits 22:23 - MDIO Input Select"]
     #[inline(always)]
     pub fn mdio(&self) -> MDIO_R {
-        MDIO_R::new(((self.bits >> 22) & 0x03) as u8)
+        MDIO_R::new(((self.bits >> 22) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable EtherCAT Reset Request"]
     #[inline(always)]
-    pub fn ecatrsten(&mut self) -> ECATRSTEN_W {
-        ECATRSTEN_W { w: self }
+    #[must_use]
+    pub fn ecatrsten(&mut self) -> ECATRSTEN_W<0> {
+        ECATRSTEN_W::new(self)
     }
     #[doc = "Bits 8:9 - LATCHIN0 Input Select"]
     #[inline(always)]
-    pub fn latchin0sel(&mut self) -> LATCHIN0SEL_W {
-        LATCHIN0SEL_W { w: self }
+    #[must_use]
+    pub fn latchin0sel(&mut self) -> LATCHIN0SEL_W<8> {
+        LATCHIN0SEL_W::new(self)
     }
     #[doc = "Bits 12:13 - LATCHIN1 Input Select"]
     #[inline(always)]
-    pub fn latchin1sel(&mut self) -> LATCHIN1SEL_W {
-        LATCHIN1SEL_W { w: self }
+    #[must_use]
+    pub fn latchin1sel(&mut self) -> LATCHIN1SEL_W<12> {
+        LATCHIN1SEL_W::new(self)
     }
     #[doc = "Bits 16:20 - Ethernet PHY Address Offset"]
     #[inline(always)]
-    pub fn phyoffset(&mut self) -> PHYOFFSET_W {
-        PHYOFFSET_W { w: self }
+    #[must_use]
+    pub fn phyoffset(&mut self) -> PHYOFFSET_W<16> {
+        PHYOFFSET_W::new(self)
     }
     #[doc = "Bits 22:23 - MDIO Input Select"]
     #[inline(always)]
-    pub fn mdio(&mut self) -> MDIO_W {
-        MDIO_W { w: self }
+    #[must_use]
+    pub fn mdio(&mut self) -> MDIO_W<22> {
+        MDIO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -556,11 +413,10 @@ impl crate::Readable for CON_SPEC {
 #[doc = "`write(|w| ..)` method takes [con::W](W) writer structure"]
 impl crate::Writable for CON_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CON to value 0"]
 impl crate::Resettable for CON_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<PCON_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `IBYP` reader - Instruction Prefetch Buffer Bypass"]
+pub type IBYP_R = crate::BitReader<IBYP_A>;
 #[doc = "Instruction Prefetch Buffer Bypass\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IBYP_A {
     #[doc = "0: Instruction prefetch buffer not bypassed."]
     CONST_0 = 0,
@@ -48,13 +50,8 @@ impl From<IBYP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IBYP` reader - Instruction Prefetch Buffer Bypass"]
-pub struct IBYP_R(crate::FieldReader<bool, IBYP_A>);
 impl IBYP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IBYP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IBYP_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl IBYP_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == IBYP_A::CONST_0
+        *self == IBYP_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == IBYP_A::CONST_1
-    }
-}
-impl core::ops::Deref for IBYP_R {
-    type Target = crate::FieldReader<bool, IBYP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IBYP_A::CONST_1
     }
 }
 #[doc = "Field `IBYP` writer - Instruction Prefetch Buffer Bypass"]
-pub struct IBYP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IBYP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IBYP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IBYP_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCON_SPEC, IBYP_A, O>;
+impl<'a, const O: u8> IBYP_W<'a, O> {
     #[doc = "Instruction prefetch buffer not bypassed."]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -100,25 +83,9 @@ impl<'a> IBYP_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(IBYP_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 #[doc = "Instruction Prefetch Buffer Invalidate\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IINV_AW {
     #[doc = "0: No effect."]
     CONST_0 = 0,
@@ -132,15 +99,8 @@ impl From<IINV_AW> for bool {
     }
 }
 #[doc = "Field `IINV` writer - Instruction Prefetch Buffer Invalidate"]
-pub struct IINV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IINV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IINV_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCON_SPEC, IINV_AW, O>;
+impl<'a, const O: u8> IINV_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -151,25 +111,11 @@ impl<'a> IINV_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(IINV_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `DBYP` reader - Data Buffer Bypass"]
+pub type DBYP_R = crate::BitReader<DBYP_A>;
 #[doc = "Data Buffer Bypass\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DBYP_A {
     #[doc = "0: Prefetch Data buffer not bypassed."]
     VALUE1 = 0,
@@ -182,13 +128,8 @@ impl From<DBYP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBYP` reader - Data Buffer Bypass"]
-pub struct DBYP_R(crate::FieldReader<bool, DBYP_A>);
 impl DBYP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DBYP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DBYP_A {
         match self.bits {
@@ -199,31 +140,17 @@ impl DBYP_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DBYP_A::VALUE1
+        *self == DBYP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DBYP_A::VALUE2
-    }
-}
-impl core::ops::Deref for DBYP_R {
-    type Target = crate::FieldReader<bool, DBYP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DBYP_A::VALUE2
     }
 }
 #[doc = "Field `DBYP` writer - Data Buffer Bypass"]
-pub struct DBYP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBYP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DBYP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DBYP_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCON_SPEC, DBYP_A, O>;
+impl<'a, const O: u8> DBYP_W<'a, O> {
     #[doc = "Prefetch Data buffer not bypassed."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -234,50 +161,37 @@ impl<'a> DBYP_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(DBYP_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Instruction Prefetch Buffer Bypass"]
     #[inline(always)]
     pub fn ibyp(&self) -> IBYP_R {
-        IBYP_R::new((self.bits & 0x01) != 0)
+        IBYP_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 4 - Data Buffer Bypass"]
     #[inline(always)]
     pub fn dbyp(&self) -> DBYP_R {
-        DBYP_R::new(((self.bits >> 4) & 0x01) != 0)
+        DBYP_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Instruction Prefetch Buffer Bypass"]
     #[inline(always)]
-    pub fn ibyp(&mut self) -> IBYP_W {
-        IBYP_W { w: self }
+    #[must_use]
+    pub fn ibyp(&mut self) -> IBYP_W<0> {
+        IBYP_W::new(self)
     }
     #[doc = "Bit 1 - Instruction Prefetch Buffer Invalidate"]
     #[inline(always)]
-    pub fn iinv(&mut self) -> IINV_W {
-        IINV_W { w: self }
+    #[must_use]
+    pub fn iinv(&mut self) -> IINV_W<1> {
+        IINV_W::new(self)
     }
     #[doc = "Bit 4 - Data Buffer Bypass"]
     #[inline(always)]
-    pub fn dbyp(&mut self) -> DBYP_W {
-        DBYP_W { w: self }
+    #[must_use]
+    pub fn dbyp(&mut self) -> DBYP_W<4> {
+        DBYP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -298,11 +212,10 @@ impl crate::Readable for PCON_SPEC {
 #[doc = "`write(|w| ..)` method takes [pcon::W](W) writer structure"]
 impl crate::Writable for PCON_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PCON to value 0"]
 impl crate::Resettable for PCON_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

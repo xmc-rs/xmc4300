@@ -35,72 +35,29 @@ impl From<crate::W<CLC_SPEC>> for W {
     }
 }
 #[doc = "Field `DISR` reader - Module Disable Request Bit"]
-pub struct DISR_R(crate::FieldReader<bool, bool>);
-impl DISR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DISR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DISR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DISR_R = crate::BitReader<bool>;
 #[doc = "Field `DISR` writer - Module Disable Request Bit"]
-pub struct DISR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DISR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DISR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLC_SPEC, bool, O>;
 #[doc = "Field `DISS` reader - Module Disable Status Bit"]
-pub struct DISS_R(crate::FieldReader<bool, bool>);
-impl DISS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DISS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DISS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DISS_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Module Disable Request Bit"]
     #[inline(always)]
     pub fn disr(&self) -> DISR_R {
-        DISR_R::new((self.bits & 0x01) != 0)
+        DISR_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Module Disable Status Bit"]
     #[inline(always)]
     pub fn diss(&self) -> DISS_R {
-        DISS_R::new(((self.bits >> 1) & 0x01) != 0)
+        DISS_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Module Disable Request Bit"]
     #[inline(always)]
-    pub fn disr(&mut self) -> DISR_W {
-        DISR_W { w: self }
+    #[must_use]
+    pub fn disr(&mut self) -> DISR_W<0> {
+        DISR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -121,11 +78,10 @@ impl crate::Readable for CLC_SPEC {
 #[doc = "`write(|w| ..)` method takes [clc::W](W) writer structure"]
 impl crate::Writable for CLC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLC to value 0x03"]
 impl crate::Resettable for CLC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x03
-    }
+    const RESET_VALUE: Self::Ux = 0x03;
 }

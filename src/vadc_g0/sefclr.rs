@@ -20,7 +20,7 @@ impl From<crate::W<SEFCLR_SPEC>> for W {
     }
 }
 #[doc = "Clear Source Event 0/1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SEV0_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -34,15 +34,8 @@ impl From<SEV0_AW> for bool {
     }
 }
 #[doc = "Field `SEV0` writer - Clear Source Event 0/1"]
-pub struct SEV0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEV0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SEV0_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SEV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEFCLR_SPEC, SEV0_AW, O>;
+impl<'a, const O: u8> SEV0_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -53,25 +46,9 @@ impl<'a> SEV0_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(SEV0_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 #[doc = "Clear Source Event 0/1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SEV1_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -85,15 +62,8 @@ impl From<SEV1_AW> for bool {
     }
 }
 #[doc = "Field `SEV1` writer - Clear Source Event 0/1"]
-pub struct SEV1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEV1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SEV1_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SEV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEFCLR_SPEC, SEV1_AW, O>;
+impl<'a, const O: u8> SEV1_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -104,33 +74,19 @@ impl<'a> SEV1_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(SEV1_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Clear Source Event 0/1"]
     #[inline(always)]
-    pub fn sev0(&mut self) -> SEV0_W {
-        SEV0_W { w: self }
+    #[must_use]
+    pub fn sev0(&mut self) -> SEV0_W<0> {
+        SEV0_W::new(self)
     }
     #[doc = "Bit 1 - Clear Source Event 0/1"]
     #[inline(always)]
-    pub fn sev1(&mut self) -> SEV1_W {
-        SEV1_W { w: self }
+    #[must_use]
+    pub fn sev1(&mut self) -> SEV1_W<1> {
+        SEV1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -147,11 +103,10 @@ impl crate::RegisterSpec for SEFCLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [sefclr::W](W) writer structure"]
 impl crate::Writable for SEFCLR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SEFCLR to value 0"]
 impl crate::Resettable for SEFCLR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

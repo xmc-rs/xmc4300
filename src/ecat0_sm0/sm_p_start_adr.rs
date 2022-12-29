@@ -14,24 +14,12 @@ impl From<crate::R<SM_P_START_ADR_SPEC>> for R {
     }
 }
 #[doc = "Field `FIRST_BYTE` reader - Specifies first byte that will be handled by SyncManager"]
-pub struct FIRST_BYTE_R(crate::FieldReader<u16, u16>);
-impl FIRST_BYTE_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        FIRST_BYTE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIRST_BYTE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIRST_BYTE_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Specifies first byte that will be handled by SyncManager"]
     #[inline(always)]
     pub fn first_byte(&self) -> FIRST_BYTE_R {
-        FIRST_BYTE_R::new((self.bits & 0xffff) as u16)
+        FIRST_BYTE_R::new(self.bits)
     }
 }
 #[doc = "Physical Start Address SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sm_p_start_adr](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for SM_P_START_ADR_SPEC {
 }
 #[doc = "`reset()` method sets SM_P_START_ADR to value 0"]
 impl crate::Resettable for SM_P_START_ADR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

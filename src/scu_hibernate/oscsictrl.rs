@@ -34,8 +34,10 @@ impl From<crate::W<OSCSICTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PWD` reader - Turn OFF the fOSI Clock Source"]
+pub type PWD_R = crate::BitReader<PWD_A>;
 #[doc = "Turn OFF the fOSI Clock Source\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PWD_A {
     #[doc = "0: Enabled"]
     CONST_0 = 0,
@@ -48,13 +50,8 @@ impl From<PWD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PWD` reader - Turn OFF the fOSI Clock Source"]
-pub struct PWD_R(crate::FieldReader<bool, PWD_A>);
 impl PWD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PWD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PWD_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl PWD_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == PWD_A::CONST_0
+        *self == PWD_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == PWD_A::CONST_1
-    }
-}
-impl core::ops::Deref for PWD_R {
-    type Target = crate::FieldReader<bool, PWD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PWD_A::CONST_1
     }
 }
 #[doc = "Field `PWD` writer - Turn OFF the fOSI Clock Source"]
-pub struct PWD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PWD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PWD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PWD_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCSICTRL_SPEC, PWD_A, O>;
+impl<'a, const O: u8> PWD_W<'a, O> {
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -100,35 +83,20 @@ impl<'a> PWD_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(PWD_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Turn OFF the fOSI Clock Source"]
     #[inline(always)]
     pub fn pwd(&self) -> PWD_R {
-        PWD_R::new((self.bits & 0x01) != 0)
+        PWD_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Turn OFF the fOSI Clock Source"]
     #[inline(always)]
-    pub fn pwd(&mut self) -> PWD_W {
-        PWD_W { w: self }
+    #[must_use]
+    pub fn pwd(&mut self) -> PWD_W<0> {
+        PWD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -149,11 +117,10 @@ impl crate::Readable for OSCSICTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [oscsictrl::W](W) writer structure"]
 impl crate::Writable for OSCSICTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets OSCSICTRL to value 0x01"]
 impl crate::Resettable for OSCSICTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

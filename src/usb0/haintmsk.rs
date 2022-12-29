@@ -35,31 +35,9 @@ impl From<crate::W<HAINTMSK_SPEC>> for W {
     }
 }
 #[doc = "Field `HAINTMsk` reader - Channel Interrupt Mask"]
-pub struct HAINTMSK_R(crate::FieldReader<u16, u16>);
-impl HAINTMSK_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        HAINTMSK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HAINTMSK_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HAINTMSK_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `HAINTMsk` writer - Channel Interrupt Mask"]
-pub struct HAINTMSK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HAINTMSK_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3fff) | (value as u32 & 0x3fff);
-        self.w
-    }
-}
+pub type HAINTMSK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HAINTMSK_SPEC, u16, u16, 14, O>;
 impl R {
     #[doc = "Bits 0:13 - Channel Interrupt Mask"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - Channel Interrupt Mask"]
     #[inline(always)]
-    pub fn haintmsk(&mut self) -> HAINTMSK_W {
-        HAINTMSK_W { w: self }
+    #[must_use]
+    pub fn haintmsk(&mut self) -> HAINTMSK_W<0> {
+        HAINTMSK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for HAINTMSK_SPEC {
 #[doc = "`write(|w| ..)` method takes [haintmsk::W](W) writer structure"]
 impl crate::Writable for HAINTMSK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HAINTMSK to value 0"]
 impl crate::Resettable for HAINTMSK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

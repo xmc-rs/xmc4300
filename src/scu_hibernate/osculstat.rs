@@ -14,24 +14,12 @@ impl From<crate::R<OSCULSTAT_SPEC>> for R {
     }
 }
 #[doc = "Field `X1D` reader - XTAL1 Data Value"]
-pub struct X1D_R(crate::FieldReader<bool, bool>);
-impl X1D_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        X1D_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for X1D_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type X1D_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - XTAL1 Data Value"]
     #[inline(always)]
     pub fn x1d(&self) -> X1D_R {
-        X1D_R::new((self.bits & 0x01) != 0)
+        X1D_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "OSC_ULP Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [osculstat](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for OSCULSTAT_SPEC {
 }
 #[doc = "`reset()` method sets OSCULSTAT to value 0"]
 impl crate::Resettable for OSCULSTAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

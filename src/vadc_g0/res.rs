@@ -35,75 +35,19 @@ impl From<crate::W<RES_SPEC>> for W {
     }
 }
 #[doc = "Field `RESULT` reader - Result of Most Recent Conversion"]
-pub struct RESULT_R(crate::FieldReader<u16, u16>);
-impl RESULT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RESULT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESULT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RESULT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `RESULT` writer - Result of Most Recent Conversion"]
-pub struct RESULT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESULT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type RESULT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RES_SPEC, u16, u16, 16, O>;
 #[doc = "Field `DRC` reader - Data Reduction Counter"]
-pub struct DRC_R(crate::FieldReader<u8, u8>);
-impl DRC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DRC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DRC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DRC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CHNR` reader - Channel Number"]
-pub struct CHNR_R(crate::FieldReader<u8, u8>);
-impl CHNR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CHNR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHNR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHNR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EMUX` reader - External Multiplexer Setting"]
-pub struct EMUX_R(crate::FieldReader<u8, u8>);
-impl EMUX_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EMUX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EMUX_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EMUX_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `CRS` reader - Converted Request Source"]
+pub type CRS_R = crate::FieldReader<u8, CRS_A>;
 #[doc = "Converted Request Source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CRS_A {
     #[doc = "0: Request source 0"]
@@ -119,13 +63,8 @@ impl From<CRS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CRS` reader - Converted Request Source"]
-pub struct CRS_R(crate::FieldReader<u8, CRS_A>);
 impl CRS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CRS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CRS_A> {
         match self.bits {
@@ -138,28 +77,23 @@ impl CRS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CRS_A::VALUE1
+        *self == CRS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CRS_A::VALUE2
+        *self == CRS_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == CRS_A::VALUE3
+        *self == CRS_A::VALUE3
     }
 }
-impl core::ops::Deref for CRS_R {
-    type Target = crate::FieldReader<u8, CRS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `FCR` reader - Fast Compare Result"]
+pub type FCR_R = crate::BitReader<FCR_A>;
 #[doc = "Fast Compare Result\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FCR_A {
     #[doc = "0: Signal level was below compare value"]
     VALUE1 = 0,
@@ -172,13 +106,8 @@ impl From<FCR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FCR` reader - Fast Compare Result"]
-pub struct FCR_R(crate::FieldReader<bool, FCR_A>);
 impl FCR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FCR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FCR_A {
         match self.bits {
@@ -189,23 +118,18 @@ impl FCR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == FCR_A::VALUE1
+        *self == FCR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == FCR_A::VALUE2
+        *self == FCR_A::VALUE2
     }
 }
-impl core::ops::Deref for FCR_R {
-    type Target = crate::FieldReader<bool, FCR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `VF` reader - Valid Flag"]
+pub type VF_R = crate::BitReader<VF_A>;
 #[doc = "Valid Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VF_A {
     #[doc = "0: No new result available"]
     VALUE1 = 0,
@@ -218,13 +142,8 @@ impl From<VF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VF` reader - Valid Flag"]
-pub struct VF_R(crate::FieldReader<bool, VF_A>);
 impl VF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VF_A {
         match self.bits {
@@ -235,19 +154,12 @@ impl VF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == VF_A::VALUE1
+        *self == VF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == VF_A::VALUE2
-    }
-}
-impl core::ops::Deref for VF_R {
-    type Target = crate::FieldReader<bool, VF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VF_A::VALUE2
     }
 }
 impl R {
@@ -269,29 +181,30 @@ impl R {
     #[doc = "Bits 25:27 - External Multiplexer Setting"]
     #[inline(always)]
     pub fn emux(&self) -> EMUX_R {
-        EMUX_R::new(((self.bits >> 25) & 0x07) as u8)
+        EMUX_R::new(((self.bits >> 25) & 7) as u8)
     }
     #[doc = "Bits 28:29 - Converted Request Source"]
     #[inline(always)]
     pub fn crs(&self) -> CRS_R {
-        CRS_R::new(((self.bits >> 28) & 0x03) as u8)
+        CRS_R::new(((self.bits >> 28) & 3) as u8)
     }
     #[doc = "Bit 30 - Fast Compare Result"]
     #[inline(always)]
     pub fn fcr(&self) -> FCR_R {
-        FCR_R::new(((self.bits >> 30) & 0x01) != 0)
+        FCR_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Valid Flag"]
     #[inline(always)]
     pub fn vf(&self) -> VF_R {
-        VF_R::new(((self.bits >> 31) & 0x01) != 0)
+        VF_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Result of Most Recent Conversion"]
     #[inline(always)]
-    pub fn result(&mut self) -> RESULT_W {
-        RESULT_W { w: self }
+    #[must_use]
+    pub fn result(&mut self) -> RESULT_W<0> {
+        RESULT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -300,7 +213,7 @@ impl W {
         self
     }
 }
-#[doc = "Result Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [res](index.html) module"]
+#[doc = "Result Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [res](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
 pub struct RES_SPEC;
 impl crate::RegisterSpec for RES_SPEC {
     type Ux = u32;
@@ -312,12 +225,11 @@ impl crate::Readable for RES_SPEC {
 #[doc = "`write(|w| ..)` method takes [res::W](W) writer structure"]
 impl crate::Writable for RES_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RES[%s]
 to value 0"]
 impl crate::Resettable for RES_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

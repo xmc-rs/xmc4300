@@ -35,33 +35,13 @@ impl From<crate::W<GUSBCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `TOutCal` reader - FS Timeout Calibration"]
-pub struct TOUTCAL_R(crate::FieldReader<u8, u8>);
-impl TOUTCAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TOUTCAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOUTCAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOUT_CAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TOutCal` writer - FS Timeout Calibration"]
-pub struct TOUTCAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TOUTCAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type TOUT_CAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUSBCFG_SPEC, u8, u8, 3, O>;
+#[doc = "Field `PHYSel` reader - USB 1.1 Full-Speed Serial Transceiver Select"]
+pub type PHYSEL_R = crate::BitReader<PHYSEL_A>;
 #[doc = "USB 1.1 Full-Speed Serial Transceiver Select\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PHYSEL_A {
     #[doc = "1: USB 1.1 full-speed serial transceiver"]
     VALUE2 = 1,
@@ -72,13 +52,8 @@ impl From<PHYSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PHYSel` reader - USB 1.1 Full-Speed Serial Transceiver Select"]
-pub struct PHYSEL_R(crate::FieldReader<bool, PHYSEL_A>);
 impl PHYSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PHYSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PHYSEL_A> {
         match self.bits {
@@ -89,18 +64,13 @@ impl PHYSEL_R {
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PHYSEL_A::VALUE2
+        *self == PHYSEL_A::VALUE2
     }
 }
-impl core::ops::Deref for PHYSEL_R {
-    type Target = crate::FieldReader<bool, PHYSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SRPCap` reader - SRP-Capable"]
+pub type SRPCAP_R = crate::BitReader<SRPCAP_A>;
 #[doc = "SRP-Capable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SRPCAP_A {
     #[doc = "0: SRP capability is not enabled."]
     VALUE1 = 0,
@@ -113,13 +83,8 @@ impl From<SRPCAP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SRPCap` reader - SRP-Capable"]
-pub struct SRPCAP_R(crate::FieldReader<bool, SRPCAP_A>);
 impl SRPCAP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SRPCAP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SRPCAP_A {
         match self.bits {
@@ -130,31 +95,17 @@ impl SRPCAP_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SRPCAP_A::VALUE1
+        *self == SRPCAP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SRPCAP_A::VALUE2
-    }
-}
-impl core::ops::Deref for SRPCAP_R {
-    type Target = crate::FieldReader<bool, SRPCAP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SRPCAP_A::VALUE2
     }
 }
 #[doc = "Field `SRPCap` writer - SRP-Capable"]
-pub struct SRPCAP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRPCAP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SRPCAP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SRPCAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, SRPCAP_A, O>;
+impl<'a, const O: u8> SRPCAP_W<'a, O> {
     #[doc = "SRP capability is not enabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -165,25 +116,11 @@ impl<'a> SRPCAP_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(SRPCAP_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `HNPCap` reader - HNP-Capable"]
+pub type HNPCAP_R = crate::BitReader<HNPCAP_A>;
 #[doc = "HNP-Capable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HNPCAP_A {
     #[doc = "0: HNP capability is not enabled."]
     VALUE1 = 0,
@@ -196,13 +133,8 @@ impl From<HNPCAP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HNPCap` reader - HNP-Capable"]
-pub struct HNPCAP_R(crate::FieldReader<bool, HNPCAP_A>);
 impl HNPCAP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HNPCAP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HNPCAP_A {
         match self.bits {
@@ -213,31 +145,17 @@ impl HNPCAP_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == HNPCAP_A::VALUE1
+        *self == HNPCAP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == HNPCAP_A::VALUE2
-    }
-}
-impl core::ops::Deref for HNPCAP_R {
-    type Target = crate::FieldReader<bool, HNPCAP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HNPCAP_A::VALUE2
     }
 }
 #[doc = "Field `HNPCap` writer - HNP-Capable"]
-pub struct HNPCAP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HNPCAP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HNPCAP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HNPCAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, HNPCAP_A, O>;
+impl<'a, const O: u8> HNPCAP_W<'a, O> {
     #[doc = "HNP capability is not enabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -248,502 +166,309 @@ impl<'a> HNPCAP_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(HNPCAP_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
 }
 #[doc = "Field `USBTrdTim` reader - USB Turnaround Time"]
-pub struct USBTRDTIM_R(crate::FieldReader<u8, u8>);
-impl USBTRDTIM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        USBTRDTIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USBTRDTIM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USBTRD_TIM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `USBTrdTim` writer - USB Turnaround Time"]
-pub struct USBTRDTIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USBTRDTIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 10)) | ((value as u32 & 0x0f) << 10);
-        self.w
-    }
-}
+pub type USBTRD_TIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUSBCFG_SPEC, u8, u8, 4, O>;
+#[doc = "Field `OtgI2CSel` reader - UTMIFS Interface Select"]
+pub type OTG_I2CSEL_R = crate::BitReader<OTG_I2CSEL_A>;
 #[doc = "UTMIFS Interface Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OTGI2CSEL_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum OTG_I2CSEL_A {
     #[doc = "0: UTMI USB 1.1 Full-Speed interface for OTG signals"]
     VALUE1 = 0,
 }
-impl From<OTGI2CSEL_A> for bool {
+impl From<OTG_I2CSEL_A> for bool {
     #[inline(always)]
-    fn from(variant: OTGI2CSEL_A) -> Self {
+    fn from(variant: OTG_I2CSEL_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OtgI2CSel` reader - UTMIFS Interface Select"]
-pub struct OTGI2CSEL_R(crate::FieldReader<bool, OTGI2CSEL_A>);
-impl OTGI2CSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OTGI2CSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl OTG_I2CSEL_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<OTGI2CSEL_A> {
+    pub fn variant(&self) -> Option<OTG_I2CSEL_A> {
         match self.bits {
-            false => Some(OTGI2CSEL_A::VALUE1),
+            false => Some(OTG_I2CSEL_A::VALUE1),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == OTGI2CSEL_A::VALUE1
-    }
-}
-impl core::ops::Deref for OTGI2CSEL_R {
-    type Target = crate::FieldReader<bool, OTGI2CSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OTG_I2CSEL_A::VALUE1
     }
 }
 #[doc = "Field `OtgI2CSel` writer - UTMIFS Interface Select"]
-pub struct OTGI2CSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OTGI2CSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OTGI2CSEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OTG_I2CSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, OTG_I2CSEL_A, O>;
+impl<'a, const O: u8> OTG_I2CSEL_W<'a, O> {
     #[doc = "UTMI USB 1.1 Full-Speed interface for OTG signals"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(OTGI2CSEL_A::VALUE1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
+        self.variant(OTG_I2CSEL_A::VALUE1)
     }
 }
+#[doc = "Field `TxEndDelay` reader - Tx End Delay"]
+pub type TX_END_DELAY_R = crate::BitReader<TX_END_DELAY_A>;
 #[doc = "Tx End Delay\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXENDDELAY_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TX_END_DELAY_A {
     #[doc = "0: Normal mode"]
     VALUE1 = 0,
     #[doc = "1: Introduce Tx end delay timers"]
     VALUE2 = 1,
 }
-impl From<TXENDDELAY_A> for bool {
+impl From<TX_END_DELAY_A> for bool {
     #[inline(always)]
-    fn from(variant: TXENDDELAY_A) -> Self {
+    fn from(variant: TX_END_DELAY_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TxEndDelay` reader - Tx End Delay"]
-pub struct TXENDDELAY_R(crate::FieldReader<bool, TXENDDELAY_A>);
-impl TXENDDELAY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXENDDELAY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl TX_END_DELAY_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TXENDDELAY_A {
+    pub fn variant(&self) -> TX_END_DELAY_A {
         match self.bits {
-            false => TXENDDELAY_A::VALUE1,
-            true => TXENDDELAY_A::VALUE2,
+            false => TX_END_DELAY_A::VALUE1,
+            true => TX_END_DELAY_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TXENDDELAY_A::VALUE1
+        *self == TX_END_DELAY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TXENDDELAY_A::VALUE2
-    }
-}
-impl core::ops::Deref for TXENDDELAY_R {
-    type Target = crate::FieldReader<bool, TXENDDELAY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TX_END_DELAY_A::VALUE2
     }
 }
 #[doc = "Field `TxEndDelay` writer - Tx End Delay"]
-pub struct TXENDDELAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXENDDELAY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TXENDDELAY_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TX_END_DELAY_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, TX_END_DELAY_A, O>;
+impl<'a, const O: u8> TX_END_DELAY_W<'a, O> {
     #[doc = "Normal mode"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(TXENDDELAY_A::VALUE1)
+        self.variant(TX_END_DELAY_A::VALUE1)
     }
     #[doc = "Introduce Tx end delay timers"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(TXENDDELAY_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
+        self.variant(TX_END_DELAY_A::VALUE2)
     }
 }
+#[doc = "Field `ForceHstMode` reader - Force Host Mode"]
+pub type FORCE_HST_MODE_R = crate::BitReader<FORCE_HST_MODE_A>;
 #[doc = "Force Host Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FORCEHSTMODE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum FORCE_HST_MODE_A {
     #[doc = "0: Normal Mode"]
     VALUE1 = 0,
     #[doc = "1: Force Host Mode"]
     VALUE2 = 1,
 }
-impl From<FORCEHSTMODE_A> for bool {
+impl From<FORCE_HST_MODE_A> for bool {
     #[inline(always)]
-    fn from(variant: FORCEHSTMODE_A) -> Self {
+    fn from(variant: FORCE_HST_MODE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ForceHstMode` reader - Force Host Mode"]
-pub struct FORCEHSTMODE_R(crate::FieldReader<bool, FORCEHSTMODE_A>);
-impl FORCEHSTMODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FORCEHSTMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl FORCE_HST_MODE_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FORCEHSTMODE_A {
+    pub fn variant(&self) -> FORCE_HST_MODE_A {
         match self.bits {
-            false => FORCEHSTMODE_A::VALUE1,
-            true => FORCEHSTMODE_A::VALUE2,
+            false => FORCE_HST_MODE_A::VALUE1,
+            true => FORCE_HST_MODE_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == FORCEHSTMODE_A::VALUE1
+        *self == FORCE_HST_MODE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == FORCEHSTMODE_A::VALUE2
-    }
-}
-impl core::ops::Deref for FORCEHSTMODE_R {
-    type Target = crate::FieldReader<bool, FORCEHSTMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FORCE_HST_MODE_A::VALUE2
     }
 }
 #[doc = "Field `ForceHstMode` writer - Force Host Mode"]
-pub struct FORCEHSTMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FORCEHSTMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FORCEHSTMODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FORCE_HST_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, FORCE_HST_MODE_A, O>;
+impl<'a, const O: u8> FORCE_HST_MODE_W<'a, O> {
     #[doc = "Normal Mode"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(FORCEHSTMODE_A::VALUE1)
+        self.variant(FORCE_HST_MODE_A::VALUE1)
     }
     #[doc = "Force Host Mode"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(FORCEHSTMODE_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
+        self.variant(FORCE_HST_MODE_A::VALUE2)
     }
 }
+#[doc = "Field `ForceDevMode` reader - Force Device Mode"]
+pub type FORCE_DEV_MODE_R = crate::BitReader<FORCE_DEV_MODE_A>;
 #[doc = "Force Device Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FORCEDEVMODE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum FORCE_DEV_MODE_A {
     #[doc = "0: Normal Mode"]
     VALUE1 = 0,
     #[doc = "1: Force Device Mode"]
     VALUE2 = 1,
 }
-impl From<FORCEDEVMODE_A> for bool {
+impl From<FORCE_DEV_MODE_A> for bool {
     #[inline(always)]
-    fn from(variant: FORCEDEVMODE_A) -> Self {
+    fn from(variant: FORCE_DEV_MODE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ForceDevMode` reader - Force Device Mode"]
-pub struct FORCEDEVMODE_R(crate::FieldReader<bool, FORCEDEVMODE_A>);
-impl FORCEDEVMODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FORCEDEVMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl FORCE_DEV_MODE_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FORCEDEVMODE_A {
+    pub fn variant(&self) -> FORCE_DEV_MODE_A {
         match self.bits {
-            false => FORCEDEVMODE_A::VALUE1,
-            true => FORCEDEVMODE_A::VALUE2,
+            false => FORCE_DEV_MODE_A::VALUE1,
+            true => FORCE_DEV_MODE_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == FORCEDEVMODE_A::VALUE1
+        *self == FORCE_DEV_MODE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == FORCEDEVMODE_A::VALUE2
-    }
-}
-impl core::ops::Deref for FORCEDEVMODE_R {
-    type Target = crate::FieldReader<bool, FORCEDEVMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FORCE_DEV_MODE_A::VALUE2
     }
 }
 #[doc = "Field `ForceDevMode` writer - Force Device Mode"]
-pub struct FORCEDEVMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FORCEDEVMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FORCEDEVMODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FORCE_DEV_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, FORCE_DEV_MODE_A, O>;
+impl<'a, const O: u8> FORCE_DEV_MODE_W<'a, O> {
     #[doc = "Normal Mode"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(FORCEDEVMODE_A::VALUE1)
+        self.variant(FORCE_DEV_MODE_A::VALUE1)
     }
     #[doc = "Force Device Mode"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(FORCEDEVMODE_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
+        self.variant(FORCE_DEV_MODE_A::VALUE2)
     }
 }
 #[doc = "Field `CTP` reader - Corrupt Tx packet"]
-pub struct CTP_R(crate::FieldReader<bool, bool>);
-impl CTP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CTP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CTP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CTP_R = crate::BitReader<bool>;
 #[doc = "Field `CTP` writer - Corrupt Tx packet"]
-pub struct CTP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type CTP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - FS Timeout Calibration"]
     #[inline(always)]
-    pub fn tout_cal(&self) -> TOUTCAL_R {
-        TOUTCAL_R::new((self.bits & 0x07) as u8)
+    pub fn tout_cal(&self) -> TOUT_CAL_R {
+        TOUT_CAL_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 6 - USB 1.1 Full-Speed Serial Transceiver Select"]
     #[inline(always)]
     pub fn physel(&self) -> PHYSEL_R {
-        PHYSEL_R::new(((self.bits >> 6) & 0x01) != 0)
+        PHYSEL_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 8 - SRP-Capable"]
     #[inline(always)]
     pub fn srpcap(&self) -> SRPCAP_R {
-        SRPCAP_R::new(((self.bits >> 8) & 0x01) != 0)
+        SRPCAP_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - HNP-Capable"]
     #[inline(always)]
     pub fn hnpcap(&self) -> HNPCAP_R {
-        HNPCAP_R::new(((self.bits >> 9) & 0x01) != 0)
+        HNPCAP_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bits 10:13 - USB Turnaround Time"]
     #[inline(always)]
-    pub fn usbtrd_tim(&self) -> USBTRDTIM_R {
-        USBTRDTIM_R::new(((self.bits >> 10) & 0x0f) as u8)
+    pub fn usbtrd_tim(&self) -> USBTRD_TIM_R {
+        USBTRD_TIM_R::new(((self.bits >> 10) & 0x0f) as u8)
     }
     #[doc = "Bit 16 - UTMIFS Interface Select"]
     #[inline(always)]
-    pub fn otg_i2csel(&self) -> OTGI2CSEL_R {
-        OTGI2CSEL_R::new(((self.bits >> 16) & 0x01) != 0)
+    pub fn otg_i2csel(&self) -> OTG_I2CSEL_R {
+        OTG_I2CSEL_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 28 - Tx End Delay"]
     #[inline(always)]
-    pub fn tx_end_delay(&self) -> TXENDDELAY_R {
-        TXENDDELAY_R::new(((self.bits >> 28) & 0x01) != 0)
+    pub fn tx_end_delay(&self) -> TX_END_DELAY_R {
+        TX_END_DELAY_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - Force Host Mode"]
     #[inline(always)]
-    pub fn force_hst_mode(&self) -> FORCEHSTMODE_R {
-        FORCEHSTMODE_R::new(((self.bits >> 29) & 0x01) != 0)
+    pub fn force_hst_mode(&self) -> FORCE_HST_MODE_R {
+        FORCE_HST_MODE_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - Force Device Mode"]
     #[inline(always)]
-    pub fn force_dev_mode(&self) -> FORCEDEVMODE_R {
-        FORCEDEVMODE_R::new(((self.bits >> 30) & 0x01) != 0)
+    pub fn force_dev_mode(&self) -> FORCE_DEV_MODE_R {
+        FORCE_DEV_MODE_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Corrupt Tx packet"]
     #[inline(always)]
     pub fn ctp(&self) -> CTP_R {
-        CTP_R::new(((self.bits >> 31) & 0x01) != 0)
+        CTP_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - FS Timeout Calibration"]
     #[inline(always)]
-    pub fn tout_cal(&mut self) -> TOUTCAL_W {
-        TOUTCAL_W { w: self }
+    #[must_use]
+    pub fn tout_cal(&mut self) -> TOUT_CAL_W<0> {
+        TOUT_CAL_W::new(self)
     }
     #[doc = "Bit 8 - SRP-Capable"]
     #[inline(always)]
-    pub fn srpcap(&mut self) -> SRPCAP_W {
-        SRPCAP_W { w: self }
+    #[must_use]
+    pub fn srpcap(&mut self) -> SRPCAP_W<8> {
+        SRPCAP_W::new(self)
     }
     #[doc = "Bit 9 - HNP-Capable"]
     #[inline(always)]
-    pub fn hnpcap(&mut self) -> HNPCAP_W {
-        HNPCAP_W { w: self }
+    #[must_use]
+    pub fn hnpcap(&mut self) -> HNPCAP_W<9> {
+        HNPCAP_W::new(self)
     }
     #[doc = "Bits 10:13 - USB Turnaround Time"]
     #[inline(always)]
-    pub fn usbtrd_tim(&mut self) -> USBTRDTIM_W {
-        USBTRDTIM_W { w: self }
+    #[must_use]
+    pub fn usbtrd_tim(&mut self) -> USBTRD_TIM_W<10> {
+        USBTRD_TIM_W::new(self)
     }
     #[doc = "Bit 16 - UTMIFS Interface Select"]
     #[inline(always)]
-    pub fn otg_i2csel(&mut self) -> OTGI2CSEL_W {
-        OTGI2CSEL_W { w: self }
+    #[must_use]
+    pub fn otg_i2csel(&mut self) -> OTG_I2CSEL_W<16> {
+        OTG_I2CSEL_W::new(self)
     }
     #[doc = "Bit 28 - Tx End Delay"]
     #[inline(always)]
-    pub fn tx_end_delay(&mut self) -> TXENDDELAY_W {
-        TXENDDELAY_W { w: self }
+    #[must_use]
+    pub fn tx_end_delay(&mut self) -> TX_END_DELAY_W<28> {
+        TX_END_DELAY_W::new(self)
     }
     #[doc = "Bit 29 - Force Host Mode"]
     #[inline(always)]
-    pub fn force_hst_mode(&mut self) -> FORCEHSTMODE_W {
-        FORCEHSTMODE_W { w: self }
+    #[must_use]
+    pub fn force_hst_mode(&mut self) -> FORCE_HST_MODE_W<29> {
+        FORCE_HST_MODE_W::new(self)
     }
     #[doc = "Bit 30 - Force Device Mode"]
     #[inline(always)]
-    pub fn force_dev_mode(&mut self) -> FORCEDEVMODE_W {
-        FORCEDEVMODE_W { w: self }
+    #[must_use]
+    pub fn force_dev_mode(&mut self) -> FORCE_DEV_MODE_W<30> {
+        FORCE_DEV_MODE_W::new(self)
     }
     #[doc = "Bit 31 - Corrupt Tx packet"]
     #[inline(always)]
-    pub fn ctp(&mut self) -> CTP_W {
-        CTP_W { w: self }
+    #[must_use]
+    pub fn ctp(&mut self) -> CTP_W<31> {
+        CTP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -764,11 +489,10 @@ impl crate::Readable for GUSBCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [gusbcfg::W](W) writer structure"]
 impl crate::Writable for GUSBCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GUSBCFG to value 0x1440"]
 impl crate::Resettable for GUSBCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1440
-    }
+    const RESET_VALUE: Self::Ux = 0x1440;
 }

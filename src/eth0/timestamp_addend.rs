@@ -35,43 +35,22 @@ impl From<crate::W<TIMESTAMP_ADDEND_SPEC>> for W {
     }
 }
 #[doc = "Field `TSAR` reader - Timestamp Addend Register"]
-pub struct TSAR_R(crate::FieldReader<u32, u32>);
-impl TSAR_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        TSAR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TSAR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TSAR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TSAR` writer - Timestamp Addend Register"]
-pub struct TSAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSAR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type TSAR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMESTAMP_ADDEND_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Timestamp Addend Register"]
     #[inline(always)]
     pub fn tsar(&self) -> TSAR_R {
-        TSAR_R::new((self.bits & 0xffff_ffff) as u32)
+        TSAR_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Timestamp Addend Register"]
     #[inline(always)]
-    pub fn tsar(&mut self) -> TSAR_W {
-        TSAR_W { w: self }
+    #[must_use]
+    pub fn tsar(&mut self) -> TSAR_W<0> {
+        TSAR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for TIMESTAMP_ADDEND_SPEC {
 #[doc = "`write(|w| ..)` method takes [timestamp_addend::W](W) writer structure"]
 impl crate::Writable for TIMESTAMP_ADDEND_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TIMESTAMP_ADDEND to value 0"]
 impl crate::Resettable for TIMESTAMP_ADDEND_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

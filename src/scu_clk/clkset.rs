@@ -20,7 +20,7 @@ impl From<crate::W<CLKSET_SPEC>> for W {
     }
 }
 #[doc = "USB Clock Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum USBCEN_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -34,15 +34,8 @@ impl From<USBCEN_AW> for bool {
     }
 }
 #[doc = "Field `USBCEN` writer - USB Clock Enable"]
-pub struct USBCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USBCEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USBCEN_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type USBCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKSET_SPEC, USBCEN_AW, O>;
+impl<'a, const O: u8> USBCEN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -53,25 +46,9 @@ impl<'a> USBCEN_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(USBCEN_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 #[doc = "MMC Clock Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MMCCEN_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -85,15 +62,8 @@ impl From<MMCCEN_AW> for bool {
     }
 }
 #[doc = "Field `MMCCEN` writer - MMC Clock Enable"]
-pub struct MMCCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MMCCEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MMCCEN_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MMCCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKSET_SPEC, MMCCEN_AW, O>;
+impl<'a, const O: u8> MMCCEN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -104,25 +74,9 @@ impl<'a> MMCCEN_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(MMCCEN_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 #[doc = "Ethernet Clock Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ETH0CEN_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -136,15 +90,8 @@ impl From<ETH0CEN_AW> for bool {
     }
 }
 #[doc = "Field `ETH0CEN` writer - Ethernet Clock Enable"]
-pub struct ETH0CEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ETH0CEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ETH0CEN_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ETH0CEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKSET_SPEC, ETH0CEN_AW, O>;
+impl<'a, const O: u8> ETH0CEN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -155,25 +102,9 @@ impl<'a> ETH0CEN_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(ETH0CEN_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
 #[doc = "CCU Clock Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCUCEN_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -187,15 +118,8 @@ impl From<CCUCEN_AW> for bool {
     }
 }
 #[doc = "Field `CCUCEN` writer - CCU Clock Enable"]
-pub struct CCUCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCUCEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CCUCEN_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CCUCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKSET_SPEC, CCUCEN_AW, O>;
+impl<'a, const O: u8> CCUCEN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -206,25 +130,9 @@ impl<'a> CCUCEN_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(CCUCEN_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
 #[doc = "WDT Clock Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WDTCEN_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -238,15 +146,8 @@ impl From<WDTCEN_AW> for bool {
     }
 }
 #[doc = "Field `WDTCEN` writer - WDT Clock Enable"]
-pub struct WDTCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDTCEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WDTCEN_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WDTCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKSET_SPEC, WDTCEN_AW, O>;
+impl<'a, const O: u8> WDTCEN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -257,48 +158,37 @@ impl<'a> WDTCEN_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(WDTCEN_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - USB Clock Enable"]
     #[inline(always)]
-    pub fn usbcen(&mut self) -> USBCEN_W {
-        USBCEN_W { w: self }
+    #[must_use]
+    pub fn usbcen(&mut self) -> USBCEN_W<0> {
+        USBCEN_W::new(self)
     }
     #[doc = "Bit 1 - MMC Clock Enable"]
     #[inline(always)]
-    pub fn mmccen(&mut self) -> MMCCEN_W {
-        MMCCEN_W { w: self }
+    #[must_use]
+    pub fn mmccen(&mut self) -> MMCCEN_W<1> {
+        MMCCEN_W::new(self)
     }
     #[doc = "Bit 2 - Ethernet Clock Enable"]
     #[inline(always)]
-    pub fn eth0cen(&mut self) -> ETH0CEN_W {
-        ETH0CEN_W { w: self }
+    #[must_use]
+    pub fn eth0cen(&mut self) -> ETH0CEN_W<2> {
+        ETH0CEN_W::new(self)
     }
     #[doc = "Bit 4 - CCU Clock Enable"]
     #[inline(always)]
-    pub fn ccucen(&mut self) -> CCUCEN_W {
-        CCUCEN_W { w: self }
+    #[must_use]
+    pub fn ccucen(&mut self) -> CCUCEN_W<4> {
+        CCUCEN_W::new(self)
     }
     #[doc = "Bit 5 - WDT Clock Enable"]
     #[inline(always)]
-    pub fn wdtcen(&mut self) -> WDTCEN_W {
-        WDTCEN_W { w: self }
+    #[must_use]
+    pub fn wdtcen(&mut self) -> WDTCEN_W<5> {
+        WDTCEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -315,11 +205,10 @@ impl crate::RegisterSpec for CLKSET_SPEC {
 #[doc = "`write(|w| ..)` method takes [clkset::W](W) writer structure"]
 impl crate::Writable for CLKSET_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLKSET to value 0"]
 impl crate::Resettable for CLKSET_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

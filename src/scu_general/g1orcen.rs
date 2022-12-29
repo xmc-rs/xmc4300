@@ -34,8 +34,10 @@ impl From<crate::W<G1ORCEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ENORC6` reader - Enable Out of Range Comparator, Channel 6"]
+pub type ENORC6_R = crate::BitReader<ENORC6_A>;
 #[doc = "Enable Out of Range Comparator, Channel 6\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ENORC6_A {
     #[doc = "0: Disabled"]
     CONST_0 = 0,
@@ -48,13 +50,8 @@ impl From<ENORC6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ENORC6` reader - Enable Out of Range Comparator, Channel 6"]
-pub struct ENORC6_R(crate::FieldReader<bool, ENORC6_A>);
 impl ENORC6_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ENORC6_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENORC6_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl ENORC6_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == ENORC6_A::CONST_0
+        *self == ENORC6_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == ENORC6_A::CONST_1
-    }
-}
-impl core::ops::Deref for ENORC6_R {
-    type Target = crate::FieldReader<bool, ENORC6_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENORC6_A::CONST_1
     }
 }
 #[doc = "Field `ENORC6` writer - Enable Out of Range Comparator, Channel 6"]
-pub struct ENORC6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENORC6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENORC6_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ENORC6_W<'a, const O: u8> = crate::BitWriter<'a, u32, G1ORCEN_SPEC, ENORC6_A, O>;
+impl<'a, const O: u8> ENORC6_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> ENORC6_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(ENORC6_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `ENORC7` reader - Enable Out of Range Comparator, Channel 7"]
+pub type ENORC7_R = crate::BitReader<ENORC7_A>;
 #[doc = "Enable Out of Range Comparator, Channel 7\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ENORC7_A {
     #[doc = "0: Disabled"]
     CONST_0 = 0,
@@ -131,13 +100,8 @@ impl From<ENORC7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ENORC7` reader - Enable Out of Range Comparator, Channel 7"]
-pub struct ENORC7_R(crate::FieldReader<bool, ENORC7_A>);
 impl ENORC7_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ENORC7_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENORC7_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl ENORC7_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == ENORC7_A::CONST_0
+        *self == ENORC7_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == ENORC7_A::CONST_1
-    }
-}
-impl core::ops::Deref for ENORC7_R {
-    type Target = crate::FieldReader<bool, ENORC7_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENORC7_A::CONST_1
     }
 }
 #[doc = "Field `ENORC7` writer - Enable Out of Range Comparator, Channel 7"]
-pub struct ENORC7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENORC7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENORC7_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ENORC7_W<'a, const O: u8> = crate::BitWriter<'a, u32, G1ORCEN_SPEC, ENORC7_A, O>;
+impl<'a, const O: u8> ENORC7_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -183,45 +133,31 @@ impl<'a> ENORC7_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(ENORC7_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 6 - Enable Out of Range Comparator, Channel 6"]
     #[inline(always)]
     pub fn enorc6(&self) -> ENORC6_R {
-        ENORC6_R::new(((self.bits >> 6) & 0x01) != 0)
+        ENORC6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable Out of Range Comparator, Channel 7"]
     #[inline(always)]
     pub fn enorc7(&self) -> ENORC7_R {
-        ENORC7_R::new(((self.bits >> 7) & 0x01) != 0)
+        ENORC7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 6 - Enable Out of Range Comparator, Channel 6"]
     #[inline(always)]
-    pub fn enorc6(&mut self) -> ENORC6_W {
-        ENORC6_W { w: self }
+    #[must_use]
+    pub fn enorc6(&mut self) -> ENORC6_W<6> {
+        ENORC6_W::new(self)
     }
     #[doc = "Bit 7 - Enable Out of Range Comparator, Channel 7"]
     #[inline(always)]
-    pub fn enorc7(&mut self) -> ENORC7_W {
-        ENORC7_W { w: self }
+    #[must_use]
+    pub fn enorc7(&mut self) -> ENORC7_W<7> {
+        ENORC7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -242,11 +178,10 @@ impl crate::Readable for G1ORCEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [g1orcen::W](W) writer structure"]
 impl crate::Writable for G1ORCEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets G1ORCEN to value 0"]
 impl crate::Resettable for G1ORCEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

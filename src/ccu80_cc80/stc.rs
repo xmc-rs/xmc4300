@@ -34,8 +34,10 @@ impl From<crate::W<STC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CSE` reader - Cascaded shadow transfer enable"]
+pub type CSE_R = crate::BitReader<CSE_A>;
 #[doc = "Cascaded shadow transfer enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CSE_A {
     #[doc = "0: Cascaded shadow transfer disabled"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<CSE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CSE` reader - Cascaded shadow transfer enable"]
-pub struct CSE_R(crate::FieldReader<bool, CSE_A>);
 impl CSE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CSE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CSE_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl CSE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CSE_A::VALUE1
+        *self == CSE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CSE_A::VALUE2
-    }
-}
-impl core::ops::Deref for CSE_R {
-    type Target = crate::FieldReader<bool, CSE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CSE_A::VALUE2
     }
 }
 #[doc = "Field `CSE` writer - Cascaded shadow transfer enable"]
-pub struct CSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CSE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, STC_SPEC, CSE_A, O>;
+impl<'a, const O: u8> CSE_W<'a, O> {
     #[doc = "Cascaded shadow transfer disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> CSE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CSE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `STM` reader - Shadow transfer mode"]
+pub type STM_R = crate::FieldReader<u8, STM_A>;
 #[doc = "Shadow transfer mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STM_A {
     #[doc = "0: Shadow transfer is done in Period Match and One match."]
@@ -134,13 +103,8 @@ impl From<STM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `STM` reader - Shadow transfer mode"]
-pub struct STM_R(crate::FieldReader<u8, STM_A>);
 impl STM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        STM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<STM_A> {
         match self.bits {
@@ -153,36 +117,22 @@ impl STM_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == STM_A::VALUE1
+        *self == STM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == STM_A::VALUE2
+        *self == STM_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == STM_A::VALUE3
-    }
-}
-impl core::ops::Deref for STM_R {
-    type Target = crate::FieldReader<u8, STM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STM_A::VALUE3
     }
 }
 #[doc = "Field `STM` writer - Shadow transfer mode"]
-pub struct STM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STM_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type STM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STC_SPEC, u8, STM_A, 2, O>;
+impl<'a, const O: u8> STM_W<'a, O> {
     #[doc = "Shadow transfer is done in Period Match and One match."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -198,35 +148,31 @@ impl<'a> STM_W<'a> {
     pub fn value3(self) -> &'a mut W {
         self.variant(STM_A::VALUE3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 1)) | ((value as u32 & 0x03) << 1);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Cascaded shadow transfer enable"]
     #[inline(always)]
     pub fn cse(&self) -> CSE_R {
-        CSE_R::new((self.bits & 0x01) != 0)
+        CSE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:2 - Shadow transfer mode"]
     #[inline(always)]
     pub fn stm(&self) -> STM_R {
-        STM_R::new(((self.bits >> 1) & 0x03) as u8)
+        STM_R::new(((self.bits >> 1) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Cascaded shadow transfer enable"]
     #[inline(always)]
-    pub fn cse(&mut self) -> CSE_W {
-        CSE_W { w: self }
+    #[must_use]
+    pub fn cse(&mut self) -> CSE_W<0> {
+        CSE_W::new(self)
     }
     #[doc = "Bits 1:2 - Shadow transfer mode"]
     #[inline(always)]
-    pub fn stm(&mut self) -> STM_W {
-        STM_W { w: self }
+    #[must_use]
+    pub fn stm(&mut self) -> STM_W<1> {
+        STM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -247,11 +193,10 @@ impl crate::Readable for STC_SPEC {
 #[doc = "`write(|w| ..)` method takes [stc::W](W) writer structure"]
 impl crate::Writable for STC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets STC to value 0"]
 impl crate::Resettable for STC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

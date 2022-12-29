@@ -13,8 +13,10 @@ impl From<crate::R<WR_REG_PROTECT_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `WR_REG_P` reader - Write register protection"]
+pub type WR_REG_P_R = crate::BitReader<WR_REG_P_A>;
 #[doc = "Write register protection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WR_REG_P_A {
     #[doc = "0: Protection disabled"]
     VALUE1 = 0,
@@ -27,13 +29,8 @@ impl From<WR_REG_P_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WR_REG_P` reader - Write register protection"]
-pub struct WR_REG_P_R(crate::FieldReader<bool, WR_REG_P_A>);
 impl WR_REG_P_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WR_REG_P_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WR_REG_P_A {
         match self.bits {
@@ -44,26 +41,19 @@ impl WR_REG_P_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == WR_REG_P_A::VALUE1
+        *self == WR_REG_P_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == WR_REG_P_A::VALUE2
-    }
-}
-impl core::ops::Deref for WR_REG_P_R {
-    type Target = crate::FieldReader<bool, WR_REG_P_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WR_REG_P_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - Write register protection"]
     #[inline(always)]
     pub fn wr_reg_p(&self) -> WR_REG_P_R {
-        WR_REG_P_R::new((self.bits & 0x01) != 0)
+        WR_REG_P_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Write Register Protection\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wr_reg_protect](index.html) module"]
@@ -77,8 +67,5 @@ impl crate::Readable for WR_REG_PROTECT_SPEC {
 }
 #[doc = "`reset()` method sets WR_REG_PROTECT to value 0"]
 impl crate::Resettable for WR_REG_PROTECT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

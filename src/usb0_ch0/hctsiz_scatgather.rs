@@ -35,59 +35,17 @@ impl From<crate::W<HCTSIZ_SCATGATHER_SPEC>> for W {
     }
 }
 #[doc = "Field `SCHED_INFO` reader - Schedule information"]
-pub struct SCHED_INFO_R(crate::FieldReader<u8, u8>);
-impl SCHED_INFO_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SCHED_INFO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCHED_INFO_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCHED_INFO_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SCHED_INFO` writer - Schedule information"]
-pub struct SCHED_INFO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCHED_INFO_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type SCHED_INFO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCTSIZ_SCATGATHER_SPEC, u8, u8, 8, O>;
 #[doc = "Field `NTD` reader - Number of Transfer Descriptors: 0=1 descriptor, 63=64 descriptors, 1=2 descriptors, 3=4 descriptors, 7=8 descriptors, 15=16 descriptors, 31=32 descriptors, 63=64 descriptors,"]
-pub struct NTD_R(crate::FieldReader<u8, u8>);
-impl NTD_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NTD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NTD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NTD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NTD` writer - Number of Transfer Descriptors: 0=1 descriptor, 63=64 descriptors, 1=2 descriptors, 3=4 descriptors, 7=8 descriptors, 15=16 descriptors, 31=32 descriptors, 63=64 descriptors,"]
-pub struct NTD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NTD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type NTD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCTSIZ_SCATGATHER_SPEC, u8, u8, 8, O>;
+#[doc = "Field `Pid` reader - PID"]
+pub type PID_R = crate::FieldReader<u8, PID_A>;
 #[doc = "PID\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PID_A {
     #[doc = "0: DATA0"]
@@ -105,13 +63,8 @@ impl From<PID_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `Pid` reader - PID"]
-pub struct PID_R(crate::FieldReader<u8, PID_A>);
 impl PID_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PID_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PID_A {
         match self.bits {
@@ -125,41 +78,27 @@ impl PID_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PID_A::VALUE1
+        *self == PID_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PID_A::VALUE2
+        *self == PID_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == PID_A::VALUE3
+        *self == PID_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == PID_A::VALUE4
-    }
-}
-impl core::ops::Deref for PID_R {
-    type Target = crate::FieldReader<u8, PID_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PID_A::VALUE4
     }
 }
 #[doc = "Field `Pid` writer - PID"]
-pub struct PID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PID_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PID_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type PID_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, HCTSIZ_SCATGATHER_SPEC, u8, PID_A, 2, O>;
+impl<'a, const O: u8> PID_W<'a, O> {
     #[doc = "DATA0"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -180,12 +119,6 @@ impl<'a> PID_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(PID_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 29)) | ((value as u32 & 0x03) << 29);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:7 - Schedule information"]
@@ -201,24 +134,27 @@ impl R {
     #[doc = "Bits 29:30 - PID"]
     #[inline(always)]
     pub fn pid(&self) -> PID_R {
-        PID_R::new(((self.bits >> 29) & 0x03) as u8)
+        PID_R::new(((self.bits >> 29) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Schedule information"]
     #[inline(always)]
-    pub fn sched_info(&mut self) -> SCHED_INFO_W {
-        SCHED_INFO_W { w: self }
+    #[must_use]
+    pub fn sched_info(&mut self) -> SCHED_INFO_W<0> {
+        SCHED_INFO_W::new(self)
     }
     #[doc = "Bits 8:15 - Number of Transfer Descriptors: 0=1 descriptor, 63=64 descriptors, 1=2 descriptors, 3=4 descriptors, 7=8 descriptors, 15=16 descriptors, 31=32 descriptors, 63=64 descriptors,"]
     #[inline(always)]
-    pub fn ntd(&mut self) -> NTD_W {
-        NTD_W { w: self }
+    #[must_use]
+    pub fn ntd(&mut self) -> NTD_W<8> {
+        NTD_W::new(self)
     }
     #[doc = "Bits 29:30 - PID"]
     #[inline(always)]
-    pub fn pid(&mut self) -> PID_W {
-        PID_W { w: self }
+    #[must_use]
+    pub fn pid(&mut self) -> PID_W<29> {
+        PID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -239,11 +175,10 @@ impl crate::Readable for HCTSIZ_SCATGATHER_SPEC {
 #[doc = "`write(|w| ..)` method takes [hctsiz_scatgather::W](W) writer structure"]
 impl crate::Writable for HCTSIZ_SCATGATHER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HCTSIZ_SCATGATHER to value 0"]
 impl crate::Resettable for HCTSIZ_SCATGATHER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

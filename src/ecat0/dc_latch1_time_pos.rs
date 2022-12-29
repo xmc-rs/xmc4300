@@ -14,24 +14,12 @@ impl From<crate::R<DC_LATCH1_TIME_POS_SPEC>> for R {
     }
 }
 #[doc = "Field `DC_LATCH1_TIME_POS` reader - Captures System time at the positive edge of the Latch1 signal"]
-pub struct DC_LATCH1_TIME_POS_R(crate::FieldReader<u32, u32>);
-impl DC_LATCH1_TIME_POS_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        DC_LATCH1_TIME_POS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DC_LATCH1_TIME_POS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DC_LATCH1_TIME_POS_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Captures System time at the positive edge of the Latch1 signal"]
     #[inline(always)]
     pub fn dc_latch1_time_pos(&self) -> DC_LATCH1_TIME_POS_R {
-        DC_LATCH1_TIME_POS_R::new((self.bits & 0xffff_ffff) as u32)
+        DC_LATCH1_TIME_POS_R::new(self.bits)
     }
 }
 #[doc = "Register captures System time at the positive edge of the Latch1 signal\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dc_latch1_time_pos](index.html) module"]
@@ -46,8 +34,5 @@ impl crate::Readable for DC_LATCH1_TIME_POS_SPEC {
 #[doc = "`reset()` method sets DC_LATCH1_TIME_POS[%s]
 to value 0"]
 impl crate::Resettable for DC_LATCH1_TIME_POS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

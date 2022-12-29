@@ -34,8 +34,10 @@ impl From<crate::W<EXTCLKCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ECKSEL` reader - External Clock Selection Value"]
+pub type ECKSEL_R = crate::FieldReader<u8, ECKSEL_A>;
 #[doc = "External Clock Selection Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ECKSEL_A {
     #[doc = "0: fSYS clock"]
@@ -51,13 +53,8 @@ impl From<ECKSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ECKSEL` reader - External Clock Selection Value"]
-pub struct ECKSEL_R(crate::FieldReader<u8, ECKSEL_A>);
 impl ECKSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ECKSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<ECKSEL_A> {
         match self.bits {
@@ -70,36 +67,22 @@ impl ECKSEL_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == ECKSEL_A::CONST_00
+        *self == ECKSEL_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == ECKSEL_A::CONST_10
+        *self == ECKSEL_A::CONST_10
     }
     #[doc = "Checks if the value of the field is `CONST_11`"]
     #[inline(always)]
     pub fn is_const_11(&self) -> bool {
-        **self == ECKSEL_A::CONST_11
-    }
-}
-impl core::ops::Deref for ECKSEL_R {
-    type Target = crate::FieldReader<u8, ECKSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ECKSEL_A::CONST_11
     }
 }
 #[doc = "Field `ECKSEL` writer - External Clock Selection Value"]
-pub struct ECKSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ECKSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ECKSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type ECKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTCLKCR_SPEC, u8, ECKSEL_A, 2, O>;
+impl<'a, const O: u8> ECKSEL_W<'a, O> {
     #[doc = "fSYS clock"]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -115,44 +98,16 @@ impl<'a> ECKSEL_W<'a> {
     pub fn const_11(self) -> &'a mut W {
         self.variant(ECKSEL_A::CONST_11)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 #[doc = "Field `ECKDIV` reader - External Clock Divider Value"]
-pub struct ECKDIV_R(crate::FieldReader<u16, u16>);
-impl ECKDIV_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        ECKDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ECKDIV_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ECKDIV_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ECKDIV` writer - External Clock Divider Value"]
-pub struct ECKDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ECKDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01ff << 16)) | ((value as u32 & 0x01ff) << 16);
-        self.w
-    }
-}
+pub type ECKDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTCLKCR_SPEC, u16, u16, 9, O>;
 impl R {
     #[doc = "Bits 0:1 - External Clock Selection Value"]
     #[inline(always)]
     pub fn ecksel(&self) -> ECKSEL_R {
-        ECKSEL_R::new((self.bits & 0x03) as u8)
+        ECKSEL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 16:24 - External Clock Divider Value"]
     #[inline(always)]
@@ -163,13 +118,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - External Clock Selection Value"]
     #[inline(always)]
-    pub fn ecksel(&mut self) -> ECKSEL_W {
-        ECKSEL_W { w: self }
+    #[must_use]
+    pub fn ecksel(&mut self) -> ECKSEL_W<0> {
+        ECKSEL_W::new(self)
     }
     #[doc = "Bits 16:24 - External Clock Divider Value"]
     #[inline(always)]
-    pub fn eckdiv(&mut self) -> ECKDIV_W {
-        ECKDIV_W { w: self }
+    #[must_use]
+    pub fn eckdiv(&mut self) -> ECKDIV_W<16> {
+        ECKDIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -190,11 +147,10 @@ impl crate::Readable for EXTCLKCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [extclkcr::W](W) writer structure"]
 impl crate::Writable for EXTCLKCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EXTCLKCR to value 0"]
 impl crate::Resettable for EXTCLKCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,33 +35,13 @@ impl From<crate::W<WDTCLKCR_SPEC>> for W {
     }
 }
 #[doc = "Field `WDTDIV` reader - WDT Clock Divider Value"]
-pub struct WDTDIV_R(crate::FieldReader<u8, u8>);
-impl WDTDIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WDTDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDTDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDTDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WDTDIV` writer - WDT Clock Divider Value"]
-pub struct WDTDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDTDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type WDTDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WDTCLKCR_SPEC, u8, u8, 8, O>;
+#[doc = "Field `WDTSEL` reader - WDT Clock Selection Value"]
+pub type WDTSEL_R = crate::FieldReader<u8, WDTSEL_A>;
 #[doc = "WDT Clock Selection Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WDTSEL_A {
     #[doc = "0: fOFI clock"]
@@ -77,13 +57,8 @@ impl From<WDTSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WDTSEL` reader - WDT Clock Selection Value"]
-pub struct WDTSEL_R(crate::FieldReader<u8, WDTSEL_A>);
 impl WDTSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WDTSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<WDTSEL_A> {
         match self.bits {
@@ -96,36 +71,22 @@ impl WDTSEL_R {
     #[doc = "Checks if the value of the field is `CONST_00`"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
-        **self == WDTSEL_A::CONST_00
+        *self == WDTSEL_A::CONST_00
     }
     #[doc = "Checks if the value of the field is `CONST_01`"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
-        **self == WDTSEL_A::CONST_01
+        *self == WDTSEL_A::CONST_01
     }
     #[doc = "Checks if the value of the field is `CONST_10`"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
-        **self == WDTSEL_A::CONST_10
-    }
-}
-impl core::ops::Deref for WDTSEL_R {
-    type Target = crate::FieldReader<u8, WDTSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WDTSEL_A::CONST_10
     }
 }
 #[doc = "Field `WDTSEL` writer - WDT Clock Selection Value"]
-pub struct WDTSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDTSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WDTSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type WDTSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WDTCLKCR_SPEC, u8, WDTSEL_A, 2, O>;
+impl<'a, const O: u8> WDTSEL_W<'a, O> {
     #[doc = "fOFI clock"]
     #[inline(always)]
     pub fn const_00(self) -> &'a mut W {
@@ -141,12 +102,6 @@ impl<'a> WDTSEL_W<'a> {
     pub fn const_10(self) -> &'a mut W {
         self.variant(WDTSEL_A::CONST_10)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:7 - WDT Clock Divider Value"]
@@ -157,19 +112,21 @@ impl R {
     #[doc = "Bits 16:17 - WDT Clock Selection Value"]
     #[inline(always)]
     pub fn wdtsel(&self) -> WDTSEL_R {
-        WDTSEL_R::new(((self.bits >> 16) & 0x03) as u8)
+        WDTSEL_R::new(((self.bits >> 16) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - WDT Clock Divider Value"]
     #[inline(always)]
-    pub fn wdtdiv(&mut self) -> WDTDIV_W {
-        WDTDIV_W { w: self }
+    #[must_use]
+    pub fn wdtdiv(&mut self) -> WDTDIV_W<0> {
+        WDTDIV_W::new(self)
     }
     #[doc = "Bits 16:17 - WDT Clock Selection Value"]
     #[inline(always)]
-    pub fn wdtsel(&mut self) -> WDTSEL_W {
-        WDTSEL_W { w: self }
+    #[must_use]
+    pub fn wdtsel(&mut self) -> WDTSEL_W<16> {
+        WDTSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -190,11 +147,10 @@ impl crate::Readable for WDTCLKCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [wdtclkcr::W](W) writer structure"]
 impl crate::Writable for WDTCLKCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets WDTCLKCR to value 0"]
 impl crate::Resettable for WDTCLKCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,221 +20,69 @@ impl From<crate::W<OVRCLR_SPEC>> for W {
     }
 }
 #[doc = "Field `LN0` writer - Line 0 Overrun Status Clear"]
-pub struct LN0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LN0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type LN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
 #[doc = "Field `LN1` writer - Line 1 Overrun Status Clear"]
-pub struct LN1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LN1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type LN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
 #[doc = "Field `LN2` writer - Line 2 Overrun Status Clear"]
-pub struct LN2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LN2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type LN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
 #[doc = "Field `LN3` writer - Line 3 Overrun Status Clear"]
-pub struct LN3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LN3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type LN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
 #[doc = "Field `LN4` writer - Line 4 Overrun Status Clear"]
-pub struct LN4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LN4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type LN4_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
 #[doc = "Field `LN5` writer - Line 5 Overrun Status Clear"]
-pub struct LN5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LN5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type LN5_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
 #[doc = "Field `LN6` writer - Line 6 Overrun Status Clear"]
-pub struct LN6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LN6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type LN6_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
 #[doc = "Field `LN7` writer - Line 7 Overrun Status Clear"]
-pub struct LN7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LN7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type LN7_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Line 0 Overrun Status Clear"]
     #[inline(always)]
-    pub fn ln0(&mut self) -> LN0_W {
-        LN0_W { w: self }
+    #[must_use]
+    pub fn ln0(&mut self) -> LN0_W<0> {
+        LN0_W::new(self)
     }
     #[doc = "Bit 1 - Line 1 Overrun Status Clear"]
     #[inline(always)]
-    pub fn ln1(&mut self) -> LN1_W {
-        LN1_W { w: self }
+    #[must_use]
+    pub fn ln1(&mut self) -> LN1_W<1> {
+        LN1_W::new(self)
     }
     #[doc = "Bit 2 - Line 2 Overrun Status Clear"]
     #[inline(always)]
-    pub fn ln2(&mut self) -> LN2_W {
-        LN2_W { w: self }
+    #[must_use]
+    pub fn ln2(&mut self) -> LN2_W<2> {
+        LN2_W::new(self)
     }
     #[doc = "Bit 3 - Line 3 Overrun Status Clear"]
     #[inline(always)]
-    pub fn ln3(&mut self) -> LN3_W {
-        LN3_W { w: self }
+    #[must_use]
+    pub fn ln3(&mut self) -> LN3_W<3> {
+        LN3_W::new(self)
     }
     #[doc = "Bit 4 - Line 4 Overrun Status Clear"]
     #[inline(always)]
-    pub fn ln4(&mut self) -> LN4_W {
-        LN4_W { w: self }
+    #[must_use]
+    pub fn ln4(&mut self) -> LN4_W<4> {
+        LN4_W::new(self)
     }
     #[doc = "Bit 5 - Line 5 Overrun Status Clear"]
     #[inline(always)]
-    pub fn ln5(&mut self) -> LN5_W {
-        LN5_W { w: self }
+    #[must_use]
+    pub fn ln5(&mut self) -> LN5_W<5> {
+        LN5_W::new(self)
     }
     #[doc = "Bit 6 - Line 6 Overrun Status Clear"]
     #[inline(always)]
-    pub fn ln6(&mut self) -> LN6_W {
-        LN6_W { w: self }
+    #[must_use]
+    pub fn ln6(&mut self) -> LN6_W<6> {
+        LN6_W::new(self)
     }
     #[doc = "Bit 7 - Line 7 Overrun Status Clear"]
     #[inline(always)]
-    pub fn ln7(&mut self) -> LN7_W {
-        LN7_W { w: self }
+    #[must_use]
+    pub fn ln7(&mut self) -> LN7_W<7> {
+        LN7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -251,11 +99,10 @@ impl crate::RegisterSpec for OVRCLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ovrclr::W](W) writer structure"]
 impl crate::Writable for OVRCLR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets OVRCLR to value 0"]
 impl crate::Resettable for OVRCLR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

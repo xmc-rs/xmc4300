@@ -13,8 +13,10 @@ impl From<crate::R<ESC_DL_STATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `PDI_EEPROM` reader - PDI operational/EEPROM loaded correctly"]
+pub type PDI_EEPROM_R = crate::BitReader<PDI_EEPROM_A>;
 #[doc = "PDI operational/EEPROM loaded correctly\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PDI_EEPROM_A {
     #[doc = "0: EEPROM not loaded, PDI not operational (no access to Process Data RAM)"]
     VALUE1 = 0,
@@ -27,13 +29,8 @@ impl From<PDI_EEPROM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PDI_EEPROM` reader - PDI operational/EEPROM loaded correctly"]
-pub struct PDI_EEPROM_R(crate::FieldReader<bool, PDI_EEPROM_A>);
 impl PDI_EEPROM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PDI_EEPROM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDI_EEPROM_A {
         match self.bits {
@@ -44,23 +41,18 @@ impl PDI_EEPROM_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PDI_EEPROM_A::VALUE1
+        *self == PDI_EEPROM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PDI_EEPROM_A::VALUE2
+        *self == PDI_EEPROM_A::VALUE2
     }
 }
-impl core::ops::Deref for PDI_EEPROM_R {
-    type Target = crate::FieldReader<bool, PDI_EEPROM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `PDI_WDT_S` reader - PDI Watchdog Status"]
+pub type PDI_WDT_S_R = crate::BitReader<PDI_WDT_S_A>;
 #[doc = "PDI Watchdog Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PDI_WDT_S_A {
     #[doc = "0: Watchdog expired"]
     VALUE1 = 0,
@@ -73,13 +65,8 @@ impl From<PDI_WDT_S_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PDI_WDT_S` reader - PDI Watchdog Status"]
-pub struct PDI_WDT_S_R(crate::FieldReader<bool, PDI_WDT_S_A>);
 impl PDI_WDT_S_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PDI_WDT_S_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDI_WDT_S_A {
         match self.bits {
@@ -90,23 +77,18 @@ impl PDI_WDT_S_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PDI_WDT_S_A::VALUE1
+        *self == PDI_WDT_S_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PDI_WDT_S_A::VALUE2
+        *self == PDI_WDT_S_A::VALUE2
     }
 }
-impl core::ops::Deref for PDI_WDT_S_R {
-    type Target = crate::FieldReader<bool, PDI_WDT_S_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `ELD` reader - Enhanced Link detection"]
+pub type ELD_R = crate::BitReader<ELD_A>;
 #[doc = "Enhanced Link detection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ELD_A {
     #[doc = "0: Deactivated for all ports"]
     VALUE1 = 0,
@@ -119,13 +101,8 @@ impl From<ELD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ELD` reader - Enhanced Link detection"]
-pub struct ELD_R(crate::FieldReader<bool, ELD_A>);
 impl ELD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ELD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ELD_A {
         match self.bits {
@@ -136,23 +113,18 @@ impl ELD_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ELD_A::VALUE1
+        *self == ELD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ELD_A::VALUE2
+        *self == ELD_A::VALUE2
     }
 }
-impl core::ops::Deref for ELD_R {
-    type Target = crate::FieldReader<bool, ELD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LINK_P0` reader - Physical link on Port 0"]
+pub type LINK_P0_R = crate::BitReader<LINK_P0_A>;
 #[doc = "Physical link on Port 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINK_P0_A {
     #[doc = "0: No link"]
     VALUE1 = 0,
@@ -165,13 +137,8 @@ impl From<LINK_P0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LINK_P0` reader - Physical link on Port 0"]
-pub struct LINK_P0_R(crate::FieldReader<bool, LINK_P0_A>);
 impl LINK_P0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LINK_P0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINK_P0_A {
         match self.bits {
@@ -182,23 +149,18 @@ impl LINK_P0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LINK_P0_A::VALUE1
+        *self == LINK_P0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LINK_P0_A::VALUE2
+        *self == LINK_P0_A::VALUE2
     }
 }
-impl core::ops::Deref for LINK_P0_R {
-    type Target = crate::FieldReader<bool, LINK_P0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LINK_P1` reader - Physical link on Port 1"]
+pub type LINK_P1_R = crate::BitReader<LINK_P1_A>;
 #[doc = "Physical link on Port 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINK_P1_A {
     #[doc = "0: No link"]
     VALUE1 = 0,
@@ -211,13 +173,8 @@ impl From<LINK_P1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LINK_P1` reader - Physical link on Port 1"]
-pub struct LINK_P1_R(crate::FieldReader<bool, LINK_P1_A>);
 impl LINK_P1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LINK_P1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINK_P1_A {
         match self.bits {
@@ -228,23 +185,18 @@ impl LINK_P1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LINK_P1_A::VALUE1
+        *self == LINK_P1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LINK_P1_A::VALUE2
+        *self == LINK_P1_A::VALUE2
     }
 }
-impl core::ops::Deref for LINK_P1_R {
-    type Target = crate::FieldReader<bool, LINK_P1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LINK_P2` reader - Physical link on Port 2"]
+pub type LINK_P2_R = crate::BitReader<LINK_P2_A>;
 #[doc = "Physical link on Port 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINK_P2_A {
     #[doc = "0: No link"]
     VALUE1 = 0,
@@ -257,13 +209,8 @@ impl From<LINK_P2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LINK_P2` reader - Physical link on Port 2"]
-pub struct LINK_P2_R(crate::FieldReader<bool, LINK_P2_A>);
 impl LINK_P2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LINK_P2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINK_P2_A {
         match self.bits {
@@ -274,23 +221,18 @@ impl LINK_P2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LINK_P2_A::VALUE1
+        *self == LINK_P2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LINK_P2_A::VALUE2
+        *self == LINK_P2_A::VALUE2
     }
 }
-impl core::ops::Deref for LINK_P2_R {
-    type Target = crate::FieldReader<bool, LINK_P2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LINK_P3` reader - Physical link on Port 3"]
+pub type LINK_P3_R = crate::BitReader<LINK_P3_A>;
 #[doc = "Physical link on Port 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINK_P3_A {
     #[doc = "0: No link"]
     VALUE1 = 0,
@@ -303,13 +245,8 @@ impl From<LINK_P3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LINK_P3` reader - Physical link on Port 3"]
-pub struct LINK_P3_R(crate::FieldReader<bool, LINK_P3_A>);
 impl LINK_P3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LINK_P3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINK_P3_A {
         match self.bits {
@@ -320,23 +257,18 @@ impl LINK_P3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LINK_P3_A::VALUE1
+        *self == LINK_P3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LINK_P3_A::VALUE2
+        *self == LINK_P3_A::VALUE2
     }
 }
-impl core::ops::Deref for LINK_P3_R {
-    type Target = crate::FieldReader<bool, LINK_P3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LP0` reader - Loop Port 0"]
+pub type LP0_R = crate::BitReader<LP0_A>;
 #[doc = "Loop Port 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LP0_A {
     #[doc = "0: Open"]
     VALUE1 = 0,
@@ -349,13 +281,8 @@ impl From<LP0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LP0` reader - Loop Port 0"]
-pub struct LP0_R(crate::FieldReader<bool, LP0_A>);
 impl LP0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LP0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LP0_A {
         match self.bits {
@@ -366,23 +293,18 @@ impl LP0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LP0_A::VALUE1
+        *self == LP0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LP0_A::VALUE2
+        *self == LP0_A::VALUE2
     }
 }
-impl core::ops::Deref for LP0_R {
-    type Target = crate::FieldReader<bool, LP0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `COM_P0` reader - Communication on Port 0"]
+pub type COM_P0_R = crate::BitReader<COM_P0_A>;
 #[doc = "Communication on Port 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum COM_P0_A {
     #[doc = "0: No stable communication"]
     VALUE1 = 0,
@@ -395,13 +317,8 @@ impl From<COM_P0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `COM_P0` reader - Communication on Port 0"]
-pub struct COM_P0_R(crate::FieldReader<bool, COM_P0_A>);
 impl COM_P0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        COM_P0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> COM_P0_A {
         match self.bits {
@@ -412,23 +329,18 @@ impl COM_P0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == COM_P0_A::VALUE1
+        *self == COM_P0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == COM_P0_A::VALUE2
+        *self == COM_P0_A::VALUE2
     }
 }
-impl core::ops::Deref for COM_P0_R {
-    type Target = crate::FieldReader<bool, COM_P0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LP1` reader - Loop Port 1"]
+pub type LP1_R = crate::BitReader<LP1_A>;
 #[doc = "Loop Port 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LP1_A {
     #[doc = "0: Open"]
     VALUE1 = 0,
@@ -441,13 +353,8 @@ impl From<LP1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LP1` reader - Loop Port 1"]
-pub struct LP1_R(crate::FieldReader<bool, LP1_A>);
 impl LP1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LP1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LP1_A {
         match self.bits {
@@ -458,23 +365,18 @@ impl LP1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LP1_A::VALUE1
+        *self == LP1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LP1_A::VALUE2
+        *self == LP1_A::VALUE2
     }
 }
-impl core::ops::Deref for LP1_R {
-    type Target = crate::FieldReader<bool, LP1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `COM_P1` reader - Communication on Port 1"]
+pub type COM_P1_R = crate::BitReader<COM_P1_A>;
 #[doc = "Communication on Port 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum COM_P1_A {
     #[doc = "0: No stable communication"]
     VALUE1 = 0,
@@ -487,13 +389,8 @@ impl From<COM_P1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `COM_P1` reader - Communication on Port 1"]
-pub struct COM_P1_R(crate::FieldReader<bool, COM_P1_A>);
 impl COM_P1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        COM_P1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> COM_P1_A {
         match self.bits {
@@ -504,23 +401,18 @@ impl COM_P1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == COM_P1_A::VALUE1
+        *self == COM_P1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == COM_P1_A::VALUE2
+        *self == COM_P1_A::VALUE2
     }
 }
-impl core::ops::Deref for COM_P1_R {
-    type Target = crate::FieldReader<bool, COM_P1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LP2` reader - Loop Port 2"]
+pub type LP2_R = crate::BitReader<LP2_A>;
 #[doc = "Loop Port 2\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LP2_A {
     #[doc = "0: Open"]
     VALUE1 = 0,
@@ -533,13 +425,8 @@ impl From<LP2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LP2` reader - Loop Port 2"]
-pub struct LP2_R(crate::FieldReader<bool, LP2_A>);
 impl LP2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LP2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LP2_A {
         match self.bits {
@@ -550,23 +437,18 @@ impl LP2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LP2_A::VALUE1
+        *self == LP2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LP2_A::VALUE2
+        *self == LP2_A::VALUE2
     }
 }
-impl core::ops::Deref for LP2_R {
-    type Target = crate::FieldReader<bool, LP2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `COM_P2` reader - Communication on Port 2"]
+pub type COM_P2_R = crate::BitReader<COM_P2_A>;
 #[doc = "Communication on Port 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum COM_P2_A {
     #[doc = "0: No stable communication"]
     VALUE1 = 0,
@@ -579,13 +461,8 @@ impl From<COM_P2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `COM_P2` reader - Communication on Port 2"]
-pub struct COM_P2_R(crate::FieldReader<bool, COM_P2_A>);
 impl COM_P2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        COM_P2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> COM_P2_A {
         match self.bits {
@@ -596,23 +473,18 @@ impl COM_P2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == COM_P2_A::VALUE1
+        *self == COM_P2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == COM_P2_A::VALUE2
+        *self == COM_P2_A::VALUE2
     }
 }
-impl core::ops::Deref for COM_P2_R {
-    type Target = crate::FieldReader<bool, COM_P2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LP3` reader - Loop Port 3"]
+pub type LP3_R = crate::BitReader<LP3_A>;
 #[doc = "Loop Port 3\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LP3_A {
     #[doc = "0: Open"]
     VALUE1 = 0,
@@ -625,13 +497,8 @@ impl From<LP3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LP3` reader - Loop Port 3"]
-pub struct LP3_R(crate::FieldReader<bool, LP3_A>);
 impl LP3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LP3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LP3_A {
         match self.bits {
@@ -642,23 +509,18 @@ impl LP3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LP3_A::VALUE1
+        *self == LP3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LP3_A::VALUE2
+        *self == LP3_A::VALUE2
     }
 }
-impl core::ops::Deref for LP3_R {
-    type Target = crate::FieldReader<bool, LP3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `COM_P3` reader - Communication on Port 3"]
+pub type COM_P3_R = crate::BitReader<COM_P3_A>;
 #[doc = "Communication on Port 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum COM_P3_A {
     #[doc = "0: No stable communication"]
     VALUE1 = 0,
@@ -671,13 +533,8 @@ impl From<COM_P3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `COM_P3` reader - Communication on Port 3"]
-pub struct COM_P3_R(crate::FieldReader<bool, COM_P3_A>);
 impl COM_P3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        COM_P3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> COM_P3_A {
         match self.bits {
@@ -688,96 +545,89 @@ impl COM_P3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == COM_P3_A::VALUE1
+        *self == COM_P3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == COM_P3_A::VALUE2
-    }
-}
-impl core::ops::Deref for COM_P3_R {
-    type Target = crate::FieldReader<bool, COM_P3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == COM_P3_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - PDI operational/EEPROM loaded correctly"]
     #[inline(always)]
     pub fn pdi_eeprom(&self) -> PDI_EEPROM_R {
-        PDI_EEPROM_R::new((self.bits & 0x01) != 0)
+        PDI_EEPROM_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - PDI Watchdog Status"]
     #[inline(always)]
     pub fn pdi_wdt_s(&self) -> PDI_WDT_S_R {
-        PDI_WDT_S_R::new(((self.bits >> 1) & 0x01) != 0)
+        PDI_WDT_S_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enhanced Link detection"]
     #[inline(always)]
     pub fn eld(&self) -> ELD_R {
-        ELD_R::new(((self.bits >> 2) & 0x01) != 0)
+        ELD_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 4 - Physical link on Port 0"]
     #[inline(always)]
     pub fn link_p0(&self) -> LINK_P0_R {
-        LINK_P0_R::new(((self.bits >> 4) & 0x01) != 0)
+        LINK_P0_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Physical link on Port 1"]
     #[inline(always)]
     pub fn link_p1(&self) -> LINK_P1_R {
-        LINK_P1_R::new(((self.bits >> 5) & 0x01) != 0)
+        LINK_P1_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Physical link on Port 2"]
     #[inline(always)]
     pub fn link_p2(&self) -> LINK_P2_R {
-        LINK_P2_R::new(((self.bits >> 6) & 0x01) != 0)
+        LINK_P2_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Physical link on Port 3"]
     #[inline(always)]
     pub fn link_p3(&self) -> LINK_P3_R {
-        LINK_P3_R::new(((self.bits >> 7) & 0x01) != 0)
+        LINK_P3_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Loop Port 0"]
     #[inline(always)]
     pub fn lp0(&self) -> LP0_R {
-        LP0_R::new(((self.bits >> 8) & 0x01) != 0)
+        LP0_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Communication on Port 0"]
     #[inline(always)]
     pub fn com_p0(&self) -> COM_P0_R {
-        COM_P0_R::new(((self.bits >> 9) & 0x01) != 0)
+        COM_P0_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Loop Port 1"]
     #[inline(always)]
     pub fn lp1(&self) -> LP1_R {
-        LP1_R::new(((self.bits >> 10) & 0x01) != 0)
+        LP1_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Communication on Port 1"]
     #[inline(always)]
     pub fn com_p1(&self) -> COM_P1_R {
-        COM_P1_R::new(((self.bits >> 11) & 0x01) != 0)
+        COM_P1_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Loop Port 2"]
     #[inline(always)]
     pub fn lp2(&self) -> LP2_R {
-        LP2_R::new(((self.bits >> 12) & 0x01) != 0)
+        LP2_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Communication on Port 2"]
     #[inline(always)]
     pub fn com_p2(&self) -> COM_P2_R {
-        COM_P2_R::new(((self.bits >> 13) & 0x01) != 0)
+        COM_P2_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Loop Port 3"]
     #[inline(always)]
     pub fn lp3(&self) -> LP3_R {
-        LP3_R::new(((self.bits >> 14) & 0x01) != 0)
+        LP3_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Communication on Port 3"]
     #[inline(always)]
     pub fn com_p3(&self) -> COM_P3_R {
-        COM_P3_R::new(((self.bits >> 15) & 0x01) != 0)
+        COM_P3_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 #[doc = "ESC DL Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [esc_dl_status](index.html) module"]
@@ -791,8 +641,5 @@ impl crate::Readable for ESC_DL_STATUS_SPEC {
 }
 #[doc = "`reset()` method sets ESC_DL_STATUS to value 0x5000"]
 impl crate::Resettable for ESC_DL_STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x5000
-    }
+    const RESET_VALUE: Self::Ux = 0x5000;
 }

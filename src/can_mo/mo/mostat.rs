@@ -13,8 +13,10 @@ impl From<crate::R<MOSTAT_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `RXPND` reader - Receive Pending"]
+pub type RXPND_R = crate::BitReader<RXPND_A>;
 #[doc = "Receive Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RXPND_A {
     #[doc = "0: No CAN message has been received."]
     VALUE1 = 0,
@@ -27,13 +29,8 @@ impl From<RXPND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXPND` reader - Receive Pending"]
-pub struct RXPND_R(crate::FieldReader<bool, RXPND_A>);
 impl RXPND_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXPND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXPND_A {
         match self.bits {
@@ -44,23 +41,18 @@ impl RXPND_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RXPND_A::VALUE1
+        *self == RXPND_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RXPND_A::VALUE2
+        *self == RXPND_A::VALUE2
     }
 }
-impl core::ops::Deref for RXPND_R {
-    type Target = crate::FieldReader<bool, RXPND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `TXPND` reader - Transmit Pending"]
+pub type TXPND_R = crate::BitReader<TXPND_A>;
 #[doc = "Transmit Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TXPND_A {
     #[doc = "0: No CAN message has been transmitted."]
     VALUE1 = 0,
@@ -73,13 +65,8 @@ impl From<TXPND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXPND` reader - Transmit Pending"]
-pub struct TXPND_R(crate::FieldReader<bool, TXPND_A>);
 impl TXPND_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXPND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXPND_A {
         match self.bits {
@@ -90,23 +77,18 @@ impl TXPND_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TXPND_A::VALUE1
+        *self == TXPND_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TXPND_A::VALUE2
+        *self == TXPND_A::VALUE2
     }
 }
-impl core::ops::Deref for TXPND_R {
-    type Target = crate::FieldReader<bool, TXPND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `RXUPD` reader - Receive Updating"]
+pub type RXUPD_R = crate::BitReader<RXUPD_A>;
 #[doc = "Receive Updating\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RXUPD_A {
     #[doc = "0: No receive update ongoing."]
     VALUE1 = 0,
@@ -119,13 +101,8 @@ impl From<RXUPD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXUPD` reader - Receive Updating"]
-pub struct RXUPD_R(crate::FieldReader<bool, RXUPD_A>);
 impl RXUPD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXUPD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXUPD_A {
         match self.bits {
@@ -136,23 +113,18 @@ impl RXUPD_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RXUPD_A::VALUE1
+        *self == RXUPD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RXUPD_A::VALUE2
+        *self == RXUPD_A::VALUE2
     }
 }
-impl core::ops::Deref for RXUPD_R {
-    type Target = crate::FieldReader<bool, RXUPD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `NEWDAT` reader - New Data"]
+pub type NEWDAT_R = crate::BitReader<NEWDAT_A>;
 #[doc = "New Data\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NEWDAT_A {
     #[doc = "0: No update of the message object n since last flag reset."]
     VALUE1 = 0,
@@ -165,13 +137,8 @@ impl From<NEWDAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NEWDAT` reader - New Data"]
-pub struct NEWDAT_R(crate::FieldReader<bool, NEWDAT_A>);
 impl NEWDAT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NEWDAT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NEWDAT_A {
         match self.bits {
@@ -182,23 +149,18 @@ impl NEWDAT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == NEWDAT_A::VALUE1
+        *self == NEWDAT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == NEWDAT_A::VALUE2
+        *self == NEWDAT_A::VALUE2
     }
 }
-impl core::ops::Deref for NEWDAT_R {
-    type Target = crate::FieldReader<bool, NEWDAT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `MSGLST` reader - Message Lost"]
+pub type MSGLST_R = crate::BitReader<MSGLST_A>;
 #[doc = "Message Lost\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MSGLST_A {
     #[doc = "0: No CAN message is lost."]
     VALUE1 = 0,
@@ -211,13 +173,8 @@ impl From<MSGLST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MSGLST` reader - Message Lost"]
-pub struct MSGLST_R(crate::FieldReader<bool, MSGLST_A>);
 impl MSGLST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MSGLST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MSGLST_A {
         match self.bits {
@@ -228,23 +185,18 @@ impl MSGLST_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == MSGLST_A::VALUE1
+        *self == MSGLST_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == MSGLST_A::VALUE2
+        *self == MSGLST_A::VALUE2
     }
 }
-impl core::ops::Deref for MSGLST_R {
-    type Target = crate::FieldReader<bool, MSGLST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `MSGVAL` reader - Message Valid"]
+pub type MSGVAL_R = crate::BitReader<MSGVAL_A>;
 #[doc = "Message Valid\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MSGVAL_A {
     #[doc = "0: Message object n is not valid."]
     VALUE1 = 0,
@@ -257,13 +209,8 @@ impl From<MSGVAL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MSGVAL` reader - Message Valid"]
-pub struct MSGVAL_R(crate::FieldReader<bool, MSGVAL_A>);
 impl MSGVAL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MSGVAL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MSGVAL_A {
         match self.bits {
@@ -274,23 +221,18 @@ impl MSGVAL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == MSGVAL_A::VALUE1
+        *self == MSGVAL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == MSGVAL_A::VALUE2
+        *self == MSGVAL_A::VALUE2
     }
 }
-impl core::ops::Deref for MSGVAL_R {
-    type Target = crate::FieldReader<bool, MSGVAL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `RTSEL` reader - Receive/Transmit Selected"]
+pub type RTSEL_R = crate::BitReader<RTSEL_A>;
 #[doc = "Receive/Transmit Selected\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RTSEL_A {
     #[doc = "0: Message object n is not selected for receive or transmit operation."]
     VALUE1 = 0,
@@ -303,13 +245,8 @@ impl From<RTSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RTSEL` reader - Receive/Transmit Selected"]
-pub struct RTSEL_R(crate::FieldReader<bool, RTSEL_A>);
 impl RTSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RTSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTSEL_A {
         match self.bits {
@@ -320,23 +257,18 @@ impl RTSEL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RTSEL_A::VALUE1
+        *self == RTSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RTSEL_A::VALUE2
+        *self == RTSEL_A::VALUE2
     }
 }
-impl core::ops::Deref for RTSEL_R {
-    type Target = crate::FieldReader<bool, RTSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `RXEN` reader - Receive Enable"]
+pub type RXEN_R = crate::BitReader<RXEN_A>;
 #[doc = "Receive Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RXEN_A {
     #[doc = "0: Message object n is not enabled for frame reception."]
     VALUE1 = 0,
@@ -349,13 +281,8 @@ impl From<RXEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXEN` reader - Receive Enable"]
-pub struct RXEN_R(crate::FieldReader<bool, RXEN_A>);
 impl RXEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXEN_A {
         match self.bits {
@@ -366,23 +293,18 @@ impl RXEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RXEN_A::VALUE1
+        *self == RXEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RXEN_A::VALUE2
+        *self == RXEN_A::VALUE2
     }
 }
-impl core::ops::Deref for RXEN_R {
-    type Target = crate::FieldReader<bool, RXEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `TXRQ` reader - Transmit Request"]
+pub type TXRQ_R = crate::BitReader<TXRQ_A>;
 #[doc = "Transmit Request\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TXRQ_A {
     #[doc = "0: No transmission of message object n is requested."]
     VALUE1 = 0,
@@ -395,13 +317,8 @@ impl From<TXRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXRQ` reader - Transmit Request"]
-pub struct TXRQ_R(crate::FieldReader<bool, TXRQ_A>);
 impl TXRQ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXRQ_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXRQ_A {
         match self.bits {
@@ -412,23 +329,18 @@ impl TXRQ_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TXRQ_A::VALUE1
+        *self == TXRQ_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TXRQ_A::VALUE2
+        *self == TXRQ_A::VALUE2
     }
 }
-impl core::ops::Deref for TXRQ_R {
-    type Target = crate::FieldReader<bool, TXRQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `TXEN0` reader - Transmit Enable 0"]
+pub type TXEN0_R = crate::BitReader<TXEN0_A>;
 #[doc = "Transmit Enable 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TXEN0_A {
     #[doc = "0: Message object n is not enabled for frame transmission."]
     VALUE1 = 0,
@@ -441,13 +353,8 @@ impl From<TXEN0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXEN0` reader - Transmit Enable 0"]
-pub struct TXEN0_R(crate::FieldReader<bool, TXEN0_A>);
 impl TXEN0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXEN0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXEN0_A {
         match self.bits {
@@ -458,23 +365,18 @@ impl TXEN0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TXEN0_A::VALUE1
+        *self == TXEN0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TXEN0_A::VALUE2
+        *self == TXEN0_A::VALUE2
     }
 }
-impl core::ops::Deref for TXEN0_R {
-    type Target = crate::FieldReader<bool, TXEN0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `TXEN1` reader - Transmit Enable 1"]
+pub type TXEN1_R = crate::BitReader<TXEN1_A>;
 #[doc = "Transmit Enable 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TXEN1_A {
     #[doc = "0: Message object n is not enabled for frame transmission."]
     VALUE1 = 0,
@@ -487,13 +389,8 @@ impl From<TXEN1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXEN1` reader - Transmit Enable 1"]
-pub struct TXEN1_R(crate::FieldReader<bool, TXEN1_A>);
 impl TXEN1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXEN1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXEN1_A {
         match self.bits {
@@ -504,23 +401,18 @@ impl TXEN1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TXEN1_A::VALUE1
+        *self == TXEN1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TXEN1_A::VALUE2
+        *self == TXEN1_A::VALUE2
     }
 }
-impl core::ops::Deref for TXEN1_R {
-    type Target = crate::FieldReader<bool, TXEN1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `DIR` reader - Message Direction"]
+pub type DIR_R = crate::BitReader<DIR_A>;
 #[doc = "Message Direction\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DIR_A {
     #[doc = "0: Receive Object selected: With TXRQ = 1, a Remote Frame with the identifier of message object n is scheduled for transmission. On reception of a Data Frame with matching identifier, the message is stored in message object n."]
     VALUE1 = 0,
@@ -533,13 +425,8 @@ impl From<DIR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DIR` reader - Message Direction"]
-pub struct DIR_R(crate::FieldReader<bool, DIR_A>);
 impl DIR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIR_A {
         match self.bits {
@@ -550,123 +437,80 @@ impl DIR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DIR_A::VALUE1
+        *self == DIR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DIR_A::VALUE2
-    }
-}
-impl core::ops::Deref for DIR_R {
-    type Target = crate::FieldReader<bool, DIR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DIR_A::VALUE2
     }
 }
 #[doc = "Field `LIST` reader - List Allocation"]
-pub struct LIST_R(crate::FieldReader<u8, u8>);
-impl LIST_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LIST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LIST_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LIST_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PPREV` reader - Pointer to Previous Message Object"]
-pub struct PPREV_R(crate::FieldReader<u8, u8>);
-impl PPREV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PPREV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PPREV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PPREV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PNEXT` reader - Pointer to Next Message Object"]
-pub struct PNEXT_R(crate::FieldReader<u8, u8>);
-impl PNEXT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PNEXT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PNEXT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PNEXT_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 0 - Receive Pending"]
     #[inline(always)]
     pub fn rxpnd(&self) -> RXPND_R {
-        RXPND_R::new((self.bits & 0x01) != 0)
+        RXPND_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Transmit Pending"]
     #[inline(always)]
     pub fn txpnd(&self) -> TXPND_R {
-        TXPND_R::new(((self.bits >> 1) & 0x01) != 0)
+        TXPND_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Receive Updating"]
     #[inline(always)]
     pub fn rxupd(&self) -> RXUPD_R {
-        RXUPD_R::new(((self.bits >> 2) & 0x01) != 0)
+        RXUPD_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - New Data"]
     #[inline(always)]
     pub fn newdat(&self) -> NEWDAT_R {
-        NEWDAT_R::new(((self.bits >> 3) & 0x01) != 0)
+        NEWDAT_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Message Lost"]
     #[inline(always)]
     pub fn msglst(&self) -> MSGLST_R {
-        MSGLST_R::new(((self.bits >> 4) & 0x01) != 0)
+        MSGLST_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Message Valid"]
     #[inline(always)]
     pub fn msgval(&self) -> MSGVAL_R {
-        MSGVAL_R::new(((self.bits >> 5) & 0x01) != 0)
+        MSGVAL_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Receive/Transmit Selected"]
     #[inline(always)]
     pub fn rtsel(&self) -> RTSEL_R {
-        RTSEL_R::new(((self.bits >> 6) & 0x01) != 0)
+        RTSEL_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Receive Enable"]
     #[inline(always)]
     pub fn rxen(&self) -> RXEN_R {
-        RXEN_R::new(((self.bits >> 7) & 0x01) != 0)
+        RXEN_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Transmit Request"]
     #[inline(always)]
     pub fn txrq(&self) -> TXRQ_R {
-        TXRQ_R::new(((self.bits >> 8) & 0x01) != 0)
+        TXRQ_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Transmit Enable 0"]
     #[inline(always)]
     pub fn txen0(&self) -> TXEN0_R {
-        TXEN0_R::new(((self.bits >> 9) & 0x01) != 0)
+        TXEN0_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Transmit Enable 1"]
     #[inline(always)]
     pub fn txen1(&self) -> TXEN1_R {
-        TXEN1_R::new(((self.bits >> 10) & 0x01) != 0)
+        TXEN1_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Message Direction"]
     #[inline(always)]
     pub fn dir(&self) -> DIR_R {
-        DIR_R::new(((self.bits >> 11) & 0x01) != 0)
+        DIR_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bits 12:15 - List Allocation"]
     #[inline(always)]
@@ -695,8 +539,5 @@ impl crate::Readable for MOSTAT_SPEC {
 }
 #[doc = "`reset()` method sets MOSTAT to value 0"]
 impl crate::Resettable for MOSTAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

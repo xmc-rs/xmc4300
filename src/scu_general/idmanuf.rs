@@ -14,33 +14,9 @@ impl From<crate::R<IDMANUF_SPEC>> for R {
     }
 }
 #[doc = "Field `DEPT` reader - Department Identification Number"]
-pub struct DEPT_R(crate::FieldReader<u8, u8>);
-impl DEPT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DEPT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEPT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEPT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MANUF` reader - Manufacturer Identification Number"]
-pub struct MANUF_R(crate::FieldReader<u16, u16>);
-impl MANUF_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        MANUF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MANUF_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MANUF_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:4 - Department Identification Number"]
     #[inline(always)]
@@ -64,8 +40,5 @@ impl crate::Readable for IDMANUF_SPEC {
 }
 #[doc = "`reset()` method sets IDMANUF to value 0x1820"]
 impl crate::Resettable for IDMANUF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1820
-    }
+    const RESET_VALUE: Self::Ux = 0x1820;
 }

@@ -14,24 +14,12 @@ impl From<crate::R<RX_MULTICAST_FRAMES_GOOD_SPEC>> for R {
     }
 }
 #[doc = "Field `RXMCASTG` reader - This field indicates the number of received good multicast frames."]
-pub struct RXMCASTG_R(crate::FieldReader<u32, u32>);
-impl RXMCASTG_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        RXMCASTG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXMCASTG_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXMCASTG_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of received good multicast frames."]
     #[inline(always)]
     pub fn rxmcastg(&self) -> RXMCASTG_R {
-        RXMCASTG_R::new((self.bits & 0xffff_ffff) as u32)
+        RXMCASTG_R::new(self.bits)
     }
 }
 #[doc = "Receive Frame Count for Good Multicast Frames\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_multicast_frames_good](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for RX_MULTICAST_FRAMES_GOOD_SPEC {
 }
 #[doc = "`reset()` method sets RX_MULTICAST_FRAMES_GOOD to value 0"]
 impl crate::Resettable for RX_MULTICAST_FRAMES_GOOD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

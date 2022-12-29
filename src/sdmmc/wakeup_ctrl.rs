@@ -34,174 +34,10 @@ impl From<crate::W<WAKEUP_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Wakeup Event Enable On SD Card Removal\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WAKEUP_EVENT_EN_REM_A {
-    #[doc = "0: Disable"]
-    VALUE1 = 0,
-    #[doc = "1: Enable"]
-    VALUE2 = 1,
-}
-impl From<WAKEUP_EVENT_EN_REM_A> for bool {
-    #[inline(always)]
-    fn from(variant: WAKEUP_EVENT_EN_REM_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `WAKEUP_EVENT_EN_REM` reader - Wakeup Event Enable On SD Card Removal"]
-pub struct WAKEUP_EVENT_EN_REM_R(crate::FieldReader<bool, WAKEUP_EVENT_EN_REM_A>);
-impl WAKEUP_EVENT_EN_REM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WAKEUP_EVENT_EN_REM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> WAKEUP_EVENT_EN_REM_A {
-        match self.bits {
-            false => WAKEUP_EVENT_EN_REM_A::VALUE1,
-            true => WAKEUP_EVENT_EN_REM_A::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline(always)]
-    pub fn is_value1(&self) -> bool {
-        **self == WAKEUP_EVENT_EN_REM_A::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline(always)]
-    pub fn is_value2(&self) -> bool {
-        **self == WAKEUP_EVENT_EN_REM_A::VALUE2
-    }
-}
-impl core::ops::Deref for WAKEUP_EVENT_EN_REM_R {
-    type Target = crate::FieldReader<bool, WAKEUP_EVENT_EN_REM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `WAKEUP_EVENT_EN_REM` writer - Wakeup Event Enable On SD Card Removal"]
-pub struct WAKEUP_EVENT_EN_REM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAKEUP_EVENT_EN_REM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WAKEUP_EVENT_EN_REM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "Disable"]
-    #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(WAKEUP_EVENT_EN_REM_A::VALUE1)
-    }
-    #[doc = "Enable"]
-    #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(WAKEUP_EVENT_EN_REM_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
-        self.w
-    }
-}
-#[doc = "Wakeup Event Enable On SD Card Insertion\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WAKEUP_EVENT_EN_INS_A {
-    #[doc = "0: Disable"]
-    VALUE1 = 0,
-    #[doc = "1: Enable"]
-    VALUE2 = 1,
-}
-impl From<WAKEUP_EVENT_EN_INS_A> for bool {
-    #[inline(always)]
-    fn from(variant: WAKEUP_EVENT_EN_INS_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `WAKEUP_EVENT_EN_INS` reader - Wakeup Event Enable On SD Card Insertion"]
-pub struct WAKEUP_EVENT_EN_INS_R(crate::FieldReader<bool, WAKEUP_EVENT_EN_INS_A>);
-impl WAKEUP_EVENT_EN_INS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WAKEUP_EVENT_EN_INS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> WAKEUP_EVENT_EN_INS_A {
-        match self.bits {
-            false => WAKEUP_EVENT_EN_INS_A::VALUE1,
-            true => WAKEUP_EVENT_EN_INS_A::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline(always)]
-    pub fn is_value1(&self) -> bool {
-        **self == WAKEUP_EVENT_EN_INS_A::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline(always)]
-    pub fn is_value2(&self) -> bool {
-        **self == WAKEUP_EVENT_EN_INS_A::VALUE2
-    }
-}
-impl core::ops::Deref for WAKEUP_EVENT_EN_INS_R {
-    type Target = crate::FieldReader<bool, WAKEUP_EVENT_EN_INS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `WAKEUP_EVENT_EN_INS` writer - Wakeup Event Enable On SD Card Insertion"]
-pub struct WAKEUP_EVENT_EN_INS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAKEUP_EVENT_EN_INS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WAKEUP_EVENT_EN_INS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "Disable"]
-    #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(WAKEUP_EVENT_EN_INS_A::VALUE1)
-    }
-    #[doc = "Enable"]
-    #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(WAKEUP_EVENT_EN_INS_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
+#[doc = "Field `WAKEUP_EVENT_EN_INT` reader - Wakeup Event Enable On Card Interrupt"]
+pub type WAKEUP_EVENT_EN_INT_R = crate::BitReader<WAKEUP_EVENT_EN_INT_A>;
 #[doc = "Wakeup Event Enable On Card Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WAKEUP_EVENT_EN_INT_A {
     #[doc = "0: Disable"]
     VALUE1 = 0,
@@ -214,13 +50,8 @@ impl From<WAKEUP_EVENT_EN_INT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WAKEUP_EVENT_EN_INT` reader - Wakeup Event Enable On Card Interrupt"]
-pub struct WAKEUP_EVENT_EN_INT_R(crate::FieldReader<bool, WAKEUP_EVENT_EN_INT_A>);
 impl WAKEUP_EVENT_EN_INT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WAKEUP_EVENT_EN_INT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WAKEUP_EVENT_EN_INT_A {
         match self.bits {
@@ -231,31 +62,17 @@ impl WAKEUP_EVENT_EN_INT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == WAKEUP_EVENT_EN_INT_A::VALUE1
+        *self == WAKEUP_EVENT_EN_INT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == WAKEUP_EVENT_EN_INT_A::VALUE2
-    }
-}
-impl core::ops::Deref for WAKEUP_EVENT_EN_INT_R {
-    type Target = crate::FieldReader<bool, WAKEUP_EVENT_EN_INT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WAKEUP_EVENT_EN_INT_A::VALUE2
     }
 }
 #[doc = "Field `WAKEUP_EVENT_EN_INT` writer - Wakeup Event Enable On Card Interrupt"]
-pub struct WAKEUP_EVENT_EN_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAKEUP_EVENT_EN_INT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WAKEUP_EVENT_EN_INT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WAKEUP_EVENT_EN_INT_W<'a, const O: u8> = crate::BitWriter<'a, u8, WAKEUP_CTRL_SPEC, WAKEUP_EVENT_EN_INT_A, O>;
+impl<'a, const O: u8> WAKEUP_EVENT_EN_INT_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -266,55 +83,142 @@ impl<'a> WAKEUP_EVENT_EN_INT_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(WAKEUP_EVENT_EN_INT_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
+}
+#[doc = "Field `WAKEUP_EVENT_EN_INS` reader - Wakeup Event Enable On SD Card Insertion"]
+pub type WAKEUP_EVENT_EN_INS_R = crate::BitReader<WAKEUP_EVENT_EN_INS_A>;
+#[doc = "Wakeup Event Enable On SD Card Insertion\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum WAKEUP_EVENT_EN_INS_A {
+    #[doc = "0: Disable"]
+    VALUE1 = 0,
+    #[doc = "1: Enable"]
+    VALUE2 = 1,
+}
+impl From<WAKEUP_EVENT_EN_INS_A> for bool {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
+    fn from(variant: WAKEUP_EVENT_EN_INS_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r"Clears the field bit"]
+}
+impl WAKEUP_EVENT_EN_INS_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
+    pub fn variant(&self) -> WAKEUP_EVENT_EN_INS_A {
+        match self.bits {
+            false => WAKEUP_EVENT_EN_INS_A::VALUE1,
+            true => WAKEUP_EVENT_EN_INS_A::VALUE2,
+        }
     }
-    #[doc = r"Writes raw bits to the field"]
+    #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
+    pub fn is_value1(&self) -> bool {
+        *self == WAKEUP_EVENT_EN_INS_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == WAKEUP_EVENT_EN_INS_A::VALUE2
+    }
+}
+#[doc = "Field `WAKEUP_EVENT_EN_INS` writer - Wakeup Event Enable On SD Card Insertion"]
+pub type WAKEUP_EVENT_EN_INS_W<'a, const O: u8> = crate::BitWriter<'a, u8, WAKEUP_CTRL_SPEC, WAKEUP_EVENT_EN_INS_A, O>;
+impl<'a, const O: u8> WAKEUP_EVENT_EN_INS_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(WAKEUP_EVENT_EN_INS_A::VALUE1)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(WAKEUP_EVENT_EN_INS_A::VALUE2)
+    }
+}
+#[doc = "Field `WAKEUP_EVENT_EN_REM` reader - Wakeup Event Enable On SD Card Removal"]
+pub type WAKEUP_EVENT_EN_REM_R = crate::BitReader<WAKEUP_EVENT_EN_REM_A>;
+#[doc = "Wakeup Event Enable On SD Card Removal\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum WAKEUP_EVENT_EN_REM_A {
+    #[doc = "0: Disable"]
+    VALUE1 = 0,
+    #[doc = "1: Enable"]
+    VALUE2 = 1,
+}
+impl From<WAKEUP_EVENT_EN_REM_A> for bool {
+    #[inline(always)]
+    fn from(variant: WAKEUP_EVENT_EN_REM_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl WAKEUP_EVENT_EN_REM_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WAKEUP_EVENT_EN_REM_A {
+        match self.bits {
+            false => WAKEUP_EVENT_EN_REM_A::VALUE1,
+            true => WAKEUP_EVENT_EN_REM_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == WAKEUP_EVENT_EN_REM_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == WAKEUP_EVENT_EN_REM_A::VALUE2
+    }
+}
+#[doc = "Field `WAKEUP_EVENT_EN_REM` writer - Wakeup Event Enable On SD Card Removal"]
+pub type WAKEUP_EVENT_EN_REM_W<'a, const O: u8> = crate::BitWriter<'a, u8, WAKEUP_CTRL_SPEC, WAKEUP_EVENT_EN_REM_A, O>;
+impl<'a, const O: u8> WAKEUP_EVENT_EN_REM_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(WAKEUP_EVENT_EN_REM_A::VALUE1)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(WAKEUP_EVENT_EN_REM_A::VALUE2)
     }
 }
 impl R {
-    #[doc = "Bit 2 - Wakeup Event Enable On SD Card Removal"]
+    #[doc = "Bit 0 - Wakeup Event Enable On Card Interrupt"]
     #[inline(always)]
-    pub fn wakeup_event_en_rem(&self) -> WAKEUP_EVENT_EN_REM_R {
-        WAKEUP_EVENT_EN_REM_R::new(((self.bits >> 2) & 0x01) != 0)
+    pub fn wakeup_event_en_int(&self) -> WAKEUP_EVENT_EN_INT_R {
+        WAKEUP_EVENT_EN_INT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Wakeup Event Enable On SD Card Insertion"]
     #[inline(always)]
     pub fn wakeup_event_en_ins(&self) -> WAKEUP_EVENT_EN_INS_R {
-        WAKEUP_EVENT_EN_INS_R::new(((self.bits >> 1) & 0x01) != 0)
+        WAKEUP_EVENT_EN_INS_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - Wakeup Event Enable On Card Interrupt"]
+    #[doc = "Bit 2 - Wakeup Event Enable On SD Card Removal"]
     #[inline(always)]
-    pub fn wakeup_event_en_int(&self) -> WAKEUP_EVENT_EN_INT_R {
-        WAKEUP_EVENT_EN_INT_R::new((self.bits & 0x01) != 0)
+    pub fn wakeup_event_en_rem(&self) -> WAKEUP_EVENT_EN_REM_R {
+        WAKEUP_EVENT_EN_REM_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 2 - Wakeup Event Enable On SD Card Removal"]
+    #[doc = "Bit 0 - Wakeup Event Enable On Card Interrupt"]
     #[inline(always)]
-    pub fn wakeup_event_en_rem(&mut self) -> WAKEUP_EVENT_EN_REM_W {
-        WAKEUP_EVENT_EN_REM_W { w: self }
+    #[must_use]
+    pub fn wakeup_event_en_int(&mut self) -> WAKEUP_EVENT_EN_INT_W<0> {
+        WAKEUP_EVENT_EN_INT_W::new(self)
     }
     #[doc = "Bit 1 - Wakeup Event Enable On SD Card Insertion"]
     #[inline(always)]
-    pub fn wakeup_event_en_ins(&mut self) -> WAKEUP_EVENT_EN_INS_W {
-        WAKEUP_EVENT_EN_INS_W { w: self }
+    #[must_use]
+    pub fn wakeup_event_en_ins(&mut self) -> WAKEUP_EVENT_EN_INS_W<1> {
+        WAKEUP_EVENT_EN_INS_W::new(self)
     }
-    #[doc = "Bit 0 - Wakeup Event Enable On Card Interrupt"]
+    #[doc = "Bit 2 - Wakeup Event Enable On SD Card Removal"]
     #[inline(always)]
-    pub fn wakeup_event_en_int(&mut self) -> WAKEUP_EVENT_EN_INT_W {
-        WAKEUP_EVENT_EN_INT_W { w: self }
+    #[must_use]
+    pub fn wakeup_event_en_rem(&mut self) -> WAKEUP_EVENT_EN_REM_W<2> {
+        WAKEUP_EVENT_EN_REM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -335,11 +239,10 @@ impl crate::Readable for WAKEUP_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [wakeup_ctrl::W](W) writer structure"]
 impl crate::Writable for WAKEUP_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets WAKEUP_CTRL to value 0"]
 impl crate::Resettable for WAKEUP_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<MCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CLKSEL` reader - Baud Rate Logic Clock Select"]
+pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
 #[doc = "Baud Rate Logic Clock Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKSEL_A {
     #[doc = "0: No clock supplied"]
@@ -55,13 +57,8 @@ impl From<CLKSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLKSEL` reader - Baud Rate Logic Clock Select"]
-pub struct CLKSEL_R(crate::FieldReader<u8, CLKSEL_A>);
 impl CLKSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CLKSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CLKSEL_A> {
         match self.bits {
@@ -76,46 +73,32 @@ impl CLKSEL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CLKSEL_A::VALUE1
+        *self == CLKSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CLKSEL_A::VALUE2
+        *self == CLKSEL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == CLKSEL_A::VALUE3
+        *self == CLKSEL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == CLKSEL_A::VALUE4
+        *self == CLKSEL_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        **self == CLKSEL_A::VALUE5
-    }
-}
-impl core::ops::Deref for CLKSEL_R {
-    type Target = crate::FieldReader<u8, CLKSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLKSEL_A::VALUE5
     }
 }
 #[doc = "Field `CLKSEL` writer - Baud Rate Logic Clock Select"]
-pub struct CLKSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLKSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CLKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MCR_SPEC, u8, CLKSEL_A, 4, O>;
+impl<'a, const O: u8> CLKSEL_W<'a, O> {
     #[doc = "No clock supplied"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -141,39 +124,11 @@ impl<'a> CLKSEL_W<'a> {
     pub fn value5(self) -> &'a mut W {
         self.variant(CLKSEL_A::VALUE5)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
 }
 #[doc = "Field `MPSEL` reader - Message Pending Selector"]
-pub struct MPSEL_R(crate::FieldReader<u8, u8>);
-impl MPSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MPSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MPSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MPSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MPSEL` writer - Message Pending Selector"]
-pub struct MPSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MPSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
-        self.w
-    }
-}
+pub type MPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MCR_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Baud Rate Logic Clock Select"]
     #[inline(always)]
@@ -189,13 +144,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Baud Rate Logic Clock Select"]
     #[inline(always)]
-    pub fn clksel(&mut self) -> CLKSEL_W {
-        CLKSEL_W { w: self }
+    #[must_use]
+    pub fn clksel(&mut self) -> CLKSEL_W<0> {
+        CLKSEL_W::new(self)
     }
     #[doc = "Bits 12:15 - Message Pending Selector"]
     #[inline(always)]
-    pub fn mpsel(&mut self) -> MPSEL_W {
-        MPSEL_W { w: self }
+    #[must_use]
+    pub fn mpsel(&mut self) -> MPSEL_W<12> {
+        MPSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -216,11 +173,10 @@ impl crate::Readable for MCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mcr::W](W) writer structure"]
 impl crate::Writable for MCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MCR to value 0"]
 impl crate::Resettable for MCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

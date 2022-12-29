@@ -14,33 +14,9 @@ impl From<crate::R<RX_ERR_COUNT1_SPEC>> for R {
     }
 }
 #[doc = "Field `INVALID_FRAME` reader - Invalid frame counter of Port y"]
-pub struct INVALID_FRAME_R(crate::FieldReader<u8, u8>);
-impl INVALID_FRAME_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        INVALID_FRAME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INVALID_FRAME_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INVALID_FRAME_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RX_ERROR` reader - RX Error counter of Port y"]
-pub struct RX_ERROR_R(crate::FieldReader<u8, u8>);
-impl RX_ERROR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RX_ERROR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RX_ERROR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_ERROR_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Invalid frame counter of Port y"]
     #[inline(always)]
@@ -64,8 +40,5 @@ impl crate::Readable for RX_ERR_COUNT1_SPEC {
 }
 #[doc = "`reset()` method sets RX_ERR_COUNT1 to value 0"]
 impl crate::Resettable for RX_ERR_COUNT1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

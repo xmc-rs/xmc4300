@@ -14,24 +14,12 @@ impl From<crate::R<DIEPDMAB_SPEC>> for R {
     }
 }
 #[doc = "Field `DMABufferAddr` reader - DMA Buffer Address"]
-pub struct DMABUFFERADDR_R(crate::FieldReader<u32, u32>);
-impl DMABUFFERADDR_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        DMABUFFERADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMABUFFERADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMABUFFER_ADDR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - DMA Buffer Address"]
     #[inline(always)]
-    pub fn dmabuffer_addr(&self) -> DMABUFFERADDR_R {
-        DMABUFFERADDR_R::new((self.bits & 0xffff_ffff) as u32)
+    pub fn dmabuffer_addr(&self) -> DMABUFFER_ADDR_R {
+        DMABUFFER_ADDR_R::new(self.bits)
     }
 }
 #[doc = "Device Endpoint DMA Buffer Address Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [diepdmab](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for DIEPDMAB_SPEC {
 }
 #[doc = "`reset()` method sets DIEPDMAB to value 0"]
 impl crate::Resettable for DIEPDMAB_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

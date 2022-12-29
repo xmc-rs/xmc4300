@@ -14,47 +14,11 @@ impl From<crate::R<MIDR_SPEC>> for R {
     }
 }
 #[doc = "Field `MODR` reader - Module Revision"]
-pub struct MODR_R(crate::FieldReader<u8, u8>);
-impl MODR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MODR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MODR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MODR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MODT` reader - Module Type"]
-pub struct MODT_R(crate::FieldReader<u8, u8>);
-impl MODT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MODT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MODT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MODT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MODN` reader - Module Number"]
-pub struct MODN_R(crate::FieldReader<u16, u16>);
-impl MODN_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        MODN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MODN_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MODN_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:7 - Module Revision"]
     #[inline(always)]
@@ -83,8 +47,5 @@ impl crate::Readable for MIDR_SPEC {
 }
 #[doc = "`reset()` method sets MIDR to value 0x00a7_c000"]
 impl crate::Resettable for MIDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x00a7_c000
-    }
+    const RESET_VALUE: Self::Ux = 0x00a7_c000;
 }

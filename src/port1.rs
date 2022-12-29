@@ -2,80 +2,80 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Port 1 Output Register"]
-    pub out: crate::Reg<out::OUT_SPEC>,
+    pub out: OUT,
     #[doc = "0x04 - Port 1 Output Modification Register"]
-    pub omr: crate::Reg<omr::OMR_SPEC>,
+    pub omr: OMR,
     _reserved2: [u8; 0x08],
     #[doc = "0x10 - Port 1 Input/Output Control Register 0"]
-    pub iocr0: crate::Reg<iocr0::IOCR0_SPEC>,
+    pub iocr0: IOCR0,
     #[doc = "0x14 - Port 1 Input/Output Control Register 4"]
-    pub iocr4: crate::Reg<iocr4::IOCR4_SPEC>,
+    pub iocr4: IOCR4,
     #[doc = "0x18 - Port 1 Input/Output Control Register 8"]
-    pub iocr8: crate::Reg<iocr8::IOCR8_SPEC>,
+    pub iocr8: IOCR8,
     #[doc = "0x1c - Port 1 Input/Output Control Register 12"]
-    pub iocr12: crate::Reg<iocr12::IOCR12_SPEC>,
+    pub iocr12: IOCR12,
     _reserved6: [u8; 0x04],
     #[doc = "0x24 - Port 1 Input Register"]
-    pub in_: crate::Reg<in_::IN_SPEC>,
+    pub in_: IN,
     _reserved7: [u8; 0x18],
     #[doc = "0x40 - Port 1 Pad Driver Mode 0 Register"]
-    pub pdr0: crate::Reg<pdr0::PDR0_SPEC>,
+    pub pdr0: PDR0,
     #[doc = "0x44 - Port 1 Pad Driver Mode 1 Register"]
-    pub pdr1: crate::Reg<pdr1::PDR1_SPEC>,
+    pub pdr1: PDR1,
     _reserved9: [u8; 0x18],
     #[doc = "0x60 - Port 1 Pin Function Decision Control Register"]
-    pub pdisc: crate::Reg<pdisc::PDISC_SPEC>,
+    pub pdisc: PDISC,
     _reserved10: [u8; 0x0c],
     #[doc = "0x70 - Port 1 Pin Power Save Register"]
-    pub pps: crate::Reg<pps::PPS_SPEC>,
+    pub pps: PPS,
     #[doc = "0x74 - Port 1 Pin Hardware Select Register"]
-    pub hwsel: crate::Reg<hwsel::HWSEL_SPEC>,
+    pub hwsel: HWSEL,
 }
-#[doc = "OUT register accessor: an alias for `Reg<OUT_SPEC>`"]
+#[doc = "OUT (rw) register accessor: an alias for `Reg<OUT_SPEC>`"]
 pub type OUT = crate::Reg<out::OUT_SPEC>;
 #[doc = "Port 1 Output Register"]
 pub mod out;
-#[doc = "OMR register accessor: an alias for `Reg<OMR_SPEC>`"]
+#[doc = "OMR (w) register accessor: an alias for `Reg<OMR_SPEC>`"]
 pub type OMR = crate::Reg<omr::OMR_SPEC>;
 #[doc = "Port 1 Output Modification Register"]
 pub mod omr;
-#[doc = "IOCR0 register accessor: an alias for `Reg<IOCR0_SPEC>`"]
+#[doc = "IOCR0 (rw) register accessor: an alias for `Reg<IOCR0_SPEC>`"]
 pub type IOCR0 = crate::Reg<iocr0::IOCR0_SPEC>;
 #[doc = "Port 1 Input/Output Control Register 0"]
 pub mod iocr0;
-#[doc = "IOCR4 register accessor: an alias for `Reg<IOCR4_SPEC>`"]
+#[doc = "IOCR4 (rw) register accessor: an alias for `Reg<IOCR4_SPEC>`"]
 pub type IOCR4 = crate::Reg<iocr4::IOCR4_SPEC>;
 #[doc = "Port 1 Input/Output Control Register 4"]
 pub mod iocr4;
-#[doc = "IOCR8 register accessor: an alias for `Reg<IOCR8_SPEC>`"]
+#[doc = "IOCR8 (rw) register accessor: an alias for `Reg<IOCR8_SPEC>`"]
 pub type IOCR8 = crate::Reg<iocr8::IOCR8_SPEC>;
 #[doc = "Port 1 Input/Output Control Register 8"]
 pub mod iocr8;
-#[doc = "IOCR12 register accessor: an alias for `Reg<IOCR12_SPEC>`"]
+#[doc = "IOCR12 (rw) register accessor: an alias for `Reg<IOCR12_SPEC>`"]
 pub type IOCR12 = crate::Reg<iocr12::IOCR12_SPEC>;
 #[doc = "Port 1 Input/Output Control Register 12"]
 pub mod iocr12;
-#[doc = "IN register accessor: an alias for `Reg<IN_SPEC>`"]
+#[doc = "IN (r) register accessor: an alias for `Reg<IN_SPEC>`"]
 pub type IN = crate::Reg<in_::IN_SPEC>;
 #[doc = "Port 1 Input Register"]
 pub mod in_;
-#[doc = "PDR0 register accessor: an alias for `Reg<PDR0_SPEC>`"]
+#[doc = "PDR0 (rw) register accessor: an alias for `Reg<PDR0_SPEC>`"]
 pub type PDR0 = crate::Reg<pdr0::PDR0_SPEC>;
 #[doc = "Port 1 Pad Driver Mode 0 Register"]
 pub mod pdr0;
-#[doc = "PDR1 register accessor: an alias for `Reg<PDR1_SPEC>`"]
+#[doc = "PDR1 (rw) register accessor: an alias for `Reg<PDR1_SPEC>`"]
 pub type PDR1 = crate::Reg<pdr1::PDR1_SPEC>;
 #[doc = "Port 1 Pad Driver Mode 1 Register"]
 pub mod pdr1;
-#[doc = "PDISC register accessor: an alias for `Reg<PDISC_SPEC>`"]
+#[doc = "PDISC (r) register accessor: an alias for `Reg<PDISC_SPEC>`"]
 pub type PDISC = crate::Reg<pdisc::PDISC_SPEC>;
 #[doc = "Port 1 Pin Function Decision Control Register"]
 pub mod pdisc;
-#[doc = "PPS register accessor: an alias for `Reg<PPS_SPEC>`"]
+#[doc = "PPS (rw) register accessor: an alias for `Reg<PPS_SPEC>`"]
 pub type PPS = crate::Reg<pps::PPS_SPEC>;
 #[doc = "Port 1 Pin Power Save Register"]
 pub mod pps;
-#[doc = "HWSEL register accessor: an alias for `Reg<HWSEL_SPEC>`"]
+#[doc = "HWSEL (rw) register accessor: an alias for `Reg<HWSEL_SPEC>`"]
 pub type HWSEL = crate::Reg<hwsel::HWSEL_SPEC>;
 #[doc = "Port 1 Pin Hardware Select Register"]
 pub mod hwsel;

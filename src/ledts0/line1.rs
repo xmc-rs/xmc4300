@@ -35,109 +35,21 @@ impl From<crate::W<LINE1_SPEC>> for W {
     }
 }
 #[doc = "Field `LINE_4` reader - Output on LINE\\[x\\]"]
-pub struct LINE_4_R(crate::FieldReader<u8, u8>);
-impl LINE_4_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LINE_4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINE_4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINE_4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LINE_4` writer - Output on LINE\\[x\\]"]
-pub struct LINE_4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LINE_4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type LINE_4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LINE1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `LINE_5` reader - Output on LINE\\[x\\]"]
-pub struct LINE_5_R(crate::FieldReader<u8, u8>);
-impl LINE_5_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LINE_5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINE_5_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINE_5_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LINE_5` writer - Output on LINE\\[x\\]"]
-pub struct LINE_5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LINE_5_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type LINE_5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LINE1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `LINE_6` reader - Output on LINE\\[x\\]"]
-pub struct LINE_6_R(crate::FieldReader<u8, u8>);
-impl LINE_6_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LINE_6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINE_6_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINE_6_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LINE_6` writer - Output on LINE\\[x\\]"]
-pub struct LINE_6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LINE_6_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type LINE_6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LINE1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `LINE_A` reader - Output on LINE\\[x\\]"]
-pub struct LINE_A_R(crate::FieldReader<u8, u8>);
-impl LINE_A_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LINE_A_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINE_A_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINE_A_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LINE_A` writer - Output on LINE\\[x\\]"]
-pub struct LINE_A_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LINE_A_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type LINE_A_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LINE1_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Output on LINE\\[x\\]"]
     #[inline(always)]
@@ -163,23 +75,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Output on LINE\\[x\\]"]
     #[inline(always)]
-    pub fn line_4(&mut self) -> LINE_4_W {
-        LINE_4_W { w: self }
+    #[must_use]
+    pub fn line_4(&mut self) -> LINE_4_W<0> {
+        LINE_4_W::new(self)
     }
     #[doc = "Bits 8:15 - Output on LINE\\[x\\]"]
     #[inline(always)]
-    pub fn line_5(&mut self) -> LINE_5_W {
-        LINE_5_W { w: self }
+    #[must_use]
+    pub fn line_5(&mut self) -> LINE_5_W<8> {
+        LINE_5_W::new(self)
     }
     #[doc = "Bits 16:23 - Output on LINE\\[x\\]"]
     #[inline(always)]
-    pub fn line_6(&mut self) -> LINE_6_W {
-        LINE_6_W { w: self }
+    #[must_use]
+    pub fn line_6(&mut self) -> LINE_6_W<16> {
+        LINE_6_W::new(self)
     }
     #[doc = "Bits 24:31 - Output on LINE\\[x\\]"]
     #[inline(always)]
-    pub fn line_a(&mut self) -> LINE_A_W {
-        LINE_A_W { w: self }
+    #[must_use]
+    pub fn line_a(&mut self) -> LINE_A_W<24> {
+        LINE_A_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -200,11 +116,10 @@ impl crate::Readable for LINE1_SPEC {
 #[doc = "`write(|w| ..)` method takes [line1::W](W) writer structure"]
 impl crate::Writable for LINE1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LINE1 to value 0"]
 impl crate::Resettable for LINE1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

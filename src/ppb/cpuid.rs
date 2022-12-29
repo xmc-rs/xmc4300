@@ -13,8 +13,10 @@ impl From<crate::R<CPUID_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `Revision` reader - Revision number"]
+pub type REVISION_R = crate::FieldReader<u8, REVISION_A>;
 #[doc = "Revision number\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum REVISION_A {
     #[doc = "1: Patch 1"]
@@ -26,13 +28,8 @@ impl From<REVISION_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `Revision` reader - Revision number"]
-pub struct REVISION_R(crate::FieldReader<u8, REVISION_A>);
 impl REVISION_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        REVISION_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<REVISION_A> {
         match self.bits {
@@ -43,72 +40,45 @@ impl REVISION_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == REVISION_A::VALUE1
-    }
-}
-impl core::ops::Deref for REVISION_R {
-    type Target = crate::FieldReader<u8, REVISION_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Part number of the processor\n\nValue on reset: 3108"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u16)]
-pub enum PARTNO_A {
-    #[doc = "3108: Cortex-M4"]
-    VALUE1 = 3108,
-}
-impl From<PARTNO_A> for u16 {
-    #[inline(always)]
-    fn from(variant: PARTNO_A) -> Self {
-        variant as _
+        *self == REVISION_A::VALUE1
     }
 }
 #[doc = "Field `PartNo` reader - Part number of the processor"]
-pub struct PARTNO_R(crate::FieldReader<u16, PARTNO_A>);
-impl PARTNO_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PARTNO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type PART_NO_R = crate::FieldReader<u16, PART_NO_A>;
+#[doc = "Part number of the processor\n\nValue on reset: 3108"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u16)]
+pub enum PART_NO_A {
+    #[doc = "3108: Cortex-M4"]
+    VALUE1 = 3108,
+}
+impl From<PART_NO_A> for u16 {
     #[inline(always)]
-    pub fn variant(&self) -> Option<PARTNO_A> {
+    fn from(variant: PART_NO_A) -> Self {
+        variant as _
+    }
+}
+impl PART_NO_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<PART_NO_A> {
         match self.bits {
-            3108 => Some(PARTNO_A::VALUE1),
+            3108 => Some(PART_NO_A::VALUE1),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PARTNO_A::VALUE1
-    }
-}
-impl core::ops::Deref for PARTNO_R {
-    type Target = crate::FieldReader<u16, PARTNO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PART_NO_A::VALUE1
     }
 }
 #[doc = "Field `Constant` reader - Reads as 0xF"]
-pub struct CONSTANT_R(crate::FieldReader<u8, u8>);
-impl CONSTANT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CONSTANT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CONSTANT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CONSTANT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `Variant` reader - Variant number"]
+pub type VARIANT_R = crate::FieldReader<u8, VARIANT_A>;
 #[doc = "Variant number\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VARIANT_A {
     #[doc = "0: Revision 0"]
@@ -120,13 +90,8 @@ impl From<VARIANT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `Variant` reader - Variant number"]
-pub struct VARIANT_R(crate::FieldReader<u8, VARIANT_A>);
 impl VARIANT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        VARIANT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<VARIANT_A> {
         match self.bits {
@@ -137,18 +102,13 @@ impl VARIANT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == VARIANT_A::VALUE1
+        *self == VARIANT_A::VALUE1
     }
 }
-impl core::ops::Deref for VARIANT_R {
-    type Target = crate::FieldReader<u8, VARIANT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `Implementer` reader - Implementer code"]
+pub type IMPLEMENTER_R = crate::FieldReader<u8, IMPLEMENTER_A>;
 #[doc = "Implementer code\n\nValue on reset: 65"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IMPLEMENTER_A {
     #[doc = "65: ARM"]
@@ -160,13 +120,8 @@ impl From<IMPLEMENTER_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `Implementer` reader - Implementer code"]
-pub struct IMPLEMENTER_R(crate::FieldReader<u8, IMPLEMENTER_A>);
 impl IMPLEMENTER_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        IMPLEMENTER_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<IMPLEMENTER_A> {
         match self.bits {
@@ -177,14 +132,7 @@ impl IMPLEMENTER_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == IMPLEMENTER_A::VALUE1
-    }
-}
-impl core::ops::Deref for IMPLEMENTER_R {
-    type Target = crate::FieldReader<u8, IMPLEMENTER_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IMPLEMENTER_A::VALUE1
     }
 }
 impl R {
@@ -195,8 +143,8 @@ impl R {
     }
     #[doc = "Bits 4:15 - Part number of the processor"]
     #[inline(always)]
-    pub fn part_no(&self) -> PARTNO_R {
-        PARTNO_R::new(((self.bits >> 4) & 0x0fff) as u16)
+    pub fn part_no(&self) -> PART_NO_R {
+        PART_NO_R::new(((self.bits >> 4) & 0x0fff) as u16)
     }
     #[doc = "Bits 16:19 - Reads as 0xF"]
     #[inline(always)]
@@ -225,8 +173,5 @@ impl crate::Readable for CPUID_SPEC {
 }
 #[doc = "`reset()` method sets CPUID to value 0x410f_c241"]
 impl crate::Resettable for CPUID_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x410f_c241
-    }
+    const RESET_VALUE: Self::Ux = 0x410f_c241;
 }

@@ -34,20 +34,10 @@ impl From<crate::W<CHENREG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `WE_CH` writer - Channel enable write enable"]
-pub struct WE_CH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WE_CH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+#[doc = "Field `CH` reader - Enables/Disables the channel"]
+pub type CH_R = crate::FieldReader<u8, CH_A>;
 #[doc = "Enables/Disables the channel\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CH_A {
     #[doc = "0: Disable the Channel"]
@@ -61,13 +51,8 @@ impl From<CH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CH` reader - Enables/Disables the channel"]
-pub struct CH_R(crate::FieldReader<u8, CH_A>);
 impl CH_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CH_A> {
         match self.bits {
@@ -79,31 +64,17 @@ impl CH_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CH_A::VALUE1
+        *self == CH_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CH_A::VALUE2
-    }
-}
-impl core::ops::Deref for CH_R {
-    type Target = crate::FieldReader<u8, CH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CH_A::VALUE2
     }
 }
 #[doc = "Field `CH` writer - Enables/Disables the channel"]
-pub struct CH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHENREG_SPEC, u8, CH_A, 8, O>;
+impl<'a, const O: u8> CH_W<'a, O> {
     #[doc = "Disable the Channel"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -114,13 +85,9 @@ impl<'a> CH_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CH_A::VALUE2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
 }
+#[doc = "Field `WE_CH` writer - Channel enable write enable"]
+pub type WE_CH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHENREG_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Enables/Disables the channel"]
     #[inline(always)]
@@ -129,15 +96,17 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 8:15 - Channel enable write enable"]
-    #[inline(always)]
-    pub fn we_ch(&mut self) -> WE_CH_W {
-        WE_CH_W { w: self }
-    }
     #[doc = "Bits 0:7 - Enables/Disables the channel"]
     #[inline(always)]
-    pub fn ch(&mut self) -> CH_W {
-        CH_W { w: self }
+    #[must_use]
+    pub fn ch(&mut self) -> CH_W<0> {
+        CH_W::new(self)
+    }
+    #[doc = "Bits 8:15 - Channel enable write enable"]
+    #[inline(always)]
+    #[must_use]
+    pub fn we_ch(&mut self) -> WE_CH_W<8> {
+        WE_CH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -158,11 +127,10 @@ impl crate::Readable for CHENREG_SPEC {
 #[doc = "`write(|w| ..)` method takes [chenreg::W](W) writer structure"]
 impl crate::Writable for CHENREG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CHENREG to value 0"]
 impl crate::Resettable for CHENREG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

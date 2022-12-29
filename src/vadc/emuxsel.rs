@@ -35,57 +35,13 @@ impl From<crate::W<EMUXSEL_SPEC>> for W {
     }
 }
 #[doc = "Field `EMUXGRP0` reader - External Multiplexer Group for Interface x"]
-pub struct EMUXGRP0_R(crate::FieldReader<u8, u8>);
-impl EMUXGRP0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EMUXGRP0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EMUXGRP0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EMUXGRP0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EMUXGRP0` writer - External Multiplexer Group for Interface x"]
-pub struct EMUXGRP0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EMUXGRP0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type EMUXGRP0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMUXSEL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `EMUXGRP1` reader - External Multiplexer Group for Interface x"]
-pub struct EMUXGRP1_R(crate::FieldReader<u8, u8>);
-impl EMUXGRP1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EMUXGRP1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EMUXGRP1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EMUXGRP1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EMUXGRP1` writer - External Multiplexer Group for Interface x"]
-pub struct EMUXGRP1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EMUXGRP1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
-}
+pub type EMUXGRP1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMUXSEL_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - External Multiplexer Group for Interface x"]
     #[inline(always)]
@@ -101,13 +57,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - External Multiplexer Group for Interface x"]
     #[inline(always)]
-    pub fn emuxgrp0(&mut self) -> EMUXGRP0_W {
-        EMUXGRP0_W { w: self }
+    #[must_use]
+    pub fn emuxgrp0(&mut self) -> EMUXGRP0_W<0> {
+        EMUXGRP0_W::new(self)
     }
     #[doc = "Bits 4:7 - External Multiplexer Group for Interface x"]
     #[inline(always)]
-    pub fn emuxgrp1(&mut self) -> EMUXGRP1_W {
-        EMUXGRP1_W { w: self }
+    #[must_use]
+    pub fn emuxgrp1(&mut self) -> EMUXGRP1_W<4> {
+        EMUXGRP1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for EMUXSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [emuxsel::W](W) writer structure"]
 impl crate::Writable for EMUXSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EMUXSEL to value 0"]
 impl crate::Resettable for EMUXSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

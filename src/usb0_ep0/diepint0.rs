@@ -35,348 +35,119 @@ impl From<crate::W<DIEPINT0_SPEC>> for W {
     }
 }
 #[doc = "Field `XferCompl` reader - Transfer Completed Interrupt"]
-pub struct XFERCOMPL_R(crate::FieldReader<bool, bool>);
-impl XFERCOMPL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        XFERCOMPL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for XFERCOMPL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type XFER_COMPL_R = crate::BitReader<bool>;
 #[doc = "Field `XferCompl` writer - Transfer Completed Interrupt"]
-pub struct XFERCOMPL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XFERCOMPL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type XFER_COMPL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
 #[doc = "Field `EPDisbld` reader - Endpoint Disabled Interrupt"]
-pub struct EPDISBLD_R(crate::FieldReader<bool, bool>);
-impl EPDISBLD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EPDISBLD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPDISBLD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPDISBLD_R = crate::BitReader<bool>;
 #[doc = "Field `EPDisbld` writer - Endpoint Disabled Interrupt"]
-pub struct EPDISBLD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPDISBLD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type EPDISBLD_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
 #[doc = "Field `AHBErr` reader - AHB Error"]
-pub struct AHBERR_R(crate::FieldReader<bool, bool>);
-impl AHBERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AHBERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AHBERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AHBERR_R = crate::BitReader<bool>;
 #[doc = "Field `AHBErr` writer - AHB Error"]
-pub struct AHBERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AHBERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type AHBERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
 #[doc = "Field `TimeOUT` reader - Timeout Condition"]
-pub struct TIMEOUT_R(crate::FieldReader<bool, bool>);
-impl TIMEOUT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMEOUT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMEOUT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIME_OUT_R = crate::BitReader<bool>;
 #[doc = "Field `TimeOUT` writer - Timeout Condition"]
-pub struct TIMEOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMEOUT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type TIME_OUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
 #[doc = "Field `INTknTXFEmp` reader - IN Token Received When TxFIFO is Empty"]
-pub struct INTKNTXFEMP_R(crate::FieldReader<bool, bool>);
-impl INTKNTXFEMP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        INTKNTXFEMP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INTKNTXFEMP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INTKN_TXFEMP_R = crate::BitReader<bool>;
 #[doc = "Field `INTknTXFEmp` writer - IN Token Received When TxFIFO is Empty"]
-pub struct INTKNTXFEMP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INTKNTXFEMP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type INTKN_TXFEMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
 #[doc = "Field `INEPNakEff` reader - IN Endpoint NAK Effective"]
-pub struct INEPNAKEFF_R(crate::FieldReader<bool, bool>);
-impl INEPNAKEFF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        INEPNAKEFF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INEPNAKEFF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INEPNAK_EFF_R = crate::BitReader<bool>;
 #[doc = "Field `INEPNakEff` writer - IN Endpoint NAK Effective"]
-pub struct INEPNAKEFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INEPNAKEFF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type INEPNAK_EFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
 #[doc = "Field `TxFEmp` reader - Transmit FIFO Empty"]
-pub struct TXFEMP_R(crate::FieldReader<bool, bool>);
-impl TXFEMP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXFEMP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXFEMP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TX_FEMP_R = crate::BitReader<bool>;
 #[doc = "Field `BNAIntr` reader - BNA (Buffer Not Available) Interrupt"]
-pub struct BNAINTR_R(crate::FieldReader<bool, bool>);
-impl BNAINTR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BNAINTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BNAINTR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BNAINTR_R = crate::BitReader<bool>;
 #[doc = "Field `BNAIntr` writer - BNA (Buffer Not Available) Interrupt"]
-pub struct BNAINTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BNAINTR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type BNAINTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Transfer Completed Interrupt"]
     #[inline(always)]
-    pub fn xfer_compl(&self) -> XFERCOMPL_R {
-        XFERCOMPL_R::new((self.bits & 0x01) != 0)
+    pub fn xfer_compl(&self) -> XFER_COMPL_R {
+        XFER_COMPL_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Endpoint Disabled Interrupt"]
     #[inline(always)]
     pub fn epdisbld(&self) -> EPDISBLD_R {
-        EPDISBLD_R::new(((self.bits >> 1) & 0x01) != 0)
+        EPDISBLD_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
     pub fn ahberr(&self) -> AHBERR_R {
-        AHBERR_R::new(((self.bits >> 2) & 0x01) != 0)
+        AHBERR_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Timeout Condition"]
     #[inline(always)]
-    pub fn time_out(&self) -> TIMEOUT_R {
-        TIMEOUT_R::new(((self.bits >> 3) & 0x01) != 0)
+    pub fn time_out(&self) -> TIME_OUT_R {
+        TIME_OUT_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - IN Token Received When TxFIFO is Empty"]
     #[inline(always)]
-    pub fn intkn_txfemp(&self) -> INTKNTXFEMP_R {
-        INTKNTXFEMP_R::new(((self.bits >> 4) & 0x01) != 0)
+    pub fn intkn_txfemp(&self) -> INTKN_TXFEMP_R {
+        INTKN_TXFEMP_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 6 - IN Endpoint NAK Effective"]
     #[inline(always)]
-    pub fn inepnak_eff(&self) -> INEPNAKEFF_R {
-        INEPNAKEFF_R::new(((self.bits >> 6) & 0x01) != 0)
+    pub fn inepnak_eff(&self) -> INEPNAK_EFF_R {
+        INEPNAK_EFF_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Transmit FIFO Empty"]
     #[inline(always)]
-    pub fn tx_femp(&self) -> TXFEMP_R {
-        TXFEMP_R::new(((self.bits >> 7) & 0x01) != 0)
+    pub fn tx_femp(&self) -> TX_FEMP_R {
+        TX_FEMP_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 9 - BNA (Buffer Not Available) Interrupt"]
     #[inline(always)]
     pub fn bnaintr(&self) -> BNAINTR_R {
-        BNAINTR_R::new(((self.bits >> 9) & 0x01) != 0)
+        BNAINTR_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Transfer Completed Interrupt"]
     #[inline(always)]
-    pub fn xfer_compl(&mut self) -> XFERCOMPL_W {
-        XFERCOMPL_W { w: self }
+    #[must_use]
+    pub fn xfer_compl(&mut self) -> XFER_COMPL_W<0> {
+        XFER_COMPL_W::new(self)
     }
     #[doc = "Bit 1 - Endpoint Disabled Interrupt"]
     #[inline(always)]
-    pub fn epdisbld(&mut self) -> EPDISBLD_W {
-        EPDISBLD_W { w: self }
+    #[must_use]
+    pub fn epdisbld(&mut self) -> EPDISBLD_W<1> {
+        EPDISBLD_W::new(self)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
-    pub fn ahberr(&mut self) -> AHBERR_W {
-        AHBERR_W { w: self }
+    #[must_use]
+    pub fn ahberr(&mut self) -> AHBERR_W<2> {
+        AHBERR_W::new(self)
     }
     #[doc = "Bit 3 - Timeout Condition"]
     #[inline(always)]
-    pub fn time_out(&mut self) -> TIMEOUT_W {
-        TIMEOUT_W { w: self }
+    #[must_use]
+    pub fn time_out(&mut self) -> TIME_OUT_W<3> {
+        TIME_OUT_W::new(self)
     }
     #[doc = "Bit 4 - IN Token Received When TxFIFO is Empty"]
     #[inline(always)]
-    pub fn intkn_txfemp(&mut self) -> INTKNTXFEMP_W {
-        INTKNTXFEMP_W { w: self }
+    #[must_use]
+    pub fn intkn_txfemp(&mut self) -> INTKN_TXFEMP_W<4> {
+        INTKN_TXFEMP_W::new(self)
     }
     #[doc = "Bit 6 - IN Endpoint NAK Effective"]
     #[inline(always)]
-    pub fn inepnak_eff(&mut self) -> INEPNAKEFF_W {
-        INEPNAKEFF_W { w: self }
+    #[must_use]
+    pub fn inepnak_eff(&mut self) -> INEPNAK_EFF_W<6> {
+        INEPNAK_EFF_W::new(self)
     }
     #[doc = "Bit 9 - BNA (Buffer Not Available) Interrupt"]
     #[inline(always)]
-    pub fn bnaintr(&mut self) -> BNAINTR_W {
-        BNAINTR_W { w: self }
+    #[must_use]
+    pub fn bnaintr(&mut self) -> BNAINTR_W<9> {
+        BNAINTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -397,11 +168,10 @@ impl crate::Readable for DIEPINT0_SPEC {
 #[doc = "`write(|w| ..)` method takes [diepint0::W](W) writer structure"]
 impl crate::Writable for DIEPINT0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DIEPINT0 to value 0x80"]
 impl crate::Resettable for DIEPINT0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x80
-    }
+    const RESET_VALUE: Self::Ux = 0x80;
 }

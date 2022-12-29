@@ -34,8 +34,10 @@ impl From<crate::W<MARP_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MARGIN` reader - PFLASH Margin Selection"]
+pub type MARGIN_R = crate::FieldReader<u8, MARGIN_A>;
 #[doc = "PFLASH Margin Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MARGIN_A {
     #[doc = "0: Standard (default) margin."]
@@ -51,13 +53,8 @@ impl From<MARGIN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MARGIN` reader - PFLASH Margin Selection"]
-pub struct MARGIN_R(crate::FieldReader<u8, MARGIN_A>);
 impl MARGIN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MARGIN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<MARGIN_A> {
         match self.bits {
@@ -70,36 +67,22 @@ impl MARGIN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == MARGIN_A::VALUE1
+        *self == MARGIN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == MARGIN_A::VALUE2
+        *self == MARGIN_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == MARGIN_A::VALUE3
-    }
-}
-impl core::ops::Deref for MARGIN_R {
-    type Target = crate::FieldReader<u8, MARGIN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MARGIN_A::VALUE3
     }
 }
 #[doc = "Field `MARGIN` writer - PFLASH Margin Selection"]
-pub struct MARGIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MARGIN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MARGIN_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type MARGIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MARP_SPEC, u8, MARGIN_A, 4, O>;
+impl<'a, const O: u8> MARGIN_W<'a, O> {
     #[doc = "Standard (default) margin."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -115,15 +98,11 @@ impl<'a> MARGIN_W<'a> {
     pub fn value3(self) -> &'a mut W {
         self.variant(MARGIN_A::VALUE3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
 }
+#[doc = "Field `TRAPDIS` reader - PFLASH Double-Bit Error Trap Disable"]
+pub type TRAPDIS_R = crate::BitReader<TRAPDIS_A>;
 #[doc = "PFLASH Double-Bit Error Trap Disable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRAPDIS_A {
     #[doc = "0: If a double-bit error occurs in PFLASH, a bus error trap is generated."]
     VALUE1 = 0,
@@ -136,13 +115,8 @@ impl From<TRAPDIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TRAPDIS` reader - PFLASH Double-Bit Error Trap Disable"]
-pub struct TRAPDIS_R(crate::FieldReader<bool, TRAPDIS_A>);
 impl TRAPDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TRAPDIS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRAPDIS_A {
         match self.bits {
@@ -153,31 +127,17 @@ impl TRAPDIS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TRAPDIS_A::VALUE1
+        *self == TRAPDIS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TRAPDIS_A::VALUE2
-    }
-}
-impl core::ops::Deref for TRAPDIS_R {
-    type Target = crate::FieldReader<bool, TRAPDIS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TRAPDIS_A::VALUE2
     }
 }
 #[doc = "Field `TRAPDIS` writer - PFLASH Double-Bit Error Trap Disable"]
-pub struct TRAPDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRAPDIS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRAPDIS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TRAPDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, MARP_SPEC, TRAPDIS_A, O>;
+impl<'a, const O: u8> TRAPDIS_W<'a, O> {
     #[doc = "If a double-bit error occurs in PFLASH, a bus error trap is generated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -187,22 +147,6 @@ impl<'a> TRAPDIS_W<'a> {
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
         self.variant(TRAPDIS_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
     }
 }
 impl R {
@@ -214,19 +158,21 @@ impl R {
     #[doc = "Bit 15 - PFLASH Double-Bit Error Trap Disable"]
     #[inline(always)]
     pub fn trapdis(&self) -> TRAPDIS_R {
-        TRAPDIS_R::new(((self.bits >> 15) & 0x01) != 0)
+        TRAPDIS_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - PFLASH Margin Selection"]
     #[inline(always)]
-    pub fn margin(&mut self) -> MARGIN_W {
-        MARGIN_W { w: self }
+    #[must_use]
+    pub fn margin(&mut self) -> MARGIN_W<0> {
+        MARGIN_W::new(self)
     }
     #[doc = "Bit 15 - PFLASH Double-Bit Error Trap Disable"]
     #[inline(always)]
-    pub fn trapdis(&mut self) -> TRAPDIS_W {
-        TRAPDIS_W { w: self }
+    #[must_use]
+    pub fn trapdis(&mut self) -> TRAPDIS_W<15> {
+        TRAPDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -247,11 +193,10 @@ impl crate::Readable for MARP_SPEC {
 #[doc = "`write(|w| ..)` method takes [marp::W](W) writer structure"]
 impl crate::Writable for MARP_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MARP to value 0"]
 impl crate::Resettable for MARP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

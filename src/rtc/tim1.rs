@@ -35,88 +35,22 @@ impl From<crate::W<TIM1_SPEC>> for W {
     }
 }
 #[doc = "Field `DAWE` reader - Days of Week Time Value"]
-pub struct DAWE_R(crate::FieldReader<u8, u8>);
-impl DAWE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DAWE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAWE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAWE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DAWE` writer - Days of Week Time Value"]
-pub struct DAWE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAWE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type DAWE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIM1_SPEC, u8, u8, 3, O>;
 #[doc = "Field `MO` reader - Month Time Value"]
-pub struct MO_R(crate::FieldReader<u8, u8>);
-impl MO_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MO_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MO_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MO` writer - Month Time Value"]
-pub struct MO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MO_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type MO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIM1_SPEC, u8, u8, 4, O>;
 #[doc = "Field `YE` reader - Year Time Value"]
-pub struct YE_R(crate::FieldReader<u16, u16>);
-impl YE_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        YE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for YE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type YE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `YE` writer - Year Time Value"]
-pub struct YE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> YE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type YE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIM1_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:2 - Days of Week Time Value"]
     #[inline(always)]
     pub fn dawe(&self) -> DAWE_R {
-        DAWE_R::new((self.bits & 0x07) as u8)
+        DAWE_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 8:11 - Month Time Value"]
     #[inline(always)]
@@ -132,18 +66,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Days of Week Time Value"]
     #[inline(always)]
-    pub fn dawe(&mut self) -> DAWE_W {
-        DAWE_W { w: self }
+    #[must_use]
+    pub fn dawe(&mut self) -> DAWE_W<0> {
+        DAWE_W::new(self)
     }
     #[doc = "Bits 8:11 - Month Time Value"]
     #[inline(always)]
-    pub fn mo(&mut self) -> MO_W {
-        MO_W { w: self }
+    #[must_use]
+    pub fn mo(&mut self) -> MO_W<8> {
+        MO_W::new(self)
     }
     #[doc = "Bits 16:31 - Year Time Value"]
     #[inline(always)]
-    pub fn ye(&mut self) -> YE_W {
-        YE_W { w: self }
+    #[must_use]
+    pub fn ye(&mut self) -> YE_W<16> {
+        YE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -164,11 +101,10 @@ impl crate::Readable for TIM1_SPEC {
 #[doc = "`write(|w| ..)` method takes [tim1::W](W) writer structure"]
 impl crate::Writable for TIM1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TIM1 to value 0"]
 impl crate::Resettable for TIM1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

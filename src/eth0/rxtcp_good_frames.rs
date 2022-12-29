@@ -14,24 +14,12 @@ impl From<crate::R<RXTCP_GOOD_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXTCPGDFRM` reader - This field indicates the number of good IP datagrams with a good TCP payload."]
-pub struct RXTCPGDFRM_R(crate::FieldReader<u32, u32>);
-impl RXTCPGDFRM_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        RXTCPGDFRM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXTCPGDFRM_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXTCPGDFRM_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of good IP datagrams with a good TCP payload."]
     #[inline(always)]
     pub fn rxtcpgdfrm(&self) -> RXTCPGDFRM_R {
-        RXTCPGDFRM_R::new((self.bits & 0xffff_ffff) as u32)
+        RXTCPGDFRM_R::new(self.bits)
     }
 }
 #[doc = "RxTCP Good Frames Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxtcp_good_frames](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for RXTCP_GOOD_FRAMES_SPEC {
 }
 #[doc = "`reset()` method sets RXTCP_GOOD_FRAMES to value 0"]
 impl crate::Resettable for RXTCP_GOOD_FRAMES_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,109 +35,21 @@ impl From<crate::W<TSCMP1_SPEC>> for W {
     }
 }
 #[doc = "Field `CMP_TS4` reader - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub struct CMP_TS4_R(crate::FieldReader<u8, u8>);
-impl CMP_TS4_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CMP_TS4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMP_TS4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMP_TS4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CMP_TS4` writer - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub struct CMP_TS4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMP_TS4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type CMP_TS4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TSCMP1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `CMP_TS5` reader - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub struct CMP_TS5_R(crate::FieldReader<u8, u8>);
-impl CMP_TS5_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CMP_TS5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMP_TS5_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMP_TS5_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CMP_TS5` writer - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub struct CMP_TS5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMP_TS5_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type CMP_TS5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TSCMP1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `CMP_TS6` reader - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub struct CMP_TS6_R(crate::FieldReader<u8, u8>);
-impl CMP_TS6_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CMP_TS6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMP_TS6_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMP_TS6_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CMP_TS6` writer - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub struct CMP_TS6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMP_TS6_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type CMP_TS6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TSCMP1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `CMP_TS7` reader - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub struct CMP_TS7_R(crate::FieldReader<u8, u8>);
-impl CMP_TS7_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CMP_TS7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMP_TS7_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMP_TS7_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CMP_TS7` writer - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub struct CMP_TS7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMP_TS7_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type CMP_TS7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TSCMP1_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
@@ -163,23 +75,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
-    pub fn cmp_ts4(&mut self) -> CMP_TS4_W {
-        CMP_TS4_W { w: self }
+    #[must_use]
+    pub fn cmp_ts4(&mut self) -> CMP_TS4_W<0> {
+        CMP_TS4_W::new(self)
     }
     #[doc = "Bits 8:15 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
-    pub fn cmp_ts5(&mut self) -> CMP_TS5_W {
-        CMP_TS5_W { w: self }
+    #[must_use]
+    pub fn cmp_ts5(&mut self) -> CMP_TS5_W<8> {
+        CMP_TS5_W::new(self)
     }
     #[doc = "Bits 16:23 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
-    pub fn cmp_ts6(&mut self) -> CMP_TS6_W {
-        CMP_TS6_W { w: self }
+    #[must_use]
+    pub fn cmp_ts6(&mut self) -> CMP_TS6_W<16> {
+        CMP_TS6_W::new(self)
     }
     #[doc = "Bits 24:31 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]
-    pub fn cmp_ts7(&mut self) -> CMP_TS7_W {
-        CMP_TS7_W { w: self }
+    #[must_use]
+    pub fn cmp_ts7(&mut self) -> CMP_TS7_W<24> {
+        CMP_TS7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -200,11 +116,10 @@ impl crate::Readable for TSCMP1_SPEC {
 #[doc = "`write(|w| ..)` method takes [tscmp1::W](W) writer structure"]
 impl crate::Writable for TSCMP1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TSCMP1 to value 0"]
 impl crate::Resettable for TSCMP1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

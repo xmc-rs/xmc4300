@@ -14,19 +14,7 @@ impl From<crate::R<PR_SPEC>> for R {
     }
 }
 #[doc = "Field `PR` reader - Period Register"]
-pub struct PR_R(crate::FieldReader<u16, u16>);
-impl PR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PR_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Period Register"]
     #[inline(always)]
@@ -45,8 +33,5 @@ impl crate::Readable for PR_SPEC {
 }
 #[doc = "`reset()` method sets PR to value 0"]
 impl crate::Resettable for PR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

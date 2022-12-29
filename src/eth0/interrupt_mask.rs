@@ -35,99 +35,37 @@ impl From<crate::W<INTERRUPT_MASK_SPEC>> for W {
     }
 }
 #[doc = "Field `PMTIM` reader - PMT Interrupt Mask"]
-pub struct PMTIM_R(crate::FieldReader<bool, bool>);
-impl PMTIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PMTIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PMTIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PMTIM_R = crate::BitReader<bool>;
 #[doc = "Field `PMTIM` writer - PMT Interrupt Mask"]
-pub struct PMTIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PMTIM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type PMTIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTERRUPT_MASK_SPEC, bool, O>;
 #[doc = "Field `TSIM` reader - Timestamp Interrupt Mask"]
-pub struct TSIM_R(crate::FieldReader<bool, bool>);
-impl TSIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TSIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TSIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TSIM_R = crate::BitReader<bool>;
 #[doc = "Field `TSIM` writer - Timestamp Interrupt Mask"]
-pub struct TSIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSIM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type TSIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTERRUPT_MASK_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 3 - PMT Interrupt Mask"]
     #[inline(always)]
     pub fn pmtim(&self) -> PMTIM_R {
-        PMTIM_R::new(((self.bits >> 3) & 0x01) != 0)
+        PMTIM_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 9 - Timestamp Interrupt Mask"]
     #[inline(always)]
     pub fn tsim(&self) -> TSIM_R {
-        TSIM_R::new(((self.bits >> 9) & 0x01) != 0)
+        TSIM_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 3 - PMT Interrupt Mask"]
     #[inline(always)]
-    pub fn pmtim(&mut self) -> PMTIM_W {
-        PMTIM_W { w: self }
+    #[must_use]
+    pub fn pmtim(&mut self) -> PMTIM_W<3> {
+        PMTIM_W::new(self)
     }
     #[doc = "Bit 9 - Timestamp Interrupt Mask"]
     #[inline(always)]
-    pub fn tsim(&mut self) -> TSIM_W {
-        TSIM_W { w: self }
+    #[must_use]
+    pub fn tsim(&mut self) -> TSIM_W<9> {
+        TSIM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -148,11 +86,10 @@ impl crate::Readable for INTERRUPT_MASK_SPEC {
 #[doc = "`write(|w| ..)` method takes [interrupt_mask::W](W) writer structure"]
 impl crate::Writable for INTERRUPT_MASK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets INTERRUPT_MASK to value 0"]
 impl crate::Resettable for INTERRUPT_MASK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

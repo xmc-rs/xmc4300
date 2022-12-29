@@ -14,24 +14,12 @@ impl From<crate::R<TX_PAUSE_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `TXPAUSE` reader - This field indicates the number of transmitted good PAUSE frames."]
-pub struct TXPAUSE_R(crate::FieldReader<u32, u32>);
-impl TXPAUSE_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        TXPAUSE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXPAUSE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXPAUSE_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of transmitted good PAUSE frames."]
     #[inline(always)]
     pub fn txpause(&self) -> TXPAUSE_R {
-        TXPAUSE_R::new((self.bits & 0xffff_ffff) as u32)
+        TXPAUSE_R::new(self.bits)
     }
 }
 #[doc = "Transmit Frame Count for Good PAUSE Frames\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_pause_frames](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for TX_PAUSE_FRAMES_SPEC {
 }
 #[doc = "`reset()` method sets TX_PAUSE_FRAMES to value 0"]
 impl crate::Resettable for TX_PAUSE_FRAMES_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

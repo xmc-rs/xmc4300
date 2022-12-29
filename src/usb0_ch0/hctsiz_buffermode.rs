@@ -35,59 +35,17 @@ impl From<crate::W<HCTSIZ_BUFFERMODE_SPEC>> for W {
     }
 }
 #[doc = "Field `XferSize` reader - Transfer Size"]
-pub struct XFERSIZE_R(crate::FieldReader<u32, u32>);
-impl XFERSIZE_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        XFERSIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for XFERSIZE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type XFER_SIZE_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `XferSize` writer - Transfer Size"]
-pub struct XFERSIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XFERSIZE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0007_ffff) | (value as u32 & 0x0007_ffff);
-        self.w
-    }
-}
+pub type XFER_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCTSIZ_BUFFERMODE_SPEC, u32, u32, 19, O>;
 #[doc = "Field `PktCnt` reader - Packet Count"]
-pub struct PKTCNT_R(crate::FieldReader<u16, u16>);
-impl PKTCNT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PKTCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PKTCNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PKT_CNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PktCnt` writer - Packet Count"]
-pub struct PKTCNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PKTCNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03ff << 19)) | ((value as u32 & 0x03ff) << 19);
-        self.w
-    }
-}
+pub type PKT_CNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCTSIZ_BUFFERMODE_SPEC, u16, u16, 10, O>;
+#[doc = "Field `Pid` reader - PID"]
+pub type PID_R = crate::FieldReader<u8, PID_A>;
 #[doc = "PID\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PID_A {
     #[doc = "0: DATA0"]
@@ -105,13 +63,8 @@ impl From<PID_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `Pid` reader - PID"]
-pub struct PID_R(crate::FieldReader<u8, PID_A>);
 impl PID_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PID_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PID_A {
         match self.bits {
@@ -125,41 +78,27 @@ impl PID_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PID_A::VALUE1
+        *self == PID_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PID_A::VALUE2
+        *self == PID_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == PID_A::VALUE3
+        *self == PID_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == PID_A::VALUE4
-    }
-}
-impl core::ops::Deref for PID_R {
-    type Target = crate::FieldReader<u8, PID_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PID_A::VALUE4
     }
 }
 #[doc = "Field `Pid` writer - PID"]
-pub struct PID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PID_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PID_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type PID_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, HCTSIZ_BUFFERMODE_SPEC, u8, PID_A, 2, O>;
+impl<'a, const O: u8> PID_W<'a, O> {
     #[doc = "DATA0"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -180,45 +119,42 @@ impl<'a> PID_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(PID_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 29)) | ((value as u32 & 0x03) << 29);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:18 - Transfer Size"]
     #[inline(always)]
-    pub fn xfer_size(&self) -> XFERSIZE_R {
-        XFERSIZE_R::new((self.bits & 0x0007_ffff) as u32)
+    pub fn xfer_size(&self) -> XFER_SIZE_R {
+        XFER_SIZE_R::new(self.bits & 0x0007_ffff)
     }
     #[doc = "Bits 19:28 - Packet Count"]
     #[inline(always)]
-    pub fn pkt_cnt(&self) -> PKTCNT_R {
-        PKTCNT_R::new(((self.bits >> 19) & 0x03ff) as u16)
+    pub fn pkt_cnt(&self) -> PKT_CNT_R {
+        PKT_CNT_R::new(((self.bits >> 19) & 0x03ff) as u16)
     }
     #[doc = "Bits 29:30 - PID"]
     #[inline(always)]
     pub fn pid(&self) -> PID_R {
-        PID_R::new(((self.bits >> 29) & 0x03) as u8)
+        PID_R::new(((self.bits >> 29) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:18 - Transfer Size"]
     #[inline(always)]
-    pub fn xfer_size(&mut self) -> XFERSIZE_W {
-        XFERSIZE_W { w: self }
+    #[must_use]
+    pub fn xfer_size(&mut self) -> XFER_SIZE_W<0> {
+        XFER_SIZE_W::new(self)
     }
     #[doc = "Bits 19:28 - Packet Count"]
     #[inline(always)]
-    pub fn pkt_cnt(&mut self) -> PKTCNT_W {
-        PKTCNT_W { w: self }
+    #[must_use]
+    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<19> {
+        PKT_CNT_W::new(self)
     }
     #[doc = "Bits 29:30 - PID"]
     #[inline(always)]
-    pub fn pid(&mut self) -> PID_W {
-        PID_W { w: self }
+    #[must_use]
+    pub fn pid(&mut self) -> PID_W<29> {
+        PID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -239,11 +175,10 @@ impl crate::Readable for HCTSIZ_BUFFERMODE_SPEC {
 #[doc = "`write(|w| ..)` method takes [hctsiz_buffermode::W](W) writer structure"]
 impl crate::Writable for HCTSIZ_BUFFERMODE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HCTSIZ_BUFFERMODE to value 0"]
 impl crate::Resettable for HCTSIZ_BUFFERMODE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

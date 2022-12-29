@@ -35,79 +35,37 @@ impl From<crate::W<DIEPTXF2_SPEC>> for W {
     }
 }
 #[doc = "Field `INEPnTxFStAddr` reader - IN Endpoint FIFOn Transmit RAM Start Address"]
-pub struct INEPNTXFSTADDR_R(crate::FieldReader<u16, u16>);
-impl INEPNTXFSTADDR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        INEPNTXFSTADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INEPNTXFSTADDR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INEPN_TX_FST_ADDR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `INEPnTxFStAddr` writer - IN Endpoint FIFOn Transmit RAM Start Address"]
-pub struct INEPNTXFSTADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INEPNTXFSTADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type INEPN_TX_FST_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DIEPTXF2_SPEC, u16, u16, 16, O>;
 #[doc = "Field `INEPnTxFDep` reader - IN Endpoint TxFIFO Depth"]
-pub struct INEPNTXFDEP_R(crate::FieldReader<u16, u16>);
-impl INEPNTXFDEP_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        INEPNTXFDEP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INEPNTXFDEP_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INEPN_TX_FDEP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `INEPnTxFDep` writer - IN Endpoint TxFIFO Depth"]
-pub struct INEPNTXFDEP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INEPNTXFDEP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type INEPN_TX_FDEP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DIEPTXF2_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - IN Endpoint FIFOn Transmit RAM Start Address"]
     #[inline(always)]
-    pub fn inepn_tx_fst_addr(&self) -> INEPNTXFSTADDR_R {
-        INEPNTXFSTADDR_R::new((self.bits & 0xffff) as u16)
+    pub fn inepn_tx_fst_addr(&self) -> INEPN_TX_FST_ADDR_R {
+        INEPN_TX_FST_ADDR_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:31 - IN Endpoint TxFIFO Depth"]
     #[inline(always)]
-    pub fn inepn_tx_fdep(&self) -> INEPNTXFDEP_R {
-        INEPNTXFDEP_R::new(((self.bits >> 16) & 0xffff) as u16)
+    pub fn inepn_tx_fdep(&self) -> INEPN_TX_FDEP_R {
+        INEPN_TX_FDEP_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - IN Endpoint FIFOn Transmit RAM Start Address"]
     #[inline(always)]
-    pub fn inepn_tx_fst_addr(&mut self) -> INEPNTXFSTADDR_W {
-        INEPNTXFSTADDR_W { w: self }
+    #[must_use]
+    pub fn inepn_tx_fst_addr(&mut self) -> INEPN_TX_FST_ADDR_W<0> {
+        INEPN_TX_FST_ADDR_W::new(self)
     }
     #[doc = "Bits 16:31 - IN Endpoint TxFIFO Depth"]
     #[inline(always)]
-    pub fn inepn_tx_fdep(&mut self) -> INEPNTXFDEP_W {
-        INEPNTXFDEP_W { w: self }
+    #[must_use]
+    pub fn inepn_tx_fdep(&mut self) -> INEPN_TX_FDEP_W<16> {
+        INEPN_TX_FDEP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for DIEPTXF2_SPEC {
 #[doc = "`write(|w| ..)` method takes [dieptxf2::W](W) writer structure"]
 impl crate::Writable for DIEPTXF2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DIEPTXF2 to value 0x0100_022a"]
 impl crate::Resettable for DIEPTXF2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0100_022a
-    }
+    const RESET_VALUE: Self::Ux = 0x0100_022a;
 }

@@ -34,241 +34,10 @@ impl From<crate::W<CFGH_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DEST_PER` reader - Destination Peripheral"]
-pub struct DEST_PER_R(crate::FieldReader<u8, u8>);
-impl DEST_PER_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DEST_PER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEST_PER_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `DEST_PER` writer - Destination Peripheral"]
-pub struct DEST_PER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEST_PER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 11)) | ((value as u32 & 0x0f) << 11);
-        self.w
-    }
-}
-#[doc = "Field `SRC_PER` reader - Source Peripheral"]
-pub struct SRC_PER_R(crate::FieldReader<u8, u8>);
-impl SRC_PER_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SRC_PER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SRC_PER_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `SRC_PER` writer - Source Peripheral"]
-pub struct SRC_PER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC_PER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 7)) | ((value as u32 & 0x0f) << 7);
-        self.w
-    }
-}
-#[doc = "Field `SS_UPD_EN` reader - Source Status Update Enable"]
-pub struct SS_UPD_EN_R(crate::FieldReader<bool, bool>);
-impl SS_UPD_EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SS_UPD_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SS_UPD_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `SS_UPD_EN` writer - Source Status Update Enable"]
-pub struct SS_UPD_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SS_UPD_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Field `DS_UPD_EN` reader - Destination Status Update Enable"]
-pub struct DS_UPD_EN_R(crate::FieldReader<bool, bool>);
-impl DS_UPD_EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DS_UPD_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DS_UPD_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `DS_UPD_EN` writer - Destination Status Update Enable"]
-pub struct DS_UPD_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DS_UPD_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
-#[doc = "Field `PROTCTL` reader - Protection Control"]
-pub struct PROTCTL_R(crate::FieldReader<u8, u8>);
-impl PROTCTL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PROTCTL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PROTCTL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `PROTCTL` writer - Protection Control"]
-pub struct PROTCTL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PROTCTL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 2)) | ((value as u32 & 0x07) << 2);
-        self.w
-    }
-}
-#[doc = "FIFO Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FIFO_MODE_A {
-    #[doc = "0: Space/data available for single AHB transfer of the specified transfer width."]
-    VALUE1 = 0,
-    #[doc = "1: Data available is greater than or equal to half the FIFO depth for destination transfers and space available is greater than half the fifo depth for source transfers. The exceptions are at the end of a burst transaction request or at the end of a block transfer."]
-    VALUE2 = 1,
-}
-impl From<FIFO_MODE_A> for bool {
-    #[inline(always)]
-    fn from(variant: FIFO_MODE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `FIFO_MODE` reader - FIFO Mode Select"]
-pub struct FIFO_MODE_R(crate::FieldReader<bool, FIFO_MODE_A>);
-impl FIFO_MODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFO_MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> FIFO_MODE_A {
-        match self.bits {
-            false => FIFO_MODE_A::VALUE1,
-            true => FIFO_MODE_A::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline(always)]
-    pub fn is_value1(&self) -> bool {
-        **self == FIFO_MODE_A::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline(always)]
-    pub fn is_value2(&self) -> bool {
-        **self == FIFO_MODE_A::VALUE2
-    }
-}
-impl core::ops::Deref for FIFO_MODE_R {
-    type Target = crate::FieldReader<bool, FIFO_MODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `FIFO_MODE` writer - FIFO Mode Select"]
-pub struct FIFO_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIFO_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FIFO_MODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "Space/data available for single AHB transfer of the specified transfer width."]
-    #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(FIFO_MODE_A::VALUE1)
-    }
-    #[doc = "Data available is greater than or equal to half the FIFO depth for destination transfers and space available is greater than half the fifo depth for source transfers. The exceptions are at the end of a burst transaction request or at the end of a block transfer."]
-    #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(FIFO_MODE_A::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+#[doc = "Field `FCMODE` reader - Flow Control Mode"]
+pub type FCMODE_R = crate::BitReader<FCMODE_A>;
 #[doc = "Flow Control Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FCMODE_A {
     #[doc = "0: Source transaction requests are serviced when they occur. Data pre-fetching is enabled."]
     VALUE1 = 0,
@@ -281,13 +50,8 @@ impl From<FCMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FCMODE` reader - Flow Control Mode"]
-pub struct FCMODE_R(crate::FieldReader<bool, FCMODE_A>);
 impl FCMODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FCMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FCMODE_A {
         match self.bits {
@@ -298,31 +62,17 @@ impl FCMODE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == FCMODE_A::VALUE1
+        *self == FCMODE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == FCMODE_A::VALUE2
-    }
-}
-impl core::ops::Deref for FCMODE_R {
-    type Target = crate::FieldReader<bool, FCMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FCMODE_A::VALUE2
     }
 }
 #[doc = "Field `FCMODE` writer - Flow Control Mode"]
-pub struct FCMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FCMODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FCMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGH_SPEC, FCMODE_A, O>;
+impl<'a, const O: u8> FCMODE_W<'a, O> {
     #[doc = "Source transaction requests are serviced when they occur. Data pre-fetching is enabled."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -333,95 +83,156 @@ impl<'a> FCMODE_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(FCMODE_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
+}
+#[doc = "Field `FIFO_MODE` reader - FIFO Mode Select"]
+pub type FIFO_MODE_R = crate::BitReader<FIFO_MODE_A>;
+#[doc = "FIFO Mode Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum FIFO_MODE_A {
+    #[doc = "0: Space/data available for single AHB transfer of the specified transfer width."]
+    VALUE1 = 0,
+    #[doc = "1: Data available is greater than or equal to half the FIFO depth for destination transfers and space available is greater than half the fifo depth for source transfers. The exceptions are at the end of a burst transaction request or at the end of a block transfer."]
+    VALUE2 = 1,
+}
+impl From<FIFO_MODE_A> for bool {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+    fn from(variant: FIFO_MODE_A) -> Self {
+        variant as u8 != 0
     }
 }
-impl R {
-    #[doc = "Bits 11:14 - Destination Peripheral"]
+impl FIFO_MODE_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn dest_per(&self) -> DEST_PER_R {
-        DEST_PER_R::new(((self.bits >> 11) & 0x0f) as u8)
+    pub fn variant(&self) -> FIFO_MODE_A {
+        match self.bits {
+            false => FIFO_MODE_A::VALUE1,
+            true => FIFO_MODE_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == FIFO_MODE_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == FIFO_MODE_A::VALUE2
+    }
+}
+#[doc = "Field `FIFO_MODE` writer - FIFO Mode Select"]
+pub type FIFO_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGH_SPEC, FIFO_MODE_A, O>;
+impl<'a, const O: u8> FIFO_MODE_W<'a, O> {
+    #[doc = "Space/data available for single AHB transfer of the specified transfer width."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(FIFO_MODE_A::VALUE1)
+    }
+    #[doc = "Data available is greater than or equal to half the FIFO depth for destination transfers and space available is greater than half the fifo depth for source transfers. The exceptions are at the end of a burst transaction request or at the end of a block transfer."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(FIFO_MODE_A::VALUE2)
+    }
+}
+#[doc = "Field `PROTCTL` reader - Protection Control"]
+pub type PROTCTL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `PROTCTL` writer - Protection Control"]
+pub type PROTCTL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGH_SPEC, u8, u8, 3, O>;
+#[doc = "Field `DS_UPD_EN` reader - Destination Status Update Enable"]
+pub type DS_UPD_EN_R = crate::BitReader<bool>;
+#[doc = "Field `DS_UPD_EN` writer - Destination Status Update Enable"]
+pub type DS_UPD_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGH_SPEC, bool, O>;
+#[doc = "Field `SS_UPD_EN` reader - Source Status Update Enable"]
+pub type SS_UPD_EN_R = crate::BitReader<bool>;
+#[doc = "Field `SS_UPD_EN` writer - Source Status Update Enable"]
+pub type SS_UPD_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGH_SPEC, bool, O>;
+#[doc = "Field `SRC_PER` reader - Source Peripheral"]
+pub type SRC_PER_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `SRC_PER` writer - Source Peripheral"]
+pub type SRC_PER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGH_SPEC, u8, u8, 4, O>;
+#[doc = "Field `DEST_PER` reader - Destination Peripheral"]
+pub type DEST_PER_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DEST_PER` writer - Destination Peripheral"]
+pub type DEST_PER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGH_SPEC, u8, u8, 4, O>;
+impl R {
+    #[doc = "Bit 0 - Flow Control Mode"]
+    #[inline(always)]
+    pub fn fcmode(&self) -> FCMODE_R {
+        FCMODE_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1 - FIFO Mode Select"]
+    #[inline(always)]
+    pub fn fifo_mode(&self) -> FIFO_MODE_R {
+        FIFO_MODE_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    #[doc = "Bits 2:4 - Protection Control"]
+    #[inline(always)]
+    pub fn protctl(&self) -> PROTCTL_R {
+        PROTCTL_R::new(((self.bits >> 2) & 7) as u8)
+    }
+    #[doc = "Bit 5 - Destination Status Update Enable"]
+    #[inline(always)]
+    pub fn ds_upd_en(&self) -> DS_UPD_EN_R {
+        DS_UPD_EN_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    #[doc = "Bit 6 - Source Status Update Enable"]
+    #[inline(always)]
+    pub fn ss_upd_en(&self) -> SS_UPD_EN_R {
+        SS_UPD_EN_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 7:10 - Source Peripheral"]
     #[inline(always)]
     pub fn src_per(&self) -> SRC_PER_R {
         SRC_PER_R::new(((self.bits >> 7) & 0x0f) as u8)
     }
-    #[doc = "Bit 6 - Source Status Update Enable"]
+    #[doc = "Bits 11:14 - Destination Peripheral"]
     #[inline(always)]
-    pub fn ss_upd_en(&self) -> SS_UPD_EN_R {
-        SS_UPD_EN_R::new(((self.bits >> 6) & 0x01) != 0)
-    }
-    #[doc = "Bit 5 - Destination Status Update Enable"]
-    #[inline(always)]
-    pub fn ds_upd_en(&self) -> DS_UPD_EN_R {
-        DS_UPD_EN_R::new(((self.bits >> 5) & 0x01) != 0)
-    }
-    #[doc = "Bits 2:4 - Protection Control"]
-    #[inline(always)]
-    pub fn protctl(&self) -> PROTCTL_R {
-        PROTCTL_R::new(((self.bits >> 2) & 0x07) as u8)
-    }
-    #[doc = "Bit 1 - FIFO Mode Select"]
-    #[inline(always)]
-    pub fn fifo_mode(&self) -> FIFO_MODE_R {
-        FIFO_MODE_R::new(((self.bits >> 1) & 0x01) != 0)
-    }
-    #[doc = "Bit 0 - Flow Control Mode"]
-    #[inline(always)]
-    pub fn fcmode(&self) -> FCMODE_R {
-        FCMODE_R::new((self.bits & 0x01) != 0)
+    pub fn dest_per(&self) -> DEST_PER_R {
+        DEST_PER_R::new(((self.bits >> 11) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 11:14 - Destination Peripheral"]
+    #[doc = "Bit 0 - Flow Control Mode"]
     #[inline(always)]
-    pub fn dest_per(&mut self) -> DEST_PER_W {
-        DEST_PER_W { w: self }
-    }
-    #[doc = "Bits 7:10 - Source Peripheral"]
-    #[inline(always)]
-    pub fn src_per(&mut self) -> SRC_PER_W {
-        SRC_PER_W { w: self }
-    }
-    #[doc = "Bit 6 - Source Status Update Enable"]
-    #[inline(always)]
-    pub fn ss_upd_en(&mut self) -> SS_UPD_EN_W {
-        SS_UPD_EN_W { w: self }
-    }
-    #[doc = "Bit 5 - Destination Status Update Enable"]
-    #[inline(always)]
-    pub fn ds_upd_en(&mut self) -> DS_UPD_EN_W {
-        DS_UPD_EN_W { w: self }
-    }
-    #[doc = "Bits 2:4 - Protection Control"]
-    #[inline(always)]
-    pub fn protctl(&mut self) -> PROTCTL_W {
-        PROTCTL_W { w: self }
+    #[must_use]
+    pub fn fcmode(&mut self) -> FCMODE_W<0> {
+        FCMODE_W::new(self)
     }
     #[doc = "Bit 1 - FIFO Mode Select"]
     #[inline(always)]
-    pub fn fifo_mode(&mut self) -> FIFO_MODE_W {
-        FIFO_MODE_W { w: self }
+    #[must_use]
+    pub fn fifo_mode(&mut self) -> FIFO_MODE_W<1> {
+        FIFO_MODE_W::new(self)
     }
-    #[doc = "Bit 0 - Flow Control Mode"]
+    #[doc = "Bits 2:4 - Protection Control"]
     #[inline(always)]
-    pub fn fcmode(&mut self) -> FCMODE_W {
-        FCMODE_W { w: self }
+    #[must_use]
+    pub fn protctl(&mut self) -> PROTCTL_W<2> {
+        PROTCTL_W::new(self)
+    }
+    #[doc = "Bit 5 - Destination Status Update Enable"]
+    #[inline(always)]
+    #[must_use]
+    pub fn ds_upd_en(&mut self) -> DS_UPD_EN_W<5> {
+        DS_UPD_EN_W::new(self)
+    }
+    #[doc = "Bit 6 - Source Status Update Enable"]
+    #[inline(always)]
+    #[must_use]
+    pub fn ss_upd_en(&mut self) -> SS_UPD_EN_W<6> {
+        SS_UPD_EN_W::new(self)
+    }
+    #[doc = "Bits 7:10 - Source Peripheral"]
+    #[inline(always)]
+    #[must_use]
+    pub fn src_per(&mut self) -> SRC_PER_W<7> {
+        SRC_PER_W::new(self)
+    }
+    #[doc = "Bits 11:14 - Destination Peripheral"]
+    #[inline(always)]
+    #[must_use]
+    pub fn dest_per(&mut self) -> DEST_PER_W<11> {
+        DEST_PER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -442,11 +253,10 @@ impl crate::Readable for CFGH_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfgh::W](W) writer structure"]
 impl crate::Writable for CFGH_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFGH to value 0x04"]
 impl crate::Resettable for CFGH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x04
-    }
+    const RESET_VALUE: Self::Ux = 0x04;
 }

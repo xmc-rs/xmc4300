@@ -35,43 +35,22 @@ impl From<crate::W<RECEIVE_DESCRIPTOR_LIST_ADDRESS_SPEC>> for W {
     }
 }
 #[doc = "Field `RDESLA_32bit` reader - Start of Receive List"]
-pub struct RDESLA_32BIT_R(crate::FieldReader<u32, u32>);
-impl RDESLA_32BIT_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        RDESLA_32BIT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RDESLA_32BIT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RDESLA_32BIT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `RDESLA_32bit` writer - Start of Receive List"]
-pub struct RDESLA_32BIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RDESLA_32BIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3fff_ffff << 2)) | ((value as u32 & 0x3fff_ffff) << 2);
-        self.w
-    }
-}
+pub type RDESLA_32BIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RECEIVE_DESCRIPTOR_LIST_ADDRESS_SPEC, u32, u32, 30, O>;
 impl R {
     #[doc = "Bits 2:31 - Start of Receive List"]
     #[inline(always)]
     pub fn rdesla_32bit(&self) -> RDESLA_32BIT_R {
-        RDESLA_32BIT_R::new(((self.bits >> 2) & 0x3fff_ffff) as u32)
+        RDESLA_32BIT_R::new((self.bits >> 2) & 0x3fff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 2:31 - Start of Receive List"]
     #[inline(always)]
-    pub fn rdesla_32bit(&mut self) -> RDESLA_32BIT_W {
-        RDESLA_32BIT_W { w: self }
+    #[must_use]
+    pub fn rdesla_32bit(&mut self) -> RDESLA_32BIT_W<2> {
+        RDESLA_32BIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for RECEIVE_DESCRIPTOR_LIST_ADDRESS_SPEC {
 #[doc = "`write(|w| ..)` method takes [receive_descriptor_list_address::W](W) writer structure"]
 impl crate::Writable for RECEIVE_DESCRIPTOR_LIST_ADDRESS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RECEIVE_DESCRIPTOR_LIST_ADDRESS to value 0"]
 impl crate::Resettable for RECEIVE_DESCRIPTOR_LIST_ADDRESS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

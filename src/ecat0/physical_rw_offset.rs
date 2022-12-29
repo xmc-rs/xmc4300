@@ -14,24 +14,12 @@ impl From<crate::R<PHYSICAL_RW_OFFSET_SPEC>> for R {
     }
 }
 #[doc = "Field `OFFSET` reader - Offset of R/W Commands (FPRW, APRW) between Read address and Write address"]
-pub struct OFFSET_R(crate::FieldReader<u16, u16>);
-impl OFFSET_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        OFFSET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OFFSET_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OFFSET_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Offset of R/W Commands (FPRW, APRW) between Read address and Write address"]
     #[inline(always)]
     pub fn offset(&self) -> OFFSET_R {
-        OFFSET_R::new((self.bits & 0xffff) as u16)
+        OFFSET_R::new(self.bits)
     }
 }
 #[doc = "Physical Read/Write Offset\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [physical_rw_offset](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for PHYSICAL_RW_OFFSET_SPEC {
 }
 #[doc = "`reset()` method sets PHYSICAL_RW_OFFSET to value 0"]
 impl crate::Resettable for PHYSICAL_RW_OFFSET_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -14,24 +14,12 @@ impl From<crate::R<BUILD_SPEC>> for R {
     }
 }
 #[doc = "Field `BUILD` reader - Actual build of EtherCAT controller"]
-pub struct BUILD_R(crate::FieldReader<u16, u16>);
-impl BUILD_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        BUILD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BUILD_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BUILD_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Actual build of EtherCAT controller"]
     #[inline(always)]
     pub fn build(&self) -> BUILD_R {
-        BUILD_R::new((self.bits & 0xffff) as u16)
+        BUILD_R::new(self.bits)
     }
 }
 #[doc = "Build Version\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [build](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for BUILD_SPEC {
 }
 #[doc = "`reset()` method sets BUILD to value 0x01"]
 impl crate::Resettable for BUILD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

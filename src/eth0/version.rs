@@ -14,33 +14,9 @@ impl From<crate::R<VERSION_SPEC>> for R {
     }
 }
 #[doc = "Field `SNPSVER` reader - Synopsys-defined Version (3.7)"]
-pub struct SNPSVER_R(crate::FieldReader<u8, u8>);
-impl SNPSVER_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SNPSVER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SNPSVER_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SNPSVER_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `USERVER` reader - User-defined Version (Configured with the coreConsultant)"]
-pub struct USERVER_R(crate::FieldReader<u8, u8>);
-impl USERVER_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        USERVER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USERVER_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USERVER_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Synopsys-defined Version (3.7)"]
     #[inline(always)]
@@ -64,8 +40,5 @@ impl crate::Readable for VERSION_SPEC {
 }
 #[doc = "`reset()` method sets VERSION to value 0x1037"]
 impl crate::Resettable for VERSION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1037
-    }
+    const RESET_VALUE: Self::Ux = 0x1037;
 }

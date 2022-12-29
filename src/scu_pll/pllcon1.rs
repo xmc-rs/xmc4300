@@ -35,109 +35,21 @@ impl From<crate::W<PLLCON1_SPEC>> for W {
     }
 }
 #[doc = "Field `K1DIV` reader - K1-Divider Value"]
-pub struct K1DIV_R(crate::FieldReader<u8, u8>);
-impl K1DIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        K1DIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for K1DIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type K1DIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `K1DIV` writer - K1-Divider Value"]
-pub struct K1DIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> K1DIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type K1DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLLCON1_SPEC, u8, u8, 7, O>;
 #[doc = "Field `NDIV` reader - N-Divider Value"]
-pub struct NDIV_R(crate::FieldReader<u8, u8>);
-impl NDIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NDIV` writer - N-Divider Value"]
-pub struct NDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | ((value as u32 & 0x7f) << 8);
-        self.w
-    }
-}
+pub type NDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLLCON1_SPEC, u8, u8, 7, O>;
 #[doc = "Field `K2DIV` reader - K2-Divider Value"]
-pub struct K2DIV_R(crate::FieldReader<u8, u8>);
-impl K2DIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        K2DIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for K2DIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type K2DIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `K2DIV` writer - K2-Divider Value"]
-pub struct K2DIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> K2DIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
+pub type K2DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLLCON1_SPEC, u8, u8, 7, O>;
 #[doc = "Field `PDIV` reader - P-Divider Value"]
-pub struct PDIV_R(crate::FieldReader<u8, u8>);
-impl PDIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PDIV` writer - P-Divider Value"]
-pub struct PDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
-}
+pub type PDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLLCON1_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:6 - K1-Divider Value"]
     #[inline(always)]
@@ -163,23 +75,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - K1-Divider Value"]
     #[inline(always)]
-    pub fn k1div(&mut self) -> K1DIV_W {
-        K1DIV_W { w: self }
+    #[must_use]
+    pub fn k1div(&mut self) -> K1DIV_W<0> {
+        K1DIV_W::new(self)
     }
     #[doc = "Bits 8:14 - N-Divider Value"]
     #[inline(always)]
-    pub fn ndiv(&mut self) -> NDIV_W {
-        NDIV_W { w: self }
+    #[must_use]
+    pub fn ndiv(&mut self) -> NDIV_W<8> {
+        NDIV_W::new(self)
     }
     #[doc = "Bits 16:22 - K2-Divider Value"]
     #[inline(always)]
-    pub fn k2div(&mut self) -> K2DIV_W {
-        K2DIV_W { w: self }
+    #[must_use]
+    pub fn k2div(&mut self) -> K2DIV_W<16> {
+        K2DIV_W::new(self)
     }
     #[doc = "Bits 24:27 - P-Divider Value"]
     #[inline(always)]
-    pub fn pdiv(&mut self) -> PDIV_W {
-        PDIV_W { w: self }
+    #[must_use]
+    pub fn pdiv(&mut self) -> PDIV_W<24> {
+        PDIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -200,11 +116,10 @@ impl crate::Readable for PLLCON1_SPEC {
 #[doc = "`write(|w| ..)` method takes [pllcon1::W](W) writer structure"]
 impl crate::Writable for PLLCON1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PLLCON1 to value 0"]
 impl crate::Resettable for PLLCON1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<CLC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DISR` reader - Module Disable Request Bit"]
+pub type DISR_R = crate::BitReader<DISR_A>;
 #[doc = "Module Disable Request Bit\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DISR_A {
     #[doc = "0: On request: enable the module clock"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<DISR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DISR` reader - Module Disable Request Bit"]
-pub struct DISR_R(crate::FieldReader<bool, DISR_A>);
 impl DISR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DISR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DISR_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl DISR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DISR_A::VALUE1
+        *self == DISR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DISR_A::VALUE2
-    }
-}
-impl core::ops::Deref for DISR_R {
-    type Target = crate::FieldReader<bool, DISR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DISR_A::VALUE2
     }
 }
 #[doc = "Field `DISR` writer - Module Disable Request Bit"]
-pub struct DISR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DISR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DISR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DISR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLC_SPEC, DISR_A, O>;
+impl<'a, const O: u8> DISR_W<'a, O> {
     #[doc = "On request: enable the module clock"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> DISR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(DISR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `DISS` reader - Module Disable Status Bit"]
+pub type DISS_R = crate::BitReader<DISS_A>;
 #[doc = "Module Disable Status Bit\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DISS_A {
     #[doc = "0: Module clock is enabled"]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<DISS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DISS` reader - Module Disable Status Bit"]
-pub struct DISS_R(crate::FieldReader<bool, DISS_A>);
 impl DISS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DISS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DISS_A {
         match self.bits {
@@ -148,23 +112,18 @@ impl DISS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DISS_A::VALUE1
+        *self == DISS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DISS_A::VALUE2
+        *self == DISS_A::VALUE2
     }
 }
-impl core::ops::Deref for DISS_R {
-    type Target = crate::FieldReader<bool, DISS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `EDIS` reader - Sleep Mode Enable Control"]
+pub type EDIS_R = crate::BitReader<EDIS_A>;
 #[doc = "Sleep Mode Enable Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EDIS_A {
     #[doc = "0: Sleep mode request is enabled and functional"]
     VALUE1 = 0,
@@ -177,13 +136,8 @@ impl From<EDIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EDIS` reader - Sleep Mode Enable Control"]
-pub struct EDIS_R(crate::FieldReader<bool, EDIS_A>);
 impl EDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EDIS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EDIS_A {
         match self.bits {
@@ -194,31 +148,17 @@ impl EDIS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == EDIS_A::VALUE1
+        *self == EDIS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == EDIS_A::VALUE2
-    }
-}
-impl core::ops::Deref for EDIS_R {
-    type Target = crate::FieldReader<bool, EDIS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EDIS_A::VALUE2
     }
 }
 #[doc = "Field `EDIS` writer - Sleep Mode Enable Control"]
-pub struct EDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDIS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EDIS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLC_SPEC, EDIS_A, O>;
+impl<'a, const O: u8> EDIS_W<'a, O> {
     #[doc = "Sleep mode request is enabled and functional"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -229,50 +169,36 @@ impl<'a> EDIS_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(EDIS_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Module Disable Request Bit"]
     #[inline(always)]
     pub fn disr(&self) -> DISR_R {
-        DISR_R::new((self.bits & 0x01) != 0)
+        DISR_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Module Disable Status Bit"]
     #[inline(always)]
     pub fn diss(&self) -> DISS_R {
-        DISS_R::new(((self.bits >> 1) & 0x01) != 0)
+        DISS_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 3 - Sleep Mode Enable Control"]
     #[inline(always)]
     pub fn edis(&self) -> EDIS_R {
-        EDIS_R::new(((self.bits >> 3) & 0x01) != 0)
+        EDIS_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Module Disable Request Bit"]
     #[inline(always)]
-    pub fn disr(&mut self) -> DISR_W {
-        DISR_W { w: self }
+    #[must_use]
+    pub fn disr(&mut self) -> DISR_W<0> {
+        DISR_W::new(self)
     }
     #[doc = "Bit 3 - Sleep Mode Enable Control"]
     #[inline(always)]
-    pub fn edis(&mut self) -> EDIS_W {
-        EDIS_W { w: self }
+    #[must_use]
+    pub fn edis(&mut self) -> EDIS_W<3> {
+        EDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -293,11 +219,10 @@ impl crate::Readable for CLC_SPEC {
 #[doc = "`write(|w| ..)` method takes [clc::W](W) writer structure"]
 impl crate::Writable for CLC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLC to value 0x03"]
 impl crate::Resettable for CLC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x03
-    }
+    const RESET_VALUE: Self::Ux = 0x03;
 }

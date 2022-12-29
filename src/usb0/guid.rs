@@ -35,83 +35,17 @@ impl From<crate::W<GUID_SPEC>> for W {
     }
 }
 #[doc = "Field `MOD_REV` reader - Module Revision"]
-pub struct MOD_REV_R(crate::FieldReader<u8, u8>);
-impl MOD_REV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MOD_REV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MOD_REV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MOD_REV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MOD_REV` writer - Module Revision"]
-pub struct MOD_REV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MOD_REV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type MOD_REV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUID_SPEC, u8, u8, 8, O>;
 #[doc = "Field `MOD_TYPE` reader - Module Type"]
-pub struct MOD_TYPE_R(crate::FieldReader<u8, u8>);
-impl MOD_TYPE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MOD_TYPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MOD_TYPE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MOD_TYPE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MOD_TYPE` writer - Module Type"]
-pub struct MOD_TYPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MOD_TYPE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type MOD_TYPE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUID_SPEC, u8, u8, 8, O>;
 #[doc = "Field `MOD_NUMBER` reader - Module Number"]
-pub struct MOD_NUMBER_R(crate::FieldReader<u16, u16>);
-impl MOD_NUMBER_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        MOD_NUMBER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MOD_NUMBER_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MOD_NUMBER_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MOD_NUMBER` writer - Module Number"]
-pub struct MOD_NUMBER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MOD_NUMBER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type MOD_NUMBER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUID_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:7 - Module Revision"]
     #[inline(always)]
@@ -132,18 +66,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Module Revision"]
     #[inline(always)]
-    pub fn mod_rev(&mut self) -> MOD_REV_W {
-        MOD_REV_W { w: self }
+    #[must_use]
+    pub fn mod_rev(&mut self) -> MOD_REV_W<0> {
+        MOD_REV_W::new(self)
     }
     #[doc = "Bits 8:15 - Module Type"]
     #[inline(always)]
-    pub fn mod_type(&mut self) -> MOD_TYPE_W {
-        MOD_TYPE_W { w: self }
+    #[must_use]
+    pub fn mod_type(&mut self) -> MOD_TYPE_W<8> {
+        MOD_TYPE_W::new(self)
     }
     #[doc = "Bits 16:31 - Module Number"]
     #[inline(always)]
-    pub fn mod_number(&mut self) -> MOD_NUMBER_W {
-        MOD_NUMBER_W { w: self }
+    #[must_use]
+    pub fn mod_number(&mut self) -> MOD_NUMBER_W<16> {
+        MOD_NUMBER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -164,11 +101,10 @@ impl crate::Readable for GUID_SPEC {
 #[doc = "`write(|w| ..)` method takes [guid::W](W) writer structure"]
 impl crate::Writable for GUID_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GUID to value 0x00ae_c000"]
 impl crate::Resettable for GUID_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x00ae_c000
-    }
+    const RESET_VALUE: Self::Ux = 0x00ae_c000;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<PBCLKCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PBDIV` reader - PB Clock Divider Enable"]
+pub type PBDIV_R = crate::BitReader<PBDIV_A>;
 #[doc = "PB Clock Divider Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PBDIV_A {
     #[doc = "0: fPERIPH = fCPU"]
     CONST_0 = 0,
@@ -48,13 +50,8 @@ impl From<PBDIV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PBDIV` reader - PB Clock Divider Enable"]
-pub struct PBDIV_R(crate::FieldReader<bool, PBDIV_A>);
 impl PBDIV_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PBDIV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PBDIV_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl PBDIV_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == PBDIV_A::CONST_0
+        *self == PBDIV_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == PBDIV_A::CONST_1
-    }
-}
-impl core::ops::Deref for PBDIV_R {
-    type Target = crate::FieldReader<bool, PBDIV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PBDIV_A::CONST_1
     }
 }
 #[doc = "Field `PBDIV` writer - PB Clock Divider Enable"]
-pub struct PBDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PBDIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PBDIV_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PBDIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, PBCLKCR_SPEC, PBDIV_A, O>;
+impl<'a, const O: u8> PBDIV_W<'a, O> {
     #[doc = "fPERIPH = fCPU"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -100,35 +83,20 @@ impl<'a> PBDIV_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(PBDIV_A::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - PB Clock Divider Enable"]
     #[inline(always)]
     pub fn pbdiv(&self) -> PBDIV_R {
-        PBDIV_R::new((self.bits & 0x01) != 0)
+        PBDIV_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - PB Clock Divider Enable"]
     #[inline(always)]
-    pub fn pbdiv(&mut self) -> PBDIV_W {
-        PBDIV_W { w: self }
+    #[must_use]
+    pub fn pbdiv(&mut self) -> PBDIV_W<0> {
+        PBDIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -149,11 +117,10 @@ impl crate::Readable for PBCLKCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pbclkcr::W](W) writer structure"]
 impl crate::Writable for PBCLKCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PBCLKCR to value 0"]
 impl crate::Resettable for PBCLKCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

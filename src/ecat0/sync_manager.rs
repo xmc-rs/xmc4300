@@ -14,24 +14,12 @@ impl From<crate::R<SYNC_MANAGER_SPEC>> for R {
     }
 }
 #[doc = "Field `NUM_SM` reader - Number of supported SyncManager channels (or entities) of the EtherCAT Slave Controller"]
-pub struct NUM_SM_R(crate::FieldReader<u8, u8>);
-impl NUM_SM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NUM_SM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NUM_SM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NUM_SM_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Number of supported SyncManager channels (or entities) of the EtherCAT Slave Controller"]
     #[inline(always)]
     pub fn num_sm(&self) -> NUM_SM_R {
-        NUM_SM_R::new((self.bits & 0xff) as u8)
+        NUM_SM_R::new(self.bits)
     }
 }
 #[doc = "SyncManagers Supported\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sync_manager](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for SYNC_MANAGER_SPEC {
 }
 #[doc = "`reset()` method sets SYNC_MANAGER to value 0x08"]
 impl crate::Resettable for SYNC_MANAGER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x08
-    }
+    const RESET_VALUE: Self::Ux = 0x08;
 }

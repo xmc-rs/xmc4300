@@ -35,43 +35,22 @@ impl From<crate::W<TRANSMIT_POLL_DEMAND_SPEC>> for W {
     }
 }
 #[doc = "Field `TPD` reader - Transmit Poll Demand"]
-pub struct TPD_R(crate::FieldReader<u32, u32>);
-impl TPD_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        TPD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TPD_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TPD_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TPD` writer - Transmit Poll Demand"]
-pub struct TPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TPD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type TPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TRANSMIT_POLL_DEMAND_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Transmit Poll Demand"]
     #[inline(always)]
     pub fn tpd(&self) -> TPD_R {
-        TPD_R::new((self.bits & 0xffff_ffff) as u32)
+        TPD_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Transmit Poll Demand"]
     #[inline(always)]
-    pub fn tpd(&mut self) -> TPD_W {
-        TPD_W { w: self }
+    #[must_use]
+    pub fn tpd(&mut self) -> TPD_W<0> {
+        TPD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for TRANSMIT_POLL_DEMAND_SPEC {
 #[doc = "`write(|w| ..)` method takes [transmit_poll_demand::W](W) writer structure"]
 impl crate::Writable for TRANSMIT_POLL_DEMAND_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TRANSMIT_POLL_DEMAND to value 0"]
 impl crate::Resettable for TRANSMIT_POLL_DEMAND_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,33 +35,13 @@ impl From<crate::W<SYST_CALIB_SPEC>> for W {
     }
 }
 #[doc = "Field `TENMS` reader - Ten Milliseconds Reload Value"]
-pub struct TENMS_R(crate::FieldReader<u32, u32>);
-impl TENMS_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        TENMS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TENMS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TENMS_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TENMS` writer - Ten Milliseconds Reload Value"]
-pub struct TENMS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TENMS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type TENMS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYST_CALIB_SPEC, u32, u32, 24, O>;
+#[doc = "Field `SKEW` reader - Ten Milliseconds Skewed"]
+pub type SKEW_R = crate::BitReader<SKEW_A>;
 #[doc = "Ten Milliseconds Skewed\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SKEW_A {
     #[doc = "0: TENMS value is exact"]
     VALUE1 = 0,
@@ -74,13 +54,8 @@ impl From<SKEW_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SKEW` reader - Ten Milliseconds Skewed"]
-pub struct SKEW_R(crate::FieldReader<bool, SKEW_A>);
 impl SKEW_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SKEW_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SKEW_A {
         match self.bits {
@@ -91,31 +66,17 @@ impl SKEW_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SKEW_A::VALUE1
+        *self == SKEW_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SKEW_A::VALUE2
-    }
-}
-impl core::ops::Deref for SKEW_R {
-    type Target = crate::FieldReader<bool, SKEW_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SKEW_A::VALUE2
     }
 }
 #[doc = "Field `SKEW` writer - Ten Milliseconds Skewed"]
-pub struct SKEW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SKEW_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SKEW_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SKEW_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYST_CALIB_SPEC, SKEW_A, O>;
+impl<'a, const O: u8> SKEW_W<'a, O> {
     #[doc = "TENMS value is exact"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -126,25 +87,11 @@ impl<'a> SKEW_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(SKEW_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
 }
+#[doc = "Field `NOREF` reader - No Reference Clock"]
+pub type NOREF_R = crate::BitReader<NOREF_A>;
 #[doc = "No Reference Clock\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NOREF_A {
     #[doc = "0: reference clock provided"]
     VALUE1 = 0,
@@ -157,13 +104,8 @@ impl From<NOREF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NOREF` reader - No Reference Clock"]
-pub struct NOREF_R(crate::FieldReader<bool, NOREF_A>);
 impl NOREF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NOREF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NOREF_A {
         match self.bits {
@@ -174,31 +116,17 @@ impl NOREF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == NOREF_A::VALUE1
+        *self == NOREF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == NOREF_A::VALUE2
-    }
-}
-impl core::ops::Deref for NOREF_R {
-    type Target = crate::FieldReader<bool, NOREF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == NOREF_A::VALUE2
     }
 }
 #[doc = "Field `NOREF` writer - No Reference Clock"]
-pub struct NOREF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NOREF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NOREF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type NOREF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYST_CALIB_SPEC, NOREF_A, O>;
+impl<'a, const O: u8> NOREF_W<'a, O> {
     #[doc = "reference clock provided"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -209,55 +137,42 @@ impl<'a> NOREF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(NOREF_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:23 - Ten Milliseconds Reload Value"]
     #[inline(always)]
     pub fn tenms(&self) -> TENMS_R {
-        TENMS_R::new((self.bits & 0x00ff_ffff) as u32)
+        TENMS_R::new(self.bits & 0x00ff_ffff)
     }
     #[doc = "Bit 30 - Ten Milliseconds Skewed"]
     #[inline(always)]
     pub fn skew(&self) -> SKEW_R {
-        SKEW_R::new(((self.bits >> 30) & 0x01) != 0)
+        SKEW_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - No Reference Clock"]
     #[inline(always)]
     pub fn noref(&self) -> NOREF_R {
-        NOREF_R::new(((self.bits >> 31) & 0x01) != 0)
+        NOREF_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - Ten Milliseconds Reload Value"]
     #[inline(always)]
-    pub fn tenms(&mut self) -> TENMS_W {
-        TENMS_W { w: self }
+    #[must_use]
+    pub fn tenms(&mut self) -> TENMS_W<0> {
+        TENMS_W::new(self)
     }
     #[doc = "Bit 30 - Ten Milliseconds Skewed"]
     #[inline(always)]
-    pub fn skew(&mut self) -> SKEW_W {
-        SKEW_W { w: self }
+    #[must_use]
+    pub fn skew(&mut self) -> SKEW_W<30> {
+        SKEW_W::new(self)
     }
     #[doc = "Bit 31 - No Reference Clock"]
     #[inline(always)]
-    pub fn noref(&mut self) -> NOREF_W {
-        NOREF_W { w: self }
+    #[must_use]
+    pub fn noref(&mut self) -> NOREF_W<31> {
+        NOREF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -278,11 +193,10 @@ impl crate::Readable for SYST_CALIB_SPEC {
 #[doc = "`write(|w| ..)` method takes [syst_calib::W](W) writer structure"]
 impl crate::Writable for SYST_CALIB_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SYST_CALIB to value 0xc000_0000"]
 impl crate::Resettable for SYST_CALIB_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xc000_0000
-    }
+    const RESET_VALUE: Self::Ux = 0xc000_0000;
 }

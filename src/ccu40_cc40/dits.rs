@@ -35,31 +35,9 @@ impl From<crate::W<DITS_SPEC>> for W {
     }
 }
 #[doc = "Field `DCVS` reader - Dither Shadow Compare Value"]
-pub struct DCVS_R(crate::FieldReader<u8, u8>);
-impl DCVS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DCVS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DCVS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DCVS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DCVS` writer - Dither Shadow Compare Value"]
-pub struct DCVS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCVS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type DCVS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DITS_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Dither Shadow Compare Value"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Dither Shadow Compare Value"]
     #[inline(always)]
-    pub fn dcvs(&mut self) -> DCVS_W {
-        DCVS_W { w: self }
+    #[must_use]
+    pub fn dcvs(&mut self) -> DCVS_W<0> {
+        DCVS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for DITS_SPEC {
 #[doc = "`write(|w| ..)` method takes [dits::W](W) writer structure"]
 impl crate::Writable for DITS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DITS to value 0"]
 impl crate::Resettable for DITS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

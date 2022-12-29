@@ -14,24 +14,12 @@ impl From<crate::R<HCDMAB_SPEC>> for R {
     }
 }
 #[doc = "Field `Buffer_Address` reader - Buffer Address"]
-pub struct BUFFER_ADDRESS_R(crate::FieldReader<u32, u32>);
-impl BUFFER_ADDRESS_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        BUFFER_ADDRESS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BUFFER_ADDRESS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BUFFER_ADDRESS_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Buffer Address"]
     #[inline(always)]
     pub fn buffer_address(&self) -> BUFFER_ADDRESS_R {
-        BUFFER_ADDRESS_R::new((self.bits & 0xffff_ffff) as u32)
+        BUFFER_ADDRESS_R::new(self.bits)
     }
 }
 #[doc = "Host Channel DMA Buffer Address Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcdmab](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for HCDMAB_SPEC {
 }
 #[doc = "`reset()` method sets HCDMAB to value 0"]
 impl crate::Resettable for HCDMAB_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

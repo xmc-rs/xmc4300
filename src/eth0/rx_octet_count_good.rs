@@ -14,24 +14,12 @@ impl From<crate::R<RX_OCTET_COUNT_GOOD_SPEC>> for R {
     }
 }
 #[doc = "Field `RXOCTG` reader - This field indicates the number of bytes received, exclusive of preamble, only in good frames."]
-pub struct RXOCTG_R(crate::FieldReader<u32, u32>);
-impl RXOCTG_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        RXOCTG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXOCTG_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXOCTG_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of bytes received, exclusive of preamble, only in good frames."]
     #[inline(always)]
     pub fn rxoctg(&self) -> RXOCTG_R {
-        RXOCTG_R::new((self.bits & 0xffff_ffff) as u32)
+        RXOCTG_R::new(self.bits)
     }
 }
 #[doc = "Rx Octet Count Good Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_octet_count_good](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for RX_OCTET_COUNT_GOOD_SPEC {
 }
 #[doc = "`reset()` method sets RX_OCTET_COUNT_GOOD to value 0"]
 impl crate::Resettable for RX_OCTET_COUNT_GOOD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,7 +20,7 @@ impl From<crate::W<CEFCLR_SPEC>> for W {
     }
 }
 #[doc = "Clear Channel Event for Channel 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CEV0_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -34,15 +34,8 @@ impl From<CEV0_AW> for bool {
     }
 }
 #[doc = "Field `CEV0` writer - Clear Channel Event for Channel 0"]
-pub struct CEV0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEV0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEV0_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CEV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV0_AW, O>;
+impl<'a, const O: u8> CEV0_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -53,25 +46,9 @@ impl<'a> CEV0_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CEV0_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 #[doc = "Clear Channel Event for Channel 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CEV1_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -85,15 +62,8 @@ impl From<CEV1_AW> for bool {
     }
 }
 #[doc = "Field `CEV1` writer - Clear Channel Event for Channel 1"]
-pub struct CEV1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEV1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEV1_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CEV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV1_AW, O>;
+impl<'a, const O: u8> CEV1_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -104,25 +74,9 @@ impl<'a> CEV1_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CEV1_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 #[doc = "Clear Channel Event for Channel 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CEV2_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -136,15 +90,8 @@ impl From<CEV2_AW> for bool {
     }
 }
 #[doc = "Field `CEV2` writer - Clear Channel Event for Channel 2"]
-pub struct CEV2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEV2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEV2_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CEV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV2_AW, O>;
+impl<'a, const O: u8> CEV2_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -155,25 +102,9 @@ impl<'a> CEV2_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CEV2_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
 #[doc = "Clear Channel Event for Channel 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CEV3_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -187,15 +118,8 @@ impl From<CEV3_AW> for bool {
     }
 }
 #[doc = "Field `CEV3` writer - Clear Channel Event for Channel 3"]
-pub struct CEV3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEV3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEV3_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CEV3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV3_AW, O>;
+impl<'a, const O: u8> CEV3_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -206,25 +130,9 @@ impl<'a> CEV3_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CEV3_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
 #[doc = "Clear Channel Event for Channel 4\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CEV4_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -238,15 +146,8 @@ impl From<CEV4_AW> for bool {
     }
 }
 #[doc = "Field `CEV4` writer - Clear Channel Event for Channel 4"]
-pub struct CEV4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEV4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEV4_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CEV4_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV4_AW, O>;
+impl<'a, const O: u8> CEV4_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -257,25 +158,9 @@ impl<'a> CEV4_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CEV4_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
 #[doc = "Clear Channel Event for Channel 5\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CEV5_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -289,15 +174,8 @@ impl From<CEV5_AW> for bool {
     }
 }
 #[doc = "Field `CEV5` writer - Clear Channel Event for Channel 5"]
-pub struct CEV5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEV5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEV5_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CEV5_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV5_AW, O>;
+impl<'a, const O: u8> CEV5_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -308,25 +186,9 @@ impl<'a> CEV5_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CEV5_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
 #[doc = "Clear Channel Event for Channel 6\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CEV6_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -340,15 +202,8 @@ impl From<CEV6_AW> for bool {
     }
 }
 #[doc = "Field `CEV6` writer - Clear Channel Event for Channel 6"]
-pub struct CEV6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEV6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEV6_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CEV6_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV6_AW, O>;
+impl<'a, const O: u8> CEV6_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -359,25 +214,9 @@ impl<'a> CEV6_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CEV6_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
 #[doc = "Clear Channel Event for Channel 7\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CEV7_AW {
     #[doc = "0: No action"]
     VALUE1 = 0,
@@ -391,15 +230,8 @@ impl From<CEV7_AW> for bool {
     }
 }
 #[doc = "Field `CEV7` writer - Clear Channel Event for Channel 7"]
-pub struct CEV7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEV7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEV7_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CEV7_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV7_AW, O>;
+impl<'a, const O: u8> CEV7_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -410,63 +242,55 @@ impl<'a> CEV7_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CEV7_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Clear Channel Event for Channel 0"]
     #[inline(always)]
-    pub fn cev0(&mut self) -> CEV0_W {
-        CEV0_W { w: self }
+    #[must_use]
+    pub fn cev0(&mut self) -> CEV0_W<0> {
+        CEV0_W::new(self)
     }
     #[doc = "Bit 1 - Clear Channel Event for Channel 1"]
     #[inline(always)]
-    pub fn cev1(&mut self) -> CEV1_W {
-        CEV1_W { w: self }
+    #[must_use]
+    pub fn cev1(&mut self) -> CEV1_W<1> {
+        CEV1_W::new(self)
     }
     #[doc = "Bit 2 - Clear Channel Event for Channel 2"]
     #[inline(always)]
-    pub fn cev2(&mut self) -> CEV2_W {
-        CEV2_W { w: self }
+    #[must_use]
+    pub fn cev2(&mut self) -> CEV2_W<2> {
+        CEV2_W::new(self)
     }
     #[doc = "Bit 3 - Clear Channel Event for Channel 3"]
     #[inline(always)]
-    pub fn cev3(&mut self) -> CEV3_W {
-        CEV3_W { w: self }
+    #[must_use]
+    pub fn cev3(&mut self) -> CEV3_W<3> {
+        CEV3_W::new(self)
     }
     #[doc = "Bit 4 - Clear Channel Event for Channel 4"]
     #[inline(always)]
-    pub fn cev4(&mut self) -> CEV4_W {
-        CEV4_W { w: self }
+    #[must_use]
+    pub fn cev4(&mut self) -> CEV4_W<4> {
+        CEV4_W::new(self)
     }
     #[doc = "Bit 5 - Clear Channel Event for Channel 5"]
     #[inline(always)]
-    pub fn cev5(&mut self) -> CEV5_W {
-        CEV5_W { w: self }
+    #[must_use]
+    pub fn cev5(&mut self) -> CEV5_W<5> {
+        CEV5_W::new(self)
     }
     #[doc = "Bit 6 - Clear Channel Event for Channel 6"]
     #[inline(always)]
-    pub fn cev6(&mut self) -> CEV6_W {
-        CEV6_W { w: self }
+    #[must_use]
+    pub fn cev6(&mut self) -> CEV6_W<6> {
+        CEV6_W::new(self)
     }
     #[doc = "Bit 7 - Clear Channel Event for Channel 7"]
     #[inline(always)]
-    pub fn cev7(&mut self) -> CEV7_W {
-        CEV7_W { w: self }
+    #[must_use]
+    pub fn cev7(&mut self) -> CEV7_W<7> {
+        CEV7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -483,11 +307,10 @@ impl crate::RegisterSpec for CEFCLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cefclr::W](W) writer structure"]
 impl crate::Writable for CEFCLR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CEFCLR to value 0"]
 impl crate::Resettable for CEFCLR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

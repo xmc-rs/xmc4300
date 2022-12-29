@@ -35,43 +35,22 @@ impl From<crate::W<HASH_TABLE_LOW_SPEC>> for W {
     }
 }
 #[doc = "Field `HTL` reader - Hash Table Low"]
-pub struct HTL_R(crate::FieldReader<u32, u32>);
-impl HTL_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        HTL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HTL_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HTL_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `HTL` writer - Hash Table Low"]
-pub struct HTL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HTL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type HTL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HASH_TABLE_LOW_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Hash Table Low"]
     #[inline(always)]
     pub fn htl(&self) -> HTL_R {
-        HTL_R::new((self.bits & 0xffff_ffff) as u32)
+        HTL_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Hash Table Low"]
     #[inline(always)]
-    pub fn htl(&mut self) -> HTL_W {
-        HTL_W { w: self }
+    #[must_use]
+    pub fn htl(&mut self) -> HTL_W<0> {
+        HTL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for HASH_TABLE_LOW_SPEC {
 #[doc = "`write(|w| ..)` method takes [hash_table_low::W](W) writer structure"]
 impl crate::Writable for HASH_TABLE_LOW_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HASH_TABLE_LOW to value 0"]
 impl crate::Resettable for HASH_TABLE_LOW_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

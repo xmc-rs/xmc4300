@@ -35,191 +35,67 @@ impl From<crate::W<STS_SPEC>> for W {
     }
 }
 #[doc = "Field `CMF` reader - CRC Mismatch Flag"]
-pub struct CMF_R(crate::FieldReader<bool, bool>);
-impl CMF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CMF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMF_R = crate::BitReader<bool>;
 #[doc = "Field `CMF` writer - CRC Mismatch Flag"]
-pub struct CMF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CMF_W<'a, const O: u8> = crate::BitWriter<'a, u32, STS_SPEC, bool, O>;
 #[doc = "Field `CEF` reader - Configuration Error Flag"]
-pub struct CEF_R(crate::FieldReader<bool, bool>);
-impl CEF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CEF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CEF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CEF_R = crate::BitReader<bool>;
 #[doc = "Field `CEF` writer - Configuration Error Flag"]
-pub struct CEF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CEF_W<'a, const O: u8> = crate::BitWriter<'a, u32, STS_SPEC, bool, O>;
 #[doc = "Field `LEF` reader - Length Error Flag"]
-pub struct LEF_R(crate::FieldReader<bool, bool>);
-impl LEF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LEF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LEF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LEF_R = crate::BitReader<bool>;
 #[doc = "Field `LEF` writer - Length Error Flag"]
-pub struct LEF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type LEF_W<'a, const O: u8> = crate::BitWriter<'a, u32, STS_SPEC, bool, O>;
 #[doc = "Field `BEF` reader - Bus Error Flag"]
-pub struct BEF_R(crate::FieldReader<bool, bool>);
-impl BEF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BEF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BEF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BEF_R = crate::BitReader<bool>;
 #[doc = "Field `BEF` writer - Bus Error Flag"]
-pub struct BEF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BEF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type BEF_W<'a, const O: u8> = crate::BitWriter<'a, u32, STS_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - CRC Mismatch Flag"]
     #[inline(always)]
     pub fn cmf(&self) -> CMF_R {
-        CMF_R::new((self.bits & 0x01) != 0)
+        CMF_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Configuration Error Flag"]
     #[inline(always)]
     pub fn cef(&self) -> CEF_R {
-        CEF_R::new(((self.bits >> 1) & 0x01) != 0)
+        CEF_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Length Error Flag"]
     #[inline(always)]
     pub fn lef(&self) -> LEF_R {
-        LEF_R::new(((self.bits >> 2) & 0x01) != 0)
+        LEF_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Bus Error Flag"]
     #[inline(always)]
     pub fn bef(&self) -> BEF_R {
-        BEF_R::new(((self.bits >> 3) & 0x01) != 0)
+        BEF_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - CRC Mismatch Flag"]
     #[inline(always)]
-    pub fn cmf(&mut self) -> CMF_W {
-        CMF_W { w: self }
+    #[must_use]
+    pub fn cmf(&mut self) -> CMF_W<0> {
+        CMF_W::new(self)
     }
     #[doc = "Bit 1 - Configuration Error Flag"]
     #[inline(always)]
-    pub fn cef(&mut self) -> CEF_W {
-        CEF_W { w: self }
+    #[must_use]
+    pub fn cef(&mut self) -> CEF_W<1> {
+        CEF_W::new(self)
     }
     #[doc = "Bit 2 - Length Error Flag"]
     #[inline(always)]
-    pub fn lef(&mut self) -> LEF_W {
-        LEF_W { w: self }
+    #[must_use]
+    pub fn lef(&mut self) -> LEF_W<2> {
+        LEF_W::new(self)
     }
     #[doc = "Bit 3 - Bus Error Flag"]
     #[inline(always)]
-    pub fn bef(&mut self) -> BEF_W {
-        BEF_W { w: self }
+    #[must_use]
+    pub fn bef(&mut self) -> BEF_W<3> {
+        BEF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -240,11 +116,10 @@ impl crate::Readable for STS_SPEC {
 #[doc = "`write(|w| ..)` method takes [sts::W](W) writer structure"]
 impl crate::Writable for STS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets STS to value 0"]
 impl crate::Resettable for STS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

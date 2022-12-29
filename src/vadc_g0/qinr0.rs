@@ -20,19 +20,9 @@ impl From<crate::W<QINR0_SPEC>> for W {
     }
 }
 #[doc = "Field `REQCHNR` writer - Request Channel Number"]
-pub struct REQCHNR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REQCHNR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type REQCHNR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, QINR0_SPEC, u8, u8, 5, O>;
 #[doc = "Refill\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_AW {
     #[doc = "0: No refill: this queue entry is converted once and then invalidated"]
     VALUE1 = 0,
@@ -46,15 +36,8 @@ impl From<RF_AW> for bool {
     }
 }
 #[doc = "Field `RF` writer - Refill"]
-pub struct RF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RF_W<'a, const O: u8> = crate::BitWriter<'a, u32, QINR0_SPEC, RF_AW, O>;
+impl<'a, const O: u8> RF_W<'a, O> {
     #[doc = "No refill: this queue entry is converted once and then invalidated"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -65,25 +48,9 @@ impl<'a> RF_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(RF_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
 #[doc = "Enable Source Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ENSI_AW {
     #[doc = "0: No request source interrupt"]
     VALUE1 = 0,
@@ -97,15 +64,8 @@ impl From<ENSI_AW> for bool {
     }
 }
 #[doc = "Field `ENSI` writer - Enable Source Interrupt"]
-pub struct ENSI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENSI_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENSI_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ENSI_W<'a, const O: u8> = crate::BitWriter<'a, u32, QINR0_SPEC, ENSI_AW, O>;
+impl<'a, const O: u8> ENSI_W<'a, O> {
     #[doc = "No request source interrupt"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -116,25 +76,9 @@ impl<'a> ENSI_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ENSI_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
 #[doc = "External Trigger\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EXTR_AW {
     #[doc = "0: A valid queue entry immediately leads to a conversion request."]
     VALUE1 = 0,
@@ -148,15 +92,8 @@ impl From<EXTR_AW> for bool {
     }
 }
 #[doc = "Field `EXTR` writer - External Trigger"]
-pub struct EXTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EXTR_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EXTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, QINR0_SPEC, EXTR_AW, O>;
+impl<'a, const O: u8> EXTR_W<'a, O> {
     #[doc = "A valid queue entry immediately leads to a conversion request."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -167,43 +104,31 @@ impl<'a> EXTR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(EXTR_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bits 0:4 - Request Channel Number"]
     #[inline(always)]
-    pub fn reqchnr(&mut self) -> REQCHNR_W {
-        REQCHNR_W { w: self }
+    #[must_use]
+    pub fn reqchnr(&mut self) -> REQCHNR_W<0> {
+        REQCHNR_W::new(self)
     }
     #[doc = "Bit 5 - Refill"]
     #[inline(always)]
-    pub fn rf(&mut self) -> RF_W {
-        RF_W { w: self }
+    #[must_use]
+    pub fn rf(&mut self) -> RF_W<5> {
+        RF_W::new(self)
     }
     #[doc = "Bit 6 - Enable Source Interrupt"]
     #[inline(always)]
-    pub fn ensi(&mut self) -> ENSI_W {
-        ENSI_W { w: self }
+    #[must_use]
+    pub fn ensi(&mut self) -> ENSI_W<6> {
+        ENSI_W::new(self)
     }
     #[doc = "Bit 7 - External Trigger"]
     #[inline(always)]
-    pub fn extr(&mut self) -> EXTR_W {
-        EXTR_W { w: self }
+    #[must_use]
+    pub fn extr(&mut self) -> EXTR_W<7> {
+        EXTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -220,11 +145,10 @@ impl crate::RegisterSpec for QINR0_SPEC {
 #[doc = "`write(|w| ..)` method takes [qinr0::W](W) writer structure"]
 impl crate::Writable for QINR0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets QINR0 to value 0"]
 impl crate::Resettable for QINR0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

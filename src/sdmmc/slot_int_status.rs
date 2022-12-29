@@ -13,8 +13,10 @@ impl From<crate::R<SLOT_INT_STATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `SLOT_INT_STATUS` reader - Interrupt Signal for Card Slot"]
+pub type SLOT_INT_STATUS_R = crate::FieldReader<u8, SLOT_INT_STATUS_A>;
 #[doc = "Interrupt Signal for Card Slot\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SLOT_INT_STATUS_A {
     #[doc = "0: Slot 1"]
@@ -26,13 +28,8 @@ impl From<SLOT_INT_STATUS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SLOT_INT_STATUS` reader - Interrupt Signal for Card Slot"]
-pub struct SLOT_INT_STATUS_R(crate::FieldReader<u8, SLOT_INT_STATUS_A>);
 impl SLOT_INT_STATUS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SLOT_INT_STATUS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SLOT_INT_STATUS_A> {
         match self.bits {
@@ -43,14 +40,7 @@ impl SLOT_INT_STATUS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SLOT_INT_STATUS_A::VALUE1
-    }
-}
-impl core::ops::Deref for SLOT_INT_STATUS_R {
-    type Target = crate::FieldReader<u8, SLOT_INT_STATUS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SLOT_INT_STATUS_A::VALUE1
     }
 }
 impl R {
@@ -71,8 +61,5 @@ impl crate::Readable for SLOT_INT_STATUS_SPEC {
 }
 #[doc = "`reset()` method sets SLOT_INT_STATUS to value 0"]
 impl crate::Resettable for SLOT_INT_STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

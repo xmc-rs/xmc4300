@@ -35,43 +35,22 @@ impl From<crate::W<DC_SYS_TIME_FIL_DEPTH_SPEC>> for W {
     }
 }
 #[doc = "Field `FILTER_DEPTH` reader - Filter depth for averaging the received System Time deviation"]
-pub struct FILTER_DEPTH_R(crate::FieldReader<u8, u8>);
-impl FILTER_DEPTH_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FILTER_DEPTH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FILTER_DEPTH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FILTER_DEPTH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FILTER_DEPTH` writer - Filter depth for averaging the received System Time deviation"]
-pub struct FILTER_DEPTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FILTER_DEPTH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u8 & 0x0f);
-        self.w
-    }
-}
+pub type FILTER_DEPTH_W<'a, const O: u8> = crate::FieldWriter<'a, u8, DC_SYS_TIME_FIL_DEPTH_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Filter depth for averaging the received System Time deviation"]
     #[inline(always)]
     pub fn filter_depth(&self) -> FILTER_DEPTH_R {
-        FILTER_DEPTH_R::new((self.bits & 0x0f) as u8)
+        FILTER_DEPTH_R::new(self.bits & 0x0f)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Filter depth for averaging the received System Time deviation"]
     #[inline(always)]
-    pub fn filter_depth(&mut self) -> FILTER_DEPTH_W {
-        FILTER_DEPTH_W { w: self }
+    #[must_use]
+    pub fn filter_depth(&mut self) -> FILTER_DEPTH_W<0> {
+        FILTER_DEPTH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for DC_SYS_TIME_FIL_DEPTH_SPEC {
 #[doc = "`write(|w| ..)` method takes [dc_sys_time_fil_depth::W](W) writer structure"]
 impl crate::Writable for DC_SYS_TIME_FIL_DEPTH_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DC_SYS_TIME_FIL_DEPTH to value 0x04"]
 impl crate::Resettable for DC_SYS_TIME_FIL_DEPTH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x04
-    }
+    const RESET_VALUE: Self::Ux = 0x04;
 }

@@ -35,79 +35,37 @@ impl From<crate::W<DIEPTSIZ_SPEC>> for W {
     }
 }
 #[doc = "Field `XferSize` reader - Transfer Size"]
-pub struct XFERSIZE_R(crate::FieldReader<u32, u32>);
-impl XFERSIZE_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        XFERSIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for XFERSIZE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type XFER_SIZE_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `XferSize` writer - Transfer Size"]
-pub struct XFERSIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XFERSIZE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0007_ffff) | (value as u32 & 0x0007_ffff);
-        self.w
-    }
-}
+pub type XFER_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DIEPTSIZ_SPEC, u32, u32, 19, O>;
 #[doc = "Field `PktCnt` reader - Packet Count"]
-pub struct PKTCNT_R(crate::FieldReader<u16, u16>);
-impl PKTCNT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PKTCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PKTCNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PKT_CNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PktCnt` writer - Packet Count"]
-pub struct PKTCNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PKTCNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03ff << 19)) | ((value as u32 & 0x03ff) << 19);
-        self.w
-    }
-}
+pub type PKT_CNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DIEPTSIZ_SPEC, u16, u16, 10, O>;
 impl R {
     #[doc = "Bits 0:18 - Transfer Size"]
     #[inline(always)]
-    pub fn xfer_size(&self) -> XFERSIZE_R {
-        XFERSIZE_R::new((self.bits & 0x0007_ffff) as u32)
+    pub fn xfer_size(&self) -> XFER_SIZE_R {
+        XFER_SIZE_R::new(self.bits & 0x0007_ffff)
     }
     #[doc = "Bits 19:28 - Packet Count"]
     #[inline(always)]
-    pub fn pkt_cnt(&self) -> PKTCNT_R {
-        PKTCNT_R::new(((self.bits >> 19) & 0x03ff) as u16)
+    pub fn pkt_cnt(&self) -> PKT_CNT_R {
+        PKT_CNT_R::new(((self.bits >> 19) & 0x03ff) as u16)
     }
 }
 impl W {
     #[doc = "Bits 0:18 - Transfer Size"]
     #[inline(always)]
-    pub fn xfer_size(&mut self) -> XFERSIZE_W {
-        XFERSIZE_W { w: self }
+    #[must_use]
+    pub fn xfer_size(&mut self) -> XFER_SIZE_W<0> {
+        XFER_SIZE_W::new(self)
     }
     #[doc = "Bits 19:28 - Packet Count"]
     #[inline(always)]
-    pub fn pkt_cnt(&mut self) -> PKTCNT_W {
-        PKTCNT_W { w: self }
+    #[must_use]
+    pub fn pkt_cnt(&mut self) -> PKT_CNT_W<19> {
+        PKT_CNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for DIEPTSIZ_SPEC {
 #[doc = "`write(|w| ..)` method takes [dieptsiz::W](W) writer structure"]
 impl crate::Writable for DIEPTSIZ_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DIEPTSIZ to value 0"]
 impl crate::Resettable for DIEPTSIZ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

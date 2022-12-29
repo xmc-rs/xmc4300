@@ -14,19 +14,7 @@ impl From<crate::R<CLKCALCONST_SPEC>> for R {
     }
 }
 #[doc = "Field `CALIBCONST` reader - Clock Calibration Constant Value"]
-pub struct CALIBCONST_R(crate::FieldReader<u8, u8>);
-impl CALIBCONST_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CALIBCONST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CALIBCONST_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CALIBCONST_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:3 - Clock Calibration Constant Value"]
     #[inline(always)]
@@ -45,8 +33,5 @@ impl crate::Readable for CLKCALCONST_SPEC {
 }
 #[doc = "`reset()` method sets CLKCALCONST to value 0"]
 impl crate::Resettable for CLKCALCONST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

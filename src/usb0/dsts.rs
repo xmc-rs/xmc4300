@@ -14,102 +14,56 @@ impl From<crate::R<DSTS_SPEC>> for R {
     }
 }
 #[doc = "Field `SuspSts` reader - Suspend Status"]
-pub struct SUSPSTS_R(crate::FieldReader<bool, bool>);
-impl SUSPSTS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SUSPSTS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SUSPSTS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SUSP_STS_R = crate::BitReader<bool>;
+#[doc = "Field `EnumSpd` reader - Enumerated Speed"]
+pub type ENUM_SPD_R = crate::FieldReader<u8, ENUM_SPD_A>;
 #[doc = "Enumerated Speed\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ENUMSPD_A {
+pub enum ENUM_SPD_A {
     #[doc = "3: Full speed (PHY clock is running at 48 MHz)"]
     VALUE4 = 3,
 }
-impl From<ENUMSPD_A> for u8 {
+impl From<ENUM_SPD_A> for u8 {
     #[inline(always)]
-    fn from(variant: ENUMSPD_A) -> Self {
+    fn from(variant: ENUM_SPD_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `EnumSpd` reader - Enumerated Speed"]
-pub struct ENUMSPD_R(crate::FieldReader<u8, ENUMSPD_A>);
-impl ENUMSPD_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ENUMSPD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl ENUM_SPD_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ENUMSPD_A> {
+    pub fn variant(&self) -> Option<ENUM_SPD_A> {
         match self.bits {
-            3 => Some(ENUMSPD_A::VALUE4),
+            3 => Some(ENUM_SPD_A::VALUE4),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == ENUMSPD_A::VALUE4
-    }
-}
-impl core::ops::Deref for ENUMSPD_R {
-    type Target = crate::FieldReader<u8, ENUMSPD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENUM_SPD_A::VALUE4
     }
 }
 #[doc = "Field `ErrticErr` reader - Erratic Error"]
-pub struct ERRTICERR_R(crate::FieldReader<bool, bool>);
-impl ERRTICERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ERRTICERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERRTICERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERRTIC_ERR_R = crate::BitReader<bool>;
 #[doc = "Field `SOFFN` reader - Frame Number of the Received SOF"]
-pub struct SOFFN_R(crate::FieldReader<u16, u16>);
-impl SOFFN_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        SOFFN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SOFFN_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SOFFN_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bit 0 - Suspend Status"]
     #[inline(always)]
-    pub fn susp_sts(&self) -> SUSPSTS_R {
-        SUSPSTS_R::new((self.bits & 0x01) != 0)
+    pub fn susp_sts(&self) -> SUSP_STS_R {
+        SUSP_STS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:2 - Enumerated Speed"]
     #[inline(always)]
-    pub fn enum_spd(&self) -> ENUMSPD_R {
-        ENUMSPD_R::new(((self.bits >> 1) & 0x03) as u8)
+    pub fn enum_spd(&self) -> ENUM_SPD_R {
+        ENUM_SPD_R::new(((self.bits >> 1) & 3) as u8)
     }
     #[doc = "Bit 3 - Erratic Error"]
     #[inline(always)]
-    pub fn errtic_err(&self) -> ERRTICERR_R {
-        ERRTICERR_R::new(((self.bits >> 3) & 0x01) != 0)
+    pub fn errtic_err(&self) -> ERRTIC_ERR_R {
+        ERRTIC_ERR_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 8:21 - Frame Number of the Received SOF"]
     #[inline(always)]
@@ -128,8 +82,5 @@ impl crate::Readable for DSTS_SPEC {
 }
 #[doc = "`reset()` method sets DSTS to value 0x02"]
 impl crate::Resettable for DSTS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02
-    }
+    const RESET_VALUE: Self::Ux = 0x02;
 }

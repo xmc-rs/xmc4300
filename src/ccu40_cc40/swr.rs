@@ -20,221 +20,69 @@ impl From<crate::W<SWR_SPEC>> for W {
     }
 }
 #[doc = "Field `RPM` writer - Period match while counting up clear"]
-pub struct RPM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RPM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RPM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWR_SPEC, bool, O>;
 #[doc = "Field `ROM` writer - One match while counting down clear"]
-pub struct ROM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ROM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type ROM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWR_SPEC, bool, O>;
 #[doc = "Field `RCMU` writer - Compare match while counting up clear"]
-pub struct RCMU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCMU_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type RCMU_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWR_SPEC, bool, O>;
 #[doc = "Field `RCMD` writer - Compare match while counting down clear"]
-pub struct RCMD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCMD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type RCMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWR_SPEC, bool, O>;
 #[doc = "Field `RE0A` writer - Event 0 detection clear"]
-pub struct RE0A_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RE0A_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type RE0A_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWR_SPEC, bool, O>;
 #[doc = "Field `RE1A` writer - Event 1 detection clear"]
-pub struct RE1A_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RE1A_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type RE1A_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWR_SPEC, bool, O>;
 #[doc = "Field `RE2A` writer - Event 2 detection clear"]
-pub struct RE2A_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RE2A_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type RE2A_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWR_SPEC, bool, O>;
 #[doc = "Field `RTRPF` writer - Trap Flag status clear"]
-pub struct RTRPF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTRPF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type RTRPF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Period match while counting up clear"]
     #[inline(always)]
-    pub fn rpm(&mut self) -> RPM_W {
-        RPM_W { w: self }
+    #[must_use]
+    pub fn rpm(&mut self) -> RPM_W<0> {
+        RPM_W::new(self)
     }
     #[doc = "Bit 1 - One match while counting down clear"]
     #[inline(always)]
-    pub fn rom(&mut self) -> ROM_W {
-        ROM_W { w: self }
+    #[must_use]
+    pub fn rom(&mut self) -> ROM_W<1> {
+        ROM_W::new(self)
     }
     #[doc = "Bit 2 - Compare match while counting up clear"]
     #[inline(always)]
-    pub fn rcmu(&mut self) -> RCMU_W {
-        RCMU_W { w: self }
+    #[must_use]
+    pub fn rcmu(&mut self) -> RCMU_W<2> {
+        RCMU_W::new(self)
     }
     #[doc = "Bit 3 - Compare match while counting down clear"]
     #[inline(always)]
-    pub fn rcmd(&mut self) -> RCMD_W {
-        RCMD_W { w: self }
+    #[must_use]
+    pub fn rcmd(&mut self) -> RCMD_W<3> {
+        RCMD_W::new(self)
     }
     #[doc = "Bit 8 - Event 0 detection clear"]
     #[inline(always)]
-    pub fn re0a(&mut self) -> RE0A_W {
-        RE0A_W { w: self }
+    #[must_use]
+    pub fn re0a(&mut self) -> RE0A_W<8> {
+        RE0A_W::new(self)
     }
     #[doc = "Bit 9 - Event 1 detection clear"]
     #[inline(always)]
-    pub fn re1a(&mut self) -> RE1A_W {
-        RE1A_W { w: self }
+    #[must_use]
+    pub fn re1a(&mut self) -> RE1A_W<9> {
+        RE1A_W::new(self)
     }
     #[doc = "Bit 10 - Event 2 detection clear"]
     #[inline(always)]
-    pub fn re2a(&mut self) -> RE2A_W {
-        RE2A_W { w: self }
+    #[must_use]
+    pub fn re2a(&mut self) -> RE2A_W<10> {
+        RE2A_W::new(self)
     }
     #[doc = "Bit 11 - Trap Flag status clear"]
     #[inline(always)]
-    pub fn rtrpf(&mut self) -> RTRPF_W {
-        RTRPF_W { w: self }
+    #[must_use]
+    pub fn rtrpf(&mut self) -> RTRPF_W<11> {
+        RTRPF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -251,11 +99,10 @@ impl crate::RegisterSpec for SWR_SPEC {
 #[doc = "`write(|w| ..)` method takes [swr::W](W) writer structure"]
 impl crate::Writable for SWR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SWR to value 0"]
 impl crate::Resettable for SWR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

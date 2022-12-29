@@ -34,8 +34,10 @@ impl From<crate::W<CCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `NONBASETHRDENA` reader - Non Base Thread Mode Enable"]
+pub type NONBASETHRDENA_R = crate::BitReader<NONBASETHRDENA_A>;
 #[doc = "Non Base Thread Mode Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NONBASETHRDENA_A {
     #[doc = "0: processor can enter Thread mode only when no exception is active."]
     VALUE1 = 0,
@@ -49,13 +51,8 @@ impl From<NONBASETHRDENA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `NONBASETHRDENA` reader - Non Base Thread Mode Enable"]
-pub struct NONBASETHRDENA_R(crate::FieldReader<bool, NONBASETHRDENA_A>);
 impl NONBASETHRDENA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NONBASETHRDENA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NONBASETHRDENA_A {
         match self.bits {
@@ -66,31 +63,17 @@ impl NONBASETHRDENA_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == NONBASETHRDENA_A::VALUE1
+        *self == NONBASETHRDENA_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == NONBASETHRDENA_A::VALUE2
-    }
-}
-impl core::ops::Deref for NONBASETHRDENA_R {
-    type Target = crate::FieldReader<bool, NONBASETHRDENA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == NONBASETHRDENA_A::VALUE2
     }
 }
 #[doc = "Field `NONBASETHRDENA` writer - Non Base Thread Mode Enable"]
-pub struct NONBASETHRDENA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NONBASETHRDENA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NONBASETHRDENA_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type NONBASETHRDENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, NONBASETHRDENA_A, O>;
+impl<'a, const O: u8> NONBASETHRDENA_W<'a, O> {
     #[doc = "processor can enter Thread mode only when no exception is active."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -102,25 +85,11 @@ set to one. When this value is loaded into the PC it indicates to the processor 
     pub fn value2(self) -> &'a mut W {
         self.variant(NONBASETHRDENA_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `USERSETMPEND` reader - User Set Pending Enable"]
+pub type USERSETMPEND_R = crate::BitReader<USERSETMPEND_A>;
 #[doc = "User Set Pending Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum USERSETMPEND_A {
     #[doc = "0: disable"]
     VALUE1 = 0,
@@ -133,13 +102,8 @@ impl From<USERSETMPEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `USERSETMPEND` reader - User Set Pending Enable"]
-pub struct USERSETMPEND_R(crate::FieldReader<bool, USERSETMPEND_A>);
 impl USERSETMPEND_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        USERSETMPEND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USERSETMPEND_A {
         match self.bits {
@@ -150,31 +114,17 @@ impl USERSETMPEND_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == USERSETMPEND_A::VALUE1
+        *self == USERSETMPEND_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == USERSETMPEND_A::VALUE2
-    }
-}
-impl core::ops::Deref for USERSETMPEND_R {
-    type Target = crate::FieldReader<bool, USERSETMPEND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == USERSETMPEND_A::VALUE2
     }
 }
 #[doc = "Field `USERSETMPEND` writer - User Set Pending Enable"]
-pub struct USERSETMPEND_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USERSETMPEND_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USERSETMPEND_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type USERSETMPEND_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, USERSETMPEND_A, O>;
+impl<'a, const O: u8> USERSETMPEND_W<'a, O> {
     #[doc = "disable"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -185,25 +135,11 @@ impl<'a> USERSETMPEND_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(USERSETMPEND_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `UNALIGN_TRP` reader - Unaligned Access Trap Enable"]
+pub type UNALIGN_TRP_R = crate::BitReader<UNALIGN_TRP_A>;
 #[doc = "Unaligned Access Trap Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UNALIGN_TRP_A {
     #[doc = "0: do not trap unaligned halfword and word accesses"]
     VALUE1 = 0,
@@ -216,13 +152,8 @@ impl From<UNALIGN_TRP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UNALIGN_TRP` reader - Unaligned Access Trap Enable"]
-pub struct UNALIGN_TRP_R(crate::FieldReader<bool, UNALIGN_TRP_A>);
 impl UNALIGN_TRP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UNALIGN_TRP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UNALIGN_TRP_A {
         match self.bits {
@@ -233,31 +164,17 @@ impl UNALIGN_TRP_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == UNALIGN_TRP_A::VALUE1
+        *self == UNALIGN_TRP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == UNALIGN_TRP_A::VALUE2
-    }
-}
-impl core::ops::Deref for UNALIGN_TRP_R {
-    type Target = crate::FieldReader<bool, UNALIGN_TRP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UNALIGN_TRP_A::VALUE2
     }
 }
 #[doc = "Field `UNALIGN_TRP` writer - Unaligned Access Trap Enable"]
-pub struct UNALIGN_TRP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UNALIGN_TRP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UNALIGN_TRP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type UNALIGN_TRP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, UNALIGN_TRP_A, O>;
+impl<'a, const O: u8> UNALIGN_TRP_W<'a, O> {
     #[doc = "do not trap unaligned halfword and word accesses"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -268,25 +185,11 @@ impl<'a> UNALIGN_TRP_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(UNALIGN_TRP_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `DIV_0_TRP` reader - Divide by Zero Trap Enable"]
+pub type DIV_0_TRP_R = crate::BitReader<DIV_0_TRP_A>;
 #[doc = "Divide by Zero Trap Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DIV_0_TRP_A {
     #[doc = "0: do not trap divide by 0"]
     VALUE1 = 0,
@@ -299,13 +202,8 @@ impl From<DIV_0_TRP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DIV_0_TRP` reader - Divide by Zero Trap Enable"]
-pub struct DIV_0_TRP_R(crate::FieldReader<bool, DIV_0_TRP_A>);
 impl DIV_0_TRP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIV_0_TRP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIV_0_TRP_A {
         match self.bits {
@@ -316,31 +214,17 @@ impl DIV_0_TRP_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DIV_0_TRP_A::VALUE1
+        *self == DIV_0_TRP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DIV_0_TRP_A::VALUE2
-    }
-}
-impl core::ops::Deref for DIV_0_TRP_R {
-    type Target = crate::FieldReader<bool, DIV_0_TRP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DIV_0_TRP_A::VALUE2
     }
 }
 #[doc = "Field `DIV_0_TRP` writer - Divide by Zero Trap Enable"]
-pub struct DIV_0_TRP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIV_0_TRP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DIV_0_TRP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DIV_0_TRP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, DIV_0_TRP_A, O>;
+impl<'a, const O: u8> DIV_0_TRP_W<'a, O> {
     #[doc = "do not trap divide by 0"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -351,25 +235,11 @@ impl<'a> DIV_0_TRP_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(DIV_0_TRP_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `BFHFNMIGN` reader - Bus Fault Hard Fault and NMI Ignore"]
+pub type BFHFNMIGN_R = crate::BitReader<BFHFNMIGN_A>;
 #[doc = "Bus Fault Hard Fault and NMI Ignore\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BFHFNMIGN_A {
     #[doc = "0: data bus faults caused by load and store instructions cause a lock-up"]
     VALUE1 = 0,
@@ -382,13 +252,8 @@ impl From<BFHFNMIGN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BFHFNMIGN` reader - Bus Fault Hard Fault and NMI Ignore"]
-pub struct BFHFNMIGN_R(crate::FieldReader<bool, BFHFNMIGN_A>);
 impl BFHFNMIGN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BFHFNMIGN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFHFNMIGN_A {
         match self.bits {
@@ -399,31 +264,17 @@ impl BFHFNMIGN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == BFHFNMIGN_A::VALUE1
+        *self == BFHFNMIGN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == BFHFNMIGN_A::VALUE2
-    }
-}
-impl core::ops::Deref for BFHFNMIGN_R {
-    type Target = crate::FieldReader<bool, BFHFNMIGN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BFHFNMIGN_A::VALUE2
     }
 }
 #[doc = "Field `BFHFNMIGN` writer - Bus Fault Hard Fault and NMI Ignore"]
-pub struct BFHFNMIGN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BFHFNMIGN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BFHFNMIGN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type BFHFNMIGN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, BFHFNMIGN_A, O>;
+impl<'a, const O: u8> BFHFNMIGN_W<'a, O> {
     #[doc = "data bus faults caused by load and store instructions cause a lock-up"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -434,25 +285,11 @@ impl<'a> BFHFNMIGN_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(BFHFNMIGN_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `STKALIGN` reader - Stack Alignment"]
+pub type STKALIGN_R = crate::BitReader<STKALIGN_A>;
 #[doc = "Stack Alignment\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum STKALIGN_A {
     #[doc = "0: 4-byte aligned"]
     VALUE1 = 0,
@@ -465,13 +302,8 @@ impl From<STKALIGN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STKALIGN` reader - Stack Alignment"]
-pub struct STKALIGN_R(crate::FieldReader<bool, STKALIGN_A>);
 impl STKALIGN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        STKALIGN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STKALIGN_A {
         match self.bits {
@@ -482,31 +314,17 @@ impl STKALIGN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == STKALIGN_A::VALUE1
+        *self == STKALIGN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == STKALIGN_A::VALUE2
-    }
-}
-impl core::ops::Deref for STKALIGN_R {
-    type Target = crate::FieldReader<bool, STKALIGN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STKALIGN_A::VALUE2
     }
 }
 #[doc = "Field `STKALIGN` writer - Stack Alignment"]
-pub struct STKALIGN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STKALIGN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STKALIGN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type STKALIGN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, STKALIGN_A, O>;
+impl<'a, const O: u8> STKALIGN_W<'a, O> {
     #[doc = "4-byte aligned"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -517,85 +335,75 @@ impl<'a> STKALIGN_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(STKALIGN_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Non Base Thread Mode Enable"]
     #[inline(always)]
     pub fn nonbasethrdena(&self) -> NONBASETHRDENA_R {
-        NONBASETHRDENA_R::new((self.bits & 0x01) != 0)
+        NONBASETHRDENA_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - User Set Pending Enable"]
     #[inline(always)]
     pub fn usersetmpend(&self) -> USERSETMPEND_R {
-        USERSETMPEND_R::new(((self.bits >> 1) & 0x01) != 0)
+        USERSETMPEND_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 3 - Unaligned Access Trap Enable"]
     #[inline(always)]
     pub fn unalign_trp(&self) -> UNALIGN_TRP_R {
-        UNALIGN_TRP_R::new(((self.bits >> 3) & 0x01) != 0)
+        UNALIGN_TRP_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Divide by Zero Trap Enable"]
     #[inline(always)]
     pub fn div_0_trp(&self) -> DIV_0_TRP_R {
-        DIV_0_TRP_R::new(((self.bits >> 4) & 0x01) != 0)
+        DIV_0_TRP_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 8 - Bus Fault Hard Fault and NMI Ignore"]
     #[inline(always)]
     pub fn bfhfnmign(&self) -> BFHFNMIGN_R {
-        BFHFNMIGN_R::new(((self.bits >> 8) & 0x01) != 0)
+        BFHFNMIGN_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Stack Alignment"]
     #[inline(always)]
     pub fn stkalign(&self) -> STKALIGN_R {
-        STKALIGN_R::new(((self.bits >> 9) & 0x01) != 0)
+        STKALIGN_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Non Base Thread Mode Enable"]
     #[inline(always)]
-    pub fn nonbasethrdena(&mut self) -> NONBASETHRDENA_W {
-        NONBASETHRDENA_W { w: self }
+    #[must_use]
+    pub fn nonbasethrdena(&mut self) -> NONBASETHRDENA_W<0> {
+        NONBASETHRDENA_W::new(self)
     }
     #[doc = "Bit 1 - User Set Pending Enable"]
     #[inline(always)]
-    pub fn usersetmpend(&mut self) -> USERSETMPEND_W {
-        USERSETMPEND_W { w: self }
+    #[must_use]
+    pub fn usersetmpend(&mut self) -> USERSETMPEND_W<1> {
+        USERSETMPEND_W::new(self)
     }
     #[doc = "Bit 3 - Unaligned Access Trap Enable"]
     #[inline(always)]
-    pub fn unalign_trp(&mut self) -> UNALIGN_TRP_W {
-        UNALIGN_TRP_W { w: self }
+    #[must_use]
+    pub fn unalign_trp(&mut self) -> UNALIGN_TRP_W<3> {
+        UNALIGN_TRP_W::new(self)
     }
     #[doc = "Bit 4 - Divide by Zero Trap Enable"]
     #[inline(always)]
-    pub fn div_0_trp(&mut self) -> DIV_0_TRP_W {
-        DIV_0_TRP_W { w: self }
+    #[must_use]
+    pub fn div_0_trp(&mut self) -> DIV_0_TRP_W<4> {
+        DIV_0_TRP_W::new(self)
     }
     #[doc = "Bit 8 - Bus Fault Hard Fault and NMI Ignore"]
     #[inline(always)]
-    pub fn bfhfnmign(&mut self) -> BFHFNMIGN_W {
-        BFHFNMIGN_W { w: self }
+    #[must_use]
+    pub fn bfhfnmign(&mut self) -> BFHFNMIGN_W<8> {
+        BFHFNMIGN_W::new(self)
     }
     #[doc = "Bit 9 - Stack Alignment"]
     #[inline(always)]
-    pub fn stkalign(&mut self) -> STKALIGN_W {
-        STKALIGN_W { w: self }
+    #[must_use]
+    pub fn stkalign(&mut self) -> STKALIGN_W<9> {
+        STKALIGN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -616,11 +424,10 @@ impl crate::Readable for CCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ccr::W](W) writer structure"]
 impl crate::Writable for CCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CCR to value 0x0200"]
 impl crate::Resettable for CCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0200
-    }
+    const RESET_VALUE: Self::Ux = 0x0200;
 }

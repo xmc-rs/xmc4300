@@ -34,8 +34,10 @@ impl From<crate::W<QCTRL0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SRCRESREG` reader - Source-specific Result Register"]
+pub type SRCRESREG_R = crate::FieldReader<u8, SRCRESREG_A>;
 #[doc = "Source-specific Result Register\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SRCRESREG_A {
     #[doc = "0: Use GxCHCTRy.RESREG to select a group result register"]
@@ -51,13 +53,8 @@ impl From<SRCRESREG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SRCRESREG` reader - Source-specific Result Register"]
-pub struct SRCRESREG_R(crate::FieldReader<u8, SRCRESREG_A>);
 impl SRCRESREG_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SRCRESREG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SRCRESREG_A> {
         match self.bits {
@@ -70,36 +67,22 @@ impl SRCRESREG_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SRCRESREG_A::VALUE1
+        *self == SRCRESREG_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SRCRESREG_A::VALUE2
+        *self == SRCRESREG_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == SRCRESREG_A::VALUE3
-    }
-}
-impl core::ops::Deref for SRCRESREG_R {
-    type Target = crate::FieldReader<u8, SRCRESREG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SRCRESREG_A::VALUE3
     }
 }
 #[doc = "Field `SRCRESREG` writer - Source-specific Result Register"]
-pub struct SRCRESREG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRCRESREG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SRCRESREG_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type SRCRESREG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, QCTRL0_SPEC, u8, SRCRESREG_A, 4, O>;
+impl<'a, const O: u8> SRCRESREG_W<'a, O> {
     #[doc = "Use GxCHCTRy.RESREG to select a group result register"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -115,55 +98,17 @@ impl<'a> SRCRESREG_W<'a> {
     pub fn value3(self) -> &'a mut W {
         self.variant(SRCRESREG_A::VALUE3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
 }
 #[doc = "Field `XTSEL` reader - External Trigger Input Selection"]
-pub struct XTSEL_R(crate::FieldReader<u8, u8>);
-impl XTSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        XTSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for XTSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type XTSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `XTSEL` writer - External Trigger Input Selection"]
-pub struct XTSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XTSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type XTSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, QCTRL0_SPEC, u8, u8, 4, O>;
 #[doc = "Field `XTLVL` reader - External Trigger Level"]
-pub struct XTLVL_R(crate::FieldReader<bool, bool>);
-impl XTLVL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        XTLVL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for XTLVL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type XTLVL_R = crate::BitReader<bool>;
+#[doc = "Field `XTMODE` reader - Trigger Operating Mode"]
+pub type XTMODE_R = crate::FieldReader<u8, XTMODE_A>;
 #[doc = "Trigger Operating Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum XTMODE_A {
     #[doc = "0: No external trigger"]
@@ -181,13 +126,8 @@ impl From<XTMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `XTMODE` reader - Trigger Operating Mode"]
-pub struct XTMODE_R(crate::FieldReader<u8, XTMODE_A>);
 impl XTMODE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        XTMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> XTMODE_A {
         match self.bits {
@@ -201,41 +141,27 @@ impl XTMODE_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == XTMODE_A::VALUE1
+        *self == XTMODE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == XTMODE_A::VALUE2
+        *self == XTMODE_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == XTMODE_A::VALUE3
+        *self == XTMODE_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == XTMODE_A::VALUE4
-    }
-}
-impl core::ops::Deref for XTMODE_R {
-    type Target = crate::FieldReader<u8, XTMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == XTMODE_A::VALUE4
     }
 }
 #[doc = "Field `XTMODE` writer - Trigger Operating Mode"]
-pub struct XTMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XTMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XTMODE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type XTMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, QCTRL0_SPEC, u8, XTMODE_A, 2, O>;
+impl<'a, const O: u8> XTMODE_W<'a, O> {
     #[doc = "No external trigger"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -256,15 +182,9 @@ impl<'a> XTMODE_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(XTMODE_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 13)) | ((value as u32 & 0x03) << 13);
-        self.w
-    }
 }
 #[doc = "Write Control for Trigger Configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum XTWC_AW {
     #[doc = "0: No write access to trigger configuration"]
     VALUE1 = 0,
@@ -278,15 +198,8 @@ impl From<XTWC_AW> for bool {
     }
 }
 #[doc = "Field `XTWC` writer - Write Control for Trigger Configuration"]
-pub struct XTWC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XTWC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XTWC_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type XTWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, QCTRL0_SPEC, XTWC_AW, O>;
+impl<'a, const O: u8> XTWC_W<'a, O> {
     #[doc = "No write access to trigger configuration"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -297,65 +210,15 @@ impl<'a> XTWC_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(XTWC_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
 }
 #[doc = "Field `GTSEL` reader - Gate Input Selection"]
-pub struct GTSEL_R(crate::FieldReader<u8, u8>);
-impl GTSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        GTSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GTSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GTSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `GTSEL` writer - Gate Input Selection"]
-pub struct GTSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GTSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
-}
+pub type GTSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, QCTRL0_SPEC, u8, u8, 4, O>;
 #[doc = "Field `GTLVL` reader - Gate Input Level"]
-pub struct GTLVL_R(crate::FieldReader<bool, bool>);
-impl GTLVL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GTLVL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GTLVL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GTLVL_R = crate::BitReader<bool>;
 #[doc = "Write Control for Gate Configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GTWC_AW {
     #[doc = "0: No write access to gate configuration"]
     VALUE1 = 0,
@@ -369,15 +232,8 @@ impl From<GTWC_AW> for bool {
     }
 }
 #[doc = "Field `GTWC` writer - Write Control for Gate Configuration"]
-pub struct GTWC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GTWC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GTWC_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type GTWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, QCTRL0_SPEC, GTWC_AW, O>;
+impl<'a, const O: u8> GTWC_W<'a, O> {
     #[doc = "No write access to gate configuration"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -388,25 +244,11 @@ impl<'a> GTWC_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(GTWC_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
 }
+#[doc = "Field `TMEN` reader - Timer Mode Enable"]
+pub type TMEN_R = crate::BitReader<TMEN_A>;
 #[doc = "Timer Mode Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TMEN_A {
     #[doc = "0: No timer mode: standard gating mechanism can be used"]
     VALUE1 = 0,
@@ -419,13 +261,8 @@ impl From<TMEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TMEN` reader - Timer Mode Enable"]
-pub struct TMEN_R(crate::FieldReader<bool, TMEN_A>);
 impl TMEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TMEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TMEN_A {
         match self.bits {
@@ -436,31 +273,17 @@ impl TMEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TMEN_A::VALUE1
+        *self == TMEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TMEN_A::VALUE2
-    }
-}
-impl core::ops::Deref for TMEN_R {
-    type Target = crate::FieldReader<bool, TMEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TMEN_A::VALUE2
     }
 }
 #[doc = "Field `TMEN` writer - Timer Mode Enable"]
-pub struct TMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TMEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TMEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, QCTRL0_SPEC, TMEN_A, O>;
+impl<'a, const O: u8> TMEN_W<'a, O> {
     #[doc = "No timer mode: standard gating mechanism can be used"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -471,25 +294,9 @@ impl<'a> TMEN_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(TMEN_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
 }
 #[doc = "Write Control for Timer Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TMWC_AW {
     #[doc = "0: No write access to timer mode"]
     VALUE1 = 0,
@@ -503,15 +310,8 @@ impl From<TMWC_AW> for bool {
     }
 }
 #[doc = "Field `TMWC` writer - Write Control for Timer Mode"]
-pub struct TMWC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TMWC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TMWC_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TMWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, QCTRL0_SPEC, TMWC_AW, O>;
+impl<'a, const O: u8> TMWC_W<'a, O> {
     #[doc = "No write access to timer mode"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -521,22 +321,6 @@ impl<'a> TMWC_W<'a> {
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
         self.variant(TMWC_AW::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
     }
 }
 impl R {
@@ -553,12 +337,12 @@ impl R {
     #[doc = "Bit 12 - External Trigger Level"]
     #[inline(always)]
     pub fn xtlvl(&self) -> XTLVL_R {
-        XTLVL_R::new(((self.bits >> 12) & 0x01) != 0)
+        XTLVL_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bits 13:14 - Trigger Operating Mode"]
     #[inline(always)]
     pub fn xtmode(&self) -> XTMODE_R {
-        XTMODE_R::new(((self.bits >> 13) & 0x03) as u8)
+        XTMODE_R::new(((self.bits >> 13) & 3) as u8)
     }
     #[doc = "Bits 16:19 - Gate Input Selection"]
     #[inline(always)]
@@ -568,54 +352,62 @@ impl R {
     #[doc = "Bit 20 - Gate Input Level"]
     #[inline(always)]
     pub fn gtlvl(&self) -> GTLVL_R {
-        GTLVL_R::new(((self.bits >> 20) & 0x01) != 0)
+        GTLVL_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 28 - Timer Mode Enable"]
     #[inline(always)]
     pub fn tmen(&self) -> TMEN_R {
-        TMEN_R::new(((self.bits >> 28) & 0x01) != 0)
+        TMEN_R::new(((self.bits >> 28) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Source-specific Result Register"]
     #[inline(always)]
-    pub fn srcresreg(&mut self) -> SRCRESREG_W {
-        SRCRESREG_W { w: self }
+    #[must_use]
+    pub fn srcresreg(&mut self) -> SRCRESREG_W<0> {
+        SRCRESREG_W::new(self)
     }
     #[doc = "Bits 8:11 - External Trigger Input Selection"]
     #[inline(always)]
-    pub fn xtsel(&mut self) -> XTSEL_W {
-        XTSEL_W { w: self }
+    #[must_use]
+    pub fn xtsel(&mut self) -> XTSEL_W<8> {
+        XTSEL_W::new(self)
     }
     #[doc = "Bits 13:14 - Trigger Operating Mode"]
     #[inline(always)]
-    pub fn xtmode(&mut self) -> XTMODE_W {
-        XTMODE_W { w: self }
+    #[must_use]
+    pub fn xtmode(&mut self) -> XTMODE_W<13> {
+        XTMODE_W::new(self)
     }
     #[doc = "Bit 15 - Write Control for Trigger Configuration"]
     #[inline(always)]
-    pub fn xtwc(&mut self) -> XTWC_W {
-        XTWC_W { w: self }
+    #[must_use]
+    pub fn xtwc(&mut self) -> XTWC_W<15> {
+        XTWC_W::new(self)
     }
     #[doc = "Bits 16:19 - Gate Input Selection"]
     #[inline(always)]
-    pub fn gtsel(&mut self) -> GTSEL_W {
-        GTSEL_W { w: self }
+    #[must_use]
+    pub fn gtsel(&mut self) -> GTSEL_W<16> {
+        GTSEL_W::new(self)
     }
     #[doc = "Bit 23 - Write Control for Gate Configuration"]
     #[inline(always)]
-    pub fn gtwc(&mut self) -> GTWC_W {
-        GTWC_W { w: self }
+    #[must_use]
+    pub fn gtwc(&mut self) -> GTWC_W<23> {
+        GTWC_W::new(self)
     }
     #[doc = "Bit 28 - Timer Mode Enable"]
     #[inline(always)]
-    pub fn tmen(&mut self) -> TMEN_W {
-        TMEN_W { w: self }
+    #[must_use]
+    pub fn tmen(&mut self) -> TMEN_W<28> {
+        TMEN_W::new(self)
     }
     #[doc = "Bit 31 - Write Control for Timer Mode"]
     #[inline(always)]
-    pub fn tmwc(&mut self) -> TMWC_W {
-        TMWC_W { w: self }
+    #[must_use]
+    pub fn tmwc(&mut self) -> TMWC_W<31> {
+        TMWC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -636,11 +428,10 @@ impl crate::Readable for QCTRL0_SPEC {
 #[doc = "`write(|w| ..)` method takes [qctrl0::W](W) writer structure"]
 impl crate::Writable for QCTRL0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets QCTRL0 to value 0"]
 impl crate::Resettable for QCTRL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,7 +20,7 @@ impl From<crate::W<TRBSCR_SPEC>> for W {
     }
 }
 #[doc = "Clear Standard Receive Buffer Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CSRBI_AW {
     #[doc = "0: No effect."]
     VALUE1 = 0,
@@ -34,15 +34,8 @@ impl From<CSRBI_AW> for bool {
     }
 }
 #[doc = "Field `CSRBI` writer - Clear Standard Receive Buffer Event"]
-pub struct CSRBI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSRBI_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CSRBI_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CSRBI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, CSRBI_AW, O>;
+impl<'a, const O: u8> CSRBI_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -53,25 +46,9 @@ impl<'a> CSRBI_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CSRBI_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 #[doc = "Clear Receive Buffer Error Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CRBERI_AW {
     #[doc = "0: No effect."]
     VALUE1 = 0,
@@ -85,15 +62,8 @@ impl From<CRBERI_AW> for bool {
     }
 }
 #[doc = "Field `CRBERI` writer - Clear Receive Buffer Error Event"]
-pub struct CRBERI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRBERI_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CRBERI_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CRBERI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, CRBERI_AW, O>;
+impl<'a, const O: u8> CRBERI_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -104,25 +74,9 @@ impl<'a> CRBERI_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CRBERI_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 #[doc = "Clear Alternative Receive Buffer Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CARBI_AW {
     #[doc = "0: No effect."]
     VALUE1 = 0,
@@ -136,15 +90,8 @@ impl From<CARBI_AW> for bool {
     }
 }
 #[doc = "Field `CARBI` writer - Clear Alternative Receive Buffer Event"]
-pub struct CARBI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CARBI_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CARBI_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CARBI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, CARBI_AW, O>;
+impl<'a, const O: u8> CARBI_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -155,25 +102,9 @@ impl<'a> CARBI_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CARBI_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
 #[doc = "Clear Standard Transmit Buffer Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CSTBI_AW {
     #[doc = "0: No effect."]
     VALUE1 = 0,
@@ -187,15 +118,8 @@ impl From<CSTBI_AW> for bool {
     }
 }
 #[doc = "Field `CSTBI` writer - Clear Standard Transmit Buffer Event"]
-pub struct CSTBI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSTBI_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CSTBI_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CSTBI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, CSTBI_AW, O>;
+impl<'a, const O: u8> CSTBI_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -206,25 +130,9 @@ impl<'a> CSTBI_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CSTBI_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
 #[doc = "Clear Transmit Buffer Error Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CTBERI_AW {
     #[doc = "0: No effect."]
     VALUE1 = 0,
@@ -238,15 +146,8 @@ impl From<CTBERI_AW> for bool {
     }
 }
 #[doc = "Field `CTBERI` writer - Clear Transmit Buffer Error Event"]
-pub struct CTBERI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CTBERI_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTBERI_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CTBERI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, CTBERI_AW, O>;
+impl<'a, const O: u8> CTBERI_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -257,25 +158,9 @@ impl<'a> CTBERI_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CTBERI_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
 }
 #[doc = "Clear Bypass Data Valid\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CBDV_AW {
     #[doc = "0: No effect."]
     VALUE1 = 0,
@@ -289,15 +174,8 @@ impl From<CBDV_AW> for bool {
     }
 }
 #[doc = "Field `CBDV` writer - Clear Bypass Data Valid"]
-pub struct CBDV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CBDV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CBDV_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CBDV_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, CBDV_AW, O>;
+impl<'a, const O: u8> CBDV_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -308,25 +186,9 @@ impl<'a> CBDV_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CBDV_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
 }
 #[doc = "Flush Receive Buffer\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FLUSHRB_AW {
     #[doc = "0: No effect."]
     VALUE1 = 0,
@@ -340,15 +202,8 @@ impl From<FLUSHRB_AW> for bool {
     }
 }
 #[doc = "Field `FLUSHRB` writer - Flush Receive Buffer"]
-pub struct FLUSHRB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLUSHRB_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FLUSHRB_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FLUSHRB_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, FLUSHRB_AW, O>;
+impl<'a, const O: u8> FLUSHRB_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -359,25 +214,9 @@ impl<'a> FLUSHRB_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(FLUSHRB_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
 }
 #[doc = "Flush Transmit Buffer\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FLUSHTB_AW {
     #[doc = "0: No effect."]
     VALUE1 = 0,
@@ -391,15 +230,8 @@ impl From<FLUSHTB_AW> for bool {
     }
 }
 #[doc = "Field `FLUSHTB` writer - Flush Transmit Buffer"]
-pub struct FLUSHTB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLUSHTB_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FLUSHTB_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FLUSHTB_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, FLUSHTB_AW, O>;
+impl<'a, const O: u8> FLUSHTB_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -410,63 +242,55 @@ impl<'a> FLUSHTB_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(FLUSHTB_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Clear Standard Receive Buffer Event"]
     #[inline(always)]
-    pub fn csrbi(&mut self) -> CSRBI_W {
-        CSRBI_W { w: self }
+    #[must_use]
+    pub fn csrbi(&mut self) -> CSRBI_W<0> {
+        CSRBI_W::new(self)
     }
     #[doc = "Bit 1 - Clear Receive Buffer Error Event"]
     #[inline(always)]
-    pub fn crberi(&mut self) -> CRBERI_W {
-        CRBERI_W { w: self }
+    #[must_use]
+    pub fn crberi(&mut self) -> CRBERI_W<1> {
+        CRBERI_W::new(self)
     }
     #[doc = "Bit 2 - Clear Alternative Receive Buffer Event"]
     #[inline(always)]
-    pub fn carbi(&mut self) -> CARBI_W {
-        CARBI_W { w: self }
+    #[must_use]
+    pub fn carbi(&mut self) -> CARBI_W<2> {
+        CARBI_W::new(self)
     }
     #[doc = "Bit 8 - Clear Standard Transmit Buffer Event"]
     #[inline(always)]
-    pub fn cstbi(&mut self) -> CSTBI_W {
-        CSTBI_W { w: self }
+    #[must_use]
+    pub fn cstbi(&mut self) -> CSTBI_W<8> {
+        CSTBI_W::new(self)
     }
     #[doc = "Bit 9 - Clear Transmit Buffer Error Event"]
     #[inline(always)]
-    pub fn ctberi(&mut self) -> CTBERI_W {
-        CTBERI_W { w: self }
+    #[must_use]
+    pub fn ctberi(&mut self) -> CTBERI_W<9> {
+        CTBERI_W::new(self)
     }
     #[doc = "Bit 10 - Clear Bypass Data Valid"]
     #[inline(always)]
-    pub fn cbdv(&mut self) -> CBDV_W {
-        CBDV_W { w: self }
+    #[must_use]
+    pub fn cbdv(&mut self) -> CBDV_W<10> {
+        CBDV_W::new(self)
     }
     #[doc = "Bit 14 - Flush Receive Buffer"]
     #[inline(always)]
-    pub fn flushrb(&mut self) -> FLUSHRB_W {
-        FLUSHRB_W { w: self }
+    #[must_use]
+    pub fn flushrb(&mut self) -> FLUSHRB_W<14> {
+        FLUSHRB_W::new(self)
     }
     #[doc = "Bit 15 - Flush Transmit Buffer"]
     #[inline(always)]
-    pub fn flushtb(&mut self) -> FLUSHTB_W {
-        FLUSHTB_W { w: self }
+    #[must_use]
+    pub fn flushtb(&mut self) -> FLUSHTB_W<15> {
+        FLUSHTB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -483,11 +307,10 @@ impl crate::RegisterSpec for TRBSCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [trbscr::W](W) writer structure"]
 impl crate::Writable for TRBSCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TRBSCR to value 0"]
 impl crate::Resettable for TRBSCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

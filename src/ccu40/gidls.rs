@@ -20,167 +20,53 @@ impl From<crate::W<GIDLS_SPEC>> for W {
     }
 }
 #[doc = "Field `SS0I` writer - CC40 IDLE mode set"]
-pub struct SS0I_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SS0I_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SS0I_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLS_SPEC, bool, O>;
 #[doc = "Field `SS1I` writer - CC41 IDLE mode set"]
-pub struct SS1I_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SS1I_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type SS1I_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLS_SPEC, bool, O>;
 #[doc = "Field `SS2I` writer - CC42 IDLE mode set"]
-pub struct SS2I_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SS2I_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type SS2I_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLS_SPEC, bool, O>;
 #[doc = "Field `SS3I` writer - CC43 IDLE mode set"]
-pub struct SS3I_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SS3I_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type SS3I_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLS_SPEC, bool, O>;
 #[doc = "Field `CPRB` writer - Prescaler Run Bit Clear"]
-pub struct CPRB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPRB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type CPRB_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLS_SPEC, bool, O>;
 #[doc = "Field `PSIC` writer - Prescaler clear"]
-pub struct PSIC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PSIC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type PSIC_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - CC40 IDLE mode set"]
     #[inline(always)]
-    pub fn ss0i(&mut self) -> SS0I_W {
-        SS0I_W { w: self }
+    #[must_use]
+    pub fn ss0i(&mut self) -> SS0I_W<0> {
+        SS0I_W::new(self)
     }
     #[doc = "Bit 1 - CC41 IDLE mode set"]
     #[inline(always)]
-    pub fn ss1i(&mut self) -> SS1I_W {
-        SS1I_W { w: self }
+    #[must_use]
+    pub fn ss1i(&mut self) -> SS1I_W<1> {
+        SS1I_W::new(self)
     }
     #[doc = "Bit 2 - CC42 IDLE mode set"]
     #[inline(always)]
-    pub fn ss2i(&mut self) -> SS2I_W {
-        SS2I_W { w: self }
+    #[must_use]
+    pub fn ss2i(&mut self) -> SS2I_W<2> {
+        SS2I_W::new(self)
     }
     #[doc = "Bit 3 - CC43 IDLE mode set"]
     #[inline(always)]
-    pub fn ss3i(&mut self) -> SS3I_W {
-        SS3I_W { w: self }
+    #[must_use]
+    pub fn ss3i(&mut self) -> SS3I_W<3> {
+        SS3I_W::new(self)
     }
     #[doc = "Bit 8 - Prescaler Run Bit Clear"]
     #[inline(always)]
-    pub fn cprb(&mut self) -> CPRB_W {
-        CPRB_W { w: self }
+    #[must_use]
+    pub fn cprb(&mut self) -> CPRB_W<8> {
+        CPRB_W::new(self)
     }
     #[doc = "Bit 9 - Prescaler clear"]
     #[inline(always)]
-    pub fn psic(&mut self) -> PSIC_W {
-        PSIC_W { w: self }
+    #[must_use]
+    pub fn psic(&mut self) -> PSIC_W<9> {
+        PSIC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -197,11 +83,10 @@ impl crate::RegisterSpec for GIDLS_SPEC {
 #[doc = "`write(|w| ..)` method takes [gidls::W](W) writer structure"]
 impl crate::Writable for GIDLS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GIDLS to value 0"]
 impl crate::Resettable for GIDLS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

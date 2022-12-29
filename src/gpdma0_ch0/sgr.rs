@@ -34,80 +34,38 @@ impl From<crate::W<SGR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SGC` reader - Source gather count"]
-pub struct SGC_R(crate::FieldReader<u16, u16>);
-impl SGC_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        SGC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SGC_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `SGC` writer - Source gather count"]
-pub struct SGC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SGC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff << 20)) | ((value as u32 & 0x0fff) << 20);
-        self.w
-    }
-}
 #[doc = "Field `SGI` reader - Source gather interval"]
-pub struct SGI_R(crate::FieldReader<u32, u32>);
-impl SGI_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        SGI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SGI_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SGI_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SGI` writer - Source gather interval"]
-pub struct SGI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SGI_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x000f_ffff) | (value as u32 & 0x000f_ffff);
-        self.w
-    }
-}
+pub type SGI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SGR_SPEC, u32, u32, 20, O>;
+#[doc = "Field `SGC` reader - Source gather count"]
+pub type SGC_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `SGC` writer - Source gather count"]
+pub type SGC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SGR_SPEC, u16, u16, 12, O>;
 impl R {
+    #[doc = "Bits 0:19 - Source gather interval"]
+    #[inline(always)]
+    pub fn sgi(&self) -> SGI_R {
+        SGI_R::new(self.bits & 0x000f_ffff)
+    }
     #[doc = "Bits 20:31 - Source gather count"]
     #[inline(always)]
     pub fn sgc(&self) -> SGC_R {
         SGC_R::new(((self.bits >> 20) & 0x0fff) as u16)
     }
-    #[doc = "Bits 0:19 - Source gather interval"]
-    #[inline(always)]
-    pub fn sgi(&self) -> SGI_R {
-        SGI_R::new((self.bits & 0x000f_ffff) as u32)
-    }
 }
 impl W {
-    #[doc = "Bits 20:31 - Source gather count"]
-    #[inline(always)]
-    pub fn sgc(&mut self) -> SGC_W {
-        SGC_W { w: self }
-    }
     #[doc = "Bits 0:19 - Source gather interval"]
     #[inline(always)]
-    pub fn sgi(&mut self) -> SGI_W {
-        SGI_W { w: self }
+    #[must_use]
+    pub fn sgi(&mut self) -> SGI_W<0> {
+        SGI_W::new(self)
+    }
+    #[doc = "Bits 20:31 - Source gather count"]
+    #[inline(always)]
+    #[must_use]
+    pub fn sgc(&mut self) -> SGC_W<20> {
+        SGC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for SGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [sgr::W](W) writer structure"]
 impl crate::Writable for SGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SGR to value 0"]
 impl crate::Resettable for SGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

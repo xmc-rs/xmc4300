@@ -34,8 +34,10 @@ impl From<crate::W<NVIC_ISPR3_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SETPEND` reader - Interrupt set-pending bits."]
+pub type SETPEND_R = crate::FieldReader<u32, SETPEND_A>;
 #[doc = "Interrupt set-pending bits.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum SETPEND_A {
     #[doc = "0: interrupt is not pending"]
@@ -49,13 +51,8 @@ impl From<SETPEND_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `SETPEND` reader - Interrupt set-pending bits."]
-pub struct SETPEND_R(crate::FieldReader<u32, SETPEND_A>);
 impl SETPEND_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        SETPEND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SETPEND_A> {
         match self.bits {
@@ -67,31 +64,17 @@ impl SETPEND_R {
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == SETPEND_A::VALUE3
+        *self == SETPEND_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == SETPEND_A::VALUE4
-    }
-}
-impl core::ops::Deref for SETPEND_R {
-    type Target = crate::FieldReader<u32, SETPEND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SETPEND_A::VALUE4
     }
 }
 #[doc = "Field `SETPEND` writer - Interrupt set-pending bits."]
-pub struct SETPEND_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SETPEND_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SETPEND_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type SETPEND_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_ISPR3_SPEC, u32, SETPEND_A, 32, O>;
+impl<'a, const O: u8> SETPEND_W<'a, O> {
     #[doc = "interrupt is not pending"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut W {
@@ -102,25 +85,20 @@ impl<'a> SETPEND_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(SETPEND_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:31 - Interrupt set-pending bits."]
     #[inline(always)]
     pub fn setpend(&self) -> SETPEND_R {
-        SETPEND_R::new((self.bits & 0xffff_ffff) as u32)
+        SETPEND_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Interrupt set-pending bits."]
     #[inline(always)]
-    pub fn setpend(&mut self) -> SETPEND_W {
-        SETPEND_W { w: self }
+    #[must_use]
+    pub fn setpend(&mut self) -> SETPEND_W<0> {
+        SETPEND_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -141,11 +119,10 @@ impl crate::Readable for NVIC_ISPR3_SPEC {
 #[doc = "`write(|w| ..)` method takes [nvic_ispr3::W](W) writer structure"]
 impl crate::Writable for NVIC_ISPR3_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets NVIC_ISPR3 to value 0"]
 impl crate::Resettable for NVIC_ISPR3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

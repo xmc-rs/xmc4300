@@ -13,8 +13,10 @@ impl From<crate::R<USBPLLSTAT_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `VCOBYST` reader - VCO Bypass Status"]
+pub type VCOBYST_R = crate::BitReader<VCOBYST_A>;
 #[doc = "VCO Bypass Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VCOBYST_A {
     #[doc = "0: Normal Mode is entered"]
     CONST_0 = 0,
@@ -27,13 +29,8 @@ impl From<VCOBYST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VCOBYST` reader - VCO Bypass Status"]
-pub struct VCOBYST_R(crate::FieldReader<bool, VCOBYST_A>);
 impl VCOBYST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VCOBYST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VCOBYST_A {
         match self.bits {
@@ -44,23 +41,18 @@ impl VCOBYST_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == VCOBYST_A::CONST_0
+        *self == VCOBYST_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == VCOBYST_A::CONST_1
+        *self == VCOBYST_A::CONST_1
     }
 }
-impl core::ops::Deref for VCOBYST_R {
-    type Target = crate::FieldReader<bool, VCOBYST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `PWDSTAT` reader - PLL Power-saving Mode Status"]
+pub type PWDSTAT_R = crate::BitReader<PWDSTAT_A>;
 #[doc = "PLL Power-saving Mode Status\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PWDSTAT_A {
     #[doc = "0: PLL Power-saving Mode was not entered"]
     CONST_0 = 0,
@@ -73,13 +65,8 @@ impl From<PWDSTAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PWDSTAT` reader - PLL Power-saving Mode Status"]
-pub struct PWDSTAT_R(crate::FieldReader<bool, PWDSTAT_A>);
 impl PWDSTAT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PWDSTAT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PWDSTAT_A {
         match self.bits {
@@ -90,23 +77,18 @@ impl PWDSTAT_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == PWDSTAT_A::CONST_0
+        *self == PWDSTAT_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == PWDSTAT_A::CONST_1
+        *self == PWDSTAT_A::CONST_1
     }
 }
-impl core::ops::Deref for PWDSTAT_R {
-    type Target = crate::FieldReader<bool, PWDSTAT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `VCOLOCK` reader - PLL VCO Lock Status"]
+pub type VCOLOCK_R = crate::BitReader<VCOLOCK_A>;
 #[doc = "PLL VCO Lock Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VCOLOCK_A {
     #[doc = "0: The frequency difference of fREF and fDIV is greater than allowed. The VCO part of the PLL can not lock on a target frequency."]
     CONST_0 = 0,
@@ -119,13 +101,8 @@ impl From<VCOLOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VCOLOCK` reader - PLL VCO Lock Status"]
-pub struct VCOLOCK_R(crate::FieldReader<bool, VCOLOCK_A>);
 impl VCOLOCK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VCOLOCK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VCOLOCK_A {
         match self.bits {
@@ -136,23 +113,18 @@ impl VCOLOCK_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == VCOLOCK_A::CONST_0
+        *self == VCOLOCK_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == VCOLOCK_A::CONST_1
+        *self == VCOLOCK_A::CONST_1
     }
 }
-impl core::ops::Deref for VCOLOCK_R {
-    type Target = crate::FieldReader<bool, VCOLOCK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `BY` reader - Bypass Mode Status"]
+pub type BY_R = crate::BitReader<BY_A>;
 #[doc = "Bypass Mode Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BY_A {
     #[doc = "0: Bypass Mode is not entered"]
     CONST_0 = 0,
@@ -165,13 +137,8 @@ impl From<BY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BY` reader - Bypass Mode Status"]
-pub struct BY_R(crate::FieldReader<bool, BY_A>);
 impl BY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BY_A {
         match self.bits {
@@ -182,23 +149,18 @@ impl BY_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == BY_A::CONST_0
+        *self == BY_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == BY_A::CONST_1
+        *self == BY_A::CONST_1
     }
 }
-impl core::ops::Deref for BY_R {
-    type Target = crate::FieldReader<bool, BY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `VCOLOCKED` reader - PLL LOCK Status"]
+pub type VCOLOCKED_R = crate::BitReader<VCOLOCKED_A>;
 #[doc = "PLL LOCK Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VCOLOCKED_A {
     #[doc = "0: PLL not locked"]
     CONST_0 = 0,
@@ -211,13 +173,8 @@ impl From<VCOLOCKED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VCOLOCKED` reader - PLL LOCK Status"]
-pub struct VCOLOCKED_R(crate::FieldReader<bool, VCOLOCKED_A>);
 impl VCOLOCKED_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VCOLOCKED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VCOLOCKED_A {
         match self.bits {
@@ -228,46 +185,39 @@ impl VCOLOCKED_R {
     #[doc = "Checks if the value of the field is `CONST_0`"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
-        **self == VCOLOCKED_A::CONST_0
+        *self == VCOLOCKED_A::CONST_0
     }
     #[doc = "Checks if the value of the field is `CONST_1`"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
-        **self == VCOLOCKED_A::CONST_1
-    }
-}
-impl core::ops::Deref for VCOLOCKED_R {
-    type Target = crate::FieldReader<bool, VCOLOCKED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VCOLOCKED_A::CONST_1
     }
 }
 impl R {
     #[doc = "Bit 0 - VCO Bypass Status"]
     #[inline(always)]
     pub fn vcobyst(&self) -> VCOBYST_R {
-        VCOBYST_R::new((self.bits & 0x01) != 0)
+        VCOBYST_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - PLL Power-saving Mode Status"]
     #[inline(always)]
     pub fn pwdstat(&self) -> PWDSTAT_R {
-        PWDSTAT_R::new(((self.bits >> 1) & 0x01) != 0)
+        PWDSTAT_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - PLL VCO Lock Status"]
     #[inline(always)]
     pub fn vcolock(&self) -> VCOLOCK_R {
-        VCOLOCK_R::new(((self.bits >> 2) & 0x01) != 0)
+        VCOLOCK_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 6 - Bypass Mode Status"]
     #[inline(always)]
     pub fn by(&self) -> BY_R {
-        BY_R::new(((self.bits >> 6) & 0x01) != 0)
+        BY_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - PLL LOCK Status"]
     #[inline(always)]
     pub fn vcolocked(&self) -> VCOLOCKED_R {
-        VCOLOCKED_R::new(((self.bits >> 7) & 0x01) != 0)
+        VCOLOCKED_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 #[doc = "USB PLL Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usbpllstat](index.html) module"]
@@ -281,8 +231,5 @@ impl crate::Readable for USBPLLSTAT_SPEC {
 }
 #[doc = "`reset()` method sets USBPLLSTAT to value 0x02"]
 impl crate::Resettable for USBPLLSTAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02
-    }
+    const RESET_VALUE: Self::Ux = 0x02;
 }

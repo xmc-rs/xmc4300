@@ -34,8 +34,10 @@ impl From<crate::W<BRSSEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CHSELG0` reader - Channel Selection Group x"]
+pub type CHSELG0_R = crate::BitReader<CHSELG0_A>;
 #[doc = "Channel Selection Group x\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHSELG0_A {
     #[doc = "0: Ignore this channel"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<CHSELG0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHSELG0` reader - Channel Selection Group x"]
-pub struct CHSELG0_R(crate::FieldReader<bool, CHSELG0_A>);
 impl CHSELG0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CHSELG0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHSELG0_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl CHSELG0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CHSELG0_A::VALUE1
+        *self == CHSELG0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CHSELG0_A::VALUE2
-    }
-}
-impl core::ops::Deref for CHSELG0_R {
-    type Target = crate::FieldReader<bool, CHSELG0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CHSELG0_A::VALUE2
     }
 }
 #[doc = "Field `CHSELG0` writer - Channel Selection Group x"]
-pub struct CHSELG0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHSELG0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CHSELG0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CHSELG0_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG0_A, O>;
+impl<'a, const O: u8> CHSELG0_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> CHSELG0_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CHSELG0_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `CHSELG1` reader - Channel Selection Group x"]
+pub type CHSELG1_R = crate::BitReader<CHSELG1_A>;
 #[doc = "Channel Selection Group x\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHSELG1_A {
     #[doc = "0: Ignore this channel"]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<CHSELG1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHSELG1` reader - Channel Selection Group x"]
-pub struct CHSELG1_R(crate::FieldReader<bool, CHSELG1_A>);
 impl CHSELG1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CHSELG1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHSELG1_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl CHSELG1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CHSELG1_A::VALUE1
+        *self == CHSELG1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CHSELG1_A::VALUE2
-    }
-}
-impl core::ops::Deref for CHSELG1_R {
-    type Target = crate::FieldReader<bool, CHSELG1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CHSELG1_A::VALUE2
     }
 }
 #[doc = "Field `CHSELG1` writer - Channel Selection Group x"]
-pub struct CHSELG1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHSELG1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CHSELG1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CHSELG1_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG1_A, O>;
+impl<'a, const O: u8> CHSELG1_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -183,25 +133,11 @@ impl<'a> CHSELG1_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CHSELG1_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `CHSELG2` reader - Channel Selection Group x"]
+pub type CHSELG2_R = crate::BitReader<CHSELG2_A>;
 #[doc = "Channel Selection Group x\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHSELG2_A {
     #[doc = "0: Ignore this channel"]
     VALUE1 = 0,
@@ -214,13 +150,8 @@ impl From<CHSELG2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHSELG2` reader - Channel Selection Group x"]
-pub struct CHSELG2_R(crate::FieldReader<bool, CHSELG2_A>);
 impl CHSELG2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CHSELG2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHSELG2_A {
         match self.bits {
@@ -231,31 +162,17 @@ impl CHSELG2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CHSELG2_A::VALUE1
+        *self == CHSELG2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CHSELG2_A::VALUE2
-    }
-}
-impl core::ops::Deref for CHSELG2_R {
-    type Target = crate::FieldReader<bool, CHSELG2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CHSELG2_A::VALUE2
     }
 }
 #[doc = "Field `CHSELG2` writer - Channel Selection Group x"]
-pub struct CHSELG2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHSELG2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CHSELG2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CHSELG2_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG2_A, O>;
+impl<'a, const O: u8> CHSELG2_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -266,25 +183,11 @@ impl<'a> CHSELG2_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CHSELG2_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `CHSELG3` reader - Channel Selection Group x"]
+pub type CHSELG3_R = crate::BitReader<CHSELG3_A>;
 #[doc = "Channel Selection Group x\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHSELG3_A {
     #[doc = "0: Ignore this channel"]
     VALUE1 = 0,
@@ -297,13 +200,8 @@ impl From<CHSELG3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHSELG3` reader - Channel Selection Group x"]
-pub struct CHSELG3_R(crate::FieldReader<bool, CHSELG3_A>);
 impl CHSELG3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CHSELG3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHSELG3_A {
         match self.bits {
@@ -314,31 +212,17 @@ impl CHSELG3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CHSELG3_A::VALUE1
+        *self == CHSELG3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CHSELG3_A::VALUE2
-    }
-}
-impl core::ops::Deref for CHSELG3_R {
-    type Target = crate::FieldReader<bool, CHSELG3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CHSELG3_A::VALUE2
     }
 }
 #[doc = "Field `CHSELG3` writer - Channel Selection Group x"]
-pub struct CHSELG3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHSELG3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CHSELG3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CHSELG3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG3_A, O>;
+impl<'a, const O: u8> CHSELG3_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -349,25 +233,11 @@ impl<'a> CHSELG3_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CHSELG3_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `CHSELG4` reader - Channel Selection Group x"]
+pub type CHSELG4_R = crate::BitReader<CHSELG4_A>;
 #[doc = "Channel Selection Group x\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHSELG4_A {
     #[doc = "0: Ignore this channel"]
     VALUE1 = 0,
@@ -380,13 +250,8 @@ impl From<CHSELG4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHSELG4` reader - Channel Selection Group x"]
-pub struct CHSELG4_R(crate::FieldReader<bool, CHSELG4_A>);
 impl CHSELG4_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CHSELG4_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHSELG4_A {
         match self.bits {
@@ -397,31 +262,17 @@ impl CHSELG4_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CHSELG4_A::VALUE1
+        *self == CHSELG4_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CHSELG4_A::VALUE2
-    }
-}
-impl core::ops::Deref for CHSELG4_R {
-    type Target = crate::FieldReader<bool, CHSELG4_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CHSELG4_A::VALUE2
     }
 }
 #[doc = "Field `CHSELG4` writer - Channel Selection Group x"]
-pub struct CHSELG4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHSELG4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CHSELG4_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CHSELG4_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG4_A, O>;
+impl<'a, const O: u8> CHSELG4_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -432,25 +283,11 @@ impl<'a> CHSELG4_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CHSELG4_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `CHSELG5` reader - Channel Selection Group x"]
+pub type CHSELG5_R = crate::BitReader<CHSELG5_A>;
 #[doc = "Channel Selection Group x\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHSELG5_A {
     #[doc = "0: Ignore this channel"]
     VALUE1 = 0,
@@ -463,13 +300,8 @@ impl From<CHSELG5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHSELG5` reader - Channel Selection Group x"]
-pub struct CHSELG5_R(crate::FieldReader<bool, CHSELG5_A>);
 impl CHSELG5_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CHSELG5_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHSELG5_A {
         match self.bits {
@@ -480,31 +312,17 @@ impl CHSELG5_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CHSELG5_A::VALUE1
+        *self == CHSELG5_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CHSELG5_A::VALUE2
-    }
-}
-impl core::ops::Deref for CHSELG5_R {
-    type Target = crate::FieldReader<bool, CHSELG5_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CHSELG5_A::VALUE2
     }
 }
 #[doc = "Field `CHSELG5` writer - Channel Selection Group x"]
-pub struct CHSELG5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHSELG5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CHSELG5_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CHSELG5_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG5_A, O>;
+impl<'a, const O: u8> CHSELG5_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -515,25 +333,11 @@ impl<'a> CHSELG5_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CHSELG5_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `CHSELG6` reader - Channel Selection Group x"]
+pub type CHSELG6_R = crate::BitReader<CHSELG6_A>;
 #[doc = "Channel Selection Group x\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHSELG6_A {
     #[doc = "0: Ignore this channel"]
     VALUE1 = 0,
@@ -546,13 +350,8 @@ impl From<CHSELG6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHSELG6` reader - Channel Selection Group x"]
-pub struct CHSELG6_R(crate::FieldReader<bool, CHSELG6_A>);
 impl CHSELG6_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CHSELG6_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHSELG6_A {
         match self.bits {
@@ -563,31 +362,17 @@ impl CHSELG6_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CHSELG6_A::VALUE1
+        *self == CHSELG6_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CHSELG6_A::VALUE2
-    }
-}
-impl core::ops::Deref for CHSELG6_R {
-    type Target = crate::FieldReader<bool, CHSELG6_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CHSELG6_A::VALUE2
     }
 }
 #[doc = "Field `CHSELG6` writer - Channel Selection Group x"]
-pub struct CHSELG6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHSELG6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CHSELG6_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CHSELG6_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG6_A, O>;
+impl<'a, const O: u8> CHSELG6_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -598,25 +383,11 @@ impl<'a> CHSELG6_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CHSELG6_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `CHSELG7` reader - Channel Selection Group x"]
+pub type CHSELG7_R = crate::BitReader<CHSELG7_A>;
 #[doc = "Channel Selection Group x\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHSELG7_A {
     #[doc = "0: Ignore this channel"]
     VALUE1 = 0,
@@ -629,13 +400,8 @@ impl From<CHSELG7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHSELG7` reader - Channel Selection Group x"]
-pub struct CHSELG7_R(crate::FieldReader<bool, CHSELG7_A>);
 impl CHSELG7_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CHSELG7_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHSELG7_A {
         match self.bits {
@@ -646,31 +412,17 @@ impl CHSELG7_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CHSELG7_A::VALUE1
+        *self == CHSELG7_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CHSELG7_A::VALUE2
-    }
-}
-impl core::ops::Deref for CHSELG7_R {
-    type Target = crate::FieldReader<bool, CHSELG7_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CHSELG7_A::VALUE2
     }
 }
 #[doc = "Field `CHSELG7` writer - Channel Selection Group x"]
-pub struct CHSELG7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHSELG7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CHSELG7_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CHSELG7_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG7_A, O>;
+impl<'a, const O: u8> CHSELG7_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -681,105 +433,97 @@ impl<'a> CHSELG7_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CHSELG7_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Channel Selection Group x"]
     #[inline(always)]
     pub fn chselg0(&self) -> CHSELG0_R {
-        CHSELG0_R::new((self.bits & 0x01) != 0)
+        CHSELG0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Channel Selection Group x"]
     #[inline(always)]
     pub fn chselg1(&self) -> CHSELG1_R {
-        CHSELG1_R::new(((self.bits >> 1) & 0x01) != 0)
+        CHSELG1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Channel Selection Group x"]
     #[inline(always)]
     pub fn chselg2(&self) -> CHSELG2_R {
-        CHSELG2_R::new(((self.bits >> 2) & 0x01) != 0)
+        CHSELG2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Channel Selection Group x"]
     #[inline(always)]
     pub fn chselg3(&self) -> CHSELG3_R {
-        CHSELG3_R::new(((self.bits >> 3) & 0x01) != 0)
+        CHSELG3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Channel Selection Group x"]
     #[inline(always)]
     pub fn chselg4(&self) -> CHSELG4_R {
-        CHSELG4_R::new(((self.bits >> 4) & 0x01) != 0)
+        CHSELG4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Channel Selection Group x"]
     #[inline(always)]
     pub fn chselg5(&self) -> CHSELG5_R {
-        CHSELG5_R::new(((self.bits >> 5) & 0x01) != 0)
+        CHSELG5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Channel Selection Group x"]
     #[inline(always)]
     pub fn chselg6(&self) -> CHSELG6_R {
-        CHSELG6_R::new(((self.bits >> 6) & 0x01) != 0)
+        CHSELG6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Channel Selection Group x"]
     #[inline(always)]
     pub fn chselg7(&self) -> CHSELG7_R {
-        CHSELG7_R::new(((self.bits >> 7) & 0x01) != 0)
+        CHSELG7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Channel Selection Group x"]
     #[inline(always)]
-    pub fn chselg0(&mut self) -> CHSELG0_W {
-        CHSELG0_W { w: self }
+    #[must_use]
+    pub fn chselg0(&mut self) -> CHSELG0_W<0> {
+        CHSELG0_W::new(self)
     }
     #[doc = "Bit 1 - Channel Selection Group x"]
     #[inline(always)]
-    pub fn chselg1(&mut self) -> CHSELG1_W {
-        CHSELG1_W { w: self }
+    #[must_use]
+    pub fn chselg1(&mut self) -> CHSELG1_W<1> {
+        CHSELG1_W::new(self)
     }
     #[doc = "Bit 2 - Channel Selection Group x"]
     #[inline(always)]
-    pub fn chselg2(&mut self) -> CHSELG2_W {
-        CHSELG2_W { w: self }
+    #[must_use]
+    pub fn chselg2(&mut self) -> CHSELG2_W<2> {
+        CHSELG2_W::new(self)
     }
     #[doc = "Bit 3 - Channel Selection Group x"]
     #[inline(always)]
-    pub fn chselg3(&mut self) -> CHSELG3_W {
-        CHSELG3_W { w: self }
+    #[must_use]
+    pub fn chselg3(&mut self) -> CHSELG3_W<3> {
+        CHSELG3_W::new(self)
     }
     #[doc = "Bit 4 - Channel Selection Group x"]
     #[inline(always)]
-    pub fn chselg4(&mut self) -> CHSELG4_W {
-        CHSELG4_W { w: self }
+    #[must_use]
+    pub fn chselg4(&mut self) -> CHSELG4_W<4> {
+        CHSELG4_W::new(self)
     }
     #[doc = "Bit 5 - Channel Selection Group x"]
     #[inline(always)]
-    pub fn chselg5(&mut self) -> CHSELG5_W {
-        CHSELG5_W { w: self }
+    #[must_use]
+    pub fn chselg5(&mut self) -> CHSELG5_W<5> {
+        CHSELG5_W::new(self)
     }
     #[doc = "Bit 6 - Channel Selection Group x"]
     #[inline(always)]
-    pub fn chselg6(&mut self) -> CHSELG6_W {
-        CHSELG6_W { w: self }
+    #[must_use]
+    pub fn chselg6(&mut self) -> CHSELG6_W<6> {
+        CHSELG6_W::new(self)
     }
     #[doc = "Bit 7 - Channel Selection Group x"]
     #[inline(always)]
-    pub fn chselg7(&mut self) -> CHSELG7_W {
-        CHSELG7_W { w: self }
+    #[must_use]
+    pub fn chselg7(&mut self) -> CHSELG7_W<7> {
+        CHSELG7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -800,12 +544,11 @@ impl crate::Readable for BRSSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [brssel::W](W) writer structure"]
 impl crate::Writable for BRSSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BRSSEL[%s]
 to value 0"]
 impl crate::Resettable for BRSSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

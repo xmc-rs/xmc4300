@@ -35,85 +35,21 @@ impl From<crate::W<NECNT_SPEC>> for W {
     }
 }
 #[doc = "Field `REC` reader - Receive Error Counter"]
-pub struct REC_R(crate::FieldReader<u8, u8>);
-impl REC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        REC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `REC` writer - Receive Error Counter"]
-pub struct REC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type REC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NECNT_SPEC, u8, u8, 8, O>;
 #[doc = "Field `TEC` reader - Transmit Error Counter"]
-pub struct TEC_R(crate::FieldReader<u8, u8>);
-impl TEC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TEC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TEC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TEC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TEC` writer - Transmit Error Counter"]
-pub struct TEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TEC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type TEC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NECNT_SPEC, u8, u8, 8, O>;
 #[doc = "Field `EWRNLVL` reader - Error Warning Level"]
-pub struct EWRNLVL_R(crate::FieldReader<u8, u8>);
-impl EWRNLVL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EWRNLVL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EWRNLVL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EWRNLVL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EWRNLVL` writer - Error Warning Level"]
-pub struct EWRNLVL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EWRNLVL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type EWRNLVL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NECNT_SPEC, u8, u8, 8, O>;
+#[doc = "Field `LETD` reader - Last Error Transfer Direction"]
+pub type LETD_R = crate::BitReader<LETD_A>;
 #[doc = "Last Error Transfer Direction\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LETD_A {
     #[doc = "0: The last error occurred while the CAN node x was receiver (REC has been incremented)."]
     VALUE1 = 0,
@@ -126,13 +62,8 @@ impl From<LETD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LETD` reader - Last Error Transfer Direction"]
-pub struct LETD_R(crate::FieldReader<bool, LETD_A>);
 impl LETD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LETD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LETD_A {
         match self.bits {
@@ -143,23 +74,18 @@ impl LETD_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LETD_A::VALUE1
+        *self == LETD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LETD_A::VALUE2
+        *self == LETD_A::VALUE2
     }
 }
-impl core::ops::Deref for LETD_R {
-    type Target = crate::FieldReader<bool, LETD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `LEINC` reader - Last Error Increment"]
+pub type LEINC_R = crate::BitReader<LEINC_A>;
 #[doc = "Last Error Increment\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LEINC_A {
     #[doc = "0: The last error led to an error counter increment of 1."]
     VALUE1 = 0,
@@ -172,13 +98,8 @@ impl From<LEINC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LEINC` reader - Last Error Increment"]
-pub struct LEINC_R(crate::FieldReader<bool, LEINC_A>);
 impl LEINC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LEINC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LEINC_A {
         match self.bits {
@@ -189,19 +110,12 @@ impl LEINC_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LEINC_A::VALUE1
+        *self == LEINC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LEINC_A::VALUE2
-    }
-}
-impl core::ops::Deref for LEINC_R {
-    type Target = crate::FieldReader<bool, LEINC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LEINC_A::VALUE2
     }
 }
 impl R {
@@ -223,29 +137,32 @@ impl R {
     #[doc = "Bit 24 - Last Error Transfer Direction"]
     #[inline(always)]
     pub fn letd(&self) -> LETD_R {
-        LETD_R::new(((self.bits >> 24) & 0x01) != 0)
+        LETD_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Last Error Increment"]
     #[inline(always)]
     pub fn leinc(&self) -> LEINC_R {
-        LEINC_R::new(((self.bits >> 25) & 0x01) != 0)
+        LEINC_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Receive Error Counter"]
     #[inline(always)]
-    pub fn rec(&mut self) -> REC_W {
-        REC_W { w: self }
+    #[must_use]
+    pub fn rec(&mut self) -> REC_W<0> {
+        REC_W::new(self)
     }
     #[doc = "Bits 8:15 - Transmit Error Counter"]
     #[inline(always)]
-    pub fn tec(&mut self) -> TEC_W {
-        TEC_W { w: self }
+    #[must_use]
+    pub fn tec(&mut self) -> TEC_W<8> {
+        TEC_W::new(self)
     }
     #[doc = "Bits 16:23 - Error Warning Level"]
     #[inline(always)]
-    pub fn ewrnlvl(&mut self) -> EWRNLVL_W {
-        EWRNLVL_W { w: self }
+    #[must_use]
+    pub fn ewrnlvl(&mut self) -> EWRNLVL_W<16> {
+        EWRNLVL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -266,11 +183,10 @@ impl crate::Readable for NECNT_SPEC {
 #[doc = "`write(|w| ..)` method takes [necnt::W](W) writer structure"]
 impl crate::Writable for NECNT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets NECNT to value 0x0060_0000"]
 impl crate::Resettable for NECNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0060_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0060_0000;
 }

@@ -13,8 +13,10 @@ impl From<crate::R<SYNC_LATCH_CONFIG_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `SYNC0_POL` reader - SYNC0 output driver/polarity"]
+pub type SYNC0_POL_R = crate::FieldReader<u8, SYNC0_POL_A>;
 #[doc = "SYNC0 output driver/polarity\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SYNC0_POL_A {
     #[doc = "0: Push-Pull active low"]
@@ -32,13 +34,8 @@ impl From<SYNC0_POL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SYNC0_POL` reader - SYNC0 output driver/polarity"]
-pub struct SYNC0_POL_R(crate::FieldReader<u8, SYNC0_POL_A>);
 impl SYNC0_POL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SYNC0_POL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYNC0_POL_A {
         match self.bits {
@@ -52,33 +49,28 @@ impl SYNC0_POL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SYNC0_POL_A::VALUE1
+        *self == SYNC0_POL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SYNC0_POL_A::VALUE2
+        *self == SYNC0_POL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == SYNC0_POL_A::VALUE3
+        *self == SYNC0_POL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == SYNC0_POL_A::VALUE4
+        *self == SYNC0_POL_A::VALUE4
     }
 }
-impl core::ops::Deref for SYNC0_POL_R {
-    type Target = crate::FieldReader<u8, SYNC0_POL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SL0_CNF` reader - SYNC0/LATCH0 configuration"]
+pub type SL0_CNF_R = crate::BitReader<SL0_CNF_A>;
 #[doc = "SYNC0/LATCH0 configuration\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SL0_CNF_A {
     #[doc = "0: LATCH0 Input"]
     VALUE1 = 0,
@@ -91,13 +83,8 @@ impl From<SL0_CNF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SL0_CNF` reader - SYNC0/LATCH0 configuration"]
-pub struct SL0_CNF_R(crate::FieldReader<bool, SL0_CNF_A>);
 impl SL0_CNF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SL0_CNF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SL0_CNF_A {
         match self.bits {
@@ -108,23 +95,18 @@ impl SL0_CNF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SL0_CNF_A::VALUE1
+        *self == SL0_CNF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SL0_CNF_A::VALUE2
+        *self == SL0_CNF_A::VALUE2
     }
 }
-impl core::ops::Deref for SL0_CNF_R {
-    type Target = crate::FieldReader<bool, SL0_CNF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `S0_MAP` reader - SYNC0 mapped to registerECAT0_AL_EVENT_REQ. ST_S0"]
+pub type S0_MAP_R = crate::BitReader<S0_MAP_A>;
 #[doc = "SYNC0 mapped to registerECAT0_AL_EVENT_REQ. ST_S0\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum S0_MAP_A {
     #[doc = "0: Disabled"]
     VALUE1 = 0,
@@ -137,13 +119,8 @@ impl From<S0_MAP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `S0_MAP` reader - SYNC0 mapped to registerECAT0_AL_EVENT_REQ. ST_S0"]
-pub struct S0_MAP_R(crate::FieldReader<bool, S0_MAP_A>);
 impl S0_MAP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        S0_MAP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S0_MAP_A {
         match self.bits {
@@ -154,23 +131,18 @@ impl S0_MAP_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == S0_MAP_A::VALUE1
+        *self == S0_MAP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == S0_MAP_A::VALUE2
+        *self == S0_MAP_A::VALUE2
     }
 }
-impl core::ops::Deref for S0_MAP_R {
-    type Target = crate::FieldReader<bool, S0_MAP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SYNC1_POL` reader - SYNC1 output driver/polarity"]
+pub type SYNC1_POL_R = crate::FieldReader<u8, SYNC1_POL_A>;
 #[doc = "SYNC1 output driver/polarity\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SYNC1_POL_A {
     #[doc = "0: Push-Pull active low"]
@@ -188,13 +160,8 @@ impl From<SYNC1_POL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SYNC1_POL` reader - SYNC1 output driver/polarity"]
-pub struct SYNC1_POL_R(crate::FieldReader<u8, SYNC1_POL_A>);
 impl SYNC1_POL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SYNC1_POL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYNC1_POL_A {
         match self.bits {
@@ -208,33 +175,28 @@ impl SYNC1_POL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SYNC1_POL_A::VALUE1
+        *self == SYNC1_POL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SYNC1_POL_A::VALUE2
+        *self == SYNC1_POL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == SYNC1_POL_A::VALUE3
+        *self == SYNC1_POL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == SYNC1_POL_A::VALUE4
+        *self == SYNC1_POL_A::VALUE4
     }
 }
-impl core::ops::Deref for SYNC1_POL_R {
-    type Target = crate::FieldReader<u8, SYNC1_POL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SL1_CNF` reader - SYNC1/LATCH1 configuration"]
+pub type SL1_CNF_R = crate::BitReader<SL1_CNF_A>;
 #[doc = "SYNC1/LATCH1 configuration\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SL1_CNF_A {
     #[doc = "0: LATCH1 Input"]
     VALUE1 = 0,
@@ -247,13 +209,8 @@ impl From<SL1_CNF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SL1_CNF` reader - SYNC1/LATCH1 configuration"]
-pub struct SL1_CNF_R(crate::FieldReader<bool, SL1_CNF_A>);
 impl SL1_CNF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SL1_CNF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SL1_CNF_A {
         match self.bits {
@@ -264,23 +221,18 @@ impl SL1_CNF_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SL1_CNF_A::VALUE1
+        *self == SL1_CNF_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SL1_CNF_A::VALUE2
+        *self == SL1_CNF_A::VALUE2
     }
 }
-impl core::ops::Deref for SL1_CNF_R {
-    type Target = crate::FieldReader<bool, SL1_CNF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `S1_MAP` reader - SYNC1 mapped to registerECAT0_AL_EVENT_REQ. ST_S1"]
+pub type S1_MAP_R = crate::BitReader<S1_MAP_A>;
 #[doc = "SYNC1 mapped to registerECAT0_AL_EVENT_REQ. ST_S1\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum S1_MAP_A {
     #[doc = "0: Disabled"]
     VALUE1 = 0,
@@ -293,13 +245,8 @@ impl From<S1_MAP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `S1_MAP` reader - SYNC1 mapped to registerECAT0_AL_EVENT_REQ. ST_S1"]
-pub struct S1_MAP_R(crate::FieldReader<bool, S1_MAP_A>);
 impl S1_MAP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        S1_MAP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S1_MAP_A {
         match self.bits {
@@ -310,51 +257,44 @@ impl S1_MAP_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == S1_MAP_A::VALUE1
+        *self == S1_MAP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == S1_MAP_A::VALUE2
-    }
-}
-impl core::ops::Deref for S1_MAP_R {
-    type Target = crate::FieldReader<bool, S1_MAP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == S1_MAP_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bits 0:1 - SYNC0 output driver/polarity"]
     #[inline(always)]
     pub fn sync0_pol(&self) -> SYNC0_POL_R {
-        SYNC0_POL_R::new((self.bits & 0x03) as u8)
+        SYNC0_POL_R::new(self.bits & 3)
     }
     #[doc = "Bit 2 - SYNC0/LATCH0 configuration"]
     #[inline(always)]
     pub fn sl0_cnf(&self) -> SL0_CNF_R {
-        SL0_CNF_R::new(((self.bits >> 2) & 0x01) != 0)
+        SL0_CNF_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - SYNC0 mapped to registerECAT0_AL_EVENT_REQ. ST_S0"]
     #[inline(always)]
     pub fn s0_map(&self) -> S0_MAP_R {
-        S0_MAP_R::new(((self.bits >> 3) & 0x01) != 0)
+        S0_MAP_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:5 - SYNC1 output driver/polarity"]
     #[inline(always)]
     pub fn sync1_pol(&self) -> SYNC1_POL_R {
-        SYNC1_POL_R::new(((self.bits >> 4) & 0x03) as u8)
+        SYNC1_POL_R::new((self.bits >> 4) & 3)
     }
     #[doc = "Bit 6 - SYNC1/LATCH1 configuration"]
     #[inline(always)]
     pub fn sl1_cnf(&self) -> SL1_CNF_R {
-        SL1_CNF_R::new(((self.bits >> 6) & 0x01) != 0)
+        SL1_CNF_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - SYNC1 mapped to registerECAT0_AL_EVENT_REQ. ST_S1"]
     #[inline(always)]
     pub fn s1_map(&self) -> S1_MAP_R {
-        S1_MAP_R::new(((self.bits >> 7) & 0x01) != 0)
+        S1_MAP_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 #[doc = "Sync/Latch\\[1:0\\]
@@ -369,8 +309,5 @@ impl crate::Readable for SYNC_LATCH_CONFIG_SPEC {
 }
 #[doc = "`reset()` method sets SYNC_LATCH_CONFIG to value 0xee"]
 impl crate::Resettable for SYNC_LATCH_CONFIG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xee
-    }
+    const RESET_VALUE: Self::Ux = 0xee;
 }

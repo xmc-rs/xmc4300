@@ -20,140 +20,45 @@ impl From<crate::W<GIDLC_SPEC>> for W {
     }
 }
 #[doc = "Field `CS0I` writer - CC40 IDLE mode clear"]
-pub struct CS0I_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CS0I_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CS0I_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLC_SPEC, bool, O>;
 #[doc = "Field `CS1I` writer - CC41 IDLE mode clear"]
-pub struct CS1I_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CS1I_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CS1I_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLC_SPEC, bool, O>;
 #[doc = "Field `CS2I` writer - CC42 IDLE mode clear"]
-pub struct CS2I_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CS2I_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CS2I_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLC_SPEC, bool, O>;
 #[doc = "Field `CS3I` writer - CC43 IDLE mode clear"]
-pub struct CS3I_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CS3I_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CS3I_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLC_SPEC, bool, O>;
 #[doc = "Field `SPRB` writer - Prescaler Run Bit Set"]
-pub struct SPRB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPRB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type SPRB_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - CC40 IDLE mode clear"]
     #[inline(always)]
-    pub fn cs0i(&mut self) -> CS0I_W {
-        CS0I_W { w: self }
+    #[must_use]
+    pub fn cs0i(&mut self) -> CS0I_W<0> {
+        CS0I_W::new(self)
     }
     #[doc = "Bit 1 - CC41 IDLE mode clear"]
     #[inline(always)]
-    pub fn cs1i(&mut self) -> CS1I_W {
-        CS1I_W { w: self }
+    #[must_use]
+    pub fn cs1i(&mut self) -> CS1I_W<1> {
+        CS1I_W::new(self)
     }
     #[doc = "Bit 2 - CC42 IDLE mode clear"]
     #[inline(always)]
-    pub fn cs2i(&mut self) -> CS2I_W {
-        CS2I_W { w: self }
+    #[must_use]
+    pub fn cs2i(&mut self) -> CS2I_W<2> {
+        CS2I_W::new(self)
     }
     #[doc = "Bit 3 - CC43 IDLE mode clear"]
     #[inline(always)]
-    pub fn cs3i(&mut self) -> CS3I_W {
-        CS3I_W { w: self }
+    #[must_use]
+    pub fn cs3i(&mut self) -> CS3I_W<3> {
+        CS3I_W::new(self)
     }
     #[doc = "Bit 8 - Prescaler Run Bit Set"]
     #[inline(always)]
-    pub fn sprb(&mut self) -> SPRB_W {
-        SPRB_W { w: self }
+    #[must_use]
+    pub fn sprb(&mut self) -> SPRB_W<8> {
+        SPRB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -170,11 +75,10 @@ impl crate::RegisterSpec for GIDLC_SPEC {
 #[doc = "`write(|w| ..)` method takes [gidlc::W](W) writer structure"]
 impl crate::Writable for GIDLC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GIDLC to value 0"]
 impl crate::Resettable for GIDLC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

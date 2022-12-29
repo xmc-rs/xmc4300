@@ -14,24 +14,12 @@ impl From<crate::R<TX_EXCESSIVE_DEFERRAL_ERROR_SPEC>> for R {
     }
 }
 #[doc = "Field `TXEXSDEF` reader - This field indicates the number of frames aborted because of excessive deferral error, that is, frames deferred for more than two max-sized frame times."]
-pub struct TXEXSDEF_R(crate::FieldReader<u32, u32>);
-impl TXEXSDEF_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        TXEXSDEF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXEXSDEF_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXEXSDEF_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of frames aborted because of excessive deferral error, that is, frames deferred for more than two max-sized frame times."]
     #[inline(always)]
     pub fn txexsdef(&self) -> TXEXSDEF_R {
-        TXEXSDEF_R::new((self.bits & 0xffff_ffff) as u32)
+        TXEXSDEF_R::new(self.bits)
     }
 }
 #[doc = "Transmit Frame Count for Excessive Deferral Error Frames\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_excessive_deferral_error](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for TX_EXCESSIVE_DEFERRAL_ERROR_SPEC {
 }
 #[doc = "`reset()` method sets TX_EXCESSIVE_DEFERRAL_ERROR to value 0"]
 impl crate::Resettable for TX_EXCESSIVE_DEFERRAL_ERROR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,7 +20,7 @@ impl From<crate::W<RSTCLR_SPEC>> for W {
     }
 }
 #[doc = "Clear Reset Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RSCLR_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -34,15 +34,8 @@ impl From<RSCLR_AW> for bool {
     }
 }
 #[doc = "Field `RSCLR` writer - Clear Reset Status"]
-pub struct RSCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSCLR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RSCLR_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RSCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCLR_SPEC, RSCLR_AW, O>;
+impl<'a, const O: u8> RSCLR_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -53,25 +46,9 @@ impl<'a> RSCLR_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(RSCLR_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 #[doc = "Clear Hibernate Wake-up Reset Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HIBWK_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -85,15 +62,8 @@ impl From<HIBWK_AW> for bool {
     }
 }
 #[doc = "Field `HIBWK` writer - Clear Hibernate Wake-up Reset Status"]
-pub struct HIBWK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIBWK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HIBWK_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HIBWK_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCLR_SPEC, HIBWK_AW, O>;
+impl<'a, const O: u8> HIBWK_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -104,25 +74,9 @@ impl<'a> HIBWK_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(HIBWK_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
 #[doc = "Clear Hibernate Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HIBRS_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -136,15 +90,8 @@ impl From<HIBRS_AW> for bool {
     }
 }
 #[doc = "Field `HIBRS` writer - Clear Hibernate Reset"]
-pub struct HIBRS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIBRS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HIBRS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HIBRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCLR_SPEC, HIBRS_AW, O>;
+impl<'a, const O: u8> HIBRS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -155,25 +102,9 @@ impl<'a> HIBRS_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(HIBRS_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
 }
 #[doc = "Enable Lockup Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCKEN_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -187,15 +118,8 @@ impl From<LCKEN_AW> for bool {
     }
 }
 #[doc = "Field `LCKEN` writer - Enable Lockup Reset"]
-pub struct LCKEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCKEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LCKEN_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LCKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCLR_SPEC, LCKEN_AW, O>;
+impl<'a, const O: u8> LCKEN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -206,25 +130,9 @@ impl<'a> LCKEN_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(LCKEN_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
 }
 #[doc = "ECAT0 Reset Status Information\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ECAT0RS_AW {
     #[doc = "0: No effect"]
     CONST_0 = 0,
@@ -238,15 +146,8 @@ impl From<ECAT0RS_AW> for bool {
     }
 }
 #[doc = "Field `ECAT0RS` writer - ECAT0 Reset Status Information"]
-pub struct ECAT0RS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ECAT0RS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ECAT0RS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ECAT0RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCLR_SPEC, ECAT0RS_AW, O>;
+impl<'a, const O: u8> ECAT0RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn const_0(self) -> &'a mut W {
@@ -257,48 +158,37 @@ impl<'a> ECAT0RS_W<'a> {
     pub fn const_1(self) -> &'a mut W {
         self.variant(ECAT0RS_AW::CONST_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Clear Reset Status"]
     #[inline(always)]
-    pub fn rsclr(&mut self) -> RSCLR_W {
-        RSCLR_W { w: self }
+    #[must_use]
+    pub fn rsclr(&mut self) -> RSCLR_W<0> {
+        RSCLR_W::new(self)
     }
     #[doc = "Bit 8 - Clear Hibernate Wake-up Reset Status"]
     #[inline(always)]
-    pub fn hibwk(&mut self) -> HIBWK_W {
-        HIBWK_W { w: self }
+    #[must_use]
+    pub fn hibwk(&mut self) -> HIBWK_W<8> {
+        HIBWK_W::new(self)
     }
     #[doc = "Bit 9 - Clear Hibernate Reset"]
     #[inline(always)]
-    pub fn hibrs(&mut self) -> HIBRS_W {
-        HIBRS_W { w: self }
+    #[must_use]
+    pub fn hibrs(&mut self) -> HIBRS_W<9> {
+        HIBRS_W::new(self)
     }
     #[doc = "Bit 10 - Enable Lockup Reset"]
     #[inline(always)]
-    pub fn lcken(&mut self) -> LCKEN_W {
-        LCKEN_W { w: self }
+    #[must_use]
+    pub fn lcken(&mut self) -> LCKEN_W<10> {
+        LCKEN_W::new(self)
     }
     #[doc = "Bit 12 - ECAT0 Reset Status Information"]
     #[inline(always)]
-    pub fn ecat0rs(&mut self) -> ECAT0RS_W {
-        ECAT0RS_W { w: self }
+    #[must_use]
+    pub fn ecat0rs(&mut self) -> ECAT0RS_W<12> {
+        ECAT0RS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -315,11 +205,10 @@ impl crate::RegisterSpec for RSTCLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [rstclr::W](W) writer structure"]
 impl crate::Writable for RSTCLR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RSTCLR to value 0"]
 impl crate::Resettable for RSTCLR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

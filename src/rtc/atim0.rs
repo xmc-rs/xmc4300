@@ -35,109 +35,21 @@ impl From<crate::W<ATIM0_SPEC>> for W {
     }
 }
 #[doc = "Field `ASE` reader - Alarm Seconds Compare Value"]
-pub struct ASE_R(crate::FieldReader<u8, u8>);
-impl ASE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ASE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ASE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ASE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ASE` writer - Alarm Seconds Compare Value"]
-pub struct ASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ASE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type ASE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ATIM0_SPEC, u8, u8, 6, O>;
 #[doc = "Field `AMI` reader - Alarm Minutes Compare Value"]
-pub struct AMI_R(crate::FieldReader<u8, u8>);
-impl AMI_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        AMI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AMI_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AMI_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AMI` writer - Alarm Minutes Compare Value"]
-pub struct AMI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AMI_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | ((value as u32 & 0x3f) << 8);
-        self.w
-    }
-}
+pub type AMI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ATIM0_SPEC, u8, u8, 6, O>;
 #[doc = "Field `AHO` reader - Alarm Hours Compare Value"]
-pub struct AHO_R(crate::FieldReader<u8, u8>);
-impl AHO_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        AHO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AHO_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AHO_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AHO` writer - Alarm Hours Compare Value"]
-pub struct AHO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AHO_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 16)) | ((value as u32 & 0x1f) << 16);
-        self.w
-    }
-}
+pub type AHO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ATIM0_SPEC, u8, u8, 5, O>;
 #[doc = "Field `ADA` reader - Alarm Days Compare Value"]
-pub struct ADA_R(crate::FieldReader<u8, u8>);
-impl ADA_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ADA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ADA` writer - Alarm Days Compare Value"]
-pub struct ADA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 24)) | ((value as u32 & 0x1f) << 24);
-        self.w
-    }
-}
+pub type ADA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ATIM0_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 0:5 - Alarm Seconds Compare Value"]
     #[inline(always)]
@@ -163,23 +75,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Alarm Seconds Compare Value"]
     #[inline(always)]
-    pub fn ase(&mut self) -> ASE_W {
-        ASE_W { w: self }
+    #[must_use]
+    pub fn ase(&mut self) -> ASE_W<0> {
+        ASE_W::new(self)
     }
     #[doc = "Bits 8:13 - Alarm Minutes Compare Value"]
     #[inline(always)]
-    pub fn ami(&mut self) -> AMI_W {
-        AMI_W { w: self }
+    #[must_use]
+    pub fn ami(&mut self) -> AMI_W<8> {
+        AMI_W::new(self)
     }
     #[doc = "Bits 16:20 - Alarm Hours Compare Value"]
     #[inline(always)]
-    pub fn aho(&mut self) -> AHO_W {
-        AHO_W { w: self }
+    #[must_use]
+    pub fn aho(&mut self) -> AHO_W<16> {
+        AHO_W::new(self)
     }
     #[doc = "Bits 24:28 - Alarm Days Compare Value"]
     #[inline(always)]
-    pub fn ada(&mut self) -> ADA_W {
-        ADA_W { w: self }
+    #[must_use]
+    pub fn ada(&mut self) -> ADA_W<24> {
+        ADA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -200,11 +116,10 @@ impl crate::Readable for ATIM0_SPEC {
 #[doc = "`write(|w| ..)` method takes [atim0::W](W) writer structure"]
 impl crate::Writable for ATIM0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ATIM0 to value 0"]
 impl crate::Resettable for ATIM0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

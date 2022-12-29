@@ -20,7 +20,7 @@ impl From<crate::W<CLEARSRCTRAN_SPEC>> for W {
     }
 }
 #[doc = "Clear Interrupt Status and Raw Status for channel 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH0_AW {
     #[doc = "0: no effect"]
     VALUE1 = 0,
@@ -34,15 +34,8 @@ impl From<CH0_AW> for bool {
     }
 }
 #[doc = "Field `CH0` writer - Clear Interrupt Status and Raw Status for channel 0"]
-pub struct CH0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH0_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLEARSRCTRAN_SPEC, CH0_AW, O>;
+impl<'a, const O: u8> CH0_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -53,25 +46,9 @@ impl<'a> CH0_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CH0_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 #[doc = "Clear Interrupt Status and Raw Status for channel 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH1_AW {
     #[doc = "0: no effect"]
     VALUE1 = 0,
@@ -85,15 +62,8 @@ impl From<CH1_AW> for bool {
     }
 }
 #[doc = "Field `CH1` writer - Clear Interrupt Status and Raw Status for channel 1"]
-pub struct CH1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH1_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLEARSRCTRAN_SPEC, CH1_AW, O>;
+impl<'a, const O: u8> CH1_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -104,25 +74,9 @@ impl<'a> CH1_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CH1_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 #[doc = "Clear Interrupt Status and Raw Status for channel 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH2_AW {
     #[doc = "0: no effect"]
     VALUE1 = 0,
@@ -136,15 +90,8 @@ impl From<CH2_AW> for bool {
     }
 }
 #[doc = "Field `CH2` writer - Clear Interrupt Status and Raw Status for channel 2"]
-pub struct CH2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH2_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLEARSRCTRAN_SPEC, CH2_AW, O>;
+impl<'a, const O: u8> CH2_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -155,25 +102,9 @@ impl<'a> CH2_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CH2_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
 #[doc = "Clear Interrupt Status and Raw Status for channel 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH3_AW {
     #[doc = "0: no effect"]
     VALUE1 = 0,
@@ -187,15 +118,8 @@ impl From<CH3_AW> for bool {
     }
 }
 #[doc = "Field `CH3` writer - Clear Interrupt Status and Raw Status for channel 3"]
-pub struct CH3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH3_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLEARSRCTRAN_SPEC, CH3_AW, O>;
+impl<'a, const O: u8> CH3_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -206,25 +130,9 @@ impl<'a> CH3_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CH3_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
 #[doc = "Clear Interrupt Status and Raw Status for channel 4\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH4_AW {
     #[doc = "0: no effect"]
     VALUE1 = 0,
@@ -238,15 +146,8 @@ impl From<CH4_AW> for bool {
     }
 }
 #[doc = "Field `CH4` writer - Clear Interrupt Status and Raw Status for channel 4"]
-pub struct CH4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH4_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH4_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLEARSRCTRAN_SPEC, CH4_AW, O>;
+impl<'a, const O: u8> CH4_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -257,25 +158,9 @@ impl<'a> CH4_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CH4_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
 #[doc = "Clear Interrupt Status and Raw Status for channel 5\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH5_AW {
     #[doc = "0: no effect"]
     VALUE1 = 0,
@@ -289,15 +174,8 @@ impl From<CH5_AW> for bool {
     }
 }
 #[doc = "Field `CH5` writer - Clear Interrupt Status and Raw Status for channel 5"]
-pub struct CH5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH5_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH5_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLEARSRCTRAN_SPEC, CH5_AW, O>;
+impl<'a, const O: u8> CH5_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -308,25 +186,9 @@ impl<'a> CH5_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CH5_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
 #[doc = "Clear Interrupt Status and Raw Status for channel 6\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH6_AW {
     #[doc = "0: no effect"]
     VALUE1 = 0,
@@ -340,15 +202,8 @@ impl From<CH6_AW> for bool {
     }
 }
 #[doc = "Field `CH6` writer - Clear Interrupt Status and Raw Status for channel 6"]
-pub struct CH6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH6_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH6_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLEARSRCTRAN_SPEC, CH6_AW, O>;
+impl<'a, const O: u8> CH6_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -359,25 +214,9 @@ impl<'a> CH6_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CH6_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
 #[doc = "Clear Interrupt Status and Raw Status for channel 7\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH7_AW {
     #[doc = "0: no effect"]
     VALUE1 = 0,
@@ -391,15 +230,8 @@ impl From<CH7_AW> for bool {
     }
 }
 #[doc = "Field `CH7` writer - Clear Interrupt Status and Raw Status for channel 7"]
-pub struct CH7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH7_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CH7_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLEARSRCTRAN_SPEC, CH7_AW, O>;
+impl<'a, const O: u8> CH7_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -410,63 +242,55 @@ impl<'a> CH7_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(CH7_AW::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 0 - Clear Interrupt Status and Raw Status for channel 0"]
     #[inline(always)]
-    pub fn ch0(&mut self) -> CH0_W {
-        CH0_W { w: self }
+    #[must_use]
+    pub fn ch0(&mut self) -> CH0_W<0> {
+        CH0_W::new(self)
     }
     #[doc = "Bit 1 - Clear Interrupt Status and Raw Status for channel 1"]
     #[inline(always)]
-    pub fn ch1(&mut self) -> CH1_W {
-        CH1_W { w: self }
+    #[must_use]
+    pub fn ch1(&mut self) -> CH1_W<1> {
+        CH1_W::new(self)
     }
     #[doc = "Bit 2 - Clear Interrupt Status and Raw Status for channel 2"]
     #[inline(always)]
-    pub fn ch2(&mut self) -> CH2_W {
-        CH2_W { w: self }
+    #[must_use]
+    pub fn ch2(&mut self) -> CH2_W<2> {
+        CH2_W::new(self)
     }
     #[doc = "Bit 3 - Clear Interrupt Status and Raw Status for channel 3"]
     #[inline(always)]
-    pub fn ch3(&mut self) -> CH3_W {
-        CH3_W { w: self }
+    #[must_use]
+    pub fn ch3(&mut self) -> CH3_W<3> {
+        CH3_W::new(self)
     }
     #[doc = "Bit 4 - Clear Interrupt Status and Raw Status for channel 4"]
     #[inline(always)]
-    pub fn ch4(&mut self) -> CH4_W {
-        CH4_W { w: self }
+    #[must_use]
+    pub fn ch4(&mut self) -> CH4_W<4> {
+        CH4_W::new(self)
     }
     #[doc = "Bit 5 - Clear Interrupt Status and Raw Status for channel 5"]
     #[inline(always)]
-    pub fn ch5(&mut self) -> CH5_W {
-        CH5_W { w: self }
+    #[must_use]
+    pub fn ch5(&mut self) -> CH5_W<5> {
+        CH5_W::new(self)
     }
     #[doc = "Bit 6 - Clear Interrupt Status and Raw Status for channel 6"]
     #[inline(always)]
-    pub fn ch6(&mut self) -> CH6_W {
-        CH6_W { w: self }
+    #[must_use]
+    pub fn ch6(&mut self) -> CH6_W<6> {
+        CH6_W::new(self)
     }
     #[doc = "Bit 7 - Clear Interrupt Status and Raw Status for channel 7"]
     #[inline(always)]
-    pub fn ch7(&mut self) -> CH7_W {
-        CH7_W { w: self }
+    #[must_use]
+    pub fn ch7(&mut self) -> CH7_W<7> {
+        CH7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -483,11 +307,10 @@ impl crate::RegisterSpec for CLEARSRCTRAN_SPEC {
 #[doc = "`write(|w| ..)` method takes [clearsrctran::W](W) writer structure"]
 impl crate::Writable for CLEARSRCTRAN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLEARSRCTRAN to value 0"]
 impl crate::Resettable for CLEARSRCTRAN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<INPR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TSINP` reader - Transmit Shift Interrupt Node Pointer"]
+pub type TSINP_R = crate::FieldReader<u8, TSINP_A>;
 #[doc = "Transmit Shift Interrupt Node Pointer\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TSINP_A {
     #[doc = "0: Output SR0 becomes activated."]
@@ -57,13 +59,8 @@ impl From<TSINP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TSINP` reader - Transmit Shift Interrupt Node Pointer"]
-pub struct TSINP_R(crate::FieldReader<u8, TSINP_A>);
 impl TSINP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TSINP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TSINP_A> {
         match self.bits {
@@ -79,51 +76,37 @@ impl TSINP_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == TSINP_A::VALUE1
+        *self == TSINP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == TSINP_A::VALUE2
+        *self == TSINP_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == TSINP_A::VALUE3
+        *self == TSINP_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == TSINP_A::VALUE4
+        *self == TSINP_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        **self == TSINP_A::VALUE5
+        *self == TSINP_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        **self == TSINP_A::VALUE6
-    }
-}
-impl core::ops::Deref for TSINP_R {
-    type Target = crate::FieldReader<u8, TSINP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TSINP_A::VALUE6
     }
 }
 #[doc = "Field `TSINP` writer - Transmit Shift Interrupt Node Pointer"]
-pub struct TSINP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSINP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TSINP_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type TSINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPR_SPEC, u8, TSINP_A, 3, O>;
+impl<'a, const O: u8> TSINP_W<'a, O> {
     #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -154,169 +137,80 @@ impl<'a> TSINP_W<'a> {
     pub fn value6(self) -> &'a mut W {
         self.variant(TSINP_A::VALUE6)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 #[doc = "Field `TBINP` reader - Transmit Buffer Interrupt Node Pointer"]
-pub struct TBINP_R(crate::FieldReader<u8, u8>);
-impl TBINP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TBINP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TBINP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TBINP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TBINP` writer - Transmit Buffer Interrupt Node Pointer"]
-pub struct TBINP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TBINP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
-        self.w
-    }
-}
+pub type TBINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPR_SPEC, u8, u8, 3, O>;
 #[doc = "Field `RINP` reader - Receive Interrupt Node Pointer"]
-pub struct RINP_R(crate::FieldReader<u8, u8>);
-impl RINP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RINP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RINP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RINP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RINP` writer - Receive Interrupt Node Pointer"]
-pub struct RINP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RINP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
-}
+pub type RINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPR_SPEC, u8, u8, 3, O>;
 #[doc = "Field `AINP` reader - Alternative Receive Interrupt Node Pointer"]
-pub struct AINP_R(crate::FieldReader<u8, u8>);
-impl AINP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        AINP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AINP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AINP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AINP` writer - Alternative Receive Interrupt Node Pointer"]
-pub struct AINP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AINP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | ((value as u32 & 0x07) << 12);
-        self.w
-    }
-}
+pub type AINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPR_SPEC, u8, u8, 3, O>;
 #[doc = "Field `PINP` reader - Transmit Shift Interrupt Node Pointer"]
-pub struct PINP_R(crate::FieldReader<u8, u8>);
-impl PINP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PINP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PINP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PINP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PINP` writer - Transmit Shift Interrupt Node Pointer"]
-pub struct PINP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PINP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
-        self.w
-    }
-}
+pub type PINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPR_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:2 - Transmit Shift Interrupt Node Pointer"]
     #[inline(always)]
     pub fn tsinp(&self) -> TSINP_R {
-        TSINP_R::new((self.bits & 0x07) as u8)
+        TSINP_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 4:6 - Transmit Buffer Interrupt Node Pointer"]
     #[inline(always)]
     pub fn tbinp(&self) -> TBINP_R {
-        TBINP_R::new(((self.bits >> 4) & 0x07) as u8)
+        TBINP_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bits 8:10 - Receive Interrupt Node Pointer"]
     #[inline(always)]
     pub fn rinp(&self) -> RINP_R {
-        RINP_R::new(((self.bits >> 8) & 0x07) as u8)
+        RINP_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bits 12:14 - Alternative Receive Interrupt Node Pointer"]
     #[inline(always)]
     pub fn ainp(&self) -> AINP_R {
-        AINP_R::new(((self.bits >> 12) & 0x07) as u8)
+        AINP_R::new(((self.bits >> 12) & 7) as u8)
     }
     #[doc = "Bits 16:18 - Transmit Shift Interrupt Node Pointer"]
     #[inline(always)]
     pub fn pinp(&self) -> PINP_R {
-        PINP_R::new(((self.bits >> 16) & 0x07) as u8)
+        PINP_R::new(((self.bits >> 16) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Transmit Shift Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn tsinp(&mut self) -> TSINP_W {
-        TSINP_W { w: self }
+    #[must_use]
+    pub fn tsinp(&mut self) -> TSINP_W<0> {
+        TSINP_W::new(self)
     }
     #[doc = "Bits 4:6 - Transmit Buffer Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn tbinp(&mut self) -> TBINP_W {
-        TBINP_W { w: self }
+    #[must_use]
+    pub fn tbinp(&mut self) -> TBINP_W<4> {
+        TBINP_W::new(self)
     }
     #[doc = "Bits 8:10 - Receive Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn rinp(&mut self) -> RINP_W {
-        RINP_W { w: self }
+    #[must_use]
+    pub fn rinp(&mut self) -> RINP_W<8> {
+        RINP_W::new(self)
     }
     #[doc = "Bits 12:14 - Alternative Receive Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn ainp(&mut self) -> AINP_W {
-        AINP_W { w: self }
+    #[must_use]
+    pub fn ainp(&mut self) -> AINP_W<12> {
+        AINP_W::new(self)
     }
     #[doc = "Bits 16:18 - Transmit Shift Interrupt Node Pointer"]
     #[inline(always)]
-    pub fn pinp(&mut self) -> PINP_W {
-        PINP_W { w: self }
+    #[must_use]
+    pub fn pinp(&mut self) -> PINP_W<16> {
+        PINP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -337,11 +231,10 @@ impl crate::Readable for INPR_SPEC {
 #[doc = "`write(|w| ..)` method takes [inpr::W](W) writer structure"]
 impl crate::Writable for INPR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets INPR to value 0"]
 impl crate::Resettable for INPR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

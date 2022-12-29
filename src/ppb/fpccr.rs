@@ -34,8 +34,10 @@ impl From<crate::W<FPCCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LSPACT` reader - Lazy State Preservation Active"]
+pub type LSPACT_R = crate::BitReader<LSPACT_A>;
 #[doc = "Lazy State Preservation Active\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LSPACT_A {
     #[doc = "0: Lazy state preservation is not active."]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<LSPACT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LSPACT` reader - Lazy State Preservation Active"]
-pub struct LSPACT_R(crate::FieldReader<bool, LSPACT_A>);
 impl LSPACT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSPACT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSPACT_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl LSPACT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LSPACT_A::VALUE1
+        *self == LSPACT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LSPACT_A::VALUE2
-    }
-}
-impl core::ops::Deref for LSPACT_R {
-    type Target = crate::FieldReader<bool, LSPACT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LSPACT_A::VALUE2
     }
 }
 #[doc = "Field `LSPACT` writer - Lazy State Preservation Active"]
-pub struct LSPACT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LSPACT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LSPACT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LSPACT_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, LSPACT_A, O>;
+impl<'a, const O: u8> LSPACT_W<'a, O> {
     #[doc = "Lazy state preservation is not active."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> LSPACT_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(LSPACT_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `USER` reader - User allocated Stack Frame"]
+pub type USER_R = crate::BitReader<USER_A>;
 #[doc = "User allocated Stack Frame\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum USER_A {
     #[doc = "0: Privilege level was not user when the floating-point stack frame was allocated."]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<USER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `USER` reader - User allocated Stack Frame"]
-pub struct USER_R(crate::FieldReader<bool, USER_A>);
 impl USER_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        USER_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USER_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl USER_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == USER_A::VALUE1
+        *self == USER_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == USER_A::VALUE2
-    }
-}
-impl core::ops::Deref for USER_R {
-    type Target = crate::FieldReader<bool, USER_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == USER_A::VALUE2
     }
 }
 #[doc = "Field `USER` writer - User allocated Stack Frame"]
-pub struct USER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USER_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USER_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type USER_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, USER_A, O>;
+impl<'a, const O: u8> USER_W<'a, O> {
     #[doc = "Privilege level was not user when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -183,25 +133,11 @@ impl<'a> USER_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(USER_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `THREAD` reader - Thread Mode allocated Stack Frame"]
+pub type THREAD_R = crate::BitReader<THREAD_A>;
 #[doc = "Thread Mode allocated Stack Frame\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum THREAD_A {
     #[doc = "0: Mode was not Thread Mode when the floating-point stack frame was allocated."]
     VALUE1 = 0,
@@ -214,13 +150,8 @@ impl From<THREAD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `THREAD` reader - Thread Mode allocated Stack Frame"]
-pub struct THREAD_R(crate::FieldReader<bool, THREAD_A>);
 impl THREAD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        THREAD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> THREAD_A {
         match self.bits {
@@ -231,31 +162,17 @@ impl THREAD_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == THREAD_A::VALUE1
+        *self == THREAD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == THREAD_A::VALUE2
-    }
-}
-impl core::ops::Deref for THREAD_R {
-    type Target = crate::FieldReader<bool, THREAD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == THREAD_A::VALUE2
     }
 }
 #[doc = "Field `THREAD` writer - Thread Mode allocated Stack Frame"]
-pub struct THREAD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> THREAD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: THREAD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type THREAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, THREAD_A, O>;
+impl<'a, const O: u8> THREAD_W<'a, O> {
     #[doc = "Mode was not Thread Mode when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -266,25 +183,11 @@ impl<'a> THREAD_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(THREAD_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `HFRDY` reader - HardFault Ready"]
+pub type HFRDY_R = crate::BitReader<HFRDY_A>;
 #[doc = "HardFault Ready\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HFRDY_A {
     #[doc = "0: Priority did not permit setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
     VALUE1 = 0,
@@ -297,13 +200,8 @@ impl From<HFRDY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HFRDY` reader - HardFault Ready"]
-pub struct HFRDY_R(crate::FieldReader<bool, HFRDY_A>);
 impl HFRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HFRDY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFRDY_A {
         match self.bits {
@@ -314,31 +212,17 @@ impl HFRDY_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == HFRDY_A::VALUE1
+        *self == HFRDY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == HFRDY_A::VALUE2
-    }
-}
-impl core::ops::Deref for HFRDY_R {
-    type Target = crate::FieldReader<bool, HFRDY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HFRDY_A::VALUE2
     }
 }
 #[doc = "Field `HFRDY` writer - HardFault Ready"]
-pub struct HFRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFRDY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HFRDY_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HFRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, HFRDY_A, O>;
+impl<'a, const O: u8> HFRDY_W<'a, O> {
     #[doc = "Priority did not permit setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -349,25 +233,11 @@ impl<'a> HFRDY_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(HFRDY_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
 }
+#[doc = "Field `MMRDY` reader - MemManage Ready"]
+pub type MMRDY_R = crate::BitReader<MMRDY_A>;
 #[doc = "MemManage Ready\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MMRDY_A {
     #[doc = "0: MemManage is disabled or priority did not permit setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
     VALUE1 = 0,
@@ -380,13 +250,8 @@ impl From<MMRDY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MMRDY` reader - MemManage Ready"]
-pub struct MMRDY_R(crate::FieldReader<bool, MMRDY_A>);
 impl MMRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MMRDY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MMRDY_A {
         match self.bits {
@@ -397,31 +262,17 @@ impl MMRDY_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == MMRDY_A::VALUE1
+        *self == MMRDY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == MMRDY_A::VALUE2
-    }
-}
-impl core::ops::Deref for MMRDY_R {
-    type Target = crate::FieldReader<bool, MMRDY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MMRDY_A::VALUE2
     }
 }
 #[doc = "Field `MMRDY` writer - MemManage Ready"]
-pub struct MMRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MMRDY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MMRDY_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MMRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, MMRDY_A, O>;
+impl<'a, const O: u8> MMRDY_W<'a, O> {
     #[doc = "MemManage is disabled or priority did not permit setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -432,25 +283,11 @@ impl<'a> MMRDY_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(MMRDY_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `BFRDY` reader - BusFault Ready"]
+pub type BFRDY_R = crate::BitReader<BFRDY_A>;
 #[doc = "BusFault Ready\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BFRDY_A {
     #[doc = "0: BusFault is disabled or priority did not permit setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
     VALUE1 = 0,
@@ -463,13 +300,8 @@ impl From<BFRDY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BFRDY` reader - BusFault Ready"]
-pub struct BFRDY_R(crate::FieldReader<bool, BFRDY_A>);
 impl BFRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BFRDY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BFRDY_A {
         match self.bits {
@@ -480,31 +312,17 @@ impl BFRDY_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == BFRDY_A::VALUE1
+        *self == BFRDY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == BFRDY_A::VALUE2
-    }
-}
-impl core::ops::Deref for BFRDY_R {
-    type Target = crate::FieldReader<bool, BFRDY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BFRDY_A::VALUE2
     }
 }
 #[doc = "Field `BFRDY` writer - BusFault Ready"]
-pub struct BFRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BFRDY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BFRDY_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type BFRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, BFRDY_A, O>;
+impl<'a, const O: u8> BFRDY_W<'a, O> {
     #[doc = "BusFault is disabled or priority did not permit setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -515,25 +333,11 @@ impl<'a> BFRDY_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(BFRDY_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `MONRDY` reader - Monitor Ready"]
+pub type MONRDY_R = crate::BitReader<MONRDY_A>;
 #[doc = "Monitor Ready\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MONRDY_A {
     #[doc = "0: Debug Monitor is disabled or priority did not permit setting MON_PEND when the floating-point stack frame was allocated."]
     VALUE1 = 0,
@@ -546,13 +350,8 @@ impl From<MONRDY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MONRDY` reader - Monitor Ready"]
-pub struct MONRDY_R(crate::FieldReader<bool, MONRDY_A>);
 impl MONRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MONRDY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MONRDY_A {
         match self.bits {
@@ -563,31 +362,17 @@ impl MONRDY_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == MONRDY_A::VALUE1
+        *self == MONRDY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == MONRDY_A::VALUE2
-    }
-}
-impl core::ops::Deref for MONRDY_R {
-    type Target = crate::FieldReader<bool, MONRDY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MONRDY_A::VALUE2
     }
 }
 #[doc = "Field `MONRDY` writer - Monitor Ready"]
-pub struct MONRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MONRDY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MONRDY_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MONRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, MONRDY_A, O>;
+impl<'a, const O: u8> MONRDY_W<'a, O> {
     #[doc = "Debug Monitor is disabled or priority did not permit setting MON_PEND when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -598,25 +383,11 @@ impl<'a> MONRDY_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(MONRDY_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
 }
+#[doc = "Field `LSPEN` reader - Lazy State Preservation Enabled"]
+pub type LSPEN_R = crate::BitReader<LSPEN_A>;
 #[doc = "Lazy State Preservation Enabled\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LSPEN_A {
     #[doc = "0: Disable automatic lazy state preservation for floating-point context."]
     VALUE1 = 0,
@@ -629,13 +400,8 @@ impl From<LSPEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LSPEN` reader - Lazy State Preservation Enabled"]
-pub struct LSPEN_R(crate::FieldReader<bool, LSPEN_A>);
 impl LSPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LSPEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSPEN_A {
         match self.bits {
@@ -646,31 +412,17 @@ impl LSPEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == LSPEN_A::VALUE1
+        *self == LSPEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == LSPEN_A::VALUE2
-    }
-}
-impl core::ops::Deref for LSPEN_R {
-    type Target = crate::FieldReader<bool, LSPEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LSPEN_A::VALUE2
     }
 }
 #[doc = "Field `LSPEN` writer - Lazy State Preservation Enabled"]
-pub struct LSPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LSPEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LSPEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, LSPEN_A, O>;
+impl<'a, const O: u8> LSPEN_W<'a, O> {
     #[doc = "Disable automatic lazy state preservation for floating-point context."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -681,25 +433,11 @@ impl<'a> LSPEN_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(LSPEN_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
 }
+#[doc = "Field `ASPEN` reader - Automatic State Preservation"]
+pub type ASPEN_R = crate::BitReader<ASPEN_A>;
 #[doc = "Automatic State Preservation\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ASPEN_A {
     #[doc = "0: Disable CONTROL setting on execution of a floating-point instruction."]
     VALUE1 = 0,
@@ -712,13 +450,8 @@ impl From<ASPEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ASPEN` reader - Automatic State Preservation"]
-pub struct ASPEN_R(crate::FieldReader<bool, ASPEN_A>);
 impl ASPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ASPEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ASPEN_A {
         match self.bits {
@@ -729,31 +462,17 @@ impl ASPEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ASPEN_A::VALUE1
+        *self == ASPEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ASPEN_A::VALUE2
-    }
-}
-impl core::ops::Deref for ASPEN_R {
-    type Target = crate::FieldReader<bool, ASPEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ASPEN_A::VALUE2
     }
 }
 #[doc = "Field `ASPEN` writer - Automatic State Preservation"]
-pub struct ASPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ASPEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ASPEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ASPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, ASPEN_A, O>;
+impl<'a, const O: u8> ASPEN_W<'a, O> {
     #[doc = "Disable CONTROL setting on execution of a floating-point instruction."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -764,115 +483,108 @@ impl<'a> ASPEN_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ASPEN_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Lazy State Preservation Active"]
     #[inline(always)]
     pub fn lspact(&self) -> LSPACT_R {
-        LSPACT_R::new((self.bits & 0x01) != 0)
+        LSPACT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - User allocated Stack Frame"]
     #[inline(always)]
     pub fn user(&self) -> USER_R {
-        USER_R::new(((self.bits >> 1) & 0x01) != 0)
+        USER_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 3 - Thread Mode allocated Stack Frame"]
     #[inline(always)]
     pub fn thread(&self) -> THREAD_R {
-        THREAD_R::new(((self.bits >> 3) & 0x01) != 0)
+        THREAD_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - HardFault Ready"]
     #[inline(always)]
     pub fn hfrdy(&self) -> HFRDY_R {
-        HFRDY_R::new(((self.bits >> 4) & 0x01) != 0)
+        HFRDY_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - MemManage Ready"]
     #[inline(always)]
     pub fn mmrdy(&self) -> MMRDY_R {
-        MMRDY_R::new(((self.bits >> 5) & 0x01) != 0)
+        MMRDY_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - BusFault Ready"]
     #[inline(always)]
     pub fn bfrdy(&self) -> BFRDY_R {
-        BFRDY_R::new(((self.bits >> 6) & 0x01) != 0)
+        BFRDY_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 8 - Monitor Ready"]
     #[inline(always)]
     pub fn monrdy(&self) -> MONRDY_R {
-        MONRDY_R::new(((self.bits >> 8) & 0x01) != 0)
+        MONRDY_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 30 - Lazy State Preservation Enabled"]
     #[inline(always)]
     pub fn lspen(&self) -> LSPEN_R {
-        LSPEN_R::new(((self.bits >> 30) & 0x01) != 0)
+        LSPEN_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Automatic State Preservation"]
     #[inline(always)]
     pub fn aspen(&self) -> ASPEN_R {
-        ASPEN_R::new(((self.bits >> 31) & 0x01) != 0)
+        ASPEN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Lazy State Preservation Active"]
     #[inline(always)]
-    pub fn lspact(&mut self) -> LSPACT_W {
-        LSPACT_W { w: self }
+    #[must_use]
+    pub fn lspact(&mut self) -> LSPACT_W<0> {
+        LSPACT_W::new(self)
     }
     #[doc = "Bit 1 - User allocated Stack Frame"]
     #[inline(always)]
-    pub fn user(&mut self) -> USER_W {
-        USER_W { w: self }
+    #[must_use]
+    pub fn user(&mut self) -> USER_W<1> {
+        USER_W::new(self)
     }
     #[doc = "Bit 3 - Thread Mode allocated Stack Frame"]
     #[inline(always)]
-    pub fn thread(&mut self) -> THREAD_W {
-        THREAD_W { w: self }
+    #[must_use]
+    pub fn thread(&mut self) -> THREAD_W<3> {
+        THREAD_W::new(self)
     }
     #[doc = "Bit 4 - HardFault Ready"]
     #[inline(always)]
-    pub fn hfrdy(&mut self) -> HFRDY_W {
-        HFRDY_W { w: self }
+    #[must_use]
+    pub fn hfrdy(&mut self) -> HFRDY_W<4> {
+        HFRDY_W::new(self)
     }
     #[doc = "Bit 5 - MemManage Ready"]
     #[inline(always)]
-    pub fn mmrdy(&mut self) -> MMRDY_W {
-        MMRDY_W { w: self }
+    #[must_use]
+    pub fn mmrdy(&mut self) -> MMRDY_W<5> {
+        MMRDY_W::new(self)
     }
     #[doc = "Bit 6 - BusFault Ready"]
     #[inline(always)]
-    pub fn bfrdy(&mut self) -> BFRDY_W {
-        BFRDY_W { w: self }
+    #[must_use]
+    pub fn bfrdy(&mut self) -> BFRDY_W<6> {
+        BFRDY_W::new(self)
     }
     #[doc = "Bit 8 - Monitor Ready"]
     #[inline(always)]
-    pub fn monrdy(&mut self) -> MONRDY_W {
-        MONRDY_W { w: self }
+    #[must_use]
+    pub fn monrdy(&mut self) -> MONRDY_W<8> {
+        MONRDY_W::new(self)
     }
     #[doc = "Bit 30 - Lazy State Preservation Enabled"]
     #[inline(always)]
-    pub fn lspen(&mut self) -> LSPEN_W {
-        LSPEN_W { w: self }
+    #[must_use]
+    pub fn lspen(&mut self) -> LSPEN_W<30> {
+        LSPEN_W::new(self)
     }
     #[doc = "Bit 31 - Automatic State Preservation"]
     #[inline(always)]
-    pub fn aspen(&mut self) -> ASPEN_W {
-        ASPEN_W { w: self }
+    #[must_use]
+    pub fn aspen(&mut self) -> ASPEN_W<31> {
+        ASPEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -893,11 +605,10 @@ impl crate::Readable for FPCCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [fpccr::W](W) writer structure"]
 impl crate::Writable for FPCCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FPCCR to value 0"]
 impl crate::Resettable for FPCCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

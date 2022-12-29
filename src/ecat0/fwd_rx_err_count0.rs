@@ -14,24 +14,12 @@ impl From<crate::R<FWD_RX_ERR_COUNT0_SPEC>> for R {
     }
 }
 #[doc = "Field `FORW_ERROR` reader - Forwarded error counter of Port y"]
-pub struct FORW_ERROR_R(crate::FieldReader<u8, u8>);
-impl FORW_ERROR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FORW_ERROR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FORW_ERROR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FORW_ERROR_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Forwarded error counter of Port y"]
     #[inline(always)]
     pub fn forw_error(&self) -> FORW_ERROR_R {
-        FORW_ERROR_R::new((self.bits & 0xff) as u8)
+        FORW_ERROR_R::new(self.bits)
     }
 }
 #[doc = "Forwarded RX Error Counter Port 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fwd_rx_err_count0](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for FWD_RX_ERR_COUNT0_SPEC {
 }
 #[doc = "`reset()` method sets FWD_RX_ERR_COUNT0 to value 0"]
 impl crate::Resettable for FWD_RX_ERR_COUNT0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }
