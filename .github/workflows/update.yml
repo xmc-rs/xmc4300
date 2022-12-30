@@ -1,0 +1,44 @@
+
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '7 5 1 * *'
+
+name: Update
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: svd2rust
+      - uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: form
+      - uses: oleksiyrudenko/gha-git-credentials@v2
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+      - run: |
+          rm -r src/
+          svd2rust -i XMC4500.svd
+          mkdir src
+          form -i lib.rs -o src/
+          cargo fmt
+          rm lib.rs
+      - uses: tibdex/github-app-token@v1
+        id: generate-token
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_SECRET_KEY }}
+      - uses: peter-evans/create-pull-request@v4
+        with:
+          branch: svd-update
+          commit-message: "feat: updating from newer svd2rust"
+          title: "feat: updating from newer svd2rust"
+          labels: automerge
+          token: ${{ steps.generate-token.outputs.token }}
