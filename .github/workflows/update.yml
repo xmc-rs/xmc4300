@@ -25,7 +25,7 @@ jobs:
           token: '${{ secrets.GITHUB_TOKEN }}'
       - run: |
           rm -r src/
-          svd2rust -i XMC4500.svd
+          svd2rust -i XMC4300.svd
           mkdir src
           form -i lib.rs -o src/
           cargo fmt
