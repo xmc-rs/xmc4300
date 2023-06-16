@@ -20,7 +20,7 @@ jobs:
         with:
           command: install
           args: form
-      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+      - uses: oleksiyrudenko/gha-git-credentials@v2.1.1
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
       - run: |
