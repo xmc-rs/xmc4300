@@ -14,7 +14,7 @@ impl From<crate::R<DOEPDMAB0_SPEC>> for R {
     }
 }
 #[doc = "Field `DMABufferAddr` reader - DMA Buffer Address"]
-pub type DMABUFFER_ADDR_R = crate::FieldReader<u32, u32>;
+pub type DMABUFFER_ADDR_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - DMA Buffer Address"]
     #[inline(always)]

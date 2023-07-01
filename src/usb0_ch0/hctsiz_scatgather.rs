@@ -35,15 +35,15 @@ impl From<crate::W<HCTSIZ_SCATGATHER_SPEC>> for W {
     }
 }
 #[doc = "Field `SCHED_INFO` reader - Schedule information"]
-pub type SCHED_INFO_R = crate::FieldReader<u8, u8>;
+pub type SCHED_INFO_R = crate::FieldReader;
 #[doc = "Field `SCHED_INFO` writer - Schedule information"]
-pub type SCHED_INFO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCTSIZ_SCATGATHER_SPEC, u8, u8, 8, O>;
+pub type SCHED_INFO_W<'a, const O: u8> = crate::FieldWriter<'a, HCTSIZ_SCATGATHER_SPEC, 8, O>;
 #[doc = "Field `NTD` reader - Number of Transfer Descriptors: 0=1 descriptor, 63=64 descriptors, 1=2 descriptors, 3=4 descriptors, 7=8 descriptors, 15=16 descriptors, 31=32 descriptors, 63=64 descriptors,"]
-pub type NTD_R = crate::FieldReader<u8, u8>;
+pub type NTD_R = crate::FieldReader;
 #[doc = "Field `NTD` writer - Number of Transfer Descriptors: 0=1 descriptor, 63=64 descriptors, 1=2 descriptors, 3=4 descriptors, 7=8 descriptors, 15=16 descriptors, 31=32 descriptors, 63=64 descriptors,"]
-pub type NTD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCTSIZ_SCATGATHER_SPEC, u8, u8, 8, O>;
+pub type NTD_W<'a, const O: u8> = crate::FieldWriter<'a, HCTSIZ_SCATGATHER_SPEC, 8, O>;
 #[doc = "Field `Pid` reader - PID"]
-pub type PID_R = crate::FieldReader<u8, PID_A>;
+pub type PID_R = crate::FieldReader<PID_A>;
 #[doc = "PID\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -62,6 +62,9 @@ impl From<PID_A> for u8 {
     fn from(variant: PID_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PID_A {
+    type Ux = u8;
 }
 impl PID_R {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl PID_R {
     }
 }
 #[doc = "Field `Pid` writer - PID"]
-pub type PID_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, HCTSIZ_SCATGATHER_SPEC, u8, PID_A, 2, O>;
+pub type PID_W<'a, const O: u8> = crate::FieldWriterSafe<'a, HCTSIZ_SCATGATHER_SPEC, 2, O, PID_A>;
 impl<'a, const O: u8> PID_W<'a, O> {
     #[doc = "DATA0"]
     #[inline(always)]

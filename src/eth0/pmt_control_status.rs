@@ -35,29 +35,29 @@ impl From<crate::W<PMT_CONTROL_STATUS_SPEC>> for W {
     }
 }
 #[doc = "Field `PWRDWN` reader - Power Down"]
-pub type PWRDWN_R = crate::BitReader<bool>;
+pub type PWRDWN_R = crate::BitReader;
 #[doc = "Field `PWRDWN` writer - Power Down"]
-pub type PWRDWN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMT_CONTROL_STATUS_SPEC, bool, O>;
+pub type PWRDWN_W<'a, const O: u8> = crate::BitWriter<'a, PMT_CONTROL_STATUS_SPEC, O>;
 #[doc = "Field `MGKPKTEN` reader - Magic Packet Enable"]
-pub type MGKPKTEN_R = crate::BitReader<bool>;
+pub type MGKPKTEN_R = crate::BitReader;
 #[doc = "Field `MGKPKTEN` writer - Magic Packet Enable"]
-pub type MGKPKTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMT_CONTROL_STATUS_SPEC, bool, O>;
+pub type MGKPKTEN_W<'a, const O: u8> = crate::BitWriter<'a, PMT_CONTROL_STATUS_SPEC, O>;
 #[doc = "Field `RWKPKTEN` reader - Wake-Up Frame Enable"]
-pub type RWKPKTEN_R = crate::BitReader<bool>;
+pub type RWKPKTEN_R = crate::BitReader;
 #[doc = "Field `RWKPKTEN` writer - Wake-Up Frame Enable"]
-pub type RWKPKTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMT_CONTROL_STATUS_SPEC, bool, O>;
+pub type RWKPKTEN_W<'a, const O: u8> = crate::BitWriter<'a, PMT_CONTROL_STATUS_SPEC, O>;
 #[doc = "Field `MGKPRCVD` reader - Magic Packet Received"]
-pub type MGKPRCVD_R = crate::BitReader<bool>;
+pub type MGKPRCVD_R = crate::BitReader;
 #[doc = "Field `RWKPRCVD` reader - Wake-Up Frame Received"]
-pub type RWKPRCVD_R = crate::BitReader<bool>;
+pub type RWKPRCVD_R = crate::BitReader;
 #[doc = "Field `GLBLUCAST` reader - Global Unicast"]
-pub type GLBLUCAST_R = crate::BitReader<bool>;
+pub type GLBLUCAST_R = crate::BitReader;
 #[doc = "Field `GLBLUCAST` writer - Global Unicast"]
-pub type GLBLUCAST_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMT_CONTROL_STATUS_SPEC, bool, O>;
+pub type GLBLUCAST_W<'a, const O: u8> = crate::BitWriter<'a, PMT_CONTROL_STATUS_SPEC, O>;
 #[doc = "Field `RWKFILTRST` reader - Wake-Up Frame Filter Register Pointer Reset"]
-pub type RWKFILTRST_R = crate::BitReader<bool>;
+pub type RWKFILTRST_R = crate::BitReader;
 #[doc = "Field `RWKFILTRST` writer - Wake-Up Frame Filter Register Pointer Reset"]
-pub type RWKFILTRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMT_CONTROL_STATUS_SPEC, bool, O>;
+pub type RWKFILTRST_W<'a, const O: u8> = crate::BitWriter<'a, PMT_CONTROL_STATUS_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Power Down"]
     #[inline(always)]

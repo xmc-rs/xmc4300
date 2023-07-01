@@ -35,9 +35,9 @@ impl From<crate::W<AL_STATUS_CODE_SPEC>> for W {
     }
 }
 #[doc = "Field `AL_S_CODE` reader - AL Status Code"]
-pub type AL_S_CODE_R = crate::FieldReader<u16, u16>;
+pub type AL_S_CODE_R = crate::FieldReader<u16>;
 #[doc = "Field `AL_S_CODE` writer - AL Status Code"]
-pub type AL_S_CODE_W<'a, const O: u8> = crate::FieldWriter<'a, u16, AL_STATUS_CODE_SPEC, u16, u16, 16, O>;
+pub type AL_S_CODE_W<'a, const O: u8> = crate::FieldWriter<'a, AL_STATUS_CODE_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - AL Status Code"]
     #[inline(always)]

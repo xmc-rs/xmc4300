@@ -71,7 +71,7 @@ impl WA_R {
     }
 }
 #[doc = "Field `WA` writer - Word Address"]
-pub type WA_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, WA_A, O>;
+pub type WA_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IISMODE_SPEC, O, WA_A>;
 impl<'a, const O: u8> WA_W<'a, O> {
     #[doc = "WA has been sampled 0."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl DX2S_R {
     }
 }
 #[doc = "Field `DX2S` writer - DX2S Status"]
-pub type DX2S_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, DX2S_A, O>;
+pub type DX2S_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IISMODE_SPEC, O, DX2S_A>;
 impl<'a, const O: u8> DX2S_W<'a, O> {
     #[doc = "DX2S is 0."]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl DX2TEV_R {
     }
 }
 #[doc = "Field `DX2TEV` writer - DX2T Event Detected"]
-pub type DX2TEV_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, DX2TEV_A, O>;
+pub type DX2TEV_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IISMODE_SPEC, O, DX2TEV_A>;
 impl<'a, const O: u8> DX2TEV_W<'a, O> {
     #[doc = "The DX2T signal has not been activated."]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl WAFE_R {
     }
 }
 #[doc = "Field `WAFE` writer - WA Falling Edge Event"]
-pub type WAFE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, WAFE_A, O>;
+pub type WAFE_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IISMODE_SPEC, O, WAFE_A>;
 impl<'a, const O: u8> WAFE_W<'a, O> {
     #[doc = "A WA falling edge has not been generated."]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl WARE_R {
     }
 }
 #[doc = "Field `WARE` writer - WA Rising Edge Event"]
-pub type WARE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, WARE_A, O>;
+pub type WARE_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IISMODE_SPEC, O, WARE_A>;
 impl<'a, const O: u8> WARE_W<'a, O> {
     #[doc = "A WA rising edge has not been generated."]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl END_R {
     }
 }
 #[doc = "Field `END` writer - WA Generation End"]
-pub type END_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, END_A, O>;
+pub type END_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IISMODE_SPEC, O, END_A>;
 impl<'a, const O: u8> END_W<'a, O> {
     #[doc = "The WA generation has not yet ended (if it is running and WAGEN has been cleared)."]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl RSIF_R {
     }
 }
 #[doc = "Field `RSIF` writer - Receiver Start Indication Flag"]
-pub type RSIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, RSIF_A, O>;
+pub type RSIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IISMODE_SPEC, O, RSIF_A>;
 impl<'a, const O: u8> RSIF_W<'a, O> {
     #[doc = "A receiver start event has not occurred."]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl DLIF_R {
     }
 }
 #[doc = "Field `DLIF` writer - Data Lost Indication Flag"]
-pub type DLIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, DLIF_A, O>;
+pub type DLIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IISMODE_SPEC, O, DLIF_A>;
 impl<'a, const O: u8> DLIF_W<'a, O> {
     #[doc = "A data lost event has not occurred."]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl TSIF_R {
     }
 }
 #[doc = "Field `TSIF` writer - Transmit Shift Indication Flag"]
-pub type TSIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, TSIF_A, O>;
+pub type TSIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IISMODE_SPEC, O, TSIF_A>;
 impl<'a, const O: u8> TSIF_W<'a, O> {
     #[doc = "A transmit shift event has not occurred."]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl TBIF_R {
     }
 }
 #[doc = "Field `TBIF` writer - Transmit Buffer Indication Flag"]
-pub type TBIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, TBIF_A, O>;
+pub type TBIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IISMODE_SPEC, O, TBIF_A>;
 impl<'a, const O: u8> TBIF_W<'a, O> {
     #[doc = "A transmit buffer event has not occurred."]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl RIF_R {
     }
 }
 #[doc = "Field `RIF` writer - Receive Indication Flag"]
-pub type RIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, RIF_A, O>;
+pub type RIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IISMODE_SPEC, O, RIF_A>;
 impl<'a, const O: u8> RIF_W<'a, O> {
     #[doc = "A receive event has not occurred."]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl AIF_R {
     }
 }
 #[doc = "Field `AIF` writer - Alternative Receive Indication Flag"]
-pub type AIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, AIF_A, O>;
+pub type AIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IISMODE_SPEC, O, AIF_A>;
 impl<'a, const O: u8> AIF_W<'a, O> {
     #[doc = "An alternative receive event has not occurred."]
     #[inline(always)]
@@ -671,7 +671,7 @@ impl BRGIF_R {
     }
 }
 #[doc = "Field `BRGIF` writer - Baud Rate Generator Indication Flag"]
-pub type BRGIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IISMODE_SPEC, BRGIF_A, O>;
+pub type BRGIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IISMODE_SPEC, O, BRGIF_A>;
 impl<'a, const O: u8> BRGIF_W<'a, O> {
     #[doc = "A baud rate generator event has not occurred."]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<WD_DIVIDE_SPEC>> for W {
     }
 }
 #[doc = "Field `WD_DIV` reader - Watchdog divider"]
-pub type WD_DIV_R = crate::FieldReader<u16, u16>;
+pub type WD_DIV_R = crate::FieldReader<u16>;
 #[doc = "Field `WD_DIV` writer - Watchdog divider"]
-pub type WD_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u16, WD_DIVIDE_SPEC, u16, u16, 16, O>;
+pub type WD_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, WD_DIVIDE_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Watchdog divider"]
     #[inline(always)]

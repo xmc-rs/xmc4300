@@ -20,7 +20,7 @@ impl From<crate::W<IN_SPEC>> for W {
     }
 }
 #[doc = "Field `TDATA` writer - Transmit Data"]
-pub type TDATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IN_SPEC, u16, u16, 16, O>;
+pub type TDATA_W<'a, const O: u8> = crate::FieldWriter<'a, IN_SPEC, 16, O, u16>;
 impl W {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]

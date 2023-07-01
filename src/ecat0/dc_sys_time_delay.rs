@@ -35,9 +35,9 @@ impl From<crate::W<DC_SYS_TIME_DELAY_SPEC>> for W {
     }
 }
 #[doc = "Field `CLK_DELAY` reader - Delay between Reference Clock and the ESC"]
-pub type CLK_DELAY_R = crate::FieldReader<u32, u32>;
+pub type CLK_DELAY_R = crate::FieldReader<u32>;
 #[doc = "Field `CLK_DELAY` writer - Delay between Reference Clock and the ESC"]
-pub type CLK_DELAY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DC_SYS_TIME_DELAY_SPEC, u32, u32, 32, O>;
+pub type CLK_DELAY_W<'a, const O: u8> = crate::FieldWriter<'a, DC_SYS_TIME_DELAY_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Delay between Reference Clock and the ESC"]
     #[inline(always)]

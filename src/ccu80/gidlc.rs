@@ -20,17 +20,17 @@ impl From<crate::W<GIDLC_SPEC>> for W {
     }
 }
 #[doc = "Field `CS0I` writer - CC80 IDLE mode clear"]
-pub type CS0I_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLC_SPEC, bool, O>;
+pub type CS0I_W<'a, const O: u8> = crate::BitWriter<'a, GIDLC_SPEC, O>;
 #[doc = "Field `CS1I` writer - CC81 IDLE mode clear"]
-pub type CS1I_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLC_SPEC, bool, O>;
+pub type CS1I_W<'a, const O: u8> = crate::BitWriter<'a, GIDLC_SPEC, O>;
 #[doc = "Field `CS2I` writer - CC82 IDLE mode clear"]
-pub type CS2I_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLC_SPEC, bool, O>;
+pub type CS2I_W<'a, const O: u8> = crate::BitWriter<'a, GIDLC_SPEC, O>;
 #[doc = "Field `CS3I` writer - CC83 IDLE mode clear"]
-pub type CS3I_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLC_SPEC, bool, O>;
+pub type CS3I_W<'a, const O: u8> = crate::BitWriter<'a, GIDLC_SPEC, O>;
 #[doc = "Field `SPRB` writer - Prescaler Run Bit Set"]
-pub type SPRB_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLC_SPEC, bool, O>;
+pub type SPRB_W<'a, const O: u8> = crate::BitWriter<'a, GIDLC_SPEC, O>;
 #[doc = "Field `SPCH` writer - Parity Checker run bit set"]
-pub type SPCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, GIDLC_SPEC, bool, O>;
+pub type SPCH_W<'a, const O: u8> = crate::BitWriter<'a, GIDLC_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - CC80 IDLE mode clear"]
     #[inline(always)]

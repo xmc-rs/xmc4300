@@ -14,7 +14,7 @@ impl From<crate::R<DC_LATCH0_TIME_POS_SPEC>> for R {
     }
 }
 #[doc = "Field `DC_LATCH0_TIME_POS` reader - Captures System time at the positive edge of the Latch0 signal"]
-pub type DC_LATCH0_TIME_POS_R = crate::FieldReader<u32, u32>;
+pub type DC_LATCH0_TIME_POS_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Captures System time at the positive edge of the Latch0 signal"]
     #[inline(always)]

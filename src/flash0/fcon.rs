@@ -35,7 +35,7 @@ impl From<crate::W<FCON_SPEC>> for W {
     }
 }
 #[doc = "Field `WSPFLASH` reader - Wait States for read access to PFLASH"]
-pub type WSPFLASH_R = crate::FieldReader<u8, WSPFLASH_A>;
+pub type WSPFLASH_R = crate::FieldReader<WSPFLASH_A>;
 #[doc = "Wait States for read access to PFLASH\n\nValue on reset: 6"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<WSPFLASH_A> for u8 {
     fn from(variant: WSPFLASH_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for WSPFLASH_A {
+    type Ux = u8;
 }
 impl WSPFLASH_R {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl WSPFLASH_R {
     }
 }
 #[doc = "Field `WSPFLASH` writer - Wait States for read access to PFLASH"]
-pub type WSPFLASH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCON_SPEC, u8, WSPFLASH_A, 4, O>;
+pub type WSPFLASH_W<'a, const O: u8> = crate::FieldWriter<'a, FCON_SPEC, 4, O, WSPFLASH_A>;
 impl<'a, const O: u8> WSPFLASH_W<'a, O> {
     #[doc = "PFLASH access in one clock cycle"]
     #[inline(always)]
@@ -162,7 +165,7 @@ impl WSECPF_R {
     }
 }
 #[doc = "Field `WSECPF` writer - Wait State for Error Correction of PFLASH"]
-pub type WSECPF_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCON_SPEC, WSECPF_A, O>;
+pub type WSECPF_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, WSECPF_A>;
 impl<'a, const O: u8> WSECPF_W<'a, O> {
     #[doc = "No additional wait state for error correction"]
     #[inline(always)]
@@ -212,7 +215,7 @@ impl IDLE_R {
     }
 }
 #[doc = "Field `IDLE` writer - Dynamic Flash Idle"]
-pub type IDLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCON_SPEC, IDLE_A, O>;
+pub type IDLE_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, IDLE_A>;
 impl<'a, const O: u8> IDLE_W<'a, O> {
     #[doc = "Normal/standard Flash read operation"]
     #[inline(always)]
@@ -262,7 +265,7 @@ impl ESLDIS_R {
     }
 }
 #[doc = "Field `ESLDIS` writer - External Sleep Request Disable"]
-pub type ESLDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCON_SPEC, ESLDIS_A, O>;
+pub type ESLDIS_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, ESLDIS_A>;
 impl<'a, const O: u8> ESLDIS_W<'a, O> {
     #[doc = "External sleep request signal input is enabled"]
     #[inline(always)]
@@ -312,7 +315,7 @@ impl SLEEP_R {
     }
 }
 #[doc = "Field `SLEEP` writer - Flash SLEEP"]
-pub type SLEEP_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCON_SPEC, SLEEP_A, O>;
+pub type SLEEP_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, SLEEP_A>;
 impl<'a, const O: u8> SLEEP_W<'a, O> {
     #[doc = "Normal state or wake-up"]
     #[inline(always)]
@@ -398,7 +401,7 @@ impl DCF_R {
     }
 }
 #[doc = "Field `DCF` writer - Disable Code Fetch from Flash Memory"]
-pub type DCF_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCON_SPEC, DCF_A, O>;
+pub type DCF_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, DCF_A>;
 impl<'a, const O: u8> DCF_W<'a, O> {
     #[doc = "Code fetching from the Flash memory area is allowed."]
     #[inline(always)]
@@ -448,7 +451,7 @@ impl DDF_R {
     }
 }
 #[doc = "Field `DDF` writer - Disable Any Data Fetch from Flash"]
-pub type DDF_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCON_SPEC, DDF_A, O>;
+pub type DDF_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, DDF_A>;
 impl<'a, const O: u8> DDF_W<'a, O> {
     #[doc = "Data read access to the Flash memory area is allowed."]
     #[inline(always)]
@@ -498,7 +501,7 @@ impl VOPERM_R {
     }
 }
 #[doc = "Field `VOPERM` writer - Verify and Operation Error Interrupt Mask"]
-pub type VOPERM_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCON_SPEC, VOPERM_A, O>;
+pub type VOPERM_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, VOPERM_A>;
 impl<'a, const O: u8> VOPERM_W<'a, O> {
     #[doc = "Interrupt not enabled"]
     #[inline(always)]
@@ -548,7 +551,7 @@ impl SQERM_R {
     }
 }
 #[doc = "Field `SQERM` writer - Command Sequence Error Interrupt Mask"]
-pub type SQERM_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCON_SPEC, SQERM_A, O>;
+pub type SQERM_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, SQERM_A>;
 impl<'a, const O: u8> SQERM_W<'a, O> {
     #[doc = "Interrupt not enabled"]
     #[inline(always)]
@@ -598,7 +601,7 @@ impl PROERM_R {
     }
 }
 #[doc = "Field `PROERM` writer - Protection Error Interrupt Mask"]
-pub type PROERM_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCON_SPEC, PROERM_A, O>;
+pub type PROERM_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, PROERM_A>;
 impl<'a, const O: u8> PROERM_W<'a, O> {
     #[doc = "Interrupt not enabled"]
     #[inline(always)]
@@ -648,7 +651,7 @@ impl PFSBERM_R {
     }
 }
 #[doc = "Field `PFSBERM` writer - PFLASH Single-Bit Error Interrupt Mask"]
-pub type PFSBERM_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCON_SPEC, PFSBERM_A, O>;
+pub type PFSBERM_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, PFSBERM_A>;
 impl<'a, const O: u8> PFSBERM_W<'a, O> {
     #[doc = "No Single-Bit Error interrupt enabled"]
     #[inline(always)]
@@ -698,7 +701,7 @@ impl PFDBERM_R {
     }
 }
 #[doc = "Field `PFDBERM` writer - PFLASH Double-Bit Error Interrupt Mask"]
-pub type PFDBERM_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCON_SPEC, PFDBERM_A, O>;
+pub type PFDBERM_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, PFDBERM_A>;
 impl<'a, const O: u8> PFDBERM_W<'a, O> {
     #[doc = "Double-Bit Error interrupt for PFLASH not enabled"]
     #[inline(always)]
@@ -748,7 +751,7 @@ impl EOBM_R {
     }
 }
 #[doc = "Field `EOBM` writer - End of Busy Interrupt Mask"]
-pub type EOBM_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCON_SPEC, EOBM_A, O>;
+pub type EOBM_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, EOBM_A>;
 impl<'a, const O: u8> EOBM_W<'a, O> {
     #[doc = "Interrupt not enabled"]
     #[inline(always)]

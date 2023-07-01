@@ -14,7 +14,7 @@ impl From<crate::R<RX_1024TOMAXOCTETS_FRAMES_GOOD_BAD_SPEC>> for R {
     }
 }
 #[doc = "Field `RX1024_MAXOCTGB` reader - This field indicates the number of received good and bad frames with length between 1,024 and maxsize (inclusive) bytes, exclusive of preamble and retried frames."]
-pub type RX1024_MAXOCTGB_R = crate::FieldReader<u32, u32>;
+pub type RX1024_MAXOCTGB_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of received good and bad frames with length between 1,024 and maxsize (inclusive) bytes, exclusive of preamble and retried frames."]
     #[inline(always)]

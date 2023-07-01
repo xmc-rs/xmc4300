@@ -35,9 +35,9 @@ impl From<crate::W<NSR_SPEC>> for W {
     }
 }
 #[doc = "Field `LEC` reader - Last Error Code"]
-pub type LEC_R = crate::FieldReader<u8, u8>;
+pub type LEC_R = crate::FieldReader;
 #[doc = "Field `LEC` writer - Last Error Code"]
-pub type LEC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NSR_SPEC, u8, u8, 3, O>;
+pub type LEC_W<'a, const O: u8> = crate::FieldWriter<'a, NSR_SPEC, 3, O>;
 #[doc = "Field `TXOK` reader - Message Transmitted Successfully"]
 pub type TXOK_R = crate::BitReader<TXOK_A>;
 #[doc = "Message Transmitted Successfully\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl TXOK_R {
     }
 }
 #[doc = "Field `TXOK` writer - Message Transmitted Successfully"]
-pub type TXOK_W<'a, const O: u8> = crate::BitWriter<'a, u32, NSR_SPEC, TXOK_A, O>;
+pub type TXOK_W<'a, const O: u8> = crate::BitWriter<'a, NSR_SPEC, O, TXOK_A>;
 impl<'a, const O: u8> TXOK_W<'a, O> {
     #[doc = "No successful transmission since last (most recent) flag reset."]
     #[inline(always)]
@@ -125,7 +125,7 @@ impl RXOK_R {
     }
 }
 #[doc = "Field `RXOK` writer - Message Received Successfully"]
-pub type RXOK_W<'a, const O: u8> = crate::BitWriter<'a, u32, NSR_SPEC, RXOK_A, O>;
+pub type RXOK_W<'a, const O: u8> = crate::BitWriter<'a, NSR_SPEC, O, RXOK_A>;
 impl<'a, const O: u8> RXOK_W<'a, O> {
     #[doc = "No successful reception since last (most recent) flag reset."]
     #[inline(always)]
@@ -139,9 +139,9 @@ impl<'a, const O: u8> RXOK_W<'a, O> {
     }
 }
 #[doc = "Field `ALERT` reader - Alert Warning"]
-pub type ALERT_R = crate::BitReader<bool>;
+pub type ALERT_R = crate::BitReader;
 #[doc = "Field `ALERT` writer - Alert Warning"]
-pub type ALERT_W<'a, const O: u8> = crate::BitWriter<'a, u32, NSR_SPEC, bool, O>;
+pub type ALERT_W<'a, const O: u8> = crate::BitWriter<'a, NSR_SPEC, O>;
 #[doc = "Field `EWRN` reader - Error Warning Status"]
 pub type EWRN_R = crate::BitReader<EWRN_A>;
 #[doc = "Error Warning Status\n\nValue on reset: 0"]
@@ -251,7 +251,7 @@ impl LLE_R {
     }
 }
 #[doc = "Field `LLE` writer - List Length Error"]
-pub type LLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, NSR_SPEC, LLE_A, O>;
+pub type LLE_W<'a, const O: u8> = crate::BitWriter<'a, NSR_SPEC, O, LLE_A>;
 impl<'a, const O: u8> LLE_W<'a, O> {
     #[doc = "No List Length Error since last (most recent) flag reset."]
     #[inline(always)]
@@ -301,7 +301,7 @@ impl LOE_R {
     }
 }
 #[doc = "Field `LOE` writer - List Object Error"]
-pub type LOE_W<'a, const O: u8> = crate::BitWriter<'a, u32, NSR_SPEC, LOE_A, O>;
+pub type LOE_W<'a, const O: u8> = crate::BitWriter<'a, NSR_SPEC, O, LOE_A>;
 impl<'a, const O: u8> LOE_W<'a, O> {
     #[doc = "No List Object Error since last (most recent) flag reset."]
     #[inline(always)]

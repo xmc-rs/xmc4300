@@ -35,7 +35,7 @@ impl From<crate::W<MARP_SPEC>> for W {
     }
 }
 #[doc = "Field `MARGIN` reader - PFLASH Margin Selection"]
-pub type MARGIN_R = crate::FieldReader<u8, MARGIN_A>;
+pub type MARGIN_R = crate::FieldReader<MARGIN_A>;
 #[doc = "PFLASH Margin Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -52,6 +52,9 @@ impl From<MARGIN_A> for u8 {
     fn from(variant: MARGIN_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MARGIN_A {
+    type Ux = u8;
 }
 impl MARGIN_R {
     #[doc = "Get enumerated values variant"]
@@ -81,7 +84,7 @@ impl MARGIN_R {
     }
 }
 #[doc = "Field `MARGIN` writer - PFLASH Margin Selection"]
-pub type MARGIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MARP_SPEC, u8, MARGIN_A, 4, O>;
+pub type MARGIN_W<'a, const O: u8> = crate::FieldWriter<'a, MARP_SPEC, 4, O, MARGIN_A>;
 impl<'a, const O: u8> MARGIN_W<'a, O> {
     #[doc = "Standard (default) margin."]
     #[inline(always)]
@@ -136,7 +139,7 @@ impl TRAPDIS_R {
     }
 }
 #[doc = "Field `TRAPDIS` writer - PFLASH Double-Bit Error Trap Disable"]
-pub type TRAPDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, MARP_SPEC, TRAPDIS_A, O>;
+pub type TRAPDIS_W<'a, const O: u8> = crate::BitWriter<'a, MARP_SPEC, O, TRAPDIS_A>;
 impl<'a, const O: u8> TRAPDIS_W<'a, O> {
     #[doc = "If a double-bit error occurs in PFLASH, a bus error trap is generated."]
     #[inline(always)]

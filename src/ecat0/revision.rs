@@ -14,7 +14,7 @@ impl From<crate::R<REVISION_SPEC>> for R {
     }
 }
 #[doc = "Field `Revision` reader - Revision of EtherCAT controller"]
-pub type REVISION_R = crate::FieldReader<u8, u8>;
+pub type REVISION_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Revision of EtherCAT controller"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<MSPND_SPEC>> for W {
     }
 }
 #[doc = "Field `PND` reader - Message Pending"]
-pub type PND_R = crate::FieldReader<u32, u32>;
+pub type PND_R = crate::FieldReader<u32>;
 #[doc = "Field `PND` writer - Message Pending"]
-pub type PND_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MSPND_SPEC, u32, u32, 32, O>;
+pub type PND_W<'a, const O: u8> = crate::FieldWriter<'a, MSPND_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Message Pending"]
     #[inline(always)]

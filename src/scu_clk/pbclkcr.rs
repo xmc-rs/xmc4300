@@ -71,7 +71,7 @@ impl PBDIV_R {
     }
 }
 #[doc = "Field `PBDIV` writer - PB Clock Divider Enable"]
-pub type PBDIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, PBCLKCR_SPEC, PBDIV_A, O>;
+pub type PBDIV_W<'a, const O: u8> = crate::BitWriter<'a, PBCLKCR_SPEC, O, PBDIV_A>;
 impl<'a, const O: u8> PBDIV_W<'a, O> {
     #[doc = "fPERIPH = fCPU"]
     #[inline(always)]

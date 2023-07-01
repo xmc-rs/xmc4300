@@ -14,7 +14,7 @@ impl From<crate::R<IDCHIP_SPEC>> for R {
     }
 }
 #[doc = "Field `IDCHIP` reader - Chip ID"]
-pub type IDCHIP_R = crate::FieldReader<u32, u32>;
+pub type IDCHIP_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Chip ID"]
     #[inline(always)]

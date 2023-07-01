@@ -35,9 +35,9 @@ impl From<crate::W<DOEPDMA0_SPEC>> for W {
     }
 }
 #[doc = "Field `DMAAddr` reader - DMA Address"]
-pub type DMAADDR_R = crate::FieldReader<u32, u32>;
+pub type DMAADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `DMAAddr` writer - DMA Address"]
-pub type DMAADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DOEPDMA0_SPEC, u32, u32, 32, O>;
+pub type DMAADDR_W<'a, const O: u8> = crate::FieldWriter<'a, DOEPDMA0_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - DMA Address"]
     #[inline(always)]

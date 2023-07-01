@@ -35,7 +35,7 @@ impl From<crate::W<CCR_SPEC>> for W {
     }
 }
 #[doc = "Field `MODE` reader - Operating Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
+pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "Operating Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<MODE_A> for u8 {
     fn from(variant: MODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MODE_A {
+    type Ux = u8;
 }
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Operating Mode"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CCR_SPEC, u8, MODE_A, 4, O>;
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, CCR_SPEC, 4, O, MODE_A>;
 impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "The USIC channel is disabled. All protocol-related state machines are set to an idle state."]
     #[inline(always)]
@@ -126,7 +129,7 @@ impl<'a, const O: u8> MODE_W<'a, O> {
     }
 }
 #[doc = "Field `HPCEN` reader - Hardware Port Control Enable"]
-pub type HPCEN_R = crate::FieldReader<u8, HPCEN_A>;
+pub type HPCEN_R = crate::FieldReader<HPCEN_A>;
 #[doc = "Hardware Port Control Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -146,6 +149,9 @@ impl From<HPCEN_A> for u8 {
     fn from(variant: HPCEN_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HPCEN_A {
+    type Ux = u8;
 }
 impl HPCEN_R {
     #[doc = "Get enumerated values variant"]
@@ -181,7 +187,7 @@ impl HPCEN_R {
     }
 }
 #[doc = "Field `HPCEN` writer - Hardware Port Control Enable"]
-pub type HPCEN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CCR_SPEC, u8, HPCEN_A, 2, O>;
+pub type HPCEN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CCR_SPEC, 2, O, HPCEN_A>;
 impl<'a, const O: u8> HPCEN_W<'a, O> {
     #[doc = "The hardware port control is disabled."]
     #[inline(always)]
@@ -206,7 +212,7 @@ and DOUT\\[3:0\\]."]
     }
 }
 #[doc = "Field `PM` reader - Parity Mode"]
-pub type PM_R = crate::FieldReader<u8, PM_A>;
+pub type PM_R = crate::FieldReader<PM_A>;
 #[doc = "Parity Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -223,6 +229,9 @@ impl From<PM_A> for u8 {
     fn from(variant: PM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PM_A {
+    type Ux = u8;
 }
 impl PM_R {
     #[doc = "Get enumerated values variant"]
@@ -252,7 +261,7 @@ impl PM_R {
     }
 }
 #[doc = "Field `PM` writer - Parity Mode"]
-pub type PM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CCR_SPEC, u8, PM_A, 2, O>;
+pub type PM_W<'a, const O: u8> = crate::FieldWriter<'a, CCR_SPEC, 2, O, PM_A>;
 impl<'a, const O: u8> PM_W<'a, O> {
     #[doc = "The parity generation is disabled."]
     #[inline(always)]
@@ -307,7 +316,7 @@ impl RSIEN_R {
     }
 }
 #[doc = "Field `RSIEN` writer - Receiver Start Interrupt Enable"]
-pub type RSIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, RSIEN_A, O>;
+pub type RSIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, RSIEN_A>;
 impl<'a, const O: u8> RSIEN_W<'a, O> {
     #[doc = "The receiver start interrupt is disabled."]
     #[inline(always)]
@@ -357,7 +366,7 @@ impl DLIEN_R {
     }
 }
 #[doc = "Field `DLIEN` writer - Data Lost Interrupt Enable"]
-pub type DLIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, DLIEN_A, O>;
+pub type DLIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, DLIEN_A>;
 impl<'a, const O: u8> DLIEN_W<'a, O> {
     #[doc = "The data lost interrupt is disabled."]
     #[inline(always)]
@@ -407,7 +416,7 @@ impl TSIEN_R {
     }
 }
 #[doc = "Field `TSIEN` writer - Transmit Shift Interrupt Enable"]
-pub type TSIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, TSIEN_A, O>;
+pub type TSIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, TSIEN_A>;
 impl<'a, const O: u8> TSIEN_W<'a, O> {
     #[doc = "The transmit shift interrupt is disabled."]
     #[inline(always)]
@@ -457,7 +466,7 @@ impl TBIEN_R {
     }
 }
 #[doc = "Field `TBIEN` writer - Transmit Buffer Interrupt Enable"]
-pub type TBIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, TBIEN_A, O>;
+pub type TBIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, TBIEN_A>;
 impl<'a, const O: u8> TBIEN_W<'a, O> {
     #[doc = "The transmit buffer interrupt is disabled."]
     #[inline(always)]
@@ -507,7 +516,7 @@ impl RIEN_R {
     }
 }
 #[doc = "Field `RIEN` writer - Receive Interrupt Enable"]
-pub type RIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, RIEN_A, O>;
+pub type RIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, RIEN_A>;
 impl<'a, const O: u8> RIEN_W<'a, O> {
     #[doc = "The receive interrupt is disabled."]
     #[inline(always)]
@@ -557,7 +566,7 @@ impl AIEN_R {
     }
 }
 #[doc = "Field `AIEN` writer - Alternative Receive Interrupt Enable"]
-pub type AIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, AIEN_A, O>;
+pub type AIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, AIEN_A>;
 impl<'a, const O: u8> AIEN_W<'a, O> {
     #[doc = "The alternative receive interrupt is disabled."]
     #[inline(always)]
@@ -607,7 +616,7 @@ impl BRGIEN_R {
     }
 }
 #[doc = "Field `BRGIEN` writer - Baud Rate Generator Interrupt Enable"]
-pub type BRGIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, BRGIEN_A, O>;
+pub type BRGIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, BRGIEN_A>;
 impl<'a, const O: u8> BRGIEN_W<'a, O> {
     #[doc = "The baud rate generator interrupt is disabled."]
     #[inline(always)]

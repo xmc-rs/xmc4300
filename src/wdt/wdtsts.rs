@@ -14,7 +14,7 @@ impl From<crate::R<WDTSTS_SPEC>> for R {
     }
 }
 #[doc = "Field `ALMS` reader - Pre-warning Alarm"]
-pub type ALMS_R = crate::BitReader<bool>;
+pub type ALMS_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Pre-warning Alarm"]
     #[inline(always)]

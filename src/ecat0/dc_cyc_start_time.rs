@@ -35,9 +35,9 @@ impl From<crate::W<DC_CYC_START_TIME_SPEC>> for W {
     }
 }
 #[doc = "Field `DC_CYC_START_TIME` reader - Start Time Cyclic Operation"]
-pub type DC_CYC_START_TIME_R = crate::FieldReader<u32, u32>;
+pub type DC_CYC_START_TIME_R = crate::FieldReader<u32>;
 #[doc = "Field `DC_CYC_START_TIME` writer - Start Time Cyclic Operation"]
-pub type DC_CYC_START_TIME_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DC_CYC_START_TIME_SPEC, u32, u32, 32, O>;
+pub type DC_CYC_START_TIME_W<'a, const O: u8> = crate::FieldWriter<'a, DC_CYC_START_TIME_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Start Time Cyclic Operation"]
     #[inline(always)]

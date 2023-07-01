@@ -35,9 +35,9 @@ impl From<crate::W<MOAR_SPEC>> for W {
     }
 }
 #[doc = "Field `ID` reader - CAN Identifier of Message Object n"]
-pub type ID_R = crate::FieldReader<u32, u32>;
+pub type ID_R = crate::FieldReader<u32>;
 #[doc = "Field `ID` writer - CAN Identifier of Message Object n"]
-pub type ID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOAR_SPEC, u32, u32, 29, O>;
+pub type ID_W<'a, const O: u8> = crate::FieldWriter<'a, MOAR_SPEC, 29, O, u32>;
 #[doc = "Field `IDE` reader - Identifier Extension Bit of Message Object n"]
 pub type IDE_R = crate::BitReader<IDE_A>;
 #[doc = "Identifier Extension Bit of Message Object n\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl IDE_R {
     }
 }
 #[doc = "Field `IDE` writer - Identifier Extension Bit of Message Object n"]
-pub type IDE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOAR_SPEC, IDE_A, O>;
+pub type IDE_W<'a, const O: u8> = crate::BitWriter<'a, MOAR_SPEC, O, IDE_A>;
 impl<'a, const O: u8> IDE_W<'a, O> {
     #[doc = "Message object n handles standard frames with 11-bit identifier."]
     #[inline(always)]
@@ -89,12 +89,12 @@ impl<'a, const O: u8> IDE_W<'a, O> {
     }
 }
 #[doc = "Field `PRI` reader - Priority Class"]
-pub type PRI_R = crate::FieldReader<u8, PRI_A>;
+pub type PRI_R = crate::FieldReader<PRI_A>;
 #[doc = "Priority Class\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRI_A {
-    #[doc = "1: Transmit acceptance filtering is based on the list order. This means that message object n is considered for transmission only if there is no other message object with valid transmit request (MSGVAL & TXEN0 & TXEN1 = 1) somewhere before this object in the list."]
+    #[doc = "1: Transmit acceptance filtering is based on the list order. This means that message object n is considered for transmission only if there is no other message object with valid transmit request (MSGVAL &amp; TXEN0 &amp; TXEN1 = 1) somewhere before this object in the list."]
     VALUE2 = 1,
     #[doc = "2: Transmit acceptance filtering is based on the CAN identifier. This means, message object n is considered for transmission only if there is no other message object with higher priority identifier + IDE + DIR (with respect to CAN arbitration rules) somewhere in the list (see )."]
     VALUE3 = 2,
@@ -106,6 +106,9 @@ impl From<PRI_A> for u8 {
     fn from(variant: PRI_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRI_A {
+    type Ux = u8;
 }
 impl PRI_R {
     #[doc = "Get enumerated values variant"]
@@ -135,9 +138,9 @@ impl PRI_R {
     }
 }
 #[doc = "Field `PRI` writer - Priority Class"]
-pub type PRI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOAR_SPEC, u8, PRI_A, 2, O>;
+pub type PRI_W<'a, const O: u8> = crate::FieldWriter<'a, MOAR_SPEC, 2, O, PRI_A>;
 impl<'a, const O: u8> PRI_W<'a, O> {
-    #[doc = "Transmit acceptance filtering is based on the list order. This means that message object n is considered for transmission only if there is no other message object with valid transmit request (MSGVAL & TXEN0 & TXEN1 = 1) somewhere before this object in the list."]
+    #[doc = "Transmit acceptance filtering is based on the list order. This means that message object n is considered for transmission only if there is no other message object with valid transmit request (MSGVAL &amp; TXEN0 &amp; TXEN1 = 1) somewhere before this object in the list."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
         self.variant(PRI_A::VALUE2)

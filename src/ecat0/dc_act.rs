@@ -71,7 +71,7 @@ impl SYNC_OUT_R {
     }
 }
 #[doc = "Field `SYNC_OUT` writer - Sync Out Unit activation"]
-pub type SYNC_OUT_W<'a, const O: u8> = crate::BitWriter<'a, u8, DC_ACT_SPEC, SYNC_OUT_A, O>;
+pub type SYNC_OUT_W<'a, const O: u8> = crate::BitWriter<'a, DC_ACT_SPEC, O, SYNC_OUT_A>;
 impl<'a, const O: u8> SYNC_OUT_W<'a, O> {
     #[doc = "Deactivated"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl SYNC_0_R {
     }
 }
 #[doc = "Field `SYNC_0` writer - SYNC0 generation"]
-pub type SYNC_0_W<'a, const O: u8> = crate::BitWriter<'a, u8, DC_ACT_SPEC, SYNC_0_A, O>;
+pub type SYNC_0_W<'a, const O: u8> = crate::BitWriter<'a, DC_ACT_SPEC, O, SYNC_0_A>;
 impl<'a, const O: u8> SYNC_0_W<'a, O> {
     #[doc = "Deactivated"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl SYNC_1_R {
     }
 }
 #[doc = "Field `SYNC_1` writer - SYNC1 generation"]
-pub type SYNC_1_W<'a, const O: u8> = crate::BitWriter<'a, u8, DC_ACT_SPEC, SYNC_1_A, O>;
+pub type SYNC_1_W<'a, const O: u8> = crate::BitWriter<'a, DC_ACT_SPEC, O, SYNC_1_A>;
 impl<'a, const O: u8> SYNC_1_W<'a, O> {
     #[doc = "Deactivated"]
     #[inline(always)]

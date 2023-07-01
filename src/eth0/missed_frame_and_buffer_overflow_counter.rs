@@ -14,13 +14,13 @@ impl From<crate::R<MISSED_FRAME_AND_BUFFER_OVERFLOW_COUNTER_SPEC>> for R {
     }
 }
 #[doc = "Field `MISFRMCNT` reader - This field indicates the number of frames missed by the controller because of the RAM Receive Buffer being unavailable. This counter is incremented each time the DMA discards an incoming frame. The counter is cleared when this register is read."]
-pub type MISFRMCNT_R = crate::FieldReader<u16, u16>;
+pub type MISFRMCNT_R = crate::FieldReader<u16>;
 #[doc = "Field `MISCNTOVF` reader - Overflow bit for Missed Frame Counter"]
-pub type MISCNTOVF_R = crate::BitReader<bool>;
+pub type MISCNTOVF_R = crate::BitReader;
 #[doc = "Field `OVFFRMCNT` reader - This field indicates the number of frames missed by the application. The counter is cleared when this register is read."]
-pub type OVFFRMCNT_R = crate::FieldReader<u16, u16>;
+pub type OVFFRMCNT_R = crate::FieldReader<u16>;
 #[doc = "Field `OVFCNTOVF` reader - Overflow bit for FIFO Overflow Counter"]
-pub type OVFCNTOVF_R = crate::BitReader<bool>;
+pub type OVFCNTOVF_R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:15 - This field indicates the number of frames missed by the controller because of the RAM Receive Buffer being unavailable. This counter is incremented each time the DMA discards an incoming frame. The counter is cleared when this register is read."]
     #[inline(always)]

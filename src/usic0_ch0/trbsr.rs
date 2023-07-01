@@ -71,7 +71,7 @@ impl SRBI_R {
     }
 }
 #[doc = "Field `SRBI` writer - Standard Receive Buffer Event"]
-pub type SRBI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSR_SPEC, SRBI_A, O>;
+pub type SRBI_W<'a, const O: u8> = crate::BitWriter<'a, TRBSR_SPEC, O, SRBI_A>;
 impl<'a, const O: u8> SRBI_W<'a, O> {
     #[doc = "A standard receive buffer event has not been detected."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl RBERI_R {
     }
 }
 #[doc = "Field `RBERI` writer - Receive Buffer Error Event"]
-pub type RBERI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSR_SPEC, RBERI_A, O>;
+pub type RBERI_W<'a, const O: u8> = crate::BitWriter<'a, TRBSR_SPEC, O, RBERI_A>;
 impl<'a, const O: u8> RBERI_W<'a, O> {
     #[doc = "A receive buffer error event has not been detected."]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl ARBI_R {
     }
 }
 #[doc = "Field `ARBI` writer - Alternative Receive Buffer Event"]
-pub type ARBI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSR_SPEC, ARBI_A, O>;
+pub type ARBI_W<'a, const O: u8> = crate::BitWriter<'a, TRBSR_SPEC, O, ARBI_A>;
 impl<'a, const O: u8> ARBI_W<'a, O> {
     #[doc = "An alternative receive buffer event has not been detected."]
     #[inline(always)]
@@ -365,7 +365,7 @@ impl STBI_R {
     }
 }
 #[doc = "Field `STBI` writer - Standard Transmit Buffer Event"]
-pub type STBI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSR_SPEC, STBI_A, O>;
+pub type STBI_W<'a, const O: u8> = crate::BitWriter<'a, TRBSR_SPEC, O, STBI_A>;
 impl<'a, const O: u8> STBI_W<'a, O> {
     #[doc = "A standard transmit buffer event has not been detected."]
     #[inline(always)]
@@ -415,7 +415,7 @@ impl TBERI_R {
     }
 }
 #[doc = "Field `TBERI` writer - Transmit Buffer Error Event"]
-pub type TBERI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSR_SPEC, TBERI_A, O>;
+pub type TBERI_W<'a, const O: u8> = crate::BitWriter<'a, TRBSR_SPEC, O, TBERI_A>;
 impl<'a, const O: u8> TBERI_W<'a, O> {
     #[doc = "A transmit buffer error event has not been detected."]
     #[inline(always)]
@@ -573,9 +573,9 @@ impl STBT_R {
     }
 }
 #[doc = "Field `RBFLVL` reader - Receive Buffer Filling Level"]
-pub type RBFLVL_R = crate::FieldReader<u8, u8>;
+pub type RBFLVL_R = crate::FieldReader;
 #[doc = "Field `TBFLVL` reader - Transmit Buffer Filling Level"]
-pub type TBFLVL_R = crate::FieldReader<u8, u8>;
+pub type TBFLVL_R = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Standard Receive Buffer Event"]
     #[inline(always)]

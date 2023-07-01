@@ -71,7 +71,7 @@ impl CMI_R {
     }
 }
 #[doc = "Field `CMI` writer - CRC Mismatch Interrupt"]
-pub type CMI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, CMI_A, O>;
+pub type CMI_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, CMI_A>;
 impl<'a, const O: u8> CMI_W<'a, O> {
     #[doc = "CRC Mismatch Interrupt is disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl CEI_R {
     }
 }
 #[doc = "Field `CEI` writer - Configuration Error Interrupt"]
-pub type CEI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, CEI_A, O>;
+pub type CEI_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, CEI_A>;
 impl<'a, const O: u8> CEI_W<'a, O> {
     #[doc = "Configuration Error Interrupt is disabled"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl LEI_R {
     }
 }
 #[doc = "Field `LEI` writer - Length Error Interrupt"]
-pub type LEI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, LEI_A, O>;
+pub type LEI_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, LEI_A>;
 impl<'a, const O: u8> LEI_W<'a, O> {
     #[doc = "Length Error Interrupt is disabled"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl BEI_R {
     }
 }
 #[doc = "Field `BEI` writer - Bus Error Interrupt"]
-pub type BEI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, BEI_A, O>;
+pub type BEI_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, BEI_A>;
 impl<'a, const O: u8> BEI_W<'a, O> {
     #[doc = "Bus Error Interrupt is disabled"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl CCE_R {
     }
 }
 #[doc = "Field `CCE` writer - CRC Check Comparison"]
-pub type CCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, CCE_A, O>;
+pub type CCE_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, CCE_A>;
 impl<'a, const O: u8> CCE_W<'a, O> {
     #[doc = "CRC check comparison at the end of a message is disabled"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl ALR_R {
     }
 }
 #[doc = "Field `ALR` writer - Automatic Length Reload"]
-pub type ALR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, ALR_A, O>;
+pub type ALR_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, ALR_A>;
 impl<'a, const O: u8> ALR_W<'a, O> {
     #[doc = "Disables automatic reload of the LENGTH field."]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl REFIN_R {
     }
 }
 #[doc = "Field `REFIN` writer - IR Byte Wise Reflection"]
-pub type REFIN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, REFIN_A, O>;
+pub type REFIN_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, REFIN_A>;
 impl<'a, const O: u8> REFIN_W<'a, O> {
     #[doc = "IR Byte Wise Reflection is disabled"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl REFOUT_R {
     }
 }
 #[doc = "Field `REFOUT` writer - CRC 32-Bit Wise Reflection"]
-pub type REFOUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, REFOUT_A, O>;
+pub type REFOUT_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, REFOUT_A>;
 impl<'a, const O: u8> REFOUT_W<'a, O> {
     #[doc = "CRC 32-bit wise is disabled"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl XSEL_R {
     }
 }
 #[doc = "Field `XSEL` writer - Selects the value to be xored with the final CRC"]
-pub type XSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, XSEL_A, O>;
+pub type XSEL_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, XSEL_A>;
 impl<'a, const O: u8> XSEL_W<'a, O> {
     #[doc = "0x00000000"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<RX_UNDERSIZE_FRAMES_GOOD_SPEC>> for R {
     }
 }
 #[doc = "Field `RXUNDERSZG` reader - This field indicates the number of frames received with length less than 64 bytes and without errors."]
-pub type RXUNDERSZG_R = crate::FieldReader<u32, u32>;
+pub type RXUNDERSZG_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of frames received with length less than 64 bytes and without errors."]
     #[inline(always)]

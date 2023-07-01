@@ -34,7 +34,7 @@ impl From<SEV0_AW> for bool {
     }
 }
 #[doc = "Field `SEV0` writer - Clear Source Event 0/1"]
-pub type SEV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEFCLR_SPEC, SEV0_AW, O>;
+pub type SEV0_W<'a, const O: u8> = crate::BitWriter<'a, SEFCLR_SPEC, O, SEV0_AW>;
 impl<'a, const O: u8> SEV0_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<SEV1_AW> for bool {
     }
 }
 #[doc = "Field `SEV1` writer - Clear Source Event 0/1"]
-pub type SEV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEFCLR_SPEC, SEV1_AW, O>;
+pub type SEV1_W<'a, const O: u8> = crate::BitWriter<'a, SEFCLR_SPEC, O, SEV1_AW>;
 impl<'a, const O: u8> SEV1_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<SYSTEM_TIME_HIGHER_WORD_SECONDS_SPEC>> for W {
     }
 }
 #[doc = "Field `TSHWR` reader - Timestamp Higher Word Register"]
-pub type TSHWR_R = crate::FieldReader<u16, u16>;
+pub type TSHWR_R = crate::FieldReader<u16>;
 #[doc = "Field `TSHWR` writer - Timestamp Higher Word Register"]
-pub type TSHWR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYSTEM_TIME_HIGHER_WORD_SECONDS_SPEC, u16, u16, 16, O>;
+pub type TSHWR_W<'a, const O: u8> = crate::FieldWriter<'a, SYSTEM_TIME_HIGHER_WORD_SECONDS_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Timestamp Higher Word Register"]
     #[inline(always)]

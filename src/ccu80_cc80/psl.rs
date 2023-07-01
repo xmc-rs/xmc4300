@@ -71,7 +71,7 @@ impl PSL11_R {
     }
 }
 #[doc = "Field `PSL11` writer - Output Passive Level for CCU8x.OUTy0"]
-pub type PSL11_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSL_SPEC, PSL11_A, O>;
+pub type PSL11_W<'a, const O: u8> = crate::BitWriter<'a, PSL_SPEC, O, PSL11_A>;
 impl<'a, const O: u8> PSL11_W<'a, O> {
     #[doc = "Passive Level is LOW"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl PSL12_R {
     }
 }
 #[doc = "Field `PSL12` writer - Output Passive Level for CCU8x.OUTy1"]
-pub type PSL12_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSL_SPEC, PSL12_A, O>;
+pub type PSL12_W<'a, const O: u8> = crate::BitWriter<'a, PSL_SPEC, O, PSL12_A>;
 impl<'a, const O: u8> PSL12_W<'a, O> {
     #[doc = "Passive Level is LOW"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl PSL21_R {
     }
 }
 #[doc = "Field `PSL21` writer - Output Passive Level for CCU8x.OUTy2"]
-pub type PSL21_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSL_SPEC, PSL21_A, O>;
+pub type PSL21_W<'a, const O: u8> = crate::BitWriter<'a, PSL_SPEC, O, PSL21_A>;
 impl<'a, const O: u8> PSL21_W<'a, O> {
     #[doc = "Passive Level is LOW"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl PSL22_R {
     }
 }
 #[doc = "Field `PSL22` writer - Output Passive Level for CCU8x.OUTy3"]
-pub type PSL22_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSL_SPEC, PSL22_A, O>;
+pub type PSL22_W<'a, const O: u8> = crate::BitWriter<'a, PSL_SPEC, O, PSL22_A>;
 impl<'a, const O: u8> PSL22_W<'a, O> {
     #[doc = "Passive Level is LOW"]
     #[inline(always)]

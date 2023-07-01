@@ -35,17 +35,17 @@ impl From<crate::W<NECNT_SPEC>> for W {
     }
 }
 #[doc = "Field `REC` reader - Receive Error Counter"]
-pub type REC_R = crate::FieldReader<u8, u8>;
+pub type REC_R = crate::FieldReader;
 #[doc = "Field `REC` writer - Receive Error Counter"]
-pub type REC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NECNT_SPEC, u8, u8, 8, O>;
+pub type REC_W<'a, const O: u8> = crate::FieldWriter<'a, NECNT_SPEC, 8, O>;
 #[doc = "Field `TEC` reader - Transmit Error Counter"]
-pub type TEC_R = crate::FieldReader<u8, u8>;
+pub type TEC_R = crate::FieldReader;
 #[doc = "Field `TEC` writer - Transmit Error Counter"]
-pub type TEC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NECNT_SPEC, u8, u8, 8, O>;
+pub type TEC_W<'a, const O: u8> = crate::FieldWriter<'a, NECNT_SPEC, 8, O>;
 #[doc = "Field `EWRNLVL` reader - Error Warning Level"]
-pub type EWRNLVL_R = crate::FieldReader<u8, u8>;
+pub type EWRNLVL_R = crate::FieldReader;
 #[doc = "Field `EWRNLVL` writer - Error Warning Level"]
-pub type EWRNLVL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NECNT_SPEC, u8, u8, 8, O>;
+pub type EWRNLVL_W<'a, const O: u8> = crate::FieldWriter<'a, NECNT_SPEC, 8, O>;
 #[doc = "Field `LETD` reader - Last Error Transfer Direction"]
 pub type LETD_R = crate::BitReader<LETD_A>;
 #[doc = "Last Error Transfer Direction\n\nValue on reset: 0"]

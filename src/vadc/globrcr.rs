@@ -35,7 +35,7 @@ impl From<crate::W<GLOBRCR_SPEC>> for W {
     }
 }
 #[doc = "Field `DRCTR` reader - Data Reduction Control"]
-pub type DRCTR_R = crate::FieldReader<u8, DRCTR_A>;
+pub type DRCTR_R = crate::FieldReader<DRCTR_A>;
 #[doc = "Data Reduction Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -48,6 +48,9 @@ impl From<DRCTR_A> for u8 {
     fn from(variant: DRCTR_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DRCTR_A {
+    type Ux = u8;
 }
 impl DRCTR_R {
     #[doc = "Get enumerated values variant"]
@@ -65,7 +68,7 @@ impl DRCTR_R {
     }
 }
 #[doc = "Field `DRCTR` writer - Data Reduction Control"]
-pub type DRCTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBRCR_SPEC, u8, DRCTR_A, 4, O>;
+pub type DRCTR_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBRCR_SPEC, 4, O, DRCTR_A>;
 impl<'a, const O: u8> DRCTR_W<'a, O> {
     #[doc = "Data reduction disabled"]
     #[inline(always)]
@@ -110,7 +113,7 @@ impl WFR_R {
     }
 }
 #[doc = "Field `WFR` writer - Wait-for-Read Mode Enable"]
-pub type WFR_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBRCR_SPEC, WFR_A, O>;
+pub type WFR_W<'a, const O: u8> = crate::BitWriter<'a, GLOBRCR_SPEC, O, WFR_A>;
 impl<'a, const O: u8> WFR_W<'a, O> {
     #[doc = "Overwrite mode"]
     #[inline(always)]
@@ -160,7 +163,7 @@ impl SRGEN_R {
     }
 }
 #[doc = "Field `SRGEN` writer - Service Request Generation Enable"]
-pub type SRGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBRCR_SPEC, SRGEN_A, O>;
+pub type SRGEN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBRCR_SPEC, O, SRGEN_A>;
 impl<'a, const O: u8> SRGEN_W<'a, O> {
     #[doc = "No service request"]
     #[inline(always)]

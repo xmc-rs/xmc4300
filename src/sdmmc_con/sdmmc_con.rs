@@ -71,7 +71,7 @@ impl WPSEL_R {
     }
 }
 #[doc = "Field `WPSEL` writer - SDMMC Write Protection Input Multiplexer Control"]
-pub type WPSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SDMMC_CON_SPEC, WPSEL_A, O>;
+pub type WPSEL_W<'a, const O: u8> = crate::BitWriter<'a, SDMMC_CON_SPEC, O, WPSEL_A>;
 impl<'a, const O: u8> WPSEL_W<'a, O> {
     #[doc = "P1.1 input pin selected"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl WPSVAL_R {
     }
 }
 #[doc = "Field `WPSVAL` writer - SDMMC Write Protect Software Control"]
-pub type WPSVAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SDMMC_CON_SPEC, WPSVAL_A, O>;
+pub type WPSVAL_W<'a, const O: u8> = crate::BitWriter<'a, SDMMC_CON_SPEC, O, WPSVAL_A>;
 impl<'a, const O: u8> WPSVAL_W<'a, O> {
     #[doc = "No write protection"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl CDSEL_R {
     }
 }
 #[doc = "Field `CDSEL` writer - SDMMC Card Detection Control"]
-pub type CDSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SDMMC_CON_SPEC, CDSEL_A, O>;
+pub type CDSEL_W<'a, const O: u8> = crate::BitWriter<'a, SDMMC_CON_SPEC, O, CDSEL_A>;
 impl<'a, const O: u8> CDSEL_W<'a, O> {
     #[doc = "P1.10 input pin selected"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl CDSVAL_R {
     }
 }
 #[doc = "Field `CDSVAL` writer - SDMMC Write Protect Software Control"]
-pub type CDSVAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SDMMC_CON_SPEC, CDSVAL_A, O>;
+pub type CDSVAL_W<'a, const O: u8> = crate::BitWriter<'a, SDMMC_CON_SPEC, O, CDSVAL_A>;
 impl<'a, const O: u8> CDSVAL_W<'a, O> {
     #[doc = "No card detected"]
     #[inline(always)]

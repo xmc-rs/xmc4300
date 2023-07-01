@@ -14,7 +14,7 @@ impl From<crate::R<SM_CONTROL_SPEC>> for R {
     }
 }
 #[doc = "Field `OP_MODE` reader - Operation Mode"]
-pub type OP_MODE_R = crate::FieldReader<u8, OP_MODE_A>;
+pub type OP_MODE_R = crate::FieldReader<OP_MODE_A>;
 #[doc = "Operation Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -29,6 +29,9 @@ impl From<OP_MODE_A> for u8 {
     fn from(variant: OP_MODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for OP_MODE_A {
+    type Ux = u8;
 }
 impl OP_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -52,7 +55,7 @@ impl OP_MODE_R {
     }
 }
 #[doc = "Field `DIR` reader - Direction"]
-pub type DIR_R = crate::FieldReader<u8, DIR_A>;
+pub type DIR_R = crate::FieldReader<DIR_A>;
 #[doc = "Direction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -67,6 +70,9 @@ impl From<DIR_A> for u8 {
     fn from(variant: DIR_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DIR_A {
+    type Ux = u8;
 }
 impl DIR_R {
     #[doc = "Get enumerated values variant"]

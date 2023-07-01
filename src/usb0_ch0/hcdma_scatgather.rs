@@ -35,7 +35,7 @@ impl From<crate::W<HCDMA_SCATGATHER_SPEC>> for W {
     }
 }
 #[doc = "Field `CTD` reader - Current Transfer Desc:"]
-pub type CTD_R = crate::FieldReader<u8, CTD_A>;
+pub type CTD_R = crate::FieldReader<CTD_A>;
 #[doc = "Current Transfer Desc:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -50,6 +50,9 @@ impl From<CTD_A> for u8 {
     fn from(variant: CTD_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CTD_A {
+    type Ux = u8;
 }
 impl CTD_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +76,7 @@ impl CTD_R {
     }
 }
 #[doc = "Field `CTD` writer - Current Transfer Desc:"]
-pub type CTD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCDMA_SCATGATHER_SPEC, u8, CTD_A, 6, O>;
+pub type CTD_W<'a, const O: u8> = crate::FieldWriter<'a, HCDMA_SCATGATHER_SPEC, 6, O, CTD_A>;
 impl<'a, const O: u8> CTD_W<'a, O> {
     #[doc = "1 descriptor"]
     #[inline(always)]
@@ -87,9 +90,9 @@ impl<'a, const O: u8> CTD_W<'a, O> {
     }
 }
 #[doc = "Field `DMAAddr` reader - DMA Address"]
-pub type DMAADDR_R = crate::FieldReader<u32, u32>;
+pub type DMAADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `DMAAddr` writer - DMA Address"]
-pub type DMAADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCDMA_SCATGATHER_SPEC, u32, u32, 23, O>;
+pub type DMAADDR_W<'a, const O: u8> = crate::FieldWriter<'a, HCDMA_SCATGATHER_SPEC, 23, O, u32>;
 impl R {
     #[doc = "Bits 3:8 - Current Transfer Desc:"]
     #[inline(always)]

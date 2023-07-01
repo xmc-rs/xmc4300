@@ -35,21 +35,21 @@ impl From<crate::W<MOFGPR_SPEC>> for W {
     }
 }
 #[doc = "Field `BOT` reader - Bottom Pointer"]
-pub type BOT_R = crate::FieldReader<u8, u8>;
+pub type BOT_R = crate::FieldReader;
 #[doc = "Field `BOT` writer - Bottom Pointer"]
-pub type BOT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOFGPR_SPEC, u8, u8, 8, O>;
+pub type BOT_W<'a, const O: u8> = crate::FieldWriter<'a, MOFGPR_SPEC, 8, O>;
 #[doc = "Field `TOP` reader - Top Pointer"]
-pub type TOP_R = crate::FieldReader<u8, u8>;
+pub type TOP_R = crate::FieldReader;
 #[doc = "Field `TOP` writer - Top Pointer"]
-pub type TOP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOFGPR_SPEC, u8, u8, 8, O>;
+pub type TOP_W<'a, const O: u8> = crate::FieldWriter<'a, MOFGPR_SPEC, 8, O>;
 #[doc = "Field `CUR` reader - Current Object Pointer"]
-pub type CUR_R = crate::FieldReader<u8, u8>;
+pub type CUR_R = crate::FieldReader;
 #[doc = "Field `CUR` writer - Current Object Pointer"]
-pub type CUR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOFGPR_SPEC, u8, u8, 8, O>;
+pub type CUR_W<'a, const O: u8> = crate::FieldWriter<'a, MOFGPR_SPEC, 8, O>;
 #[doc = "Field `SEL` reader - Object Select Pointer"]
-pub type SEL_R = crate::FieldReader<u8, u8>;
+pub type SEL_R = crate::FieldReader;
 #[doc = "Field `SEL` writer - Object Select Pointer"]
-pub type SEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOFGPR_SPEC, u8, u8, 8, O>;
+pub type SEL_W<'a, const O: u8> = crate::FieldWriter<'a, MOFGPR_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Bottom Pointer"]
     #[inline(always)]

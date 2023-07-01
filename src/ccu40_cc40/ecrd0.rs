@@ -14,11 +14,11 @@ impl From<crate::R<ECRD0_SPEC>> for R {
     }
 }
 #[doc = "Field `CAPV` reader - Timer Capture Value"]
-pub type CAPV_R = crate::FieldReader<u16, u16>;
+pub type CAPV_R = crate::FieldReader<u16>;
 #[doc = "Field `FPCV` reader - Prescaler Capture value"]
-pub type FPCV_R = crate::FieldReader<u8, u8>;
+pub type FPCV_R = crate::FieldReader;
 #[doc = "Field `SPTR` reader - Slice pointer"]
-pub type SPTR_R = crate::FieldReader<u8, SPTR_A>;
+pub type SPTR_R = crate::FieldReader<SPTR_A>;
 #[doc = "Slice pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -37,6 +37,9 @@ impl From<SPTR_A> for u8 {
     fn from(variant: SPTR_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SPTR_A {
+    type Ux = u8;
 }
 impl SPTR_R {
     #[doc = "Get enumerated values variant"]
@@ -72,7 +75,7 @@ impl SPTR_R {
     }
 }
 #[doc = "Field `VPTR` reader - Capture register pointer"]
-pub type VPTR_R = crate::FieldReader<u8, VPTR_A>;
+pub type VPTR_R = crate::FieldReader<VPTR_A>;
 #[doc = "Capture register pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -91,6 +94,9 @@ impl From<VPTR_A> for u8 {
     fn from(variant: VPTR_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for VPTR_A {
+    type Ux = u8;
 }
 impl VPTR_R {
     #[doc = "Get enumerated values variant"]

@@ -71,7 +71,7 @@ impl RSEN_R {
     }
 }
 #[doc = "Field `RSEN` writer - System Reset Enable upon Parity Error Trap"]
-pub type RSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERSTEN_SPEC, RSEN_A, O>;
+pub type RSEN_W<'a, const O: u8> = crate::BitWriter<'a, PERSTEN_SPEC, O, RSEN_A>;
 impl<'a, const O: u8> RSEN_W<'a, O> {
     #[doc = "Reset request disabled"]
     #[inline(always)]

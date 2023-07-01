@@ -13,10 +13,10 @@ impl From<crate::R<RX_RUNT_ERROR_FRAMES_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `RXRUNTERR` reader - This field indicates the number of frames received with runt error(<64 bytes and CRC error)."]
-pub type RXRUNTERR_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `RXRUNTERR` reader - This field indicates the number of frames received with runt error(&lt;64 bytes and CRC error)."]
+pub type RXRUNTERR_R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:31 - This field indicates the number of frames received with runt error(<64 bytes and CRC error)."]
+    #[doc = "Bits 0:31 - This field indicates the number of frames received with runt error(&lt;64 bytes and CRC error)."]
     #[inline(always)]
     pub fn rxrunterr(&self) -> RXRUNTERR_R {
         RXRUNTERR_R::new(self.bits)

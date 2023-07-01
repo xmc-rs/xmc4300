@@ -14,11 +14,11 @@ impl From<crate::R<MPU_TYPE_SPEC>> for R {
     }
 }
 #[doc = "Field `SEPARATE` reader - Support for unified or separate instruction and date memory maps"]
-pub type SEPARATE_R = crate::BitReader<bool>;
+pub type SEPARATE_R = crate::BitReader;
 #[doc = "Field `DREGION` reader - Number of supported MPU data regions"]
-pub type DREGION_R = crate::FieldReader<u8, u8>;
+pub type DREGION_R = crate::FieldReader;
 #[doc = "Field `IREGION` reader - Number of supported MPU instruction regions"]
-pub type IREGION_R = crate::FieldReader<u8, u8>;
+pub type IREGION_R = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Support for unified or separate instruction and date memory maps"]
     #[inline(always)]

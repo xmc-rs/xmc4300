@@ -14,7 +14,7 @@ impl From<crate::R<MSID_SPEC>> for R {
     }
 }
 #[doc = "Field `INDEX` reader - Message Pending Index"]
-pub type INDEX_R = crate::FieldReader<u8, u8>;
+pub type INDEX_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:5 - Message Pending Index"]
     #[inline(always)]

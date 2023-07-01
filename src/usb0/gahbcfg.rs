@@ -71,7 +71,7 @@ impl GLBL_INTR_MSK_R {
     }
 }
 #[doc = "Field `GlblIntrMsk` writer - Global Interrupt Mask"]
-pub type GLBL_INTR_MSK_W<'a, const O: u8> = crate::BitWriter<'a, u32, GAHBCFG_SPEC, GLBL_INTR_MSK_A, O>;
+pub type GLBL_INTR_MSK_W<'a, const O: u8> = crate::BitWriter<'a, GAHBCFG_SPEC, O, GLBL_INTR_MSK_A>;
 impl<'a, const O: u8> GLBL_INTR_MSK_W<'a, O> {
     #[doc = "Mask the interrupt assertion to the application."]
     #[inline(always)]
@@ -85,7 +85,7 @@ impl<'a, const O: u8> GLBL_INTR_MSK_W<'a, O> {
     }
 }
 #[doc = "Field `HBstLen` reader - Burst Length/Type"]
-pub type HBST_LEN_R = crate::FieldReader<u8, HBST_LEN_A>;
+pub type HBST_LEN_R = crate::FieldReader<HBST_LEN_A>;
 #[doc = "Burst Length/Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -106,6 +106,9 @@ impl From<HBST_LEN_A> for u8 {
     fn from(variant: HBST_LEN_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HBST_LEN_A {
+    type Ux = u8;
 }
 impl HBST_LEN_R {
     #[doc = "Get enumerated values variant"]
@@ -147,7 +150,7 @@ impl HBST_LEN_R {
     }
 }
 #[doc = "Field `HBstLen` writer - Burst Length/Type"]
-pub type HBST_LEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GAHBCFG_SPEC, u8, HBST_LEN_A, 4, O>;
+pub type HBST_LEN_W<'a, const O: u8> = crate::FieldWriter<'a, GAHBCFG_SPEC, 4, O, HBST_LEN_A>;
 impl<'a, const O: u8> HBST_LEN_W<'a, O> {
     #[doc = "Single"]
     #[inline(always)]
@@ -212,7 +215,7 @@ impl DMAEN_R {
     }
 }
 #[doc = "Field `DMAEn` writer - DMA Enable"]
-pub type DMAEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GAHBCFG_SPEC, DMAEN_A, O>;
+pub type DMAEN_W<'a, const O: u8> = crate::BitWriter<'a, GAHBCFG_SPEC, O, DMAEN_A>;
 impl<'a, const O: u8> DMAEN_W<'a, O> {
     #[doc = "Core operates in Slave mode"]
     #[inline(always)]
@@ -262,7 +265,7 @@ impl NPTX_FEMP_LVL_R {
     }
 }
 #[doc = "Field `NPTxFEmpLvl` writer - Non-Periodic TxFIFO Empty Level"]
-pub type NPTX_FEMP_LVL_W<'a, const O: u8> = crate::BitWriter<'a, u32, GAHBCFG_SPEC, NPTX_FEMP_LVL_A, O>;
+pub type NPTX_FEMP_LVL_W<'a, const O: u8> = crate::BitWriter<'a, GAHBCFG_SPEC, O, NPTX_FEMP_LVL_A>;
 impl<'a, const O: u8> NPTX_FEMP_LVL_W<'a, O> {
     #[doc = "DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is half empty"]
     #[inline(always)]
@@ -312,7 +315,7 @@ impl PTX_FEMP_LVL_R {
     }
 }
 #[doc = "Field `PTxFEmpLvl` writer - Periodic TxFIFO Empty Level"]
-pub type PTX_FEMP_LVL_W<'a, const O: u8> = crate::BitWriter<'a, u32, GAHBCFG_SPEC, PTX_FEMP_LVL_A, O>;
+pub type PTX_FEMP_LVL_W<'a, const O: u8> = crate::BitWriter<'a, GAHBCFG_SPEC, O, PTX_FEMP_LVL_A>;
 impl<'a, const O: u8> PTX_FEMP_LVL_W<'a, O> {
     #[doc = "GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is half empty"]
     #[inline(always)]
@@ -362,7 +365,7 @@ impl AHBSINGLE_R {
     }
 }
 #[doc = "Field `AHBSingle` writer - AHB Single Support"]
-pub type AHBSINGLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GAHBCFG_SPEC, AHBSINGLE_A, O>;
+pub type AHBSINGLE_W<'a, const O: u8> = crate::BitWriter<'a, GAHBCFG_SPEC, O, AHBSINGLE_A>;
 impl<'a, const O: u8> AHBSINGLE_W<'a, O> {
     #[doc = "The remaining data in a transfer is sent using INCR burst size. This is the default mode."]
     #[inline(always)]

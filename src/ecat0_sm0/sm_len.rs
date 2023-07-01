@@ -14,7 +14,7 @@ impl From<crate::R<SM_LEN_SPEC>> for R {
     }
 }
 #[doc = "Field `NO_BYTES` reader - Number of bytes assigned to SyncManager"]
-pub type NO_BYTES_R = crate::FieldReader<u16, u16>;
+pub type NO_BYTES_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Number of bytes assigned to SyncManager"]
     #[inline(always)]

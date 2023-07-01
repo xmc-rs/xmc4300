@@ -14,9 +14,9 @@ impl From<crate::R<VERSION_SPEC>> for R {
     }
 }
 #[doc = "Field `SNPSVER` reader - Synopsys-defined Version (3.7)"]
-pub type SNPSVER_R = crate::FieldReader<u8, u8>;
+pub type SNPSVER_R = crate::FieldReader;
 #[doc = "Field `USERVER` reader - User-defined Version (Configured with the coreConsultant)"]
-pub type USERVER_R = crate::FieldReader<u8, u8>;
+pub type USERVER_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Synopsys-defined Version (3.7)"]
     #[inline(always)]

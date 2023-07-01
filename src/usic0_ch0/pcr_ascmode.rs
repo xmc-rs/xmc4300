@@ -71,7 +71,7 @@ impl SMD_R {
     }
 }
 #[doc = "Field `SMD` writer - Sample Mode"]
-pub type SMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_ASCMODE_SPEC, SMD_A, O>;
+pub type SMD_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, SMD_A>;
 impl<'a, const O: u8> SMD_W<'a, O> {
     #[doc = "Only one sample is taken per bit time. The current input value is sampled."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl STPB_R {
     }
 }
 #[doc = "Field `STPB` writer - Stop Bits"]
-pub type STPB_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_ASCMODE_SPEC, STPB_A, O>;
+pub type STPB_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, STPB_A>;
 impl<'a, const O: u8> STPB_W<'a, O> {
     #[doc = "The number of stop bits is 1."]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl IDM_R {
     }
 }
 #[doc = "Field `IDM` writer - Idle Detection Mode"]
-pub type IDM_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_ASCMODE_SPEC, IDM_A, O>;
+pub type IDM_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, IDM_A>;
 impl<'a, const O: u8> IDM_W<'a, O> {
     #[doc = "The bus idle detection is switched off and bits PSR.TXIDLE and PSR.RXIDLE are set automatically to enable data transfers without checking the inputs before."]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl SBIEN_R {
     }
 }
 #[doc = "Field `SBIEN` writer - Synchronization Break Interrupt Enable"]
-pub type SBIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_ASCMODE_SPEC, SBIEN_A, O>;
+pub type SBIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, SBIEN_A>;
 impl<'a, const O: u8> SBIEN_W<'a, O> {
     #[doc = "The interrupt generation is disabled."]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl CDEN_R {
     }
 }
 #[doc = "Field `CDEN` writer - Collision Detection Enable"]
-pub type CDEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_ASCMODE_SPEC, CDEN_A, O>;
+pub type CDEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, CDEN_A>;
 impl<'a, const O: u8> CDEN_W<'a, O> {
     #[doc = "The collision detection is disabled."]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl RNIEN_R {
     }
 }
 #[doc = "Field `RNIEN` writer - Receiver Noise Detection Interrupt Enable"]
-pub type RNIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_ASCMODE_SPEC, RNIEN_A, O>;
+pub type RNIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, RNIEN_A>;
 impl<'a, const O: u8> RNIEN_W<'a, O> {
     #[doc = "The interrupt generation is disabled."]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl FEIEN_R {
     }
 }
 #[doc = "Field `FEIEN` writer - Format Error Interrupt Enable"]
-pub type FEIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_ASCMODE_SPEC, FEIEN_A, O>;
+pub type FEIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, FEIEN_A>;
 impl<'a, const O: u8> FEIEN_W<'a, O> {
     #[doc = "The interrupt generation is disabled."]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl FFIEN_R {
     }
 }
 #[doc = "Field `FFIEN` writer - Frame Finished Interrupt Enable"]
-pub type FFIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_ASCMODE_SPEC, FFIEN_A, O>;
+pub type FFIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, FFIEN_A>;
 impl<'a, const O: u8> FFIEN_W<'a, O> {
     #[doc = "The interrupt generation is disabled."]
     #[inline(always)]
@@ -435,11 +435,11 @@ impl<'a, const O: u8> FFIEN_W<'a, O> {
     }
 }
 #[doc = "Field `SP` reader - Sample Point"]
-pub type SP_R = crate::FieldReader<u8, u8>;
+pub type SP_R = crate::FieldReader;
 #[doc = "Field `SP` writer - Sample Point"]
-pub type SP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_ASCMODE_SPEC, u8, u8, 5, O>;
+pub type SP_W<'a, const O: u8> = crate::FieldWriter<'a, PCR_ASCMODE_SPEC, 5, O>;
 #[doc = "Field `PL` reader - Pulse Length"]
-pub type PL_R = crate::FieldReader<u8, PL_A>;
+pub type PL_R = crate::FieldReader<PL_A>;
 #[doc = "Pulse Length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -458,6 +458,9 @@ impl From<PL_A> for u8 {
     fn from(variant: PL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PL_A {
+    type Ux = u8;
 }
 impl PL_R {
     #[doc = "Get enumerated values variant"]
@@ -493,7 +496,7 @@ impl PL_R {
     }
 }
 #[doc = "Field `PL` writer - Pulse Length"]
-pub type PL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_ASCMODE_SPEC, u8, PL_A, 3, O>;
+pub type PL_W<'a, const O: u8> = crate::FieldWriter<'a, PCR_ASCMODE_SPEC, 3, O, PL_A>;
 impl<'a, const O: u8> PL_W<'a, O> {
     #[doc = "The pulse length is equal to the bit length (no shortened 0)."]
     #[inline(always)]
@@ -555,7 +558,7 @@ impl RSTEN_R {
     }
 }
 #[doc = "Field `RSTEN` writer - Receiver Status Enable"]
-pub type RSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_ASCMODE_SPEC, RSTEN_A, O>;
+pub type RSTEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, RSTEN_A>;
 impl<'a, const O: u8> RSTEN_W<'a, O> {
     #[doc = "Flag PSR\\[9\\]
 is not modified depending on the receiver status."]
@@ -609,7 +612,7 @@ impl TSTEN_R {
     }
 }
 #[doc = "Field `TSTEN` writer - Transmitter Status Enable"]
-pub type TSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_ASCMODE_SPEC, TSTEN_A, O>;
+pub type TSTEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, TSTEN_A>;
 impl<'a, const O: u8> TSTEN_W<'a, O> {
     #[doc = "Flag PSR\\[9\\]
 is not modified depending on the transmitter status."]
@@ -661,7 +664,7 @@ impl MCLK_R {
     }
 }
 #[doc = "Field `MCLK` writer - Master Clock Enable"]
-pub type MCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_ASCMODE_SPEC, MCLK_A, O>;
+pub type MCLK_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, MCLK_A>;
 impl<'a, const O: u8> MCLK_W<'a, O> {
     #[doc = "The MCLK generation is disabled and the MCLK signal is 0."]
     #[inline(always)]

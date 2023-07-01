@@ -35,7 +35,7 @@ impl From<crate::W<STCON_SPEC>> for W {
     }
 }
 #[doc = "Field `HWCON` reader - HW Configuration"]
-pub type HWCON_R = crate::FieldReader<u8, HWCON_A>;
+pub type HWCON_R = crate::FieldReader<HWCON_A>;
 #[doc = "HW Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<HWCON_A> for u8 {
     fn from(variant: HWCON_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HWCON_A {
+    type Ux = u8;
 }
 impl HWCON_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl HWCON_R {
     }
 }
 #[doc = "Field `SWCON` reader - SW Configuration"]
-pub type SWCON_R = crate::FieldReader<u8, SWCON_A>;
+pub type SWCON_R = crate::FieldReader<SWCON_A>;
 #[doc = "SW Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -116,6 +119,9 @@ impl From<SWCON_A> for u8 {
     fn from(variant: SWCON_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SWCON_A {
+    type Ux = u8;
 }
 impl SWCON_R {
     #[doc = "Get enumerated values variant"]
@@ -175,7 +181,7 @@ impl SWCON_R {
     }
 }
 #[doc = "Field `SWCON` writer - SW Configuration"]
-pub type SWCON_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STCON_SPEC, u8, SWCON_A, 4, O>;
+pub type SWCON_W<'a, const O: u8> = crate::FieldWriter<'a, STCON_SPEC, 4, O, SWCON_A>;
 impl<'a, const O: u8> SWCON_W<'a, O> {
     #[doc = "Normal mode, boot from Boot ROM"]
     #[inline(always)]

@@ -35,33 +35,33 @@ impl From<crate::W<MMC_CONTROL_SPEC>> for W {
     }
 }
 #[doc = "Field `CNTRST` reader - Counters Reset"]
-pub type CNTRST_R = crate::BitReader<bool>;
+pub type CNTRST_R = crate::BitReader;
 #[doc = "Field `CNTRST` writer - Counters Reset"]
-pub type CNTRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_CONTROL_SPEC, bool, O>;
+pub type CNTRST_W<'a, const O: u8> = crate::BitWriter<'a, MMC_CONTROL_SPEC, O>;
 #[doc = "Field `CNTSTOPRO` reader - Counters Stop Rollover"]
-pub type CNTSTOPRO_R = crate::BitReader<bool>;
+pub type CNTSTOPRO_R = crate::BitReader;
 #[doc = "Field `CNTSTOPRO` writer - Counters Stop Rollover"]
-pub type CNTSTOPRO_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_CONTROL_SPEC, bool, O>;
+pub type CNTSTOPRO_W<'a, const O: u8> = crate::BitWriter<'a, MMC_CONTROL_SPEC, O>;
 #[doc = "Field `RSTONRD` reader - Reset on Read"]
-pub type RSTONRD_R = crate::BitReader<bool>;
+pub type RSTONRD_R = crate::BitReader;
 #[doc = "Field `RSTONRD` writer - Reset on Read"]
-pub type RSTONRD_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_CONTROL_SPEC, bool, O>;
+pub type RSTONRD_W<'a, const O: u8> = crate::BitWriter<'a, MMC_CONTROL_SPEC, O>;
 #[doc = "Field `CNTFREEZ` reader - MMC Counter Freeze"]
-pub type CNTFREEZ_R = crate::BitReader<bool>;
+pub type CNTFREEZ_R = crate::BitReader;
 #[doc = "Field `CNTFREEZ` writer - MMC Counter Freeze"]
-pub type CNTFREEZ_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_CONTROL_SPEC, bool, O>;
+pub type CNTFREEZ_W<'a, const O: u8> = crate::BitWriter<'a, MMC_CONTROL_SPEC, O>;
 #[doc = "Field `CNTPRST` reader - Counters Preset"]
-pub type CNTPRST_R = crate::BitReader<bool>;
+pub type CNTPRST_R = crate::BitReader;
 #[doc = "Field `CNTPRST` writer - Counters Preset"]
-pub type CNTPRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_CONTROL_SPEC, bool, O>;
+pub type CNTPRST_W<'a, const O: u8> = crate::BitWriter<'a, MMC_CONTROL_SPEC, O>;
 #[doc = "Field `CNTPRSTLVL` reader - Full-Half Preset"]
-pub type CNTPRSTLVL_R = crate::BitReader<bool>;
+pub type CNTPRSTLVL_R = crate::BitReader;
 #[doc = "Field `CNTPRSTLVL` writer - Full-Half Preset"]
-pub type CNTPRSTLVL_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_CONTROL_SPEC, bool, O>;
+pub type CNTPRSTLVL_W<'a, const O: u8> = crate::BitWriter<'a, MMC_CONTROL_SPEC, O>;
 #[doc = "Field `UCDBC` reader - Update MMC Counters for Dropped Broadcast Frames"]
-pub type UCDBC_R = crate::BitReader<bool>;
+pub type UCDBC_R = crate::BitReader;
 #[doc = "Field `UCDBC` writer - Update MMC Counters for Dropped Broadcast Frames"]
-pub type UCDBC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MMC_CONTROL_SPEC, bool, O>;
+pub type UCDBC_W<'a, const O: u8> = crate::BitWriter<'a, MMC_CONTROL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Counters Reset"]
     #[inline(always)]

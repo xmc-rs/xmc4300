@@ -14,7 +14,7 @@ impl From<crate::R<TX_EXCESSIVE_DEFERRAL_ERROR_SPEC>> for R {
     }
 }
 #[doc = "Field `TXEXSDEF` reader - This field indicates the number of frames aborted because of excessive deferral error, that is, frames deferred for more than two max-sized frame times."]
-pub type TXEXSDEF_R = crate::FieldReader<u32, u32>;
+pub type TXEXSDEF_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of frames aborted because of excessive deferral error, that is, frames deferred for more than two max-sized frame times."]
     #[inline(always)]

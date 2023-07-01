@@ -35,9 +35,9 @@ impl From<crate::W<MOAMR_SPEC>> for W {
     }
 }
 #[doc = "Field `AM` reader - Acceptance Mask for Message Identifier"]
-pub type AM_R = crate::FieldReader<u32, u32>;
+pub type AM_R = crate::FieldReader<u32>;
 #[doc = "Field `AM` writer - Acceptance Mask for Message Identifier"]
-pub type AM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOAMR_SPEC, u32, u32, 29, O>;
+pub type AM_W<'a, const O: u8> = crate::FieldWriter<'a, MOAMR_SPEC, 29, O, u32>;
 #[doc = "Field `MIDE` reader - Acceptance Mask Bit for Message IDE Bit"]
 pub type MIDE_R = crate::BitReader<MIDE_A>;
 #[doc = "Acceptance Mask Bit for Message IDE Bit\n\nValue on reset: 1"]
@@ -75,7 +75,7 @@ impl MIDE_R {
     }
 }
 #[doc = "Field `MIDE` writer - Acceptance Mask Bit for Message IDE Bit"]
-pub type MIDE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOAMR_SPEC, MIDE_A, O>;
+pub type MIDE_W<'a, const O: u8> = crate::BitWriter<'a, MOAMR_SPEC, O, MIDE_A>;
 impl<'a, const O: u8> MIDE_W<'a, O> {
     #[doc = "Message object n accepts the reception of both, standard and extended frames."]
     #[inline(always)]

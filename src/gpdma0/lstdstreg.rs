@@ -71,7 +71,7 @@ impl CH0_R {
     }
 }
 #[doc = "Field `CH0` writer - Destination last request for channel 0"]
-pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, CH0_A, O>;
+pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, CH0_A>;
 impl<'a, const O: u8> CH0_W<'a, O> {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl CH1_R {
     }
 }
 #[doc = "Field `CH1` writer - Destination last request for channel 1"]
-pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, CH1_A, O>;
+pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, CH1_A>;
 impl<'a, const O: u8> CH1_W<'a, O> {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl CH2_R {
     }
 }
 #[doc = "Field `CH2` writer - Destination last request for channel 2"]
-pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, CH2_A, O>;
+pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, CH2_A>;
 impl<'a, const O: u8> CH2_W<'a, O> {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl CH3_R {
     }
 }
 #[doc = "Field `CH3` writer - Destination last request for channel 3"]
-pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, CH3_A, O>;
+pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, CH3_A>;
 impl<'a, const O: u8> CH3_W<'a, O> {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl CH4_R {
     }
 }
 #[doc = "Field `CH4` writer - Destination last request for channel 4"]
-pub type CH4_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, CH4_A, O>;
+pub type CH4_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, CH4_A>;
 impl<'a, const O: u8> CH4_W<'a, O> {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl CH5_R {
     }
 }
 #[doc = "Field `CH5` writer - Destination last request for channel 5"]
-pub type CH5_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, CH5_A, O>;
+pub type CH5_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, CH5_A>;
 impl<'a, const O: u8> CH5_W<'a, O> {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl CH6_R {
     }
 }
 #[doc = "Field `CH6` writer - Destination last request for channel 6"]
-pub type CH6_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, CH6_A, O>;
+pub type CH6_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, CH6_A>;
 impl<'a, const O: u8> CH6_W<'a, O> {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl CH7_R {
     }
 }
 #[doc = "Field `CH7` writer - Destination last request for channel 7"]
-pub type CH7_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, CH7_A, O>;
+pub type CH7_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, CH7_A>;
 impl<'a, const O: u8> CH7_W<'a, O> {
     #[doc = "Not last transaction in current block"]
     #[inline(always)]
@@ -449,7 +449,7 @@ impl From<WE_CH0_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH0` writer - Destination last transaction request write enable for channel 0"]
-pub type WE_CH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, WE_CH0_AW, O>;
+pub type WE_CH0_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, WE_CH0_AW>;
 impl<'a, const O: u8> WE_CH0_W<'a, O> {
     #[doc = "write disabled"]
     #[inline(always)]
@@ -477,7 +477,7 @@ impl From<WE_CH1_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH1` writer - Destination last transaction request write enable for channel 1"]
-pub type WE_CH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, WE_CH1_AW, O>;
+pub type WE_CH1_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, WE_CH1_AW>;
 impl<'a, const O: u8> WE_CH1_W<'a, O> {
     #[doc = "write disabled"]
     #[inline(always)]
@@ -505,7 +505,7 @@ impl From<WE_CH2_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH2` writer - Destination last transaction request write enable for channel 2"]
-pub type WE_CH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, WE_CH2_AW, O>;
+pub type WE_CH2_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, WE_CH2_AW>;
 impl<'a, const O: u8> WE_CH2_W<'a, O> {
     #[doc = "write disabled"]
     #[inline(always)]
@@ -533,7 +533,7 @@ impl From<WE_CH3_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH3` writer - Destination last transaction request write enable for channel 3"]
-pub type WE_CH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, WE_CH3_AW, O>;
+pub type WE_CH3_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, WE_CH3_AW>;
 impl<'a, const O: u8> WE_CH3_W<'a, O> {
     #[doc = "write disabled"]
     #[inline(always)]
@@ -561,7 +561,7 @@ impl From<WE_CH4_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH4` writer - Destination last transaction request write enable for channel 4"]
-pub type WE_CH4_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, WE_CH4_AW, O>;
+pub type WE_CH4_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, WE_CH4_AW>;
 impl<'a, const O: u8> WE_CH4_W<'a, O> {
     #[doc = "write disabled"]
     #[inline(always)]
@@ -589,7 +589,7 @@ impl From<WE_CH5_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH5` writer - Destination last transaction request write enable for channel 5"]
-pub type WE_CH5_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, WE_CH5_AW, O>;
+pub type WE_CH5_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, WE_CH5_AW>;
 impl<'a, const O: u8> WE_CH5_W<'a, O> {
     #[doc = "write disabled"]
     #[inline(always)]
@@ -617,7 +617,7 @@ impl From<WE_CH6_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH6` writer - Destination last transaction request write enable for channel 6"]
-pub type WE_CH6_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, WE_CH6_AW, O>;
+pub type WE_CH6_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, WE_CH6_AW>;
 impl<'a, const O: u8> WE_CH6_W<'a, O> {
     #[doc = "write disabled"]
     #[inline(always)]
@@ -645,7 +645,7 @@ impl From<WE_CH7_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH7` writer - Destination last transaction request write enable for channel 7"]
-pub type WE_CH7_W<'a, const O: u8> = crate::BitWriter<'a, u32, LSTDSTREG_SPEC, WE_CH7_AW, O>;
+pub type WE_CH7_W<'a, const O: u8> = crate::BitWriter<'a, LSTDSTREG_SPEC, O, WE_CH7_AW>;
 impl<'a, const O: u8> WE_CH7_W<'a, O> {
     #[doc = "write disabled"]
     #[inline(always)]

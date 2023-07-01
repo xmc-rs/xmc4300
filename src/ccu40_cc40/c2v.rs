@@ -14,9 +14,9 @@ impl From<crate::R<C2V_SPEC>> for R {
     }
 }
 #[doc = "Field `CAPTV` reader - Capture Value"]
-pub type CAPTV_R = crate::FieldReader<u16, u16>;
+pub type CAPTV_R = crate::FieldReader<u16>;
 #[doc = "Field `FPCV` reader - Prescaler Value"]
-pub type FPCV_R = crate::FieldReader<u8, u8>;
+pub type FPCV_R = crate::FieldReader;
 #[doc = "Field `FFL` reader - Full Flag"]
 pub type FFL_R = crate::BitReader<FFL_A>;
 #[doc = "Full Flag\n\nValue on reset: 0"]

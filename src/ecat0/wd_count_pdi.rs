@@ -14,7 +14,7 @@ impl From<crate::R<WD_COUNT_PDI_SPEC>> for R {
     }
 }
 #[doc = "Field `WD_COUNTER_PDI` reader - Watchdog PDI counter"]
-pub type WD_COUNTER_PDI_R = crate::FieldReader<u8, u8>;
+pub type WD_COUNTER_PDI_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Watchdog PDI counter"]
     #[inline(always)]

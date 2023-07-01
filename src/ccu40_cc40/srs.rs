@@ -35,7 +35,7 @@ impl From<crate::W<SRS_SPEC>> for W {
     }
 }
 #[doc = "Field `POSR` reader - Period/One match Service request selector"]
-pub type POSR_R = crate::FieldReader<u8, POSR_A>;
+pub type POSR_R = crate::FieldReader<POSR_A>;
 #[doc = "Period/One match Service request selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<POSR_A> for u8 {
     fn from(variant: POSR_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for POSR_A {
+    type Ux = u8;
 }
 impl POSR_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl POSR_R {
     }
 }
 #[doc = "Field `POSR` writer - Period/One match Service request selector"]
-pub type POSR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SRS_SPEC, u8, POSR_A, 2, O>;
+pub type POSR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SRS_SPEC, 2, O, POSR_A>;
 impl<'a, const O: u8> POSR_W<'a, O> {
     #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> POSR_W<'a, O> {
     }
 }
 #[doc = "Field `CMSR` reader - Compare match Service request selector"]
-pub type CMSR_R = crate::FieldReader<u8, CMSR_A>;
+pub type CMSR_R = crate::FieldReader<CMSR_A>;
 #[doc = "Compare match Service request selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<CMSR_A> for u8 {
     fn from(variant: CMSR_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CMSR_A {
+    type Ux = u8;
 }
 impl CMSR_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl CMSR_R {
     }
 }
 #[doc = "Field `CMSR` writer - Compare match Service request selector"]
-pub type CMSR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SRS_SPEC, u8, CMSR_A, 2, O>;
+pub type CMSR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SRS_SPEC, 2, O, CMSR_A>;
 impl<'a, const O: u8> CMSR_W<'a, O> {
     #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
@@ -191,7 +197,7 @@ impl<'a, const O: u8> CMSR_W<'a, O> {
     }
 }
 #[doc = "Field `E0SR` reader - Event 0 Service request selector"]
-pub type E0SR_R = crate::FieldReader<u8, E0SR_A>;
+pub type E0SR_R = crate::FieldReader<E0SR_A>;
 #[doc = "Event 0 Service request selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -210,6 +216,9 @@ impl From<E0SR_A> for u8 {
     fn from(variant: E0SR_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for E0SR_A {
+    type Ux = u8;
 }
 impl E0SR_R {
     #[doc = "Get enumerated values variant"]
@@ -245,7 +254,7 @@ impl E0SR_R {
     }
 }
 #[doc = "Field `E0SR` writer - Event 0 Service request selector"]
-pub type E0SR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SRS_SPEC, u8, E0SR_A, 2, O>;
+pub type E0SR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SRS_SPEC, 2, O, E0SR_A>;
 impl<'a, const O: u8> E0SR_W<'a, O> {
     #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
@@ -269,7 +278,7 @@ impl<'a, const O: u8> E0SR_W<'a, O> {
     }
 }
 #[doc = "Field `E1SR` reader - Event 1 Service request selector"]
-pub type E1SR_R = crate::FieldReader<u8, E1SR_A>;
+pub type E1SR_R = crate::FieldReader<E1SR_A>;
 #[doc = "Event 1 Service request selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -288,6 +297,9 @@ impl From<E1SR_A> for u8 {
     fn from(variant: E1SR_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for E1SR_A {
+    type Ux = u8;
 }
 impl E1SR_R {
     #[doc = "Get enumerated values variant"]
@@ -323,7 +335,7 @@ impl E1SR_R {
     }
 }
 #[doc = "Field `E1SR` writer - Event 1 Service request selector"]
-pub type E1SR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SRS_SPEC, u8, E1SR_A, 2, O>;
+pub type E1SR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SRS_SPEC, 2, O, E1SR_A>;
 impl<'a, const O: u8> E1SR_W<'a, O> {
     #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
@@ -347,7 +359,7 @@ impl<'a, const O: u8> E1SR_W<'a, O> {
     }
 }
 #[doc = "Field `E2SR` reader - Event 2 Service request selector"]
-pub type E2SR_R = crate::FieldReader<u8, E2SR_A>;
+pub type E2SR_R = crate::FieldReader<E2SR_A>;
 #[doc = "Event 2 Service request selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -366,6 +378,9 @@ impl From<E2SR_A> for u8 {
     fn from(variant: E2SR_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for E2SR_A {
+    type Ux = u8;
 }
 impl E2SR_R {
     #[doc = "Get enumerated values variant"]
@@ -401,7 +416,7 @@ impl E2SR_R {
     }
 }
 #[doc = "Field `E2SR` writer - Event 2 Service request selector"]
-pub type E2SR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SRS_SPEC, u8, E2SR_A, 2, O>;
+pub type E2SR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SRS_SPEC, 2, O, E2SR_A>;
 impl<'a, const O: u8> E2SR_W<'a, O> {
     #[doc = "Forward to CC4ySR0"]
     #[inline(always)]

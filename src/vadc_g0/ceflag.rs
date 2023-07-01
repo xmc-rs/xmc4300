@@ -71,7 +71,7 @@ impl CEV0_R {
     }
 }
 #[doc = "Field `CEV0` writer - Channel Event for Channel 0"]
-pub type CEV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFLAG_SPEC, CEV0_A, O>;
+pub type CEV0_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV0_A>;
 impl<'a, const O: u8> CEV0_W<'a, O> {
     #[doc = "No channel event"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl CEV1_R {
     }
 }
 #[doc = "Field `CEV1` writer - Channel Event for Channel 1"]
-pub type CEV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFLAG_SPEC, CEV1_A, O>;
+pub type CEV1_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV1_A>;
 impl<'a, const O: u8> CEV1_W<'a, O> {
     #[doc = "No channel event"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl CEV2_R {
     }
 }
 #[doc = "Field `CEV2` writer - Channel Event for Channel 2"]
-pub type CEV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFLAG_SPEC, CEV2_A, O>;
+pub type CEV2_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV2_A>;
 impl<'a, const O: u8> CEV2_W<'a, O> {
     #[doc = "No channel event"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl CEV3_R {
     }
 }
 #[doc = "Field `CEV3` writer - Channel Event for Channel 3"]
-pub type CEV3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFLAG_SPEC, CEV3_A, O>;
+pub type CEV3_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV3_A>;
 impl<'a, const O: u8> CEV3_W<'a, O> {
     #[doc = "No channel event"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl CEV4_R {
     }
 }
 #[doc = "Field `CEV4` writer - Channel Event for Channel 4"]
-pub type CEV4_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFLAG_SPEC, CEV4_A, O>;
+pub type CEV4_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV4_A>;
 impl<'a, const O: u8> CEV4_W<'a, O> {
     #[doc = "No channel event"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl CEV5_R {
     }
 }
 #[doc = "Field `CEV5` writer - Channel Event for Channel 5"]
-pub type CEV5_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFLAG_SPEC, CEV5_A, O>;
+pub type CEV5_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV5_A>;
 impl<'a, const O: u8> CEV5_W<'a, O> {
     #[doc = "No channel event"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl CEV6_R {
     }
 }
 #[doc = "Field `CEV6` writer - Channel Event for Channel 6"]
-pub type CEV6_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFLAG_SPEC, CEV6_A, O>;
+pub type CEV6_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV6_A>;
 impl<'a, const O: u8> CEV6_W<'a, O> {
     #[doc = "No channel event"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl CEV7_R {
     }
 }
 #[doc = "Field `CEV7` writer - Channel Event for Channel 7"]
-pub type CEV7_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFLAG_SPEC, CEV7_A, O>;
+pub type CEV7_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV7_A>;
 impl<'a, const O: u8> CEV7_W<'a, O> {
     #[doc = "No channel event"]
     #[inline(always)]

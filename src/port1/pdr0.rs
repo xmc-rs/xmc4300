@@ -35,37 +35,37 @@ impl From<crate::W<PDR0_SPEC>> for W {
     }
 }
 #[doc = "Field `PD0` reader - Pad Driver Mode for Pn.0"]
-pub type PD0_R = crate::FieldReader<u8, u8>;
+pub type PD0_R = crate::FieldReader;
 #[doc = "Field `PD0` writer - Pad Driver Mode for Pn.0"]
-pub type PD0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR0_SPEC, u8, u8, 3, O>;
+pub type PD0_W<'a, const O: u8> = crate::FieldWriter<'a, PDR0_SPEC, 3, O>;
 #[doc = "Field `PD1` reader - Pad Driver Mode for Pn.1"]
-pub type PD1_R = crate::FieldReader<u8, u8>;
+pub type PD1_R = crate::FieldReader;
 #[doc = "Field `PD1` writer - Pad Driver Mode for Pn.1"]
-pub type PD1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR0_SPEC, u8, u8, 3, O>;
+pub type PD1_W<'a, const O: u8> = crate::FieldWriter<'a, PDR0_SPEC, 3, O>;
 #[doc = "Field `PD2` reader - Pad Driver Mode for Pn.2"]
-pub type PD2_R = crate::FieldReader<u8, u8>;
+pub type PD2_R = crate::FieldReader;
 #[doc = "Field `PD2` writer - Pad Driver Mode for Pn.2"]
-pub type PD2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR0_SPEC, u8, u8, 3, O>;
+pub type PD2_W<'a, const O: u8> = crate::FieldWriter<'a, PDR0_SPEC, 3, O>;
 #[doc = "Field `PD3` reader - Pad Driver Mode for Pn.3"]
-pub type PD3_R = crate::FieldReader<u8, u8>;
+pub type PD3_R = crate::FieldReader;
 #[doc = "Field `PD3` writer - Pad Driver Mode for Pn.3"]
-pub type PD3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR0_SPEC, u8, u8, 3, O>;
+pub type PD3_W<'a, const O: u8> = crate::FieldWriter<'a, PDR0_SPEC, 3, O>;
 #[doc = "Field `PD4` reader - Pad Driver Mode for Pn.4"]
-pub type PD4_R = crate::FieldReader<u8, u8>;
+pub type PD4_R = crate::FieldReader;
 #[doc = "Field `PD4` writer - Pad Driver Mode for Pn.4"]
-pub type PD4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR0_SPEC, u8, u8, 3, O>;
+pub type PD4_W<'a, const O: u8> = crate::FieldWriter<'a, PDR0_SPEC, 3, O>;
 #[doc = "Field `PD5` reader - Pad Driver Mode for Pn.5"]
-pub type PD5_R = crate::FieldReader<u8, u8>;
+pub type PD5_R = crate::FieldReader;
 #[doc = "Field `PD5` writer - Pad Driver Mode for Pn.5"]
-pub type PD5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR0_SPEC, u8, u8, 3, O>;
+pub type PD5_W<'a, const O: u8> = crate::FieldWriter<'a, PDR0_SPEC, 3, O>;
 #[doc = "Field `PD6` reader - Pad Driver Mode for Pn.6"]
-pub type PD6_R = crate::FieldReader<u8, u8>;
+pub type PD6_R = crate::FieldReader;
 #[doc = "Field `PD6` writer - Pad Driver Mode for Pn.6"]
-pub type PD6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR0_SPEC, u8, u8, 3, O>;
+pub type PD6_W<'a, const O: u8> = crate::FieldWriter<'a, PDR0_SPEC, 3, O>;
 #[doc = "Field `PD7` reader - Pad Driver Mode for Pn.7"]
-pub type PD7_R = crate::FieldReader<u8, u8>;
+pub type PD7_R = crate::FieldReader;
 #[doc = "Field `PD7` writer - Pad Driver Mode for Pn.7"]
-pub type PD7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR0_SPEC, u8, u8, 3, O>;
+pub type PD7_W<'a, const O: u8> = crate::FieldWriter<'a, PDR0_SPEC, 3, O>;
 impl R {
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.0"]
     #[inline(always)]

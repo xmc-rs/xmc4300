@@ -35,21 +35,21 @@ impl From<crate::W<STS_SPEC>> for W {
     }
 }
 #[doc = "Field `CMF` reader - CRC Mismatch Flag"]
-pub type CMF_R = crate::BitReader<bool>;
+pub type CMF_R = crate::BitReader;
 #[doc = "Field `CMF` writer - CRC Mismatch Flag"]
-pub type CMF_W<'a, const O: u8> = crate::BitWriter<'a, u32, STS_SPEC, bool, O>;
+pub type CMF_W<'a, const O: u8> = crate::BitWriter<'a, STS_SPEC, O>;
 #[doc = "Field `CEF` reader - Configuration Error Flag"]
-pub type CEF_R = crate::BitReader<bool>;
+pub type CEF_R = crate::BitReader;
 #[doc = "Field `CEF` writer - Configuration Error Flag"]
-pub type CEF_W<'a, const O: u8> = crate::BitWriter<'a, u32, STS_SPEC, bool, O>;
+pub type CEF_W<'a, const O: u8> = crate::BitWriter<'a, STS_SPEC, O>;
 #[doc = "Field `LEF` reader - Length Error Flag"]
-pub type LEF_R = crate::BitReader<bool>;
+pub type LEF_R = crate::BitReader;
 #[doc = "Field `LEF` writer - Length Error Flag"]
-pub type LEF_W<'a, const O: u8> = crate::BitWriter<'a, u32, STS_SPEC, bool, O>;
+pub type LEF_W<'a, const O: u8> = crate::BitWriter<'a, STS_SPEC, O>;
 #[doc = "Field `BEF` reader - Bus Error Flag"]
-pub type BEF_R = crate::BitReader<bool>;
+pub type BEF_R = crate::BitReader;
 #[doc = "Field `BEF` writer - Bus Error Flag"]
-pub type BEF_W<'a, const O: u8> = crate::BitWriter<'a, u32, STS_SPEC, bool, O>;
+pub type BEF_W<'a, const O: u8> = crate::BitWriter<'a, STS_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - CRC Mismatch Flag"]
     #[inline(always)]

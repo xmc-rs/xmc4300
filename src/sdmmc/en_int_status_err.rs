@@ -71,7 +71,7 @@ impl CMD_TIMEOUT_ERR_EN_R {
     }
 }
 #[doc = "Field `CMD_TIMEOUT_ERR_EN` writer - Command Timeout Error Status Enable"]
-pub type CMD_TIMEOUT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_STATUS_ERR_SPEC, CMD_TIMEOUT_ERR_EN_A, O>;
+pub type CMD_TIMEOUT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_ERR_SPEC, O, CMD_TIMEOUT_ERR_EN_A>;
 impl<'a, const O: u8> CMD_TIMEOUT_ERR_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl CMD_CRC_ERR_EN_R {
     }
 }
 #[doc = "Field `CMD_CRC_ERR_EN` writer - Command CRC Error Status Enable"]
-pub type CMD_CRC_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_STATUS_ERR_SPEC, CMD_CRC_ERR_EN_A, O>;
+pub type CMD_CRC_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_ERR_SPEC, O, CMD_CRC_ERR_EN_A>;
 impl<'a, const O: u8> CMD_CRC_ERR_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl CMD_END_BIT_ERR_EN_R {
     }
 }
 #[doc = "Field `CMD_END_BIT_ERR_EN` writer - Command End Bit Error Status Enable"]
-pub type CMD_END_BIT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_STATUS_ERR_SPEC, CMD_END_BIT_ERR_EN_A, O>;
+pub type CMD_END_BIT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_ERR_SPEC, O, CMD_END_BIT_ERR_EN_A>;
 impl<'a, const O: u8> CMD_END_BIT_ERR_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl CMD_IND_ERR_EN_R {
     }
 }
 #[doc = "Field `CMD_IND_ERR_EN` writer - Command Index Error Status Enable"]
-pub type CMD_IND_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_STATUS_ERR_SPEC, CMD_IND_ERR_EN_A, O>;
+pub type CMD_IND_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_ERR_SPEC, O, CMD_IND_ERR_EN_A>;
 impl<'a, const O: u8> CMD_IND_ERR_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl DATA_TIMEOUT_ERR_EN_R {
     }
 }
 #[doc = "Field `DATA_TIMEOUT_ERR_EN` writer - Data Timeout Error Status Enable"]
-pub type DATA_TIMEOUT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_STATUS_ERR_SPEC, DATA_TIMEOUT_ERR_EN_A, O>;
+pub type DATA_TIMEOUT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_ERR_SPEC, O, DATA_TIMEOUT_ERR_EN_A>;
 impl<'a, const O: u8> DATA_TIMEOUT_ERR_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl DATA_CRC_ERR_EN_R {
     }
 }
 #[doc = "Field `DATA_CRC_ERR_EN` writer - Data CRC Error Status Enable"]
-pub type DATA_CRC_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_STATUS_ERR_SPEC, DATA_CRC_ERR_EN_A, O>;
+pub type DATA_CRC_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_ERR_SPEC, O, DATA_CRC_ERR_EN_A>;
 impl<'a, const O: u8> DATA_CRC_ERR_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl DATA_END_BIT_ERR_EN_R {
     }
 }
 #[doc = "Field `DATA_END_BIT_ERR_EN` writer - Data End Bit Error Status Enable"]
-pub type DATA_END_BIT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_STATUS_ERR_SPEC, DATA_END_BIT_ERR_EN_A, O>;
+pub type DATA_END_BIT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_ERR_SPEC, O, DATA_END_BIT_ERR_EN_A>;
 impl<'a, const O: u8> DATA_END_BIT_ERR_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl CURRENT_LIMIT_ERR_EN_R {
     }
 }
 #[doc = "Field `CURRENT_LIMIT_ERR_EN` writer - Current Limit Error Status Enable"]
-pub type CURRENT_LIMIT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_STATUS_ERR_SPEC, CURRENT_LIMIT_ERR_EN_A, O>;
+pub type CURRENT_LIMIT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_ERR_SPEC, O, CURRENT_LIMIT_ERR_EN_A>;
 impl<'a, const O: u8> CURRENT_LIMIT_ERR_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl ACMD_ERR_EN_R {
     }
 }
 #[doc = "Field `ACMD_ERR_EN` writer - Auto CMD12 Error Status Enable"]
-pub type ACMD_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_STATUS_ERR_SPEC, ACMD_ERR_EN_A, O>;
+pub type ACMD_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_ERR_SPEC, O, ACMD_ERR_EN_A>;
 impl<'a, const O: u8> ACMD_ERR_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl TARGET_RESP_ERR_EN_R {
     }
 }
 #[doc = "Field `TARGET_RESP_ERR_EN` writer - Target Response Error Status Enable"]
-pub type TARGET_RESP_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_STATUS_ERR_SPEC, TARGET_RESP_ERR_EN_A, O>;
+pub type TARGET_RESP_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_ERR_SPEC, O, TARGET_RESP_ERR_EN_A>;
 impl<'a, const O: u8> TARGET_RESP_ERR_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl CEATA_ERR_EN_R {
     }
 }
 #[doc = "Field `CEATA_ERR_EN` writer - Ceata Error Status Enable"]
-pub type CEATA_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_STATUS_ERR_SPEC, CEATA_ERR_EN_A, O>;
+pub type CEATA_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_ERR_SPEC, O, CEATA_ERR_EN_A>;
 impl<'a, const O: u8> CEATA_ERR_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]

@@ -20,7 +20,7 @@ impl From<crate::W<MITR_SPEC>> for W {
     }
 }
 #[doc = "Field `IT` writer - Interrupt Trigger"]
-pub type IT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MITR_SPEC, u8, u8, 8, O>;
+pub type IT_W<'a, const O: u8> = crate::FieldWriter<'a, MITR_SPEC, 8, O>;
 impl W {
     #[doc = "Bits 0:7 - Interrupt Trigger"]
     #[inline(always)]

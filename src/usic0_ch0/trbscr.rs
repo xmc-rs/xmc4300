@@ -34,7 +34,7 @@ impl From<CSRBI_AW> for bool {
     }
 }
 #[doc = "Field `CSRBI` writer - Clear Standard Receive Buffer Event"]
-pub type CSRBI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, CSRBI_AW, O>;
+pub type CSRBI_W<'a, const O: u8> = crate::BitWriter<'a, TRBSCR_SPEC, O, CSRBI_AW>;
 impl<'a, const O: u8> CSRBI_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<CRBERI_AW> for bool {
     }
 }
 #[doc = "Field `CRBERI` writer - Clear Receive Buffer Error Event"]
-pub type CRBERI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, CRBERI_AW, O>;
+pub type CRBERI_W<'a, const O: u8> = crate::BitWriter<'a, TRBSCR_SPEC, O, CRBERI_AW>;
 impl<'a, const O: u8> CRBERI_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<CARBI_AW> for bool {
     }
 }
 #[doc = "Field `CARBI` writer - Clear Alternative Receive Buffer Event"]
-pub type CARBI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, CARBI_AW, O>;
+pub type CARBI_W<'a, const O: u8> = crate::BitWriter<'a, TRBSCR_SPEC, O, CARBI_AW>;
 impl<'a, const O: u8> CARBI_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<CSTBI_AW> for bool {
     }
 }
 #[doc = "Field `CSTBI` writer - Clear Standard Transmit Buffer Event"]
-pub type CSTBI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, CSTBI_AW, O>;
+pub type CSTBI_W<'a, const O: u8> = crate::BitWriter<'a, TRBSCR_SPEC, O, CSTBI_AW>;
 impl<'a, const O: u8> CSTBI_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<CTBERI_AW> for bool {
     }
 }
 #[doc = "Field `CTBERI` writer - Clear Transmit Buffer Error Event"]
-pub type CTBERI_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, CTBERI_AW, O>;
+pub type CTBERI_W<'a, const O: u8> = crate::BitWriter<'a, TRBSCR_SPEC, O, CTBERI_AW>;
 impl<'a, const O: u8> CTBERI_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<CBDV_AW> for bool {
     }
 }
 #[doc = "Field `CBDV` writer - Clear Bypass Data Valid"]
-pub type CBDV_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, CBDV_AW, O>;
+pub type CBDV_W<'a, const O: u8> = crate::BitWriter<'a, TRBSCR_SPEC, O, CBDV_AW>;
 impl<'a, const O: u8> CBDV_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
@@ -202,7 +202,7 @@ impl From<FLUSHRB_AW> for bool {
     }
 }
 #[doc = "Field `FLUSHRB` writer - Flush Receive Buffer"]
-pub type FLUSHRB_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, FLUSHRB_AW, O>;
+pub type FLUSHRB_W<'a, const O: u8> = crate::BitWriter<'a, TRBSCR_SPEC, O, FLUSHRB_AW>;
 impl<'a, const O: u8> FLUSHRB_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
@@ -230,7 +230,7 @@ impl From<FLUSHTB_AW> for bool {
     }
 }
 #[doc = "Field `FLUSHTB` writer - Flush Transmit Buffer"]
-pub type FLUSHTB_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRBSCR_SPEC, FLUSHTB_AW, O>;
+pub type FLUSHTB_W<'a, const O: u8> = crate::BitWriter<'a, TRBSCR_SPEC, O, FLUSHTB_AW>;
 impl<'a, const O: u8> FLUSHTB_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]

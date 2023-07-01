@@ -34,7 +34,7 @@ impl From<WDT_AW> for bool {
     }
 }
 #[doc = "Field `WDT` writer - WDT Gating Set"]
-pub type WDT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET2_SPEC, WDT_AW, O>;
+pub type WDT_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET2_SPEC, O, WDT_AW>;
 impl<'a, const O: u8> WDT_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<ETH0_AW> for bool {
     }
 }
 #[doc = "Field `ETH0` writer - ETH0 Gating Set"]
-pub type ETH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET2_SPEC, ETH0_AW, O>;
+pub type ETH0_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET2_SPEC, O, ETH0_AW>;
 impl<'a, const O: u8> ETH0_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<DMA0_AW> for bool {
     }
 }
 #[doc = "Field `DMA0` writer - DMA0 Gating Set"]
-pub type DMA0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET2_SPEC, DMA0_AW, O>;
+pub type DMA0_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET2_SPEC, O, DMA0_AW>;
 impl<'a, const O: u8> DMA0_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<FCE_AW> for bool {
     }
 }
 #[doc = "Field `FCE` writer - FCE Gating Set"]
-pub type FCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET2_SPEC, FCE_AW, O>;
+pub type FCE_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET2_SPEC, O, FCE_AW>;
 impl<'a, const O: u8> FCE_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<USB_AW> for bool {
     }
 }
 #[doc = "Field `USB` writer - USB Gating Set"]
-pub type USB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET2_SPEC, USB_AW, O>;
+pub type USB_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET2_SPEC, O, USB_AW>;
 impl<'a, const O: u8> USB_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<ECAT0_AW> for bool {
     }
 }
 #[doc = "Field `ECAT0` writer - ECAT0 Gating Set"]
-pub type ECAT0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET2_SPEC, ECAT0_AW, O>;
+pub type ECAT0_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET2_SPEC, O, ECAT0_AW>;
 impl<'a, const O: u8> ECAT0_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<PHYSICAL_RW_OFFSET_SPEC>> for R {
     }
 }
 #[doc = "Field `OFFSET` reader - Offset of R/W Commands (FPRW, APRW) between Read address and Write address"]
-pub type OFFSET_R = crate::FieldReader<u16, u16>;
+pub type OFFSET_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Offset of R/W Commands (FPRW, APRW) between Read address and Write address"]
     #[inline(always)]

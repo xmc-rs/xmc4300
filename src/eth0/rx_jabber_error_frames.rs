@@ -14,7 +14,7 @@ impl From<crate::R<RX_JABBER_ERROR_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXJABERR` reader - This field indicates the number of giant frames received with length (including CRC) greater than 1,518 bytes (1,522 bytes for VLAN tagged) and with CRC error. If Jumbo Frame mode is enabled, then frames of length greater than 9,018 bytes (9,022 for VLAN tagged) are considered as giant frames."]
-pub type RXJABERR_R = crate::FieldReader<u32, u32>;
+pub type RXJABERR_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of giant frames received with length (including CRC) greater than 1,518 bytes (1,522 bytes for VLAN tagged) and with CRC error. If Jumbo Frame mode is enabled, then frames of length greater than 9,018 bytes (9,022 for VLAN tagged) are considered as giant frames."]
     #[inline(always)]

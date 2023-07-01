@@ -35,13 +35,13 @@ impl From<crate::W<DC1R_SPEC>> for W {
     }
 }
 #[doc = "Field `DT1R` reader - Rise Value for Dead Time of Channel 1"]
-pub type DT1R_R = crate::FieldReader<u8, u8>;
+pub type DT1R_R = crate::FieldReader;
 #[doc = "Field `DT1R` writer - Rise Value for Dead Time of Channel 1"]
-pub type DT1R_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DC1R_SPEC, u8, u8, 8, O>;
+pub type DT1R_W<'a, const O: u8> = crate::FieldWriter<'a, DC1R_SPEC, 8, O>;
 #[doc = "Field `DT1F` reader - Fall Value for Dead Time of Channel 1"]
-pub type DT1F_R = crate::FieldReader<u8, u8>;
+pub type DT1F_R = crate::FieldReader;
 #[doc = "Field `DT1F` writer - Fall Value for Dead Time of Channel 1"]
-pub type DT1F_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DC1R_SPEC, u8, u8, 8, O>;
+pub type DT1F_W<'a, const O: u8> = crate::FieldWriter<'a, DC1R_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Rise Value for Dead Time of Channel 1"]
     #[inline(always)]

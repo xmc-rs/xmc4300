@@ -35,9 +35,9 @@ impl From<crate::W<NPCR_SPEC>> for W {
     }
 }
 #[doc = "Field `RXSEL` reader - Receive Select"]
-pub type RXSEL_R = crate::FieldReader<u8, u8>;
+pub type RXSEL_R = crate::FieldReader;
 #[doc = "Field `RXSEL` writer - Receive Select"]
-pub type RXSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NPCR_SPEC, u8, u8, 3, O>;
+pub type RXSEL_W<'a, const O: u8> = crate::FieldWriter<'a, NPCR_SPEC, 3, O>;
 #[doc = "Field `LBM` reader - Loop-Back Mode"]
 pub type LBM_R = crate::BitReader<LBM_A>;
 #[doc = "Loop-Back Mode\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl LBM_R {
     }
 }
 #[doc = "Field `LBM` writer - Loop-Back Mode"]
-pub type LBM_W<'a, const O: u8> = crate::BitWriter<'a, u32, NPCR_SPEC, LBM_A, O>;
+pub type LBM_W<'a, const O: u8> = crate::BitWriter<'a, NPCR_SPEC, O, LBM_A>;
 impl<'a, const O: u8> LBM_W<'a, O> {
     #[doc = "Loop-Back Mode is disabled."]
     #[inline(always)]

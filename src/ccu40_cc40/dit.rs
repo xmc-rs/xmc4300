@@ -14,9 +14,9 @@ impl From<crate::R<DIT_SPEC>> for R {
     }
 }
 #[doc = "Field `DCV` reader - Dither compare Value"]
-pub type DCV_R = crate::FieldReader<u8, u8>;
+pub type DCV_R = crate::FieldReader;
 #[doc = "Field `DCNT` reader - Dither counter actual value"]
-pub type DCNT_R = crate::FieldReader<u8, u8>;
+pub type DCNT_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:3 - Dither compare Value"]
     #[inline(always)]

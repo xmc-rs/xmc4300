@@ -71,7 +71,7 @@ impl VF0_R {
     }
 }
 #[doc = "Field `VF0` writer - Valid Flag of Result Register x"]
-pub type VF0_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF0_A, O>;
+pub type VF0_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF0_A>;
 impl<'a, const O: u8> VF0_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl VF1_R {
     }
 }
 #[doc = "Field `VF1` writer - Valid Flag of Result Register x"]
-pub type VF1_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF1_A, O>;
+pub type VF1_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF1_A>;
 impl<'a, const O: u8> VF1_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl VF2_R {
     }
 }
 #[doc = "Field `VF2` writer - Valid Flag of Result Register x"]
-pub type VF2_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF2_A, O>;
+pub type VF2_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF2_A>;
 impl<'a, const O: u8> VF2_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl VF3_R {
     }
 }
 #[doc = "Field `VF3` writer - Valid Flag of Result Register x"]
-pub type VF3_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF3_A, O>;
+pub type VF3_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF3_A>;
 impl<'a, const O: u8> VF3_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl VF4_R {
     }
 }
 #[doc = "Field `VF4` writer - Valid Flag of Result Register x"]
-pub type VF4_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF4_A, O>;
+pub type VF4_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF4_A>;
 impl<'a, const O: u8> VF4_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl VF5_R {
     }
 }
 #[doc = "Field `VF5` writer - Valid Flag of Result Register x"]
-pub type VF5_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF5_A, O>;
+pub type VF5_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF5_A>;
 impl<'a, const O: u8> VF5_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl VF6_R {
     }
 }
 #[doc = "Field `VF6` writer - Valid Flag of Result Register x"]
-pub type VF6_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF6_A, O>;
+pub type VF6_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF6_A>;
 impl<'a, const O: u8> VF6_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl VF7_R {
     }
 }
 #[doc = "Field `VF7` writer - Valid Flag of Result Register x"]
-pub type VF7_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF7_A, O>;
+pub type VF7_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF7_A>;
 impl<'a, const O: u8> VF7_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl VF8_R {
     }
 }
 #[doc = "Field `VF8` writer - Valid Flag of Result Register x"]
-pub type VF8_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF8_A, O>;
+pub type VF8_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF8_A>;
 impl<'a, const O: u8> VF8_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl VF9_R {
     }
 }
 #[doc = "Field `VF9` writer - Valid Flag of Result Register x"]
-pub type VF9_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF9_A, O>;
+pub type VF9_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF9_A>;
 impl<'a, const O: u8> VF9_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl VF10_R {
     }
 }
 #[doc = "Field `VF10` writer - Valid Flag of Result Register x"]
-pub type VF10_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF10_A, O>;
+pub type VF10_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF10_A>;
 impl<'a, const O: u8> VF10_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl VF11_R {
     }
 }
 #[doc = "Field `VF11` writer - Valid Flag of Result Register x"]
-pub type VF11_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF11_A, O>;
+pub type VF11_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF11_A>;
 impl<'a, const O: u8> VF11_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -671,7 +671,7 @@ impl VF12_R {
     }
 }
 #[doc = "Field `VF12` writer - Valid Flag of Result Register x"]
-pub type VF12_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF12_A, O>;
+pub type VF12_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF12_A>;
 impl<'a, const O: u8> VF12_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -721,7 +721,7 @@ impl VF13_R {
     }
 }
 #[doc = "Field `VF13` writer - Valid Flag of Result Register x"]
-pub type VF13_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF13_A, O>;
+pub type VF13_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF13_A>;
 impl<'a, const O: u8> VF13_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -771,7 +771,7 @@ impl VF14_R {
     }
 }
 #[doc = "Field `VF14` writer - Valid Flag of Result Register x"]
-pub type VF14_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF14_A, O>;
+pub type VF14_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF14_A>;
 impl<'a, const O: u8> VF14_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
@@ -821,7 +821,7 @@ impl VF15_R {
     }
 }
 #[doc = "Field `VF15` writer - Valid Flag of Result Register x"]
-pub type VF15_W<'a, const O: u8> = crate::BitWriter<'a, u32, VFR_SPEC, VF15_A, O>;
+pub type VF15_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF15_A>;
 impl<'a, const O: u8> VF15_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]

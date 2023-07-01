@@ -35,7 +35,7 @@ impl From<crate::W<EEP_ADR_SPEC>> for W {
     }
 }
 #[doc = "Field `EEPROM_ADDR` reader - EEPROM Address"]
-pub type EEPROM_ADDR_R = crate::FieldReader<u32, EEPROM_ADDR_A>;
+pub type EEPROM_ADDR_R = crate::FieldReader<EEPROM_ADDR_A>;
 #[doc = "EEPROM Address\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
@@ -50,6 +50,9 @@ impl From<EEPROM_ADDR_A> for u32 {
     fn from(variant: EEPROM_ADDR_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EEPROM_ADDR_A {
+    type Ux = u32;
 }
 impl EEPROM_ADDR_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +76,7 @@ impl EEPROM_ADDR_R {
     }
 }
 #[doc = "Field `EEPROM_ADDR` writer - EEPROM Address"]
-pub type EEPROM_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EEP_ADR_SPEC, u32, EEPROM_ADDR_A, 32, O>;
+pub type EEPROM_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, EEP_ADR_SPEC, 32, O, EEPROM_ADDR_A>;
 impl<'a, const O: u8> EEPROM_ADDR_W<'a, O> {
     #[doc = "First word (= 16 bits)"]
     #[inline(always)]

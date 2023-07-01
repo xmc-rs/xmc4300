@@ -14,7 +14,7 @@ impl From<crate::R<DC_NEXT_SYNC1_PULSE_SPEC>> for R {
     }
 }
 #[doc = "Field `DC_NEXT_SYNC1_PULSE` reader - System time of next SYNC1 pulse in ns"]
-pub type DC_NEXT_SYNC1_PULSE_R = crate::FieldReader<u32, u32>;
+pub type DC_NEXT_SYNC1_PULSE_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - System time of next SYNC1 pulse in ns"]
     #[inline(always)]

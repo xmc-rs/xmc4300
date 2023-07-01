@@ -71,7 +71,7 @@ impl ENORC6_R {
     }
 }
 #[doc = "Field `ENORC6` writer - Enable Out of Range Comparator, Channel 6"]
-pub type ENORC6_W<'a, const O: u8> = crate::BitWriter<'a, u32, G0ORCEN_SPEC, ENORC6_A, O>;
+pub type ENORC6_W<'a, const O: u8> = crate::BitWriter<'a, G0ORCEN_SPEC, O, ENORC6_A>;
 impl<'a, const O: u8> ENORC6_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl ENORC7_R {
     }
 }
 #[doc = "Field `ENORC7` writer - Enable Out of Range Comparator, Channel 7"]
-pub type ENORC7_W<'a, const O: u8> = crate::BitWriter<'a, u32, G0ORCEN_SPEC, ENORC7_A, O>;
+pub type ENORC7_W<'a, const O: u8> = crate::BitWriter<'a, G0ORCEN_SPEC, O, ENORC7_A>;
 impl<'a, const O: u8> ENORC7_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]

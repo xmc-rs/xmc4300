@@ -71,7 +71,7 @@ impl PWD_R {
     }
 }
 #[doc = "Field `PWD` writer - Sensor Power Down"]
-pub type PWD_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTSCON_SPEC, PWD_A, O>;
+pub type PWD_W<'a, const O: u8> = crate::BitWriter<'a, DTSCON_SPEC, O, PWD_A>;
 impl<'a, const O: u8> PWD_W<'a, O> {
     #[doc = "The DTS is powered"]
     #[inline(always)]
@@ -99,7 +99,7 @@ impl From<START_AW> for bool {
     }
 }
 #[doc = "Field `START` writer - Sensor Measurement Start"]
-pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTSCON_SPEC, START_AW, O>;
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, DTSCON_SPEC, O, START_AW>;
 impl<'a, const O: u8> START_W<'a, O> {
     #[doc = "No DTS measurement is started"]
     #[inline(always)]
@@ -113,21 +113,21 @@ impl<'a, const O: u8> START_W<'a, O> {
     }
 }
 #[doc = "Field `OFFSET` reader - Offset Calibration Value"]
-pub type OFFSET_R = crate::FieldReader<u8, u8>;
+pub type OFFSET_R = crate::FieldReader;
 #[doc = "Field `OFFSET` writer - Offset Calibration Value"]
-pub type OFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTSCON_SPEC, u8, u8, 7, O>;
+pub type OFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, DTSCON_SPEC, 7, O>;
 #[doc = "Field `GAIN` reader - Gain Calibration Value"]
-pub type GAIN_R = crate::FieldReader<u8, u8>;
+pub type GAIN_R = crate::FieldReader;
 #[doc = "Field `GAIN` writer - Gain Calibration Value"]
-pub type GAIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTSCON_SPEC, u8, u8, 6, O>;
+pub type GAIN_W<'a, const O: u8> = crate::FieldWriter<'a, DTSCON_SPEC, 6, O>;
 #[doc = "Field `REFTRIM` reader - Reference Trim Calibration Value"]
-pub type REFTRIM_R = crate::FieldReader<u8, u8>;
+pub type REFTRIM_R = crate::FieldReader;
 #[doc = "Field `REFTRIM` writer - Reference Trim Calibration Value"]
-pub type REFTRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTSCON_SPEC, u8, u8, 3, O>;
+pub type REFTRIM_W<'a, const O: u8> = crate::FieldWriter<'a, DTSCON_SPEC, 3, O>;
 #[doc = "Field `BGTRIM` reader - Bandgap Trim Calibration Value"]
-pub type BGTRIM_R = crate::FieldReader<u8, u8>;
+pub type BGTRIM_R = crate::FieldReader;
 #[doc = "Field `BGTRIM` writer - Bandgap Trim Calibration Value"]
-pub type BGTRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DTSCON_SPEC, u8, u8, 4, O>;
+pub type BGTRIM_W<'a, const O: u8> = crate::FieldWriter<'a, DTSCON_SPEC, 4, O>;
 impl R {
     #[doc = "Bit 0 - Sensor Power Down"]
     #[inline(always)]

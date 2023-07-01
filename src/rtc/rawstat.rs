@@ -14,19 +14,19 @@ impl From<crate::R<RAWSTAT_SPEC>> for R {
     }
 }
 #[doc = "Field `RPSE` reader - Raw Periodic Seconds Service Request"]
-pub type RPSE_R = crate::BitReader<bool>;
+pub type RPSE_R = crate::BitReader;
 #[doc = "Field `RPMI` reader - Raw Periodic Minutes Service Request"]
-pub type RPMI_R = crate::BitReader<bool>;
+pub type RPMI_R = crate::BitReader;
 #[doc = "Field `RPHO` reader - Raw Periodic Hours Service Request"]
-pub type RPHO_R = crate::BitReader<bool>;
+pub type RPHO_R = crate::BitReader;
 #[doc = "Field `RPDA` reader - Raw Periodic Days Service Request"]
-pub type RPDA_R = crate::BitReader<bool>;
+pub type RPDA_R = crate::BitReader;
 #[doc = "Field `RPMO` reader - Raw Periodic Months Service Request"]
-pub type RPMO_R = crate::BitReader<bool>;
+pub type RPMO_R = crate::BitReader;
 #[doc = "Field `RPYE` reader - Raw Periodic Years Service Request"]
-pub type RPYE_R = crate::BitReader<bool>;
+pub type RPYE_R = crate::BitReader;
 #[doc = "Field `RAI` reader - Raw Alarm Service Request"]
-pub type RAI_R = crate::BitReader<bool>;
+pub type RAI_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Raw Periodic Seconds Service Request"]
     #[inline(always)]

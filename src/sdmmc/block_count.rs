@@ -35,9 +35,9 @@ impl From<crate::W<BLOCK_COUNT_SPEC>> for W {
     }
 }
 #[doc = "Field `BLOCK_COUNT` reader - Blocks Count for Current Transfer"]
-pub type BLOCK_COUNT_R = crate::FieldReader<u16, u16>;
+pub type BLOCK_COUNT_R = crate::FieldReader<u16>;
 #[doc = "Field `BLOCK_COUNT` writer - Blocks Count for Current Transfer"]
-pub type BLOCK_COUNT_W<'a, const O: u8> = crate::FieldWriter<'a, u16, BLOCK_COUNT_SPEC, u16, u16, 16, O>;
+pub type BLOCK_COUNT_W<'a, const O: u8> = crate::FieldWriter<'a, BLOCK_COUNT_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Blocks Count for Current Transfer"]
     #[inline(always)]

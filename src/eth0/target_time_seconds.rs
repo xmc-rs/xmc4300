@@ -35,9 +35,9 @@ impl From<crate::W<TARGET_TIME_SECONDS_SPEC>> for W {
     }
 }
 #[doc = "Field `TSTR` reader - Target Time Seconds Register"]
-pub type TSTR_R = crate::FieldReader<u32, u32>;
+pub type TSTR_R = crate::FieldReader<u32>;
 #[doc = "Field `TSTR` writer - Target Time Seconds Register"]
-pub type TSTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TARGET_TIME_SECONDS_SPEC, u32, u32, 32, O>;
+pub type TSTR_W<'a, const O: u8> = crate::FieldWriter<'a, TARGET_TIME_SECONDS_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Target Time Seconds Register"]
     #[inline(always)]

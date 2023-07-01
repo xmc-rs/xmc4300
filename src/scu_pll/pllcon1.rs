@@ -35,21 +35,21 @@ impl From<crate::W<PLLCON1_SPEC>> for W {
     }
 }
 #[doc = "Field `K1DIV` reader - K1-Divider Value"]
-pub type K1DIV_R = crate::FieldReader<u8, u8>;
+pub type K1DIV_R = crate::FieldReader;
 #[doc = "Field `K1DIV` writer - K1-Divider Value"]
-pub type K1DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLLCON1_SPEC, u8, u8, 7, O>;
+pub type K1DIV_W<'a, const O: u8> = crate::FieldWriter<'a, PLLCON1_SPEC, 7, O>;
 #[doc = "Field `NDIV` reader - N-Divider Value"]
-pub type NDIV_R = crate::FieldReader<u8, u8>;
+pub type NDIV_R = crate::FieldReader;
 #[doc = "Field `NDIV` writer - N-Divider Value"]
-pub type NDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLLCON1_SPEC, u8, u8, 7, O>;
+pub type NDIV_W<'a, const O: u8> = crate::FieldWriter<'a, PLLCON1_SPEC, 7, O>;
 #[doc = "Field `K2DIV` reader - K2-Divider Value"]
-pub type K2DIV_R = crate::FieldReader<u8, u8>;
+pub type K2DIV_R = crate::FieldReader;
 #[doc = "Field `K2DIV` writer - K2-Divider Value"]
-pub type K2DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLLCON1_SPEC, u8, u8, 7, O>;
+pub type K2DIV_W<'a, const O: u8> = crate::FieldWriter<'a, PLLCON1_SPEC, 7, O>;
 #[doc = "Field `PDIV` reader - P-Divider Value"]
-pub type PDIV_R = crate::FieldReader<u8, u8>;
+pub type PDIV_R = crate::FieldReader;
 #[doc = "Field `PDIV` writer - P-Divider Value"]
-pub type PDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLLCON1_SPEC, u8, u8, 4, O>;
+pub type PDIV_W<'a, const O: u8> = crate::FieldWriter<'a, PLLCON1_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:6 - K1-Divider Value"]
     #[inline(always)]

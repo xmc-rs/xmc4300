@@ -71,7 +71,7 @@ impl REV0_R {
     }
 }
 #[doc = "Field `REV0` writer - Result Event for Result Register 0"]
-pub type REV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV0_A, O>;
+pub type REV0_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV0_A>;
 impl<'a, const O: u8> REV0_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl REV1_R {
     }
 }
 #[doc = "Field `REV1` writer - Result Event for Result Register 1"]
-pub type REV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV1_A, O>;
+pub type REV1_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV1_A>;
 impl<'a, const O: u8> REV1_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl REV2_R {
     }
 }
 #[doc = "Field `REV2` writer - Result Event for Result Register 2"]
-pub type REV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV2_A, O>;
+pub type REV2_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV2_A>;
 impl<'a, const O: u8> REV2_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl REV3_R {
     }
 }
 #[doc = "Field `REV3` writer - Result Event for Result Register 3"]
-pub type REV3_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV3_A, O>;
+pub type REV3_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV3_A>;
 impl<'a, const O: u8> REV3_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl REV4_R {
     }
 }
 #[doc = "Field `REV4` writer - Result Event for Result Register 4"]
-pub type REV4_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV4_A, O>;
+pub type REV4_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV4_A>;
 impl<'a, const O: u8> REV4_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl REV5_R {
     }
 }
 #[doc = "Field `REV5` writer - Result Event for Result Register 5"]
-pub type REV5_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV5_A, O>;
+pub type REV5_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV5_A>;
 impl<'a, const O: u8> REV5_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl REV6_R {
     }
 }
 #[doc = "Field `REV6` writer - Result Event for Result Register 6"]
-pub type REV6_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV6_A, O>;
+pub type REV6_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV6_A>;
 impl<'a, const O: u8> REV6_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl REV7_R {
     }
 }
 #[doc = "Field `REV7` writer - Result Event for Result Register 7"]
-pub type REV7_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV7_A, O>;
+pub type REV7_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV7_A>;
 impl<'a, const O: u8> REV7_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl REV8_R {
     }
 }
 #[doc = "Field `REV8` writer - Result Event for Result Register 8"]
-pub type REV8_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV8_A, O>;
+pub type REV8_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV8_A>;
 impl<'a, const O: u8> REV8_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl REV9_R {
     }
 }
 #[doc = "Field `REV9` writer - Result Event for Result Register 9"]
-pub type REV9_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV9_A, O>;
+pub type REV9_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV9_A>;
 impl<'a, const O: u8> REV9_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl REV10_R {
     }
 }
 #[doc = "Field `REV10` writer - Result Event for Result Register 10"]
-pub type REV10_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV10_A, O>;
+pub type REV10_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV10_A>;
 impl<'a, const O: u8> REV10_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl REV11_R {
     }
 }
 #[doc = "Field `REV11` writer - Result Event for Result Register 11"]
-pub type REV11_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV11_A, O>;
+pub type REV11_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV11_A>;
 impl<'a, const O: u8> REV11_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -671,7 +671,7 @@ impl REV12_R {
     }
 }
 #[doc = "Field `REV12` writer - Result Event for Result Register 12"]
-pub type REV12_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV12_A, O>;
+pub type REV12_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV12_A>;
 impl<'a, const O: u8> REV12_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -721,7 +721,7 @@ impl REV13_R {
     }
 }
 #[doc = "Field `REV13` writer - Result Event for Result Register 13"]
-pub type REV13_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV13_A, O>;
+pub type REV13_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV13_A>;
 impl<'a, const O: u8> REV13_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -771,7 +771,7 @@ impl REV14_R {
     }
 }
 #[doc = "Field `REV14` writer - Result Event for Result Register 14"]
-pub type REV14_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV14_A, O>;
+pub type REV14_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV14_A>;
 impl<'a, const O: u8> REV14_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -821,7 +821,7 @@ impl REV15_R {
     }
 }
 #[doc = "Field `REV15` writer - Result Event for Result Register 15"]
-pub type REV15_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFLAG_SPEC, REV15_A, O>;
+pub type REV15_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV15_A>;
 impl<'a, const O: u8> REV15_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]

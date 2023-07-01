@@ -34,7 +34,7 @@ impl From<EPEV_AW> for bool {
     }
 }
 #[doc = "Field `EPEV` writer - Wake-up Pin Event Positive Edge Set"]
-pub type EPEV_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDSET_SPEC, EPEV_AW, O>;
+pub type EPEV_W<'a, const O: u8> = crate::BitWriter<'a, HDSET_SPEC, O, EPEV_AW>;
 impl<'a, const O: u8> EPEV_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<ENEV_AW> for bool {
     }
 }
 #[doc = "Field `ENEV` writer - Wake-up Pin Event Negative Edge Set"]
-pub type ENEV_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDSET_SPEC, ENEV_AW, O>;
+pub type ENEV_W<'a, const O: u8> = crate::BitWriter<'a, HDSET_SPEC, O, ENEV_AW>;
 impl<'a, const O: u8> ENEV_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<RTCEV_AW> for bool {
     }
 }
 #[doc = "Field `RTCEV` writer - RTC Event Set"]
-pub type RTCEV_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDSET_SPEC, RTCEV_AW, O>;
+pub type RTCEV_W<'a, const O: u8> = crate::BitWriter<'a, HDSET_SPEC, O, RTCEV_AW>;
 impl<'a, const O: u8> RTCEV_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<ULPWDG_AW> for bool {
     }
 }
 #[doc = "Field `ULPWDG` writer - ULP WDG Alarm Set"]
-pub type ULPWDG_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDSET_SPEC, ULPWDG_AW, O>;
+pub type ULPWDG_W<'a, const O: u8> = crate::BitWriter<'a, HDSET_SPEC, O, ULPWDG_AW>;
 impl<'a, const O: u8> ULPWDG_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

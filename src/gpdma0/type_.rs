@@ -14,7 +14,7 @@ impl From<crate::R<TYPE_SPEC>> for R {
     }
 }
 #[doc = "Field `VALUE` reader - Component Type"]
-pub type VALUE_R = crate::FieldReader<u32, u32>;
+pub type VALUE_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Component Type"]
     #[inline(always)]

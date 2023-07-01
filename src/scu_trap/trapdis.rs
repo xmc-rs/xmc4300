@@ -71,7 +71,7 @@ impl SOSCWDGT_R {
     }
 }
 #[doc = "Field `SOSCWDGT` writer - OSC_HP Oscillator Watchdog Trap Disable"]
-pub type SOSCWDGT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, SOSCWDGT_A, O>;
+pub type SOSCWDGT_W<'a, const O: u8> = crate::BitWriter<'a, TRAPDIS_SPEC, O, SOSCWDGT_A>;
 impl<'a, const O: u8> SOSCWDGT_W<'a, O> {
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl SVCOLCKT_R {
     }
 }
 #[doc = "Field `SVCOLCKT` writer - System VCO Lock Trap Disable"]
-pub type SVCOLCKT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, SVCOLCKT_A, O>;
+pub type SVCOLCKT_W<'a, const O: u8> = crate::BitWriter<'a, TRAPDIS_SPEC, O, SVCOLCKT_A>;
 impl<'a, const O: u8> SVCOLCKT_W<'a, O> {
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl UVCOLCKT_R {
     }
 }
 #[doc = "Field `UVCOLCKT` writer - USB VCO Lock Trap Disable"]
-pub type UVCOLCKT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, UVCOLCKT_A, O>;
+pub type UVCOLCKT_W<'a, const O: u8> = crate::BitWriter<'a, TRAPDIS_SPEC, O, UVCOLCKT_A>;
 impl<'a, const O: u8> UVCOLCKT_W<'a, O> {
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl PET_R {
     }
 }
 #[doc = "Field `PET` writer - Parity Error Trap Disable"]
-pub type PET_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, PET_A, O>;
+pub type PET_W<'a, const O: u8> = crate::BitWriter<'a, TRAPDIS_SPEC, O, PET_A>;
 impl<'a, const O: u8> PET_W<'a, O> {
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl BRWNT_R {
     }
 }
 #[doc = "Field `BRWNT` writer - Brown Out Trap Disable"]
-pub type BRWNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, BRWNT_A, O>;
+pub type BRWNT_W<'a, const O: u8> = crate::BitWriter<'a, TRAPDIS_SPEC, O, BRWNT_A>;
 impl<'a, const O: u8> BRWNT_W<'a, O> {
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl ULPWDGT_R {
     }
 }
 #[doc = "Field `ULPWDGT` writer - OSC_ULP Oscillator Watchdog Trap Disable"]
-pub type ULPWDGT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, ULPWDGT_A, O>;
+pub type ULPWDGT_W<'a, const O: u8> = crate::BitWriter<'a, TRAPDIS_SPEC, O, ULPWDGT_A>;
 impl<'a, const O: u8> ULPWDGT_W<'a, O> {
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl BWERR0T_R {
     }
 }
 #[doc = "Field `BWERR0T` writer - Peripheral Bridge 0 Trap Disable"]
-pub type BWERR0T_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, BWERR0T_A, O>;
+pub type BWERR0T_W<'a, const O: u8> = crate::BitWriter<'a, TRAPDIS_SPEC, O, BWERR0T_A>;
 impl<'a, const O: u8> BWERR0T_W<'a, O> {
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl BWERR1T_R {
     }
 }
 #[doc = "Field `BWERR1T` writer - Peripheral Bridge 1 Trap Disable"]
-pub type BWERR1T_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, BWERR1T_A, O>;
+pub type BWERR1T_W<'a, const O: u8> = crate::BitWriter<'a, TRAPDIS_SPEC, O, BWERR1T_A>;
 impl<'a, const O: u8> BWERR1T_W<'a, O> {
     #[doc = "Trap request enabled"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl ECAT0RST_R {
     }
 }
 #[doc = "Field `ECAT0RST` writer - EtherCat Reset 0 Trap Disable"]
-pub type ECAT0RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPDIS_SPEC, ECAT0RST_A, O>;
+pub type ECAT0RST_W<'a, const O: u8> = crate::BitWriter<'a, TRAPDIS_SPEC, O, ECAT0RST_A>;
 impl<'a, const O: u8> ECAT0RST_W<'a, O> {
     #[doc = "Trap request enabled"]
     #[inline(always)]

@@ -35,11 +35,11 @@ impl From<crate::W<CLC_SPEC>> for W {
     }
 }
 #[doc = "Field `DISR` reader - Module Disable Request Bit"]
-pub type DISR_R = crate::BitReader<bool>;
+pub type DISR_R = crate::BitReader;
 #[doc = "Field `DISR` writer - Module Disable Request Bit"]
-pub type DISR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLC_SPEC, bool, O>;
+pub type DISR_W<'a, const O: u8> = crate::BitWriter<'a, CLC_SPEC, O>;
 #[doc = "Field `DISS` reader - Module Disable Status Bit"]
-pub type DISS_R = crate::BitReader<bool>;
+pub type DISS_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Module Disable Request Bit"]
     #[inline(always)]

@@ -35,15 +35,15 @@ impl From<crate::W<DOEPTSIZ_ISO_SPEC>> for W {
     }
 }
 #[doc = "Field `XferSize` reader - Transfer Size"]
-pub type XFER_SIZE_R = crate::FieldReader<u32, u32>;
+pub type XFER_SIZE_R = crate::FieldReader<u32>;
 #[doc = "Field `XferSize` writer - Transfer Size"]
-pub type XFER_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DOEPTSIZ_ISO_SPEC, u32, u32, 19, O>;
+pub type XFER_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, DOEPTSIZ_ISO_SPEC, 19, O, u32>;
 #[doc = "Field `PktCnt` reader - Packet Count"]
-pub type PKT_CNT_R = crate::FieldReader<u16, u16>;
+pub type PKT_CNT_R = crate::FieldReader<u16>;
 #[doc = "Field `PktCnt` writer - Packet Count"]
-pub type PKT_CNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DOEPTSIZ_ISO_SPEC, u16, u16, 10, O>;
+pub type PKT_CNT_W<'a, const O: u8> = crate::FieldWriter<'a, DOEPTSIZ_ISO_SPEC, 10, O, u16>;
 #[doc = "Field `RxDPID` reader - Received Data PID"]
-pub type RX_DPID_R = crate::FieldReader<u8, RX_DPID_A>;
+pub type RX_DPID_R = crate::FieldReader<RX_DPID_A>;
 #[doc = "Received Data PID\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -62,6 +62,9 @@ impl From<RX_DPID_A> for u8 {
     fn from(variant: RX_DPID_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RX_DPID_A {
+    type Ux = u8;
 }
 impl RX_DPID_R {
     #[doc = "Get enumerated values variant"]

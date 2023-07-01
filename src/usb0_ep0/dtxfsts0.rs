@@ -14,7 +14,7 @@ impl From<crate::R<DTXFSTS0_SPEC>> for R {
     }
 }
 #[doc = "Field `INEPTxFSpcAvail` reader - IN Endpoint TxFIFO Space Avail"]
-pub type INEPTX_FSPC_AVAIL_R = crate::FieldReader<u16, INEPTX_FSPC_AVAIL_A>;
+pub type INEPTX_FSPC_AVAIL_R = crate::FieldReader<INEPTX_FSPC_AVAIL_A>;
 #[doc = "IN Endpoint TxFIFO Space Avail\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
@@ -31,6 +31,9 @@ impl From<INEPTX_FSPC_AVAIL_A> for u16 {
     fn from(variant: INEPTX_FSPC_AVAIL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for INEPTX_FSPC_AVAIL_A {
+    type Ux = u16;
 }
 impl INEPTX_FSPC_AVAIL_R {
     #[doc = "Get enumerated values variant"]

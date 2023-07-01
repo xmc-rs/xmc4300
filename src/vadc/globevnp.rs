@@ -35,7 +35,7 @@ impl From<crate::W<GLOBEVNP_SPEC>> for W {
     }
 }
 #[doc = "Field `SEV0NP` reader - Service Request Node Pointer Backgr. Source"]
-pub type SEV0NP_R = crate::FieldReader<u8, SEV0NP_A>;
+pub type SEV0NP_R = crate::FieldReader<SEV0NP_A>;
 #[doc = "Service Request Node Pointer Backgr. Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<SEV0NP_A> for u8 {
     fn from(variant: SEV0NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SEV0NP_A {
+    type Ux = u8;
 }
 impl SEV0NP_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl SEV0NP_R {
     }
 }
 #[doc = "Field `SEV0NP` writer - Service Request Node Pointer Backgr. Source"]
-pub type SEV0NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBEVNP_SPEC, u8, SEV0NP_A, 4, O>;
+pub type SEV0NP_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBEVNP_SPEC, 4, O, SEV0NP_A>;
 impl<'a, const O: u8> SEV0NP_W<'a, O> {
     #[doc = "Select shared service request line 0 of common service request group 0"]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> SEV0NP_W<'a, O> {
     }
 }
 #[doc = "Field `REV0NP` reader - Service Request Node Pointer Backgr. Result"]
-pub type REV0NP_R = crate::FieldReader<u8, REV0NP_A>;
+pub type REV0NP_R = crate::FieldReader<REV0NP_A>;
 #[doc = "Service Request Node Pointer Backgr. Result\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<REV0NP_A> for u8 {
     fn from(variant: REV0NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for REV0NP_A {
+    type Ux = u8;
 }
 impl REV0NP_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl REV0NP_R {
     }
 }
 #[doc = "Field `REV0NP` writer - Service Request Node Pointer Backgr. Result"]
-pub type REV0NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBEVNP_SPEC, u8, REV0NP_A, 4, O>;
+pub type REV0NP_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBEVNP_SPEC, 4, O, REV0NP_A>;
 impl<'a, const O: u8> REV0NP_W<'a, O> {
     #[doc = "Select shared service request line 0 of common service request group 0"]
     #[inline(always)]

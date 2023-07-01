@@ -35,9 +35,9 @@ impl From<crate::W<GPR1_SPEC>> for W {
     }
 }
 #[doc = "Field `DAT` reader - User Data"]
-pub type DAT_R = crate::FieldReader<u32, u32>;
+pub type DAT_R = crate::FieldReader<u32>;
 #[doc = "Field `DAT` writer - User Data"]
-pub type DAT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GPR1_SPEC, u32, u32, 32, O>;
+pub type DAT_W<'a, const O: u8> = crate::FieldWriter<'a, GPR1_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - User Data"]
     #[inline(always)]

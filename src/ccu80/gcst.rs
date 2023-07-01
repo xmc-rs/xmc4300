@@ -446,21 +446,21 @@ impl S3PSS_R {
     }
 }
 #[doc = "Field `CC80ST1` reader - Slice 0 compare channel 1 status bit"]
-pub type CC80ST1_R = crate::BitReader<bool>;
+pub type CC80ST1_R = crate::BitReader;
 #[doc = "Field `CC81ST1` reader - Slice 1 compare channel 1 status bit"]
-pub type CC81ST1_R = crate::BitReader<bool>;
+pub type CC81ST1_R = crate::BitReader;
 #[doc = "Field `CC82ST1` reader - Slice 2 compare channel 1 status bit"]
-pub type CC82ST1_R = crate::BitReader<bool>;
+pub type CC82ST1_R = crate::BitReader;
 #[doc = "Field `CC83ST1` reader - Slice 3 compare channel 1 status bit"]
-pub type CC83ST1_R = crate::BitReader<bool>;
+pub type CC83ST1_R = crate::BitReader;
 #[doc = "Field `CC80ST2` reader - Slice 0 compare channel 2 status bit"]
-pub type CC80ST2_R = crate::BitReader<bool>;
+pub type CC80ST2_R = crate::BitReader;
 #[doc = "Field `CC81ST2` reader - Slice 1 compare channel 2 status bit"]
-pub type CC81ST2_R = crate::BitReader<bool>;
+pub type CC81ST2_R = crate::BitReader;
 #[doc = "Field `CC82ST2` reader - Slice 2 compare channel 2 status bit"]
-pub type CC82ST2_R = crate::BitReader<bool>;
+pub type CC82ST2_R = crate::BitReader;
 #[doc = "Field `CC83ST2` reader - Slice 3 compare channel 2 status bit"]
-pub type CC83ST2_R = crate::BitReader<bool>;
+pub type CC83ST2_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Slice 0 shadow transfer status"]
     #[inline(always)]

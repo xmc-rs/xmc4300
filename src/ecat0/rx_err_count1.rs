@@ -14,9 +14,9 @@ impl From<crate::R<RX_ERR_COUNT1_SPEC>> for R {
     }
 }
 #[doc = "Field `INVALID_FRAME` reader - Invalid frame counter of Port y"]
-pub type INVALID_FRAME_R = crate::FieldReader<u8, u8>;
+pub type INVALID_FRAME_R = crate::FieldReader;
 #[doc = "Field `RX_ERROR` reader - RX Error counter of Port y"]
-pub type RX_ERROR_R = crate::FieldReader<u8, u8>;
+pub type RX_ERROR_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Invalid frame counter of Port y"]
     #[inline(always)]

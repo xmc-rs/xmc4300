@@ -35,37 +35,37 @@ impl From<crate::W<SRSEL0_SPEC>> for W {
     }
 }
 #[doc = "Field `RS0` reader - Request Source for Line 0"]
-pub type RS0_R = crate::FieldReader<u8, u8>;
+pub type RS0_R = crate::FieldReader;
 #[doc = "Field `RS0` writer - Request Source for Line 0"]
-pub type RS0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SRSEL0_SPEC, u8, u8, 4, O>;
+pub type RS0_W<'a, const O: u8> = crate::FieldWriter<'a, SRSEL0_SPEC, 4, O>;
 #[doc = "Field `RS1` reader - Request Source for Line 1"]
-pub type RS1_R = crate::FieldReader<u8, u8>;
+pub type RS1_R = crate::FieldReader;
 #[doc = "Field `RS1` writer - Request Source for Line 1"]
-pub type RS1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SRSEL0_SPEC, u8, u8, 4, O>;
+pub type RS1_W<'a, const O: u8> = crate::FieldWriter<'a, SRSEL0_SPEC, 4, O>;
 #[doc = "Field `RS2` reader - Request Source for Line 2"]
-pub type RS2_R = crate::FieldReader<u8, u8>;
+pub type RS2_R = crate::FieldReader;
 #[doc = "Field `RS2` writer - Request Source for Line 2"]
-pub type RS2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SRSEL0_SPEC, u8, u8, 4, O>;
+pub type RS2_W<'a, const O: u8> = crate::FieldWriter<'a, SRSEL0_SPEC, 4, O>;
 #[doc = "Field `RS3` reader - Request Source for Line 3"]
-pub type RS3_R = crate::FieldReader<u8, u8>;
+pub type RS3_R = crate::FieldReader;
 #[doc = "Field `RS3` writer - Request Source for Line 3"]
-pub type RS3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SRSEL0_SPEC, u8, u8, 4, O>;
+pub type RS3_W<'a, const O: u8> = crate::FieldWriter<'a, SRSEL0_SPEC, 4, O>;
 #[doc = "Field `RS4` reader - Request Source for Line 4"]
-pub type RS4_R = crate::FieldReader<u8, u8>;
+pub type RS4_R = crate::FieldReader;
 #[doc = "Field `RS4` writer - Request Source for Line 4"]
-pub type RS4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SRSEL0_SPEC, u8, u8, 4, O>;
+pub type RS4_W<'a, const O: u8> = crate::FieldWriter<'a, SRSEL0_SPEC, 4, O>;
 #[doc = "Field `RS5` reader - Request Source for Line 5"]
-pub type RS5_R = crate::FieldReader<u8, u8>;
+pub type RS5_R = crate::FieldReader;
 #[doc = "Field `RS5` writer - Request Source for Line 5"]
-pub type RS5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SRSEL0_SPEC, u8, u8, 4, O>;
+pub type RS5_W<'a, const O: u8> = crate::FieldWriter<'a, SRSEL0_SPEC, 4, O>;
 #[doc = "Field `RS6` reader - Request Source for Line 6"]
-pub type RS6_R = crate::FieldReader<u8, u8>;
+pub type RS6_R = crate::FieldReader;
 #[doc = "Field `RS6` writer - Request Source for Line 6"]
-pub type RS6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SRSEL0_SPEC, u8, u8, 4, O>;
+pub type RS6_W<'a, const O: u8> = crate::FieldWriter<'a, SRSEL0_SPEC, 4, O>;
 #[doc = "Field `RS7` reader - Request Source for Line 7"]
-pub type RS7_R = crate::FieldReader<u8, u8>;
+pub type RS7_R = crate::FieldReader;
 #[doc = "Field `RS7` writer - Request Source for Line 7"]
-pub type RS7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SRSEL0_SPEC, u8, u8, 4, O>;
+pub type RS7_W<'a, const O: u8> = crate::FieldWriter<'a, SRSEL0_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Request Source for Line 0"]
     #[inline(always)]

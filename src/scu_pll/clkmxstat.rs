@@ -14,7 +14,7 @@ impl From<crate::R<CLKMXSTAT_SPEC>> for R {
     }
 }
 #[doc = "Field `SYSCLKMUX` reader - Status of System Clock Multiplexing Upon Source Switching"]
-pub type SYSCLKMUX_R = crate::FieldReader<u8, SYSCLKMUX_A>;
+pub type SYSCLKMUX_R = crate::FieldReader<SYSCLKMUX_A>;
 #[doc = "Status of System Clock Multiplexing Upon Source Switching\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -29,6 +29,9 @@ impl From<SYSCLKMUX_A> for u8 {
     fn from(variant: SYSCLKMUX_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SYSCLKMUX_A {
+    type Ux = u8;
 }
 impl SYSCLKMUX_R {
     #[doc = "Get enumerated values variant"]

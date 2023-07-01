@@ -20,25 +20,25 @@ impl From<crate::W<SWS_SPEC>> for W {
     }
 }
 #[doc = "Field `SPM` writer - Period match while counting up set"]
-pub type SPM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWS_SPEC, bool, O>;
+pub type SPM_W<'a, const O: u8> = crate::BitWriter<'a, SWS_SPEC, O>;
 #[doc = "Field `SOM` writer - One match while counting down set"]
-pub type SOM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWS_SPEC, bool, O>;
+pub type SOM_W<'a, const O: u8> = crate::BitWriter<'a, SWS_SPEC, O>;
 #[doc = "Field `SCM1U` writer - Channel 1 Compare match while counting up set"]
-pub type SCM1U_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWS_SPEC, bool, O>;
+pub type SCM1U_W<'a, const O: u8> = crate::BitWriter<'a, SWS_SPEC, O>;
 #[doc = "Field `SCM1D` writer - Channel 1 Compare match while counting down set"]
-pub type SCM1D_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWS_SPEC, bool, O>;
+pub type SCM1D_W<'a, const O: u8> = crate::BitWriter<'a, SWS_SPEC, O>;
 #[doc = "Field `SCM2U` writer - Compare match while counting up set"]
-pub type SCM2U_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWS_SPEC, bool, O>;
+pub type SCM2U_W<'a, const O: u8> = crate::BitWriter<'a, SWS_SPEC, O>;
 #[doc = "Field `SCM2D` writer - Compare match while counting down set"]
-pub type SCM2D_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWS_SPEC, bool, O>;
+pub type SCM2D_W<'a, const O: u8> = crate::BitWriter<'a, SWS_SPEC, O>;
 #[doc = "Field `SE0A` writer - Event 0 detection set"]
-pub type SE0A_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWS_SPEC, bool, O>;
+pub type SE0A_W<'a, const O: u8> = crate::BitWriter<'a, SWS_SPEC, O>;
 #[doc = "Field `SE1A` writer - Event 1 detection set"]
-pub type SE1A_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWS_SPEC, bool, O>;
+pub type SE1A_W<'a, const O: u8> = crate::BitWriter<'a, SWS_SPEC, O>;
 #[doc = "Field `SE2A` writer - Event 2 detection set"]
-pub type SE2A_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWS_SPEC, bool, O>;
+pub type SE2A_W<'a, const O: u8> = crate::BitWriter<'a, SWS_SPEC, O>;
 #[doc = "Field `STRPF` writer - Trap Flag status set"]
-pub type STRPF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SWS_SPEC, bool, O>;
+pub type STRPF_W<'a, const O: u8> = crate::BitWriter<'a, SWS_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Period match while counting up set"]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl L0_POS_R {
     }
 }
 #[doc = "Field `L0_POS` writer - Latch0 positive edge"]
-pub type L0_POS_W<'a, const O: u8> = crate::BitWriter<'a, u8, DC_LATCH0_CONT_SPEC, L0_POS_A, O>;
+pub type L0_POS_W<'a, const O: u8> = crate::BitWriter<'a, DC_LATCH0_CONT_SPEC, O, L0_POS_A>;
 impl<'a, const O: u8> L0_POS_W<'a, O> {
     #[doc = "Continuous Latch active"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl L0_NEG_R {
     }
 }
 #[doc = "Field `L0_NEG` writer - Latch0 negative edge"]
-pub type L0_NEG_W<'a, const O: u8> = crate::BitWriter<'a, u8, DC_LATCH0_CONT_SPEC, L0_NEG_A, O>;
+pub type L0_NEG_W<'a, const O: u8> = crate::BitWriter<'a, DC_LATCH0_CONT_SPEC, O, L0_NEG_A>;
 impl<'a, const O: u8> L0_NEG_W<'a, O> {
     #[doc = "Continuous Latch active"]
     #[inline(always)]

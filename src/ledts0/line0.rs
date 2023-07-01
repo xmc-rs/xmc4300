@@ -35,21 +35,21 @@ impl From<crate::W<LINE0_SPEC>> for W {
     }
 }
 #[doc = "Field `LINE_0` reader - Output on LINE\\[x\\]"]
-pub type LINE_0_R = crate::FieldReader<u8, u8>;
+pub type LINE_0_R = crate::FieldReader;
 #[doc = "Field `LINE_0` writer - Output on LINE\\[x\\]"]
-pub type LINE_0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LINE0_SPEC, u8, u8, 8, O>;
+pub type LINE_0_W<'a, const O: u8> = crate::FieldWriter<'a, LINE0_SPEC, 8, O>;
 #[doc = "Field `LINE_1` reader - Output on LINE\\[x\\]"]
-pub type LINE_1_R = crate::FieldReader<u8, u8>;
+pub type LINE_1_R = crate::FieldReader;
 #[doc = "Field `LINE_1` writer - Output on LINE\\[x\\]"]
-pub type LINE_1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LINE0_SPEC, u8, u8, 8, O>;
+pub type LINE_1_W<'a, const O: u8> = crate::FieldWriter<'a, LINE0_SPEC, 8, O>;
 #[doc = "Field `LINE_2` reader - Output on LINE\\[x\\]"]
-pub type LINE_2_R = crate::FieldReader<u8, u8>;
+pub type LINE_2_R = crate::FieldReader;
 #[doc = "Field `LINE_2` writer - Output on LINE\\[x\\]"]
-pub type LINE_2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LINE0_SPEC, u8, u8, 8, O>;
+pub type LINE_2_W<'a, const O: u8> = crate::FieldWriter<'a, LINE0_SPEC, 8, O>;
 #[doc = "Field `LINE_3` reader - Output on LINE\\[x\\]"]
-pub type LINE_3_R = crate::FieldReader<u8, u8>;
+pub type LINE_3_R = crate::FieldReader;
 #[doc = "Field `LINE_3` writer - Output on LINE\\[x\\]"]
-pub type LINE_3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LINE0_SPEC, u8, u8, 8, O>;
+pub type LINE_3_W<'a, const O: u8> = crate::FieldWriter<'a, LINE0_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Output on LINE\\[x\\]"]
     #[inline(always)]

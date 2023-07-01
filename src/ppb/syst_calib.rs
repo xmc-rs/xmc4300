@@ -35,9 +35,9 @@ impl From<crate::W<SYST_CALIB_SPEC>> for W {
     }
 }
 #[doc = "Field `TENMS` reader - Ten Milliseconds Reload Value"]
-pub type TENMS_R = crate::FieldReader<u32, u32>;
+pub type TENMS_R = crate::FieldReader<u32>;
 #[doc = "Field `TENMS` writer - Ten Milliseconds Reload Value"]
-pub type TENMS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYST_CALIB_SPEC, u32, u32, 24, O>;
+pub type TENMS_W<'a, const O: u8> = crate::FieldWriter<'a, SYST_CALIB_SPEC, 24, O, u32>;
 #[doc = "Field `SKEW` reader - Ten Milliseconds Skewed"]
 pub type SKEW_R = crate::BitReader<SKEW_A>;
 #[doc = "Ten Milliseconds Skewed\n\nValue on reset: 1"]
@@ -75,7 +75,7 @@ impl SKEW_R {
     }
 }
 #[doc = "Field `SKEW` writer - Ten Milliseconds Skewed"]
-pub type SKEW_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYST_CALIB_SPEC, SKEW_A, O>;
+pub type SKEW_W<'a, const O: u8> = crate::BitWriter<'a, SYST_CALIB_SPEC, O, SKEW_A>;
 impl<'a, const O: u8> SKEW_W<'a, O> {
     #[doc = "TENMS value is exact"]
     #[inline(always)]
@@ -125,7 +125,7 @@ impl NOREF_R {
     }
 }
 #[doc = "Field `NOREF` writer - No Reference Clock"]
-pub type NOREF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYST_CALIB_SPEC, NOREF_A, O>;
+pub type NOREF_W<'a, const O: u8> = crate::BitWriter<'a, SYST_CALIB_SPEC, O, NOREF_A>;
 impl<'a, const O: u8> NOREF_W<'a, O> {
     #[doc = "reference clock provided"]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl VECTTBL_R {
     }
 }
 #[doc = "Field `VECTTBL` writer - BusFault on vector table read"]
-pub type VECTTBL_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFSR_SPEC, VECTTBL_A, O>;
+pub type VECTTBL_W<'a, const O: u8> = crate::BitWriter<'a, HFSR_SPEC, O, VECTTBL_A>;
 impl<'a, const O: u8> VECTTBL_W<'a, O> {
     #[doc = "no BusFault on vector table read"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl FORCED_R {
     }
 }
 #[doc = "Field `FORCED` writer - Forced HardFault"]
-pub type FORCED_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFSR_SPEC, FORCED_A, O>;
+pub type FORCED_W<'a, const O: u8> = crate::BitWriter<'a, HFSR_SPEC, O, FORCED_A>;
 impl<'a, const O: u8> FORCED_W<'a, O> {
     #[doc = "no forced HardFault"]
     #[inline(always)]
@@ -135,9 +135,9 @@ impl<'a, const O: u8> FORCED_W<'a, O> {
     }
 }
 #[doc = "Field `DEBUGEVT` reader - Reserved for Debug use"]
-pub type DEBUGEVT_R = crate::BitReader<bool>;
+pub type DEBUGEVT_R = crate::BitReader;
 #[doc = "Field `DEBUGEVT` writer - Reserved for Debug use"]
-pub type DEBUGEVT_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFSR_SPEC, bool, O>;
+pub type DEBUGEVT_W<'a, const O: u8> = crate::BitWriter<'a, HFSR_SPEC, O>;
 impl R {
     #[doc = "Bit 1 - BusFault on vector table read"]
     #[inline(always)]

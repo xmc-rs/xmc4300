@@ -71,7 +71,7 @@ impl PSL_R {
     }
 }
 #[doc = "Field `PSL` writer - Output Passive Level"]
-pub type PSL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSL_SPEC, PSL_A, O>;
+pub type PSL_W<'a, const O: u8> = crate::BitWriter<'a, PSL_SPEC, O, PSL_A>;
 impl<'a, const O: u8> PSL_W<'a, O> {
     #[doc = "Passive Level is LOW"]
     #[inline(always)]

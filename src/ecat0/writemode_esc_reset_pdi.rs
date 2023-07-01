@@ -14,7 +14,7 @@ impl From<crate::R<WRITEMODE_ESC_RESET_PDI_SPEC>> for R {
     }
 }
 #[doc = "Field `RESET_CMD` reader - Reset commands issued by XMC4700"]
-pub type RESET_CMD_R = crate::FieldReader<u8, u8>;
+pub type RESET_CMD_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Reset commands issued by XMC4700"]
     #[inline(always)]

@@ -20,37 +20,37 @@ impl From<crate::W<GCSS_SPEC>> for W {
     }
 }
 #[doc = "Field `S0SE` writer - Slice 0 shadow transfer set enable"]
-pub type S0SE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S0SE_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S0DSE` writer - Slice 0 Dither shadow transfer set enable"]
-pub type S0DSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S0DSE_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S0PSE` writer - Slice 0 Prescaler shadow transfer set enable"]
-pub type S0PSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S0PSE_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S1SE` writer - Slice 1 shadow transfer set enable"]
-pub type S1SE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S1SE_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S1DSE` writer - Slice 1 Dither shadow transfer set enable"]
-pub type S1DSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S1DSE_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S1PSE` writer - Slice 1 Prescaler shadow transfer set enable"]
-pub type S1PSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S1PSE_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S2SE` writer - Slice 2 shadow transfer set enable"]
-pub type S2SE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S2SE_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S2DSE` writer - Slice 2 Dither shadow transfer set enable"]
-pub type S2DSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S2DSE_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S2PSE` writer - Slice 2 Prescaler shadow transfer set enable"]
-pub type S2PSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S2PSE_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S3SE` writer - Slice 3 shadow transfer set enable"]
-pub type S3SE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S3SE_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S3DSE` writer - Slice 3 Dither shadow transfer set enable"]
-pub type S3DSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S3DSE_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S3PSE` writer - Slice 3 Prescaler shadow transfer set enable"]
-pub type S3PSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S3PSE_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S0STS` writer - Slice 0 status bit set"]
-pub type S0STS_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S0STS_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S1STS` writer - Slice 1 status bit set"]
-pub type S1STS_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S1STS_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S2STS` writer - Slice 2 status bit set"]
-pub type S2STS_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S2STS_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 #[doc = "Field `S3STS` writer - Slice 3 status bit set"]
-pub type S3STS_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCSS_SPEC, bool, O>;
+pub type S3STS_W<'a, const O: u8> = crate::BitWriter<'a, GCSS_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Slice 0 shadow transfer set enable"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<SUB_SECOND_INCREMENT_SPEC>> for W {
     }
 }
 #[doc = "Field `SSINC` reader - Sub-second Increment Value"]
-pub type SSINC_R = crate::FieldReader<u8, u8>;
+pub type SSINC_R = crate::FieldReader;
 #[doc = "Field `SSINC` writer - Sub-second Increment Value"]
-pub type SSINC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SUB_SECOND_INCREMENT_SPEC, u8, u8, 8, O>;
+pub type SSINC_W<'a, const O: u8> = crate::FieldWriter<'a, SUB_SECOND_INCREMENT_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Sub-second Increment Value"]
     #[inline(always)]

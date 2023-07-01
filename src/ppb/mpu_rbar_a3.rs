@@ -35,9 +35,9 @@ impl From<crate::W<MPU_RBAR_A3_SPEC>> for W {
     }
 }
 #[doc = "Field `REGION` reader - MPU region field"]
-pub type REGION_R = crate::FieldReader<u8, u8>;
+pub type REGION_R = crate::FieldReader;
 #[doc = "Field `REGION` writer - MPU region field"]
-pub type REGION_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MPU_RBAR_A3_SPEC, u8, u8, 4, O>;
+pub type REGION_W<'a, const O: u8> = crate::FieldWriter<'a, MPU_RBAR_A3_SPEC, 4, O>;
 #[doc = "Field `VALID` reader - MPU Region Number valid bit"]
 pub type VALID_R = crate::BitReader<VALID_A>;
 #[doc = "MPU Region Number valid bit\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl VALID_R {
     }
 }
 #[doc = "Field `VALID` writer - MPU Region Number valid bit"]
-pub type VALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_RBAR_A3_SPEC, VALID_A, O>;
+pub type VALID_W<'a, const O: u8> = crate::BitWriter<'a, MPU_RBAR_A3_SPEC, O, VALID_A>;
 impl<'a, const O: u8> VALID_W<'a, O> {
     #[doc = "MPU_RNR not changed, and the processor: - updates the base address for the region specified in the MPU_RNR - ignores the value of the REGION field"]
     #[inline(always)]
@@ -89,9 +89,9 @@ impl<'a, const O: u8> VALID_W<'a, O> {
     }
 }
 #[doc = "Field `ADDR` reader - Region base address field"]
-pub type ADDR_R = crate::FieldReader<u32, u32>;
+pub type ADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `ADDR` writer - Region base address field"]
-pub type ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MPU_RBAR_A3_SPEC, u32, u32, 23, O>;
+pub type ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, MPU_RBAR_A3_SPEC, 23, O, u32>;
 impl R {
     #[doc = "Bits 0:3 - MPU region field"]
     #[inline(always)]

@@ -35,7 +35,7 @@ impl From<crate::W<CHCTR_SPEC>> for W {
     }
 }
 #[doc = "Field `ICLSEL` reader - Input Class Select"]
-pub type ICLSEL_R = crate::FieldReader<u8, ICLSEL_A>;
+pub type ICLSEL_R = crate::FieldReader<ICLSEL_A>;
 #[doc = "Input Class Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<ICLSEL_A> for u8 {
     fn from(variant: ICLSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ICLSEL_A {
+    type Ux = u8;
 }
 impl ICLSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl ICLSEL_R {
     }
 }
 #[doc = "Field `ICLSEL` writer - Input Class Select"]
-pub type ICLSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CHCTR_SPEC, u8, ICLSEL_A, 2, O>;
+pub type ICLSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CHCTR_SPEC, 2, O, ICLSEL_A>;
 impl<'a, const O: u8> ICLSEL_W<'a, O> {
     #[doc = "Use group-specific class 0"]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> ICLSEL_W<'a, O> {
     }
 }
 #[doc = "Field `BNDSELL` reader - Lower Boundary Select"]
-pub type BNDSELL_R = crate::FieldReader<u8, BNDSELL_A>;
+pub type BNDSELL_R = crate::FieldReader<BNDSELL_A>;
 #[doc = "Lower Boundary Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<BNDSELL_A> for u8 {
     fn from(variant: BNDSELL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BNDSELL_A {
+    type Ux = u8;
 }
 impl BNDSELL_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl BNDSELL_R {
     }
 }
 #[doc = "Field `BNDSELL` writer - Lower Boundary Select"]
-pub type BNDSELL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CHCTR_SPEC, u8, BNDSELL_A, 2, O>;
+pub type BNDSELL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CHCTR_SPEC, 2, O, BNDSELL_A>;
 impl<'a, const O: u8> BNDSELL_W<'a, O> {
     #[doc = "Use group-specific boundary 0"]
     #[inline(always)]
@@ -191,7 +197,7 @@ impl<'a, const O: u8> BNDSELL_W<'a, O> {
     }
 }
 #[doc = "Field `BNDSELU` reader - Upper Boundary Select"]
-pub type BNDSELU_R = crate::FieldReader<u8, BNDSELU_A>;
+pub type BNDSELU_R = crate::FieldReader<BNDSELU_A>;
 #[doc = "Upper Boundary Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -210,6 +216,9 @@ impl From<BNDSELU_A> for u8 {
     fn from(variant: BNDSELU_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BNDSELU_A {
+    type Ux = u8;
 }
 impl BNDSELU_R {
     #[doc = "Get enumerated values variant"]
@@ -245,7 +254,7 @@ impl BNDSELU_R {
     }
 }
 #[doc = "Field `BNDSELU` writer - Upper Boundary Select"]
-pub type BNDSELU_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CHCTR_SPEC, u8, BNDSELU_A, 2, O>;
+pub type BNDSELU_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CHCTR_SPEC, 2, O, BNDSELU_A>;
 impl<'a, const O: u8> BNDSELU_W<'a, O> {
     #[doc = "Use group-specific boundary 0"]
     #[inline(always)]
@@ -269,7 +278,7 @@ impl<'a, const O: u8> BNDSELU_W<'a, O> {
     }
 }
 #[doc = "Field `CHEVMODE` reader - Channel Event Mode"]
-pub type CHEVMODE_R = crate::FieldReader<u8, CHEVMODE_A>;
+pub type CHEVMODE_R = crate::FieldReader<CHEVMODE_A>;
 #[doc = "Channel Event Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -288,6 +297,9 @@ impl From<CHEVMODE_A> for u8 {
     fn from(variant: CHEVMODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CHEVMODE_A {
+    type Ux = u8;
 }
 impl CHEVMODE_R {
     #[doc = "Get enumerated values variant"]
@@ -323,7 +335,7 @@ impl CHEVMODE_R {
     }
 }
 #[doc = "Field `CHEVMODE` writer - Channel Event Mode"]
-pub type CHEVMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CHCTR_SPEC, u8, CHEVMODE_A, 2, O>;
+pub type CHEVMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CHCTR_SPEC, 2, O, CHEVMODE_A>;
 impl<'a, const O: u8> CHEVMODE_W<'a, O> {
     #[doc = "Never"]
     #[inline(always)]
@@ -383,7 +395,7 @@ impl SYNC_R {
     }
 }
 #[doc = "Field `SYNC` writer - Synchronization Request"]
-pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHCTR_SPEC, SYNC_A, O>;
+pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, CHCTR_SPEC, O, SYNC_A>;
 impl<'a, const O: u8> SYNC_W<'a, O> {
     #[doc = "No synchroniz. request, standalone operation"]
     #[inline(always)]
@@ -433,7 +445,7 @@ impl REFSEL_R {
     }
 }
 #[doc = "Field `REFSEL` writer - Reference Input Selection"]
-pub type REFSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHCTR_SPEC, REFSEL_A, O>;
+pub type REFSEL_W<'a, const O: u8> = crate::BitWriter<'a, CHCTR_SPEC, O, REFSEL_A>;
 impl<'a, const O: u8> REFSEL_W<'a, O> {
     #[doc = "Standard reference input VAREF"]
     #[inline(always)]
@@ -447,7 +459,7 @@ impl<'a, const O: u8> REFSEL_W<'a, O> {
     }
 }
 #[doc = "Field `RESREG` reader - Result Register"]
-pub type RESREG_R = crate::FieldReader<u8, RESREG_A>;
+pub type RESREG_R = crate::FieldReader<RESREG_A>;
 #[doc = "Result Register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -462,6 +474,9 @@ impl From<RESREG_A> for u8 {
     fn from(variant: RESREG_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RESREG_A {
+    type Ux = u8;
 }
 impl RESREG_R {
     #[doc = "Get enumerated values variant"]
@@ -485,7 +500,7 @@ impl RESREG_R {
     }
 }
 #[doc = "Field `RESREG` writer - Result Register"]
-pub type RESREG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHCTR_SPEC, u8, RESREG_A, 4, O>;
+pub type RESREG_W<'a, const O: u8> = crate::FieldWriter<'a, CHCTR_SPEC, 4, O, RESREG_A>;
 impl<'a, const O: u8> RESREG_W<'a, O> {
     #[doc = "Store result in group result register GxRES0"]
     #[inline(always)]
@@ -535,7 +550,7 @@ impl RESTBS_R {
     }
 }
 #[doc = "Field `RESTBS` writer - Result Target for Background Source"]
-pub type RESTBS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHCTR_SPEC, RESTBS_A, O>;
+pub type RESTBS_W<'a, const O: u8> = crate::BitWriter<'a, CHCTR_SPEC, O, RESTBS_A>;
 impl<'a, const O: u8> RESTBS_W<'a, O> {
     #[doc = "Store results in the selected group result register"]
     #[inline(always)]
@@ -585,7 +600,7 @@ impl RESPOS_R {
     }
 }
 #[doc = "Field `RESPOS` writer - Result Position"]
-pub type RESPOS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHCTR_SPEC, RESPOS_A, O>;
+pub type RESPOS_W<'a, const O: u8> = crate::BitWriter<'a, CHCTR_SPEC, O, RESPOS_A>;
 impl<'a, const O: u8> RESPOS_W<'a, O> {
     #[doc = "Store results left-aligned"]
     #[inline(always)]
@@ -599,7 +614,7 @@ impl<'a, const O: u8> RESPOS_W<'a, O> {
     }
 }
 #[doc = "Field `BWDCH` reader - Broken Wire Detection Channel"]
-pub type BWDCH_R = crate::FieldReader<u8, BWDCH_A>;
+pub type BWDCH_R = crate::FieldReader<BWDCH_A>;
 #[doc = "Broken Wire Detection Channel\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -614,6 +629,9 @@ impl From<BWDCH_A> for u8 {
     fn from(variant: BWDCH_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BWDCH_A {
+    type Ux = u8;
 }
 impl BWDCH_R {
     #[doc = "Get enumerated values variant"]
@@ -637,7 +655,7 @@ impl BWDCH_R {
     }
 }
 #[doc = "Field `BWDCH` writer - Broken Wire Detection Channel"]
-pub type BWDCH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHCTR_SPEC, u8, BWDCH_A, 2, O>;
+pub type BWDCH_W<'a, const O: u8> = crate::FieldWriter<'a, CHCTR_SPEC, 2, O, BWDCH_A>;
 impl<'a, const O: u8> BWDCH_W<'a, O> {
     #[doc = "Select VAGND"]
     #[inline(always)]
@@ -687,7 +705,7 @@ impl BWDEN_R {
     }
 }
 #[doc = "Field `BWDEN` writer - Broken Wire Detection Enable"]
-pub type BWDEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHCTR_SPEC, BWDEN_A, O>;
+pub type BWDEN_W<'a, const O: u8> = crate::BitWriter<'a, CHCTR_SPEC, O, BWDEN_A>;
 impl<'a, const O: u8> BWDEN_W<'a, O> {
     #[doc = "Normal operation"]
     #[inline(always)]

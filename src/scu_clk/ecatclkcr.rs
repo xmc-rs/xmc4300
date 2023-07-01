@@ -35,9 +35,9 @@ impl From<crate::W<ECATCLKCR_SPEC>> for W {
     }
 }
 #[doc = "Field `ECADIV` reader - EtherCAT Clock Divider Value"]
-pub type ECADIV_R = crate::FieldReader<u8, u8>;
+pub type ECADIV_R = crate::FieldReader;
 #[doc = "Field `ECADIV` writer - EtherCAT Clock Divider Value"]
-pub type ECADIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ECATCLKCR_SPEC, u8, u8, 2, O>;
+pub type ECADIV_W<'a, const O: u8> = crate::FieldWriter<'a, ECATCLKCR_SPEC, 2, O>;
 #[doc = "Field `ECATSEL` reader - EtherCAT Clock Selection Value"]
 pub type ECATSEL_R = crate::BitReader<ECATSEL_A>;
 #[doc = "EtherCAT Clock Selection Value\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl ECATSEL_R {
     }
 }
 #[doc = "Field `ECATSEL` writer - EtherCAT Clock Selection Value"]
-pub type ECATSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, ECATCLKCR_SPEC, ECATSEL_A, O>;
+pub type ECATSEL_W<'a, const O: u8> = crate::BitWriter<'a, ECATCLKCR_SPEC, O, ECATSEL_A>;
 impl<'a, const O: u8> ECATSEL_W<'a, O> {
     #[doc = "fPLLUSB clock"]
     #[inline(always)]

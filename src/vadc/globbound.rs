@@ -35,13 +35,13 @@ impl From<crate::W<GLOBBOUND_SPEC>> for W {
     }
 }
 #[doc = "Field `BOUNDARY0` reader - Boundary Value 0 for Limit Checking"]
-pub type BOUNDARY0_R = crate::FieldReader<u16, u16>;
+pub type BOUNDARY0_R = crate::FieldReader<u16>;
 #[doc = "Field `BOUNDARY0` writer - Boundary Value 0 for Limit Checking"]
-pub type BOUNDARY0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBBOUND_SPEC, u16, u16, 12, O>;
+pub type BOUNDARY0_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBBOUND_SPEC, 12, O, u16>;
 #[doc = "Field `BOUNDARY1` reader - Boundary Value 1 for Limit Checking"]
-pub type BOUNDARY1_R = crate::FieldReader<u16, u16>;
+pub type BOUNDARY1_R = crate::FieldReader<u16>;
 #[doc = "Field `BOUNDARY1` writer - Boundary Value 1 for Limit Checking"]
-pub type BOUNDARY1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBBOUND_SPEC, u16, u16, 12, O>;
+pub type BOUNDARY1_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBBOUND_SPEC, 12, O, u16>;
 impl R {
     #[doc = "Bits 0:11 - Boundary Value 0 for Limit Checking"]
     #[inline(always)]

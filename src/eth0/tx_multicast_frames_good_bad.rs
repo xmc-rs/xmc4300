@@ -14,7 +14,7 @@ impl From<crate::R<TX_MULTICAST_FRAMES_GOOD_BAD_SPEC>> for R {
     }
 }
 #[doc = "Field `TXMCASTGB` reader - This field indicates the number of transmitted good and bad multicast frames."]
-pub type TXMCASTGB_R = crate::FieldReader<u32, u32>;
+pub type TXMCASTGB_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of transmitted good and bad multicast frames."]
     #[inline(always)]

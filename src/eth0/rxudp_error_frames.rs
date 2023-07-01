@@ -14,7 +14,7 @@ impl From<crate::R<RXUDP_ERROR_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXUDPERRFRM` reader - This field indicates the number of good IP datagrams whose UDP payload has a checksum error."]
-pub type RXUDPERRFRM_R = crate::FieldReader<u32, u32>;
+pub type RXUDPERRFRM_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of good IP datagrams whose UDP payload has a checksum error."]
     #[inline(always)]

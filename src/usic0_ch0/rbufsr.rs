@@ -14,19 +14,19 @@ impl From<crate::R<RBUFSR_SPEC>> for R {
     }
 }
 #[doc = "Field `WLEN` reader - Received Data Word Length in RBUF or RBUFD"]
-pub type WLEN_R = crate::FieldReader<u8, u8>;
+pub type WLEN_R = crate::FieldReader;
 #[doc = "Field `SOF` reader - Start of Frame in RBUF or RBUFD"]
-pub type SOF_R = crate::BitReader<bool>;
+pub type SOF_R = crate::BitReader;
 #[doc = "Field `PAR` reader - Protocol-Related Argument in RBUF or RBUFD"]
-pub type PAR_R = crate::BitReader<bool>;
+pub type PAR_R = crate::BitReader;
 #[doc = "Field `PERR` reader - Protocol-related Error in RBUF or RBUFD"]
-pub type PERR_R = crate::BitReader<bool>;
+pub type PERR_R = crate::BitReader;
 #[doc = "Field `RDV0` reader - Receive Data Valid in RBUF or RBUFD"]
-pub type RDV0_R = crate::BitReader<bool>;
+pub type RDV0_R = crate::BitReader;
 #[doc = "Field `RDV1` reader - Receive Data Valid in RBUF or RBUFD"]
-pub type RDV1_R = crate::BitReader<bool>;
+pub type RDV1_R = crate::BitReader;
 #[doc = "Field `DS` reader - Data Source of RBUF or RBUFD"]
-pub type DS_R = crate::BitReader<bool>;
+pub type DS_R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:3 - Received Data Word Length in RBUF or RBUFD"]
     #[inline(always)]

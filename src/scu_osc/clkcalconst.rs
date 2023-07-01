@@ -14,7 +14,7 @@ impl From<crate::R<CLKCALCONST_SPEC>> for R {
     }
 }
 #[doc = "Field `CALIBCONST` reader - Clock Calibration Constant Value"]
-pub type CALIBCONST_R = crate::FieldReader<u8, u8>;
+pub type CALIBCONST_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:3 - Clock Calibration Constant Value"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<RXIPV6_GOOD_OCTETS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV6GDOCT` reader - Thsi field indicates the number of bytes received in good IPv6 datagrams encapsulating TCP, UDP or ICMPv6 data."]
-pub type RXIPV6GDOCT_R = crate::FieldReader<u32, u32>;
+pub type RXIPV6GDOCT_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Thsi field indicates the number of bytes received in good IPv6 datagrams encapsulating TCP, UDP or ICMPv6 data."]
     #[inline(always)]

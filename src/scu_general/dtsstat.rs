@@ -14,7 +14,7 @@ impl From<crate::R<DTSSTAT_SPEC>> for R {
     }
 }
 #[doc = "Field `RESULT` reader - Result of the DTS Measurement"]
-pub type RESULT_R = crate::FieldReader<u16, u16>;
+pub type RESULT_R = crate::FieldReader<u16>;
 #[doc = "Field `RDY` reader - Sensor Ready Status"]
 pub type RDY_R = crate::BitReader<RDY_A>;
 #[doc = "Sensor Ready Status\n\nValue on reset: 0"]

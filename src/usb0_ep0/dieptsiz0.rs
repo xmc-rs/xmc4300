@@ -35,13 +35,13 @@ impl From<crate::W<DIEPTSIZ0_SPEC>> for W {
     }
 }
 #[doc = "Field `XferSize` reader - Transfer Size"]
-pub type XFER_SIZE_R = crate::FieldReader<u8, u8>;
+pub type XFER_SIZE_R = crate::FieldReader;
 #[doc = "Field `XferSize` writer - Transfer Size"]
-pub type XFER_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DIEPTSIZ0_SPEC, u8, u8, 7, O>;
+pub type XFER_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, DIEPTSIZ0_SPEC, 7, O>;
 #[doc = "Field `PktCnt` reader - Packet Count"]
-pub type PKT_CNT_R = crate::FieldReader<u8, u8>;
+pub type PKT_CNT_R = crate::FieldReader;
 #[doc = "Field `PktCnt` writer - Packet Count"]
-pub type PKT_CNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DIEPTSIZ0_SPEC, u8, u8, 2, O>;
+pub type PKT_CNT_W<'a, const O: u8> = crate::FieldWriter<'a, DIEPTSIZ0_SPEC, 2, O>;
 impl R {
     #[doc = "Bits 0:6 - Transfer Size"]
     #[inline(always)]

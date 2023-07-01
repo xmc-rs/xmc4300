@@ -35,11 +35,11 @@ impl From<crate::W<PMTPR_SPEC>> for W {
     }
 }
 #[doc = "Field `PWR` reader - Parity Write Values for Memory Test"]
-pub type PWR_R = crate::FieldReader<u8, u8>;
+pub type PWR_R = crate::FieldReader;
 #[doc = "Field `PWR` writer - Parity Write Values for Memory Test"]
-pub type PWR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PMTPR_SPEC, u8, u8, 8, O>;
+pub type PWR_W<'a, const O: u8> = crate::FieldWriter<'a, PMTPR_SPEC, 8, O>;
 #[doc = "Field `PRD` reader - Parity Read Values for Memory Test"]
-pub type PRD_R = crate::FieldReader<u8, u8>;
+pub type PRD_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Parity Write Values for Memory Test"]
     #[inline(always)]

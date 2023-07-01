@@ -14,7 +14,7 @@ impl From<crate::R<CR2_SPEC>> for R {
     }
 }
 #[doc = "Field `CR2` reader - Compare Register for Channel 2"]
-pub type CR2_R = crate::FieldReader<u16, u16>;
+pub type CR2_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Compare Register for Channel 2"]
     #[inline(always)]

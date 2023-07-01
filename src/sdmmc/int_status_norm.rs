@@ -71,7 +71,7 @@ impl CMD_COMPLETE_R {
     }
 }
 #[doc = "Field `CMD_COMPLETE` writer - Command Complete"]
-pub type CMD_COMPLETE_W<'a, const O: u8> = crate::BitWriter<'a, u16, INT_STATUS_NORM_SPEC, CMD_COMPLETE_A, O>;
+pub type CMD_COMPLETE_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, CMD_COMPLETE_A>;
 impl<'a, const O: u8> CMD_COMPLETE_W<'a, O> {
     #[doc = "No Command Complete"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl TX_COMPLETE_R {
     }
 }
 #[doc = "Field `TX_COMPLETE` writer - Transfer Complete"]
-pub type TX_COMPLETE_W<'a, const O: u8> = crate::BitWriter<'a, u16, INT_STATUS_NORM_SPEC, TX_COMPLETE_A, O>;
+pub type TX_COMPLETE_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, TX_COMPLETE_A>;
 impl<'a, const O: u8> TX_COMPLETE_W<'a, O> {
     #[doc = "No Data Transfer Complete"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl BLOCK_GAP_EVENT_R {
     }
 }
 #[doc = "Field `BLOCK_GAP_EVENT` writer - Block Gap Event"]
-pub type BLOCK_GAP_EVENT_W<'a, const O: u8> = crate::BitWriter<'a, u16, INT_STATUS_NORM_SPEC, BLOCK_GAP_EVENT_A, O>;
+pub type BLOCK_GAP_EVENT_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, BLOCK_GAP_EVENT_A>;
 impl<'a, const O: u8> BLOCK_GAP_EVENT_W<'a, O> {
     #[doc = "No Block Gap Event"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl BUFF_WRITE_READY_R {
     }
 }
 #[doc = "Field `BUFF_WRITE_READY` writer - Buffer Write Ready"]
-pub type BUFF_WRITE_READY_W<'a, const O: u8> = crate::BitWriter<'a, u16, INT_STATUS_NORM_SPEC, BUFF_WRITE_READY_A, O>;
+pub type BUFF_WRITE_READY_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, BUFF_WRITE_READY_A>;
 impl<'a, const O: u8> BUFF_WRITE_READY_W<'a, O> {
     #[doc = "Not Ready to Write Buffer."]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl BUFF_READ_READY_R {
     }
 }
 #[doc = "Field `BUFF_READ_READY` writer - Buffer Read Ready"]
-pub type BUFF_READ_READY_W<'a, const O: u8> = crate::BitWriter<'a, u16, INT_STATUS_NORM_SPEC, BUFF_READ_READY_A, O>;
+pub type BUFF_READ_READY_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, BUFF_READ_READY_A>;
 impl<'a, const O: u8> BUFF_READ_READY_W<'a, O> {
     #[doc = "Not Ready to read Buffer."]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl CARD_INS_R {
     }
 }
 #[doc = "Field `CARD_INS` writer - Card Insertion"]
-pub type CARD_INS_W<'a, const O: u8> = crate::BitWriter<'a, u16, INT_STATUS_NORM_SPEC, CARD_INS_A, O>;
+pub type CARD_INS_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, CARD_INS_A>;
 impl<'a, const O: u8> CARD_INS_W<'a, O> {
     #[doc = "Card State Stable or Debouncing"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl CARD_REMOVAL_R {
     }
 }
 #[doc = "Field `CARD_REMOVAL` writer - Card Removal"]
-pub type CARD_REMOVAL_W<'a, const O: u8> = crate::BitWriter<'a, u16, INT_STATUS_NORM_SPEC, CARD_REMOVAL_A, O>;
+pub type CARD_REMOVAL_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, CARD_REMOVAL_A>;
 impl<'a, const O: u8> CARD_REMOVAL_W<'a, O> {
     #[doc = "Card State Stable or Debouncing"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<QSR0_SPEC>> for R {
     }
 }
 #[doc = "Field `FILL` reader - Filling Level for Queue 2"]
-pub type FILL_R = crate::FieldReader<u8, FILL_A>;
+pub type FILL_R = crate::FieldReader<FILL_A>;
 #[doc = "Filling Level for Queue 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -33,6 +33,9 @@ impl From<FILL_A> for u8 {
     fn from(variant: FILL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for FILL_A {
+    type Ux = u8;
 }
 impl FILL_R {
     #[doc = "Get enumerated values variant"]

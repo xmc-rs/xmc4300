@@ -14,7 +14,7 @@ impl From<crate::R<DC_SPEED_COUNT_DIFF_SPEC>> for R {
     }
 }
 #[doc = "Field `DEVIATION` reader - Representation of the deviation between local clock period and Reference Clock's clock period"]
-pub type DEVIATION_R = crate::FieldReader<u16, u16>;
+pub type DEVIATION_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Representation of the deviation between local clock period and Reference Clock's clock period"]
     #[inline(always)]

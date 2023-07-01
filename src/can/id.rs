@@ -14,9 +14,9 @@ impl From<crate::R<ID_SPEC>> for R {
     }
 }
 #[doc = "Field `MOD_REV` reader - Module Revision Number"]
-pub type MOD_REV_R = crate::FieldReader<u8, u8>;
+pub type MOD_REV_R = crate::FieldReader;
 #[doc = "Field `MOD_TYPE` reader - Module Type"]
-pub type MOD_TYPE_R = crate::FieldReader<u8, MOD_TYPE_A>;
+pub type MOD_TYPE_R = crate::FieldReader<MOD_TYPE_A>;
 #[doc = "Module Type\n\nValue on reset: 192"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -29,6 +29,9 @@ impl From<MOD_TYPE_A> for u8 {
     fn from(variant: MOD_TYPE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MOD_TYPE_A {
+    type Ux = u8;
 }
 impl MOD_TYPE_R {
     #[doc = "Get enumerated values variant"]
@@ -46,7 +49,7 @@ impl MOD_TYPE_R {
     }
 }
 #[doc = "Field `MOD_NUMBER` reader - Module Number Value"]
-pub type MOD_NUMBER_R = crate::FieldReader<u16, u16>;
+pub type MOD_NUMBER_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:7 - Module Revision Number"]
     #[inline(always)]

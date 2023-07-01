@@ -14,7 +14,7 @@ impl From<crate::R<STATION_ADR_SPEC>> for R {
     }
 }
 #[doc = "Field `NODE_ADDR` reader - Address used for node addressing (FPxx commands)"]
-pub type NODE_ADDR_R = crate::FieldReader<u16, u16>;
+pub type NODE_ADDR_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Address used for node addressing (FPxx commands)"]
     #[inline(always)]

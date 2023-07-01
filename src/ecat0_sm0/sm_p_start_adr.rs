@@ -14,7 +14,7 @@ impl From<crate::R<SM_P_START_ADR_SPEC>> for R {
     }
 }
 #[doc = "Field `FIRST_BYTE` reader - Specifies first byte that will be handled by SyncManager"]
-pub type FIRST_BYTE_R = crate::FieldReader<u16, u16>;
+pub type FIRST_BYTE_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Specifies first byte that will be handled by SyncManager"]
     #[inline(always)]

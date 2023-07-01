@@ -35,7 +35,7 @@ impl From<crate::W<GCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `PRBC` reader - Prescaler Clear Configuration"]
-pub type PRBC_R = crate::FieldReader<u8, PRBC_A>;
+pub type PRBC_R = crate::FieldReader<PRBC_A>;
 #[doc = "Prescaler Clear Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<PRBC_A> for u8 {
     fn from(variant: PRBC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRBC_A {
+    type Ux = u8;
 }
 impl PRBC_R {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl PRBC_R {
     }
 }
 #[doc = "Field `PRBC` writer - Prescaler Clear Configuration"]
-pub type PRBC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GCTRL_SPEC, u8, PRBC_A, 3, O>;
+pub type PRBC_W<'a, const O: u8> = crate::FieldWriter<'a, GCTRL_SPEC, 3, O, PRBC_A>;
 impl<'a, const O: u8> PRBC_W<'a, O> {
     #[doc = "SW only"]
     #[inline(always)]
@@ -126,7 +129,7 @@ impl<'a, const O: u8> PRBC_W<'a, O> {
     }
 }
 #[doc = "Field `PCIS` reader - Prescaler Input Clock Selection"]
-pub type PCIS_R = crate::FieldReader<u8, PCIS_A>;
+pub type PCIS_R = crate::FieldReader<PCIS_A>;
 #[doc = "Prescaler Input Clock Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -145,6 +148,9 @@ impl From<PCIS_A> for u8 {
     fn from(variant: PCIS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PCIS_A {
+    type Ux = u8;
 }
 impl PCIS_R {
     #[doc = "Get enumerated values variant"]
@@ -180,7 +186,7 @@ impl PCIS_R {
     }
 }
 #[doc = "Field `PCIS` writer - Prescaler Input Clock Selection"]
-pub type PCIS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, GCTRL_SPEC, u8, PCIS_A, 2, O>;
+pub type PCIS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, GCTRL_SPEC, 2, O, PCIS_A>;
 impl<'a, const O: u8> PCIS_W<'a, O> {
     #[doc = "Module clock"]
     #[inline(always)]
@@ -204,7 +210,7 @@ impl<'a, const O: u8> PCIS_W<'a, O> {
     }
 }
 #[doc = "Field `SUSCFG` reader - Suspend Mode Configuration"]
-pub type SUSCFG_R = crate::FieldReader<u8, SUSCFG_A>;
+pub type SUSCFG_R = crate::FieldReader<SUSCFG_A>;
 #[doc = "Suspend Mode Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -223,6 +229,9 @@ impl From<SUSCFG_A> for u8 {
     fn from(variant: SUSCFG_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SUSCFG_A {
+    type Ux = u8;
 }
 impl SUSCFG_R {
     #[doc = "Get enumerated values variant"]
@@ -258,7 +267,7 @@ impl SUSCFG_R {
     }
 }
 #[doc = "Field `SUSCFG` writer - Suspend Mode Configuration"]
-pub type SUSCFG_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, GCTRL_SPEC, u8, SUSCFG_A, 2, O>;
+pub type SUSCFG_W<'a, const O: u8> = crate::FieldWriterSafe<'a, GCTRL_SPEC, 2, O, SUSCFG_A>;
 impl<'a, const O: u8> SUSCFG_W<'a, O> {
     #[doc = "Suspend request ignored. The module never enters in suspend"]
     #[inline(always)]
@@ -318,7 +327,7 @@ impl MSE0_R {
     }
 }
 #[doc = "Field `MSE0` writer - Slice 0 Multi Channel shadow transfer enable"]
-pub type MSE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCTRL_SPEC, MSE0_A, O>;
+pub type MSE0_W<'a, const O: u8> = crate::BitWriter<'a, GCTRL_SPEC, O, MSE0_A>;
 impl<'a, const O: u8> MSE0_W<'a, O> {
     #[doc = "Shadow transfer can only be requested by SW"]
     #[inline(always)]
@@ -368,7 +377,7 @@ impl MSE1_R {
     }
 }
 #[doc = "Field `MSE1` writer - Slice 1 Multi Channel shadow transfer enable"]
-pub type MSE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCTRL_SPEC, MSE1_A, O>;
+pub type MSE1_W<'a, const O: u8> = crate::BitWriter<'a, GCTRL_SPEC, O, MSE1_A>;
 impl<'a, const O: u8> MSE1_W<'a, O> {
     #[doc = "Shadow transfer can only be requested by SW"]
     #[inline(always)]
@@ -418,7 +427,7 @@ impl MSE2_R {
     }
 }
 #[doc = "Field `MSE2` writer - Slice 2 Multi Channel shadow transfer enable"]
-pub type MSE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCTRL_SPEC, MSE2_A, O>;
+pub type MSE2_W<'a, const O: u8> = crate::BitWriter<'a, GCTRL_SPEC, O, MSE2_A>;
 impl<'a, const O: u8> MSE2_W<'a, O> {
     #[doc = "Shadow transfer can only be requested by SW"]
     #[inline(always)]
@@ -468,7 +477,7 @@ impl MSE3_R {
     }
 }
 #[doc = "Field `MSE3` writer - Slice 3 Multi Channel shadow transfer enable"]
-pub type MSE3_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCTRL_SPEC, MSE3_A, O>;
+pub type MSE3_W<'a, const O: u8> = crate::BitWriter<'a, GCTRL_SPEC, O, MSE3_A>;
 impl<'a, const O: u8> MSE3_W<'a, O> {
     #[doc = "Shadow transfer can only be requested by SW"]
     #[inline(always)]
@@ -482,7 +491,7 @@ impl<'a, const O: u8> MSE3_W<'a, O> {
     }
 }
 #[doc = "Field `MSDE` reader - Multi Channel shadow transfer request configuration"]
-pub type MSDE_R = crate::FieldReader<u8, MSDE_A>;
+pub type MSDE_R = crate::FieldReader<MSDE_A>;
 #[doc = "Multi Channel shadow transfer request configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -499,6 +508,9 @@ impl From<MSDE_A> for u8 {
     fn from(variant: MSDE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MSDE_A {
+    type Ux = u8;
 }
 impl MSDE_R {
     #[doc = "Get enumerated values variant"]
@@ -528,7 +540,7 @@ impl MSDE_R {
     }
 }
 #[doc = "Field `MSDE` writer - Multi Channel shadow transfer request configuration"]
-pub type MSDE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GCTRL_SPEC, u8, MSDE_A, 2, O>;
+pub type MSDE_W<'a, const O: u8> = crate::FieldWriter<'a, GCTRL_SPEC, 2, O, MSDE_A>;
 impl<'a, const O: u8> MSDE_W<'a, O> {
     #[doc = "Only the shadow transfer for period and compare values is requested"]
     #[inline(always)]

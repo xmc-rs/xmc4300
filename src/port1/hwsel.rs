@@ -35,7 +35,7 @@ impl From<crate::W<HWSEL_SPEC>> for W {
     }
 }
 #[doc = "Field `HW0` reader - Port n Pin Hardware Select Bit 0"]
-pub type HW0_R = crate::FieldReader<u8, HW0_A>;
+pub type HW0_R = crate::FieldReader<HW0_A>;
 #[doc = "Port n Pin Hardware Select Bit 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -52,6 +52,9 @@ impl From<HW0_A> for u8 {
     fn from(variant: HW0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW0_A {
+    type Ux = u8;
 }
 impl HW0_R {
     #[doc = "Get enumerated values variant"]
@@ -81,7 +84,7 @@ impl HW0_R {
     }
 }
 #[doc = "Field `HW0` writer - Port n Pin Hardware Select Bit 0"]
-pub type HW0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW0_A, 2, O>;
+pub type HW0_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW0_A>;
 impl<'a, const O: u8> HW0_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -100,7 +103,7 @@ impl<'a, const O: u8> HW0_W<'a, O> {
     }
 }
 #[doc = "Field `HW1` reader - Port n Pin Hardware Select Bit 1"]
-pub type HW1_R = crate::FieldReader<u8, HW1_A>;
+pub type HW1_R = crate::FieldReader<HW1_A>;
 #[doc = "Port n Pin Hardware Select Bit 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -117,6 +120,9 @@ impl From<HW1_A> for u8 {
     fn from(variant: HW1_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW1_A {
+    type Ux = u8;
 }
 impl HW1_R {
     #[doc = "Get enumerated values variant"]
@@ -146,7 +152,7 @@ impl HW1_R {
     }
 }
 #[doc = "Field `HW1` writer - Port n Pin Hardware Select Bit 1"]
-pub type HW1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW1_A, 2, O>;
+pub type HW1_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW1_A>;
 impl<'a, const O: u8> HW1_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -165,7 +171,7 @@ impl<'a, const O: u8> HW1_W<'a, O> {
     }
 }
 #[doc = "Field `HW2` reader - Port n Pin Hardware Select Bit 2"]
-pub type HW2_R = crate::FieldReader<u8, HW2_A>;
+pub type HW2_R = crate::FieldReader<HW2_A>;
 #[doc = "Port n Pin Hardware Select Bit 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -182,6 +188,9 @@ impl From<HW2_A> for u8 {
     fn from(variant: HW2_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW2_A {
+    type Ux = u8;
 }
 impl HW2_R {
     #[doc = "Get enumerated values variant"]
@@ -211,7 +220,7 @@ impl HW2_R {
     }
 }
 #[doc = "Field `HW2` writer - Port n Pin Hardware Select Bit 2"]
-pub type HW2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW2_A, 2, O>;
+pub type HW2_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW2_A>;
 impl<'a, const O: u8> HW2_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -230,7 +239,7 @@ impl<'a, const O: u8> HW2_W<'a, O> {
     }
 }
 #[doc = "Field `HW3` reader - Port n Pin Hardware Select Bit 3"]
-pub type HW3_R = crate::FieldReader<u8, HW3_A>;
+pub type HW3_R = crate::FieldReader<HW3_A>;
 #[doc = "Port n Pin Hardware Select Bit 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -247,6 +256,9 @@ impl From<HW3_A> for u8 {
     fn from(variant: HW3_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW3_A {
+    type Ux = u8;
 }
 impl HW3_R {
     #[doc = "Get enumerated values variant"]
@@ -276,7 +288,7 @@ impl HW3_R {
     }
 }
 #[doc = "Field `HW3` writer - Port n Pin Hardware Select Bit 3"]
-pub type HW3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW3_A, 2, O>;
+pub type HW3_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW3_A>;
 impl<'a, const O: u8> HW3_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -295,7 +307,7 @@ impl<'a, const O: u8> HW3_W<'a, O> {
     }
 }
 #[doc = "Field `HW4` reader - Port n Pin Hardware Select Bit 4"]
-pub type HW4_R = crate::FieldReader<u8, HW4_A>;
+pub type HW4_R = crate::FieldReader<HW4_A>;
 #[doc = "Port n Pin Hardware Select Bit 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -312,6 +324,9 @@ impl From<HW4_A> for u8 {
     fn from(variant: HW4_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW4_A {
+    type Ux = u8;
 }
 impl HW4_R {
     #[doc = "Get enumerated values variant"]
@@ -341,7 +356,7 @@ impl HW4_R {
     }
 }
 #[doc = "Field `HW4` writer - Port n Pin Hardware Select Bit 4"]
-pub type HW4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW4_A, 2, O>;
+pub type HW4_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW4_A>;
 impl<'a, const O: u8> HW4_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -360,7 +375,7 @@ impl<'a, const O: u8> HW4_W<'a, O> {
     }
 }
 #[doc = "Field `HW5` reader - Port n Pin Hardware Select Bit 5"]
-pub type HW5_R = crate::FieldReader<u8, HW5_A>;
+pub type HW5_R = crate::FieldReader<HW5_A>;
 #[doc = "Port n Pin Hardware Select Bit 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -377,6 +392,9 @@ impl From<HW5_A> for u8 {
     fn from(variant: HW5_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW5_A {
+    type Ux = u8;
 }
 impl HW5_R {
     #[doc = "Get enumerated values variant"]
@@ -406,7 +424,7 @@ impl HW5_R {
     }
 }
 #[doc = "Field `HW5` writer - Port n Pin Hardware Select Bit 5"]
-pub type HW5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW5_A, 2, O>;
+pub type HW5_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW5_A>;
 impl<'a, const O: u8> HW5_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -425,7 +443,7 @@ impl<'a, const O: u8> HW5_W<'a, O> {
     }
 }
 #[doc = "Field `HW6` reader - Port n Pin Hardware Select Bit 6"]
-pub type HW6_R = crate::FieldReader<u8, HW6_A>;
+pub type HW6_R = crate::FieldReader<HW6_A>;
 #[doc = "Port n Pin Hardware Select Bit 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -442,6 +460,9 @@ impl From<HW6_A> for u8 {
     fn from(variant: HW6_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW6_A {
+    type Ux = u8;
 }
 impl HW6_R {
     #[doc = "Get enumerated values variant"]
@@ -471,7 +492,7 @@ impl HW6_R {
     }
 }
 #[doc = "Field `HW6` writer - Port n Pin Hardware Select Bit 6"]
-pub type HW6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW6_A, 2, O>;
+pub type HW6_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW6_A>;
 impl<'a, const O: u8> HW6_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -490,7 +511,7 @@ impl<'a, const O: u8> HW6_W<'a, O> {
     }
 }
 #[doc = "Field `HW7` reader - Port n Pin Hardware Select Bit 7"]
-pub type HW7_R = crate::FieldReader<u8, HW7_A>;
+pub type HW7_R = crate::FieldReader<HW7_A>;
 #[doc = "Port n Pin Hardware Select Bit 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -507,6 +528,9 @@ impl From<HW7_A> for u8 {
     fn from(variant: HW7_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW7_A {
+    type Ux = u8;
 }
 impl HW7_R {
     #[doc = "Get enumerated values variant"]
@@ -536,7 +560,7 @@ impl HW7_R {
     }
 }
 #[doc = "Field `HW7` writer - Port n Pin Hardware Select Bit 7"]
-pub type HW7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW7_A, 2, O>;
+pub type HW7_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW7_A>;
 impl<'a, const O: u8> HW7_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -555,7 +579,7 @@ impl<'a, const O: u8> HW7_W<'a, O> {
     }
 }
 #[doc = "Field `HW8` reader - Port n Pin Hardware Select Bit 8"]
-pub type HW8_R = crate::FieldReader<u8, HW8_A>;
+pub type HW8_R = crate::FieldReader<HW8_A>;
 #[doc = "Port n Pin Hardware Select Bit 8\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -572,6 +596,9 @@ impl From<HW8_A> for u8 {
     fn from(variant: HW8_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW8_A {
+    type Ux = u8;
 }
 impl HW8_R {
     #[doc = "Get enumerated values variant"]
@@ -601,7 +628,7 @@ impl HW8_R {
     }
 }
 #[doc = "Field `HW8` writer - Port n Pin Hardware Select Bit 8"]
-pub type HW8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW8_A, 2, O>;
+pub type HW8_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW8_A>;
 impl<'a, const O: u8> HW8_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -620,7 +647,7 @@ impl<'a, const O: u8> HW8_W<'a, O> {
     }
 }
 #[doc = "Field `HW9` reader - Port n Pin Hardware Select Bit 9"]
-pub type HW9_R = crate::FieldReader<u8, HW9_A>;
+pub type HW9_R = crate::FieldReader<HW9_A>;
 #[doc = "Port n Pin Hardware Select Bit 9\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -637,6 +664,9 @@ impl From<HW9_A> for u8 {
     fn from(variant: HW9_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW9_A {
+    type Ux = u8;
 }
 impl HW9_R {
     #[doc = "Get enumerated values variant"]
@@ -666,7 +696,7 @@ impl HW9_R {
     }
 }
 #[doc = "Field `HW9` writer - Port n Pin Hardware Select Bit 9"]
-pub type HW9_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW9_A, 2, O>;
+pub type HW9_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW9_A>;
 impl<'a, const O: u8> HW9_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -685,7 +715,7 @@ impl<'a, const O: u8> HW9_W<'a, O> {
     }
 }
 #[doc = "Field `HW10` reader - Port n Pin Hardware Select Bit 10"]
-pub type HW10_R = crate::FieldReader<u8, HW10_A>;
+pub type HW10_R = crate::FieldReader<HW10_A>;
 #[doc = "Port n Pin Hardware Select Bit 10\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -702,6 +732,9 @@ impl From<HW10_A> for u8 {
     fn from(variant: HW10_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW10_A {
+    type Ux = u8;
 }
 impl HW10_R {
     #[doc = "Get enumerated values variant"]
@@ -731,7 +764,7 @@ impl HW10_R {
     }
 }
 #[doc = "Field `HW10` writer - Port n Pin Hardware Select Bit 10"]
-pub type HW10_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW10_A, 2, O>;
+pub type HW10_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW10_A>;
 impl<'a, const O: u8> HW10_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -750,7 +783,7 @@ impl<'a, const O: u8> HW10_W<'a, O> {
     }
 }
 #[doc = "Field `HW11` reader - Port n Pin Hardware Select Bit 11"]
-pub type HW11_R = crate::FieldReader<u8, HW11_A>;
+pub type HW11_R = crate::FieldReader<HW11_A>;
 #[doc = "Port n Pin Hardware Select Bit 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -767,6 +800,9 @@ impl From<HW11_A> for u8 {
     fn from(variant: HW11_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW11_A {
+    type Ux = u8;
 }
 impl HW11_R {
     #[doc = "Get enumerated values variant"]
@@ -796,7 +832,7 @@ impl HW11_R {
     }
 }
 #[doc = "Field `HW11` writer - Port n Pin Hardware Select Bit 11"]
-pub type HW11_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW11_A, 2, O>;
+pub type HW11_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW11_A>;
 impl<'a, const O: u8> HW11_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -815,7 +851,7 @@ impl<'a, const O: u8> HW11_W<'a, O> {
     }
 }
 #[doc = "Field `HW12` reader - Port n Pin Hardware Select Bit 12"]
-pub type HW12_R = crate::FieldReader<u8, HW12_A>;
+pub type HW12_R = crate::FieldReader<HW12_A>;
 #[doc = "Port n Pin Hardware Select Bit 12\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -832,6 +868,9 @@ impl From<HW12_A> for u8 {
     fn from(variant: HW12_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW12_A {
+    type Ux = u8;
 }
 impl HW12_R {
     #[doc = "Get enumerated values variant"]
@@ -861,7 +900,7 @@ impl HW12_R {
     }
 }
 #[doc = "Field `HW12` writer - Port n Pin Hardware Select Bit 12"]
-pub type HW12_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW12_A, 2, O>;
+pub type HW12_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW12_A>;
 impl<'a, const O: u8> HW12_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -880,7 +919,7 @@ impl<'a, const O: u8> HW12_W<'a, O> {
     }
 }
 #[doc = "Field `HW13` reader - Port n Pin Hardware Select Bit 13"]
-pub type HW13_R = crate::FieldReader<u8, HW13_A>;
+pub type HW13_R = crate::FieldReader<HW13_A>;
 #[doc = "Port n Pin Hardware Select Bit 13\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -897,6 +936,9 @@ impl From<HW13_A> for u8 {
     fn from(variant: HW13_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW13_A {
+    type Ux = u8;
 }
 impl HW13_R {
     #[doc = "Get enumerated values variant"]
@@ -926,7 +968,7 @@ impl HW13_R {
     }
 }
 #[doc = "Field `HW13` writer - Port n Pin Hardware Select Bit 13"]
-pub type HW13_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW13_A, 2, O>;
+pub type HW13_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW13_A>;
 impl<'a, const O: u8> HW13_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -945,7 +987,7 @@ impl<'a, const O: u8> HW13_W<'a, O> {
     }
 }
 #[doc = "Field `HW14` reader - Port n Pin Hardware Select Bit 14"]
-pub type HW14_R = crate::FieldReader<u8, HW14_A>;
+pub type HW14_R = crate::FieldReader<HW14_A>;
 #[doc = "Port n Pin Hardware Select Bit 14\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -962,6 +1004,9 @@ impl From<HW14_A> for u8 {
     fn from(variant: HW14_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW14_A {
+    type Ux = u8;
 }
 impl HW14_R {
     #[doc = "Get enumerated values variant"]
@@ -991,7 +1036,7 @@ impl HW14_R {
     }
 }
 #[doc = "Field `HW14` writer - Port n Pin Hardware Select Bit 14"]
-pub type HW14_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW14_A, 2, O>;
+pub type HW14_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW14_A>;
 impl<'a, const O: u8> HW14_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]
@@ -1010,7 +1055,7 @@ impl<'a, const O: u8> HW14_W<'a, O> {
     }
 }
 #[doc = "Field `HW15` reader - Port n Pin Hardware Select Bit 15"]
-pub type HW15_R = crate::FieldReader<u8, HW15_A>;
+pub type HW15_R = crate::FieldReader<HW15_A>;
 #[doc = "Port n Pin Hardware Select Bit 15\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -1027,6 +1072,9 @@ impl From<HW15_A> for u8 {
     fn from(variant: HW15_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HW15_A {
+    type Ux = u8;
 }
 impl HW15_R {
     #[doc = "Get enumerated values variant"]
@@ -1056,7 +1104,7 @@ impl HW15_R {
     }
 }
 #[doc = "Field `HW15` writer - Port n Pin Hardware Select Bit 15"]
-pub type HW15_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HWSEL_SPEC, u8, HW15_A, 2, O>;
+pub type HW15_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW15_A>;
 impl<'a, const O: u8> HW15_W<'a, O> {
     #[doc = "Software control only."]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl WLEMD_R {
     }
 }
 #[doc = "Field `WLEMD` writer - WLE Mode"]
-pub type WLEMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, WLEMD_A, O>;
+pub type WLEMD_W<'a, const O: u8> = crate::BitWriter<'a, TCSR_SPEC, O, WLEMD_A>;
 impl<'a, const O: u8> WLEMD_W<'a, O> {
     #[doc = "The automatic update of SCTR.WLE and TCSR.EOF is disabled."]
     #[inline(always)]
@@ -123,7 +123,7 @@ impl SELMD_R {
     }
 }
 #[doc = "Field `SELMD` writer - Select Mode"]
-pub type SELMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, SELMD_A, O>;
+pub type SELMD_W<'a, const O: u8> = crate::BitWriter<'a, TCSR_SPEC, O, SELMD_A>;
 impl<'a, const O: u8> SELMD_W<'a, O> {
     #[doc = "The automatic update of PCR.CTR\\[23:16\\]
 is disabled."]
@@ -175,7 +175,7 @@ impl FLEMD_R {
     }
 }
 #[doc = "Field `FLEMD` writer - FLE Mode"]
-pub type FLEMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, FLEMD_A, O>;
+pub type FLEMD_W<'a, const O: u8> = crate::BitWriter<'a, TCSR_SPEC, O, FLEMD_A>;
 impl<'a, const O: u8> FLEMD_W<'a, O> {
     #[doc = "The automatic update of FLE is disabled."]
     #[inline(always)]
@@ -225,7 +225,7 @@ impl WAMD_R {
     }
 }
 #[doc = "Field `WAMD` writer - WA Mode"]
-pub type WAMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, WAMD_A, O>;
+pub type WAMD_W<'a, const O: u8> = crate::BitWriter<'a, TCSR_SPEC, O, WAMD_A>;
 impl<'a, const O: u8> WAMD_W<'a, O> {
     #[doc = "The automatic update of bit WA is disabled."]
     #[inline(always)]
@@ -275,7 +275,7 @@ impl HPCMD_R {
     }
 }
 #[doc = "Field `HPCMD` writer - Hardware Port Control Mode"]
-pub type HPCMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, HPCMD_A, O>;
+pub type HPCMD_W<'a, const O: u8> = crate::BitWriter<'a, TCSR_SPEC, O, HPCMD_A>;
 impl<'a, const O: u8> HPCMD_W<'a, O> {
     #[doc = "The automatic update of bits SCTR.DSM and SCTR.HPCDIR is disabled."]
     #[inline(always)]
@@ -325,7 +325,7 @@ impl SOF_R {
     }
 }
 #[doc = "Field `SOF` writer - Start Of Frame"]
-pub type SOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, SOF_A, O>;
+pub type SOF_W<'a, const O: u8> = crate::BitWriter<'a, TCSR_SPEC, O, SOF_A>;
 impl<'a, const O: u8> SOF_W<'a, O> {
     #[doc = "The data word in TBUF is not considered as first word of a frame."]
     #[inline(always)]
@@ -375,7 +375,7 @@ impl EOF_R {
     }
 }
 #[doc = "Field `EOF` writer - End Of Frame"]
-pub type EOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, EOF_A, O>;
+pub type EOF_W<'a, const O: u8> = crate::BitWriter<'a, TCSR_SPEC, O, EOF_A>;
 impl<'a, const O: u8> EOF_W<'a, O> {
     #[doc = "The data word in TBUF is not considered as last word of an SSC frame."]
     #[inline(always)]
@@ -461,7 +461,7 @@ impl TDSSM_R {
     }
 }
 #[doc = "Field `TDSSM` writer - TBUF Data Single Shot Mode"]
-pub type TDSSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, TDSSM_A, O>;
+pub type TDSSM_W<'a, const O: u8> = crate::BitWriter<'a, TCSR_SPEC, O, TDSSM_A>;
 impl<'a, const O: u8> TDSSM_W<'a, O> {
     #[doc = "The data word in TBUF is not considered as invalid after it has been loaded into the transmit shift register. The loading of the TBUF data into the shift register does not clear TDV."]
     #[inline(always)]
@@ -475,7 +475,7 @@ impl<'a, const O: u8> TDSSM_W<'a, O> {
     }
 }
 #[doc = "Field `TDEN` reader - TBUF Data Enable"]
-pub type TDEN_R = crate::FieldReader<u8, TDEN_A>;
+pub type TDEN_R = crate::FieldReader<TDEN_A>;
 #[doc = "TBUF Data Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -494,6 +494,9 @@ impl From<TDEN_A> for u8 {
     fn from(variant: TDEN_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TDEN_A {
+    type Ux = u8;
 }
 impl TDEN_R {
     #[doc = "Get enumerated values variant"]
@@ -529,7 +532,7 @@ impl TDEN_R {
     }
 }
 #[doc = "Field `TDEN` writer - TBUF Data Enable"]
-pub type TDEN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TCSR_SPEC, u8, TDEN_A, 2, O>;
+pub type TDEN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, TCSR_SPEC, 2, O, TDEN_A>;
 impl<'a, const O: u8> TDEN_W<'a, O> {
     #[doc = "A transmission start of the data word in TBUF is disabled. If a transmission is started, the passive data level is sent out."]
     #[inline(always)]
@@ -589,7 +592,7 @@ impl TDVTR_R {
     }
 }
 #[doc = "Field `TDVTR` writer - TBUF Data Valid Trigger"]
-pub type TDVTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, TDVTR_A, O>;
+pub type TDVTR_W<'a, const O: u8> = crate::BitWriter<'a, TCSR_SPEC, O, TDVTR_A>;
 impl<'a, const O: u8> TDVTR_W<'a, O> {
     #[doc = "Bit TCSR.TE is permanently set."]
     #[inline(always)]
@@ -639,7 +642,7 @@ impl WA_R {
     }
 }
 #[doc = "Field `WA` writer - Word Address"]
-pub type WA_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSR_SPEC, WA_A, O>;
+pub type WA_W<'a, const O: u8> = crate::BitWriter<'a, TCSR_SPEC, O, WA_A>;
 impl<'a, const O: u8> WA_W<'a, O> {
     #[doc = "The data word in TBUF will be transmitted after a falling edge of WA has been detected (referring to PSR.WA)."]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl SELPS_R {
     }
 }
 #[doc = "Field `SELPS` writer - Select Memory Check for PSRAM"]
-pub type SELPS_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCHKCON_SPEC, SELPS_A, O>;
+pub type SELPS_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELPS_A>;
 impl<'a, const O: u8> SELPS_W<'a, O> {
     #[doc = "Not selected"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl SELDS1_R {
     }
 }
 #[doc = "Field `SELDS1` writer - Select Memory Check for DSRAM1"]
-pub type SELDS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCHKCON_SPEC, SELDS1_A, O>;
+pub type SELDS1_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELDS1_A>;
 impl<'a, const O: u8> SELDS1_W<'a, O> {
     #[doc = "Not selected"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl USIC0DRA_R {
     }
 }
 #[doc = "Field `USIC0DRA` writer - Select Memory Check for USIC0"]
-pub type USIC0DRA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCHKCON_SPEC, USIC0DRA_A, O>;
+pub type USIC0DRA_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, USIC0DRA_A>;
 impl<'a, const O: u8> USIC0DRA_W<'a, O> {
     #[doc = "Not selected"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl USIC1DRA_R {
     }
 }
 #[doc = "Field `USIC1DRA` writer - Select Memory Check for USIC1"]
-pub type USIC1DRA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCHKCON_SPEC, USIC1DRA_A, O>;
+pub type USIC1DRA_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, USIC1DRA_A>;
 impl<'a, const O: u8> USIC1DRA_W<'a, O> {
     #[doc = "Not selected"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl MCANDRA_R {
     }
 }
 #[doc = "Field `MCANDRA` writer - Select Memory Check for MultiCAN"]
-pub type MCANDRA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCHKCON_SPEC, MCANDRA_A, O>;
+pub type MCANDRA_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, MCANDRA_A>;
 impl<'a, const O: u8> MCANDRA_W<'a, O> {
     #[doc = "Not selected"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl PPRFDRA_R {
     }
 }
 #[doc = "Field `PPRFDRA` writer - Select Memory Check for PMU"]
-pub type PPRFDRA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCHKCON_SPEC, PPRFDRA_A, O>;
+pub type PPRFDRA_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, PPRFDRA_A>;
 impl<'a, const O: u8> PPRFDRA_W<'a, O> {
     #[doc = "Not selected"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl SELUSB_R {
     }
 }
 #[doc = "Field `SELUSB` writer - Select Memory Check for USB SRAM"]
-pub type SELUSB_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCHKCON_SPEC, SELUSB_A, O>;
+pub type SELUSB_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELUSB_A>;
 impl<'a, const O: u8> SELUSB_W<'a, O> {
     #[doc = "Not selected"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl SELETH0TX_R {
     }
 }
 #[doc = "Field `SELETH0TX` writer - Select Memory Check for ETH0 TX SRAM"]
-pub type SELETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCHKCON_SPEC, SELETH0TX_A, O>;
+pub type SELETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELETH0TX_A>;
 impl<'a, const O: u8> SELETH0TX_W<'a, O> {
     #[doc = "Not selected"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl SELETH0RX_R {
     }
 }
 #[doc = "Field `SELETH0RX` writer - Select Memory Check for ETH0 RX SRAM"]
-pub type SELETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCHKCON_SPEC, SELETH0RX_A, O>;
+pub type SELETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELETH0RX_A>;
 impl<'a, const O: u8> SELETH0RX_W<'a, O> {
     #[doc = "Not selected"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl SELSD0_R {
     }
 }
 #[doc = "Field `SELSD0` writer - Select Memory Check for SDMMC SRAM 0"]
-pub type SELSD0_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCHKCON_SPEC, SELSD0_A, O>;
+pub type SELSD0_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELSD0_A>;
 impl<'a, const O: u8> SELSD0_W<'a, O> {
     #[doc = "Not selected"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl SELSD1_R {
     }
 }
 #[doc = "Field `SELSD1` writer - Select Memory Check for SDMMC SRAM 1"]
-pub type SELSD1_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCHKCON_SPEC, SELSD1_A, O>;
+pub type SELSD1_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELSD1_A>;
 impl<'a, const O: u8> SELSD1_W<'a, O> {
     #[doc = "Not selected"]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl SELECAT0_R {
     }
 }
 #[doc = "Field `SELECAT0` writer - Select Memory Check for ECAT0 SRAM 1"]
-pub type SELECAT0_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCHKCON_SPEC, SELECAT0_A, O>;
+pub type SELECAT0_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELECAT0_A>;
 impl<'a, const O: u8> SELECAT0_W<'a, O> {
     #[doc = "Not selected"]
     #[inline(always)]

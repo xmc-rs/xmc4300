@@ -71,7 +71,7 @@ impl CSE_R {
     }
 }
 #[doc = "Field `CSE` writer - Cascaded shadow transfer enable"]
-pub type CSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, STC_SPEC, CSE_A, O>;
+pub type CSE_W<'a, const O: u8> = crate::BitWriter<'a, STC_SPEC, O, CSE_A>;
 impl<'a, const O: u8> CSE_W<'a, O> {
     #[doc = "Cascaded shadow transfer disabled"]
     #[inline(always)]
@@ -85,7 +85,7 @@ impl<'a, const O: u8> CSE_W<'a, O> {
     }
 }
 #[doc = "Field `STM` reader - Shadow transfer mode"]
-pub type STM_R = crate::FieldReader<u8, STM_A>;
+pub type STM_R = crate::FieldReader<STM_A>;
 #[doc = "Shadow transfer mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -102,6 +102,9 @@ impl From<STM_A> for u8 {
     fn from(variant: STM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for STM_A {
+    type Ux = u8;
 }
 impl STM_R {
     #[doc = "Get enumerated values variant"]
@@ -131,7 +134,7 @@ impl STM_R {
     }
 }
 #[doc = "Field `STM` writer - Shadow transfer mode"]
-pub type STM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STC_SPEC, u8, STM_A, 2, O>;
+pub type STM_W<'a, const O: u8> = crate::FieldWriter<'a, STC_SPEC, 2, O, STM_A>;
 impl<'a, const O: u8> STM_W<'a, O> {
     #[doc = "Shadow transfer is done in Period Match and One match."]
     #[inline(always)]

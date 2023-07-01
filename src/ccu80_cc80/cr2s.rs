@@ -35,9 +35,9 @@ impl From<crate::W<CR2S_SPEC>> for W {
     }
 }
 #[doc = "Field `CR2S` reader - Shadow Compare Register for Channel 2"]
-pub type CR2S_R = crate::FieldReader<u16, u16>;
+pub type CR2S_R = crate::FieldReader<u16>;
 #[doc = "Field `CR2S` writer - Shadow Compare Register for Channel 2"]
-pub type CR2S_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR2S_SPEC, u16, u16, 16, O>;
+pub type CR2S_W<'a, const O: u8> = crate::FieldWriter<'a, CR2S_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Shadow Compare Register for Channel 2"]
     #[inline(always)]

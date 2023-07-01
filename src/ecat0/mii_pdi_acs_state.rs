@@ -71,7 +71,7 @@ impl ACS_MII_BY_PDI_R {
     }
 }
 #[doc = "Field `ACS_MII_BY_PDI` writer - Access to MII management"]
-pub type ACS_MII_BY_PDI_W<'a, const O: u8> = crate::BitWriter<'a, u8, MII_PDI_ACS_STATE_SPEC, ACS_MII_BY_PDI_A, O>;
+pub type ACS_MII_BY_PDI_W<'a, const O: u8> = crate::BitWriter<'a, MII_PDI_ACS_STATE_SPEC, O, ACS_MII_BY_PDI_A>;
 impl<'a, const O: u8> ACS_MII_BY_PDI_W<'a, O> {
     #[doc = "ECAT has access to MII managment"]
     #[inline(always)]

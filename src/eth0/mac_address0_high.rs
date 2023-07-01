@@ -35,11 +35,11 @@ impl From<crate::W<MAC_ADDRESS0_HIGH_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDRHI` reader - MAC Address0 \\[47:32\\]"]
-pub type ADDRHI_R = crate::FieldReader<u16, u16>;
+pub type ADDRHI_R = crate::FieldReader<u16>;
 #[doc = "Field `ADDRHI` writer - MAC Address0 \\[47:32\\]"]
-pub type ADDRHI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAC_ADDRESS0_HIGH_SPEC, u16, u16, 16, O>;
+pub type ADDRHI_W<'a, const O: u8> = crate::FieldWriter<'a, MAC_ADDRESS0_HIGH_SPEC, 16, O, u16>;
 #[doc = "Field `AE` reader - Address Enable"]
-pub type AE_R = crate::BitReader<bool>;
+pub type AE_R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:15 - MAC Address0 \\[47:32\\]"]
     #[inline(always)]

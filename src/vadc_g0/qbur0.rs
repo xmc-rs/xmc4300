@@ -14,13 +14,13 @@ impl From<crate::R<QBUR0_SPEC>> for R {
     }
 }
 #[doc = "Field `REQCHNR` reader - Request Channel Number"]
-pub type REQCHNR_R = crate::FieldReader<u8, u8>;
+pub type REQCHNR_R = crate::FieldReader;
 #[doc = "Field `RF` reader - Refill"]
-pub type RF_R = crate::BitReader<bool>;
+pub type RF_R = crate::BitReader;
 #[doc = "Field `ENSI` reader - Enable Source Interrupt"]
-pub type ENSI_R = crate::BitReader<bool>;
+pub type ENSI_R = crate::BitReader;
 #[doc = "Field `EXTR` reader - External Trigger"]
-pub type EXTR_R = crate::BitReader<bool>;
+pub type EXTR_R = crate::BitReader;
 #[doc = "Field `V` reader - Request Channel Number Valid"]
 pub type V_R = crate::BitReader<V_A>;
 #[doc = "Request Channel Number Valid\n\nValue on reset: 0"]

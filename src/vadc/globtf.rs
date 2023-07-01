@@ -35,9 +35,9 @@ impl From<crate::W<GLOBTF_SPEC>> for W {
     }
 }
 #[doc = "Field `CDGR` reader - Converter Diagnostics Group"]
-pub type CDGR_R = crate::FieldReader<u8, u8>;
+pub type CDGR_R = crate::FieldReader;
 #[doc = "Field `CDGR` writer - Converter Diagnostics Group"]
-pub type CDGR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBTF_SPEC, u8, u8, 4, O>;
+pub type CDGR_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBTF_SPEC, 4, O>;
 #[doc = "Field `CDEN` reader - Converter Diagnostics Enable"]
 pub type CDEN_R = crate::BitReader<CDEN_A>;
 #[doc = "Converter Diagnostics Enable\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl CDEN_R {
     }
 }
 #[doc = "Field `CDEN` writer - Converter Diagnostics Enable"]
-pub type CDEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBTF_SPEC, CDEN_A, O>;
+pub type CDEN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBTF_SPEC, O, CDEN_A>;
 impl<'a, const O: u8> CDEN_W<'a, O> {
     #[doc = "All diagnostic pull devices are disconnected"]
     #[inline(always)]
@@ -89,7 +89,7 @@ impl<'a, const O: u8> CDEN_W<'a, O> {
     }
 }
 #[doc = "Field `CDSEL` reader - Converter Diagnostics Pull-Devices Select"]
-pub type CDSEL_R = crate::FieldReader<u8, CDSEL_A>;
+pub type CDSEL_R = crate::FieldReader<CDSEL_A>;
 #[doc = "Converter Diagnostics Pull-Devices Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -108,6 +108,9 @@ impl From<CDSEL_A> for u8 {
     fn from(variant: CDSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CDSEL_A {
+    type Ux = u8;
 }
 impl CDSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -143,7 +146,7 @@ impl CDSEL_R {
     }
 }
 #[doc = "Field `CDSEL` writer - Converter Diagnostics Pull-Devices Select"]
-pub type CDSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, GLOBTF_SPEC, u8, CDSEL_A, 2, O>;
+pub type CDSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, GLOBTF_SPEC, 2, O, CDSEL_A>;
 impl<'a, const O: u8> CDSEL_W<'a, O> {
     #[doc = "Connected to VAREF"]
     #[inline(always)]
@@ -181,7 +184,7 @@ impl From<CDWC_AW> for bool {
     }
 }
 #[doc = "Field `CDWC` writer - Write Control for Conversion Diagnostics"]
-pub type CDWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBTF_SPEC, CDWC_AW, O>;
+pub type CDWC_W<'a, const O: u8> = crate::BitWriter<'a, GLOBTF_SPEC, O, CDWC_AW>;
 impl<'a, const O: u8> CDWC_W<'a, O> {
     #[doc = "No write access to parameters"]
     #[inline(always)]
@@ -231,7 +234,7 @@ impl PDD_R {
     }
 }
 #[doc = "Field `PDD` writer - Pull-Down Diagnostics Enable"]
-pub type PDD_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBTF_SPEC, PDD_A, O>;
+pub type PDD_W<'a, const O: u8> = crate::BitWriter<'a, GLOBTF_SPEC, O, PDD_A>;
 impl<'a, const O: u8> PDD_W<'a, O> {
     #[doc = "Disconnected"]
     #[inline(always)]
@@ -259,7 +262,7 @@ impl From<MDWC_AW> for bool {
     }
 }
 #[doc = "Field `MDWC` writer - Write Control for Multiplexer Diagnostics"]
-pub type MDWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBTF_SPEC, MDWC_AW, O>;
+pub type MDWC_W<'a, const O: u8> = crate::BitWriter<'a, GLOBTF_SPEC, O, MDWC_AW>;
 impl<'a, const O: u8> MDWC_W<'a, O> {
     #[doc = "No write access to parameters"]
     #[inline(always)]

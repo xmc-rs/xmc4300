@@ -35,7 +35,7 @@ impl From<crate::W<CPACR_SPEC>> for W {
     }
 }
 #[doc = "Field `CP10` reader - Access privileges for coprocessor 10"]
-pub type CP10_R = crate::FieldReader<u8, CP10_A>;
+pub type CP10_R = crate::FieldReader<CP10_A>;
 #[doc = "Access privileges for coprocessor 10\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -52,6 +52,9 @@ impl From<CP10_A> for u8 {
     fn from(variant: CP10_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CP10_A {
+    type Ux = u8;
 }
 impl CP10_R {
     #[doc = "Get enumerated values variant"]
@@ -81,7 +84,7 @@ impl CP10_R {
     }
 }
 #[doc = "Field `CP10` writer - Access privileges for coprocessor 10"]
-pub type CP10_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CPACR_SPEC, u8, CP10_A, 2, O>;
+pub type CP10_W<'a, const O: u8> = crate::FieldWriter<'a, CPACR_SPEC, 2, O, CP10_A>;
 impl<'a, const O: u8> CP10_W<'a, O> {
     #[doc = "Access denied. Any attempted access generates a NOCP UsageFault."]
     #[inline(always)]
@@ -100,7 +103,7 @@ impl<'a, const O: u8> CP10_W<'a, O> {
     }
 }
 #[doc = "Field `CP11` reader - Access privileges for coprocessor 11"]
-pub type CP11_R = crate::FieldReader<u8, CP11_A>;
+pub type CP11_R = crate::FieldReader<CP11_A>;
 #[doc = "Access privileges for coprocessor 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -117,6 +120,9 @@ impl From<CP11_A> for u8 {
     fn from(variant: CP11_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CP11_A {
+    type Ux = u8;
 }
 impl CP11_R {
     #[doc = "Get enumerated values variant"]
@@ -146,7 +152,7 @@ impl CP11_R {
     }
 }
 #[doc = "Field `CP11` writer - Access privileges for coprocessor 11"]
-pub type CP11_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CPACR_SPEC, u8, CP11_A, 2, O>;
+pub type CP11_W<'a, const O: u8> = crate::FieldWriter<'a, CPACR_SPEC, 2, O, CP11_A>;
 impl<'a, const O: u8> CP11_W<'a, O> {
     #[doc = "Access denied. Any attempted access generates a NOCP UsageFault."]
     #[inline(always)]

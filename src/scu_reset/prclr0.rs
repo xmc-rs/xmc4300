@@ -34,7 +34,7 @@ impl From<VADCRS_AW> for bool {
     }
 }
 #[doc = "Field `VADCRS` writer - VADC Reset Clear"]
-pub type VADCRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR0_SPEC, VADCRS_AW, O>;
+pub type VADCRS_W<'a, const O: u8> = crate::BitWriter<'a, PRCLR0_SPEC, O, VADCRS_AW>;
 impl<'a, const O: u8> VADCRS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<CCU40RS_AW> for bool {
     }
 }
 #[doc = "Field `CCU40RS` writer - CCU40 Reset Clear"]
-pub type CCU40RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR0_SPEC, CCU40RS_AW, O>;
+pub type CCU40RS_W<'a, const O: u8> = crate::BitWriter<'a, PRCLR0_SPEC, O, CCU40RS_AW>;
 impl<'a, const O: u8> CCU40RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<CCU41RS_AW> for bool {
     }
 }
 #[doc = "Field `CCU41RS` writer - CCU41 Reset Clear"]
-pub type CCU41RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR0_SPEC, CCU41RS_AW, O>;
+pub type CCU41RS_W<'a, const O: u8> = crate::BitWriter<'a, PRCLR0_SPEC, O, CCU41RS_AW>;
 impl<'a, const O: u8> CCU41RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<CCU80RS_AW> for bool {
     }
 }
 #[doc = "Field `CCU80RS` writer - CCU80 Reset Clear"]
-pub type CCU80RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR0_SPEC, CCU80RS_AW, O>;
+pub type CCU80RS_W<'a, const O: u8> = crate::BitWriter<'a, PRCLR0_SPEC, O, CCU80RS_AW>;
 impl<'a, const O: u8> CCU80RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<USIC0RS_AW> for bool {
     }
 }
 #[doc = "Field `USIC0RS` writer - USIC0 Reset Clear"]
-pub type USIC0RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR0_SPEC, USIC0RS_AW, O>;
+pub type USIC0RS_W<'a, const O: u8> = crate::BitWriter<'a, PRCLR0_SPEC, O, USIC0RS_AW>;
 impl<'a, const O: u8> USIC0RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<ERU1RS_AW> for bool {
     }
 }
 #[doc = "Field `ERU1RS` writer - ERU1 Reset Clear"]
-pub type ERU1RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR0_SPEC, ERU1RS_AW, O>;
+pub type ERU1RS_W<'a, const O: u8> = crate::BitWriter<'a, PRCLR0_SPEC, O, ERU1RS_AW>;
 impl<'a, const O: u8> ERU1RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

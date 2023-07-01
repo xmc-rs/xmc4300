@@ -34,7 +34,7 @@ impl From<LEDTSCU0RS_AW> for bool {
     }
 }
 #[doc = "Field `LEDTSCU0RS` writer - LEDTS Reset Assert"]
-pub type LEDTSCU0RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRSET1_SPEC, LEDTSCU0RS_AW, O>;
+pub type LEDTSCU0RS_W<'a, const O: u8> = crate::BitWriter<'a, PRSET1_SPEC, O, LEDTSCU0RS_AW>;
 impl<'a, const O: u8> LEDTSCU0RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<MCAN0RS_AW> for bool {
     }
 }
 #[doc = "Field `MCAN0RS` writer - MultiCAN Reset Assert"]
-pub type MCAN0RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRSET1_SPEC, MCAN0RS_AW, O>;
+pub type MCAN0RS_W<'a, const O: u8> = crate::BitWriter<'a, PRSET1_SPEC, O, MCAN0RS_AW>;
 impl<'a, const O: u8> MCAN0RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<DACRS_AW> for bool {
     }
 }
 #[doc = "Field `DACRS` writer - DAC Reset Assert"]
-pub type DACRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRSET1_SPEC, DACRS_AW, O>;
+pub type DACRS_W<'a, const O: u8> = crate::BitWriter<'a, PRSET1_SPEC, O, DACRS_AW>;
 impl<'a, const O: u8> DACRS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<MMCIRS_AW> for bool {
     }
 }
 #[doc = "Field `MMCIRS` writer - MMC Interface Reset Assert"]
-pub type MMCIRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRSET1_SPEC, MMCIRS_AW, O>;
+pub type MMCIRS_W<'a, const O: u8> = crate::BitWriter<'a, PRSET1_SPEC, O, MMCIRS_AW>;
 impl<'a, const O: u8> MMCIRS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<USIC1RS_AW> for bool {
     }
 }
 #[doc = "Field `USIC1RS` writer - USIC1 Reset Assert"]
-pub type USIC1RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRSET1_SPEC, USIC1RS_AW, O>;
+pub type USIC1RS_W<'a, const O: u8> = crate::BitWriter<'a, PRSET1_SPEC, O, USIC1RS_AW>;
 impl<'a, const O: u8> USIC1RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<PPORTSRS_AW> for bool {
     }
 }
 #[doc = "Field `PPORTSRS` writer - PORTS Reset Assert"]
-pub type PPORTSRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRSET1_SPEC, PPORTSRS_AW, O>;
+pub type PPORTSRS_W<'a, const O: u8> = crate::BitWriter<'a, PRSET1_SPEC, O, PPORTSRS_AW>;
 impl<'a, const O: u8> PPORTSRS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

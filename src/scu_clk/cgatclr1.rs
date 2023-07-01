@@ -34,7 +34,7 @@ impl From<LEDTSCU0_AW> for bool {
     }
 }
 #[doc = "Field `LEDTSCU0` writer - LEDTS Gating Clear"]
-pub type LEDTSCU0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATCLR1_SPEC, LEDTSCU0_AW, O>;
+pub type LEDTSCU0_W<'a, const O: u8> = crate::BitWriter<'a, CGATCLR1_SPEC, O, LEDTSCU0_AW>;
 impl<'a, const O: u8> LEDTSCU0_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<MCAN0_AW> for bool {
     }
 }
 #[doc = "Field `MCAN0` writer - MultiCAN Gating Clear"]
-pub type MCAN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATCLR1_SPEC, MCAN0_AW, O>;
+pub type MCAN0_W<'a, const O: u8> = crate::BitWriter<'a, CGATCLR1_SPEC, O, MCAN0_AW>;
 impl<'a, const O: u8> MCAN0_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<DAC_AW> for bool {
     }
 }
 #[doc = "Field `DAC` writer - DAC Gating Clear"]
-pub type DAC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATCLR1_SPEC, DAC_AW, O>;
+pub type DAC_W<'a, const O: u8> = crate::BitWriter<'a, CGATCLR1_SPEC, O, DAC_AW>;
 impl<'a, const O: u8> DAC_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<MMCI_AW> for bool {
     }
 }
 #[doc = "Field `MMCI` writer - MMC Interface Gating Clear"]
-pub type MMCI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATCLR1_SPEC, MMCI_AW, O>;
+pub type MMCI_W<'a, const O: u8> = crate::BitWriter<'a, CGATCLR1_SPEC, O, MMCI_AW>;
 impl<'a, const O: u8> MMCI_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<USIC1_AW> for bool {
     }
 }
 #[doc = "Field `USIC1` writer - USIC1 Gating Clear"]
-pub type USIC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATCLR1_SPEC, USIC1_AW, O>;
+pub type USIC1_W<'a, const O: u8> = crate::BitWriter<'a, CGATCLR1_SPEC, O, USIC1_AW>;
 impl<'a, const O: u8> USIC1_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<PPORTS_AW> for bool {
     }
 }
 #[doc = "Field `PPORTS` writer - PORTS Gating Clear"]
-pub type PPORTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATCLR1_SPEC, PPORTS_AW, O>;
+pub type PPORTS_W<'a, const O: u8> = crate::BitWriter<'a, CGATCLR1_SPEC, O, PPORTS_AW>;
 impl<'a, const O: u8> PPORTS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

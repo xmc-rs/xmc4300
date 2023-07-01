@@ -35,7 +35,7 @@ impl From<crate::W<ARBPR_SPEC>> for W {
     }
 }
 #[doc = "Field `PRIO0` reader - Priority of Request Source x"]
-pub type PRIO0_R = crate::FieldReader<u8, PRIO0_A>;
+pub type PRIO0_R = crate::FieldReader<PRIO0_A>;
 #[doc = "Priority of Request Source x\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -50,6 +50,9 @@ impl From<PRIO0_A> for u8 {
     fn from(variant: PRIO0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRIO0_A {
+    type Ux = u8;
 }
 impl PRIO0_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +76,7 @@ impl PRIO0_R {
     }
 }
 #[doc = "Field `PRIO0` writer - Priority of Request Source x"]
-pub type PRIO0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ARBPR_SPEC, u8, PRIO0_A, 2, O>;
+pub type PRIO0_W<'a, const O: u8> = crate::FieldWriter<'a, ARBPR_SPEC, 2, O, PRIO0_A>;
 impl<'a, const O: u8> PRIO0_W<'a, O> {
     #[doc = "Lowest priority is selected."]
     #[inline(always)]
@@ -123,7 +126,7 @@ impl CSM0_R {
     }
 }
 #[doc = "Field `CSM0` writer - Conversion Start Mode of Request Source x"]
-pub type CSM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBPR_SPEC, CSM0_A, O>;
+pub type CSM0_W<'a, const O: u8> = crate::BitWriter<'a, ARBPR_SPEC, O, CSM0_A>;
 impl<'a, const O: u8> CSM0_W<'a, O> {
     #[doc = "Wait-for-start mode"]
     #[inline(always)]
@@ -137,7 +140,7 @@ impl<'a, const O: u8> CSM0_W<'a, O> {
     }
 }
 #[doc = "Field `PRIO1` reader - Priority of Request Source x"]
-pub type PRIO1_R = crate::FieldReader<u8, PRIO1_A>;
+pub type PRIO1_R = crate::FieldReader<PRIO1_A>;
 #[doc = "Priority of Request Source x\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -152,6 +155,9 @@ impl From<PRIO1_A> for u8 {
     fn from(variant: PRIO1_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRIO1_A {
+    type Ux = u8;
 }
 impl PRIO1_R {
     #[doc = "Get enumerated values variant"]
@@ -175,7 +181,7 @@ impl PRIO1_R {
     }
 }
 #[doc = "Field `PRIO1` writer - Priority of Request Source x"]
-pub type PRIO1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ARBPR_SPEC, u8, PRIO1_A, 2, O>;
+pub type PRIO1_W<'a, const O: u8> = crate::FieldWriter<'a, ARBPR_SPEC, 2, O, PRIO1_A>;
 impl<'a, const O: u8> PRIO1_W<'a, O> {
     #[doc = "Lowest priority is selected."]
     #[inline(always)]
@@ -225,7 +231,7 @@ impl CSM1_R {
     }
 }
 #[doc = "Field `CSM1` writer - Conversion Start Mode of Request Source x"]
-pub type CSM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBPR_SPEC, CSM1_A, O>;
+pub type CSM1_W<'a, const O: u8> = crate::BitWriter<'a, ARBPR_SPEC, O, CSM1_A>;
 impl<'a, const O: u8> CSM1_W<'a, O> {
     #[doc = "Wait-for-start mode"]
     #[inline(always)]
@@ -239,7 +245,7 @@ impl<'a, const O: u8> CSM1_W<'a, O> {
     }
 }
 #[doc = "Field `PRIO2` reader - Priority of Request Source x"]
-pub type PRIO2_R = crate::FieldReader<u8, PRIO2_A>;
+pub type PRIO2_R = crate::FieldReader<PRIO2_A>;
 #[doc = "Priority of Request Source x\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -254,6 +260,9 @@ impl From<PRIO2_A> for u8 {
     fn from(variant: PRIO2_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRIO2_A {
+    type Ux = u8;
 }
 impl PRIO2_R {
     #[doc = "Get enumerated values variant"]
@@ -277,7 +286,7 @@ impl PRIO2_R {
     }
 }
 #[doc = "Field `PRIO2` writer - Priority of Request Source x"]
-pub type PRIO2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ARBPR_SPEC, u8, PRIO2_A, 2, O>;
+pub type PRIO2_W<'a, const O: u8> = crate::FieldWriter<'a, ARBPR_SPEC, 2, O, PRIO2_A>;
 impl<'a, const O: u8> PRIO2_W<'a, O> {
     #[doc = "Lowest priority is selected."]
     #[inline(always)]
@@ -327,7 +336,7 @@ impl CSM2_R {
     }
 }
 #[doc = "Field `CSM2` writer - Conversion Start Mode of Request Source x"]
-pub type CSM2_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBPR_SPEC, CSM2_A, O>;
+pub type CSM2_W<'a, const O: u8> = crate::BitWriter<'a, ARBPR_SPEC, O, CSM2_A>;
 impl<'a, const O: u8> CSM2_W<'a, O> {
     #[doc = "Wait-for-start mode"]
     #[inline(always)]
@@ -377,7 +386,7 @@ impl ASEN0_R {
     }
 }
 #[doc = "Field `ASEN0` writer - Arbitration Slot 0 Enable"]
-pub type ASEN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBPR_SPEC, ASEN0_A, O>;
+pub type ASEN0_W<'a, const O: u8> = crate::BitWriter<'a, ARBPR_SPEC, O, ASEN0_A>;
 impl<'a, const O: u8> ASEN0_W<'a, O> {
     #[doc = "The corresponding arbitration slot is disabled and considered as empty. Pending conversion requests from the associated request source are disregarded."]
     #[inline(always)]
@@ -427,7 +436,7 @@ impl ASEN1_R {
     }
 }
 #[doc = "Field `ASEN1` writer - Arbitration Slot 1 Enable"]
-pub type ASEN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBPR_SPEC, ASEN1_A, O>;
+pub type ASEN1_W<'a, const O: u8> = crate::BitWriter<'a, ARBPR_SPEC, O, ASEN1_A>;
 impl<'a, const O: u8> ASEN1_W<'a, O> {
     #[doc = "The corresponding arbitration slot is disabled and considered as empty. Pending conversion requests from the associated request source are disregarded."]
     #[inline(always)]
@@ -477,7 +486,7 @@ impl ASEN2_R {
     }
 }
 #[doc = "Field `ASEN2` writer - Arbitration Slot 2 Enable"]
-pub type ASEN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBPR_SPEC, ASEN2_A, O>;
+pub type ASEN2_W<'a, const O: u8> = crate::BitWriter<'a, ARBPR_SPEC, O, ASEN2_A>;
 impl<'a, const O: u8> ASEN2_W<'a, O> {
     #[doc = "The corresponding arbitration slot is disabled and considered as empty. Pending conversion requests from the associated request source are disregarded."]
     #[inline(always)]

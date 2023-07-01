@@ -14,7 +14,7 @@ impl From<crate::R<TYPE_SPEC>> for R {
     }
 }
 #[doc = "Field `Type` reader - Type of EtherCAT controller"]
-pub type TYPE_R = crate::FieldReader<u8, u8>;
+pub type TYPE_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Type of EtherCAT controller"]
     #[inline(always)]

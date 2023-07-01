@@ -14,7 +14,7 @@ impl From<crate::R<TX_EXCESSIVE_COLLISION_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `TXEXSCOL` reader - This field indicates the number of frames aborted because of excessive (16) collision error."]
-pub type TXEXSCOL_R = crate::FieldReader<u32, u32>;
+pub type TXEXSCOL_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of frames aborted because of excessive (16) collision error."]
     #[inline(always)]

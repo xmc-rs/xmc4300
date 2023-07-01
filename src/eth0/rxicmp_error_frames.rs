@@ -14,7 +14,7 @@ impl From<crate::R<RXICMP_ERROR_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXICMPERRFRM` reader - This field indicates the number of good IP datagrams whose ICMP payload has a checksum error."]
-pub type RXICMPERRFRM_R = crate::FieldReader<u32, u32>;
+pub type RXICMPERRFRM_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of good IP datagrams whose ICMP payload has a checksum error."]
     #[inline(always)]

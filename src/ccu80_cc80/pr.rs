@@ -14,7 +14,7 @@ impl From<crate::R<PR_SPEC>> for R {
     }
 }
 #[doc = "Field `PR` reader - Period Register"]
-pub type PR_R = crate::FieldReader<u16, u16>;
+pub type PR_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Period Register"]
     #[inline(always)]

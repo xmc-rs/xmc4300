@@ -14,7 +14,7 @@ impl From<crate::R<RSTSTAT_SPEC>> for R {
     }
 }
 #[doc = "Field `RSTSTAT` reader - Reset Status Information"]
-pub type RSTSTAT_R = crate::FieldReader<u8, RSTSTAT_A>;
+pub type RSTSTAT_R = crate::FieldReader<RSTSTAT_A>;
 #[doc = "Reset Status Information\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -39,6 +39,9 @@ impl From<RSTSTAT_A> for u8 {
     fn from(variant: RSTSTAT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RSTSTAT_A {
+    type Ux = u8;
 }
 impl RSTSTAT_R {
     #[doc = "Get enumerated values variant"]

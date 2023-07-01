@@ -35,11 +35,11 @@ impl From<crate::W<FPC_SPEC>> for W {
     }
 }
 #[doc = "Field `PCMP` reader - Floating Prescaler Compare Value"]
-pub type PCMP_R = crate::FieldReader<u8, u8>;
+pub type PCMP_R = crate::FieldReader;
 #[doc = "Field `PVAL` reader - Actual Prescaler Value"]
-pub type PVAL_R = crate::FieldReader<u8, u8>;
+pub type PVAL_R = crate::FieldReader;
 #[doc = "Field `PVAL` writer - Actual Prescaler Value"]
-pub type PVAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPC_SPEC, u8, u8, 4, O>;
+pub type PVAL_W<'a, const O: u8> = crate::FieldWriter<'a, FPC_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Floating Prescaler Compare Value"]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl ENABLE_R {
     }
 }
 #[doc = "Field `ENABLE` writer - Enable MPU"]
-pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_CTRL_SPEC, ENABLE_A, O>;
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, MPU_CTRL_SPEC, O, ENABLE_A>;
 impl<'a, const O: u8> ENABLE_W<'a, O> {
     #[doc = "MPU disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl HFNMIENA_R {
     }
 }
 #[doc = "Field `HFNMIENA` writer - Enable the operation of MPU during hard fault, NMI, and FAULTMASK handlers"]
-pub type HFNMIENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_CTRL_SPEC, HFNMIENA_A, O>;
+pub type HFNMIENA_W<'a, const O: u8> = crate::BitWriter<'a, MPU_CTRL_SPEC, O, HFNMIENA_A>;
 impl<'a, const O: u8> HFNMIENA_W<'a, O> {
     #[doc = "MPU is disabled during hard fault, NMI, and FAULTMASK handlers, regardless of the value of the ENABLE bit"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl PRIVDEFENA_R {
     }
 }
 #[doc = "Field `PRIVDEFENA` writer - Enables privileged software access to the default memory map"]
-pub type PRIVDEFENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_CTRL_SPEC, PRIVDEFENA_A, O>;
+pub type PRIVDEFENA_W<'a, const O: u8> = crate::BitWriter<'a, MPU_CTRL_SPEC, O, PRIVDEFENA_A>;
 impl<'a, const O: u8> PRIVDEFENA_W<'a, O> {
     #[doc = "If the MPU is enabled, disables use of the default memory map. Any memory access to a location not covered by any enabled region causes a fault."]
     #[inline(always)]

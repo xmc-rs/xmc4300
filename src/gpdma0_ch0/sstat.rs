@@ -35,9 +35,9 @@ impl From<crate::W<SSTAT_SPEC>> for W {
     }
 }
 #[doc = "Field `SSTAT` reader - Source Status"]
-pub type SSTAT_R = crate::FieldReader<u32, u32>;
+pub type SSTAT_R = crate::FieldReader<u32>;
 #[doc = "Field `SSTAT` writer - Source Status"]
-pub type SSTAT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SSTAT_SPEC, u32, u32, 32, O>;
+pub type SSTAT_W<'a, const O: u8> = crate::FieldWriter<'a, SSTAT_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Source Status"]
     #[inline(always)]

@@ -35,7 +35,7 @@ impl From<crate::W<REVNP0_SPEC>> for W {
     }
 }
 #[doc = "Field `REV0NP` reader - Service Request Node Pointer Result Event i"]
-pub type REV0NP_R = crate::FieldReader<u8, REV0NP_A>;
+pub type REV0NP_R = crate::FieldReader<REV0NP_A>;
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<REV0NP_A> for u8 {
     fn from(variant: REV0NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for REV0NP_A {
+    type Ux = u8;
 }
 impl REV0NP_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl REV0NP_R {
     }
 }
 #[doc = "Field `REV0NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV0NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REVNP0_SPEC, u8, REV0NP_A, 4, O>;
+pub type REV0NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV0NP_A>;
 impl<'a, const O: u8> REV0NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> REV0NP_W<'a, O> {
     }
 }
 #[doc = "Field `REV1NP` reader - Service Request Node Pointer Result Event i"]
-pub type REV1NP_R = crate::FieldReader<u8, REV1NP_A>;
+pub type REV1NP_R = crate::FieldReader<REV1NP_A>;
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<REV1NP_A> for u8 {
     fn from(variant: REV1NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for REV1NP_A {
+    type Ux = u8;
 }
 impl REV1NP_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl REV1NP_R {
     }
 }
 #[doc = "Field `REV1NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV1NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REVNP0_SPEC, u8, REV1NP_A, 4, O>;
+pub type REV1NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV1NP_A>;
 impl<'a, const O: u8> REV1NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -191,7 +197,7 @@ impl<'a, const O: u8> REV1NP_W<'a, O> {
     }
 }
 #[doc = "Field `REV2NP` reader - Service Request Node Pointer Result Event i"]
-pub type REV2NP_R = crate::FieldReader<u8, REV2NP_A>;
+pub type REV2NP_R = crate::FieldReader<REV2NP_A>;
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -210,6 +216,9 @@ impl From<REV2NP_A> for u8 {
     fn from(variant: REV2NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for REV2NP_A {
+    type Ux = u8;
 }
 impl REV2NP_R {
     #[doc = "Get enumerated values variant"]
@@ -245,7 +254,7 @@ impl REV2NP_R {
     }
 }
 #[doc = "Field `REV2NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV2NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REVNP0_SPEC, u8, REV2NP_A, 4, O>;
+pub type REV2NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV2NP_A>;
 impl<'a, const O: u8> REV2NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -269,7 +278,7 @@ impl<'a, const O: u8> REV2NP_W<'a, O> {
     }
 }
 #[doc = "Field `REV3NP` reader - Service Request Node Pointer Result Event i"]
-pub type REV3NP_R = crate::FieldReader<u8, REV3NP_A>;
+pub type REV3NP_R = crate::FieldReader<REV3NP_A>;
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -288,6 +297,9 @@ impl From<REV3NP_A> for u8 {
     fn from(variant: REV3NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for REV3NP_A {
+    type Ux = u8;
 }
 impl REV3NP_R {
     #[doc = "Get enumerated values variant"]
@@ -323,7 +335,7 @@ impl REV3NP_R {
     }
 }
 #[doc = "Field `REV3NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV3NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REVNP0_SPEC, u8, REV3NP_A, 4, O>;
+pub type REV3NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV3NP_A>;
 impl<'a, const O: u8> REV3NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -347,7 +359,7 @@ impl<'a, const O: u8> REV3NP_W<'a, O> {
     }
 }
 #[doc = "Field `REV4NP` reader - Service Request Node Pointer Result Event i"]
-pub type REV4NP_R = crate::FieldReader<u8, REV4NP_A>;
+pub type REV4NP_R = crate::FieldReader<REV4NP_A>;
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -366,6 +378,9 @@ impl From<REV4NP_A> for u8 {
     fn from(variant: REV4NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for REV4NP_A {
+    type Ux = u8;
 }
 impl REV4NP_R {
     #[doc = "Get enumerated values variant"]
@@ -401,7 +416,7 @@ impl REV4NP_R {
     }
 }
 #[doc = "Field `REV4NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV4NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REVNP0_SPEC, u8, REV4NP_A, 4, O>;
+pub type REV4NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV4NP_A>;
 impl<'a, const O: u8> REV4NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -425,7 +440,7 @@ impl<'a, const O: u8> REV4NP_W<'a, O> {
     }
 }
 #[doc = "Field `REV5NP` reader - Service Request Node Pointer Result Event i"]
-pub type REV5NP_R = crate::FieldReader<u8, REV5NP_A>;
+pub type REV5NP_R = crate::FieldReader<REV5NP_A>;
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -444,6 +459,9 @@ impl From<REV5NP_A> for u8 {
     fn from(variant: REV5NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for REV5NP_A {
+    type Ux = u8;
 }
 impl REV5NP_R {
     #[doc = "Get enumerated values variant"]
@@ -479,7 +497,7 @@ impl REV5NP_R {
     }
 }
 #[doc = "Field `REV5NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV5NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REVNP0_SPEC, u8, REV5NP_A, 4, O>;
+pub type REV5NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV5NP_A>;
 impl<'a, const O: u8> REV5NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -503,7 +521,7 @@ impl<'a, const O: u8> REV5NP_W<'a, O> {
     }
 }
 #[doc = "Field `REV6NP` reader - Service Request Node Pointer Result Event i"]
-pub type REV6NP_R = crate::FieldReader<u8, REV6NP_A>;
+pub type REV6NP_R = crate::FieldReader<REV6NP_A>;
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -522,6 +540,9 @@ impl From<REV6NP_A> for u8 {
     fn from(variant: REV6NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for REV6NP_A {
+    type Ux = u8;
 }
 impl REV6NP_R {
     #[doc = "Get enumerated values variant"]
@@ -557,7 +578,7 @@ impl REV6NP_R {
     }
 }
 #[doc = "Field `REV6NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV6NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REVNP0_SPEC, u8, REV6NP_A, 4, O>;
+pub type REV6NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV6NP_A>;
 impl<'a, const O: u8> REV6NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -581,7 +602,7 @@ impl<'a, const O: u8> REV6NP_W<'a, O> {
     }
 }
 #[doc = "Field `REV7NP` reader - Service Request Node Pointer Result Event i"]
-pub type REV7NP_R = crate::FieldReader<u8, REV7NP_A>;
+pub type REV7NP_R = crate::FieldReader<REV7NP_A>;
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -600,6 +621,9 @@ impl From<REV7NP_A> for u8 {
     fn from(variant: REV7NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for REV7NP_A {
+    type Ux = u8;
 }
 impl REV7NP_R {
     #[doc = "Get enumerated values variant"]
@@ -635,7 +659,7 @@ impl REV7NP_R {
     }
 }
 #[doc = "Field `REV7NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV7NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REVNP0_SPEC, u8, REV7NP_A, 4, O>;
+pub type REV7NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV7NP_A>;
 impl<'a, const O: u8> REV7NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]

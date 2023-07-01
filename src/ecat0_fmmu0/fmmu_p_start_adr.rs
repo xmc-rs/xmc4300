@@ -14,7 +14,7 @@ impl From<crate::R<FMMU_P_START_ADR_SPEC>> for R {
     }
 }
 #[doc = "Field `P_START_ADDR` reader - Physical Start Address"]
-pub type P_START_ADDR_R = crate::FieldReader<u16, u16>;
+pub type P_START_ADDR_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Physical Start Address"]
     #[inline(always)]

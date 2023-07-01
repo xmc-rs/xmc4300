@@ -50,7 +50,7 @@ impl SM_EN_R {
     }
 }
 #[doc = "Field `REP_REQ` reader - Repeat Request"]
-pub type REP_REQ_R = crate::BitReader<bool>;
+pub type REP_REQ_R = crate::BitReader;
 #[doc = "Field `LE_ECAT` reader - LatchEvent ECAT"]
 pub type LE_ECAT_R = crate::BitReader<LE_ECAT_A>;
 #[doc = "LatchEvent ECAT\n\nValue on reset: 0"]

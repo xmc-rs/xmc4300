@@ -14,7 +14,7 @@ impl From<crate::R<TX_OSIZE_FRAMES_GOOD_SPEC>> for R {
     }
 }
 #[doc = "Field `TXOSIZG` reader - This field indicates the number of frames transmitted without errors and with length greater than the maxsize (1,518 or 1,522 bytes for VLAN tagged frames; 2000 bytes if enabled by setting MAC Configuration.2KPE)."]
-pub type TXOSIZG_R = crate::FieldReader<u32, u32>;
+pub type TXOSIZG_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of frames transmitted without errors and with length greater than the maxsize (1,518 or 1,522 bytes for VLAN tagged frames; 2000 bytes if enabled by setting MAC Configuration.2KPE)."]
     #[inline(always)]

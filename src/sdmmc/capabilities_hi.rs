@@ -188,7 +188,7 @@ impl DRV_D_SUPPORT_R {
     }
 }
 #[doc = "Field `TIM_CNT_RETUNE` reader - Timer count for Re-Tuning"]
-pub type TIM_CNT_RETUNE_R = crate::FieldReader<u8, TIM_CNT_RETUNE_A>;
+pub type TIM_CNT_RETUNE_R = crate::FieldReader<TIM_CNT_RETUNE_A>;
 #[doc = "Timer count for Re-Tuning\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -201,6 +201,9 @@ impl From<TIM_CNT_RETUNE_A> for u8 {
     fn from(variant: TIM_CNT_RETUNE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TIM_CNT_RETUNE_A {
+    type Ux = u8;
 }
 impl TIM_CNT_RETUNE_R {
     #[doc = "Get enumerated values variant"]
@@ -247,7 +250,7 @@ impl USE_TUNING_SDR50_R {
     }
 }
 #[doc = "Field `RE_TUNING_MODES` reader - Re-tuning modes"]
-pub type RE_TUNING_MODES_R = crate::FieldReader<u8, RE_TUNING_MODES_A>;
+pub type RE_TUNING_MODES_R = crate::FieldReader<RE_TUNING_MODES_A>;
 #[doc = "Re-tuning modes\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -260,6 +263,9 @@ impl From<RE_TUNING_MODES_A> for u8 {
     fn from(variant: RE_TUNING_MODES_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RE_TUNING_MODES_A {
+    type Ux = u8;
 }
 impl RE_TUNING_MODES_R {
     #[doc = "Get enumerated values variant"]
@@ -277,7 +283,7 @@ impl RE_TUNING_MODES_R {
     }
 }
 #[doc = "Field `CLK_MULT` reader - Clock Multiplier"]
-pub type CLK_MULT_R = crate::FieldReader<u8, CLK_MULT_A>;
+pub type CLK_MULT_R = crate::FieldReader<CLK_MULT_A>;
 #[doc = "Clock Multiplier\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -290,6 +296,9 @@ impl From<CLK_MULT_A> for u8 {
     fn from(variant: CLK_MULT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLK_MULT_A {
+    type Ux = u8;
 }
 impl CLK_MULT_R {
     #[doc = "Get enumerated values variant"]

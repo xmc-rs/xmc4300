@@ -35,17 +35,17 @@ impl From<crate::W<CCUCON_SPEC>> for W {
     }
 }
 #[doc = "Field `GSC40` reader - Global Start Control CCU40"]
-pub type GSC40_R = crate::BitReader<bool>;
+pub type GSC40_R = crate::BitReader;
 #[doc = "Field `GSC40` writer - Global Start Control CCU40"]
-pub type GSC40_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCUCON_SPEC, bool, O>;
+pub type GSC40_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O>;
 #[doc = "Field `GSC41` reader - Global Start Control CCU41"]
-pub type GSC41_R = crate::BitReader<bool>;
+pub type GSC41_R = crate::BitReader;
 #[doc = "Field `GSC41` writer - Global Start Control CCU41"]
-pub type GSC41_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCUCON_SPEC, bool, O>;
+pub type GSC41_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O>;
 #[doc = "Field `GSC80` reader - Global Start Control CCU80"]
-pub type GSC80_R = crate::BitReader<bool>;
+pub type GSC80_R = crate::BitReader;
 #[doc = "Field `GSC80` writer - Global Start Control CCU80"]
-pub type GSC80_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCUCON_SPEC, bool, O>;
+pub type GSC80_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Global Start Control CCU40"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<RX_OVERSIZE_FRAMES_GOOD_SPEC>> for R {
     }
 }
 #[doc = "Field `RXOVERSZG` reader - This field indicates the number of frames received without errors, with length greater than the maxsize (1,518 or 1,522 for VLAN tagged frames; 2,000 bytes if enabled by setting MAC Configuration.2KPE)."]
-pub type RXOVERSZG_R = crate::FieldReader<u32, u32>;
+pub type RXOVERSZG_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of frames received without errors, with length greater than the maxsize (1,518 or 1,522 for VLAN tagged frames; 2,000 bytes if enabled by setting MAC Configuration.2KPE)."]
     #[inline(always)]

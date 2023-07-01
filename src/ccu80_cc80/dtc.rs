@@ -71,7 +71,7 @@ impl DTE1_R {
     }
 }
 #[doc = "Field `DTE1` writer - Dead Time Enable for Channel 1"]
-pub type DTE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTC_SPEC, DTE1_A, O>;
+pub type DTE1_W<'a, const O: u8> = crate::BitWriter<'a, DTC_SPEC, O, DTE1_A>;
 impl<'a, const O: u8> DTE1_W<'a, O> {
     #[doc = "Dead Time for channel 1 is disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl DTE2_R {
     }
 }
 #[doc = "Field `DTE2` writer - Dead Time Enable for Channel 2"]
-pub type DTE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTC_SPEC, DTE2_A, O>;
+pub type DTE2_W<'a, const O: u8> = crate::BitWriter<'a, DTC_SPEC, O, DTE2_A>;
 impl<'a, const O: u8> DTE2_W<'a, O> {
     #[doc = "Dead Time for channel 2 is disabled"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl DCEN1_R {
     }
 }
 #[doc = "Field `DCEN1` writer - Dead Time Enable for CC8yST1"]
-pub type DCEN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTC_SPEC, DCEN1_A, O>;
+pub type DCEN1_W<'a, const O: u8> = crate::BitWriter<'a, DTC_SPEC, O, DCEN1_A>;
 impl<'a, const O: u8> DCEN1_W<'a, O> {
     #[doc = "Dead Time for CC8yST1 path is disabled"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl DCEN2_R {
     }
 }
 #[doc = "Field `DCEN2` writer - Dead Time Enable for inverted CC8yST1"]
-pub type DCEN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTC_SPEC, DCEN2_A, O>;
+pub type DCEN2_W<'a, const O: u8> = crate::BitWriter<'a, DTC_SPEC, O, DCEN2_A>;
 impl<'a, const O: u8> DCEN2_W<'a, O> {
     #[doc = "Dead Time for inverted CC8yST1 path is disabled"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl DCEN3_R {
     }
 }
 #[doc = "Field `DCEN3` writer - Dead Time Enable for CC8yST2"]
-pub type DCEN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTC_SPEC, DCEN3_A, O>;
+pub type DCEN3_W<'a, const O: u8> = crate::BitWriter<'a, DTC_SPEC, O, DCEN3_A>;
 impl<'a, const O: u8> DCEN3_W<'a, O> {
     #[doc = "Dead Time for CC8yST2 path is disabled"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl DCEN4_R {
     }
 }
 #[doc = "Field `DCEN4` writer - Dead Time Enable for inverted CC8yST2"]
-pub type DCEN4_W<'a, const O: u8> = crate::BitWriter<'a, u32, DTC_SPEC, DCEN4_A, O>;
+pub type DCEN4_W<'a, const O: u8> = crate::BitWriter<'a, DTC_SPEC, O, DCEN4_A>;
 impl<'a, const O: u8> DCEN4_W<'a, O> {
     #[doc = "Dead Time for inverted CC8yST2 path is disabled"]
     #[inline(always)]
@@ -335,7 +335,7 @@ impl<'a, const O: u8> DCEN4_W<'a, O> {
     }
 }
 #[doc = "Field `DTCC` reader - Dead Time clock control"]
-pub type DTCC_R = crate::FieldReader<u8, DTCC_A>;
+pub type DTCC_R = crate::FieldReader<DTCC_A>;
 #[doc = "Dead Time clock control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -354,6 +354,9 @@ impl From<DTCC_A> for u8 {
     fn from(variant: DTCC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DTCC_A {
+    type Ux = u8;
 }
 impl DTCC_R {
     #[doc = "Get enumerated values variant"]
@@ -389,7 +392,7 @@ impl DTCC_R {
     }
 }
 #[doc = "Field `DTCC` writer - Dead Time clock control"]
-pub type DTCC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DTC_SPEC, u8, DTCC_A, 2, O>;
+pub type DTCC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DTC_SPEC, 2, O, DTCC_A>;
 impl<'a, const O: u8> DTCC_W<'a, O> {
     #[doc = "ftclk"]
     #[inline(always)]

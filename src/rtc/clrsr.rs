@@ -20,19 +20,19 @@ impl From<crate::W<CLRSR_SPEC>> for W {
     }
 }
 #[doc = "Field `RPSE` writer - Periodic Seconds Interrupt Clear"]
-pub type RPSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
+pub type RPSE_W<'a, const O: u8> = crate::BitWriter<'a, CLRSR_SPEC, O>;
 #[doc = "Field `RPMI` writer - Periodic Minutes Interrupt Clear"]
-pub type RPMI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
+pub type RPMI_W<'a, const O: u8> = crate::BitWriter<'a, CLRSR_SPEC, O>;
 #[doc = "Field `RPHO` writer - Periodic Hours Interrupt Clear"]
-pub type RPHO_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
+pub type RPHO_W<'a, const O: u8> = crate::BitWriter<'a, CLRSR_SPEC, O>;
 #[doc = "Field `RPDA` writer - Periodic Days Interrupt Clear"]
-pub type RPDA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
+pub type RPDA_W<'a, const O: u8> = crate::BitWriter<'a, CLRSR_SPEC, O>;
 #[doc = "Field `RPMO` writer - Periodic Months Interrupt Clear"]
-pub type RPMO_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
+pub type RPMO_W<'a, const O: u8> = crate::BitWriter<'a, CLRSR_SPEC, O>;
 #[doc = "Field `RPYE` writer - Periodic Years Interrupt Clear"]
-pub type RPYE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
+pub type RPYE_W<'a, const O: u8> = crate::BitWriter<'a, CLRSR_SPEC, O>;
 #[doc = "Field `RAI` writer - Alarm Interrupt Clear"]
-pub type RAI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLRSR_SPEC, bool, O>;
+pub type RAI_W<'a, const O: u8> = crate::BitWriter<'a, CLRSR_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Periodic Seconds Interrupt Clear"]
     #[inline(always)]

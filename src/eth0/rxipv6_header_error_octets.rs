@@ -14,7 +14,7 @@ impl From<crate::R<RXIPV6_HEADER_ERROR_OCTETS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV6HDRERROCT` reader - This field indicates the number of bytes received in IPv6 datagrams with header errors (length or version mismatch). The value in the IPv6 headers Length field is used to update this counter."]
-pub type RXIPV6HDRERROCT_R = crate::FieldReader<u32, u32>;
+pub type RXIPV6HDRERROCT_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of bytes received in IPv6 datagrams with header errors (length or version mismatch). The value in the IPv6 headers Length field is used to update this counter."]
     #[inline(always)]

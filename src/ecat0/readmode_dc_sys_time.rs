@@ -14,7 +14,7 @@ impl From<crate::R<READMODE_DC_SYS_TIME_SPEC>> for R {
     }
 }
 #[doc = "Field `READ_ACCESS` reader - Read access"]
-pub type READ_ACCESS_R = crate::FieldReader<u32, u32>;
+pub type READ_ACCESS_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Read access"]
     #[inline(always)]

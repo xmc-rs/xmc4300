@@ -35,11 +35,11 @@ impl From<crate::W<WDTCLKCR_SPEC>> for W {
     }
 }
 #[doc = "Field `WDTDIV` reader - WDT Clock Divider Value"]
-pub type WDTDIV_R = crate::FieldReader<u8, u8>;
+pub type WDTDIV_R = crate::FieldReader;
 #[doc = "Field `WDTDIV` writer - WDT Clock Divider Value"]
-pub type WDTDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WDTCLKCR_SPEC, u8, u8, 8, O>;
+pub type WDTDIV_W<'a, const O: u8> = crate::FieldWriter<'a, WDTCLKCR_SPEC, 8, O>;
 #[doc = "Field `WDTSEL` reader - WDT Clock Selection Value"]
-pub type WDTSEL_R = crate::FieldReader<u8, WDTSEL_A>;
+pub type WDTSEL_R = crate::FieldReader<WDTSEL_A>;
 #[doc = "WDT Clock Selection Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<WDTSEL_A> for u8 {
     fn from(variant: WDTSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for WDTSEL_A {
+    type Ux = u8;
 }
 impl WDTSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -85,7 +88,7 @@ impl WDTSEL_R {
     }
 }
 #[doc = "Field `WDTSEL` writer - WDT Clock Selection Value"]
-pub type WDTSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WDTCLKCR_SPEC, u8, WDTSEL_A, 2, O>;
+pub type WDTSEL_W<'a, const O: u8> = crate::FieldWriter<'a, WDTCLKCR_SPEC, 2, O, WDTSEL_A>;
 impl<'a, const O: u8> WDTSEL_W<'a, O> {
     #[doc = "fOFI clock"]
     #[inline(always)]

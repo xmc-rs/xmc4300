@@ -35,9 +35,9 @@ impl From<crate::W<TBUF_SPEC>> for W {
     }
 }
 #[doc = "Field `TDATA` reader - Transmit Data"]
-pub type TDATA_R = crate::FieldReader<u16, u16>;
+pub type TDATA_R = crate::FieldReader<u16>;
 #[doc = "Field `TDATA` writer - Transmit Data"]
-pub type TDATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TBUF_SPEC, u16, u16, 16, O>;
+pub type TDATA_W<'a, const O: u8> = crate::FieldWriter<'a, TBUF_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]

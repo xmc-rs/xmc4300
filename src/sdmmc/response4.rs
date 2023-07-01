@@ -14,9 +14,9 @@ impl From<crate::R<RESPONSE4_SPEC>> for R {
     }
 }
 #[doc = "Field `RESPONSE4` reader - Response4"]
-pub type RESPONSE4_R = crate::FieldReader<u16, u16>;
+pub type RESPONSE4_R = crate::FieldReader<u16>;
 #[doc = "Field `RESPONSE5` reader - Response5"]
-pub type RESPONSE5_R = crate::FieldReader<u16, u16>;
+pub type RESPONSE5_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Response4"]
     #[inline(always)]

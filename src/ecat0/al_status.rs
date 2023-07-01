@@ -35,7 +35,7 @@ impl From<crate::W<AL_STATUS_SPEC>> for W {
     }
 }
 #[doc = "Field `STATE` reader - Actual State of the Device State Machine"]
-pub type STATE_R = crate::FieldReader<u8, STATE_A>;
+pub type STATE_R = crate::FieldReader<STATE_A>;
 #[doc = "Actual State of the Device State Machine\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<STATE_A> for u8 {
     fn from(variant: STATE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for STATE_A {
+    type Ux = u8;
 }
 impl STATE_R {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl STATE_R {
     }
 }
 #[doc = "Field `STATE` writer - Actual State of the Device State Machine"]
-pub type STATE_W<'a, const O: u8> = crate::FieldWriter<'a, u16, AL_STATUS_SPEC, u8, STATE_A, 4, O>;
+pub type STATE_W<'a, const O: u8> = crate::FieldWriter<'a, AL_STATUS_SPEC, 4, O, STATE_A>;
 impl<'a, const O: u8> STATE_W<'a, O> {
     #[doc = "Init State"]
     #[inline(always)]
@@ -162,7 +165,7 @@ impl ERRI_R {
     }
 }
 #[doc = "Field `ERRI` writer - Error Ind"]
-pub type ERRI_W<'a, const O: u8> = crate::BitWriter<'a, u16, AL_STATUS_SPEC, ERRI_A, O>;
+pub type ERRI_W<'a, const O: u8> = crate::BitWriter<'a, AL_STATUS_SPEC, O, ERRI_A>;
 impl<'a, const O: u8> ERRI_W<'a, O> {
     #[doc = "Device is in State as requested or Flag cleared by command"]
     #[inline(always)]
@@ -212,7 +215,7 @@ impl DID_R {
     }
 }
 #[doc = "Field `DID` writer - Device Identification"]
-pub type DID_W<'a, const O: u8> = crate::BitWriter<'a, u16, AL_STATUS_SPEC, DID_A, O>;
+pub type DID_W<'a, const O: u8> = crate::BitWriter<'a, AL_STATUS_SPEC, O, DID_A>;
 impl<'a, const O: u8> DID_W<'a, O> {
     #[doc = "Device Identification not valid"]
     #[inline(always)]
