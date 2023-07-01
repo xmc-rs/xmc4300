@@ -35,17 +35,17 @@ impl From<crate::W<CTR_SPEC>> for W {
     }
 }
 #[doc = "Field `FCM` reader - Force CRC Mismatch"]
-pub type FCM_R = crate::BitReader<bool>;
+pub type FCM_R = crate::BitReader;
 #[doc = "Field `FCM` writer - Force CRC Mismatch"]
-pub type FCM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTR_SPEC, bool, O>;
+pub type FCM_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
 #[doc = "Field `FRM_CFG` reader - Force CFG Register Mismatch"]
-pub type FRM_CFG_R = crate::BitReader<bool>;
+pub type FRM_CFG_R = crate::BitReader;
 #[doc = "Field `FRM_CFG` writer - Force CFG Register Mismatch"]
-pub type FRM_CFG_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTR_SPEC, bool, O>;
+pub type FRM_CFG_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
 #[doc = "Field `FRM_CHECK` reader - Force Check Register Mismatch"]
-pub type FRM_CHECK_R = crate::BitReader<bool>;
+pub type FRM_CHECK_R = crate::BitReader;
 #[doc = "Field `FRM_CHECK` writer - Force Check Register Mismatch"]
-pub type FRM_CHECK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTR_SPEC, bool, O>;
+pub type FRM_CHECK_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Force CRC Mismatch"]
     #[inline(always)]

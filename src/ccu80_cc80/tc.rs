@@ -71,7 +71,7 @@ impl TCM_R {
     }
 }
 #[doc = "Field `TCM` writer - Timer Counting Mode"]
-pub type TCM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, TCM_A, O>;
+pub type TCM_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, TCM_A>;
 impl<'a, const O: u8> TCM_W<'a, O> {
     #[doc = "Edge aligned mode"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl TSSM_R {
     }
 }
 #[doc = "Field `TSSM` writer - Timer Single Shot Mode"]
-pub type TSSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, TSSM_A, O>;
+pub type TSSM_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, TSSM_A>;
 impl<'a, const O: u8> TSSM_W<'a, O> {
     #[doc = "Single shot mode is disabled"]
     #[inline(always)]
@@ -135,9 +135,9 @@ impl<'a, const O: u8> TSSM_W<'a, O> {
     }
 }
 #[doc = "Field `CLST` reader - Shadow Transfer on Clear"]
-pub type CLST_R = crate::BitReader<bool>;
+pub type CLST_R = crate::BitReader;
 #[doc = "Field `CLST` writer - Shadow Transfer on Clear"]
-pub type CLST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, bool, O>;
+pub type CLST_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O>;
 #[doc = "Field `CMOD` reader - Capture Compare Mode"]
 pub type CMOD_R = crate::BitReader<CMOD_A>;
 #[doc = "Capture Compare Mode\n\nValue on reset: 0"]
@@ -211,7 +211,7 @@ impl ECM_R {
     }
 }
 #[doc = "Field `ECM` writer - Extended Capture Mode"]
-pub type ECM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, ECM_A, O>;
+pub type ECM_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, ECM_A>;
 impl<'a, const O: u8> ECM_W<'a, O> {
     #[doc = "Normal Capture Mode. Clear of the Full Flag of each capture register is done by accessing the registers individually only."]
     #[inline(always)]
@@ -225,7 +225,7 @@ impl<'a, const O: u8> ECM_W<'a, O> {
     }
 }
 #[doc = "Field `CAPC` reader - Clear on Capture Control"]
-pub type CAPC_R = crate::FieldReader<u8, CAPC_A>;
+pub type CAPC_R = crate::FieldReader<CAPC_A>;
 #[doc = "Clear on Capture Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -244,6 +244,9 @@ impl From<CAPC_A> for u8 {
     fn from(variant: CAPC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CAPC_A {
+    type Ux = u8;
 }
 impl CAPC_R {
     #[doc = "Get enumerated values variant"]
@@ -279,7 +282,7 @@ impl CAPC_R {
     }
 }
 #[doc = "Field `CAPC` writer - Clear on Capture Control"]
-pub type CAPC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TC_SPEC, u8, CAPC_A, 2, O>;
+pub type CAPC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, TC_SPEC, 2, O, CAPC_A>;
 impl<'a, const O: u8> CAPC_W<'a, O> {
     #[doc = "Timer is never cleared on a capture event"]
     #[inline(always)]
@@ -339,7 +342,7 @@ impl TLS_R {
     }
 }
 #[doc = "Field `TLS` writer - Timer Load selector"]
-pub type TLS_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, TLS_A, O>;
+pub type TLS_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, TLS_A>;
 impl<'a, const O: u8> TLS_W<'a, O> {
     #[doc = "Timer is loaded with the value of CR1"]
     #[inline(always)]
@@ -353,7 +356,7 @@ impl<'a, const O: u8> TLS_W<'a, O> {
     }
 }
 #[doc = "Field `ENDM` reader - Extended Stop Function Control"]
-pub type ENDM_R = crate::FieldReader<u8, ENDM_A>;
+pub type ENDM_R = crate::FieldReader<ENDM_A>;
 #[doc = "Extended Stop Function Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -370,6 +373,9 @@ impl From<ENDM_A> for u8 {
     fn from(variant: ENDM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ENDM_A {
+    type Ux = u8;
 }
 impl ENDM_R {
     #[doc = "Get enumerated values variant"]
@@ -399,7 +405,7 @@ impl ENDM_R {
     }
 }
 #[doc = "Field `ENDM` writer - Extended Stop Function Control"]
-pub type ENDM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TC_SPEC, u8, ENDM_A, 2, O>;
+pub type ENDM_W<'a, const O: u8> = crate::FieldWriter<'a, TC_SPEC, 2, O, ENDM_A>;
 impl<'a, const O: u8> ENDM_W<'a, O> {
     #[doc = "Clears the timer run bit only (default stop)"]
     #[inline(always)]
@@ -454,7 +460,7 @@ impl STRM_R {
     }
 }
 #[doc = "Field `STRM` writer - Extended Start Function Control"]
-pub type STRM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, STRM_A, O>;
+pub type STRM_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, STRM_A>;
 impl<'a, const O: u8> STRM_W<'a, O> {
     #[doc = "Sets run bit only (default start)"]
     #[inline(always)]
@@ -504,7 +510,7 @@ impl SCE_R {
     }
 }
 #[doc = "Field `SCE` writer - Equal Capture Event enable"]
-pub type SCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, SCE_A, O>;
+pub type SCE_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, SCE_A>;
 impl<'a, const O: u8> SCE_W<'a, O> {
     #[doc = "Capture into CC8yC0VThis register contains the values associated with the Capture 0 field./CC8yC1VThis register contains the values associated with the Capture 1 field. registers control by CCycapt0 and capture into CC8yC3VThis register contains the values associated with the Capture 3 field./CC8yC2VThis register contains the values associated with the Capture 2 field. control by CCycapt1"]
     #[inline(always)]
@@ -554,7 +560,7 @@ impl CCS_R {
     }
 }
 #[doc = "Field `CCS` writer - Continuous Capture Enable"]
-pub type CCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, CCS_A, O>;
+pub type CCS_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, CCS_A>;
 impl<'a, const O: u8> CCS_W<'a, O> {
     #[doc = "The capture into a specific capture register is done with the rules linked with the full flags, described at ."]
     #[inline(always)]
@@ -568,7 +574,7 @@ impl<'a, const O: u8> CCS_W<'a, O> {
     }
 }
 #[doc = "Field `DITHE` reader - Dither Enable"]
-pub type DITHE_R = crate::FieldReader<u8, DITHE_A>;
+pub type DITHE_R = crate::FieldReader<DITHE_A>;
 #[doc = "Dither Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -587,6 +593,9 @@ impl From<DITHE_A> for u8 {
     fn from(variant: DITHE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DITHE_A {
+    type Ux = u8;
 }
 impl DITHE_R {
     #[doc = "Get enumerated values variant"]
@@ -622,7 +631,7 @@ impl DITHE_R {
     }
 }
 #[doc = "Field `DITHE` writer - Dither Enable"]
-pub type DITHE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TC_SPEC, u8, DITHE_A, 2, O>;
+pub type DITHE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, TC_SPEC, 2, O, DITHE_A>;
 impl<'a, const O: u8> DITHE_W<'a, O> {
     #[doc = "Dither is disabled"]
     #[inline(always)]
@@ -682,7 +691,7 @@ impl DIM_R {
     }
 }
 #[doc = "Field `DIM` writer - Dither input selector"]
-pub type DIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, DIM_A, O>;
+pub type DIM_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, DIM_A>;
 impl<'a, const O: u8> DIM_W<'a, O> {
     #[doc = "Slice is using it own dither unit"]
     #[inline(always)]
@@ -732,7 +741,7 @@ impl FPE_R {
     }
 }
 #[doc = "Field `FPE` writer - Floating Prescaler enable"]
-pub type FPE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, FPE_A, O>;
+pub type FPE_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, FPE_A>;
 impl<'a, const O: u8> FPE_W<'a, O> {
     #[doc = "Floating prescaler mode is disabled"]
     #[inline(always)]
@@ -782,7 +791,7 @@ impl TRAPE0_R {
     }
 }
 #[doc = "Field `TRAPE0` writer - TRAP enable for CCU8x.OUTy0"]
-pub type TRAPE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, TRAPE0_A, O>;
+pub type TRAPE0_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, TRAPE0_A>;
 impl<'a, const O: u8> TRAPE0_W<'a, O> {
     #[doc = "TRAP functionality has no effect on the CCU8x.OUTy0 output"]
     #[inline(always)]
@@ -796,17 +805,17 @@ impl<'a, const O: u8> TRAPE0_W<'a, O> {
     }
 }
 #[doc = "Field `TRAPE1` reader - TRAP enable for CCU8x.OUTy1"]
-pub type TRAPE1_R = crate::BitReader<bool>;
+pub type TRAPE1_R = crate::BitReader;
 #[doc = "Field `TRAPE1` writer - TRAP enable for CCU8x.OUTy1"]
-pub type TRAPE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, bool, O>;
+pub type TRAPE1_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O>;
 #[doc = "Field `TRAPE2` reader - TRAP enable for CCU8x.OUTy2"]
-pub type TRAPE2_R = crate::BitReader<bool>;
+pub type TRAPE2_R = crate::BitReader;
 #[doc = "Field `TRAPE2` writer - TRAP enable for CCU8x.OUTy2"]
-pub type TRAPE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, bool, O>;
+pub type TRAPE2_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O>;
 #[doc = "Field `TRAPE3` reader - TRAP enable for CCU8x.OUTy3"]
-pub type TRAPE3_R = crate::BitReader<bool>;
+pub type TRAPE3_R = crate::BitReader;
 #[doc = "Field `TRAPE3` writer - TRAP enable for CCU8x.OUTy3"]
-pub type TRAPE3_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, bool, O>;
+pub type TRAPE3_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O>;
 #[doc = "Field `TRPSE` reader - TRAP Synchronization Enable"]
 pub type TRPSE_R = crate::BitReader<TRPSE_A>;
 #[doc = "TRAP Synchronization Enable\n\nValue on reset: 0"]
@@ -844,7 +853,7 @@ impl TRPSE_R {
     }
 }
 #[doc = "Field `TRPSE` writer - TRAP Synchronization Enable"]
-pub type TRPSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, TRPSE_A, O>;
+pub type TRPSE_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, TRPSE_A>;
 impl<'a, const O: u8> TRPSE_W<'a, O> {
     #[doc = "Exiting from TRAP state isn't synchronized with the PWM signal"]
     #[inline(always)]
@@ -894,7 +903,7 @@ impl TRPSW_R {
     }
 }
 #[doc = "Field `TRPSW` writer - TRAP State Clear Control"]
-pub type TRPSW_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, TRPSW_A, O>;
+pub type TRPSW_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, TRPSW_A>;
 impl<'a, const O: u8> TRPSW_W<'a, O> {
     #[doc = "The slice exits the TRAP state automatically when the TRAP condition is not present (Trap state cleared by HW and SW)"]
     #[inline(always)]
@@ -944,7 +953,7 @@ impl EMS_R {
     }
 }
 #[doc = "Field `EMS` writer - External Modulation Synchronization"]
-pub type EMS_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, EMS_A, O>;
+pub type EMS_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, EMS_A>;
 impl<'a, const O: u8> EMS_W<'a, O> {
     #[doc = "External Modulation functionality is not synchronized with the PWM signal"]
     #[inline(always)]
@@ -994,7 +1003,7 @@ impl EMT_R {
     }
 }
 #[doc = "Field `EMT` writer - External Modulation Type"]
-pub type EMT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, EMT_A, O>;
+pub type EMT_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, EMT_A>;
 impl<'a, const O: u8> EMT_W<'a, O> {
     #[doc = "External Modulation functionality is clearing the CC8ySTx bits."]
     #[inline(always)]
@@ -1044,7 +1053,7 @@ impl MCME1_R {
     }
 }
 #[doc = "Field `MCME1` writer - Multi Channel Mode Enable for Channel 1"]
-pub type MCME1_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, MCME1_A, O>;
+pub type MCME1_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, MCME1_A>;
 impl<'a, const O: u8> MCME1_W<'a, O> {
     #[doc = "Multi Channel Mode in Channel 1 is disabled"]
     #[inline(always)]
@@ -1094,7 +1103,7 @@ impl MCME2_R {
     }
 }
 #[doc = "Field `MCME2` writer - Multi Channel Mode Enable for Channel 2"]
-pub type MCME2_W<'a, const O: u8> = crate::BitWriter<'a, u32, TC_SPEC, MCME2_A, O>;
+pub type MCME2_W<'a, const O: u8> = crate::BitWriter<'a, TC_SPEC, O, MCME2_A>;
 impl<'a, const O: u8> MCME2_W<'a, O> {
     #[doc = "Multi Channel Mode in Channel 2 is disabled"]
     #[inline(always)]
@@ -1108,7 +1117,7 @@ impl<'a, const O: u8> MCME2_W<'a, O> {
     }
 }
 #[doc = "Field `EME` reader - External Modulation Channel enable"]
-pub type EME_R = crate::FieldReader<u8, EME_A>;
+pub type EME_R = crate::FieldReader<EME_A>;
 #[doc = "External Modulation Channel enable\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -1127,6 +1136,9 @@ impl From<EME_A> for u8 {
     fn from(variant: EME_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EME_A {
+    type Ux = u8;
 }
 impl EME_R {
     #[doc = "Get enumerated values variant"]
@@ -1162,7 +1174,7 @@ impl EME_R {
     }
 }
 #[doc = "Field `EME` writer - External Modulation Channel enable"]
-pub type EME_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TC_SPEC, u8, EME_A, 2, O>;
+pub type EME_W<'a, const O: u8> = crate::FieldWriterSafe<'a, TC_SPEC, 2, O, EME_A>;
 impl<'a, const O: u8> EME_W<'a, O> {
     #[doc = "External Modulation functionality doesn't affect any channel"]
     #[inline(always)]
@@ -1186,7 +1198,7 @@ impl<'a, const O: u8> EME_W<'a, O> {
     }
 }
 #[doc = "Field `STOS` reader - Status bit output selector"]
-pub type STOS_R = crate::FieldReader<u8, STOS_A>;
+pub type STOS_R = crate::FieldReader<STOS_A>;
 #[doc = "Status bit output selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -1205,6 +1217,9 @@ impl From<STOS_A> for u8 {
     fn from(variant: STOS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for STOS_A {
+    type Ux = u8;
 }
 impl STOS_R {
     #[doc = "Get enumerated values variant"]
@@ -1240,7 +1255,7 @@ impl STOS_R {
     }
 }
 #[doc = "Field `STOS` writer - Status bit output selector"]
-pub type STOS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TC_SPEC, u8, STOS_A, 2, O>;
+pub type STOS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, TC_SPEC, 2, O, STOS_A>;
 impl<'a, const O: u8> STOS_W<'a, O> {
     #[doc = "CC8yST1 forward to CCU8x.STy"]
     #[inline(always)]

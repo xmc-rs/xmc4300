@@ -14,7 +14,7 @@ impl From<crate::R<DC_PULSE_LEN_SPEC>> for R {
     }
 }
 #[doc = "Field `PULS_LENGTH` reader - Pulse length of SyncSignals"]
-pub type PULS_LENGTH_R = crate::FieldReader<u16, PULS_LENGTH_A>;
+pub type PULS_LENGTH_R = crate::FieldReader<PULS_LENGTH_A>;
 #[doc = "Pulse length of SyncSignals\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
@@ -28,6 +28,9 @@ impl From<PULS_LENGTH_A> for u16 {
     fn from(variant: PULS_LENGTH_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PULS_LENGTH_A {
+    type Ux = u16;
 }
 impl PULS_LENGTH_R {
     #[doc = "Get enumerated values variant"]

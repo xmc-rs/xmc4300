@@ -35,7 +35,7 @@ impl From<crate::W<NVIC_IABR0_SPEC>> for W {
     }
 }
 #[doc = "Field `ACTIVE` reader - Interrupt active flags:"]
-pub type ACTIVE_R = crate::FieldReader<u32, ACTIVE_A>;
+pub type ACTIVE_R = crate::FieldReader<ACTIVE_A>;
 #[doc = "Interrupt active flags:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
@@ -50,6 +50,9 @@ impl From<ACTIVE_A> for u32 {
     fn from(variant: ACTIVE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ACTIVE_A {
+    type Ux = u32;
 }
 impl ACTIVE_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +76,7 @@ impl ACTIVE_R {
     }
 }
 #[doc = "Field `ACTIVE` writer - Interrupt active flags:"]
-pub type ACTIVE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_IABR0_SPEC, u32, ACTIVE_A, 32, O>;
+pub type ACTIVE_W<'a, const O: u8> = crate::FieldWriter<'a, NVIC_IABR0_SPEC, 32, O, ACTIVE_A>;
 impl<'a, const O: u8> ACTIVE_W<'a, O> {
     #[doc = "interrupt not active"]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl P0_R {
     }
 }
 #[doc = "Field `P0` writer - Port n Output Bit 0"]
-pub type P0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P0_A, O>;
+pub type P0_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P0_A>;
 impl<'a, const O: u8> P0_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl P1_R {
     }
 }
 #[doc = "Field `P1` writer - Port n Output Bit 1"]
-pub type P1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P1_A, O>;
+pub type P1_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P1_A>;
 impl<'a, const O: u8> P1_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl P2_R {
     }
 }
 #[doc = "Field `P2` writer - Port n Output Bit 2"]
-pub type P2_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P2_A, O>;
+pub type P2_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P2_A>;
 impl<'a, const O: u8> P2_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl P3_R {
     }
 }
 #[doc = "Field `P3` writer - Port n Output Bit 3"]
-pub type P3_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P3_A, O>;
+pub type P3_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P3_A>;
 impl<'a, const O: u8> P3_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl P4_R {
     }
 }
 #[doc = "Field `P4` writer - Port n Output Bit 4"]
-pub type P4_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P4_A, O>;
+pub type P4_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P4_A>;
 impl<'a, const O: u8> P4_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl P5_R {
     }
 }
 #[doc = "Field `P5` writer - Port n Output Bit 5"]
-pub type P5_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P5_A, O>;
+pub type P5_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P5_A>;
 impl<'a, const O: u8> P5_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl P6_R {
     }
 }
 #[doc = "Field `P6` writer - Port n Output Bit 6"]
-pub type P6_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P6_A, O>;
+pub type P6_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P6_A>;
 impl<'a, const O: u8> P6_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl P7_R {
     }
 }
 #[doc = "Field `P7` writer - Port n Output Bit 7"]
-pub type P7_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P7_A, O>;
+pub type P7_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P7_A>;
 impl<'a, const O: u8> P7_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl P8_R {
     }
 }
 #[doc = "Field `P8` writer - Port n Output Bit 8"]
-pub type P8_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P8_A, O>;
+pub type P8_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P8_A>;
 impl<'a, const O: u8> P8_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl P9_R {
     }
 }
 #[doc = "Field `P9` writer - Port n Output Bit 9"]
-pub type P9_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P9_A, O>;
+pub type P9_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P9_A>;
 impl<'a, const O: u8> P9_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl P10_R {
     }
 }
 #[doc = "Field `P10` writer - Port n Output Bit 10"]
-pub type P10_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P10_A, O>;
+pub type P10_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P10_A>;
 impl<'a, const O: u8> P10_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl P11_R {
     }
 }
 #[doc = "Field `P11` writer - Port n Output Bit 11"]
-pub type P11_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P11_A, O>;
+pub type P11_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P11_A>;
 impl<'a, const O: u8> P11_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -671,7 +671,7 @@ impl P12_R {
     }
 }
 #[doc = "Field `P12` writer - Port n Output Bit 12"]
-pub type P12_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P12_A, O>;
+pub type P12_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P12_A>;
 impl<'a, const O: u8> P12_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -721,7 +721,7 @@ impl P13_R {
     }
 }
 #[doc = "Field `P13` writer - Port n Output Bit 13"]
-pub type P13_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P13_A, O>;
+pub type P13_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P13_A>;
 impl<'a, const O: u8> P13_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -771,7 +771,7 @@ impl P14_R {
     }
 }
 #[doc = "Field `P14` writer - Port n Output Bit 14"]
-pub type P14_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P14_A, O>;
+pub type P14_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P14_A>;
 impl<'a, const O: u8> P14_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]
@@ -821,7 +821,7 @@ impl P15_R {
     }
 }
 #[doc = "Field `P15` writer - Port n Output Bit 15"]
-pub type P15_W<'a, const O: u8> = crate::BitWriter<'a, u32, OUT_SPEC, P15_A, O>;
+pub type P15_W<'a, const O: u8> = crate::BitWriter<'a, OUT_SPEC, O, P15_A>;
 impl<'a, const O: u8> P15_W<'a, O> {
     #[doc = "The output level of Pn.x is 0."]
     #[inline(always)]

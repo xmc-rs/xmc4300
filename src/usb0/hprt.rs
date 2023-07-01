@@ -71,9 +71,9 @@ impl PRT_CONN_STS_R {
     }
 }
 #[doc = "Field `PrtConnDet` reader - Port Connect Detected"]
-pub type PRT_CONN_DET_R = crate::BitReader<bool>;
+pub type PRT_CONN_DET_R = crate::BitReader;
 #[doc = "Field `PrtConnDet` writer - Port Connect Detected"]
-pub type PRT_CONN_DET_W<'a, const O: u8> = crate::BitWriter<'a, u32, HPRT_SPEC, bool, O>;
+pub type PRT_CONN_DET_W<'a, const O: u8> = crate::BitWriter<'a, HPRT_SPEC, O>;
 #[doc = "Field `PrtEna` reader - Port Enable"]
 pub type PRT_ENA_R = crate::BitReader<PRT_ENA_A>;
 #[doc = "Port Enable\n\nValue on reset: 0"]
@@ -111,7 +111,7 @@ impl PRT_ENA_R {
     }
 }
 #[doc = "Field `PrtEna` writer - Port Enable"]
-pub type PRT_ENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, HPRT_SPEC, PRT_ENA_A, O>;
+pub type PRT_ENA_W<'a, const O: u8> = crate::BitWriter<'a, HPRT_SPEC, O, PRT_ENA_A>;
 impl<'a, const O: u8> PRT_ENA_W<'a, O> {
     #[doc = "Port disabled"]
     #[inline(always)]
@@ -125,9 +125,9 @@ impl<'a, const O: u8> PRT_ENA_W<'a, O> {
     }
 }
 #[doc = "Field `PrtEnChng` reader - Port Enable/Disable Change"]
-pub type PRT_EN_CHNG_R = crate::BitReader<bool>;
+pub type PRT_EN_CHNG_R = crate::BitReader;
 #[doc = "Field `PrtEnChng` writer - Port Enable/Disable Change"]
-pub type PRT_EN_CHNG_W<'a, const O: u8> = crate::BitWriter<'a, u32, HPRT_SPEC, bool, O>;
+pub type PRT_EN_CHNG_W<'a, const O: u8> = crate::BitWriter<'a, HPRT_SPEC, O>;
 #[doc = "Field `PrtOvrCurrAct` reader - Port Overcurrent Active"]
 pub type PRT_OVR_CURR_ACT_R = crate::BitReader<PRT_OVR_CURR_ACT_A>;
 #[doc = "Port Overcurrent Active\n\nValue on reset: 0"]
@@ -165,9 +165,9 @@ impl PRT_OVR_CURR_ACT_R {
     }
 }
 #[doc = "Field `PrtOvrCurrChng` reader - Port Overcurrent Change"]
-pub type PRT_OVR_CURR_CHNG_R = crate::BitReader<bool>;
+pub type PRT_OVR_CURR_CHNG_R = crate::BitReader;
 #[doc = "Field `PrtOvrCurrChng` writer - Port Overcurrent Change"]
-pub type PRT_OVR_CURR_CHNG_W<'a, const O: u8> = crate::BitWriter<'a, u32, HPRT_SPEC, bool, O>;
+pub type PRT_OVR_CURR_CHNG_W<'a, const O: u8> = crate::BitWriter<'a, HPRT_SPEC, O>;
 #[doc = "Field `PrtRes` reader - Port Resume"]
 pub type PRT_RES_R = crate::BitReader<PRT_RES_A>;
 #[doc = "Port Resume\n\nValue on reset: 0"]
@@ -205,7 +205,7 @@ impl PRT_RES_R {
     }
 }
 #[doc = "Field `PrtRes` writer - Port Resume"]
-pub type PRT_RES_W<'a, const O: u8> = crate::BitWriter<'a, u32, HPRT_SPEC, PRT_RES_A, O>;
+pub type PRT_RES_W<'a, const O: u8> = crate::BitWriter<'a, HPRT_SPEC, O, PRT_RES_A>;
 impl<'a, const O: u8> PRT_RES_W<'a, O> {
     #[doc = "No resume driven"]
     #[inline(always)]
@@ -255,7 +255,7 @@ impl PRT_SUSP_R {
     }
 }
 #[doc = "Field `PrtSusp` writer - Port Suspend"]
-pub type PRT_SUSP_W<'a, const O: u8> = crate::BitWriter<'a, u32, HPRT_SPEC, PRT_SUSP_A, O>;
+pub type PRT_SUSP_W<'a, const O: u8> = crate::BitWriter<'a, HPRT_SPEC, O, PRT_SUSP_A>;
 impl<'a, const O: u8> PRT_SUSP_W<'a, O> {
     #[doc = "Port not in Suspend mode"]
     #[inline(always)]
@@ -305,7 +305,7 @@ impl PRT_RST_R {
     }
 }
 #[doc = "Field `PrtRst` writer - Port Reset"]
-pub type PRT_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, HPRT_SPEC, PRT_RST_A, O>;
+pub type PRT_RST_W<'a, const O: u8> = crate::BitWriter<'a, HPRT_SPEC, O, PRT_RST_A>;
 impl<'a, const O: u8> PRT_RST_W<'a, O> {
     #[doc = "Port not in reset"]
     #[inline(always)]
@@ -319,7 +319,7 @@ impl<'a, const O: u8> PRT_RST_W<'a, O> {
     }
 }
 #[doc = "Field `PrtLnSts` reader - Port Line Status"]
-pub type PRT_LN_STS_R = crate::FieldReader<u8, u8>;
+pub type PRT_LN_STS_R = crate::FieldReader;
 #[doc = "Field `PrtPwr` reader - Port Power"]
 pub type PRT_PWR_R = crate::BitReader<PRT_PWR_A>;
 #[doc = "Port Power\n\nValue on reset: 0"]
@@ -357,7 +357,7 @@ impl PRT_PWR_R {
     }
 }
 #[doc = "Field `PrtPwr` writer - Port Power"]
-pub type PRT_PWR_W<'a, const O: u8> = crate::BitWriter<'a, u32, HPRT_SPEC, PRT_PWR_A, O>;
+pub type PRT_PWR_W<'a, const O: u8> = crate::BitWriter<'a, HPRT_SPEC, O, PRT_PWR_A>;
 impl<'a, const O: u8> PRT_PWR_W<'a, O> {
     #[doc = "Power off"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl<'a, const O: u8> PRT_PWR_W<'a, O> {
     }
 }
 #[doc = "Field `PrtSpd` reader - Port Speed"]
-pub type PRT_SPD_R = crate::FieldReader<u8, PRT_SPD_A>;
+pub type PRT_SPD_R = crate::FieldReader<PRT_SPD_A>;
 #[doc = "Port Speed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -384,6 +384,9 @@ impl From<PRT_SPD_A> for u8 {
     fn from(variant: PRT_SPD_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PRT_SPD_A {
+    type Ux = u8;
 }
 impl PRT_SPD_R {
     #[doc = "Get enumerated values variant"]

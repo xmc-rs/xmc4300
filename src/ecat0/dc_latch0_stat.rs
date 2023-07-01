@@ -86,7 +86,7 @@ impl EV_L0_NEG_R {
     }
 }
 #[doc = "Field `L0_PIN` reader - Latch0 pin state"]
-pub type L0_PIN_R = crate::BitReader<bool>;
+pub type L0_PIN_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Event Latch0 positive edge"]
     #[inline(always)]

@@ -34,7 +34,7 @@ impl From<CEV0_AW> for bool {
     }
 }
 #[doc = "Field `CEV0` writer - Clear Channel Event for Channel 0"]
-pub type CEV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV0_AW, O>;
+pub type CEV0_W<'a, const O: u8> = crate::BitWriter<'a, CEFCLR_SPEC, O, CEV0_AW>;
 impl<'a, const O: u8> CEV0_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<CEV1_AW> for bool {
     }
 }
 #[doc = "Field `CEV1` writer - Clear Channel Event for Channel 1"]
-pub type CEV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV1_AW, O>;
+pub type CEV1_W<'a, const O: u8> = crate::BitWriter<'a, CEFCLR_SPEC, O, CEV1_AW>;
 impl<'a, const O: u8> CEV1_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<CEV2_AW> for bool {
     }
 }
 #[doc = "Field `CEV2` writer - Clear Channel Event for Channel 2"]
-pub type CEV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV2_AW, O>;
+pub type CEV2_W<'a, const O: u8> = crate::BitWriter<'a, CEFCLR_SPEC, O, CEV2_AW>;
 impl<'a, const O: u8> CEV2_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<CEV3_AW> for bool {
     }
 }
 #[doc = "Field `CEV3` writer - Clear Channel Event for Channel 3"]
-pub type CEV3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV3_AW, O>;
+pub type CEV3_W<'a, const O: u8> = crate::BitWriter<'a, CEFCLR_SPEC, O, CEV3_AW>;
 impl<'a, const O: u8> CEV3_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<CEV4_AW> for bool {
     }
 }
 #[doc = "Field `CEV4` writer - Clear Channel Event for Channel 4"]
-pub type CEV4_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV4_AW, O>;
+pub type CEV4_W<'a, const O: u8> = crate::BitWriter<'a, CEFCLR_SPEC, O, CEV4_AW>;
 impl<'a, const O: u8> CEV4_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<CEV5_AW> for bool {
     }
 }
 #[doc = "Field `CEV5` writer - Clear Channel Event for Channel 5"]
-pub type CEV5_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV5_AW, O>;
+pub type CEV5_W<'a, const O: u8> = crate::BitWriter<'a, CEFCLR_SPEC, O, CEV5_AW>;
 impl<'a, const O: u8> CEV5_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -202,7 +202,7 @@ impl From<CEV6_AW> for bool {
     }
 }
 #[doc = "Field `CEV6` writer - Clear Channel Event for Channel 6"]
-pub type CEV6_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV6_AW, O>;
+pub type CEV6_W<'a, const O: u8> = crate::BitWriter<'a, CEFCLR_SPEC, O, CEV6_AW>;
 impl<'a, const O: u8> CEV6_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -230,7 +230,7 @@ impl From<CEV7_AW> for bool {
     }
 }
 #[doc = "Field `CEV7` writer - Clear Channel Event for Channel 7"]
-pub type CEV7_W<'a, const O: u8> = crate::BitWriter<'a, u32, CEFCLR_SPEC, CEV7_AW, O>;
+pub type CEV7_W<'a, const O: u8> = crate::BitWriter<'a, CEFCLR_SPEC, O, CEV7_AW>;
 impl<'a, const O: u8> CEV7_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]

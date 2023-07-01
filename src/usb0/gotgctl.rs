@@ -107,7 +107,7 @@ impl SES_REQ_R {
     }
 }
 #[doc = "Field `SesReq` writer - Session Request"]
-pub type SES_REQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGCTL_SPEC, SES_REQ_A, O>;
+pub type SES_REQ_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, SES_REQ_A>;
 impl<'a, const O: u8> SES_REQ_W<'a, O> {
     #[doc = "No session request"]
     #[inline(always)]
@@ -157,7 +157,7 @@ impl VBVALID_OV_EN_R {
     }
 }
 #[doc = "Field `VbvalidOvEn` writer - VBUS Valid Override Enable"]
-pub type VBVALID_OV_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGCTL_SPEC, VBVALID_OV_EN_A, O>;
+pub type VBVALID_OV_EN_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, VBVALID_OV_EN_A>;
 impl<'a, const O: u8> VBVALID_OV_EN_W<'a, O> {
     #[doc = "Override is disabled and vbus valid signal from the PHY is used internally by the core."]
     #[inline(always)]
@@ -207,7 +207,7 @@ impl VBVALID_OV_VAL_R {
     }
 }
 #[doc = "Field `VbvalidOvVal` writer - VBUS Valid Override Value"]
-pub type VBVALID_OV_VAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGCTL_SPEC, VBVALID_OV_VAL_A, O>;
+pub type VBVALID_OV_VAL_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, VBVALID_OV_VAL_A>;
 impl<'a, const O: u8> VBVALID_OV_VAL_W<'a, O> {
     #[doc = "vbusvalid value is 0# when GOTGCTL.VbvalidOvEn = 1"]
     #[inline(always)]
@@ -257,7 +257,7 @@ impl AVALID_OV_EN_R {
     }
 }
 #[doc = "Field `AvalidOvEn` writer - A-Peripheral Session Valid Override Enable"]
-pub type AVALID_OV_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGCTL_SPEC, AVALID_OV_EN_A, O>;
+pub type AVALID_OV_EN_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, AVALID_OV_EN_A>;
 impl<'a, const O: u8> AVALID_OV_EN_W<'a, O> {
     #[doc = "Override is disabled and Avalid signal from the PHY is used internally by the core."]
     #[inline(always)]
@@ -307,7 +307,7 @@ impl AVALID_OV_VAL_R {
     }
 }
 #[doc = "Field `AvalidOvVal` writer - A-Peripheral Session Valid Override Value"]
-pub type AVALID_OV_VAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGCTL_SPEC, AVALID_OV_VAL_A, O>;
+pub type AVALID_OV_VAL_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, AVALID_OV_VAL_A>;
 impl<'a, const O: u8> AVALID_OV_VAL_W<'a, O> {
     #[doc = "Avalid value is 0# when GOTGCTL.AvalidOvEn = 1"]
     #[inline(always)]
@@ -357,7 +357,7 @@ impl BVALID_OV_EN_R {
     }
 }
 #[doc = "Field `BvalidOvEn` writer - B-Peripheral Session Valid Override Enable"]
-pub type BVALID_OV_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGCTL_SPEC, BVALID_OV_EN_A, O>;
+pub type BVALID_OV_EN_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, BVALID_OV_EN_A>;
 impl<'a, const O: u8> BVALID_OV_EN_W<'a, O> {
     #[doc = "Override is disabled and Bvalid signal from the PHY is used internally by the core."]
     #[inline(always)]
@@ -407,7 +407,7 @@ impl BVALID_OV_VAL_R {
     }
 }
 #[doc = "Field `BvalidOvVal` writer - B-Peripheral Session Valid Override Value"]
-pub type BVALID_OV_VAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGCTL_SPEC, BVALID_OV_VAL_A, O>;
+pub type BVALID_OV_VAL_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, BVALID_OV_VAL_A>;
 impl<'a, const O: u8> BVALID_OV_VAL_W<'a, O> {
     #[doc = "Bvalid value is 0# when GOTGCTL.BvalidOvEn = 1"]
     #[inline(always)]
@@ -493,7 +493,7 @@ impl HNPREQ_R {
     }
 }
 #[doc = "Field `HNPReq` writer - HNP Request"]
-pub type HNPREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGCTL_SPEC, HNPREQ_A, O>;
+pub type HNPREQ_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, HNPREQ_A>;
 impl<'a, const O: u8> HNPREQ_W<'a, O> {
     #[doc = "No HNP request"]
     #[inline(always)]
@@ -543,7 +543,7 @@ impl HST_SET_HNPEN_R {
     }
 }
 #[doc = "Field `HstSetHNPEn` writer - Host Set HNP Enable"]
-pub type HST_SET_HNPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGCTL_SPEC, HST_SET_HNPEN_A, O>;
+pub type HST_SET_HNPEN_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, HST_SET_HNPEN_A>;
 impl<'a, const O: u8> HST_SET_HNPEN_W<'a, O> {
     #[doc = "Host Set HNP is not enabled"]
     #[inline(always)]
@@ -593,7 +593,7 @@ impl DEV_HNPEN_R {
     }
 }
 #[doc = "Field `DevHNPEn` writer - Device HNP Enabled"]
-pub type DEV_HNPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGCTL_SPEC, DEV_HNPEN_A, O>;
+pub type DEV_HNPEN_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, DEV_HNPEN_A>;
 impl<'a, const O: u8> DEV_HNPEN_W<'a, O> {
     #[doc = "HNP is not enabled in the application"]
     #[inline(always)]
@@ -787,7 +787,7 @@ impl OTGVER_R {
     }
 }
 #[doc = "Field `OTGVer` writer - OTG Version"]
-pub type OTGVER_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGCTL_SPEC, OTGVER_A, O>;
+pub type OTGVER_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, OTGVER_A>;
 impl<'a, const O: u8> OTGVER_W<'a, O> {
     #[doc = "OTG Version 1.3. In this version the core supports Data line pulsing and VBus pulsing for SRP."]
     #[inline(always)]

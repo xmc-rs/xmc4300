@@ -71,7 +71,7 @@ impl DEACT_R {
     }
 }
 #[doc = "Field `DEACT` writer - Deactivate SyncManager"]
-pub type DEACT_W<'a, const O: u8> = crate::BitWriter<'a, u8, SM_PDI_CTR_SPEC, DEACT_A, O>;
+pub type DEACT_W<'a, const O: u8> = crate::BitWriter<'a, SM_PDI_CTR_SPEC, O, DEACT_A>;
 impl<'a, const O: u8> DEACT_W<'a, O> {
     #[doc = "Read 0 for Normal operation, SyncManager activated, write 0 for Activate SyncManager"]
     #[inline(always)]
@@ -85,9 +85,9 @@ impl<'a, const O: u8> DEACT_W<'a, O> {
     }
 }
 #[doc = "Field `REP_ACK` reader - Repeat Ack"]
-pub type REP_ACK_R = crate::BitReader<bool>;
+pub type REP_ACK_R = crate::BitReader;
 #[doc = "Field `REP_ACK` writer - Repeat Ack"]
-pub type REP_ACK_W<'a, const O: u8> = crate::BitWriter<'a, u8, SM_PDI_CTR_SPEC, bool, O>;
+pub type REP_ACK_W<'a, const O: u8> = crate::BitWriter<'a, SM_PDI_CTR_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Deactivate SyncManager"]
     #[inline(always)]

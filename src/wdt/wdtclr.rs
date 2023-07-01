@@ -20,7 +20,7 @@ impl From<crate::W<WDTCLR_SPEC>> for W {
     }
 }
 #[doc = "Field `ALMC` writer - Pre-warning Alarm"]
-pub type ALMC_W<'a, const O: u8> = crate::BitWriter<'a, u32, WDTCLR_SPEC, bool, O>;
+pub type ALMC_W<'a, const O: u8> = crate::BitWriter<'a, WDTCLR_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Pre-warning Alarm"]
     #[inline(always)]

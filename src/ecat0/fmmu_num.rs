@@ -14,7 +14,7 @@ impl From<crate::R<FMMU_NUM_SPEC>> for R {
     }
 }
 #[doc = "Field `NUM_FMMU` reader - Number of supported FMMU channels (or entities) of the EtherCAT Slave Controller"]
-pub type NUM_FMMU_R = crate::FieldReader<u8, u8>;
+pub type NUM_FMMU_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Number of supported FMMU channels (or entities) of the EtherCAT Slave Controller"]
     #[inline(always)]

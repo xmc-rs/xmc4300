@@ -35,13 +35,13 @@ impl From<crate::W<HCCHAR_SPEC>> for W {
     }
 }
 #[doc = "Field `MPS` reader - Maximum Packet Size"]
-pub type MPS_R = crate::FieldReader<u16, u16>;
+pub type MPS_R = crate::FieldReader<u16>;
 #[doc = "Field `MPS` writer - Maximum Packet Size"]
-pub type MPS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCCHAR_SPEC, u16, u16, 11, O>;
+pub type MPS_W<'a, const O: u8> = crate::FieldWriter<'a, HCCHAR_SPEC, 11, O, u16>;
 #[doc = "Field `EPNum` reader - Endpoint Number"]
-pub type EPNUM_R = crate::FieldReader<u8, u8>;
+pub type EPNUM_R = crate::FieldReader;
 #[doc = "Field `EPNum` writer - Endpoint Number"]
-pub type EPNUM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCCHAR_SPEC, u8, u8, 4, O>;
+pub type EPNUM_W<'a, const O: u8> = crate::FieldWriter<'a, HCCHAR_SPEC, 4, O>;
 #[doc = "Field `EPDir` reader - Endpoint Direction"]
 pub type EPDIR_R = crate::BitReader<EPDIR_A>;
 #[doc = "Endpoint Direction\n\nValue on reset: 0"]
@@ -79,7 +79,7 @@ impl EPDIR_R {
     }
 }
 #[doc = "Field `EPDir` writer - Endpoint Direction"]
-pub type EPDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCCHAR_SPEC, EPDIR_A, O>;
+pub type EPDIR_W<'a, const O: u8> = crate::BitWriter<'a, HCCHAR_SPEC, O, EPDIR_A>;
 impl<'a, const O: u8> EPDIR_W<'a, O> {
     #[doc = "OUT"]
     #[inline(always)]
@@ -93,7 +93,7 @@ impl<'a, const O: u8> EPDIR_W<'a, O> {
     }
 }
 #[doc = "Field `EPType` reader - Endpoint Type"]
-pub type EPTYPE_R = crate::FieldReader<u8, EPTYPE_A>;
+pub type EPTYPE_R = crate::FieldReader<EPTYPE_A>;
 #[doc = "Endpoint Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -112,6 +112,9 @@ impl From<EPTYPE_A> for u8 {
     fn from(variant: EPTYPE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EPTYPE_A {
+    type Ux = u8;
 }
 impl EPTYPE_R {
     #[doc = "Get enumerated values variant"]
@@ -147,7 +150,7 @@ impl EPTYPE_R {
     }
 }
 #[doc = "Field `EPType` writer - Endpoint Type"]
-pub type EPTYPE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, HCCHAR_SPEC, u8, EPTYPE_A, 2, O>;
+pub type EPTYPE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, HCCHAR_SPEC, 2, O, EPTYPE_A>;
 impl<'a, const O: u8> EPTYPE_W<'a, O> {
     #[doc = "Control"]
     #[inline(always)]
@@ -171,7 +174,7 @@ impl<'a, const O: u8> EPTYPE_W<'a, O> {
     }
 }
 #[doc = "Field `MC_EC` reader - Multi Count / Error Count"]
-pub type MC_EC_R = crate::FieldReader<u8, MC_EC_A>;
+pub type MC_EC_R = crate::FieldReader<MC_EC_A>;
 #[doc = "Multi Count / Error Count\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -188,6 +191,9 @@ impl From<MC_EC_A> for u8 {
     fn from(variant: MC_EC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MC_EC_A {
+    type Ux = u8;
 }
 impl MC_EC_R {
     #[doc = "Get enumerated values variant"]
@@ -217,7 +223,7 @@ impl MC_EC_R {
     }
 }
 #[doc = "Field `MC_EC` writer - Multi Count / Error Count"]
-pub type MC_EC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCCHAR_SPEC, u8, MC_EC_A, 2, O>;
+pub type MC_EC_W<'a, const O: u8> = crate::FieldWriter<'a, HCCHAR_SPEC, 2, O, MC_EC_A>;
 impl<'a, const O: u8> MC_EC_W<'a, O> {
     #[doc = "1 transaction"]
     #[inline(always)]
@@ -236,9 +242,9 @@ impl<'a, const O: u8> MC_EC_W<'a, O> {
     }
 }
 #[doc = "Field `DevAddr` reader - Device Address"]
-pub type DEV_ADDR_R = crate::FieldReader<u8, u8>;
+pub type DEV_ADDR_R = crate::FieldReader;
 #[doc = "Field `DevAddr` writer - Device Address"]
-pub type DEV_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCCHAR_SPEC, u8, u8, 7, O>;
+pub type DEV_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, HCCHAR_SPEC, 7, O>;
 #[doc = "Field `OddFrm` reader - Odd Frame"]
 pub type ODD_FRM_R = crate::BitReader<ODD_FRM_A>;
 #[doc = "Odd Frame\n\nValue on reset: 0"]
@@ -276,7 +282,7 @@ impl ODD_FRM_R {
     }
 }
 #[doc = "Field `OddFrm` writer - Odd Frame"]
-pub type ODD_FRM_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCCHAR_SPEC, ODD_FRM_A, O>;
+pub type ODD_FRM_W<'a, const O: u8> = crate::BitWriter<'a, HCCHAR_SPEC, O, ODD_FRM_A>;
 impl<'a, const O: u8> ODD_FRM_W<'a, O> {
     #[doc = "Even frame"]
     #[inline(always)]
@@ -290,9 +296,9 @@ impl<'a, const O: u8> ODD_FRM_W<'a, O> {
     }
 }
 #[doc = "Field `ChDis` reader - Channel Disable"]
-pub type CH_DIS_R = crate::BitReader<bool>;
+pub type CH_DIS_R = crate::BitReader;
 #[doc = "Field `ChDis` writer - Channel Disable"]
-pub type CH_DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCCHAR_SPEC, bool, O>;
+pub type CH_DIS_W<'a, const O: u8> = crate::BitWriter<'a, HCCHAR_SPEC, O>;
 #[doc = "Field `ChEna` reader - Channel Enable"]
 pub type CH_ENA_R = crate::BitReader<CH_ENA_A>;
 #[doc = "Channel Enable\n\nValue on reset: 0"]
@@ -330,7 +336,7 @@ impl CH_ENA_R {
     }
 }
 #[doc = "Field `ChEna` writer - Channel Enable"]
-pub type CH_ENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCCHAR_SPEC, CH_ENA_A, O>;
+pub type CH_ENA_W<'a, const O: u8> = crate::BitWriter<'a, HCCHAR_SPEC, O, CH_ENA_A>;
 impl<'a, const O: u8> CH_ENA_W<'a, O> {
     #[doc = "Scatter/Gather mode enabled: Indicates that the descriptor structure is not yet ready. Scatter/Gather mode disabled: Channel disabled"]
     #[inline(always)]

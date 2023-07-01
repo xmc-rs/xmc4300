@@ -14,7 +14,7 @@ impl From<crate::R<TX_FRAME_COUNT_GOOD_BAD_SPEC>> for R {
     }
 }
 #[doc = "Field `TXFRMGB` reader - This field indicates the number of good and bad frames transmitted, exclusive of retried frames"]
-pub type TXFRMGB_R = crate::FieldReader<u32, u32>;
+pub type TXFRMGB_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of good and bad frames transmitted, exclusive of retried frames"]
     #[inline(always)]

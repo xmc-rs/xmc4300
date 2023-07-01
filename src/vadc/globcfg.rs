@@ -35,7 +35,7 @@ impl From<crate::W<GLOBCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `DIVA` reader - Divider Factor for the Analog Internal Clock"]
-pub type DIVA_R = crate::FieldReader<u8, DIVA_A>;
+pub type DIVA_R = crate::FieldReader<DIVA_A>;
 #[doc = "Divider Factor for the Analog Internal Clock\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<DIVA_A> for u8 {
     fn from(variant: DIVA_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DIVA_A {
+    type Ux = u8;
 }
 impl DIVA_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl DIVA_R {
     }
 }
 #[doc = "Field `DIVA` writer - Divider Factor for the Analog Internal Clock"]
-pub type DIVA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBCFG_SPEC, u8, DIVA_A, 5, O>;
+pub type DIVA_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBCFG_SPEC, 5, O, DIVA_A>;
 impl<'a, const O: u8> DIVA_W<'a, O> {
     #[doc = "fADCI = fADC / 2"]
     #[inline(always)]
@@ -149,7 +152,7 @@ impl DCMSB_R {
     }
 }
 #[doc = "Field `DCMSB` writer - Double Clock for the MSB Conversion"]
-pub type DCMSB_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCFG_SPEC, DCMSB_A, O>;
+pub type DCMSB_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCFG_SPEC, O, DCMSB_A>;
 impl<'a, const O: u8> DCMSB_W<'a, O> {
     #[doc = "1 clock cycles for the MSB (standard)"]
     #[inline(always)]
@@ -163,7 +166,7 @@ impl<'a, const O: u8> DCMSB_W<'a, O> {
     }
 }
 #[doc = "Field `DIVD` reader - Divider Factor for the Arbiter Clock"]
-pub type DIVD_R = crate::FieldReader<u8, DIVD_A>;
+pub type DIVD_R = crate::FieldReader<DIVD_A>;
 #[doc = "Divider Factor for the Arbiter Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -182,6 +185,9 @@ impl From<DIVD_A> for u8 {
     fn from(variant: DIVD_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DIVD_A {
+    type Ux = u8;
 }
 impl DIVD_R {
     #[doc = "Get enumerated values variant"]
@@ -217,7 +223,7 @@ impl DIVD_R {
     }
 }
 #[doc = "Field `DIVD` writer - Divider Factor for the Arbiter Clock"]
-pub type DIVD_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, GLOBCFG_SPEC, u8, DIVD_A, 2, O>;
+pub type DIVD_W<'a, const O: u8> = crate::FieldWriterSafe<'a, GLOBCFG_SPEC, 2, O, DIVD_A>;
 impl<'a, const O: u8> DIVD_W<'a, O> {
     #[doc = "fADCD = fADC"]
     #[inline(always)]
@@ -255,7 +261,7 @@ impl From<DIVWC_AW> for bool {
     }
 }
 #[doc = "Field `DIVWC` writer - Write Control for Divider Parameters"]
-pub type DIVWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCFG_SPEC, DIVWC_AW, O>;
+pub type DIVWC_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCFG_SPEC, O, DIVWC_AW>;
 impl<'a, const O: u8> DIVWC_W<'a, O> {
     #[doc = "No write access to divider parameters"]
     #[inline(always)]
@@ -305,7 +311,7 @@ impl DPCAL0_R {
     }
 }
 #[doc = "Field `DPCAL0` writer - Disable Post-Calibration"]
-pub type DPCAL0_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCFG_SPEC, DPCAL0_A, O>;
+pub type DPCAL0_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCFG_SPEC, O, DPCAL0_A>;
 impl<'a, const O: u8> DPCAL0_W<'a, O> {
     #[doc = "Automatic post-calibration after each conversion of group x"]
     #[inline(always)]
@@ -355,7 +361,7 @@ impl DPCAL1_R {
     }
 }
 #[doc = "Field `DPCAL1` writer - Disable Post-Calibration"]
-pub type DPCAL1_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCFG_SPEC, DPCAL1_A, O>;
+pub type DPCAL1_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCFG_SPEC, O, DPCAL1_A>;
 impl<'a, const O: u8> DPCAL1_W<'a, O> {
     #[doc = "Automatic post-calibration after each conversion of group x"]
     #[inline(always)]
@@ -405,7 +411,7 @@ impl DPCAL2_R {
     }
 }
 #[doc = "Field `DPCAL2` writer - Disable Post-Calibration"]
-pub type DPCAL2_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCFG_SPEC, DPCAL2_A, O>;
+pub type DPCAL2_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCFG_SPEC, O, DPCAL2_A>;
 impl<'a, const O: u8> DPCAL2_W<'a, O> {
     #[doc = "Automatic post-calibration after each conversion of group x"]
     #[inline(always)]
@@ -455,7 +461,7 @@ impl DPCAL3_R {
     }
 }
 #[doc = "Field `DPCAL3` writer - Disable Post-Calibration"]
-pub type DPCAL3_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCFG_SPEC, DPCAL3_A, O>;
+pub type DPCAL3_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCFG_SPEC, O, DPCAL3_A>;
 impl<'a, const O: u8> DPCAL3_W<'a, O> {
     #[doc = "Automatic post-calibration after each conversion of group x"]
     #[inline(always)]
@@ -483,7 +489,7 @@ impl From<SUCAL_AW> for bool {
     }
 }
 #[doc = "Field `SUCAL` writer - Start-Up Calibration"]
-pub type SUCAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCFG_SPEC, SUCAL_AW, O>;
+pub type SUCAL_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCFG_SPEC, O, SUCAL_AW>;
 impl<'a, const O: u8> SUCAL_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]

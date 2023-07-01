@@ -35,25 +35,25 @@ impl From<crate::W<GMII_ADDRESS_SPEC>> for W {
     }
 }
 #[doc = "Field `MB` reader - MII Busy"]
-pub type MB_R = crate::BitReader<bool>;
+pub type MB_R = crate::BitReader;
 #[doc = "Field `MB` writer - MII Busy"]
-pub type MB_W<'a, const O: u8> = crate::BitWriter<'a, u32, GMII_ADDRESS_SPEC, bool, O>;
+pub type MB_W<'a, const O: u8> = crate::BitWriter<'a, GMII_ADDRESS_SPEC, O>;
 #[doc = "Field `MW` reader - MII Write"]
-pub type MW_R = crate::BitReader<bool>;
+pub type MW_R = crate::BitReader;
 #[doc = "Field `MW` writer - MII Write"]
-pub type MW_W<'a, const O: u8> = crate::BitWriter<'a, u32, GMII_ADDRESS_SPEC, bool, O>;
+pub type MW_W<'a, const O: u8> = crate::BitWriter<'a, GMII_ADDRESS_SPEC, O>;
 #[doc = "Field `CR` reader - CSR Clock Range"]
-pub type CR_R = crate::FieldReader<u8, u8>;
+pub type CR_R = crate::FieldReader;
 #[doc = "Field `CR` writer - CSR Clock Range"]
-pub type CR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GMII_ADDRESS_SPEC, u8, u8, 4, O>;
+pub type CR_W<'a, const O: u8> = crate::FieldWriter<'a, GMII_ADDRESS_SPEC, 4, O>;
 #[doc = "Field `MR` reader - MII Register"]
-pub type MR_R = crate::FieldReader<u8, u8>;
+pub type MR_R = crate::FieldReader;
 #[doc = "Field `MR` writer - MII Register"]
-pub type MR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GMII_ADDRESS_SPEC, u8, u8, 5, O>;
+pub type MR_W<'a, const O: u8> = crate::FieldWriter<'a, GMII_ADDRESS_SPEC, 5, O>;
 #[doc = "Field `PA` reader - Physical Layer Address"]
-pub type PA_R = crate::FieldReader<u8, u8>;
+pub type PA_R = crate::FieldReader;
 #[doc = "Field `PA` writer - Physical Layer Address"]
-pub type PA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GMII_ADDRESS_SPEC, u8, u8, 5, O>;
+pub type PA_W<'a, const O: u8> = crate::FieldWriter<'a, GMII_ADDRESS_SPEC, 5, O>;
 impl R {
     #[doc = "Bit 0 - MII Busy"]
     #[inline(always)]

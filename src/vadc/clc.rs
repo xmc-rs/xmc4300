@@ -71,7 +71,7 @@ impl DISR_R {
     }
 }
 #[doc = "Field `DISR` writer - Module Disable Request Bit"]
-pub type DISR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLC_SPEC, DISR_A, O>;
+pub type DISR_W<'a, const O: u8> = crate::BitWriter<'a, CLC_SPEC, O, DISR_A>;
 impl<'a, const O: u8> DISR_W<'a, O> {
     #[doc = "On request: enable the module clock"]
     #[inline(always)]
@@ -157,7 +157,7 @@ impl EDIS_R {
     }
 }
 #[doc = "Field `EDIS` writer - Sleep Mode Enable Control"]
-pub type EDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLC_SPEC, EDIS_A, O>;
+pub type EDIS_W<'a, const O: u8> = crate::BitWriter<'a, CLC_SPEC, O, EDIS_A>;
 impl<'a, const O: u8> EDIS_W<'a, O> {
     #[doc = "Sleep mode request is enabled and functional"]
     #[inline(always)]

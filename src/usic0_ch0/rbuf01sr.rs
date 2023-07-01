@@ -14,7 +14,7 @@ impl From<crate::R<RBUF01SR_SPEC>> for R {
     }
 }
 #[doc = "Field `WLEN0` reader - Received Data Word Length in RBUF0"]
-pub type WLEN0_R = crate::FieldReader<u8, u8>;
+pub type WLEN0_R = crate::FieldReader;
 #[doc = "Field `SOF0` reader - Start of Frame in RBUF0"]
 pub type SOF0_R = crate::BitReader<SOF0_A>;
 #[doc = "Start of Frame in RBUF0\n\nValue on reset: 0"]
@@ -52,7 +52,7 @@ impl SOF0_R {
     }
 }
 #[doc = "Field `PAR0` reader - Protocol-Related Argument in RBUF0"]
-pub type PAR0_R = crate::BitReader<bool>;
+pub type PAR0_R = crate::BitReader;
 #[doc = "Field `PERR0` reader - Protocol-related Error in RBUF0"]
 pub type PERR0_R = crate::BitReader<PERR0_A>;
 #[doc = "Protocol-related Error in RBUF0\n\nValue on reset: 0"]
@@ -198,7 +198,7 @@ impl DS0_R {
     }
 }
 #[doc = "Field `WLEN1` reader - Received Data Word Length in RBUF1"]
-pub type WLEN1_R = crate::FieldReader<u8, WLEN1_A>;
+pub type WLEN1_R = crate::FieldReader<WLEN1_A>;
 #[doc = "Received Data Word Length in RBUF1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -213,6 +213,9 @@ impl From<WLEN1_A> for u8 {
     fn from(variant: WLEN1_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for WLEN1_A {
+    type Ux = u8;
 }
 impl WLEN1_R {
     #[doc = "Get enumerated values variant"]
@@ -272,7 +275,7 @@ impl SOF1_R {
     }
 }
 #[doc = "Field `PAR1` reader - Protocol-Related Argument in RBUF1"]
-pub type PAR1_R = crate::BitReader<bool>;
+pub type PAR1_R = crate::BitReader;
 #[doc = "Field `PERR1` reader - Protocol-related Error in RBUF1"]
 pub type PERR1_R = crate::BitReader<PERR1_A>;
 #[doc = "Protocol-related Error in RBUF1\n\nValue on reset: 0"]

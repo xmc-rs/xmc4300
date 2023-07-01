@@ -35,7 +35,7 @@ impl From<crate::W<MOIPR_SPEC>> for W {
     }
 }
 #[doc = "Field `RXINP` reader - Receive Interrupt Node Pointer"]
-pub type RXINP_R = crate::FieldReader<u8, RXINP_A>;
+pub type RXINP_R = crate::FieldReader<RXINP_A>;
 #[doc = "Receive Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<RXINP_A> for u8 {
     fn from(variant: RXINP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RXINP_A {
+    type Ux = u8;
 }
 impl RXINP_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl RXINP_R {
     }
 }
 #[doc = "Field `RXINP` writer - Receive Interrupt Node Pointer"]
-pub type RXINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOIPR_SPEC, u8, RXINP_A, 4, O>;
+pub type RXINP_W<'a, const O: u8> = crate::FieldWriter<'a, MOIPR_SPEC, 4, O, RXINP_A>;
 impl<'a, const O: u8> RXINP_W<'a, O> {
     #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> RXINP_W<'a, O> {
     }
 }
 #[doc = "Field `TXINP` reader - Transmit Interrupt Node Pointer"]
-pub type TXINP_R = crate::FieldReader<u8, TXINP_A>;
+pub type TXINP_R = crate::FieldReader<TXINP_A>;
 #[doc = "Transmit Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<TXINP_A> for u8 {
     fn from(variant: TXINP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TXINP_A {
+    type Ux = u8;
 }
 impl TXINP_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl TXINP_R {
     }
 }
 #[doc = "Field `TXINP` writer - Transmit Interrupt Node Pointer"]
-pub type TXINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOIPR_SPEC, u8, TXINP_A, 4, O>;
+pub type TXINP_W<'a, const O: u8> = crate::FieldWriter<'a, MOIPR_SPEC, 4, O, TXINP_A>;
 impl<'a, const O: u8> TXINP_W<'a, O> {
     #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]
@@ -191,13 +197,13 @@ impl<'a, const O: u8> TXINP_W<'a, O> {
     }
 }
 #[doc = "Field `MPN` reader - Message Pending Number"]
-pub type MPN_R = crate::FieldReader<u8, u8>;
+pub type MPN_R = crate::FieldReader;
 #[doc = "Field `MPN` writer - Message Pending Number"]
-pub type MPN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOIPR_SPEC, u8, u8, 8, O>;
+pub type MPN_W<'a, const O: u8> = crate::FieldWriter<'a, MOIPR_SPEC, 8, O>;
 #[doc = "Field `CFCVAL` reader - CAN Frame Counter Value"]
-pub type CFCVAL_R = crate::FieldReader<u16, u16>;
+pub type CFCVAL_R = crate::FieldReader<u16>;
 #[doc = "Field `CFCVAL` writer - CAN Frame Counter Value"]
-pub type CFCVAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOIPR_SPEC, u16, u16, 16, O>;
+pub type CFCVAL_W<'a, const O: u8> = crate::FieldWriter<'a, MOIPR_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:3 - Receive Interrupt Node Pointer"]
     #[inline(always)]

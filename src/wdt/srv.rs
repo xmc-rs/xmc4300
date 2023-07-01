@@ -20,7 +20,7 @@ impl From<crate::W<SRV_SPEC>> for W {
     }
 }
 #[doc = "Field `SRV` writer - Service"]
-pub type SRV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SRV_SPEC, u32, u32, 32, O>;
+pub type SRV_W<'a, const O: u8> = crate::FieldWriter<'a, SRV_SPEC, 32, O, u32>;
 impl W {
     #[doc = "Bits 0:31 - Service"]
     #[inline(always)]

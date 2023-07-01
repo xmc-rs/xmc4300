@@ -446,11 +446,11 @@ impl DIR_R {
     }
 }
 #[doc = "Field `LIST` reader - List Allocation"]
-pub type LIST_R = crate::FieldReader<u8, u8>;
+pub type LIST_R = crate::FieldReader;
 #[doc = "Field `PPREV` reader - Pointer to Previous Message Object"]
-pub type PPREV_R = crate::FieldReader<u8, u8>;
+pub type PPREV_R = crate::FieldReader;
 #[doc = "Field `PNEXT` reader - Pointer to Next Message Object"]
-pub type PNEXT_R = crate::FieldReader<u8, u8>;
+pub type PNEXT_R = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Receive Pending"]
     #[inline(always)]

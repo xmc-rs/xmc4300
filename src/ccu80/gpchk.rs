@@ -35,11 +35,11 @@ impl From<crate::W<GPCHK_SPEC>> for W {
     }
 }
 #[doc = "Field `PASE` reader - Parity Checker Automatic start/stop"]
-pub type PASE_R = crate::BitReader<bool>;
+pub type PASE_R = crate::BitReader;
 #[doc = "Field `PASE` writer - Parity Checker Automatic start/stop"]
-pub type PASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GPCHK_SPEC, bool, O>;
+pub type PASE_W<'a, const O: u8> = crate::BitWriter<'a, GPCHK_SPEC, O>;
 #[doc = "Field `PACS` reader - Parity Checker Automatic start/stop selector"]
-pub type PACS_R = crate::FieldReader<u8, PACS_A>;
+pub type PACS_R = crate::FieldReader<PACS_A>;
 #[doc = "Parity Checker Automatic start/stop selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -58,6 +58,9 @@ impl From<PACS_A> for u8 {
     fn from(variant: PACS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PACS_A {
+    type Ux = u8;
 }
 impl PACS_R {
     #[doc = "Get enumerated values variant"]
@@ -93,7 +96,7 @@ impl PACS_R {
     }
 }
 #[doc = "Field `PACS` writer - Parity Checker Automatic start/stop selector"]
-pub type PACS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, GPCHK_SPEC, u8, PACS_A, 2, O>;
+pub type PACS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, GPCHK_SPEC, 2, O, PACS_A>;
 impl<'a, const O: u8> PACS_W<'a, O> {
     #[doc = "CC80"]
     #[inline(always)]
@@ -117,7 +120,7 @@ impl<'a, const O: u8> PACS_W<'a, O> {
     }
 }
 #[doc = "Field `PISEL` reader - Driver Input signal selector"]
-pub type PISEL_R = crate::FieldReader<u8, PISEL_A>;
+pub type PISEL_R = crate::FieldReader<PISEL_A>;
 #[doc = "Driver Input signal selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -136,6 +139,9 @@ impl From<PISEL_A> for u8 {
     fn from(variant: PISEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PISEL_A {
+    type Ux = u8;
 }
 impl PISEL_R {
     #[doc = "Get enumerated values variant"]
@@ -171,7 +177,7 @@ impl PISEL_R {
     }
 }
 #[doc = "Field `PISEL` writer - Driver Input signal selector"]
-pub type PISEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, GPCHK_SPEC, u8, PISEL_A, 2, O>;
+pub type PISEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, GPCHK_SPEC, 2, O, PISEL_A>;
 impl<'a, const O: u8> PISEL_W<'a, O> {
     #[doc = "CC8x.GP01 - driver output is connected to event 1 of slice 0"]
     #[inline(always)]
@@ -195,7 +201,7 @@ impl<'a, const O: u8> PISEL_W<'a, O> {
     }
 }
 #[doc = "Field `PCDS` reader - Parity Checker Delay Input Selector"]
-pub type PCDS_R = crate::FieldReader<u8, PCDS_A>;
+pub type PCDS_R = crate::FieldReader<PCDS_A>;
 #[doc = "Parity Checker Delay Input Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -214,6 +220,9 @@ impl From<PCDS_A> for u8 {
     fn from(variant: PCDS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PCDS_A {
+    type Ux = u8;
 }
 impl PCDS_R {
     #[doc = "Get enumerated values variant"]
@@ -249,7 +258,7 @@ impl PCDS_R {
     }
 }
 #[doc = "Field `PCDS` writer - Parity Checker Delay Input Selector"]
-pub type PCDS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, GPCHK_SPEC, u8, PCDS_A, 2, O>;
+pub type PCDS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, GPCHK_SPEC, 2, O, PCDS_A>;
 impl<'a, const O: u8> PCDS_W<'a, O> {
     #[doc = "CCU8x.IGBTA"]
     #[inline(always)]
@@ -309,7 +318,7 @@ impl PCTS_R {
     }
 }
 #[doc = "Field `PCTS` writer - Parity Checker type selector"]
-pub type PCTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, GPCHK_SPEC, PCTS_A, O>;
+pub type PCTS_W<'a, const O: u8> = crate::BitWriter<'a, GPCHK_SPEC, O, PCTS_A>;
 impl<'a, const O: u8> PCTS_W<'a, O> {
     #[doc = "Even parity enabled"]
     #[inline(always)]
@@ -323,23 +332,23 @@ impl<'a, const O: u8> PCTS_W<'a, O> {
     }
 }
 #[doc = "Field `PCST` reader - Parity Checker XOR status"]
-pub type PCST_R = crate::BitReader<bool>;
+pub type PCST_R = crate::BitReader;
 #[doc = "Field `PCSEL0` reader - Parity Checker Slice 0 output selection"]
-pub type PCSEL0_R = crate::FieldReader<u8, u8>;
+pub type PCSEL0_R = crate::FieldReader;
 #[doc = "Field `PCSEL0` writer - Parity Checker Slice 0 output selection"]
-pub type PCSEL0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GPCHK_SPEC, u8, u8, 4, O>;
+pub type PCSEL0_W<'a, const O: u8> = crate::FieldWriter<'a, GPCHK_SPEC, 4, O>;
 #[doc = "Field `PCSEL1` reader - Parity Checker Slice 1 output selection"]
-pub type PCSEL1_R = crate::FieldReader<u8, u8>;
+pub type PCSEL1_R = crate::FieldReader;
 #[doc = "Field `PCSEL1` writer - Parity Checker Slice 1 output selection"]
-pub type PCSEL1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GPCHK_SPEC, u8, u8, 4, O>;
+pub type PCSEL1_W<'a, const O: u8> = crate::FieldWriter<'a, GPCHK_SPEC, 4, O>;
 #[doc = "Field `PCSEL2` reader - Parity Checker Slice 2 output selection"]
-pub type PCSEL2_R = crate::FieldReader<u8, u8>;
+pub type PCSEL2_R = crate::FieldReader;
 #[doc = "Field `PCSEL2` writer - Parity Checker Slice 2 output selection"]
-pub type PCSEL2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GPCHK_SPEC, u8, u8, 4, O>;
+pub type PCSEL2_W<'a, const O: u8> = crate::FieldWriter<'a, GPCHK_SPEC, 4, O>;
 #[doc = "Field `PCSEL3` reader - Parity Checker Slice 3 output selection"]
-pub type PCSEL3_R = crate::FieldReader<u8, u8>;
+pub type PCSEL3_R = crate::FieldReader;
 #[doc = "Field `PCSEL3` writer - Parity Checker Slice 3 output selection"]
-pub type PCSEL3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GPCHK_SPEC, u8, u8, 4, O>;
+pub type PCSEL3_W<'a, const O: u8> = crate::FieldWriter<'a, GPCHK_SPEC, 4, O>;
 impl R {
     #[doc = "Bit 0 - Parity Checker Automatic start/stop"]
     #[inline(always)]

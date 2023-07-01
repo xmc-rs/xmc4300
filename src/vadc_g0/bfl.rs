@@ -215,7 +215,7 @@ impl BFA0_R {
     }
 }
 #[doc = "Field `BFA0` writer - Boundary Flag 0 Activation Select"]
-pub type BFA0_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFA0_A, O>;
+pub type BFA0_W<'a, const O: u8> = crate::BitWriter<'a, BFL_SPEC, O, BFA0_A>;
 impl<'a, const O: u8> BFA0_W<'a, O> {
     #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
@@ -265,7 +265,7 @@ impl BFA1_R {
     }
 }
 #[doc = "Field `BFA1` writer - Boundary Flag 1 Activation Select"]
-pub type BFA1_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFA1_A, O>;
+pub type BFA1_W<'a, const O: u8> = crate::BitWriter<'a, BFL_SPEC, O, BFA1_A>;
 impl<'a, const O: u8> BFA1_W<'a, O> {
     #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
@@ -315,7 +315,7 @@ impl BFA2_R {
     }
 }
 #[doc = "Field `BFA2` writer - Boundary Flag 2 Activation Select"]
-pub type BFA2_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFA2_A, O>;
+pub type BFA2_W<'a, const O: u8> = crate::BitWriter<'a, BFL_SPEC, O, BFA2_A>;
 impl<'a, const O: u8> BFA2_W<'a, O> {
     #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
@@ -365,7 +365,7 @@ impl BFA3_R {
     }
 }
 #[doc = "Field `BFA3` writer - Boundary Flag 3 Activation Select"]
-pub type BFA3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFA3_A, O>;
+pub type BFA3_W<'a, const O: u8> = crate::BitWriter<'a, BFL_SPEC, O, BFA3_A>;
 impl<'a, const O: u8> BFA3_W<'a, O> {
     #[doc = "Set boundary flag BFLy if result is above the defined band or compare value, clear if below"]
     #[inline(always)]
@@ -415,7 +415,7 @@ impl BFI0_R {
     }
 }
 #[doc = "Field `BFI0` writer - Boundary Flag 0 Inversion Control"]
-pub type BFI0_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFI0_A, O>;
+pub type BFI0_W<'a, const O: u8> = crate::BitWriter<'a, BFL_SPEC, O, BFI0_A>;
 impl<'a, const O: u8> BFI0_W<'a, O> {
     #[doc = "Use BFLy directly"]
     #[inline(always)]
@@ -465,7 +465,7 @@ impl BFI1_R {
     }
 }
 #[doc = "Field `BFI1` writer - Boundary Flag 1 Inversion Control"]
-pub type BFI1_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFI1_A, O>;
+pub type BFI1_W<'a, const O: u8> = crate::BitWriter<'a, BFL_SPEC, O, BFI1_A>;
 impl<'a, const O: u8> BFI1_W<'a, O> {
     #[doc = "Use BFLy directly"]
     #[inline(always)]
@@ -515,7 +515,7 @@ impl BFI2_R {
     }
 }
 #[doc = "Field `BFI2` writer - Boundary Flag 2 Inversion Control"]
-pub type BFI2_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFI2_A, O>;
+pub type BFI2_W<'a, const O: u8> = crate::BitWriter<'a, BFL_SPEC, O, BFI2_A>;
 impl<'a, const O: u8> BFI2_W<'a, O> {
     #[doc = "Use BFLy directly"]
     #[inline(always)]
@@ -565,7 +565,7 @@ impl BFI3_R {
     }
 }
 #[doc = "Field `BFI3` writer - Boundary Flag 3 Inversion Control"]
-pub type BFI3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFL_SPEC, BFI3_A, O>;
+pub type BFI3_W<'a, const O: u8> = crate::BitWriter<'a, BFL_SPEC, O, BFI3_A>;
 impl<'a, const O: u8> BFI3_W<'a, O> {
     #[doc = "Use BFLy directly"]
     #[inline(always)]

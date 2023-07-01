@@ -35,11 +35,11 @@ impl From<crate::W<FDR_SPEC>> for W {
     }
 }
 #[doc = "Field `STEP` reader - Step Value"]
-pub type STEP_R = crate::FieldReader<u16, u16>;
+pub type STEP_R = crate::FieldReader<u16>;
 #[doc = "Field `STEP` writer - Step Value"]
-pub type STEP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FDR_SPEC, u16, u16, 10, O>;
+pub type STEP_W<'a, const O: u8> = crate::FieldWriter<'a, FDR_SPEC, 10, O, u16>;
 #[doc = "Field `DM` reader - Divider Mode"]
-pub type DM_R = crate::FieldReader<u8, DM_A>;
+pub type DM_R = crate::FieldReader<DM_A>;
 #[doc = "Divider Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -58,6 +58,9 @@ impl From<DM_A> for u8 {
     fn from(variant: DM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DM_A {
+    type Ux = u8;
 }
 impl DM_R {
     #[doc = "Get enumerated values variant"]
@@ -93,7 +96,7 @@ impl DM_R {
     }
 }
 #[doc = "Field `DM` writer - Divider Mode"]
-pub type DM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, FDR_SPEC, u8, DM_A, 2, O>;
+pub type DM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, FDR_SPEC, 2, O, DM_A>;
 impl<'a, const O: u8> DM_W<'a, O> {
     #[doc = "The divider is switched off, fFD = 0."]
     #[inline(always)]
@@ -117,7 +120,7 @@ impl<'a, const O: u8> DM_W<'a, O> {
     }
 }
 #[doc = "Field `RESULT` reader - Result Value"]
-pub type RESULT_R = crate::FieldReader<u16, u16>;
+pub type RESULT_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:9 - Step Value"]
     #[inline(always)]

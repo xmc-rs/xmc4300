@@ -35,7 +35,7 @@ impl From<crate::W<INS_SPEC>> for W {
     }
 }
 #[doc = "Field `EV0IS` reader - Event 0 signal selection"]
-pub type EV0IS_R = crate::FieldReader<u8, EV0IS_A>;
+pub type EV0IS_R = crate::FieldReader<EV0IS_A>;
 #[doc = "Event 0 signal selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -78,6 +78,9 @@ impl From<EV0IS_A> for u8 {
     fn from(variant: EV0IS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EV0IS_A {
+    type Ux = u8;
 }
 impl EV0IS_R {
     #[doc = "Get enumerated values variant"]
@@ -185,7 +188,7 @@ impl EV0IS_R {
     }
 }
 #[doc = "Field `EV0IS` writer - Event 0 signal selection"]
-pub type EV0IS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, INS_SPEC, u8, EV0IS_A, 4, O>;
+pub type EV0IS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 4, O, EV0IS_A>;
 impl<'a, const O: u8> EV0IS_W<'a, O> {
     #[doc = "CCU4x.INyA"]
     #[inline(always)]
@@ -269,7 +272,7 @@ impl<'a, const O: u8> EV0IS_W<'a, O> {
     }
 }
 #[doc = "Field `EV1IS` reader - Event 1 signal selection"]
-pub type EV1IS_R = crate::FieldReader<u8, EV1IS_A>;
+pub type EV1IS_R = crate::FieldReader<EV1IS_A>;
 #[doc = "Event 1 signal selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -312,6 +315,9 @@ impl From<EV1IS_A> for u8 {
     fn from(variant: EV1IS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EV1IS_A {
+    type Ux = u8;
 }
 impl EV1IS_R {
     #[doc = "Get enumerated values variant"]
@@ -419,7 +425,7 @@ impl EV1IS_R {
     }
 }
 #[doc = "Field `EV1IS` writer - Event 1 signal selection"]
-pub type EV1IS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, INS_SPEC, u8, EV1IS_A, 4, O>;
+pub type EV1IS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 4, O, EV1IS_A>;
 impl<'a, const O: u8> EV1IS_W<'a, O> {
     #[doc = "CCU4x.INyA"]
     #[inline(always)]
@@ -503,7 +509,7 @@ impl<'a, const O: u8> EV1IS_W<'a, O> {
     }
 }
 #[doc = "Field `EV2IS` reader - Event 2 signal selection"]
-pub type EV2IS_R = crate::FieldReader<u8, EV2IS_A>;
+pub type EV2IS_R = crate::FieldReader<EV2IS_A>;
 #[doc = "Event 2 signal selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -546,6 +552,9 @@ impl From<EV2IS_A> for u8 {
     fn from(variant: EV2IS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EV2IS_A {
+    type Ux = u8;
 }
 impl EV2IS_R {
     #[doc = "Get enumerated values variant"]
@@ -653,7 +662,7 @@ impl EV2IS_R {
     }
 }
 #[doc = "Field `EV2IS` writer - Event 2 signal selection"]
-pub type EV2IS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, INS_SPEC, u8, EV2IS_A, 4, O>;
+pub type EV2IS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 4, O, EV2IS_A>;
 impl<'a, const O: u8> EV2IS_W<'a, O> {
     #[doc = "CCU4x.INyA"]
     #[inline(always)]
@@ -737,7 +746,7 @@ impl<'a, const O: u8> EV2IS_W<'a, O> {
     }
 }
 #[doc = "Field `EV0EM` reader - Event 0 Edge Selection"]
-pub type EV0EM_R = crate::FieldReader<u8, EV0EM_A>;
+pub type EV0EM_R = crate::FieldReader<EV0EM_A>;
 #[doc = "Event 0 Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -756,6 +765,9 @@ impl From<EV0EM_A> for u8 {
     fn from(variant: EV0EM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EV0EM_A {
+    type Ux = u8;
 }
 impl EV0EM_R {
     #[doc = "Get enumerated values variant"]
@@ -791,7 +803,7 @@ impl EV0EM_R {
     }
 }
 #[doc = "Field `EV0EM` writer - Event 0 Edge Selection"]
-pub type EV0EM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, INS_SPEC, u8, EV0EM_A, 2, O>;
+pub type EV0EM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 2, O, EV0EM_A>;
 impl<'a, const O: u8> EV0EM_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -815,7 +827,7 @@ impl<'a, const O: u8> EV0EM_W<'a, O> {
     }
 }
 #[doc = "Field `EV1EM` reader - Event 1 Edge Selection"]
-pub type EV1EM_R = crate::FieldReader<u8, EV1EM_A>;
+pub type EV1EM_R = crate::FieldReader<EV1EM_A>;
 #[doc = "Event 1 Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -834,6 +846,9 @@ impl From<EV1EM_A> for u8 {
     fn from(variant: EV1EM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EV1EM_A {
+    type Ux = u8;
 }
 impl EV1EM_R {
     #[doc = "Get enumerated values variant"]
@@ -869,7 +884,7 @@ impl EV1EM_R {
     }
 }
 #[doc = "Field `EV1EM` writer - Event 1 Edge Selection"]
-pub type EV1EM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, INS_SPEC, u8, EV1EM_A, 2, O>;
+pub type EV1EM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 2, O, EV1EM_A>;
 impl<'a, const O: u8> EV1EM_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -893,7 +908,7 @@ impl<'a, const O: u8> EV1EM_W<'a, O> {
     }
 }
 #[doc = "Field `EV2EM` reader - Event 2 Edge Selection"]
-pub type EV2EM_R = crate::FieldReader<u8, EV2EM_A>;
+pub type EV2EM_R = crate::FieldReader<EV2EM_A>;
 #[doc = "Event 2 Edge Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -912,6 +927,9 @@ impl From<EV2EM_A> for u8 {
     fn from(variant: EV2EM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EV2EM_A {
+    type Ux = u8;
 }
 impl EV2EM_R {
     #[doc = "Get enumerated values variant"]
@@ -947,7 +965,7 @@ impl EV2EM_R {
     }
 }
 #[doc = "Field `EV2EM` writer - Event 2 Edge Selection"]
-pub type EV2EM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, INS_SPEC, u8, EV2EM_A, 2, O>;
+pub type EV2EM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 2, O, EV2EM_A>;
 impl<'a, const O: u8> EV2EM_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -1007,7 +1025,7 @@ impl EV0LM_R {
     }
 }
 #[doc = "Field `EV0LM` writer - Event 0 Level Selection"]
-pub type EV0LM_W<'a, const O: u8> = crate::BitWriter<'a, u32, INS_SPEC, EV0LM_A, O>;
+pub type EV0LM_W<'a, const O: u8> = crate::BitWriter<'a, INS_SPEC, O, EV0LM_A>;
 impl<'a, const O: u8> EV0LM_W<'a, O> {
     #[doc = "Active on HIGH level"]
     #[inline(always)]
@@ -1057,7 +1075,7 @@ impl EV1LM_R {
     }
 }
 #[doc = "Field `EV1LM` writer - Event 1 Level Selection"]
-pub type EV1LM_W<'a, const O: u8> = crate::BitWriter<'a, u32, INS_SPEC, EV1LM_A, O>;
+pub type EV1LM_W<'a, const O: u8> = crate::BitWriter<'a, INS_SPEC, O, EV1LM_A>;
 impl<'a, const O: u8> EV1LM_W<'a, O> {
     #[doc = "Active on HIGH level"]
     #[inline(always)]
@@ -1107,7 +1125,7 @@ impl EV2LM_R {
     }
 }
 #[doc = "Field `EV2LM` writer - Event 2 Level Selection"]
-pub type EV2LM_W<'a, const O: u8> = crate::BitWriter<'a, u32, INS_SPEC, EV2LM_A, O>;
+pub type EV2LM_W<'a, const O: u8> = crate::BitWriter<'a, INS_SPEC, O, EV2LM_A>;
 impl<'a, const O: u8> EV2LM_W<'a, O> {
     #[doc = "Active on HIGH level"]
     #[inline(always)]
@@ -1121,7 +1139,7 @@ impl<'a, const O: u8> EV2LM_W<'a, O> {
     }
 }
 #[doc = "Field `LPF0M` reader - Event 0 Low Pass Filter Configuration"]
-pub type LPF0M_R = crate::FieldReader<u8, LPF0M_A>;
+pub type LPF0M_R = crate::FieldReader<LPF0M_A>;
 #[doc = "Event 0 Low Pass Filter Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -1140,6 +1158,9 @@ impl From<LPF0M_A> for u8 {
     fn from(variant: LPF0M_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LPF0M_A {
+    type Ux = u8;
 }
 impl LPF0M_R {
     #[doc = "Get enumerated values variant"]
@@ -1175,7 +1196,7 @@ impl LPF0M_R {
     }
 }
 #[doc = "Field `LPF0M` writer - Event 0 Low Pass Filter Configuration"]
-pub type LPF0M_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, INS_SPEC, u8, LPF0M_A, 2, O>;
+pub type LPF0M_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 2, O, LPF0M_A>;
 impl<'a, const O: u8> LPF0M_W<'a, O> {
     #[doc = "LPF is disabled"]
     #[inline(always)]
@@ -1199,7 +1220,7 @@ impl<'a, const O: u8> LPF0M_W<'a, O> {
     }
 }
 #[doc = "Field `LPF1M` reader - Event 1 Low Pass Filter Configuration"]
-pub type LPF1M_R = crate::FieldReader<u8, LPF1M_A>;
+pub type LPF1M_R = crate::FieldReader<LPF1M_A>;
 #[doc = "Event 1 Low Pass Filter Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -1218,6 +1239,9 @@ impl From<LPF1M_A> for u8 {
     fn from(variant: LPF1M_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LPF1M_A {
+    type Ux = u8;
 }
 impl LPF1M_R {
     #[doc = "Get enumerated values variant"]
@@ -1253,7 +1277,7 @@ impl LPF1M_R {
     }
 }
 #[doc = "Field `LPF1M` writer - Event 1 Low Pass Filter Configuration"]
-pub type LPF1M_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, INS_SPEC, u8, LPF1M_A, 2, O>;
+pub type LPF1M_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 2, O, LPF1M_A>;
 impl<'a, const O: u8> LPF1M_W<'a, O> {
     #[doc = "LPF is disabled"]
     #[inline(always)]
@@ -1277,7 +1301,7 @@ impl<'a, const O: u8> LPF1M_W<'a, O> {
     }
 }
 #[doc = "Field `LPF2M` reader - Event 2 Low Pass Filter Configuration"]
-pub type LPF2M_R = crate::FieldReader<u8, LPF2M_A>;
+pub type LPF2M_R = crate::FieldReader<LPF2M_A>;
 #[doc = "Event 2 Low Pass Filter Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -1296,6 +1320,9 @@ impl From<LPF2M_A> for u8 {
     fn from(variant: LPF2M_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LPF2M_A {
+    type Ux = u8;
 }
 impl LPF2M_R {
     #[doc = "Get enumerated values variant"]
@@ -1331,7 +1358,7 @@ impl LPF2M_R {
     }
 }
 #[doc = "Field `LPF2M` writer - Event 2 Low Pass Filter Configuration"]
-pub type LPF2M_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, INS_SPEC, u8, LPF2M_A, 2, O>;
+pub type LPF2M_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 2, O, LPF2M_A>;
 impl<'a, const O: u8> LPF2M_W<'a, O> {
     #[doc = "LPF is disabled"]
     #[inline(always)]

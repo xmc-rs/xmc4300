@@ -35,15 +35,15 @@ impl From<crate::W<HCTSIZ_BUFFERMODE_SPEC>> for W {
     }
 }
 #[doc = "Field `XferSize` reader - Transfer Size"]
-pub type XFER_SIZE_R = crate::FieldReader<u32, u32>;
+pub type XFER_SIZE_R = crate::FieldReader<u32>;
 #[doc = "Field `XferSize` writer - Transfer Size"]
-pub type XFER_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCTSIZ_BUFFERMODE_SPEC, u32, u32, 19, O>;
+pub type XFER_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, HCTSIZ_BUFFERMODE_SPEC, 19, O, u32>;
 #[doc = "Field `PktCnt` reader - Packet Count"]
-pub type PKT_CNT_R = crate::FieldReader<u16, u16>;
+pub type PKT_CNT_R = crate::FieldReader<u16>;
 #[doc = "Field `PktCnt` writer - Packet Count"]
-pub type PKT_CNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCTSIZ_BUFFERMODE_SPEC, u16, u16, 10, O>;
+pub type PKT_CNT_W<'a, const O: u8> = crate::FieldWriter<'a, HCTSIZ_BUFFERMODE_SPEC, 10, O, u16>;
 #[doc = "Field `Pid` reader - PID"]
-pub type PID_R = crate::FieldReader<u8, PID_A>;
+pub type PID_R = crate::FieldReader<PID_A>;
 #[doc = "PID\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -62,6 +62,9 @@ impl From<PID_A> for u8 {
     fn from(variant: PID_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PID_A {
+    type Ux = u8;
 }
 impl PID_R {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl PID_R {
     }
 }
 #[doc = "Field `Pid` writer - PID"]
-pub type PID_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, HCTSIZ_BUFFERMODE_SPEC, u8, PID_A, 2, O>;
+pub type PID_W<'a, const O: u8> = crate::FieldWriterSafe<'a, HCTSIZ_BUFFERMODE_SPEC, 2, O, PID_A>;
 impl<'a, const O: u8> PID_W<'a, O> {
     #[doc = "DATA0"]
     #[inline(always)]

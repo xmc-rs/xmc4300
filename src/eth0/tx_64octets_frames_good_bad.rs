@@ -14,7 +14,7 @@ impl From<crate::R<TX_64OCTETS_FRAMES_GOOD_BAD_SPEC>> for R {
     }
 }
 #[doc = "Field `TX64OCTGB` reader - This field indicates the number of transmitted good and bad frames with length of 64 bytes, exclusive of preamble and retried frames."]
-pub type TX64OCTGB_R = crate::FieldReader<u32, u32>;
+pub type TX64OCTGB_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of transmitted good and bad frames with length of 64 bytes, exclusive of preamble and retried frames."]
     #[inline(always)]

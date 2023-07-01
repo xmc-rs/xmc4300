@@ -35,13 +35,13 @@ impl From<crate::W<ALIAS_SPEC>> for W {
     }
 }
 #[doc = "Field `ALIAS0` reader - Alias Value for CH0 Conversion Requests"]
-pub type ALIAS0_R = crate::FieldReader<u8, u8>;
+pub type ALIAS0_R = crate::FieldReader;
 #[doc = "Field `ALIAS0` writer - Alias Value for CH0 Conversion Requests"]
-pub type ALIAS0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ALIAS_SPEC, u8, u8, 5, O>;
+pub type ALIAS0_W<'a, const O: u8> = crate::FieldWriter<'a, ALIAS_SPEC, 5, O>;
 #[doc = "Field `ALIAS1` reader - Alias Value for CH1 Conversion Requests"]
-pub type ALIAS1_R = crate::FieldReader<u8, u8>;
+pub type ALIAS1_R = crate::FieldReader;
 #[doc = "Field `ALIAS1` writer - Alias Value for CH1 Conversion Requests"]
-pub type ALIAS1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ALIAS_SPEC, u8, u8, 5, O>;
+pub type ALIAS1_W<'a, const O: u8> = crate::FieldWriter<'a, ALIAS_SPEC, 5, O>;
 impl R {
     #[doc = "Bits 0:4 - Alias Value for CH0 Conversion Requests"]
     #[inline(always)]

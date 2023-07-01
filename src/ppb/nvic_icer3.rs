@@ -35,7 +35,7 @@ impl From<crate::W<NVIC_ICER3_SPEC>> for W {
     }
 }
 #[doc = "Field `CLRENA` reader - Interrupt clear-enable bits."]
-pub type CLRENA_R = crate::FieldReader<u32, CLRENA_A>;
+pub type CLRENA_R = crate::FieldReader<CLRENA_A>;
 #[doc = "Interrupt clear-enable bits.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
@@ -50,6 +50,9 @@ impl From<CLRENA_A> for u32 {
     fn from(variant: CLRENA_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLRENA_A {
+    type Ux = u32;
 }
 impl CLRENA_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +76,7 @@ impl CLRENA_R {
     }
 }
 #[doc = "Field `CLRENA` writer - Interrupt clear-enable bits."]
-pub type CLRENA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_ICER3_SPEC, u32, CLRENA_A, 32, O>;
+pub type CLRENA_W<'a, const O: u8> = crate::FieldWriter<'a, NVIC_ICER3_SPEC, 32, O, CLRENA_A>;
 impl<'a, const O: u8> CLRENA_W<'a, O> {
     #[doc = "interrupt disabled"]
     #[inline(always)]

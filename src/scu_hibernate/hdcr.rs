@@ -71,7 +71,7 @@ impl WKPEP_R {
     }
 }
 #[doc = "Field `WKPEP` writer - Wake-Up on Pin Event Positive Edge Enable"]
-pub type WKPEP_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, WKPEP_A, O>;
+pub type WKPEP_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, WKPEP_A>;
 impl<'a, const O: u8> WKPEP_W<'a, O> {
     #[doc = "Wake-up event disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl WKPEN_R {
     }
 }
 #[doc = "Field `WKPEN` writer - Wake-up on Pin Event Negative Edge Enable"]
-pub type WKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, WKPEN_A, O>;
+pub type WKPEN_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, WKPEN_A>;
 impl<'a, const O: u8> WKPEN_W<'a, O> {
     #[doc = "Wake-up event disabled"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl RTCE_R {
     }
 }
 #[doc = "Field `RTCE` writer - Wake-up on RTC Event Enable"]
-pub type RTCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, RTCE_A, O>;
+pub type RTCE_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, RTCE_A>;
 impl<'a, const O: u8> RTCE_W<'a, O> {
     #[doc = "Wake-up event disabled"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl ULPWDGEN_R {
     }
 }
 #[doc = "Field `ULPWDGEN` writer - ULP WDG Alarm Enable"]
-pub type ULPWDGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, ULPWDGEN_A, O>;
+pub type ULPWDGEN_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, ULPWDGEN_A>;
 impl<'a, const O: u8> ULPWDGEN_W<'a, O> {
     #[doc = "Wake-up event disabled"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl HIB_R {
     }
 }
 #[doc = "Field `HIB` writer - Hibernate Request Value Set"]
-pub type HIB_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, HIB_A, O>;
+pub type HIB_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, HIB_A>;
 impl<'a, const O: u8> HIB_W<'a, O> {
     #[doc = "External hibernate request inactive"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl RCS_R {
     }
 }
 #[doc = "Field `RCS` writer - fRTC Clock Selection"]
-pub type RCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, RCS_A, O>;
+pub type RCS_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, RCS_A>;
 impl<'a, const O: u8> RCS_W<'a, O> {
     #[doc = "fOSI selected"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl STDBYSEL_R {
     }
 }
 #[doc = "Field `STDBYSEL` writer - fSTDBY Clock Selection"]
-pub type STDBYSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, STDBYSEL_A, O>;
+pub type STDBYSEL_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, STDBYSEL_A>;
 impl<'a, const O: u8> STDBYSEL_W<'a, O> {
     #[doc = "fOSI selected"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl WKUPSEL_R {
     }
 }
 #[doc = "Field `WKUPSEL` writer - Wake-Up from Hibernate Trigger Input Selection"]
-pub type WKUPSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, WKUPSEL_A, O>;
+pub type WKUPSEL_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, WKUPSEL_A>;
 impl<'a, const O: u8> WKUPSEL_W<'a, O> {
     #[doc = "HIB_IO_1 pin selected"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl GPI0SEL_R {
     }
 }
 #[doc = "Field `GPI0SEL` writer - General Purpose Input 0 Selection"]
-pub type GPI0SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, GPI0SEL_A, O>;
+pub type GPI0SEL_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, GPI0SEL_A>;
 impl<'a, const O: u8> GPI0SEL_W<'a, O> {
     #[doc = "#0"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl HIBIO0POL_R {
     }
 }
 #[doc = "Field `HIBIO0POL` writer - HIBIO0 Polarity Set"]
-pub type HIBIO0POL_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, HIBIO0POL_A, O>;
+pub type HIBIO0POL_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, HIBIO0POL_A>;
 impl<'a, const O: u8> HIBIO0POL_W<'a, O> {
     #[doc = "Direct value"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl HIBIO1POL_R {
     }
 }
 #[doc = "Field `HIBIO1POL` writer - HIBIO1 Polarity Set"]
-pub type HIBIO1POL_W<'a, const O: u8> = crate::BitWriter<'a, u32, HDCR_SPEC, HIBIO1POL_A, O>;
+pub type HIBIO1POL_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, HIBIO1POL_A>;
 impl<'a, const O: u8> HIBIO1POL_W<'a, O> {
     #[doc = "Direct value"]
     #[inline(always)]
@@ -585,7 +585,7 @@ impl<'a, const O: u8> HIBIO1POL_W<'a, O> {
     }
 }
 #[doc = "Field `HIBIO0SEL` reader - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
-pub type HIBIO0SEL_R = crate::FieldReader<u8, HIBIO0SEL_A>;
+pub type HIBIO0SEL_R = crate::FieldReader<HIBIO0SEL_A>;
 #[doc = "HIB_IO_0 Pin I/O Control (default HIBOUT)\n\nValue on reset: 12"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -616,6 +616,9 @@ impl From<HIBIO0SEL_A> for u8 {
     fn from(variant: HIBIO0SEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HIBIO0SEL_A {
+    type Ux = u8;
 }
 impl HIBIO0SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -687,7 +690,7 @@ impl HIBIO0SEL_R {
     }
 }
 #[doc = "Field `HIBIO0SEL` writer - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
-pub type HIBIO0SEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HDCR_SPEC, u8, HIBIO0SEL_A, 4, O>;
+pub type HIBIO0SEL_W<'a, const O: u8> = crate::FieldWriter<'a, HDCR_SPEC, 4, O, HIBIO0SEL_A>;
 impl<'a, const O: u8> HIBIO0SEL_W<'a, O> {
     #[doc = "Direct input, No input pull device connected"]
     #[inline(always)]
@@ -741,7 +744,7 @@ impl<'a, const O: u8> HIBIO0SEL_W<'a, O> {
     }
 }
 #[doc = "Field `HIBIO1SEL` reader - HIB_IO_1 Pin I/O Control (Default WKUP)"]
-pub type HIBIO1SEL_R = crate::FieldReader<u8, HIBIO1SEL_A>;
+pub type HIBIO1SEL_R = crate::FieldReader<HIBIO1SEL_A>;
 #[doc = "HIB_IO_1 Pin I/O Control (Default WKUP)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -772,6 +775,9 @@ impl From<HIBIO1SEL_A> for u8 {
     fn from(variant: HIBIO1SEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for HIBIO1SEL_A {
+    type Ux = u8;
 }
 impl HIBIO1SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -843,7 +849,7 @@ impl HIBIO1SEL_R {
     }
 }
 #[doc = "Field `HIBIO1SEL` writer - HIB_IO_1 Pin I/O Control (Default WKUP)"]
-pub type HIBIO1SEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HDCR_SPEC, u8, HIBIO1SEL_A, 4, O>;
+pub type HIBIO1SEL_W<'a, const O: u8> = crate::FieldWriter<'a, HDCR_SPEC, 4, O, HIBIO1SEL_A>;
 impl<'a, const O: u8> HIBIO1SEL_W<'a, O> {
     #[doc = "Direct input, No input pull device connected"]
     #[inline(always)]

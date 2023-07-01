@@ -20,7 +20,7 @@ impl From<crate::W<STIR_SPEC>> for W {
     }
 }
 #[doc = "Field `INTID` writer - Interrupt ID of the interrupt to trigger"]
-pub type INTID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STIR_SPEC, u16, u16, 9, O>;
+pub type INTID_W<'a, const O: u8> = crate::FieldWriter<'a, STIR_SPEC, 9, O, u16>;
 impl W {
     #[doc = "Bits 0:8 - Interrupt ID of the interrupt to trigger"]
     #[inline(always)]

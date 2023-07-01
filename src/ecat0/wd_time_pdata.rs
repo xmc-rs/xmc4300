@@ -35,9 +35,9 @@ impl From<crate::W<WD_TIME_PDATA_SPEC>> for W {
     }
 }
 #[doc = "Field `WD_TIME_PD` reader - Watchdog Time Process Data"]
-pub type WD_TIME_PD_R = crate::FieldReader<u16, u16>;
+pub type WD_TIME_PD_R = crate::FieldReader<u16>;
 #[doc = "Field `WD_TIME_PD` writer - Watchdog Time Process Data"]
-pub type WD_TIME_PD_W<'a, const O: u8> = crate::FieldWriter<'a, u16, WD_TIME_PDATA_SPEC, u16, u16, 16, O>;
+pub type WD_TIME_PD_W<'a, const O: u8> = crate::FieldWriter<'a, WD_TIME_PDATA_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Watchdog Time Process Data"]
     #[inline(always)]

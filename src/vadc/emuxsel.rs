@@ -35,13 +35,13 @@ impl From<crate::W<EMUXSEL_SPEC>> for W {
     }
 }
 #[doc = "Field `EMUXGRP0` reader - External Multiplexer Group for Interface x"]
-pub type EMUXGRP0_R = crate::FieldReader<u8, u8>;
+pub type EMUXGRP0_R = crate::FieldReader;
 #[doc = "Field `EMUXGRP0` writer - External Multiplexer Group for Interface x"]
-pub type EMUXGRP0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMUXSEL_SPEC, u8, u8, 4, O>;
+pub type EMUXGRP0_W<'a, const O: u8> = crate::FieldWriter<'a, EMUXSEL_SPEC, 4, O>;
 #[doc = "Field `EMUXGRP1` reader - External Multiplexer Group for Interface x"]
-pub type EMUXGRP1_R = crate::FieldReader<u8, u8>;
+pub type EMUXGRP1_R = crate::FieldReader;
 #[doc = "Field `EMUXGRP1` writer - External Multiplexer Group for Interface x"]
-pub type EMUXGRP1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMUXSEL_SPEC, u8, u8, 4, O>;
+pub type EMUXGRP1_W<'a, const O: u8> = crate::FieldWriter<'a, EMUXSEL_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - External Multiplexer Group for Interface x"]
     #[inline(always)]

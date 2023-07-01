@@ -14,7 +14,7 @@ impl From<crate::R<RX_256TO511OCTETS_FRAMES_GOOD_BAD_SPEC>> for R {
     }
 }
 #[doc = "Field `RX256_511OCTGB` reader - This field indicates the number of received good and bad frames with length between 256 and 511 (inclusive) bytes, exclusive of preamble."]
-pub type RX256_511OCTGB_R = crate::FieldReader<u32, u32>;
+pub type RX256_511OCTGB_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of received good and bad frames with length between 256 and 511 (inclusive) bytes, exclusive of preamble."]
     #[inline(always)]

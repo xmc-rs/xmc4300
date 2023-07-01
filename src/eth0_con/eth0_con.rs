@@ -35,7 +35,7 @@ impl From<crate::W<ETH0_CON_SPEC>> for W {
     }
 }
 #[doc = "Field `RXD0` reader - MAC Receive Input 0"]
-pub type RXD0_R = crate::FieldReader<u8, RXD0_A>;
+pub type RXD0_R = crate::FieldReader<RXD0_A>;
 #[doc = "MAC Receive Input 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<RXD0_A> for u8 {
     fn from(variant: RXD0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RXD0_A {
+    type Ux = u8;
 }
 impl RXD0_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl RXD0_R {
     }
 }
 #[doc = "Field `RXD0` writer - MAC Receive Input 0"]
-pub type RXD0_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ETH0_CON_SPEC, u8, RXD0_A, 2, O>;
+pub type RXD0_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ETH0_CON_SPEC, 2, O, RXD0_A>;
 impl<'a, const O: u8> RXD0_W<'a, O> {
     #[doc = "Data input RXD0A is selected"]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> RXD0_W<'a, O> {
     }
 }
 #[doc = "Field `RXD1` reader - MAC Receive Input 1"]
-pub type RXD1_R = crate::FieldReader<u8, RXD1_A>;
+pub type RXD1_R = crate::FieldReader<RXD1_A>;
 #[doc = "MAC Receive Input 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<RXD1_A> for u8 {
     fn from(variant: RXD1_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RXD1_A {
+    type Ux = u8;
 }
 impl RXD1_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl RXD1_R {
     }
 }
 #[doc = "Field `RXD1` writer - MAC Receive Input 1"]
-pub type RXD1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ETH0_CON_SPEC, u8, RXD1_A, 2, O>;
+pub type RXD1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ETH0_CON_SPEC, 2, O, RXD1_A>;
 impl<'a, const O: u8> RXD1_W<'a, O> {
     #[doc = "Data input RXD1A is selected"]
     #[inline(always)]
@@ -191,7 +197,7 @@ impl<'a, const O: u8> RXD1_W<'a, O> {
     }
 }
 #[doc = "Field `RXD2` reader - MAC Receive Input 2"]
-pub type RXD2_R = crate::FieldReader<u8, RXD2_A>;
+pub type RXD2_R = crate::FieldReader<RXD2_A>;
 #[doc = "MAC Receive Input 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -210,6 +216,9 @@ impl From<RXD2_A> for u8 {
     fn from(variant: RXD2_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RXD2_A {
+    type Ux = u8;
 }
 impl RXD2_R {
     #[doc = "Get enumerated values variant"]
@@ -245,7 +254,7 @@ impl RXD2_R {
     }
 }
 #[doc = "Field `RXD2` writer - MAC Receive Input 2"]
-pub type RXD2_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ETH0_CON_SPEC, u8, RXD2_A, 2, O>;
+pub type RXD2_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ETH0_CON_SPEC, 2, O, RXD2_A>;
 impl<'a, const O: u8> RXD2_W<'a, O> {
     #[doc = "Data input RXD2A is selected"]
     #[inline(always)]
@@ -269,7 +278,7 @@ impl<'a, const O: u8> RXD2_W<'a, O> {
     }
 }
 #[doc = "Field `RXD3` reader - MAC Receive Input 3"]
-pub type RXD3_R = crate::FieldReader<u8, RXD3_A>;
+pub type RXD3_R = crate::FieldReader<RXD3_A>;
 #[doc = "MAC Receive Input 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -288,6 +297,9 @@ impl From<RXD3_A> for u8 {
     fn from(variant: RXD3_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RXD3_A {
+    type Ux = u8;
 }
 impl RXD3_R {
     #[doc = "Get enumerated values variant"]
@@ -323,7 +335,7 @@ impl RXD3_R {
     }
 }
 #[doc = "Field `RXD3` writer - MAC Receive Input 3"]
-pub type RXD3_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ETH0_CON_SPEC, u8, RXD3_A, 2, O>;
+pub type RXD3_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ETH0_CON_SPEC, 2, O, RXD3_A>;
 impl<'a, const O: u8> RXD3_W<'a, O> {
     #[doc = "Data input RXD3A is selected"]
     #[inline(always)]
@@ -347,7 +359,7 @@ impl<'a, const O: u8> RXD3_W<'a, O> {
     }
 }
 #[doc = "Field `CLK_RMII` reader - RMII clock input"]
-pub type CLK_RMII_R = crate::FieldReader<u8, CLK_RMII_A>;
+pub type CLK_RMII_R = crate::FieldReader<CLK_RMII_A>;
 #[doc = "RMII clock input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -366,6 +378,9 @@ impl From<CLK_RMII_A> for u8 {
     fn from(variant: CLK_RMII_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLK_RMII_A {
+    type Ux = u8;
 }
 impl CLK_RMII_R {
     #[doc = "Get enumerated values variant"]
@@ -401,7 +416,7 @@ impl CLK_RMII_R {
     }
 }
 #[doc = "Field `CLK_RMII` writer - RMII clock input"]
-pub type CLK_RMII_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ETH0_CON_SPEC, u8, CLK_RMII_A, 2, O>;
+pub type CLK_RMII_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ETH0_CON_SPEC, 2, O, CLK_RMII_A>;
 impl<'a, const O: u8> CLK_RMII_W<'a, O> {
     #[doc = "Data input RMIIA is selected"]
     #[inline(always)]
@@ -425,7 +440,7 @@ impl<'a, const O: u8> CLK_RMII_W<'a, O> {
     }
 }
 #[doc = "Field `CRS_DV` reader - CRS_DV input"]
-pub type CRS_DV_R = crate::FieldReader<u8, CRS_DV_A>;
+pub type CRS_DV_R = crate::FieldReader<CRS_DV_A>;
 #[doc = "CRS_DV input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -444,6 +459,9 @@ impl From<CRS_DV_A> for u8 {
     fn from(variant: CRS_DV_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CRS_DV_A {
+    type Ux = u8;
 }
 impl CRS_DV_R {
     #[doc = "Get enumerated values variant"]
@@ -479,7 +497,7 @@ impl CRS_DV_R {
     }
 }
 #[doc = "Field `CRS_DV` writer - CRS_DV input"]
-pub type CRS_DV_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ETH0_CON_SPEC, u8, CRS_DV_A, 2, O>;
+pub type CRS_DV_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ETH0_CON_SPEC, 2, O, CRS_DV_A>;
 impl<'a, const O: u8> CRS_DV_W<'a, O> {
     #[doc = "Data input CRS_DVA is selected"]
     #[inline(always)]
@@ -503,7 +521,7 @@ impl<'a, const O: u8> CRS_DV_W<'a, O> {
     }
 }
 #[doc = "Field `CRS` reader - CRS input"]
-pub type CRS_R = crate::FieldReader<u8, CRS_A>;
+pub type CRS_R = crate::FieldReader<CRS_A>;
 #[doc = "CRS input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -522,6 +540,9 @@ impl From<CRS_A> for u8 {
     fn from(variant: CRS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CRS_A {
+    type Ux = u8;
 }
 impl CRS_R {
     #[doc = "Get enumerated values variant"]
@@ -557,7 +578,7 @@ impl CRS_R {
     }
 }
 #[doc = "Field `CRS` writer - CRS input"]
-pub type CRS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ETH0_CON_SPEC, u8, CRS_A, 2, O>;
+pub type CRS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ETH0_CON_SPEC, 2, O, CRS_A>;
 impl<'a, const O: u8> CRS_W<'a, O> {
     #[doc = "Data input CRSA"]
     #[inline(always)]
@@ -581,7 +602,7 @@ impl<'a, const O: u8> CRS_W<'a, O> {
     }
 }
 #[doc = "Field `RXER` reader - RXER Input"]
-pub type RXER_R = crate::FieldReader<u8, RXER_A>;
+pub type RXER_R = crate::FieldReader<RXER_A>;
 #[doc = "RXER Input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -600,6 +621,9 @@ impl From<RXER_A> for u8 {
     fn from(variant: RXER_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RXER_A {
+    type Ux = u8;
 }
 impl RXER_R {
     #[doc = "Get enumerated values variant"]
@@ -635,7 +659,7 @@ impl RXER_R {
     }
 }
 #[doc = "Field `RXER` writer - RXER Input"]
-pub type RXER_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ETH0_CON_SPEC, u8, RXER_A, 2, O>;
+pub type RXER_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ETH0_CON_SPEC, 2, O, RXER_A>;
 impl<'a, const O: u8> RXER_W<'a, O> {
     #[doc = "Data input RXERA is selected"]
     #[inline(always)]
@@ -659,7 +683,7 @@ impl<'a, const O: u8> RXER_W<'a, O> {
     }
 }
 #[doc = "Field `COL` reader - COL input"]
-pub type COL_R = crate::FieldReader<u8, COL_A>;
+pub type COL_R = crate::FieldReader<COL_A>;
 #[doc = "COL input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -678,6 +702,9 @@ impl From<COL_A> for u8 {
     fn from(variant: COL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for COL_A {
+    type Ux = u8;
 }
 impl COL_R {
     #[doc = "Get enumerated values variant"]
@@ -713,7 +740,7 @@ impl COL_R {
     }
 }
 #[doc = "Field `COL` writer - COL input"]
-pub type COL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ETH0_CON_SPEC, u8, COL_A, 2, O>;
+pub type COL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ETH0_CON_SPEC, 2, O, COL_A>;
 impl<'a, const O: u8> COL_W<'a, O> {
     #[doc = "Data input COLA is selected"]
     #[inline(always)]
@@ -737,7 +764,7 @@ impl<'a, const O: u8> COL_W<'a, O> {
     }
 }
 #[doc = "Field `CLK_TX` reader - CLK_TX input"]
-pub type CLK_TX_R = crate::FieldReader<u8, CLK_TX_A>;
+pub type CLK_TX_R = crate::FieldReader<CLK_TX_A>;
 #[doc = "CLK_TX input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -756,6 +783,9 @@ impl From<CLK_TX_A> for u8 {
     fn from(variant: CLK_TX_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLK_TX_A {
+    type Ux = u8;
 }
 impl CLK_TX_R {
     #[doc = "Get enumerated values variant"]
@@ -791,7 +821,7 @@ impl CLK_TX_R {
     }
 }
 #[doc = "Field `CLK_TX` writer - CLK_TX input"]
-pub type CLK_TX_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ETH0_CON_SPEC, u8, CLK_TX_A, 2, O>;
+pub type CLK_TX_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ETH0_CON_SPEC, 2, O, CLK_TX_A>;
 impl<'a, const O: u8> CLK_TX_W<'a, O> {
     #[doc = "Data input CLK_TXA is selected"]
     #[inline(always)]
@@ -815,7 +845,7 @@ impl<'a, const O: u8> CLK_TX_W<'a, O> {
     }
 }
 #[doc = "Field `MDIO` reader - MDIO Input Select"]
-pub type MDIO_R = crate::FieldReader<u8, MDIO_A>;
+pub type MDIO_R = crate::FieldReader<MDIO_A>;
 #[doc = "MDIO Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -834,6 +864,9 @@ impl From<MDIO_A> for u8 {
     fn from(variant: MDIO_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MDIO_A {
+    type Ux = u8;
 }
 impl MDIO_R {
     #[doc = "Get enumerated values variant"]
@@ -869,7 +902,7 @@ impl MDIO_R {
     }
 }
 #[doc = "Field `MDIO` writer - MDIO Input Select"]
-pub type MDIO_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ETH0_CON_SPEC, u8, MDIO_A, 2, O>;
+pub type MDIO_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ETH0_CON_SPEC, 2, O, MDIO_A>;
 impl<'a, const O: u8> MDIO_W<'a, O> {
     #[doc = "Data input MDIA is selected"]
     #[inline(always)]
@@ -929,7 +962,7 @@ impl INFSEL_R {
     }
 }
 #[doc = "Field `INFSEL` writer - Ethernet MAC Interface Selection"]
-pub type INFSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, ETH0_CON_SPEC, INFSEL_A, O>;
+pub type INFSEL_W<'a, const O: u8> = crate::BitWriter<'a, ETH0_CON_SPEC, O, INFSEL_A>;
 impl<'a, const O: u8> INFSEL_W<'a, O> {
     #[doc = "MII"]
     #[inline(always)]

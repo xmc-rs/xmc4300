@@ -35,9 +35,9 @@ impl From<crate::W<PANCTR_SPEC>> for W {
     }
 }
 #[doc = "Field `PANCMD` reader - Panel Command"]
-pub type PANCMD_R = crate::FieldReader<u8, u8>;
+pub type PANCMD_R = crate::FieldReader;
 #[doc = "Field `PANCMD` writer - Panel Command"]
-pub type PANCMD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PANCTR_SPEC, u8, u8, 8, O>;
+pub type PANCMD_W<'a, const O: u8> = crate::FieldWriter<'a, PANCTR_SPEC, 8, O>;
 #[doc = "Field `BUSY` reader - Panel Busy Flag"]
 pub type BUSY_R = crate::BitReader<BUSY_A>;
 #[doc = "Panel Busy Flag\n\nValue on reset: 1"]
@@ -111,13 +111,13 @@ impl RBUSY_R {
     }
 }
 #[doc = "Field `PANAR1` reader - Panel Argument 1"]
-pub type PANAR1_R = crate::FieldReader<u8, u8>;
+pub type PANAR1_R = crate::FieldReader;
 #[doc = "Field `PANAR1` writer - Panel Argument 1"]
-pub type PANAR1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PANCTR_SPEC, u8, u8, 8, O>;
+pub type PANAR1_W<'a, const O: u8> = crate::FieldWriter<'a, PANCTR_SPEC, 8, O>;
 #[doc = "Field `PANAR2` reader - Panel Argument 2"]
-pub type PANAR2_R = crate::FieldReader<u8, u8>;
+pub type PANAR2_R = crate::FieldReader;
 #[doc = "Field `PANAR2` writer - Panel Argument 2"]
-pub type PANAR2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PANCTR_SPEC, u8, u8, 8, O>;
+pub type PANAR2_W<'a, const O: u8> = crate::FieldWriter<'a, PANCTR_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Panel Command"]
     #[inline(always)]

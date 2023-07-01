@@ -35,9 +35,9 @@ impl From<crate::W<GRXFSIZ_SPEC>> for W {
     }
 }
 #[doc = "Field `RxFDep` reader - RxFIFO Depth"]
-pub type RX_FDEP_R = crate::FieldReader<u16, u16>;
+pub type RX_FDEP_R = crate::FieldReader<u16>;
 #[doc = "Field `RxFDep` writer - RxFIFO Depth"]
-pub type RX_FDEP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GRXFSIZ_SPEC, u16, u16, 16, O>;
+pub type RX_FDEP_W<'a, const O: u8> = crate::FieldWriter<'a, GRXFSIZ_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - RxFIFO Depth"]
     #[inline(always)]

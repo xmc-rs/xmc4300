@@ -71,7 +71,7 @@ impl AL_CE_MASK_R {
     }
 }
 #[doc = "Field `AL_CE_MASK` writer - AL Control event"]
-pub type AL_CE_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, AL_CE_MASK_A, O>;
+pub type AL_CE_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, AL_CE_MASK_A>;
 impl<'a, const O: u8> AL_CE_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl DC_LE_MASK_R {
     }
 }
 #[doc = "Field `DC_LE_MASK` writer - DC Latch event"]
-pub type DC_LE_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, DC_LE_MASK_A, O>;
+pub type DC_LE_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, DC_LE_MASK_A>;
 impl<'a, const O: u8> DC_LE_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl ST_S0_MASK_R {
     }
 }
 #[doc = "Field `ST_S0_MASK` writer - State of DC SYNC0"]
-pub type ST_S0_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, ST_S0_MASK_A, O>;
+pub type ST_S0_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, ST_S0_MASK_A>;
 impl<'a, const O: u8> ST_S0_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl ST_S1_MASK_R {
     }
 }
 #[doc = "Field `ST_S1_MASK` writer - State of DC SYNC1"]
-pub type ST_S1_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, ST_S1_MASK_A, O>;
+pub type ST_S1_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, ST_S1_MASK_A>;
 impl<'a, const O: u8> ST_S1_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl SM_A_MASK_R {
     }
 }
 #[doc = "Field `SM_A_MASK` writer - SyncManager activation register changed"]
-pub type SM_A_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SM_A_MASK_A, O>;
+pub type SM_A_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SM_A_MASK_A>;
 impl<'a, const O: u8> SM_A_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl EEP_E_MASK_R {
     }
 }
 #[doc = "Field `EEP_E_MASK` writer - EEPROM Emulation"]
-pub type EEP_E_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, EEP_E_MASK_A, O>;
+pub type EEP_E_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, EEP_E_MASK_A>;
 impl<'a, const O: u8> EEP_E_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl WP_D_MASK_R {
     }
 }
 #[doc = "Field `WP_D_MASK` writer - Watchdog Process Data"]
-pub type WP_D_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, WP_D_MASK_A, O>;
+pub type WP_D_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, WP_D_MASK_A>;
 impl<'a, const O: u8> WP_D_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl SMI_0_MASK_R {
     }
 }
 #[doc = "Field `SMI_0_MASK` writer - SyncManager interrupt"]
-pub type SMI_0_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_0_MASK_A, O>;
+pub type SMI_0_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_0_MASK_A>;
 impl<'a, const O: u8> SMI_0_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl SMI_1_MASK_R {
     }
 }
 #[doc = "Field `SMI_1_MASK` writer - SyncManager interrupt"]
-pub type SMI_1_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_1_MASK_A, O>;
+pub type SMI_1_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_1_MASK_A>;
 impl<'a, const O: u8> SMI_1_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl SMI_2_MASK_R {
     }
 }
 #[doc = "Field `SMI_2_MASK` writer - SyncManager interrupt"]
-pub type SMI_2_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_2_MASK_A, O>;
+pub type SMI_2_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_2_MASK_A>;
 impl<'a, const O: u8> SMI_2_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl SMI_3_MASK_R {
     }
 }
 #[doc = "Field `SMI_3_MASK` writer - SyncManager interrupt"]
-pub type SMI_3_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_3_MASK_A, O>;
+pub type SMI_3_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_3_MASK_A>;
 impl<'a, const O: u8> SMI_3_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl SMI_4_MASK_R {
     }
 }
 #[doc = "Field `SMI_4_MASK` writer - SyncManager interrupt"]
-pub type SMI_4_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_4_MASK_A, O>;
+pub type SMI_4_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_4_MASK_A>;
 impl<'a, const O: u8> SMI_4_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -671,7 +671,7 @@ impl SMI_5_MASK_R {
     }
 }
 #[doc = "Field `SMI_5_MASK` writer - SyncManager interrupt"]
-pub type SMI_5_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_5_MASK_A, O>;
+pub type SMI_5_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_5_MASK_A>;
 impl<'a, const O: u8> SMI_5_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -721,7 +721,7 @@ impl SMI_6_MASK_R {
     }
 }
 #[doc = "Field `SMI_6_MASK` writer - SyncManager interrupt"]
-pub type SMI_6_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_6_MASK_A, O>;
+pub type SMI_6_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_6_MASK_A>;
 impl<'a, const O: u8> SMI_6_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -771,7 +771,7 @@ impl SMI_7_MASK_R {
     }
 }
 #[doc = "Field `SMI_7_MASK` writer - SyncManager interrupt"]
-pub type SMI_7_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_7_MASK_A, O>;
+pub type SMI_7_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_7_MASK_A>;
 impl<'a, const O: u8> SMI_7_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -821,7 +821,7 @@ impl SMI_8_MASK_R {
     }
 }
 #[doc = "Field `SMI_8_MASK` writer - SyncManager interrupt"]
-pub type SMI_8_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_8_MASK_A, O>;
+pub type SMI_8_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_8_MASK_A>;
 impl<'a, const O: u8> SMI_8_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -871,7 +871,7 @@ impl SMI_9_MASK_R {
     }
 }
 #[doc = "Field `SMI_9_MASK` writer - SyncManager interrupt"]
-pub type SMI_9_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_9_MASK_A, O>;
+pub type SMI_9_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_9_MASK_A>;
 impl<'a, const O: u8> SMI_9_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -921,7 +921,7 @@ impl SMI_10_MASK_R {
     }
 }
 #[doc = "Field `SMI_10_MASK` writer - SyncManager interrupt"]
-pub type SMI_10_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_10_MASK_A, O>;
+pub type SMI_10_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_10_MASK_A>;
 impl<'a, const O: u8> SMI_10_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -971,7 +971,7 @@ impl SMI_11_MASK_R {
     }
 }
 #[doc = "Field `SMI_11_MASK` writer - SyncManager interrupt"]
-pub type SMI_11_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_11_MASK_A, O>;
+pub type SMI_11_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_11_MASK_A>;
 impl<'a, const O: u8> SMI_11_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -1021,7 +1021,7 @@ impl SMI_12_MASK_R {
     }
 }
 #[doc = "Field `SMI_12_MASK` writer - SyncManager interrupt"]
-pub type SMI_12_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_12_MASK_A, O>;
+pub type SMI_12_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_12_MASK_A>;
 impl<'a, const O: u8> SMI_12_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -1071,7 +1071,7 @@ impl SMI_13_MASK_R {
     }
 }
 #[doc = "Field `SMI_13_MASK` writer - SyncManager interrupt"]
-pub type SMI_13_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_13_MASK_A, O>;
+pub type SMI_13_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_13_MASK_A>;
 impl<'a, const O: u8> SMI_13_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -1121,7 +1121,7 @@ impl SMI_14_MASK_R {
     }
 }
 #[doc = "Field `SMI_14_MASK` writer - SyncManager interrupt"]
-pub type SMI_14_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_14_MASK_A, O>;
+pub type SMI_14_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_14_MASK_A>;
 impl<'a, const O: u8> SMI_14_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
@@ -1171,7 +1171,7 @@ impl SMI_15_MASK_R {
     }
 }
 #[doc = "Field `SMI_15_MASK` writer - SyncManager interrupt"]
-pub type SMI_15_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_MASK_SPEC, SMI_15_MASK_A, O>;
+pub type SMI_15_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_15_MASK_A>;
 impl<'a, const O: u8> SMI_15_MASK_W<'a, O> {
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]

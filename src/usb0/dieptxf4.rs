@@ -35,13 +35,13 @@ impl From<crate::W<DIEPTXF4_SPEC>> for W {
     }
 }
 #[doc = "Field `INEPnTxFStAddr` reader - IN Endpoint FIFOn Transmit RAM Start Address"]
-pub type INEPN_TX_FST_ADDR_R = crate::FieldReader<u16, u16>;
+pub type INEPN_TX_FST_ADDR_R = crate::FieldReader<u16>;
 #[doc = "Field `INEPnTxFStAddr` writer - IN Endpoint FIFOn Transmit RAM Start Address"]
-pub type INEPN_TX_FST_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DIEPTXF4_SPEC, u16, u16, 16, O>;
+pub type INEPN_TX_FST_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, DIEPTXF4_SPEC, 16, O, u16>;
 #[doc = "Field `INEPnTxFDep` reader - IN Endpoint TxFIFO Depth"]
-pub type INEPN_TX_FDEP_R = crate::FieldReader<u16, u16>;
+pub type INEPN_TX_FDEP_R = crate::FieldReader<u16>;
 #[doc = "Field `INEPnTxFDep` writer - IN Endpoint TxFIFO Depth"]
-pub type INEPN_TX_FDEP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DIEPTXF4_SPEC, u16, u16, 16, O>;
+pub type INEPN_TX_FDEP_W<'a, const O: u8> = crate::FieldWriter<'a, DIEPTXF4_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - IN Endpoint FIFOn Transmit RAM Start Address"]
     #[inline(always)]

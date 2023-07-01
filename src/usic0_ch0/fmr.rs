@@ -36,8 +36,11 @@ impl From<MTDV_AW> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for MTDV_AW {
+    type Ux = u8;
+}
 #[doc = "Field `MTDV` writer - Modify Transmit Data Valid"]
-pub type MTDV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FMR_SPEC, u8, MTDV_AW, 2, O>;
+pub type MTDV_W<'a, const O: u8> = crate::FieldWriter<'a, FMR_SPEC, 2, O, MTDV_AW>;
 impl<'a, const O: u8> MTDV_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
@@ -70,7 +73,7 @@ impl From<ATVC_AW> for bool {
     }
 }
 #[doc = "Field `ATVC` writer - Activate Bit TVC"]
-pub type ATVC_W<'a, const O: u8> = crate::BitWriter<'a, u32, FMR_SPEC, ATVC_AW, O>;
+pub type ATVC_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, ATVC_AW>;
 impl<'a, const O: u8> ATVC_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
@@ -98,7 +101,7 @@ impl From<CRDV0_AW> for bool {
     }
 }
 #[doc = "Field `CRDV0` writer - Clear Bits RDV for RBUF0"]
-pub type CRDV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, FMR_SPEC, CRDV0_AW, O>;
+pub type CRDV0_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, CRDV0_AW>;
 impl<'a, const O: u8> CRDV0_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
@@ -126,7 +129,7 @@ impl From<CRDV1_AW> for bool {
     }
 }
 #[doc = "Field `CRDV1` writer - Clear Bit RDV for RBUF1"]
-pub type CRDV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, FMR_SPEC, CRDV1_AW, O>;
+pub type CRDV1_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, CRDV1_AW>;
 impl<'a, const O: u8> CRDV1_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
@@ -154,7 +157,7 @@ impl From<SIO0_AW> for bool {
     }
 }
 #[doc = "Field `SIO0` writer - Set Interrupt Output SRx"]
-pub type SIO0_W<'a, const O: u8> = crate::BitWriter<'a, u32, FMR_SPEC, SIO0_AW, O>;
+pub type SIO0_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, SIO0_AW>;
 impl<'a, const O: u8> SIO0_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
@@ -182,7 +185,7 @@ impl From<SIO1_AW> for bool {
     }
 }
 #[doc = "Field `SIO1` writer - Set Interrupt Output SRx"]
-pub type SIO1_W<'a, const O: u8> = crate::BitWriter<'a, u32, FMR_SPEC, SIO1_AW, O>;
+pub type SIO1_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, SIO1_AW>;
 impl<'a, const O: u8> SIO1_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
@@ -210,7 +213,7 @@ impl From<SIO2_AW> for bool {
     }
 }
 #[doc = "Field `SIO2` writer - Set Interrupt Output SRx"]
-pub type SIO2_W<'a, const O: u8> = crate::BitWriter<'a, u32, FMR_SPEC, SIO2_AW, O>;
+pub type SIO2_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, SIO2_AW>;
 impl<'a, const O: u8> SIO2_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
@@ -238,7 +241,7 @@ impl From<SIO3_AW> for bool {
     }
 }
 #[doc = "Field `SIO3` writer - Set Interrupt Output SRx"]
-pub type SIO3_W<'a, const O: u8> = crate::BitWriter<'a, u32, FMR_SPEC, SIO3_AW, O>;
+pub type SIO3_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, SIO3_AW>;
 impl<'a, const O: u8> SIO3_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
@@ -266,7 +269,7 @@ impl From<SIO4_AW> for bool {
     }
 }
 #[doc = "Field `SIO4` writer - Set Interrupt Output SRx"]
-pub type SIO4_W<'a, const O: u8> = crate::BitWriter<'a, u32, FMR_SPEC, SIO4_AW, O>;
+pub type SIO4_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, SIO4_AW>;
 impl<'a, const O: u8> SIO4_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
@@ -294,7 +297,7 @@ impl From<SIO5_AW> for bool {
     }
 }
 #[doc = "Field `SIO5` writer - Set Interrupt Output SRx"]
-pub type SIO5_W<'a, const O: u8> = crate::BitWriter<'a, u32, FMR_SPEC, SIO5_AW, O>;
+pub type SIO5_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, SIO5_AW>;
 impl<'a, const O: u8> SIO5_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]

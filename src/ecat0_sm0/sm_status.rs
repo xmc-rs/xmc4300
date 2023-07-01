@@ -122,7 +122,7 @@ impl MB_STATUS_R {
     }
 }
 #[doc = "Field `BUF_STATUS` reader - Buffered mode: buffer status (last written buffer)"]
-pub type BUF_STATUS_R = crate::FieldReader<u8, BUF_STATUS_A>;
+pub type BUF_STATUS_R = crate::FieldReader<BUF_STATUS_A>;
 #[doc = "Buffered mode: buffer status (last written buffer)\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -141,6 +141,9 @@ impl From<BUF_STATUS_A> for u8 {
     fn from(variant: BUF_STATUS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BUF_STATUS_A {
+    type Ux = u8;
 }
 impl BUF_STATUS_R {
     #[doc = "Get enumerated values variant"]

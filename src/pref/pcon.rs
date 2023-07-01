@@ -71,7 +71,7 @@ impl IBYP_R {
     }
 }
 #[doc = "Field `IBYP` writer - Instruction Prefetch Buffer Bypass"]
-pub type IBYP_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCON_SPEC, IBYP_A, O>;
+pub type IBYP_W<'a, const O: u8> = crate::BitWriter<'a, PCON_SPEC, O, IBYP_A>;
 impl<'a, const O: u8> IBYP_W<'a, O> {
     #[doc = "Instruction prefetch buffer not bypassed."]
     #[inline(always)]
@@ -99,7 +99,7 @@ impl From<IINV_AW> for bool {
     }
 }
 #[doc = "Field `IINV` writer - Instruction Prefetch Buffer Invalidate"]
-pub type IINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCON_SPEC, IINV_AW, O>;
+pub type IINV_W<'a, const O: u8> = crate::BitWriter<'a, PCON_SPEC, O, IINV_AW>;
 impl<'a, const O: u8> IINV_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
@@ -149,7 +149,7 @@ impl DBYP_R {
     }
 }
 #[doc = "Field `DBYP` writer - Data Buffer Bypass"]
-pub type DBYP_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCON_SPEC, DBYP_A, O>;
+pub type DBYP_W<'a, const O: u8> = crate::BitWriter<'a, PCON_SPEC, O, DBYP_A>;
 impl<'a, const O: u8> DBYP_W<'a, O> {
     #[doc = "Prefetch Data buffer not bypassed."]
     #[inline(always)]

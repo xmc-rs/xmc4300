@@ -71,7 +71,7 @@ impl IACCVIOL_R {
     }
 }
 #[doc = "Field `IACCVIOL` writer - Instruction access violation flag"]
-pub type IACCVIOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, IACCVIOL_A, O>;
+pub type IACCVIOL_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, IACCVIOL_A>;
 impl<'a, const O: u8> IACCVIOL_W<'a, O> {
     #[doc = "no instruction access violation fault"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl DACCVIOL_R {
     }
 }
 #[doc = "Field `DACCVIOL` writer - Data access violation flag"]
-pub type DACCVIOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, DACCVIOL_A, O>;
+pub type DACCVIOL_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, DACCVIOL_A>;
 impl<'a, const O: u8> DACCVIOL_W<'a, O> {
     #[doc = "no data access violation fault"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl MUNSTKERR_R {
     }
 }
 #[doc = "Field `MUNSTKERR` writer - MemManage fault on unstacking for a return from exception"]
-pub type MUNSTKERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, MUNSTKERR_A, O>;
+pub type MUNSTKERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, MUNSTKERR_A>;
 impl<'a, const O: u8> MUNSTKERR_W<'a, O> {
     #[doc = "no unstacking fault"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl MSTKERR_R {
     }
 }
 #[doc = "Field `MSTKERR` writer - MemManage fault on stacking for exception entry"]
-pub type MSTKERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, MSTKERR_A, O>;
+pub type MSTKERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, MSTKERR_A>;
 impl<'a, const O: u8> MSTKERR_W<'a, O> {
     #[doc = "no stacking fault"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl MLSPERR_R {
     }
 }
 #[doc = "Field `MLSPERR` writer - MemManage fault during floating point lazy state preservation"]
-pub type MLSPERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, MLSPERR_A, O>;
+pub type MLSPERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, MLSPERR_A>;
 impl<'a, const O: u8> MLSPERR_W<'a, O> {
     #[doc = "No MemManage fault occurred during floating-point lazy state preservation"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl MMARVALID_R {
     }
 }
 #[doc = "Field `MMARVALID` writer - MemManage Fault Address Register (MMFAR) valid flag"]
-pub type MMARVALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, MMARVALID_A, O>;
+pub type MMARVALID_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, MMARVALID_A>;
 impl<'a, const O: u8> MMARVALID_W<'a, O> {
     #[doc = "value in MMAR is not a valid fault address"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl IBUSERR_R {
     }
 }
 #[doc = "Field `IBUSERR` writer - Instruction bus error"]
-pub type IBUSERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, IBUSERR_A, O>;
+pub type IBUSERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, IBUSERR_A>;
 impl<'a, const O: u8> IBUSERR_W<'a, O> {
     #[doc = "no instruction bus error"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl PRECISERR_R {
     }
 }
 #[doc = "Field `PRECISERR` writer - Precise data bus error"]
-pub type PRECISERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, PRECISERR_A, O>;
+pub type PRECISERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, PRECISERR_A>;
 impl<'a, const O: u8> PRECISERR_W<'a, O> {
     #[doc = "no precise data bus error"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl IMPRECISERR_R {
     }
 }
 #[doc = "Field `IMPRECISERR` writer - Imprecise data bus error"]
-pub type IMPRECISERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, IMPRECISERR_A, O>;
+pub type IMPRECISERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, IMPRECISERR_A>;
 impl<'a, const O: u8> IMPRECISERR_W<'a, O> {
     #[doc = "no imprecise data bus error"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl UNSTKERR_R {
     }
 }
 #[doc = "Field `UNSTKERR` writer - BusFault on unstacking for a return from exception"]
-pub type UNSTKERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, UNSTKERR_A, O>;
+pub type UNSTKERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, UNSTKERR_A>;
 impl<'a, const O: u8> UNSTKERR_W<'a, O> {
     #[doc = "no unstacking fault"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl STKERR_R {
     }
 }
 #[doc = "Field `STKERR` writer - BusFault on stacking for exception entry"]
-pub type STKERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, STKERR_A, O>;
+pub type STKERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, STKERR_A>;
 impl<'a, const O: u8> STKERR_W<'a, O> {
     #[doc = "no stacking fault"]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl LSPERR_R {
     }
 }
 #[doc = "Field `LSPERR` writer - BusFault during floating point lazy state preservation"]
-pub type LSPERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, LSPERR_A, O>;
+pub type LSPERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, LSPERR_A>;
 impl<'a, const O: u8> LSPERR_W<'a, O> {
     #[doc = "No bus fault occurred during floating-point lazy state preservation."]
     #[inline(always)]
@@ -671,7 +671,7 @@ impl BFARVALID_R {
     }
 }
 #[doc = "Field `BFARVALID` writer - BusFault Address Register (BFAR) valid flag"]
-pub type BFARVALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, BFARVALID_A, O>;
+pub type BFARVALID_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, BFARVALID_A>;
 impl<'a, const O: u8> BFARVALID_W<'a, O> {
     #[doc = "value in BFAR is not a valid fault address"]
     #[inline(always)]
@@ -721,7 +721,7 @@ impl UNDEFINSTR_R {
     }
 }
 #[doc = "Field `UNDEFINSTR` writer - Undefined instruction UsageFault"]
-pub type UNDEFINSTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, UNDEFINSTR_A, O>;
+pub type UNDEFINSTR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, UNDEFINSTR_A>;
 impl<'a, const O: u8> UNDEFINSTR_W<'a, O> {
     #[doc = "no undefined instruction UsageFault"]
     #[inline(always)]
@@ -771,7 +771,7 @@ impl INVSTATE_R {
     }
 }
 #[doc = "Field `INVSTATE` writer - Invalid state UsageFault"]
-pub type INVSTATE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, INVSTATE_A, O>;
+pub type INVSTATE_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, INVSTATE_A>;
 impl<'a, const O: u8> INVSTATE_W<'a, O> {
     #[doc = "no invalid state UsageFault"]
     #[inline(always)]
@@ -821,7 +821,7 @@ impl INVPC_R {
     }
 }
 #[doc = "Field `INVPC` writer - Invalid PC load UsageFault"]
-pub type INVPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, INVPC_A, O>;
+pub type INVPC_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, INVPC_A>;
 impl<'a, const O: u8> INVPC_W<'a, O> {
     #[doc = "no invalid PC load UsageFault"]
     #[inline(always)]
@@ -871,7 +871,7 @@ impl NOCP_R {
     }
 }
 #[doc = "Field `NOCP` writer - No coprocessor UsageFault"]
-pub type NOCP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, NOCP_A, O>;
+pub type NOCP_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, NOCP_A>;
 impl<'a, const O: u8> NOCP_W<'a, O> {
     #[doc = "no UsageFault caused by attempting to access a coprocessor"]
     #[inline(always)]
@@ -921,7 +921,7 @@ impl UNALIGNED_R {
     }
 }
 #[doc = "Field `UNALIGNED` writer - Unaligned access UsageFault"]
-pub type UNALIGNED_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, UNALIGNED_A, O>;
+pub type UNALIGNED_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, UNALIGNED_A>;
 impl<'a, const O: u8> UNALIGNED_W<'a, O> {
     #[doc = "no unaligned access fault, or unaligned access trapping not enabled"]
     #[inline(always)]
@@ -971,7 +971,7 @@ impl DIVBYZERO_R {
     }
 }
 #[doc = "Field `DIVBYZERO` writer - Divide by zero UsageFault"]
-pub type DIVBYZERO_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFSR_SPEC, DIVBYZERO_A, O>;
+pub type DIVBYZERO_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, DIVBYZERO_A>;
 impl<'a, const O: u8> DIVBYZERO_W<'a, O> {
     #[doc = "no divide by zero fault, or divide by zero trapping not enabled"]
     #[inline(always)]

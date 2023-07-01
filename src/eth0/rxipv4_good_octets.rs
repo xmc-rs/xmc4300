@@ -14,7 +14,7 @@ impl From<crate::R<RXIPV4_GOOD_OCTETS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV4GDOCT` reader - This field indicates the number of bytes received in good IPv4 datagrams encapsulating TCP, UDP, or ICMP data. The Ethernet header, FCS, pad, or IP pad"]
-pub type RXIPV4GDOCT_R = crate::FieldReader<u32, u32>;
+pub type RXIPV4GDOCT_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of bytes received in good IPv4 datagrams encapsulating TCP, UDP, or ICMP data. The Ethernet header, FCS, pad, or IP pad"]
     #[inline(always)]

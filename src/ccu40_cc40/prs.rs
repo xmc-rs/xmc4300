@@ -35,9 +35,9 @@ impl From<crate::W<PRS_SPEC>> for W {
     }
 }
 #[doc = "Field `PRS` reader - Period Register"]
-pub type PRS_R = crate::FieldReader<u16, u16>;
+pub type PRS_R = crate::FieldReader<u16>;
 #[doc = "Field `PRS` writer - Period Register"]
-pub type PRS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PRS_SPEC, u16, u16, 16, O>;
+pub type PRS_W<'a, const O: u8> = crate::FieldWriter<'a, PRS_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Period Register"]
     #[inline(always)]

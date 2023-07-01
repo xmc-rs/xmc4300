@@ -35,29 +35,29 @@ impl From<crate::W<GOTGINT_SPEC>> for W {
     }
 }
 #[doc = "Field `SesEndDet` reader - Session End Detected"]
-pub type SES_END_DET_R = crate::BitReader<bool>;
+pub type SES_END_DET_R = crate::BitReader;
 #[doc = "Field `SesEndDet` writer - Session End Detected"]
-pub type SES_END_DET_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGINT_SPEC, bool, O>;
+pub type SES_END_DET_W<'a, const O: u8> = crate::BitWriter<'a, GOTGINT_SPEC, O>;
 #[doc = "Field `SesReqSucStsChng` reader - Session Request Success Status Change"]
-pub type SES_REQ_SUC_STS_CHNG_R = crate::BitReader<bool>;
+pub type SES_REQ_SUC_STS_CHNG_R = crate::BitReader;
 #[doc = "Field `SesReqSucStsChng` writer - Session Request Success Status Change"]
-pub type SES_REQ_SUC_STS_CHNG_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGINT_SPEC, bool, O>;
+pub type SES_REQ_SUC_STS_CHNG_W<'a, const O: u8> = crate::BitWriter<'a, GOTGINT_SPEC, O>;
 #[doc = "Field `HstNegSucStsChng` reader - Host Negotiation Success Status Change"]
-pub type HST_NEG_SUC_STS_CHNG_R = crate::BitReader<bool>;
+pub type HST_NEG_SUC_STS_CHNG_R = crate::BitReader;
 #[doc = "Field `HstNegSucStsChng` writer - Host Negotiation Success Status Change"]
-pub type HST_NEG_SUC_STS_CHNG_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGINT_SPEC, bool, O>;
+pub type HST_NEG_SUC_STS_CHNG_W<'a, const O: u8> = crate::BitWriter<'a, GOTGINT_SPEC, O>;
 #[doc = "Field `HstNegDet` reader - Host Negotiation Detected"]
-pub type HST_NEG_DET_R = crate::BitReader<bool>;
+pub type HST_NEG_DET_R = crate::BitReader;
 #[doc = "Field `HstNegDet` writer - Host Negotiation Detected"]
-pub type HST_NEG_DET_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGINT_SPEC, bool, O>;
+pub type HST_NEG_DET_W<'a, const O: u8> = crate::BitWriter<'a, GOTGINT_SPEC, O>;
 #[doc = "Field `ADevTOUTChg` reader - A-Device Timeout Change"]
-pub type ADEV_TOUTCHG_R = crate::BitReader<bool>;
+pub type ADEV_TOUTCHG_R = crate::BitReader;
 #[doc = "Field `ADevTOUTChg` writer - A-Device Timeout Change"]
-pub type ADEV_TOUTCHG_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGINT_SPEC, bool, O>;
+pub type ADEV_TOUTCHG_W<'a, const O: u8> = crate::BitWriter<'a, GOTGINT_SPEC, O>;
 #[doc = "Field `DbnceDone` reader - Debounce Done"]
-pub type DBNCE_DONE_R = crate::BitReader<bool>;
+pub type DBNCE_DONE_R = crate::BitReader;
 #[doc = "Field `DbnceDone` writer - Debounce Done"]
-pub type DBNCE_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GOTGINT_SPEC, bool, O>;
+pub type DBNCE_DONE_W<'a, const O: u8> = crate::BitWriter<'a, GOTGINT_SPEC, O>;
 impl R {
     #[doc = "Bit 2 - Session End Detected"]
     #[inline(always)]

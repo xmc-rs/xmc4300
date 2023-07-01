@@ -71,7 +71,7 @@ impl WAGEN_R {
     }
 }
 #[doc = "Field `WAGEN` writer - WA Generation Enable"]
-pub type WAGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IISMODE_SPEC, WAGEN_A, O>;
+pub type WAGEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IISMODE_SPEC, O, WAGEN_A>;
 impl<'a, const O: u8> WAGEN_W<'a, O> {
     #[doc = "The IIS can be used as slave. The generation of the word address signal is disabled. The output signal WA is 0. The MCLKO signal generation depends on PCR.MCLK."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl DTEN_R {
     }
 }
 #[doc = "Field `DTEN` writer - Data Transfers Enable"]
-pub type DTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IISMODE_SPEC, DTEN_A, O>;
+pub type DTEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IISMODE_SPEC, O, DTEN_A>;
 impl<'a, const O: u8> DTEN_W<'a, O> {
     #[doc = "The changes of the WA input signal are ignored and no transfers take place."]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl SELINV_R {
     }
 }
 #[doc = "Field `SELINV` writer - Select Inversion"]
-pub type SELINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IISMODE_SPEC, SELINV_A, O>;
+pub type SELINV_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IISMODE_SPEC, O, SELINV_A>;
 impl<'a, const O: u8> SELINV_W<'a, O> {
     #[doc = "The SELOx outputs have the same polarity as the WA signal."]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl WAFEIEN_R {
     }
 }
 #[doc = "Field `WAFEIEN` writer - WA Falling Edge Interrupt Enable"]
-pub type WAFEIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IISMODE_SPEC, WAFEIEN_A, O>;
+pub type WAFEIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IISMODE_SPEC, O, WAFEIEN_A>;
 impl<'a, const O: u8> WAFEIEN_W<'a, O> {
     #[doc = "A protocol interrupt is not activated if a falling edge of WA is generated."]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl WAREIEN_R {
     }
 }
 #[doc = "Field `WAREIEN` writer - WA Rising Edge Interrupt Enable"]
-pub type WAREIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IISMODE_SPEC, WAREIEN_A, O>;
+pub type WAREIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IISMODE_SPEC, O, WAREIEN_A>;
 impl<'a, const O: u8> WAREIEN_W<'a, O> {
     #[doc = "A protocol interrupt is not activated if a rising edge of WA is generated."]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl ENDIEN_R {
     }
 }
 #[doc = "Field `ENDIEN` writer - END Interrupt Enable"]
-pub type ENDIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IISMODE_SPEC, ENDIEN_A, O>;
+pub type ENDIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IISMODE_SPEC, O, ENDIEN_A>;
 impl<'a, const O: u8> ENDIEN_W<'a, O> {
     #[doc = "A protocol interrupt is not activated."]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl DX2TIEN_R {
     }
 }
 #[doc = "Field `DX2TIEN` writer - DX2T Interrupt Enable"]
-pub type DX2TIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IISMODE_SPEC, DX2TIEN_A, O>;
+pub type DX2TIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IISMODE_SPEC, O, DX2TIEN_A>;
 impl<'a, const O: u8> DX2TIEN_W<'a, O> {
     #[doc = "A protocol interrupt is not generated if DX2T is active."]
     #[inline(always)]
@@ -385,9 +385,9 @@ impl<'a, const O: u8> DX2TIEN_W<'a, O> {
     }
 }
 #[doc = "Field `TDEL` reader - Transfer Delay"]
-pub type TDEL_R = crate::FieldReader<u8, u8>;
+pub type TDEL_R = crate::FieldReader;
 #[doc = "Field `TDEL` writer - Transfer Delay"]
-pub type TDEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_IISMODE_SPEC, u8, u8, 6, O>;
+pub type TDEL_W<'a, const O: u8> = crate::FieldWriter<'a, PCR_IISMODE_SPEC, 6, O>;
 #[doc = "Field `MCLK` reader - Master Clock Enable"]
 pub type MCLK_R = crate::BitReader<MCLK_A>;
 #[doc = "Master Clock Enable\n\nValue on reset: 0"]
@@ -425,7 +425,7 @@ impl MCLK_R {
     }
 }
 #[doc = "Field `MCLK` writer - Master Clock Enable"]
-pub type MCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IISMODE_SPEC, MCLK_A, O>;
+pub type MCLK_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IISMODE_SPEC, O, MCLK_A>;
 impl<'a, const O: u8> MCLK_W<'a, O> {
     #[doc = "The MCLK generation is disabled and MCLK is 0."]
     #[inline(always)]

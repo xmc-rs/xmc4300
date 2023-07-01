@@ -71,7 +71,7 @@ impl PE_R {
     }
 }
 #[doc = "Field `PE` writer - Output Trigger Pulse Enable for ETLx"]
-pub type PE_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXICON_SPEC, PE_A, O>;
+pub type PE_W<'a, const O: u8> = crate::BitWriter<'a, EXICON_SPEC, O, PE_A>;
 impl<'a, const O: u8> PE_W<'a, O> {
     #[doc = "The trigger pulse generation is disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl LD_R {
     }
 }
 #[doc = "Field `LD` writer - Rebuild Level Detection for Status Flag for ETLx"]
-pub type LD_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXICON_SPEC, LD_A, O>;
+pub type LD_W<'a, const O: u8> = crate::BitWriter<'a, EXICON_SPEC, O, LD_A>;
 impl<'a, const O: u8> LD_W<'a, O> {
     #[doc = "The status flag FL is not cleared by hardware and is used as \"sticky\" bit. Once set, it is not influenced by any edge until it becomes cleared by software."]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl RE_R {
     }
 }
 #[doc = "Field `RE` writer - Rising Edge Detection Enable ETLx"]
-pub type RE_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXICON_SPEC, RE_A, O>;
+pub type RE_W<'a, const O: u8> = crate::BitWriter<'a, EXICON_SPEC, O, RE_A>;
 impl<'a, const O: u8> RE_W<'a, O> {
     #[doc = "A rising edge is not considered as edge event"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl FE_R {
     }
 }
 #[doc = "Field `FE` writer - Falling Edge Detection Enable ETLx"]
-pub type FE_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXICON_SPEC, FE_A, O>;
+pub type FE_W<'a, const O: u8> = crate::BitWriter<'a, EXICON_SPEC, O, FE_A>;
 impl<'a, const O: u8> FE_W<'a, O> {
     #[doc = "A falling edge is not considered as edge event"]
     #[inline(always)]
@@ -235,7 +235,7 @@ impl<'a, const O: u8> FE_W<'a, O> {
     }
 }
 #[doc = "Field `OCS` reader - Output Channel Select for ETLx Output Trigger Pulse"]
-pub type OCS_R = crate::FieldReader<u8, OCS_A>;
+pub type OCS_R = crate::FieldReader<OCS_A>;
 #[doc = "Output Channel Select for ETLx Output Trigger Pulse\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -254,6 +254,9 @@ impl From<OCS_A> for u8 {
     fn from(variant: OCS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for OCS_A {
+    type Ux = u8;
 }
 impl OCS_R {
     #[doc = "Get enumerated values variant"]
@@ -289,7 +292,7 @@ impl OCS_R {
     }
 }
 #[doc = "Field `OCS` writer - Output Channel Select for ETLx Output Trigger Pulse"]
-pub type OCS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXICON_SPEC, u8, OCS_A, 3, O>;
+pub type OCS_W<'a, const O: u8> = crate::FieldWriter<'a, EXICON_SPEC, 3, O, OCS_A>;
 impl<'a, const O: u8> OCS_W<'a, O> {
     #[doc = "Trigger pulses are sent to OGU0"]
     #[inline(always)]
@@ -349,7 +352,7 @@ impl FL_R {
     }
 }
 #[doc = "Field `FL` writer - Status Flag for ETLx"]
-pub type FL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXICON_SPEC, FL_A, O>;
+pub type FL_W<'a, const O: u8> = crate::BitWriter<'a, EXICON_SPEC, O, FL_A>;
 impl<'a, const O: u8> FL_W<'a, O> {
     #[doc = "The enabled edge event has not been detected"]
     #[inline(always)]
@@ -363,7 +366,7 @@ impl<'a, const O: u8> FL_W<'a, O> {
     }
 }
 #[doc = "Field `SS` reader - Input Source Select for ERSx"]
-pub type SS_R = crate::FieldReader<u8, SS_A>;
+pub type SS_R = crate::FieldReader<SS_A>;
 #[doc = "Input Source Select for ERSx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -382,6 +385,9 @@ impl From<SS_A> for u8 {
     fn from(variant: SS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SS_A {
+    type Ux = u8;
 }
 impl SS_R {
     #[doc = "Get enumerated values variant"]
@@ -417,7 +423,7 @@ impl SS_R {
     }
 }
 #[doc = "Field `SS` writer - Input Source Select for ERSx"]
-pub type SS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EXICON_SPEC, u8, SS_A, 2, O>;
+pub type SS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, EXICON_SPEC, 2, O, SS_A>;
 impl<'a, const O: u8> SS_W<'a, O> {
     #[doc = "Input A without additional combination"]
     #[inline(always)]
@@ -477,7 +483,7 @@ impl NA_R {
     }
 }
 #[doc = "Field `NA` writer - Input A Negation Select for ERSx"]
-pub type NA_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXICON_SPEC, NA_A, O>;
+pub type NA_W<'a, const O: u8> = crate::BitWriter<'a, EXICON_SPEC, O, NA_A>;
 impl<'a, const O: u8> NA_W<'a, O> {
     #[doc = "Input A is used directly"]
     #[inline(always)]
@@ -527,7 +533,7 @@ impl NB_R {
     }
 }
 #[doc = "Field `NB` writer - Input B Negation Select for ERSx"]
-pub type NB_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXICON_SPEC, NB_A, O>;
+pub type NB_W<'a, const O: u8> = crate::BitWriter<'a, EXICON_SPEC, O, NB_A>;
 impl<'a, const O: u8> NB_W<'a, O> {
     #[doc = "Input B is used directly"]
     #[inline(always)]

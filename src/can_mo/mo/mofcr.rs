@@ -35,7 +35,7 @@ impl From<crate::W<MOFCR_SPEC>> for W {
     }
 }
 #[doc = "Field `MMC` reader - Message Mode Control"]
-pub type MMC_R = crate::FieldReader<u8, MMC_A>;
+pub type MMC_R = crate::FieldReader<MMC_A>;
 #[doc = "Message Mode Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<MMC_A> for u8 {
     fn from(variant: MMC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MMC_A {
+    type Ux = u8;
 }
 impl MMC_R {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl MMC_R {
     }
 }
 #[doc = "Field `MMC` writer - Message Mode Control"]
-pub type MMC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOFCR_SPEC, u8, MMC_A, 4, O>;
+pub type MMC_W<'a, const O: u8> = crate::FieldWriter<'a, MOFCR_SPEC, 4, O, MMC_A>;
 impl<'a, const O: u8> MMC_W<'a, O> {
     #[doc = "Standard Message Object"]
     #[inline(always)]
@@ -162,7 +165,7 @@ impl RXTOE_R {
     }
 }
 #[doc = "Field `RXTOE` writer - Receive Time-Out Enable"]
-pub type RXTOE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOFCR_SPEC, RXTOE_A, O>;
+pub type RXTOE_W<'a, const O: u8> = crate::BitWriter<'a, MOFCR_SPEC, O, RXTOE_A>;
 impl<'a, const O: u8> RXTOE_W<'a, O> {
     #[doc = "Message does not take part in receive time-out check"]
     #[inline(always)]
@@ -212,7 +215,7 @@ impl GDFS_R {
     }
 }
 #[doc = "Field `GDFS` writer - Gateway Data Frame Send"]
-pub type GDFS_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOFCR_SPEC, GDFS_A, O>;
+pub type GDFS_W<'a, const O: u8> = crate::BitWriter<'a, MOFCR_SPEC, O, GDFS_A>;
 impl<'a, const O: u8> GDFS_W<'a, O> {
     #[doc = "TXRQ is unchanged in the destination object."]
     #[inline(always)]
@@ -262,7 +265,7 @@ impl IDC_R {
     }
 }
 #[doc = "Field `IDC` writer - Identifier Copy"]
-pub type IDC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOFCR_SPEC, IDC_A, O>;
+pub type IDC_W<'a, const O: u8> = crate::BitWriter<'a, MOFCR_SPEC, O, IDC_A>;
 impl<'a, const O: u8> IDC_W<'a, O> {
     #[doc = "The identifier of the gateway source object is not copied."]
     #[inline(always)]
@@ -312,7 +315,7 @@ impl DLCC_R {
     }
 }
 #[doc = "Field `DLCC` writer - Data Length Code Copy"]
-pub type DLCC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOFCR_SPEC, DLCC_A, O>;
+pub type DLCC_W<'a, const O: u8> = crate::BitWriter<'a, MOFCR_SPEC, O, DLCC_A>;
 impl<'a, const O: u8> DLCC_W<'a, O> {
     #[doc = "Data length code is not copied."]
     #[inline(always)]
@@ -362,7 +365,7 @@ impl DATC_R {
     }
 }
 #[doc = "Field `DATC` writer - Data Copy"]
-pub type DATC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOFCR_SPEC, DATC_A, O>;
+pub type DATC_W<'a, const O: u8> = crate::BitWriter<'a, MOFCR_SPEC, O, DATC_A>;
 impl<'a, const O: u8> DATC_W<'a, O> {
     #[doc = "Data fields are not copied."]
     #[inline(always)]
@@ -412,7 +415,7 @@ impl RXIE_R {
     }
 }
 #[doc = "Field `RXIE` writer - Receive Interrupt Enable"]
-pub type RXIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOFCR_SPEC, RXIE_A, O>;
+pub type RXIE_W<'a, const O: u8> = crate::BitWriter<'a, MOFCR_SPEC, O, RXIE_A>;
 impl<'a, const O: u8> RXIE_W<'a, O> {
     #[doc = "Message receive interrupt is disabled."]
     #[inline(always)]
@@ -462,7 +465,7 @@ impl TXIE_R {
     }
 }
 #[doc = "Field `TXIE` writer - Transmit Interrupt Enable"]
-pub type TXIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOFCR_SPEC, TXIE_A, O>;
+pub type TXIE_W<'a, const O: u8> = crate::BitWriter<'a, MOFCR_SPEC, O, TXIE_A>;
 impl<'a, const O: u8> TXIE_W<'a, O> {
     #[doc = "Message transmit interrupt is disabled."]
     #[inline(always)]
@@ -512,7 +515,7 @@ impl OVIE_R {
     }
 }
 #[doc = "Field `OVIE` writer - Overflow Interrupt Enable"]
-pub type OVIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOFCR_SPEC, OVIE_A, O>;
+pub type OVIE_W<'a, const O: u8> = crate::BitWriter<'a, MOFCR_SPEC, O, OVIE_A>;
 impl<'a, const O: u8> OVIE_W<'a, O> {
     #[doc = "FIFO full interrupt is disabled."]
     #[inline(always)]
@@ -562,7 +565,7 @@ impl FRREN_R {
     }
 }
 #[doc = "Field `FRREN` writer - Foreign Remote Request Enable"]
-pub type FRREN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOFCR_SPEC, FRREN_A, O>;
+pub type FRREN_W<'a, const O: u8> = crate::BitWriter<'a, MOFCR_SPEC, O, FRREN_A>;
 impl<'a, const O: u8> FRREN_W<'a, O> {
     #[doc = "TXRQ of message object n is set on reception of a matching Remote Frame."]
     #[inline(always)]
@@ -612,7 +615,7 @@ impl RMM_R {
     }
 }
 #[doc = "Field `RMM` writer - Transmit Object Remote Monitoring"]
-pub type RMM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOFCR_SPEC, RMM_A, O>;
+pub type RMM_W<'a, const O: u8> = crate::BitWriter<'a, MOFCR_SPEC, O, RMM_A>;
 impl<'a, const O: u8> RMM_W<'a, O> {
     #[doc = "Remote monitoring is disabled: Identifier, IDE bit, and DLC of message object n remain unchanged upon the reception of a matching Remote Frame."]
     #[inline(always)]
@@ -626,17 +629,17 @@ impl<'a, const O: u8> RMM_W<'a, O> {
     }
 }
 #[doc = "Field `SDT` reader - Single Data Transfer"]
-pub type SDT_R = crate::BitReader<bool>;
+pub type SDT_R = crate::BitReader;
 #[doc = "Field `SDT` writer - Single Data Transfer"]
-pub type SDT_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOFCR_SPEC, bool, O>;
+pub type SDT_W<'a, const O: u8> = crate::BitWriter<'a, MOFCR_SPEC, O>;
 #[doc = "Field `STT` reader - Single Transmit Trial"]
-pub type STT_R = crate::BitReader<bool>;
+pub type STT_R = crate::BitReader;
 #[doc = "Field `STT` writer - Single Transmit Trial"]
-pub type STT_W<'a, const O: u8> = crate::BitWriter<'a, u32, MOFCR_SPEC, bool, O>;
+pub type STT_W<'a, const O: u8> = crate::BitWriter<'a, MOFCR_SPEC, O>;
 #[doc = "Field `DLC` reader - Data Length Code"]
-pub type DLC_R = crate::FieldReader<u8, u8>;
+pub type DLC_R = crate::FieldReader;
 #[doc = "Field `DLC` writer - Data Length Code"]
-pub type DLC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MOFCR_SPEC, u8, u8, 4, O>;
+pub type DLC_W<'a, const O: u8> = crate::FieldWriter<'a, MOFCR_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Message Mode Control"]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl CHPNDG0_R {
     }
 }
 #[doc = "Field `CHPNDG0` writer - Channels Pending Group x"]
-pub type CHPNDG0_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSPND_SPEC, CHPNDG0_A, O>;
+pub type CHPNDG0_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG0_A>;
 impl<'a, const O: u8> CHPNDG0_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl CHPNDG1_R {
     }
 }
 #[doc = "Field `CHPNDG1` writer - Channels Pending Group x"]
-pub type CHPNDG1_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSPND_SPEC, CHPNDG1_A, O>;
+pub type CHPNDG1_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG1_A>;
 impl<'a, const O: u8> CHPNDG1_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl CHPNDG2_R {
     }
 }
 #[doc = "Field `CHPNDG2` writer - Channels Pending Group x"]
-pub type CHPNDG2_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSPND_SPEC, CHPNDG2_A, O>;
+pub type CHPNDG2_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG2_A>;
 impl<'a, const O: u8> CHPNDG2_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl CHPNDG3_R {
     }
 }
 #[doc = "Field `CHPNDG3` writer - Channels Pending Group x"]
-pub type CHPNDG3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSPND_SPEC, CHPNDG3_A, O>;
+pub type CHPNDG3_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG3_A>;
 impl<'a, const O: u8> CHPNDG3_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl CHPNDG4_R {
     }
 }
 #[doc = "Field `CHPNDG4` writer - Channels Pending Group x"]
-pub type CHPNDG4_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSPND_SPEC, CHPNDG4_A, O>;
+pub type CHPNDG4_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG4_A>;
 impl<'a, const O: u8> CHPNDG4_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl CHPNDG5_R {
     }
 }
 #[doc = "Field `CHPNDG5` writer - Channels Pending Group x"]
-pub type CHPNDG5_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSPND_SPEC, CHPNDG5_A, O>;
+pub type CHPNDG5_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG5_A>;
 impl<'a, const O: u8> CHPNDG5_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl CHPNDG6_R {
     }
 }
 #[doc = "Field `CHPNDG6` writer - Channels Pending Group x"]
-pub type CHPNDG6_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSPND_SPEC, CHPNDG6_A, O>;
+pub type CHPNDG6_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG6_A>;
 impl<'a, const O: u8> CHPNDG6_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl CHPNDG7_R {
     }
 }
 #[doc = "Field `CHPNDG7` writer - Channels Pending Group x"]
-pub type CHPNDG7_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSPND_SPEC, CHPNDG7_A, O>;
+pub type CHPNDG7_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG7_A>;
 impl<'a, const O: u8> CHPNDG7_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]

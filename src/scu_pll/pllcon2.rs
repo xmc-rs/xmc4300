@@ -71,7 +71,7 @@ impl PINSEL_R {
     }
 }
 #[doc = "Field `PINSEL` writer - P-Divider Input Selection"]
-pub type PINSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLLCON2_SPEC, PINSEL_A, O>;
+pub type PINSEL_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON2_SPEC, O, PINSEL_A>;
 impl<'a, const O: u8> PINSEL_W<'a, O> {
     #[doc = "PLL external oscillator selected"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl K1INSEL_R {
     }
 }
 #[doc = "Field `K1INSEL` writer - K1-Divider Input Selection"]
-pub type K1INSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLLCON2_SPEC, K1INSEL_A, O>;
+pub type K1INSEL_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON2_SPEC, O, K1INSEL_A>;
 impl<'a, const O: u8> K1INSEL_W<'a, O> {
     #[doc = "PLL external oscillator selected"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<RX_OCTET_COUNT_GOOD_SPEC>> for R {
     }
 }
 #[doc = "Field `RXOCTG` reader - This field indicates the number of bytes received, exclusive of preamble, only in good frames."]
-pub type RXOCTG_R = crate::FieldReader<u32, u32>;
+pub type RXOCTG_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of bytes received, exclusive of preamble, only in good frames."]
     #[inline(always)]

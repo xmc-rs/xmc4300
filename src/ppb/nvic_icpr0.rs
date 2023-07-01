@@ -35,7 +35,7 @@ impl From<crate::W<NVIC_ICPR0_SPEC>> for W {
     }
 }
 #[doc = "Field `CLRPEND` reader - Interrupt set-pending bits."]
-pub type CLRPEND_R = crate::FieldReader<u32, CLRPEND_A>;
+pub type CLRPEND_R = crate::FieldReader<CLRPEND_A>;
 #[doc = "Interrupt set-pending bits.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
@@ -50,6 +50,9 @@ impl From<CLRPEND_A> for u32 {
     fn from(variant: CLRPEND_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLRPEND_A {
+    type Ux = u32;
 }
 impl CLRPEND_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +76,7 @@ impl CLRPEND_R {
     }
 }
 #[doc = "Field `CLRPEND` writer - Interrupt set-pending bits."]
-pub type CLRPEND_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_ICPR0_SPEC, u32, CLRPEND_A, 32, O>;
+pub type CLRPEND_W<'a, const O: u8> = crate::FieldWriter<'a, NVIC_ICPR0_SPEC, 32, O, CLRPEND_A>;
 impl<'a, const O: u8> CLRPEND_W<'a, O> {
     #[doc = "interrupt is not pending"]
     #[inline(always)]

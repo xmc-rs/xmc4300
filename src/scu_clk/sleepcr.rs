@@ -71,7 +71,7 @@ impl SYSSEL_R {
     }
 }
 #[doc = "Field `SYSSEL` writer - System Clock Selection Value"]
-pub type SYSSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SLEEPCR_SPEC, SYSSEL_A, O>;
+pub type SYSSEL_W<'a, const O: u8> = crate::BitWriter<'a, SLEEPCR_SPEC, O, SYSSEL_A>;
 impl<'a, const O: u8> SYSSEL_W<'a, O> {
     #[doc = "fOFI clock"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl USBCR_R {
     }
 }
 #[doc = "Field `USBCR` writer - USB Clock Control in Sleep Mode"]
-pub type USBCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SLEEPCR_SPEC, USBCR_A, O>;
+pub type USBCR_W<'a, const O: u8> = crate::BitWriter<'a, SLEEPCR_SPEC, O, USBCR_A>;
 impl<'a, const O: u8> USBCR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl MMCCR_R {
     }
 }
 #[doc = "Field `MMCCR` writer - MMC Clock Control in Sleep Mode"]
-pub type MMCCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SLEEPCR_SPEC, MMCCR_A, O>;
+pub type MMCCR_W<'a, const O: u8> = crate::BitWriter<'a, SLEEPCR_SPEC, O, MMCCR_A>;
 impl<'a, const O: u8> MMCCR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl ETH0CR_R {
     }
 }
 #[doc = "Field `ETH0CR` writer - Ethernet Clock Control in Sleep Mode"]
-pub type ETH0CR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SLEEPCR_SPEC, ETH0CR_A, O>;
+pub type ETH0CR_W<'a, const O: u8> = crate::BitWriter<'a, SLEEPCR_SPEC, O, ETH0CR_A>;
 impl<'a, const O: u8> ETH0CR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl CCUCR_R {
     }
 }
 #[doc = "Field `CCUCR` writer - CCU Clock Control in Sleep Mode"]
-pub type CCUCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SLEEPCR_SPEC, CCUCR_A, O>;
+pub type CCUCR_W<'a, const O: u8> = crate::BitWriter<'a, SLEEPCR_SPEC, O, CCUCR_A>;
 impl<'a, const O: u8> CCUCR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl WDTCR_R {
     }
 }
 #[doc = "Field `WDTCR` writer - WDT Clock Control in Sleep Mode"]
-pub type WDTCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SLEEPCR_SPEC, WDTCR_A, O>;
+pub type WDTCR_W<'a, const O: u8> = crate::BitWriter<'a, SLEEPCR_SPEC, O, WDTCR_A>;
 impl<'a, const O: u8> WDTCR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]

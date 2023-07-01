@@ -35,9 +35,9 @@ impl From<crate::W<HFLBADDR_SPEC>> for W {
     }
 }
 #[doc = "Field `Starting_Address` reader - Starting Address"]
-pub type STARTING_ADDRESS_R = crate::FieldReader<u32, u32>;
+pub type STARTING_ADDRESS_R = crate::FieldReader<u32>;
 #[doc = "Field `Starting_Address` writer - Starting Address"]
-pub type STARTING_ADDRESS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFLBADDR_SPEC, u32, u32, 32, O>;
+pub type STARTING_ADDRESS_W<'a, const O: u8> = crate::FieldWriter<'a, HFLBADDR_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Starting Address"]
     #[inline(always)]

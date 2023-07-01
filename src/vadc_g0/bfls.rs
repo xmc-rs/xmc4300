@@ -34,7 +34,7 @@ impl From<BFC0_AW> for bool {
     }
 }
 #[doc = "Field `BFC0` writer - Boundary Flag 0 Clear"]
-pub type BFC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFLS_SPEC, BFC0_AW, O>;
+pub type BFC0_W<'a, const O: u8> = crate::BitWriter<'a, BFLS_SPEC, O, BFC0_AW>;
 impl<'a, const O: u8> BFC0_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<BFC1_AW> for bool {
     }
 }
 #[doc = "Field `BFC1` writer - Boundary Flag 1 Clear"]
-pub type BFC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFLS_SPEC, BFC1_AW, O>;
+pub type BFC1_W<'a, const O: u8> = crate::BitWriter<'a, BFLS_SPEC, O, BFC1_AW>;
 impl<'a, const O: u8> BFC1_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<BFC2_AW> for bool {
     }
 }
 #[doc = "Field `BFC2` writer - Boundary Flag 2 Clear"]
-pub type BFC2_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFLS_SPEC, BFC2_AW, O>;
+pub type BFC2_W<'a, const O: u8> = crate::BitWriter<'a, BFLS_SPEC, O, BFC2_AW>;
 impl<'a, const O: u8> BFC2_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<BFC3_AW> for bool {
     }
 }
 #[doc = "Field `BFC3` writer - Boundary Flag 3 Clear"]
-pub type BFC3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFLS_SPEC, BFC3_AW, O>;
+pub type BFC3_W<'a, const O: u8> = crate::BitWriter<'a, BFLS_SPEC, O, BFC3_AW>;
 impl<'a, const O: u8> BFC3_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<BFS0_AW> for bool {
     }
 }
 #[doc = "Field `BFS0` writer - Boundary Flag 0 Set"]
-pub type BFS0_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFLS_SPEC, BFS0_AW, O>;
+pub type BFS0_W<'a, const O: u8> = crate::BitWriter<'a, BFLS_SPEC, O, BFS0_AW>;
 impl<'a, const O: u8> BFS0_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<BFS1_AW> for bool {
     }
 }
 #[doc = "Field `BFS1` writer - Boundary Flag 1 Set"]
-pub type BFS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFLS_SPEC, BFS1_AW, O>;
+pub type BFS1_W<'a, const O: u8> = crate::BitWriter<'a, BFLS_SPEC, O, BFS1_AW>;
 impl<'a, const O: u8> BFS1_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -202,7 +202,7 @@ impl From<BFS2_AW> for bool {
     }
 }
 #[doc = "Field `BFS2` writer - Boundary Flag 2 Set"]
-pub type BFS2_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFLS_SPEC, BFS2_AW, O>;
+pub type BFS2_W<'a, const O: u8> = crate::BitWriter<'a, BFLS_SPEC, O, BFS2_AW>;
 impl<'a, const O: u8> BFS2_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -230,7 +230,7 @@ impl From<BFS3_AW> for bool {
     }
 }
 #[doc = "Field `BFS3` writer - Boundary Flag 3 Set"]
-pub type BFS3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BFLS_SPEC, BFS3_AW, O>;
+pub type BFS3_W<'a, const O: u8> = crate::BitWriter<'a, BFLS_SPEC, O, BFS3_AW>;
 impl<'a, const O: u8> BFS3_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]

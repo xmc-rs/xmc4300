@@ -71,7 +71,7 @@ impl CCUDIV_R {
     }
 }
 #[doc = "Field `CCUDIV` writer - CCU Clock Divider Enable"]
-pub type CCUDIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCUCLKCR_SPEC, CCUDIV_A, O>;
+pub type CCUDIV_W<'a, const O: u8> = crate::BitWriter<'a, CCUCLKCR_SPEC, O, CCUDIV_A>;
 impl<'a, const O: u8> CCUDIV_W<'a, O> {
     #[doc = "fCCU = fSYS"]
     #[inline(always)]

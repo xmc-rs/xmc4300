@@ -14,7 +14,7 @@ impl From<crate::R<RXUDP_GOOD_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXUDPGDFRM` reader - This field indicates the number of good IP datagrams with a good UDP payload. This counter is not updated when the counter is incremented."]
-pub type RXUDPGDFRM_R = crate::FieldReader<u32, u32>;
+pub type RXUDPGDFRM_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of good IP datagrams with a good UDP payload. This counter is not updated when the counter is incremented."]
     #[inline(always)]

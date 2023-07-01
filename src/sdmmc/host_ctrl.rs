@@ -71,7 +71,7 @@ impl LED_CTRL_R {
     }
 }
 #[doc = "Field `LED_CTRL` writer - LED Control"]
-pub type LED_CTRL_W<'a, const O: u8> = crate::BitWriter<'a, u8, HOST_CTRL_SPEC, LED_CTRL_A, O>;
+pub type LED_CTRL_W<'a, const O: u8> = crate::BitWriter<'a, HOST_CTRL_SPEC, O, LED_CTRL_A>;
 impl<'a, const O: u8> LED_CTRL_W<'a, O> {
     #[doc = "LED off"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl DATA_TX_WIDTH_R {
     }
 }
 #[doc = "Field `DATA_TX_WIDTH` writer - Data Transfer Width (SD1 or SD4)"]
-pub type DATA_TX_WIDTH_W<'a, const O: u8> = crate::BitWriter<'a, u8, HOST_CTRL_SPEC, DATA_TX_WIDTH_A, O>;
+pub type DATA_TX_WIDTH_W<'a, const O: u8> = crate::BitWriter<'a, HOST_CTRL_SPEC, O, DATA_TX_WIDTH_A>;
 impl<'a, const O: u8> DATA_TX_WIDTH_W<'a, O> {
     #[doc = "1 bit mode"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl HIGH_SPEED_EN_R {
     }
 }
 #[doc = "Field `HIGH_SPEED_EN` writer - High Speed Enable"]
-pub type HIGH_SPEED_EN_W<'a, const O: u8> = crate::BitWriter<'a, u8, HOST_CTRL_SPEC, HIGH_SPEED_EN_A, O>;
+pub type HIGH_SPEED_EN_W<'a, const O: u8> = crate::BitWriter<'a, HOST_CTRL_SPEC, O, HIGH_SPEED_EN_A>;
 impl<'a, const O: u8> HIGH_SPEED_EN_W<'a, O> {
     #[doc = "Normal Speed Mode"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl SD_8BIT_MODE_R {
     }
 }
 #[doc = "Field `SD_8BIT_MODE` writer - Extended Data Transfer Width"]
-pub type SD_8BIT_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u8, HOST_CTRL_SPEC, SD_8BIT_MODE_A, O>;
+pub type SD_8BIT_MODE_W<'a, const O: u8> = crate::BitWriter<'a, HOST_CTRL_SPEC, O, SD_8BIT_MODE_A>;
 impl<'a, const O: u8> SD_8BIT_MODE_W<'a, O> {
     #[doc = "Bus Width is selected by Data Transfer Width"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl CARD_DETECT_TEST_LEVEL_R {
     }
 }
 #[doc = "Field `CARD_DETECT_TEST_LEVEL` writer - Card Detect Test Level"]
-pub type CARD_DETECT_TEST_LEVEL_W<'a, const O: u8> = crate::BitWriter<'a, u8, HOST_CTRL_SPEC, CARD_DETECT_TEST_LEVEL_A, O>;
+pub type CARD_DETECT_TEST_LEVEL_W<'a, const O: u8> = crate::BitWriter<'a, HOST_CTRL_SPEC, O, CARD_DETECT_TEST_LEVEL_A>;
 impl<'a, const O: u8> CARD_DETECT_TEST_LEVEL_W<'a, O> {
     #[doc = "No Card"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl CARD_DET_SIGNAL_DETECT_R {
     }
 }
 #[doc = "Field `CARD_DET_SIGNAL_DETECT` writer - Card detect signal detetction"]
-pub type CARD_DET_SIGNAL_DETECT_W<'a, const O: u8> = crate::BitWriter<'a, u8, HOST_CTRL_SPEC, CARD_DET_SIGNAL_DETECT_A, O>;
+pub type CARD_DET_SIGNAL_DETECT_W<'a, const O: u8> = crate::BitWriter<'a, HOST_CTRL_SPEC, O, CARD_DET_SIGNAL_DETECT_A>;
 impl<'a, const O: u8> CARD_DET_SIGNAL_DETECT_W<'a, O> {
     #[doc = "SDCD is selected (for normal use)"]
     #[inline(always)]

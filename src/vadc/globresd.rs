@@ -35,17 +35,17 @@ impl From<crate::W<GLOBRESD_SPEC>> for W {
     }
 }
 #[doc = "Field `RESULT` reader - Result of most recent conversion"]
-pub type RESULT_R = crate::FieldReader<u16, u16>;
+pub type RESULT_R = crate::FieldReader<u16>;
 #[doc = "Field `RESULT` writer - Result of most recent conversion"]
-pub type RESULT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBRESD_SPEC, u16, u16, 16, O>;
+pub type RESULT_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBRESD_SPEC, 16, O, u16>;
 #[doc = "Field `GNR` reader - Group Number"]
-pub type GNR_R = crate::FieldReader<u8, u8>;
+pub type GNR_R = crate::FieldReader;
 #[doc = "Field `CHNR` reader - Channel Number"]
-pub type CHNR_R = crate::FieldReader<u8, u8>;
+pub type CHNR_R = crate::FieldReader;
 #[doc = "Field `EMUX` reader - External Multiplexer Setting"]
-pub type EMUX_R = crate::FieldReader<u8, u8>;
+pub type EMUX_R = crate::FieldReader;
 #[doc = "Field `CRS` reader - Converted Request Source"]
-pub type CRS_R = crate::FieldReader<u8, u8>;
+pub type CRS_R = crate::FieldReader;
 #[doc = "Field `FCR` reader - Fast Compare Result"]
 pub type FCR_R = crate::BitReader<FCR_A>;
 #[doc = "Fast Compare Result\n\nValue on reset: 0"]
@@ -119,7 +119,7 @@ impl VF_R {
     }
 }
 #[doc = "Field `VF` writer - Valid Flag"]
-pub type VF_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBRESD_SPEC, VF_A, O>;
+pub type VF_W<'a, const O: u8> = crate::BitWriter<'a, GLOBRESD_SPEC, O, VF_A>;
 impl<'a, const O: u8> VF_W<'a, O> {
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]

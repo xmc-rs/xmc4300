@@ -14,7 +14,7 @@ impl From<crate::R<DC_ECAT_CNG_EV_TIME_SPEC>> for R {
     }
 }
 #[doc = "Field `ECAT_CNG_EV_TIME` reader - Register captures local time of the beginning of the frame which causes at least one SyncManager to assert an ECAT event"]
-pub type ECAT_CNG_EV_TIME_R = crate::FieldReader<u32, u32>;
+pub type ECAT_CNG_EV_TIME_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Register captures local time of the beginning of the frame which causes at least one SyncManager to assert an ECAT event"]
     #[inline(always)]

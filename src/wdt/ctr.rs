@@ -35,21 +35,21 @@ impl From<crate::W<CTR_SPEC>> for W {
     }
 }
 #[doc = "Field `ENB` reader - Enable"]
-pub type ENB_R = crate::BitReader<bool>;
+pub type ENB_R = crate::BitReader;
 #[doc = "Field `ENB` writer - Enable"]
-pub type ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTR_SPEC, bool, O>;
+pub type ENB_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
 #[doc = "Field `PRE` reader - Pre-warning"]
-pub type PRE_R = crate::BitReader<bool>;
+pub type PRE_R = crate::BitReader;
 #[doc = "Field `PRE` writer - Pre-warning"]
-pub type PRE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTR_SPEC, bool, O>;
+pub type PRE_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
 #[doc = "Field `DSP` reader - Debug Suspend"]
-pub type DSP_R = crate::BitReader<bool>;
+pub type DSP_R = crate::BitReader;
 #[doc = "Field `DSP` writer - Debug Suspend"]
-pub type DSP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTR_SPEC, bool, O>;
+pub type DSP_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
 #[doc = "Field `SPW` reader - Service Indication Pulse Width"]
-pub type SPW_R = crate::FieldReader<u8, u8>;
+pub type SPW_R = crate::FieldReader;
 #[doc = "Field `SPW` writer - Service Indication Pulse Width"]
-pub type SPW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTR_SPEC, u8, u8, 8, O>;
+pub type SPW_W<'a, const O: u8> = crate::FieldWriter<'a, CTR_SPEC, 8, O>;
 impl R {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]

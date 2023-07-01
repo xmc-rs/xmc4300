@@ -35,9 +35,9 @@ impl From<crate::W<CFGL_SPEC>> for W {
     }
 }
 #[doc = "Field `CH_PRIOR` reader - Channel priority"]
-pub type CH_PRIOR_R = crate::FieldReader<u8, u8>;
+pub type CH_PRIOR_R = crate::FieldReader;
 #[doc = "Field `CH_PRIOR` writer - Channel priority"]
-pub type CH_PRIOR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGL_SPEC, u8, u8, 3, O>;
+pub type CH_PRIOR_W<'a, const O: u8> = crate::FieldWriter<'a, CFGL_SPEC, 3, O>;
 #[doc = "Field `CH_SUSP` reader - Channel Suspend"]
 pub type CH_SUSP_R = crate::BitReader<CH_SUSP_A>;
 #[doc = "Channel Suspend\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl CH_SUSP_R {
     }
 }
 #[doc = "Field `CH_SUSP` writer - Channel Suspend"]
-pub type CH_SUSP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGL_SPEC, CH_SUSP_A, O>;
+pub type CH_SUSP_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O, CH_SUSP_A>;
 impl<'a, const O: u8> CH_SUSP_W<'a, O> {
     #[doc = "Not suspended."]
     #[inline(always)]
@@ -161,7 +161,7 @@ impl HS_SEL_DST_R {
     }
 }
 #[doc = "Field `HS_SEL_DST` writer - Destination Software or Hardware Handshaking Select"]
-pub type HS_SEL_DST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGL_SPEC, HS_SEL_DST_A, O>;
+pub type HS_SEL_DST_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O, HS_SEL_DST_A>;
 impl<'a, const O: u8> HS_SEL_DST_W<'a, O> {
     #[doc = "Hardware handshaking interface. Software-initiated transaction requests are ignored."]
     #[inline(always)]
@@ -211,7 +211,7 @@ impl HS_SEL_SRC_R {
     }
 }
 #[doc = "Field `HS_SEL_SRC` writer - Source Software or Hardware Handshaking Select"]
-pub type HS_SEL_SRC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGL_SPEC, HS_SEL_SRC_A, O>;
+pub type HS_SEL_SRC_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O, HS_SEL_SRC_A>;
 impl<'a, const O: u8> HS_SEL_SRC_W<'a, O> {
     #[doc = "Hardware handshaking interface. Software-initiated transaction requests are ignored."]
     #[inline(always)]
@@ -225,7 +225,7 @@ impl<'a, const O: u8> HS_SEL_SRC_W<'a, O> {
     }
 }
 #[doc = "Field `LOCK_CH_L` reader - Channel Lock Level"]
-pub type LOCK_CH_L_R = crate::FieldReader<u8, LOCK_CH_L_A>;
+pub type LOCK_CH_L_R = crate::FieldReader<LOCK_CH_L_A>;
 #[doc = "Channel Lock Level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -242,6 +242,9 @@ impl From<LOCK_CH_L_A> for u8 {
     fn from(variant: LOCK_CH_L_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LOCK_CH_L_A {
+    type Ux = u8;
 }
 impl LOCK_CH_L_R {
     #[doc = "Get enumerated values variant"]
@@ -271,7 +274,7 @@ impl LOCK_CH_L_R {
     }
 }
 #[doc = "Field `LOCK_CH_L` writer - Channel Lock Level"]
-pub type LOCK_CH_L_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGL_SPEC, u8, LOCK_CH_L_A, 2, O>;
+pub type LOCK_CH_L_W<'a, const O: u8> = crate::FieldWriter<'a, CFGL_SPEC, 2, O, LOCK_CH_L_A>;
 impl<'a, const O: u8> LOCK_CH_L_W<'a, O> {
     #[doc = "Over complete DMA transfer"]
     #[inline(always)]
@@ -290,7 +293,7 @@ impl<'a, const O: u8> LOCK_CH_L_W<'a, O> {
     }
 }
 #[doc = "Field `LOCK_B_L` reader - Bus Lock Level"]
-pub type LOCK_B_L_R = crate::FieldReader<u8, LOCK_B_L_A>;
+pub type LOCK_B_L_R = crate::FieldReader<LOCK_B_L_A>;
 #[doc = "Bus Lock Level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -307,6 +310,9 @@ impl From<LOCK_B_L_A> for u8 {
     fn from(variant: LOCK_B_L_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LOCK_B_L_A {
+    type Ux = u8;
 }
 impl LOCK_B_L_R {
     #[doc = "Get enumerated values variant"]
@@ -336,7 +342,7 @@ impl LOCK_B_L_R {
     }
 }
 #[doc = "Field `LOCK_B_L` writer - Bus Lock Level"]
-pub type LOCK_B_L_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGL_SPEC, u8, LOCK_B_L_A, 2, O>;
+pub type LOCK_B_L_W<'a, const O: u8> = crate::FieldWriter<'a, CFGL_SPEC, 2, O, LOCK_B_L_A>;
 impl<'a, const O: u8> LOCK_B_L_W<'a, O> {
     #[doc = "Over complete DMA transfer"]
     #[inline(always)]
@@ -355,13 +361,13 @@ impl<'a, const O: u8> LOCK_B_L_W<'a, O> {
     }
 }
 #[doc = "Field `LOCK_CH` reader - Channel Lock Bit"]
-pub type LOCK_CH_R = crate::BitReader<bool>;
+pub type LOCK_CH_R = crate::BitReader;
 #[doc = "Field `LOCK_CH` writer - Channel Lock Bit"]
-pub type LOCK_CH_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGL_SPEC, bool, O>;
+pub type LOCK_CH_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O>;
 #[doc = "Field `LOCK_B` reader - Bus Lock Bit"]
-pub type LOCK_B_R = crate::BitReader<bool>;
+pub type LOCK_B_R = crate::BitReader;
 #[doc = "Field `LOCK_B` writer - Bus Lock Bit"]
-pub type LOCK_B_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGL_SPEC, bool, O>;
+pub type LOCK_B_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O>;
 #[doc = "Field `DST_HS_POL` reader - Destination Handshaking Interface Polarity"]
 pub type DST_HS_POL_R = crate::BitReader<DST_HS_POL_A>;
 #[doc = "Destination Handshaking Interface Polarity\n\nValue on reset: 0"]
@@ -399,7 +405,7 @@ impl DST_HS_POL_R {
     }
 }
 #[doc = "Field `DST_HS_POL` writer - Destination Handshaking Interface Polarity"]
-pub type DST_HS_POL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGL_SPEC, DST_HS_POL_A, O>;
+pub type DST_HS_POL_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O, DST_HS_POL_A>;
 impl<'a, const O: u8> DST_HS_POL_W<'a, O> {
     #[doc = "Active high"]
     #[inline(always)]
@@ -449,7 +455,7 @@ impl SRC_HS_POL_R {
     }
 }
 #[doc = "Field `SRC_HS_POL` writer - Source Handshaking Interface Polarity"]
-pub type SRC_HS_POL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGL_SPEC, SRC_HS_POL_A, O>;
+pub type SRC_HS_POL_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O, SRC_HS_POL_A>;
 impl<'a, const O: u8> SRC_HS_POL_W<'a, O> {
     #[doc = "Active high"]
     #[inline(always)]
@@ -463,17 +469,17 @@ impl<'a, const O: u8> SRC_HS_POL_W<'a, O> {
     }
 }
 #[doc = "Field `MAX_ABRST` reader - Maximum AMBA Burst Length"]
-pub type MAX_ABRST_R = crate::FieldReader<u16, u16>;
+pub type MAX_ABRST_R = crate::FieldReader<u16>;
 #[doc = "Field `MAX_ABRST` writer - Maximum AMBA Burst Length"]
-pub type MAX_ABRST_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGL_SPEC, u16, u16, 10, O>;
+pub type MAX_ABRST_W<'a, const O: u8> = crate::FieldWriter<'a, CFGL_SPEC, 10, O, u16>;
 #[doc = "Field `RELOAD_SRC` reader - Automatic Source Reload"]
-pub type RELOAD_SRC_R = crate::BitReader<bool>;
+pub type RELOAD_SRC_R = crate::BitReader;
 #[doc = "Field `RELOAD_SRC` writer - Automatic Source Reload"]
-pub type RELOAD_SRC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGL_SPEC, bool, O>;
+pub type RELOAD_SRC_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O>;
 #[doc = "Field `RELOAD_DST` reader - Automatic Destination Reload"]
-pub type RELOAD_DST_R = crate::BitReader<bool>;
+pub type RELOAD_DST_R = crate::BitReader;
 #[doc = "Field `RELOAD_DST` writer - Automatic Destination Reload"]
-pub type RELOAD_DST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGL_SPEC, bool, O>;
+pub type RELOAD_DST_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O>;
 impl R {
     #[doc = "Bits 5:7 - Channel priority"]
     #[inline(always)]

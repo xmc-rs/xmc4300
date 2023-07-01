@@ -34,7 +34,7 @@ impl From<HIB_AW> for bool {
     }
 }
 #[doc = "Field `HIB` writer - Clear Disable Hibernate Domain"]
-pub type HIB_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWRCLR_SPEC, HIB_AW, O>;
+pub type HIB_W<'a, const O: u8> = crate::BitWriter<'a, PWRCLR_SPEC, O, HIB_AW>;
 impl<'a, const O: u8> HIB_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<USBPHYPDQ_AW> for bool {
     }
 }
 #[doc = "Field `USBPHYPDQ` writer - Clear USB PHY Transceiver Disable"]
-pub type USBPHYPDQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWRCLR_SPEC, USBPHYPDQ_AW, O>;
+pub type USBPHYPDQ_W<'a, const O: u8> = crate::BitWriter<'a, PWRCLR_SPEC, O, USBPHYPDQ_AW>;
 impl<'a, const O: u8> USBPHYPDQ_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<USBOTGEN_AW> for bool {
     }
 }
 #[doc = "Field `USBOTGEN` writer - Clear USB On-The-Go Comparators Enable"]
-pub type USBOTGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWRCLR_SPEC, USBOTGEN_AW, O>;
+pub type USBOTGEN_W<'a, const O: u8> = crate::BitWriter<'a, PWRCLR_SPEC, O, USBOTGEN_AW>;
 impl<'a, const O: u8> USBOTGEN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<USBPUWQ_AW> for bool {
     }
 }
 #[doc = "Field `USBPUWQ` writer - Clear USB Weak Pull-Up at PADN Enable"]
-pub type USBPUWQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWRCLR_SPEC, USBPUWQ_AW, O>;
+pub type USBPUWQ_W<'a, const O: u8> = crate::BitWriter<'a, PWRCLR_SPEC, O, USBPUWQ_AW>;
 impl<'a, const O: u8> USBPUWQ_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

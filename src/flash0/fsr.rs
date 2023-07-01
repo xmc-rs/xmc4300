@@ -50,7 +50,7 @@ impl PBUSY_R {
     }
 }
 #[doc = "Field `FABUSY` reader - Flash Array Busy"]
-pub type FABUSY_R = crate::BitReader<bool>;
+pub type FABUSY_R = crate::BitReader;
 #[doc = "Field `PROG` reader - Programming State"]
 pub type PROG_R = crate::BitReader<PROG_A>;
 #[doc = "Programming State\n\nValue on reset: 0"]

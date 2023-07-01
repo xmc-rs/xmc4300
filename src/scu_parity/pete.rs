@@ -71,7 +71,7 @@ impl PETEPS_R {
     }
 }
 #[doc = "Field `PETEPS` writer - Parity Error Trap Enable for PSRAM"]
-pub type PETEPS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PETE_SPEC, PETEPS_A, O>;
+pub type PETEPS_W<'a, const O: u8> = crate::BitWriter<'a, PETE_SPEC, O, PETEPS_A>;
 impl<'a, const O: u8> PETEPS_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl PETEDS1_R {
     }
 }
 #[doc = "Field `PETEDS1` writer - Parity Error Trap Enable for DSRAM1"]
-pub type PETEDS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PETE_SPEC, PETEDS1_A, O>;
+pub type PETEDS1_W<'a, const O: u8> = crate::BitWriter<'a, PETE_SPEC, O, PETEDS1_A>;
 impl<'a, const O: u8> PETEDS1_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl PETEU0_R {
     }
 }
 #[doc = "Field `PETEU0` writer - Parity Error Trap Enable for USIC0 Memory"]
-pub type PETEU0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PETE_SPEC, PETEU0_A, O>;
+pub type PETEU0_W<'a, const O: u8> = crate::BitWriter<'a, PETE_SPEC, O, PETEU0_A>;
 impl<'a, const O: u8> PETEU0_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl PETEU1_R {
     }
 }
 #[doc = "Field `PETEU1` writer - Parity Error Trap Enable for USIC1 Memory"]
-pub type PETEU1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PETE_SPEC, PETEU1_A, O>;
+pub type PETEU1_W<'a, const O: u8> = crate::BitWriter<'a, PETE_SPEC, O, PETEU1_A>;
 impl<'a, const O: u8> PETEU1_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl PETEMC_R {
     }
 }
 #[doc = "Field `PETEMC` writer - Parity Error Trap Enable for MultiCAN Memory"]
-pub type PETEMC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PETE_SPEC, PETEMC_A, O>;
+pub type PETEMC_W<'a, const O: u8> = crate::BitWriter<'a, PETE_SPEC, O, PETEMC_A>;
 impl<'a, const O: u8> PETEMC_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl PETEPPRF_R {
     }
 }
 #[doc = "Field `PETEPPRF` writer - Parity Error Trap Enable for PMU Prefetch Memory"]
-pub type PETEPPRF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PETE_SPEC, PETEPPRF_A, O>;
+pub type PETEPPRF_W<'a, const O: u8> = crate::BitWriter<'a, PETE_SPEC, O, PETEPPRF_A>;
 impl<'a, const O: u8> PETEPPRF_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl PETEUSB_R {
     }
 }
 #[doc = "Field `PETEUSB` writer - Parity Error Trap Enable for USB Memory"]
-pub type PETEUSB_W<'a, const O: u8> = crate::BitWriter<'a, u32, PETE_SPEC, PETEUSB_A, O>;
+pub type PETEUSB_W<'a, const O: u8> = crate::BitWriter<'a, PETE_SPEC, O, PETEUSB_A>;
 impl<'a, const O: u8> PETEUSB_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl PETEETH0TX_R {
     }
 }
 #[doc = "Field `PETEETH0TX` writer - Parity Error Trap Enable for ETH 0TX Memory"]
-pub type PETEETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, u32, PETE_SPEC, PETEETH0TX_A, O>;
+pub type PETEETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, PETE_SPEC, O, PETEETH0TX_A>;
 impl<'a, const O: u8> PETEETH0TX_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl PETEETH0RX_R {
     }
 }
 #[doc = "Field `PETEETH0RX` writer - Parity Error Trap Enable for ETH0 RX Memory"]
-pub type PETEETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, u32, PETE_SPEC, PETEETH0RX_A, O>;
+pub type PETEETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, PETE_SPEC, O, PETEETH0RX_A>;
 impl<'a, const O: u8> PETEETH0RX_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl PETESD0_R {
     }
 }
 #[doc = "Field `PETESD0` writer - Parity Error Trap Enable for SDMMC SRAM 0 Memory"]
-pub type PETESD0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PETE_SPEC, PETESD0_A, O>;
+pub type PETESD0_W<'a, const O: u8> = crate::BitWriter<'a, PETE_SPEC, O, PETESD0_A>;
 impl<'a, const O: u8> PETESD0_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl PETESD1_R {
     }
 }
 #[doc = "Field `PETESD1` writer - Parity Error Trap Enable for SDMMC SRAM 1 Memory"]
-pub type PETESD1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PETE_SPEC, PETESD1_A, O>;
+pub type PETESD1_W<'a, const O: u8> = crate::BitWriter<'a, PETE_SPEC, O, PETESD1_A>;
 impl<'a, const O: u8> PETESD1_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl PETEECAT0_R {
     }
 }
 #[doc = "Field `PETEECAT0` writer - Parity Error Trap Enable for ECAT0 SRAM Memory"]
-pub type PETEECAT0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PETE_SPEC, PETEECAT0_A, O>;
+pub type PETEECAT0_W<'a, const O: u8> = crate::BitWriter<'a, PETE_SPEC, O, PETEECAT0_A>;
 impl<'a, const O: u8> PETEECAT0_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]

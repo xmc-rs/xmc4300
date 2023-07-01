@@ -35,21 +35,21 @@ impl From<crate::W<MAC_ADDRESS2_HIGH_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDRHI` reader - MAC Address2 \\[47:32\\]"]
-pub type ADDRHI_R = crate::FieldReader<u16, u16>;
+pub type ADDRHI_R = crate::FieldReader<u16>;
 #[doc = "Field `ADDRHI` writer - MAC Address2 \\[47:32\\]"]
-pub type ADDRHI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAC_ADDRESS2_HIGH_SPEC, u16, u16, 16, O>;
+pub type ADDRHI_W<'a, const O: u8> = crate::FieldWriter<'a, MAC_ADDRESS2_HIGH_SPEC, 16, O, u16>;
 #[doc = "Field `MBC` reader - Mask Byte Control"]
-pub type MBC_R = crate::FieldReader<u8, u8>;
+pub type MBC_R = crate::FieldReader;
 #[doc = "Field `MBC` writer - Mask Byte Control"]
-pub type MBC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAC_ADDRESS2_HIGH_SPEC, u8, u8, 6, O>;
+pub type MBC_W<'a, const O: u8> = crate::FieldWriter<'a, MAC_ADDRESS2_HIGH_SPEC, 6, O>;
 #[doc = "Field `SA` reader - Source Address"]
-pub type SA_R = crate::BitReader<bool>;
+pub type SA_R = crate::BitReader;
 #[doc = "Field `SA` writer - Source Address"]
-pub type SA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MAC_ADDRESS2_HIGH_SPEC, bool, O>;
+pub type SA_W<'a, const O: u8> = crate::BitWriter<'a, MAC_ADDRESS2_HIGH_SPEC, O>;
 #[doc = "Field `AE` reader - Address Enable"]
-pub type AE_R = crate::BitReader<bool>;
+pub type AE_R = crate::BitReader;
 #[doc = "Field `AE` writer - Address Enable"]
-pub type AE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MAC_ADDRESS2_HIGH_SPEC, bool, O>;
+pub type AE_W<'a, const O: u8> = crate::BitWriter<'a, MAC_ADDRESS2_HIGH_SPEC, O>;
 impl R {
     #[doc = "Bits 0:15 - MAC Address2 \\[47:32\\]"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<RECEIVE_POLL_DEMAND_SPEC>> for W {
     }
 }
 #[doc = "Field `RPD` reader - Receive Poll Demand"]
-pub type RPD_R = crate::FieldReader<u32, u32>;
+pub type RPD_R = crate::FieldReader<u32>;
 #[doc = "Field `RPD` writer - Receive Poll Demand"]
-pub type RPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RECEIVE_POLL_DEMAND_SPEC, u32, u32, 32, O>;
+pub type RPD_W<'a, const O: u8> = crate::FieldWriter<'a, RECEIVE_POLL_DEMAND_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Receive Poll Demand"]
     #[inline(always)]

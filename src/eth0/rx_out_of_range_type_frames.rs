@@ -14,7 +14,7 @@ impl From<crate::R<RX_OUT_OF_RANGE_TYPE_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXOUTOFRNG` reader - This field indicates the number of received frames with length field not equal to the valid frame size (greater than 1,500 but less than 1,536)."]
-pub type RXOUTOFRNG_R = crate::FieldReader<u32, u32>;
+pub type RXOUTOFRNG_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of received frames with length field not equal to the valid frame size (greater than 1,500 but less than 1,536)."]
     #[inline(always)]

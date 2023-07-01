@@ -71,7 +71,7 @@ impl ACCESS_R {
     }
 }
 #[doc = "Field `ACCESS` writer - Access to EEPROM"]
-pub type ACCESS_W<'a, const O: u8> = crate::BitWriter<'a, u8, EEP_STATE_SPEC, ACCESS_A, O>;
+pub type ACCESS_W<'a, const O: u8> = crate::BitWriter<'a, EEP_STATE_SPEC, O, ACCESS_A>;
 impl<'a, const O: u8> ACCESS_W<'a, O> {
     #[doc = "PDI releases EEPROM access"]
     #[inline(always)]

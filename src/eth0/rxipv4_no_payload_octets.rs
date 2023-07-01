@@ -14,7 +14,7 @@ impl From<crate::R<RXIPV4_NO_PAYLOAD_OCTETS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV4NOPAYOCT` reader - This field indicates the number of bytes received in IPv4 datagrams that did not have a TCP, UDP, or ICMP payload. The value in the IPv4 headers Length field is used to update this counter."]
-pub type RXIPV4NOPAYOCT_R = crate::FieldReader<u32, u32>;
+pub type RXIPV4NOPAYOCT_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of bytes received in IPv4 datagrams that did not have a TCP, UDP, or ICMP payload. The value in the IPv4 headers Length field is used to update this counter."]
     #[inline(always)]

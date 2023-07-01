@@ -86,7 +86,7 @@ impl TEMP_R {
     }
 }
 #[doc = "Field `LP0` reader - Loop Port 0"]
-pub type LP0_R = crate::FieldReader<u8, LP0_A>;
+pub type LP0_R = crate::FieldReader<LP0_A>;
 #[doc = "Loop Port 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -105,6 +105,9 @@ impl From<LP0_A> for u8 {
     fn from(variant: LP0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LP0_A {
+    type Ux = u8;
 }
 impl LP0_R {
     #[doc = "Get enumerated values variant"]
@@ -140,7 +143,7 @@ impl LP0_R {
     }
 }
 #[doc = "Field `LP1` reader - Loop Port 1"]
-pub type LP1_R = crate::FieldReader<u8, LP1_A>;
+pub type LP1_R = crate::FieldReader<LP1_A>;
 #[doc = "Loop Port 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -159,6 +162,9 @@ impl From<LP1_A> for u8 {
     fn from(variant: LP1_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LP1_A {
+    type Ux = u8;
 }
 impl LP1_R {
     #[doc = "Get enumerated values variant"]
@@ -194,7 +200,7 @@ impl LP1_R {
     }
 }
 #[doc = "Field `LP2` reader - Loop Port 2"]
-pub type LP2_R = crate::FieldReader<u8, LP2_A>;
+pub type LP2_R = crate::FieldReader<LP2_A>;
 #[doc = "Loop Port 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -213,6 +219,9 @@ impl From<LP2_A> for u8 {
     fn from(variant: LP2_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LP2_A {
+    type Ux = u8;
 }
 impl LP2_R {
     #[doc = "Get enumerated values variant"]
@@ -248,7 +257,7 @@ impl LP2_R {
     }
 }
 #[doc = "Field `LP3` reader - Loop Port 3"]
-pub type LP3_R = crate::FieldReader<u8, LP3_A>;
+pub type LP3_R = crate::FieldReader<LP3_A>;
 #[doc = "Loop Port 3\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -267,6 +276,9 @@ impl From<LP3_A> for u8 {
     fn from(variant: LP3_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LP3_A {
+    type Ux = u8;
 }
 impl LP3_R {
     #[doc = "Get enumerated values variant"]
@@ -302,7 +314,7 @@ impl LP3_R {
     }
 }
 #[doc = "Field `RX_FIFO_SIZE` reader - RX FIFO Size"]
-pub type RX_FIFO_SIZE_R = crate::FieldReader<u8, RX_FIFO_SIZE_A>;
+pub type RX_FIFO_SIZE_R = crate::FieldReader<RX_FIFO_SIZE_A>;
 #[doc = "RX FIFO Size\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -329,6 +341,9 @@ impl From<RX_FIFO_SIZE_A> for u8 {
     fn from(variant: RX_FIFO_SIZE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RX_FIFO_SIZE_A {
+    type Ux = u8;
 }
 impl RX_FIFO_SIZE_R {
     #[doc = "Get enumerated values variant"]

@@ -35,9 +35,9 @@ impl From<crate::W<LENGTH_SPEC>> for W {
     }
 }
 #[doc = "Field `LENGTH` reader - Message Length Register"]
-pub type LENGTH_R = crate::FieldReader<u16, u16>;
+pub type LENGTH_R = crate::FieldReader<u16>;
 #[doc = "Field `LENGTH` writer - Message Length Register"]
-pub type LENGTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LENGTH_SPEC, u16, u16, 16, O>;
+pub type LENGTH_W<'a, const O: u8> = crate::FieldWriter<'a, LENGTH_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Message Length Register"]
     #[inline(always)]

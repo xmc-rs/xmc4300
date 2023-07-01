@@ -35,13 +35,13 @@ impl From<crate::W<DAC01DATA_SPEC>> for W {
     }
 }
 #[doc = "Field `DATA0` reader - DAC0 Data Bits"]
-pub type DATA0_R = crate::FieldReader<u16, u16>;
+pub type DATA0_R = crate::FieldReader<u16>;
 #[doc = "Field `DATA0` writer - DAC0 Data Bits"]
-pub type DATA0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC01DATA_SPEC, u16, u16, 12, O>;
+pub type DATA0_W<'a, const O: u8> = crate::FieldWriter<'a, DAC01DATA_SPEC, 12, O, u16>;
 #[doc = "Field `DATA1` reader - DAC1 Data Bits"]
-pub type DATA1_R = crate::FieldReader<u16, u16>;
+pub type DATA1_R = crate::FieldReader<u16>;
 #[doc = "Field `DATA1` writer - DAC1 Data Bits"]
-pub type DATA1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC01DATA_SPEC, u16, u16, 12, O>;
+pub type DATA1_W<'a, const O: u8> = crate::FieldWriter<'a, DAC01DATA_SPEC, 12, O, u16>;
 impl R {
     #[doc = "Bits 0:11 - DAC0 Data Bits"]
     #[inline(always)]

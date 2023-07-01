@@ -35,9 +35,9 @@ impl From<crate::W<SYSTEM_TIME_SECONDS_UPDATE_SPEC>> for W {
     }
 }
 #[doc = "Field `TSS` reader - Timestamp Second"]
-pub type TSS_R = crate::FieldReader<u32, u32>;
+pub type TSS_R = crate::FieldReader<u32>;
 #[doc = "Field `TSS` writer - Timestamp Second"]
-pub type TSS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYSTEM_TIME_SECONDS_UPDATE_SPEC, u32, u32, 32, O>;
+pub type TSS_W<'a, const O: u8> = crate::FieldWriter<'a, SYSTEM_TIME_SECONDS_UPDATE_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Timestamp Second"]
     #[inline(always)]

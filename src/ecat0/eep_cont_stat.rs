@@ -179,7 +179,7 @@ impl ALG_R {
     }
 }
 #[doc = "Field `CMD_REG` reader - Command register"]
-pub type CMD_REG_R = crate::FieldReader<u8, CMD_REG_A>;
+pub type CMD_REG_R = crate::FieldReader<CMD_REG_A>;
 #[doc = "Command register\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -198,6 +198,9 @@ impl From<CMD_REG_A> for u8 {
     fn from(variant: CMD_REG_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CMD_REG_A {
+    type Ux = u8;
 }
 impl CMD_REG_R {
     #[doc = "Get enumerated values variant"]
@@ -233,7 +236,7 @@ impl CMD_REG_R {
     }
 }
 #[doc = "Field `CMD_REG` writer - Command register"]
-pub type CMD_REG_W<'a, const O: u8> = crate::FieldWriter<'a, u16, EEP_CONT_STAT_SPEC, u8, CMD_REG_A, 3, O>;
+pub type CMD_REG_W<'a, const O: u8> = crate::FieldWriter<'a, EEP_CONT_STAT_SPEC, 3, O, CMD_REG_A>;
 impl<'a, const O: u8> CMD_REG_W<'a, O> {
     #[doc = "No command/EEPROM idle (clear error bits)"]
     #[inline(always)]
@@ -365,7 +368,7 @@ impl ERROR_AC_R {
     }
 }
 #[doc = "Field `ERROR_AC` writer - Error Acknowledge/Command"]
-pub type ERROR_AC_W<'a, const O: u8> = crate::BitWriter<'a, u16, EEP_CONT_STAT_SPEC, ERROR_AC_A, O>;
+pub type ERROR_AC_W<'a, const O: u8> = crate::BitWriter<'a, EEP_CONT_STAT_SPEC, O, ERROR_AC_A>;
 impl<'a, const O: u8> ERROR_AC_W<'a, O> {
     #[doc = "No error"]
     #[inline(always)]

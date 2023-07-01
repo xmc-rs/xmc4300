@@ -35,17 +35,17 @@ impl From<crate::W<EMUXCTR_SPEC>> for W {
     }
 }
 #[doc = "Field `EMUXSET` reader - External Multiplexer Start Selection"]
-pub type EMUXSET_R = crate::FieldReader<u8, u8>;
+pub type EMUXSET_R = crate::FieldReader;
 #[doc = "Field `EMUXSET` writer - External Multiplexer Start Selection"]
-pub type EMUXSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMUXCTR_SPEC, u8, u8, 3, O>;
+pub type EMUXSET_W<'a, const O: u8> = crate::FieldWriter<'a, EMUXCTR_SPEC, 3, O>;
 #[doc = "Field `EMUXACT` reader - External Multiplexer Actual Selection"]
-pub type EMUXACT_R = crate::FieldReader<u8, u8>;
+pub type EMUXACT_R = crate::FieldReader;
 #[doc = "Field `EMUXCH` reader - External Multiplexer Channel Select"]
-pub type EMUXCH_R = crate::FieldReader<u16, u16>;
+pub type EMUXCH_R = crate::FieldReader<u16>;
 #[doc = "Field `EMUXCH` writer - External Multiplexer Channel Select"]
-pub type EMUXCH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMUXCTR_SPEC, u16, u16, 10, O>;
+pub type EMUXCH_W<'a, const O: u8> = crate::FieldWriter<'a, EMUXCTR_SPEC, 10, O, u16>;
 #[doc = "Field `EMUXMODE` reader - External Multiplexer Mode"]
-pub type EMUXMODE_R = crate::FieldReader<u8, EMUXMODE_A>;
+pub type EMUXMODE_R = crate::FieldReader<EMUXMODE_A>;
 #[doc = "External Multiplexer Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -64,6 +64,9 @@ impl From<EMUXMODE_A> for u8 {
     fn from(variant: EMUXMODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EMUXMODE_A {
+    type Ux = u8;
 }
 impl EMUXMODE_R {
     #[doc = "Get enumerated values variant"]
@@ -99,7 +102,7 @@ impl EMUXMODE_R {
     }
 }
 #[doc = "Field `EMUXMODE` writer - External Multiplexer Mode"]
-pub type EMUXMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EMUXCTR_SPEC, u8, EMUXMODE_A, 2, O>;
+pub type EMUXMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, EMUXCTR_SPEC, 2, O, EMUXMODE_A>;
 impl<'a, const O: u8> EMUXMODE_W<'a, O> {
     #[doc = "Software control (no hardware action)"]
     #[inline(always)]
@@ -159,7 +162,7 @@ impl EMXCOD_R {
     }
 }
 #[doc = "Field `EMXCOD` writer - External Multiplexer Coding Scheme"]
-pub type EMXCOD_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMUXCTR_SPEC, EMXCOD_A, O>;
+pub type EMXCOD_W<'a, const O: u8> = crate::BitWriter<'a, EMUXCTR_SPEC, O, EMXCOD_A>;
 impl<'a, const O: u8> EMXCOD_W<'a, O> {
     #[doc = "Output the channel number in binary code"]
     #[inline(always)]
@@ -209,7 +212,7 @@ impl EMXST_R {
     }
 }
 #[doc = "Field `EMXST` writer - External Multiplexer Sample Time Control"]
-pub type EMXST_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMUXCTR_SPEC, EMXST_A, O>;
+pub type EMXST_W<'a, const O: u8> = crate::BitWriter<'a, EMUXCTR_SPEC, O, EMXST_A>;
 impl<'a, const O: u8> EMXST_W<'a, O> {
     #[doc = "Use STCE whenever the setting changes"]
     #[inline(always)]
@@ -273,7 +276,7 @@ impl From<EMXWC_AW> for bool {
     }
 }
 #[doc = "Field `EMXWC` writer - Write Control for EMUX Configuration"]
-pub type EMXWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMUXCTR_SPEC, EMXWC_AW, O>;
+pub type EMXWC_W<'a, const O: u8> = crate::BitWriter<'a, EMUXCTR_SPEC, O, EMXWC_AW>;
 impl<'a, const O: u8> EMXWC_W<'a, O> {
     #[doc = "No write access to EMUX cfg."]
     #[inline(always)]

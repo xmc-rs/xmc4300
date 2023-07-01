@@ -14,7 +14,7 @@ impl From<crate::R<RXIPV4_HEADER_ERROR_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV4HDRERRFRM` reader - This field indicates the number of IPv4 datagrams received with header errors (checksum, length, or version mismatch)."]
-pub type RXIPV4HDRERRFRM_R = crate::FieldReader<u32, u32>;
+pub type RXIPV4HDRERRFRM_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of IPv4 datagrams received with header errors (checksum, length, or version mismatch)."]
     #[inline(always)]

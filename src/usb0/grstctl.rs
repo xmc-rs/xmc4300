@@ -35,23 +35,23 @@ impl From<crate::W<GRSTCTL_SPEC>> for W {
     }
 }
 #[doc = "Field `CSftRst` reader - Core Soft Reset"]
-pub type CSFT_RST_R = crate::BitReader<bool>;
+pub type CSFT_RST_R = crate::BitReader;
 #[doc = "Field `CSftRst` writer - Core Soft Reset"]
-pub type CSFT_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRSTCTL_SPEC, bool, O>;
+pub type CSFT_RST_W<'a, const O: u8> = crate::BitWriter<'a, GRSTCTL_SPEC, O>;
 #[doc = "Field `FrmCntrRst` reader - Host Frame Counter Reset"]
-pub type FRM_CNTR_RST_R = crate::BitReader<bool>;
+pub type FRM_CNTR_RST_R = crate::BitReader;
 #[doc = "Field `FrmCntrRst` writer - Host Frame Counter Reset"]
-pub type FRM_CNTR_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRSTCTL_SPEC, bool, O>;
+pub type FRM_CNTR_RST_W<'a, const O: u8> = crate::BitWriter<'a, GRSTCTL_SPEC, O>;
 #[doc = "Field `RxFFlsh` reader - RxFIFO Flush"]
-pub type RX_FFLSH_R = crate::BitReader<bool>;
+pub type RX_FFLSH_R = crate::BitReader;
 #[doc = "Field `RxFFlsh` writer - RxFIFO Flush"]
-pub type RX_FFLSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRSTCTL_SPEC, bool, O>;
+pub type RX_FFLSH_W<'a, const O: u8> = crate::BitWriter<'a, GRSTCTL_SPEC, O>;
 #[doc = "Field `TxFFlsh` reader - TxFIFO Flush"]
-pub type TX_FFLSH_R = crate::BitReader<bool>;
+pub type TX_FFLSH_R = crate::BitReader;
 #[doc = "Field `TxFFlsh` writer - TxFIFO Flush"]
-pub type TX_FFLSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, GRSTCTL_SPEC, bool, O>;
+pub type TX_FFLSH_W<'a, const O: u8> = crate::BitWriter<'a, GRSTCTL_SPEC, O>;
 #[doc = "Field `TxFNum` reader - TxFIFO Number"]
-pub type TX_FNUM_R = crate::FieldReader<u8, TX_FNUM_A>;
+pub type TX_FNUM_R = crate::FieldReader<TX_FNUM_A>;
 #[doc = "TxFIFO Number\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -72,6 +72,9 @@ impl From<TX_FNUM_A> for u8 {
     fn from(variant: TX_FNUM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TX_FNUM_A {
+    type Ux = u8;
 }
 impl TX_FNUM_R {
     #[doc = "Get enumerated values variant"]
@@ -113,7 +116,7 @@ impl TX_FNUM_R {
     }
 }
 #[doc = "Field `TxFNum` writer - TxFIFO Number"]
-pub type TX_FNUM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GRSTCTL_SPEC, u8, TX_FNUM_A, 5, O>;
+pub type TX_FNUM_W<'a, const O: u8> = crate::FieldWriter<'a, GRSTCTL_SPEC, 5, O, TX_FNUM_A>;
 impl<'a, const O: u8> TX_FNUM_W<'a, O> {
     #[doc = "Non-periodic TxFIFO flush in Host mode or Tx FIFO 0 flush in device mode"]
     #[inline(always)]
@@ -142,9 +145,9 @@ impl<'a, const O: u8> TX_FNUM_W<'a, O> {
     }
 }
 #[doc = "Field `DMAReq` reader - DMA Request Signal"]
-pub type DMAREQ_R = crate::BitReader<bool>;
+pub type DMAREQ_R = crate::BitReader;
 #[doc = "Field `AHBIdle` reader - AHB Master Idle"]
-pub type AHBIDLE_R = crate::BitReader<bool>;
+pub type AHBIDLE_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Core Soft Reset"]
     #[inline(always)]

@@ -35,7 +35,7 @@ impl From<crate::W<DX1CR_SPEC>> for W {
     }
 }
 #[doc = "Field `DSEL` reader - Data Selection for Input Signal"]
-pub type DSEL_R = crate::FieldReader<u8, DSEL_A>;
+pub type DSEL_R = crate::FieldReader<DSEL_A>;
 #[doc = "Data Selection for Input Signal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -62,6 +62,9 @@ impl From<DSEL_A> for u8 {
     fn from(variant: DSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DSEL_A {
+    type Ux = u8;
 }
 impl DSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +124,7 @@ impl DSEL_R {
     }
 }
 #[doc = "Field `DSEL` writer - Data Selection for Input Signal"]
-pub type DSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DX1CR_SPEC, u8, DSEL_A, 3, O>;
+pub type DSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DX1CR_SPEC, 3, O, DSEL_A>;
 impl<'a, const O: u8> DSEL_W<'a, O> {
     #[doc = "The data input DX1A is selected."]
     #[inline(always)]
@@ -201,7 +204,7 @@ impl DCEN_R {
     }
 }
 #[doc = "Field `DCEN` writer - Delay Compensation Enable"]
-pub type DCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DX1CR_SPEC, DCEN_A, O>;
+pub type DCEN_W<'a, const O: u8> = crate::BitWriter<'a, DX1CR_SPEC, O, DCEN_A>;
 impl<'a, const O: u8> DCEN_W<'a, O> {
     #[doc = "The receive shift clock is dependent on INSW selection."]
     #[inline(always)]
@@ -251,7 +254,7 @@ impl INSW_R {
     }
 }
 #[doc = "Field `INSW` writer - Input Switch"]
-pub type INSW_W<'a, const O: u8> = crate::BitWriter<'a, u32, DX1CR_SPEC, INSW_A, O>;
+pub type INSW_W<'a, const O: u8> = crate::BitWriter<'a, DX1CR_SPEC, O, INSW_A>;
 impl<'a, const O: u8> INSW_W<'a, O> {
     #[doc = "The input of the data shift unit is controlled by the protocol pre-processor."]
     #[inline(always)]
@@ -301,7 +304,7 @@ impl DFEN_R {
     }
 }
 #[doc = "Field `DFEN` writer - Digital Filter Enable"]
-pub type DFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DX1CR_SPEC, DFEN_A, O>;
+pub type DFEN_W<'a, const O: u8> = crate::BitWriter<'a, DX1CR_SPEC, O, DFEN_A>;
 impl<'a, const O: u8> DFEN_W<'a, O> {
     #[doc = "The input signal is not digitally filtered."]
     #[inline(always)]
@@ -351,7 +354,7 @@ impl DSEN_R {
     }
 }
 #[doc = "Field `DSEN` writer - Data Synchronization Enable"]
-pub type DSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DX1CR_SPEC, DSEN_A, O>;
+pub type DSEN_W<'a, const O: u8> = crate::BitWriter<'a, DX1CR_SPEC, O, DSEN_A>;
 impl<'a, const O: u8> DSEN_W<'a, O> {
     #[doc = "The un-synchronized signal can be taken as input for the data shift unit."]
     #[inline(always)]
@@ -401,7 +404,7 @@ impl DPOL_R {
     }
 }
 #[doc = "Field `DPOL` writer - Data Polarity for DXn"]
-pub type DPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DX1CR_SPEC, DPOL_A, O>;
+pub type DPOL_W<'a, const O: u8> = crate::BitWriter<'a, DX1CR_SPEC, O, DPOL_A>;
 impl<'a, const O: u8> DPOL_W<'a, O> {
     #[doc = "The input signal is not inverted."]
     #[inline(always)]
@@ -451,7 +454,7 @@ impl SFSEL_R {
     }
 }
 #[doc = "Field `SFSEL` writer - Sampling Frequency Selection"]
-pub type SFSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DX1CR_SPEC, SFSEL_A, O>;
+pub type SFSEL_W<'a, const O: u8> = crate::BitWriter<'a, DX1CR_SPEC, O, SFSEL_A>;
 impl<'a, const O: u8> SFSEL_W<'a, O> {
     #[doc = "The sampling frequency is fPB."]
     #[inline(always)]
@@ -465,7 +468,7 @@ impl<'a, const O: u8> SFSEL_W<'a, O> {
     }
 }
 #[doc = "Field `CM` reader - Combination Mode"]
-pub type CM_R = crate::FieldReader<u8, CM_A>;
+pub type CM_R = crate::FieldReader<CM_A>;
 #[doc = "Combination Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -484,6 +487,9 @@ impl From<CM_A> for u8 {
     fn from(variant: CM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CM_A {
+    type Ux = u8;
 }
 impl CM_R {
     #[doc = "Get enumerated values variant"]
@@ -519,7 +525,7 @@ impl CM_R {
     }
 }
 #[doc = "Field `CM` writer - Combination Mode"]
-pub type CM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DX1CR_SPEC, u8, CM_A, 2, O>;
+pub type CM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DX1CR_SPEC, 2, O, CM_A>;
 impl<'a, const O: u8> CM_W<'a, O> {
     #[doc = "The trigger activation is disabled."]
     #[inline(always)]

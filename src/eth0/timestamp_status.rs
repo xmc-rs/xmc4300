@@ -14,23 +14,23 @@ impl From<crate::R<TIMESTAMP_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `TSSOVF` reader - Timestamp Seconds Overflow"]
-pub type TSSOVF_R = crate::BitReader<bool>;
+pub type TSSOVF_R = crate::BitReader;
 #[doc = "Field `TSTARGT` reader - Timestamp Target Time Reached"]
-pub type TSTARGT_R = crate::BitReader<bool>;
+pub type TSTARGT_R = crate::BitReader;
 #[doc = "Field `TSTRGTERR` reader - Timestamp Target Time Error"]
-pub type TSTRGTERR_R = crate::BitReader<bool>;
+pub type TSTRGTERR_R = crate::BitReader;
 #[doc = "Field `TSTARGT1` reader - Timestamp Target Time Reached for Target Time PPS1"]
-pub type TSTARGT1_R = crate::BitReader<bool>;
+pub type TSTARGT1_R = crate::BitReader;
 #[doc = "Field `TSTRGTERR1` reader - Timestamp Target Time Error"]
-pub type TSTRGTERR1_R = crate::BitReader<bool>;
+pub type TSTRGTERR1_R = crate::BitReader;
 #[doc = "Field `TSTARGT2` reader - Timestamp Target Time Reached for Target Time PPS2"]
-pub type TSTARGT2_R = crate::BitReader<bool>;
+pub type TSTARGT2_R = crate::BitReader;
 #[doc = "Field `TSTRGTERR2` reader - Timestamp Target Time Error"]
-pub type TSTRGTERR2_R = crate::BitReader<bool>;
+pub type TSTRGTERR2_R = crate::BitReader;
 #[doc = "Field `TSTARGT3` reader - Timestamp Target Time Reached for Target Time PPS3"]
-pub type TSTARGT3_R = crate::BitReader<bool>;
+pub type TSTARGT3_R = crate::BitReader;
 #[doc = "Field `TSTRGTERR3` reader - Timestamp Target Time Error"]
-pub type TSTRGTERR3_R = crate::BitReader<bool>;
+pub type TSTRGTERR3_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Timestamp Seconds Overflow"]
     #[inline(always)]

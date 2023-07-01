@@ -50,11 +50,11 @@ impl PRWARN_R {
     }
 }
 #[doc = "Field `PI` reader - RTC Raw Periodic Interrupt Status Before Masking"]
-pub type PI_R = crate::BitReader<bool>;
+pub type PI_R = crate::BitReader;
 #[doc = "Field `AI` reader - RTC Raw Alarm Interrupt Status Before Masking"]
-pub type AI_R = crate::BitReader<bool>;
+pub type AI_R = crate::BitReader;
 #[doc = "Field `DLROVR` reader - DLR Request Overrun Interrupt Status Before Masking"]
-pub type DLROVR_R = crate::BitReader<bool>;
+pub type DLROVR_R = crate::BitReader;
 #[doc = "Field `HDCLR` reader - HDCLR Mirror Register Update Status Before Masking"]
 pub type HDCLR_R = crate::BitReader<HDCLR_A>;
 #[doc = "HDCLR Mirror Register Update Status Before Masking\n\nValue on reset: 0"]

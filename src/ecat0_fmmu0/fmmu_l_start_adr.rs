@@ -14,7 +14,7 @@ impl From<crate::R<FMMU_L_START_ADR_SPEC>> for R {
     }
 }
 #[doc = "Field `L_START_ADDR` reader - Logical start address within the EtherCAT Address Space"]
-pub type L_START_ADDR_R = crate::FieldReader<u32, u32>;
+pub type L_START_ADDR_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Logical start address within the EtherCAT Address Space"]
     #[inline(always)]

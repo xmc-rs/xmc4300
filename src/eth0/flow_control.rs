@@ -35,33 +35,33 @@ impl From<crate::W<FLOW_CONTROL_SPEC>> for W {
     }
 }
 #[doc = "Field `FCA_BPA` reader - Flow Control Busy or Backpressure Activate"]
-pub type FCA_BPA_R = crate::BitReader<bool>;
+pub type FCA_BPA_R = crate::BitReader;
 #[doc = "Field `FCA_BPA` writer - Flow Control Busy or Backpressure Activate"]
-pub type FCA_BPA_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLOW_CONTROL_SPEC, bool, O>;
+pub type FCA_BPA_W<'a, const O: u8> = crate::BitWriter<'a, FLOW_CONTROL_SPEC, O>;
 #[doc = "Field `TFE` reader - Transmit Flow Control Enable"]
-pub type TFE_R = crate::BitReader<bool>;
+pub type TFE_R = crate::BitReader;
 #[doc = "Field `TFE` writer - Transmit Flow Control Enable"]
-pub type TFE_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLOW_CONTROL_SPEC, bool, O>;
+pub type TFE_W<'a, const O: u8> = crate::BitWriter<'a, FLOW_CONTROL_SPEC, O>;
 #[doc = "Field `RFE` reader - Receive Flow Control Enable"]
-pub type RFE_R = crate::BitReader<bool>;
+pub type RFE_R = crate::BitReader;
 #[doc = "Field `RFE` writer - Receive Flow Control Enable"]
-pub type RFE_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLOW_CONTROL_SPEC, bool, O>;
+pub type RFE_W<'a, const O: u8> = crate::BitWriter<'a, FLOW_CONTROL_SPEC, O>;
 #[doc = "Field `UP` reader - Unicast Pause Frame Detect"]
-pub type UP_R = crate::BitReader<bool>;
+pub type UP_R = crate::BitReader;
 #[doc = "Field `UP` writer - Unicast Pause Frame Detect"]
-pub type UP_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLOW_CONTROL_SPEC, bool, O>;
+pub type UP_W<'a, const O: u8> = crate::BitWriter<'a, FLOW_CONTROL_SPEC, O>;
 #[doc = "Field `PLT` reader - Pause Low Threshold"]
-pub type PLT_R = crate::FieldReader<u8, u8>;
+pub type PLT_R = crate::FieldReader;
 #[doc = "Field `PLT` writer - Pause Low Threshold"]
-pub type PLT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FLOW_CONTROL_SPEC, u8, u8, 2, O>;
+pub type PLT_W<'a, const O: u8> = crate::FieldWriter<'a, FLOW_CONTROL_SPEC, 2, O>;
 #[doc = "Field `DZPQ` reader - Disable Zero-Quanta Pause"]
-pub type DZPQ_R = crate::BitReader<bool>;
+pub type DZPQ_R = crate::BitReader;
 #[doc = "Field `DZPQ` writer - Disable Zero-Quanta Pause"]
-pub type DZPQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLOW_CONTROL_SPEC, bool, O>;
+pub type DZPQ_W<'a, const O: u8> = crate::BitWriter<'a, FLOW_CONTROL_SPEC, O>;
 #[doc = "Field `PT` reader - Pause Time"]
-pub type PT_R = crate::FieldReader<u16, u16>;
+pub type PT_R = crate::FieldReader<u16>;
 #[doc = "Field `PT` writer - Pause Time"]
-pub type PT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FLOW_CONTROL_SPEC, u16, u16, 16, O>;
+pub type PT_W<'a, const O: u8> = crate::FieldWriter<'a, FLOW_CONTROL_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bit 0 - Flow Control Busy or Backpressure Activate"]
     #[inline(always)]

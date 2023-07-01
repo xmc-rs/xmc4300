@@ -35,9 +35,9 @@ impl From<crate::W<SW_RESET_SPEC>> for W {
     }
 }
 #[doc = "Field `SW_RST_ALL` reader - Software Reset for All"]
-pub type SW_RST_ALL_R = crate::BitReader<bool>;
+pub type SW_RST_ALL_R = crate::BitReader;
 #[doc = "Field `SW_RST_ALL` writer - Software Reset for All"]
-pub type SW_RST_ALL_W<'a, const O: u8> = crate::BitWriter<'a, u8, SW_RESET_SPEC, bool, O>;
+pub type SW_RST_ALL_W<'a, const O: u8> = crate::BitWriter<'a, SW_RESET_SPEC, O>;
 #[doc = "Field `SW_RST_CMD_LINE` reader - Software Reset for CMD Line"]
 pub type SW_RST_CMD_LINE_R = crate::BitReader<SW_RST_CMD_LINE_A>;
 #[doc = "Software Reset for CMD Line\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl SW_RST_CMD_LINE_R {
     }
 }
 #[doc = "Field `SW_RST_CMD_LINE` writer - Software Reset for CMD Line"]
-pub type SW_RST_CMD_LINE_W<'a, const O: u8> = crate::BitWriter<'a, u8, SW_RESET_SPEC, SW_RST_CMD_LINE_A, O>;
+pub type SW_RST_CMD_LINE_W<'a, const O: u8> = crate::BitWriter<'a, SW_RESET_SPEC, O, SW_RST_CMD_LINE_A>;
 impl<'a, const O: u8> SW_RST_CMD_LINE_W<'a, O> {
     #[doc = "Work"]
     #[inline(always)]
@@ -125,7 +125,7 @@ impl SW_RST_DAT_LINE_R {
     }
 }
 #[doc = "Field `SW_RST_DAT_LINE` writer - Software Reset for DAT Line"]
-pub type SW_RST_DAT_LINE_W<'a, const O: u8> = crate::BitWriter<'a, u8, SW_RESET_SPEC, SW_RST_DAT_LINE_A, O>;
+pub type SW_RST_DAT_LINE_W<'a, const O: u8> = crate::BitWriter<'a, SW_RESET_SPEC, O, SW_RST_DAT_LINE_A>;
 impl<'a, const O: u8> SW_RST_DAT_LINE_W<'a, O> {
     #[doc = "Work"]
     #[inline(always)]

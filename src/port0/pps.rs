@@ -71,7 +71,7 @@ impl PPS0_R {
     }
 }
 #[doc = "Field `PPS0` writer - Port n Pin Power Save Bit 0"]
-pub type PPS0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS0_A, O>;
+pub type PPS0_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS0_A>;
 impl<'a, const O: u8> PPS0_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl PPS1_R {
     }
 }
 #[doc = "Field `PPS1` writer - Port n Pin Power Save Bit 1"]
-pub type PPS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS1_A, O>;
+pub type PPS1_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS1_A>;
 impl<'a, const O: u8> PPS1_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl PPS2_R {
     }
 }
 #[doc = "Field `PPS2` writer - Port n Pin Power Save Bit 2"]
-pub type PPS2_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS2_A, O>;
+pub type PPS2_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS2_A>;
 impl<'a, const O: u8> PPS2_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl PPS3_R {
     }
 }
 #[doc = "Field `PPS3` writer - Port n Pin Power Save Bit 3"]
-pub type PPS3_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS3_A, O>;
+pub type PPS3_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS3_A>;
 impl<'a, const O: u8> PPS3_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl PPS4_R {
     }
 }
 #[doc = "Field `PPS4` writer - Port n Pin Power Save Bit 4"]
-pub type PPS4_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS4_A, O>;
+pub type PPS4_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS4_A>;
 impl<'a, const O: u8> PPS4_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl PPS5_R {
     }
 }
 #[doc = "Field `PPS5` writer - Port n Pin Power Save Bit 5"]
-pub type PPS5_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS5_A, O>;
+pub type PPS5_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS5_A>;
 impl<'a, const O: u8> PPS5_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl PPS6_R {
     }
 }
 #[doc = "Field `PPS6` writer - Port n Pin Power Save Bit 6"]
-pub type PPS6_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS6_A, O>;
+pub type PPS6_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS6_A>;
 impl<'a, const O: u8> PPS6_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl PPS7_R {
     }
 }
 #[doc = "Field `PPS7` writer - Port n Pin Power Save Bit 7"]
-pub type PPS7_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS7_A, O>;
+pub type PPS7_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS7_A>;
 impl<'a, const O: u8> PPS7_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl PPS8_R {
     }
 }
 #[doc = "Field `PPS8` writer - Port n Pin Power Save Bit 8"]
-pub type PPS8_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS8_A, O>;
+pub type PPS8_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS8_A>;
 impl<'a, const O: u8> PPS8_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl PPS9_R {
     }
 }
 #[doc = "Field `PPS9` writer - Port n Pin Power Save Bit 9"]
-pub type PPS9_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS9_A, O>;
+pub type PPS9_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS9_A>;
 impl<'a, const O: u8> PPS9_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl PPS10_R {
     }
 }
 #[doc = "Field `PPS10` writer - Port n Pin Power Save Bit 10"]
-pub type PPS10_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS10_A, O>;
+pub type PPS10_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS10_A>;
 impl<'a, const O: u8> PPS10_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl PPS11_R {
     }
 }
 #[doc = "Field `PPS11` writer - Port n Pin Power Save Bit 11"]
-pub type PPS11_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS11_A, O>;
+pub type PPS11_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS11_A>;
 impl<'a, const O: u8> PPS11_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -671,7 +671,7 @@ impl PPS12_R {
     }
 }
 #[doc = "Field `PPS12` writer - Port n Pin Power Save Bit 12"]
-pub type PPS12_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS12_A, O>;
+pub type PPS12_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS12_A>;
 impl<'a, const O: u8> PPS12_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -721,7 +721,7 @@ impl PPS13_R {
     }
 }
 #[doc = "Field `PPS13` writer - Port n Pin Power Save Bit 13"]
-pub type PPS13_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS13_A, O>;
+pub type PPS13_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS13_A>;
 impl<'a, const O: u8> PPS13_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -771,7 +771,7 @@ impl PPS14_R {
     }
 }
 #[doc = "Field `PPS14` writer - Port n Pin Power Save Bit 14"]
-pub type PPS14_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS14_A, O>;
+pub type PPS14_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS14_A>;
 impl<'a, const O: u8> PPS14_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
@@ -821,7 +821,7 @@ impl PPS15_R {
     }
 }
 #[doc = "Field `PPS15` writer - Port n Pin Power Save Bit 15"]
-pub type PPS15_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPS_SPEC, PPS15_A, O>;
+pub type PPS15_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS15_A>;
 impl<'a, const O: u8> PPS15_W<'a, O> {
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]

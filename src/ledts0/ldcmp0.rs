@@ -35,21 +35,21 @@ impl From<crate::W<LDCMP0_SPEC>> for W {
     }
 }
 #[doc = "Field `CMP_LD0` reader - Compare Value for LED COL\\[x\\]"]
-pub type CMP_LD0_R = crate::FieldReader<u8, u8>;
+pub type CMP_LD0_R = crate::FieldReader;
 #[doc = "Field `CMP_LD0` writer - Compare Value for LED COL\\[x\\]"]
-pub type CMP_LD0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LDCMP0_SPEC, u8, u8, 8, O>;
+pub type CMP_LD0_W<'a, const O: u8> = crate::FieldWriter<'a, LDCMP0_SPEC, 8, O>;
 #[doc = "Field `CMP_LD1` reader - Compare Value for LED COL\\[x\\]"]
-pub type CMP_LD1_R = crate::FieldReader<u8, u8>;
+pub type CMP_LD1_R = crate::FieldReader;
 #[doc = "Field `CMP_LD1` writer - Compare Value for LED COL\\[x\\]"]
-pub type CMP_LD1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LDCMP0_SPEC, u8, u8, 8, O>;
+pub type CMP_LD1_W<'a, const O: u8> = crate::FieldWriter<'a, LDCMP0_SPEC, 8, O>;
 #[doc = "Field `CMP_LD2` reader - Compare Value for LED COL\\[x\\]"]
-pub type CMP_LD2_R = crate::FieldReader<u8, u8>;
+pub type CMP_LD2_R = crate::FieldReader;
 #[doc = "Field `CMP_LD2` writer - Compare Value for LED COL\\[x\\]"]
-pub type CMP_LD2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LDCMP0_SPEC, u8, u8, 8, O>;
+pub type CMP_LD2_W<'a, const O: u8> = crate::FieldWriter<'a, LDCMP0_SPEC, 8, O>;
 #[doc = "Field `CMP_LD3` reader - Compare Value for LED COL\\[x\\]"]
-pub type CMP_LD3_R = crate::FieldReader<u8, u8>;
+pub type CMP_LD3_R = crate::FieldReader;
 #[doc = "Field `CMP_LD3` writer - Compare Value for LED COL\\[x\\]"]
-pub type CMP_LD3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LDCMP0_SPEC, u8, u8, 8, O>;
+pub type CMP_LD3_W<'a, const O: u8> = crate::FieldWriter<'a, LDCMP0_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Compare Value for LED COL\\[x\\]"]
     #[inline(always)]

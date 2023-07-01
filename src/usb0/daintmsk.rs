@@ -35,13 +35,13 @@ impl From<crate::W<DAINTMSK_SPEC>> for W {
     }
 }
 #[doc = "Field `InEpMsk` reader - IN EP Interrupt Mask Bits"]
-pub type IN_EP_MSK_R = crate::FieldReader<u16, u16>;
+pub type IN_EP_MSK_R = crate::FieldReader<u16>;
 #[doc = "Field `InEpMsk` writer - IN EP Interrupt Mask Bits"]
-pub type IN_EP_MSK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAINTMSK_SPEC, u16, u16, 16, O>;
+pub type IN_EP_MSK_W<'a, const O: u8> = crate::FieldWriter<'a, DAINTMSK_SPEC, 16, O, u16>;
 #[doc = "Field `OutEpMsk` reader - OUT EP Interrupt Mask Bits"]
-pub type OUT_EP_MSK_R = crate::FieldReader<u16, u16>;
+pub type OUT_EP_MSK_R = crate::FieldReader<u16>;
 #[doc = "Field `OutEpMsk` writer - OUT EP Interrupt Mask Bits"]
-pub type OUT_EP_MSK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAINTMSK_SPEC, u16, u16, 16, O>;
+pub type OUT_EP_MSK_W<'a, const O: u8> = crate::FieldWriter<'a, DAINTMSK_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - IN EP Interrupt Mask Bits"]
     #[inline(always)]

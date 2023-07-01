@@ -71,7 +71,7 @@ impl CHSELG0_R {
     }
 }
 #[doc = "Field `CHSELG0` writer - Channel Selection Group x"]
-pub type CHSELG0_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG0_A, O>;
+pub type CHSELG0_W<'a, const O: u8> = crate::BitWriter<'a, BRSSEL_SPEC, O, CHSELG0_A>;
 impl<'a, const O: u8> CHSELG0_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl CHSELG1_R {
     }
 }
 #[doc = "Field `CHSELG1` writer - Channel Selection Group x"]
-pub type CHSELG1_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG1_A, O>;
+pub type CHSELG1_W<'a, const O: u8> = crate::BitWriter<'a, BRSSEL_SPEC, O, CHSELG1_A>;
 impl<'a, const O: u8> CHSELG1_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl CHSELG2_R {
     }
 }
 #[doc = "Field `CHSELG2` writer - Channel Selection Group x"]
-pub type CHSELG2_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG2_A, O>;
+pub type CHSELG2_W<'a, const O: u8> = crate::BitWriter<'a, BRSSEL_SPEC, O, CHSELG2_A>;
 impl<'a, const O: u8> CHSELG2_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl CHSELG3_R {
     }
 }
 #[doc = "Field `CHSELG3` writer - Channel Selection Group x"]
-pub type CHSELG3_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG3_A, O>;
+pub type CHSELG3_W<'a, const O: u8> = crate::BitWriter<'a, BRSSEL_SPEC, O, CHSELG3_A>;
 impl<'a, const O: u8> CHSELG3_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl CHSELG4_R {
     }
 }
 #[doc = "Field `CHSELG4` writer - Channel Selection Group x"]
-pub type CHSELG4_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG4_A, O>;
+pub type CHSELG4_W<'a, const O: u8> = crate::BitWriter<'a, BRSSEL_SPEC, O, CHSELG4_A>;
 impl<'a, const O: u8> CHSELG4_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl CHSELG5_R {
     }
 }
 #[doc = "Field `CHSELG5` writer - Channel Selection Group x"]
-pub type CHSELG5_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG5_A, O>;
+pub type CHSELG5_W<'a, const O: u8> = crate::BitWriter<'a, BRSSEL_SPEC, O, CHSELG5_A>;
 impl<'a, const O: u8> CHSELG5_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl CHSELG6_R {
     }
 }
 #[doc = "Field `CHSELG6` writer - Channel Selection Group x"]
-pub type CHSELG6_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG6_A, O>;
+pub type CHSELG6_W<'a, const O: u8> = crate::BitWriter<'a, BRSSEL_SPEC, O, CHSELG6_A>;
 impl<'a, const O: u8> CHSELG6_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl CHSELG7_R {
     }
 }
 #[doc = "Field `CHSELG7` writer - Channel Selection Group x"]
-pub type CHSELG7_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSSEL_SPEC, CHSELG7_A, O>;
+pub type CHSELG7_W<'a, const O: u8> = crate::BitWriter<'a, BRSSEL_SPEC, O, CHSELG7_A>;
 impl<'a, const O: u8> CHSELG7_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<RECEIVE_TIME_PU_SPEC>> for R {
     }
 }
 #[doc = "Field `RECEIVE_TIME_PU` reader - Local time of the beginning of a frame"]
-pub type RECEIVE_TIME_PU_R = crate::FieldReader<u32, u32>;
+pub type RECEIVE_TIME_PU_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Local time of the beginning of a frame"]
     #[inline(always)]

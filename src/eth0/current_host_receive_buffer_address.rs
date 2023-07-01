@@ -14,7 +14,7 @@ impl From<crate::R<CURRENT_HOST_RECEIVE_BUFFER_ADDRESS_SPEC>> for R {
     }
 }
 #[doc = "Field `CURRBUFAPTR` reader - Host Receive Buffer Address Pointer"]
-pub type CURRBUFAPTR_R = crate::FieldReader<u32, u32>;
+pub type CURRBUFAPTR_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Host Receive Buffer Address Pointer"]
     #[inline(always)]

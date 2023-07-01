@@ -35,9 +35,9 @@ impl From<crate::W<DAR_SPEC>> for W {
     }
 }
 #[doc = "Field `DAR` reader - Current Destination address of DMA transfer"]
-pub type DAR_R = crate::FieldReader<u32, u32>;
+pub type DAR_R = crate::FieldReader<u32>;
 #[doc = "Field `DAR` writer - Current Destination address of DMA transfer"]
-pub type DAR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAR_SPEC, u32, u32, 32, O>;
+pub type DAR_W<'a, const O: u8> = crate::FieldWriter<'a, DAR_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Current Destination address of DMA transfer"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<FWD_RX_ERR_COUNT0_SPEC>> for R {
     }
 }
 #[doc = "Field `FORW_ERROR` reader - Forwarded error counter of Port y"]
-pub type FORW_ERROR_R = crate::FieldReader<u8, u8>;
+pub type FORW_ERROR_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Forwarded error counter of Port y"]
     #[inline(always)]

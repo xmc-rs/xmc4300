@@ -14,7 +14,7 @@ impl From<crate::R<RES_SPEC>> for R {
     }
 }
 #[doc = "Field `RES` reader - Result Register"]
-pub type RES_R = crate::FieldReader<u32, u32>;
+pub type RES_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Result Register"]
     #[inline(always)]

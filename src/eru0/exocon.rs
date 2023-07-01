@@ -35,7 +35,7 @@ impl From<crate::W<EXOCON_SPEC>> for W {
     }
 }
 #[doc = "Field `ISS` reader - Internal Trigger Source Selection"]
-pub type ISS_R = crate::FieldReader<u8, ISS_A>;
+pub type ISS_R = crate::FieldReader<ISS_A>;
 #[doc = "Internal Trigger Source Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<ISS_A> for u8 {
     fn from(variant: ISS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ISS_A {
+    type Ux = u8;
 }
 impl ISS_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl ISS_R {
     }
 }
 #[doc = "Field `ISS` writer - Internal Trigger Source Selection"]
-pub type ISS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EXOCON_SPEC, u8, ISS_A, 2, O>;
+pub type ISS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, EXOCON_SPEC, 2, O, ISS_A>;
 impl<'a, const O: u8> ISS_W<'a, O> {
     #[doc = "The peripheral trigger function is disabled"]
     #[inline(always)]
@@ -149,7 +152,7 @@ impl GEEN_R {
     }
 }
 #[doc = "Field `GEEN` writer - Gating Event Enable"]
-pub type GEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXOCON_SPEC, GEEN_A, O>;
+pub type GEEN_W<'a, const O: u8> = crate::BitWriter<'a, EXOCON_SPEC, O, GEEN_A>;
 impl<'a, const O: u8> GEEN_W<'a, O> {
     #[doc = "The event detection is disabled"]
     #[inline(always)]
@@ -199,7 +202,7 @@ impl PDR_R {
     }
 }
 #[doc = "Field `GP` reader - Gating Selection for Pattern Detection Result"]
-pub type GP_R = crate::FieldReader<u8, GP_A>;
+pub type GP_R = crate::FieldReader<GP_A>;
 #[doc = "Gating Selection for Pattern Detection Result\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -218,6 +221,9 @@ impl From<GP_A> for u8 {
     fn from(variant: GP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for GP_A {
+    type Ux = u8;
 }
 impl GP_R {
     #[doc = "Get enumerated values variant"]
@@ -253,7 +259,7 @@ impl GP_R {
     }
 }
 #[doc = "Field `GP` writer - Gating Selection for Pattern Detection Result"]
-pub type GP_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EXOCON_SPEC, u8, GP_A, 2, O>;
+pub type GP_W<'a, const O: u8> = crate::FieldWriterSafe<'a, EXOCON_SPEC, 2, O, GP_A>;
 impl<'a, const O: u8> GP_W<'a, O> {
     #[doc = "ERU_GOUTy is always disabled and ERU_IOUTy can not be activated"]
     #[inline(always)]
@@ -313,7 +319,7 @@ impl IPEN0_R {
     }
 }
 #[doc = "Field `IPEN0` writer - Pattern Detection Enable for ETL0"]
-pub type IPEN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXOCON_SPEC, IPEN0_A, O>;
+pub type IPEN0_W<'a, const O: u8> = crate::BitWriter<'a, EXOCON_SPEC, O, IPEN0_A>;
 impl<'a, const O: u8> IPEN0_W<'a, O> {
     #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
     #[inline(always)]
@@ -363,7 +369,7 @@ impl IPEN1_R {
     }
 }
 #[doc = "Field `IPEN1` writer - Pattern Detection Enable for ETL1"]
-pub type IPEN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXOCON_SPEC, IPEN1_A, O>;
+pub type IPEN1_W<'a, const O: u8> = crate::BitWriter<'a, EXOCON_SPEC, O, IPEN1_A>;
 impl<'a, const O: u8> IPEN1_W<'a, O> {
     #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
     #[inline(always)]
@@ -413,7 +419,7 @@ impl IPEN2_R {
     }
 }
 #[doc = "Field `IPEN2` writer - Pattern Detection Enable for ETL2"]
-pub type IPEN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXOCON_SPEC, IPEN2_A, O>;
+pub type IPEN2_W<'a, const O: u8> = crate::BitWriter<'a, EXOCON_SPEC, O, IPEN2_A>;
 impl<'a, const O: u8> IPEN2_W<'a, O> {
     #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
     #[inline(always)]
@@ -463,7 +469,7 @@ impl IPEN3_R {
     }
 }
 #[doc = "Field `IPEN3` writer - Pattern Detection Enable for ETL3"]
-pub type IPEN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXOCON_SPEC, IPEN3_A, O>;
+pub type IPEN3_W<'a, const O: u8> = crate::BitWriter<'a, EXOCON_SPEC, O, IPEN3_A>;
 impl<'a, const O: u8> IPEN3_W<'a, O> {
     #[doc = "Flag EXICONx.FL is excluded from the pattern detection"]
     #[inline(always)]

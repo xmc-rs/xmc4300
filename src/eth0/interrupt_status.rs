@@ -14,17 +14,17 @@ impl From<crate::R<INTERRUPT_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `PMTIS` reader - PMT Interrupt Status"]
-pub type PMTIS_R = crate::BitReader<bool>;
+pub type PMTIS_R = crate::BitReader;
 #[doc = "Field `MMCIS` reader - MMC Interrupt Status"]
-pub type MMCIS_R = crate::BitReader<bool>;
+pub type MMCIS_R = crate::BitReader;
 #[doc = "Field `MMCRXIS` reader - MMC Receive Interrupt Status"]
-pub type MMCRXIS_R = crate::BitReader<bool>;
+pub type MMCRXIS_R = crate::BitReader;
 #[doc = "Field `MMCTXIS` reader - MMC Transmit Interrupt Status"]
-pub type MMCTXIS_R = crate::BitReader<bool>;
+pub type MMCTXIS_R = crate::BitReader;
 #[doc = "Field `MMCRXIPIS` reader - MMC Receive Checksum Offload Interrupt Status"]
-pub type MMCRXIPIS_R = crate::BitReader<bool>;
+pub type MMCRXIPIS_R = crate::BitReader;
 #[doc = "Field `TSIS` reader - Timestamp Interrupt Status"]
-pub type TSIS_R = crate::BitReader<bool>;
+pub type TSIS_R = crate::BitReader;
 impl R {
     #[doc = "Bit 3 - PMT Interrupt Status"]
     #[inline(always)]

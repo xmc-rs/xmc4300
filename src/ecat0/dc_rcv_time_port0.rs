@@ -14,7 +14,7 @@ impl From<crate::R<DC_RCV_TIME_PORT0_SPEC>> for R {
     }
 }
 #[doc = "Field `LOCAL_TIME_P0` reader - Write by EtherCAT master"]
-pub type LOCAL_TIME_P0_R = crate::FieldReader<u32, u32>;
+pub type LOCAL_TIME_P0_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Write by EtherCAT master"]
     #[inline(always)]

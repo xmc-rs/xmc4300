@@ -71,7 +71,7 @@ impl X1DEN_R {
     }
 }
 #[doc = "Field `X1DEN` writer - XTAL1 Data Enable"]
-pub type X1DEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCHPCTRL_SPEC, X1DEN_A, O>;
+pub type X1DEN_W<'a, const O: u8> = crate::BitWriter<'a, OSCHPCTRL_SPEC, O, X1DEN_A>;
 impl<'a, const O: u8> X1DEN_W<'a, O> {
     #[doc = "Bit X1D is not updated"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl SHBY_R {
     }
 }
 #[doc = "Field `SHBY` writer - Shaper Bypass"]
-pub type SHBY_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCHPCTRL_SPEC, SHBY_A, O>;
+pub type SHBY_W<'a, const O: u8> = crate::BitWriter<'a, OSCHPCTRL_SPEC, O, SHBY_A>;
 impl<'a, const O: u8> SHBY_W<'a, O> {
     #[doc = "The shaper is not bypassed"]
     #[inline(always)]
@@ -135,7 +135,7 @@ impl<'a, const O: u8> SHBY_W<'a, O> {
     }
 }
 #[doc = "Field `GAINSEL` reader - Oscillator Gain Selection"]
-pub type GAINSEL_R = crate::FieldReader<u8, GAINSEL_A>;
+pub type GAINSEL_R = crate::FieldReader<GAINSEL_A>;
 #[doc = "Oscillator Gain Selection\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -154,6 +154,9 @@ impl From<GAINSEL_A> for u8 {
     fn from(variant: GAINSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for GAINSEL_A {
+    type Ux = u8;
 }
 impl GAINSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -189,7 +192,7 @@ impl GAINSEL_R {
     }
 }
 #[doc = "Field `GAINSEL` writer - Oscillator Gain Selection"]
-pub type GAINSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, OSCHPCTRL_SPEC, u8, GAINSEL_A, 2, O>;
+pub type GAINSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, OSCHPCTRL_SPEC, 2, O, GAINSEL_A>;
 impl<'a, const O: u8> GAINSEL_W<'a, O> {
     #[doc = "The gain control is configured for frequencies from 4 MHz to 8 MHz"]
     #[inline(always)]
@@ -213,7 +216,7 @@ impl<'a, const O: u8> GAINSEL_W<'a, O> {
     }
 }
 #[doc = "Field `MODE` reader - Oscillator Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
+pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "Oscillator Mode\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -232,6 +235,9 @@ impl From<MODE_A> for u8 {
     fn from(variant: MODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MODE_A {
+    type Ux = u8;
 }
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -267,7 +273,7 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Oscillator Mode"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, OSCHPCTRL_SPEC, u8, MODE_A, 2, O>;
+pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, OSCHPCTRL_SPEC, 2, O, MODE_A>;
 impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "External Crystal Mode and External Input Clock Mode. The oscillator Power-Saving Mode is not entered."]
     #[inline(always)]
@@ -291,9 +297,9 @@ impl<'a, const O: u8> MODE_W<'a, O> {
     }
 }
 #[doc = "Field `OSCVAL` reader - OSC Frequency Value"]
-pub type OSCVAL_R = crate::FieldReader<u8, u8>;
+pub type OSCVAL_R = crate::FieldReader;
 #[doc = "Field `OSCVAL` writer - OSC Frequency Value"]
-pub type OSCVAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OSCHPCTRL_SPEC, u8, u8, 4, O>;
+pub type OSCVAL_W<'a, const O: u8> = crate::FieldWriter<'a, OSCHPCTRL_SPEC, 4, O>;
 impl R {
     #[doc = "Bit 0 - XTAL1 Data Enable"]
     #[inline(always)]

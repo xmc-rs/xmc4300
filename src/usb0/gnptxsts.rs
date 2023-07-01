@@ -14,7 +14,7 @@ impl From<crate::R<GNPTXSTS_SPEC>> for R {
     }
 }
 #[doc = "Field `NPTxFSpcAvail` reader - Non-periodic TxFIFO Space Avail"]
-pub type NPTX_FSPC_AVAIL_R = crate::FieldReader<u16, NPTX_FSPC_AVAIL_A>;
+pub type NPTX_FSPC_AVAIL_R = crate::FieldReader<NPTX_FSPC_AVAIL_A>;
 #[doc = "Non-periodic TxFIFO Space Avail\n\nValue on reset: 16"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
@@ -31,6 +31,9 @@ impl From<NPTX_FSPC_AVAIL_A> for u16 {
     fn from(variant: NPTX_FSPC_AVAIL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for NPTX_FSPC_AVAIL_A {
+    type Ux = u16;
 }
 impl NPTX_FSPC_AVAIL_R {
     #[doc = "Get enumerated values variant"]
@@ -60,7 +63,7 @@ impl NPTX_FSPC_AVAIL_R {
     }
 }
 #[doc = "Field `NPTxQSpcAvail` reader - Non-periodic Transmit Request Queue Space Available"]
-pub type NPTX_QSPC_AVAIL_R = crate::FieldReader<u8, NPTX_QSPC_AVAIL_A>;
+pub type NPTX_QSPC_AVAIL_R = crate::FieldReader<NPTX_QSPC_AVAIL_A>;
 #[doc = "Non-periodic Transmit Request Queue Space Available\n\nValue on reset: 8"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -77,6 +80,9 @@ impl From<NPTX_QSPC_AVAIL_A> for u8 {
     fn from(variant: NPTX_QSPC_AVAIL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for NPTX_QSPC_AVAIL_A {
+    type Ux = u8;
 }
 impl NPTX_QSPC_AVAIL_R {
     #[doc = "Get enumerated values variant"]
@@ -106,7 +112,7 @@ impl NPTX_QSPC_AVAIL_R {
     }
 }
 #[doc = "Field `NPTxQTop` reader - Top of the Non-periodic Transmit Request Queue"]
-pub type NPTX_QTOP_R = crate::FieldReader<u8, NPTX_QTOP_A>;
+pub type NPTX_QTOP_R = crate::FieldReader<NPTX_QTOP_A>;
 #[doc = "Top of the Non-periodic Transmit Request Queue\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -123,6 +129,9 @@ impl From<NPTX_QTOP_A> for u8 {
     fn from(variant: NPTX_QTOP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for NPTX_QTOP_A {
+    type Ux = u8;
 }
 impl NPTX_QTOP_R {
     #[doc = "Get enumerated values variant"]

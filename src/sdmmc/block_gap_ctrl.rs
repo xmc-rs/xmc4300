@@ -71,7 +71,7 @@ impl STOP_AT_BLOCK_GAP_R {
     }
 }
 #[doc = "Field `STOP_AT_BLOCK_GAP` writer - Stop At Block Gap Request"]
-pub type STOP_AT_BLOCK_GAP_W<'a, const O: u8> = crate::BitWriter<'a, u8, BLOCK_GAP_CTRL_SPEC, STOP_AT_BLOCK_GAP_A, O>;
+pub type STOP_AT_BLOCK_GAP_W<'a, const O: u8> = crate::BitWriter<'a, BLOCK_GAP_CTRL_SPEC, O, STOP_AT_BLOCK_GAP_A>;
 impl<'a, const O: u8> STOP_AT_BLOCK_GAP_W<'a, O> {
     #[doc = "Transfer"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl CONTINUE_REQ_R {
     }
 }
 #[doc = "Field `CONTINUE_REQ` writer - Continue Request"]
-pub type CONTINUE_REQ_W<'a, const O: u8> = crate::BitWriter<'a, u8, BLOCK_GAP_CTRL_SPEC, CONTINUE_REQ_A, O>;
+pub type CONTINUE_REQ_W<'a, const O: u8> = crate::BitWriter<'a, BLOCK_GAP_CTRL_SPEC, O, CONTINUE_REQ_A>;
 impl<'a, const O: u8> CONTINUE_REQ_W<'a, O> {
     #[doc = "Ignored"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl READ_WAIT_CTRL_R {
     }
 }
 #[doc = "Field `READ_WAIT_CTRL` writer - Read Wait Control"]
-pub type READ_WAIT_CTRL_W<'a, const O: u8> = crate::BitWriter<'a, u8, BLOCK_GAP_CTRL_SPEC, READ_WAIT_CTRL_A, O>;
+pub type READ_WAIT_CTRL_W<'a, const O: u8> = crate::BitWriter<'a, BLOCK_GAP_CTRL_SPEC, O, READ_WAIT_CTRL_A>;
 impl<'a, const O: u8> READ_WAIT_CTRL_W<'a, O> {
     #[doc = "Disable Read Wait Control"]
     #[inline(always)]
@@ -185,9 +185,9 @@ impl<'a, const O: u8> READ_WAIT_CTRL_W<'a, O> {
     }
 }
 #[doc = "Field `INT_AT_BLOCK_GAP` reader - Interrupt At Block Gap"]
-pub type INT_AT_BLOCK_GAP_R = crate::BitReader<bool>;
+pub type INT_AT_BLOCK_GAP_R = crate::BitReader;
 #[doc = "Field `INT_AT_BLOCK_GAP` writer - Interrupt At Block Gap"]
-pub type INT_AT_BLOCK_GAP_W<'a, const O: u8> = crate::BitWriter<'a, u8, BLOCK_GAP_CTRL_SPEC, bool, O>;
+pub type INT_AT_BLOCK_GAP_W<'a, const O: u8> = crate::BitWriter<'a, BLOCK_GAP_CTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Stop At Block Gap Request"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<AHB_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `AHBMS` reader - AHB Master Status"]
-pub type AHBMS_R = crate::BitReader<bool>;
+pub type AHBMS_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - AHB Master Status"]
     #[inline(always)]

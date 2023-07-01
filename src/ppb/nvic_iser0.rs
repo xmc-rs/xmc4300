@@ -35,7 +35,7 @@ impl From<crate::W<NVIC_ISER0_SPEC>> for W {
     }
 }
 #[doc = "Field `SETENA` reader - Interrupt set-enable bits"]
-pub type SETENA_R = crate::FieldReader<u32, SETENA_A>;
+pub type SETENA_R = crate::FieldReader<SETENA_A>;
 #[doc = "Interrupt set-enable bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
@@ -50,6 +50,9 @@ impl From<SETENA_A> for u32 {
     fn from(variant: SETENA_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SETENA_A {
+    type Ux = u32;
 }
 impl SETENA_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +76,7 @@ impl SETENA_R {
     }
 }
 #[doc = "Field `SETENA` writer - Interrupt set-enable bits"]
-pub type SETENA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_ISER0_SPEC, u32, SETENA_A, 32, O>;
+pub type SETENA_W<'a, const O: u8> = crate::FieldWriter<'a, NVIC_ISER0_SPEC, 32, O, SETENA_A>;
 impl<'a, const O: u8> SETENA_W<'a, O> {
     #[doc = "interrupt disabled"]
     #[inline(always)]

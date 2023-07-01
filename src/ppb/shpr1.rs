@@ -35,17 +35,17 @@ impl From<crate::W<SHPR1_SPEC>> for W {
     }
 }
 #[doc = "Field `PRI_4` reader - Priority of system handler 4, MemManage"]
-pub type PRI_4_R = crate::FieldReader<u8, u8>;
+pub type PRI_4_R = crate::FieldReader;
 #[doc = "Field `PRI_4` writer - Priority of system handler 4, MemManage"]
-pub type PRI_4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SHPR1_SPEC, u8, u8, 8, O>;
+pub type PRI_4_W<'a, const O: u8> = crate::FieldWriter<'a, SHPR1_SPEC, 8, O>;
 #[doc = "Field `PRI_5` reader - Priority of system handler 5, BusFault"]
-pub type PRI_5_R = crate::FieldReader<u8, u8>;
+pub type PRI_5_R = crate::FieldReader;
 #[doc = "Field `PRI_5` writer - Priority of system handler 5, BusFault"]
-pub type PRI_5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SHPR1_SPEC, u8, u8, 8, O>;
+pub type PRI_5_W<'a, const O: u8> = crate::FieldWriter<'a, SHPR1_SPEC, 8, O>;
 #[doc = "Field `PRI_6` reader - Priority of system handler 6, UsageFault"]
-pub type PRI_6_R = crate::FieldReader<u8, u8>;
+pub type PRI_6_R = crate::FieldReader;
 #[doc = "Field `PRI_6` writer - Priority of system handler 6, UsageFault"]
-pub type PRI_6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SHPR1_SPEC, u8, u8, 8, O>;
+pub type PRI_6_W<'a, const O: u8> = crate::FieldWriter<'a, SHPR1_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Priority of system handler 4, MemManage"]
     #[inline(always)]

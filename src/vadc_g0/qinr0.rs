@@ -20,7 +20,7 @@ impl From<crate::W<QINR0_SPEC>> for W {
     }
 }
 #[doc = "Field `REQCHNR` writer - Request Channel Number"]
-pub type REQCHNR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, QINR0_SPEC, u8, u8, 5, O>;
+pub type REQCHNR_W<'a, const O: u8> = crate::FieldWriter<'a, QINR0_SPEC, 5, O>;
 #[doc = "Refill\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_AW {
@@ -36,7 +36,7 @@ impl From<RF_AW> for bool {
     }
 }
 #[doc = "Field `RF` writer - Refill"]
-pub type RF_W<'a, const O: u8> = crate::BitWriter<'a, u32, QINR0_SPEC, RF_AW, O>;
+pub type RF_W<'a, const O: u8> = crate::BitWriter<'a, QINR0_SPEC, O, RF_AW>;
 impl<'a, const O: u8> RF_W<'a, O> {
     #[doc = "No refill: this queue entry is converted once and then invalidated"]
     #[inline(always)]
@@ -64,7 +64,7 @@ impl From<ENSI_AW> for bool {
     }
 }
 #[doc = "Field `ENSI` writer - Enable Source Interrupt"]
-pub type ENSI_W<'a, const O: u8> = crate::BitWriter<'a, u32, QINR0_SPEC, ENSI_AW, O>;
+pub type ENSI_W<'a, const O: u8> = crate::BitWriter<'a, QINR0_SPEC, O, ENSI_AW>;
 impl<'a, const O: u8> ENSI_W<'a, O> {
     #[doc = "No request source interrupt"]
     #[inline(always)]
@@ -92,7 +92,7 @@ impl From<EXTR_AW> for bool {
     }
 }
 #[doc = "Field `EXTR` writer - External Trigger"]
-pub type EXTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, QINR0_SPEC, EXTR_AW, O>;
+pub type EXTR_W<'a, const O: u8> = crate::BitWriter<'a, QINR0_SPEC, O, EXTR_AW>;
 impl<'a, const O: u8> EXTR_W<'a, O> {
     #[doc = "A valid queue entry immediately leads to a conversion request."]
     #[inline(always)]

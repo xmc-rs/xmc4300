@@ -35,9 +35,9 @@ impl From<crate::W<PCR_IICMODE_SPEC>> for W {
     }
 }
 #[doc = "Field `SLAD` reader - Slave Address"]
-pub type SLAD_R = crate::FieldReader<u16, u16>;
+pub type SLAD_R = crate::FieldReader<u16>;
 #[doc = "Field `SLAD` writer - Slave Address"]
-pub type SLAD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_IICMODE_SPEC, u16, u16, 16, O>;
+pub type SLAD_W<'a, const O: u8> = crate::FieldWriter<'a, PCR_IICMODE_SPEC, 16, O, u16>;
 #[doc = "Field `ACK00` reader - Acknowledge 00H"]
 pub type ACK00_R = crate::BitReader<ACK00_A>;
 #[doc = "Acknowledge 00H\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl ACK00_R {
     }
 }
 #[doc = "Field `ACK00` writer - Acknowledge 00H"]
-pub type ACK00_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, ACK00_A, O>;
+pub type ACK00_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IICMODE_SPEC, O, ACK00_A>;
 impl<'a, const O: u8> ACK00_W<'a, O> {
     #[doc = "The slave device is not sensitive to this address."]
     #[inline(always)]
@@ -125,7 +125,7 @@ impl STIM_R {
     }
 }
 #[doc = "Field `STIM` writer - Symbol Timing"]
-pub type STIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, STIM_A, O>;
+pub type STIM_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IICMODE_SPEC, O, STIM_A>;
 impl<'a, const O: u8> STIM_W<'a, O> {
     #[doc = "A symbol contains 10 time quanta. The timing is adapted for standard mode (100 kBaud)."]
     #[inline(always)]
@@ -175,7 +175,7 @@ impl SCRIEN_R {
     }
 }
 #[doc = "Field `SCRIEN` writer - Start Condition Received Interrupt Enable"]
-pub type SCRIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, SCRIEN_A, O>;
+pub type SCRIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IICMODE_SPEC, O, SCRIEN_A>;
 impl<'a, const O: u8> SCRIEN_W<'a, O> {
     #[doc = "The start condition interrupt is disabled."]
     #[inline(always)]
@@ -225,7 +225,7 @@ impl RSCRIEN_R {
     }
 }
 #[doc = "Field `RSCRIEN` writer - Repeated Start Condition Received Interrupt Enable"]
-pub type RSCRIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, RSCRIEN_A, O>;
+pub type RSCRIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IICMODE_SPEC, O, RSCRIEN_A>;
 impl<'a, const O: u8> RSCRIEN_W<'a, O> {
     #[doc = "The repeated start condition interrupt is disabled."]
     #[inline(always)]
@@ -275,7 +275,7 @@ impl PCRIEN_R {
     }
 }
 #[doc = "Field `PCRIEN` writer - Stop Condition Received Interrupt Enable"]
-pub type PCRIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, PCRIEN_A, O>;
+pub type PCRIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IICMODE_SPEC, O, PCRIEN_A>;
 impl<'a, const O: u8> PCRIEN_W<'a, O> {
     #[doc = "The stop condition interrupt is disabled."]
     #[inline(always)]
@@ -325,7 +325,7 @@ impl NACKIEN_R {
     }
 }
 #[doc = "Field `NACKIEN` writer - Non-Acknowledge Interrupt Enable"]
-pub type NACKIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, NACKIEN_A, O>;
+pub type NACKIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IICMODE_SPEC, O, NACKIEN_A>;
 impl<'a, const O: u8> NACKIEN_W<'a, O> {
     #[doc = "The non-acknowledge interrupt is disabled."]
     #[inline(always)]
@@ -375,7 +375,7 @@ impl ARLIEN_R {
     }
 }
 #[doc = "Field `ARLIEN` writer - Arbitration Lost Interrupt Enable"]
-pub type ARLIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, ARLIEN_A, O>;
+pub type ARLIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IICMODE_SPEC, O, ARLIEN_A>;
 impl<'a, const O: u8> ARLIEN_W<'a, O> {
     #[doc = "The arbitration lost interrupt is disabled."]
     #[inline(always)]
@@ -425,7 +425,7 @@ impl SRRIEN_R {
     }
 }
 #[doc = "Field `SRRIEN` writer - Slave Read Request Interrupt Enable"]
-pub type SRRIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, SRRIEN_A, O>;
+pub type SRRIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IICMODE_SPEC, O, SRRIEN_A>;
 impl<'a, const O: u8> SRRIEN_W<'a, O> {
     #[doc = "The slave read request interrupt is disabled."]
     #[inline(always)]
@@ -475,7 +475,7 @@ impl ERRIEN_R {
     }
 }
 #[doc = "Field `ERRIEN` writer - Error Interrupt Enable"]
-pub type ERRIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, ERRIEN_A, O>;
+pub type ERRIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IICMODE_SPEC, O, ERRIEN_A>;
 impl<'a, const O: u8> ERRIEN_W<'a, O> {
     #[doc = "The error interrupt is disabled."]
     #[inline(always)]
@@ -525,7 +525,7 @@ impl SACKDIS_R {
     }
 }
 #[doc = "Field `SACKDIS` writer - Slave Acknowledge Disable"]
-pub type SACKDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, SACKDIS_A, O>;
+pub type SACKDIS_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IICMODE_SPEC, O, SACKDIS_A>;
 impl<'a, const O: u8> SACKDIS_W<'a, O> {
     #[doc = "The generation of an active slave acknowledge is enabled (slave acknowledge with 0 level = more bytes can be received)."]
     #[inline(always)]
@@ -539,9 +539,9 @@ impl<'a, const O: u8> SACKDIS_W<'a, O> {
     }
 }
 #[doc = "Field `HDEL` reader - Hardware Delay"]
-pub type HDEL_R = crate::FieldReader<u8, u8>;
+pub type HDEL_R = crate::FieldReader;
 #[doc = "Field `HDEL` writer - Hardware Delay"]
-pub type HDEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_IICMODE_SPEC, u8, u8, 4, O>;
+pub type HDEL_W<'a, const O: u8> = crate::FieldWriter<'a, PCR_IICMODE_SPEC, 4, O>;
 #[doc = "Field `ACKIEN` reader - Acknowledge Interrupt Enable"]
 pub type ACKIEN_R = crate::BitReader<ACKIEN_A>;
 #[doc = "Acknowledge Interrupt Enable\n\nValue on reset: 0"]
@@ -579,7 +579,7 @@ impl ACKIEN_R {
     }
 }
 #[doc = "Field `ACKIEN` writer - Acknowledge Interrupt Enable"]
-pub type ACKIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, ACKIEN_A, O>;
+pub type ACKIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IICMODE_SPEC, O, ACKIEN_A>;
 impl<'a, const O: u8> ACKIEN_W<'a, O> {
     #[doc = "The acknowledge interrupt is disabled."]
     #[inline(always)]
@@ -629,7 +629,7 @@ impl MCLK_R {
     }
 }
 #[doc = "Field `MCLK` writer - Master Clock Enable"]
-pub type MCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_IICMODE_SPEC, MCLK_A, O>;
+pub type MCLK_W<'a, const O: u8> = crate::BitWriter<'a, PCR_IICMODE_SPEC, O, MCLK_A>;
 impl<'a, const O: u8> MCLK_W<'a, O> {
     #[doc = "The MCLK generation is disabled and MCLK is 0."]
     #[inline(always)]

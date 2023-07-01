@@ -71,7 +71,7 @@ impl CHSEL0_R {
     }
 }
 #[doc = "Field `CHSEL0` writer - Channel Selection"]
-pub type CHSEL0_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL0_A, O>;
+pub type CHSEL0_W<'a, const O: u8> = crate::BitWriter<'a, ASSEL_SPEC, O, CHSEL0_A>;
 impl<'a, const O: u8> CHSEL0_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl CHSEL1_R {
     }
 }
 #[doc = "Field `CHSEL1` writer - Channel Selection"]
-pub type CHSEL1_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL1_A, O>;
+pub type CHSEL1_W<'a, const O: u8> = crate::BitWriter<'a, ASSEL_SPEC, O, CHSEL1_A>;
 impl<'a, const O: u8> CHSEL1_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl CHSEL2_R {
     }
 }
 #[doc = "Field `CHSEL2` writer - Channel Selection"]
-pub type CHSEL2_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL2_A, O>;
+pub type CHSEL2_W<'a, const O: u8> = crate::BitWriter<'a, ASSEL_SPEC, O, CHSEL2_A>;
 impl<'a, const O: u8> CHSEL2_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl CHSEL3_R {
     }
 }
 #[doc = "Field `CHSEL3` writer - Channel Selection"]
-pub type CHSEL3_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL3_A, O>;
+pub type CHSEL3_W<'a, const O: u8> = crate::BitWriter<'a, ASSEL_SPEC, O, CHSEL3_A>;
 impl<'a, const O: u8> CHSEL3_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl CHSEL4_R {
     }
 }
 #[doc = "Field `CHSEL4` writer - Channel Selection"]
-pub type CHSEL4_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL4_A, O>;
+pub type CHSEL4_W<'a, const O: u8> = crate::BitWriter<'a, ASSEL_SPEC, O, CHSEL4_A>;
 impl<'a, const O: u8> CHSEL4_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl CHSEL5_R {
     }
 }
 #[doc = "Field `CHSEL5` writer - Channel Selection"]
-pub type CHSEL5_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL5_A, O>;
+pub type CHSEL5_W<'a, const O: u8> = crate::BitWriter<'a, ASSEL_SPEC, O, CHSEL5_A>;
 impl<'a, const O: u8> CHSEL5_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl CHSEL6_R {
     }
 }
 #[doc = "Field `CHSEL6` writer - Channel Selection"]
-pub type CHSEL6_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL6_A, O>;
+pub type CHSEL6_W<'a, const O: u8> = crate::BitWriter<'a, ASSEL_SPEC, O, CHSEL6_A>;
 impl<'a, const O: u8> CHSEL6_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl CHSEL7_R {
     }
 }
 #[doc = "Field `CHSEL7` writer - Channel Selection"]
-pub type CHSEL7_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASSEL_SPEC, CHSEL7_A, O>;
+pub type CHSEL7_W<'a, const O: u8> = crate::BitWriter<'a, ASSEL_SPEC, O, CHSEL7_A>;
 impl<'a, const O: u8> CHSEL7_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]

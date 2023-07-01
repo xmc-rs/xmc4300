@@ -14,7 +14,7 @@ impl From<crate::R<OSCULSTAT_SPEC>> for R {
     }
 }
 #[doc = "Field `X1D` reader - XTAL1 Data Value"]
-pub type X1D_R = crate::BitReader<bool>;
+pub type X1D_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - XTAL1 Data Value"]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl X1DEN_R {
     }
 }
 #[doc = "Field `X1DEN` writer - XTAL1 Data General Purpose Input Enable"]
-pub type X1DEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCULCTRL_SPEC, X1DEN_A, O>;
+pub type X1DEN_W<'a, const O: u8> = crate::BitWriter<'a, OSCULCTRL_SPEC, O, X1DEN_A>;
 impl<'a, const O: u8> X1DEN_W<'a, O> {
     #[doc = "Data input inactivated, power down"]
     #[inline(always)]
@@ -85,7 +85,7 @@ impl<'a, const O: u8> X1DEN_W<'a, O> {
     }
 }
 #[doc = "Field `MODE` reader - Oscillator Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
+pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "Oscillator Mode\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -104,6 +104,9 @@ impl From<MODE_A> for u8 {
     fn from(variant: MODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MODE_A {
+    type Ux = u8;
 }
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -139,7 +142,7 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Oscillator Mode"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, OSCULCTRL_SPEC, u8, MODE_A, 2, O>;
+pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, OSCULCTRL_SPEC, 2, O, MODE_A>;
 impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Oscillator is enabled, in operation"]
     #[inline(always)]

@@ -14,15 +14,15 @@ impl From<crate::R<RESD_SPEC>> for R {
     }
 }
 #[doc = "Field `RESULT` reader - Result of Most Recent Conversion"]
-pub type RESULT_R = crate::FieldReader<u16, u16>;
+pub type RESULT_R = crate::FieldReader<u16>;
 #[doc = "Field `DRC` reader - Data Reduction Counter"]
-pub type DRC_R = crate::FieldReader<u8, u8>;
+pub type DRC_R = crate::FieldReader;
 #[doc = "Field `CHNR` reader - Channel Number"]
-pub type CHNR_R = crate::FieldReader<u8, u8>;
+pub type CHNR_R = crate::FieldReader;
 #[doc = "Field `EMUX` reader - External Multiplexer Setting"]
-pub type EMUX_R = crate::FieldReader<u8, u8>;
+pub type EMUX_R = crate::FieldReader;
 #[doc = "Field `CRS` reader - Converted Request Source"]
-pub type CRS_R = crate::FieldReader<u8, CRS_A>;
+pub type CRS_R = crate::FieldReader<CRS_A>;
 #[doc = "Converted Request Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -39,6 +39,9 @@ impl From<CRS_A> for u8 {
     fn from(variant: CRS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CRS_A {
+    type Ux = u8;
 }
 impl CRS_R {
     #[doc = "Get enumerated values variant"]

@@ -35,9 +35,9 @@ impl From<crate::W<EEP_DATA_SPEC>> for W {
     }
 }
 #[doc = "Field `EEP_DATA` reader - EEPROM Data"]
-pub type EEP_DATA_R = crate::FieldReader<u32, u32>;
+pub type EEP_DATA_R = crate::FieldReader<u32>;
 #[doc = "Field `EEP_DATA` writer - EEPROM Data"]
-pub type EEP_DATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EEP_DATA_SPEC, u32, u32, 32, O>;
+pub type EEP_DATA_W<'a, const O: u8> = crate::FieldWriter<'a, EEP_DATA_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - EEPROM Data"]
     #[inline(always)]

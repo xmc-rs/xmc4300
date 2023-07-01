@@ -35,9 +35,9 @@ impl From<crate::W<STATION_ALIAS_SPEC>> for W {
     }
 }
 #[doc = "Field `ALIAS_ADDR` reader - Alias Address used for node addressing(FPxx commands)"]
-pub type ALIAS_ADDR_R = crate::FieldReader<u16, u16>;
+pub type ALIAS_ADDR_R = crate::FieldReader<u16>;
 #[doc = "Field `ALIAS_ADDR` writer - Alias Address used for node addressing(FPxx commands)"]
-pub type ALIAS_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u16, STATION_ALIAS_SPEC, u16, u16, 16, O>;
+pub type ALIAS_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, STATION_ALIAS_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Alias Address used for node addressing(FPxx commands)"]
     #[inline(always)]

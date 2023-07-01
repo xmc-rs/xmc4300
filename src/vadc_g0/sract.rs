@@ -34,7 +34,7 @@ impl From<AGSR0_AW> for bool {
     }
 }
 #[doc = "Field `AGSR0` writer - Activate Group Service Request Node 0"]
-pub type AGSR0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRACT_SPEC, AGSR0_AW, O>;
+pub type AGSR0_W<'a, const O: u8> = crate::BitWriter<'a, SRACT_SPEC, O, AGSR0_AW>;
 impl<'a, const O: u8> AGSR0_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<AGSR1_AW> for bool {
     }
 }
 #[doc = "Field `AGSR1` writer - Activate Group Service Request Node 1"]
-pub type AGSR1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRACT_SPEC, AGSR1_AW, O>;
+pub type AGSR1_W<'a, const O: u8> = crate::BitWriter<'a, SRACT_SPEC, O, AGSR1_AW>;
 impl<'a, const O: u8> AGSR1_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<AGSR2_AW> for bool {
     }
 }
 #[doc = "Field `AGSR2` writer - Activate Group Service Request Node 2"]
-pub type AGSR2_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRACT_SPEC, AGSR2_AW, O>;
+pub type AGSR2_W<'a, const O: u8> = crate::BitWriter<'a, SRACT_SPEC, O, AGSR2_AW>;
 impl<'a, const O: u8> AGSR2_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<AGSR3_AW> for bool {
     }
 }
 #[doc = "Field `AGSR3` writer - Activate Group Service Request Node 3"]
-pub type AGSR3_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRACT_SPEC, AGSR3_AW, O>;
+pub type AGSR3_W<'a, const O: u8> = crate::BitWriter<'a, SRACT_SPEC, O, AGSR3_AW>;
 impl<'a, const O: u8> AGSR3_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<ASSR0_AW> for bool {
     }
 }
 #[doc = "Field `ASSR0` writer - Activate Shared Service Request Node 0"]
-pub type ASSR0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRACT_SPEC, ASSR0_AW, O>;
+pub type ASSR0_W<'a, const O: u8> = crate::BitWriter<'a, SRACT_SPEC, O, ASSR0_AW>;
 impl<'a, const O: u8> ASSR0_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<ASSR1_AW> for bool {
     }
 }
 #[doc = "Field `ASSR1` writer - Activate Shared Service Request Node 1"]
-pub type ASSR1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRACT_SPEC, ASSR1_AW, O>;
+pub type ASSR1_W<'a, const O: u8> = crate::BitWriter<'a, SRACT_SPEC, O, ASSR1_AW>;
 impl<'a, const O: u8> ASSR1_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -202,7 +202,7 @@ impl From<ASSR2_AW> for bool {
     }
 }
 #[doc = "Field `ASSR2` writer - Activate Shared Service Request Node 2"]
-pub type ASSR2_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRACT_SPEC, ASSR2_AW, O>;
+pub type ASSR2_W<'a, const O: u8> = crate::BitWriter<'a, SRACT_SPEC, O, ASSR2_AW>;
 impl<'a, const O: u8> ASSR2_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -230,7 +230,7 @@ impl From<ASSR3_AW> for bool {
     }
 }
 #[doc = "Field `ASSR3` writer - Activate Shared Service Request Node 3"]
-pub type ASSR3_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRACT_SPEC, ASSR3_AW, O>;
+pub type ASSR3_W<'a, const O: u8> = crate::BitWriter<'a, SRACT_SPEC, O, ASSR3_AW>;
 impl<'a, const O: u8> ASSR3_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]

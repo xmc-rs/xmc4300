@@ -14,21 +14,21 @@ impl From<crate::R<OVRSTAT_SPEC>> for R {
     }
 }
 #[doc = "Field `LN0` reader - Line 0 Overrun Status"]
-pub type LN0_R = crate::BitReader<bool>;
+pub type LN0_R = crate::BitReader;
 #[doc = "Field `LN1` reader - Line 1 Overrun Status"]
-pub type LN1_R = crate::BitReader<bool>;
+pub type LN1_R = crate::BitReader;
 #[doc = "Field `LN2` reader - Line 2 Overrun Status"]
-pub type LN2_R = crate::BitReader<bool>;
+pub type LN2_R = crate::BitReader;
 #[doc = "Field `LN3` reader - Line 3 Overrun Status"]
-pub type LN3_R = crate::BitReader<bool>;
+pub type LN3_R = crate::BitReader;
 #[doc = "Field `LN4` reader - Line 4 Overrun Status"]
-pub type LN4_R = crate::BitReader<bool>;
+pub type LN4_R = crate::BitReader;
 #[doc = "Field `LN5` reader - Line 5 Overrun Status"]
-pub type LN5_R = crate::BitReader<bool>;
+pub type LN5_R = crate::BitReader;
 #[doc = "Field `LN6` reader - Line 6 Overrun Status"]
-pub type LN6_R = crate::BitReader<bool>;
+pub type LN6_R = crate::BitReader;
 #[doc = "Field `LN7` reader - Line 7 Overrun Status"]
-pub type LN7_R = crate::BitReader<bool>;
+pub type LN7_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Line 0 Overrun Status"]
     #[inline(always)]

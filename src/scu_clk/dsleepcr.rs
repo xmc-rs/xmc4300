@@ -71,7 +71,7 @@ impl SYSSEL_R {
     }
 }
 #[doc = "Field `SYSSEL` writer - System Clock Selection Value"]
-pub type SYSSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, SYSSEL_A, O>;
+pub type SYSSEL_W<'a, const O: u8> = crate::BitWriter<'a, DSLEEPCR_SPEC, O, SYSSEL_A>;
 impl<'a, const O: u8> SYSSEL_W<'a, O> {
     #[doc = "fOFI clock"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl FPDN_R {
     }
 }
 #[doc = "Field `FPDN` writer - Flash Power Down"]
-pub type FPDN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, FPDN_A, O>;
+pub type FPDN_W<'a, const O: u8> = crate::BitWriter<'a, DSLEEPCR_SPEC, O, FPDN_A>;
 impl<'a, const O: u8> FPDN_W<'a, O> {
     #[doc = "Flash power down module"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl PLLPDN_R {
     }
 }
 #[doc = "Field `PLLPDN` writer - PLL Power Down"]
-pub type PLLPDN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, PLLPDN_A, O>;
+pub type PLLPDN_W<'a, const O: u8> = crate::BitWriter<'a, DSLEEPCR_SPEC, O, PLLPDN_A>;
 impl<'a, const O: u8> PLLPDN_W<'a, O> {
     #[doc = "Switch off main PLL"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl VCOPDN_R {
     }
 }
 #[doc = "Field `VCOPDN` writer - VCO Power Down"]
-pub type VCOPDN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, VCOPDN_A, O>;
+pub type VCOPDN_W<'a, const O: u8> = crate::BitWriter<'a, DSLEEPCR_SPEC, O, VCOPDN_A>;
 impl<'a, const O: u8> VCOPDN_W<'a, O> {
     #[doc = "Switch off VCO of main PLL"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl USBCR_R {
     }
 }
 #[doc = "Field `USBCR` writer - USB Clock Control in Deep Sleep Mode"]
-pub type USBCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, USBCR_A, O>;
+pub type USBCR_W<'a, const O: u8> = crate::BitWriter<'a, DSLEEPCR_SPEC, O, USBCR_A>;
 impl<'a, const O: u8> USBCR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl MMCCR_R {
     }
 }
 #[doc = "Field `MMCCR` writer - MMC Clock Control in Deep Sleep Mode"]
-pub type MMCCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, MMCCR_A, O>;
+pub type MMCCR_W<'a, const O: u8> = crate::BitWriter<'a, DSLEEPCR_SPEC, O, MMCCR_A>;
 impl<'a, const O: u8> MMCCR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl ETH0CR_R {
     }
 }
 #[doc = "Field `ETH0CR` writer - Ethernet Clock Control in Deep Sleep Mode"]
-pub type ETH0CR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, ETH0CR_A, O>;
+pub type ETH0CR_W<'a, const O: u8> = crate::BitWriter<'a, DSLEEPCR_SPEC, O, ETH0CR_A>;
 impl<'a, const O: u8> ETH0CR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl CCUCR_R {
     }
 }
 #[doc = "Field `CCUCR` writer - CCU Clock Control in Deep Sleep Mode"]
-pub type CCUCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, CCUCR_A, O>;
+pub type CCUCR_W<'a, const O: u8> = crate::BitWriter<'a, DSLEEPCR_SPEC, O, CCUCR_A>;
 impl<'a, const O: u8> CCUCR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl WDTCR_R {
     }
 }
 #[doc = "Field `WDTCR` writer - WDT Clock Control in Deep Sleep Mode"]
-pub type WDTCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSLEEPCR_SPEC, WDTCR_A, O>;
+pub type WDTCR_W<'a, const O: u8> = crate::BitWriter<'a, DSLEEPCR_SPEC, O, WDTCR_A>;
 impl<'a, const O: u8> WDTCR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]

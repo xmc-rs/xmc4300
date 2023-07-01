@@ -71,7 +71,7 @@ impl MSLSEN_R {
     }
 }
 #[doc = "Field `MSLSEN` writer - MSLS Enable"]
-pub type MSLSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SSCMODE_SPEC, MSLSEN_A, O>;
+pub type MSLSEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, MSLSEN_A>;
 impl<'a, const O: u8> MSLSEN_W<'a, O> {
     #[doc = "The MSLS generation is disabled (MSLS = 0). This is the setting for SSC slave mode."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl SELCTR_R {
     }
 }
 #[doc = "Field `SELCTR` writer - Select Control"]
-pub type SELCTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SSCMODE_SPEC, SELCTR_A, O>;
+pub type SELCTR_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, SELCTR_A>;
 impl<'a, const O: u8> SELCTR_W<'a, O> {
     #[doc = "The coded select mode is enabled."]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl SELINV_R {
     }
 }
 #[doc = "Field `SELINV` writer - Select Inversion"]
-pub type SELINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SSCMODE_SPEC, SELINV_A, O>;
+pub type SELINV_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, SELINV_A>;
 impl<'a, const O: u8> SELINV_W<'a, O> {
     #[doc = "The SELO outputs have the same polarity as the MSLS signal (active high)."]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl FEM_R {
     }
 }
 #[doc = "Field `FEM` writer - Frame End Mode"]
-pub type FEM_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SSCMODE_SPEC, FEM_A, O>;
+pub type FEM_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, FEM_A>;
 impl<'a, const O: u8> FEM_W<'a, O> {
     #[doc = "The current data frame is considered as finished when the last bit of a data word has been sent out and the transmit buffer TBUF does not contain new data (TDV = 0)."]
     #[inline(always)]
@@ -235,7 +235,7 @@ impl<'a, const O: u8> FEM_W<'a, O> {
     }
 }
 #[doc = "Field `CTQSEL1` reader - Input Frequency Selection"]
-pub type CTQSEL1_R = crate::FieldReader<u8, CTQSEL1_A>;
+pub type CTQSEL1_R = crate::FieldReader<CTQSEL1_A>;
 #[doc = "Input Frequency Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -254,6 +254,9 @@ impl From<CTQSEL1_A> for u8 {
     fn from(variant: CTQSEL1_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CTQSEL1_A {
+    type Ux = u8;
 }
 impl CTQSEL1_R {
     #[doc = "Get enumerated values variant"]
@@ -289,7 +292,7 @@ impl CTQSEL1_R {
     }
 }
 #[doc = "Field `CTQSEL1` writer - Input Frequency Selection"]
-pub type CTQSEL1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PCR_SSCMODE_SPEC, u8, CTQSEL1_A, 2, O>;
+pub type CTQSEL1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PCR_SSCMODE_SPEC, 2, O, CTQSEL1_A>;
 impl<'a, const O: u8> CTQSEL1_W<'a, O> {
     #[doc = "fCTQIN = fPDIV"]
     #[inline(always)]
@@ -313,13 +316,13 @@ impl<'a, const O: u8> CTQSEL1_W<'a, O> {
     }
 }
 #[doc = "Field `PCTQ1` reader - Divider Factor PCTQ1 for Tiw and Tnf"]
-pub type PCTQ1_R = crate::FieldReader<u8, u8>;
+pub type PCTQ1_R = crate::FieldReader;
 #[doc = "Field `PCTQ1` writer - Divider Factor PCTQ1 for Tiw and Tnf"]
-pub type PCTQ1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_SSCMODE_SPEC, u8, u8, 2, O>;
+pub type PCTQ1_W<'a, const O: u8> = crate::FieldWriter<'a, PCR_SSCMODE_SPEC, 2, O>;
 #[doc = "Field `DCTQ1` reader - Divider Factor DCTQ1 for Tiw and Tnf"]
-pub type DCTQ1_R = crate::FieldReader<u8, u8>;
+pub type DCTQ1_R = crate::FieldReader;
 #[doc = "Field `DCTQ1` writer - Divider Factor DCTQ1 for Tiw and Tnf"]
-pub type DCTQ1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_SSCMODE_SPEC, u8, u8, 5, O>;
+pub type DCTQ1_W<'a, const O: u8> = crate::FieldWriter<'a, PCR_SSCMODE_SPEC, 5, O>;
 #[doc = "Field `PARIEN` reader - Parity Error Interrupt Enable"]
 pub type PARIEN_R = crate::BitReader<PARIEN_A>;
 #[doc = "Parity Error Interrupt Enable\n\nValue on reset: 0"]
@@ -357,7 +360,7 @@ impl PARIEN_R {
     }
 }
 #[doc = "Field `PARIEN` writer - Parity Error Interrupt Enable"]
-pub type PARIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SSCMODE_SPEC, PARIEN_A, O>;
+pub type PARIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, PARIEN_A>;
 impl<'a, const O: u8> PARIEN_W<'a, O> {
     #[doc = "A protocol interrupt is not generated with the detection of a parity error."]
     #[inline(always)]
@@ -407,7 +410,7 @@ impl MSLSIEN_R {
     }
 }
 #[doc = "Field `MSLSIEN` writer - MSLS Interrupt Enable"]
-pub type MSLSIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SSCMODE_SPEC, MSLSIEN_A, O>;
+pub type MSLSIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, MSLSIEN_A>;
 impl<'a, const O: u8> MSLSIEN_W<'a, O> {
     #[doc = "A protocol interrupt is not generated if a change of signal MSLS is detected."]
     #[inline(always)]
@@ -457,7 +460,7 @@ impl DX2TIEN_R {
     }
 }
 #[doc = "Field `DX2TIEN` writer - DX2T Interrupt Enable"]
-pub type DX2TIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SSCMODE_SPEC, DX2TIEN_A, O>;
+pub type DX2TIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, DX2TIEN_A>;
 impl<'a, const O: u8> DX2TIEN_W<'a, O> {
     #[doc = "A protocol interrupt is not generated if DX2T is activated."]
     #[inline(always)]
@@ -471,7 +474,7 @@ impl<'a, const O: u8> DX2TIEN_W<'a, O> {
     }
 }
 #[doc = "Field `SELO` reader - Select Output"]
-pub type SELO_R = crate::FieldReader<u8, SELO_A>;
+pub type SELO_R = crate::FieldReader<SELO_A>;
 #[doc = "Select Output\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -486,6 +489,9 @@ impl From<SELO_A> for u8 {
     fn from(variant: SELO_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SELO_A {
+    type Ux = u8;
 }
 impl SELO_R {
     #[doc = "Get enumerated values variant"]
@@ -509,7 +515,7 @@ impl SELO_R {
     }
 }
 #[doc = "Field `SELO` writer - Select Output"]
-pub type SELO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_SSCMODE_SPEC, u8, SELO_A, 8, O>;
+pub type SELO_W<'a, const O: u8> = crate::FieldWriter<'a, PCR_SSCMODE_SPEC, 8, O, SELO_A>;
 impl<'a, const O: u8> SELO_W<'a, O> {
     #[doc = "The corresponding SELOx line cannot be activated."]
     #[inline(always)]
@@ -559,7 +565,7 @@ impl TIWEN_R {
     }
 }
 #[doc = "Field `TIWEN` writer - Enable Inter-Word Delay Tiw"]
-pub type TIWEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SSCMODE_SPEC, TIWEN_A, O>;
+pub type TIWEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, TIWEN_A>;
 impl<'a, const O: u8> TIWEN_W<'a, O> {
     #[doc = "No delay between data words of the same frame."]
     #[inline(always)]
@@ -609,7 +615,7 @@ impl SLPHSEL_R {
     }
 }
 #[doc = "Field `SLPHSEL` writer - Slave Mode Clock Phase Select"]
-pub type SLPHSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SSCMODE_SPEC, SLPHSEL_A, O>;
+pub type SLPHSEL_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, SLPHSEL_A>;
 impl<'a, const O: u8> SLPHSEL_W<'a, O> {
     #[doc = "Data bits are shifted out with the leading edge of the shift clock signal and latched in with the trailing edge."]
     #[inline(always)]
@@ -659,7 +665,7 @@ impl MCLK_R {
     }
 }
 #[doc = "Field `MCLK` writer - Master Clock Enable"]
-pub type MCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SSCMODE_SPEC, MCLK_A, O>;
+pub type MCLK_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, MCLK_A>;
 impl<'a, const O: u8> MCLK_W<'a, O> {
     #[doc = "The MCLK generation is disabled and output MCLK = 0."]
     #[inline(always)]

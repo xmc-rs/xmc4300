@@ -14,7 +14,7 @@ impl From<crate::R<RX_RECEIVE_ERROR_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXRCVERR` reader - This field indicates the number of frames received with error because of the watchdog timeout error (frames with more than 2,048 bytes data load)."]
-pub type RXRCVERR_R = crate::FieldReader<u32, u32>;
+pub type RXRCVERR_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of frames received with error because of the watchdog timeout error (frames with more than 2,048 bytes data load)."]
     #[inline(always)]

@@ -34,7 +34,7 @@ impl From<FE_CMD_TIMEOUT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CMD_TIMEOUT_ERR` writer - Force Event for Command Timeout Error"]
-pub type FE_CMD_TIMEOUT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ERR_STATUS_SPEC, FE_CMD_TIMEOUT_ERR_AW, O>;
+pub type FE_CMD_TIMEOUT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ERR_STATUS_SPEC, O, FE_CMD_TIMEOUT_ERR_AW>;
 impl<'a, const O: u8> FE_CMD_TIMEOUT_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<FE_CMD_CRC_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CMD_CRC_ERR` writer - Force Event for Command CRC Error"]
-pub type FE_CMD_CRC_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ERR_STATUS_SPEC, FE_CMD_CRC_ERR_AW, O>;
+pub type FE_CMD_CRC_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ERR_STATUS_SPEC, O, FE_CMD_CRC_ERR_AW>;
 impl<'a, const O: u8> FE_CMD_CRC_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<FE_CMD_END_BIT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CMD_END_BIT_ERR` writer - Force Event for Command End Bit Error"]
-pub type FE_CMD_END_BIT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ERR_STATUS_SPEC, FE_CMD_END_BIT_ERR_AW, O>;
+pub type FE_CMD_END_BIT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ERR_STATUS_SPEC, O, FE_CMD_END_BIT_ERR_AW>;
 impl<'a, const O: u8> FE_CMD_END_BIT_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<FE_CMD_IND_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CMD_IND_ERR` writer - Force Event for Command Index Error"]
-pub type FE_CMD_IND_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ERR_STATUS_SPEC, FE_CMD_IND_ERR_AW, O>;
+pub type FE_CMD_IND_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ERR_STATUS_SPEC, O, FE_CMD_IND_ERR_AW>;
 impl<'a, const O: u8> FE_CMD_IND_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<FE_DATA_TIMEOUT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_DATA_TIMEOUT_ERR` writer - Force Event for Data Timeout Error"]
-pub type FE_DATA_TIMEOUT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ERR_STATUS_SPEC, FE_DATA_TIMEOUT_ERR_AW, O>;
+pub type FE_DATA_TIMEOUT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ERR_STATUS_SPEC, O, FE_DATA_TIMEOUT_ERR_AW>;
 impl<'a, const O: u8> FE_DATA_TIMEOUT_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<FE_DATA_CRC_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_DATA_CRC_ERR` writer - Force Event for Data CRC Error"]
-pub type FE_DATA_CRC_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ERR_STATUS_SPEC, FE_DATA_CRC_ERR_AW, O>;
+pub type FE_DATA_CRC_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ERR_STATUS_SPEC, O, FE_DATA_CRC_ERR_AW>;
 impl<'a, const O: u8> FE_DATA_CRC_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -202,7 +202,7 @@ impl From<FE_DATA_END_BIT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_DATA_END_BIT_ERR` writer - Force Event for Data End Bit Error"]
-pub type FE_DATA_END_BIT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ERR_STATUS_SPEC, FE_DATA_END_BIT_ERR_AW, O>;
+pub type FE_DATA_END_BIT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ERR_STATUS_SPEC, O, FE_DATA_END_BIT_ERR_AW>;
 impl<'a, const O: u8> FE_DATA_END_BIT_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -230,7 +230,7 @@ impl From<FE_CURRENT_LIMIT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CURRENT_LIMIT_ERR` writer - Force Event for Current Limit Error"]
-pub type FE_CURRENT_LIMIT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ERR_STATUS_SPEC, FE_CURRENT_LIMIT_ERR_AW, O>;
+pub type FE_CURRENT_LIMIT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ERR_STATUS_SPEC, O, FE_CURRENT_LIMIT_ERR_AW>;
 impl<'a, const O: u8> FE_CURRENT_LIMIT_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -258,7 +258,7 @@ impl From<FE_ACMD12_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_ACMD12_ERR` writer - Force Event for Auto CMD Error"]
-pub type FE_ACMD12_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ERR_STATUS_SPEC, FE_ACMD12_ERR_AW, O>;
+pub type FE_ACMD12_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ERR_STATUS_SPEC, O, FE_ACMD12_ERR_AW>;
 impl<'a, const O: u8> FE_ACMD12_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -286,7 +286,7 @@ impl From<FE_TARGET_RESPONSE_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_TARGET_RESPONSE_ERR` writer - Force event for Target Response Error"]
-pub type FE_TARGET_RESPONSE_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ERR_STATUS_SPEC, FE_TARGET_RESPONSE_ERR_AW, O>;
+pub type FE_TARGET_RESPONSE_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ERR_STATUS_SPEC, O, FE_TARGET_RESPONSE_ERR_AW>;
 impl<'a, const O: u8> FE_TARGET_RESPONSE_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -314,7 +314,7 @@ impl From<FE_CEATA_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CEATA_ERR` writer - Force Event for Ceata Error"]
-pub type FE_CEATA_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ERR_STATUS_SPEC, FE_CEATA_ERR_AW, O>;
+pub type FE_CEATA_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ERR_STATUS_SPEC, O, FE_CEATA_ERR_AW>;
 impl<'a, const O: u8> FE_CEATA_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<CAPABILITIES_SPEC>> for R {
     }
 }
 #[doc = "Field `TIMEOUT_CLOCK_FREQ` reader - Timeout Clock Frequency"]
-pub type TIMEOUT_CLOCK_FREQ_R = crate::FieldReader<u8, TIMEOUT_CLOCK_FREQ_A>;
+pub type TIMEOUT_CLOCK_FREQ_R = crate::FieldReader<TIMEOUT_CLOCK_FREQ_A>;
 #[doc = "Timeout Clock Frequency\n\nValue on reset: 48"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -27,6 +27,9 @@ impl From<TIMEOUT_CLOCK_FREQ_A> for u8 {
     fn from(variant: TIMEOUT_CLOCK_FREQ_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TIMEOUT_CLOCK_FREQ_A {
+    type Ux = u8;
 }
 impl TIMEOUT_CLOCK_FREQ_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +76,7 @@ impl TIMEOUT_CLOCK_UNIT_R {
     }
 }
 #[doc = "Field `BASE_SD_CLOCK_FREQ` reader - Base Clock Frequency for SD Clock"]
-pub type BASE_SD_CLOCK_FREQ_R = crate::FieldReader<u8, BASE_SD_CLOCK_FREQ_A>;
+pub type BASE_SD_CLOCK_FREQ_R = crate::FieldReader<BASE_SD_CLOCK_FREQ_A>;
 #[doc = "Base Clock Frequency for SD Clock\n\nValue on reset: 48"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -86,6 +89,9 @@ impl From<BASE_SD_CLOCK_FREQ_A> for u8 {
     fn from(variant: BASE_SD_CLOCK_FREQ_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BASE_SD_CLOCK_FREQ_A {
+    type Ux = u8;
 }
 impl BASE_SD_CLOCK_FREQ_R {
     #[doc = "Get enumerated values variant"]
@@ -103,7 +109,7 @@ impl BASE_SD_CLOCK_FREQ_R {
     }
 }
 #[doc = "Field `MAX_BLOCK_LENGTH` reader - Max Block Length"]
-pub type MAX_BLOCK_LENGTH_R = crate::FieldReader<u8, MAX_BLOCK_LENGTH_A>;
+pub type MAX_BLOCK_LENGTH_R = crate::FieldReader<MAX_BLOCK_LENGTH_A>;
 #[doc = "Max Block Length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -116,6 +122,9 @@ impl From<MAX_BLOCK_LENGTH_A> for u8 {
     fn from(variant: MAX_BLOCK_LENGTH_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MAX_BLOCK_LENGTH_A {
+    type Ux = u8;
 }
 impl MAX_BLOCK_LENGTH_R {
     #[doc = "Get enumerated values variant"]
@@ -423,7 +432,7 @@ impl ASYNC_INT_SUPPORT_R {
     }
 }
 #[doc = "Field `SLOT_TYPE` reader - Slot Type"]
-pub type SLOT_TYPE_R = crate::FieldReader<u8, SLOT_TYPE_A>;
+pub type SLOT_TYPE_R = crate::FieldReader<SLOT_TYPE_A>;
 #[doc = "Slot Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -436,6 +445,9 @@ impl From<SLOT_TYPE_A> for u8 {
     fn from(variant: SLOT_TYPE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SLOT_TYPE_A {
+    type Ux = u8;
 }
 impl SLOT_TYPE_R {
     #[doc = "Get enumerated values variant"]

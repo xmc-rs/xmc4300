@@ -14,7 +14,7 @@ impl From<crate::R<TIM_SPEC>> for R {
     }
 }
 #[doc = "Field `TIM` reader - Timer Value"]
-pub type TIM_R = crate::FieldReader<u32, u32>;
+pub type TIM_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Timer Value"]
     #[inline(always)]

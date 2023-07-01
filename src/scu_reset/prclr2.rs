@@ -34,7 +34,7 @@ impl From<WDTRS_AW> for bool {
     }
 }
 #[doc = "Field `WDTRS` writer - WDT Reset Clear"]
-pub type WDTRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR2_SPEC, WDTRS_AW, O>;
+pub type WDTRS_W<'a, const O: u8> = crate::BitWriter<'a, PRCLR2_SPEC, O, WDTRS_AW>;
 impl<'a, const O: u8> WDTRS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<ETH0RS_AW> for bool {
     }
 }
 #[doc = "Field `ETH0RS` writer - ETH0 Reset Clear"]
-pub type ETH0RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR2_SPEC, ETH0RS_AW, O>;
+pub type ETH0RS_W<'a, const O: u8> = crate::BitWriter<'a, PRCLR2_SPEC, O, ETH0RS_AW>;
 impl<'a, const O: u8> ETH0RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<DMA0RS_AW> for bool {
     }
 }
 #[doc = "Field `DMA0RS` writer - DMA0 Reset Clear"]
-pub type DMA0RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR2_SPEC, DMA0RS_AW, O>;
+pub type DMA0RS_W<'a, const O: u8> = crate::BitWriter<'a, PRCLR2_SPEC, O, DMA0RS_AW>;
 impl<'a, const O: u8> DMA0RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<FCERS_AW> for bool {
     }
 }
 #[doc = "Field `FCERS` writer - FCE Reset Clear"]
-pub type FCERS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR2_SPEC, FCERS_AW, O>;
+pub type FCERS_W<'a, const O: u8> = crate::BitWriter<'a, PRCLR2_SPEC, O, FCERS_AW>;
 impl<'a, const O: u8> FCERS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<USBRS_AW> for bool {
     }
 }
 #[doc = "Field `USBRS` writer - USB Reset Clear"]
-pub type USBRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR2_SPEC, USBRS_AW, O>;
+pub type USBRS_W<'a, const O: u8> = crate::BitWriter<'a, PRCLR2_SPEC, O, USBRS_AW>;
 impl<'a, const O: u8> USBRS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<ECAT0RS_AW> for bool {
     }
 }
 #[doc = "Field `ECAT0RS` writer - ECAT0 Reset Clear"]
-pub type ECAT0RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR2_SPEC, ECAT0RS_AW, O>;
+pub type ECAT0RS_W<'a, const O: u8> = crate::BitWriter<'a, PRCLR2_SPEC, O, ECAT0RS_AW>;
 impl<'a, const O: u8> ECAT0RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

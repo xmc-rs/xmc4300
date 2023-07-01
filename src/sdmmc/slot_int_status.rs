@@ -14,7 +14,7 @@ impl From<crate::R<SLOT_INT_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `SLOT_INT_STATUS` reader - Interrupt Signal for Card Slot"]
-pub type SLOT_INT_STATUS_R = crate::FieldReader<u8, SLOT_INT_STATUS_A>;
+pub type SLOT_INT_STATUS_R = crate::FieldReader<SLOT_INT_STATUS_A>;
 #[doc = "Interrupt Signal for Card Slot\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -27,6 +27,9 @@ impl From<SLOT_INT_STATUS_A> for u8 {
     fn from(variant: SLOT_INT_STATUS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SLOT_INT_STATUS_A {
+    type Ux = u8;
 }
 impl SLOT_INT_STATUS_R {
     #[doc = "Get enumerated values variant"]

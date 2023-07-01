@@ -35,9 +35,9 @@ impl From<crate::W<DC_SPEED_COUNT_START_SPEC>> for W {
     }
 }
 #[doc = "Field `COUNT_START` reader - Bandwidth for adjustment of local copy of System Time"]
-pub type COUNT_START_R = crate::FieldReader<u16, u16>;
+pub type COUNT_START_R = crate::FieldReader<u16>;
 #[doc = "Field `COUNT_START` writer - Bandwidth for adjustment of local copy of System Time"]
-pub type COUNT_START_W<'a, const O: u8> = crate::FieldWriter<'a, u16, DC_SPEED_COUNT_START_SPEC, u16, u16, 15, O>;
+pub type COUNT_START_W<'a, const O: u8> = crate::FieldWriter<'a, DC_SPEED_COUNT_START_SPEC, 15, O, u16>;
 impl R {
     #[doc = "Bits 0:14 - Bandwidth for adjustment of local copy of System Time"]
     #[inline(always)]

@@ -35,21 +35,21 @@ impl From<crate::W<MODATAH_SPEC>> for W {
     }
 }
 #[doc = "Field `DB4` reader - Data Byte 4 of Message Object n"]
-pub type DB4_R = crate::FieldReader<u8, u8>;
+pub type DB4_R = crate::FieldReader;
 #[doc = "Field `DB4` writer - Data Byte 4 of Message Object n"]
-pub type DB4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODATAH_SPEC, u8, u8, 8, O>;
+pub type DB4_W<'a, const O: u8> = crate::FieldWriter<'a, MODATAH_SPEC, 8, O>;
 #[doc = "Field `DB5` reader - Data Byte 5 of Message Object n"]
-pub type DB5_R = crate::FieldReader<u8, u8>;
+pub type DB5_R = crate::FieldReader;
 #[doc = "Field `DB5` writer - Data Byte 5 of Message Object n"]
-pub type DB5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODATAH_SPEC, u8, u8, 8, O>;
+pub type DB5_W<'a, const O: u8> = crate::FieldWriter<'a, MODATAH_SPEC, 8, O>;
 #[doc = "Field `DB6` reader - Data Byte 6 of Message Object n"]
-pub type DB6_R = crate::FieldReader<u8, u8>;
+pub type DB6_R = crate::FieldReader;
 #[doc = "Field `DB6` writer - Data Byte 6 of Message Object n"]
-pub type DB6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODATAH_SPEC, u8, u8, 8, O>;
+pub type DB6_W<'a, const O: u8> = crate::FieldWriter<'a, MODATAH_SPEC, 8, O>;
 #[doc = "Field `DB7` reader - Data Byte 7 of Message Object n"]
-pub type DB7_R = crate::FieldReader<u8, u8>;
+pub type DB7_R = crate::FieldReader;
 #[doc = "Field `DB7` writer - Data Byte 7 of Message Object n"]
-pub type DB7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODATAH_SPEC, u8, u8, 8, O>;
+pub type DB7_W<'a, const O: u8> = crate::FieldWriter<'a, MODATAH_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Data Byte 4 of Message Object n"]
     #[inline(always)]

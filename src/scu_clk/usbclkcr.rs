@@ -35,9 +35,9 @@ impl From<crate::W<USBCLKCR_SPEC>> for W {
     }
 }
 #[doc = "Field `USBDIV` reader - USB Clock Divider Value"]
-pub type USBDIV_R = crate::FieldReader<u8, u8>;
+pub type USBDIV_R = crate::FieldReader;
 #[doc = "Field `USBDIV` writer - USB Clock Divider Value"]
-pub type USBDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, USBCLKCR_SPEC, u8, u8, 3, O>;
+pub type USBDIV_W<'a, const O: u8> = crate::FieldWriter<'a, USBCLKCR_SPEC, 3, O>;
 #[doc = "Field `USBSEL` reader - USB Clock Selection Value"]
 pub type USBSEL_R = crate::BitReader<USBSEL_A>;
 #[doc = "USB Clock Selection Value\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl USBSEL_R {
     }
 }
 #[doc = "Field `USBSEL` writer - USB Clock Selection Value"]
-pub type USBSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBCLKCR_SPEC, USBSEL_A, O>;
+pub type USBSEL_W<'a, const O: u8> = crate::BitWriter<'a, USBCLKCR_SPEC, O, USBSEL_A>;
 impl<'a, const O: u8> USBSEL_W<'a, O> {
     #[doc = "USB PLL Clock"]
     #[inline(always)]

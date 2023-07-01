@@ -35,7 +35,7 @@ impl From<crate::W<INPR_SPEC>> for W {
     }
 }
 #[doc = "Field `TSINP` reader - Transmit Shift Interrupt Node Pointer"]
-pub type TSINP_R = crate::FieldReader<u8, TSINP_A>;
+pub type TSINP_R = crate::FieldReader<TSINP_A>;
 #[doc = "Transmit Shift Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -58,6 +58,9 @@ impl From<TSINP_A> for u8 {
     fn from(variant: TSINP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TSINP_A {
+    type Ux = u8;
 }
 impl TSINP_R {
     #[doc = "Get enumerated values variant"]
@@ -105,7 +108,7 @@ impl TSINP_R {
     }
 }
 #[doc = "Field `TSINP` writer - Transmit Shift Interrupt Node Pointer"]
-pub type TSINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPR_SPEC, u8, TSINP_A, 3, O>;
+pub type TSINP_W<'a, const O: u8> = crate::FieldWriter<'a, INPR_SPEC, 3, O, TSINP_A>;
 impl<'a, const O: u8> TSINP_W<'a, O> {
     #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
@@ -139,21 +142,21 @@ impl<'a, const O: u8> TSINP_W<'a, O> {
     }
 }
 #[doc = "Field `TBINP` reader - Transmit Buffer Interrupt Node Pointer"]
-pub type TBINP_R = crate::FieldReader<u8, u8>;
+pub type TBINP_R = crate::FieldReader;
 #[doc = "Field `TBINP` writer - Transmit Buffer Interrupt Node Pointer"]
-pub type TBINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPR_SPEC, u8, u8, 3, O>;
+pub type TBINP_W<'a, const O: u8> = crate::FieldWriter<'a, INPR_SPEC, 3, O>;
 #[doc = "Field `RINP` reader - Receive Interrupt Node Pointer"]
-pub type RINP_R = crate::FieldReader<u8, u8>;
+pub type RINP_R = crate::FieldReader;
 #[doc = "Field `RINP` writer - Receive Interrupt Node Pointer"]
-pub type RINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPR_SPEC, u8, u8, 3, O>;
+pub type RINP_W<'a, const O: u8> = crate::FieldWriter<'a, INPR_SPEC, 3, O>;
 #[doc = "Field `AINP` reader - Alternative Receive Interrupt Node Pointer"]
-pub type AINP_R = crate::FieldReader<u8, u8>;
+pub type AINP_R = crate::FieldReader;
 #[doc = "Field `AINP` writer - Alternative Receive Interrupt Node Pointer"]
-pub type AINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPR_SPEC, u8, u8, 3, O>;
+pub type AINP_W<'a, const O: u8> = crate::FieldWriter<'a, INPR_SPEC, 3, O>;
 #[doc = "Field `PINP` reader - Transmit Shift Interrupt Node Pointer"]
-pub type PINP_R = crate::FieldReader<u8, u8>;
+pub type PINP_R = crate::FieldReader;
 #[doc = "Field `PINP` writer - Transmit Shift Interrupt Node Pointer"]
-pub type PINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INPR_SPEC, u8, u8, 3, O>;
+pub type PINP_W<'a, const O: u8> = crate::FieldWriter<'a, INPR_SPEC, 3, O>;
 impl R {
     #[doc = "Bits 0:2 - Transmit Shift Interrupt Node Pointer"]
     #[inline(always)]

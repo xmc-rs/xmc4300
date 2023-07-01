@@ -71,7 +71,7 @@ impl INTERNAL_CLOCK_EN_R {
     }
 }
 #[doc = "Field `INTERNAL_CLOCK_EN` writer - Internal Clock Enable"]
-pub type INTERNAL_CLOCK_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, CLOCK_CTRL_SPEC, INTERNAL_CLOCK_EN_A, O>;
+pub type INTERNAL_CLOCK_EN_W<'a, const O: u8> = crate::BitWriter<'a, CLOCK_CTRL_SPEC, O, INTERNAL_CLOCK_EN_A>;
 impl<'a, const O: u8> INTERNAL_CLOCK_EN_W<'a, O> {
     #[doc = "Stop"]
     #[inline(always)]
@@ -157,7 +157,7 @@ impl SDCLOCK_EN_R {
     }
 }
 #[doc = "Field `SDCLOCK_EN` writer - SD Clock Enable"]
-pub type SDCLOCK_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, CLOCK_CTRL_SPEC, SDCLOCK_EN_A, O>;
+pub type SDCLOCK_EN_W<'a, const O: u8> = crate::BitWriter<'a, CLOCK_CTRL_SPEC, O, SDCLOCK_EN_A>;
 impl<'a, const O: u8> SDCLOCK_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl<'a, const O: u8> SDCLOCK_EN_W<'a, O> {
     }
 }
 #[doc = "Field `SDCLK_FREQ_SEL` reader - SDCLK Frequency Select"]
-pub type SDCLK_FREQ_SEL_R = crate::FieldReader<u8, SDCLK_FREQ_SEL_A>;
+pub type SDCLK_FREQ_SEL_R = crate::FieldReader<SDCLK_FREQ_SEL_A>;
 #[doc = "SDCLK Frequency Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -200,6 +200,9 @@ impl From<SDCLK_FREQ_SEL_A> for u8 {
     fn from(variant: SDCLK_FREQ_SEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SDCLK_FREQ_SEL_A {
+    type Ux = u8;
 }
 impl SDCLK_FREQ_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -265,7 +268,7 @@ impl SDCLK_FREQ_SEL_R {
     }
 }
 #[doc = "Field `SDCLK_FREQ_SEL` writer - SDCLK Frequency Select"]
-pub type SDCLK_FREQ_SEL_W<'a, const O: u8> = crate::FieldWriter<'a, u16, CLOCK_CTRL_SPEC, u8, SDCLK_FREQ_SEL_A, 8, O>;
+pub type SDCLK_FREQ_SEL_W<'a, const O: u8> = crate::FieldWriter<'a, CLOCK_CTRL_SPEC, 8, O, SDCLK_FREQ_SEL_A>;
 impl<'a, const O: u8> SDCLK_FREQ_SEL_W<'a, O> {
     #[doc = "base clock(10MHz-63MHz)"]
     #[inline(always)]

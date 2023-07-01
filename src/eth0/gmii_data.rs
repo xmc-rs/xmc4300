@@ -35,9 +35,9 @@ impl From<crate::W<GMII_DATA_SPEC>> for W {
     }
 }
 #[doc = "Field `MD` reader - MII Data"]
-pub type MD_R = crate::FieldReader<u16, u16>;
+pub type MD_R = crate::FieldReader<u16>;
 #[doc = "Field `MD` writer - MII Data"]
-pub type MD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GMII_DATA_SPEC, u16, u16, 16, O>;
+pub type MD_W<'a, const O: u8> = crate::FieldWriter<'a, GMII_DATA_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - MII Data"]
     #[inline(always)]

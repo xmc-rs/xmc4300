@@ -71,7 +71,7 @@ impl PDIS0_R {
     }
 }
 #[doc = "Field `PDIS0` writer - Pad Disable for Port n Pin 0"]
-pub type PDIS0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS0_A, O>;
+pub type PDIS0_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS0_A>;
 impl<'a, const O: u8> PDIS0_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl PDIS1_R {
     }
 }
 #[doc = "Field `PDIS1` writer - Pad Disable for Port n Pin 1"]
-pub type PDIS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS1_A, O>;
+pub type PDIS1_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS1_A>;
 impl<'a, const O: u8> PDIS1_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl PDIS2_R {
     }
 }
 #[doc = "Field `PDIS2` writer - Pad Disable for Port n Pin 2"]
-pub type PDIS2_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS2_A, O>;
+pub type PDIS2_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS2_A>;
 impl<'a, const O: u8> PDIS2_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl PDIS3_R {
     }
 }
 #[doc = "Field `PDIS3` writer - Pad Disable for Port n Pin 3"]
-pub type PDIS3_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS3_A, O>;
+pub type PDIS3_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS3_A>;
 impl<'a, const O: u8> PDIS3_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl PDIS4_R {
     }
 }
 #[doc = "Field `PDIS4` writer - Pad Disable for Port n Pin 4"]
-pub type PDIS4_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS4_A, O>;
+pub type PDIS4_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS4_A>;
 impl<'a, const O: u8> PDIS4_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl PDIS5_R {
     }
 }
 #[doc = "Field `PDIS5` writer - Pad Disable for Port n Pin 5"]
-pub type PDIS5_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS5_A, O>;
+pub type PDIS5_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS5_A>;
 impl<'a, const O: u8> PDIS5_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl PDIS6_R {
     }
 }
 #[doc = "Field `PDIS6` writer - Pad Disable for Port n Pin 6"]
-pub type PDIS6_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS6_A, O>;
+pub type PDIS6_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS6_A>;
 impl<'a, const O: u8> PDIS6_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl PDIS7_R {
     }
 }
 #[doc = "Field `PDIS7` writer - Pad Disable for Port n Pin 7"]
-pub type PDIS7_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS7_A, O>;
+pub type PDIS7_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS7_A>;
 impl<'a, const O: u8> PDIS7_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl PDIS8_R {
     }
 }
 #[doc = "Field `PDIS8` writer - Pad Disable for Port n Pin 8"]
-pub type PDIS8_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS8_A, O>;
+pub type PDIS8_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS8_A>;
 impl<'a, const O: u8> PDIS8_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl PDIS9_R {
     }
 }
 #[doc = "Field `PDIS9` writer - Pad Disable for Port n Pin 9"]
-pub type PDIS9_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS9_A, O>;
+pub type PDIS9_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS9_A>;
 impl<'a, const O: u8> PDIS9_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl PDIS10_R {
     }
 }
 #[doc = "Field `PDIS10` writer - Pad Disable for Port n Pin 10"]
-pub type PDIS10_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS10_A, O>;
+pub type PDIS10_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS10_A>;
 impl<'a, const O: u8> PDIS10_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl PDIS11_R {
     }
 }
 #[doc = "Field `PDIS11` writer - Pad Disable for Port n Pin 11"]
-pub type PDIS11_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS11_A, O>;
+pub type PDIS11_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS11_A>;
 impl<'a, const O: u8> PDIS11_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -671,7 +671,7 @@ impl PDIS12_R {
     }
 }
 #[doc = "Field `PDIS12` writer - Pad Disable for Port n Pin 12"]
-pub type PDIS12_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS12_A, O>;
+pub type PDIS12_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS12_A>;
 impl<'a, const O: u8> PDIS12_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -721,7 +721,7 @@ impl PDIS13_R {
     }
 }
 #[doc = "Field `PDIS13` writer - Pad Disable for Port n Pin 13"]
-pub type PDIS13_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS13_A, O>;
+pub type PDIS13_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS13_A>;
 impl<'a, const O: u8> PDIS13_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -771,7 +771,7 @@ impl PDIS14_R {
     }
 }
 #[doc = "Field `PDIS14` writer - Pad Disable for Port n Pin 14"]
-pub type PDIS14_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS14_A, O>;
+pub type PDIS14_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS14_A>;
 impl<'a, const O: u8> PDIS14_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]
@@ -821,7 +821,7 @@ impl PDIS15_R {
     }
 }
 #[doc = "Field `PDIS15` writer - Pad Disable for Port n Pin 15"]
-pub type PDIS15_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDISC_SPEC, PDIS15_A, O>;
+pub type PDIS15_W<'a, const O: u8> = crate::BitWriter<'a, PDISC_SPEC, O, PDIS15_A>;
 impl<'a, const O: u8> PDIS15_W<'a, O> {
     #[doc = "Digital Pad input is enabled. Analog and digital input path active."]
     #[inline(always)]

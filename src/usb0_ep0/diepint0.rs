@@ -35,35 +35,35 @@ impl From<crate::W<DIEPINT0_SPEC>> for W {
     }
 }
 #[doc = "Field `XferCompl` reader - Transfer Completed Interrupt"]
-pub type XFER_COMPL_R = crate::BitReader<bool>;
+pub type XFER_COMPL_R = crate::BitReader;
 #[doc = "Field `XferCompl` writer - Transfer Completed Interrupt"]
-pub type XFER_COMPL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
+pub type XFER_COMPL_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT0_SPEC, O>;
 #[doc = "Field `EPDisbld` reader - Endpoint Disabled Interrupt"]
-pub type EPDISBLD_R = crate::BitReader<bool>;
+pub type EPDISBLD_R = crate::BitReader;
 #[doc = "Field `EPDisbld` writer - Endpoint Disabled Interrupt"]
-pub type EPDISBLD_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
+pub type EPDISBLD_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT0_SPEC, O>;
 #[doc = "Field `AHBErr` reader - AHB Error"]
-pub type AHBERR_R = crate::BitReader<bool>;
+pub type AHBERR_R = crate::BitReader;
 #[doc = "Field `AHBErr` writer - AHB Error"]
-pub type AHBERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
+pub type AHBERR_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT0_SPEC, O>;
 #[doc = "Field `TimeOUT` reader - Timeout Condition"]
-pub type TIME_OUT_R = crate::BitReader<bool>;
+pub type TIME_OUT_R = crate::BitReader;
 #[doc = "Field `TimeOUT` writer - Timeout Condition"]
-pub type TIME_OUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
+pub type TIME_OUT_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT0_SPEC, O>;
 #[doc = "Field `INTknTXFEmp` reader - IN Token Received When TxFIFO is Empty"]
-pub type INTKN_TXFEMP_R = crate::BitReader<bool>;
+pub type INTKN_TXFEMP_R = crate::BitReader;
 #[doc = "Field `INTknTXFEmp` writer - IN Token Received When TxFIFO is Empty"]
-pub type INTKN_TXFEMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
+pub type INTKN_TXFEMP_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT0_SPEC, O>;
 #[doc = "Field `INEPNakEff` reader - IN Endpoint NAK Effective"]
-pub type INEPNAK_EFF_R = crate::BitReader<bool>;
+pub type INEPNAK_EFF_R = crate::BitReader;
 #[doc = "Field `INEPNakEff` writer - IN Endpoint NAK Effective"]
-pub type INEPNAK_EFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
+pub type INEPNAK_EFF_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT0_SPEC, O>;
 #[doc = "Field `TxFEmp` reader - Transmit FIFO Empty"]
-pub type TX_FEMP_R = crate::BitReader<bool>;
+pub type TX_FEMP_R = crate::BitReader;
 #[doc = "Field `BNAIntr` reader - BNA (Buffer Not Available) Interrupt"]
-pub type BNAINTR_R = crate::BitReader<bool>;
+pub type BNAINTR_R = crate::BitReader;
 #[doc = "Field `BNAIntr` writer - BNA (Buffer Not Available) Interrupt"]
-pub type BNAINTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIEPINT0_SPEC, bool, O>;
+pub type BNAINTR_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT0_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Transfer Completed Interrupt"]
     #[inline(always)]

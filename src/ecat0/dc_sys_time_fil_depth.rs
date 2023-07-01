@@ -35,9 +35,9 @@ impl From<crate::W<DC_SYS_TIME_FIL_DEPTH_SPEC>> for W {
     }
 }
 #[doc = "Field `FILTER_DEPTH` reader - Filter depth for averaging the received System Time deviation"]
-pub type FILTER_DEPTH_R = crate::FieldReader<u8, u8>;
+pub type FILTER_DEPTH_R = crate::FieldReader;
 #[doc = "Field `FILTER_DEPTH` writer - Filter depth for averaging the received System Time deviation"]
-pub type FILTER_DEPTH_W<'a, const O: u8> = crate::FieldWriter<'a, u8, DC_SYS_TIME_FIL_DEPTH_SPEC, u8, u8, 4, O>;
+pub type FILTER_DEPTH_W<'a, const O: u8> = crate::FieldWriter<'a, DC_SYS_TIME_FIL_DEPTH_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Filter depth for averaging the received System Time deviation"]
     #[inline(always)]

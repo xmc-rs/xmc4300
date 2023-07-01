@@ -50,11 +50,11 @@ impl PRWARN_R {
     }
 }
 #[doc = "Field `PI` reader - RTC Periodic Interrupt Status"]
-pub type PI_R = crate::BitReader<bool>;
+pub type PI_R = crate::BitReader;
 #[doc = "Field `AI` reader - Alarm Interrupt Status"]
-pub type AI_R = crate::BitReader<bool>;
+pub type AI_R = crate::BitReader;
 #[doc = "Field `DLROVR` reader - DLR Request Overrun Interrupt Status"]
-pub type DLROVR_R = crate::BitReader<bool>;
+pub type DLROVR_R = crate::BitReader;
 #[doc = "Field `HDCLR` reader - HDCLR Mirror Register Update Status"]
 pub type HDCLR_R = crate::BitReader<HDCLR_A>;
 #[doc = "HDCLR Mirror Register Update Status\n\nValue on reset: 0"]

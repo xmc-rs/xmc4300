@@ -35,17 +35,17 @@ impl From<crate::W<GUID_SPEC>> for W {
     }
 }
 #[doc = "Field `MOD_REV` reader - Module Revision"]
-pub type MOD_REV_R = crate::FieldReader<u8, u8>;
+pub type MOD_REV_R = crate::FieldReader;
 #[doc = "Field `MOD_REV` writer - Module Revision"]
-pub type MOD_REV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUID_SPEC, u8, u8, 8, O>;
+pub type MOD_REV_W<'a, const O: u8> = crate::FieldWriter<'a, GUID_SPEC, 8, O>;
 #[doc = "Field `MOD_TYPE` reader - Module Type"]
-pub type MOD_TYPE_R = crate::FieldReader<u8, u8>;
+pub type MOD_TYPE_R = crate::FieldReader;
 #[doc = "Field `MOD_TYPE` writer - Module Type"]
-pub type MOD_TYPE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUID_SPEC, u8, u8, 8, O>;
+pub type MOD_TYPE_W<'a, const O: u8> = crate::FieldWriter<'a, GUID_SPEC, 8, O>;
 #[doc = "Field `MOD_NUMBER` reader - Module Number"]
-pub type MOD_NUMBER_R = crate::FieldReader<u16, u16>;
+pub type MOD_NUMBER_R = crate::FieldReader<u16>;
 #[doc = "Field `MOD_NUMBER` writer - Module Number"]
-pub type MOD_NUMBER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUID_SPEC, u16, u16, 16, O>;
+pub type MOD_NUMBER_W<'a, const O: u8> = crate::FieldWriter<'a, GUID_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:7 - Module Revision"]
     #[inline(always)]

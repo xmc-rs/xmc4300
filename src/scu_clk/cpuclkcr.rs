@@ -71,7 +71,7 @@ impl CPUDIV_R {
     }
 }
 #[doc = "Field `CPUDIV` writer - CPU Clock Divider Enable"]
-pub type CPUDIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CPUCLKCR_SPEC, CPUDIV_A, O>;
+pub type CPUDIV_W<'a, const O: u8> = crate::BitWriter<'a, CPUCLKCR_SPEC, O, CPUDIV_A>;
 impl<'a, const O: u8> CPUDIV_W<'a, O> {
     #[doc = "fCPU = fSYS"]
     #[inline(always)]

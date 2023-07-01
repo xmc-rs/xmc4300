@@ -35,9 +35,9 @@ impl From<crate::W<MPU_RNR_SPEC>> for W {
     }
 }
 #[doc = "Field `REGION` reader - Region"]
-pub type REGION_R = crate::FieldReader<u8, u8>;
+pub type REGION_R = crate::FieldReader;
 #[doc = "Field `REGION` writer - Region"]
-pub type REGION_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MPU_RNR_SPEC, u8, u8, 8, O>;
+pub type REGION_W<'a, const O: u8> = crate::FieldWriter<'a, MPU_RNR_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Region"]
     #[inline(always)]

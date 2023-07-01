@@ -14,7 +14,7 @@ impl From<crate::R<ESC_WR_ENABLE_SPEC>> for R {
     }
 }
 #[doc = "Field `ESC_WR_PROT` reader - Write protection enabled"]
-pub type ESC_WR_PROT_R = crate::BitReader<bool>;
+pub type ESC_WR_PROT_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Write protection enabled"]
     #[inline(always)]

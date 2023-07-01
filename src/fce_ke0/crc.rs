@@ -35,9 +35,9 @@ impl From<crate::W<CRC_SPEC>> for W {
     }
 }
 #[doc = "Field `CRC` reader - CRC Register"]
-pub type CRC_R = crate::FieldReader<u32, u32>;
+pub type CRC_R = crate::FieldReader<u32>;
 #[doc = "Field `CRC` writer - CRC Register"]
-pub type CRC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CRC_SPEC, u32, u32, 32, O>;
+pub type CRC_W<'a, const O: u8> = crate::FieldWriter<'a, CRC_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - CRC Register"]
     #[inline(always)]

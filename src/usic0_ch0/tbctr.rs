@@ -35,11 +35,11 @@ impl From<crate::W<TBCTR_SPEC>> for W {
     }
 }
 #[doc = "Field `DPTR` writer - Data Pointer"]
-pub type DPTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TBCTR_SPEC, u8, u8, 6, O>;
+pub type DPTR_W<'a, const O: u8> = crate::FieldWriter<'a, TBCTR_SPEC, 6, O>;
 #[doc = "Field `LIMIT` reader - Limit For Interrupt Generation"]
-pub type LIMIT_R = crate::FieldReader<u8, u8>;
+pub type LIMIT_R = crate::FieldReader;
 #[doc = "Field `LIMIT` writer - Limit For Interrupt Generation"]
-pub type LIMIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TBCTR_SPEC, u8, u8, 6, O>;
+pub type LIMIT_W<'a, const O: u8> = crate::FieldWriter<'a, TBCTR_SPEC, 6, O>;
 #[doc = "Field `STBTM` reader - Standard Transmit Buffer Trigger Mode"]
 pub type STBTM_R = crate::BitReader<STBTM_A>;
 #[doc = "Standard Transmit Buffer Trigger Mode\n\nValue on reset: 0"]
@@ -77,7 +77,7 @@ impl STBTM_R {
     }
 }
 #[doc = "Field `STBTM` writer - Standard Transmit Buffer Trigger Mode"]
-pub type STBTM_W<'a, const O: u8> = crate::BitWriter<'a, u32, TBCTR_SPEC, STBTM_A, O>;
+pub type STBTM_W<'a, const O: u8> = crate::BitWriter<'a, TBCTR_SPEC, O, STBTM_A>;
 impl<'a, const O: u8> STBTM_W<'a, O> {
     #[doc = "Trigger mode 0: While TRBSR.STBT=1, a standard buffer event will be generated whenever there is a data transfer to TBUF or data write to INx (depending on TBCTR.LOF setting). STBT is cleared when TRBSR.TBFLVL=TBCTR.LIMIT."]
     #[inline(always)]
@@ -127,7 +127,7 @@ impl STBTEN_R {
     }
 }
 #[doc = "Field `STBTEN` writer - Standard Transmit Buffer Trigger Enable"]
-pub type STBTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TBCTR_SPEC, STBTEN_A, O>;
+pub type STBTEN_W<'a, const O: u8> = crate::BitWriter<'a, TBCTR_SPEC, O, STBTEN_A>;
 impl<'a, const O: u8> STBTEN_W<'a, O> {
     #[doc = "The standard transmit buffer event trigger through bit TRBSR.STBT is disabled."]
     #[inline(always)]
@@ -141,7 +141,7 @@ impl<'a, const O: u8> STBTEN_W<'a, O> {
     }
 }
 #[doc = "Field `STBINP` reader - Standard Transmit Buffer Interrupt Node Pointer"]
-pub type STBINP_R = crate::FieldReader<u8, STBINP_A>;
+pub type STBINP_R = crate::FieldReader<STBINP_A>;
 #[doc = "Standard Transmit Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -164,6 +164,9 @@ impl From<STBINP_A> for u8 {
     fn from(variant: STBINP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for STBINP_A {
+    type Ux = u8;
 }
 impl STBINP_R {
     #[doc = "Get enumerated values variant"]
@@ -211,7 +214,7 @@ impl STBINP_R {
     }
 }
 #[doc = "Field `STBINP` writer - Standard Transmit Buffer Interrupt Node Pointer"]
-pub type STBINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TBCTR_SPEC, u8, STBINP_A, 3, O>;
+pub type STBINP_W<'a, const O: u8> = crate::FieldWriter<'a, TBCTR_SPEC, 3, O, STBINP_A>;
 impl<'a, const O: u8> STBINP_W<'a, O> {
     #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
@@ -245,7 +248,7 @@ impl<'a, const O: u8> STBINP_W<'a, O> {
     }
 }
 #[doc = "Field `ATBINP` reader - Alternative Transmit Buffer Interrupt Node Pointer"]
-pub type ATBINP_R = crate::FieldReader<u8, ATBINP_A>;
+pub type ATBINP_R = crate::FieldReader<ATBINP_A>;
 #[doc = "Alternative Transmit Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -268,6 +271,9 @@ impl From<ATBINP_A> for u8 {
     fn from(variant: ATBINP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ATBINP_A {
+    type Ux = u8;
 }
 impl ATBINP_R {
     #[doc = "Get enumerated values variant"]
@@ -315,7 +321,7 @@ impl ATBINP_R {
     }
 }
 #[doc = "Field `ATBINP` writer - Alternative Transmit Buffer Interrupt Node Pointer"]
-pub type ATBINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TBCTR_SPEC, u8, ATBINP_A, 3, O>;
+pub type ATBINP_W<'a, const O: u8> = crate::FieldWriter<'a, TBCTR_SPEC, 3, O, ATBINP_A>;
 impl<'a, const O: u8> ATBINP_W<'a, O> {
     #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
@@ -349,7 +355,7 @@ impl<'a, const O: u8> ATBINP_W<'a, O> {
     }
 }
 #[doc = "Field `SIZE` reader - Buffer Size"]
-pub type SIZE_R = crate::FieldReader<u8, SIZE_A>;
+pub type SIZE_R = crate::FieldReader<SIZE_A>;
 #[doc = "Buffer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -374,6 +380,9 @@ impl From<SIZE_A> for u8 {
     fn from(variant: SIZE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SIZE_A {
+    type Ux = u8;
 }
 impl SIZE_R {
     #[doc = "Get enumerated values variant"]
@@ -427,7 +436,7 @@ impl SIZE_R {
     }
 }
 #[doc = "Field `SIZE` writer - Buffer Size"]
-pub type SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TBCTR_SPEC, u8, SIZE_A, 3, O>;
+pub type SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, TBCTR_SPEC, 3, O, SIZE_A>;
 impl<'a, const O: u8> SIZE_W<'a, O> {
     #[doc = "The FIFO mechanism is disabled. The buffer does not accept any request for data."]
     #[inline(always)]
@@ -502,7 +511,7 @@ impl LOF_R {
     }
 }
 #[doc = "Field `LOF` writer - Buffer Event on Limit Overflow"]
-pub type LOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, TBCTR_SPEC, LOF_A, O>;
+pub type LOF_W<'a, const O: u8> = crate::BitWriter<'a, TBCTR_SPEC, O, LOF_A>;
 impl<'a, const O: u8> LOF_W<'a, O> {
     #[doc = "A standard transmit buffer event occurs when the filling level equals the limit value and gets lower due to transmission of a data word."]
     #[inline(always)]
@@ -552,7 +561,7 @@ impl STBIEN_R {
     }
 }
 #[doc = "Field `STBIEN` writer - Standard Transmit Buffer Interrupt Enable"]
-pub type STBIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TBCTR_SPEC, STBIEN_A, O>;
+pub type STBIEN_W<'a, const O: u8> = crate::BitWriter<'a, TBCTR_SPEC, O, STBIEN_A>;
 impl<'a, const O: u8> STBIEN_W<'a, O> {
     #[doc = "The standard transmit buffer interrupt generation is disabled."]
     #[inline(always)]
@@ -602,7 +611,7 @@ impl TBERIEN_R {
     }
 }
 #[doc = "Field `TBERIEN` writer - Transmit Buffer Error Interrupt Enable"]
-pub type TBERIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TBCTR_SPEC, TBERIEN_A, O>;
+pub type TBERIEN_W<'a, const O: u8> = crate::BitWriter<'a, TBCTR_SPEC, O, TBERIEN_A>;
 impl<'a, const O: u8> TBERIEN_W<'a, O> {
     #[doc = "The transmit buffer error interrupt generation is disabled."]
     #[inline(always)]

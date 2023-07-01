@@ -35,9 +35,9 @@ impl From<crate::W<DITS_SPEC>> for W {
     }
 }
 #[doc = "Field `DCVS` reader - Dither Shadow Compare Value"]
-pub type DCVS_R = crate::FieldReader<u8, u8>;
+pub type DCVS_R = crate::FieldReader;
 #[doc = "Field `DCVS` writer - Dither Shadow Compare Value"]
-pub type DCVS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DITS_SPEC, u8, u8, 4, O>;
+pub type DCVS_W<'a, const O: u8> = crate::FieldWriter<'a, DITS_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Dither Shadow Compare Value"]
     #[inline(always)]

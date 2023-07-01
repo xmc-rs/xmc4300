@@ -35,11 +35,11 @@ impl From<crate::W<ARBCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `ANONC` reader - Analog Converter Control"]
-pub type ANONC_R = crate::FieldReader<u8, u8>;
+pub type ANONC_R = crate::FieldReader;
 #[doc = "Field `ANONC` writer - Analog Converter Control"]
-pub type ANONC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ARBCFG_SPEC, u8, u8, 2, O>;
+pub type ANONC_W<'a, const O: u8> = crate::FieldWriter<'a, ARBCFG_SPEC, 2, O>;
 #[doc = "Field `ARBRND` reader - Arbitration Round Length"]
-pub type ARBRND_R = crate::FieldReader<u8, ARBRND_A>;
+pub type ARBRND_R = crate::FieldReader<ARBRND_A>;
 #[doc = "Arbitration Round Length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -58,6 +58,9 @@ impl From<ARBRND_A> for u8 {
     fn from(variant: ARBRND_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ARBRND_A {
+    type Ux = u8;
 }
 impl ARBRND_R {
     #[doc = "Get enumerated values variant"]
@@ -93,7 +96,7 @@ impl ARBRND_R {
     }
 }
 #[doc = "Field `ARBRND` writer - Arbitration Round Length"]
-pub type ARBRND_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, ARBCFG_SPEC, u8, ARBRND_A, 2, O>;
+pub type ARBRND_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ARBCFG_SPEC, 2, O, ARBRND_A>;
 impl<'a, const O: u8> ARBRND_W<'a, O> {
     #[doc = "4 arbitration slots per round (tARB = 4 / fADCD)"]
     #[inline(always)]
@@ -153,7 +156,7 @@ impl ARBM_R {
     }
 }
 #[doc = "Field `ARBM` writer - Arbitration Mode"]
-pub type ARBM_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARBCFG_SPEC, ARBM_A, O>;
+pub type ARBM_W<'a, const O: u8> = crate::BitWriter<'a, ARBCFG_SPEC, O, ARBM_A>;
 impl<'a, const O: u8> ARBM_W<'a, O> {
     #[doc = "The arbiter runs permanently. This setting is required for a synchronization slave (see ) and for equidistant sampling using the signal ARBCNT (see )."]
     #[inline(always)]
@@ -167,7 +170,7 @@ impl<'a, const O: u8> ARBM_W<'a, O> {
     }
 }
 #[doc = "Field `ANONS` reader - Analog Converter Control Status"]
-pub type ANONS_R = crate::FieldReader<u8, ANONS_A>;
+pub type ANONS_R = crate::FieldReader<ANONS_A>;
 #[doc = "Analog Converter Control Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -182,6 +185,9 @@ impl From<ANONS_A> for u8 {
     fn from(variant: ANONS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ANONS_A {
+    type Ux = u8;
 }
 impl ANONS_R {
     #[doc = "Get enumerated values variant"]

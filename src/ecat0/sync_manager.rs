@@ -14,7 +14,7 @@ impl From<crate::R<SYNC_MANAGER_SPEC>> for R {
     }
 }
 #[doc = "Field `NUM_SM` reader - Number of supported SyncManager channels (or entities) of the EtherCAT Slave Controller"]
-pub type NUM_SM_R = crate::FieldReader<u8, u8>;
+pub type NUM_SM_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Number of supported SyncManager channels (or entities) of the EtherCAT Slave Controller"]
     #[inline(always)]

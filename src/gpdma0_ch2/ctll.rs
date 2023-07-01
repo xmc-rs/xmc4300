@@ -35,19 +35,19 @@ impl From<crate::W<CTLL_SPEC>> for W {
     }
 }
 #[doc = "Field `INT_EN` reader - Interrupt Enable Bit"]
-pub type INT_EN_R = crate::BitReader<bool>;
+pub type INT_EN_R = crate::BitReader;
 #[doc = "Field `INT_EN` writer - Interrupt Enable Bit"]
-pub type INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTLL_SPEC, bool, O>;
+pub type INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTLL_SPEC, O>;
 #[doc = "Field `DST_TR_WIDTH` reader - Destination Transfer Width"]
-pub type DST_TR_WIDTH_R = crate::FieldReader<u8, u8>;
+pub type DST_TR_WIDTH_R = crate::FieldReader;
 #[doc = "Field `DST_TR_WIDTH` writer - Destination Transfer Width"]
-pub type DST_TR_WIDTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTLL_SPEC, u8, u8, 3, O>;
+pub type DST_TR_WIDTH_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 3, O>;
 #[doc = "Field `SRC_TR_WIDTH` reader - Source Transfer Width"]
-pub type SRC_TR_WIDTH_R = crate::FieldReader<u8, u8>;
+pub type SRC_TR_WIDTH_R = crate::FieldReader;
 #[doc = "Field `SRC_TR_WIDTH` writer - Source Transfer Width"]
-pub type SRC_TR_WIDTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTLL_SPEC, u8, u8, 3, O>;
+pub type SRC_TR_WIDTH_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 3, O>;
 #[doc = "Field `DINC` reader - Destination Address Increment"]
-pub type DINC_R = crate::FieldReader<u8, DINC_A>;
+pub type DINC_R = crate::FieldReader<DINC_A>;
 #[doc = "Destination Address Increment\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -64,6 +64,9 @@ impl From<DINC_A> for u8 {
     fn from(variant: DINC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DINC_A {
+    type Ux = u8;
 }
 impl DINC_R {
     #[doc = "Get enumerated values variant"]
@@ -93,7 +96,7 @@ impl DINC_R {
     }
 }
 #[doc = "Field `DINC` writer - Destination Address Increment"]
-pub type DINC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTLL_SPEC, u8, DINC_A, 2, O>;
+pub type DINC_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 2, O, DINC_A>;
 impl<'a, const O: u8> DINC_W<'a, O> {
     #[doc = "Increment"]
     #[inline(always)]
@@ -112,7 +115,7 @@ impl<'a, const O: u8> DINC_W<'a, O> {
     }
 }
 #[doc = "Field `SINC` reader - Source Address Increment"]
-pub type SINC_R = crate::FieldReader<u8, SINC_A>;
+pub type SINC_R = crate::FieldReader<SINC_A>;
 #[doc = "Source Address Increment\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -129,6 +132,9 @@ impl From<SINC_A> for u8 {
     fn from(variant: SINC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SINC_A {
+    type Ux = u8;
 }
 impl SINC_R {
     #[doc = "Get enumerated values variant"]
@@ -158,7 +164,7 @@ impl SINC_R {
     }
 }
 #[doc = "Field `SINC` writer - Source Address Increment"]
-pub type SINC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTLL_SPEC, u8, SINC_A, 2, O>;
+pub type SINC_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 2, O, SINC_A>;
 impl<'a, const O: u8> SINC_W<'a, O> {
     #[doc = "Increment"]
     #[inline(always)]
@@ -177,17 +183,17 @@ impl<'a, const O: u8> SINC_W<'a, O> {
     }
 }
 #[doc = "Field `DEST_MSIZE` reader - Destination Burst Transaction Length"]
-pub type DEST_MSIZE_R = crate::FieldReader<u8, u8>;
+pub type DEST_MSIZE_R = crate::FieldReader;
 #[doc = "Field `DEST_MSIZE` writer - Destination Burst Transaction Length"]
-pub type DEST_MSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTLL_SPEC, u8, u8, 3, O>;
+pub type DEST_MSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 3, O>;
 #[doc = "Field `SRC_MSIZE` reader - Source Burst Transaction Length"]
-pub type SRC_MSIZE_R = crate::FieldReader<u8, u8>;
+pub type SRC_MSIZE_R = crate::FieldReader;
 #[doc = "Field `SRC_MSIZE` writer - Source Burst Transaction Length"]
-pub type SRC_MSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTLL_SPEC, u8, u8, 3, O>;
+pub type SRC_MSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 3, O>;
 #[doc = "Field `TT_FC` reader - Transfer Type and Flow Control"]
-pub type TT_FC_R = crate::FieldReader<u8, u8>;
+pub type TT_FC_R = crate::FieldReader;
 #[doc = "Field `TT_FC` writer - Transfer Type and Flow Control"]
-pub type TT_FC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTLL_SPEC, u8, u8, 3, O>;
+pub type TT_FC_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 3, O>;
 impl R {
     #[doc = "Bit 0 - Interrupt Enable Bit"]
     #[inline(always)]

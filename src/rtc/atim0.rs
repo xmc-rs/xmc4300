@@ -35,21 +35,21 @@ impl From<crate::W<ATIM0_SPEC>> for W {
     }
 }
 #[doc = "Field `ASE` reader - Alarm Seconds Compare Value"]
-pub type ASE_R = crate::FieldReader<u8, u8>;
+pub type ASE_R = crate::FieldReader;
 #[doc = "Field `ASE` writer - Alarm Seconds Compare Value"]
-pub type ASE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ATIM0_SPEC, u8, u8, 6, O>;
+pub type ASE_W<'a, const O: u8> = crate::FieldWriter<'a, ATIM0_SPEC, 6, O>;
 #[doc = "Field `AMI` reader - Alarm Minutes Compare Value"]
-pub type AMI_R = crate::FieldReader<u8, u8>;
+pub type AMI_R = crate::FieldReader;
 #[doc = "Field `AMI` writer - Alarm Minutes Compare Value"]
-pub type AMI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ATIM0_SPEC, u8, u8, 6, O>;
+pub type AMI_W<'a, const O: u8> = crate::FieldWriter<'a, ATIM0_SPEC, 6, O>;
 #[doc = "Field `AHO` reader - Alarm Hours Compare Value"]
-pub type AHO_R = crate::FieldReader<u8, u8>;
+pub type AHO_R = crate::FieldReader;
 #[doc = "Field `AHO` writer - Alarm Hours Compare Value"]
-pub type AHO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ATIM0_SPEC, u8, u8, 5, O>;
+pub type AHO_W<'a, const O: u8> = crate::FieldWriter<'a, ATIM0_SPEC, 5, O>;
 #[doc = "Field `ADA` reader - Alarm Days Compare Value"]
-pub type ADA_R = crate::FieldReader<u8, u8>;
+pub type ADA_R = crate::FieldReader;
 #[doc = "Field `ADA` writer - Alarm Days Compare Value"]
-pub type ADA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ATIM0_SPEC, u8, u8, 5, O>;
+pub type ADA_W<'a, const O: u8> = crate::FieldWriter<'a, ATIM0_SPEC, 5, O>;
 impl R {
     #[doc = "Bits 0:5 - Alarm Seconds Compare Value"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<RMDATA_SPEC>> for W {
     }
 }
 #[doc = "Field `DATA` reader - Hibernate Retention Memory Data"]
-pub type DATA_R = crate::FieldReader<u32, u32>;
+pub type DATA_R = crate::FieldReader<u32>;
 #[doc = "Field `DATA` writer - Hibernate Retention Memory Data"]
-pub type DATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RMDATA_SPEC, u32, u32, 32, O>;
+pub type DATA_W<'a, const O: u8> = crate::FieldWriter<'a, RMDATA_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Hibernate Retention Memory Data"]
     #[inline(always)]

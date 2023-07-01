@@ -14,7 +14,7 @@ impl From<crate::R<RXIPV6_NO_PAYLOAD_OCTETS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV6NOPAYOCT` reader - This field indicates the number of bytes received in IPv6 datagrams that did not have a TCP, UDP, or ICMP payload. The value in the IPv6 headers Length field is used to update this counter."]
-pub type RXIPV6NOPAYOCT_R = crate::FieldReader<u32, u32>;
+pub type RXIPV6NOPAYOCT_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of bytes received in IPv6 datagrams that did not have a TCP, UDP, or ICMP payload. The value in the IPv6 headers Length field is used to update this counter."]
     #[inline(always)]

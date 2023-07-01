@@ -71,7 +71,7 @@ impl RDWR_R {
     }
 }
 #[doc = "Field `RDWR` writer - Hibernate Retention Memory Register Update Control"]
-pub type RDWR_W<'a, const O: u8> = crate::BitWriter<'a, u32, RMACR_SPEC, RDWR_A, O>;
+pub type RDWR_W<'a, const O: u8> = crate::BitWriter<'a, RMACR_SPEC, O, RDWR_A>;
 impl<'a, const O: u8> RDWR_W<'a, O> {
     #[doc = "transfer data from Retention Memory in Hibernate domain to RMDATA register"]
     #[inline(always)]
@@ -85,9 +85,9 @@ impl<'a, const O: u8> RDWR_W<'a, O> {
     }
 }
 #[doc = "Field `ADDR` reader - Hibernate Retention Memory Register Address Select"]
-pub type ADDR_R = crate::FieldReader<u8, u8>;
+pub type ADDR_R = crate::FieldReader;
 #[doc = "Field `ADDR` writer - Hibernate Retention Memory Register Address Select"]
-pub type ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RMACR_SPEC, u8, u8, 4, O>;
+pub type ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, RMACR_SPEC, 4, O>;
 impl R {
     #[doc = "Bit 0 - Hibernate Retention Memory Register Update Control"]
     #[inline(always)]

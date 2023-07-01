@@ -35,23 +35,23 @@ impl From<crate::W<VLAN_TAG_SPEC>> for W {
     }
 }
 #[doc = "Field `VL` reader - VLAN Tag Identifier for Receive Frames"]
-pub type VL_R = crate::FieldReader<u16, u16>;
+pub type VL_R = crate::FieldReader<u16>;
 #[doc = "Field `VL` writer - VLAN Tag Identifier for Receive Frames"]
-pub type VL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, VLAN_TAG_SPEC, u16, u16, 16, O>;
+pub type VL_W<'a, const O: u8> = crate::FieldWriter<'a, VLAN_TAG_SPEC, 16, O, u16>;
 #[doc = "Field `ETV` reader - Enable 12-Bit VLAN Tag Comparison"]
-pub type ETV_R = crate::BitReader<bool>;
+pub type ETV_R = crate::BitReader;
 #[doc = "Field `ETV` writer - Enable 12-Bit VLAN Tag Comparison"]
-pub type ETV_W<'a, const O: u8> = crate::BitWriter<'a, u32, VLAN_TAG_SPEC, bool, O>;
+pub type ETV_W<'a, const O: u8> = crate::BitWriter<'a, VLAN_TAG_SPEC, O>;
 #[doc = "Field `VTIM` reader - VLAN Tag Inverse Match Enable"]
-pub type VTIM_R = crate::BitReader<bool>;
+pub type VTIM_R = crate::BitReader;
 #[doc = "Field `VTIM` writer - VLAN Tag Inverse Match Enable"]
-pub type VTIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, VLAN_TAG_SPEC, bool, O>;
+pub type VTIM_W<'a, const O: u8> = crate::BitWriter<'a, VLAN_TAG_SPEC, O>;
 #[doc = "Field `ESVL` reader - Enable S-VLAN"]
-pub type ESVL_R = crate::BitReader<bool>;
+pub type ESVL_R = crate::BitReader;
 #[doc = "Field `ESVL` writer - Enable S-VLAN"]
-pub type ESVL_W<'a, const O: u8> = crate::BitWriter<'a, u32, VLAN_TAG_SPEC, bool, O>;
+pub type ESVL_W<'a, const O: u8> = crate::BitWriter<'a, VLAN_TAG_SPEC, O>;
 #[doc = "Field `VTHM` reader - VLAN Tag Hash Table Match Enable"]
-pub type VTHM_R = crate::BitReader<bool>;
+pub type VTHM_R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:15 - VLAN Tag Identifier for Receive Frames"]
     #[inline(always)]

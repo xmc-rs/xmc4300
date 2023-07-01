@@ -35,7 +35,7 @@ impl From<crate::W<NIPR_SPEC>> for W {
     }
 }
 #[doc = "Field `ALINP` reader - Alert Interrupt Node Pointer"]
-pub type ALINP_R = crate::FieldReader<u8, ALINP_A>;
+pub type ALINP_R = crate::FieldReader<ALINP_A>;
 #[doc = "Alert Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<ALINP_A> for u8 {
     fn from(variant: ALINP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ALINP_A {
+    type Ux = u8;
 }
 impl ALINP_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl ALINP_R {
     }
 }
 #[doc = "Field `ALINP` writer - Alert Interrupt Node Pointer"]
-pub type ALINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NIPR_SPEC, u8, ALINP_A, 4, O>;
+pub type ALINP_W<'a, const O: u8> = crate::FieldWriter<'a, NIPR_SPEC, 4, O, ALINP_A>;
 impl<'a, const O: u8> ALINP_W<'a, O> {
     #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> ALINP_W<'a, O> {
     }
 }
 #[doc = "Field `LECINP` reader - Last Error Code Interrupt Node Pointer"]
-pub type LECINP_R = crate::FieldReader<u8, LECINP_A>;
+pub type LECINP_R = crate::FieldReader<LECINP_A>;
 #[doc = "Last Error Code Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<LECINP_A> for u8 {
     fn from(variant: LECINP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LECINP_A {
+    type Ux = u8;
 }
 impl LECINP_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl LECINP_R {
     }
 }
 #[doc = "Field `LECINP` writer - Last Error Code Interrupt Node Pointer"]
-pub type LECINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NIPR_SPEC, u8, LECINP_A, 4, O>;
+pub type LECINP_W<'a, const O: u8> = crate::FieldWriter<'a, NIPR_SPEC, 4, O, LECINP_A>;
 impl<'a, const O: u8> LECINP_W<'a, O> {
     #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]
@@ -191,7 +197,7 @@ impl<'a, const O: u8> LECINP_W<'a, O> {
     }
 }
 #[doc = "Field `TRINP` reader - Transfer OK Interrupt Node Pointer"]
-pub type TRINP_R = crate::FieldReader<u8, TRINP_A>;
+pub type TRINP_R = crate::FieldReader<TRINP_A>;
 #[doc = "Transfer OK Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -210,6 +216,9 @@ impl From<TRINP_A> for u8 {
     fn from(variant: TRINP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TRINP_A {
+    type Ux = u8;
 }
 impl TRINP_R {
     #[doc = "Get enumerated values variant"]
@@ -245,7 +254,7 @@ impl TRINP_R {
     }
 }
 #[doc = "Field `TRINP` writer - Transfer OK Interrupt Node Pointer"]
-pub type TRINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NIPR_SPEC, u8, TRINP_A, 4, O>;
+pub type TRINP_W<'a, const O: u8> = crate::FieldWriter<'a, NIPR_SPEC, 4, O, TRINP_A>;
 impl<'a, const O: u8> TRINP_W<'a, O> {
     #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]
@@ -269,7 +278,7 @@ impl<'a, const O: u8> TRINP_W<'a, O> {
     }
 }
 #[doc = "Field `CFCINP` reader - Frame Counter Interrupt Node Pointer"]
-pub type CFCINP_R = crate::FieldReader<u8, CFCINP_A>;
+pub type CFCINP_R = crate::FieldReader<CFCINP_A>;
 #[doc = "Frame Counter Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -288,6 +297,9 @@ impl From<CFCINP_A> for u8 {
     fn from(variant: CFCINP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CFCINP_A {
+    type Ux = u8;
 }
 impl CFCINP_R {
     #[doc = "Get enumerated values variant"]
@@ -323,7 +335,7 @@ impl CFCINP_R {
     }
 }
 #[doc = "Field `CFCINP` writer - Frame Counter Interrupt Node Pointer"]
-pub type CFCINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NIPR_SPEC, u8, CFCINP_A, 4, O>;
+pub type CFCINP_W<'a, const O: u8> = crate::FieldWriter<'a, NIPR_SPEC, 4, O, CFCINP_A>;
 impl<'a, const O: u8> CFCINP_W<'a, O> {
     #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]

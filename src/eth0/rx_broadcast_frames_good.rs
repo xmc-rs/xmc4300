@@ -14,7 +14,7 @@ impl From<crate::R<RX_BROADCAST_FRAMES_GOOD_SPEC>> for R {
     }
 }
 #[doc = "Field `RXBCASTG` reader - This field indicates the number of received good broadcast frames."]
-pub type RXBCASTG_R = crate::FieldReader<u32, u32>;
+pub type RXBCASTG_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of received good broadcast frames."]
     #[inline(always)]

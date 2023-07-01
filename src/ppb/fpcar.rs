@@ -35,9 +35,9 @@ impl From<crate::W<FPCAR_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDRESS` reader - Address"]
-pub type ADDRESS_R = crate::FieldReader<u32, u32>;
+pub type ADDRESS_R = crate::FieldReader<u32>;
 #[doc = "Field `ADDRESS` writer - Address"]
-pub type ADDRESS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPCAR_SPEC, u32, u32, 29, O>;
+pub type ADDRESS_W<'a, const O: u8> = crate::FieldWriter<'a, FPCAR_SPEC, 29, O, u32>;
 impl R {
     #[doc = "Bits 3:31 - Address"]
     #[inline(always)]

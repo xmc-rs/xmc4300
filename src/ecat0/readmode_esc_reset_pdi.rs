@@ -14,7 +14,7 @@ impl From<crate::R<READMODE_ESC_RESET_PDI_SPEC>> for R {
     }
 }
 #[doc = "Field `RESET_CMD_STATE` reader - Progress of the reset procedure"]
-pub type RESET_CMD_STATE_R = crate::FieldReader<u8, RESET_CMD_STATE_A>;
+pub type RESET_CMD_STATE_R = crate::FieldReader<RESET_CMD_STATE_A>;
 #[doc = "Progress of the reset procedure\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -31,6 +31,9 @@ impl From<RESET_CMD_STATE_A> for u8 {
     fn from(variant: RESET_CMD_STATE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RESET_CMD_STATE_A {
+    type Ux = u8;
 }
 impl RESET_CMD_STATE_R {
     #[doc = "Get enumerated values variant"]

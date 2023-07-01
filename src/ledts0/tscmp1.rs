@@ -35,21 +35,21 @@ impl From<crate::W<TSCMP1_SPEC>> for W {
     }
 }
 #[doc = "Field `CMP_TS4` reader - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub type CMP_TS4_R = crate::FieldReader<u8, u8>;
+pub type CMP_TS4_R = crate::FieldReader;
 #[doc = "Field `CMP_TS4` writer - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub type CMP_TS4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TSCMP1_SPEC, u8, u8, 8, O>;
+pub type CMP_TS4_W<'a, const O: u8> = crate::FieldWriter<'a, TSCMP1_SPEC, 8, O>;
 #[doc = "Field `CMP_TS5` reader - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub type CMP_TS5_R = crate::FieldReader<u8, u8>;
+pub type CMP_TS5_R = crate::FieldReader;
 #[doc = "Field `CMP_TS5` writer - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub type CMP_TS5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TSCMP1_SPEC, u8, u8, 8, O>;
+pub type CMP_TS5_W<'a, const O: u8> = crate::FieldWriter<'a, TSCMP1_SPEC, 8, O>;
 #[doc = "Field `CMP_TS6` reader - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub type CMP_TS6_R = crate::FieldReader<u8, u8>;
+pub type CMP_TS6_R = crate::FieldReader;
 #[doc = "Field `CMP_TS6` writer - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub type CMP_TS6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TSCMP1_SPEC, u8, u8, 8, O>;
+pub type CMP_TS6_W<'a, const O: u8> = crate::FieldWriter<'a, TSCMP1_SPEC, 8, O>;
 #[doc = "Field `CMP_TS7` reader - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub type CMP_TS7_R = crate::FieldReader<u8, u8>;
+pub type CMP_TS7_R = crate::FieldReader;
 #[doc = "Field `CMP_TS7` writer - Compare Value for Touch-Sense TSIN\\[x\\]"]
-pub type CMP_TS7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TSCMP1_SPEC, u8, u8, 8, O>;
+pub type CMP_TS7_W<'a, const O: u8> = crate::FieldWriter<'a, TSCMP1_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Compare Value for Touch-Sense TSIN\\[x\\]"]
     #[inline(always)]

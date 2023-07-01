@@ -35,7 +35,7 @@ impl From<crate::W<EXTCLKCR_SPEC>> for W {
     }
 }
 #[doc = "Field `ECKSEL` reader - External Clock Selection Value"]
-pub type ECKSEL_R = crate::FieldReader<u8, ECKSEL_A>;
+pub type ECKSEL_R = crate::FieldReader<ECKSEL_A>;
 #[doc = "External Clock Selection Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -52,6 +52,9 @@ impl From<ECKSEL_A> for u8 {
     fn from(variant: ECKSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ECKSEL_A {
+    type Ux = u8;
 }
 impl ECKSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -81,7 +84,7 @@ impl ECKSEL_R {
     }
 }
 #[doc = "Field `ECKSEL` writer - External Clock Selection Value"]
-pub type ECKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTCLKCR_SPEC, u8, ECKSEL_A, 2, O>;
+pub type ECKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, EXTCLKCR_SPEC, 2, O, ECKSEL_A>;
 impl<'a, const O: u8> ECKSEL_W<'a, O> {
     #[doc = "fSYS clock"]
     #[inline(always)]
@@ -100,9 +103,9 @@ impl<'a, const O: u8> ECKSEL_W<'a, O> {
     }
 }
 #[doc = "Field `ECKDIV` reader - External Clock Divider Value"]
-pub type ECKDIV_R = crate::FieldReader<u16, u16>;
+pub type ECKDIV_R = crate::FieldReader<u16>;
 #[doc = "Field `ECKDIV` writer - External Clock Divider Value"]
-pub type ECKDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EXTCLKCR_SPEC, u16, u16, 9, O>;
+pub type ECKDIV_W<'a, const O: u8> = crate::FieldWriter<'a, EXTCLKCR_SPEC, 9, O, u16>;
 impl R {
     #[doc = "Bits 0:1 - External Clock Selection Value"]
     #[inline(always)]

@@ -35,13 +35,13 @@ impl From<crate::W<GNPTXFSIZ_DEVICEMODE_SPEC>> for W {
     }
 }
 #[doc = "Field `INEPTxF0StAddr` reader - IN Endpoint FIFO0 Transmit RAM Start Address"]
-pub type INEPTX_F0ST_ADDR_R = crate::FieldReader<u16, u16>;
+pub type INEPTX_F0ST_ADDR_R = crate::FieldReader<u16>;
 #[doc = "Field `INEPTxF0StAddr` writer - IN Endpoint FIFO0 Transmit RAM Start Address"]
-pub type INEPTX_F0ST_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GNPTXFSIZ_DEVICEMODE_SPEC, u16, u16, 16, O>;
+pub type INEPTX_F0ST_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, GNPTXFSIZ_DEVICEMODE_SPEC, 16, O, u16>;
 #[doc = "Field `INEPTxF0Dep` reader - IN Endpoint TxFIFO 0 Depth"]
-pub type INEPTX_F0DEP_R = crate::FieldReader<u16, u16>;
+pub type INEPTX_F0DEP_R = crate::FieldReader<u16>;
 #[doc = "Field `INEPTxF0Dep` writer - IN Endpoint TxFIFO 0 Depth"]
-pub type INEPTX_F0DEP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GNPTXFSIZ_DEVICEMODE_SPEC, u16, u16, 16, O>;
+pub type INEPTX_F0DEP_W<'a, const O: u8> = crate::FieldWriter<'a, GNPTXFSIZ_DEVICEMODE_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - IN Endpoint FIFO0 Transmit RAM Start Address"]
     #[inline(always)]

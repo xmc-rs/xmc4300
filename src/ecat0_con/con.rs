@@ -71,7 +71,7 @@ impl ECATRSTEN_R {
     }
 }
 #[doc = "Field `ECATRSTEN` writer - Enable EtherCAT Reset Request"]
-pub type ECATRSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CON_SPEC, ECATRSTEN_A, O>;
+pub type ECATRSTEN_W<'a, const O: u8> = crate::BitWriter<'a, CON_SPEC, O, ECATRSTEN_A>;
 impl<'a, const O: u8> ECATRSTEN_W<'a, O> {
     #[doc = "Reset request by EtherCAT Master disabled"]
     #[inline(always)]
@@ -85,7 +85,7 @@ impl<'a, const O: u8> ECATRSTEN_W<'a, O> {
     }
 }
 #[doc = "Field `LATCHIN0SEL` reader - LATCHIN0 Input Select"]
-pub type LATCHIN0SEL_R = crate::FieldReader<u8, LATCHIN0SEL_A>;
+pub type LATCHIN0SEL_R = crate::FieldReader<LATCHIN0SEL_A>;
 #[doc = "LATCHIN0 Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -104,6 +104,9 @@ impl From<LATCHIN0SEL_A> for u8 {
     fn from(variant: LATCHIN0SEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LATCHIN0SEL_A {
+    type Ux = u8;
 }
 impl LATCHIN0SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -139,7 +142,7 @@ impl LATCHIN0SEL_R {
     }
 }
 #[doc = "Field `LATCHIN0SEL` writer - LATCHIN0 Input Select"]
-pub type LATCHIN0SEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CON_SPEC, u8, LATCHIN0SEL_A, 2, O>;
+pub type LATCHIN0SEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CON_SPEC, 2, O, LATCHIN0SEL_A>;
 impl<'a, const O: u8> LATCHIN0SEL_W<'a, O> {
     #[doc = "Data input LATCHIN0A is selected"]
     #[inline(always)]
@@ -163,9 +166,9 @@ impl<'a, const O: u8> LATCHIN0SEL_W<'a, O> {
     }
 }
 #[doc = "Field `LATCHIN0` reader - EtherCAT LATCH_IN0 Input Signal"]
-pub type LATCHIN0_R = crate::BitReader<bool>;
+pub type LATCHIN0_R = crate::BitReader;
 #[doc = "Field `LATCHIN1SEL` reader - LATCHIN1 Input Select"]
-pub type LATCHIN1SEL_R = crate::FieldReader<u8, LATCHIN1SEL_A>;
+pub type LATCHIN1SEL_R = crate::FieldReader<LATCHIN1SEL_A>;
 #[doc = "LATCHIN1 Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -184,6 +187,9 @@ impl From<LATCHIN1SEL_A> for u8 {
     fn from(variant: LATCHIN1SEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LATCHIN1SEL_A {
+    type Ux = u8;
 }
 impl LATCHIN1SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -219,7 +225,7 @@ impl LATCHIN1SEL_R {
     }
 }
 #[doc = "Field `LATCHIN1SEL` writer - LATCHIN1 Input Select"]
-pub type LATCHIN1SEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CON_SPEC, u8, LATCHIN1SEL_A, 2, O>;
+pub type LATCHIN1SEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CON_SPEC, 2, O, LATCHIN1SEL_A>;
 impl<'a, const O: u8> LATCHIN1SEL_W<'a, O> {
     #[doc = "Data input LATCHIN1A is selected"]
     #[inline(always)]
@@ -243,13 +249,13 @@ impl<'a, const O: u8> LATCHIN1SEL_W<'a, O> {
     }
 }
 #[doc = "Field `LATCHIN1` reader - EtherCAT LATCH_IN1 Input Signal"]
-pub type LATCHIN1_R = crate::BitReader<bool>;
+pub type LATCHIN1_R = crate::BitReader;
 #[doc = "Field `PHYOFFSET` reader - Ethernet PHY Address Offset"]
-pub type PHYOFFSET_R = crate::FieldReader<u8, u8>;
+pub type PHYOFFSET_R = crate::FieldReader;
 #[doc = "Field `PHYOFFSET` writer - Ethernet PHY Address Offset"]
-pub type PHYOFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CON_SPEC, u8, u8, 5, O>;
+pub type PHYOFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, CON_SPEC, 5, O>;
 #[doc = "Field `MDIO` reader - MDIO Input Select"]
-pub type MDIO_R = crate::FieldReader<u8, MDIO_A>;
+pub type MDIO_R = crate::FieldReader<MDIO_A>;
 #[doc = "MDIO Input Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -268,6 +274,9 @@ impl From<MDIO_A> for u8 {
     fn from(variant: MDIO_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MDIO_A {
+    type Ux = u8;
 }
 impl MDIO_R {
     #[doc = "Get enumerated values variant"]
@@ -303,7 +312,7 @@ impl MDIO_R {
     }
 }
 #[doc = "Field `MDIO` writer - MDIO Input Select"]
-pub type MDIO_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CON_SPEC, u8, MDIO_A, 2, O>;
+pub type MDIO_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CON_SPEC, 2, O, MDIO_A>;
 impl<'a, const O: u8> MDIO_W<'a, O> {
     #[doc = "Data input MDIA is selected"]
     #[inline(always)]

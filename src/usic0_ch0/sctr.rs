@@ -71,7 +71,7 @@ impl SDIR_R {
     }
 }
 #[doc = "Field `SDIR` writer - Shift Direction"]
-pub type SDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCTR_SPEC, SDIR_A, O>;
+pub type SDIR_W<'a, const O: u8> = crate::BitWriter<'a, SCTR_SPEC, O, SDIR_A>;
 impl<'a, const O: u8> SDIR_W<'a, O> {
     #[doc = "Shift LSB first. The first data bit of a data word is located at bit position 0."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl PDL_R {
     }
 }
 #[doc = "Field `PDL` writer - Passive Data Level"]
-pub type PDL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCTR_SPEC, PDL_A, O>;
+pub type PDL_W<'a, const O: u8> = crate::BitWriter<'a, SCTR_SPEC, O, PDL_A>;
 impl<'a, const O: u8> PDL_W<'a, O> {
     #[doc = "The passive data level is 0."]
     #[inline(always)]
@@ -135,7 +135,7 @@ impl<'a, const O: u8> PDL_W<'a, O> {
     }
 }
 #[doc = "Field `DSM` reader - Data Shift Mode"]
-pub type DSM_R = crate::FieldReader<u8, DSM_A>;
+pub type DSM_R = crate::FieldReader<DSM_A>;
 #[doc = "Data Shift Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -154,6 +154,9 @@ impl From<DSM_A> for u8 {
     fn from(variant: DSM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DSM_A {
+    type Ux = u8;
 }
 impl DSM_R {
     #[doc = "Get enumerated values variant"]
@@ -183,7 +186,7 @@ impl DSM_R {
     }
 }
 #[doc = "Field `DSM` writer - Data Shift Mode"]
-pub type DSM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCTR_SPEC, u8, DSM_A, 2, O>;
+pub type DSM_W<'a, const O: u8> = crate::FieldWriter<'a, SCTR_SPEC, 2, O, DSM_A>;
 impl<'a, const O: u8> DSM_W<'a, O> {
     #[doc = "Receive and transmit data is shifted in and out one bit at a time through DX0 and DOUT0."]
     #[inline(always)]
@@ -240,7 +243,7 @@ impl HPCDIR_R {
     }
 }
 #[doc = "Field `HPCDIR` writer - Port Control Direction"]
-pub type HPCDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCTR_SPEC, HPCDIR_A, O>;
+pub type HPCDIR_W<'a, const O: u8> = crate::BitWriter<'a, SCTR_SPEC, O, HPCDIR_A>;
 impl<'a, const O: u8> HPCDIR_W<'a, O> {
     #[doc = "The pin(s) with hardware pin control enabled are selected to be in input mode."]
     #[inline(always)]
@@ -254,7 +257,7 @@ impl<'a, const O: u8> HPCDIR_W<'a, O> {
     }
 }
 #[doc = "Field `DOCFG` reader - Data Output Configuration"]
-pub type DOCFG_R = crate::FieldReader<u8, DOCFG_A>;
+pub type DOCFG_R = crate::FieldReader<DOCFG_A>;
 #[doc = "Data Output Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -269,6 +272,9 @@ impl From<DOCFG_A> for u8 {
     fn from(variant: DOCFG_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DOCFG_A {
+    type Ux = u8;
 }
 impl DOCFG_R {
     #[doc = "Get enumerated values variant"]
@@ -292,7 +298,7 @@ impl DOCFG_R {
     }
 }
 #[doc = "Field `DOCFG` writer - Data Output Configuration"]
-pub type DOCFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCTR_SPEC, u8, DOCFG_A, 2, O>;
+pub type DOCFG_W<'a, const O: u8> = crate::FieldWriter<'a, SCTR_SPEC, 2, O, DOCFG_A>;
 impl<'a, const O: u8> DOCFG_W<'a, O> {
     #[doc = "DOUTx = shift data value"]
     #[inline(always)]
@@ -306,7 +312,7 @@ impl<'a, const O: u8> DOCFG_W<'a, O> {
     }
 }
 #[doc = "Field `TRM` reader - Transmission Mode"]
-pub type TRM_R = crate::FieldReader<u8, TRM_A>;
+pub type TRM_R = crate::FieldReader<TRM_A>;
 #[doc = "Transmission Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -325,6 +331,9 @@ impl From<TRM_A> for u8 {
     fn from(variant: TRM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TRM_A {
+    type Ux = u8;
 }
 impl TRM_R {
     #[doc = "Get enumerated values variant"]
@@ -360,7 +369,7 @@ impl TRM_R {
     }
 }
 #[doc = "Field `TRM` writer - Transmission Mode"]
-pub type TRM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SCTR_SPEC, u8, TRM_A, 2, O>;
+pub type TRM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SCTR_SPEC, 2, O, TRM_A>;
 impl<'a, const O: u8> TRM_W<'a, O> {
     #[doc = "The shift control signal is considered as inactive and data frame transfers are not possible."]
     #[inline(always)]
@@ -384,11 +393,11 @@ impl<'a, const O: u8> TRM_W<'a, O> {
     }
 }
 #[doc = "Field `FLE` reader - Frame Length"]
-pub type FLE_R = crate::FieldReader<u8, u8>;
+pub type FLE_R = crate::FieldReader;
 #[doc = "Field `FLE` writer - Frame Length"]
-pub type FLE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCTR_SPEC, u8, u8, 6, O>;
+pub type FLE_W<'a, const O: u8> = crate::FieldWriter<'a, SCTR_SPEC, 6, O>;
 #[doc = "Field `WLE` reader - Word Length"]
-pub type WLE_R = crate::FieldReader<u8, WLE_A>;
+pub type WLE_R = crate::FieldReader<WLE_A>;
 #[doc = "Word Length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -407,6 +416,9 @@ impl From<WLE_A> for u8 {
     fn from(variant: WLE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for WLE_A {
+    type Ux = u8;
 }
 impl WLE_R {
     #[doc = "Get enumerated values variant"]
@@ -442,7 +454,7 @@ impl WLE_R {
     }
 }
 #[doc = "Field `WLE` writer - Word Length"]
-pub type WLE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCTR_SPEC, u8, WLE_A, 4, O>;
+pub type WLE_W<'a, const O: u8> = crate::FieldWriter<'a, SCTR_SPEC, 4, O, WLE_A>;
 impl<'a, const O: u8> WLE_W<'a, O> {
     #[doc = "The data word contains 1 data bit located at bit position 0."]
     #[inline(always)]

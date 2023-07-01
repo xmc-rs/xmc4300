@@ -14,7 +14,7 @@ impl From<crate::R<RXTCP_ERROR_OCTETS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXTCPERROCT` reader - Thsi field indicates the number of bytes received in a TCP segment with checksum errors. This counter does not count the IP Header bytes. The Ethernet header, FCS, pad, or IP pad bytes are not included in this counter."]
-pub type RXTCPERROCT_R = crate::FieldReader<u32, u32>;
+pub type RXTCPERROCT_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Thsi field indicates the number of bytes received in a TCP segment with checksum errors. This counter does not count the IP Header bytes. The Ethernet header, FCS, pad, or IP pad bytes are not included in this counter."]
     #[inline(always)]

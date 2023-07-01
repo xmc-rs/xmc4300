@@ -14,7 +14,7 @@ impl From<crate::R<MAX_CURRENT_CAP_SPEC>> for R {
     }
 }
 #[doc = "Field `MAX_CURRENT_FOR_3_3V` reader - Maximum Current for 3.3V"]
-pub type MAX_CURRENT_FOR_3_3V_R = crate::FieldReader<u8, u8>;
+pub type MAX_CURRENT_FOR_3_3V_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Maximum Current for 3.3V"]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl VCOBYP_R {
     }
 }
 #[doc = "Field `VCOBYP` writer - VCO Bypass"]
-pub type VCOBYP_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, VCOBYP_A, O>;
+pub type VCOBYP_W<'a, const O: u8> = crate::BitWriter<'a, USBPLLCON_SPEC, O, VCOBYP_A>;
 impl<'a, const O: u8> VCOBYP_W<'a, O> {
     #[doc = "Normal operation, VCO is not bypassed"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl VCOPWD_R {
     }
 }
 #[doc = "Field `VCOPWD` writer - VCO Power Saving Mode"]
-pub type VCOPWD_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, VCOPWD_A, O>;
+pub type VCOPWD_W<'a, const O: u8> = crate::BitWriter<'a, USBPLLCON_SPEC, O, VCOPWD_A>;
 impl<'a, const O: u8> VCOPWD_W<'a, O> {
     #[doc = "Normal behavior"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl VCOTR_R {
     }
 }
 #[doc = "Field `VCOTR` writer - VCO Trim Control"]
-pub type VCOTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, VCOTR_A, O>;
+pub type VCOTR_W<'a, const O: u8> = crate::BitWriter<'a, USBPLLCON_SPEC, O, VCOTR_A>;
 impl<'a, const O: u8> VCOTR_W<'a, O> {
     #[doc = "VCO bandwidth is operating in the normal range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl FINDIS_R {
     }
 }
 #[doc = "Field `FINDIS` writer - Disconnect Oscillator from VCO"]
-pub type FINDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, FINDIS_A, O>;
+pub type FINDIS_W<'a, const O: u8> = crate::BitWriter<'a, USBPLLCON_SPEC, O, FINDIS_A>;
 impl<'a, const O: u8> FINDIS_W<'a, O> {
     #[doc = "Connect oscillator to the VCO part"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl OSCDISCDIS_R {
     }
 }
 #[doc = "Field `OSCDISCDIS` writer - Oscillator Disconnect Disable"]
-pub type OSCDISCDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, OSCDISCDIS_A, O>;
+pub type OSCDISCDIS_W<'a, const O: u8> = crate::BitWriter<'a, USBPLLCON_SPEC, O, OSCDISCDIS_A>;
 impl<'a, const O: u8> OSCDISCDIS_W<'a, O> {
     #[doc = "In case of a PLL loss-of-lock bit FINDIS is set"]
     #[inline(always)]
@@ -285,9 +285,9 @@ impl<'a, const O: u8> OSCDISCDIS_W<'a, O> {
     }
 }
 #[doc = "Field `NDIV` reader - N-Divider Value"]
-pub type NDIV_R = crate::FieldReader<u8, u8>;
+pub type NDIV_R = crate::FieldReader;
 #[doc = "Field `NDIV` writer - N-Divider Value"]
-pub type NDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, USBPLLCON_SPEC, u8, u8, 7, O>;
+pub type NDIV_W<'a, const O: u8> = crate::FieldWriter<'a, USBPLLCON_SPEC, 7, O>;
 #[doc = "Field `PLLPWD` reader - PLL Power Saving Mode"]
 pub type PLLPWD_R = crate::BitReader<PLLPWD_A>;
 #[doc = "PLL Power Saving Mode\n\nValue on reset: 1"]
@@ -325,7 +325,7 @@ impl PLLPWD_R {
     }
 }
 #[doc = "Field `PLLPWD` writer - PLL Power Saving Mode"]
-pub type PLLPWD_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, PLLPWD_A, O>;
+pub type PLLPWD_W<'a, const O: u8> = crate::BitWriter<'a, USBPLLCON_SPEC, O, PLLPWD_A>;
 impl<'a, const O: u8> PLLPWD_W<'a, O> {
     #[doc = "Normal behavior"]
     #[inline(always)]
@@ -339,11 +339,11 @@ impl<'a, const O: u8> PLLPWD_W<'a, O> {
     }
 }
 #[doc = "Field `RESLD` writer - Restart VCO Lock Detection"]
-pub type RESLD_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBPLLCON_SPEC, bool, O>;
+pub type RESLD_W<'a, const O: u8> = crate::BitWriter<'a, USBPLLCON_SPEC, O>;
 #[doc = "Field `PDIV` reader - P-Divider Value"]
-pub type PDIV_R = crate::FieldReader<u8, u8>;
+pub type PDIV_R = crate::FieldReader;
 #[doc = "Field `PDIV` writer - P-Divider Value"]
-pub type PDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, USBPLLCON_SPEC, u8, u8, 4, O>;
+pub type PDIV_W<'a, const O: u8> = crate::FieldWriter<'a, USBPLLCON_SPEC, 4, O>;
 impl R {
     #[doc = "Bit 0 - VCO Bypass"]
     #[inline(always)]

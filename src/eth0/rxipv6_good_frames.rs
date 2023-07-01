@@ -14,7 +14,7 @@ impl From<crate::R<RXIPV6_GOOD_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV6GDFRM` reader - This field indicates the number of good IPv6 datagrams received with TCP, UDP, or ICMP payloads."]
-pub type RXIPV6GDFRM_R = crate::FieldReader<u32, u32>;
+pub type RXIPV6GDFRM_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of good IPv6 datagrams received with TCP, UDP, or ICMP payloads."]
     #[inline(always)]

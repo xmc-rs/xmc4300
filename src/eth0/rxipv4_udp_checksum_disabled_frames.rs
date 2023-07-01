@@ -14,7 +14,7 @@ impl From<crate::R<RXIPV4_UDP_CHECKSUM_DISABLED_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV4UDSBLFRM` reader - This field indicates the number of received good IPv4 datagrams which have the UDP payload with checksum disabled."]
-pub type RXIPV4UDSBLFRM_R = crate::FieldReader<u32, u32>;
+pub type RXIPV4UDSBLFRM_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of received good IPv4 datagrams which have the UDP payload with checksum disabled."]
     #[inline(always)]

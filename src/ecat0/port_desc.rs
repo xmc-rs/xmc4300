@@ -14,7 +14,7 @@ impl From<crate::R<PORT_DESC_SPEC>> for R {
     }
 }
 #[doc = "Field `Port0` reader - Port Configuration"]
-pub type PORT0_R = crate::FieldReader<u8, PORT0_A>;
+pub type PORT0_R = crate::FieldReader<PORT0_A>;
 #[doc = "Port Configuration\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -33,6 +33,9 @@ impl From<PORT0_A> for u8 {
     fn from(variant: PORT0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PORT0_A {
+    type Ux = u8;
 }
 impl PORT0_R {
     #[doc = "Get enumerated values variant"]
@@ -68,7 +71,7 @@ impl PORT0_R {
     }
 }
 #[doc = "Field `Port1` reader - Port Configuration"]
-pub type PORT1_R = crate::FieldReader<u8, PORT1_A>;
+pub type PORT1_R = crate::FieldReader<PORT1_A>;
 #[doc = "Port Configuration\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -87,6 +90,9 @@ impl From<PORT1_A> for u8 {
     fn from(variant: PORT1_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PORT1_A {
+    type Ux = u8;
 }
 impl PORT1_R {
     #[doc = "Get enumerated values variant"]
@@ -122,7 +128,7 @@ impl PORT1_R {
     }
 }
 #[doc = "Field `Port2` reader - Port Configuration"]
-pub type PORT2_R = crate::FieldReader<u8, PORT2_A>;
+pub type PORT2_R = crate::FieldReader<PORT2_A>;
 #[doc = "Port Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -141,6 +147,9 @@ impl From<PORT2_A> for u8 {
     fn from(variant: PORT2_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PORT2_A {
+    type Ux = u8;
 }
 impl PORT2_R {
     #[doc = "Get enumerated values variant"]
@@ -176,7 +185,7 @@ impl PORT2_R {
     }
 }
 #[doc = "Field `Port3` reader - Port Configuration"]
-pub type PORT3_R = crate::FieldReader<u8, PORT3_A>;
+pub type PORT3_R = crate::FieldReader<PORT3_A>;
 #[doc = "Port Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -195,6 +204,9 @@ impl From<PORT3_A> for u8 {
     fn from(variant: PORT3_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PORT3_A {
+    type Ux = u8;
 }
 impl PORT3_R {
     #[doc = "Get enumerated values variant"]

@@ -14,21 +14,21 @@ impl From<crate::R<STATUSBLOCK_SPEC>> for R {
     }
 }
 #[doc = "Field `CH0` reader - Interrupt Status for channel 0"]
-pub type CH0_R = crate::BitReader<bool>;
+pub type CH0_R = crate::BitReader;
 #[doc = "Field `CH1` reader - Interrupt Status for channel 1"]
-pub type CH1_R = crate::BitReader<bool>;
+pub type CH1_R = crate::BitReader;
 #[doc = "Field `CH2` reader - Interrupt Status for channel 2"]
-pub type CH2_R = crate::BitReader<bool>;
+pub type CH2_R = crate::BitReader;
 #[doc = "Field `CH3` reader - Interrupt Status for channel 3"]
-pub type CH3_R = crate::BitReader<bool>;
+pub type CH3_R = crate::BitReader;
 #[doc = "Field `CH4` reader - Interrupt Status for channel 4"]
-pub type CH4_R = crate::BitReader<bool>;
+pub type CH4_R = crate::BitReader;
 #[doc = "Field `CH5` reader - Interrupt Status for channel 5"]
-pub type CH5_R = crate::BitReader<bool>;
+pub type CH5_R = crate::BitReader;
 #[doc = "Field `CH6` reader - Interrupt Status for channel 6"]
-pub type CH6_R = crate::BitReader<bool>;
+pub type CH6_R = crate::BitReader;
 #[doc = "Field `CH7` reader - Interrupt Status for channel 7"]
-pub type CH7_R = crate::BitReader<bool>;
+pub type CH7_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Interrupt Status for channel 0"]
     #[inline(always)]

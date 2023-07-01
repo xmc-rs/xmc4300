@@ -14,7 +14,7 @@ impl From<crate::R<RBUF1_SPEC>> for R {
     }
 }
 #[doc = "Field `DSR1` reader - Data of Shift Registers 1\\[3:0\\]"]
-pub type DSR1_R = crate::FieldReader<u16, u16>;
+pub type DSR1_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Data of Shift Registers 1\\[3:0\\]"]
     #[inline(always)]

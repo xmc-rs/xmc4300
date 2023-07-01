@@ -14,9 +14,9 @@ impl From<crate::R<EVRVADCSTAT_SPEC>> for R {
     }
 }
 #[doc = "Field `VADC13V` reader - VADC 1.3 V Conversion Result"]
-pub type VADC13V_R = crate::FieldReader<u8, u8>;
+pub type VADC13V_R = crate::FieldReader;
 #[doc = "Field `VADC33V` reader - VADC 3.3 V Conversion Result"]
-pub type VADC33V_R = crate::FieldReader<u8, u8>;
+pub type VADC33V_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - VADC 1.3 V Conversion Result"]
     #[inline(always)]

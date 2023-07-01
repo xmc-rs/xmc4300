@@ -35,9 +35,9 @@ impl From<crate::W<DCTL_SPEC>> for W {
     }
 }
 #[doc = "Field `RmtWkUpSig` reader - Remote Wakeup Signaling"]
-pub type RMT_WK_UP_SIG_R = crate::BitReader<bool>;
+pub type RMT_WK_UP_SIG_R = crate::BitReader;
 #[doc = "Field `RmtWkUpSig` writer - Remote Wakeup Signaling"]
-pub type RMT_WK_UP_SIG_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, bool, O>;
+pub type RMT_WK_UP_SIG_W<'a, const O: u8> = crate::BitWriter<'a, DCTL_SPEC, O>;
 #[doc = "Field `SftDiscon` reader - Soft Disconnect"]
 pub type SFT_DISCON_R = crate::BitReader<SFT_DISCON_A>;
 #[doc = "Soft Disconnect\n\nValue on reset: 1"]
@@ -75,7 +75,7 @@ impl SFT_DISCON_R {
     }
 }
 #[doc = "Field `SftDiscon` writer - Soft Disconnect"]
-pub type SFT_DISCON_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, SFT_DISCON_A, O>;
+pub type SFT_DISCON_W<'a, const O: u8> = crate::BitWriter<'a, DCTL_SPEC, O, SFT_DISCON_A>;
 impl<'a, const O: u8> SFT_DISCON_W<'a, O> {
     #[doc = "Normal operation. When this bit is cleared after a soft disconnect, the core drives a device connect event to the USB host. When the device is reconnected, the USB host restarts device enumeration."]
     #[inline(always)]
@@ -161,15 +161,15 @@ impl GOUTNAK_STS_R {
     }
 }
 #[doc = "Field `SGNPInNak` writer - Set Global Non-periodic IN NAK"]
-pub type SGNPIN_NAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, bool, O>;
+pub type SGNPIN_NAK_W<'a, const O: u8> = crate::BitWriter<'a, DCTL_SPEC, O>;
 #[doc = "Field `CGNPInNak` writer - Clear Global Non-periodic IN NAK"]
-pub type CGNPIN_NAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, bool, O>;
+pub type CGNPIN_NAK_W<'a, const O: u8> = crate::BitWriter<'a, DCTL_SPEC, O>;
 #[doc = "Field `SGOUTNak` writer - Set Global OUT NAK"]
-pub type SGOUTNAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, bool, O>;
+pub type SGOUTNAK_W<'a, const O: u8> = crate::BitWriter<'a, DCTL_SPEC, O>;
 #[doc = "Field `CGOUTNak` writer - Clear Global OUT NAK"]
-pub type CGOUTNAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, bool, O>;
+pub type CGOUTNAK_W<'a, const O: u8> = crate::BitWriter<'a, DCTL_SPEC, O>;
 #[doc = "Field `GMC` reader - Global Multi Count"]
-pub type GMC_R = crate::FieldReader<u8, GMC_A>;
+pub type GMC_R = crate::FieldReader<GMC_A>;
 #[doc = "Global Multi Count\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -188,6 +188,9 @@ impl From<GMC_A> for u8 {
     fn from(variant: GMC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for GMC_A {
+    type Ux = u8;
 }
 impl GMC_R {
     #[doc = "Get enumerated values variant"]
@@ -223,7 +226,7 @@ impl GMC_R {
     }
 }
 #[doc = "Field `GMC` writer - Global Multi Count"]
-pub type GMC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DCTL_SPEC, u8, GMC_A, 2, O>;
+pub type GMC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DCTL_SPEC, 2, O, GMC_A>;
 impl<'a, const O: u8> GMC_W<'a, O> {
     #[doc = "Invalid."]
     #[inline(always)]
@@ -283,7 +286,7 @@ impl IGNR_FRM_NUM_R {
     }
 }
 #[doc = "Field `IgnrFrmNum` writer - Ignore frame number for isochronous endpoints in case of Scatter/Gather DMA"]
-pub type IGNR_FRM_NUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, IGNR_FRM_NUM_A, O>;
+pub type IGNR_FRM_NUM_W<'a, const O: u8> = crate::BitWriter<'a, DCTL_SPEC, O, IGNR_FRM_NUM_A>;
 impl<'a, const O: u8> IGNR_FRM_NUM_W<'a, O> {
     #[doc = "Scatter/Gather enabled: The core transmits the packets only in the frame number in which they are intended to be transmitted. Scatter/Gather disabled: Periodic transfer interrupt feature is disabled; the application must program transfers for periodic endpoints every frame"]
     #[inline(always)]
@@ -297,9 +300,9 @@ impl<'a, const O: u8> IGNR_FRM_NUM_W<'a, O> {
     }
 }
 #[doc = "Field `NakOnBble` reader - Set NAK automatically on babble"]
-pub type NAK_ON_BBLE_R = crate::BitReader<bool>;
+pub type NAK_ON_BBLE_R = crate::BitReader;
 #[doc = "Field `NakOnBble` writer - Set NAK automatically on babble"]
-pub type NAK_ON_BBLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, bool, O>;
+pub type NAK_ON_BBLE_W<'a, const O: u8> = crate::BitWriter<'a, DCTL_SPEC, O>;
 #[doc = "Field `EnContOnBNA` reader - Enable continue on BNA"]
 pub type EN_CONT_ON_BNA_R = crate::BitReader<EN_CONT_ON_BNA_A>;
 #[doc = "Enable continue on BNA\n\nValue on reset: 0"]
@@ -337,7 +340,7 @@ impl EN_CONT_ON_BNA_R {
     }
 }
 #[doc = "Field `EnContOnBNA` writer - Enable continue on BNA"]
-pub type EN_CONT_ON_BNA_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCTL_SPEC, EN_CONT_ON_BNA_A, O>;
+pub type EN_CONT_ON_BNA_W<'a, const O: u8> = crate::BitWriter<'a, DCTL_SPEC, O, EN_CONT_ON_BNA_A>;
 impl<'a, const O: u8> EN_CONT_ON_BNA_W<'a, O> {
     #[doc = "After receiving BNA interrupt, the core disables the endpoint. When the endpoint is re-enabled by the application, the core starts processing from the DOEPDMA descriptor."]
     #[inline(always)]

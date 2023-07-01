@@ -35,7 +35,7 @@ impl From<crate::W<MCR_SPEC>> for W {
     }
 }
 #[doc = "Field `CLKSEL` reader - Baud Rate Logic Clock Select"]
-pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
+pub type CLKSEL_R = crate::FieldReader<CLKSEL_A>;
 #[doc = "Baud Rate Logic Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<CLKSEL_A> for u8 {
     fn from(variant: CLKSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLKSEL_A {
+    type Ux = u8;
 }
 impl CLKSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl CLKSEL_R {
     }
 }
 #[doc = "Field `CLKSEL` writer - Baud Rate Logic Clock Select"]
-pub type CLKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MCR_SPEC, u8, CLKSEL_A, 4, O>;
+pub type CLKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, MCR_SPEC, 4, O, CLKSEL_A>;
 impl<'a, const O: u8> CLKSEL_W<'a, O> {
     #[doc = "No clock supplied"]
     #[inline(always)]
@@ -126,9 +129,9 @@ impl<'a, const O: u8> CLKSEL_W<'a, O> {
     }
 }
 #[doc = "Field `MPSEL` reader - Message Pending Selector"]
-pub type MPSEL_R = crate::FieldReader<u8, u8>;
+pub type MPSEL_R = crate::FieldReader;
 #[doc = "Field `MPSEL` writer - Message Pending Selector"]
-pub type MPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MCR_SPEC, u8, u8, 4, O>;
+pub type MPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, MCR_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Baud Rate Logic Clock Select"]
     #[inline(always)]

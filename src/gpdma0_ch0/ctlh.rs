@@ -35,13 +35,13 @@ impl From<crate::W<CTLH_SPEC>> for W {
     }
 }
 #[doc = "Field `BLOCK_TS` reader - Block Transfer Size"]
-pub type BLOCK_TS_R = crate::FieldReader<u16, u16>;
+pub type BLOCK_TS_R = crate::FieldReader<u16>;
 #[doc = "Field `BLOCK_TS` writer - Block Transfer Size"]
-pub type BLOCK_TS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTLH_SPEC, u16, u16, 12, O>;
+pub type BLOCK_TS_W<'a, const O: u8> = crate::FieldWriter<'a, CTLH_SPEC, 12, O, u16>;
 #[doc = "Field `DONE` reader - Done bit"]
-pub type DONE_R = crate::BitReader<bool>;
+pub type DONE_R = crate::BitReader;
 #[doc = "Field `DONE` writer - Done bit"]
-pub type DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTLH_SPEC, bool, O>;
+pub type DONE_W<'a, const O: u8> = crate::BitWriter<'a, CTLH_SPEC, O>;
 impl R {
     #[doc = "Bits 0:11 - Block Transfer Size"]
     #[inline(always)]

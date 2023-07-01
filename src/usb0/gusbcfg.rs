@@ -35,9 +35,9 @@ impl From<crate::W<GUSBCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `TOutCal` reader - FS Timeout Calibration"]
-pub type TOUT_CAL_R = crate::FieldReader<u8, u8>;
+pub type TOUT_CAL_R = crate::FieldReader;
 #[doc = "Field `TOutCal` writer - FS Timeout Calibration"]
-pub type TOUT_CAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUSBCFG_SPEC, u8, u8, 3, O>;
+pub type TOUT_CAL_W<'a, const O: u8> = crate::FieldWriter<'a, GUSBCFG_SPEC, 3, O>;
 #[doc = "Field `PHYSel` reader - USB 1.1 Full-Speed Serial Transceiver Select"]
 pub type PHYSEL_R = crate::BitReader<PHYSEL_A>;
 #[doc = "USB 1.1 Full-Speed Serial Transceiver Select\n\nValue on reset: 1"]
@@ -104,7 +104,7 @@ impl SRPCAP_R {
     }
 }
 #[doc = "Field `SRPCap` writer - SRP-Capable"]
-pub type SRPCAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, SRPCAP_A, O>;
+pub type SRPCAP_W<'a, const O: u8> = crate::BitWriter<'a, GUSBCFG_SPEC, O, SRPCAP_A>;
 impl<'a, const O: u8> SRPCAP_W<'a, O> {
     #[doc = "SRP capability is not enabled."]
     #[inline(always)]
@@ -154,7 +154,7 @@ impl HNPCAP_R {
     }
 }
 #[doc = "Field `HNPCap` writer - HNP-Capable"]
-pub type HNPCAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, HNPCAP_A, O>;
+pub type HNPCAP_W<'a, const O: u8> = crate::BitWriter<'a, GUSBCFG_SPEC, O, HNPCAP_A>;
 impl<'a, const O: u8> HNPCAP_W<'a, O> {
     #[doc = "HNP capability is not enabled."]
     #[inline(always)]
@@ -168,9 +168,9 @@ impl<'a, const O: u8> HNPCAP_W<'a, O> {
     }
 }
 #[doc = "Field `USBTrdTim` reader - USB Turnaround Time"]
-pub type USBTRD_TIM_R = crate::FieldReader<u8, u8>;
+pub type USBTRD_TIM_R = crate::FieldReader;
 #[doc = "Field `USBTrdTim` writer - USB Turnaround Time"]
-pub type USBTRD_TIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GUSBCFG_SPEC, u8, u8, 4, O>;
+pub type USBTRD_TIM_W<'a, const O: u8> = crate::FieldWriter<'a, GUSBCFG_SPEC, 4, O>;
 #[doc = "Field `OtgI2CSel` reader - UTMIFS Interface Select"]
 pub type OTG_I2CSEL_R = crate::BitReader<OTG_I2CSEL_A>;
 #[doc = "UTMIFS Interface Select\n\nValue on reset: 0"]
@@ -201,7 +201,7 @@ impl OTG_I2CSEL_R {
     }
 }
 #[doc = "Field `OtgI2CSel` writer - UTMIFS Interface Select"]
-pub type OTG_I2CSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, OTG_I2CSEL_A, O>;
+pub type OTG_I2CSEL_W<'a, const O: u8> = crate::BitWriter<'a, GUSBCFG_SPEC, O, OTG_I2CSEL_A>;
 impl<'a, const O: u8> OTG_I2CSEL_W<'a, O> {
     #[doc = "UTMI USB 1.1 Full-Speed interface for OTG signals"]
     #[inline(always)]
@@ -246,7 +246,7 @@ impl TX_END_DELAY_R {
     }
 }
 #[doc = "Field `TxEndDelay` writer - Tx End Delay"]
-pub type TX_END_DELAY_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, TX_END_DELAY_A, O>;
+pub type TX_END_DELAY_W<'a, const O: u8> = crate::BitWriter<'a, GUSBCFG_SPEC, O, TX_END_DELAY_A>;
 impl<'a, const O: u8> TX_END_DELAY_W<'a, O> {
     #[doc = "Normal mode"]
     #[inline(always)]
@@ -296,7 +296,7 @@ impl FORCE_HST_MODE_R {
     }
 }
 #[doc = "Field `ForceHstMode` writer - Force Host Mode"]
-pub type FORCE_HST_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, FORCE_HST_MODE_A, O>;
+pub type FORCE_HST_MODE_W<'a, const O: u8> = crate::BitWriter<'a, GUSBCFG_SPEC, O, FORCE_HST_MODE_A>;
 impl<'a, const O: u8> FORCE_HST_MODE_W<'a, O> {
     #[doc = "Normal Mode"]
     #[inline(always)]
@@ -346,7 +346,7 @@ impl FORCE_DEV_MODE_R {
     }
 }
 #[doc = "Field `ForceDevMode` writer - Force Device Mode"]
-pub type FORCE_DEV_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, FORCE_DEV_MODE_A, O>;
+pub type FORCE_DEV_MODE_W<'a, const O: u8> = crate::BitWriter<'a, GUSBCFG_SPEC, O, FORCE_DEV_MODE_A>;
 impl<'a, const O: u8> FORCE_DEV_MODE_W<'a, O> {
     #[doc = "Normal Mode"]
     #[inline(always)]
@@ -360,9 +360,9 @@ impl<'a, const O: u8> FORCE_DEV_MODE_W<'a, O> {
     }
 }
 #[doc = "Field `CTP` reader - Corrupt Tx packet"]
-pub type CTP_R = crate::BitReader<bool>;
+pub type CTP_R = crate::BitReader;
 #[doc = "Field `CTP` writer - Corrupt Tx packet"]
-pub type CTP_W<'a, const O: u8> = crate::BitWriter<'a, u32, GUSBCFG_SPEC, bool, O>;
+pub type CTP_W<'a, const O: u8> = crate::BitWriter<'a, GUSBCFG_SPEC, O>;
 impl R {
     #[doc = "Bits 0:2 - FS Timeout Calibration"]
     #[inline(always)]

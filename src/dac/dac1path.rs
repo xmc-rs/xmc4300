@@ -35,17 +35,17 @@ impl From<crate::W<DAC1PATH_SPEC>> for W {
     }
 }
 #[doc = "Field `PAT6` reader - Pattern Number 6 for PATGEN of DAC1"]
-pub type PAT6_R = crate::FieldReader<u8, u8>;
+pub type PAT6_R = crate::FieldReader;
 #[doc = "Field `PAT6` writer - Pattern Number 6 for PATGEN of DAC1"]
-pub type PAT6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC1PATH_SPEC, u8, u8, 5, O>;
+pub type PAT6_W<'a, const O: u8> = crate::FieldWriter<'a, DAC1PATH_SPEC, 5, O>;
 #[doc = "Field `PAT7` reader - Pattern Number 7 for PATGEN of DAC1"]
-pub type PAT7_R = crate::FieldReader<u8, u8>;
+pub type PAT7_R = crate::FieldReader;
 #[doc = "Field `PAT7` writer - Pattern Number 7 for PATGEN of DAC1"]
-pub type PAT7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC1PATH_SPEC, u8, u8, 5, O>;
+pub type PAT7_W<'a, const O: u8> = crate::FieldWriter<'a, DAC1PATH_SPEC, 5, O>;
 #[doc = "Field `PAT8` reader - Pattern Number 8 for PATGEN of DAC1"]
-pub type PAT8_R = crate::FieldReader<u8, u8>;
+pub type PAT8_R = crate::FieldReader;
 #[doc = "Field `PAT8` writer - Pattern Number 8 for PATGEN of DAC1"]
-pub type PAT8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC1PATH_SPEC, u8, u8, 5, O>;
+pub type PAT8_W<'a, const O: u8> = crate::FieldWriter<'a, DAC1PATH_SPEC, 5, O>;
 impl R {
     #[doc = "Bits 0:4 - Pattern Number 6 for PATGEN of DAC1"]
     #[inline(always)]

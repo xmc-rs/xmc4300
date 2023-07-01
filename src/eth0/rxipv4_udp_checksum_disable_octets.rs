@@ -14,7 +14,7 @@ impl From<crate::R<RXIPV4_UDP_CHECKSUM_DISABLE_OCTETS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV4UDSBLOCT` reader - This field indicates the number of bytes received in a UDP segment that had the UDP checksum disabled. This counter does not count the IP Header bytes. The Ethernet header, FCS, pad, or IP pad bytes are not included in this counter."]
-pub type RXIPV4UDSBLOCT_R = crate::FieldReader<u32, u32>;
+pub type RXIPV4UDSBLOCT_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of bytes received in a UDP segment that had the UDP checksum disabled. This counter does not count the IP Header bytes. The Ethernet header, FCS, pad, or IP pad bytes are not included in this counter."]
     #[inline(always)]

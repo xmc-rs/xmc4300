@@ -266,7 +266,7 @@ impl E2AS_R {
     }
 }
 #[doc = "Field `TRPF` reader - Trap Flag Status"]
-pub type TRPF_R = crate::BitReader<bool>;
+pub type TRPF_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Period Match while Counting Up"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<MII_PHY_ADR_SPEC>> for W {
     }
 }
 #[doc = "Field `PHY_ADDR` reader - PHY Address"]
-pub type PHY_ADDR_R = crate::FieldReader<u8, u8>;
+pub type PHY_ADDR_R = crate::FieldReader;
 #[doc = "Field `PHY_ADDR` writer - PHY Address"]
-pub type PHY_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u8, MII_PHY_ADR_SPEC, u8, u8, 5, O>;
+pub type PHY_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, MII_PHY_ADR_SPEC, 5, O>;
 #[doc = "Field `PHY_CADDR` reader - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
 of this register (valid values are 0-3)"]
 pub type PHY_CADDR_R = crate::BitReader<PHY_CADDR_A>;
@@ -78,7 +78,7 @@ impl PHY_CADDR_R {
 }
 #[doc = "Field `PHY_CADDR` writer - Show configured PHY address of port 0-3 in registerECAT0_MII_CONT_STAT\\[7:3\\]. Select port x with bits \\[4:0\\]
 of this register (valid values are 0-3)"]
-pub type PHY_CADDR_W<'a, const O: u8> = crate::BitWriter<'a, u8, MII_PHY_ADR_SPEC, PHY_CADDR_A, O>;
+pub type PHY_CADDR_W<'a, const O: u8> = crate::BitWriter<'a, MII_PHY_ADR_SPEC, O, PHY_CADDR_A>;
 impl<'a, const O: u8> PHY_CADDR_W<'a, O> {
     #[doc = "Show address of port 0 (offset)"]
     #[inline(always)]

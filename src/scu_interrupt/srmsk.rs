@@ -71,7 +71,7 @@ impl PRWARN_R {
     }
 }
 #[doc = "Field `PRWARN` writer - WDT pre-warning Interrupt Mask"]
-pub type PRWARN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, PRWARN_A, O>;
+pub type PRWARN_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, PRWARN_A>;
 impl<'a, const O: u8> PRWARN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl PI_R {
     }
 }
 #[doc = "Field `PI` writer - RTC Periodic Interrupt Mask"]
-pub type PI_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, PI_A, O>;
+pub type PI_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, PI_A>;
 impl<'a, const O: u8> PI_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl AI_R {
     }
 }
 #[doc = "Field `AI` writer - RTC Alarm Interrupt Mask"]
-pub type AI_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, AI_A, O>;
+pub type AI_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, AI_A>;
 impl<'a, const O: u8> AI_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl DLROVR_R {
     }
 }
 #[doc = "Field `DLROVR` writer - DLR Request Overrun Interrupt Mask"]
-pub type DLROVR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, DLROVR_A, O>;
+pub type DLROVR_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, DLROVR_A>;
 impl<'a, const O: u8> DLROVR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl HDCLR_R {
     }
 }
 #[doc = "Field `HDCLR` writer - HDCLR Mirror Register Update Mask"]
-pub type HDCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, HDCLR_A, O>;
+pub type HDCLR_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, HDCLR_A>;
 impl<'a, const O: u8> HDCLR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl HDSET_R {
     }
 }
 #[doc = "Field `HDSET` writer - HDSET Mirror Register Update Mask"]
-pub type HDSET_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, HDSET_A, O>;
+pub type HDSET_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, HDSET_A>;
 impl<'a, const O: u8> HDSET_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl HDCR_R {
     }
 }
 #[doc = "Field `HDCR` writer - HDCR Mirror Register Update Mask"]
-pub type HDCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, HDCR_A, O>;
+pub type HDCR_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, HDCR_A>;
 impl<'a, const O: u8> HDCR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl OSCSICTRL_R {
     }
 }
 #[doc = "Field `OSCSICTRL` writer - OSCSICTRL Mirror Register Update Mask"]
-pub type OSCSICTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, OSCSICTRL_A, O>;
+pub type OSCSICTRL_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, OSCSICTRL_A>;
 impl<'a, const O: u8> OSCSICTRL_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl OSCULCTRL_R {
     }
 }
 #[doc = "Field `OSCULCTRL` writer - OSCULCTRL Mirror Register Update Mask"]
-pub type OSCULCTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, OSCULCTRL_A, O>;
+pub type OSCULCTRL_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, OSCULCTRL_A>;
 impl<'a, const O: u8> OSCULCTRL_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl RTC_CTR_R {
     }
 }
 #[doc = "Field `RTC_CTR` writer - RTC CTR Mirror Register Update Mask"]
-pub type RTC_CTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, RTC_CTR_A, O>;
+pub type RTC_CTR_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, RTC_CTR_A>;
 impl<'a, const O: u8> RTC_CTR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl RTC_ATIM0_R {
     }
 }
 #[doc = "Field `RTC_ATIM0` writer - RTC ATIM0 Mirror Register Update Mask"]
-pub type RTC_ATIM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, RTC_ATIM0_A, O>;
+pub type RTC_ATIM0_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, RTC_ATIM0_A>;
 impl<'a, const O: u8> RTC_ATIM0_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl RTC_ATIM1_R {
     }
 }
 #[doc = "Field `RTC_ATIM1` writer - RTC ATIM1 Mirror Register Update Mask"]
-pub type RTC_ATIM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, RTC_ATIM1_A, O>;
+pub type RTC_ATIM1_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, RTC_ATIM1_A>;
 impl<'a, const O: u8> RTC_ATIM1_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -671,7 +671,7 @@ impl RTC_TIM0_R {
     }
 }
 #[doc = "Field `RTC_TIM0` writer - RTC TIM0 Mirror Register Update Mask"]
-pub type RTC_TIM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, RTC_TIM0_A, O>;
+pub type RTC_TIM0_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, RTC_TIM0_A>;
 impl<'a, const O: u8> RTC_TIM0_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -721,7 +721,7 @@ impl RTC_TIM1_R {
     }
 }
 #[doc = "Field `RTC_TIM1` writer - RTC TIM1 Mirror Register Update Mask"]
-pub type RTC_TIM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, RTC_TIM1_A, O>;
+pub type RTC_TIM1_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, RTC_TIM1_A>;
 impl<'a, const O: u8> RTC_TIM1_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -771,7 +771,7 @@ impl RMX_R {
     }
 }
 #[doc = "Field `RMX` writer - Retention Memory Mirror Register Update Mask"]
-pub type RMX_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRMSK_SPEC, RMX_A, O>;
+pub type RMX_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, RMX_A>;
 impl<'a, const O: u8> RMX_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]

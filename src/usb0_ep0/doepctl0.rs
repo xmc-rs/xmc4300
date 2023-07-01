@@ -35,7 +35,7 @@ impl From<crate::W<DOEPCTL0_SPEC>> for W {
     }
 }
 #[doc = "Field `MPS` reader - Maximum Packet Size"]
-pub type MPS_R = crate::FieldReader<u8, MPS_A>;
+pub type MPS_R = crate::FieldReader<MPS_A>;
 #[doc = "Maximum Packet Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<MPS_A> for u8 {
     fn from(variant: MPS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MPS_A {
+    type Ux = u8;
 }
 impl MPS_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl MPS_R {
     }
 }
 #[doc = "Field `USBActEP` reader - USB Active Endpoint"]
-pub type USBACT_EP_R = crate::BitReader<bool>;
+pub type USBACT_EP_R = crate::BitReader;
 #[doc = "Field `NAKSts` reader - NAK Status"]
 pub type NAKSTS_R = crate::BitReader<NAKSTS_A>;
 #[doc = "NAK Status\n\nValue on reset: 0"]
@@ -127,25 +130,25 @@ impl NAKSTS_R {
     }
 }
 #[doc = "Field `EPType` reader - Endpoint Type"]
-pub type EPTYPE_R = crate::FieldReader<u8, u8>;
+pub type EPTYPE_R = crate::FieldReader;
 #[doc = "Field `Snp` reader - Snoop Mode"]
-pub type SNP_R = crate::BitReader<bool>;
+pub type SNP_R = crate::BitReader;
 #[doc = "Field `Snp` writer - Snoop Mode"]
-pub type SNP_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPCTL0_SPEC, bool, O>;
+pub type SNP_W<'a, const O: u8> = crate::BitWriter<'a, DOEPCTL0_SPEC, O>;
 #[doc = "Field `Stall` reader - STALL Handshake"]
-pub type STALL_R = crate::BitReader<bool>;
+pub type STALL_R = crate::BitReader;
 #[doc = "Field `Stall` writer - STALL Handshake"]
-pub type STALL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPCTL0_SPEC, bool, O>;
+pub type STALL_W<'a, const O: u8> = crate::BitWriter<'a, DOEPCTL0_SPEC, O>;
 #[doc = "Field `CNAK` writer - Clear NAK"]
-pub type CNAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPCTL0_SPEC, bool, O>;
+pub type CNAK_W<'a, const O: u8> = crate::BitWriter<'a, DOEPCTL0_SPEC, O>;
 #[doc = "Field `SNAK` writer - Set NAK"]
-pub type SNAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPCTL0_SPEC, bool, O>;
+pub type SNAK_W<'a, const O: u8> = crate::BitWriter<'a, DOEPCTL0_SPEC, O>;
 #[doc = "Field `EPDis` reader - Endpoint Disable"]
-pub type EPDIS_R = crate::BitReader<bool>;
+pub type EPDIS_R = crate::BitReader;
 #[doc = "Field `EPEna` reader - Endpoint Enable"]
-pub type EPENA_R = crate::BitReader<bool>;
+pub type EPENA_R = crate::BitReader;
 #[doc = "Field `EPEna` writer - Endpoint Enable"]
-pub type EPENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, DOEPCTL0_SPEC, bool, O>;
+pub type EPENA_W<'a, const O: u8> = crate::BitWriter<'a, DOEPCTL0_SPEC, O>;
 impl R {
     #[doc = "Bits 0:1 - Maximum Packet Size"]
     #[inline(always)]

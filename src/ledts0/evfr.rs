@@ -35,11 +35,11 @@ impl From<crate::W<EVFR_SPEC>> for W {
     }
 }
 #[doc = "Field `TSF` reader - Time Slice Interrupt Flag"]
-pub type TSF_R = crate::BitReader<bool>;
+pub type TSF_R = crate::BitReader;
 #[doc = "Field `TFF` reader - (Extended) Time Frame Interrupt Flag"]
-pub type TFF_R = crate::BitReader<bool>;
+pub type TFF_R = crate::BitReader;
 #[doc = "Field `TPF` reader - Autoscan Time Period Interrupt Flag"]
-pub type TPF_R = crate::BitReader<bool>;
+pub type TPF_R = crate::BitReader;
 #[doc = "Field `TSCTROVF` reader - TS-Counter Overflow Indication"]
 pub type TSCTROVF_R = crate::BitReader<TSCTROVF_A>;
 #[doc = "TS-Counter Overflow Indication\n\nValue on reset: 0"]
@@ -91,7 +91,7 @@ impl From<CTSF_AW> for bool {
     }
 }
 #[doc = "Field `CTSF` writer - Clear Time Slice Interrupt Flag"]
-pub type CTSF_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFR_SPEC, CTSF_AW, O>;
+pub type CTSF_W<'a, const O: u8> = crate::BitWriter<'a, EVFR_SPEC, O, CTSF_AW>;
 impl<'a, const O: u8> CTSF_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
@@ -119,7 +119,7 @@ impl From<CTFF_AW> for bool {
     }
 }
 #[doc = "Field `CTFF` writer - Clear (Extended) Time Frame Interrupt Flag"]
-pub type CTFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFR_SPEC, CTFF_AW, O>;
+pub type CTFF_W<'a, const O: u8> = crate::BitWriter<'a, EVFR_SPEC, O, CTFF_AW>;
 impl<'a, const O: u8> CTFF_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]
@@ -147,7 +147,7 @@ impl From<CTPF_AW> for bool {
     }
 }
 #[doc = "Field `CTPF` writer - Clear Autoscan Time Period Interrupt Flag"]
-pub type CTPF_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFR_SPEC, CTPF_AW, O>;
+pub type CTPF_W<'a, const O: u8> = crate::BitWriter<'a, EVFR_SPEC, O, CTPF_AW>;
 impl<'a, const O: u8> CTPF_W<'a, O> {
     #[doc = "No action."]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<RAM_SIZE_SPEC>> for R {
     }
 }
 #[doc = "Field `RAM_Size` reader - Process Data RAM size supported by the EtherCAT Slave Controller in KByte"]
-pub type RAM_SIZE_R = crate::FieldReader<u8, u8>;
+pub type RAM_SIZE_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Process Data RAM size supported by the EtherCAT Slave Controller in KByte"]
     #[inline(always)]

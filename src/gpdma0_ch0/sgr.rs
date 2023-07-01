@@ -35,13 +35,13 @@ impl From<crate::W<SGR_SPEC>> for W {
     }
 }
 #[doc = "Field `SGI` reader - Source gather interval"]
-pub type SGI_R = crate::FieldReader<u32, u32>;
+pub type SGI_R = crate::FieldReader<u32>;
 #[doc = "Field `SGI` writer - Source gather interval"]
-pub type SGI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SGR_SPEC, u32, u32, 20, O>;
+pub type SGI_W<'a, const O: u8> = crate::FieldWriter<'a, SGR_SPEC, 20, O, u32>;
 #[doc = "Field `SGC` reader - Source gather count"]
-pub type SGC_R = crate::FieldReader<u16, u16>;
+pub type SGC_R = crate::FieldReader<u16>;
 #[doc = "Field `SGC` writer - Source gather count"]
-pub type SGC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SGR_SPEC, u16, u16, 12, O>;
+pub type SGC_W<'a, const O: u8> = crate::FieldWriter<'a, SGR_SPEC, 12, O, u16>;
 impl R {
     #[doc = "Bits 0:19 - Source gather interval"]
     #[inline(always)]
