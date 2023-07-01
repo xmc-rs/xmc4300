@@ -35,17 +35,17 @@ impl From<crate::W<PWRMON_SPEC>> for W {
     }
 }
 #[doc = "Field `THRS` reader - Threshold"]
-pub type THRS_R = crate::FieldReader<u8, u8>;
+pub type THRS_R = crate::FieldReader;
 #[doc = "Field `THRS` writer - Threshold"]
-pub type THRS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PWRMON_SPEC, u8, u8, 8, O>;
+pub type THRS_W<'a, const O: u8> = crate::FieldWriter<'a, PWRMON_SPEC, 8, O>;
 #[doc = "Field `INTV` reader - Interval"]
-pub type INTV_R = crate::FieldReader<u8, u8>;
+pub type INTV_R = crate::FieldReader;
 #[doc = "Field `INTV` writer - Interval"]
-pub type INTV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PWRMON_SPEC, u8, u8, 8, O>;
+pub type INTV_W<'a, const O: u8> = crate::FieldWriter<'a, PWRMON_SPEC, 8, O>;
 #[doc = "Field `ENB` reader - Enable"]
-pub type ENB_R = crate::BitReader<bool>;
+pub type ENB_R = crate::BitReader;
 #[doc = "Field `ENB` writer - Enable"]
-pub type ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWRMON_SPEC, bool, O>;
+pub type ENB_W<'a, const O: u8> = crate::BitWriter<'a, PWRMON_SPEC, O>;
 impl R {
     #[doc = "Bits 0:7 - Threshold"]
     #[inline(always)]

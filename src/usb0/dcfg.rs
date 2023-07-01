@@ -35,7 +35,7 @@ impl From<crate::W<DCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `DevSpd` reader - Device Speed"]
-pub type DEV_SPD_R = crate::FieldReader<u8, DEV_SPD_A>;
+pub type DEV_SPD_R = crate::FieldReader<DEV_SPD_A>;
 #[doc = "Device Speed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -48,6 +48,9 @@ impl From<DEV_SPD_A> for u8 {
     fn from(variant: DEV_SPD_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DEV_SPD_A {
+    type Ux = u8;
 }
 impl DEV_SPD_R {
     #[doc = "Get enumerated values variant"]
@@ -65,7 +68,7 @@ impl DEV_SPD_R {
     }
 }
 #[doc = "Field `DevSpd` writer - Device Speed"]
-pub type DEV_SPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCFG_SPEC, u8, DEV_SPD_A, 2, O>;
+pub type DEV_SPD_W<'a, const O: u8> = crate::FieldWriter<'a, DCFG_SPEC, 2, O, DEV_SPD_A>;
 impl<'a, const O: u8> DEV_SPD_W<'a, O> {
     #[doc = "Full speed (USB 1.1 transceiver clock is 48 MHz)"]
     #[inline(always)]
@@ -110,7 +113,7 @@ impl NZSTS_OUTHSHK_R {
     }
 }
 #[doc = "Field `NZStsOUTHShk` writer - Non-Zero-Length Status OUT Handshake"]
-pub type NZSTS_OUTHSHK_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFG_SPEC, NZSTS_OUTHSHK_A, O>;
+pub type NZSTS_OUTHSHK_W<'a, const O: u8> = crate::BitWriter<'a, DCFG_SPEC, O, NZSTS_OUTHSHK_A>;
 impl<'a, const O: u8> NZSTS_OUTHSHK_W<'a, O> {
     #[doc = "Send a STALL handshake on a nonzero-length status OUT transaction and do not send the received OUT packet to the application."]
     #[inline(always)]
@@ -124,11 +127,11 @@ impl<'a, const O: u8> NZSTS_OUTHSHK_W<'a, O> {
     }
 }
 #[doc = "Field `DevAddr` reader - Device Address"]
-pub type DEV_ADDR_R = crate::FieldReader<u8, u8>;
+pub type DEV_ADDR_R = crate::FieldReader;
 #[doc = "Field `DevAddr` writer - Device Address"]
-pub type DEV_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCFG_SPEC, u8, u8, 7, O>;
+pub type DEV_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, DCFG_SPEC, 7, O>;
 #[doc = "Field `PerFrInt` reader - Periodic Frame Interval"]
-pub type PER_FR_INT_R = crate::FieldReader<u8, PER_FR_INT_A>;
+pub type PER_FR_INT_R = crate::FieldReader<PER_FR_INT_A>;
 #[doc = "Periodic Frame Interval\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -147,6 +150,9 @@ impl From<PER_FR_INT_A> for u8 {
     fn from(variant: PER_FR_INT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PER_FR_INT_A {
+    type Ux = u8;
 }
 impl PER_FR_INT_R {
     #[doc = "Get enumerated values variant"]
@@ -182,7 +188,7 @@ impl PER_FR_INT_R {
     }
 }
 #[doc = "Field `PerFrInt` writer - Periodic Frame Interval"]
-pub type PER_FR_INT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DCFG_SPEC, u8, PER_FR_INT_A, 2, O>;
+pub type PER_FR_INT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DCFG_SPEC, 2, O, PER_FR_INT_A>;
 impl<'a, const O: u8> PER_FR_INT_W<'a, O> {
     #[doc = "80% of the frame interval"]
     #[inline(always)]
@@ -206,11 +212,11 @@ impl<'a, const O: u8> PER_FR_INT_W<'a, O> {
     }
 }
 #[doc = "Field `DescDMA` reader - Enable Scatter/Gather DMA in Device mode."]
-pub type DESC_DMA_R = crate::BitReader<bool>;
+pub type DESC_DMA_R = crate::BitReader;
 #[doc = "Field `DescDMA` writer - Enable Scatter/Gather DMA in Device mode."]
-pub type DESC_DMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFG_SPEC, bool, O>;
+pub type DESC_DMA_W<'a, const O: u8> = crate::BitWriter<'a, DCFG_SPEC, O>;
 #[doc = "Field `PerSchIntvl` reader - Periodic Scheduling Interval"]
-pub type PER_SCH_INTVL_R = crate::FieldReader<u8, PER_SCH_INTVL_A>;
+pub type PER_SCH_INTVL_R = crate::FieldReader<PER_SCH_INTVL_A>;
 #[doc = "Periodic Scheduling Interval\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -227,6 +233,9 @@ impl From<PER_SCH_INTVL_A> for u8 {
     fn from(variant: PER_SCH_INTVL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PER_SCH_INTVL_A {
+    type Ux = u8;
 }
 impl PER_SCH_INTVL_R {
     #[doc = "Get enumerated values variant"]
@@ -256,7 +265,7 @@ impl PER_SCH_INTVL_R {
     }
 }
 #[doc = "Field `PerSchIntvl` writer - Periodic Scheduling Interval"]
-pub type PER_SCH_INTVL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCFG_SPEC, u8, PER_SCH_INTVL_A, 2, O>;
+pub type PER_SCH_INTVL_W<'a, const O: u8> = crate::FieldWriter<'a, DCFG_SPEC, 2, O, PER_SCH_INTVL_A>;
 impl<'a, const O: u8> PER_SCH_INTVL_W<'a, O> {
     #[doc = "25% of frame."]
     #[inline(always)]

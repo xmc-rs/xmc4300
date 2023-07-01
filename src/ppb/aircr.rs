@@ -35,9 +35,9 @@ impl From<crate::W<AIRCR_SPEC>> for W {
     }
 }
 #[doc = "Field `VECTRESET` writer - Reserved for Debug use."]
-pub type VECTRESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, AIRCR_SPEC, bool, O>;
+pub type VECTRESET_W<'a, const O: u8> = crate::BitWriter<'a, AIRCR_SPEC, O>;
 #[doc = "Field `VECTCLRACTIVE` writer - Reserved for Debug use."]
-pub type VECTCLRACTIVE_W<'a, const O: u8> = crate::BitWriter<'a, u32, AIRCR_SPEC, bool, O>;
+pub type VECTCLRACTIVE_W<'a, const O: u8> = crate::BitWriter<'a, AIRCR_SPEC, O>;
 #[doc = "System reset request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYSRESETREQ_AW {
@@ -53,7 +53,7 @@ impl From<SYSRESETREQ_AW> for bool {
     }
 }
 #[doc = "Field `SYSRESETREQ` writer - System reset request"]
-pub type SYSRESETREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, AIRCR_SPEC, SYSRESETREQ_AW, O>;
+pub type SYSRESETREQ_W<'a, const O: u8> = crate::BitWriter<'a, AIRCR_SPEC, O, SYSRESETREQ_AW>;
 impl<'a, const O: u8> SYSRESETREQ_W<'a, O> {
     #[doc = "no system reset request"]
     #[inline(always)]
@@ -67,9 +67,9 @@ impl<'a, const O: u8> SYSRESETREQ_W<'a, O> {
     }
 }
 #[doc = "Field `PRIGROUP` reader - Interrupt priority grouping field"]
-pub type PRIGROUP_R = crate::FieldReader<u8, u8>;
+pub type PRIGROUP_R = crate::FieldReader;
 #[doc = "Field `PRIGROUP` writer - Interrupt priority grouping field"]
-pub type PRIGROUP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AIRCR_SPEC, u8, u8, 3, O>;
+pub type PRIGROUP_W<'a, const O: u8> = crate::FieldWriter<'a, AIRCR_SPEC, 3, O>;
 #[doc = "Field `ENDIANNESS` reader - Data endianness bit"]
 pub type ENDIANNESS_R = crate::BitReader<ENDIANNESS_A>;
 #[doc = "Data endianness bit\n\nValue on reset: 0"]
@@ -107,9 +107,9 @@ impl ENDIANNESS_R {
     }
 }
 #[doc = "Field `VECTKEY` reader - Register key"]
-pub type VECTKEY_R = crate::FieldReader<u16, u16>;
+pub type VECTKEY_R = crate::FieldReader<u16>;
 #[doc = "Field `VECTKEY` writer - Register key"]
-pub type VECTKEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AIRCR_SPEC, u16, u16, 16, O>;
+pub type VECTKEY_W<'a, const O: u8> = crate::FieldWriter<'a, AIRCR_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 8:10 - Interrupt priority grouping field"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<RX_LENGTH_ERROR_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXLENERR` reader - This field indicates the number of frames received with length error (Length type field not equal to frame size) for all frames with valid length field."]
-pub type RXLENERR_R = crate::FieldReader<u32, u32>;
+pub type RXLENERR_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of frames received with length error (Length type field not equal to frame size) for all frames with valid length field."]
     #[inline(always)]

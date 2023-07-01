@@ -14,9 +14,9 @@ impl From<crate::R<DSTS_SPEC>> for R {
     }
 }
 #[doc = "Field `SuspSts` reader - Suspend Status"]
-pub type SUSP_STS_R = crate::BitReader<bool>;
+pub type SUSP_STS_R = crate::BitReader;
 #[doc = "Field `EnumSpd` reader - Enumerated Speed"]
-pub type ENUM_SPD_R = crate::FieldReader<u8, ENUM_SPD_A>;
+pub type ENUM_SPD_R = crate::FieldReader<ENUM_SPD_A>;
 #[doc = "Enumerated Speed\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -29,6 +29,9 @@ impl From<ENUM_SPD_A> for u8 {
     fn from(variant: ENUM_SPD_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ENUM_SPD_A {
+    type Ux = u8;
 }
 impl ENUM_SPD_R {
     #[doc = "Get enumerated values variant"]
@@ -46,9 +49,9 @@ impl ENUM_SPD_R {
     }
 }
 #[doc = "Field `ErrticErr` reader - Erratic Error"]
-pub type ERRTIC_ERR_R = crate::BitReader<bool>;
+pub type ERRTIC_ERR_R = crate::BitReader;
 #[doc = "Field `SOFFN` reader - Frame Number of the Received SOF"]
-pub type SOFFN_R = crate::FieldReader<u16, u16>;
+pub type SOFFN_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bit 0 - Suspend Status"]
     #[inline(always)]

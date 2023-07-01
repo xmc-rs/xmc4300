@@ -71,7 +71,7 @@ impl MTENPS_R {
     }
 }
 #[doc = "Field `MTENPS` writer - Test Enable Control for PSRAM"]
-pub type MTENPS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMTSR_SPEC, MTENPS_A, O>;
+pub type MTENPS_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTENPS_A>;
 impl<'a, const O: u8> MTENPS_W<'a, O> {
     #[doc = "Standard operation"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl MTENDS1_R {
     }
 }
 #[doc = "Field `MTENDS1` writer - Test Enable Control for DSRAM1"]
-pub type MTENDS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMTSR_SPEC, MTENDS1_A, O>;
+pub type MTENDS1_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTENDS1_A>;
 impl<'a, const O: u8> MTENDS1_W<'a, O> {
     #[doc = "Standard operation"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl MTEU0_R {
     }
 }
 #[doc = "Field `MTEU0` writer - Test Enable Control for USIC0 Memory"]
-pub type MTEU0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMTSR_SPEC, MTEU0_A, O>;
+pub type MTEU0_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTEU0_A>;
 impl<'a, const O: u8> MTEU0_W<'a, O> {
     #[doc = "Standard operation"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl MTEU1_R {
     }
 }
 #[doc = "Field `MTEU1` writer - Test Enable Control for USIC1 Memory"]
-pub type MTEU1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMTSR_SPEC, MTEU1_A, O>;
+pub type MTEU1_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTEU1_A>;
 impl<'a, const O: u8> MTEU1_W<'a, O> {
     #[doc = "Standard operation"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl MTEMC_R {
     }
 }
 #[doc = "Field `MTEMC` writer - Test Enable Control for MultiCAN Memory"]
-pub type MTEMC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMTSR_SPEC, MTEMC_A, O>;
+pub type MTEMC_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTEMC_A>;
 impl<'a, const O: u8> MTEMC_W<'a, O> {
     #[doc = "Standard operation"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl MTEPPRF_R {
     }
 }
 #[doc = "Field `MTEPPRF` writer - Test Enable Control for PMU Prefetch Memory"]
-pub type MTEPPRF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMTSR_SPEC, MTEPPRF_A, O>;
+pub type MTEPPRF_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTEPPRF_A>;
 impl<'a, const O: u8> MTEPPRF_W<'a, O> {
     #[doc = "Standard operation"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl MTUSB_R {
     }
 }
 #[doc = "Field `MTUSB` writer - Test Enable Control for USB Memory"]
-pub type MTUSB_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMTSR_SPEC, MTUSB_A, O>;
+pub type MTUSB_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTUSB_A>;
 impl<'a, const O: u8> MTUSB_W<'a, O> {
     #[doc = "Standard operation"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl MTETH0TX_R {
     }
 }
 #[doc = "Field `MTETH0TX` writer - Test Enable Control for ETH TX Memory"]
-pub type MTETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMTSR_SPEC, MTETH0TX_A, O>;
+pub type MTETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTETH0TX_A>;
 impl<'a, const O: u8> MTETH0TX_W<'a, O> {
     #[doc = "Standard operation"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl MTETH0RX_R {
     }
 }
 #[doc = "Field `MTETH0RX` writer - Test Enable Control for ETH RX Memory"]
-pub type MTETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMTSR_SPEC, MTETH0RX_A, O>;
+pub type MTETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTETH0RX_A>;
 impl<'a, const O: u8> MTETH0RX_W<'a, O> {
     #[doc = "Standard operation"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl MTSD0_R {
     }
 }
 #[doc = "Field `MTSD0` writer - Test Enable Control for SDMMC Memory 0"]
-pub type MTSD0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMTSR_SPEC, MTSD0_A, O>;
+pub type MTSD0_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTSD0_A>;
 impl<'a, const O: u8> MTSD0_W<'a, O> {
     #[doc = "Standard operation"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl MTSD1_R {
     }
 }
 #[doc = "Field `MTSD1` writer - Test Enable Control for SDMMC Memory 1"]
-pub type MTSD1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMTSR_SPEC, MTSD1_A, O>;
+pub type MTSD1_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTSD1_A>;
 impl<'a, const O: u8> MTSD1_W<'a, O> {
     #[doc = "Standard operation"]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl MTECAT0_R {
     }
 }
 #[doc = "Field `MTECAT0` writer - Test Enable Control for ECAT0 Memory"]
-pub type MTECAT0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PMTSR_SPEC, MTECAT0_A, O>;
+pub type MTECAT0_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTECAT0_A>;
 impl<'a, const O: u8> MTECAT0_W<'a, O> {
     #[doc = "Standard operation"]
     #[inline(always)]

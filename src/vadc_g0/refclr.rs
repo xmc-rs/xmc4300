@@ -34,7 +34,7 @@ impl From<REV0_AW> for bool {
     }
 }
 #[doc = "Field `REV0` writer - Clear Result Event for Result Register 0"]
-pub type REV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV0_AW, O>;
+pub type REV0_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV0_AW>;
 impl<'a, const O: u8> REV0_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<REV1_AW> for bool {
     }
 }
 #[doc = "Field `REV1` writer - Clear Result Event for Result Register 1"]
-pub type REV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV1_AW, O>;
+pub type REV1_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV1_AW>;
 impl<'a, const O: u8> REV1_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<REV2_AW> for bool {
     }
 }
 #[doc = "Field `REV2` writer - Clear Result Event for Result Register 2"]
-pub type REV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV2_AW, O>;
+pub type REV2_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV2_AW>;
 impl<'a, const O: u8> REV2_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<REV3_AW> for bool {
     }
 }
 #[doc = "Field `REV3` writer - Clear Result Event for Result Register 3"]
-pub type REV3_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV3_AW, O>;
+pub type REV3_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV3_AW>;
 impl<'a, const O: u8> REV3_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<REV4_AW> for bool {
     }
 }
 #[doc = "Field `REV4` writer - Clear Result Event for Result Register 4"]
-pub type REV4_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV4_AW, O>;
+pub type REV4_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV4_AW>;
 impl<'a, const O: u8> REV4_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<REV5_AW> for bool {
     }
 }
 #[doc = "Field `REV5` writer - Clear Result Event for Result Register 5"]
-pub type REV5_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV5_AW, O>;
+pub type REV5_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV5_AW>;
 impl<'a, const O: u8> REV5_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -202,7 +202,7 @@ impl From<REV6_AW> for bool {
     }
 }
 #[doc = "Field `REV6` writer - Clear Result Event for Result Register 6"]
-pub type REV6_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV6_AW, O>;
+pub type REV6_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV6_AW>;
 impl<'a, const O: u8> REV6_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -230,7 +230,7 @@ impl From<REV7_AW> for bool {
     }
 }
 #[doc = "Field `REV7` writer - Clear Result Event for Result Register 7"]
-pub type REV7_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV7_AW, O>;
+pub type REV7_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV7_AW>;
 impl<'a, const O: u8> REV7_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -258,7 +258,7 @@ impl From<REV8_AW> for bool {
     }
 }
 #[doc = "Field `REV8` writer - Clear Result Event for Result Register 8"]
-pub type REV8_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV8_AW, O>;
+pub type REV8_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV8_AW>;
 impl<'a, const O: u8> REV8_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -286,7 +286,7 @@ impl From<REV9_AW> for bool {
     }
 }
 #[doc = "Field `REV9` writer - Clear Result Event for Result Register 9"]
-pub type REV9_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV9_AW, O>;
+pub type REV9_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV9_AW>;
 impl<'a, const O: u8> REV9_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -314,7 +314,7 @@ impl From<REV10_AW> for bool {
     }
 }
 #[doc = "Field `REV10` writer - Clear Result Event for Result Register 10"]
-pub type REV10_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV10_AW, O>;
+pub type REV10_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV10_AW>;
 impl<'a, const O: u8> REV10_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -342,7 +342,7 @@ impl From<REV11_AW> for bool {
     }
 }
 #[doc = "Field `REV11` writer - Clear Result Event for Result Register 11"]
-pub type REV11_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV11_AW, O>;
+pub type REV11_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV11_AW>;
 impl<'a, const O: u8> REV11_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -370,7 +370,7 @@ impl From<REV12_AW> for bool {
     }
 }
 #[doc = "Field `REV12` writer - Clear Result Event for Result Register 12"]
-pub type REV12_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV12_AW, O>;
+pub type REV12_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV12_AW>;
 impl<'a, const O: u8> REV12_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -398,7 +398,7 @@ impl From<REV13_AW> for bool {
     }
 }
 #[doc = "Field `REV13` writer - Clear Result Event for Result Register 13"]
-pub type REV13_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV13_AW, O>;
+pub type REV13_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV13_AW>;
 impl<'a, const O: u8> REV13_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -426,7 +426,7 @@ impl From<REV14_AW> for bool {
     }
 }
 #[doc = "Field `REV14` writer - Clear Result Event for Result Register 14"]
-pub type REV14_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV14_AW, O>;
+pub type REV14_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV14_AW>;
 impl<'a, const O: u8> REV14_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -454,7 +454,7 @@ impl From<REV15_AW> for bool {
     }
 }
 #[doc = "Field `REV15` writer - Clear Result Event for Result Register 15"]
-pub type REV15_W<'a, const O: u8> = crate::BitWriter<'a, u32, REFCLR_SPEC, REV15_AW, O>;
+pub type REV15_W<'a, const O: u8> = crate::BitWriter<'a, REFCLR_SPEC, O, REV15_AW>;
 impl<'a, const O: u8> REV15_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl PEFPS_R {
     }
 }
 #[doc = "Field `PEFPS` writer - Parity Error Flag for PSRAM"]
-pub type PEFPS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFPS_A, O>;
+pub type PEFPS_W<'a, const O: u8> = crate::BitWriter<'a, PEFLAG_SPEC, O, PEFPS_A>;
 impl<'a, const O: u8> PEFPS_W<'a, O> {
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl PEFDS1_R {
     }
 }
 #[doc = "Field `PEFDS1` writer - Parity Error Flag for DSRAM1"]
-pub type PEFDS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFDS1_A, O>;
+pub type PEFDS1_W<'a, const O: u8> = crate::BitWriter<'a, PEFLAG_SPEC, O, PEFDS1_A>;
 impl<'a, const O: u8> PEFDS1_W<'a, O> {
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl PEFU0_R {
     }
 }
 #[doc = "Field `PEFU0` writer - Parity Error Flag for USIC0 Memory"]
-pub type PEFU0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFU0_A, O>;
+pub type PEFU0_W<'a, const O: u8> = crate::BitWriter<'a, PEFLAG_SPEC, O, PEFU0_A>;
 impl<'a, const O: u8> PEFU0_W<'a, O> {
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl PEFU1_R {
     }
 }
 #[doc = "Field `PEFU1` writer - Parity Error Flag for USIC1 Memory"]
-pub type PEFU1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFU1_A, O>;
+pub type PEFU1_W<'a, const O: u8> = crate::BitWriter<'a, PEFLAG_SPEC, O, PEFU1_A>;
 impl<'a, const O: u8> PEFU1_W<'a, O> {
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl PEFMC_R {
     }
 }
 #[doc = "Field `PEFMC` writer - Parity Error Flag for MultiCAN Memory"]
-pub type PEFMC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFMC_A, O>;
+pub type PEFMC_W<'a, const O: u8> = crate::BitWriter<'a, PEFLAG_SPEC, O, PEFMC_A>;
 impl<'a, const O: u8> PEFMC_W<'a, O> {
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl PEFPPRF_R {
     }
 }
 #[doc = "Field `PEFPPRF` writer - Parity Error Flag for PMU Prefetch Memory"]
-pub type PEFPPRF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEFPPRF_A, O>;
+pub type PEFPPRF_W<'a, const O: u8> = crate::BitWriter<'a, PEFLAG_SPEC, O, PEFPPRF_A>;
 impl<'a, const O: u8> PEFPPRF_W<'a, O> {
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl PEUSB_R {
     }
 }
 #[doc = "Field `PEUSB` writer - Parity Error Flag for USB Memory"]
-pub type PEUSB_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEUSB_A, O>;
+pub type PEUSB_W<'a, const O: u8> = crate::BitWriter<'a, PEFLAG_SPEC, O, PEUSB_A>;
 impl<'a, const O: u8> PEUSB_W<'a, O> {
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl PEETH0TX_R {
     }
 }
 #[doc = "Field `PEETH0TX` writer - Parity Error Flag for ETH TX Memory"]
-pub type PEETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEETH0TX_A, O>;
+pub type PEETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, PEFLAG_SPEC, O, PEETH0TX_A>;
 impl<'a, const O: u8> PEETH0TX_W<'a, O> {
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl PEETH0RX_R {
     }
 }
 #[doc = "Field `PEETH0RX` writer - Parity Error Flag for ETH RX Memory"]
-pub type PEETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEETH0RX_A, O>;
+pub type PEETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, PEFLAG_SPEC, O, PEETH0RX_A>;
 impl<'a, const O: u8> PEETH0RX_W<'a, O> {
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl PESD0_R {
     }
 }
 #[doc = "Field `PESD0` writer - Parity Error Flag for SDMMC Memory 0"]
-pub type PESD0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PESD0_A, O>;
+pub type PESD0_W<'a, const O: u8> = crate::BitWriter<'a, PEFLAG_SPEC, O, PESD0_A>;
 impl<'a, const O: u8> PESD0_W<'a, O> {
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl PESD1_R {
     }
 }
 #[doc = "Field `PESD1` writer - Parity Error Flag for SDMMC Memory 1"]
-pub type PESD1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PESD1_A, O>;
+pub type PESD1_W<'a, const O: u8> = crate::BitWriter<'a, PEFLAG_SPEC, O, PESD1_A>;
 impl<'a, const O: u8> PESD1_W<'a, O> {
     #[doc = "No parity error detected"]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl PEECAT0_R {
     }
 }
 #[doc = "Field `PEECAT0` writer - Parity Error Flag for ECAT0 Memory"]
-pub type PEECAT0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEFLAG_SPEC, PEECAT0_A, O>;
+pub type PEECAT0_W<'a, const O: u8> = crate::BitWriter<'a, PEFLAG_SPEC, O, PEECAT0_A>;
 impl<'a, const O: u8> PEECAT0_W<'a, O> {
     #[doc = "No parity error detected"]
     #[inline(always)]

@@ -35,15 +35,15 @@ impl From<crate::W<NFCR_SPEC>> for W {
     }
 }
 #[doc = "Field `CFC` reader - CAN Frame Counter"]
-pub type CFC_R = crate::FieldReader<u16, u16>;
+pub type CFC_R = crate::FieldReader<u16>;
 #[doc = "Field `CFC` writer - CAN Frame Counter"]
-pub type CFC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NFCR_SPEC, u16, u16, 16, O>;
+pub type CFC_W<'a, const O: u8> = crate::FieldWriter<'a, NFCR_SPEC, 16, O, u16>;
 #[doc = "Field `CFSEL` reader - CAN Frame Count Selection"]
-pub type CFSEL_R = crate::FieldReader<u8, u8>;
+pub type CFSEL_R = crate::FieldReader;
 #[doc = "Field `CFSEL` writer - CAN Frame Count Selection"]
-pub type CFSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NFCR_SPEC, u8, u8, 3, O>;
+pub type CFSEL_W<'a, const O: u8> = crate::FieldWriter<'a, NFCR_SPEC, 3, O>;
 #[doc = "Field `CFMOD` reader - CAN Frame Counter Mode"]
-pub type CFMOD_R = crate::FieldReader<u8, CFMOD_A>;
+pub type CFMOD_R = crate::FieldReader<CFMOD_A>;
 #[doc = "CAN Frame Counter Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -62,6 +62,9 @@ impl From<CFMOD_A> for u8 {
     fn from(variant: CFMOD_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CFMOD_A {
+    type Ux = u8;
 }
 impl CFMOD_R {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl CFMOD_R {
     }
 }
 #[doc = "Field `CFMOD` writer - CAN Frame Counter Mode"]
-pub type CFMOD_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, NFCR_SPEC, u8, CFMOD_A, 2, O>;
+pub type CFMOD_W<'a, const O: u8> = crate::FieldWriterSafe<'a, NFCR_SPEC, 2, O, CFMOD_A>;
 impl<'a, const O: u8> CFMOD_W<'a, O> {
     #[doc = "Frame Count Mode: The frame counter is incremented upon the reception and transmission of frames."]
     #[inline(always)]
@@ -157,7 +160,7 @@ impl CFCIE_R {
     }
 }
 #[doc = "Field `CFCIE` writer - CAN Frame Count Interrupt Enable"]
-pub type CFCIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, NFCR_SPEC, CFCIE_A, O>;
+pub type CFCIE_W<'a, const O: u8> = crate::BitWriter<'a, NFCR_SPEC, O, CFCIE_A>;
 impl<'a, const O: u8> CFCIE_W<'a, O> {
     #[doc = "CAN frame counter overflow interrupt is disabled."]
     #[inline(always)]
@@ -207,7 +210,7 @@ impl CFCOV_R {
     }
 }
 #[doc = "Field `CFCOV` writer - CAN Frame Counter Overflow Flag"]
-pub type CFCOV_W<'a, const O: u8> = crate::BitWriter<'a, u32, NFCR_SPEC, CFCOV_A, O>;
+pub type CFCOV_W<'a, const O: u8> = crate::BitWriter<'a, NFCR_SPEC, O, CFCOV_A>;
 impl<'a, const O: u8> CFCOV_W<'a, O> {
     #[doc = "No overflow has occurred since last flag reset."]
     #[inline(always)]

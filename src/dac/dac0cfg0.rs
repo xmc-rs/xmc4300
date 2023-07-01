@@ -35,11 +35,11 @@ impl From<crate::W<DAC0CFG0_SPEC>> for W {
     }
 }
 #[doc = "Field `FREQ` reader - Integer Frequency Divider Value"]
-pub type FREQ_R = crate::FieldReader<u32, u32>;
+pub type FREQ_R = crate::FieldReader<u32>;
 #[doc = "Field `FREQ` writer - Integer Frequency Divider Value"]
-pub type FREQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC0CFG0_SPEC, u32, u32, 20, O>;
+pub type FREQ_W<'a, const O: u8> = crate::FieldWriter<'a, DAC0CFG0_SPEC, 20, O, u32>;
 #[doc = "Field `MODE` reader - Enables and Sets the Mode for DAC0"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
+pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "Enables and Sets the Mode for DAC0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -66,6 +66,9 @@ impl From<MODE_A> for u8 {
     fn from(variant: MODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MODE_A {
+    type Ux = u8;
 }
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -125,7 +128,7 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Enables and Sets the Mode for DAC0"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DAC0CFG0_SPEC, u8, MODE_A, 3, O>;
+pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DAC0CFG0_SPEC, 3, O, MODE_A>;
 impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "disable/switch-off DAC"]
     #[inline(always)]
@@ -205,7 +208,7 @@ impl SIGN_R {
     }
 }
 #[doc = "Field `SIGN` writer - Selects Between Signed and Unsigned DAC0 Mode"]
-pub type SIGN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAC0CFG0_SPEC, SIGN_A, O>;
+pub type SIGN_W<'a, const O: u8> = crate::BitWriter<'a, DAC0CFG0_SPEC, O, SIGN_A>;
 impl<'a, const O: u8> SIGN_W<'a, O> {
     #[doc = "DAC expects unsigned input data"]
     #[inline(always)]
@@ -219,7 +222,7 @@ impl<'a, const O: u8> SIGN_W<'a, O> {
     }
 }
 #[doc = "Field `FIFOIND` reader - Current write position inside the data FIFO"]
-pub type FIFOIND_R = crate::FieldReader<u8, u8>;
+pub type FIFOIND_R = crate::FieldReader;
 #[doc = "Field `FIFOEMP` reader - Indicate if the FIFO is empty"]
 pub type FIFOEMP_R = crate::BitReader<FIFOEMP_A>;
 #[doc = "Indicate if the FIFO is empty\n\nValue on reset: 0"]
@@ -329,7 +332,7 @@ impl NEGATE_R {
     }
 }
 #[doc = "Field `NEGATE` writer - Negates the DAC0 output"]
-pub type NEGATE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAC0CFG0_SPEC, NEGATE_A, O>;
+pub type NEGATE_W<'a, const O: u8> = crate::BitWriter<'a, DAC0CFG0_SPEC, O, NEGATE_A>;
 impl<'a, const O: u8> NEGATE_W<'a, O> {
     #[doc = "DAC output not negated"]
     #[inline(always)]
@@ -379,7 +382,7 @@ impl SIGNEN_R {
     }
 }
 #[doc = "Field `SIGNEN` writer - Enable Sign Output of DAC0 Pattern Generator"]
-pub type SIGNEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAC0CFG0_SPEC, SIGNEN_A, O>;
+pub type SIGNEN_W<'a, const O: u8> = crate::BitWriter<'a, DAC0CFG0_SPEC, O, SIGNEN_A>;
 impl<'a, const O: u8> SIGNEN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -429,7 +432,7 @@ impl SREN_R {
     }
 }
 #[doc = "Field `SREN` writer - Enable DAC0 service request interrupt generation"]
-pub type SREN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAC0CFG0_SPEC, SREN_A, O>;
+pub type SREN_W<'a, const O: u8> = crate::BitWriter<'a, DAC0CFG0_SPEC, O, SREN_A>;
 impl<'a, const O: u8> SREN_W<'a, O> {
     #[doc = "disable"]
     #[inline(always)]

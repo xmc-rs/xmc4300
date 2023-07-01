@@ -14,7 +14,7 @@ impl From<crate::R<HCDMAB_SPEC>> for R {
     }
 }
 #[doc = "Field `Buffer_Address` reader - Buffer Address"]
-pub type BUFFER_ADDRESS_R = crate::FieldReader<u32, u32>;
+pub type BUFFER_ADDRESS_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Buffer Address"]
     #[inline(always)]

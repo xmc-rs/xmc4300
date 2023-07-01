@@ -14,7 +14,7 @@ impl From<crate::R<DC_SYNC1_STAT_SPEC>> for R {
     }
 }
 #[doc = "Field `S1_STATE` reader - SYNC1 state for Acknowledge mode"]
-pub type S1_STATE_R = crate::BitReader<bool>;
+pub type S1_STATE_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - SYNC1 state for Acknowledge mode"]
     #[inline(always)]

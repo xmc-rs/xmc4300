@@ -71,7 +71,7 @@ impl LSPACT_R {
     }
 }
 #[doc = "Field `LSPACT` writer - Lazy State Preservation Active"]
-pub type LSPACT_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, LSPACT_A, O>;
+pub type LSPACT_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, LSPACT_A>;
 impl<'a, const O: u8> LSPACT_W<'a, O> {
     #[doc = "Lazy state preservation is not active."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl USER_R {
     }
 }
 #[doc = "Field `USER` writer - User allocated Stack Frame"]
-pub type USER_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, USER_A, O>;
+pub type USER_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, USER_A>;
 impl<'a, const O: u8> USER_W<'a, O> {
     #[doc = "Privilege level was not user when the floating-point stack frame was allocated."]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl THREAD_R {
     }
 }
 #[doc = "Field `THREAD` writer - Thread Mode allocated Stack Frame"]
-pub type THREAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, THREAD_A, O>;
+pub type THREAD_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, THREAD_A>;
 impl<'a, const O: u8> THREAD_W<'a, O> {
     #[doc = "Mode was not Thread Mode when the floating-point stack frame was allocated."]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl HFRDY_R {
     }
 }
 #[doc = "Field `HFRDY` writer - HardFault Ready"]
-pub type HFRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, HFRDY_A, O>;
+pub type HFRDY_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, HFRDY_A>;
 impl<'a, const O: u8> HFRDY_W<'a, O> {
     #[doc = "Priority did not permit setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl MMRDY_R {
     }
 }
 #[doc = "Field `MMRDY` writer - MemManage Ready"]
-pub type MMRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, MMRDY_A, O>;
+pub type MMRDY_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, MMRDY_A>;
 impl<'a, const O: u8> MMRDY_W<'a, O> {
     #[doc = "MemManage is disabled or priority did not permit setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl BFRDY_R {
     }
 }
 #[doc = "Field `BFRDY` writer - BusFault Ready"]
-pub type BFRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, BFRDY_A, O>;
+pub type BFRDY_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, BFRDY_A>;
 impl<'a, const O: u8> BFRDY_W<'a, O> {
     #[doc = "BusFault is disabled or priority did not permit setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl MONRDY_R {
     }
 }
 #[doc = "Field `MONRDY` writer - Monitor Ready"]
-pub type MONRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, MONRDY_A, O>;
+pub type MONRDY_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, MONRDY_A>;
 impl<'a, const O: u8> MONRDY_W<'a, O> {
     #[doc = "Debug Monitor is disabled or priority did not permit setting MON_PEND when the floating-point stack frame was allocated."]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl LSPEN_R {
     }
 }
 #[doc = "Field `LSPEN` writer - Lazy State Preservation Enabled"]
-pub type LSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, LSPEN_A, O>;
+pub type LSPEN_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, LSPEN_A>;
 impl<'a, const O: u8> LSPEN_W<'a, O> {
     #[doc = "Disable automatic lazy state preservation for floating-point context."]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl ASPEN_R {
     }
 }
 #[doc = "Field `ASPEN` writer - Automatic State Preservation"]
-pub type ASPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPCCR_SPEC, ASPEN_A, O>;
+pub type ASPEN_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, ASPEN_A>;
 impl<'a, const O: u8> ASPEN_W<'a, O> {
     #[doc = "Disable CONTROL setting on execution of a floating-point instruction."]
     #[inline(always)]

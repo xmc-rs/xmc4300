@@ -35,21 +35,21 @@ impl From<crate::W<TIM0_SPEC>> for W {
     }
 }
 #[doc = "Field `SE` reader - Seconds Time Value"]
-pub type SE_R = crate::FieldReader<u8, u8>;
+pub type SE_R = crate::FieldReader;
 #[doc = "Field `SE` writer - Seconds Time Value"]
-pub type SE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIM0_SPEC, u8, u8, 6, O>;
+pub type SE_W<'a, const O: u8> = crate::FieldWriter<'a, TIM0_SPEC, 6, O>;
 #[doc = "Field `MI` reader - Minutes Time Value"]
-pub type MI_R = crate::FieldReader<u8, u8>;
+pub type MI_R = crate::FieldReader;
 #[doc = "Field `MI` writer - Minutes Time Value"]
-pub type MI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIM0_SPEC, u8, u8, 6, O>;
+pub type MI_W<'a, const O: u8> = crate::FieldWriter<'a, TIM0_SPEC, 6, O>;
 #[doc = "Field `HO` reader - Hours Time Value"]
-pub type HO_R = crate::FieldReader<u8, u8>;
+pub type HO_R = crate::FieldReader;
 #[doc = "Field `HO` writer - Hours Time Value"]
-pub type HO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIM0_SPEC, u8, u8, 5, O>;
+pub type HO_W<'a, const O: u8> = crate::FieldWriter<'a, TIM0_SPEC, 5, O>;
 #[doc = "Field `DA` reader - Days Time Value"]
-pub type DA_R = crate::FieldReader<u8, u8>;
+pub type DA_R = crate::FieldReader;
 #[doc = "Field `DA` writer - Days Time Value"]
-pub type DA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIM0_SPEC, u8, u8, 5, O>;
+pub type DA_W<'a, const O: u8> = crate::FieldWriter<'a, TIM0_SPEC, 5, O>;
 impl R {
     #[doc = "Bits 0:5 - Seconds Time Value"]
     #[inline(always)]

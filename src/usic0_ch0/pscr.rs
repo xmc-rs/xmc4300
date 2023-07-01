@@ -34,7 +34,7 @@ impl From<CST0_AW> for bool {
     }
 }
 #[doc = "Field `CST0` writer - Clear Status Flag 0 in PSR"]
-pub type CST0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST0_AW, O>;
+pub type CST0_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CST0_AW>;
 impl<'a, const O: u8> CST0_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<CST1_AW> for bool {
     }
 }
 #[doc = "Field `CST1` writer - Clear Status Flag 1 in PSR"]
-pub type CST1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST1_AW, O>;
+pub type CST1_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CST1_AW>;
 impl<'a, const O: u8> CST1_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<CST2_AW> for bool {
     }
 }
 #[doc = "Field `CST2` writer - Clear Status Flag 2 in PSR"]
-pub type CST2_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST2_AW, O>;
+pub type CST2_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CST2_AW>;
 impl<'a, const O: u8> CST2_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<CST3_AW> for bool {
     }
 }
 #[doc = "Field `CST3` writer - Clear Status Flag 3 in PSR"]
-pub type CST3_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST3_AW, O>;
+pub type CST3_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CST3_AW>;
 impl<'a, const O: u8> CST3_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<CST4_AW> for bool {
     }
 }
 #[doc = "Field `CST4` writer - Clear Status Flag 4 in PSR"]
-pub type CST4_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST4_AW, O>;
+pub type CST4_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CST4_AW>;
 impl<'a, const O: u8> CST4_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<CST5_AW> for bool {
     }
 }
 #[doc = "Field `CST5` writer - Clear Status Flag 5 in PSR"]
-pub type CST5_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST5_AW, O>;
+pub type CST5_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CST5_AW>;
 impl<'a, const O: u8> CST5_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -202,7 +202,7 @@ impl From<CST6_AW> for bool {
     }
 }
 #[doc = "Field `CST6` writer - Clear Status Flag 6 in PSR"]
-pub type CST6_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST6_AW, O>;
+pub type CST6_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CST6_AW>;
 impl<'a, const O: u8> CST6_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -230,7 +230,7 @@ impl From<CST7_AW> for bool {
     }
 }
 #[doc = "Field `CST7` writer - Clear Status Flag 7 in PSR"]
-pub type CST7_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST7_AW, O>;
+pub type CST7_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CST7_AW>;
 impl<'a, const O: u8> CST7_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -258,7 +258,7 @@ impl From<CST8_AW> for bool {
     }
 }
 #[doc = "Field `CST8` writer - Clear Status Flag 8 in PSR"]
-pub type CST8_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST8_AW, O>;
+pub type CST8_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CST8_AW>;
 impl<'a, const O: u8> CST8_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -286,7 +286,7 @@ impl From<CST9_AW> for bool {
     }
 }
 #[doc = "Field `CST9` writer - Clear Status Flag 9 in PSR"]
-pub type CST9_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CST9_AW, O>;
+pub type CST9_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CST9_AW>;
 impl<'a, const O: u8> CST9_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -314,7 +314,7 @@ impl From<CRSIF_AW> for bool {
     }
 }
 #[doc = "Field `CRSIF` writer - Clear Receiver Start Indication Flag"]
-pub type CRSIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CRSIF_AW, O>;
+pub type CRSIF_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CRSIF_AW>;
 impl<'a, const O: u8> CRSIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -342,7 +342,7 @@ impl From<CDLIF_AW> for bool {
     }
 }
 #[doc = "Field `CDLIF` writer - Clear Data Lost Indication Flag"]
-pub type CDLIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CDLIF_AW, O>;
+pub type CDLIF_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CDLIF_AW>;
 impl<'a, const O: u8> CDLIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -370,7 +370,7 @@ impl From<CTSIF_AW> for bool {
     }
 }
 #[doc = "Field `CTSIF` writer - Clear Transmit Shift Indication Flag"]
-pub type CTSIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CTSIF_AW, O>;
+pub type CTSIF_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CTSIF_AW>;
 impl<'a, const O: u8> CTSIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -398,7 +398,7 @@ impl From<CTBIF_AW> for bool {
     }
 }
 #[doc = "Field `CTBIF` writer - Clear Transmit Buffer Indication Flag"]
-pub type CTBIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CTBIF_AW, O>;
+pub type CTBIF_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CTBIF_AW>;
 impl<'a, const O: u8> CTBIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -426,7 +426,7 @@ impl From<CRIF_AW> for bool {
     }
 }
 #[doc = "Field `CRIF` writer - Clear Receive Indication Flag"]
-pub type CRIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CRIF_AW, O>;
+pub type CRIF_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CRIF_AW>;
 impl<'a, const O: u8> CRIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -454,7 +454,7 @@ impl From<CAIF_AW> for bool {
     }
 }
 #[doc = "Field `CAIF` writer - Clear Alternative Receive Indication Flag"]
-pub type CAIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CAIF_AW, O>;
+pub type CAIF_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CAIF_AW>;
 impl<'a, const O: u8> CAIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -482,7 +482,7 @@ impl From<CBRGIF_AW> for bool {
     }
 }
 #[doc = "Field `CBRGIF` writer - Clear Baud Rate Generator Indication Flag"]
-pub type CBRGIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSCR_SPEC, CBRGIF_AW, O>;
+pub type CBRGIF_W<'a, const O: u8> = crate::BitWriter<'a, PSCR_SPEC, O, CBRGIF_AW>;
 impl<'a, const O: u8> CBRGIF_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]

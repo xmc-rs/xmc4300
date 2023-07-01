@@ -14,19 +14,19 @@ impl From<crate::R<STSSR_SPEC>> for R {
     }
 }
 #[doc = "Field `SPSE` reader - Periodic Seconds Service Request Status after Masking"]
-pub type SPSE_R = crate::BitReader<bool>;
+pub type SPSE_R = crate::BitReader;
 #[doc = "Field `SPMI` reader - Periodic Minutes Service Request Status after Masking"]
-pub type SPMI_R = crate::BitReader<bool>;
+pub type SPMI_R = crate::BitReader;
 #[doc = "Field `SPHO` reader - Periodic Hours Service Request Status after Masking"]
-pub type SPHO_R = crate::BitReader<bool>;
+pub type SPHO_R = crate::BitReader;
 #[doc = "Field `SPDA` reader - Periodic Days Service Request Status after Masking"]
-pub type SPDA_R = crate::BitReader<bool>;
+pub type SPDA_R = crate::BitReader;
 #[doc = "Field `SPMO` reader - Periodic Months Service Request Status after Masking"]
-pub type SPMO_R = crate::BitReader<bool>;
+pub type SPMO_R = crate::BitReader;
 #[doc = "Field `SPYE` reader - Periodic Years Service Request Status after Masking"]
-pub type SPYE_R = crate::BitReader<bool>;
+pub type SPYE_R = crate::BitReader;
 #[doc = "Field `SAI` reader - Alarm Service Request Status after Masking"]
-pub type SAI_R = crate::BitReader<bool>;
+pub type SAI_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Periodic Seconds Service Request Status after Masking"]
     #[inline(always)]

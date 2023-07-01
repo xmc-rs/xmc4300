@@ -14,7 +14,7 @@ impl From<crate::R<RX_VLAN_FRAMES_GOOD_BAD_SPEC>> for R {
     }
 }
 #[doc = "Field `RXVLANFRGB` reader - This field indicates the number of received good and bad VLAN frames."]
-pub type RXVLANFRGB_R = crate::FieldReader<u32, u32>;
+pub type RXVLANFRGB_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of received good and bad VLAN frames."]
     #[inline(always)]

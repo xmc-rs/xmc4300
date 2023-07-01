@@ -14,7 +14,7 @@ impl From<crate::R<RXIPV4_FRAGMENTED_OCTETS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV4FRAGOCT` reader - This field indicates the number of bytes received in fragmented IPv4 datagrams. The value in the IPv4 headers Length field is used to update this counter."]
-pub type RXIPV4FRAGOCT_R = crate::FieldReader<u32, u32>;
+pub type RXIPV4FRAGOCT_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of bytes received in fragmented IPv4 datagrams. The value in the IPv4 headers Length field is used to update this counter."]
     #[inline(always)]

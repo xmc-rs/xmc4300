@@ -446,13 +446,13 @@ impl S3PSS_R {
     }
 }
 #[doc = "Field `CC40ST` reader - Slice 0 status bit"]
-pub type CC40ST_R = crate::BitReader<bool>;
+pub type CC40ST_R = crate::BitReader;
 #[doc = "Field `CC41ST` reader - Slice 1 status bit"]
-pub type CC41ST_R = crate::BitReader<bool>;
+pub type CC41ST_R = crate::BitReader;
 #[doc = "Field `CC42ST` reader - Slice 2 status bit"]
-pub type CC42ST_R = crate::BitReader<bool>;
+pub type CC42ST_R = crate::BitReader;
 #[doc = "Field `CC43ST` reader - Slice 3 status bit"]
-pub type CC43ST_R = crate::BitReader<bool>;
+pub type CC43ST_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Slice 0 shadow transfer status"]
     #[inline(always)]

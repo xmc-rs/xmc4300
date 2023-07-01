@@ -14,9 +14,9 @@ impl From<crate::R<DAINT_SPEC>> for R {
     }
 }
 #[doc = "Field `InEpInt` reader - IN Endpoint Interrupt Bits"]
-pub type IN_EP_INT_R = crate::FieldReader<u16, u16>;
+pub type IN_EP_INT_R = crate::FieldReader<u16>;
 #[doc = "Field `OutEPInt` reader - OUT Endpoint Interrupt Bits"]
-pub type OUT_EPINT_R = crate::FieldReader<u16, u16>;
+pub type OUT_EPINT_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - IN Endpoint Interrupt Bits"]
     #[inline(always)]

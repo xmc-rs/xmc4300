@@ -35,9 +35,9 @@ impl From<crate::W<SYSCLKCR_SPEC>> for W {
     }
 }
 #[doc = "Field `SYSDIV` reader - System Clock Division Value"]
-pub type SYSDIV_R = crate::FieldReader<u8, u8>;
+pub type SYSDIV_R = crate::FieldReader;
 #[doc = "Field `SYSDIV` writer - System Clock Division Value"]
-pub type SYSDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYSCLKCR_SPEC, u8, u8, 8, O>;
+pub type SYSDIV_W<'a, const O: u8> = crate::FieldWriter<'a, SYSCLKCR_SPEC, 8, O>;
 #[doc = "Field `SYSSEL` reader - System Clock Selection Value"]
 pub type SYSSEL_R = crate::BitReader<SYSSEL_A>;
 #[doc = "System Clock Selection Value\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl SYSSEL_R {
     }
 }
 #[doc = "Field `SYSSEL` writer - System Clock Selection Value"]
-pub type SYSSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYSCLKCR_SPEC, SYSSEL_A, O>;
+pub type SYSSEL_W<'a, const O: u8> = crate::BitWriter<'a, SYSCLKCR_SPEC, O, SYSSEL_A>;
 impl<'a, const O: u8> SYSSEL_W<'a, O> {
     #[doc = "fOFI clock"]
     #[inline(always)]

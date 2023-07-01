@@ -35,13 +35,13 @@ impl From<crate::W<PCGCCTL_SPEC>> for W {
     }
 }
 #[doc = "Field `StopPclk` reader - Stop Pclk"]
-pub type STOP_PCLK_R = crate::BitReader<bool>;
+pub type STOP_PCLK_R = crate::BitReader;
 #[doc = "Field `StopPclk` writer - Stop Pclk"]
-pub type STOP_PCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCGCCTL_SPEC, bool, O>;
+pub type STOP_PCLK_W<'a, const O: u8> = crate::BitWriter<'a, PCGCCTL_SPEC, O>;
 #[doc = "Field `GateHclk` reader - Gate Hclk"]
-pub type GATE_HCLK_R = crate::BitReader<bool>;
+pub type GATE_HCLK_R = crate::BitReader;
 #[doc = "Field `GateHclk` writer - Gate Hclk"]
-pub type GATE_HCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCGCCTL_SPEC, bool, O>;
+pub type GATE_HCLK_W<'a, const O: u8> = crate::BitWriter<'a, PCGCCTL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Stop Pclk"]
     #[inline(always)]

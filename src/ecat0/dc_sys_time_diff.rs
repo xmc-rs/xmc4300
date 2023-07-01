@@ -14,7 +14,7 @@ impl From<crate::R<DC_SYS_TIME_DIFF_SPEC>> for R {
     }
 }
 #[doc = "Field `TIME_DIF` reader - Mean difference between local copy of System Time and received System Time values"]
-pub type TIME_DIF_R = crate::FieldReader<u32, u32>;
+pub type TIME_DIF_R = crate::FieldReader<u32>;
 #[doc = "Field `CPY` reader - Local copy of System Time"]
 pub type CPY_R = crate::BitReader<CPY_A>;
 #[doc = "Local copy of System Time\n\nValue on reset: 0"]

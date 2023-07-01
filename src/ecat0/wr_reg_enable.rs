@@ -14,7 +14,7 @@ impl From<crate::R<WR_REG_ENABLE_SPEC>> for R {
     }
 }
 #[doc = "Field `WR_REG_EN` reader - Write register protection enabled"]
-pub type WR_REG_EN_R = crate::BitReader<bool>;
+pub type WR_REG_EN_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Write register protection enabled"]
     #[inline(always)]

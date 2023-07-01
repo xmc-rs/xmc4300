@@ -14,7 +14,7 @@ impl From<crate::R<CURRENT_HOST_TRANSMIT_DESCRIPTOR_SPEC>> for R {
     }
 }
 #[doc = "Field `CURTDESAPTR` reader - Host Transmit Descriptor Address Pointer"]
-pub type CURTDESAPTR_R = crate::FieldReader<u32, u32>;
+pub type CURTDESAPTR_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Host Transmit Descriptor Address Pointer"]
     #[inline(always)]

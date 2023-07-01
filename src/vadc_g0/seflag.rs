@@ -71,7 +71,7 @@ impl SEV0_R {
     }
 }
 #[doc = "Field `SEV0` writer - Source Event 0/1"]
-pub type SEV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEFLAG_SPEC, SEV0_A, O>;
+pub type SEV0_W<'a, const O: u8> = crate::BitWriter<'a, SEFLAG_SPEC, O, SEV0_A>;
 impl<'a, const O: u8> SEV0_W<'a, O> {
     #[doc = "No source event"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl SEV1_R {
     }
 }
 #[doc = "Field `SEV1` writer - Source Event 0/1"]
-pub type SEV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEFLAG_SPEC, SEV1_A, O>;
+pub type SEV1_W<'a, const O: u8> = crate::BitWriter<'a, SEFLAG_SPEC, O, SEV1_A>;
 impl<'a, const O: u8> SEV1_W<'a, O> {
     #[doc = "No source event"]
     #[inline(always)]

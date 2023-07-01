@@ -14,7 +14,7 @@ impl From<crate::R<RXIPV4_FRAGMENTED_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV4FRAGFRM` reader - This field indicates the number of good IPv4 datagrams received with fragmentation."]
-pub type RXIPV4FRAGFRM_R = crate::FieldReader<u32, u32>;
+pub type RXIPV4FRAGFRM_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of good IPv4 datagrams received with fragmentation."]
     #[inline(always)]

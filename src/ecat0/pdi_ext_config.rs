@@ -14,7 +14,7 @@ impl From<crate::R<PDI_EXT_CONFIG_SPEC>> for R {
     }
 }
 #[doc = "Field `R_Pref` reader - Read Prefetch Size"]
-pub type R_PREF_R = crate::FieldReader<u8, R_PREF_A>;
+pub type R_PREF_R = crate::FieldReader<R_PREF_A>;
 #[doc = "Read Prefetch Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -31,6 +31,9 @@ impl From<R_PREF_A> for u8 {
     fn from(variant: R_PREF_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for R_PREF_A {
+    type Ux = u8;
 }
 impl R_PREF_R {
     #[doc = "Get enumerated values variant"]
@@ -60,7 +63,7 @@ impl R_PREF_R {
     }
 }
 #[doc = "Field `SUB_TYPE` reader - On-chip Sub Type for AXI"]
-pub type SUB_TYPE_R = crate::FieldReader<u8, SUB_TYPE_A>;
+pub type SUB_TYPE_R = crate::FieldReader<SUB_TYPE_A>;
 #[doc = "On-chip Sub Type for AXI\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -77,6 +80,9 @@ impl From<SUB_TYPE_A> for u8 {
     fn from(variant: SUB_TYPE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SUB_TYPE_A {
+    type Ux = u8;
 }
 impl SUB_TYPE_R {
     #[doc = "Get enumerated values variant"]

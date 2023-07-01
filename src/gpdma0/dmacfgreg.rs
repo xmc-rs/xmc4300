@@ -71,7 +71,7 @@ impl DMA_EN_R {
     }
 }
 #[doc = "Field `DMA_EN` writer - GPDMA Enable bit."]
-pub type DMA_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMACFGREG_SPEC, DMA_EN_A, O>;
+pub type DMA_EN_W<'a, const O: u8> = crate::BitWriter<'a, DMACFGREG_SPEC, O, DMA_EN_A>;
 impl<'a, const O: u8> DMA_EN_W<'a, O> {
     #[doc = "GPDMA Disabled"]
     #[inline(always)]

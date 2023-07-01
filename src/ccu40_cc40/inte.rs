@@ -71,7 +71,7 @@ impl PME_R {
     }
 }
 #[doc = "Field `PME` writer - Period match while counting up enable"]
-pub type PME_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTE_SPEC, PME_A, O>;
+pub type PME_W<'a, const O: u8> = crate::BitWriter<'a, INTE_SPEC, O, PME_A>;
 impl<'a, const O: u8> PME_W<'a, O> {
     #[doc = "Period Match interrupt is disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl OME_R {
     }
 }
 #[doc = "Field `OME` writer - One match while counting down enable"]
-pub type OME_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTE_SPEC, OME_A, O>;
+pub type OME_W<'a, const O: u8> = crate::BitWriter<'a, INTE_SPEC, O, OME_A>;
 impl<'a, const O: u8> OME_W<'a, O> {
     #[doc = "One Match interrupt is disabled"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl CMUE_R {
     }
 }
 #[doc = "Field `CMUE` writer - Compare match while counting up enable"]
-pub type CMUE_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTE_SPEC, CMUE_A, O>;
+pub type CMUE_W<'a, const O: u8> = crate::BitWriter<'a, INTE_SPEC, O, CMUE_A>;
 impl<'a, const O: u8> CMUE_W<'a, O> {
     #[doc = "Compare Match while counting up interrupt is disabled"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl CMDE_R {
     }
 }
 #[doc = "Field `CMDE` writer - Compare match while counting down enable"]
-pub type CMDE_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTE_SPEC, CMDE_A, O>;
+pub type CMDE_W<'a, const O: u8> = crate::BitWriter<'a, INTE_SPEC, O, CMDE_A>;
 impl<'a, const O: u8> CMDE_W<'a, O> {
     #[doc = "Compare Match while counting down interrupt is disabled"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl E0AE_R {
     }
 }
 #[doc = "Field `E0AE` writer - Event 0 interrupt enable"]
-pub type E0AE_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTE_SPEC, E0AE_A, O>;
+pub type E0AE_W<'a, const O: u8> = crate::BitWriter<'a, INTE_SPEC, O, E0AE_A>;
 impl<'a, const O: u8> E0AE_W<'a, O> {
     #[doc = "Event 0 detection interrupt is disabled"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl E1AE_R {
     }
 }
 #[doc = "Field `E1AE` writer - Event 1 interrupt enable"]
-pub type E1AE_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTE_SPEC, E1AE_A, O>;
+pub type E1AE_W<'a, const O: u8> = crate::BitWriter<'a, INTE_SPEC, O, E1AE_A>;
 impl<'a, const O: u8> E1AE_W<'a, O> {
     #[doc = "Event 1 detection interrupt is disabled"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl E2AE_R {
     }
 }
 #[doc = "Field `E2AE` writer - Event 2 interrupt enable"]
-pub type E2AE_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTE_SPEC, E2AE_A, O>;
+pub type E2AE_W<'a, const O: u8> = crate::BitWriter<'a, INTE_SPEC, O, E2AE_A>;
 impl<'a, const O: u8> E2AE_W<'a, O> {
     #[doc = "Event 2 detection interrupt is disabled"]
     #[inline(always)]

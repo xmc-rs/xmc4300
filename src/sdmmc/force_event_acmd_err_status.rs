@@ -34,7 +34,7 @@ impl From<FE_ACMD_NOT_EXEC_AW> for bool {
     }
 }
 #[doc = "Field `FE_ACMD_NOT_EXEC` writer - Force Event for Auto CMD12 NOT Executed"]
-pub type FE_ACMD_NOT_EXEC_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ACMD_ERR_STATUS_SPEC, FE_ACMD_NOT_EXEC_AW, O>;
+pub type FE_ACMD_NOT_EXEC_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ACMD_ERR_STATUS_SPEC, O, FE_ACMD_NOT_EXEC_AW>;
 impl<'a, const O: u8> FE_ACMD_NOT_EXEC_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<FE_ACMD_TIMEOUT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_ACMD_TIMEOUT_ERR` writer - Force Event for Auto CMD timeout Error"]
-pub type FE_ACMD_TIMEOUT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ACMD_ERR_STATUS_SPEC, FE_ACMD_TIMEOUT_ERR_AW, O>;
+pub type FE_ACMD_TIMEOUT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ACMD_ERR_STATUS_SPEC, O, FE_ACMD_TIMEOUT_ERR_AW>;
 impl<'a, const O: u8> FE_ACMD_TIMEOUT_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<FE_ACMD_CRC_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_ACMD_CRC_ERR` writer - Force Event for Auto CMD CRC Error"]
-pub type FE_ACMD_CRC_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ACMD_ERR_STATUS_SPEC, FE_ACMD_CRC_ERR_AW, O>;
+pub type FE_ACMD_CRC_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ACMD_ERR_STATUS_SPEC, O, FE_ACMD_CRC_ERR_AW>;
 impl<'a, const O: u8> FE_ACMD_CRC_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<FE_ACMD_END_BIT_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_ACMD_END_BIT_ERR` writer - Force Event for Auto CMD End bit Error"]
-pub type FE_ACMD_END_BIT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ACMD_ERR_STATUS_SPEC, FE_ACMD_END_BIT_ERR_AW, O>;
+pub type FE_ACMD_END_BIT_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ACMD_ERR_STATUS_SPEC, O, FE_ACMD_END_BIT_ERR_AW>;
 impl<'a, const O: u8> FE_ACMD_END_BIT_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<FE_ACMD_IND_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_ACMD_IND_ERR` writer - Force Event for Auto CMD Index Error"]
-pub type FE_ACMD_IND_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ACMD_ERR_STATUS_SPEC, FE_ACMD_IND_ERR_AW, O>;
+pub type FE_ACMD_IND_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ACMD_ERR_STATUS_SPEC, O, FE_ACMD_IND_ERR_AW>;
 impl<'a, const O: u8> FE_ACMD_IND_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<FE_CMD_NOT_ISSUED_ACMD12_ERR_AW> for bool {
     }
 }
 #[doc = "Field `FE_CMD_NOT_ISSUED_ACMD12_ERR` writer - Force Event for CMD not issued by Auto CMD12 Error"]
-pub type FE_CMD_NOT_ISSUED_ACMD12_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u16, FORCE_EVENT_ACMD_ERR_STATUS_SPEC, FE_CMD_NOT_ISSUED_ACMD12_ERR_AW, O>;
+pub type FE_CMD_NOT_ISSUED_ACMD12_ERR_W<'a, const O: u8> = crate::BitWriter<'a, FORCE_EVENT_ACMD_ERR_STATUS_SPEC, O, FE_CMD_NOT_ISSUED_ACMD12_ERR_AW>;
 impl<'a, const O: u8> FE_CMD_NOT_ISSUED_ACMD12_ERR_W<'a, O> {
     #[doc = "No interrupt"]
     #[inline(always)]

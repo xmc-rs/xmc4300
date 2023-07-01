@@ -35,9 +35,9 @@ impl From<crate::W<BFAR_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDRESS` reader - Address causing the fault"]
-pub type ADDRESS_R = crate::FieldReader<u32, u32>;
+pub type ADDRESS_R = crate::FieldReader<u32>;
 #[doc = "Field `ADDRESS` writer - Address causing the fault"]
-pub type ADDRESS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BFAR_SPEC, u32, u32, 32, O>;
+pub type ADDRESS_W<'a, const O: u8> = crate::FieldWriter<'a, BFAR_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Address causing the fault"]
     #[inline(always)]

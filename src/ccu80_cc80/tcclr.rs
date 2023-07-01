@@ -20,15 +20,15 @@ impl From<crate::W<TCCLR_SPEC>> for W {
     }
 }
 #[doc = "Field `TRBC` writer - Timer Run Bit Clear"]
-pub type TRBC_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCCLR_SPEC, bool, O>;
+pub type TRBC_W<'a, const O: u8> = crate::BitWriter<'a, TCCLR_SPEC, O>;
 #[doc = "Field `TCC` writer - Timer Clear"]
-pub type TCC_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCCLR_SPEC, bool, O>;
+pub type TCC_W<'a, const O: u8> = crate::BitWriter<'a, TCCLR_SPEC, O>;
 #[doc = "Field `DITC` writer - Dither Counter Clear"]
-pub type DITC_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCCLR_SPEC, bool, O>;
+pub type DITC_W<'a, const O: u8> = crate::BitWriter<'a, TCCLR_SPEC, O>;
 #[doc = "Field `DTC1C` writer - Dead Time Counter 1 Clear"]
-pub type DTC1C_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCCLR_SPEC, bool, O>;
+pub type DTC1C_W<'a, const O: u8> = crate::BitWriter<'a, TCCLR_SPEC, O>;
 #[doc = "Field `DTC2C` writer - Dead Time Counter 2 Clear"]
-pub type DTC2C_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCCLR_SPEC, bool, O>;
+pub type DTC2C_W<'a, const O: u8> = crate::BitWriter<'a, TCCLR_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Timer Run Bit Clear"]
     #[inline(always)]

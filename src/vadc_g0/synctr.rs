@@ -35,7 +35,7 @@ impl From<crate::W<SYNCTR_SPEC>> for W {
     }
 }
 #[doc = "Field `STSEL` reader - Start Selection"]
-pub type STSEL_R = crate::FieldReader<u8, STSEL_A>;
+pub type STSEL_R = crate::FieldReader<STSEL_A>;
 #[doc = "Start Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<STSEL_A> for u8 {
     fn from(variant: STSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for STSEL_A {
+    type Ux = u8;
 }
 impl STSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl STSEL_R {
     }
 }
 #[doc = "Field `STSEL` writer - Start Selection"]
-pub type STSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SYNCTR_SPEC, u8, STSEL_A, 2, O>;
+pub type STSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SYNCTR_SPEC, 2, O, STSEL_A>;
 impl<'a, const O: u8> STSEL_W<'a, O> {
     #[doc = "Kernel is synchronization master: Use own bitfield GxARBCFG.ANONC"]
     #[inline(always)]
@@ -149,7 +152,7 @@ impl EVALR1_R {
     }
 }
 #[doc = "Field `EVALR1` writer - Evaluate Ready Input Rx"]
-pub type EVALR1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYNCTR_SPEC, EVALR1_A, O>;
+pub type EVALR1_W<'a, const O: u8> = crate::BitWriter<'a, SYNCTR_SPEC, O, EVALR1_A>;
 impl<'a, const O: u8> EVALR1_W<'a, O> {
     #[doc = "No ready input control"]
     #[inline(always)]
@@ -199,7 +202,7 @@ impl EVALR2_R {
     }
 }
 #[doc = "Field `EVALR2` writer - Evaluate Ready Input Rx"]
-pub type EVALR2_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYNCTR_SPEC, EVALR2_A, O>;
+pub type EVALR2_W<'a, const O: u8> = crate::BitWriter<'a, SYNCTR_SPEC, O, EVALR2_A>;
 impl<'a, const O: u8> EVALR2_W<'a, O> {
     #[doc = "No ready input control"]
     #[inline(always)]
@@ -249,7 +252,7 @@ impl EVALR3_R {
     }
 }
 #[doc = "Field `EVALR3` writer - Evaluate Ready Input Rx"]
-pub type EVALR3_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYNCTR_SPEC, EVALR3_A, O>;
+pub type EVALR3_W<'a, const O: u8> = crate::BitWriter<'a, SYNCTR_SPEC, O, EVALR3_A>;
 impl<'a, const O: u8> EVALR3_W<'a, O> {
     #[doc = "No ready input control"]
     #[inline(always)]

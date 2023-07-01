@@ -35,11 +35,11 @@ impl From<crate::W<RCR_SPEC>> for W {
     }
 }
 #[doc = "Field `DRCTR` reader - Data Reduction Control"]
-pub type DRCTR_R = crate::FieldReader<u8, u8>;
+pub type DRCTR_R = crate::FieldReader;
 #[doc = "Field `DRCTR` writer - Data Reduction Control"]
-pub type DRCTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RCR_SPEC, u8, u8, 4, O>;
+pub type DRCTR_W<'a, const O: u8> = crate::FieldWriter<'a, RCR_SPEC, 4, O>;
 #[doc = "Field `DMM` reader - Data Modification Mode"]
-pub type DMM_R = crate::FieldReader<u8, DMM_A>;
+pub type DMM_R = crate::FieldReader<DMM_A>;
 #[doc = "Data Modification Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<DMM_A> for u8 {
     fn from(variant: DMM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DMM_A {
+    type Ux = u8;
 }
 impl DMM_R {
     #[doc = "Get enumerated values variant"]
@@ -85,7 +88,7 @@ impl DMM_R {
     }
 }
 #[doc = "Field `DMM` writer - Data Modification Mode"]
-pub type DMM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RCR_SPEC, u8, DMM_A, 2, O>;
+pub type DMM_W<'a, const O: u8> = crate::FieldWriter<'a, RCR_SPEC, 2, O, DMM_A>;
 impl<'a, const O: u8> DMM_W<'a, O> {
     #[doc = "Standard data reduction (accumulation)"]
     #[inline(always)]
@@ -140,7 +143,7 @@ impl WFR_R {
     }
 }
 #[doc = "Field `WFR` writer - Wait-for-Read Mode Enable"]
-pub type WFR_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCR_SPEC, WFR_A, O>;
+pub type WFR_W<'a, const O: u8> = crate::BitWriter<'a, RCR_SPEC, O, WFR_A>;
 impl<'a, const O: u8> WFR_W<'a, O> {
     #[doc = "Overwrite mode"]
     #[inline(always)]
@@ -154,7 +157,7 @@ impl<'a, const O: u8> WFR_W<'a, O> {
     }
 }
 #[doc = "Field `FEN` reader - FIFO Mode Enable"]
-pub type FEN_R = crate::FieldReader<u8, FEN_A>;
+pub type FEN_R = crate::FieldReader<FEN_A>;
 #[doc = "FIFO Mode Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -169,6 +172,9 @@ impl From<FEN_A> for u8 {
     fn from(variant: FEN_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for FEN_A {
+    type Ux = u8;
 }
 impl FEN_R {
     #[doc = "Get enumerated values variant"]
@@ -192,7 +198,7 @@ impl FEN_R {
     }
 }
 #[doc = "Field `FEN` writer - FIFO Mode Enable"]
-pub type FEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RCR_SPEC, u8, FEN_A, 2, O>;
+pub type FEN_W<'a, const O: u8> = crate::FieldWriter<'a, RCR_SPEC, 2, O, FEN_A>;
 impl<'a, const O: u8> FEN_W<'a, O> {
     #[doc = "Separate result register"]
     #[inline(always)]
@@ -242,7 +248,7 @@ impl SRGEN_R {
     }
 }
 #[doc = "Field `SRGEN` writer - Service Request Generation Enable"]
-pub type SRGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCR_SPEC, SRGEN_A, O>;
+pub type SRGEN_W<'a, const O: u8> = crate::BitWriter<'a, RCR_SPEC, O, SRGEN_A>;
 impl<'a, const O: u8> SRGEN_W<'a, O> {
     #[doc = "No service request"]
     #[inline(always)]

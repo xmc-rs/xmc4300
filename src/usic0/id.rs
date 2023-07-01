@@ -14,11 +14,11 @@ impl From<crate::R<ID_SPEC>> for R {
     }
 }
 #[doc = "Field `MOD_REV` reader - Module Revision Number"]
-pub type MOD_REV_R = crate::FieldReader<u8, u8>;
+pub type MOD_REV_R = crate::FieldReader;
 #[doc = "Field `MOD_TYPE` reader - Module Type"]
-pub type MOD_TYPE_R = crate::FieldReader<u8, u8>;
+pub type MOD_TYPE_R = crate::FieldReader;
 #[doc = "Field `MOD_NUMBER` reader - Module Number Value"]
-pub type MOD_NUMBER_R = crate::FieldReader<u16, u16>;
+pub type MOD_NUMBER_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:7 - Module Revision Number"]
     #[inline(always)]

@@ -35,13 +35,13 @@ impl From<crate::W<FDR_SPEC>> for W {
     }
 }
 #[doc = "Field `STEP` reader - Step Value"]
-pub type STEP_R = crate::FieldReader<u16, u16>;
+pub type STEP_R = crate::FieldReader<u16>;
 #[doc = "Field `STEP` writer - Step Value"]
-pub type STEP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FDR_SPEC, u16, u16, 10, O>;
+pub type STEP_W<'a, const O: u8> = crate::FieldWriter<'a, FDR_SPEC, 10, O, u16>;
 #[doc = "Field `DM` reader - Divider Mode"]
-pub type DM_R = crate::FieldReader<u8, u8>;
+pub type DM_R = crate::FieldReader;
 #[doc = "Field `DM` writer - Divider Mode"]
-pub type DM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FDR_SPEC, u8, u8, 2, O>;
+pub type DM_W<'a, const O: u8> = crate::FieldWriter<'a, FDR_SPEC, 2, O>;
 impl R {
     #[doc = "Bits 0:9 - Step Value"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<SAR_SPEC>> for W {
     }
 }
 #[doc = "Field `SAR` reader - Current Source Address of DMA transfer"]
-pub type SAR_R = crate::FieldReader<u32, u32>;
+pub type SAR_R = crate::FieldReader<u32>;
 #[doc = "Field `SAR` writer - Current Source Address of DMA transfer"]
-pub type SAR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SAR_SPEC, u32, u32, 32, O>;
+pub type SAR_W<'a, const O: u8> = crate::FieldWriter<'a, SAR_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Current Source Address of DMA transfer"]
     #[inline(always)]

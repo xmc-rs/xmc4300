@@ -35,13 +35,13 @@ impl From<crate::W<SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC>> for W {
     }
 }
 #[doc = "Field `TSSS` reader - Timestamp Sub Second"]
-pub type TSSS_R = crate::FieldReader<u32, u32>;
+pub type TSSS_R = crate::FieldReader<u32>;
 #[doc = "Field `TSSS` writer - Timestamp Sub Second"]
-pub type TSSS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC, u32, u32, 31, O>;
+pub type TSSS_W<'a, const O: u8> = crate::FieldWriter<'a, SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC, 31, O, u32>;
 #[doc = "Field `ADDSUB` reader - Add or subtract time"]
-pub type ADDSUB_R = crate::BitReader<bool>;
+pub type ADDSUB_R = crate::BitReader;
 #[doc = "Field `ADDSUB` writer - Add or subtract time"]
-pub type ADDSUB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC, bool, O>;
+pub type ADDSUB_W<'a, const O: u8> = crate::BitWriter<'a, SYSTEM_TIME_NANOSECONDS_UPDATE_SPEC, O>;
 impl R {
     #[doc = "Bits 0:30 - Timestamp Sub Second"]
     #[inline(always)]

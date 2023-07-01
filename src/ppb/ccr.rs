@@ -72,7 +72,7 @@ impl NONBASETHRDENA_R {
     }
 }
 #[doc = "Field `NONBASETHRDENA` writer - Non Base Thread Mode Enable"]
-pub type NONBASETHRDENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, NONBASETHRDENA_A, O>;
+pub type NONBASETHRDENA_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, NONBASETHRDENA_A>;
 impl<'a, const O: u8> NONBASETHRDENA_W<'a, O> {
     #[doc = "processor can enter Thread mode only when no exception is active."]
     #[inline(always)]
@@ -123,7 +123,7 @@ impl USERSETMPEND_R {
     }
 }
 #[doc = "Field `USERSETMPEND` writer - User Set Pending Enable"]
-pub type USERSETMPEND_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, USERSETMPEND_A, O>;
+pub type USERSETMPEND_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, USERSETMPEND_A>;
 impl<'a, const O: u8> USERSETMPEND_W<'a, O> {
     #[doc = "disable"]
     #[inline(always)]
@@ -173,7 +173,7 @@ impl UNALIGN_TRP_R {
     }
 }
 #[doc = "Field `UNALIGN_TRP` writer - Unaligned Access Trap Enable"]
-pub type UNALIGN_TRP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, UNALIGN_TRP_A, O>;
+pub type UNALIGN_TRP_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, UNALIGN_TRP_A>;
 impl<'a, const O: u8> UNALIGN_TRP_W<'a, O> {
     #[doc = "do not trap unaligned halfword and word accesses"]
     #[inline(always)]
@@ -223,7 +223,7 @@ impl DIV_0_TRP_R {
     }
 }
 #[doc = "Field `DIV_0_TRP` writer - Divide by Zero Trap Enable"]
-pub type DIV_0_TRP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, DIV_0_TRP_A, O>;
+pub type DIV_0_TRP_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, DIV_0_TRP_A>;
 impl<'a, const O: u8> DIV_0_TRP_W<'a, O> {
     #[doc = "do not trap divide by 0"]
     #[inline(always)]
@@ -273,7 +273,7 @@ impl BFHFNMIGN_R {
     }
 }
 #[doc = "Field `BFHFNMIGN` writer - Bus Fault Hard Fault and NMI Ignore"]
-pub type BFHFNMIGN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, BFHFNMIGN_A, O>;
+pub type BFHFNMIGN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, BFHFNMIGN_A>;
 impl<'a, const O: u8> BFHFNMIGN_W<'a, O> {
     #[doc = "data bus faults caused by load and store instructions cause a lock-up"]
     #[inline(always)]
@@ -323,7 +323,7 @@ impl STKALIGN_R {
     }
 }
 #[doc = "Field `STKALIGN` writer - Stack Alignment"]
-pub type STKALIGN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, STKALIGN_A, O>;
+pub type STKALIGN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, STKALIGN_A>;
 impl<'a, const O: u8> STKALIGN_W<'a, O> {
     #[doc = "4-byte aligned"]
     #[inline(always)]

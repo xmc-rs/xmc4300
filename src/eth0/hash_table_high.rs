@@ -35,9 +35,9 @@ impl From<crate::W<HASH_TABLE_HIGH_SPEC>> for W {
     }
 }
 #[doc = "Field `HTH` reader - Hash Table High"]
-pub type HTH_R = crate::FieldReader<u32, u32>;
+pub type HTH_R = crate::FieldReader<u32>;
 #[doc = "Field `HTH` writer - Hash Table High"]
-pub type HTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HASH_TABLE_HIGH_SPEC, u32, u32, 32, O>;
+pub type HTH_W<'a, const O: u8> = crate::FieldWriter<'a, HASH_TABLE_HIGH_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Hash Table High"]
     #[inline(always)]

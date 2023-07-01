@@ -14,7 +14,7 @@ impl From<crate::R<TX_FRAME_COUNT_GOOD_SPEC>> for R {
     }
 }
 #[doc = "Field `TXFRMG` reader - This field indicates the number of transmitted good frames, exclusive of preamble."]
-pub type TXFRMG_R = crate::FieldReader<u32, u32>;
+pub type TXFRMG_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of transmitted good frames, exclusive of preamble."]
     #[inline(always)]

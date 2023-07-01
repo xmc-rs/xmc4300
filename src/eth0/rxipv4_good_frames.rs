@@ -14,7 +14,7 @@ impl From<crate::R<RXIPV4_GOOD_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV4GDFRM` reader - This field indicates the number of good IPv4 datagrams received with the TCP, UDP, or ICMP payload."]
-pub type RXIPV4GDFRM_R = crate::FieldReader<u32, u32>;
+pub type RXIPV4GDFRM_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of good IPv4 datagrams received with the TCP, UDP, or ICMP payload."]
     #[inline(always)]

@@ -35,13 +35,13 @@ impl From<crate::W<DSR_SPEC>> for W {
     }
 }
 #[doc = "Field `DSI` reader - Destination scatter interval"]
-pub type DSI_R = crate::FieldReader<u32, u32>;
+pub type DSI_R = crate::FieldReader<u32>;
 #[doc = "Field `DSI` writer - Destination scatter interval"]
-pub type DSI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DSR_SPEC, u32, u32, 20, O>;
+pub type DSI_W<'a, const O: u8> = crate::FieldWriter<'a, DSR_SPEC, 20, O, u32>;
 #[doc = "Field `DSC` reader - Destination scatter count"]
-pub type DSC_R = crate::FieldReader<u16, u16>;
+pub type DSC_R = crate::FieldReader<u16>;
 #[doc = "Field `DSC` writer - Destination scatter count"]
-pub type DSC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DSR_SPEC, u16, u16, 12, O>;
+pub type DSC_W<'a, const O: u8> = crate::FieldWriter<'a, DSR_SPEC, 12, O, u16>;
 impl R {
     #[doc = "Bits 0:19 - Destination scatter interval"]
     #[inline(always)]

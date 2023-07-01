@@ -143,9 +143,9 @@ impl MI_LD_R {
     }
 }
 #[doc = "Field `PHY_ADDR` reader - PHY address of port 0"]
-pub type PHY_ADDR_R = crate::FieldReader<u8, u8>;
+pub type PHY_ADDR_R = crate::FieldReader;
 #[doc = "Field `CMD_REG` reader - Command register"]
-pub type CMD_REG_R = crate::FieldReader<u8, CMD_REG_A>;
+pub type CMD_REG_R = crate::FieldReader<CMD_REG_A>;
 #[doc = "Command register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -162,6 +162,9 @@ impl From<CMD_REG_A> for u8 {
     fn from(variant: CMD_REG_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CMD_REG_A {
+    type Ux = u8;
 }
 impl CMD_REG_R {
     #[doc = "Get enumerated values variant"]
@@ -191,7 +194,7 @@ impl CMD_REG_R {
     }
 }
 #[doc = "Field `CMD_REG` writer - Command register"]
-pub type CMD_REG_W<'a, const O: u8> = crate::FieldWriter<'a, u16, MII_CONT_STAT_SPEC, u8, CMD_REG_A, 2, O>;
+pub type CMD_REG_W<'a, const O: u8> = crate::FieldWriter<'a, MII_CONT_STAT_SPEC, 2, O, CMD_REG_A>;
 impl<'a, const O: u8> CMD_REG_W<'a, O> {
     #[doc = "No command/MII idle (clear error bits)"]
     #[inline(always)]

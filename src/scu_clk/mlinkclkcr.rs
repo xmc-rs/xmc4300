@@ -35,9 +35,9 @@ impl From<crate::W<MLINKCLKCR_SPEC>> for W {
     }
 }
 #[doc = "Field `SYSDIV` reader - System Clock Division Value"]
-pub type SYSDIV_R = crate::FieldReader<u8, u8>;
+pub type SYSDIV_R = crate::FieldReader;
 #[doc = "Field `SYSDIV` writer - System Clock Division Value"]
-pub type SYSDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MLINKCLKCR_SPEC, u8, u8, 8, O>;
+pub type SYSDIV_W<'a, const O: u8> = crate::FieldWriter<'a, MLINKCLKCR_SPEC, 8, O>;
 #[doc = "Field `SYSSEL` reader - System Clock Selection Value"]
 pub type SYSSEL_R = crate::BitReader<SYSSEL_A>;
 #[doc = "System Clock Selection Value\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl SYSSEL_R {
     }
 }
 #[doc = "Field `SYSSEL` writer - System Clock Selection Value"]
-pub type SYSSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, MLINKCLKCR_SPEC, SYSSEL_A, O>;
+pub type SYSSEL_W<'a, const O: u8> = crate::BitWriter<'a, MLINKCLKCR_SPEC, O, SYSSEL_A>;
 impl<'a, const O: u8> SYSSEL_W<'a, O> {
     #[doc = "fOFI clock"]
     #[inline(always)]
@@ -125,7 +125,7 @@ impl CPUDIV_R {
     }
 }
 #[doc = "Field `CPUDIV` writer - CPU Clock Divider Enable"]
-pub type CPUDIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, MLINKCLKCR_SPEC, CPUDIV_A, O>;
+pub type CPUDIV_W<'a, const O: u8> = crate::BitWriter<'a, MLINKCLKCR_SPEC, O, CPUDIV_A>;
 impl<'a, const O: u8> CPUDIV_W<'a, O> {
     #[doc = "fCPU = fSYS"]
     #[inline(always)]
@@ -175,7 +175,7 @@ impl PBDIV_R {
     }
 }
 #[doc = "Field `PBDIV` writer - PB Clock Divider Enable"]
-pub type PBDIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, MLINKCLKCR_SPEC, PBDIV_A, O>;
+pub type PBDIV_W<'a, const O: u8> = crate::BitWriter<'a, MLINKCLKCR_SPEC, O, PBDIV_A>;
 impl<'a, const O: u8> PBDIV_W<'a, O> {
     #[doc = "fPERIPH = fCPU"]
     #[inline(always)]
@@ -225,7 +225,7 @@ impl CCUDIV_R {
     }
 }
 #[doc = "Field `CCUDIV` writer - CCU Clock Divider Enable"]
-pub type CCUDIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, MLINKCLKCR_SPEC, CCUDIV_A, O>;
+pub type CCUDIV_W<'a, const O: u8> = crate::BitWriter<'a, MLINKCLKCR_SPEC, O, CCUDIV_A>;
 impl<'a, const O: u8> CCUDIV_W<'a, O> {
     #[doc = "fCCU = fSYS"]
     #[inline(always)]
@@ -239,11 +239,11 @@ impl<'a, const O: u8> CCUDIV_W<'a, O> {
     }
 }
 #[doc = "Field `WDTDIV` reader - WDT Clock Divider Value"]
-pub type WDTDIV_R = crate::FieldReader<u8, u8>;
+pub type WDTDIV_R = crate::FieldReader;
 #[doc = "Field `WDTDIV` writer - WDT Clock Divider Value"]
-pub type WDTDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MLINKCLKCR_SPEC, u8, u8, 8, O>;
+pub type WDTDIV_W<'a, const O: u8> = crate::FieldWriter<'a, MLINKCLKCR_SPEC, 8, O>;
 #[doc = "Field `WDTSEL` reader - WDT Clock Selection Value"]
-pub type WDTSEL_R = crate::FieldReader<u8, WDTSEL_A>;
+pub type WDTSEL_R = crate::FieldReader<WDTSEL_A>;
 #[doc = "WDT Clock Selection Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -260,6 +260,9 @@ impl From<WDTSEL_A> for u8 {
     fn from(variant: WDTSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for WDTSEL_A {
+    type Ux = u8;
 }
 impl WDTSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -289,7 +292,7 @@ impl WDTSEL_R {
     }
 }
 #[doc = "Field `WDTSEL` writer - WDT Clock Selection Value"]
-pub type WDTSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MLINKCLKCR_SPEC, u8, WDTSEL_A, 2, O>;
+pub type WDTSEL_W<'a, const O: u8> = crate::FieldWriter<'a, MLINKCLKCR_SPEC, 2, O, WDTSEL_A>;
 impl<'a, const O: u8> WDTSEL_W<'a, O> {
     #[doc = "fOFI clock"]
     #[inline(always)]

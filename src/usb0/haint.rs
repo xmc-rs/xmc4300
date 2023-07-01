@@ -14,7 +14,7 @@ impl From<crate::R<HAINT_SPEC>> for R {
     }
 }
 #[doc = "Field `HAINT` reader - Channel Interrupts"]
-pub type HAINT_R = crate::FieldReader<u16, u16>;
+pub type HAINT_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:13 - Channel Interrupts"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<CMTR_SPEC>> for W {
     }
 }
 #[doc = "Field `CTV` reader - Captured Timer Value"]
-pub type CTV_R = crate::FieldReader<u16, u16>;
+pub type CTV_R = crate::FieldReader<u16>;
 #[doc = "Field `CTV` writer - Captured Timer Value"]
-pub type CTV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMTR_SPEC, u16, u16, 10, O>;
+pub type CTV_W<'a, const O: u8> = crate::FieldWriter<'a, CMTR_SPEC, 10, O, u16>;
 impl R {
     #[doc = "Bits 0:9 - Captured Timer Value"]
     #[inline(always)]

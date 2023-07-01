@@ -14,7 +14,7 @@ impl From<crate::R<RXICMP_ERROR_OCTETS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXICMPERROCT` reader - Number of bytes received in an ICMP segment with checksum errors"]
-pub type RXICMPERROCT_R = crate::FieldReader<u32, u32>;
+pub type RXICMPERROCT_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Number of bytes received in an ICMP segment with checksum errors"]
     #[inline(always)]

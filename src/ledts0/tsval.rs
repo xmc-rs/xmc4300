@@ -35,11 +35,11 @@ impl From<crate::W<TSVAL_SPEC>> for W {
     }
 }
 #[doc = "Field `TSCTRVALR` reader - Shadow TS-Counter (Read)"]
-pub type TSCTRVALR_R = crate::FieldReader<u16, u16>;
+pub type TSCTRVALR_R = crate::FieldReader<u16>;
 #[doc = "Field `TSCTRVAL` reader - TS-Counter Value"]
-pub type TSCTRVAL_R = crate::FieldReader<u16, u16>;
+pub type TSCTRVAL_R = crate::FieldReader<u16>;
 #[doc = "Field `TSCTRVAL` writer - TS-Counter Value"]
-pub type TSCTRVAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TSVAL_SPEC, u16, u16, 16, O>;
+pub type TSCTRVAL_W<'a, const O: u8> = crate::FieldWriter<'a, TSVAL_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Shadow TS-Counter (Read)"]
     #[inline(always)]

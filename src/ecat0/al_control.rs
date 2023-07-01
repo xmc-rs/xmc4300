@@ -14,7 +14,7 @@ impl From<crate::R<AL_CONTROL_SPEC>> for R {
     }
 }
 #[doc = "Field `IST` reader - Initiate State Transition of the Device StateMachine"]
-pub type IST_R = crate::FieldReader<u8, IST_A>;
+pub type IST_R = crate::FieldReader<IST_A>;
 #[doc = "Initiate State Transition of the Device StateMachine\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -35,6 +35,9 @@ impl From<IST_A> for u8 {
     fn from(variant: IST_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for IST_A {
+    type Ux = u8;
 }
 impl IST_R {
     #[doc = "Get enumerated values variant"]

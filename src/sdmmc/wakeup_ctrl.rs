@@ -71,7 +71,7 @@ impl WAKEUP_EVENT_EN_INT_R {
     }
 }
 #[doc = "Field `WAKEUP_EVENT_EN_INT` writer - Wakeup Event Enable On Card Interrupt"]
-pub type WAKEUP_EVENT_EN_INT_W<'a, const O: u8> = crate::BitWriter<'a, u8, WAKEUP_CTRL_SPEC, WAKEUP_EVENT_EN_INT_A, O>;
+pub type WAKEUP_EVENT_EN_INT_W<'a, const O: u8> = crate::BitWriter<'a, WAKEUP_CTRL_SPEC, O, WAKEUP_EVENT_EN_INT_A>;
 impl<'a, const O: u8> WAKEUP_EVENT_EN_INT_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl WAKEUP_EVENT_EN_INS_R {
     }
 }
 #[doc = "Field `WAKEUP_EVENT_EN_INS` writer - Wakeup Event Enable On SD Card Insertion"]
-pub type WAKEUP_EVENT_EN_INS_W<'a, const O: u8> = crate::BitWriter<'a, u8, WAKEUP_CTRL_SPEC, WAKEUP_EVENT_EN_INS_A, O>;
+pub type WAKEUP_EVENT_EN_INS_W<'a, const O: u8> = crate::BitWriter<'a, WAKEUP_CTRL_SPEC, O, WAKEUP_EVENT_EN_INS_A>;
 impl<'a, const O: u8> WAKEUP_EVENT_EN_INS_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl WAKEUP_EVENT_EN_REM_R {
     }
 }
 #[doc = "Field `WAKEUP_EVENT_EN_REM` writer - Wakeup Event Enable On SD Card Removal"]
-pub type WAKEUP_EVENT_EN_REM_W<'a, const O: u8> = crate::BitWriter<'a, u8, WAKEUP_CTRL_SPEC, WAKEUP_EVENT_EN_REM_A, O>;
+pub type WAKEUP_EVENT_EN_REM_W<'a, const O: u8> = crate::BitWriter<'a, WAKEUP_CTRL_SPEC, O, WAKEUP_EVENT_EN_REM_A>;
 impl<'a, const O: u8> WAKEUP_EVENT_EN_REM_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]

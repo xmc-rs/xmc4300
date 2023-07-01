@@ -35,9 +35,9 @@ impl From<crate::W<MII_PHY_DATA_SPEC>> for W {
     }
 }
 #[doc = "Field `PHY_RW_DATA` reader - PHY Read/Write Data"]
-pub type PHY_RW_DATA_R = crate::FieldReader<u16, u16>;
+pub type PHY_RW_DATA_R = crate::FieldReader<u16>;
 #[doc = "Field `PHY_RW_DATA` writer - PHY Read/Write Data"]
-pub type PHY_RW_DATA_W<'a, const O: u8> = crate::FieldWriter<'a, u16, MII_PHY_DATA_SPEC, u16, u16, 16, O>;
+pub type PHY_RW_DATA_W<'a, const O: u8> = crate::FieldWriter<'a, MII_PHY_DATA_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - PHY Read/Write Data"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<BYPCR_SPEC>> for W {
     }
 }
 #[doc = "Field `BWLE` reader - Bypass Word Length"]
-pub type BWLE_R = crate::FieldReader<u8, u8>;
+pub type BWLE_R = crate::FieldReader;
 #[doc = "Field `BWLE` writer - Bypass Word Length"]
-pub type BWLE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BYPCR_SPEC, u8, u8, 4, O>;
+pub type BWLE_W<'a, const O: u8> = crate::FieldWriter<'a, BYPCR_SPEC, 4, O>;
 #[doc = "Field `BDSSM` reader - Bypass Data Single Shot Mode"]
 pub type BDSSM_R = crate::BitReader<BDSSM_A>;
 #[doc = "Bypass Data Single Shot Mode\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl BDSSM_R {
     }
 }
 #[doc = "Field `BDSSM` writer - Bypass Data Single Shot Mode"]
-pub type BDSSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, BYPCR_SPEC, BDSSM_A, O>;
+pub type BDSSM_W<'a, const O: u8> = crate::BitWriter<'a, BYPCR_SPEC, O, BDSSM_A>;
 impl<'a, const O: u8> BDSSM_W<'a, O> {
     #[doc = "The bypass data is still considered as valid after it has been loaded into TBUF. The loading of the data into TBUF does not clear BDV."]
     #[inline(always)]
@@ -89,7 +89,7 @@ impl<'a, const O: u8> BDSSM_W<'a, O> {
     }
 }
 #[doc = "Field `BDEN` reader - Bypass Data Enable"]
-pub type BDEN_R = crate::FieldReader<u8, BDEN_A>;
+pub type BDEN_R = crate::FieldReader<BDEN_A>;
 #[doc = "Bypass Data Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -108,6 +108,9 @@ impl From<BDEN_A> for u8 {
     fn from(variant: BDEN_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BDEN_A {
+    type Ux = u8;
 }
 impl BDEN_R {
     #[doc = "Get enumerated values variant"]
@@ -143,7 +146,7 @@ impl BDEN_R {
     }
 }
 #[doc = "Field `BDEN` writer - Bypass Data Enable"]
-pub type BDEN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, BYPCR_SPEC, u8, BDEN_A, 2, O>;
+pub type BDEN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, BYPCR_SPEC, 2, O, BDEN_A>;
 impl<'a, const O: u8> BDEN_W<'a, O> {
     #[doc = "The transfer of bypass data is disabled."]
     #[inline(always)]
@@ -203,7 +206,7 @@ impl BDVTR_R {
     }
 }
 #[doc = "Field `BDVTR` writer - Bypass Data Valid Trigger"]
-pub type BDVTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, BYPCR_SPEC, BDVTR_A, O>;
+pub type BDVTR_W<'a, const O: u8> = crate::BitWriter<'a, BYPCR_SPEC, O, BDVTR_A>;
 impl<'a, const O: u8> BDVTR_W<'a, O> {
     #[doc = "Bit BDV is not influenced by DX2T."]
     #[inline(always)]
@@ -253,7 +256,7 @@ impl BPRIO_R {
     }
 }
 #[doc = "Field `BPRIO` writer - Bypass Priority"]
-pub type BPRIO_W<'a, const O: u8> = crate::BitWriter<'a, u32, BYPCR_SPEC, BPRIO_A, O>;
+pub type BPRIO_W<'a, const O: u8> = crate::BitWriter<'a, BYPCR_SPEC, O, BPRIO_A>;
 impl<'a, const O: u8> BPRIO_W<'a, O> {
     #[doc = "The transmit FIFO data has a higher priority than the bypass data."]
     #[inline(always)]
@@ -303,13 +306,13 @@ impl BDV_R {
     }
 }
 #[doc = "Field `BSELO` reader - Bypass Select Outputs"]
-pub type BSELO_R = crate::FieldReader<u8, u8>;
+pub type BSELO_R = crate::FieldReader;
 #[doc = "Field `BSELO` writer - Bypass Select Outputs"]
-pub type BSELO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BYPCR_SPEC, u8, u8, 5, O>;
+pub type BSELO_W<'a, const O: u8> = crate::FieldWriter<'a, BYPCR_SPEC, 5, O>;
 #[doc = "Field `BHPC` reader - Bypass Hardware Port Control"]
-pub type BHPC_R = crate::FieldReader<u8, u8>;
+pub type BHPC_R = crate::FieldReader;
 #[doc = "Field `BHPC` writer - Bypass Hardware Port Control"]
-pub type BHPC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BYPCR_SPEC, u8, u8, 3, O>;
+pub type BHPC_W<'a, const O: u8> = crate::FieldWriter<'a, BYPCR_SPEC, 3, O>;
 impl R {
     #[doc = "Bits 0:3 - Bypass Word Length"]
     #[inline(always)]

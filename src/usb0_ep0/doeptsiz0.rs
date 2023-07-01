@@ -35,15 +35,15 @@ impl From<crate::W<DOEPTSIZ0_SPEC>> for W {
     }
 }
 #[doc = "Field `XferSize` reader - Transfer Size"]
-pub type XFER_SIZE_R = crate::FieldReader<u8, u8>;
+pub type XFER_SIZE_R = crate::FieldReader;
 #[doc = "Field `XferSize` writer - Transfer Size"]
-pub type XFER_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DOEPTSIZ0_SPEC, u8, u8, 7, O>;
+pub type XFER_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, DOEPTSIZ0_SPEC, 7, O>;
 #[doc = "Field `PktCnt` reader - Packet Count"]
-pub type PKT_CNT_R = crate::FieldReader<u8, u8>;
+pub type PKT_CNT_R = crate::FieldReader;
 #[doc = "Field `PktCnt` writer - Packet Count"]
-pub type PKT_CNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DOEPTSIZ0_SPEC, u8, u8, 2, O>;
+pub type PKT_CNT_W<'a, const O: u8> = crate::FieldWriter<'a, DOEPTSIZ0_SPEC, 2, O>;
 #[doc = "Field `SUPCnt` reader - SETUP Packet Count"]
-pub type SUPCNT_R = crate::FieldReader<u8, SUPCNT_A>;
+pub type SUPCNT_R = crate::FieldReader<SUPCNT_A>;
 #[doc = "SETUP Packet Count\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -60,6 +60,9 @@ impl From<SUPCNT_A> for u8 {
     fn from(variant: SUPCNT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SUPCNT_A {
+    type Ux = u8;
 }
 impl SUPCNT_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl SUPCNT_R {
     }
 }
 #[doc = "Field `SUPCnt` writer - SETUP Packet Count"]
-pub type SUPCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DOEPTSIZ0_SPEC, u8, SUPCNT_A, 2, O>;
+pub type SUPCNT_W<'a, const O: u8> = crate::FieldWriter<'a, DOEPTSIZ0_SPEC, 2, O, SUPCNT_A>;
 impl<'a, const O: u8> SUPCNT_W<'a, O> {
     #[doc = "1 packet"]
     #[inline(always)]

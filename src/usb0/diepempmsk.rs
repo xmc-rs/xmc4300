@@ -35,9 +35,9 @@ impl From<crate::W<DIEPEMPMSK_SPEC>> for W {
     }
 }
 #[doc = "Field `InEpTxfEmpMsk` reader - IN EP Tx FIFO Empty Interrupt Mask Bits"]
-pub type IN_EP_TXF_EMP_MSK_R = crate::FieldReader<u16, u16>;
+pub type IN_EP_TXF_EMP_MSK_R = crate::FieldReader<u16>;
 #[doc = "Field `InEpTxfEmpMsk` writer - IN EP Tx FIFO Empty Interrupt Mask Bits"]
-pub type IN_EP_TXF_EMP_MSK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DIEPEMPMSK_SPEC, u16, u16, 16, O>;
+pub type IN_EP_TXF_EMP_MSK_W<'a, const O: u8> = crate::FieldWriter<'a, DIEPEMPMSK_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - IN EP Tx FIFO Empty Interrupt Mask Bits"]
     #[inline(always)]

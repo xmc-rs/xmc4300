@@ -35,9 +35,9 @@ impl From<crate::W<PSC_SPEC>> for W {
     }
 }
 #[doc = "Field `PSIV` reader - Prescaler Initial Value"]
-pub type PSIV_R = crate::FieldReader<u8, u8>;
+pub type PSIV_R = crate::FieldReader;
 #[doc = "Field `PSIV` writer - Prescaler Initial Value"]
-pub type PSIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PSC_SPEC, u8, u8, 4, O>;
+pub type PSIV_W<'a, const O: u8> = crate::FieldWriter<'a, PSC_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Prescaler Initial Value"]
     #[inline(always)]

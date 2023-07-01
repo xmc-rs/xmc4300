@@ -35,15 +35,15 @@ impl From<crate::W<MPU_RASR_A3_SPEC>> for W {
     }
 }
 #[doc = "Field `ENABLE` reader - Region enable bit."]
-pub type ENABLE_R = crate::BitReader<bool>;
+pub type ENABLE_R = crate::BitReader;
 #[doc = "Field `ENABLE` writer - Region enable bit."]
-pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_RASR_A3_SPEC, bool, O>;
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, MPU_RASR_A3_SPEC, O>;
 #[doc = "Field `SIZE` reader - MPU protection region size"]
-pub type SIZE_R = crate::FieldReader<u8, u8>;
+pub type SIZE_R = crate::FieldReader;
 #[doc = "Field `SIZE` writer - MPU protection region size"]
-pub type SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MPU_RASR_A3_SPEC, u8, u8, 5, O>;
+pub type SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, MPU_RASR_A3_SPEC, 5, O>;
 #[doc = "Field `SRD` reader - Subregion disable bits"]
-pub type SRD_R = crate::FieldReader<u8, SRD_A>;
+pub type SRD_R = crate::FieldReader<SRD_A>;
 #[doc = "Subregion disable bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -58,6 +58,9 @@ impl From<SRD_A> for u8 {
     fn from(variant: SRD_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SRD_A {
+    type Ux = u8;
 }
 impl SRD_R {
     #[doc = "Get enumerated values variant"]
@@ -81,7 +84,7 @@ impl SRD_R {
     }
 }
 #[doc = "Field `SRD` writer - Subregion disable bits"]
-pub type SRD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MPU_RASR_A3_SPEC, u8, SRD_A, 8, O>;
+pub type SRD_W<'a, const O: u8> = crate::FieldWriter<'a, MPU_RASR_A3_SPEC, 8, O, SRD_A>;
 impl<'a, const O: u8> SRD_W<'a, O> {
     #[doc = "corresponding sub-region is enabled"]
     #[inline(always)]
@@ -95,25 +98,25 @@ impl<'a, const O: u8> SRD_W<'a, O> {
     }
 }
 #[doc = "Field `B` reader - Memory access attribute"]
-pub type B_R = crate::BitReader<bool>;
+pub type B_R = crate::BitReader;
 #[doc = "Field `B` writer - Memory access attribute"]
-pub type B_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_RASR_A3_SPEC, bool, O>;
+pub type B_W<'a, const O: u8> = crate::BitWriter<'a, MPU_RASR_A3_SPEC, O>;
 #[doc = "Field `C` reader - Memory access attribute"]
-pub type C_R = crate::BitReader<bool>;
+pub type C_R = crate::BitReader;
 #[doc = "Field `C` writer - Memory access attribute"]
-pub type C_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_RASR_A3_SPEC, bool, O>;
+pub type C_W<'a, const O: u8> = crate::BitWriter<'a, MPU_RASR_A3_SPEC, O>;
 #[doc = "Field `S` reader - Shareable bit"]
-pub type S_R = crate::BitReader<bool>;
+pub type S_R = crate::BitReader;
 #[doc = "Field `S` writer - Shareable bit"]
-pub type S_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_RASR_A3_SPEC, bool, O>;
+pub type S_W<'a, const O: u8> = crate::BitWriter<'a, MPU_RASR_A3_SPEC, O>;
 #[doc = "Field `TEX` reader - Memory access attribute"]
-pub type TEX_R = crate::FieldReader<u8, u8>;
+pub type TEX_R = crate::FieldReader;
 #[doc = "Field `TEX` writer - Memory access attribute"]
-pub type TEX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MPU_RASR_A3_SPEC, u8, u8, 3, O>;
+pub type TEX_W<'a, const O: u8> = crate::FieldWriter<'a, MPU_RASR_A3_SPEC, 3, O>;
 #[doc = "Field `AP` reader - Access permission field"]
-pub type AP_R = crate::FieldReader<u8, u8>;
+pub type AP_R = crate::FieldReader;
 #[doc = "Field `AP` writer - Access permission field"]
-pub type AP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MPU_RASR_A3_SPEC, u8, u8, 3, O>;
+pub type AP_W<'a, const O: u8> = crate::FieldWriter<'a, MPU_RASR_A3_SPEC, 3, O>;
 #[doc = "Field `XN` reader - Instruction access disable bit"]
 pub type XN_R = crate::BitReader<XN_A>;
 #[doc = "Instruction access disable bit\n\nValue on reset: 0"]
@@ -151,7 +154,7 @@ impl XN_R {
     }
 }
 #[doc = "Field `XN` writer - Instruction access disable bit"]
-pub type XN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MPU_RASR_A3_SPEC, XN_A, O>;
+pub type XN_W<'a, const O: u8> = crate::BitWriter<'a, MPU_RASR_A3_SPEC, O, XN_A>;
 impl<'a, const O: u8> XN_W<'a, O> {
     #[doc = "instruction fetches enabled"]
     #[inline(always)]

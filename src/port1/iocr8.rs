@@ -35,21 +35,21 @@ impl From<crate::W<IOCR8_SPEC>> for W {
     }
 }
 #[doc = "Field `PC8` reader - Port Control for Port n Pin 8 to 11"]
-pub type PC8_R = crate::FieldReader<u8, u8>;
+pub type PC8_R = crate::FieldReader;
 #[doc = "Field `PC8` writer - Port Control for Port n Pin 8 to 11"]
-pub type PC8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR8_SPEC, u8, u8, 5, O>;
+pub type PC8_W<'a, const O: u8> = crate::FieldWriter<'a, IOCR8_SPEC, 5, O>;
 #[doc = "Field `PC9` reader - Port Control for Port n Pin 8 to 11"]
-pub type PC9_R = crate::FieldReader<u8, u8>;
+pub type PC9_R = crate::FieldReader;
 #[doc = "Field `PC9` writer - Port Control for Port n Pin 8 to 11"]
-pub type PC9_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR8_SPEC, u8, u8, 5, O>;
+pub type PC9_W<'a, const O: u8> = crate::FieldWriter<'a, IOCR8_SPEC, 5, O>;
 #[doc = "Field `PC10` reader - Port Control for Port n Pin 8 to 11"]
-pub type PC10_R = crate::FieldReader<u8, u8>;
+pub type PC10_R = crate::FieldReader;
 #[doc = "Field `PC10` writer - Port Control for Port n Pin 8 to 11"]
-pub type PC10_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR8_SPEC, u8, u8, 5, O>;
+pub type PC10_W<'a, const O: u8> = crate::FieldWriter<'a, IOCR8_SPEC, 5, O>;
 #[doc = "Field `PC11` reader - Port Control for Port n Pin 8 to 11"]
-pub type PC11_R = crate::FieldReader<u8, u8>;
+pub type PC11_R = crate::FieldReader;
 #[doc = "Field `PC11` writer - Port Control for Port n Pin 8 to 11"]
-pub type PC11_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR8_SPEC, u8, u8, 5, O>;
+pub type PC11_W<'a, const O: u8> = crate::FieldWriter<'a, IOCR8_SPEC, 5, O>;
 impl R {
     #[doc = "Bits 3:7 - Port Control for Port n Pin 8 to 11"]
     #[inline(always)]

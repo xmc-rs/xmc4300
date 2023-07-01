@@ -14,7 +14,7 @@ impl From<crate::R<Q0R0_SPEC>> for R {
     }
 }
 #[doc = "Field `REQCHNR` reader - Request Channel Number"]
-pub type REQCHNR_R = crate::FieldReader<u8, u8>;
+pub type REQCHNR_R = crate::FieldReader;
 #[doc = "Field `RF` reader - Refill"]
 pub type RF_R = crate::BitReader<RF_A>;
 #[doc = "Refill\n\nValue on reset: 0"]

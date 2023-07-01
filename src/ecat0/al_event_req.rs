@@ -107,9 +107,9 @@ impl DC_LE_R {
     }
 }
 #[doc = "Field `ST_S0` reader - State of DC SYNC0"]
-pub type ST_S0_R = crate::BitReader<bool>;
+pub type ST_S0_R = crate::BitReader;
 #[doc = "Field `ST_S1` reader - State of DC SYNC1"]
-pub type ST_S1_R = crate::BitReader<bool>;
+pub type ST_S1_R = crate::BitReader;
 #[doc = "Field `SM_A` reader - SyncManager activation register changed"]
 pub type SM_A_R = crate::BitReader<SM_A_A>;
 #[doc = "SyncManager activation register changed\n\nValue on reset: 0"]
@@ -327,7 +327,7 @@ impl SMI_2_R {
     }
 }
 #[doc = "Field `SMI_2` writer - SyncManager interrupt"]
-pub type SMI_2_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_REQ_SPEC, SMI_2_A, O>;
+pub type SMI_2_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_2_A>;
 impl<'a, const O: u8> SMI_2_W<'a, O> {
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
@@ -377,7 +377,7 @@ impl SMI_3_R {
     }
 }
 #[doc = "Field `SMI_3` writer - SyncManager interrupt"]
-pub type SMI_3_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_REQ_SPEC, SMI_3_A, O>;
+pub type SMI_3_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_3_A>;
 impl<'a, const O: u8> SMI_3_W<'a, O> {
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
@@ -427,7 +427,7 @@ impl SMI_4_R {
     }
 }
 #[doc = "Field `SMI_4` writer - SyncManager interrupt"]
-pub type SMI_4_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_REQ_SPEC, SMI_4_A, O>;
+pub type SMI_4_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_4_A>;
 impl<'a, const O: u8> SMI_4_W<'a, O> {
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
@@ -477,7 +477,7 @@ impl SMI_5_R {
     }
 }
 #[doc = "Field `SMI_5` writer - SyncManager interrupt"]
-pub type SMI_5_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_REQ_SPEC, SMI_5_A, O>;
+pub type SMI_5_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_5_A>;
 impl<'a, const O: u8> SMI_5_W<'a, O> {
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
@@ -527,7 +527,7 @@ impl SMI_6_R {
     }
 }
 #[doc = "Field `SMI_6` writer - SyncManager interrupt"]
-pub type SMI_6_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_REQ_SPEC, SMI_6_A, O>;
+pub type SMI_6_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_6_A>;
 impl<'a, const O: u8> SMI_6_W<'a, O> {
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
@@ -577,7 +577,7 @@ impl SMI_7_R {
     }
 }
 #[doc = "Field `SMI_7` writer - SyncManager interrupt"]
-pub type SMI_7_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_REQ_SPEC, SMI_7_A, O>;
+pub type SMI_7_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_7_A>;
 impl<'a, const O: u8> SMI_7_W<'a, O> {
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
@@ -627,7 +627,7 @@ impl SMI_8_R {
     }
 }
 #[doc = "Field `SMI_8` writer - SyncManager interrupt"]
-pub type SMI_8_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_REQ_SPEC, SMI_8_A, O>;
+pub type SMI_8_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_8_A>;
 impl<'a, const O: u8> SMI_8_W<'a, O> {
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
@@ -677,7 +677,7 @@ impl SMI_9_R {
     }
 }
 #[doc = "Field `SMI_9` writer - SyncManager interrupt"]
-pub type SMI_9_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_REQ_SPEC, SMI_9_A, O>;
+pub type SMI_9_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_9_A>;
 impl<'a, const O: u8> SMI_9_W<'a, O> {
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
@@ -727,7 +727,7 @@ impl SMI_10_R {
     }
 }
 #[doc = "Field `SMI_10` writer - SyncManager interrupt"]
-pub type SMI_10_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_REQ_SPEC, SMI_10_A, O>;
+pub type SMI_10_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_10_A>;
 impl<'a, const O: u8> SMI_10_W<'a, O> {
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
@@ -777,7 +777,7 @@ impl SMI_11_R {
     }
 }
 #[doc = "Field `SMI_11` writer - SyncManager interrupt"]
-pub type SMI_11_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_REQ_SPEC, SMI_11_A, O>;
+pub type SMI_11_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_11_A>;
 impl<'a, const O: u8> SMI_11_W<'a, O> {
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
@@ -827,7 +827,7 @@ impl SMI_12_R {
     }
 }
 #[doc = "Field `SMI_12` writer - SyncManager interrupt"]
-pub type SMI_12_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_REQ_SPEC, SMI_12_A, O>;
+pub type SMI_12_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_12_A>;
 impl<'a, const O: u8> SMI_12_W<'a, O> {
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
@@ -877,7 +877,7 @@ impl SMI_13_R {
     }
 }
 #[doc = "Field `SMI_13` writer - SyncManager interrupt"]
-pub type SMI_13_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_REQ_SPEC, SMI_13_A, O>;
+pub type SMI_13_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_13_A>;
 impl<'a, const O: u8> SMI_13_W<'a, O> {
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
@@ -927,7 +927,7 @@ impl SMI_14_R {
     }
 }
 #[doc = "Field `SMI_14` writer - SyncManager interrupt"]
-pub type SMI_14_W<'a, const O: u8> = crate::BitWriter<'a, u32, AL_EVENT_REQ_SPEC, SMI_14_A, O>;
+pub type SMI_14_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_14_A>;
 impl<'a, const O: u8> SMI_14_W<'a, O> {
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]

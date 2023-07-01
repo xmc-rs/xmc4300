@@ -35,7 +35,7 @@ impl From<crate::W<QMR0_SPEC>> for W {
     }
 }
 #[doc = "Field `ENGT` reader - Enable Gate"]
-pub type ENGT_R = crate::FieldReader<u8, ENGT_A>;
+pub type ENGT_R = crate::FieldReader<ENGT_A>;
 #[doc = "Enable Gate\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<ENGT_A> for u8 {
     fn from(variant: ENGT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ENGT_A {
+    type Ux = u8;
 }
 impl ENGT_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl ENGT_R {
     }
 }
 #[doc = "Field `ENGT` writer - Enable Gate"]
-pub type ENGT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, QMR0_SPEC, u8, ENGT_A, 2, O>;
+pub type ENGT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, QMR0_SPEC, 2, O, ENGT_A>;
 impl<'a, const O: u8> ENGT_W<'a, O> {
     #[doc = "No conversion requests are issued"]
     #[inline(always)]
@@ -149,7 +152,7 @@ impl ENTR_R {
     }
 }
 #[doc = "Field `ENTR` writer - Enable External Trigger"]
-pub type ENTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, QMR0_SPEC, ENTR_A, O>;
+pub type ENTR_W<'a, const O: u8> = crate::BitWriter<'a, QMR0_SPEC, O, ENTR_A>;
 impl<'a, const O: u8> ENTR_W<'a, O> {
     #[doc = "External trigger disabled"]
     #[inline(always)]
@@ -177,7 +180,7 @@ impl From<CLRV_AW> for bool {
     }
 }
 #[doc = "Field `CLRV` writer - Clear Valid Bit"]
-pub type CLRV_W<'a, const O: u8> = crate::BitWriter<'a, u32, QMR0_SPEC, CLRV_AW, O>;
+pub type CLRV_W<'a, const O: u8> = crate::BitWriter<'a, QMR0_SPEC, O, CLRV_AW>;
 impl<'a, const O: u8> CLRV_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -205,7 +208,7 @@ impl From<TREV_AW> for bool {
     }
 }
 #[doc = "Field `TREV` writer - Trigger Event"]
-pub type TREV_W<'a, const O: u8> = crate::BitWriter<'a, u32, QMR0_SPEC, TREV_AW, O>;
+pub type TREV_W<'a, const O: u8> = crate::BitWriter<'a, QMR0_SPEC, O, TREV_AW>;
 impl<'a, const O: u8> TREV_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -233,7 +236,7 @@ impl From<FLUSH_AW> for bool {
     }
 }
 #[doc = "Field `FLUSH` writer - Flush Queue"]
-pub type FLUSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, QMR0_SPEC, FLUSH_AW, O>;
+pub type FLUSH_W<'a, const O: u8> = crate::BitWriter<'a, QMR0_SPEC, O, FLUSH_AW>;
 impl<'a, const O: u8> FLUSH_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -261,7 +264,7 @@ impl From<CEV_AW> for bool {
     }
 }
 #[doc = "Field `CEV` writer - Clear Event Flag"]
-pub type CEV_W<'a, const O: u8> = crate::BitWriter<'a, u32, QMR0_SPEC, CEV_AW, O>;
+pub type CEV_W<'a, const O: u8> = crate::BitWriter<'a, QMR0_SPEC, O, CEV_AW>;
 impl<'a, const O: u8> CEV_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -311,7 +314,7 @@ impl RPTDIS_R {
     }
 }
 #[doc = "Field `RPTDIS` writer - Repeat Disable"]
-pub type RPTDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, QMR0_SPEC, RPTDIS_A, O>;
+pub type RPTDIS_W<'a, const O: u8> = crate::BitWriter<'a, QMR0_SPEC, O, RPTDIS_A>;
 impl<'a, const O: u8> RPTDIS_W<'a, O> {
     #[doc = "A cancelled conversion is repeated"]
     #[inline(always)]

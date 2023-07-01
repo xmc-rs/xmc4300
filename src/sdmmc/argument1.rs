@@ -35,9 +35,9 @@ impl From<crate::W<ARGUMENT1_SPEC>> for W {
     }
 }
 #[doc = "Field `ARGUMENT1` reader - Command Argument"]
-pub type ARGUMENT1_R = crate::FieldReader<u32, u32>;
+pub type ARGUMENT1_R = crate::FieldReader<u32>;
 #[doc = "Field `ARGUMENT1` writer - Command Argument"]
-pub type ARGUMENT1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ARGUMENT1_SPEC, u32, u32, 32, O>;
+pub type ARGUMENT1_W<'a, const O: u8> = crate::FieldWriter<'a, ARGUMENT1_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Command Argument"]
     #[inline(always)]

@@ -35,7 +35,7 @@ impl From<crate::W<COMMAND_SPEC>> for W {
     }
 }
 #[doc = "Field `RESP_TYPE_SELECT` reader - Response Type Select"]
-pub type RESP_TYPE_SELECT_R = crate::FieldReader<u8, RESP_TYPE_SELECT_A>;
+pub type RESP_TYPE_SELECT_R = crate::FieldReader<RESP_TYPE_SELECT_A>;
 #[doc = "Response Type Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<RESP_TYPE_SELECT_A> for u8 {
     fn from(variant: RESP_TYPE_SELECT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RESP_TYPE_SELECT_A {
+    type Ux = u8;
 }
 impl RESP_TYPE_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl RESP_TYPE_SELECT_R {
     }
 }
 #[doc = "Field `RESP_TYPE_SELECT` writer - Response Type Select"]
-pub type RESP_TYPE_SELECT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, COMMAND_SPEC, u8, RESP_TYPE_SELECT_A, 2, O>;
+pub type RESP_TYPE_SELECT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, COMMAND_SPEC, 2, O, RESP_TYPE_SELECT_A>;
 impl<'a, const O: u8> RESP_TYPE_SELECT_W<'a, O> {
     #[doc = "No Response"]
     #[inline(always)]
@@ -149,7 +152,7 @@ impl CMD_CRC_CHECK_EN_R {
     }
 }
 #[doc = "Field `CMD_CRC_CHECK_EN` writer - Command CRC Check Enable"]
-pub type CMD_CRC_CHECK_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, COMMAND_SPEC, CMD_CRC_CHECK_EN_A, O>;
+pub type CMD_CRC_CHECK_EN_W<'a, const O: u8> = crate::BitWriter<'a, COMMAND_SPEC, O, CMD_CRC_CHECK_EN_A>;
 impl<'a, const O: u8> CMD_CRC_CHECK_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -199,7 +202,7 @@ impl CMD_IND_CHECK_EN_R {
     }
 }
 #[doc = "Field `CMD_IND_CHECK_EN` writer - Command Index Check Enable"]
-pub type CMD_IND_CHECK_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, COMMAND_SPEC, CMD_IND_CHECK_EN_A, O>;
+pub type CMD_IND_CHECK_EN_W<'a, const O: u8> = crate::BitWriter<'a, COMMAND_SPEC, O, CMD_IND_CHECK_EN_A>;
 impl<'a, const O: u8> CMD_IND_CHECK_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -249,7 +252,7 @@ impl DATA_PRESENT_SELECT_R {
     }
 }
 #[doc = "Field `DATA_PRESENT_SELECT` writer - Data Present Select"]
-pub type DATA_PRESENT_SELECT_W<'a, const O: u8> = crate::BitWriter<'a, u16, COMMAND_SPEC, DATA_PRESENT_SELECT_A, O>;
+pub type DATA_PRESENT_SELECT_W<'a, const O: u8> = crate::BitWriter<'a, COMMAND_SPEC, O, DATA_PRESENT_SELECT_A>;
 impl<'a, const O: u8> DATA_PRESENT_SELECT_W<'a, O> {
     #[doc = "No Data Present"]
     #[inline(always)]
@@ -263,7 +266,7 @@ impl<'a, const O: u8> DATA_PRESENT_SELECT_W<'a, O> {
     }
 }
 #[doc = "Field `CMD_TYPE` reader - Command Type"]
-pub type CMD_TYPE_R = crate::FieldReader<u8, CMD_TYPE_A>;
+pub type CMD_TYPE_R = crate::FieldReader<CMD_TYPE_A>;
 #[doc = "Command Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -282,6 +285,9 @@ impl From<CMD_TYPE_A> for u8 {
     fn from(variant: CMD_TYPE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CMD_TYPE_A {
+    type Ux = u8;
 }
 impl CMD_TYPE_R {
     #[doc = "Get enumerated values variant"]
@@ -317,7 +323,7 @@ impl CMD_TYPE_R {
     }
 }
 #[doc = "Field `CMD_TYPE` writer - Command Type"]
-pub type CMD_TYPE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, COMMAND_SPEC, u8, CMD_TYPE_A, 2, O>;
+pub type CMD_TYPE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, COMMAND_SPEC, 2, O, CMD_TYPE_A>;
 impl<'a, const O: u8> CMD_TYPE_W<'a, O> {
     #[doc = "Normal"]
     #[inline(always)]
@@ -341,9 +347,9 @@ impl<'a, const O: u8> CMD_TYPE_W<'a, O> {
     }
 }
 #[doc = "Field `CMD_IND` reader - Command Index"]
-pub type CMD_IND_R = crate::FieldReader<u8, u8>;
+pub type CMD_IND_R = crate::FieldReader;
 #[doc = "Field `CMD_IND` writer - Command Index"]
-pub type CMD_IND_W<'a, const O: u8> = crate::FieldWriter<'a, u16, COMMAND_SPEC, u8, u8, 6, O>;
+pub type CMD_IND_W<'a, const O: u8> = crate::FieldWriter<'a, COMMAND_SPEC, 6, O>;
 impl R {
     #[doc = "Bits 0:1 - Response Type Select"]
     #[inline(always)]

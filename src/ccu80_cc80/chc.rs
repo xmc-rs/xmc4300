@@ -71,7 +71,7 @@ impl ASE_R {
     }
 }
 #[doc = "Field `ASE` writer - Asymmetric PWM mode Enable"]
-pub type ASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHC_SPEC, ASE_A, O>;
+pub type ASE_W<'a, const O: u8> = crate::BitWriter<'a, CHC_SPEC, O, ASE_A>;
 impl<'a, const O: u8> ASE_W<'a, O> {
     #[doc = "Asymmetric PWM is disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl OCS1_R {
     }
 }
 #[doc = "Field `OCS1` writer - Output selector for CCU8x.OUTy0"]
-pub type OCS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHC_SPEC, OCS1_A, O>;
+pub type OCS1_W<'a, const O: u8> = crate::BitWriter<'a, CHC_SPEC, O, OCS1_A>;
 impl<'a, const O: u8> OCS1_W<'a, O> {
     #[doc = "CC8yST1 signal path is connected to the CCU8x.OUTy0"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl OCS2_R {
     }
 }
 #[doc = "Field `OCS2` writer - Output selector for CCU8x.OUTy1"]
-pub type OCS2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHC_SPEC, OCS2_A, O>;
+pub type OCS2_W<'a, const O: u8> = crate::BitWriter<'a, CHC_SPEC, O, OCS2_A>;
 impl<'a, const O: u8> OCS2_W<'a, O> {
     #[doc = "Inverted CC8yST1 signal path is connected to the CCU8x.OUTy1"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl OCS3_R {
     }
 }
 #[doc = "Field `OCS3` writer - Output selector for CCU8x.OUTy2"]
-pub type OCS3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHC_SPEC, OCS3_A, O>;
+pub type OCS3_W<'a, const O: u8> = crate::BitWriter<'a, CHC_SPEC, O, OCS3_A>;
 impl<'a, const O: u8> OCS3_W<'a, O> {
     #[doc = "CC8yST2 signal path is connected to the CCU8x.OUTy2"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl OCS4_R {
     }
 }
 #[doc = "Field `OCS4` writer - Output selector for CCU8x.OUTy3"]
-pub type OCS4_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHC_SPEC, OCS4_A, O>;
+pub type OCS4_W<'a, const O: u8> = crate::BitWriter<'a, CHC_SPEC, O, OCS4_A>;
 impl<'a, const O: u8> OCS4_W<'a, O> {
     #[doc = "Inverted CC8yST2 signal path is connected to the CCU8x.OUTy3"]
     #[inline(always)]

@@ -34,7 +34,7 @@ impl From<HIBWK_AW> for bool {
     }
 }
 #[doc = "Field `HIBWK` writer - Set Hibernate Wake-up Reset Status"]
-pub type HIBWK_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTSET_SPEC, HIBWK_AW, O>;
+pub type HIBWK_W<'a, const O: u8> = crate::BitWriter<'a, RSTSET_SPEC, O, HIBWK_AW>;
 impl<'a, const O: u8> HIBWK_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<HIBRS_AW> for bool {
     }
 }
 #[doc = "Field `HIBRS` writer - Set Hibernate Reset"]
-pub type HIBRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTSET_SPEC, HIBRS_AW, O>;
+pub type HIBRS_W<'a, const O: u8> = crate::BitWriter<'a, RSTSET_SPEC, O, HIBRS_AW>;
 impl<'a, const O: u8> HIBRS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<LCKEN_AW> for bool {
     }
 }
 #[doc = "Field `LCKEN` writer - Enable Lockup Reset"]
-pub type LCKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTSET_SPEC, LCKEN_AW, O>;
+pub type LCKEN_W<'a, const O: u8> = crate::BitWriter<'a, RSTSET_SPEC, O, LCKEN_AW>;
 impl<'a, const O: u8> LCKEN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<ECAT0RS_AW> for bool {
     }
 }
 #[doc = "Field `ECAT0RS` writer - ECAT0 Reset Status Information"]
-pub type ECAT0RS_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTSET_SPEC, ECAT0RS_AW, O>;
+pub type ECAT0RS_W<'a, const O: u8> = crate::BitWriter<'a, RSTSET_SPEC, O, ECAT0RS_AW>;
 impl<'a, const O: u8> ECAT0RS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<REMOTE_WAKE_UP_FRAME_FILTER_SPEC>> for W {
     }
 }
 #[doc = "Field `WKUPFRMFTR` reader - Remote Wake-Up Frame Filter"]
-pub type WKUPFRMFTR_R = crate::FieldReader<u32, u32>;
+pub type WKUPFRMFTR_R = crate::FieldReader<u32>;
 #[doc = "Field `WKUPFRMFTR` writer - Remote Wake-Up Frame Filter"]
-pub type WKUPFRMFTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REMOTE_WAKE_UP_FRAME_FILTER_SPEC, u32, u32, 32, O>;
+pub type WKUPFRMFTR_W<'a, const O: u8> = crate::FieldWriter<'a, REMOTE_WAKE_UP_FRAME_FILTER_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Remote Wake-Up Frame Filter"]
     #[inline(always)]

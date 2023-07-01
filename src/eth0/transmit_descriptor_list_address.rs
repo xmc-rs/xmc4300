@@ -35,9 +35,9 @@ impl From<crate::W<TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC>> for W {
     }
 }
 #[doc = "Field `TDESLA_32bit` reader - Start of Transmit List"]
-pub type TDESLA_32BIT_R = crate::FieldReader<u32, u32>;
+pub type TDESLA_32BIT_R = crate::FieldReader<u32>;
 #[doc = "Field `TDESLA_32bit` writer - Start of Transmit List"]
-pub type TDESLA_32BIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC, u32, u32, 30, O>;
+pub type TDESLA_32BIT_W<'a, const O: u8> = crate::FieldWriter<'a, TRANSMIT_DESCRIPTOR_LIST_ADDRESS_SPEC, 30, O, u32>;
 impl R {
     #[doc = "Bits 2:31 - Start of Transmit List"]
     #[inline(always)]

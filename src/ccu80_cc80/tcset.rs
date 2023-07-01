@@ -20,7 +20,7 @@ impl From<crate::W<TCSET_SPEC>> for W {
     }
 }
 #[doc = "Field `TRBS` writer - Timer Run Bit set"]
-pub type TRBS_W<'a, const O: u8> = crate::BitWriter<'a, u32, TCSET_SPEC, bool, O>;
+pub type TRBS_W<'a, const O: u8> = crate::BitWriter<'a, TCSET_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Timer Run Bit set"]
     #[inline(always)]

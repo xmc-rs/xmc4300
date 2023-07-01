@@ -71,7 +71,7 @@ impl ENABLE_R {
     }
 }
 #[doc = "Field `ENABLE` writer - Enable"]
-pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYST_CSR_SPEC, ENABLE_A, O>;
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, SYST_CSR_SPEC, O, ENABLE_A>;
 impl<'a, const O: u8> ENABLE_W<'a, O> {
     #[doc = "counter disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl TICKINT_R {
     }
 }
 #[doc = "Field `TICKINT` writer - Tick Interrupt Enable"]
-pub type TICKINT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYST_CSR_SPEC, TICKINT_A, O>;
+pub type TICKINT_W<'a, const O: u8> = crate::BitWriter<'a, SYST_CSR_SPEC, O, TICKINT_A>;
 impl<'a, const O: u8> TICKINT_W<'a, O> {
     #[doc = "counting down to zero does not assert the SysTick exception request"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl CLKSOURCE_R {
     }
 }
 #[doc = "Field `CLKSOURCE` writer - Indicates the clock source:"]
-pub type CLKSOURCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYST_CSR_SPEC, CLKSOURCE_A, O>;
+pub type CLKSOURCE_W<'a, const O: u8> = crate::BitWriter<'a, SYST_CSR_SPEC, O, CLKSOURCE_A>;
 impl<'a, const O: u8> CLKSOURCE_W<'a, O> {
     #[doc = "external clock"]
     #[inline(always)]
@@ -185,9 +185,9 @@ impl<'a, const O: u8> CLKSOURCE_W<'a, O> {
     }
 }
 #[doc = "Field `COUNTFLAG` reader - Counter Flag"]
-pub type COUNTFLAG_R = crate::BitReader<bool>;
+pub type COUNTFLAG_R = crate::BitReader;
 #[doc = "Field `COUNTFLAG` writer - Counter Flag"]
-pub type COUNTFLAG_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYST_CSR_SPEC, bool, O>;
+pub type COUNTFLAG_W<'a, const O: u8> = crate::BitWriter<'a, SYST_CSR_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]

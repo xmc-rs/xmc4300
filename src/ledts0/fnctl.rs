@@ -35,7 +35,7 @@ impl From<crate::W<FNCTL_SPEC>> for W {
     }
 }
 #[doc = "Field `PADT` reader - Touch-Sense TSIN Pad Turn"]
-pub type PADT_R = crate::FieldReader<u8, PADT_A>;
+pub type PADT_R = crate::FieldReader<PADT_A>;
 #[doc = "Touch-Sense TSIN Pad Turn\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -50,6 +50,9 @@ impl From<PADT_A> for u8 {
     fn from(variant: PADT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PADT_A {
+    type Ux = u8;
 }
 impl PADT_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +76,7 @@ impl PADT_R {
     }
 }
 #[doc = "Field `PADT` writer - Touch-Sense TSIN Pad Turn"]
-pub type PADT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FNCTL_SPEC, u8, PADT_A, 3, O>;
+pub type PADT_W<'a, const O: u8> = crate::FieldWriter<'a, FNCTL_SPEC, 3, O, PADT_A>;
 impl<'a, const O: u8> PADT_W<'a, O> {
     #[doc = "TSIN0"]
     #[inline(always)]
@@ -123,7 +126,7 @@ impl PADTSW_R {
     }
 }
 #[doc = "Field `PADTSW` writer - Software Control for Touch-Sense Pad Turn"]
-pub type PADTSW_W<'a, const O: u8> = crate::BitWriter<'a, u32, FNCTL_SPEC, PADTSW_A, O>;
+pub type PADTSW_W<'a, const O: u8> = crate::BitWriter<'a, FNCTL_SPEC, O, PADTSW_A>;
 impl<'a, const O: u8> PADTSW_W<'a, O> {
     #[doc = "The hardware automatically enables the touch-sense inputs in sequence round-robin, starting from TSIN0."]
     #[inline(always)]
@@ -174,7 +177,7 @@ impl EPULL_R {
     }
 }
 #[doc = "Field `EPULL` writer - Enable External Pull-up Configuration on Pin COLA"]
-pub type EPULL_W<'a, const O: u8> = crate::BitWriter<'a, u32, FNCTL_SPEC, EPULL_A, O>;
+pub type EPULL_W<'a, const O: u8> = crate::BitWriter<'a, FNCTL_SPEC, O, EPULL_A>;
 impl<'a, const O: u8> EPULL_W<'a, O> {
     #[doc = "HW over-rule to enable internal pull-up is active on TSIN\\[x\\]
 for set duration in touch-sense time slice. With this setting, it is not specified to assign the COLA to any pin."]
@@ -189,9 +192,9 @@ for set duration in touch-sense time slice. With this setting, it is not specifi
     }
 }
 #[doc = "Field `FNCOL` reader - Previous Active Function/LED Column Status"]
-pub type FNCOL_R = crate::FieldReader<u8, u8>;
+pub type FNCOL_R = crate::FieldReader;
 #[doc = "Field `ACCCNT` reader - Accumulate Count on Touch-Sense Input"]
-pub type ACCCNT_R = crate::FieldReader<u8, ACCCNT_A>;
+pub type ACCCNT_R = crate::FieldReader<ACCCNT_A>;
 #[doc = "Accumulate Count on Touch-Sense Input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -208,6 +211,9 @@ impl From<ACCCNT_A> for u8 {
     fn from(variant: ACCCNT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ACCCNT_A {
+    type Ux = u8;
 }
 impl ACCCNT_R {
     #[doc = "Get enumerated values variant"]
@@ -237,7 +243,7 @@ impl ACCCNT_R {
     }
 }
 #[doc = "Field `ACCCNT` writer - Accumulate Count on Touch-Sense Input"]
-pub type ACCCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FNCTL_SPEC, u8, ACCCNT_A, 4, O>;
+pub type ACCCNT_W<'a, const O: u8> = crate::FieldWriter<'a, FNCTL_SPEC, 4, O, ACCCNT_A>;
 impl<'a, const O: u8> ACCCNT_W<'a, O> {
     #[doc = "1 time"]
     #[inline(always)]
@@ -292,7 +298,7 @@ impl TSCCMP_R {
     }
 }
 #[doc = "Field `TSCCMP` writer - Common Compare Enable for Touch-Sense"]
-pub type TSCCMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, FNCTL_SPEC, TSCCMP_A, O>;
+pub type TSCCMP_W<'a, const O: u8> = crate::BitWriter<'a, FNCTL_SPEC, O, TSCCMP_A>;
 impl<'a, const O: u8> TSCCMP_W<'a, O> {
     #[doc = "Disable common compare for touch-sense"]
     #[inline(always)]
@@ -306,7 +312,7 @@ impl<'a, const O: u8> TSCCMP_W<'a, O> {
     }
 }
 #[doc = "Field `TSOEXT` reader - Extension for Touch-Sense Output for Pin-Low-Level"]
-pub type TSOEXT_R = crate::FieldReader<u8, TSOEXT_A>;
+pub type TSOEXT_R = crate::FieldReader<TSOEXT_A>;
 #[doc = "Extension for Touch-Sense Output for Pin-Low-Level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -325,6 +331,9 @@ impl From<TSOEXT_A> for u8 {
     fn from(variant: TSOEXT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TSOEXT_A {
+    type Ux = u8;
 }
 impl TSOEXT_R {
     #[doc = "Get enumerated values variant"]
@@ -360,7 +369,7 @@ impl TSOEXT_R {
     }
 }
 #[doc = "Field `TSOEXT` writer - Extension for Touch-Sense Output for Pin-Low-Level"]
-pub type TSOEXT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, FNCTL_SPEC, u8, TSOEXT_A, 2, O>;
+pub type TSOEXT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, FNCTL_SPEC, 2, O, TSOEXT_A>;
 impl<'a, const O: u8> TSOEXT_W<'a, O> {
     #[doc = "Extend by 1 ledts_clk"]
     #[inline(always)]
@@ -420,7 +429,7 @@ impl TSCTRR_R {
     }
 }
 #[doc = "Field `TSCTRR` writer - TS-Counter Auto Reset"]
-pub type TSCTRR_W<'a, const O: u8> = crate::BitWriter<'a, u32, FNCTL_SPEC, TSCTRR_A, O>;
+pub type TSCTRR_W<'a, const O: u8> = crate::BitWriter<'a, FNCTL_SPEC, O, TSCTRR_A>;
 impl<'a, const O: u8> TSCTRR_W<'a, O> {
     #[doc = "Disable TS-counter automatic reset"]
     #[inline(always)]
@@ -470,7 +479,7 @@ impl TSCTRSAT_R {
     }
 }
 #[doc = "Field `TSCTRSAT` writer - Saturation of TS-Counter"]
-pub type TSCTRSAT_W<'a, const O: u8> = crate::BitWriter<'a, u32, FNCTL_SPEC, TSCTRSAT_A, O>;
+pub type TSCTRSAT_W<'a, const O: u8> = crate::BitWriter<'a, FNCTL_SPEC, O, TSCTRSAT_A>;
 impl<'a, const O: u8> TSCTRSAT_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -484,7 +493,7 @@ impl<'a, const O: u8> TSCTRSAT_W<'a, O> {
     }
 }
 #[doc = "Field `NR_TSIN` reader - Number of Touch-Sense Input"]
-pub type NR_TSIN_R = crate::FieldReader<u8, NR_TSIN_A>;
+pub type NR_TSIN_R = crate::FieldReader<NR_TSIN_A>;
 #[doc = "Number of Touch-Sense Input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -499,6 +508,9 @@ impl From<NR_TSIN_A> for u8 {
     fn from(variant: NR_TSIN_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for NR_TSIN_A {
+    type Ux = u8;
 }
 impl NR_TSIN_R {
     #[doc = "Get enumerated values variant"]
@@ -522,7 +534,7 @@ impl NR_TSIN_R {
     }
 }
 #[doc = "Field `NR_TSIN` writer - Number of Touch-Sense Input"]
-pub type NR_TSIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FNCTL_SPEC, u8, NR_TSIN_A, 3, O>;
+pub type NR_TSIN_W<'a, const O: u8> = crate::FieldWriter<'a, FNCTL_SPEC, 3, O, NR_TSIN_A>;
 impl<'a, const O: u8> NR_TSIN_W<'a, O> {
     #[doc = "1"]
     #[inline(always)]
@@ -572,7 +584,7 @@ impl COLLEV_R {
     }
 }
 #[doc = "Field `COLLEV` writer - Active Level of LED Column"]
-pub type COLLEV_W<'a, const O: u8> = crate::BitWriter<'a, u32, FNCTL_SPEC, COLLEV_A, O>;
+pub type COLLEV_W<'a, const O: u8> = crate::BitWriter<'a, FNCTL_SPEC, O, COLLEV_A>;
 impl<'a, const O: u8> COLLEV_W<'a, O> {
     #[doc = "Active low"]
     #[inline(always)]
@@ -586,7 +598,7 @@ impl<'a, const O: u8> COLLEV_W<'a, O> {
     }
 }
 #[doc = "Field `NR_LEDCOL` reader - Number of LED Columns"]
-pub type NR_LEDCOL_R = crate::FieldReader<u8, NR_LEDCOL_A>;
+pub type NR_LEDCOL_R = crate::FieldReader<NR_LEDCOL_A>;
 #[doc = "Number of LED Columns\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -613,6 +625,9 @@ impl From<NR_LEDCOL_A> for u8 {
     fn from(variant: NR_LEDCOL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for NR_LEDCOL_A {
+    type Ux = u8;
 }
 impl NR_LEDCOL_R {
     #[doc = "Get enumerated values variant"]
@@ -672,7 +687,7 @@ impl NR_LEDCOL_R {
     }
 }
 #[doc = "Field `NR_LEDCOL` writer - Number of LED Columns"]
-pub type NR_LEDCOL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, FNCTL_SPEC, u8, NR_LEDCOL_A, 3, O>;
+pub type NR_LEDCOL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, FNCTL_SPEC, 3, O, NR_LEDCOL_A>;
 impl<'a, const O: u8> NR_LEDCOL_W<'a, O> {
     #[doc = "1 LED column"]
     #[inline(always)]

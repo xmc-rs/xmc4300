@@ -14,11 +14,11 @@ impl From<crate::R<LIST_SPEC>> for R {
     }
 }
 #[doc = "Field `BEGIN` reader - List Begin"]
-pub type BEGIN_R = crate::FieldReader<u8, u8>;
+pub type BEGIN_R = crate::FieldReader;
 #[doc = "Field `END` reader - List End"]
-pub type END_R = crate::FieldReader<u8, u8>;
+pub type END_R = crate::FieldReader;
 #[doc = "Field `SIZE` reader - List Size"]
-pub type SIZE_R = crate::FieldReader<u8, u8>;
+pub type SIZE_R = crate::FieldReader;
 #[doc = "Field `EMPTY` reader - List Empty Indication"]
 pub type EMPTY_R = crate::BitReader<EMPTY_A>;
 #[doc = "List Empty Indication\n\nValue on reset: 0"]

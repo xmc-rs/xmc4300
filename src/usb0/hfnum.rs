@@ -35,11 +35,11 @@ impl From<crate::W<HFNUM_SPEC>> for W {
     }
 }
 #[doc = "Field `FrNum` reader - Frame Number"]
-pub type FR_NUM_R = crate::FieldReader<u16, u16>;
+pub type FR_NUM_R = crate::FieldReader<u16>;
 #[doc = "Field `FrNum` writer - Frame Number"]
-pub type FR_NUM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFNUM_SPEC, u16, u16, 16, O>;
+pub type FR_NUM_W<'a, const O: u8> = crate::FieldWriter<'a, HFNUM_SPEC, 16, O, u16>;
 #[doc = "Field `FrRem` reader - Frame Time Remaining"]
-pub type FR_REM_R = crate::FieldReader<u16, u16>;
+pub type FR_REM_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Frame Number"]
     #[inline(always)]

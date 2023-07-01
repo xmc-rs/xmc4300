@@ -35,7 +35,7 @@ impl From<crate::W<DAC1CFG1_SPEC>> for W {
     }
 }
 #[doc = "Field `SCALE` reader - Scale value for up- or downscale of the DAC1 input data in steps by the power of 2 (=shift operation)"]
-pub type SCALE_R = crate::FieldReader<u8, SCALE_A>;
+pub type SCALE_R = crate::FieldReader<SCALE_A>;
 #[doc = "Scale value for up- or downscale of the DAC1 input data in steps by the power of 2 (=shift operation)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -62,6 +62,9 @@ impl From<SCALE_A> for u8 {
     fn from(variant: SCALE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SCALE_A {
+    type Ux = u8;
 }
 impl SCALE_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +124,7 @@ impl SCALE_R {
     }
 }
 #[doc = "Field `SCALE` writer - Scale value for up- or downscale of the DAC1 input data in steps by the power of 2 (=shift operation)"]
-pub type SCALE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DAC1CFG1_SPEC, u8, SCALE_A, 3, O>;
+pub type SCALE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DAC1CFG1_SPEC, 3, O, SCALE_A>;
 impl<'a, const O: u8> SCALE_W<'a, O> {
     #[doc = "no shift = multiplication/division by 1"]
     #[inline(always)]
@@ -201,7 +204,7 @@ impl MULDIV_R {
     }
 }
 #[doc = "Field `MULDIV` writer - Switch between up- and downscale of the DAC1 input data values"]
-pub type MULDIV_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAC1CFG1_SPEC, MULDIV_A, O>;
+pub type MULDIV_W<'a, const O: u8> = crate::BitWriter<'a, DAC1CFG1_SPEC, O, MULDIV_A>;
 impl<'a, const O: u8> MULDIV_W<'a, O> {
     #[doc = "downscale = division (shift SCALE positions to the right)"]
     #[inline(always)]
@@ -215,19 +218,19 @@ impl<'a, const O: u8> MULDIV_W<'a, O> {
     }
 }
 #[doc = "Field `OFFS` reader - 8-bit offset value addition"]
-pub type OFFS_R = crate::FieldReader<u8, u8>;
+pub type OFFS_R = crate::FieldReader;
 #[doc = "Field `OFFS` writer - 8-bit offset value addition"]
-pub type OFFS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC1CFG1_SPEC, u8, u8, 8, O>;
+pub type OFFS_W<'a, const O: u8> = crate::FieldWriter<'a, DAC1CFG1_SPEC, 8, O>;
 #[doc = "Field `TRIGSEL` reader - Selects one of the eight external trigger sources for DAC1"]
-pub type TRIGSEL_R = crate::FieldReader<u8, u8>;
+pub type TRIGSEL_R = crate::FieldReader;
 #[doc = "Field `TRIGSEL` writer - Selects one of the eight external trigger sources for DAC1"]
-pub type TRIGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC1CFG1_SPEC, u8, u8, 3, O>;
+pub type TRIGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DAC1CFG1_SPEC, 3, O>;
 #[doc = "Field `SWTRIG` reader - Software Trigger"]
-pub type SWTRIG_R = crate::BitReader<bool>;
+pub type SWTRIG_R = crate::BitReader;
 #[doc = "Field `SWTRIG` writer - Software Trigger"]
-pub type SWTRIG_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAC1CFG1_SPEC, bool, O>;
+pub type SWTRIG_W<'a, const O: u8> = crate::BitWriter<'a, DAC1CFG1_SPEC, O>;
 #[doc = "Field `TRIGMOD` reader - Select the trigger source for channel 1"]
-pub type TRIGMOD_R = crate::FieldReader<u8, TRIGMOD_A>;
+pub type TRIGMOD_R = crate::FieldReader<TRIGMOD_A>;
 #[doc = "Select the trigger source for channel 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -244,6 +247,9 @@ impl From<TRIGMOD_A> for u8 {
     fn from(variant: TRIGMOD_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TRIGMOD_A {
+    type Ux = u8;
 }
 impl TRIGMOD_R {
     #[doc = "Get enumerated values variant"]
@@ -273,7 +279,7 @@ impl TRIGMOD_R {
     }
 }
 #[doc = "Field `TRIGMOD` writer - Select the trigger source for channel 1"]
-pub type TRIGMOD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC1CFG1_SPEC, u8, TRIGMOD_A, 2, O>;
+pub type TRIGMOD_W<'a, const O: u8> = crate::FieldWriter<'a, DAC1CFG1_SPEC, 2, O, TRIGMOD_A>;
 impl<'a, const O: u8> TRIGMOD_W<'a, O> {
     #[doc = "internal Trigger (integer divided clock - see FREQ parameter)"]
     #[inline(always)]
@@ -292,9 +298,9 @@ impl<'a, const O: u8> TRIGMOD_W<'a, O> {
     }
 }
 #[doc = "Field `ANACFG` reader - DAC1 analog configuration/calibration parameters"]
-pub type ANACFG_R = crate::FieldReader<u8, u8>;
+pub type ANACFG_R = crate::FieldReader;
 #[doc = "Field `ANACFG` writer - DAC1 analog configuration/calibration parameters"]
-pub type ANACFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC1CFG1_SPEC, u8, u8, 5, O>;
+pub type ANACFG_W<'a, const O: u8> = crate::FieldWriter<'a, DAC1CFG1_SPEC, 5, O>;
 #[doc = "Field `ANAEN` reader - Enable analog DAC for channel 1"]
 pub type ANAEN_R = crate::BitReader<ANAEN_A>;
 #[doc = "Enable analog DAC for channel 1\n\nValue on reset: 0"]
@@ -332,7 +338,7 @@ impl ANAEN_R {
     }
 }
 #[doc = "Field `ANAEN` writer - Enable analog DAC for channel 1"]
-pub type ANAEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DAC1CFG1_SPEC, ANAEN_A, O>;
+pub type ANAEN_W<'a, const O: u8> = crate::BitWriter<'a, DAC1CFG1_SPEC, O, ANAEN_A>;
 impl<'a, const O: u8> ANAEN_W<'a, O> {
     #[doc = "DAC1 is set to standby (analog output only)"]
     #[inline(always)]
@@ -346,9 +352,9 @@ impl<'a, const O: u8> ANAEN_W<'a, O> {
     }
 }
 #[doc = "Field `REFCFGH` reader - Higher 4 band-gap configuration/calibration parameters"]
-pub type REFCFGH_R = crate::FieldReader<u8, u8>;
+pub type REFCFGH_R = crate::FieldReader;
 #[doc = "Field `REFCFGH` writer - Higher 4 band-gap configuration/calibration parameters"]
-pub type REFCFGH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC1CFG1_SPEC, u8, u8, 4, O>;
+pub type REFCFGH_W<'a, const O: u8> = crate::FieldWriter<'a, DAC1CFG1_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:2 - Scale value for up- or downscale of the DAC1 input data in steps by the power of 2 (=shift operation)"]
     #[inline(always)]

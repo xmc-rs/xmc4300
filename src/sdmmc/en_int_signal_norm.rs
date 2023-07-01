@@ -71,7 +71,7 @@ impl CMD_COMPLETE_EN_R {
     }
 }
 #[doc = "Field `CMD_COMPLETE_EN` writer - Command Complete Signal Enable"]
-pub type CMD_COMPLETE_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, CMD_COMPLETE_EN_A, O>;
+pub type CMD_COMPLETE_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_NORM_SPEC, O, CMD_COMPLETE_EN_A>;
 impl<'a, const O: u8> CMD_COMPLETE_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl TX_COMPLETE_EN_R {
     }
 }
 #[doc = "Field `TX_COMPLETE_EN` writer - Transfer Complete Signal Enable"]
-pub type TX_COMPLETE_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, TX_COMPLETE_EN_A, O>;
+pub type TX_COMPLETE_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_NORM_SPEC, O, TX_COMPLETE_EN_A>;
 impl<'a, const O: u8> TX_COMPLETE_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl BLOCK_GAP_EVENT_EN_R {
     }
 }
 #[doc = "Field `BLOCK_GAP_EVENT_EN` writer - Block Gap Event Signal Enable"]
-pub type BLOCK_GAP_EVENT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, BLOCK_GAP_EVENT_EN_A, O>;
+pub type BLOCK_GAP_EVENT_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_NORM_SPEC, O, BLOCK_GAP_EVENT_EN_A>;
 impl<'a, const O: u8> BLOCK_GAP_EVENT_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl BUFF_WRITE_READY_EN_R {
     }
 }
 #[doc = "Field `BUFF_WRITE_READY_EN` writer - Buffer Write Ready Signal Enable"]
-pub type BUFF_WRITE_READY_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, BUFF_WRITE_READY_EN_A, O>;
+pub type BUFF_WRITE_READY_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_NORM_SPEC, O, BUFF_WRITE_READY_EN_A>;
 impl<'a, const O: u8> BUFF_WRITE_READY_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl BUFF_READ_READY_EN_R {
     }
 }
 #[doc = "Field `BUFF_READ_READY_EN` writer - Buffer Read Ready Signal Enable"]
-pub type BUFF_READ_READY_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, BUFF_READ_READY_EN_A, O>;
+pub type BUFF_READ_READY_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_NORM_SPEC, O, BUFF_READ_READY_EN_A>;
 impl<'a, const O: u8> BUFF_READ_READY_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl CARD_INS_EN_R {
     }
 }
 #[doc = "Field `CARD_INS_EN` writer - Card Insertion Signal Enable"]
-pub type CARD_INS_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, CARD_INS_EN_A, O>;
+pub type CARD_INS_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_NORM_SPEC, O, CARD_INS_EN_A>;
 impl<'a, const O: u8> CARD_INS_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl CARD_REMOVAL_EN_R {
     }
 }
 #[doc = "Field `CARD_REMOVAL_EN` writer - Card Removal Signal Enable"]
-pub type CARD_REMOVAL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, CARD_REMOVAL_EN_A, O>;
+pub type CARD_REMOVAL_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_NORM_SPEC, O, CARD_REMOVAL_EN_A>;
 impl<'a, const O: u8> CARD_REMOVAL_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl CARD_INT_EN_R {
     }
 }
 #[doc = "Field `CARD_INT_EN` writer - Card Interrupt Signal Enable"]
-pub type CARD_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, EN_INT_SIGNAL_NORM_SPEC, CARD_INT_EN_A, O>;
+pub type CARD_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_NORM_SPEC, O, CARD_INT_EN_A>;
 impl<'a, const O: u8> CARD_INT_EN_W<'a, O> {
     #[doc = "Masked"]
     #[inline(always)]
@@ -435,7 +435,7 @@ impl<'a, const O: u8> CARD_INT_EN_W<'a, O> {
     }
 }
 #[doc = "Field `FIXED_TO_0` reader - Fixed to 0"]
-pub type FIXED_TO_0_R = crate::BitReader<bool>;
+pub type FIXED_TO_0_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Command Complete Signal Enable"]
     #[inline(always)]

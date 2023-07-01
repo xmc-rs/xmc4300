@@ -35,9 +35,9 @@ impl From<crate::W<HFIR_SPEC>> for W {
     }
 }
 #[doc = "Field `FrInt` reader - Frame Interval"]
-pub type FR_INT_R = crate::FieldReader<u16, u16>;
+pub type FR_INT_R = crate::FieldReader<u16>;
 #[doc = "Field `FrInt` writer - Frame Interval"]
-pub type FR_INT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFIR_SPEC, u16, u16, 16, O>;
+pub type FR_INT_W<'a, const O: u8> = crate::FieldWriter<'a, HFIR_SPEC, 16, O, u16>;
 #[doc = "Field `HFIRRldCtrl` reader - Reload Control"]
 pub type HFIRRLD_CTRL_R = crate::BitReader<HFIRRLD_CTRL_A>;
 #[doc = "Reload Control\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl HFIRRLD_CTRL_R {
     }
 }
 #[doc = "Field `HFIRRldCtrl` writer - Reload Control"]
-pub type HFIRRLD_CTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFIR_SPEC, HFIRRLD_CTRL_A, O>;
+pub type HFIRRLD_CTRL_W<'a, const O: u8> = crate::BitWriter<'a, HFIR_SPEC, O, HFIRRLD_CTRL_A>;
 impl<'a, const O: u8> HFIRRLD_CTRL_W<'a, O> {
     #[doc = "HFIR cannot be reloaded dynamically"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC>> for W {
     }
 }
 #[doc = "Field `RIWT` reader - RI Watchdog Timer Count"]
-pub type RIWT_R = crate::FieldReader<u8, u8>;
+pub type RIWT_R = crate::FieldReader;
 #[doc = "Field `RIWT` writer - RI Watchdog Timer Count"]
-pub type RIWT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC, u8, u8, 8, O>;
+pub type RIWT_W<'a, const O: u8> = crate::FieldWriter<'a, RECEIVE_INTERRUPT_WATCHDOG_TIMER_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - RI Watchdog Timer Count"]
     #[inline(always)]

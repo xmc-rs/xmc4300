@@ -14,7 +14,7 @@ impl From<crate::R<TX_DEFERRED_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `TXDEFRD` reader - This field indicates the number of successfully transmitted frames after a deferral in the half-duplex mode."]
-pub type TXDEFRD_R = crate::FieldReader<u32, u32>;
+pub type TXDEFRD_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of successfully transmitted frames after a deferral in the half-duplex mode."]
     #[inline(always)]

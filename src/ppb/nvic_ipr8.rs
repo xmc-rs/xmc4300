@@ -35,21 +35,21 @@ impl From<crate::W<NVIC_IPR8_SPEC>> for W {
     }
 }
 #[doc = "Field `PRI_0` reader - Priority value 0"]
-pub type PRI_0_R = crate::FieldReader<u8, u8>;
+pub type PRI_0_R = crate::FieldReader;
 #[doc = "Field `PRI_0` writer - Priority value 0"]
-pub type PRI_0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_IPR8_SPEC, u8, u8, 8, O>;
+pub type PRI_0_W<'a, const O: u8> = crate::FieldWriter<'a, NVIC_IPR8_SPEC, 8, O>;
 #[doc = "Field `PRI_1` reader - Priority value 1"]
-pub type PRI_1_R = crate::FieldReader<u8, u8>;
+pub type PRI_1_R = crate::FieldReader;
 #[doc = "Field `PRI_1` writer - Priority value 1"]
-pub type PRI_1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_IPR8_SPEC, u8, u8, 8, O>;
+pub type PRI_1_W<'a, const O: u8> = crate::FieldWriter<'a, NVIC_IPR8_SPEC, 8, O>;
 #[doc = "Field `PRI_2` reader - Priority value 2"]
-pub type PRI_2_R = crate::FieldReader<u8, u8>;
+pub type PRI_2_R = crate::FieldReader;
 #[doc = "Field `PRI_2` writer - Priority value 2"]
-pub type PRI_2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_IPR8_SPEC, u8, u8, 8, O>;
+pub type PRI_2_W<'a, const O: u8> = crate::FieldWriter<'a, NVIC_IPR8_SPEC, 8, O>;
 #[doc = "Field `PRI_3` reader - Priority value 3"]
-pub type PRI_3_R = crate::FieldReader<u8, u8>;
+pub type PRI_3_R = crate::FieldReader;
 #[doc = "Field `PRI_3` writer - Priority value 3"]
-pub type PRI_3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NVIC_IPR8_SPEC, u8, u8, 8, O>;
+pub type PRI_3_W<'a, const O: u8> = crate::FieldWriter<'a, NVIC_IPR8_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Priority value 0"]
     #[inline(always)]

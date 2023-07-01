@@ -14,7 +14,7 @@ impl From<crate::R<CR_SPEC>> for R {
     }
 }
 #[doc = "Field `CR` reader - Compare Register"]
-pub type CR_R = crate::FieldReader<u16, u16>;
+pub type CR_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Compare Register"]
     #[inline(always)]

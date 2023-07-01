@@ -35,7 +35,7 @@ impl From<crate::W<BFLNP_SPEC>> for W {
     }
 }
 #[doc = "Field `BFL0NP` reader - Boundary Flag y Node Pointer"]
-pub type BFL0NP_R = crate::FieldReader<u8, BFL0NP_A>;
+pub type BFL0NP_R = crate::FieldReader<BFL0NP_A>;
 #[doc = "Boundary Flag y Node Pointer\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<BFL0NP_A> for u8 {
     fn from(variant: BFL0NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BFL0NP_A {
+    type Ux = u8;
 }
 impl BFL0NP_R {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl BFL0NP_R {
     }
 }
 #[doc = "Field `BFL0NP` writer - Boundary Flag y Node Pointer"]
-pub type BFL0NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BFLNP_SPEC, u8, BFL0NP_A, 4, O>;
+pub type BFL0NP_W<'a, const O: u8> = crate::FieldWriter<'a, BFLNP_SPEC, 4, O, BFL0NP_A>;
 impl<'a, const O: u8> BFL0NP_W<'a, O> {
     #[doc = "Select common bondary flag output 0"]
     #[inline(always)]
@@ -126,7 +129,7 @@ impl<'a, const O: u8> BFL0NP_W<'a, O> {
     }
 }
 #[doc = "Field `BFL1NP` reader - Boundary Flag y Node Pointer"]
-pub type BFL1NP_R = crate::FieldReader<u8, BFL1NP_A>;
+pub type BFL1NP_R = crate::FieldReader<BFL1NP_A>;
 #[doc = "Boundary Flag y Node Pointer\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -147,6 +150,9 @@ impl From<BFL1NP_A> for u8 {
     fn from(variant: BFL1NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BFL1NP_A {
+    type Ux = u8;
 }
 impl BFL1NP_R {
     #[doc = "Get enumerated values variant"]
@@ -188,7 +194,7 @@ impl BFL1NP_R {
     }
 }
 #[doc = "Field `BFL1NP` writer - Boundary Flag y Node Pointer"]
-pub type BFL1NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BFLNP_SPEC, u8, BFL1NP_A, 4, O>;
+pub type BFL1NP_W<'a, const O: u8> = crate::FieldWriter<'a, BFLNP_SPEC, 4, O, BFL1NP_A>;
 impl<'a, const O: u8> BFL1NP_W<'a, O> {
     #[doc = "Select common bondary flag output 0"]
     #[inline(always)]
@@ -217,7 +223,7 @@ impl<'a, const O: u8> BFL1NP_W<'a, O> {
     }
 }
 #[doc = "Field `BFL2NP` reader - Boundary Flag y Node Pointer"]
-pub type BFL2NP_R = crate::FieldReader<u8, BFL2NP_A>;
+pub type BFL2NP_R = crate::FieldReader<BFL2NP_A>;
 #[doc = "Boundary Flag y Node Pointer\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -238,6 +244,9 @@ impl From<BFL2NP_A> for u8 {
     fn from(variant: BFL2NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BFL2NP_A {
+    type Ux = u8;
 }
 impl BFL2NP_R {
     #[doc = "Get enumerated values variant"]
@@ -279,7 +288,7 @@ impl BFL2NP_R {
     }
 }
 #[doc = "Field `BFL2NP` writer - Boundary Flag y Node Pointer"]
-pub type BFL2NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BFLNP_SPEC, u8, BFL2NP_A, 4, O>;
+pub type BFL2NP_W<'a, const O: u8> = crate::FieldWriter<'a, BFLNP_SPEC, 4, O, BFL2NP_A>;
 impl<'a, const O: u8> BFL2NP_W<'a, O> {
     #[doc = "Select common bondary flag output 0"]
     #[inline(always)]
@@ -308,7 +317,7 @@ impl<'a, const O: u8> BFL2NP_W<'a, O> {
     }
 }
 #[doc = "Field `BFL3NP` reader - Boundary Flag y Node Pointer"]
-pub type BFL3NP_R = crate::FieldReader<u8, BFL3NP_A>;
+pub type BFL3NP_R = crate::FieldReader<BFL3NP_A>;
 #[doc = "Boundary Flag y Node Pointer\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -329,6 +338,9 @@ impl From<BFL3NP_A> for u8 {
     fn from(variant: BFL3NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BFL3NP_A {
+    type Ux = u8;
 }
 impl BFL3NP_R {
     #[doc = "Get enumerated values variant"]
@@ -370,7 +382,7 @@ impl BFL3NP_R {
     }
 }
 #[doc = "Field `BFL3NP` writer - Boundary Flag y Node Pointer"]
-pub type BFL3NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BFLNP_SPEC, u8, BFL3NP_A, 4, O>;
+pub type BFL3NP_W<'a, const O: u8> = crate::FieldWriter<'a, BFLNP_SPEC, 4, O, BFL3NP_A>;
 impl<'a, const O: u8> BFL3NP_W<'a, O> {
     #[doc = "Select common bondary flag output 0"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<RXUDP_GOOD_OCTETS_SPEC>> for R {
     }
 }
 #[doc = "Field `RXUDPGDOCT` reader - This field indicates the number of bytes received in a good UDP segment. This counter does not count IP header bytes. The Ethernet header, FCS, pad, or IP pad bytes are not included in this counter."]
-pub type RXUDPGDOCT_R = crate::FieldReader<u32, u32>;
+pub type RXUDPGDOCT_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of bytes received in a good UDP segment. This counter does not count IP header bytes. The Ethernet header, FCS, pad, or IP pad bytes are not included in this counter."]
     #[inline(always)]

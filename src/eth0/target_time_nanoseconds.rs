@@ -35,11 +35,11 @@ impl From<crate::W<TARGET_TIME_NANOSECONDS_SPEC>> for W {
     }
 }
 #[doc = "Field `TTSLO` reader - Target Timestamp Low Register"]
-pub type TTSLO_R = crate::FieldReader<u32, u32>;
+pub type TTSLO_R = crate::FieldReader<u32>;
 #[doc = "Field `TTSLO` writer - Target Timestamp Low Register"]
-pub type TTSLO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TARGET_TIME_NANOSECONDS_SPEC, u32, u32, 31, O>;
+pub type TTSLO_W<'a, const O: u8> = crate::FieldWriter<'a, TARGET_TIME_NANOSECONDS_SPEC, 31, O, u32>;
 #[doc = "Field `TRGTBUSY` reader - Target Time Register Busy"]
-pub type TRGTBUSY_R = crate::BitReader<bool>;
+pub type TRGTBUSY_R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:30 - Target Timestamp Low Register"]
     #[inline(always)]

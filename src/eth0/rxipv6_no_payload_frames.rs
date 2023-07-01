@@ -14,7 +14,7 @@ impl From<crate::R<RXIPV6_NO_PAYLOAD_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXIPV6NOPAYFRM` reader - This field indicates the number of IPv6 datagram frames received that did not have a TCP, UDP, or ICMP payload. This includes all IPv6 datagrams with fragmentation or security extension headers."]
-pub type RXIPV6NOPAYFRM_R = crate::FieldReader<u32, u32>;
+pub type RXIPV6NOPAYFRM_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of IPv6 datagram frames received that did not have a TCP, UDP, or ICMP payload. This includes all IPv6 datagrams with fragmentation or security extension headers."]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<PRESENT_STATE_SPEC>> for R {
     }
 }
 #[doc = "Field `COMMAND_INHIBIT_CMD` reader - Command Inhibit (CMD)"]
-pub type COMMAND_INHIBIT_CMD_R = crate::BitReader<bool>;
+pub type COMMAND_INHIBIT_CMD_R = crate::BitReader;
 #[doc = "Field `COMMAND_INHIBIT_DAT` reader - Command Inhibit (DAT)"]
 pub type COMMAND_INHIBIT_DAT_R = crate::BitReader<COMMAND_INHIBIT_DAT_A>;
 #[doc = "Command Inhibit (DAT)\n\nValue on reset: 0"]
@@ -376,11 +376,11 @@ impl WRITE_PROTECT_PIN_LEVEL_R {
     }
 }
 #[doc = "Field `DAT_3_0_PIN_LEVEL` reader - Line Signal Level"]
-pub type DAT_3_0_PIN_LEVEL_R = crate::FieldReader<u8, u8>;
+pub type DAT_3_0_PIN_LEVEL_R = crate::FieldReader;
 #[doc = "Field `CMD_LINE_LEVEL` reader - CMD Line Signal Level"]
-pub type CMD_LINE_LEVEL_R = crate::BitReader<bool>;
+pub type CMD_LINE_LEVEL_R = crate::BitReader;
 #[doc = "Field `DAT_7_4_PIN_LEVEL` reader - Line Signal Level"]
-pub type DAT_7_4_PIN_LEVEL_R = crate::FieldReader<u8, u8>;
+pub type DAT_7_4_PIN_LEVEL_R = crate::FieldReader;
 impl R {
     #[doc = "Bit 0 - Command Inhibit (CMD)"]
     #[inline(always)]

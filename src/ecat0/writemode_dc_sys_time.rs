@@ -20,7 +20,7 @@ impl From<crate::W<WRITEMODE_DC_SYS_TIME_SPEC>> for W {
     }
 }
 #[doc = "Field `WRITE_ACCESS` writer - Write access"]
-pub type WRITE_ACCESS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WRITEMODE_DC_SYS_TIME_SPEC, u32, u32, 32, O>;
+pub type WRITE_ACCESS_W<'a, const O: u8> = crate::FieldWriter<'a, WRITEMODE_DC_SYS_TIME_SPEC, 32, O, u32>;
 impl W {
     #[doc = "Bits 0:31 - Write access"]
     #[inline(always)]

@@ -35,7 +35,7 @@ impl From<crate::W<BRSMR_SPEC>> for W {
     }
 }
 #[doc = "Field `ENGT` reader - Enable Gate"]
-pub type ENGT_R = crate::FieldReader<u8, ENGT_A>;
+pub type ENGT_R = crate::FieldReader<ENGT_A>;
 #[doc = "Enable Gate\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<ENGT_A> for u8 {
     fn from(variant: ENGT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ENGT_A {
+    type Ux = u8;
 }
 impl ENGT_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl ENGT_R {
     }
 }
 #[doc = "Field `ENGT` writer - Enable Gate"]
-pub type ENGT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, BRSMR_SPEC, u8, ENGT_A, 2, O>;
+pub type ENGT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, BRSMR_SPEC, 2, O, ENGT_A>;
 impl<'a, const O: u8> ENGT_W<'a, O> {
     #[doc = "No conversion requests are issued"]
     #[inline(always)]
@@ -149,7 +152,7 @@ impl ENTR_R {
     }
 }
 #[doc = "Field `ENTR` writer - Enable External Trigger"]
-pub type ENTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, ENTR_A, O>;
+pub type ENTR_W<'a, const O: u8> = crate::BitWriter<'a, BRSMR_SPEC, O, ENTR_A>;
 impl<'a, const O: u8> ENTR_W<'a, O> {
     #[doc = "External trigger disabled"]
     #[inline(always)]
@@ -199,7 +202,7 @@ impl ENSI_R {
     }
 }
 #[doc = "Field `ENSI` writer - Enable Source Interrupt"]
-pub type ENSI_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, ENSI_A, O>;
+pub type ENSI_W<'a, const O: u8> = crate::BitWriter<'a, BRSMR_SPEC, O, ENSI_A>;
 impl<'a, const O: u8> ENSI_W<'a, O> {
     #[doc = "No request source interrupt"]
     #[inline(always)]
@@ -249,7 +252,7 @@ impl SCAN_R {
     }
 }
 #[doc = "Field `SCAN` writer - Autoscan Enable"]
-pub type SCAN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, SCAN_A, O>;
+pub type SCAN_W<'a, const O: u8> = crate::BitWriter<'a, BRSMR_SPEC, O, SCAN_A>;
 impl<'a, const O: u8> SCAN_W<'a, O> {
     #[doc = "No autoscan"]
     #[inline(always)]
@@ -299,7 +302,7 @@ impl LDM_R {
     }
 }
 #[doc = "Field `LDM` writer - Autoscan Source Load Event Mode"]
-pub type LDM_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, LDM_A, O>;
+pub type LDM_W<'a, const O: u8> = crate::BitWriter<'a, BRSMR_SPEC, O, LDM_A>;
 impl<'a, const O: u8> LDM_W<'a, O> {
     #[doc = "Overwrite mode: Copy all bits from the select registers to the pending registers upon a load event"]
     #[inline(always)]
@@ -363,7 +366,7 @@ impl From<CLRPND_AW> for bool {
     }
 }
 #[doc = "Field `CLRPND` writer - Clear Pending Bits"]
-pub type CLRPND_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, CLRPND_AW, O>;
+pub type CLRPND_W<'a, const O: u8> = crate::BitWriter<'a, BRSMR_SPEC, O, CLRPND_AW>;
 impl<'a, const O: u8> CLRPND_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -391,7 +394,7 @@ impl From<LDEV_AW> for bool {
     }
 }
 #[doc = "Field `LDEV` writer - Generate Load Event"]
-pub type LDEV_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, LDEV_AW, O>;
+pub type LDEV_W<'a, const O: u8> = crate::BitWriter<'a, BRSMR_SPEC, O, LDEV_AW>;
 impl<'a, const O: u8> LDEV_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -441,7 +444,7 @@ impl RPTDIS_R {
     }
 }
 #[doc = "Field `RPTDIS` writer - Repeat Disable"]
-pub type RPTDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRSMR_SPEC, RPTDIS_A, O>;
+pub type RPTDIS_W<'a, const O: u8> = crate::BitWriter<'a, BRSMR_SPEC, O, RPTDIS_A>;
 impl<'a, const O: u8> RPTDIS_W<'a, O> {
     #[doc = "A cancelled conversion is repeated"]
     #[inline(always)]

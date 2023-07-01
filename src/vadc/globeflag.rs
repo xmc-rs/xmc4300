@@ -71,7 +71,7 @@ impl SEVGLB_R {
     }
 }
 #[doc = "Field `SEVGLB` writer - Source Event (Background)"]
-pub type SEVGLB_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBEFLAG_SPEC, SEVGLB_A, O>;
+pub type SEVGLB_W<'a, const O: u8> = crate::BitWriter<'a, GLOBEFLAG_SPEC, O, SEVGLB_A>;
 impl<'a, const O: u8> SEVGLB_W<'a, O> {
     #[doc = "No source event"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl REVGLB_R {
     }
 }
 #[doc = "Field `REVGLB` writer - Global Result Event"]
-pub type REVGLB_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBEFLAG_SPEC, REVGLB_A, O>;
+pub type REVGLB_W<'a, const O: u8> = crate::BitWriter<'a, GLOBEFLAG_SPEC, O, REVGLB_A>;
 impl<'a, const O: u8> REVGLB_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -149,7 +149,7 @@ impl From<SEVGLBCLR_AW> for bool {
     }
 }
 #[doc = "Field `SEVGLBCLR` writer - Clear Source Event (Background)"]
-pub type SEVGLBCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBEFLAG_SPEC, SEVGLBCLR_AW, O>;
+pub type SEVGLBCLR_W<'a, const O: u8> = crate::BitWriter<'a, GLOBEFLAG_SPEC, O, SEVGLBCLR_AW>;
 impl<'a, const O: u8> SEVGLBCLR_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -177,7 +177,7 @@ impl From<REVGLBCLR_AW> for bool {
     }
 }
 #[doc = "Field `REVGLBCLR` writer - Clear Global Result Event"]
-pub type REVGLBCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBEFLAG_SPEC, REVGLBCLR_AW, O>;
+pub type REVGLBCLR_W<'a, const O: u8> = crate::BitWriter<'a, GLOBEFLAG_SPEC, O, REVGLBCLR_AW>;
 impl<'a, const O: u8> REVGLBCLR_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]

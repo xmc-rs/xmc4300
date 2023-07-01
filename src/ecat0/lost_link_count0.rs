@@ -14,7 +14,7 @@ impl From<crate::R<LOST_LINK_COUNT0_SPEC>> for R {
     }
 }
 #[doc = "Field `LL_COUNTER` reader - Lost Link counter of Port p"]
-pub type LL_COUNTER_R = crate::FieldReader<u8, u8>;
+pub type LL_COUNTER_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - Lost Link counter of Port p"]
     #[inline(always)]

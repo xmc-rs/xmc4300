@@ -14,7 +14,7 @@ impl From<crate::R<FMMU_L_START_BIT_SPEC>> for R {
     }
 }
 #[doc = "Field `L_START_BIT` reader - Logical starting bit that shall be mapped"]
-pub type L_START_BIT_R = crate::FieldReader<u8, u8>;
+pub type L_START_BIT_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:2 - Logical starting bit that shall be mapped"]
     #[inline(always)]

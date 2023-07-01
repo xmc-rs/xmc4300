@@ -35,7 +35,7 @@ impl From<crate::W<ICSR_SPEC>> for W {
     }
 }
 #[doc = "Field `VECTACTIVE` reader - Active exception number"]
-pub type VECTACTIVE_R = crate::FieldReader<u16, VECTACTIVE_A>;
+pub type VECTACTIVE_R = crate::FieldReader<VECTACTIVE_A>;
 #[doc = "Active exception number\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
@@ -48,6 +48,9 @@ impl From<VECTACTIVE_A> for u16 {
     fn from(variant: VECTACTIVE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for VECTACTIVE_A {
+    type Ux = u16;
 }
 impl VECTACTIVE_R {
     #[doc = "Get enumerated values variant"]
@@ -101,7 +104,7 @@ impl RETTOBASE_R {
     }
 }
 #[doc = "Field `VECTPENDING` reader - Vector Pending"]
-pub type VECTPENDING_R = crate::FieldReader<u8, VECTPENDING_A>;
+pub type VECTPENDING_R = crate::FieldReader<VECTPENDING_A>;
 #[doc = "Vector Pending\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -114,6 +117,9 @@ impl From<VECTPENDING_A> for u8 {
     fn from(variant: VECTPENDING_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for VECTPENDING_A {
+    type Ux = u8;
 }
 impl VECTPENDING_R {
     #[doc = "Get enumerated values variant"]
@@ -181,7 +187,7 @@ impl From<PENDSTCLR_AW> for bool {
     }
 }
 #[doc = "Field `PENDSTCLR` writer - SysTick exception clear-pending bit"]
-pub type PENDSTCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICSR_SPEC, PENDSTCLR_AW, O>;
+pub type PENDSTCLR_W<'a, const O: u8> = crate::BitWriter<'a, ICSR_SPEC, O, PENDSTCLR_AW>;
 impl<'a, const O: u8> PENDSTCLR_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
@@ -231,7 +237,7 @@ impl PENDSTSET_R {
     }
 }
 #[doc = "Field `PENDSTSET` writer - SysTick exception set-pending bit"]
-pub type PENDSTSET_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICSR_SPEC, PENDSTSET_A, O>;
+pub type PENDSTSET_W<'a, const O: u8> = crate::BitWriter<'a, ICSR_SPEC, O, PENDSTSET_A>;
 impl<'a, const O: u8> PENDSTSET_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
@@ -259,7 +265,7 @@ impl From<PENDSVCLR_AW> for bool {
     }
 }
 #[doc = "Field `PENDSVCLR` writer - PendSV clear-pending bit"]
-pub type PENDSVCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICSR_SPEC, PENDSVCLR_AW, O>;
+pub type PENDSVCLR_W<'a, const O: u8> = crate::BitWriter<'a, ICSR_SPEC, O, PENDSVCLR_AW>;
 impl<'a, const O: u8> PENDSVCLR_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
@@ -273,13 +279,13 @@ impl<'a, const O: u8> PENDSVCLR_W<'a, O> {
     }
 }
 #[doc = "Field `PENDSVSET` reader - PendSV set-pending bit: 0b0=no effect, 0b1=changes PendSV exception state to pending., 0b0=PendSV exception is not pending, 0b1=PendSV exception is pending.,"]
-pub type PENDSVSET_R = crate::BitReader<bool>;
+pub type PENDSVSET_R = crate::BitReader;
 #[doc = "Field `PENDSVSET` writer - PendSV set-pending bit: 0b0=no effect, 0b1=changes PendSV exception state to pending., 0b0=PendSV exception is not pending, 0b1=PendSV exception is pending.,"]
-pub type PENDSVSET_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICSR_SPEC, bool, O>;
+pub type PENDSVSET_W<'a, const O: u8> = crate::BitWriter<'a, ICSR_SPEC, O>;
 #[doc = "Field `NMIPENDSET` reader - NMI set-pending bit: 0b0=no effect, 0b1=changes NMI exception state to pending., 0b0=NMI exception is not pending, 0b1=NMI exception is pending.,"]
-pub type NMIPENDSET_R = crate::BitReader<bool>;
+pub type NMIPENDSET_R = crate::BitReader;
 #[doc = "Field `NMIPENDSET` writer - NMI set-pending bit: 0b0=no effect, 0b1=changes NMI exception state to pending., 0b0=NMI exception is not pending, 0b1=NMI exception is pending.,"]
-pub type NMIPENDSET_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICSR_SPEC, bool, O>;
+pub type NMIPENDSET_W<'a, const O: u8> = crate::BitWriter<'a, ICSR_SPEC, O>;
 impl R {
     #[doc = "Bits 0:8 - Active exception number"]
     #[inline(always)]

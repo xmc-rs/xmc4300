@@ -35,9 +35,9 @@ impl From<crate::W<MII_PHY_REG_ADR_SPEC>> for W {
     }
 }
 #[doc = "Field `PHY_REG_ADDR` reader - Address of PHY Register that shall beread/written"]
-pub type PHY_REG_ADDR_R = crate::FieldReader<u8, u8>;
+pub type PHY_REG_ADDR_R = crate::FieldReader;
 #[doc = "Field `PHY_REG_ADDR` writer - Address of PHY Register that shall beread/written"]
-pub type PHY_REG_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u8, MII_PHY_REG_ADR_SPEC, u8, u8, 5, O>;
+pub type PHY_REG_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, MII_PHY_REG_ADR_SPEC, 5, O>;
 impl R {
     #[doc = "Bits 0:4 - Address of PHY Register that shall beread/written"]
     #[inline(always)]

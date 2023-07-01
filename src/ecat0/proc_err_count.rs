@@ -14,7 +14,7 @@ impl From<crate::R<PROC_ERR_COUNT_SPEC>> for R {
     }
 }
 #[doc = "Field `UNIT_ERROR` reader - ECAT Processing Unit error counter"]
-pub type UNIT_ERROR_R = crate::FieldReader<u8, u8>;
+pub type UNIT_ERROR_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - ECAT Processing Unit error counter"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<DC_SYNC1_CYC_TIME_SPEC>> for W {
     }
 }
 #[doc = "Field `TIME_SYNC1_SYNC0` reader - Time between SYNC1 pulses and SYNC0 pulse"]
-pub type TIME_SYNC1_SYNC0_R = crate::FieldReader<u32, u32>;
+pub type TIME_SYNC1_SYNC0_R = crate::FieldReader<u32>;
 #[doc = "Field `TIME_SYNC1_SYNC0` writer - Time between SYNC1 pulses and SYNC0 pulse"]
-pub type TIME_SYNC1_SYNC0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DC_SYNC1_CYC_TIME_SPEC, u32, u32, 32, O>;
+pub type TIME_SYNC1_SYNC0_W<'a, const O: u8> = crate::FieldWriter<'a, DC_SYNC1_CYC_TIME_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Time between SYNC1 pulses and SYNC0 pulse"]
     #[inline(always)]

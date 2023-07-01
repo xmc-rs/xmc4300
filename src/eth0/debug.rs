@@ -14,29 +14,29 @@ impl From<crate::R<DEBUG_SPEC>> for R {
     }
 }
 #[doc = "Field `RPESTS` reader - MAC MII Receive Protocol Engine Status"]
-pub type RPESTS_R = crate::BitReader<bool>;
+pub type RPESTS_R = crate::BitReader;
 #[doc = "Field `RFCFCSTS` reader - MAC Receive Frame Controller FIFO Status"]
-pub type RFCFCSTS_R = crate::FieldReader<u8, u8>;
+pub type RFCFCSTS_R = crate::FieldReader;
 #[doc = "Field `RWCSTS` reader - MTL Rx FIFO Write Controller Active Status"]
-pub type RWCSTS_R = crate::BitReader<bool>;
+pub type RWCSTS_R = crate::BitReader;
 #[doc = "Field `RRCSTS` reader - MTL Rx FIFO Read Controller State"]
-pub type RRCSTS_R = crate::FieldReader<u8, u8>;
+pub type RRCSTS_R = crate::FieldReader;
 #[doc = "Field `RXFSTS` reader - MTL Rx FIFO Fill-level Status"]
-pub type RXFSTS_R = crate::FieldReader<u8, u8>;
+pub type RXFSTS_R = crate::FieldReader;
 #[doc = "Field `TPESTS` reader - MAC MII Transmit Protocol Engine Status"]
-pub type TPESTS_R = crate::BitReader<bool>;
+pub type TPESTS_R = crate::BitReader;
 #[doc = "Field `TFCSTS` reader - MAC Transmit Frame Controller Status"]
-pub type TFCSTS_R = crate::FieldReader<u8, u8>;
+pub type TFCSTS_R = crate::FieldReader;
 #[doc = "Field `TXPAUSED` reader - MAC transmitter in PAUSE"]
-pub type TXPAUSED_R = crate::BitReader<bool>;
+pub type TXPAUSED_R = crate::BitReader;
 #[doc = "Field `TRCSTS` reader - MTL Tx FIFO Read Controller Status"]
-pub type TRCSTS_R = crate::FieldReader<u8, u8>;
+pub type TRCSTS_R = crate::FieldReader;
 #[doc = "Field `TWCSTS` reader - MTL Tx FIFO Write Controller Active Status"]
-pub type TWCSTS_R = crate::BitReader<bool>;
+pub type TWCSTS_R = crate::BitReader;
 #[doc = "Field `TXFSTS` reader - MTL Tx FIFO Not Empty Status"]
-pub type TXFSTS_R = crate::BitReader<bool>;
+pub type TXFSTS_R = crate::BitReader;
 #[doc = "Field `TXSTSFSTS` reader - MTL TxStatus FIFO Full Status"]
-pub type TXSTSFSTS_R = crate::BitReader<bool>;
+pub type TXSTSFSTS_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - MAC MII Receive Protocol Engine Status"]
     #[inline(always)]

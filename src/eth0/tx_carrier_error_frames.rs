@@ -14,7 +14,7 @@ impl From<crate::R<TX_CARRIER_ERROR_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `TXCARR` reader - This field indicates the number of frames aborted because of carrier sense error (no carrier or loss of carrier)."]
-pub type TXCARR_R = crate::FieldReader<u32, u32>;
+pub type TXCARR_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of frames aborted because of carrier sense error (no carrier or loss of carrier)."]
     #[inline(always)]

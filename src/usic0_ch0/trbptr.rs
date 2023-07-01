@@ -14,13 +14,13 @@ impl From<crate::R<TRBPTR_SPEC>> for R {
     }
 }
 #[doc = "Field `TDIPTR` reader - Transmitter Data Input Pointer"]
-pub type TDIPTR_R = crate::FieldReader<u8, u8>;
+pub type TDIPTR_R = crate::FieldReader;
 #[doc = "Field `TDOPTR` reader - Transmitter Data Output Pointer"]
-pub type TDOPTR_R = crate::FieldReader<u8, u8>;
+pub type TDOPTR_R = crate::FieldReader;
 #[doc = "Field `RDIPTR` reader - Receiver Data Input Pointer"]
-pub type RDIPTR_R = crate::FieldReader<u8, u8>;
+pub type RDIPTR_R = crate::FieldReader;
 #[doc = "Field `RDOPTR` reader - Receiver Data Output Pointer"]
-pub type RDOPTR_R = crate::FieldReader<u8, u8>;
+pub type RDOPTR_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:5 - Transmitter Data Input Pointer"]
     #[inline(always)]

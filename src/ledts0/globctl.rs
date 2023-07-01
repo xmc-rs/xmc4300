@@ -35,13 +35,13 @@ impl From<crate::W<GLOBCTL_SPEC>> for W {
     }
 }
 #[doc = "Field `TS_EN` reader - Touch-Sense Function Enable"]
-pub type TS_EN_R = crate::BitReader<bool>;
+pub type TS_EN_R = crate::BitReader;
 #[doc = "Field `TS_EN` writer - Touch-Sense Function Enable"]
-pub type TS_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCTL_SPEC, bool, O>;
+pub type TS_EN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O>;
 #[doc = "Field `LD_EN` reader - LED Function Enable"]
-pub type LD_EN_R = crate::BitReader<bool>;
+pub type LD_EN_R = crate::BitReader;
 #[doc = "Field `LD_EN` writer - LED Function Enable"]
-pub type LD_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCTL_SPEC, bool, O>;
+pub type LD_EN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O>;
 #[doc = "Field `CMTR` reader - Clock Master Disable"]
 pub type CMTR_R = crate::BitReader<CMTR_A>;
 #[doc = "Clock Master Disable\n\nValue on reset: 0"]
@@ -79,7 +79,7 @@ impl CMTR_R {
     }
 }
 #[doc = "Field `CMTR` writer - Clock Master Disable"]
-pub type CMTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCTL_SPEC, CMTR_A, O>;
+pub type CMTR_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, CMTR_A>;
 impl<'a, const O: u8> CMTR_W<'a, O> {
     #[doc = "Kernel generates its own clock for LEDTS-counter based on SFR setting"]
     #[inline(always)]
@@ -129,7 +129,7 @@ impl ENSYNC_R {
     }
 }
 #[doc = "Field `ENSYNC` writer - Enable Autoscan Time Period Synchronization"]
-pub type ENSYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCTL_SPEC, ENSYNC_A, O>;
+pub type ENSYNC_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, ENSYNC_A>;
 impl<'a, const O: u8> ENSYNC_W<'a, O> {
     #[doc = "No synchronization"]
     #[inline(always)]
@@ -179,7 +179,7 @@ impl SUSCFG_R {
     }
 }
 #[doc = "Field `SUSCFG` writer - Suspend Request Configuration"]
-pub type SUSCFG_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCTL_SPEC, SUSCFG_A, O>;
+pub type SUSCFG_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, SUSCFG_A>;
 impl<'a, const O: u8> SUSCFG_W<'a, O> {
     #[doc = "Ignore suspend request"]
     #[inline(always)]
@@ -193,7 +193,7 @@ impl<'a, const O: u8> SUSCFG_W<'a, O> {
     }
 }
 #[doc = "Field `MASKVAL` reader - Mask Number of LSB Bits for Event Validation"]
-pub type MASKVAL_R = crate::FieldReader<u8, MASKVAL_A>;
+pub type MASKVAL_R = crate::FieldReader<MASKVAL_A>;
 #[doc = "Mask Number of LSB Bits for Event Validation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -210,6 +210,9 @@ impl From<MASKVAL_A> for u8 {
     fn from(variant: MASKVAL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MASKVAL_A {
+    type Ux = u8;
 }
 impl MASKVAL_R {
     #[doc = "Get enumerated values variant"]
@@ -239,7 +242,7 @@ impl MASKVAL_R {
     }
 }
 #[doc = "Field `MASKVAL` writer - Mask Number of LSB Bits for Event Validation"]
-pub type MASKVAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBCTL_SPEC, u8, MASKVAL_A, 3, O>;
+pub type MASKVAL_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBCTL_SPEC, 3, O, MASKVAL_A>;
 impl<'a, const O: u8> MASKVAL_W<'a, O> {
     #[doc = "Mask LSB bit"]
     #[inline(always)]
@@ -294,7 +297,7 @@ impl FENVAL_R {
     }
 }
 #[doc = "Field `FENVAL` writer - Enable (Extended) Time Frame Validation"]
-pub type FENVAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCTL_SPEC, FENVAL_A, O>;
+pub type FENVAL_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, FENVAL_A>;
 impl<'a, const O: u8> FENVAL_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -344,7 +347,7 @@ impl ITS_EN_R {
     }
 }
 #[doc = "Field `ITS_EN` writer - Enable Time Slice Interrupt"]
-pub type ITS_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCTL_SPEC, ITS_EN_A, O>;
+pub type ITS_EN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, ITS_EN_A>;
 impl<'a, const O: u8> ITS_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -394,7 +397,7 @@ impl ITF_EN_R {
     }
 }
 #[doc = "Field `ITF_EN` writer - Enable (Extended) Time Frame Interrupt"]
-pub type ITF_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCTL_SPEC, ITF_EN_A, O>;
+pub type ITF_EN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, ITF_EN_A>;
 impl<'a, const O: u8> ITF_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -444,7 +447,7 @@ impl ITP_EN_R {
     }
 }
 #[doc = "Field `ITP_EN` writer - Enable Autoscan Time Period Interrupt"]
-pub type ITP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBCTL_SPEC, ITP_EN_A, O>;
+pub type ITP_EN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, ITP_EN_A>;
 impl<'a, const O: u8> ITP_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -458,9 +461,9 @@ impl<'a, const O: u8> ITP_EN_W<'a, O> {
     }
 }
 #[doc = "Field `CLK_PS` reader - LEDTS-Counter Clock Pre-Scale Factor"]
-pub type CLK_PS_R = crate::FieldReader<u16, u16>;
+pub type CLK_PS_R = crate::FieldReader<u16>;
 #[doc = "Field `CLK_PS` writer - LEDTS-Counter Clock Pre-Scale Factor"]
-pub type CLK_PS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBCTL_SPEC, u16, u16, 16, O>;
+pub type CLK_PS_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBCTL_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bit 0 - Touch-Sense Function Enable"]
     #[inline(always)]

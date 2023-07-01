@@ -71,7 +71,7 @@ impl PRWARN_R {
     }
 }
 #[doc = "Field `PRWARN` writer - Promote Pre-Warning Interrupt Request to NMI Request"]
-pub type PRWARN_W<'a, const O: u8> = crate::BitWriter<'a, u32, NMIREQEN_SPEC, PRWARN_A, O>;
+pub type PRWARN_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, PRWARN_A>;
 impl<'a, const O: u8> PRWARN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl PI_R {
     }
 }
 #[doc = "Field `PI` writer - Promote RTC Periodic Interrupt request to NMI Request"]
-pub type PI_W<'a, const O: u8> = crate::BitWriter<'a, u32, NMIREQEN_SPEC, PI_A, O>;
+pub type PI_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, PI_A>;
 impl<'a, const O: u8> PI_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl AI_R {
     }
 }
 #[doc = "Field `AI` writer - Promote RTC Alarm Interrupt Request to NMI Request"]
-pub type AI_W<'a, const O: u8> = crate::BitWriter<'a, u32, NMIREQEN_SPEC, AI_A, O>;
+pub type AI_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, AI_A>;
 impl<'a, const O: u8> AI_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl ERU00_R {
     }
 }
 #[doc = "Field `ERU00` writer - Promote Channel 0 Interrupt of ERU0 Request to NMI Request"]
-pub type ERU00_W<'a, const O: u8> = crate::BitWriter<'a, u32, NMIREQEN_SPEC, ERU00_A, O>;
+pub type ERU00_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, ERU00_A>;
 impl<'a, const O: u8> ERU00_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl ERU01_R {
     }
 }
 #[doc = "Field `ERU01` writer - Promote Channel 1 Interrupt of ERU0 Request to NMI Request"]
-pub type ERU01_W<'a, const O: u8> = crate::BitWriter<'a, u32, NMIREQEN_SPEC, ERU01_A, O>;
+pub type ERU01_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, ERU01_A>;
 impl<'a, const O: u8> ERU01_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl ERU02_R {
     }
 }
 #[doc = "Field `ERU02` writer - Promote Channel 2 Interrupt of ERU0 Request to NMI Request"]
-pub type ERU02_W<'a, const O: u8> = crate::BitWriter<'a, u32, NMIREQEN_SPEC, ERU02_A, O>;
+pub type ERU02_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, ERU02_A>;
 impl<'a, const O: u8> ERU02_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl ERU03_R {
     }
 }
 #[doc = "Field `ERU03` writer - Promote Channel 3 Interrupt of ERU0 Request to NMI Request"]
-pub type ERU03_W<'a, const O: u8> = crate::BitWriter<'a, u32, NMIREQEN_SPEC, ERU03_A, O>;
+pub type ERU03_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, ERU03_A>;
 impl<'a, const O: u8> ERU03_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]

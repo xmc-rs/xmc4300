@@ -34,7 +34,7 @@ impl From<DEBUG_SEL_AW> for bool {
     }
 }
 #[doc = "Field `DEBUG_SEL` writer - Debug_sel"]
-pub type DEBUG_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DEBUG_SEL_SPEC, DEBUG_SEL_AW, O>;
+pub type DEBUG_SEL_W<'a, const O: u8> = crate::BitWriter<'a, DEBUG_SEL_SPEC, O, DEBUG_SEL_AW>;
 impl<'a, const O: u8> DEBUG_SEL_W<'a, O> {
     #[doc = "receiver module and fifo_ctrl module signals are probed out"]
     #[inline(always)]

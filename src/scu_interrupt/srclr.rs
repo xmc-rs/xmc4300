@@ -34,7 +34,7 @@ impl From<PRWARN_AW> for bool {
     }
 }
 #[doc = "Field `PRWARN` writer - WDT pre-warning Interrupt Clear"]
-pub type PRWARN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, PRWARN_AW, O>;
+pub type PRWARN_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, PRWARN_AW>;
 impl<'a, const O: u8> PRWARN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<PI_AW> for bool {
     }
 }
 #[doc = "Field `PI` writer - RTC Periodic Interrupt Clear"]
-pub type PI_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, PI_AW, O>;
+pub type PI_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, PI_AW>;
 impl<'a, const O: u8> PI_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<AI_AW> for bool {
     }
 }
 #[doc = "Field `AI` writer - RTC Alarm Interrupt Clear"]
-pub type AI_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, AI_AW, O>;
+pub type AI_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, AI_AW>;
 impl<'a, const O: u8> AI_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<DLROVR_AW> for bool {
     }
 }
 #[doc = "Field `DLROVR` writer - DLR Request Overrun Interrupt clear"]
-pub type DLROVR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, DLROVR_AW, O>;
+pub type DLROVR_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, DLROVR_AW>;
 impl<'a, const O: u8> DLROVR_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<HDCLR_AW> for bool {
     }
 }
 #[doc = "Field `HDCLR` writer - HDCLR Mirror Register Update Clear"]
-pub type HDCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, HDCLR_AW, O>;
+pub type HDCLR_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, HDCLR_AW>;
 impl<'a, const O: u8> HDCLR_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<HDSET_AW> for bool {
     }
 }
 #[doc = "Field `HDSET` writer - HDSET Mirror Register Update Clear"]
-pub type HDSET_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, HDSET_AW, O>;
+pub type HDSET_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, HDSET_AW>;
 impl<'a, const O: u8> HDSET_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -202,7 +202,7 @@ impl From<HDCR_AW> for bool {
     }
 }
 #[doc = "Field `HDCR` writer - HDCR Mirror Register Update Clear"]
-pub type HDCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, HDCR_AW, O>;
+pub type HDCR_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, HDCR_AW>;
 impl<'a, const O: u8> HDCR_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -230,7 +230,7 @@ impl From<OSCSICTRL_AW> for bool {
     }
 }
 #[doc = "Field `OSCSICTRL` writer - OSCSICTRL Mirror Register Update Clear"]
-pub type OSCSICTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, OSCSICTRL_AW, O>;
+pub type OSCSICTRL_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, OSCSICTRL_AW>;
 impl<'a, const O: u8> OSCSICTRL_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -258,7 +258,7 @@ impl From<OSCULCTRL_AW> for bool {
     }
 }
 #[doc = "Field `OSCULCTRL` writer - OSCULCTRL Mirror Register Update Clear"]
-pub type OSCULCTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, OSCULCTRL_AW, O>;
+pub type OSCULCTRL_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, OSCULCTRL_AW>;
 impl<'a, const O: u8> OSCULCTRL_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -286,7 +286,7 @@ impl From<RTC_CTR_AW> for bool {
     }
 }
 #[doc = "Field `RTC_CTR` writer - RTC CTR Mirror Register Update Clear"]
-pub type RTC_CTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, RTC_CTR_AW, O>;
+pub type RTC_CTR_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, RTC_CTR_AW>;
 impl<'a, const O: u8> RTC_CTR_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -314,7 +314,7 @@ impl From<RTC_ATIM0_AW> for bool {
     }
 }
 #[doc = "Field `RTC_ATIM0` writer - RTC ATIM0 Mirror Register Update Clear"]
-pub type RTC_ATIM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, RTC_ATIM0_AW, O>;
+pub type RTC_ATIM0_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, RTC_ATIM0_AW>;
 impl<'a, const O: u8> RTC_ATIM0_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -342,7 +342,7 @@ impl From<RTC_ATIM1_AW> for bool {
     }
 }
 #[doc = "Field `RTC_ATIM1` writer - RTC ATIM1 Mirror Register Update Clear"]
-pub type RTC_ATIM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, RTC_ATIM1_AW, O>;
+pub type RTC_ATIM1_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, RTC_ATIM1_AW>;
 impl<'a, const O: u8> RTC_ATIM1_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -370,7 +370,7 @@ impl From<RTC_TIM0_AW> for bool {
     }
 }
 #[doc = "Field `RTC_TIM0` writer - RTC TIM0 Mirror Register Update Clear"]
-pub type RTC_TIM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, RTC_TIM0_AW, O>;
+pub type RTC_TIM0_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, RTC_TIM0_AW>;
 impl<'a, const O: u8> RTC_TIM0_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -398,7 +398,7 @@ impl From<RTC_TIM1_AW> for bool {
     }
 }
 #[doc = "Field `RTC_TIM1` writer - RTC TIM1 Mirror Register Update Clear"]
-pub type RTC_TIM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, RTC_TIM1_AW, O>;
+pub type RTC_TIM1_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, RTC_TIM1_AW>;
 impl<'a, const O: u8> RTC_TIM1_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -426,7 +426,7 @@ impl From<RMX_AW> for bool {
     }
 }
 #[doc = "Field `RMX` writer - Retention Memory Mirror Register Update Clear"]
-pub type RMX_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRCLR_SPEC, RMX_AW, O>;
+pub type RMX_W<'a, const O: u8> = crate::BitWriter<'a, SRCLR_SPEC, O, RMX_AW>;
 impl<'a, const O: u8> RMX_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

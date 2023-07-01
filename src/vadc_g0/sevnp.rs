@@ -35,7 +35,7 @@ impl From<crate::W<SEVNP_SPEC>> for W {
     }
 }
 #[doc = "Field `SEV0NP` reader - Service Request Node Pointer Source Event i"]
-pub type SEV0NP_R = crate::FieldReader<u8, SEV0NP_A>;
+pub type SEV0NP_R = crate::FieldReader<SEV0NP_A>;
 #[doc = "Service Request Node Pointer Source Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<SEV0NP_A> for u8 {
     fn from(variant: SEV0NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SEV0NP_A {
+    type Ux = u8;
 }
 impl SEV0NP_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl SEV0NP_R {
     }
 }
 #[doc = "Field `SEV0NP` writer - Service Request Node Pointer Source Event i"]
-pub type SEV0NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEVNP_SPEC, u8, SEV0NP_A, 4, O>;
+pub type SEV0NP_W<'a, const O: u8> = crate::FieldWriter<'a, SEVNP_SPEC, 4, O, SEV0NP_A>;
 impl<'a, const O: u8> SEV0NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> SEV0NP_W<'a, O> {
     }
 }
 #[doc = "Field `SEV1NP` reader - Service Request Node Pointer Source Event i"]
-pub type SEV1NP_R = crate::FieldReader<u8, SEV1NP_A>;
+pub type SEV1NP_R = crate::FieldReader<SEV1NP_A>;
 #[doc = "Service Request Node Pointer Source Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<SEV1NP_A> for u8 {
     fn from(variant: SEV1NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SEV1NP_A {
+    type Ux = u8;
 }
 impl SEV1NP_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl SEV1NP_R {
     }
 }
 #[doc = "Field `SEV1NP` writer - Service Request Node Pointer Source Event i"]
-pub type SEV1NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEVNP_SPEC, u8, SEV1NP_A, 4, O>;
+pub type SEV1NP_W<'a, const O: u8> = crate::FieldWriter<'a, SEVNP_SPEC, 4, O, SEV1NP_A>;
 impl<'a, const O: u8> SEV1NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]

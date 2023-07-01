@@ -35,7 +35,7 @@ impl From<crate::W<TIMEOUT_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `DAT_TIMEOUT_CNT_VAL` reader - Data Timeout Counter Value"]
-pub type DAT_TIMEOUT_CNT_VAL_R = crate::FieldReader<u8, DAT_TIMEOUT_CNT_VAL_A>;
+pub type DAT_TIMEOUT_CNT_VAL_R = crate::FieldReader<DAT_TIMEOUT_CNT_VAL_A>;
 #[doc = "Data Timeout Counter Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -52,6 +52,9 @@ impl From<DAT_TIMEOUT_CNT_VAL_A> for u8 {
     fn from(variant: DAT_TIMEOUT_CNT_VAL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DAT_TIMEOUT_CNT_VAL_A {
+    type Ux = u8;
 }
 impl DAT_TIMEOUT_CNT_VAL_R {
     #[doc = "Get enumerated values variant"]
@@ -81,7 +84,7 @@ impl DAT_TIMEOUT_CNT_VAL_R {
     }
 }
 #[doc = "Field `DAT_TIMEOUT_CNT_VAL` writer - Data Timeout Counter Value"]
-pub type DAT_TIMEOUT_CNT_VAL_W<'a, const O: u8> = crate::FieldWriter<'a, u8, TIMEOUT_CTRL_SPEC, u8, DAT_TIMEOUT_CNT_VAL_A, 4, O>;
+pub type DAT_TIMEOUT_CNT_VAL_W<'a, const O: u8> = crate::FieldWriter<'a, TIMEOUT_CTRL_SPEC, 4, O, DAT_TIMEOUT_CNT_VAL_A>;
 impl<'a, const O: u8> DAT_TIMEOUT_CNT_VAL_W<'a, O> {
     #[doc = "TMCLK * 2^13"]
     #[inline(always)]

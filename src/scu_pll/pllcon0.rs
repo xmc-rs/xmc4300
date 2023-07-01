@@ -71,7 +71,7 @@ impl VCOBYP_R {
     }
 }
 #[doc = "Field `VCOBYP` writer - VCO Bypass"]
-pub type VCOBYP_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLLCON0_SPEC, VCOBYP_A, O>;
+pub type VCOBYP_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, VCOBYP_A>;
 impl<'a, const O: u8> VCOBYP_W<'a, O> {
     #[doc = "Normal operation, VCO is not bypassed"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl VCOPWD_R {
     }
 }
 #[doc = "Field `VCOPWD` writer - VCO Power Saving Mode"]
-pub type VCOPWD_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLLCON0_SPEC, VCOPWD_A, O>;
+pub type VCOPWD_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, VCOPWD_A>;
 impl<'a, const O: u8> VCOPWD_W<'a, O> {
     #[doc = "Normal behavior"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl VCOTR_R {
     }
 }
 #[doc = "Field `VCOTR` writer - VCO Trim Control"]
-pub type VCOTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLLCON0_SPEC, VCOTR_A, O>;
+pub type VCOTR_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, VCOTR_A>;
 impl<'a, const O: u8> VCOTR_W<'a, O> {
     #[doc = "VCO bandwidth is operation in the normal range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl FINDIS_R {
     }
 }
 #[doc = "Field `FINDIS` writer - Disconnect Oscillator from VCO"]
-pub type FINDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLLCON0_SPEC, FINDIS_A, O>;
+pub type FINDIS_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, FINDIS_A>;
 impl<'a, const O: u8> FINDIS_W<'a, O> {
     #[doc = "connect oscillator to the VCO part"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl OSCDISCDIS_R {
     }
 }
 #[doc = "Field `OSCDISCDIS` writer - Oscillator Disconnect Disable"]
-pub type OSCDISCDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLLCON0_SPEC, OSCDISCDIS_A, O>;
+pub type OSCDISCDIS_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, OSCDISCDIS_A>;
 impl<'a, const O: u8> OSCDISCDIS_W<'a, O> {
     #[doc = "In case of a PLL loss-of-lock bit FINDIS is set"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl PLLPWD_R {
     }
 }
 #[doc = "Field `PLLPWD` writer - PLL Power Saving Mode"]
-pub type PLLPWD_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLLCON0_SPEC, PLLPWD_A, O>;
+pub type PLLPWD_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, PLLPWD_A>;
 impl<'a, const O: u8> PLLPWD_W<'a, O> {
     #[doc = "Normal behavior"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl OSCRES_R {
     }
 }
 #[doc = "Field `OSCRES` writer - Oscillator Watchdog Reset"]
-pub type OSCRES_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLLCON0_SPEC, OSCRES_A, O>;
+pub type OSCRES_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, OSCRES_A>;
 impl<'a, const O: u8> OSCRES_W<'a, O> {
     #[doc = "The Oscillator Watchdog of the PLL is not reset and remains active"]
     #[inline(always)]
@@ -385,7 +385,7 @@ impl<'a, const O: u8> OSCRES_W<'a, O> {
     }
 }
 #[doc = "Field `RESLD` writer - Restart VCO Lock Detection"]
-pub type RESLD_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLLCON0_SPEC, bool, O>;
+pub type RESLD_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O>;
 #[doc = "Field `AOTREN` reader - Automatic Oscillator Calibration Enable"]
 pub type AOTREN_R = crate::BitReader<AOTREN_A>;
 #[doc = "Automatic Oscillator Calibration Enable\n\nValue on reset: 0"]
@@ -423,7 +423,7 @@ impl AOTREN_R {
     }
 }
 #[doc = "Field `AOTREN` writer - Automatic Oscillator Calibration Enable"]
-pub type AOTREN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLLCON0_SPEC, AOTREN_A, O>;
+pub type AOTREN_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, AOTREN_A>;
 impl<'a, const O: u8> AOTREN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -473,7 +473,7 @@ impl FOTR_R {
     }
 }
 #[doc = "Field `FOTR` writer - Factory Oscillator Calibration"]
-pub type FOTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLLCON0_SPEC, FOTR_A, O>;
+pub type FOTR_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, FOTR_A>;
 impl<'a, const O: u8> FOTR_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

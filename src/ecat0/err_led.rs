@@ -35,7 +35,7 @@ impl From<crate::W<ERR_LED_SPEC>> for W {
     }
 }
 #[doc = "Field `LED_CODE` reader - LED Code"]
-pub type LED_CODE_R = crate::FieldReader<u8, LED_CODE_A>;
+pub type LED_CODE_R = crate::FieldReader<LED_CODE_A>;
 #[doc = "LED Code\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<LED_CODE_A> for u8 {
     fn from(variant: LED_CODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LED_CODE_A {
+    type Ux = u8;
 }
 impl LED_CODE_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl LED_CODE_R {
     }
 }
 #[doc = "Field `LED_CODE` writer - LED Code"]
-pub type LED_CODE_W<'a, const O: u8> = crate::FieldWriter<'a, u8, ERR_LED_SPEC, u8, LED_CODE_A, 4, O>;
+pub type LED_CODE_W<'a, const O: u8> = crate::FieldWriter<'a, ERR_LED_SPEC, 4, O, LED_CODE_A>;
 impl<'a, const O: u8> LED_CODE_W<'a, O> {
     #[doc = "OFF"]
     #[inline(always)]
@@ -149,7 +152,7 @@ impl EN_OVERR_R {
     }
 }
 #[doc = "Field `EN_OVERR` writer - Enable Override"]
-pub type EN_OVERR_W<'a, const O: u8> = crate::BitWriter<'a, u8, ERR_LED_SPEC, EN_OVERR_A, O>;
+pub type EN_OVERR_W<'a, const O: u8> = crate::BitWriter<'a, ERR_LED_SPEC, O, EN_OVERR_A>;
 impl<'a, const O: u8> EN_OVERR_W<'a, O> {
     #[doc = "Override disable"]
     #[inline(always)]

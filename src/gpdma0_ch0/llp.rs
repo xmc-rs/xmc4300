@@ -35,9 +35,9 @@ impl From<crate::W<LLP_SPEC>> for W {
     }
 }
 #[doc = "Field `LOC` reader - Starting Address In Memory"]
-pub type LOC_R = crate::FieldReader<u32, u32>;
+pub type LOC_R = crate::FieldReader<u32>;
 #[doc = "Field `LOC` writer - Starting Address In Memory"]
-pub type LOC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LLP_SPEC, u32, u32, 30, O>;
+pub type LOC_W<'a, const O: u8> = crate::FieldWriter<'a, LLP_SPEC, 30, O, u32>;
 impl R {
     #[doc = "Bits 2:31 - Starting Address In Memory"]
     #[inline(always)]

@@ -35,9 +35,9 @@ impl From<crate::W<BYP_SPEC>> for W {
     }
 }
 #[doc = "Field `BDATA` reader - Bypass Data"]
-pub type BDATA_R = crate::FieldReader<u16, u16>;
+pub type BDATA_R = crate::FieldReader<u16>;
 #[doc = "Field `BDATA` writer - Bypass Data"]
-pub type BDATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BYP_SPEC, u16, u16, 16, O>;
+pub type BDATA_W<'a, const O: u8> = crate::FieldWriter<'a, BYP_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Bypass Data"]
     #[inline(always)]

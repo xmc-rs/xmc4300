@@ -14,7 +14,7 @@ impl From<crate::R<RX_FIFO_OVERFLOW_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXFIFOOVFL` reader - This field indicates the number of received frames missed because of FIFO overflow."]
-pub type RXFIFOOVFL_R = crate::FieldReader<u32, u32>;
+pub type RXFIFOOVFL_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of received frames missed because of FIFO overflow."]
     #[inline(always)]

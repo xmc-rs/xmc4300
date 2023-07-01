@@ -35,7 +35,7 @@ impl From<crate::W<BRG_SPEC>> for W {
     }
 }
 #[doc = "Field `CLKSEL` reader - Clock Selection"]
-pub type CLKSEL_R = crate::FieldReader<u8, CLKSEL_A>;
+pub type CLKSEL_R = crate::FieldReader<CLKSEL_A>;
 #[doc = "Clock Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -52,6 +52,9 @@ impl From<CLKSEL_A> for u8 {
     fn from(variant: CLKSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CLKSEL_A {
+    type Ux = u8;
 }
 impl CLKSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -81,7 +84,7 @@ impl CLKSEL_R {
     }
 }
 #[doc = "Field `CLKSEL` writer - Clock Selection"]
-pub type CLKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BRG_SPEC, u8, CLKSEL_A, 2, O>;
+pub type CLKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, BRG_SPEC, 2, O, CLKSEL_A>;
 impl<'a, const O: u8> CLKSEL_W<'a, O> {
     #[doc = "The fractional divider frequency fFD is selected."]
     #[inline(always)]
@@ -136,7 +139,7 @@ impl TMEN_R {
     }
 }
 #[doc = "Field `TMEN` writer - Timing Measurement Enable"]
-pub type TMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRG_SPEC, TMEN_A, O>;
+pub type TMEN_W<'a, const O: u8> = crate::BitWriter<'a, BRG_SPEC, O, TMEN_A>;
 impl<'a, const O: u8> TMEN_W<'a, O> {
     #[doc = "Timing measurement is disabled: The trigger signals DX0T and DX1T are ignored."]
     #[inline(always)]
@@ -186,7 +189,7 @@ impl PPPEN_R {
     }
 }
 #[doc = "Field `PPPEN` writer - Enable 2:1 Divider for fPPP"]
-pub type PPPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRG_SPEC, PPPEN_A, O>;
+pub type PPPEN_W<'a, const O: u8> = crate::BitWriter<'a, BRG_SPEC, O, PPPEN_A>;
 impl<'a, const O: u8> PPPEN_W<'a, O> {
     #[doc = "The 2:1 divider for fPPP is disabled. fPPP = fPIN"]
     #[inline(always)]
@@ -200,7 +203,7 @@ impl<'a, const O: u8> PPPEN_W<'a, O> {
     }
 }
 #[doc = "Field `CTQSEL` reader - Input Selection for CTQ"]
-pub type CTQSEL_R = crate::FieldReader<u8, CTQSEL_A>;
+pub type CTQSEL_R = crate::FieldReader<CTQSEL_A>;
 #[doc = "Input Selection for CTQ\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -219,6 +222,9 @@ impl From<CTQSEL_A> for u8 {
     fn from(variant: CTQSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CTQSEL_A {
+    type Ux = u8;
 }
 impl CTQSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -254,7 +260,7 @@ impl CTQSEL_R {
     }
 }
 #[doc = "Field `CTQSEL` writer - Input Selection for CTQ"]
-pub type CTQSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, BRG_SPEC, u8, CTQSEL_A, 2, O>;
+pub type CTQSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, BRG_SPEC, 2, O, CTQSEL_A>;
 impl<'a, const O: u8> CTQSEL_W<'a, O> {
     #[doc = "fCTQIN = fPDIV"]
     #[inline(always)]
@@ -278,17 +284,17 @@ impl<'a, const O: u8> CTQSEL_W<'a, O> {
     }
 }
 #[doc = "Field `PCTQ` reader - Pre-Divider for Time Quanta Counter"]
-pub type PCTQ_R = crate::FieldReader<u8, u8>;
+pub type PCTQ_R = crate::FieldReader;
 #[doc = "Field `PCTQ` writer - Pre-Divider for Time Quanta Counter"]
-pub type PCTQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BRG_SPEC, u8, u8, 2, O>;
+pub type PCTQ_W<'a, const O: u8> = crate::FieldWriter<'a, BRG_SPEC, 2, O>;
 #[doc = "Field `DCTQ` reader - Denominator for Time Quanta Counter"]
-pub type DCTQ_R = crate::FieldReader<u8, u8>;
+pub type DCTQ_R = crate::FieldReader;
 #[doc = "Field `DCTQ` writer - Denominator for Time Quanta Counter"]
-pub type DCTQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BRG_SPEC, u8, u8, 5, O>;
+pub type DCTQ_W<'a, const O: u8> = crate::FieldWriter<'a, BRG_SPEC, 5, O>;
 #[doc = "Field `PDIV` reader - Divider Mode: Divider Factor to Generate fPDIV"]
-pub type PDIV_R = crate::FieldReader<u16, u16>;
+pub type PDIV_R = crate::FieldReader<u16>;
 #[doc = "Field `PDIV` writer - Divider Mode: Divider Factor to Generate fPDIV"]
-pub type PDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BRG_SPEC, u16, u16, 10, O>;
+pub type PDIV_W<'a, const O: u8> = crate::FieldWriter<'a, BRG_SPEC, 10, O, u16>;
 #[doc = "Field `SCLKOSEL` reader - Shift Clock Output Select"]
 pub type SCLKOSEL_R = crate::BitReader<SCLKOSEL_A>;
 #[doc = "Shift Clock Output Select\n\nValue on reset: 0"]
@@ -326,7 +332,7 @@ impl SCLKOSEL_R {
     }
 }
 #[doc = "Field `SCLKOSEL` writer - Shift Clock Output Select"]
-pub type SCLKOSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRG_SPEC, SCLKOSEL_A, O>;
+pub type SCLKOSEL_W<'a, const O: u8> = crate::BitWriter<'a, BRG_SPEC, O, SCLKOSEL_A>;
 impl<'a, const O: u8> SCLKOSEL_W<'a, O> {
     #[doc = "SCLK from the baud rate generator is selected as the SCLKOUT input source."]
     #[inline(always)]
@@ -376,7 +382,7 @@ impl MCLKCFG_R {
     }
 }
 #[doc = "Field `MCLKCFG` writer - Master Clock Configuration"]
-pub type MCLKCFG_W<'a, const O: u8> = crate::BitWriter<'a, u32, BRG_SPEC, MCLKCFG_A, O>;
+pub type MCLKCFG_W<'a, const O: u8> = crate::BitWriter<'a, BRG_SPEC, O, MCLKCFG_A>;
 impl<'a, const O: u8> MCLKCFG_W<'a, O> {
     #[doc = "The passive level is 0."]
     #[inline(always)]
@@ -390,7 +396,7 @@ impl<'a, const O: u8> MCLKCFG_W<'a, O> {
     }
 }
 #[doc = "Field `SCLKCFG` reader - Shift Clock Output Configuration"]
-pub type SCLKCFG_R = crate::FieldReader<u8, SCLKCFG_A>;
+pub type SCLKCFG_R = crate::FieldReader<SCLKCFG_A>;
 #[doc = "Shift Clock Output Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -409,6 +415,9 @@ impl From<SCLKCFG_A> for u8 {
     fn from(variant: SCLKCFG_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SCLKCFG_A {
+    type Ux = u8;
 }
 impl SCLKCFG_R {
     #[doc = "Get enumerated values variant"]
@@ -444,7 +453,7 @@ impl SCLKCFG_R {
     }
 }
 #[doc = "Field `SCLKCFG` writer - Shift Clock Output Configuration"]
-pub type SCLKCFG_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, BRG_SPEC, u8, SCLKCFG_A, 2, O>;
+pub type SCLKCFG_W<'a, const O: u8> = crate::FieldWriterSafe<'a, BRG_SPEC, 2, O, SCLKCFG_A>;
 impl<'a, const O: u8> SCLKCFG_W<'a, O> {
     #[doc = "The passive level is 0 and the delay is disabled."]
     #[inline(always)]

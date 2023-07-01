@@ -14,7 +14,7 @@ impl From<crate::R<SYSTEM_TIME_SECONDS_SPEC>> for R {
     }
 }
 #[doc = "Field `TSS` reader - Timestamp Second"]
-pub type TSS_R = crate::FieldReader<u32, u32>;
+pub type TSS_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Timestamp Second"]
     #[inline(always)]

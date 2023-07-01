@@ -35,9 +35,9 @@ impl From<crate::W<DC_SYS_TIME_OFFSET_SPEC>> for W {
     }
 }
 #[doc = "Field `DC_SYS_TIME_OFFSET` reader - Difference between local time and System Time"]
-pub type DC_SYS_TIME_OFFSET_R = crate::FieldReader<u32, u32>;
+pub type DC_SYS_TIME_OFFSET_R = crate::FieldReader<u32>;
 #[doc = "Field `DC_SYS_TIME_OFFSET` writer - Difference between local time and System Time"]
-pub type DC_SYS_TIME_OFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DC_SYS_TIME_OFFSET_SPEC, u32, u32, 32, O>;
+pub type DC_SYS_TIME_OFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, DC_SYS_TIME_OFFSET_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Difference between local time and System Time"]
     #[inline(always)]

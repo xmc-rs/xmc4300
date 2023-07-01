@@ -14,7 +14,7 @@ impl From<crate::R<SYNC_LATCH_CONFIG_SPEC>> for R {
     }
 }
 #[doc = "Field `SYNC0_POL` reader - SYNC0 output driver/polarity"]
-pub type SYNC0_POL_R = crate::FieldReader<u8, SYNC0_POL_A>;
+pub type SYNC0_POL_R = crate::FieldReader<SYNC0_POL_A>;
 #[doc = "SYNC0 output driver/polarity\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -33,6 +33,9 @@ impl From<SYNC0_POL_A> for u8 {
     fn from(variant: SYNC0_POL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SYNC0_POL_A {
+    type Ux = u8;
 }
 impl SYNC0_POL_R {
     #[doc = "Get enumerated values variant"]
@@ -140,7 +143,7 @@ impl S0_MAP_R {
     }
 }
 #[doc = "Field `SYNC1_POL` reader - SYNC1 output driver/polarity"]
-pub type SYNC1_POL_R = crate::FieldReader<u8, SYNC1_POL_A>;
+pub type SYNC1_POL_R = crate::FieldReader<SYNC1_POL_A>;
 #[doc = "SYNC1 output driver/polarity\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -159,6 +162,9 @@ impl From<SYNC1_POL_A> for u8 {
     fn from(variant: SYNC1_POL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SYNC1_POL_A {
+    type Ux = u8;
 }
 impl SYNC1_POL_R {
     #[doc = "Get enumerated values variant"]

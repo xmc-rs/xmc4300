@@ -35,7 +35,7 @@ impl From<crate::W<CEVNP0_SPEC>> for W {
     }
 }
 #[doc = "Field `CEV0NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV0NP_R = crate::FieldReader<u8, CEV0NP_A>;
+pub type CEV0NP_R = crate::FieldReader<CEV0NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<CEV0NP_A> for u8 {
     fn from(variant: CEV0NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CEV0NP_A {
+    type Ux = u8;
 }
 impl CEV0NP_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl CEV0NP_R {
     }
 }
 #[doc = "Field `CEV0NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV0NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV0NP_A, 4, O>;
+pub type CEV0NP_W<'a, const O: u8> = crate::FieldWriter<'a, CEVNP0_SPEC, 4, O, CEV0NP_A>;
 impl<'a, const O: u8> CEV0NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> CEV0NP_W<'a, O> {
     }
 }
 #[doc = "Field `CEV1NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV1NP_R = crate::FieldReader<u8, CEV1NP_A>;
+pub type CEV1NP_R = crate::FieldReader<CEV1NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<CEV1NP_A> for u8 {
     fn from(variant: CEV1NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CEV1NP_A {
+    type Ux = u8;
 }
 impl CEV1NP_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl CEV1NP_R {
     }
 }
 #[doc = "Field `CEV1NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV1NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV1NP_A, 4, O>;
+pub type CEV1NP_W<'a, const O: u8> = crate::FieldWriter<'a, CEVNP0_SPEC, 4, O, CEV1NP_A>;
 impl<'a, const O: u8> CEV1NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -191,7 +197,7 @@ impl<'a, const O: u8> CEV1NP_W<'a, O> {
     }
 }
 #[doc = "Field `CEV2NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV2NP_R = crate::FieldReader<u8, CEV2NP_A>;
+pub type CEV2NP_R = crate::FieldReader<CEV2NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -210,6 +216,9 @@ impl From<CEV2NP_A> for u8 {
     fn from(variant: CEV2NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CEV2NP_A {
+    type Ux = u8;
 }
 impl CEV2NP_R {
     #[doc = "Get enumerated values variant"]
@@ -245,7 +254,7 @@ impl CEV2NP_R {
     }
 }
 #[doc = "Field `CEV2NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV2NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV2NP_A, 4, O>;
+pub type CEV2NP_W<'a, const O: u8> = crate::FieldWriter<'a, CEVNP0_SPEC, 4, O, CEV2NP_A>;
 impl<'a, const O: u8> CEV2NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -269,7 +278,7 @@ impl<'a, const O: u8> CEV2NP_W<'a, O> {
     }
 }
 #[doc = "Field `CEV3NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV3NP_R = crate::FieldReader<u8, CEV3NP_A>;
+pub type CEV3NP_R = crate::FieldReader<CEV3NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -288,6 +297,9 @@ impl From<CEV3NP_A> for u8 {
     fn from(variant: CEV3NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CEV3NP_A {
+    type Ux = u8;
 }
 impl CEV3NP_R {
     #[doc = "Get enumerated values variant"]
@@ -323,7 +335,7 @@ impl CEV3NP_R {
     }
 }
 #[doc = "Field `CEV3NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV3NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV3NP_A, 4, O>;
+pub type CEV3NP_W<'a, const O: u8> = crate::FieldWriter<'a, CEVNP0_SPEC, 4, O, CEV3NP_A>;
 impl<'a, const O: u8> CEV3NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -347,7 +359,7 @@ impl<'a, const O: u8> CEV3NP_W<'a, O> {
     }
 }
 #[doc = "Field `CEV4NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV4NP_R = crate::FieldReader<u8, CEV4NP_A>;
+pub type CEV4NP_R = crate::FieldReader<CEV4NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -366,6 +378,9 @@ impl From<CEV4NP_A> for u8 {
     fn from(variant: CEV4NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CEV4NP_A {
+    type Ux = u8;
 }
 impl CEV4NP_R {
     #[doc = "Get enumerated values variant"]
@@ -401,7 +416,7 @@ impl CEV4NP_R {
     }
 }
 #[doc = "Field `CEV4NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV4NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV4NP_A, 4, O>;
+pub type CEV4NP_W<'a, const O: u8> = crate::FieldWriter<'a, CEVNP0_SPEC, 4, O, CEV4NP_A>;
 impl<'a, const O: u8> CEV4NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -425,7 +440,7 @@ impl<'a, const O: u8> CEV4NP_W<'a, O> {
     }
 }
 #[doc = "Field `CEV5NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV5NP_R = crate::FieldReader<u8, CEV5NP_A>;
+pub type CEV5NP_R = crate::FieldReader<CEV5NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -444,6 +459,9 @@ impl From<CEV5NP_A> for u8 {
     fn from(variant: CEV5NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CEV5NP_A {
+    type Ux = u8;
 }
 impl CEV5NP_R {
     #[doc = "Get enumerated values variant"]
@@ -479,7 +497,7 @@ impl CEV5NP_R {
     }
 }
 #[doc = "Field `CEV5NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV5NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV5NP_A, 4, O>;
+pub type CEV5NP_W<'a, const O: u8> = crate::FieldWriter<'a, CEVNP0_SPEC, 4, O, CEV5NP_A>;
 impl<'a, const O: u8> CEV5NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -503,7 +521,7 @@ impl<'a, const O: u8> CEV5NP_W<'a, O> {
     }
 }
 #[doc = "Field `CEV6NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV6NP_R = crate::FieldReader<u8, CEV6NP_A>;
+pub type CEV6NP_R = crate::FieldReader<CEV6NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -522,6 +540,9 @@ impl From<CEV6NP_A> for u8 {
     fn from(variant: CEV6NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CEV6NP_A {
+    type Ux = u8;
 }
 impl CEV6NP_R {
     #[doc = "Get enumerated values variant"]
@@ -557,7 +578,7 @@ impl CEV6NP_R {
     }
 }
 #[doc = "Field `CEV6NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV6NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV6NP_A, 4, O>;
+pub type CEV6NP_W<'a, const O: u8> = crate::FieldWriter<'a, CEVNP0_SPEC, 4, O, CEV6NP_A>;
 impl<'a, const O: u8> CEV6NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
@@ -581,7 +602,7 @@ impl<'a, const O: u8> CEV6NP_W<'a, O> {
     }
 }
 #[doc = "Field `CEV7NP` reader - Service Request Node Pointer Channel Event i"]
-pub type CEV7NP_R = crate::FieldReader<u8, CEV7NP_A>;
+pub type CEV7NP_R = crate::FieldReader<CEV7NP_A>;
 #[doc = "Service Request Node Pointer Channel Event i\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -600,6 +621,9 @@ impl From<CEV7NP_A> for u8 {
     fn from(variant: CEV7NP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CEV7NP_A {
+    type Ux = u8;
 }
 impl CEV7NP_R {
     #[doc = "Get enumerated values variant"]
@@ -635,7 +659,7 @@ impl CEV7NP_R {
     }
 }
 #[doc = "Field `CEV7NP` writer - Service Request Node Pointer Channel Event i"]
-pub type CEV7NP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CEVNP0_SPEC, u8, CEV7NP_A, 4, O>;
+pub type CEV7NP_W<'a, const O: u8> = crate::FieldWriter<'a, CEVNP0_SPEC, 4, O, CEV7NP_A>;
 impl<'a, const O: u8> CEV7NP_W<'a, O> {
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]

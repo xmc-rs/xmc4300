@@ -35,9 +35,9 @@ impl From<crate::W<WLB_SPEC>> for W {
     }
 }
 #[doc = "Field `WLB` reader - Window Lower Bound"]
-pub type WLB_R = crate::FieldReader<u32, u32>;
+pub type WLB_R = crate::FieldReader<u32>;
 #[doc = "Field `WLB` writer - Window Lower Bound"]
-pub type WLB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WLB_SPEC, u32, u32, 32, O>;
+pub type WLB_W<'a, const O: u8> = crate::FieldWriter<'a, WLB_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Window Lower Bound"]
     #[inline(always)]

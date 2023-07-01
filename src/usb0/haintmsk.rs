@@ -35,9 +35,9 @@ impl From<crate::W<HAINTMSK_SPEC>> for W {
     }
 }
 #[doc = "Field `HAINTMsk` reader - Channel Interrupt Mask"]
-pub type HAINTMSK_R = crate::FieldReader<u16, u16>;
+pub type HAINTMSK_R = crate::FieldReader<u16>;
 #[doc = "Field `HAINTMsk` writer - Channel Interrupt Mask"]
-pub type HAINTMSK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HAINTMSK_SPEC, u16, u16, 14, O>;
+pub type HAINTMSK_W<'a, const O: u8> = crate::FieldWriter<'a, HAINTMSK_SPEC, 14, O, u16>;
 impl R {
     #[doc = "Bits 0:13 - Channel Interrupt Mask"]
     #[inline(always)]

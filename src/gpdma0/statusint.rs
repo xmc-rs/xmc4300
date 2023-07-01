@@ -14,15 +14,15 @@ impl From<crate::R<STATUSINT_SPEC>> for R {
     }
 }
 #[doc = "Field `TFR` reader - OR of the contents of STATUSTFR register"]
-pub type TFR_R = crate::BitReader<bool>;
+pub type TFR_R = crate::BitReader;
 #[doc = "Field `BLOCK` reader - OR of the contents of STATUSBLOCK register"]
-pub type BLOCK_R = crate::BitReader<bool>;
+pub type BLOCK_R = crate::BitReader;
 #[doc = "Field `SRCT` reader - OR of the contents of STATUSSRCTRAN register"]
-pub type SRCT_R = crate::BitReader<bool>;
+pub type SRCT_R = crate::BitReader;
 #[doc = "Field `DSTT` reader - OR of the contents of STATUSDSTTRAN register"]
-pub type DSTT_R = crate::BitReader<bool>;
+pub type DSTT_R = crate::BitReader;
 #[doc = "Field `ERR` reader - OR of the contents of STATUSERR register"]
-pub type ERR_R = crate::BitReader<bool>;
+pub type ERR_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - OR of the contents of STATUSTFR register"]
     #[inline(always)]

@@ -35,13 +35,13 @@ impl From<crate::W<GDFIFOCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `GDFIFOCfg` reader - GDFIFOCfg"]
-pub type GDFIFOCFG_R = crate::FieldReader<u16, u16>;
+pub type GDFIFOCFG_R = crate::FieldReader<u16>;
 #[doc = "Field `GDFIFOCfg` writer - GDFIFOCfg"]
-pub type GDFIFOCFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GDFIFOCFG_SPEC, u16, u16, 16, O>;
+pub type GDFIFOCFG_W<'a, const O: u8> = crate::FieldWriter<'a, GDFIFOCFG_SPEC, 16, O, u16>;
 #[doc = "Field `EPInfoBaseAddr` reader - EPInfoBaseAddr"]
-pub type EPINFO_BASE_ADDR_R = crate::FieldReader<u16, u16>;
+pub type EPINFO_BASE_ADDR_R = crate::FieldReader<u16>;
 #[doc = "Field `EPInfoBaseAddr` writer - EPInfoBaseAddr"]
-pub type EPINFO_BASE_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GDFIFOCFG_SPEC, u16, u16, 16, O>;
+pub type EPINFO_BASE_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, GDFIFOCFG_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - GDFIFOCfg"]
     #[inline(always)]

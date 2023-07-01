@@ -35,13 +35,13 @@ impl From<crate::W<BLOCK_SIZE_SPEC>> for W {
     }
 }
 #[doc = "Field `TX_BLOCK_SIZE` reader - Transfer Block Size"]
-pub type TX_BLOCK_SIZE_R = crate::FieldReader<u16, u16>;
+pub type TX_BLOCK_SIZE_R = crate::FieldReader<u16>;
 #[doc = "Field `TX_BLOCK_SIZE` writer - Transfer Block Size"]
-pub type TX_BLOCK_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u16, BLOCK_SIZE_SPEC, u16, u16, 12, O>;
+pub type TX_BLOCK_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, BLOCK_SIZE_SPEC, 12, O, u16>;
 #[doc = "Field `TX_BLOCK_SIZE_12` reader - Transfer Block Size 12th bit."]
-pub type TX_BLOCK_SIZE_12_R = crate::BitReader<bool>;
+pub type TX_BLOCK_SIZE_12_R = crate::BitReader;
 #[doc = "Field `TX_BLOCK_SIZE_12` writer - Transfer Block Size 12th bit."]
-pub type TX_BLOCK_SIZE_12_W<'a, const O: u8> = crate::BitWriter<'a, u16, BLOCK_SIZE_SPEC, bool, O>;
+pub type TX_BLOCK_SIZE_12_W<'a, const O: u8> = crate::BitWriter<'a, BLOCK_SIZE_SPEC, O>;
 impl R {
     #[doc = "Bits 0:11 - Transfer Block Size"]
     #[inline(always)]

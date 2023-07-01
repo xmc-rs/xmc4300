@@ -35,9 +35,9 @@ impl From<crate::W<TIMER_SPEC>> for W {
     }
 }
 #[doc = "Field `TVAL` reader - Timer Value"]
-pub type TVAL_R = crate::FieldReader<u16, u16>;
+pub type TVAL_R = crate::FieldReader<u16>;
 #[doc = "Field `TVAL` writer - Timer Value"]
-pub type TVAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMER_SPEC, u16, u16, 16, O>;
+pub type TVAL_W<'a, const O: u8> = crate::FieldWriter<'a, TIMER_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Timer Value"]
     #[inline(always)]

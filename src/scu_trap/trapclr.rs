@@ -34,7 +34,7 @@ impl From<SOSCWDGT_AW> for bool {
     }
 }
 #[doc = "Field `SOSCWDGT` writer - OSC_HP Oscillator Watchdog Trap Clear"]
-pub type SOSCWDGT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPCLR_SPEC, SOSCWDGT_AW, O>;
+pub type SOSCWDGT_W<'a, const O: u8> = crate::BitWriter<'a, TRAPCLR_SPEC, O, SOSCWDGT_AW>;
 impl<'a, const O: u8> SOSCWDGT_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<SVCOLCKT_AW> for bool {
     }
 }
 #[doc = "Field `SVCOLCKT` writer - System VCO Lock Trap Clear"]
-pub type SVCOLCKT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPCLR_SPEC, SVCOLCKT_AW, O>;
+pub type SVCOLCKT_W<'a, const O: u8> = crate::BitWriter<'a, TRAPCLR_SPEC, O, SVCOLCKT_AW>;
 impl<'a, const O: u8> SVCOLCKT_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<UVCOLCKT_AW> for bool {
     }
 }
 #[doc = "Field `UVCOLCKT` writer - USB VCO Lock Trap Clear"]
-pub type UVCOLCKT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPCLR_SPEC, UVCOLCKT_AW, O>;
+pub type UVCOLCKT_W<'a, const O: u8> = crate::BitWriter<'a, TRAPCLR_SPEC, O, UVCOLCKT_AW>;
 impl<'a, const O: u8> UVCOLCKT_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<PET_AW> for bool {
     }
 }
 #[doc = "Field `PET` writer - Parity Error Trap Clear"]
-pub type PET_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPCLR_SPEC, PET_AW, O>;
+pub type PET_W<'a, const O: u8> = crate::BitWriter<'a, TRAPCLR_SPEC, O, PET_AW>;
 impl<'a, const O: u8> PET_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<BRWNT_AW> for bool {
     }
 }
 #[doc = "Field `BRWNT` writer - Brown Out Trap Clear"]
-pub type BRWNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPCLR_SPEC, BRWNT_AW, O>;
+pub type BRWNT_W<'a, const O: u8> = crate::BitWriter<'a, TRAPCLR_SPEC, O, BRWNT_AW>;
 impl<'a, const O: u8> BRWNT_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<ULPWDGT_AW> for bool {
     }
 }
 #[doc = "Field `ULPWDGT` writer - OSC_ULP Oscillator Watchdog Trap Clear"]
-pub type ULPWDGT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPCLR_SPEC, ULPWDGT_AW, O>;
+pub type ULPWDGT_W<'a, const O: u8> = crate::BitWriter<'a, TRAPCLR_SPEC, O, ULPWDGT_AW>;
 impl<'a, const O: u8> ULPWDGT_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -202,7 +202,7 @@ impl From<BWERR0T_AW> for bool {
     }
 }
 #[doc = "Field `BWERR0T` writer - Peripheral Bridge 0 Trap Clear"]
-pub type BWERR0T_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPCLR_SPEC, BWERR0T_AW, O>;
+pub type BWERR0T_W<'a, const O: u8> = crate::BitWriter<'a, TRAPCLR_SPEC, O, BWERR0T_AW>;
 impl<'a, const O: u8> BWERR0T_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -230,7 +230,7 @@ impl From<BWERR1T_AW> for bool {
     }
 }
 #[doc = "Field `BWERR1T` writer - Peripheral Bridge 1 Trap Clear"]
-pub type BWERR1T_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPCLR_SPEC, BWERR1T_AW, O>;
+pub type BWERR1T_W<'a, const O: u8> = crate::BitWriter<'a, TRAPCLR_SPEC, O, BWERR1T_AW>;
 impl<'a, const O: u8> BWERR1T_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -258,7 +258,7 @@ impl From<ECAT0RST_AW> for bool {
     }
 }
 #[doc = "Field `ECAT0RST` writer - EtherCat Reset 0 Trap Clear"]
-pub type ECAT0RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TRAPCLR_SPEC, ECAT0RST_AW, O>;
+pub type ECAT0RST_W<'a, const O: u8> = crate::BitWriter<'a, TRAPCLR_SPEC, O, ECAT0RST_AW>;
 impl<'a, const O: u8> ECAT0RST_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

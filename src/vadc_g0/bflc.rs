@@ -35,7 +35,7 @@ impl From<crate::W<BFLC_SPEC>> for W {
     }
 }
 #[doc = "Field `BFM0` reader - Boundary Flag y Mode Control"]
-pub type BFM0_R = crate::FieldReader<u8, BFM0_A>;
+pub type BFM0_R = crate::FieldReader<BFM0_A>;
 #[doc = "Boundary Flag y Mode Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<BFM0_A> for u8 {
     fn from(variant: BFM0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BFM0_A {
+    type Ux = u8;
 }
 impl BFM0_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl BFM0_R {
     }
 }
 #[doc = "Field `BFM0` writer - Boundary Flag y Mode Control"]
-pub type BFM0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BFLC_SPEC, u8, BFM0_A, 4, O>;
+pub type BFM0_W<'a, const O: u8> = crate::FieldWriter<'a, BFLC_SPEC, 4, O, BFM0_A>;
 impl<'a, const O: u8> BFM0_W<'a, O> {
     #[doc = "Disable boundary flag, BFLy is not changed"]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> BFM0_W<'a, O> {
     }
 }
 #[doc = "Field `BFM1` reader - Boundary Flag y Mode Control"]
-pub type BFM1_R = crate::FieldReader<u8, BFM1_A>;
+pub type BFM1_R = crate::FieldReader<BFM1_A>;
 #[doc = "Boundary Flag y Mode Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<BFM1_A> for u8 {
     fn from(variant: BFM1_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BFM1_A {
+    type Ux = u8;
 }
 impl BFM1_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl BFM1_R {
     }
 }
 #[doc = "Field `BFM1` writer - Boundary Flag y Mode Control"]
-pub type BFM1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BFLC_SPEC, u8, BFM1_A, 4, O>;
+pub type BFM1_W<'a, const O: u8> = crate::FieldWriter<'a, BFLC_SPEC, 4, O, BFM1_A>;
 impl<'a, const O: u8> BFM1_W<'a, O> {
     #[doc = "Disable boundary flag, BFLy is not changed"]
     #[inline(always)]
@@ -191,7 +197,7 @@ impl<'a, const O: u8> BFM1_W<'a, O> {
     }
 }
 #[doc = "Field `BFM2` reader - Boundary Flag y Mode Control"]
-pub type BFM2_R = crate::FieldReader<u8, BFM2_A>;
+pub type BFM2_R = crate::FieldReader<BFM2_A>;
 #[doc = "Boundary Flag y Mode Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -210,6 +216,9 @@ impl From<BFM2_A> for u8 {
     fn from(variant: BFM2_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BFM2_A {
+    type Ux = u8;
 }
 impl BFM2_R {
     #[doc = "Get enumerated values variant"]
@@ -245,7 +254,7 @@ impl BFM2_R {
     }
 }
 #[doc = "Field `BFM2` writer - Boundary Flag y Mode Control"]
-pub type BFM2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BFLC_SPEC, u8, BFM2_A, 4, O>;
+pub type BFM2_W<'a, const O: u8> = crate::FieldWriter<'a, BFLC_SPEC, 4, O, BFM2_A>;
 impl<'a, const O: u8> BFM2_W<'a, O> {
     #[doc = "Disable boundary flag, BFLy is not changed"]
     #[inline(always)]
@@ -269,7 +278,7 @@ impl<'a, const O: u8> BFM2_W<'a, O> {
     }
 }
 #[doc = "Field `BFM3` reader - Boundary Flag y Mode Control"]
-pub type BFM3_R = crate::FieldReader<u8, BFM3_A>;
+pub type BFM3_R = crate::FieldReader<BFM3_A>;
 #[doc = "Boundary Flag y Mode Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -288,6 +297,9 @@ impl From<BFM3_A> for u8 {
     fn from(variant: BFM3_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BFM3_A {
+    type Ux = u8;
 }
 impl BFM3_R {
     #[doc = "Get enumerated values variant"]
@@ -323,7 +335,7 @@ impl BFM3_R {
     }
 }
 #[doc = "Field `BFM3` writer - Boundary Flag y Mode Control"]
-pub type BFM3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BFLC_SPEC, u8, BFM3_A, 4, O>;
+pub type BFM3_W<'a, const O: u8> = crate::FieldWriter<'a, BFLC_SPEC, 4, O, BFM3_A>;
 impl<'a, const O: u8> BFM3_W<'a, O> {
     #[doc = "Disable boundary flag, BFLy is not changed"]
     #[inline(always)]

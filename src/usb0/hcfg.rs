@@ -35,7 +35,7 @@ impl From<crate::W<HCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `FSLSPclkSel` reader - FS PHY Clock Select"]
-pub type FSLSPCLK_SEL_R = crate::FieldReader<u8, FSLSPCLK_SEL_A>;
+pub type FSLSPCLK_SEL_R = crate::FieldReader<FSLSPCLK_SEL_A>;
 #[doc = "FS PHY Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -48,6 +48,9 @@ impl From<FSLSPCLK_SEL_A> for u8 {
     fn from(variant: FSLSPCLK_SEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for FSLSPCLK_SEL_A {
+    type Ux = u8;
 }
 impl FSLSPCLK_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -65,7 +68,7 @@ impl FSLSPCLK_SEL_R {
     }
 }
 #[doc = "Field `FSLSPclkSel` writer - FS PHY Clock Select"]
-pub type FSLSPCLK_SEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HCFG_SPEC, u8, FSLSPCLK_SEL_A, 2, O>;
+pub type FSLSPCLK_SEL_W<'a, const O: u8> = crate::FieldWriter<'a, HCFG_SPEC, 2, O, FSLSPCLK_SEL_A>;
 impl<'a, const O: u8> FSLSPCLK_SEL_W<'a, O> {
     #[doc = "PHY clock is running at 48 MHz"]
     #[inline(always)]
@@ -110,7 +113,7 @@ impl FSLSSUPP_R {
     }
 }
 #[doc = "Field `FSLSSupp` writer - FS-Only Support"]
-pub type FSLSSUPP_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCFG_SPEC, FSLSSUPP_A, O>;
+pub type FSLSSUPP_W<'a, const O: u8> = crate::BitWriter<'a, HCFG_SPEC, O, FSLSSUPP_A>;
 impl<'a, const O: u8> FSLSSUPP_W<'a, O> {
     #[doc = "FS-only, connected device can supports also only FS."]
     #[inline(always)]
@@ -124,11 +127,11 @@ impl<'a, const O: u8> FSLSSUPP_W<'a, O> {
     }
 }
 #[doc = "Field `DescDMA` reader - Enable Scatter/gather DMA in Host mode"]
-pub type DESC_DMA_R = crate::BitReader<bool>;
+pub type DESC_DMA_R = crate::BitReader;
 #[doc = "Field `DescDMA` writer - Enable Scatter/gather DMA in Host mode"]
-pub type DESC_DMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCFG_SPEC, bool, O>;
+pub type DESC_DMA_W<'a, const O: u8> = crate::BitWriter<'a, HCFG_SPEC, O>;
 #[doc = "Field `FrListEn` reader - Frame List Entries"]
-pub type FR_LIST_EN_R = crate::FieldReader<u8, FR_LIST_EN_A>;
+pub type FR_LIST_EN_R = crate::FieldReader<FR_LIST_EN_A>;
 #[doc = "Frame List Entries\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -147,6 +150,9 @@ impl From<FR_LIST_EN_A> for u8 {
     fn from(variant: FR_LIST_EN_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for FR_LIST_EN_A {
+    type Ux = u8;
 }
 impl FR_LIST_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -182,7 +188,7 @@ impl FR_LIST_EN_R {
     }
 }
 #[doc = "Field `FrListEn` writer - Frame List Entries"]
-pub type FR_LIST_EN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, HCFG_SPEC, u8, FR_LIST_EN_A, 2, O>;
+pub type FR_LIST_EN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, HCFG_SPEC, 2, O, FR_LIST_EN_A>;
 impl<'a, const O: u8> FR_LIST_EN_W<'a, O> {
     #[doc = "8 Entries"]
     #[inline(always)]
@@ -206,9 +212,9 @@ impl<'a, const O: u8> FR_LIST_EN_W<'a, O> {
     }
 }
 #[doc = "Field `PerSchedEna` reader - Enable Periodic Scheduling"]
-pub type PER_SCHED_ENA_R = crate::BitReader<bool>;
+pub type PER_SCHED_ENA_R = crate::BitReader;
 #[doc = "Field `PerSchedEna` writer - Enable Periodic Scheduling"]
-pub type PER_SCHED_ENA_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCFG_SPEC, bool, O>;
+pub type PER_SCHED_ENA_W<'a, const O: u8> = crate::BitWriter<'a, HCFG_SPEC, O>;
 impl R {
     #[doc = "Bits 0:1 - FS PHY Clock Select"]
     #[inline(always)]

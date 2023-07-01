@@ -14,7 +14,7 @@ impl From<crate::R<DC_RCV_TIME_PORT1_SPEC>> for R {
     }
 }
 #[doc = "Field `LOCAL_TIME_P1` reader - Local time of the beginning of a frame"]
-pub type LOCAL_TIME_P1_R = crate::FieldReader<u32, u32>;
+pub type LOCAL_TIME_P1_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Local time of the beginning of a frame"]
     #[inline(always)]

@@ -35,13 +35,13 @@ impl From<crate::W<HPTXFSIZ_SPEC>> for W {
     }
 }
 #[doc = "Field `PTxFStAddr` reader - Host Periodic TxFIFO Start Address"]
-pub type PTX_FST_ADDR_R = crate::FieldReader<u16, u16>;
+pub type PTX_FST_ADDR_R = crate::FieldReader<u16>;
 #[doc = "Field `PTxFStAddr` writer - Host Periodic TxFIFO Start Address"]
-pub type PTX_FST_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HPTXFSIZ_SPEC, u16, u16, 16, O>;
+pub type PTX_FST_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, HPTXFSIZ_SPEC, 16, O, u16>;
 #[doc = "Field `PTxFSize` reader - Host Periodic TxFIFO Depth"]
-pub type PTX_FSIZE_R = crate::FieldReader<u16, u16>;
+pub type PTX_FSIZE_R = crate::FieldReader<u16>;
 #[doc = "Field `PTxFSize` writer - Host Periodic TxFIFO Depth"]
-pub type PTX_FSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HPTXFSIZ_SPEC, u16, u16, 16, O>;
+pub type PTX_FSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, HPTXFSIZ_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Host Periodic TxFIFO Start Address"]
     #[inline(always)]

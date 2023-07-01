@@ -35,7 +35,7 @@ impl From<crate::W<HPTXSTS_SPEC>> for W {
     }
 }
 #[doc = "Field `PTxFSpcAvail` reader - Periodic Transmit Data FIFO Space Available"]
-pub type PTX_FSPC_AVAIL_R = crate::FieldReader<u16, PTX_FSPC_AVAIL_A>;
+pub type PTX_FSPC_AVAIL_R = crate::FieldReader<PTX_FSPC_AVAIL_A>;
 #[doc = "Periodic Transmit Data FIFO Space Available\n\nValue on reset: 256"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
@@ -52,6 +52,9 @@ impl From<PTX_FSPC_AVAIL_A> for u16 {
     fn from(variant: PTX_FSPC_AVAIL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PTX_FSPC_AVAIL_A {
+    type Ux = u16;
 }
 impl PTX_FSPC_AVAIL_R {
     #[doc = "Get enumerated values variant"]
@@ -81,7 +84,7 @@ impl PTX_FSPC_AVAIL_R {
     }
 }
 #[doc = "Field `PTxFSpcAvail` writer - Periodic Transmit Data FIFO Space Available"]
-pub type PTX_FSPC_AVAIL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HPTXSTS_SPEC, u16, PTX_FSPC_AVAIL_A, 16, O>;
+pub type PTX_FSPC_AVAIL_W<'a, const O: u8> = crate::FieldWriter<'a, HPTXSTS_SPEC, 16, O, PTX_FSPC_AVAIL_A>;
 impl<'a, const O: u8> PTX_FSPC_AVAIL_W<'a, O> {
     #[doc = "Periodic TxFIFO is full"]
     #[inline(always)]
@@ -100,7 +103,7 @@ impl<'a, const O: u8> PTX_FSPC_AVAIL_W<'a, O> {
     }
 }
 #[doc = "Field `PTxQSpcAvail` reader - Periodic Transmit Request Queue Space Available"]
-pub type PTX_QSPC_AVAIL_R = crate::FieldReader<u8, PTX_QSPC_AVAIL_A>;
+pub type PTX_QSPC_AVAIL_R = crate::FieldReader<PTX_QSPC_AVAIL_A>;
 #[doc = "Periodic Transmit Request Queue Space Available\n\nValue on reset: 8"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -117,6 +120,9 @@ impl From<PTX_QSPC_AVAIL_A> for u8 {
     fn from(variant: PTX_QSPC_AVAIL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PTX_QSPC_AVAIL_A {
+    type Ux = u8;
 }
 impl PTX_QSPC_AVAIL_R {
     #[doc = "Get enumerated values variant"]
@@ -146,7 +152,7 @@ impl PTX_QSPC_AVAIL_R {
     }
 }
 #[doc = "Field `PTxQTop` reader - Top of the Periodic Transmit Request Queue"]
-pub type PTX_QTOP_R = crate::FieldReader<u8, u8>;
+pub type PTX_QTOP_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:15 - Periodic Transmit Data FIFO Space Available"]
     #[inline(always)]

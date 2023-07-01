@@ -71,7 +71,7 @@ impl TAPEN_R {
     }
 }
 #[doc = "Field `TAPEN` writer - Enable delay on the CMD/DAT out lines"]
-pub type TAPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SDMMCDEL_SPEC, TAPEN_A, O>;
+pub type TAPEN_W<'a, const O: u8> = crate::BitWriter<'a, SDMMCDEL_SPEC, O, TAPEN_A>;
 impl<'a, const O: u8> TAPEN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -85,9 +85,9 @@ impl<'a, const O: u8> TAPEN_W<'a, O> {
     }
 }
 #[doc = "Field `TAPDEL` reader - Number of Delay Elements Select"]
-pub type TAPDEL_R = crate::FieldReader<u8, u8>;
+pub type TAPDEL_R = crate::FieldReader;
 #[doc = "Field `TAPDEL` writer - Number of Delay Elements Select"]
-pub type TAPDEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDMMCDEL_SPEC, u8, u8, 4, O>;
+pub type TAPDEL_W<'a, const O: u8> = crate::FieldWriter<'a, SDMMCDEL_SPEC, 4, O>;
 impl R {
     #[doc = "Bit 0 - Enable delay on the CMD/DAT out lines"]
     #[inline(always)]

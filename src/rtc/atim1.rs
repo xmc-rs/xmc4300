@@ -35,13 +35,13 @@ impl From<crate::W<ATIM1_SPEC>> for W {
     }
 }
 #[doc = "Field `AMO` reader - Alarm Month Compare Value"]
-pub type AMO_R = crate::FieldReader<u8, u8>;
+pub type AMO_R = crate::FieldReader;
 #[doc = "Field `AMO` writer - Alarm Month Compare Value"]
-pub type AMO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ATIM1_SPEC, u8, u8, 4, O>;
+pub type AMO_W<'a, const O: u8> = crate::FieldWriter<'a, ATIM1_SPEC, 4, O>;
 #[doc = "Field `AYE` reader - Alarm Year Compare Value"]
-pub type AYE_R = crate::FieldReader<u16, u16>;
+pub type AYE_R = crate::FieldReader<u16>;
 #[doc = "Field `AYE` writer - Alarm Year Compare Value"]
-pub type AYE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ATIM1_SPEC, u16, u16, 16, O>;
+pub type AYE_W<'a, const O: u8> = crate::FieldWriter<'a, ATIM1_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 8:11 - Alarm Month Compare Value"]
     #[inline(always)]

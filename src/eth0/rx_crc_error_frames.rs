@@ -14,7 +14,7 @@ impl From<crate::R<RX_CRC_ERROR_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `RXCRCERR` reader - This field indicates the number of frames received with CRC error."]
-pub type RXCRCERR_R = crate::FieldReader<u32, u32>;
+pub type RXCRCERR_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of frames received with CRC error."]
     #[inline(always)]

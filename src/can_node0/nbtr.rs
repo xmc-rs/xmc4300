@@ -35,21 +35,21 @@ impl From<crate::W<NBTR_SPEC>> for W {
     }
 }
 #[doc = "Field `BRP` reader - Baud Rate Prescaler"]
-pub type BRP_R = crate::FieldReader<u8, u8>;
+pub type BRP_R = crate::FieldReader;
 #[doc = "Field `BRP` writer - Baud Rate Prescaler"]
-pub type BRP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NBTR_SPEC, u8, u8, 6, O>;
+pub type BRP_W<'a, const O: u8> = crate::FieldWriter<'a, NBTR_SPEC, 6, O>;
 #[doc = "Field `SJW` reader - (Re) Synchronization Jump Width"]
-pub type SJW_R = crate::FieldReader<u8, u8>;
+pub type SJW_R = crate::FieldReader;
 #[doc = "Field `SJW` writer - (Re) Synchronization Jump Width"]
-pub type SJW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NBTR_SPEC, u8, u8, 2, O>;
+pub type SJW_W<'a, const O: u8> = crate::FieldWriter<'a, NBTR_SPEC, 2, O>;
 #[doc = "Field `TSEG1` reader - Time Segment Before Sample Point"]
-pub type TSEG1_R = crate::FieldReader<u8, u8>;
+pub type TSEG1_R = crate::FieldReader;
 #[doc = "Field `TSEG1` writer - Time Segment Before Sample Point"]
-pub type TSEG1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NBTR_SPEC, u8, u8, 4, O>;
+pub type TSEG1_W<'a, const O: u8> = crate::FieldWriter<'a, NBTR_SPEC, 4, O>;
 #[doc = "Field `TSEG2` reader - Time Segment After Sample Point"]
-pub type TSEG2_R = crate::FieldReader<u8, u8>;
+pub type TSEG2_R = crate::FieldReader;
 #[doc = "Field `TSEG2` writer - Time Segment After Sample Point"]
-pub type TSEG2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, NBTR_SPEC, u8, u8, 3, O>;
+pub type TSEG2_W<'a, const O: u8> = crate::FieldWriter<'a, NBTR_SPEC, 3, O>;
 #[doc = "Field `DIV8` reader - Divide Prescaler Clock by 8"]
 pub type DIV8_R = crate::BitReader<DIV8_A>;
 #[doc = "Divide Prescaler Clock by 8\n\nValue on reset: 0"]
@@ -87,7 +87,7 @@ impl DIV8_R {
     }
 }
 #[doc = "Field `DIV8` writer - Divide Prescaler Clock by 8"]
-pub type DIV8_W<'a, const O: u8> = crate::BitWriter<'a, u32, NBTR_SPEC, DIV8_A, O>;
+pub type DIV8_W<'a, const O: u8> = crate::BitWriter<'a, NBTR_SPEC, O, DIV8_A>;
 impl<'a, const O: u8> DIV8_W<'a, O> {
     #[doc = "A time quantum lasts (BRP+1) clock cycles."]
     #[inline(always)]

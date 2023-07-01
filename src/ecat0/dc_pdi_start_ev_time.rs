@@ -14,7 +14,7 @@ impl From<crate::R<DC_PDI_START_EV_TIME_SPEC>> for R {
     }
 }
 #[doc = "Field `PDI_START_EV_TIME` reader - Register captures local time when at least one SyncManager asserts an PDI buffer start event"]
-pub type PDI_START_EV_TIME_R = crate::FieldReader<u32, u32>;
+pub type PDI_START_EV_TIME_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - Register captures local time when at least one SyncManager asserts an PDI buffer start event"]
     #[inline(always)]

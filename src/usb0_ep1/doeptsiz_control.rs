@@ -35,17 +35,17 @@ impl From<crate::W<DOEPTSIZ_CONTROL_SPEC>> for W {
     }
 }
 #[doc = "Field `XferSize` reader - Transfer Size"]
-pub type XFER_SIZE_R = crate::FieldReader<u32, u32>;
+pub type XFER_SIZE_R = crate::FieldReader<u32>;
 #[doc = "Field `XferSize` writer - Transfer Size"]
-pub type XFER_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DOEPTSIZ_CONTROL_SPEC, u32, u32, 19, O>;
+pub type XFER_SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, DOEPTSIZ_CONTROL_SPEC, 19, O, u32>;
 #[doc = "Field `PktCnt` reader - Packet Count"]
-pub type PKT_CNT_R = crate::FieldReader<u16, u16>;
+pub type PKT_CNT_R = crate::FieldReader<u16>;
 #[doc = "Field `PktCnt` writer - Packet Count"]
-pub type PKT_CNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DOEPTSIZ_CONTROL_SPEC, u16, u16, 10, O>;
+pub type PKT_CNT_W<'a, const O: u8> = crate::FieldWriter<'a, DOEPTSIZ_CONTROL_SPEC, 10, O, u16>;
 #[doc = "Field `SUPCnt` reader - SETUP Packet Count: 0b00=1 packet, 0b00=2 packets, 0b00=3 packets,"]
-pub type SUPCNT_R = crate::FieldReader<u8, u8>;
+pub type SUPCNT_R = crate::FieldReader;
 #[doc = "Field `SUPCnt` writer - SETUP Packet Count: 0b00=1 packet, 0b00=2 packets, 0b00=3 packets,"]
-pub type SUPCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DOEPTSIZ_CONTROL_SPEC, u8, u8, 2, O>;
+pub type SUPCNT_W<'a, const O: u8> = crate::FieldWriter<'a, DOEPTSIZ_CONTROL_SPEC, 2, O>;
 impl R {
     #[doc = "Bits 0:18 - Transfer Size"]
     #[inline(always)]

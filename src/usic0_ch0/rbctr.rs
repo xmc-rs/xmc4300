@@ -35,11 +35,11 @@ impl From<crate::W<RBCTR_SPEC>> for W {
     }
 }
 #[doc = "Field `DPTR` writer - Data Pointer"]
-pub type DPTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RBCTR_SPEC, u8, u8, 6, O>;
+pub type DPTR_W<'a, const O: u8> = crate::FieldWriter<'a, RBCTR_SPEC, 6, O>;
 #[doc = "Field `LIMIT` reader - Limit For Interrupt Generation"]
-pub type LIMIT_R = crate::FieldReader<u8, u8>;
+pub type LIMIT_R = crate::FieldReader;
 #[doc = "Field `LIMIT` writer - Limit For Interrupt Generation"]
-pub type LIMIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RBCTR_SPEC, u8, u8, 6, O>;
+pub type LIMIT_W<'a, const O: u8> = crate::FieldWriter<'a, RBCTR_SPEC, 6, O>;
 #[doc = "Field `SRBTM` reader - Standard Receive Buffer Trigger Mode"]
 pub type SRBTM_R = crate::BitReader<SRBTM_A>;
 #[doc = "Standard Receive Buffer Trigger Mode\n\nValue on reset: 0"]
@@ -77,7 +77,7 @@ impl SRBTM_R {
     }
 }
 #[doc = "Field `SRBTM` writer - Standard Receive Buffer Trigger Mode"]
-pub type SRBTM_W<'a, const O: u8> = crate::BitWriter<'a, u32, RBCTR_SPEC, SRBTM_A, O>;
+pub type SRBTM_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, SRBTM_A>;
 impl<'a, const O: u8> SRBTM_W<'a, O> {
     #[doc = "Trigger mode 0: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=RBCTR.LIMIT."]
     #[inline(always)]
@@ -127,7 +127,7 @@ impl SRBTEN_R {
     }
 }
 #[doc = "Field `SRBTEN` writer - Standard Receive Buffer Trigger Enable"]
-pub type SRBTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RBCTR_SPEC, SRBTEN_A, O>;
+pub type SRBTEN_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, SRBTEN_A>;
 impl<'a, const O: u8> SRBTEN_W<'a, O> {
     #[doc = "The standard receive buffer event trigger through bit TRBSR.SRBT is disabled."]
     #[inline(always)]
@@ -141,7 +141,7 @@ impl<'a, const O: u8> SRBTEN_W<'a, O> {
     }
 }
 #[doc = "Field `SRBINP` reader - Standard Receive Buffer Interrupt Node Pointer"]
-pub type SRBINP_R = crate::FieldReader<u8, SRBINP_A>;
+pub type SRBINP_R = crate::FieldReader<SRBINP_A>;
 #[doc = "Standard Receive Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -164,6 +164,9 @@ impl From<SRBINP_A> for u8 {
     fn from(variant: SRBINP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SRBINP_A {
+    type Ux = u8;
 }
 impl SRBINP_R {
     #[doc = "Get enumerated values variant"]
@@ -211,7 +214,7 @@ impl SRBINP_R {
     }
 }
 #[doc = "Field `SRBINP` writer - Standard Receive Buffer Interrupt Node Pointer"]
-pub type SRBINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RBCTR_SPEC, u8, SRBINP_A, 3, O>;
+pub type SRBINP_W<'a, const O: u8> = crate::FieldWriter<'a, RBCTR_SPEC, 3, O, SRBINP_A>;
 impl<'a, const O: u8> SRBINP_W<'a, O> {
     #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
@@ -245,7 +248,7 @@ impl<'a, const O: u8> SRBINP_W<'a, O> {
     }
 }
 #[doc = "Field `ARBINP` reader - Alternative Receive Buffer Interrupt Node Pointer"]
-pub type ARBINP_R = crate::FieldReader<u8, ARBINP_A>;
+pub type ARBINP_R = crate::FieldReader<ARBINP_A>;
 #[doc = "Alternative Receive Buffer Interrupt Node Pointer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -268,6 +271,9 @@ impl From<ARBINP_A> for u8 {
     fn from(variant: ARBINP_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ARBINP_A {
+    type Ux = u8;
 }
 impl ARBINP_R {
     #[doc = "Get enumerated values variant"]
@@ -315,7 +321,7 @@ impl ARBINP_R {
     }
 }
 #[doc = "Field `ARBINP` writer - Alternative Receive Buffer Interrupt Node Pointer"]
-pub type ARBINP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RBCTR_SPEC, u8, ARBINP_A, 3, O>;
+pub type ARBINP_W<'a, const O: u8> = crate::FieldWriter<'a, RBCTR_SPEC, 3, O, ARBINP_A>;
 impl<'a, const O: u8> ARBINP_W<'a, O> {
     #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
@@ -349,7 +355,7 @@ impl<'a, const O: u8> ARBINP_W<'a, O> {
     }
 }
 #[doc = "Field `RCIM` reader - Receiver Control Information Mode"]
-pub type RCIM_R = crate::FieldReader<u8, RCIM_A>;
+pub type RCIM_R = crate::FieldReader<RCIM_A>;
 #[doc = "Receiver Control Information Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -378,6 +384,9 @@ impl From<RCIM_A> for u8 {
     fn from(variant: RCIM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RCIM_A {
+    type Ux = u8;
 }
 impl RCIM_R {
     #[doc = "Get enumerated values variant"]
@@ -413,7 +422,7 @@ impl RCIM_R {
     }
 }
 #[doc = "Field `RCIM` writer - Receiver Control Information Mode"]
-pub type RCIM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, RBCTR_SPEC, u8, RCIM_A, 2, O>;
+pub type RCIM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, RBCTR_SPEC, 2, O, RCIM_A>;
 impl<'a, const O: u8> RCIM_W<'a, O> {
     #[doc = "RCI\\[4\\]
 = PERR, RCI\\[3:0\\]
@@ -447,7 +456,7 @@ impl<'a, const O: u8> RCIM_W<'a, O> {
     }
 }
 #[doc = "Field `SIZE` reader - Buffer Size"]
-pub type SIZE_R = crate::FieldReader<u8, SIZE_A>;
+pub type SIZE_R = crate::FieldReader<SIZE_A>;
 #[doc = "Buffer Size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -472,6 +481,9 @@ impl From<SIZE_A> for u8 {
     fn from(variant: SIZE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SIZE_A {
+    type Ux = u8;
 }
 impl SIZE_R {
     #[doc = "Get enumerated values variant"]
@@ -525,7 +537,7 @@ impl SIZE_R {
     }
 }
 #[doc = "Field `SIZE` writer - Buffer Size"]
-pub type SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RBCTR_SPEC, u8, SIZE_A, 3, O>;
+pub type SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, RBCTR_SPEC, 3, O, SIZE_A>;
 impl<'a, const O: u8> SIZE_W<'a, O> {
     #[doc = "The FIFO mechanism is disabled. The buffer does not accept any request for data."]
     #[inline(always)]
@@ -602,7 +614,7 @@ impl RNM_R {
     }
 }
 #[doc = "Field `RNM` writer - Receiver Notification Mode"]
-pub type RNM_W<'a, const O: u8> = crate::BitWriter<'a, u32, RBCTR_SPEC, RNM_A, O>;
+pub type RNM_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, RNM_A>;
 impl<'a, const O: u8> RNM_W<'a, O> {
     #[doc = "Filling level mode: A standard receive buffer event occurs when the filling level equals the limit value and changes, either due to a read access from OUTR (LOF = 0) or due to a new received data word (LOF = 1)."]
     #[inline(always)]
@@ -654,7 +666,7 @@ impl LOF_R {
     }
 }
 #[doc = "Field `LOF` writer - Buffer Event on Limit Overflow"]
-pub type LOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, RBCTR_SPEC, LOF_A, O>;
+pub type LOF_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, LOF_A>;
 impl<'a, const O: u8> LOF_W<'a, O> {
     #[doc = "A standard receive buffer event occurs when the filling level equals the limit value and gets lower due to a read access from OUTR."]
     #[inline(always)]
@@ -704,7 +716,7 @@ impl ARBIEN_R {
     }
 }
 #[doc = "Field `ARBIEN` writer - Alternative Receive Buffer Interrupt Enable"]
-pub type ARBIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RBCTR_SPEC, ARBIEN_A, O>;
+pub type ARBIEN_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, ARBIEN_A>;
 impl<'a, const O: u8> ARBIEN_W<'a, O> {
     #[doc = "The alternative receive buffer interrupt generation is disabled."]
     #[inline(always)]
@@ -754,7 +766,7 @@ impl SRBIEN_R {
     }
 }
 #[doc = "Field `SRBIEN` writer - Standard Receive Buffer Interrupt Enable"]
-pub type SRBIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RBCTR_SPEC, SRBIEN_A, O>;
+pub type SRBIEN_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, SRBIEN_A>;
 impl<'a, const O: u8> SRBIEN_W<'a, O> {
     #[doc = "The standard receive buffer interrupt generation is disabled."]
     #[inline(always)]
@@ -804,7 +816,7 @@ impl RBERIEN_R {
     }
 }
 #[doc = "Field `RBERIEN` writer - Receive Buffer Error Interrupt Enable"]
-pub type RBERIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RBCTR_SPEC, RBERIEN_A, O>;
+pub type RBERIEN_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, RBERIEN_A>;
 impl<'a, const O: u8> RBERIEN_W<'a, O> {
     #[doc = "The receive buffer error interrupt generation is disabled."]
     #[inline(always)]

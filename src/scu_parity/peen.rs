@@ -71,7 +71,7 @@ impl PEENPS_R {
     }
 }
 #[doc = "Field `PEENPS` writer - Parity Error Enable for PSRAM"]
-pub type PEENPS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEEN_SPEC, PEENPS_A, O>;
+pub type PEENPS_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENPS_A>;
 impl<'a, const O: u8> PEENPS_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl PEENDS1_R {
     }
 }
 #[doc = "Field `PEENDS1` writer - Parity Error Enable for DSRAM1"]
-pub type PEENDS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEEN_SPEC, PEENDS1_A, O>;
+pub type PEENDS1_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENDS1_A>;
 impl<'a, const O: u8> PEENDS1_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl PEENU0_R {
     }
 }
 #[doc = "Field `PEENU0` writer - Parity Error Enable for USIC0 Memory"]
-pub type PEENU0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEEN_SPEC, PEENU0_A, O>;
+pub type PEENU0_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENU0_A>;
 impl<'a, const O: u8> PEENU0_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl PEENU1_R {
     }
 }
 #[doc = "Field `PEENU1` writer - Parity Error Enable for USIC1 Memory"]
-pub type PEENU1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEEN_SPEC, PEENU1_A, O>;
+pub type PEENU1_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENU1_A>;
 impl<'a, const O: u8> PEENU1_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl PEENMC_R {
     }
 }
 #[doc = "Field `PEENMC` writer - Parity Error Enable for MultiCAN Memory"]
-pub type PEENMC_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEEN_SPEC, PEENMC_A, O>;
+pub type PEENMC_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENMC_A>;
 impl<'a, const O: u8> PEENMC_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl PEENPPRF_R {
     }
 }
 #[doc = "Field `PEENPPRF` writer - Parity Error Enable for PMU Prefetch Memory"]
-pub type PEENPPRF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEEN_SPEC, PEENPPRF_A, O>;
+pub type PEENPPRF_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENPPRF_A>;
 impl<'a, const O: u8> PEENPPRF_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl PEENUSB_R {
     }
 }
 #[doc = "Field `PEENUSB` writer - Parity Error Enable for USB Memory"]
-pub type PEENUSB_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEEN_SPEC, PEENUSB_A, O>;
+pub type PEENUSB_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENUSB_A>;
 impl<'a, const O: u8> PEENUSB_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl PEENETH0TX_R {
     }
 }
 #[doc = "Field `PEENETH0TX` writer - Parity Error Enable for ETH TX Memory"]
-pub type PEENETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEEN_SPEC, PEENETH0TX_A, O>;
+pub type PEENETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENETH0TX_A>;
 impl<'a, const O: u8> PEENETH0TX_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl PEENETH0RX_R {
     }
 }
 #[doc = "Field `PEENETH0RX` writer - Parity Error Enable for ETH RX Memory"]
-pub type PEENETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEEN_SPEC, PEENETH0RX_A, O>;
+pub type PEENETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENETH0RX_A>;
 impl<'a, const O: u8> PEENETH0RX_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl PEENSD0_R {
     }
 }
 #[doc = "Field `PEENSD0` writer - Parity Error Enable for SDMMC Memory 0"]
-pub type PEENSD0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEEN_SPEC, PEENSD0_A, O>;
+pub type PEENSD0_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENSD0_A>;
 impl<'a, const O: u8> PEENSD0_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl PEENSD1_R {
     }
 }
 #[doc = "Field `PEENSD1` writer - Parity Error Enable for SDMMC Memory 1"]
-pub type PEENSD1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEEN_SPEC, PEENSD1_A, O>;
+pub type PEENSD1_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENSD1_A>;
 impl<'a, const O: u8> PEENSD1_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl PEENECAT0_R {
     }
 }
 #[doc = "Field `PEENECAT0` writer - Parity Error Enable for ECAT0 Memory"]
-pub type PEENECAT0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PEEN_SPEC, PEENECAT0_A, O>;
+pub type PEENECAT0_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENECAT0_A>;
 impl<'a, const O: u8> PEENECAT0_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]

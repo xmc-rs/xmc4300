@@ -35,9 +35,9 @@ impl From<crate::W<RECEIVE_DESCRIPTOR_LIST_ADDRESS_SPEC>> for W {
     }
 }
 #[doc = "Field `RDESLA_32bit` reader - Start of Receive List"]
-pub type RDESLA_32BIT_R = crate::FieldReader<u32, u32>;
+pub type RDESLA_32BIT_R = crate::FieldReader<u32>;
 #[doc = "Field `RDESLA_32bit` writer - Start of Receive List"]
-pub type RDESLA_32BIT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RECEIVE_DESCRIPTOR_LIST_ADDRESS_SPEC, u32, u32, 30, O>;
+pub type RDESLA_32BIT_W<'a, const O: u8> = crate::FieldWriter<'a, RECEIVE_DESCRIPTOR_LIST_ADDRESS_SPEC, 30, O, u32>;
 impl R {
     #[doc = "Bits 2:31 - Start of Receive List"]
     #[inline(always)]

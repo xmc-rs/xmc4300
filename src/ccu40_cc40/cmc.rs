@@ -35,7 +35,7 @@ impl From<crate::W<CMC_SPEC>> for W {
     }
 }
 #[doc = "Field `STRTS` reader - External Start Functionality Selector"]
-pub type STRTS_R = crate::FieldReader<u8, STRTS_A>;
+pub type STRTS_R = crate::FieldReader<STRTS_A>;
 #[doc = "External Start Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<STRTS_A> for u8 {
     fn from(variant: STRTS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for STRTS_A {
+    type Ux = u8;
 }
 impl STRTS_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl STRTS_R {
     }
 }
 #[doc = "Field `STRTS` writer - External Start Functionality Selector"]
-pub type STRTS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CMC_SPEC, u8, STRTS_A, 2, O>;
+pub type STRTS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, STRTS_A>;
 impl<'a, const O: u8> STRTS_W<'a, O> {
     #[doc = "External Start Function deactivated"]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> STRTS_W<'a, O> {
     }
 }
 #[doc = "Field `ENDS` reader - External Stop Functionality Selector"]
-pub type ENDS_R = crate::FieldReader<u8, ENDS_A>;
+pub type ENDS_R = crate::FieldReader<ENDS_A>;
 #[doc = "External Stop Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<ENDS_A> for u8 {
     fn from(variant: ENDS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ENDS_A {
+    type Ux = u8;
 }
 impl ENDS_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl ENDS_R {
     }
 }
 #[doc = "Field `ENDS` writer - External Stop Functionality Selector"]
-pub type ENDS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CMC_SPEC, u8, ENDS_A, 2, O>;
+pub type ENDS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, ENDS_A>;
 impl<'a, const O: u8> ENDS_W<'a, O> {
     #[doc = "External Stop Function deactivated"]
     #[inline(always)]
@@ -191,7 +197,7 @@ impl<'a, const O: u8> ENDS_W<'a, O> {
     }
 }
 #[doc = "Field `CAP0S` reader - External Capture 0 Functionality Selector"]
-pub type CAP0S_R = crate::FieldReader<u8, CAP0S_A>;
+pub type CAP0S_R = crate::FieldReader<CAP0S_A>;
 #[doc = "External Capture 0 Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -210,6 +216,9 @@ impl From<CAP0S_A> for u8 {
     fn from(variant: CAP0S_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CAP0S_A {
+    type Ux = u8;
 }
 impl CAP0S_R {
     #[doc = "Get enumerated values variant"]
@@ -245,7 +254,7 @@ impl CAP0S_R {
     }
 }
 #[doc = "Field `CAP0S` writer - External Capture 0 Functionality Selector"]
-pub type CAP0S_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CMC_SPEC, u8, CAP0S_A, 2, O>;
+pub type CAP0S_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, CAP0S_A>;
 impl<'a, const O: u8> CAP0S_W<'a, O> {
     #[doc = "External Capture 0 Function deactivated"]
     #[inline(always)]
@@ -269,7 +278,7 @@ impl<'a, const O: u8> CAP0S_W<'a, O> {
     }
 }
 #[doc = "Field `CAP1S` reader - External Capture 1 Functionality Selector"]
-pub type CAP1S_R = crate::FieldReader<u8, CAP1S_A>;
+pub type CAP1S_R = crate::FieldReader<CAP1S_A>;
 #[doc = "External Capture 1 Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -288,6 +297,9 @@ impl From<CAP1S_A> for u8 {
     fn from(variant: CAP1S_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CAP1S_A {
+    type Ux = u8;
 }
 impl CAP1S_R {
     #[doc = "Get enumerated values variant"]
@@ -323,7 +335,7 @@ impl CAP1S_R {
     }
 }
 #[doc = "Field `CAP1S` writer - External Capture 1 Functionality Selector"]
-pub type CAP1S_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CMC_SPEC, u8, CAP1S_A, 2, O>;
+pub type CAP1S_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, CAP1S_A>;
 impl<'a, const O: u8> CAP1S_W<'a, O> {
     #[doc = "External Capture 1 Function deactivated"]
     #[inline(always)]
@@ -347,7 +359,7 @@ impl<'a, const O: u8> CAP1S_W<'a, O> {
     }
 }
 #[doc = "Field `GATES` reader - External Gate Functionality Selector"]
-pub type GATES_R = crate::FieldReader<u8, GATES_A>;
+pub type GATES_R = crate::FieldReader<GATES_A>;
 #[doc = "External Gate Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -366,6 +378,9 @@ impl From<GATES_A> for u8 {
     fn from(variant: GATES_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for GATES_A {
+    type Ux = u8;
 }
 impl GATES_R {
     #[doc = "Get enumerated values variant"]
@@ -401,7 +416,7 @@ impl GATES_R {
     }
 }
 #[doc = "Field `GATES` writer - External Gate Functionality Selector"]
-pub type GATES_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CMC_SPEC, u8, GATES_A, 2, O>;
+pub type GATES_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, GATES_A>;
 impl<'a, const O: u8> GATES_W<'a, O> {
     #[doc = "External Gating Function deactivated"]
     #[inline(always)]
@@ -425,7 +440,7 @@ impl<'a, const O: u8> GATES_W<'a, O> {
     }
 }
 #[doc = "Field `UDS` reader - External Up/Down Functionality Selector"]
-pub type UDS_R = crate::FieldReader<u8, UDS_A>;
+pub type UDS_R = crate::FieldReader<UDS_A>;
 #[doc = "External Up/Down Functionality Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -444,6 +459,9 @@ impl From<UDS_A> for u8 {
     fn from(variant: UDS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for UDS_A {
+    type Ux = u8;
 }
 impl UDS_R {
     #[doc = "Get enumerated values variant"]
@@ -479,7 +497,7 @@ impl UDS_R {
     }
 }
 #[doc = "Field `UDS` writer - External Up/Down Functionality Selector"]
-pub type UDS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CMC_SPEC, u8, UDS_A, 2, O>;
+pub type UDS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, UDS_A>;
 impl<'a, const O: u8> UDS_W<'a, O> {
     #[doc = "External Up/Down Function deactivated"]
     #[inline(always)]
@@ -503,11 +521,11 @@ impl<'a, const O: u8> UDS_W<'a, O> {
     }
 }
 #[doc = "Field `LDS` reader - External Timer Load Functionality Selector"]
-pub type LDS_R = crate::FieldReader<u8, u8>;
+pub type LDS_R = crate::FieldReader;
 #[doc = "Field `LDS` writer - External Timer Load Functionality Selector"]
-pub type LDS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMC_SPEC, u8, u8, 2, O>;
+pub type LDS_W<'a, const O: u8> = crate::FieldWriter<'a, CMC_SPEC, 2, O>;
 #[doc = "Field `CNTS` reader - External Count Selector"]
-pub type CNTS_R = crate::FieldReader<u8, CNTS_A>;
+pub type CNTS_R = crate::FieldReader<CNTS_A>;
 #[doc = "External Count Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -526,6 +544,9 @@ impl From<CNTS_A> for u8 {
     fn from(variant: CNTS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CNTS_A {
+    type Ux = u8;
 }
 impl CNTS_R {
     #[doc = "Get enumerated values variant"]
@@ -561,7 +582,7 @@ impl CNTS_R {
     }
 }
 #[doc = "Field `CNTS` writer - External Count Selector"]
-pub type CNTS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CMC_SPEC, u8, CNTS_A, 2, O>;
+pub type CNTS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, CNTS_A>;
 impl<'a, const O: u8> CNTS_W<'a, O> {
     #[doc = "External Count Function deactivated"]
     #[inline(always)]
@@ -621,7 +642,7 @@ impl OFS_R {
     }
 }
 #[doc = "Field `OFS` writer - Override Function Selector"]
-pub type OFS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMC_SPEC, OFS_A, O>;
+pub type OFS_W<'a, const O: u8> = crate::BitWriter<'a, CMC_SPEC, O, OFS_A>;
 impl<'a, const O: u8> OFS_W<'a, O> {
     #[doc = "Override functionality disabled"]
     #[inline(always)]
@@ -671,7 +692,7 @@ impl TS_R {
     }
 }
 #[doc = "Field `TS` writer - Trap Function Selector"]
-pub type TS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMC_SPEC, TS_A, O>;
+pub type TS_W<'a, const O: u8> = crate::BitWriter<'a, CMC_SPEC, O, TS_A>;
 impl<'a, const O: u8> TS_W<'a, O> {
     #[doc = "Trap function disabled"]
     #[inline(always)]
@@ -685,9 +706,9 @@ impl<'a, const O: u8> TS_W<'a, O> {
     }
 }
 #[doc = "Field `MOS` reader - External Modulation Functionality Selector"]
-pub type MOS_R = crate::FieldReader<u8, u8>;
+pub type MOS_R = crate::FieldReader;
 #[doc = "Field `MOS` writer - External Modulation Functionality Selector"]
-pub type MOS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMC_SPEC, u8, u8, 2, O>;
+pub type MOS_W<'a, const O: u8> = crate::FieldWriter<'a, CMC_SPEC, 2, O>;
 #[doc = "Field `TCE` reader - Timer Concatenation Enable"]
 pub type TCE_R = crate::BitReader<TCE_A>;
 #[doc = "Timer Concatenation Enable\n\nValue on reset: 0"]
@@ -725,7 +746,7 @@ impl TCE_R {
     }
 }
 #[doc = "Field `TCE` writer - Timer Concatenation Enable"]
-pub type TCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMC_SPEC, TCE_A, O>;
+pub type TCE_W<'a, const O: u8> = crate::BitWriter<'a, CMC_SPEC, O, TCE_A>;
 impl<'a, const O: u8> TCE_W<'a, O> {
     #[doc = "Timer concatenation is disabled"]
     #[inline(always)]

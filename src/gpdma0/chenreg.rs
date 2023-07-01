@@ -35,7 +35,7 @@ impl From<crate::W<CHENREG_SPEC>> for W {
     }
 }
 #[doc = "Field `CH` reader - Enables/Disables the channel"]
-pub type CH_R = crate::FieldReader<u8, CH_A>;
+pub type CH_R = crate::FieldReader<CH_A>;
 #[doc = "Enables/Disables the channel\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -50,6 +50,9 @@ impl From<CH_A> for u8 {
     fn from(variant: CH_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CH_A {
+    type Ux = u8;
 }
 impl CH_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +76,7 @@ impl CH_R {
     }
 }
 #[doc = "Field `CH` writer - Enables/Disables the channel"]
-pub type CH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHENREG_SPEC, u8, CH_A, 8, O>;
+pub type CH_W<'a, const O: u8> = crate::FieldWriter<'a, CHENREG_SPEC, 8, O, CH_A>;
 impl<'a, const O: u8> CH_W<'a, O> {
     #[doc = "Disable the Channel"]
     #[inline(always)]
@@ -87,7 +90,7 @@ impl<'a, const O: u8> CH_W<'a, O> {
     }
 }
 #[doc = "Field `WE_CH` writer - Channel enable write enable"]
-pub type WE_CH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHENREG_SPEC, u8, u8, 8, O>;
+pub type WE_CH_W<'a, const O: u8> = crate::FieldWriter<'a, CHENREG_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Enables/Disables the channel"]
     #[inline(always)]

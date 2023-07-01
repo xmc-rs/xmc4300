@@ -71,7 +71,7 @@ impl WERR_R {
     }
 }
 #[doc = "Field `WERR` writer - Bufferable Write Access Error"]
-pub type WERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, STS_SPEC, WERR_A, O>;
+pub type WERR_W<'a, const O: u8> = crate::BitWriter<'a, STS_SPEC, O, WERR_A>;
 impl<'a, const O: u8> WERR_W<'a, O> {
     #[doc = "no write error occurred."]
     #[inline(always)]

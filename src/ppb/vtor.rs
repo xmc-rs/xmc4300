@@ -35,9 +35,9 @@ impl From<crate::W<VTOR_SPEC>> for W {
     }
 }
 #[doc = "Field `TBLOFF` reader - Vector table base offset field"]
-pub type TBLOFF_R = crate::FieldReader<u32, u32>;
+pub type TBLOFF_R = crate::FieldReader<u32>;
 #[doc = "Field `TBLOFF` writer - Vector table base offset field"]
-pub type TBLOFF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, VTOR_SPEC, u32, u32, 22, O>;
+pub type TBLOFF_W<'a, const O: u8> = crate::FieldWriter<'a, VTOR_SPEC, 22, O, u32>;
 impl R {
     #[doc = "Bits 10:31 - Vector table base offset field"]
     #[inline(always)]

@@ -35,11 +35,11 @@ impl From<crate::W<GLOBICLASS_SPEC>> for W {
     }
 }
 #[doc = "Field `STCS` reader - Sample Time Control for Standard Conversions"]
-pub type STCS_R = crate::FieldReader<u8, u8>;
+pub type STCS_R = crate::FieldReader;
 #[doc = "Field `STCS` writer - Sample Time Control for Standard Conversions"]
-pub type STCS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBICLASS_SPEC, u8, u8, 5, O>;
+pub type STCS_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBICLASS_SPEC, 5, O>;
 #[doc = "Field `CMS` reader - Conversion Mode for Standard Conversions"]
-pub type CMS_R = crate::FieldReader<u8, CMS_A>;
+pub type CMS_R = crate::FieldReader<CMS_A>;
 #[doc = "Conversion Mode for Standard Conversions\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -58,6 +58,9 @@ impl From<CMS_A> for u8 {
     fn from(variant: CMS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CMS_A {
+    type Ux = u8;
 }
 impl CMS_R {
     #[doc = "Get enumerated values variant"]
@@ -93,7 +96,7 @@ impl CMS_R {
     }
 }
 #[doc = "Field `CMS` writer - Conversion Mode for Standard Conversions"]
-pub type CMS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBICLASS_SPEC, u8, CMS_A, 3, O>;
+pub type CMS_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBICLASS_SPEC, 3, O, CMS_A>;
 impl<'a, const O: u8> CMS_W<'a, O> {
     #[doc = "12-bit conversion"]
     #[inline(always)]
@@ -117,11 +120,11 @@ impl<'a, const O: u8> CMS_W<'a, O> {
     }
 }
 #[doc = "Field `STCE` reader - Sample Time Control for EMUX Conversions"]
-pub type STCE_R = crate::FieldReader<u8, u8>;
+pub type STCE_R = crate::FieldReader;
 #[doc = "Field `STCE` writer - Sample Time Control for EMUX Conversions"]
-pub type STCE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBICLASS_SPEC, u8, u8, 5, O>;
+pub type STCE_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBICLASS_SPEC, 5, O>;
 #[doc = "Field `CME` reader - Conversion Mode for EMUX Conversions"]
-pub type CME_R = crate::FieldReader<u8, CME_A>;
+pub type CME_R = crate::FieldReader<CME_A>;
 #[doc = "Conversion Mode for EMUX Conversions\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -140,6 +143,9 @@ impl From<CME_A> for u8 {
     fn from(variant: CME_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CME_A {
+    type Ux = u8;
 }
 impl CME_R {
     #[doc = "Get enumerated values variant"]
@@ -175,7 +181,7 @@ impl CME_R {
     }
 }
 #[doc = "Field `CME` writer - Conversion Mode for EMUX Conversions"]
-pub type CME_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBICLASS_SPEC, u8, CME_A, 3, O>;
+pub type CME_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBICLASS_SPEC, 3, O, CME_A>;
 impl<'a, const O: u8> CME_W<'a, O> {
     #[doc = "12-bit conversion"]
     #[inline(always)]

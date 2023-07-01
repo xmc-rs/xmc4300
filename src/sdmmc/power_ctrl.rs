@@ -71,7 +71,7 @@ impl SD_BUS_POWER_R {
     }
 }
 #[doc = "Field `SD_BUS_POWER` writer - SD Bus Power"]
-pub type SD_BUS_POWER_W<'a, const O: u8> = crate::BitWriter<'a, u8, POWER_CTRL_SPEC, SD_BUS_POWER_A, O>;
+pub type SD_BUS_POWER_W<'a, const O: u8> = crate::BitWriter<'a, POWER_CTRL_SPEC, O, SD_BUS_POWER_A>;
 impl<'a, const O: u8> SD_BUS_POWER_W<'a, O> {
     #[doc = "Power off"]
     #[inline(always)]
@@ -85,7 +85,7 @@ impl<'a, const O: u8> SD_BUS_POWER_W<'a, O> {
     }
 }
 #[doc = "Field `SD_BUS_VOLTAGE_SEL` reader - SD Bus Voltage Select"]
-pub type SD_BUS_VOLTAGE_SEL_R = crate::FieldReader<u8, SD_BUS_VOLTAGE_SEL_A>;
+pub type SD_BUS_VOLTAGE_SEL_R = crate::FieldReader<SD_BUS_VOLTAGE_SEL_A>;
 #[doc = "SD Bus Voltage Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -98,6 +98,9 @@ impl From<SD_BUS_VOLTAGE_SEL_A> for u8 {
     fn from(variant: SD_BUS_VOLTAGE_SEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SD_BUS_VOLTAGE_SEL_A {
+    type Ux = u8;
 }
 impl SD_BUS_VOLTAGE_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -115,7 +118,7 @@ impl SD_BUS_VOLTAGE_SEL_R {
     }
 }
 #[doc = "Field `SD_BUS_VOLTAGE_SEL` writer - SD Bus Voltage Select"]
-pub type SD_BUS_VOLTAGE_SEL_W<'a, const O: u8> = crate::FieldWriter<'a, u8, POWER_CTRL_SPEC, u8, SD_BUS_VOLTAGE_SEL_A, 3, O>;
+pub type SD_BUS_VOLTAGE_SEL_W<'a, const O: u8> = crate::FieldWriter<'a, POWER_CTRL_SPEC, 3, O, SD_BUS_VOLTAGE_SEL_A>;
 impl<'a, const O: u8> SD_BUS_VOLTAGE_SEL_W<'a, O> {
     #[doc = "3.3V (Flattop.)"]
     #[inline(always)]
@@ -124,9 +127,9 @@ impl<'a, const O: u8> SD_BUS_VOLTAGE_SEL_W<'a, O> {
     }
 }
 #[doc = "Field `HARDWARE_RESET` reader - Hardware reset"]
-pub type HARDWARE_RESET_R = crate::BitReader<bool>;
+pub type HARDWARE_RESET_R = crate::BitReader;
 #[doc = "Field `HARDWARE_RESET` writer - Hardware reset"]
-pub type HARDWARE_RESET_W<'a, const O: u8> = crate::BitWriter<'a, u8, POWER_CTRL_SPEC, bool, O>;
+pub type HARDWARE_RESET_W<'a, const O: u8> = crate::BitWriter<'a, POWER_CTRL_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - SD Bus Power"]
     #[inline(always)]

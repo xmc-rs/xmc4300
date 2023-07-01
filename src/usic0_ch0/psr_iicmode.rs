@@ -71,7 +71,7 @@ impl SLSEL_R {
     }
 }
 #[doc = "Field `SLSEL` writer - Slave Select"]
-pub type SLSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, SLSEL_A, O>;
+pub type SLSEL_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, SLSEL_A>;
 impl<'a, const O: u8> SLSEL_W<'a, O> {
     #[doc = "The device is not selected as slave."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl WTDF_R {
     }
 }
 #[doc = "Field `WTDF` writer - Wrong TDF Code Found"]
-pub type WTDF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, WTDF_A, O>;
+pub type WTDF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, WTDF_A>;
 impl<'a, const O: u8> WTDF_W<'a, O> {
     #[doc = "A wrong TDF code has not been found."]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl SCR_R {
     }
 }
 #[doc = "Field `SCR` writer - Start Condition Received"]
-pub type SCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, SCR_A, O>;
+pub type SCR_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, SCR_A>;
 impl<'a, const O: u8> SCR_W<'a, O> {
     #[doc = "A start condition has not yet been detected."]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl RSCR_R {
     }
 }
 #[doc = "Field `RSCR` writer - Repeated Start Condition Received"]
-pub type RSCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, RSCR_A, O>;
+pub type RSCR_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, RSCR_A>;
 impl<'a, const O: u8> RSCR_W<'a, O> {
     #[doc = "A repeated start condition has not yet been detected."]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl PCR_R {
     }
 }
 #[doc = "Field `PCR` writer - Stop Condition Received"]
-pub type PCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, PCR_A, O>;
+pub type PCR_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, PCR_A>;
 impl<'a, const O: u8> PCR_W<'a, O> {
     #[doc = "A stop condition has not yet been detected."]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl NACK_R {
     }
 }
 #[doc = "Field `NACK` writer - Non-Acknowledge Received"]
-pub type NACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, NACK_A, O>;
+pub type NACK_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, NACK_A>;
 impl<'a, const O: u8> NACK_W<'a, O> {
     #[doc = "A non-acknowledge has not been received."]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl ARL_R {
     }
 }
 #[doc = "Field `ARL` writer - Arbitration Lost"]
-pub type ARL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, ARL_A, O>;
+pub type ARL_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, ARL_A>;
 impl<'a, const O: u8> ARL_W<'a, O> {
     #[doc = "An arbitration has not been lost."]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl SRR_R {
     }
 }
 #[doc = "Field `SRR` writer - Slave Read Request"]
-pub type SRR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, SRR_A, O>;
+pub type SRR_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, SRR_A>;
 impl<'a, const O: u8> SRR_W<'a, O> {
     #[doc = "A slave read request has not been detected."]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl ERR_R {
     }
 }
 #[doc = "Field `ERR` writer - Error"]
-pub type ERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, ERR_A, O>;
+pub type ERR_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, ERR_A>;
 impl<'a, const O: u8> ERR_W<'a, O> {
     #[doc = "An IIC error has not been detected."]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl ACK_R {
     }
 }
 #[doc = "Field `ACK` writer - Acknowledge Received"]
-pub type ACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, ACK_A, O>;
+pub type ACK_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, ACK_A>;
 impl<'a, const O: u8> ACK_W<'a, O> {
     #[doc = "An acknowledge has not been received."]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl RSIF_R {
     }
 }
 #[doc = "Field `RSIF` writer - Receiver Start Indication Flag"]
-pub type RSIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, RSIF_A, O>;
+pub type RSIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, RSIF_A>;
 impl<'a, const O: u8> RSIF_W<'a, O> {
     #[doc = "A receiver start event has not occurred."]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl DLIF_R {
     }
 }
 #[doc = "Field `DLIF` writer - Data Lost Indication Flag"]
-pub type DLIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, DLIF_A, O>;
+pub type DLIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, DLIF_A>;
 impl<'a, const O: u8> DLIF_W<'a, O> {
     #[doc = "A data lost event has not occurred."]
     #[inline(always)]
@@ -671,7 +671,7 @@ impl TSIF_R {
     }
 }
 #[doc = "Field `TSIF` writer - Transmit Shift Indication Flag"]
-pub type TSIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, TSIF_A, O>;
+pub type TSIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, TSIF_A>;
 impl<'a, const O: u8> TSIF_W<'a, O> {
     #[doc = "A transmit shift event has not occurred."]
     #[inline(always)]
@@ -721,7 +721,7 @@ impl TBIF_R {
     }
 }
 #[doc = "Field `TBIF` writer - Transmit Buffer Indication Flag"]
-pub type TBIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, TBIF_A, O>;
+pub type TBIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, TBIF_A>;
 impl<'a, const O: u8> TBIF_W<'a, O> {
     #[doc = "A transmit buffer event has not occurred."]
     #[inline(always)]
@@ -771,7 +771,7 @@ impl RIF_R {
     }
 }
 #[doc = "Field `RIF` writer - Receive Indication Flag"]
-pub type RIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, RIF_A, O>;
+pub type RIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, RIF_A>;
 impl<'a, const O: u8> RIF_W<'a, O> {
     #[doc = "A receive event has not occurred."]
     #[inline(always)]
@@ -821,7 +821,7 @@ impl AIF_R {
     }
 }
 #[doc = "Field `AIF` writer - Alternative Receive Indication Flag"]
-pub type AIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, AIF_A, O>;
+pub type AIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, AIF_A>;
 impl<'a, const O: u8> AIF_W<'a, O> {
     #[doc = "An alternative receive event has not occurred."]
     #[inline(always)]
@@ -871,7 +871,7 @@ impl BRGIF_R {
     }
 }
 #[doc = "Field `BRGIF` writer - Baud Rate Generator Indication Flag"]
-pub type BRGIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSR_IICMODE_SPEC, BRGIF_A, O>;
+pub type BRGIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, BRGIF_A>;
 impl<'a, const O: u8> BRGIF_W<'a, O> {
     #[doc = "A baud rate generator event has not occurred."]
     #[inline(always)]

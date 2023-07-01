@@ -35,7 +35,7 @@ impl From<crate::W<EXISEL_SPEC>> for W {
     }
 }
 #[doc = "Field `EXS0A` reader - Event Source Select for A0 (ERS0)"]
-pub type EXS0A_R = crate::FieldReader<u8, EXS0A_A>;
+pub type EXS0A_R = crate::FieldReader<EXS0A_A>;
 #[doc = "Event Source Select for A0 (ERS0)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<EXS0A_A> for u8 {
     fn from(variant: EXS0A_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXS0A_A {
+    type Ux = u8;
 }
 impl EXS0A_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl EXS0A_R {
     }
 }
 #[doc = "Field `EXS0A` writer - Event Source Select for A0 (ERS0)"]
-pub type EXS0A_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EXISEL_SPEC, u8, EXS0A_A, 2, O>;
+pub type EXS0A_W<'a, const O: u8> = crate::FieldWriterSafe<'a, EXISEL_SPEC, 2, O, EXS0A_A>;
 impl<'a, const O: u8> EXS0A_W<'a, O> {
     #[doc = "Input ERU_0A0 is selected"]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> EXS0A_W<'a, O> {
     }
 }
 #[doc = "Field `EXS0B` reader - Event Source Select for B0 (ERS0)"]
-pub type EXS0B_R = crate::FieldReader<u8, EXS0B_A>;
+pub type EXS0B_R = crate::FieldReader<EXS0B_A>;
 #[doc = "Event Source Select for B0 (ERS0)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<EXS0B_A> for u8 {
     fn from(variant: EXS0B_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXS0B_A {
+    type Ux = u8;
 }
 impl EXS0B_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl EXS0B_R {
     }
 }
 #[doc = "Field `EXS0B` writer - Event Source Select for B0 (ERS0)"]
-pub type EXS0B_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EXISEL_SPEC, u8, EXS0B_A, 2, O>;
+pub type EXS0B_W<'a, const O: u8> = crate::FieldWriterSafe<'a, EXISEL_SPEC, 2, O, EXS0B_A>;
 impl<'a, const O: u8> EXS0B_W<'a, O> {
     #[doc = "Input ERU_0B0 is selected"]
     #[inline(always)]
@@ -191,7 +197,7 @@ impl<'a, const O: u8> EXS0B_W<'a, O> {
     }
 }
 #[doc = "Field `EXS1A` reader - Event Source Select for A1 (ERS1)"]
-pub type EXS1A_R = crate::FieldReader<u8, EXS1A_A>;
+pub type EXS1A_R = crate::FieldReader<EXS1A_A>;
 #[doc = "Event Source Select for A1 (ERS1)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -210,6 +216,9 @@ impl From<EXS1A_A> for u8 {
     fn from(variant: EXS1A_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXS1A_A {
+    type Ux = u8;
 }
 impl EXS1A_R {
     #[doc = "Get enumerated values variant"]
@@ -245,7 +254,7 @@ impl EXS1A_R {
     }
 }
 #[doc = "Field `EXS1A` writer - Event Source Select for A1 (ERS1)"]
-pub type EXS1A_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EXISEL_SPEC, u8, EXS1A_A, 2, O>;
+pub type EXS1A_W<'a, const O: u8> = crate::FieldWriterSafe<'a, EXISEL_SPEC, 2, O, EXS1A_A>;
 impl<'a, const O: u8> EXS1A_W<'a, O> {
     #[doc = "Input ERU_1A0 is selected"]
     #[inline(always)]
@@ -269,7 +278,7 @@ impl<'a, const O: u8> EXS1A_W<'a, O> {
     }
 }
 #[doc = "Field `EXS1B` reader - Event Source Select for B1 (ERS1)"]
-pub type EXS1B_R = crate::FieldReader<u8, EXS1B_A>;
+pub type EXS1B_R = crate::FieldReader<EXS1B_A>;
 #[doc = "Event Source Select for B1 (ERS1)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -288,6 +297,9 @@ impl From<EXS1B_A> for u8 {
     fn from(variant: EXS1B_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXS1B_A {
+    type Ux = u8;
 }
 impl EXS1B_R {
     #[doc = "Get enumerated values variant"]
@@ -323,7 +335,7 @@ impl EXS1B_R {
     }
 }
 #[doc = "Field `EXS1B` writer - Event Source Select for B1 (ERS1)"]
-pub type EXS1B_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EXISEL_SPEC, u8, EXS1B_A, 2, O>;
+pub type EXS1B_W<'a, const O: u8> = crate::FieldWriterSafe<'a, EXISEL_SPEC, 2, O, EXS1B_A>;
 impl<'a, const O: u8> EXS1B_W<'a, O> {
     #[doc = "Input ERU_1B0 is selected"]
     #[inline(always)]
@@ -347,7 +359,7 @@ impl<'a, const O: u8> EXS1B_W<'a, O> {
     }
 }
 #[doc = "Field `EXS2A` reader - Event Source Select for A2 (ERS2)"]
-pub type EXS2A_R = crate::FieldReader<u8, EXS2A_A>;
+pub type EXS2A_R = crate::FieldReader<EXS2A_A>;
 #[doc = "Event Source Select for A2 (ERS2)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -366,6 +378,9 @@ impl From<EXS2A_A> for u8 {
     fn from(variant: EXS2A_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXS2A_A {
+    type Ux = u8;
 }
 impl EXS2A_R {
     #[doc = "Get enumerated values variant"]
@@ -401,7 +416,7 @@ impl EXS2A_R {
     }
 }
 #[doc = "Field `EXS2A` writer - Event Source Select for A2 (ERS2)"]
-pub type EXS2A_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EXISEL_SPEC, u8, EXS2A_A, 2, O>;
+pub type EXS2A_W<'a, const O: u8> = crate::FieldWriterSafe<'a, EXISEL_SPEC, 2, O, EXS2A_A>;
 impl<'a, const O: u8> EXS2A_W<'a, O> {
     #[doc = "Input ERU_2A0 is selected"]
     #[inline(always)]
@@ -425,7 +440,7 @@ impl<'a, const O: u8> EXS2A_W<'a, O> {
     }
 }
 #[doc = "Field `EXS2B` reader - Event Source Select for B2 (ERS2)"]
-pub type EXS2B_R = crate::FieldReader<u8, EXS2B_A>;
+pub type EXS2B_R = crate::FieldReader<EXS2B_A>;
 #[doc = "Event Source Select for B2 (ERS2)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -444,6 +459,9 @@ impl From<EXS2B_A> for u8 {
     fn from(variant: EXS2B_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXS2B_A {
+    type Ux = u8;
 }
 impl EXS2B_R {
     #[doc = "Get enumerated values variant"]
@@ -479,7 +497,7 @@ impl EXS2B_R {
     }
 }
 #[doc = "Field `EXS2B` writer - Event Source Select for B2 (ERS2)"]
-pub type EXS2B_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EXISEL_SPEC, u8, EXS2B_A, 2, O>;
+pub type EXS2B_W<'a, const O: u8> = crate::FieldWriterSafe<'a, EXISEL_SPEC, 2, O, EXS2B_A>;
 impl<'a, const O: u8> EXS2B_W<'a, O> {
     #[doc = "Input ERU_2B0 is selected"]
     #[inline(always)]
@@ -503,7 +521,7 @@ impl<'a, const O: u8> EXS2B_W<'a, O> {
     }
 }
 #[doc = "Field `EXS3A` reader - Event Source Select for A3 (ERS3)"]
-pub type EXS3A_R = crate::FieldReader<u8, EXS3A_A>;
+pub type EXS3A_R = crate::FieldReader<EXS3A_A>;
 #[doc = "Event Source Select for A3 (ERS3)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -522,6 +540,9 @@ impl From<EXS3A_A> for u8 {
     fn from(variant: EXS3A_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXS3A_A {
+    type Ux = u8;
 }
 impl EXS3A_R {
     #[doc = "Get enumerated values variant"]
@@ -557,7 +578,7 @@ impl EXS3A_R {
     }
 }
 #[doc = "Field `EXS3A` writer - Event Source Select for A3 (ERS3)"]
-pub type EXS3A_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EXISEL_SPEC, u8, EXS3A_A, 2, O>;
+pub type EXS3A_W<'a, const O: u8> = crate::FieldWriterSafe<'a, EXISEL_SPEC, 2, O, EXS3A_A>;
 impl<'a, const O: u8> EXS3A_W<'a, O> {
     #[doc = "Input ERU_3A0 is selected"]
     #[inline(always)]
@@ -581,7 +602,7 @@ impl<'a, const O: u8> EXS3A_W<'a, O> {
     }
 }
 #[doc = "Field `EXS3B` reader - Event Source Select for B3 (ERS3)"]
-pub type EXS3B_R = crate::FieldReader<u8, EXS3B_A>;
+pub type EXS3B_R = crate::FieldReader<EXS3B_A>;
 #[doc = "Event Source Select for B3 (ERS3)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -600,6 +621,9 @@ impl From<EXS3B_A> for u8 {
     fn from(variant: EXS3B_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXS3B_A {
+    type Ux = u8;
 }
 impl EXS3B_R {
     #[doc = "Get enumerated values variant"]
@@ -635,7 +659,7 @@ impl EXS3B_R {
     }
 }
 #[doc = "Field `EXS3B` writer - Event Source Select for B3 (ERS3)"]
-pub type EXS3B_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, EXISEL_SPEC, u8, EXS3B_A, 2, O>;
+pub type EXS3B_W<'a, const O: u8> = crate::FieldWriterSafe<'a, EXISEL_SPEC, 2, O, EXS3B_A>;
 impl<'a, const O: u8> EXS3B_W<'a, O> {
     #[doc = "Input ERU_3B0 is selected"]
     #[inline(always)]

@@ -34,7 +34,7 @@ impl From<USBCEN_AW> for bool {
     }
 }
 #[doc = "Field `USBCEN` writer - USB Clock Enable"]
-pub type USBCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKSET_SPEC, USBCEN_AW, O>;
+pub type USBCEN_W<'a, const O: u8> = crate::BitWriter<'a, CLKSET_SPEC, O, USBCEN_AW>;
 impl<'a, const O: u8> USBCEN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<MMCCEN_AW> for bool {
     }
 }
 #[doc = "Field `MMCCEN` writer - MMC Clock Enable"]
-pub type MMCCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKSET_SPEC, MMCCEN_AW, O>;
+pub type MMCCEN_W<'a, const O: u8> = crate::BitWriter<'a, CLKSET_SPEC, O, MMCCEN_AW>;
 impl<'a, const O: u8> MMCCEN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<ETH0CEN_AW> for bool {
     }
 }
 #[doc = "Field `ETH0CEN` writer - Ethernet Clock Enable"]
-pub type ETH0CEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKSET_SPEC, ETH0CEN_AW, O>;
+pub type ETH0CEN_W<'a, const O: u8> = crate::BitWriter<'a, CLKSET_SPEC, O, ETH0CEN_AW>;
 impl<'a, const O: u8> ETH0CEN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<CCUCEN_AW> for bool {
     }
 }
 #[doc = "Field `CCUCEN` writer - CCU Clock Enable"]
-pub type CCUCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKSET_SPEC, CCUCEN_AW, O>;
+pub type CCUCEN_W<'a, const O: u8> = crate::BitWriter<'a, CLKSET_SPEC, O, CCUCEN_AW>;
 impl<'a, const O: u8> CCUCEN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<WDTCEN_AW> for bool {
     }
 }
 #[doc = "Field `WDTCEN` writer - WDT Clock Enable"]
-pub type WDTCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKSET_SPEC, WDTCEN_AW, O>;
+pub type WDTCEN_W<'a, const O: u8> = crate::BitWriter<'a, CLKSET_SPEC, O, WDTCEN_AW>;
 impl<'a, const O: u8> WDTCEN_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

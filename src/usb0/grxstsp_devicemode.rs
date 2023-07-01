@@ -14,11 +14,11 @@ impl From<crate::R<GRXSTSP_DEVICEMODE_SPEC>> for R {
     }
 }
 #[doc = "Field `EPNum` reader - Endpoint Number"]
-pub type EPNUM_R = crate::FieldReader<u8, u8>;
+pub type EPNUM_R = crate::FieldReader;
 #[doc = "Field `BCnt` reader - Byte Count"]
-pub type BCNT_R = crate::FieldReader<u16, u16>;
+pub type BCNT_R = crate::FieldReader<u16>;
 #[doc = "Field `DPID` reader - Data PID"]
-pub type DPID_R = crate::FieldReader<u8, DPID_A>;
+pub type DPID_R = crate::FieldReader<DPID_A>;
 #[doc = "Data PID\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -37,6 +37,9 @@ impl From<DPID_A> for u8 {
     fn from(variant: DPID_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DPID_A {
+    type Ux = u8;
 }
 impl DPID_R {
     #[doc = "Get enumerated values variant"]
@@ -72,7 +75,7 @@ impl DPID_R {
     }
 }
 #[doc = "Field `PktSts` reader - Packet Status"]
-pub type PKT_STS_R = crate::FieldReader<u8, PKT_STS_A>;
+pub type PKT_STS_R = crate::FieldReader<PKT_STS_A>;
 #[doc = "Packet Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -93,6 +96,9 @@ impl From<PKT_STS_A> for u8 {
     fn from(variant: PKT_STS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PKT_STS_A {
+    type Ux = u8;
 }
 impl PKT_STS_R {
     #[doc = "Get enumerated values variant"]
@@ -134,7 +140,7 @@ impl PKT_STS_R {
     }
 }
 #[doc = "Field `FN` reader - Frame Number"]
-pub type FN_R = crate::FieldReader<u8, u8>;
+pub type FN_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:3 - Endpoint Number"]
     #[inline(always)]

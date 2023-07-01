@@ -14,9 +14,9 @@ impl From<crate::R<IDMANUF_SPEC>> for R {
     }
 }
 #[doc = "Field `DEPT` reader - Department Identification Number"]
-pub type DEPT_R = crate::FieldReader<u8, u8>;
+pub type DEPT_R = crate::FieldReader;
 #[doc = "Field `MANUF` reader - Manufacturer Identification Number"]
-pub type MANUF_R = crate::FieldReader<u16, u16>;
+pub type MANUF_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:4 - Department Identification Number"]
     #[inline(always)]

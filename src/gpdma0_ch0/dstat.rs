@@ -35,9 +35,9 @@ impl From<crate::W<DSTAT_SPEC>> for W {
     }
 }
 #[doc = "Field `DSTAT` reader - Destination Status"]
-pub type DSTAT_R = crate::FieldReader<u32, u32>;
+pub type DSTAT_R = crate::FieldReader<u32>;
 #[doc = "Field `DSTAT` writer - Destination Status"]
-pub type DSTAT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DSTAT_SPEC, u32, u32, 32, O>;
+pub type DSTAT_W<'a, const O: u8> = crate::FieldWriter<'a, DSTAT_SPEC, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Destination Status"]
     #[inline(always)]

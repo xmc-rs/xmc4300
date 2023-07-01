@@ -71,7 +71,7 @@ impl PWD_R {
     }
 }
 #[doc = "Field `PWD` writer - Turn OFF the fOSI Clock Source"]
-pub type PWD_W<'a, const O: u8> = crate::BitWriter<'a, u32, OSCSICTRL_SPEC, PWD_A, O>;
+pub type PWD_W<'a, const O: u8> = crate::BitWriter<'a, OSCSICTRL_SPEC, O, PWD_A>;
 impl<'a, const O: u8> PWD_W<'a, O> {
     #[doc = "Enabled"]
     #[inline(always)]

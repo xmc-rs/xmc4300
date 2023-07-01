@@ -35,9 +35,9 @@ impl From<crate::W<FPCS_SPEC>> for W {
     }
 }
 #[doc = "Field `PCMP` reader - Floating Prescaler Shadow Compare Value"]
-pub type PCMP_R = crate::FieldReader<u8, u8>;
+pub type PCMP_R = crate::FieldReader;
 #[doc = "Field `PCMP` writer - Floating Prescaler Shadow Compare Value"]
-pub type PCMP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPCS_SPEC, u8, u8, 4, O>;
+pub type PCMP_W<'a, const O: u8> = crate::FieldWriter<'a, FPCS_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Floating Prescaler Shadow Compare Value"]
     #[inline(always)]

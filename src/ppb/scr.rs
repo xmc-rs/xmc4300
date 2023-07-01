@@ -71,7 +71,7 @@ impl SLEEPONEXIT_R {
     }
 }
 #[doc = "Field `SLEEPONEXIT` writer - Sleep on Exit"]
-pub type SLEEPONEXIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, SLEEPONEXIT_A, O>;
+pub type SLEEPONEXIT_W<'a, const O: u8> = crate::BitWriter<'a, SCR_SPEC, O, SLEEPONEXIT_A>;
 impl<'a, const O: u8> SLEEPONEXIT_W<'a, O> {
     #[doc = "do not sleep when returning to Thread mode."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl SLEEPDEEP_R {
     }
 }
 #[doc = "Field `SLEEPDEEP` writer - Sleep or Deep Sleep"]
-pub type SLEEPDEEP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, SLEEPDEEP_A, O>;
+pub type SLEEPDEEP_W<'a, const O: u8> = crate::BitWriter<'a, SCR_SPEC, O, SLEEPDEEP_A>;
 impl<'a, const O: u8> SLEEPDEEP_W<'a, O> {
     #[doc = "sleep"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl SEVONPEND_R {
     }
 }
 #[doc = "Field `SEVONPEND` writer - Send Event on Pending bit:"]
-pub type SEVONPEND_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, SEVONPEND_A, O>;
+pub type SEVONPEND_W<'a, const O: u8> = crate::BitWriter<'a, SCR_SPEC, O, SEVONPEND_A>;
 impl<'a, const O: u8> SEVONPEND_W<'a, O> {
     #[doc = "only enabled interrupts or events can wakeup the processor, disabled interrupts are excluded"]
     #[inline(always)]

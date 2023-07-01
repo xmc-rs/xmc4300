@@ -14,7 +14,7 @@ impl From<crate::R<BUILD_SPEC>> for R {
     }
 }
 #[doc = "Field `BUILD` reader - Actual build of EtherCAT controller"]
-pub type BUILD_R = crate::FieldReader<u16, u16>;
+pub type BUILD_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Actual build of EtherCAT controller"]
     #[inline(always)]

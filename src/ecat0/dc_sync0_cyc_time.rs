@@ -35,7 +35,7 @@ impl From<crate::W<DC_SYNC0_CYC_TIME_SPEC>> for W {
     }
 }
 #[doc = "Field `TIME_BETWEEN_SYNC0` reader - Time between two consecutive SYNC0 pulses"]
-pub type TIME_BETWEEN_SYNC0_R = crate::FieldReader<u32, TIME_BETWEEN_SYNC0_A>;
+pub type TIME_BETWEEN_SYNC0_R = crate::FieldReader<TIME_BETWEEN_SYNC0_A>;
 #[doc = "Time between two consecutive SYNC0 pulses\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
@@ -48,6 +48,9 @@ impl From<TIME_BETWEEN_SYNC0_A> for u32 {
     fn from(variant: TIME_BETWEEN_SYNC0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TIME_BETWEEN_SYNC0_A {
+    type Ux = u32;
 }
 impl TIME_BETWEEN_SYNC0_R {
     #[doc = "Get enumerated values variant"]
@@ -65,7 +68,7 @@ impl TIME_BETWEEN_SYNC0_R {
     }
 }
 #[doc = "Field `TIME_BETWEEN_SYNC0` writer - Time between two consecutive SYNC0 pulses"]
-pub type TIME_BETWEEN_SYNC0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DC_SYNC0_CYC_TIME_SPEC, u32, TIME_BETWEEN_SYNC0_A, 32, O>;
+pub type TIME_BETWEEN_SYNC0_W<'a, const O: u8> = crate::FieldWriter<'a, DC_SYNC0_CYC_TIME_SPEC, 32, O, TIME_BETWEEN_SYNC0_A>;
 impl<'a, const O: u8> TIME_BETWEEN_SYNC0_W<'a, O> {
     #[doc = "Single shot mode, generate only one SYNC0 pulse"]
     #[inline(always)]

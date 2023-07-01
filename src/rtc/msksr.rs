@@ -35,33 +35,33 @@ impl From<crate::W<MSKSR_SPEC>> for W {
     }
 }
 #[doc = "Field `MPSE` reader - Periodic Seconds Interrupt Mask"]
-pub type MPSE_R = crate::BitReader<bool>;
+pub type MPSE_R = crate::BitReader;
 #[doc = "Field `MPSE` writer - Periodic Seconds Interrupt Mask"]
-pub type MPSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MPSE_W<'a, const O: u8> = crate::BitWriter<'a, MSKSR_SPEC, O>;
 #[doc = "Field `MPMI` reader - Periodic Minutes Interrupt Mask"]
-pub type MPMI_R = crate::BitReader<bool>;
+pub type MPMI_R = crate::BitReader;
 #[doc = "Field `MPMI` writer - Periodic Minutes Interrupt Mask"]
-pub type MPMI_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MPMI_W<'a, const O: u8> = crate::BitWriter<'a, MSKSR_SPEC, O>;
 #[doc = "Field `MPHO` reader - Periodic Hours Interrupt Mask"]
-pub type MPHO_R = crate::BitReader<bool>;
+pub type MPHO_R = crate::BitReader;
 #[doc = "Field `MPHO` writer - Periodic Hours Interrupt Mask"]
-pub type MPHO_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MPHO_W<'a, const O: u8> = crate::BitWriter<'a, MSKSR_SPEC, O>;
 #[doc = "Field `MPDA` reader - Periodic Days Interrupt Mask"]
-pub type MPDA_R = crate::BitReader<bool>;
+pub type MPDA_R = crate::BitReader;
 #[doc = "Field `MPDA` writer - Periodic Days Interrupt Mask"]
-pub type MPDA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MPDA_W<'a, const O: u8> = crate::BitWriter<'a, MSKSR_SPEC, O>;
 #[doc = "Field `MPMO` reader - Periodic Months Interrupt Mask"]
-pub type MPMO_R = crate::BitReader<bool>;
+pub type MPMO_R = crate::BitReader;
 #[doc = "Field `MPMO` writer - Periodic Months Interrupt Mask"]
-pub type MPMO_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MPMO_W<'a, const O: u8> = crate::BitWriter<'a, MSKSR_SPEC, O>;
 #[doc = "Field `MPYE` reader - Periodic Years Interrupt Mask"]
-pub type MPYE_R = crate::BitReader<bool>;
+pub type MPYE_R = crate::BitReader;
 #[doc = "Field `MPYE` writer - Periodic Years Interrupt Mask"]
-pub type MPYE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MPYE_W<'a, const O: u8> = crate::BitWriter<'a, MSKSR_SPEC, O>;
 #[doc = "Field `MAI` reader - Alarm Interrupt Mask"]
-pub type MAI_R = crate::BitReader<bool>;
+pub type MAI_R = crate::BitReader;
 #[doc = "Field `MAI` writer - Alarm Interrupt Mask"]
-pub type MAI_W<'a, const O: u8> = crate::BitWriter<'a, u32, MSKSR_SPEC, bool, O>;
+pub type MAI_W<'a, const O: u8> = crate::BitWriter<'a, MSKSR_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Periodic Seconds Interrupt Mask"]
     #[inline(always)]

@@ -35,13 +35,13 @@ impl From<crate::W<INTERRUPT_MASK_SPEC>> for W {
     }
 }
 #[doc = "Field `PMTIM` reader - PMT Interrupt Mask"]
-pub type PMTIM_R = crate::BitReader<bool>;
+pub type PMTIM_R = crate::BitReader;
 #[doc = "Field `PMTIM` writer - PMT Interrupt Mask"]
-pub type PMTIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTERRUPT_MASK_SPEC, bool, O>;
+pub type PMTIM_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_MASK_SPEC, O>;
 #[doc = "Field `TSIM` reader - Timestamp Interrupt Mask"]
-pub type TSIM_R = crate::BitReader<bool>;
+pub type TSIM_R = crate::BitReader;
 #[doc = "Field `TSIM` writer - Timestamp Interrupt Mask"]
-pub type TSIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTERRUPT_MASK_SPEC, bool, O>;
+pub type TSIM_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_MASK_SPEC, O>;
 impl R {
     #[doc = "Bit 3 - PMT Interrupt Mask"]
     #[inline(always)]

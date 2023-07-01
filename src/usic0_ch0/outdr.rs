@@ -14,9 +14,9 @@ impl From<crate::R<OUTDR_SPEC>> for R {
     }
 }
 #[doc = "Field `DSR` reader - Data from Shift Register"]
-pub type DSR_R = crate::FieldReader<u16, u16>;
+pub type DSR_R = crate::FieldReader<u16>;
 #[doc = "Field `RCI` reader - Receive Control Information from Shift Register"]
-pub type RCI_R = crate::FieldReader<u8, u8>;
+pub type RCI_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:15 - Data from Shift Register"]
     #[inline(always)]

@@ -14,7 +14,7 @@ impl From<crate::R<TX_PAUSE_FRAMES_SPEC>> for R {
     }
 }
 #[doc = "Field `TXPAUSE` reader - This field indicates the number of transmitted good PAUSE frames."]
-pub type TXPAUSE_R = crate::FieldReader<u32, u32>;
+pub type TXPAUSE_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This field indicates the number of transmitted good PAUSE frames."]
     #[inline(always)]

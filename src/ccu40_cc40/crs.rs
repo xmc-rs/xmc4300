@@ -35,9 +35,9 @@ impl From<crate::W<CRS_SPEC>> for W {
     }
 }
 #[doc = "Field `CRS` reader - Compare Register"]
-pub type CRS_R = crate::FieldReader<u16, u16>;
+pub type CRS_R = crate::FieldReader<u16>;
 #[doc = "Field `CRS` writer - Compare Register"]
-pub type CRS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CRS_SPEC, u16, u16, 16, O>;
+pub type CRS_W<'a, const O: u8> = crate::FieldWriter<'a, CRS_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Compare Register"]
     #[inline(always)]

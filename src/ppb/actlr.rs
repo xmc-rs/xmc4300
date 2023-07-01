@@ -35,25 +35,25 @@ impl From<crate::W<ACTLR_SPEC>> for W {
     }
 }
 #[doc = "Field `DISMCYCINT` reader - Disable load/store multiple"]
-pub type DISMCYCINT_R = crate::BitReader<bool>;
+pub type DISMCYCINT_R = crate::BitReader;
 #[doc = "Field `DISMCYCINT` writer - Disable load/store multiple"]
-pub type DISMCYCINT_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACTLR_SPEC, bool, O>;
+pub type DISMCYCINT_W<'a, const O: u8> = crate::BitWriter<'a, ACTLR_SPEC, O>;
 #[doc = "Field `DISDEFWBUF` reader - Disable write buffer"]
-pub type DISDEFWBUF_R = crate::BitReader<bool>;
+pub type DISDEFWBUF_R = crate::BitReader;
 #[doc = "Field `DISDEFWBUF` writer - Disable write buffer"]
-pub type DISDEFWBUF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACTLR_SPEC, bool, O>;
+pub type DISDEFWBUF_W<'a, const O: u8> = crate::BitWriter<'a, ACTLR_SPEC, O>;
 #[doc = "Field `DISFOLD` reader - Disable IT folding"]
-pub type DISFOLD_R = crate::BitReader<bool>;
+pub type DISFOLD_R = crate::BitReader;
 #[doc = "Field `DISFOLD` writer - Disable IT folding"]
-pub type DISFOLD_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACTLR_SPEC, bool, O>;
+pub type DISFOLD_W<'a, const O: u8> = crate::BitWriter<'a, ACTLR_SPEC, O>;
 #[doc = "Field `DISFPCA` reader - Disable FPCA update"]
-pub type DISFPCA_R = crate::BitReader<bool>;
+pub type DISFPCA_R = crate::BitReader;
 #[doc = "Field `DISFPCA` writer - Disable FPCA update"]
-pub type DISFPCA_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACTLR_SPEC, bool, O>;
+pub type DISFPCA_W<'a, const O: u8> = crate::BitWriter<'a, ACTLR_SPEC, O>;
 #[doc = "Field `DISOOFP` reader - Disable out of order FP execution"]
-pub type DISOOFP_R = crate::BitReader<bool>;
+pub type DISOOFP_R = crate::BitReader;
 #[doc = "Field `DISOOFP` writer - Disable out of order FP execution"]
-pub type DISOOFP_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACTLR_SPEC, bool, O>;
+pub type DISOOFP_W<'a, const O: u8> = crate::BitWriter<'a, ACTLR_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Disable load/store multiple"]
     #[inline(always)]

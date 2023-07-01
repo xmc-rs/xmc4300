@@ -14,7 +14,7 @@ impl From<crate::R<PDI_ERR_COUNT_SPEC>> for R {
     }
 }
 #[doc = "Field `PDI_ERROR_COUNTER` reader - PDI Error counter"]
-pub type PDI_ERROR_COUNTER_R = crate::FieldReader<u8, u8>;
+pub type PDI_ERROR_COUNTER_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - PDI Error counter"]
     #[inline(always)]

@@ -35,21 +35,21 @@ impl From<crate::W<FPDSCR_SPEC>> for W {
     }
 }
 #[doc = "Field `RMode` reader - Default value for FPSCR.RMode"]
-pub type RMODE_R = crate::FieldReader<u8, u8>;
+pub type RMODE_R = crate::FieldReader;
 #[doc = "Field `RMode` writer - Default value for FPSCR.RMode"]
-pub type RMODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPDSCR_SPEC, u8, u8, 2, O>;
+pub type RMODE_W<'a, const O: u8> = crate::FieldWriter<'a, FPDSCR_SPEC, 2, O>;
 #[doc = "Field `FZ` reader - Default value for FPSCR.FZ"]
-pub type FZ_R = crate::BitReader<bool>;
+pub type FZ_R = crate::BitReader;
 #[doc = "Field `FZ` writer - Default value for FPSCR.FZ"]
-pub type FZ_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPDSCR_SPEC, bool, O>;
+pub type FZ_W<'a, const O: u8> = crate::BitWriter<'a, FPDSCR_SPEC, O>;
 #[doc = "Field `DN` reader - Default value for FPSCR.DN"]
-pub type DN_R = crate::BitReader<bool>;
+pub type DN_R = crate::BitReader;
 #[doc = "Field `DN` writer - Default value for FPSCR.DN"]
-pub type DN_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPDSCR_SPEC, bool, O>;
+pub type DN_W<'a, const O: u8> = crate::BitWriter<'a, FPDSCR_SPEC, O>;
 #[doc = "Field `AHP` reader - Default value for FPSCR.AHP"]
-pub type AHP_R = crate::BitReader<bool>;
+pub type AHP_R = crate::BitReader;
 #[doc = "Field `AHP` writer - Default value for FPSCR.AHP"]
-pub type AHP_W<'a, const O: u8> = crate::BitWriter<'a, u32, FPDSCR_SPEC, bool, O>;
+pub type AHP_W<'a, const O: u8> = crate::BitWriter<'a, FPDSCR_SPEC, O>;
 impl R {
     #[doc = "Bits 22:23 - Default value for FPSCR.RMode"]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl CHPND0_R {
     }
 }
 #[doc = "Field `CHPND0` writer - Channels Pending"]
-pub type CHPND0_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASPND_SPEC, CHPND0_A, O>;
+pub type CHPND0_W<'a, const O: u8> = crate::BitWriter<'a, ASPND_SPEC, O, CHPND0_A>;
 impl<'a, const O: u8> CHPND0_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl CHPND1_R {
     }
 }
 #[doc = "Field `CHPND1` writer - Channels Pending"]
-pub type CHPND1_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASPND_SPEC, CHPND1_A, O>;
+pub type CHPND1_W<'a, const O: u8> = crate::BitWriter<'a, ASPND_SPEC, O, CHPND1_A>;
 impl<'a, const O: u8> CHPND1_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl CHPND2_R {
     }
 }
 #[doc = "Field `CHPND2` writer - Channels Pending"]
-pub type CHPND2_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASPND_SPEC, CHPND2_A, O>;
+pub type CHPND2_W<'a, const O: u8> = crate::BitWriter<'a, ASPND_SPEC, O, CHPND2_A>;
 impl<'a, const O: u8> CHPND2_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl CHPND3_R {
     }
 }
 #[doc = "Field `CHPND3` writer - Channels Pending"]
-pub type CHPND3_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASPND_SPEC, CHPND3_A, O>;
+pub type CHPND3_W<'a, const O: u8> = crate::BitWriter<'a, ASPND_SPEC, O, CHPND3_A>;
 impl<'a, const O: u8> CHPND3_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl CHPND4_R {
     }
 }
 #[doc = "Field `CHPND4` writer - Channels Pending"]
-pub type CHPND4_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASPND_SPEC, CHPND4_A, O>;
+pub type CHPND4_W<'a, const O: u8> = crate::BitWriter<'a, ASPND_SPEC, O, CHPND4_A>;
 impl<'a, const O: u8> CHPND4_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl CHPND5_R {
     }
 }
 #[doc = "Field `CHPND5` writer - Channels Pending"]
-pub type CHPND5_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASPND_SPEC, CHPND5_A, O>;
+pub type CHPND5_W<'a, const O: u8> = crate::BitWriter<'a, ASPND_SPEC, O, CHPND5_A>;
 impl<'a, const O: u8> CHPND5_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl CHPND6_R {
     }
 }
 #[doc = "Field `CHPND6` writer - Channels Pending"]
-pub type CHPND6_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASPND_SPEC, CHPND6_A, O>;
+pub type CHPND6_W<'a, const O: u8> = crate::BitWriter<'a, ASPND_SPEC, O, CHPND6_A>;
 impl<'a, const O: u8> CHPND6_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl CHPND7_R {
     }
 }
 #[doc = "Field `CHPND7` writer - Channels Pending"]
-pub type CHPND7_W<'a, const O: u8> = crate::BitWriter<'a, u32, ASPND_SPEC, CHPND7_A, O>;
+pub type CHPND7_W<'a, const O: u8> = crate::BitWriter<'a, ASPND_SPEC, O, CHPND7_A>;
 impl<'a, const O: u8> CHPND7_W<'a, O> {
     #[doc = "Ignore this channel"]
     #[inline(always)]

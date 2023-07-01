@@ -71,7 +71,7 @@ impl ASSCH0_R {
     }
 }
 #[doc = "Field `ASSCH0` writer - Assignment for Channel 0"]
-pub type ASSCH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH0_A, O>;
+pub type ASSCH0_W<'a, const O: u8> = crate::BitWriter<'a, CHASS_SPEC, O, ASSCH0_A>;
 impl<'a, const O: u8> ASSCH0_W<'a, O> {
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl ASSCH1_R {
     }
 }
 #[doc = "Field `ASSCH1` writer - Assignment for Channel 1"]
-pub type ASSCH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH1_A, O>;
+pub type ASSCH1_W<'a, const O: u8> = crate::BitWriter<'a, CHASS_SPEC, O, ASSCH1_A>;
 impl<'a, const O: u8> ASSCH1_W<'a, O> {
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl ASSCH2_R {
     }
 }
 #[doc = "Field `ASSCH2` writer - Assignment for Channel 2"]
-pub type ASSCH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH2_A, O>;
+pub type ASSCH2_W<'a, const O: u8> = crate::BitWriter<'a, CHASS_SPEC, O, ASSCH2_A>;
 impl<'a, const O: u8> ASSCH2_W<'a, O> {
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl ASSCH3_R {
     }
 }
 #[doc = "Field `ASSCH3` writer - Assignment for Channel 3"]
-pub type ASSCH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH3_A, O>;
+pub type ASSCH3_W<'a, const O: u8> = crate::BitWriter<'a, CHASS_SPEC, O, ASSCH3_A>;
 impl<'a, const O: u8> ASSCH3_W<'a, O> {
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl ASSCH4_R {
     }
 }
 #[doc = "Field `ASSCH4` writer - Assignment for Channel 4"]
-pub type ASSCH4_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH4_A, O>;
+pub type ASSCH4_W<'a, const O: u8> = crate::BitWriter<'a, CHASS_SPEC, O, ASSCH4_A>;
 impl<'a, const O: u8> ASSCH4_W<'a, O> {
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl ASSCH5_R {
     }
 }
 #[doc = "Field `ASSCH5` writer - Assignment for Channel 5"]
-pub type ASSCH5_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH5_A, O>;
+pub type ASSCH5_W<'a, const O: u8> = crate::BitWriter<'a, CHASS_SPEC, O, ASSCH5_A>;
 impl<'a, const O: u8> ASSCH5_W<'a, O> {
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl ASSCH6_R {
     }
 }
 #[doc = "Field `ASSCH6` writer - Assignment for Channel 6"]
-pub type ASSCH6_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH6_A, O>;
+pub type ASSCH6_W<'a, const O: u8> = crate::BitWriter<'a, CHASS_SPEC, O, ASSCH6_A>;
 impl<'a, const O: u8> ASSCH6_W<'a, O> {
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl ASSCH7_R {
     }
 }
 #[doc = "Field `ASSCH7` writer - Assignment for Channel 7"]
-pub type ASSCH7_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHASS_SPEC, ASSCH7_A, O>;
+pub type ASSCH7_W<'a, const O: u8> = crate::BitWriter<'a, CHASS_SPEC, O, ASSCH7_A>;
 impl<'a, const O: u8> ASSCH7_W<'a, O> {
     #[doc = "Channel y can be a background channel converted with lowest priority"]
     #[inline(always)]

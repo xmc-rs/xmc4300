@@ -71,7 +71,7 @@ impl FCMODE_R {
     }
 }
 #[doc = "Field `FCMODE` writer - Flow Control Mode"]
-pub type FCMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGH_SPEC, FCMODE_A, O>;
+pub type FCMODE_W<'a, const O: u8> = crate::BitWriter<'a, CFGH_SPEC, O, FCMODE_A>;
 impl<'a, const O: u8> FCMODE_W<'a, O> {
     #[doc = "Source transaction requests are serviced when they occur. Data pre-fetching is enabled."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl FIFO_MODE_R {
     }
 }
 #[doc = "Field `FIFO_MODE` writer - FIFO Mode Select"]
-pub type FIFO_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFGH_SPEC, FIFO_MODE_A, O>;
+pub type FIFO_MODE_W<'a, const O: u8> = crate::BitWriter<'a, CFGH_SPEC, O, FIFO_MODE_A>;
 impl<'a, const O: u8> FIFO_MODE_W<'a, O> {
     #[doc = "Space/data available for single AHB transfer of the specified transfer width."]
     #[inline(always)]
@@ -135,17 +135,17 @@ impl<'a, const O: u8> FIFO_MODE_W<'a, O> {
     }
 }
 #[doc = "Field `PROTCTL` reader - Protection Control"]
-pub type PROTCTL_R = crate::FieldReader<u8, u8>;
+pub type PROTCTL_R = crate::FieldReader;
 #[doc = "Field `PROTCTL` writer - Protection Control"]
-pub type PROTCTL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGH_SPEC, u8, u8, 3, O>;
+pub type PROTCTL_W<'a, const O: u8> = crate::FieldWriter<'a, CFGH_SPEC, 3, O>;
 #[doc = "Field `SRC_PER` reader - Source Peripheral"]
-pub type SRC_PER_R = crate::FieldReader<u8, u8>;
+pub type SRC_PER_R = crate::FieldReader;
 #[doc = "Field `SRC_PER` writer - Source Peripheral"]
-pub type SRC_PER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGH_SPEC, u8, u8, 4, O>;
+pub type SRC_PER_W<'a, const O: u8> = crate::FieldWriter<'a, CFGH_SPEC, 4, O>;
 #[doc = "Field `DEST_PER` reader - Destination Peripheral"]
-pub type DEST_PER_R = crate::FieldReader<u8, u8>;
+pub type DEST_PER_R = crate::FieldReader;
 #[doc = "Field `DEST_PER` writer - Destination Peripheral"]
-pub type DEST_PER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFGH_SPEC, u8, u8, 4, O>;
+pub type DEST_PER_W<'a, const O: u8> = crate::FieldWriter<'a, CFGH_SPEC, 4, O>;
 impl R {
     #[doc = "Bit 0 - Flow Control Mode"]
     #[inline(always)]

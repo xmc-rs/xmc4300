@@ -14,7 +14,7 @@ impl From<crate::R<TX_VLAN_FRAMES_GOOD_SPEC>> for R {
     }
 }
 #[doc = "Field `TXVLANG` reader - This register maintains the number of transmitted good VLAN frames, exclusive of retried frames."]
-pub type TXVLANG_R = crate::FieldReader<u32, u32>;
+pub type TXVLANG_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:31 - This register maintains the number of transmitted good VLAN frames, exclusive of retried frames."]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl BLOCK_COUNT_EN_R {
     }
 }
 #[doc = "Field `BLOCK_COUNT_EN` writer - Block Count Enable"]
-pub type BLOCK_COUNT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u16, TRANSFER_MODE_SPEC, BLOCK_COUNT_EN_A, O>;
+pub type BLOCK_COUNT_EN_W<'a, const O: u8> = crate::BitWriter<'a, TRANSFER_MODE_SPEC, O, BLOCK_COUNT_EN_A>;
 impl<'a, const O: u8> BLOCK_COUNT_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -85,7 +85,7 @@ impl<'a, const O: u8> BLOCK_COUNT_EN_W<'a, O> {
     }
 }
 #[doc = "Field `ACMD_EN` reader - Auto CMD Enable"]
-pub type ACMD_EN_R = crate::FieldReader<u8, ACMD_EN_A>;
+pub type ACMD_EN_R = crate::FieldReader<ACMD_EN_A>;
 #[doc = "Auto CMD Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -100,6 +100,9 @@ impl From<ACMD_EN_A> for u8 {
     fn from(variant: ACMD_EN_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ACMD_EN_A {
+    type Ux = u8;
 }
 impl ACMD_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -123,7 +126,7 @@ impl ACMD_EN_R {
     }
 }
 #[doc = "Field `ACMD_EN` writer - Auto CMD Enable"]
-pub type ACMD_EN_W<'a, const O: u8> = crate::FieldWriter<'a, u16, TRANSFER_MODE_SPEC, u8, ACMD_EN_A, 2, O>;
+pub type ACMD_EN_W<'a, const O: u8> = crate::FieldWriter<'a, TRANSFER_MODE_SPEC, 2, O, ACMD_EN_A>;
 impl<'a, const O: u8> ACMD_EN_W<'a, O> {
     #[doc = "Auto Command Disabled"]
     #[inline(always)]
@@ -173,7 +176,7 @@ impl TX_DIR_SELECT_R {
     }
 }
 #[doc = "Field `TX_DIR_SELECT` writer - Data Transfer Direction Select"]
-pub type TX_DIR_SELECT_W<'a, const O: u8> = crate::BitWriter<'a, u16, TRANSFER_MODE_SPEC, TX_DIR_SELECT_A, O>;
+pub type TX_DIR_SELECT_W<'a, const O: u8> = crate::BitWriter<'a, TRANSFER_MODE_SPEC, O, TX_DIR_SELECT_A>;
 impl<'a, const O: u8> TX_DIR_SELECT_W<'a, O> {
     #[doc = "Write (Host to Card)"]
     #[inline(always)]
@@ -223,7 +226,7 @@ impl MULTI_BLOCK_SELECT_R {
     }
 }
 #[doc = "Field `MULTI_BLOCK_SELECT` writer - Multi / Single Block Select"]
-pub type MULTI_BLOCK_SELECT_W<'a, const O: u8> = crate::BitWriter<'a, u16, TRANSFER_MODE_SPEC, MULTI_BLOCK_SELECT_A, O>;
+pub type MULTI_BLOCK_SELECT_W<'a, const O: u8> = crate::BitWriter<'a, TRANSFER_MODE_SPEC, O, MULTI_BLOCK_SELECT_A>;
 impl<'a, const O: u8> MULTI_BLOCK_SELECT_W<'a, O> {
     #[doc = "Single Block"]
     #[inline(always)]
@@ -273,7 +276,7 @@ impl CMD_COMP_ATA_R {
     }
 }
 #[doc = "Field `CMD_COMP_ATA` writer - Command Completion Signal Enable for CE-ATA Device"]
-pub type CMD_COMP_ATA_W<'a, const O: u8> = crate::BitWriter<'a, u16, TRANSFER_MODE_SPEC, CMD_COMP_ATA_A, O>;
+pub type CMD_COMP_ATA_W<'a, const O: u8> = crate::BitWriter<'a, TRANSFER_MODE_SPEC, O, CMD_COMP_ATA_A>;
 impl<'a, const O: u8> CMD_COMP_ATA_W<'a, O> {
     #[doc = "Device will send command completion Signal"]
     #[inline(always)]

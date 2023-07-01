@@ -14,7 +14,7 @@ impl From<crate::R<PDI_CONFIG_SPEC>> for R {
     }
 }
 #[doc = "Field `BUS_CLK` reader - On-chip bus clock"]
-pub type BUS_CLK_R = crate::FieldReader<u8, BUS_CLK_A>;
+pub type BUS_CLK_R = crate::FieldReader<BUS_CLK_A>;
 #[doc = "On-chip bus clock\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -29,6 +29,9 @@ impl From<BUS_CLK_A> for u8 {
     fn from(variant: BUS_CLK_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BUS_CLK_A {
+    type Ux = u8;
 }
 impl BUS_CLK_R {
     #[doc = "Get enumerated values variant"]
@@ -52,7 +55,7 @@ impl BUS_CLK_R {
     }
 }
 #[doc = "Field `OC_BUS` reader - On-chip bus"]
-pub type OC_BUS_R = crate::FieldReader<u8, OC_BUS_A>;
+pub type OC_BUS_R = crate::FieldReader<OC_BUS_A>;
 #[doc = "On-chip bus\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -71,6 +74,9 @@ impl From<OC_BUS_A> for u8 {
     fn from(variant: OC_BUS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for OC_BUS_A {
+    type Ux = u8;
 }
 impl OC_BUS_R {
     #[doc = "Get enumerated values variant"]

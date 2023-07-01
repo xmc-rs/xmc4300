@@ -71,7 +71,7 @@ impl MODEN_R {
     }
 }
 #[doc = "Field `MODEN` writer - Module Enable"]
-pub type MODEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, KSCFG_SPEC, MODEN_A, O>;
+pub type MODEN_W<'a, const O: u8> = crate::BitWriter<'a, KSCFG_SPEC, O, MODEN_A>;
 impl<'a, const O: u8> MODEN_W<'a, O> {
     #[doc = "The module is switched off immediately (without respecting a stop condition). It does not react on mode control actions and the module clock is switched off. The module does not react on read accesses and ignores write accesses (except to KSCFG)."]
     #[inline(always)]
@@ -99,7 +99,7 @@ impl From<BPMODEN_AW> for bool {
     }
 }
 #[doc = "Field `BPMODEN` writer - Bit Protection for MODEN"]
-pub type BPMODEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, KSCFG_SPEC, BPMODEN_AW, O>;
+pub type BPMODEN_W<'a, const O: u8> = crate::BitWriter<'a, KSCFG_SPEC, O, BPMODEN_AW>;
 impl<'a, const O: u8> BPMODEN_W<'a, O> {
     #[doc = "MODEN is not changed."]
     #[inline(always)]
@@ -113,7 +113,7 @@ impl<'a, const O: u8> BPMODEN_W<'a, O> {
     }
 }
 #[doc = "Field `NOMCFG` reader - Normal Operation Mode Configuration"]
-pub type NOMCFG_R = crate::FieldReader<u8, NOMCFG_A>;
+pub type NOMCFG_R = crate::FieldReader<NOMCFG_A>;
 #[doc = "Normal Operation Mode Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +132,9 @@ impl From<NOMCFG_A> for u8 {
     fn from(variant: NOMCFG_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for NOMCFG_A {
+    type Ux = u8;
 }
 impl NOMCFG_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +170,7 @@ impl NOMCFG_R {
     }
 }
 #[doc = "Field `NOMCFG` writer - Normal Operation Mode Configuration"]
-pub type NOMCFG_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, KSCFG_SPEC, u8, NOMCFG_A, 2, O>;
+pub type NOMCFG_W<'a, const O: u8> = crate::FieldWriterSafe<'a, KSCFG_SPEC, 2, O, NOMCFG_A>;
 impl<'a, const O: u8> NOMCFG_W<'a, O> {
     #[doc = "Run mode 0 is selected."]
     #[inline(always)]
@@ -205,7 +208,7 @@ impl From<BPNOM_AW> for bool {
     }
 }
 #[doc = "Field `BPNOM` writer - Bit Protection for NOMCFG"]
-pub type BPNOM_W<'a, const O: u8> = crate::BitWriter<'a, u32, KSCFG_SPEC, BPNOM_AW, O>;
+pub type BPNOM_W<'a, const O: u8> = crate::BitWriter<'a, KSCFG_SPEC, O, BPNOM_AW>;
 impl<'a, const O: u8> BPNOM_W<'a, O> {
     #[doc = "NOMCFG is not changed."]
     #[inline(always)]
@@ -219,9 +222,9 @@ impl<'a, const O: u8> BPNOM_W<'a, O> {
     }
 }
 #[doc = "Field `SUMCFG` reader - Suspend Mode Configuration"]
-pub type SUMCFG_R = crate::FieldReader<u8, u8>;
+pub type SUMCFG_R = crate::FieldReader;
 #[doc = "Field `SUMCFG` writer - Suspend Mode Configuration"]
-pub type SUMCFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, KSCFG_SPEC, u8, u8, 2, O>;
+pub type SUMCFG_W<'a, const O: u8> = crate::FieldWriter<'a, KSCFG_SPEC, 2, O>;
 #[doc = "Bit Protection for SUMCFG\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BPSUM_AW {
@@ -237,7 +240,7 @@ impl From<BPSUM_AW> for bool {
     }
 }
 #[doc = "Field `BPSUM` writer - Bit Protection for SUMCFG"]
-pub type BPSUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, KSCFG_SPEC, BPSUM_AW, O>;
+pub type BPSUM_W<'a, const O: u8> = crate::BitWriter<'a, KSCFG_SPEC, O, BPSUM_AW>;
 impl<'a, const O: u8> BPSUM_W<'a, O> {
     #[doc = "SUMCFG is not changed."]
     #[inline(always)]
