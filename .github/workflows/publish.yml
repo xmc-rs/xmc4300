@@ -27,7 +27,7 @@ jobs:
         with:
           command: install
           args: cargo-release
-      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+      - uses: oleksiyrudenko/gha-git-credentials@v2.1.1
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
       - uses: Swatinem/rust-cache@v2
