@@ -1,43 +1,11 @@
 #[doc = "Register `AIRCR` reader"]
-pub struct R(crate::R<AIRCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<AIRCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<AIRCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<AIRCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<AIRCR_SPEC>;
 #[doc = "Register `AIRCR` writer"]
-pub struct W(crate::W<AIRCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<AIRCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<AIRCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<AIRCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<AIRCR_SPEC>;
 #[doc = "Field `VECTRESET` writer - Reserved for Debug use."]
-pub type VECTRESET_W<'a, const O: u8> = crate::BitWriter<'a, AIRCR_SPEC, O>;
+pub type VECTRESET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `VECTCLRACTIVE` writer - Reserved for Debug use."]
-pub type VECTCLRACTIVE_W<'a, const O: u8> = crate::BitWriter<'a, AIRCR_SPEC, O>;
+pub type VECTCLRACTIVE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "System reset request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYSRESETREQ_AW {
@@ -53,23 +21,26 @@ impl From<SYSRESETREQ_AW> for bool {
     }
 }
 #[doc = "Field `SYSRESETREQ` writer - System reset request"]
-pub type SYSRESETREQ_W<'a, const O: u8> = crate::BitWriter<'a, AIRCR_SPEC, O, SYSRESETREQ_AW>;
-impl<'a, const O: u8> SYSRESETREQ_W<'a, O> {
+pub type SYSRESETREQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SYSRESETREQ_AW>;
+impl<'a, REG, const O: u8> SYSRESETREQ_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no system reset request"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SYSRESETREQ_AW::VALUE1)
     }
     #[doc = "asserts a signal to the outer system that requests a reset."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SYSRESETREQ_AW::VALUE2)
     }
 }
 #[doc = "Field `PRIGROUP` reader - Interrupt priority grouping field"]
 pub type PRIGROUP_R = crate::FieldReader;
 #[doc = "Field `PRIGROUP` writer - Interrupt priority grouping field"]
-pub type PRIGROUP_W<'a, const O: u8> = crate::FieldWriter<'a, AIRCR_SPEC, 3, O>;
+pub type PRIGROUP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `ENDIANNESS` reader - Data endianness bit"]
 pub type ENDIANNESS_R = crate::BitReader<ENDIANNESS_A>;
 #[doc = "Data endianness bit\n\nValue on reset: 0"]
@@ -95,12 +66,12 @@ impl ENDIANNESS_R {
             true => ENDIANNESS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Little-endian"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ENDIANNESS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Big-endian."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ENDIANNESS_A::VALUE2
@@ -109,7 +80,7 @@ impl ENDIANNESS_R {
 #[doc = "Field `VECTKEY` reader - Register key"]
 pub type VECTKEY_R = crate::FieldReader<u16>;
 #[doc = "Field `VECTKEY` writer - Register key"]
-pub type VECTKEY_W<'a, const O: u8> = crate::FieldWriter<'a, AIRCR_SPEC, 16, O, u16>;
+pub type VECTKEY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 impl R {
     #[doc = "Bits 8:10 - Interrupt priority grouping field"]
     #[inline(always)]
@@ -131,52 +102,49 @@ impl W {
     #[doc = "Bit 0 - Reserved for Debug use."]
     #[inline(always)]
     #[must_use]
-    pub fn vectreset(&mut self) -> VECTRESET_W<0> {
+    pub fn vectreset(&mut self) -> VECTRESET_W<AIRCR_SPEC, 0> {
         VECTRESET_W::new(self)
     }
     #[doc = "Bit 1 - Reserved for Debug use."]
     #[inline(always)]
     #[must_use]
-    pub fn vectclractive(&mut self) -> VECTCLRACTIVE_W<1> {
+    pub fn vectclractive(&mut self) -> VECTCLRACTIVE_W<AIRCR_SPEC, 1> {
         VECTCLRACTIVE_W::new(self)
     }
     #[doc = "Bit 2 - System reset request"]
     #[inline(always)]
     #[must_use]
-    pub fn sysresetreq(&mut self) -> SYSRESETREQ_W<2> {
+    pub fn sysresetreq(&mut self) -> SYSRESETREQ_W<AIRCR_SPEC, 2> {
         SYSRESETREQ_W::new(self)
     }
     #[doc = "Bits 8:10 - Interrupt priority grouping field"]
     #[inline(always)]
     #[must_use]
-    pub fn prigroup(&mut self) -> PRIGROUP_W<8> {
+    pub fn prigroup(&mut self) -> PRIGROUP_W<AIRCR_SPEC, 8> {
         PRIGROUP_W::new(self)
     }
     #[doc = "Bits 16:31 - Register key"]
     #[inline(always)]
     #[must_use]
-    pub fn vectkey(&mut self) -> VECTKEY_W<16> {
+    pub fn vectkey(&mut self) -> VECTKEY_W<AIRCR_SPEC, 16> {
         VECTKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Application Interrupt and Reset Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [aircr](index.html) module"]
+#[doc = "Application Interrupt and Reset Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aircr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aircr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AIRCR_SPEC;
 impl crate::RegisterSpec for AIRCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [aircr::R](R) reader structure"]
-impl crate::Readable for AIRCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [aircr::W](W) writer structure"]
+#[doc = "`read()` method returns [`aircr::R`](R) reader structure"]
+impl crate::Readable for AIRCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`aircr::W`](W) writer structure"]
 impl crate::Writable for AIRCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

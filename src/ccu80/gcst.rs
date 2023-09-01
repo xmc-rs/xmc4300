@@ -1,18 +1,5 @@
 #[doc = "Register `GCST` reader"]
-pub struct R(crate::R<GCST_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GCST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GCST_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GCST_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GCST_SPEC>;
 #[doc = "Field `S0SS` reader - Slice 0 shadow transfer status"]
 pub type S0SS_R = crate::BitReader<S0SS_A>;
 #[doc = "Slice 0 shadow transfer status\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl S0SS_R {
             true => S0SS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S0SS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S0SS_A::VALUE2
@@ -74,12 +61,12 @@ impl S0DSS_R {
             true => S0DSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dither shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S0DSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dither shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S0DSS_A::VALUE2
@@ -110,12 +97,12 @@ impl S0PSS_R {
             true => S0PSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Prescaler shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S0PSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Prescaler shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S0PSS_A::VALUE2
@@ -146,12 +133,12 @@ impl S1SS_R {
             true => S1SS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S1SS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S1SS_A::VALUE2
@@ -182,12 +169,12 @@ impl S1DSS_R {
             true => S1DSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dither shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S1DSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dither shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S1DSS_A::VALUE2
@@ -218,12 +205,12 @@ impl S1PSS_R {
             true => S1PSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Prescaler shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S1PSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Prescaler shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S1PSS_A::VALUE2
@@ -254,12 +241,12 @@ impl S2SS_R {
             true => S2SS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S2SS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S2SS_A::VALUE2
@@ -290,12 +277,12 @@ impl S2DSS_R {
             true => S2DSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dither shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S2DSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dither shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S2DSS_A::VALUE2
@@ -326,12 +313,12 @@ impl S2PSS_R {
             true => S2PSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Prescaler shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S2PSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Prescaler shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S2PSS_A::VALUE2
@@ -362,12 +349,12 @@ impl S3SS_R {
             true => S3SS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S3SS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S3SS_A::VALUE2
@@ -398,12 +385,12 @@ impl S3DSS_R {
             true => S3DSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dither shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S3DSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dither shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S3DSS_A::VALUE2
@@ -434,12 +421,12 @@ impl S3PSS_R {
             true => S3PSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Prescaler shadow transfer has not been requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S3PSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Prescaler shadow transfer has been requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S3PSS_A::VALUE2
@@ -563,15 +550,13 @@ impl R {
         CC83ST2_R::new(((self.bits >> 23) & 1) != 0)
     }
 }
-#[doc = "Global Channel status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gcst](index.html) module"]
+#[doc = "Global Channel status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gcst::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GCST_SPEC;
 impl crate::RegisterSpec for GCST_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [gcst::R](R) reader structure"]
-impl crate::Readable for GCST_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`gcst::R`](R) reader structure"]
+impl crate::Readable for GCST_SPEC {}
 #[doc = "`reset()` method sets GCST to value 0"]
 impl crate::Resettable for GCST_SPEC {
     const RESET_VALUE: Self::Ux = 0;

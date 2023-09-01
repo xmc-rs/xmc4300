@@ -1,39 +1,7 @@
 #[doc = "Register `QMR0` reader"]
-pub struct R(crate::R<QMR0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<QMR0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<QMR0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<QMR0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<QMR0_SPEC>;
 #[doc = "Register `QMR0` writer"]
-pub struct W(crate::W<QMR0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<QMR0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<QMR0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<QMR0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<QMR0_SPEC>;
 #[doc = "Field `ENGT` reader - Enable Gate"]
 pub type ENGT_R = crate::FieldReader<ENGT_A>;
 #[doc = "Enable Gate\n\nValue on reset: 0"]
@@ -70,48 +38,52 @@ impl ENGT_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No conversion requests are issued"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ENGT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ENGT_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ENGT_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 0"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ENGT_A::VALUE4
     }
 }
 #[doc = "Field `ENGT` writer - Enable Gate"]
-pub type ENGT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, QMR0_SPEC, 2, O, ENGT_A>;
-impl<'a, const O: u8> ENGT_W<'a, O> {
+pub type ENGT_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ENGT_A>;
+impl<'a, REG, const O: u8> ENGT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No conversion requests are issued"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ENGT_A::VALUE1)
     }
     #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ENGT_A::VALUE2)
     }
     #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 1"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ENGT_A::VALUE3)
     }
     #[doc = "Conversion requests are issued if a valid conversion request is pending in the queue 0 register or in the backup register and REQGTx = 0"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(ENGT_A::VALUE4)
     }
 }
@@ -140,28 +112,31 @@ impl ENTR_R {
             true => ENTR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "External trigger disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ENTR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The selected edge at the selected trigger input signal REQTR generates the trigger event"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ENTR_A::VALUE2
     }
 }
 #[doc = "Field `ENTR` writer - Enable External Trigger"]
-pub type ENTR_W<'a, const O: u8> = crate::BitWriter<'a, QMR0_SPEC, O, ENTR_A>;
-impl<'a, const O: u8> ENTR_W<'a, O> {
+pub type ENTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENTR_A>;
+impl<'a, REG, const O: u8> ENTR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "External trigger disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ENTR_A::VALUE1)
     }
     #[doc = "The selected edge at the selected trigger input signal REQTR generates the trigger event"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ENTR_A::VALUE2)
     }
 }
@@ -180,16 +155,19 @@ impl From<CLRV_AW> for bool {
     }
 }
 #[doc = "Field `CLRV` writer - Clear Valid Bit"]
-pub type CLRV_W<'a, const O: u8> = crate::BitWriter<'a, QMR0_SPEC, O, CLRV_AW>;
-impl<'a, const O: u8> CLRV_W<'a, O> {
+pub type CLRV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CLRV_AW>;
+impl<'a, REG, const O: u8> CLRV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CLRV_AW::VALUE1)
     }
     #[doc = "The next pending valid queue entry in the sequence and the event flag EV are cleared. If there is a valid entry in the queue backup register (QBUR.V = 1), this entry is cleared, otherwise the entry in queue register 0 is cleared."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CLRV_AW::VALUE2)
     }
 }
@@ -208,16 +186,19 @@ impl From<TREV_AW> for bool {
     }
 }
 #[doc = "Field `TREV` writer - Trigger Event"]
-pub type TREV_W<'a, const O: u8> = crate::BitWriter<'a, QMR0_SPEC, O, TREV_AW>;
-impl<'a, const O: u8> TREV_W<'a, O> {
+pub type TREV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TREV_AW>;
+impl<'a, REG, const O: u8> TREV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TREV_AW::VALUE1)
     }
     #[doc = "Generate a trigger event by software"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TREV_AW::VALUE2)
     }
 }
@@ -236,16 +217,19 @@ impl From<FLUSH_AW> for bool {
     }
 }
 #[doc = "Field `FLUSH` writer - Flush Queue"]
-pub type FLUSH_W<'a, const O: u8> = crate::BitWriter<'a, QMR0_SPEC, O, FLUSH_AW>;
-impl<'a, const O: u8> FLUSH_W<'a, O> {
+pub type FLUSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FLUSH_AW>;
+impl<'a, REG, const O: u8> FLUSH_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(FLUSH_AW::VALUE1)
     }
     #[doc = "Clear all queue entries (including backup stage) and the event flag EV. The queue contains no more valid entry."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(FLUSH_AW::VALUE2)
     }
 }
@@ -264,16 +248,19 @@ impl From<CEV_AW> for bool {
     }
 }
 #[doc = "Field `CEV` writer - Clear Event Flag"]
-pub type CEV_W<'a, const O: u8> = crate::BitWriter<'a, QMR0_SPEC, O, CEV_AW>;
-impl<'a, const O: u8> CEV_W<'a, O> {
+pub type CEV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV_AW>;
+impl<'a, REG, const O: u8> CEV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV_AW::VALUE1)
     }
     #[doc = "Clear bit EV"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV_AW::VALUE2)
     }
 }
@@ -302,28 +289,31 @@ impl RPTDIS_R {
             true => RPTDIS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A cancelled conversion is repeated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RPTDIS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A cancelled conversion is discarded"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RPTDIS_A::VALUE2
     }
 }
 #[doc = "Field `RPTDIS` writer - Repeat Disable"]
-pub type RPTDIS_W<'a, const O: u8> = crate::BitWriter<'a, QMR0_SPEC, O, RPTDIS_A>;
-impl<'a, const O: u8> RPTDIS_W<'a, O> {
+pub type RPTDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RPTDIS_A>;
+impl<'a, REG, const O: u8> RPTDIS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A cancelled conversion is repeated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RPTDIS_A::VALUE1)
     }
     #[doc = "A cancelled conversion is discarded"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RPTDIS_A::VALUE2)
     }
 }
@@ -348,64 +338,61 @@ impl W {
     #[doc = "Bits 0:1 - Enable Gate"]
     #[inline(always)]
     #[must_use]
-    pub fn engt(&mut self) -> ENGT_W<0> {
+    pub fn engt(&mut self) -> ENGT_W<QMR0_SPEC, 0> {
         ENGT_W::new(self)
     }
     #[doc = "Bit 2 - Enable External Trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn entr(&mut self) -> ENTR_W<2> {
+    pub fn entr(&mut self) -> ENTR_W<QMR0_SPEC, 2> {
         ENTR_W::new(self)
     }
     #[doc = "Bit 8 - Clear Valid Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn clrv(&mut self) -> CLRV_W<8> {
+    pub fn clrv(&mut self) -> CLRV_W<QMR0_SPEC, 8> {
         CLRV_W::new(self)
     }
     #[doc = "Bit 9 - Trigger Event"]
     #[inline(always)]
     #[must_use]
-    pub fn trev(&mut self) -> TREV_W<9> {
+    pub fn trev(&mut self) -> TREV_W<QMR0_SPEC, 9> {
         TREV_W::new(self)
     }
     #[doc = "Bit 10 - Flush Queue"]
     #[inline(always)]
     #[must_use]
-    pub fn flush(&mut self) -> FLUSH_W<10> {
+    pub fn flush(&mut self) -> FLUSH_W<QMR0_SPEC, 10> {
         FLUSH_W::new(self)
     }
     #[doc = "Bit 11 - Clear Event Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cev(&mut self) -> CEV_W<11> {
+    pub fn cev(&mut self) -> CEV_W<QMR0_SPEC, 11> {
         CEV_W::new(self)
     }
     #[doc = "Bit 16 - Repeat Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn rptdis(&mut self) -> RPTDIS_W<16> {
+    pub fn rptdis(&mut self) -> RPTDIS_W<QMR0_SPEC, 16> {
         RPTDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Queue 0 Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qmr0](index.html) module"]
+#[doc = "Queue 0 Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`qmr0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`qmr0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct QMR0_SPEC;
 impl crate::RegisterSpec for QMR0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [qmr0::R](R) reader structure"]
-impl crate::Readable for QMR0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [qmr0::W](W) writer structure"]
+#[doc = "`read()` method returns [`qmr0::R`](R) reader structure"]
+impl crate::Readable for QMR0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`qmr0::W`](W) writer structure"]
 impl crate::Writable for QMR0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

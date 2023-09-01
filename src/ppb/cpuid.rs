@@ -1,18 +1,5 @@
 #[doc = "Register `CPUID` reader"]
-pub struct R(crate::R<CPUID_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CPUID_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CPUID_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CPUID_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CPUID_SPEC>;
 #[doc = "Field `Revision` reader - Revision number"]
 pub type REVISION_R = crate::FieldReader<REVISION_A>;
 #[doc = "Revision number\n\nValue on reset: 1"]
@@ -40,7 +27,7 @@ impl REVISION_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Patch 1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REVISION_A::VALUE1
@@ -73,7 +60,7 @@ impl PART_NO_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Cortex-M4"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PART_NO_A::VALUE1
@@ -108,7 +95,7 @@ impl VARIANT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Revision 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VARIANT_A::VALUE1
@@ -141,7 +128,7 @@ impl IMPLEMENTER_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "ARM"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == IMPLEMENTER_A::VALUE1
@@ -174,15 +161,13 @@ impl R {
         IMPLEMENTER_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
-#[doc = "CPUID Base Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpuid](index.html) module"]
+#[doc = "CPUID Base Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cpuid::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CPUID_SPEC;
 impl crate::RegisterSpec for CPUID_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cpuid::R](R) reader structure"]
-impl crate::Readable for CPUID_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`cpuid::R`](R) reader structure"]
+impl crate::Readable for CPUID_SPEC {}
 #[doc = "`reset()` method sets CPUID to value 0x410f_c241"]
 impl crate::Resettable for CPUID_SPEC {
     const RESET_VALUE: Self::Ux = 0x410f_c241;

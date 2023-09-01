@@ -1,18 +1,5 @@
 #[doc = "Register `QSR0` reader"]
-pub struct R(crate::R<QSR0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<QSR0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<QSR0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<QSR0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<QSR0_SPEC>;
 #[doc = "Field `FILL` reader - Filling Level for Queue 2"]
 pub type FILL_R = crate::FieldReader<FILL_A>;
 #[doc = "Filling Level for Queue 2\n\nValue on reset: 0"]
@@ -49,22 +36,22 @@ impl FILL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "There is 1 ( if EMPTY = 0) or no (if EMPTY = 1) valid entry in the queue"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FILL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "There are 2 valid entries in the queue"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FILL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "There are 3 valid entries in the queue"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == FILL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "There are 8 valid entries in the queue"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == FILL_A::VALUE4
@@ -95,12 +82,12 @@ impl EMPTY_R {
             true => EMPTY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "There are valid entries in the queue (see FILL)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EMPTY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "No valid entries (queue is empty)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EMPTY_A::VALUE2
@@ -131,12 +118,12 @@ impl REQGT_R {
             true => REQGT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The gate input is low"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REQGT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The gate input is high"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REQGT_A::VALUE2
@@ -167,12 +154,12 @@ impl EV_R {
             true => EV_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No trigger event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A trigger event has been detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EV_A::VALUE2
@@ -200,15 +187,13 @@ impl R {
         EV_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
-#[doc = "Queue 0 Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qsr0](index.html) module"]
+#[doc = "Queue 0 Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`qsr0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct QSR0_SPEC;
 impl crate::RegisterSpec for QSR0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [qsr0::R](R) reader structure"]
-impl crate::Readable for QSR0_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`qsr0::R`](R) reader structure"]
+impl crate::Readable for QSR0_SPEC {}
 #[doc = "`reset()` method sets QSR0 to value 0x20"]
 impl crate::Resettable for QSR0_SPEC {
     const RESET_VALUE: Self::Ux = 0x20;

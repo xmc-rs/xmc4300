@@ -1,18 +1,5 @@
 #[doc = "Register `VERSION` reader"]
-pub struct R(crate::R<VERSION_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<VERSION_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<VERSION_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<VERSION_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<VERSION_SPEC>;
 #[doc = "Field `SNPSVER` reader - Synopsys-defined Version (3.7)"]
 pub type SNPSVER_R = crate::FieldReader;
 #[doc = "Field `USERVER` reader - User-defined Version (Configured with the coreConsultant)"]
@@ -29,15 +16,13 @@ impl R {
         USERVER_R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
-#[doc = "Version Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [version](index.html) module"]
+#[doc = "Version Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`version::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct VERSION_SPEC;
 impl crate::RegisterSpec for VERSION_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [version::R](R) reader structure"]
-impl crate::Readable for VERSION_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`version::R`](R) reader structure"]
+impl crate::Readable for VERSION_SPEC {}
 #[doc = "`reset()` method sets VERSION to value 0x1037"]
 impl crate::Resettable for VERSION_SPEC {
     const RESET_VALUE: Self::Ux = 0x1037;

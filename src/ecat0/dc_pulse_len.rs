@@ -1,18 +1,5 @@
 #[doc = "Register `DC_PULSE_LEN` reader"]
-pub struct R(crate::R<DC_PULSE_LEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DC_PULSE_LEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DC_PULSE_LEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DC_PULSE_LEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DC_PULSE_LEN_SPEC>;
 #[doc = "Field `PULS_LENGTH` reader - Pulse length of SyncSignals"]
 pub type PULS_LENGTH_R = crate::FieldReader<PULS_LENGTH_A>;
 #[doc = "Pulse length of SyncSignals\n\nValue on reset: 0"]
@@ -41,7 +28,8 @@ impl PULS_LENGTH_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Acknowledge mode: SyncSignal will be cleared by reading SYNC\\[1:0\\]
+Status register"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PULS_LENGTH_A::VALUE1
@@ -54,15 +42,13 @@ impl R {
         PULS_LENGTH_R::new(self.bits)
     }
 }
-#[doc = "Pulse Length of SyncSignals\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dc_pulse_len](index.html) module"]
+#[doc = "Pulse Length of SyncSignals\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_pulse_len::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_PULSE_LEN_SPEC;
 impl crate::RegisterSpec for DC_PULSE_LEN_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [dc_pulse_len::R](R) reader structure"]
-impl crate::Readable for DC_PULSE_LEN_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dc_pulse_len::R`](R) reader structure"]
+impl crate::Readable for DC_PULSE_LEN_SPEC {}
 #[doc = "`reset()` method sets DC_PULSE_LEN to value 0"]
 impl crate::Resettable for DC_PULSE_LEN_SPEC {
     const RESET_VALUE: Self::Ux = 0;

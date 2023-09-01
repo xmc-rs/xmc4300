@@ -1,39 +1,7 @@
 #[doc = "Register `INT_STATUS_NORM` reader"]
-pub struct R(crate::R<INT_STATUS_NORM_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INT_STATUS_NORM_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INT_STATUS_NORM_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INT_STATUS_NORM_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<INT_STATUS_NORM_SPEC>;
 #[doc = "Register `INT_STATUS_NORM` writer"]
-pub struct W(crate::W<INT_STATUS_NORM_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INT_STATUS_NORM_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INT_STATUS_NORM_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INT_STATUS_NORM_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<INT_STATUS_NORM_SPEC>;
 #[doc = "Field `CMD_COMPLETE` reader - Command Complete"]
 pub type CMD_COMPLETE_R = crate::BitReader<CMD_COMPLETE_A>;
 #[doc = "Command Complete\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl CMD_COMPLETE_R {
             true => CMD_COMPLETE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Command Complete"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMD_COMPLETE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Command Complete"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMD_COMPLETE_A::VALUE2
     }
 }
 #[doc = "Field `CMD_COMPLETE` writer - Command Complete"]
-pub type CMD_COMPLETE_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, CMD_COMPLETE_A>;
-impl<'a, const O: u8> CMD_COMPLETE_W<'a, O> {
+pub type CMD_COMPLETE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_COMPLETE_A>;
+impl<'a, REG, const O: u8> CMD_COMPLETE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No Command Complete"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_COMPLETE_A::VALUE1)
     }
     #[doc = "Command Complete"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_COMPLETE_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl TX_COMPLETE_R {
             true => TX_COMPLETE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Data Transfer Complete"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TX_COMPLETE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Data Transfer Complete"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TX_COMPLETE_A::VALUE2
     }
 }
 #[doc = "Field `TX_COMPLETE` writer - Transfer Complete"]
-pub type TX_COMPLETE_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, TX_COMPLETE_A>;
-impl<'a, const O: u8> TX_COMPLETE_W<'a, O> {
+pub type TX_COMPLETE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_COMPLETE_A>;
+impl<'a, REG, const O: u8> TX_COMPLETE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No Data Transfer Complete"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TX_COMPLETE_A::VALUE1)
     }
     #[doc = "Data Transfer Complete"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TX_COMPLETE_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl BLOCK_GAP_EVENT_R {
             true => BLOCK_GAP_EVENT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Block Gap Event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BLOCK_GAP_EVENT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Transaction stopped at Block Gap"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BLOCK_GAP_EVENT_A::VALUE2
     }
 }
 #[doc = "Field `BLOCK_GAP_EVENT` writer - Block Gap Event"]
-pub type BLOCK_GAP_EVENT_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, BLOCK_GAP_EVENT_A>;
-impl<'a, const O: u8> BLOCK_GAP_EVENT_W<'a, O> {
+pub type BLOCK_GAP_EVENT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BLOCK_GAP_EVENT_A>;
+impl<'a, REG, const O: u8> BLOCK_GAP_EVENT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No Block Gap Event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCK_GAP_EVENT_A::VALUE1)
     }
     #[doc = "Transaction stopped at Block Gap"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCK_GAP_EVENT_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl BUFF_WRITE_READY_R {
             true => BUFF_WRITE_READY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not Ready to Write Buffer."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUFF_WRITE_READY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Ready to Write Buffer."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUFF_WRITE_READY_A::VALUE2
     }
 }
 #[doc = "Field `BUFF_WRITE_READY` writer - Buffer Write Ready"]
-pub type BUFF_WRITE_READY_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, BUFF_WRITE_READY_A>;
-impl<'a, const O: u8> BUFF_WRITE_READY_W<'a, O> {
+pub type BUFF_WRITE_READY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BUFF_WRITE_READY_A>;
+impl<'a, REG, const O: u8> BUFF_WRITE_READY_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not Ready to Write Buffer."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BUFF_WRITE_READY_A::VALUE1)
     }
     #[doc = "Ready to Write Buffer."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BUFF_WRITE_READY_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl BUFF_READ_READY_R {
             true => BUFF_READ_READY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not Ready to read Buffer."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUFF_READ_READY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Ready to read Buffer."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUFF_READ_READY_A::VALUE2
     }
 }
 #[doc = "Field `BUFF_READ_READY` writer - Buffer Read Ready"]
-pub type BUFF_READ_READY_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, BUFF_READ_READY_A>;
-impl<'a, const O: u8> BUFF_READ_READY_W<'a, O> {
+pub type BUFF_READ_READY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BUFF_READ_READY_A>;
+impl<'a, REG, const O: u8> BUFF_READ_READY_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not Ready to read Buffer."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BUFF_READ_READY_A::VALUE1)
     }
     #[doc = "Ready to read Buffer."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BUFF_READ_READY_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl CARD_INS_R {
             true => CARD_INS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Card State Stable or Debouncing"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_INS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Card Inserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_INS_A::VALUE2
     }
 }
 #[doc = "Field `CARD_INS` writer - Card Insertion"]
-pub type CARD_INS_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, CARD_INS_A>;
-impl<'a, const O: u8> CARD_INS_W<'a, O> {
+pub type CARD_INS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CARD_INS_A>;
+impl<'a, REG, const O: u8> CARD_INS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Card State Stable or Debouncing"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_INS_A::VALUE1)
     }
     #[doc = "Card Inserted"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_INS_A::VALUE2)
     }
 }
@@ -359,28 +345,31 @@ impl CARD_REMOVAL_R {
             true => CARD_REMOVAL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Card State Stable or Debouncing"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_REMOVAL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Card Removed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_REMOVAL_A::VALUE2
     }
 }
 #[doc = "Field `CARD_REMOVAL` writer - Card Removal"]
-pub type CARD_REMOVAL_W<'a, const O: u8> = crate::BitWriter<'a, INT_STATUS_NORM_SPEC, O, CARD_REMOVAL_A>;
-impl<'a, const O: u8> CARD_REMOVAL_W<'a, O> {
+pub type CARD_REMOVAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CARD_REMOVAL_A>;
+impl<'a, REG, const O: u8> CARD_REMOVAL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Card State Stable or Debouncing"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_REMOVAL_A::VALUE1)
     }
     #[doc = "Card Removed"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_REMOVAL_A::VALUE2)
     }
 }
@@ -409,12 +398,12 @@ impl CARD_INT_R {
             true => CARD_INT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Card Interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_INT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Generate Card Interrupt"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_INT_A::VALUE2
@@ -445,12 +434,12 @@ impl ERR_INT_R {
             true => ERR_INT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Error."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ERR_INT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Error."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ERR_INT_A::VALUE2
@@ -507,64 +496,61 @@ impl W {
     #[doc = "Bit 0 - Command Complete"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_complete(&mut self) -> CMD_COMPLETE_W<0> {
+    pub fn cmd_complete(&mut self) -> CMD_COMPLETE_W<INT_STATUS_NORM_SPEC, 0> {
         CMD_COMPLETE_W::new(self)
     }
     #[doc = "Bit 1 - Transfer Complete"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_complete(&mut self) -> TX_COMPLETE_W<1> {
+    pub fn tx_complete(&mut self) -> TX_COMPLETE_W<INT_STATUS_NORM_SPEC, 1> {
         TX_COMPLETE_W::new(self)
     }
     #[doc = "Bit 2 - Block Gap Event"]
     #[inline(always)]
     #[must_use]
-    pub fn block_gap_event(&mut self) -> BLOCK_GAP_EVENT_W<2> {
+    pub fn block_gap_event(&mut self) -> BLOCK_GAP_EVENT_W<INT_STATUS_NORM_SPEC, 2> {
         BLOCK_GAP_EVENT_W::new(self)
     }
     #[doc = "Bit 4 - Buffer Write Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_write_ready(&mut self) -> BUFF_WRITE_READY_W<4> {
+    pub fn buff_write_ready(&mut self) -> BUFF_WRITE_READY_W<INT_STATUS_NORM_SPEC, 4> {
         BUFF_WRITE_READY_W::new(self)
     }
     #[doc = "Bit 5 - Buffer Read Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_read_ready(&mut self) -> BUFF_READ_READY_W<5> {
+    pub fn buff_read_ready(&mut self) -> BUFF_READ_READY_W<INT_STATUS_NORM_SPEC, 5> {
         BUFF_READ_READY_W::new(self)
     }
     #[doc = "Bit 6 - Card Insertion"]
     #[inline(always)]
     #[must_use]
-    pub fn card_ins(&mut self) -> CARD_INS_W<6> {
+    pub fn card_ins(&mut self) -> CARD_INS_W<INT_STATUS_NORM_SPEC, 6> {
         CARD_INS_W::new(self)
     }
     #[doc = "Bit 7 - Card Removal"]
     #[inline(always)]
     #[must_use]
-    pub fn card_removal(&mut self) -> CARD_REMOVAL_W<7> {
+    pub fn card_removal(&mut self) -> CARD_REMOVAL_W<INT_STATUS_NORM_SPEC, 7> {
         CARD_REMOVAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Normal Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [int_status_norm](index.html) module"]
+#[doc = "Normal Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`int_status_norm::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`int_status_norm::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INT_STATUS_NORM_SPEC;
 impl crate::RegisterSpec for INT_STATUS_NORM_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [int_status_norm::R](R) reader structure"]
-impl crate::Readable for INT_STATUS_NORM_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [int_status_norm::W](W) writer structure"]
+#[doc = "`read()` method returns [`int_status_norm::R`](R) reader structure"]
+impl crate::Readable for INT_STATUS_NORM_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`int_status_norm::W`](W) writer structure"]
 impl crate::Writable for INT_STATUS_NORM_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

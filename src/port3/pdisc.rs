@@ -1,18 +1,5 @@
 #[doc = "Register `PDISC` reader"]
-pub struct R(crate::R<PDISC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PDISC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PDISC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PDISC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PDISC_SPEC>;
 #[doc = "Field `PDIS0` reader - Pad Disable for Port n Pin 0"]
 pub type PDIS0_R = crate::BitReader<PDIS0_A>;
 #[doc = "Pad Disable for Port n Pin 0\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl PDIS0_R {
             true => PDIS0_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS0_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS0_A::CONST_1
@@ -74,12 +61,12 @@ impl PDIS1_R {
             true => PDIS1_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS1_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS1_A::CONST_1
@@ -110,12 +97,12 @@ impl PDIS2_R {
             true => PDIS2_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS2_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS2_A::CONST_1
@@ -146,12 +133,12 @@ impl PDIS3_R {
             true => PDIS3_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS3_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS3_A::CONST_1
@@ -182,12 +169,12 @@ impl PDIS4_R {
             true => PDIS4_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS4_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS4_A::CONST_1
@@ -218,12 +205,12 @@ impl PDIS5_R {
             true => PDIS5_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS5_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS5_A::CONST_1
@@ -254,12 +241,12 @@ impl PDIS6_R {
             true => PDIS6_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS6_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS6_A::CONST_1
@@ -290,12 +277,12 @@ impl PDIS7_R {
             true => PDIS7_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS7_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS7_A::CONST_1
@@ -326,12 +313,12 @@ impl PDIS8_R {
             true => PDIS8_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS8_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS8_A::CONST_1
@@ -362,12 +349,12 @@ impl PDIS9_R {
             true => PDIS9_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS9_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS9_A::CONST_1
@@ -398,12 +385,12 @@ impl PDIS10_R {
             true => PDIS10_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS10_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS10_A::CONST_1
@@ -434,12 +421,12 @@ impl PDIS11_R {
             true => PDIS11_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS11_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS11_A::CONST_1
@@ -470,12 +457,12 @@ impl PDIS12_R {
             true => PDIS12_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS12_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS12_A::CONST_1
@@ -506,12 +493,12 @@ impl PDIS13_R {
             true => PDIS13_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS13_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS13_A::CONST_1
@@ -542,12 +529,12 @@ impl PDIS14_R {
             true => PDIS14_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS14_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS14_A::CONST_1
@@ -578,12 +565,12 @@ impl PDIS15_R {
             true => PDIS15_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pad Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PDIS15_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pad Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PDIS15_A::CONST_1
@@ -671,15 +658,13 @@ impl R {
         PDIS15_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Port 3 Pin Function Decision Control Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdisc](index.html) module"]
+#[doc = "Port 3 Pin Function Decision Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdisc::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PDISC_SPEC;
 impl crate::RegisterSpec for PDISC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pdisc::R](R) reader structure"]
-impl crate::Readable for PDISC_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pdisc::R`](R) reader structure"]
+impl crate::Readable for PDISC_SPEC {}
 #[doc = "`reset()` method sets PDISC to value 0"]
 impl crate::Resettable for PDISC_SPEC {
     const RESET_VALUE: Self::Ux = 0;

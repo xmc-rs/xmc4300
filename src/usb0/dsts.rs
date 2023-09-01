@@ -1,18 +1,5 @@
 #[doc = "Register `DSTS` reader"]
-pub struct R(crate::R<DSTS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DSTS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DSTS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DSTS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DSTS_SPEC>;
 #[doc = "Field `SuspSts` reader - Suspend Status"]
 pub type SUSP_STS_R = crate::BitReader;
 #[doc = "Field `EnumSpd` reader - Enumerated Speed"]
@@ -42,7 +29,7 @@ impl ENUM_SPD_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Full speed (PHY clock is running at 48 MHz)"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ENUM_SPD_A::VALUE4
@@ -74,15 +61,13 @@ impl R {
         SOFFN_R::new(((self.bits >> 8) & 0x3fff) as u16)
     }
 }
-#[doc = "Device Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dsts](index.html) module"]
+#[doc = "Device Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dsts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DSTS_SPEC;
 impl crate::RegisterSpec for DSTS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dsts::R](R) reader structure"]
-impl crate::Readable for DSTS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dsts::R`](R) reader structure"]
+impl crate::Readable for DSTS_SPEC {}
 #[doc = "`reset()` method sets DSTS to value 0x02"]
 impl crate::Resettable for DSTS_SPEC {
     const RESET_VALUE: Self::Ux = 0x02;

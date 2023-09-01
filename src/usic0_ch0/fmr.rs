@@ -1,24 +1,5 @@
 #[doc = "Register `FMR` writer"]
-pub struct W(crate::W<FMR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FMR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FMR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FMR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<FMR_SPEC>;
 #[doc = "Modify Transmit Data Valid\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -40,21 +21,25 @@ impl crate::FieldSpec for MTDV_AW {
     type Ux = u8;
 }
 #[doc = "Field `MTDV` writer - Modify Transmit Data Valid"]
-pub type MTDV_W<'a, const O: u8> = crate::FieldWriter<'a, FMR_SPEC, 2, O, MTDV_AW>;
-impl<'a, const O: u8> MTDV_W<'a, O> {
+pub type MTDV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, MTDV_AW>;
+impl<'a, REG, const O: u8> MTDV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No action."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MTDV_AW::VALUE1)
     }
     #[doc = "Bit TDV is set, TE is unchanged."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MTDV_AW::VALUE2)
     }
     #[doc = "Bits TDV and TE are cleared."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(MTDV_AW::VALUE3)
     }
 }
@@ -73,16 +58,19 @@ impl From<ATVC_AW> for bool {
     }
 }
 #[doc = "Field `ATVC` writer - Activate Bit TVC"]
-pub type ATVC_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, ATVC_AW>;
-impl<'a, const O: u8> ATVC_W<'a, O> {
+pub type ATVC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ATVC_AW>;
+impl<'a, REG, const O: u8> ATVC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ATVC_AW::VALUE1)
     }
     #[doc = "Bit TCSR.TVC is set."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ATVC_AW::VALUE2)
     }
 }
@@ -101,16 +89,19 @@ impl From<CRDV0_AW> for bool {
     }
 }
 #[doc = "Field `CRDV0` writer - Clear Bits RDV for RBUF0"]
-pub type CRDV0_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, CRDV0_AW>;
-impl<'a, const O: u8> CRDV0_W<'a, O> {
+pub type CRDV0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CRDV0_AW>;
+impl<'a, REG, const O: u8> CRDV0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CRDV0_AW::VALUE1)
     }
     #[doc = "Bits RBUF01SR.RDV00 and RBUF01SR.RDV10 are cleared."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CRDV0_AW::VALUE2)
     }
 }
@@ -129,16 +120,19 @@ impl From<CRDV1_AW> for bool {
     }
 }
 #[doc = "Field `CRDV1` writer - Clear Bit RDV for RBUF1"]
-pub type CRDV1_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, CRDV1_AW>;
-impl<'a, const O: u8> CRDV1_W<'a, O> {
+pub type CRDV1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CRDV1_AW>;
+impl<'a, REG, const O: u8> CRDV1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CRDV1_AW::VALUE1)
     }
     #[doc = "Bits RBUF01SR.RDV01 and RBUF01SR.RDV11 are cleared."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CRDV1_AW::VALUE2)
     }
 }
@@ -157,16 +151,19 @@ impl From<SIO0_AW> for bool {
     }
 }
 #[doc = "Field `SIO0` writer - Set Interrupt Output SRx"]
-pub type SIO0_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, SIO0_AW>;
-impl<'a, const O: u8> SIO0_W<'a, O> {
+pub type SIO0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIO0_AW>;
+impl<'a, REG, const O: u8> SIO0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SIO0_AW::VALUE1)
     }
     #[doc = "The service request output SRx is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SIO0_AW::VALUE2)
     }
 }
@@ -185,16 +182,19 @@ impl From<SIO1_AW> for bool {
     }
 }
 #[doc = "Field `SIO1` writer - Set Interrupt Output SRx"]
-pub type SIO1_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, SIO1_AW>;
-impl<'a, const O: u8> SIO1_W<'a, O> {
+pub type SIO1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIO1_AW>;
+impl<'a, REG, const O: u8> SIO1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SIO1_AW::VALUE1)
     }
     #[doc = "The service request output SRx is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SIO1_AW::VALUE2)
     }
 }
@@ -213,16 +213,19 @@ impl From<SIO2_AW> for bool {
     }
 }
 #[doc = "Field `SIO2` writer - Set Interrupt Output SRx"]
-pub type SIO2_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, SIO2_AW>;
-impl<'a, const O: u8> SIO2_W<'a, O> {
+pub type SIO2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIO2_AW>;
+impl<'a, REG, const O: u8> SIO2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SIO2_AW::VALUE1)
     }
     #[doc = "The service request output SRx is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SIO2_AW::VALUE2)
     }
 }
@@ -241,16 +244,19 @@ impl From<SIO3_AW> for bool {
     }
 }
 #[doc = "Field `SIO3` writer - Set Interrupt Output SRx"]
-pub type SIO3_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, SIO3_AW>;
-impl<'a, const O: u8> SIO3_W<'a, O> {
+pub type SIO3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIO3_AW>;
+impl<'a, REG, const O: u8> SIO3_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SIO3_AW::VALUE1)
     }
     #[doc = "The service request output SRx is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SIO3_AW::VALUE2)
     }
 }
@@ -269,16 +275,19 @@ impl From<SIO4_AW> for bool {
     }
 }
 #[doc = "Field `SIO4` writer - Set Interrupt Output SRx"]
-pub type SIO4_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, SIO4_AW>;
-impl<'a, const O: u8> SIO4_W<'a, O> {
+pub type SIO4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIO4_AW>;
+impl<'a, REG, const O: u8> SIO4_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SIO4_AW::VALUE1)
     }
     #[doc = "The service request output SRx is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SIO4_AW::VALUE2)
     }
 }
@@ -297,16 +306,19 @@ impl From<SIO5_AW> for bool {
     }
 }
 #[doc = "Field `SIO5` writer - Set Interrupt Output SRx"]
-pub type SIO5_W<'a, const O: u8> = crate::BitWriter<'a, FMR_SPEC, O, SIO5_AW>;
-impl<'a, const O: u8> SIO5_W<'a, O> {
+pub type SIO5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIO5_AW>;
+impl<'a, REG, const O: u8> SIO5_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No action."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SIO5_AW::VALUE1)
     }
     #[doc = "The service request output SRx is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SIO5_AW::VALUE2)
     }
 }
@@ -314,78 +326,77 @@ impl W {
     #[doc = "Bits 0:1 - Modify Transmit Data Valid"]
     #[inline(always)]
     #[must_use]
-    pub fn mtdv(&mut self) -> MTDV_W<0> {
+    pub fn mtdv(&mut self) -> MTDV_W<FMR_SPEC, 0> {
         MTDV_W::new(self)
     }
     #[doc = "Bit 4 - Activate Bit TVC"]
     #[inline(always)]
     #[must_use]
-    pub fn atvc(&mut self) -> ATVC_W<4> {
+    pub fn atvc(&mut self) -> ATVC_W<FMR_SPEC, 4> {
         ATVC_W::new(self)
     }
     #[doc = "Bit 14 - Clear Bits RDV for RBUF0"]
     #[inline(always)]
     #[must_use]
-    pub fn crdv0(&mut self) -> CRDV0_W<14> {
+    pub fn crdv0(&mut self) -> CRDV0_W<FMR_SPEC, 14> {
         CRDV0_W::new(self)
     }
     #[doc = "Bit 15 - Clear Bit RDV for RBUF1"]
     #[inline(always)]
     #[must_use]
-    pub fn crdv1(&mut self) -> CRDV1_W<15> {
+    pub fn crdv1(&mut self) -> CRDV1_W<FMR_SPEC, 15> {
         CRDV1_W::new(self)
     }
     #[doc = "Bit 16 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio0(&mut self) -> SIO0_W<16> {
+    pub fn sio0(&mut self) -> SIO0_W<FMR_SPEC, 16> {
         SIO0_W::new(self)
     }
     #[doc = "Bit 17 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio1(&mut self) -> SIO1_W<17> {
+    pub fn sio1(&mut self) -> SIO1_W<FMR_SPEC, 17> {
         SIO1_W::new(self)
     }
     #[doc = "Bit 18 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio2(&mut self) -> SIO2_W<18> {
+    pub fn sio2(&mut self) -> SIO2_W<FMR_SPEC, 18> {
         SIO2_W::new(self)
     }
     #[doc = "Bit 19 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio3(&mut self) -> SIO3_W<19> {
+    pub fn sio3(&mut self) -> SIO3_W<FMR_SPEC, 19> {
         SIO3_W::new(self)
     }
     #[doc = "Bit 20 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio4(&mut self) -> SIO4_W<20> {
+    pub fn sio4(&mut self) -> SIO4_W<FMR_SPEC, 20> {
         SIO4_W::new(self)
     }
     #[doc = "Bit 21 - Set Interrupt Output SRx"]
     #[inline(always)]
     #[must_use]
-    pub fn sio5(&mut self) -> SIO5_W<21> {
+    pub fn sio5(&mut self) -> SIO5_W<FMR_SPEC, 21> {
         SIO5_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Flag Modification Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmr](index.html) module"]
+#[doc = "Flag Modification Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fmr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FMR_SPEC;
 impl crate::RegisterSpec for FMR_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [fmr::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`fmr::W`](W) writer structure"]
 impl crate::Writable for FMR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

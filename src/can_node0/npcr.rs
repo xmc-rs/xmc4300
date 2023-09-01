@@ -1,43 +1,11 @@
 #[doc = "Register `NPCR` reader"]
-pub struct R(crate::R<NPCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NPCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NPCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NPCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<NPCR_SPEC>;
 #[doc = "Register `NPCR` writer"]
-pub struct W(crate::W<NPCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<NPCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<NPCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<NPCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<NPCR_SPEC>;
 #[doc = "Field `RXSEL` reader - Receive Select"]
 pub type RXSEL_R = crate::FieldReader;
 #[doc = "Field `RXSEL` writer - Receive Select"]
-pub type RXSEL_W<'a, const O: u8> = crate::FieldWriter<'a, NPCR_SPEC, 3, O>;
+pub type RXSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `LBM` reader - Loop-Back Mode"]
 pub type LBM_R = crate::BitReader<LBM_A>;
 #[doc = "Loop-Back Mode\n\nValue on reset: 0"]
@@ -63,28 +31,31 @@ impl LBM_R {
             true => LBM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Loop-Back Mode is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LBM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Loop-Back Mode is enabled. This node is connected to an internal (virtual) loop-back CAN bus. All CAN nodes which are in Loop-Back Mode are connected to this virtual CAN bus so that they can communicate with each other internally. The external transmit line is forced recessive in Loop-Back Mode."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LBM_A::VALUE2
     }
 }
 #[doc = "Field `LBM` writer - Loop-Back Mode"]
-pub type LBM_W<'a, const O: u8> = crate::BitWriter<'a, NPCR_SPEC, O, LBM_A>;
-impl<'a, const O: u8> LBM_W<'a, O> {
+pub type LBM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LBM_A>;
+impl<'a, REG, const O: u8> LBM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Loop-Back Mode is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LBM_A::VALUE1)
     }
     #[doc = "Loop-Back Mode is enabled. This node is connected to an internal (virtual) loop-back CAN bus. All CAN nodes which are in Loop-Back Mode are connected to this virtual CAN bus so that they can communicate with each other internally. The external transmit line is forced recessive in Loop-Back Mode."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LBM_A::VALUE2)
     }
 }
@@ -104,34 +75,31 @@ impl W {
     #[doc = "Bits 0:2 - Receive Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rxsel(&mut self) -> RXSEL_W<0> {
+    pub fn rxsel(&mut self) -> RXSEL_W<NPCR_SPEC, 0> {
         RXSEL_W::new(self)
     }
     #[doc = "Bit 8 - Loop-Back Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn lbm(&mut self) -> LBM_W<8> {
+    pub fn lbm(&mut self) -> LBM_W<NPCR_SPEC, 8> {
         LBM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Node Port Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [npcr](index.html) module"]
+#[doc = "Node Port Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`npcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`npcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct NPCR_SPEC;
 impl crate::RegisterSpec for NPCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [npcr::R](R) reader structure"]
-impl crate::Readable for NPCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [npcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`npcr::R`](R) reader structure"]
+impl crate::Readable for NPCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`npcr::W`](W) writer structure"]
 impl crate::Writable for NPCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

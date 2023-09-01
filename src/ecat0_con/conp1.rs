@@ -1,39 +1,7 @@
 #[doc = "Register `CONP1` reader"]
-pub struct R(crate::R<CONP1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CONP1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CONP1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CONP1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CONP1_SPEC>;
 #[doc = "Register `CONP1` writer"]
-pub struct W(crate::W<CONP1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CONP1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CONP1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CONP1_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CONP1_SPEC>;
 #[doc = "Field `RXD0` reader - Port1 Receive Input 0 Select"]
 pub type RXD0_R = crate::FieldReader<RXD0_A>;
 #[doc = "Port1 Receive Input 0 Select\n\nValue on reset: 0"]
@@ -70,48 +38,52 @@ impl RXD0_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Data input RXD0A is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RXD0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Data input RXD0B is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RXD0_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Data input RXD0C is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == RXD0_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Data input RXD0D is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == RXD0_A::VALUE4
     }
 }
 #[doc = "Field `RXD0` writer - Port1 Receive Input 0 Select"]
-pub type RXD0_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CONP1_SPEC, 2, O, RXD0_A>;
-impl<'a, const O: u8> RXD0_W<'a, O> {
+pub type RXD0_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RXD0_A>;
+impl<'a, REG, const O: u8> RXD0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Data input RXD0A is selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RXD0_A::VALUE1)
     }
     #[doc = "Data input RXD0B is selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RXD0_A::VALUE2)
     }
     #[doc = "Data input RXD0C is selected"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(RXD0_A::VALUE3)
     }
     #[doc = "Data input RXD0D is selected"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(RXD0_A::VALUE4)
     }
 }
@@ -151,48 +123,52 @@ impl RXD1_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Data input RXD1A is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RXD1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Data input RXD1B is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RXD1_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Data input RXD1C is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == RXD1_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Data input RXD1D is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == RXD1_A::VALUE4
     }
 }
 #[doc = "Field `RXD1` writer - Port1 Receive Input 1 Select"]
-pub type RXD1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CONP1_SPEC, 2, O, RXD1_A>;
-impl<'a, const O: u8> RXD1_W<'a, O> {
+pub type RXD1_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RXD1_A>;
+impl<'a, REG, const O: u8> RXD1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Data input RXD1A is selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RXD1_A::VALUE1)
     }
     #[doc = "Data input RXD1B is selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RXD1_A::VALUE2)
     }
     #[doc = "Data input RXD1C is selected"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(RXD1_A::VALUE3)
     }
     #[doc = "Data input RXD1D is selected"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(RXD1_A::VALUE4)
     }
 }
@@ -232,48 +208,52 @@ impl RXD2_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Data input RXD2A is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RXD2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Data input RXD2B is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RXD2_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Data input RXD2C is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == RXD2_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Data input RXD2D is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == RXD2_A::VALUE4
     }
 }
 #[doc = "Field `RXD2` writer - Port1 Receive Input 2 Select"]
-pub type RXD2_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CONP1_SPEC, 2, O, RXD2_A>;
-impl<'a, const O: u8> RXD2_W<'a, O> {
+pub type RXD2_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RXD2_A>;
+impl<'a, REG, const O: u8> RXD2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Data input RXD2A is selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RXD2_A::VALUE1)
     }
     #[doc = "Data input RXD2B is selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RXD2_A::VALUE2)
     }
     #[doc = "Data input RXD2C is selected"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(RXD2_A::VALUE3)
     }
     #[doc = "Data input RXD2D is selected"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(RXD2_A::VALUE4)
     }
 }
@@ -313,48 +293,52 @@ impl RXD3_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Data input RXD3A is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RXD3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Data input RXD3B is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RXD3_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Data input RXD3C is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == RXD3_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Data input RXD3D is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == RXD3_A::VALUE4
     }
 }
 #[doc = "Field `RXD3` writer - Port1 Receive Input 3 Select"]
-pub type RXD3_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CONP1_SPEC, 2, O, RXD3_A>;
-impl<'a, const O: u8> RXD3_W<'a, O> {
+pub type RXD3_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RXD3_A>;
+impl<'a, REG, const O: u8> RXD3_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Data input RXD3A is selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RXD3_A::VALUE1)
     }
     #[doc = "Data input RXD3B is selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RXD3_A::VALUE2)
     }
     #[doc = "Data input RXD3C is selected"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(RXD3_A::VALUE3)
     }
     #[doc = "Data input RXD3D is selected"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(RXD3_A::VALUE4)
     }
 }
@@ -394,48 +378,52 @@ impl RX_ERR_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Data input RX_ERRA is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RX_ERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Data input RX_ERRB is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RX_ERR_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Data input RX_ERRC is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == RX_ERR_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Data input RX_ERRD is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == RX_ERR_A::VALUE4
     }
 }
 #[doc = "Field `RX_ERR` writer - Port1 MII RX ERROR Input Select"]
-pub type RX_ERR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CONP1_SPEC, 2, O, RX_ERR_A>;
-impl<'a, const O: u8> RX_ERR_W<'a, O> {
+pub type RX_ERR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RX_ERR_A>;
+impl<'a, REG, const O: u8> RX_ERR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Data input RX_ERRA is selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RX_ERR_A::VALUE1)
     }
     #[doc = "Data input RX_ERRB is selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RX_ERR_A::VALUE2)
     }
     #[doc = "Data input RX_ERRC is selected"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(RX_ERR_A::VALUE3)
     }
     #[doc = "Data input RX_ERRD is selected"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(RX_ERR_A::VALUE4)
     }
 }
@@ -475,48 +463,52 @@ impl RX_DV_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Data input RX_DVA is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RX_DV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Data input RX_DVB is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RX_DV_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Data input RX_DVC is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == RX_DV_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Data input RX_DVD is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == RX_DV_A::VALUE4
     }
 }
 #[doc = "Field `RX_DV` writer - Port1 MII RX DV Input Select"]
-pub type RX_DV_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CONP1_SPEC, 2, O, RX_DV_A>;
-impl<'a, const O: u8> RX_DV_W<'a, O> {
+pub type RX_DV_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RX_DV_A>;
+impl<'a, REG, const O: u8> RX_DV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Data input RX_DVA is selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RX_DV_A::VALUE1)
     }
     #[doc = "Data input RX_DVB is selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RX_DV_A::VALUE2)
     }
     #[doc = "Data input RX_DVC is selected"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(RX_DV_A::VALUE3)
     }
     #[doc = "Data input RX_DVD is selected"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(RX_DV_A::VALUE4)
     }
 }
@@ -556,48 +548,52 @@ impl RX_CLK_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Clock input RX_CLKA"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RX_CLK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Clock input RX_CLKB"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RX_CLK_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Clock input RX_CLKC"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == RX_CLK_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Clock input RX_CLKD"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == RX_CLK_A::VALUE4
     }
 }
 #[doc = "Field `RX_CLK` writer - Port1 MII RX Clock Input Select"]
-pub type RX_CLK_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CONP1_SPEC, 2, O, RX_CLK_A>;
-impl<'a, const O: u8> RX_CLK_W<'a, O> {
+pub type RX_CLK_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RX_CLK_A>;
+impl<'a, REG, const O: u8> RX_CLK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Clock input RX_CLKA"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RX_CLK_A::VALUE1)
     }
     #[doc = "Clock input RX_CLKB"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RX_CLK_A::VALUE2)
     }
     #[doc = "Clock input RX_CLKC"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(RX_CLK_A::VALUE3)
     }
     #[doc = "Clock input RX_CLKD"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(RX_CLK_A::VALUE4)
     }
 }
@@ -637,48 +633,52 @@ impl LINK_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "PHY LINKA"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LINK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "PHY LINKB"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LINK_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "PHY LINKC"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == LINK_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "PHY LINKD"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == LINK_A::VALUE4
     }
 }
 #[doc = "Field `LINK` writer - Port1 PHY Link Input Select"]
-pub type LINK_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CONP1_SPEC, 2, O, LINK_A>;
-impl<'a, const O: u8> LINK_W<'a, O> {
+pub type LINK_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LINK_A>;
+impl<'a, REG, const O: u8> LINK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "PHY LINKA"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LINK_A::VALUE1)
     }
     #[doc = "PHY LINKB"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LINK_A::VALUE2)
     }
     #[doc = "PHY LINKC"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(LINK_A::VALUE3)
     }
     #[doc = "PHY LINKD"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(LINK_A::VALUE4)
     }
 }
@@ -718,48 +718,52 @@ impl TX_CLK_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Clock input TX_CLKA"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TX_CLK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Clock input TX_CLKB"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TX_CLK_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Clock input TX_CLKC"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == TX_CLK_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Clock input TX_CLKD"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == TX_CLK_A::VALUE4
     }
 }
 #[doc = "Field `TX_CLK` writer - Port1 MII TX Clock Input Select"]
-pub type TX_CLK_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CONP1_SPEC, 2, O, TX_CLK_A>;
-impl<'a, const O: u8> TX_CLK_W<'a, O> {
+pub type TX_CLK_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, TX_CLK_A>;
+impl<'a, REG, const O: u8> TX_CLK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Clock input TX_CLKA"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TX_CLK_A::VALUE1)
     }
     #[doc = "Clock input TX_CLKB"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TX_CLK_A::VALUE2)
     }
     #[doc = "Clock input TX_CLKC"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(TX_CLK_A::VALUE3)
     }
     #[doc = "Clock input TX_CLKD"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(TX_CLK_A::VALUE4)
     }
 }
@@ -799,48 +803,52 @@ impl TX_SHIFT_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "0 ns"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TX_SHIFT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "10 ns"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TX_SHIFT_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "20 ns"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == TX_SHIFT_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "30 ns"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == TX_SHIFT_A::VALUE4
     }
 }
 #[doc = "Field `TX_SHIFT` writer - Port1 Manual TX Shift configuration"]
-pub type TX_SHIFT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CONP1_SPEC, 2, O, TX_SHIFT_A>;
-impl<'a, const O: u8> TX_SHIFT_W<'a, O> {
+pub type TX_SHIFT_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, TX_SHIFT_A>;
+impl<'a, REG, const O: u8> TX_SHIFT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "0 ns"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TX_SHIFT_A::VALUE1)
     }
     #[doc = "10 ns"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TX_SHIFT_A::VALUE2)
     }
     #[doc = "20 ns"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(TX_SHIFT_A::VALUE3)
     }
     #[doc = "30 ns"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(TX_SHIFT_A::VALUE4)
     }
 }
@@ -900,82 +908,79 @@ impl W {
     #[doc = "Bits 0:1 - Port1 Receive Input 0 Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rxd0(&mut self) -> RXD0_W<0> {
+    pub fn rxd0(&mut self) -> RXD0_W<CONP1_SPEC, 0> {
         RXD0_W::new(self)
     }
     #[doc = "Bits 2:3 - Port1 Receive Input 1 Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rxd1(&mut self) -> RXD1_W<2> {
+    pub fn rxd1(&mut self) -> RXD1_W<CONP1_SPEC, 2> {
         RXD1_W::new(self)
     }
     #[doc = "Bits 4:5 - Port1 Receive Input 2 Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rxd2(&mut self) -> RXD2_W<4> {
+    pub fn rxd2(&mut self) -> RXD2_W<CONP1_SPEC, 4> {
         RXD2_W::new(self)
     }
     #[doc = "Bits 6:7 - Port1 Receive Input 3 Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rxd3(&mut self) -> RXD3_W<6> {
+    pub fn rxd3(&mut self) -> RXD3_W<CONP1_SPEC, 6> {
         RXD3_W::new(self)
     }
     #[doc = "Bits 8:9 - Port1 MII RX ERROR Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_err(&mut self) -> RX_ERR_W<8> {
+    pub fn rx_err(&mut self) -> RX_ERR_W<CONP1_SPEC, 8> {
         RX_ERR_W::new(self)
     }
     #[doc = "Bits 10:11 - Port1 MII RX DV Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_dv(&mut self) -> RX_DV_W<10> {
+    pub fn rx_dv(&mut self) -> RX_DV_W<CONP1_SPEC, 10> {
         RX_DV_W::new(self)
     }
     #[doc = "Bits 12:13 - Port1 MII RX Clock Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_clk(&mut self) -> RX_CLK_W<12> {
+    pub fn rx_clk(&mut self) -> RX_CLK_W<CONP1_SPEC, 12> {
         RX_CLK_W::new(self)
     }
     #[doc = "Bits 16:17 - Port1 PHY Link Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn link(&mut self) -> LINK_W<16> {
+    pub fn link(&mut self) -> LINK_W<CONP1_SPEC, 16> {
         LINK_W::new(self)
     }
     #[doc = "Bits 28:29 - Port1 MII TX Clock Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_clk(&mut self) -> TX_CLK_W<28> {
+    pub fn tx_clk(&mut self) -> TX_CLK_W<CONP1_SPEC, 28> {
         TX_CLK_W::new(self)
     }
     #[doc = "Bits 30:31 - Port1 Manual TX Shift configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_shift(&mut self) -> TX_SHIFT_W<30> {
+    pub fn tx_shift(&mut self) -> TX_SHIFT_W<CONP1_SPEC, 30> {
         TX_SHIFT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EtherCAT 0 Port 1 Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [conp1](index.html) module"]
+#[doc = "EtherCAT 0 Port 1 Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`conp1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`conp1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CONP1_SPEC;
 impl crate::RegisterSpec for CONP1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [conp1::R](R) reader structure"]
-impl crate::Readable for CONP1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [conp1::W](W) writer structure"]
+#[doc = "`read()` method returns [`conp1::R`](R) reader structure"]
+impl crate::Readable for CONP1_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`conp1::W`](W) writer structure"]
 impl crate::Writable for CONP1_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

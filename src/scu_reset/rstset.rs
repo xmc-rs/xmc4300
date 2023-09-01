@@ -1,24 +1,5 @@
 #[doc = "Register `RSTSET` writer"]
-pub struct W(crate::W<RSTSET_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RSTSET_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RSTSET_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RSTSET_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<RSTSET_SPEC>;
 #[doc = "Set Hibernate Wake-up Reset Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HIBWK_AW {
@@ -34,16 +15,19 @@ impl From<HIBWK_AW> for bool {
     }
 }
 #[doc = "Field `HIBWK` writer - Set Hibernate Wake-up Reset Status"]
-pub type HIBWK_W<'a, const O: u8> = crate::BitWriter<'a, RSTSET_SPEC, O, HIBWK_AW>;
-impl<'a, const O: u8> HIBWK_W<'a, O> {
+pub type HIBWK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HIBWK_AW>;
+impl<'a, REG, const O: u8> HIBWK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(HIBWK_AW::CONST_0)
     }
     #[doc = "Assert reset status bit"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(HIBWK_AW::CONST_1)
     }
 }
@@ -62,16 +46,19 @@ impl From<HIBRS_AW> for bool {
     }
 }
 #[doc = "Field `HIBRS` writer - Set Hibernate Reset"]
-pub type HIBRS_W<'a, const O: u8> = crate::BitWriter<'a, RSTSET_SPEC, O, HIBRS_AW>;
-impl<'a, const O: u8> HIBRS_W<'a, O> {
+pub type HIBRS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HIBRS_AW>;
+impl<'a, REG, const O: u8> HIBRS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(HIBRS_AW::CONST_0)
     }
     #[doc = "Assert reset"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(HIBRS_AW::CONST_1)
     }
 }
@@ -90,16 +77,19 @@ impl From<LCKEN_AW> for bool {
     }
 }
 #[doc = "Field `LCKEN` writer - Enable Lockup Reset"]
-pub type LCKEN_W<'a, const O: u8> = crate::BitWriter<'a, RSTSET_SPEC, O, LCKEN_AW>;
-impl<'a, const O: u8> LCKEN_W<'a, O> {
+pub type LCKEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LCKEN_AW>;
+impl<'a, REG, const O: u8> LCKEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(LCKEN_AW::CONST_0)
     }
     #[doc = "Enable reset when Lockup gets asserted"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(LCKEN_AW::CONST_1)
     }
 }
@@ -118,16 +108,19 @@ impl From<ECAT0RS_AW> for bool {
     }
 }
 #[doc = "Field `ECAT0RS` writer - ECAT0 Reset Status Information"]
-pub type ECAT0RS_W<'a, const O: u8> = crate::BitWriter<'a, RSTSET_SPEC, O, ECAT0RS_AW>;
-impl<'a, const O: u8> ECAT0RS_W<'a, O> {
+pub type ECAT0RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ECAT0RS_AW>;
+impl<'a, REG, const O: u8> ECAT0RS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(ECAT0RS_AW::CONST_0)
     }
     #[doc = "Assert reset status bit"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(ECAT0RS_AW::CONST_1)
     }
 }
@@ -135,42 +128,41 @@ impl W {
     #[doc = "Bit 8 - Set Hibernate Wake-up Reset Status"]
     #[inline(always)]
     #[must_use]
-    pub fn hibwk(&mut self) -> HIBWK_W<8> {
+    pub fn hibwk(&mut self) -> HIBWK_W<RSTSET_SPEC, 8> {
         HIBWK_W::new(self)
     }
     #[doc = "Bit 9 - Set Hibernate Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn hibrs(&mut self) -> HIBRS_W<9> {
+    pub fn hibrs(&mut self) -> HIBRS_W<RSTSET_SPEC, 9> {
         HIBRS_W::new(self)
     }
     #[doc = "Bit 10 - Enable Lockup Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn lcken(&mut self) -> LCKEN_W<10> {
+    pub fn lcken(&mut self) -> LCKEN_W<RSTSET_SPEC, 10> {
         LCKEN_W::new(self)
     }
     #[doc = "Bit 12 - ECAT0 Reset Status Information"]
     #[inline(always)]
     #[must_use]
-    pub fn ecat0rs(&mut self) -> ECAT0RS_W<12> {
+    pub fn ecat0rs(&mut self) -> ECAT0RS_W<RSTSET_SPEC, 12> {
         ECAT0RS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "RCU Reset Set Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rstset](index.html) module"]
+#[doc = "RCU Reset Set Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rstset::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RSTSET_SPEC;
 impl crate::RegisterSpec for RSTSET_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [rstset::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`rstset::W`](W) writer structure"]
 impl crate::Writable for RSTSET_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

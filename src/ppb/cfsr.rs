@@ -1,39 +1,7 @@
 #[doc = "Register `CFSR` reader"]
-pub struct R(crate::R<CFSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CFSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CFSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CFSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CFSR_SPEC>;
 #[doc = "Register `CFSR` writer"]
-pub struct W(crate::W<CFSR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CFSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CFSR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CFSR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CFSR_SPEC>;
 #[doc = "Field `IACCVIOL` reader - Instruction access violation flag"]
 pub type IACCVIOL_R = crate::BitReader<IACCVIOL_A>;
 #[doc = "Instruction access violation flag\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl IACCVIOL_R {
             true => IACCVIOL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no instruction access violation fault"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == IACCVIOL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "the processor attempted an instruction fetch from a location that does not permit execution."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == IACCVIOL_A::VALUE2
     }
 }
 #[doc = "Field `IACCVIOL` writer - Instruction access violation flag"]
-pub type IACCVIOL_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, IACCVIOL_A>;
-impl<'a, const O: u8> IACCVIOL_W<'a, O> {
+pub type IACCVIOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IACCVIOL_A>;
+impl<'a, REG, const O: u8> IACCVIOL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no instruction access violation fault"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(IACCVIOL_A::VALUE1)
     }
     #[doc = "the processor attempted an instruction fetch from a location that does not permit execution."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(IACCVIOL_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl DACCVIOL_R {
             true => DACCVIOL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no data access violation fault"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DACCVIOL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "the processor attempted a load or store at a location that does not permit the operation."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DACCVIOL_A::VALUE2
     }
 }
 #[doc = "Field `DACCVIOL` writer - Data access violation flag"]
-pub type DACCVIOL_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, DACCVIOL_A>;
-impl<'a, const O: u8> DACCVIOL_W<'a, O> {
+pub type DACCVIOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DACCVIOL_A>;
+impl<'a, REG, const O: u8> DACCVIOL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no data access violation fault"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DACCVIOL_A::VALUE1)
     }
     #[doc = "the processor attempted a load or store at a location that does not permit the operation."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DACCVIOL_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl MUNSTKERR_R {
             true => MUNSTKERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no unstacking fault"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MUNSTKERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "unstack for an exception return has caused one or more access violations."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MUNSTKERR_A::VALUE2
     }
 }
 #[doc = "Field `MUNSTKERR` writer - MemManage fault on unstacking for a return from exception"]
-pub type MUNSTKERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, MUNSTKERR_A>;
-impl<'a, const O: u8> MUNSTKERR_W<'a, O> {
+pub type MUNSTKERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MUNSTKERR_A>;
+impl<'a, REG, const O: u8> MUNSTKERR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no unstacking fault"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MUNSTKERR_A::VALUE1)
     }
     #[doc = "unstack for an exception return has caused one or more access violations."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MUNSTKERR_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl MSTKERR_R {
             true => MSTKERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no stacking fault"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSTKERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "stacking for an exception entry has caused one or more access violations."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSTKERR_A::VALUE2
     }
 }
 #[doc = "Field `MSTKERR` writer - MemManage fault on stacking for exception entry"]
-pub type MSTKERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, MSTKERR_A>;
-impl<'a, const O: u8> MSTKERR_W<'a, O> {
+pub type MSTKERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MSTKERR_A>;
+impl<'a, REG, const O: u8> MSTKERR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no stacking fault"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MSTKERR_A::VALUE1)
     }
     #[doc = "stacking for an exception entry has caused one or more access violations."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MSTKERR_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl MLSPERR_R {
             true => MLSPERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No MemManage fault occurred during floating-point lazy state preservation"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MLSPERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A MemManage fault occurred during floating-point lazy state preservation"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MLSPERR_A::VALUE2
     }
 }
 #[doc = "Field `MLSPERR` writer - MemManage fault during floating point lazy state preservation"]
-pub type MLSPERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, MLSPERR_A>;
-impl<'a, const O: u8> MLSPERR_W<'a, O> {
+pub type MLSPERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MLSPERR_A>;
+impl<'a, REG, const O: u8> MLSPERR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No MemManage fault occurred during floating-point lazy state preservation"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MLSPERR_A::VALUE1)
     }
     #[doc = "A MemManage fault occurred during floating-point lazy state preservation"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MLSPERR_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl MMARVALID_R {
             true => MMARVALID_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "value in MMAR is not a valid fault address"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MMARVALID_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "MMAR holds a valid fault address."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MMARVALID_A::VALUE2
     }
 }
 #[doc = "Field `MMARVALID` writer - MemManage Fault Address Register (MMFAR) valid flag"]
-pub type MMARVALID_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, MMARVALID_A>;
-impl<'a, const O: u8> MMARVALID_W<'a, O> {
+pub type MMARVALID_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MMARVALID_A>;
+impl<'a, REG, const O: u8> MMARVALID_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "value in MMAR is not a valid fault address"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MMARVALID_A::VALUE1)
     }
     #[doc = "MMAR holds a valid fault address."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MMARVALID_A::VALUE2)
     }
 }
@@ -359,28 +345,31 @@ impl IBUSERR_R {
             true => IBUSERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no instruction bus error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == IBUSERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "instruction bus error."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == IBUSERR_A::VALUE2
     }
 }
 #[doc = "Field `IBUSERR` writer - Instruction bus error"]
-pub type IBUSERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, IBUSERR_A>;
-impl<'a, const O: u8> IBUSERR_W<'a, O> {
+pub type IBUSERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IBUSERR_A>;
+impl<'a, REG, const O: u8> IBUSERR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no instruction bus error"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(IBUSERR_A::VALUE1)
     }
     #[doc = "instruction bus error."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(IBUSERR_A::VALUE2)
     }
 }
@@ -409,28 +398,31 @@ impl PRECISERR_R {
             true => PRECISERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no precise data bus error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PRECISERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "a data bus error has occurred, and the PC value stacked for the exception return points to the instruction that caused the fault."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PRECISERR_A::VALUE2
     }
 }
 #[doc = "Field `PRECISERR` writer - Precise data bus error"]
-pub type PRECISERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, PRECISERR_A>;
-impl<'a, const O: u8> PRECISERR_W<'a, O> {
+pub type PRECISERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PRECISERR_A>;
+impl<'a, REG, const O: u8> PRECISERR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no precise data bus error"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PRECISERR_A::VALUE1)
     }
     #[doc = "a data bus error has occurred, and the PC value stacked for the exception return points to the instruction that caused the fault."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PRECISERR_A::VALUE2)
     }
 }
@@ -459,28 +451,31 @@ impl IMPRECISERR_R {
             true => IMPRECISERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no imprecise data bus error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == IMPRECISERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "a data bus error has occurred, but the return address in the stack frame is not related to the instruction that caused the error."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == IMPRECISERR_A::VALUE2
     }
 }
 #[doc = "Field `IMPRECISERR` writer - Imprecise data bus error"]
-pub type IMPRECISERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, IMPRECISERR_A>;
-impl<'a, const O: u8> IMPRECISERR_W<'a, O> {
+pub type IMPRECISERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IMPRECISERR_A>;
+impl<'a, REG, const O: u8> IMPRECISERR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no imprecise data bus error"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(IMPRECISERR_A::VALUE1)
     }
     #[doc = "a data bus error has occurred, but the return address in the stack frame is not related to the instruction that caused the error."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(IMPRECISERR_A::VALUE2)
     }
 }
@@ -509,28 +504,31 @@ impl UNSTKERR_R {
             true => UNSTKERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no unstacking fault"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == UNSTKERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "stacking for an exception entry has caused one or more BusFaults."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == UNSTKERR_A::VALUE2
     }
 }
 #[doc = "Field `UNSTKERR` writer - BusFault on unstacking for a return from exception"]
-pub type UNSTKERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, UNSTKERR_A>;
-impl<'a, const O: u8> UNSTKERR_W<'a, O> {
+pub type UNSTKERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, UNSTKERR_A>;
+impl<'a, REG, const O: u8> UNSTKERR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no unstacking fault"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(UNSTKERR_A::VALUE1)
     }
     #[doc = "stacking for an exception entry has caused one or more BusFaults."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(UNSTKERR_A::VALUE2)
     }
 }
@@ -559,28 +557,31 @@ impl STKERR_R {
             true => STKERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no stacking fault"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == STKERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "stacking for an exception entry has caused one or more BusFaults."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == STKERR_A::VALUE2
     }
 }
 #[doc = "Field `STKERR` writer - BusFault on stacking for exception entry"]
-pub type STKERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, STKERR_A>;
-impl<'a, const O: u8> STKERR_W<'a, O> {
+pub type STKERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STKERR_A>;
+impl<'a, REG, const O: u8> STKERR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no stacking fault"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(STKERR_A::VALUE1)
     }
     #[doc = "stacking for an exception entry has caused one or more BusFaults."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(STKERR_A::VALUE2)
     }
 }
@@ -609,28 +610,31 @@ impl LSPERR_R {
             true => LSPERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No bus fault occurred during floating-point lazy state preservation."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LSPERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A bus fault occurred during floating-point lazy state preservation"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LSPERR_A::VALUE2
     }
 }
 #[doc = "Field `LSPERR` writer - BusFault during floating point lazy state preservation"]
-pub type LSPERR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, LSPERR_A>;
-impl<'a, const O: u8> LSPERR_W<'a, O> {
+pub type LSPERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LSPERR_A>;
+impl<'a, REG, const O: u8> LSPERR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No bus fault occurred during floating-point lazy state preservation."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LSPERR_A::VALUE1)
     }
     #[doc = "A bus fault occurred during floating-point lazy state preservation"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LSPERR_A::VALUE2)
     }
 }
@@ -659,28 +663,31 @@ impl BFARVALID_R {
             true => BFARVALID_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "value in BFAR is not a valid fault address"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFARVALID_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "BFAR holds a valid fault address."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFARVALID_A::VALUE2
     }
 }
 #[doc = "Field `BFARVALID` writer - BusFault Address Register (BFAR) valid flag"]
-pub type BFARVALID_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, BFARVALID_A>;
-impl<'a, const O: u8> BFARVALID_W<'a, O> {
+pub type BFARVALID_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFARVALID_A>;
+impl<'a, REG, const O: u8> BFARVALID_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "value in BFAR is not a valid fault address"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFARVALID_A::VALUE1)
     }
     #[doc = "BFAR holds a valid fault address."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFARVALID_A::VALUE2)
     }
 }
@@ -709,28 +716,31 @@ impl UNDEFINSTR_R {
             true => UNDEFINSTR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no undefined instruction UsageFault"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == UNDEFINSTR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "the processor has attempted to execute an undefined instruction."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == UNDEFINSTR_A::VALUE2
     }
 }
 #[doc = "Field `UNDEFINSTR` writer - Undefined instruction UsageFault"]
-pub type UNDEFINSTR_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, UNDEFINSTR_A>;
-impl<'a, const O: u8> UNDEFINSTR_W<'a, O> {
+pub type UNDEFINSTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, UNDEFINSTR_A>;
+impl<'a, REG, const O: u8> UNDEFINSTR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no undefined instruction UsageFault"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(UNDEFINSTR_A::VALUE1)
     }
     #[doc = "the processor has attempted to execute an undefined instruction."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(UNDEFINSTR_A::VALUE2)
     }
 }
@@ -759,28 +769,31 @@ impl INVSTATE_R {
             true => INVSTATE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no invalid state UsageFault"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == INVSTATE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "the processor has attempted to execute an instruction that makes illegal use of the EPSR."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == INVSTATE_A::VALUE2
     }
 }
 #[doc = "Field `INVSTATE` writer - Invalid state UsageFault"]
-pub type INVSTATE_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, INVSTATE_A>;
-impl<'a, const O: u8> INVSTATE_W<'a, O> {
+pub type INVSTATE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, INVSTATE_A>;
+impl<'a, REG, const O: u8> INVSTATE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no invalid state UsageFault"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(INVSTATE_A::VALUE1)
     }
     #[doc = "the processor has attempted to execute an instruction that makes illegal use of the EPSR."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(INVSTATE_A::VALUE2)
     }
 }
@@ -809,28 +822,31 @@ impl INVPC_R {
             true => INVPC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no invalid PC load UsageFault"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == INVPC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "the processor has attempted an illegal load of EXC_RETURN to the PC, as a result of an invalid context, or an invalid EXC_RETURN value."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == INVPC_A::VALUE2
     }
 }
 #[doc = "Field `INVPC` writer - Invalid PC load UsageFault"]
-pub type INVPC_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, INVPC_A>;
-impl<'a, const O: u8> INVPC_W<'a, O> {
+pub type INVPC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, INVPC_A>;
+impl<'a, REG, const O: u8> INVPC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no invalid PC load UsageFault"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(INVPC_A::VALUE1)
     }
     #[doc = "the processor has attempted an illegal load of EXC_RETURN to the PC, as a result of an invalid context, or an invalid EXC_RETURN value."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(INVPC_A::VALUE2)
     }
 }
@@ -859,28 +875,31 @@ impl NOCP_R {
             true => NOCP_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no UsageFault caused by attempting to access a coprocessor"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == NOCP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "the processor has attempted to access a coprocessor."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == NOCP_A::VALUE2
     }
 }
 #[doc = "Field `NOCP` writer - No coprocessor UsageFault"]
-pub type NOCP_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, NOCP_A>;
-impl<'a, const O: u8> NOCP_W<'a, O> {
+pub type NOCP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NOCP_A>;
+impl<'a, REG, const O: u8> NOCP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no UsageFault caused by attempting to access a coprocessor"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(NOCP_A::VALUE1)
     }
     #[doc = "the processor has attempted to access a coprocessor."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(NOCP_A::VALUE2)
     }
 }
@@ -909,28 +928,31 @@ impl UNALIGNED_R {
             true => UNALIGNED_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no unaligned access fault, or unaligned access trapping not enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == UNALIGNED_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "the processor has made an unaligned memory access."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == UNALIGNED_A::VALUE2
     }
 }
 #[doc = "Field `UNALIGNED` writer - Unaligned access UsageFault"]
-pub type UNALIGNED_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, UNALIGNED_A>;
-impl<'a, const O: u8> UNALIGNED_W<'a, O> {
+pub type UNALIGNED_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, UNALIGNED_A>;
+impl<'a, REG, const O: u8> UNALIGNED_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no unaligned access fault, or unaligned access trapping not enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(UNALIGNED_A::VALUE1)
     }
     #[doc = "the processor has made an unaligned memory access."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(UNALIGNED_A::VALUE2)
     }
 }
@@ -959,28 +981,31 @@ impl DIVBYZERO_R {
             true => DIVBYZERO_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no divide by zero fault, or divide by zero trapping not enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DIVBYZERO_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "the processor has executed an SDIV or UDIV instruction with a divisor of 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DIVBYZERO_A::VALUE2
     }
 }
 #[doc = "Field `DIVBYZERO` writer - Divide by zero UsageFault"]
-pub type DIVBYZERO_W<'a, const O: u8> = crate::BitWriter<'a, CFSR_SPEC, O, DIVBYZERO_A>;
-impl<'a, const O: u8> DIVBYZERO_W<'a, O> {
+pub type DIVBYZERO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DIVBYZERO_A>;
+impl<'a, REG, const O: u8> DIVBYZERO_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no divide by zero fault, or divide by zero trapping not enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DIVBYZERO_A::VALUE1)
     }
     #[doc = "the processor has executed an SDIV or UDIV instruction with a divisor of 0"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DIVBYZERO_A::VALUE2)
     }
 }
@@ -1085,136 +1110,133 @@ impl W {
     #[doc = "Bit 0 - Instruction access violation flag"]
     #[inline(always)]
     #[must_use]
-    pub fn iaccviol(&mut self) -> IACCVIOL_W<0> {
+    pub fn iaccviol(&mut self) -> IACCVIOL_W<CFSR_SPEC, 0> {
         IACCVIOL_W::new(self)
     }
     #[doc = "Bit 1 - Data access violation flag"]
     #[inline(always)]
     #[must_use]
-    pub fn daccviol(&mut self) -> DACCVIOL_W<1> {
+    pub fn daccviol(&mut self) -> DACCVIOL_W<CFSR_SPEC, 1> {
         DACCVIOL_W::new(self)
     }
     #[doc = "Bit 3 - MemManage fault on unstacking for a return from exception"]
     #[inline(always)]
     #[must_use]
-    pub fn munstkerr(&mut self) -> MUNSTKERR_W<3> {
+    pub fn munstkerr(&mut self) -> MUNSTKERR_W<CFSR_SPEC, 3> {
         MUNSTKERR_W::new(self)
     }
     #[doc = "Bit 4 - MemManage fault on stacking for exception entry"]
     #[inline(always)]
     #[must_use]
-    pub fn mstkerr(&mut self) -> MSTKERR_W<4> {
+    pub fn mstkerr(&mut self) -> MSTKERR_W<CFSR_SPEC, 4> {
         MSTKERR_W::new(self)
     }
     #[doc = "Bit 5 - MemManage fault during floating point lazy state preservation"]
     #[inline(always)]
     #[must_use]
-    pub fn mlsperr(&mut self) -> MLSPERR_W<5> {
+    pub fn mlsperr(&mut self) -> MLSPERR_W<CFSR_SPEC, 5> {
         MLSPERR_W::new(self)
     }
     #[doc = "Bit 7 - MemManage Fault Address Register (MMFAR) valid flag"]
     #[inline(always)]
     #[must_use]
-    pub fn mmarvalid(&mut self) -> MMARVALID_W<7> {
+    pub fn mmarvalid(&mut self) -> MMARVALID_W<CFSR_SPEC, 7> {
         MMARVALID_W::new(self)
     }
     #[doc = "Bit 8 - Instruction bus error"]
     #[inline(always)]
     #[must_use]
-    pub fn ibuserr(&mut self) -> IBUSERR_W<8> {
+    pub fn ibuserr(&mut self) -> IBUSERR_W<CFSR_SPEC, 8> {
         IBUSERR_W::new(self)
     }
     #[doc = "Bit 9 - Precise data bus error"]
     #[inline(always)]
     #[must_use]
-    pub fn preciserr(&mut self) -> PRECISERR_W<9> {
+    pub fn preciserr(&mut self) -> PRECISERR_W<CFSR_SPEC, 9> {
         PRECISERR_W::new(self)
     }
     #[doc = "Bit 10 - Imprecise data bus error"]
     #[inline(always)]
     #[must_use]
-    pub fn impreciserr(&mut self) -> IMPRECISERR_W<10> {
+    pub fn impreciserr(&mut self) -> IMPRECISERR_W<CFSR_SPEC, 10> {
         IMPRECISERR_W::new(self)
     }
     #[doc = "Bit 11 - BusFault on unstacking for a return from exception"]
     #[inline(always)]
     #[must_use]
-    pub fn unstkerr(&mut self) -> UNSTKERR_W<11> {
+    pub fn unstkerr(&mut self) -> UNSTKERR_W<CFSR_SPEC, 11> {
         UNSTKERR_W::new(self)
     }
     #[doc = "Bit 12 - BusFault on stacking for exception entry"]
     #[inline(always)]
     #[must_use]
-    pub fn stkerr(&mut self) -> STKERR_W<12> {
+    pub fn stkerr(&mut self) -> STKERR_W<CFSR_SPEC, 12> {
         STKERR_W::new(self)
     }
     #[doc = "Bit 13 - BusFault during floating point lazy state preservation"]
     #[inline(always)]
     #[must_use]
-    pub fn lsperr(&mut self) -> LSPERR_W<13> {
+    pub fn lsperr(&mut self) -> LSPERR_W<CFSR_SPEC, 13> {
         LSPERR_W::new(self)
     }
     #[doc = "Bit 15 - BusFault Address Register (BFAR) valid flag"]
     #[inline(always)]
     #[must_use]
-    pub fn bfarvalid(&mut self) -> BFARVALID_W<15> {
+    pub fn bfarvalid(&mut self) -> BFARVALID_W<CFSR_SPEC, 15> {
         BFARVALID_W::new(self)
     }
     #[doc = "Bit 16 - Undefined instruction UsageFault"]
     #[inline(always)]
     #[must_use]
-    pub fn undefinstr(&mut self) -> UNDEFINSTR_W<16> {
+    pub fn undefinstr(&mut self) -> UNDEFINSTR_W<CFSR_SPEC, 16> {
         UNDEFINSTR_W::new(self)
     }
     #[doc = "Bit 17 - Invalid state UsageFault"]
     #[inline(always)]
     #[must_use]
-    pub fn invstate(&mut self) -> INVSTATE_W<17> {
+    pub fn invstate(&mut self) -> INVSTATE_W<CFSR_SPEC, 17> {
         INVSTATE_W::new(self)
     }
     #[doc = "Bit 18 - Invalid PC load UsageFault"]
     #[inline(always)]
     #[must_use]
-    pub fn invpc(&mut self) -> INVPC_W<18> {
+    pub fn invpc(&mut self) -> INVPC_W<CFSR_SPEC, 18> {
         INVPC_W::new(self)
     }
     #[doc = "Bit 19 - No coprocessor UsageFault"]
     #[inline(always)]
     #[must_use]
-    pub fn nocp(&mut self) -> NOCP_W<19> {
+    pub fn nocp(&mut self) -> NOCP_W<CFSR_SPEC, 19> {
         NOCP_W::new(self)
     }
     #[doc = "Bit 24 - Unaligned access UsageFault"]
     #[inline(always)]
     #[must_use]
-    pub fn unaligned(&mut self) -> UNALIGNED_W<24> {
+    pub fn unaligned(&mut self) -> UNALIGNED_W<CFSR_SPEC, 24> {
         UNALIGNED_W::new(self)
     }
     #[doc = "Bit 25 - Divide by zero UsageFault"]
     #[inline(always)]
     #[must_use]
-    pub fn divbyzero(&mut self) -> DIVBYZERO_W<25> {
+    pub fn divbyzero(&mut self) -> DIVBYZERO_W<CFSR_SPEC, 25> {
         DIVBYZERO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Configurable Fault Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cfsr](index.html) module"]
+#[doc = "Configurable Fault Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfsr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfsr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CFSR_SPEC;
 impl crate::RegisterSpec for CFSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cfsr::R](R) reader structure"]
-impl crate::Readable for CFSR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cfsr::W](W) writer structure"]
+#[doc = "`read()` method returns [`cfsr::R`](R) reader structure"]
+impl crate::Readable for CFSR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cfsr::W`](W) writer structure"]
 impl crate::Writable for CFSR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

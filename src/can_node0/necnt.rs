@@ -1,51 +1,19 @@
 #[doc = "Register `NECNT` reader"]
-pub struct R(crate::R<NECNT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NECNT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NECNT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NECNT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<NECNT_SPEC>;
 #[doc = "Register `NECNT` writer"]
-pub struct W(crate::W<NECNT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<NECNT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<NECNT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<NECNT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<NECNT_SPEC>;
 #[doc = "Field `REC` reader - Receive Error Counter"]
 pub type REC_R = crate::FieldReader;
 #[doc = "Field `REC` writer - Receive Error Counter"]
-pub type REC_W<'a, const O: u8> = crate::FieldWriter<'a, NECNT_SPEC, 8, O>;
+pub type REC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `TEC` reader - Transmit Error Counter"]
 pub type TEC_R = crate::FieldReader;
 #[doc = "Field `TEC` writer - Transmit Error Counter"]
-pub type TEC_W<'a, const O: u8> = crate::FieldWriter<'a, NECNT_SPEC, 8, O>;
+pub type TEC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `EWRNLVL` reader - Error Warning Level"]
 pub type EWRNLVL_R = crate::FieldReader;
 #[doc = "Field `EWRNLVL` writer - Error Warning Level"]
-pub type EWRNLVL_W<'a, const O: u8> = crate::FieldWriter<'a, NECNT_SPEC, 8, O>;
+pub type EWRNLVL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `LETD` reader - Last Error Transfer Direction"]
 pub type LETD_R = crate::BitReader<LETD_A>;
 #[doc = "Last Error Transfer Direction\n\nValue on reset: 0"]
@@ -71,12 +39,12 @@ impl LETD_R {
             true => LETD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The last error occurred while the CAN node x was receiver (REC has been incremented)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LETD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The last error occurred while the CAN node x was transmitter (TEC has been incremented)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LETD_A::VALUE2
@@ -107,12 +75,12 @@ impl LEINC_R {
             true => LEINC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The last error led to an error counter increment of 1."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LEINC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The last error led to an error counter increment of 8."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LEINC_A::VALUE2
@@ -149,40 +117,37 @@ impl W {
     #[doc = "Bits 0:7 - Receive Error Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn rec(&mut self) -> REC_W<0> {
+    pub fn rec(&mut self) -> REC_W<NECNT_SPEC, 0> {
         REC_W::new(self)
     }
     #[doc = "Bits 8:15 - Transmit Error Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn tec(&mut self) -> TEC_W<8> {
+    pub fn tec(&mut self) -> TEC_W<NECNT_SPEC, 8> {
         TEC_W::new(self)
     }
     #[doc = "Bits 16:23 - Error Warning Level"]
     #[inline(always)]
     #[must_use]
-    pub fn ewrnlvl(&mut self) -> EWRNLVL_W<16> {
+    pub fn ewrnlvl(&mut self) -> EWRNLVL_W<NECNT_SPEC, 16> {
         EWRNLVL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Node Error Counter Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [necnt](index.html) module"]
+#[doc = "Node Error Counter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`necnt::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`necnt::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct NECNT_SPEC;
 impl crate::RegisterSpec for NECNT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [necnt::R](R) reader structure"]
-impl crate::Readable for NECNT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [necnt::W](W) writer structure"]
+#[doc = "`read()` method returns [`necnt::R`](R) reader structure"]
+impl crate::Readable for NECNT_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`necnt::W`](W) writer structure"]
 impl crate::Writable for NECNT_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

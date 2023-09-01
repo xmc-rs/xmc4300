@@ -1,18 +1,5 @@
 #[doc = "Register `PRSTAT2` reader"]
-pub struct R(crate::R<PRSTAT2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PRSTAT2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PRSTAT2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PRSTAT2_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PRSTAT2_SPEC>;
 #[doc = "Field `WDTRS` reader - WDT Reset Status"]
 pub type WDTRS_R = crate::BitReader<WDTRS_A>;
 #[doc = "WDT Reset Status\n\nValue on reset: 1"]
@@ -38,12 +25,12 @@ impl WDTRS_R {
             true => WDTRS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == WDTRS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == WDTRS_A::CONST_1
@@ -74,12 +61,12 @@ impl ETH0RS_R {
             true => ETH0RS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ETH0RS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ETH0RS_A::CONST_1
@@ -110,12 +97,12 @@ impl DMA0RS_R {
             true => DMA0RS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == DMA0RS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == DMA0RS_A::CONST_1
@@ -146,12 +133,12 @@ impl FCERS_R {
             true => FCERS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == FCERS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == FCERS_A::CONST_1
@@ -182,12 +169,12 @@ impl USBRS_R {
             true => USBRS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == USBRS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == USBRS_A::CONST_1
@@ -218,12 +205,12 @@ impl ECAT0RS_R {
             true => ECAT0RS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ECAT0RS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ECAT0RS_A::CONST_1
@@ -261,15 +248,13 @@ impl R {
         ECAT0RS_R::new(((self.bits >> 10) & 1) != 0)
     }
 }
-#[doc = "RCU Peripheral 2 Reset Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prstat2](index.html) module"]
+#[doc = "RCU Peripheral 2 Reset Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`prstat2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRSTAT2_SPEC;
 impl crate::RegisterSpec for PRSTAT2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [prstat2::R](R) reader structure"]
-impl crate::Readable for PRSTAT2_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`prstat2::R`](R) reader structure"]
+impl crate::Readable for PRSTAT2_SPEC {}
 #[doc = "`reset()` method sets PRSTAT2 to value 0x04f6"]
 impl crate::Resettable for PRSTAT2_SPEC {
     const RESET_VALUE: Self::Ux = 0x04f6;

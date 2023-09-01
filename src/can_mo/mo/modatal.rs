@@ -1,55 +1,23 @@
 #[doc = "Register `MODATAL` reader"]
-pub struct R(crate::R<MODATAL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MODATAL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MODATAL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MODATAL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MODATAL_SPEC>;
 #[doc = "Register `MODATAL` writer"]
-pub struct W(crate::W<MODATAL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MODATAL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MODATAL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MODATAL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MODATAL_SPEC>;
 #[doc = "Field `DB0` reader - Data Byte 0 of Message Object n"]
 pub type DB0_R = crate::FieldReader;
 #[doc = "Field `DB0` writer - Data Byte 0 of Message Object n"]
-pub type DB0_W<'a, const O: u8> = crate::FieldWriter<'a, MODATAL_SPEC, 8, O>;
+pub type DB0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `DB1` reader - Data Byte 1 of Message Object n"]
 pub type DB1_R = crate::FieldReader;
 #[doc = "Field `DB1` writer - Data Byte 1 of Message Object n"]
-pub type DB1_W<'a, const O: u8> = crate::FieldWriter<'a, MODATAL_SPEC, 8, O>;
+pub type DB1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `DB2` reader - Data Byte 2 of Message Object n"]
 pub type DB2_R = crate::FieldReader;
 #[doc = "Field `DB2` writer - Data Byte 2 of Message Object n"]
-pub type DB2_W<'a, const O: u8> = crate::FieldWriter<'a, MODATAL_SPEC, 8, O>;
+pub type DB2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `DB3` reader - Data Byte 3 of Message Object n"]
 pub type DB3_R = crate::FieldReader;
 #[doc = "Field `DB3` writer - Data Byte 3 of Message Object n"]
-pub type DB3_W<'a, const O: u8> = crate::FieldWriter<'a, MODATAL_SPEC, 8, O>;
+pub type DB3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Data Byte 0 of Message Object n"]
     #[inline(always)]
@@ -76,46 +44,43 @@ impl W {
     #[doc = "Bits 0:7 - Data Byte 0 of Message Object n"]
     #[inline(always)]
     #[must_use]
-    pub fn db0(&mut self) -> DB0_W<0> {
+    pub fn db0(&mut self) -> DB0_W<MODATAL_SPEC, 0> {
         DB0_W::new(self)
     }
     #[doc = "Bits 8:15 - Data Byte 1 of Message Object n"]
     #[inline(always)]
     #[must_use]
-    pub fn db1(&mut self) -> DB1_W<8> {
+    pub fn db1(&mut self) -> DB1_W<MODATAL_SPEC, 8> {
         DB1_W::new(self)
     }
     #[doc = "Bits 16:23 - Data Byte 2 of Message Object n"]
     #[inline(always)]
     #[must_use]
-    pub fn db2(&mut self) -> DB2_W<16> {
+    pub fn db2(&mut self) -> DB2_W<MODATAL_SPEC, 16> {
         DB2_W::new(self)
     }
     #[doc = "Bits 24:31 - Data Byte 3 of Message Object n"]
     #[inline(always)]
     #[must_use]
-    pub fn db3(&mut self) -> DB3_W<24> {
+    pub fn db3(&mut self) -> DB3_W<MODATAL_SPEC, 24> {
         DB3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Message Object Data Register Low\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [modatal](index.html) module"]
+#[doc = "Message Object Data Register Low\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`modatal::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`modatal::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MODATAL_SPEC;
 impl crate::RegisterSpec for MODATAL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [modatal::R](R) reader structure"]
-impl crate::Readable for MODATAL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [modatal::W](W) writer structure"]
+#[doc = "`read()` method returns [`modatal::R`](R) reader structure"]
+impl crate::Readable for MODATAL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`modatal::W`](W) writer structure"]
 impl crate::Writable for MODATAL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

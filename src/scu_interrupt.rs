@@ -14,27 +14,33 @@ pub struct RegisterBlock {
     #[doc = "0x14 - SCU Service Request Mask"]
     pub nmireqen: NMIREQEN,
 }
-#[doc = "SRSTAT (r) register accessor: an alias for `Reg<SRSTAT_SPEC>`"]
+#[doc = "SRSTAT (r) register accessor: SCU Service Request Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`srstat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`srstat`]
+module"]
 pub type SRSTAT = crate::Reg<srstat::SRSTAT_SPEC>;
 #[doc = "SCU Service Request Status"]
 pub mod srstat;
-#[doc = "SRRAW (r) register accessor: an alias for `Reg<SRRAW_SPEC>`"]
+#[doc = "SRRAW (r) register accessor: SCU Raw Service Request Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`srraw::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`srraw`]
+module"]
 pub type SRRAW = crate::Reg<srraw::SRRAW_SPEC>;
 #[doc = "SCU Raw Service Request Status"]
 pub mod srraw;
-#[doc = "SRMSK (rw) register accessor: an alias for `Reg<SRMSK_SPEC>`"]
+#[doc = "SRMSK (rw) register accessor: SCU Service Request Mask\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`srmsk::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`srmsk::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`srmsk`]
+module"]
 pub type SRMSK = crate::Reg<srmsk::SRMSK_SPEC>;
 #[doc = "SCU Service Request Mask"]
 pub mod srmsk;
-#[doc = "SRCLR (w) register accessor: an alias for `Reg<SRCLR_SPEC>`"]
+#[doc = "SRCLR (w) register accessor: SCU Service Request Clear\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`srclr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`srclr`]
+module"]
 pub type SRCLR = crate::Reg<srclr::SRCLR_SPEC>;
 #[doc = "SCU Service Request Clear"]
 pub mod srclr;
-#[doc = "SRSET (w) register accessor: an alias for `Reg<SRSET_SPEC>`"]
+#[doc = "SRSET (w) register accessor: SCU Service Request Set\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`srset::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`srset`]
+module"]
 pub type SRSET = crate::Reg<srset::SRSET_SPEC>;
 #[doc = "SCU Service Request Set"]
 pub mod srset;
-#[doc = "NMIREQEN (rw) register accessor: an alias for `Reg<NMIREQEN_SPEC>`"]
+#[doc = "NMIREQEN (rw) register accessor: SCU Service Request Mask\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`nmireqen::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`nmireqen::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`nmireqen`]
+module"]
 pub type NMIREQEN = crate::Reg<nmireqen::NMIREQEN_SPEC>;
 #[doc = "SCU Service Request Mask"]
 pub mod nmireqen;

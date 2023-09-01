@@ -1,18 +1,5 @@
 #[doc = "Register `EEP_CONF` reader"]
-pub struct R(crate::R<EEP_CONF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EEP_CONF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EEP_CONF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EEP_CONF_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EEP_CONF_SPEC>;
 #[doc = "Field `TO_PDI` reader - EEPROM control is offered to PDI"]
 pub type TO_PDI_R = crate::BitReader<TO_PDI_A>;
 #[doc = "EEPROM control is offered to PDI\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl TO_PDI_R {
             true => TO_PDI_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TO_PDI_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Yes (PDI has EEPROM control)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TO_PDI_A::VALUE2
@@ -74,12 +61,12 @@ impl FORCE_R {
             true => FORCE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Do not change Bit 501.0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FORCE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reset Bit 501.0 to 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FORCE_A::VALUE2
@@ -97,15 +84,13 @@ impl R {
         FORCE_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
-#[doc = "EEPROM Configuration\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [eep_conf](index.html) module"]
+#[doc = "EEPROM Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`eep_conf::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EEP_CONF_SPEC;
 impl crate::RegisterSpec for EEP_CONF_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [eep_conf::R](R) reader structure"]
-impl crate::Readable for EEP_CONF_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`eep_conf::R`](R) reader structure"]
+impl crate::Readable for EEP_CONF_SPEC {}
 #[doc = "`reset()` method sets EEP_CONF to value 0"]
 impl crate::Resettable for EEP_CONF_SPEC {
     const RESET_VALUE: Self::Ux = 0;

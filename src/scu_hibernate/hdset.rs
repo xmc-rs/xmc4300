@@ -1,24 +1,5 @@
 #[doc = "Register `HDSET` writer"]
-pub struct W(crate::W<HDSET_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HDSET_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HDSET_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HDSET_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HDSET_SPEC>;
 #[doc = "Wake-up Pin Event Positive Edge Set\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EPEV_AW {
@@ -34,16 +15,19 @@ impl From<EPEV_AW> for bool {
     }
 }
 #[doc = "Field `EPEV` writer - Wake-up Pin Event Positive Edge Set"]
-pub type EPEV_W<'a, const O: u8> = crate::BitWriter<'a, HDSET_SPEC, O, EPEV_AW>;
-impl<'a, const O: u8> EPEV_W<'a, O> {
+pub type EPEV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EPEV_AW>;
+impl<'a, REG, const O: u8> EPEV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(EPEV_AW::CONST_0)
     }
     #[doc = "Set wake-up event"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(EPEV_AW::CONST_1)
     }
 }
@@ -62,16 +46,19 @@ impl From<ENEV_AW> for bool {
     }
 }
 #[doc = "Field `ENEV` writer - Wake-up Pin Event Negative Edge Set"]
-pub type ENEV_W<'a, const O: u8> = crate::BitWriter<'a, HDSET_SPEC, O, ENEV_AW>;
-impl<'a, const O: u8> ENEV_W<'a, O> {
+pub type ENEV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENEV_AW>;
+impl<'a, REG, const O: u8> ENEV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(ENEV_AW::CONST_0)
     }
     #[doc = "Set wake-up event"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(ENEV_AW::CONST_1)
     }
 }
@@ -90,16 +77,19 @@ impl From<RTCEV_AW> for bool {
     }
 }
 #[doc = "Field `RTCEV` writer - RTC Event Set"]
-pub type RTCEV_W<'a, const O: u8> = crate::BitWriter<'a, HDSET_SPEC, O, RTCEV_AW>;
-impl<'a, const O: u8> RTCEV_W<'a, O> {
+pub type RTCEV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTCEV_AW>;
+impl<'a, REG, const O: u8> RTCEV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(RTCEV_AW::CONST_0)
     }
     #[doc = "Set wake-up event"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(RTCEV_AW::CONST_1)
     }
 }
@@ -118,16 +108,19 @@ impl From<ULPWDG_AW> for bool {
     }
 }
 #[doc = "Field `ULPWDG` writer - ULP WDG Alarm Set"]
-pub type ULPWDG_W<'a, const O: u8> = crate::BitWriter<'a, HDSET_SPEC, O, ULPWDG_AW>;
-impl<'a, const O: u8> ULPWDG_W<'a, O> {
+pub type ULPWDG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ULPWDG_AW>;
+impl<'a, REG, const O: u8> ULPWDG_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(ULPWDG_AW::CONST_0)
     }
     #[doc = "Set watchdog alarm"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(ULPWDG_AW::CONST_1)
     }
 }
@@ -135,42 +128,41 @@ impl W {
     #[doc = "Bit 0 - Wake-up Pin Event Positive Edge Set"]
     #[inline(always)]
     #[must_use]
-    pub fn epev(&mut self) -> EPEV_W<0> {
+    pub fn epev(&mut self) -> EPEV_W<HDSET_SPEC, 0> {
         EPEV_W::new(self)
     }
     #[doc = "Bit 1 - Wake-up Pin Event Negative Edge Set"]
     #[inline(always)]
     #[must_use]
-    pub fn enev(&mut self) -> ENEV_W<1> {
+    pub fn enev(&mut self) -> ENEV_W<HDSET_SPEC, 1> {
         ENEV_W::new(self)
     }
     #[doc = "Bit 2 - RTC Event Set"]
     #[inline(always)]
     #[must_use]
-    pub fn rtcev(&mut self) -> RTCEV_W<2> {
+    pub fn rtcev(&mut self) -> RTCEV_W<HDSET_SPEC, 2> {
         RTCEV_W::new(self)
     }
     #[doc = "Bit 3 - ULP WDG Alarm Set"]
     #[inline(always)]
     #[must_use]
-    pub fn ulpwdg(&mut self) -> ULPWDG_W<3> {
+    pub fn ulpwdg(&mut self) -> ULPWDG_W<HDSET_SPEC, 3> {
         ULPWDG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Hibernate Domain Status Set Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hdset](index.html) module"]
+#[doc = "Hibernate Domain Status Set Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdset::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HDSET_SPEC;
 impl crate::RegisterSpec for HDSET_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [hdset::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`hdset::W`](W) writer structure"]
 impl crate::Writable for HDSET_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

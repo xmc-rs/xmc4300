@@ -1,39 +1,7 @@
 #[doc = "Register `PPS` reader"]
-pub struct R(crate::R<PPS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PPS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PPS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PPS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PPS_SPEC>;
 #[doc = "Register `PPS` writer"]
-pub struct W(crate::W<PPS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PPS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PPS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PPS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PPS_SPEC>;
 #[doc = "Field `PPS0` reader - Port n Pin Power Save Bit 0"]
 pub type PPS0_R = crate::BitReader<PPS0_A>;
 #[doc = "Port n Pin Power Save Bit 0\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl PPS0_R {
             true => PPS0_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS0_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS0_A::CONST_1
     }
 }
 #[doc = "Field `PPS0` writer - Port n Pin Power Save Bit 0"]
-pub type PPS0_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS0_A>;
-impl<'a, const O: u8> PPS0_W<'a, O> {
+pub type PPS0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS0_A>;
+impl<'a, REG, const O: u8> PPS0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS0_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS0_A::CONST_1)
     }
 }
@@ -109,28 +80,31 @@ impl PPS1_R {
             true => PPS1_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS1_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS1_A::CONST_1
     }
 }
 #[doc = "Field `PPS1` writer - Port n Pin Power Save Bit 1"]
-pub type PPS1_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS1_A>;
-impl<'a, const O: u8> PPS1_W<'a, O> {
+pub type PPS1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS1_A>;
+impl<'a, REG, const O: u8> PPS1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS1_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS1_A::CONST_1)
     }
 }
@@ -159,28 +133,31 @@ impl PPS2_R {
             true => PPS2_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS2_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS2_A::CONST_1
     }
 }
 #[doc = "Field `PPS2` writer - Port n Pin Power Save Bit 2"]
-pub type PPS2_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS2_A>;
-impl<'a, const O: u8> PPS2_W<'a, O> {
+pub type PPS2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS2_A>;
+impl<'a, REG, const O: u8> PPS2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS2_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS2_A::CONST_1)
     }
 }
@@ -209,28 +186,31 @@ impl PPS3_R {
             true => PPS3_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS3_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS3_A::CONST_1
     }
 }
 #[doc = "Field `PPS3` writer - Port n Pin Power Save Bit 3"]
-pub type PPS3_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS3_A>;
-impl<'a, const O: u8> PPS3_W<'a, O> {
+pub type PPS3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS3_A>;
+impl<'a, REG, const O: u8> PPS3_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS3_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS3_A::CONST_1)
     }
 }
@@ -259,28 +239,31 @@ impl PPS4_R {
             true => PPS4_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS4_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS4_A::CONST_1
     }
 }
 #[doc = "Field `PPS4` writer - Port n Pin Power Save Bit 4"]
-pub type PPS4_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS4_A>;
-impl<'a, const O: u8> PPS4_W<'a, O> {
+pub type PPS4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS4_A>;
+impl<'a, REG, const O: u8> PPS4_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS4_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS4_A::CONST_1)
     }
 }
@@ -309,28 +292,31 @@ impl PPS5_R {
             true => PPS5_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS5_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS5_A::CONST_1
     }
 }
 #[doc = "Field `PPS5` writer - Port n Pin Power Save Bit 5"]
-pub type PPS5_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS5_A>;
-impl<'a, const O: u8> PPS5_W<'a, O> {
+pub type PPS5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS5_A>;
+impl<'a, REG, const O: u8> PPS5_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS5_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS5_A::CONST_1)
     }
 }
@@ -359,28 +345,31 @@ impl PPS6_R {
             true => PPS6_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS6_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS6_A::CONST_1
     }
 }
 #[doc = "Field `PPS6` writer - Port n Pin Power Save Bit 6"]
-pub type PPS6_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS6_A>;
-impl<'a, const O: u8> PPS6_W<'a, O> {
+pub type PPS6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS6_A>;
+impl<'a, REG, const O: u8> PPS6_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS6_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS6_A::CONST_1)
     }
 }
@@ -409,28 +398,31 @@ impl PPS7_R {
             true => PPS7_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS7_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS7_A::CONST_1
     }
 }
 #[doc = "Field `PPS7` writer - Port n Pin Power Save Bit 7"]
-pub type PPS7_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS7_A>;
-impl<'a, const O: u8> PPS7_W<'a, O> {
+pub type PPS7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS7_A>;
+impl<'a, REG, const O: u8> PPS7_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS7_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS7_A::CONST_1)
     }
 }
@@ -459,28 +451,31 @@ impl PPS8_R {
             true => PPS8_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS8_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS8_A::CONST_1
     }
 }
 #[doc = "Field `PPS8` writer - Port n Pin Power Save Bit 8"]
-pub type PPS8_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS8_A>;
-impl<'a, const O: u8> PPS8_W<'a, O> {
+pub type PPS8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS8_A>;
+impl<'a, REG, const O: u8> PPS8_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS8_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS8_A::CONST_1)
     }
 }
@@ -509,28 +504,31 @@ impl PPS9_R {
             true => PPS9_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS9_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS9_A::CONST_1
     }
 }
 #[doc = "Field `PPS9` writer - Port n Pin Power Save Bit 9"]
-pub type PPS9_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS9_A>;
-impl<'a, const O: u8> PPS9_W<'a, O> {
+pub type PPS9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS9_A>;
+impl<'a, REG, const O: u8> PPS9_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS9_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS9_A::CONST_1)
     }
 }
@@ -559,28 +557,31 @@ impl PPS10_R {
             true => PPS10_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS10_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS10_A::CONST_1
     }
 }
 #[doc = "Field `PPS10` writer - Port n Pin Power Save Bit 10"]
-pub type PPS10_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS10_A>;
-impl<'a, const O: u8> PPS10_W<'a, O> {
+pub type PPS10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS10_A>;
+impl<'a, REG, const O: u8> PPS10_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS10_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS10_A::CONST_1)
     }
 }
@@ -609,28 +610,31 @@ impl PPS11_R {
             true => PPS11_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS11_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS11_A::CONST_1
     }
 }
 #[doc = "Field `PPS11` writer - Port n Pin Power Save Bit 11"]
-pub type PPS11_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS11_A>;
-impl<'a, const O: u8> PPS11_W<'a, O> {
+pub type PPS11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS11_A>;
+impl<'a, REG, const O: u8> PPS11_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS11_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS11_A::CONST_1)
     }
 }
@@ -659,28 +663,31 @@ impl PPS12_R {
             true => PPS12_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS12_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS12_A::CONST_1
     }
 }
 #[doc = "Field `PPS12` writer - Port n Pin Power Save Bit 12"]
-pub type PPS12_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS12_A>;
-impl<'a, const O: u8> PPS12_W<'a, O> {
+pub type PPS12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS12_A>;
+impl<'a, REG, const O: u8> PPS12_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS12_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS12_A::CONST_1)
     }
 }
@@ -709,28 +716,31 @@ impl PPS13_R {
             true => PPS13_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS13_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS13_A::CONST_1
     }
 }
 #[doc = "Field `PPS13` writer - Port n Pin Power Save Bit 13"]
-pub type PPS13_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS13_A>;
-impl<'a, const O: u8> PPS13_W<'a, O> {
+pub type PPS13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS13_A>;
+impl<'a, REG, const O: u8> PPS13_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS13_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS13_A::CONST_1)
     }
 }
@@ -759,28 +769,31 @@ impl PPS14_R {
             true => PPS14_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS14_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS14_A::CONST_1
     }
 }
 #[doc = "Field `PPS14` writer - Port n Pin Power Save Bit 14"]
-pub type PPS14_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS14_A>;
-impl<'a, const O: u8> PPS14_W<'a, O> {
+pub type PPS14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS14_A>;
+impl<'a, REG, const O: u8> PPS14_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS14_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS14_A::CONST_1)
     }
 }
@@ -809,28 +822,31 @@ impl PPS15_R {
             true => PPS15_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPS15_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPS15_A::CONST_1
     }
 }
 #[doc = "Field `PPS15` writer - Port n Pin Power Save Bit 15"]
-pub type PPS15_W<'a, const O: u8> = crate::BitWriter<'a, PPS_SPEC, O, PPS15_A>;
-impl<'a, const O: u8> PPS15_W<'a, O> {
+pub type PPS15_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPS15_A>;
+impl<'a, REG, const O: u8> PPS15_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Pin Power Save of Pn.x is disabled."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPS15_A::CONST_0)
     }
     #[doc = "Pin Power Save of Pn.x is enabled."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPS15_A::CONST_1)
     }
 }
@@ -920,118 +936,115 @@ impl W {
     #[doc = "Bit 0 - Port n Pin Power Save Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn pps0(&mut self) -> PPS0_W<0> {
+    pub fn pps0(&mut self) -> PPS0_W<PPS_SPEC, 0> {
         PPS0_W::new(self)
     }
     #[doc = "Bit 1 - Port n Pin Power Save Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn pps1(&mut self) -> PPS1_W<1> {
+    pub fn pps1(&mut self) -> PPS1_W<PPS_SPEC, 1> {
         PPS1_W::new(self)
     }
     #[doc = "Bit 2 - Port n Pin Power Save Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn pps2(&mut self) -> PPS2_W<2> {
+    pub fn pps2(&mut self) -> PPS2_W<PPS_SPEC, 2> {
         PPS2_W::new(self)
     }
     #[doc = "Bit 3 - Port n Pin Power Save Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn pps3(&mut self) -> PPS3_W<3> {
+    pub fn pps3(&mut self) -> PPS3_W<PPS_SPEC, 3> {
         PPS3_W::new(self)
     }
     #[doc = "Bit 4 - Port n Pin Power Save Bit 4"]
     #[inline(always)]
     #[must_use]
-    pub fn pps4(&mut self) -> PPS4_W<4> {
+    pub fn pps4(&mut self) -> PPS4_W<PPS_SPEC, 4> {
         PPS4_W::new(self)
     }
     #[doc = "Bit 5 - Port n Pin Power Save Bit 5"]
     #[inline(always)]
     #[must_use]
-    pub fn pps5(&mut self) -> PPS5_W<5> {
+    pub fn pps5(&mut self) -> PPS5_W<PPS_SPEC, 5> {
         PPS5_W::new(self)
     }
     #[doc = "Bit 6 - Port n Pin Power Save Bit 6"]
     #[inline(always)]
     #[must_use]
-    pub fn pps6(&mut self) -> PPS6_W<6> {
+    pub fn pps6(&mut self) -> PPS6_W<PPS_SPEC, 6> {
         PPS6_W::new(self)
     }
     #[doc = "Bit 7 - Port n Pin Power Save Bit 7"]
     #[inline(always)]
     #[must_use]
-    pub fn pps7(&mut self) -> PPS7_W<7> {
+    pub fn pps7(&mut self) -> PPS7_W<PPS_SPEC, 7> {
         PPS7_W::new(self)
     }
     #[doc = "Bit 8 - Port n Pin Power Save Bit 8"]
     #[inline(always)]
     #[must_use]
-    pub fn pps8(&mut self) -> PPS8_W<8> {
+    pub fn pps8(&mut self) -> PPS8_W<PPS_SPEC, 8> {
         PPS8_W::new(self)
     }
     #[doc = "Bit 9 - Port n Pin Power Save Bit 9"]
     #[inline(always)]
     #[must_use]
-    pub fn pps9(&mut self) -> PPS9_W<9> {
+    pub fn pps9(&mut self) -> PPS9_W<PPS_SPEC, 9> {
         PPS9_W::new(self)
     }
     #[doc = "Bit 10 - Port n Pin Power Save Bit 10"]
     #[inline(always)]
     #[must_use]
-    pub fn pps10(&mut self) -> PPS10_W<10> {
+    pub fn pps10(&mut self) -> PPS10_W<PPS_SPEC, 10> {
         PPS10_W::new(self)
     }
     #[doc = "Bit 11 - Port n Pin Power Save Bit 11"]
     #[inline(always)]
     #[must_use]
-    pub fn pps11(&mut self) -> PPS11_W<11> {
+    pub fn pps11(&mut self) -> PPS11_W<PPS_SPEC, 11> {
         PPS11_W::new(self)
     }
     #[doc = "Bit 12 - Port n Pin Power Save Bit 12"]
     #[inline(always)]
     #[must_use]
-    pub fn pps12(&mut self) -> PPS12_W<12> {
+    pub fn pps12(&mut self) -> PPS12_W<PPS_SPEC, 12> {
         PPS12_W::new(self)
     }
     #[doc = "Bit 13 - Port n Pin Power Save Bit 13"]
     #[inline(always)]
     #[must_use]
-    pub fn pps13(&mut self) -> PPS13_W<13> {
+    pub fn pps13(&mut self) -> PPS13_W<PPS_SPEC, 13> {
         PPS13_W::new(self)
     }
     #[doc = "Bit 14 - Port n Pin Power Save Bit 14"]
     #[inline(always)]
     #[must_use]
-    pub fn pps14(&mut self) -> PPS14_W<14> {
+    pub fn pps14(&mut self) -> PPS14_W<PPS_SPEC, 14> {
         PPS14_W::new(self)
     }
     #[doc = "Bit 15 - Port n Pin Power Save Bit 15"]
     #[inline(always)]
     #[must_use]
-    pub fn pps15(&mut self) -> PPS15_W<15> {
+    pub fn pps15(&mut self) -> PPS15_W<PPS_SPEC, 15> {
         PPS15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Port 5 Pin Power Save Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pps](index.html) module"]
+#[doc = "Port 5 Pin Power Save Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pps::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pps::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PPS_SPEC;
 impl crate::RegisterSpec for PPS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pps::R](R) reader structure"]
-impl crate::Readable for PPS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pps::W](W) writer structure"]
+#[doc = "`read()` method returns [`pps::R`](R) reader structure"]
+impl crate::Readable for PPS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pps::W`](W) writer structure"]
 impl crate::Writable for PPS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

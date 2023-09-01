@@ -1,18 +1,5 @@
 #[doc = "Register `MMC_TRANSMIT_INTERRUPT` reader"]
-pub struct R(crate::R<MMC_TRANSMIT_INTERRUPT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MMC_TRANSMIT_INTERRUPT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MMC_TRANSMIT_INTERRUPT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MMC_TRANSMIT_INTERRUPT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MMC_TRANSMIT_INTERRUPT_SPEC>;
 #[doc = "Field `TXGBOCTIS` reader - MMC Transmit Good Bad Octet Counter Interrupt Status"]
 pub type TXGBOCTIS_R = crate::BitReader;
 #[doc = "Field `TXGBFRMIS` reader - MMC Transmit Good Bad Frame Counter Interrupt Status"]
@@ -197,15 +184,13 @@ impl R {
         TXOSIZEGFIS_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
-#[doc = "MMC Transmit Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mmc_transmit_interrupt](index.html) module"]
+#[doc = "MMC Transmit Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mmc_transmit_interrupt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MMC_TRANSMIT_INTERRUPT_SPEC;
 impl crate::RegisterSpec for MMC_TRANSMIT_INTERRUPT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mmc_transmit_interrupt::R](R) reader structure"]
-impl crate::Readable for MMC_TRANSMIT_INTERRUPT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`mmc_transmit_interrupt::R`](R) reader structure"]
+impl crate::Readable for MMC_TRANSMIT_INTERRUPT_SPEC {}
 #[doc = "`reset()` method sets MMC_TRANSMIT_INTERRUPT to value 0"]
 impl crate::Resettable for MMC_TRANSMIT_INTERRUPT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

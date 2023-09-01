@@ -1,47 +1,15 @@
 #[doc = "Register `GLOBCTL` reader"]
-pub struct R(crate::R<GLOBCTL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GLOBCTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GLOBCTL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GLOBCTL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GLOBCTL_SPEC>;
 #[doc = "Register `GLOBCTL` writer"]
-pub struct W(crate::W<GLOBCTL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<GLOBCTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<GLOBCTL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<GLOBCTL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<GLOBCTL_SPEC>;
 #[doc = "Field `TS_EN` reader - Touch-Sense Function Enable"]
 pub type TS_EN_R = crate::BitReader;
 #[doc = "Field `TS_EN` writer - Touch-Sense Function Enable"]
-pub type TS_EN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O>;
+pub type TS_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LD_EN` reader - LED Function Enable"]
 pub type LD_EN_R = crate::BitReader;
 #[doc = "Field `LD_EN` writer - LED Function Enable"]
-pub type LD_EN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O>;
+pub type LD_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CMTR` reader - Clock Master Disable"]
 pub type CMTR_R = crate::BitReader<CMTR_A>;
 #[doc = "Clock Master Disable\n\nValue on reset: 0"]
@@ -67,28 +35,31 @@ impl CMTR_R {
             true => CMTR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Kernel generates its own clock for LEDTS-counter based on SFR setting"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMTR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "LEDTS-counter takes its clock from another master kernel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMTR_A::VALUE2
     }
 }
 #[doc = "Field `CMTR` writer - Clock Master Disable"]
-pub type CMTR_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, CMTR_A>;
-impl<'a, const O: u8> CMTR_W<'a, O> {
+pub type CMTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMTR_A>;
+impl<'a, REG, const O: u8> CMTR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Kernel generates its own clock for LEDTS-counter based on SFR setting"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CMTR_A::VALUE1)
     }
     #[doc = "LEDTS-counter takes its clock from another master kernel"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CMTR_A::VALUE2)
     }
 }
@@ -117,28 +88,31 @@ impl ENSYNC_R {
             true => ENSYNC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No synchronization"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ENSYNC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Synchronization enabled on Kernel0 autoscan time period"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ENSYNC_A::VALUE2
     }
 }
 #[doc = "Field `ENSYNC` writer - Enable Autoscan Time Period Synchronization"]
-pub type ENSYNC_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, ENSYNC_A>;
-impl<'a, const O: u8> ENSYNC_W<'a, O> {
+pub type ENSYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENSYNC_A>;
+impl<'a, REG, const O: u8> ENSYNC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No synchronization"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ENSYNC_A::VALUE1)
     }
     #[doc = "Synchronization enabled on Kernel0 autoscan time period"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ENSYNC_A::VALUE2)
     }
 }
@@ -167,28 +141,31 @@ impl SUSCFG_R {
             true => SUSCFG_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore suspend request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SUSCFG_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable suspend according to request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SUSCFG_A::VALUE2
     }
 }
 #[doc = "Field `SUSCFG` writer - Suspend Request Configuration"]
-pub type SUSCFG_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, SUSCFG_A>;
-impl<'a, const O: u8> SUSCFG_W<'a, O> {
+pub type SUSCFG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SUSCFG_A>;
+impl<'a, REG, const O: u8> SUSCFG_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore suspend request"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SUSCFG_A::VALUE1)
     }
     #[doc = "Enable suspend according to request"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SUSCFG_A::VALUE2)
     }
 }
@@ -225,38 +202,42 @@ impl MASKVAL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Mask LSB bit"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MASKVAL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Mask 2 LSB bits"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MASKVAL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Mask 8 LSB bits"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == MASKVAL_A::VALUE3
     }
 }
 #[doc = "Field `MASKVAL` writer - Mask Number of LSB Bits for Event Validation"]
-pub type MASKVAL_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBCTL_SPEC, 3, O, MASKVAL_A>;
-impl<'a, const O: u8> MASKVAL_W<'a, O> {
+pub type MASKVAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, MASKVAL_A>;
+impl<'a, REG, const O: u8> MASKVAL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Mask LSB bit"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MASKVAL_A::VALUE1)
     }
     #[doc = "Mask 2 LSB bits"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MASKVAL_A::VALUE2)
     }
     #[doc = "Mask 8 LSB bits"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(MASKVAL_A::VALUE3)
     }
 }
@@ -285,28 +266,31 @@ impl FENVAL_R {
             true => FENVAL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FENVAL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FENVAL_A::VALUE2
     }
 }
 #[doc = "Field `FENVAL` writer - Enable (Extended) Time Frame Validation"]
-pub type FENVAL_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, FENVAL_A>;
-impl<'a, const O: u8> FENVAL_W<'a, O> {
+pub type FENVAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FENVAL_A>;
+impl<'a, REG, const O: u8> FENVAL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(FENVAL_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(FENVAL_A::VALUE2)
     }
 }
@@ -335,28 +319,31 @@ impl ITS_EN_R {
             true => ITS_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ITS_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ITS_EN_A::VALUE2
     }
 }
 #[doc = "Field `ITS_EN` writer - Enable Time Slice Interrupt"]
-pub type ITS_EN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, ITS_EN_A>;
-impl<'a, const O: u8> ITS_EN_W<'a, O> {
+pub type ITS_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ITS_EN_A>;
+impl<'a, REG, const O: u8> ITS_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ITS_EN_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ITS_EN_A::VALUE2)
     }
 }
@@ -385,28 +372,31 @@ impl ITF_EN_R {
             true => ITF_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ITF_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ITF_EN_A::VALUE2
     }
 }
 #[doc = "Field `ITF_EN` writer - Enable (Extended) Time Frame Interrupt"]
-pub type ITF_EN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, ITF_EN_A>;
-impl<'a, const O: u8> ITF_EN_W<'a, O> {
+pub type ITF_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ITF_EN_A>;
+impl<'a, REG, const O: u8> ITF_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ITF_EN_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ITF_EN_A::VALUE2)
     }
 }
@@ -435,35 +425,38 @@ impl ITP_EN_R {
             true => ITP_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ITP_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable (valid only for case of hardware-enabled pad turn control)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ITP_EN_A::VALUE2
     }
 }
 #[doc = "Field `ITP_EN` writer - Enable Autoscan Time Period Interrupt"]
-pub type ITP_EN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBCTL_SPEC, O, ITP_EN_A>;
-impl<'a, const O: u8> ITP_EN_W<'a, O> {
+pub type ITP_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ITP_EN_A>;
+impl<'a, REG, const O: u8> ITP_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ITP_EN_A::VALUE1)
     }
     #[doc = "Enable (valid only for case of hardware-enabled pad turn control)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ITP_EN_A::VALUE2)
     }
 }
 #[doc = "Field `CLK_PS` reader - LEDTS-Counter Clock Pre-Scale Factor"]
 pub type CLK_PS_R = crate::FieldReader<u16>;
 #[doc = "Field `CLK_PS` writer - LEDTS-Counter Clock Pre-Scale Factor"]
-pub type CLK_PS_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBCTL_SPEC, 16, O, u16>;
+pub type CLK_PS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 impl R {
     #[doc = "Bit 0 - Touch-Sense Function Enable"]
     #[inline(always)]
@@ -525,88 +518,85 @@ impl W {
     #[doc = "Bit 0 - Touch-Sense Function Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ts_en(&mut self) -> TS_EN_W<0> {
+    pub fn ts_en(&mut self) -> TS_EN_W<GLOBCTL_SPEC, 0> {
         TS_EN_W::new(self)
     }
     #[doc = "Bit 1 - LED Function Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ld_en(&mut self) -> LD_EN_W<1> {
+    pub fn ld_en(&mut self) -> LD_EN_W<GLOBCTL_SPEC, 1> {
         LD_EN_W::new(self)
     }
     #[doc = "Bit 2 - Clock Master Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmtr(&mut self) -> CMTR_W<2> {
+    pub fn cmtr(&mut self) -> CMTR_W<GLOBCTL_SPEC, 2> {
         CMTR_W::new(self)
     }
     #[doc = "Bit 3 - Enable Autoscan Time Period Synchronization"]
     #[inline(always)]
     #[must_use]
-    pub fn ensync(&mut self) -> ENSYNC_W<3> {
+    pub fn ensync(&mut self) -> ENSYNC_W<GLOBCTL_SPEC, 3> {
         ENSYNC_W::new(self)
     }
     #[doc = "Bit 8 - Suspend Request Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn suscfg(&mut self) -> SUSCFG_W<8> {
+    pub fn suscfg(&mut self) -> SUSCFG_W<GLOBCTL_SPEC, 8> {
         SUSCFG_W::new(self)
     }
     #[doc = "Bits 9:11 - Mask Number of LSB Bits for Event Validation"]
     #[inline(always)]
     #[must_use]
-    pub fn maskval(&mut self) -> MASKVAL_W<9> {
+    pub fn maskval(&mut self) -> MASKVAL_W<GLOBCTL_SPEC, 9> {
         MASKVAL_W::new(self)
     }
     #[doc = "Bit 12 - Enable (Extended) Time Frame Validation"]
     #[inline(always)]
     #[must_use]
-    pub fn fenval(&mut self) -> FENVAL_W<12> {
+    pub fn fenval(&mut self) -> FENVAL_W<GLOBCTL_SPEC, 12> {
         FENVAL_W::new(self)
     }
     #[doc = "Bit 13 - Enable Time Slice Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn its_en(&mut self) -> ITS_EN_W<13> {
+    pub fn its_en(&mut self) -> ITS_EN_W<GLOBCTL_SPEC, 13> {
         ITS_EN_W::new(self)
     }
     #[doc = "Bit 14 - Enable (Extended) Time Frame Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn itf_en(&mut self) -> ITF_EN_W<14> {
+    pub fn itf_en(&mut self) -> ITF_EN_W<GLOBCTL_SPEC, 14> {
         ITF_EN_W::new(self)
     }
     #[doc = "Bit 15 - Enable Autoscan Time Period Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn itp_en(&mut self) -> ITP_EN_W<15> {
+    pub fn itp_en(&mut self) -> ITP_EN_W<GLOBCTL_SPEC, 15> {
         ITP_EN_W::new(self)
     }
     #[doc = "Bits 16:31 - LEDTS-Counter Clock Pre-Scale Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_ps(&mut self) -> CLK_PS_W<16> {
+    pub fn clk_ps(&mut self) -> CLK_PS_W<GLOBCTL_SPEC, 16> {
         CLK_PS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Global Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [globctl](index.html) module"]
+#[doc = "Global Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`globctl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`globctl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GLOBCTL_SPEC;
 impl crate::RegisterSpec for GLOBCTL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [globctl::R](R) reader structure"]
-impl crate::Readable for GLOBCTL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [globctl::W](W) writer structure"]
+#[doc = "`read()` method returns [`globctl::R`](R) reader structure"]
+impl crate::Readable for GLOBCTL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`globctl::W`](W) writer structure"]
 impl crate::Writable for GLOBCTL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

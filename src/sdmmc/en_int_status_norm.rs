@@ -1,39 +1,7 @@
 #[doc = "Register `EN_INT_STATUS_NORM` reader"]
-pub struct R(crate::R<EN_INT_STATUS_NORM_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EN_INT_STATUS_NORM_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EN_INT_STATUS_NORM_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EN_INT_STATUS_NORM_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EN_INT_STATUS_NORM_SPEC>;
 #[doc = "Register `EN_INT_STATUS_NORM` writer"]
-pub struct W(crate::W<EN_INT_STATUS_NORM_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EN_INT_STATUS_NORM_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EN_INT_STATUS_NORM_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EN_INT_STATUS_NORM_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EN_INT_STATUS_NORM_SPEC>;
 #[doc = "Field `CMD_COMPLETE_EN` reader - Command Complete Status Enable"]
 pub type CMD_COMPLETE_EN_R = crate::BitReader<CMD_COMPLETE_EN_A>;
 #[doc = "Command Complete Status Enable\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl CMD_COMPLETE_EN_R {
             true => CMD_COMPLETE_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMD_COMPLETE_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMD_COMPLETE_EN_A::VALUE2
     }
 }
 #[doc = "Field `CMD_COMPLETE_EN` writer - Command Complete Status Enable"]
-pub type CMD_COMPLETE_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_NORM_SPEC, O, CMD_COMPLETE_EN_A>;
-impl<'a, const O: u8> CMD_COMPLETE_EN_W<'a, O> {
+pub type CMD_COMPLETE_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_COMPLETE_EN_A>;
+impl<'a, REG, const O: u8> CMD_COMPLETE_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_COMPLETE_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_COMPLETE_EN_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl TX_COMPLETE_EN_R {
             true => TX_COMPLETE_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TX_COMPLETE_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TX_COMPLETE_EN_A::VALUE2
     }
 }
 #[doc = "Field `TX_COMPLETE_EN` writer - Transfer Complete Status Enable"]
-pub type TX_COMPLETE_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_NORM_SPEC, O, TX_COMPLETE_EN_A>;
-impl<'a, const O: u8> TX_COMPLETE_EN_W<'a, O> {
+pub type TX_COMPLETE_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TX_COMPLETE_EN_A>;
+impl<'a, REG, const O: u8> TX_COMPLETE_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TX_COMPLETE_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TX_COMPLETE_EN_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl BLOCK_GAP_EVENT_EN_R {
             true => BLOCK_GAP_EVENT_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BLOCK_GAP_EVENT_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BLOCK_GAP_EVENT_EN_A::VALUE2
     }
 }
 #[doc = "Field `BLOCK_GAP_EVENT_EN` writer - Block Gap Event Status Enable"]
-pub type BLOCK_GAP_EVENT_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_NORM_SPEC, O, BLOCK_GAP_EVENT_EN_A>;
-impl<'a, const O: u8> BLOCK_GAP_EVENT_EN_W<'a, O> {
+pub type BLOCK_GAP_EVENT_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BLOCK_GAP_EVENT_EN_A>;
+impl<'a, REG, const O: u8> BLOCK_GAP_EVENT_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCK_GAP_EVENT_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BLOCK_GAP_EVENT_EN_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl BUFF_WRITE_READY_EN_R {
             true => BUFF_WRITE_READY_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUFF_WRITE_READY_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUFF_WRITE_READY_EN_A::VALUE2
     }
 }
 #[doc = "Field `BUFF_WRITE_READY_EN` writer - Buffer Write Ready Status Enable"]
-pub type BUFF_WRITE_READY_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_NORM_SPEC, O, BUFF_WRITE_READY_EN_A>;
-impl<'a, const O: u8> BUFF_WRITE_READY_EN_W<'a, O> {
+pub type BUFF_WRITE_READY_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BUFF_WRITE_READY_EN_A>;
+impl<'a, REG, const O: u8> BUFF_WRITE_READY_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BUFF_WRITE_READY_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BUFF_WRITE_READY_EN_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl BUFF_READ_READY_EN_R {
             true => BUFF_READ_READY_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUFF_READ_READY_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUFF_READ_READY_EN_A::VALUE2
     }
 }
 #[doc = "Field `BUFF_READ_READY_EN` writer - Buffer Read Ready Status Enable"]
-pub type BUFF_READ_READY_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_NORM_SPEC, O, BUFF_READ_READY_EN_A>;
-impl<'a, const O: u8> BUFF_READ_READY_EN_W<'a, O> {
+pub type BUFF_READ_READY_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BUFF_READ_READY_EN_A>;
+impl<'a, REG, const O: u8> BUFF_READ_READY_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BUFF_READ_READY_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BUFF_READ_READY_EN_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl CARD_INS_EN_R {
             true => CARD_INS_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_INS_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_INS_EN_A::VALUE2
     }
 }
 #[doc = "Field `CARD_INS_EN` writer - Card Insertion Status Enable"]
-pub type CARD_INS_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_NORM_SPEC, O, CARD_INS_EN_A>;
-impl<'a, const O: u8> CARD_INS_EN_W<'a, O> {
+pub type CARD_INS_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CARD_INS_EN_A>;
+impl<'a, REG, const O: u8> CARD_INS_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_INS_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_INS_EN_A::VALUE2)
     }
 }
@@ -359,28 +345,31 @@ impl CARD_REMOVAL_EN_R {
             true => CARD_REMOVAL_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_REMOVAL_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_REMOVAL_EN_A::VALUE2
     }
 }
 #[doc = "Field `CARD_REMOVAL_EN` writer - Card Removal Status Enable"]
-pub type CARD_REMOVAL_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_NORM_SPEC, O, CARD_REMOVAL_EN_A>;
-impl<'a, const O: u8> CARD_REMOVAL_EN_W<'a, O> {
+pub type CARD_REMOVAL_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CARD_REMOVAL_EN_A>;
+impl<'a, REG, const O: u8> CARD_REMOVAL_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_REMOVAL_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_REMOVAL_EN_A::VALUE2)
     }
 }
@@ -409,28 +398,31 @@ impl CARD_INT_EN_R {
             true => CARD_INT_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_INT_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_INT_EN_A::VALUE2
     }
 }
 #[doc = "Field `CARD_INT_EN` writer - Card Interrupt Status Enable"]
-pub type CARD_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_STATUS_NORM_SPEC, O, CARD_INT_EN_A>;
-impl<'a, const O: u8> CARD_INT_EN_W<'a, O> {
+pub type CARD_INT_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CARD_INT_EN_A>;
+impl<'a, REG, const O: u8> CARD_INT_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_INT_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CARD_INT_EN_A::VALUE2)
     }
 }
@@ -487,70 +479,67 @@ impl W {
     #[doc = "Bit 0 - Command Complete Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_complete_en(&mut self) -> CMD_COMPLETE_EN_W<0> {
+    pub fn cmd_complete_en(&mut self) -> CMD_COMPLETE_EN_W<EN_INT_STATUS_NORM_SPEC, 0> {
         CMD_COMPLETE_EN_W::new(self)
     }
     #[doc = "Bit 1 - Transfer Complete Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_complete_en(&mut self) -> TX_COMPLETE_EN_W<1> {
+    pub fn tx_complete_en(&mut self) -> TX_COMPLETE_EN_W<EN_INT_STATUS_NORM_SPEC, 1> {
         TX_COMPLETE_EN_W::new(self)
     }
     #[doc = "Bit 2 - Block Gap Event Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn block_gap_event_en(&mut self) -> BLOCK_GAP_EVENT_EN_W<2> {
+    pub fn block_gap_event_en(&mut self) -> BLOCK_GAP_EVENT_EN_W<EN_INT_STATUS_NORM_SPEC, 2> {
         BLOCK_GAP_EVENT_EN_W::new(self)
     }
     #[doc = "Bit 4 - Buffer Write Ready Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_write_ready_en(&mut self) -> BUFF_WRITE_READY_EN_W<4> {
+    pub fn buff_write_ready_en(&mut self) -> BUFF_WRITE_READY_EN_W<EN_INT_STATUS_NORM_SPEC, 4> {
         BUFF_WRITE_READY_EN_W::new(self)
     }
     #[doc = "Bit 5 - Buffer Read Ready Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn buff_read_ready_en(&mut self) -> BUFF_READ_READY_EN_W<5> {
+    pub fn buff_read_ready_en(&mut self) -> BUFF_READ_READY_EN_W<EN_INT_STATUS_NORM_SPEC, 5> {
         BUFF_READ_READY_EN_W::new(self)
     }
     #[doc = "Bit 6 - Card Insertion Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn card_ins_en(&mut self) -> CARD_INS_EN_W<6> {
+    pub fn card_ins_en(&mut self) -> CARD_INS_EN_W<EN_INT_STATUS_NORM_SPEC, 6> {
         CARD_INS_EN_W::new(self)
     }
     #[doc = "Bit 7 - Card Removal Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn card_removal_en(&mut self) -> CARD_REMOVAL_EN_W<7> {
+    pub fn card_removal_en(&mut self) -> CARD_REMOVAL_EN_W<EN_INT_STATUS_NORM_SPEC, 7> {
         CARD_REMOVAL_EN_W::new(self)
     }
     #[doc = "Bit 8 - Card Interrupt Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn card_int_en(&mut self) -> CARD_INT_EN_W<8> {
+    pub fn card_int_en(&mut self) -> CARD_INT_EN_W<EN_INT_STATUS_NORM_SPEC, 8> {
         CARD_INT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Normal Interrupt Status Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [en_int_status_norm](index.html) module"]
+#[doc = "Normal Interrupt Status Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`en_int_status_norm::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`en_int_status_norm::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EN_INT_STATUS_NORM_SPEC;
 impl crate::RegisterSpec for EN_INT_STATUS_NORM_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [en_int_status_norm::R](R) reader structure"]
-impl crate::Readable for EN_INT_STATUS_NORM_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [en_int_status_norm::W](W) writer structure"]
+#[doc = "`read()` method returns [`en_int_status_norm::R`](R) reader structure"]
+impl crate::Readable for EN_INT_STATUS_NORM_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`en_int_status_norm::W`](W) writer structure"]
 impl crate::Writable for EN_INT_STATUS_NORM_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

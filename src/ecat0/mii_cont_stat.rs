@@ -1,39 +1,7 @@
 #[doc = "Register `MII_CONT_STAT` reader"]
-pub struct R(crate::R<MII_CONT_STAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MII_CONT_STAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MII_CONT_STAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MII_CONT_STAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MII_CONT_STAT_SPEC>;
 #[doc = "Register `MII_CONT_STAT` writer"]
-pub struct W(crate::W<MII_CONT_STAT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MII_CONT_STAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MII_CONT_STAT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MII_CONT_STAT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MII_CONT_STAT_SPEC>;
 #[doc = "Field `W_EN` reader - Write enable"]
 pub type W_EN_R = crate::BitReader<W_EN_A>;
 #[doc = "Write enable\n\nValue on reset: 0"]
@@ -59,12 +27,12 @@ impl W_EN_R {
             true => W_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Write disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == W_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == W_EN_A::VALUE2
@@ -95,12 +63,12 @@ impl MIC_PDI_R {
             true => MIC_PDI_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Only ECAT control"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIC_PDI_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "PDI control possible"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIC_PDI_A::VALUE2
@@ -131,12 +99,12 @@ impl MI_LD_R {
             true => MI_LD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not available"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MI_LD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "MI link detection active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MI_LD_A::VALUE2
@@ -177,38 +145,42 @@ impl CMD_REG_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No command/MII idle (clear error bits)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMD_REG_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMD_REG_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Write"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CMD_REG_A::VALUE3
     }
 }
 #[doc = "Field `CMD_REG` writer - Command register"]
-pub type CMD_REG_W<'a, const O: u8> = crate::FieldWriter<'a, MII_CONT_STAT_SPEC, 2, O, CMD_REG_A>;
-impl<'a, const O: u8> CMD_REG_W<'a, O> {
+pub type CMD_REG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, CMD_REG_A>;
+impl<'a, REG, const O: u8> CMD_REG_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No command/MII idle (clear error bits)"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_REG_A::VALUE1)
     }
     #[doc = "Read"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_REG_A::VALUE2)
     }
     #[doc = "Write"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_REG_A::VALUE3)
     }
 }
@@ -237,12 +209,12 @@ impl ERROR_R {
             true => ERROR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Last Command was successful"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ERROR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Invalid command or write command without Write Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ERROR_A::VALUE2
@@ -273,12 +245,12 @@ impl BUSY_R {
             true => BUSY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "MI control state machine is idle"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUSY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "MI control state machine is active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUSY_A::VALUE2
@@ -325,28 +297,25 @@ impl W {
     #[doc = "Bits 8:9 - Command register"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_reg(&mut self) -> CMD_REG_W<8> {
+    pub fn cmd_reg(&mut self) -> CMD_REG_W<MII_CONT_STAT_SPEC, 8> {
         CMD_REG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "MII Management Control/Status\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mii_cont_stat](index.html) module"]
+#[doc = "MII Management Control/Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mii_cont_stat::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mii_cont_stat::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MII_CONT_STAT_SPEC;
 impl crate::RegisterSpec for MII_CONT_STAT_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [mii_cont_stat::R](R) reader structure"]
-impl crate::Readable for MII_CONT_STAT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mii_cont_stat::W](W) writer structure"]
+#[doc = "`read()` method returns [`mii_cont_stat::R`](R) reader structure"]
+impl crate::Readable for MII_CONT_STAT_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mii_cont_stat::W`](W) writer structure"]
 impl crate::Writable for MII_CONT_STAT_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

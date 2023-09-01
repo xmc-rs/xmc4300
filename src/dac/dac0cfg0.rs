@@ -1,43 +1,11 @@
 #[doc = "Register `DAC0CFG0` reader"]
-pub struct R(crate::R<DAC0CFG0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DAC0CFG0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DAC0CFG0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DAC0CFG0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DAC0CFG0_SPEC>;
 #[doc = "Register `DAC0CFG0` writer"]
-pub struct W(crate::W<DAC0CFG0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DAC0CFG0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DAC0CFG0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DAC0CFG0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DAC0CFG0_SPEC>;
 #[doc = "Field `FREQ` reader - Integer Frequency Divider Value"]
 pub type FREQ_R = crate::FieldReader<u32>;
 #[doc = "Field `FREQ` writer - Integer Frequency Divider Value"]
-pub type FREQ_W<'a, const O: u8> = crate::FieldWriter<'a, DAC0CFG0_SPEC, 20, O, u32>;
+pub type FREQ_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 20, O, u32>;
 #[doc = "Field `MODE` reader - Enables and Sets the Mode for DAC0"]
 pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "Enables and Sets the Mode for DAC0\n\nValue on reset: 0"]
@@ -86,88 +54,92 @@ impl MODE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "disable/switch-off DAC"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MODE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Single Value Mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MODE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Data Mode"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == MODE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Patgen Mode"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == MODE_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "Noise Mode"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == MODE_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "Ramp Mode"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == MODE_A::VALUE6
     }
-    #[doc = "Checks if the value of the field is `VALUE7`"]
+    #[doc = "na"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
         *self == MODE_A::VALUE7
     }
-    #[doc = "Checks if the value of the field is `VALUE8`"]
+    #[doc = "na"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
         *self == MODE_A::VALUE8
     }
 }
 #[doc = "Field `MODE` writer - Enables and Sets the Mode for DAC0"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DAC0CFG0_SPEC, 3, O, MODE_A>;
-impl<'a, const O: u8> MODE_W<'a, O> {
+pub type MODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, MODE_A>;
+impl<'a, REG, const O: u8> MODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "disable/switch-off DAC"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE1)
     }
     #[doc = "Single Value Mode"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE2)
     }
     #[doc = "Data Mode"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE3)
     }
     #[doc = "Patgen Mode"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE4)
     }
     #[doc = "Noise Mode"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE5)
     }
     #[doc = "Ramp Mode"]
     #[inline(always)]
-    pub fn value6(self) -> &'a mut W {
+    pub fn value6(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE6)
     }
     #[doc = "na"]
     #[inline(always)]
-    pub fn value7(self) -> &'a mut W {
+    pub fn value7(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE7)
     }
     #[doc = "na"]
     #[inline(always)]
-    pub fn value8(self) -> &'a mut W {
+    pub fn value8(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE8)
     }
 }
@@ -196,28 +168,31 @@ impl SIGN_R {
             true => SIGN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "DAC expects unsigned input data"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SIGN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "DAC expects signed input data"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SIGN_A::VALUE2
     }
 }
 #[doc = "Field `SIGN` writer - Selects Between Signed and Unsigned DAC0 Mode"]
-pub type SIGN_W<'a, const O: u8> = crate::BitWriter<'a, DAC0CFG0_SPEC, O, SIGN_A>;
-impl<'a, const O: u8> SIGN_W<'a, O> {
+pub type SIGN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIGN_A>;
+impl<'a, REG, const O: u8> SIGN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "DAC expects unsigned input data"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SIGN_A::VALUE1)
     }
     #[doc = "DAC expects signed input data"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SIGN_A::VALUE2)
     }
 }
@@ -248,12 +223,12 @@ impl FIFOEMP_R {
             true => FIFOEMP_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "FIFO not empty"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FIFOEMP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "FIFO empty"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FIFOEMP_A::VALUE2
@@ -284,12 +259,12 @@ impl FIFOFUL_R {
             true => FIFOFUL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "FIFO not full"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FIFOFUL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "FIFO full"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FIFOFUL_A::VALUE2
@@ -320,28 +295,31 @@ impl NEGATE_R {
             true => NEGATE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "DAC output not negated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == NEGATE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "DAC output negated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == NEGATE_A::VALUE2
     }
 }
 #[doc = "Field `NEGATE` writer - Negates the DAC0 output"]
-pub type NEGATE_W<'a, const O: u8> = crate::BitWriter<'a, DAC0CFG0_SPEC, O, NEGATE_A>;
-impl<'a, const O: u8> NEGATE_W<'a, O> {
+pub type NEGATE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NEGATE_A>;
+impl<'a, REG, const O: u8> NEGATE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "DAC output not negated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(NEGATE_A::VALUE1)
     }
     #[doc = "DAC output negated"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(NEGATE_A::VALUE2)
     }
 }
@@ -370,28 +348,31 @@ impl SIGNEN_R {
             true => SIGNEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SIGNEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SIGNEN_A::VALUE2
     }
 }
 #[doc = "Field `SIGNEN` writer - Enable Sign Output of DAC0 Pattern Generator"]
-pub type SIGNEN_W<'a, const O: u8> = crate::BitWriter<'a, DAC0CFG0_SPEC, O, SIGNEN_A>;
-impl<'a, const O: u8> SIGNEN_W<'a, O> {
+pub type SIGNEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIGNEN_A>;
+impl<'a, REG, const O: u8> SIGNEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SIGNEN_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SIGNEN_A::VALUE2)
     }
 }
@@ -420,28 +401,31 @@ impl SREN_R {
             true => SREN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SREN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SREN_A::VALUE2
     }
 }
 #[doc = "Field `SREN` writer - Enable DAC0 service request interrupt generation"]
-pub type SREN_W<'a, const O: u8> = crate::BitWriter<'a, DAC0CFG0_SPEC, O, SREN_A>;
-impl<'a, const O: u8> SREN_W<'a, O> {
+pub type SREN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SREN_A>;
+impl<'a, REG, const O: u8> SREN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SREN_A::VALUE1)
     }
     #[doc = "enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SREN_A::VALUE2)
     }
 }
@@ -470,12 +454,12 @@ impl RUN_R {
             true => RUN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "DAC0 channel disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RUN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "DAC0 channel in operation"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RUN_A::VALUE2
@@ -537,58 +521,55 @@ impl W {
     #[doc = "Bits 0:19 - Integer Frequency Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn freq(&mut self) -> FREQ_W<0> {
+    pub fn freq(&mut self) -> FREQ_W<DAC0CFG0_SPEC, 0> {
         FREQ_W::new(self)
     }
     #[doc = "Bits 20:22 - Enables and Sets the Mode for DAC0"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<20> {
+    pub fn mode(&mut self) -> MODE_W<DAC0CFG0_SPEC, 20> {
         MODE_W::new(self)
     }
     #[doc = "Bit 23 - Selects Between Signed and Unsigned DAC0 Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn sign(&mut self) -> SIGN_W<23> {
+    pub fn sign(&mut self) -> SIGN_W<DAC0CFG0_SPEC, 23> {
         SIGN_W::new(self)
     }
     #[doc = "Bit 28 - Negates the DAC0 output"]
     #[inline(always)]
     #[must_use]
-    pub fn negate(&mut self) -> NEGATE_W<28> {
+    pub fn negate(&mut self) -> NEGATE_W<DAC0CFG0_SPEC, 28> {
         NEGATE_W::new(self)
     }
     #[doc = "Bit 29 - Enable Sign Output of DAC0 Pattern Generator"]
     #[inline(always)]
     #[must_use]
-    pub fn signen(&mut self) -> SIGNEN_W<29> {
+    pub fn signen(&mut self) -> SIGNEN_W<DAC0CFG0_SPEC, 29> {
         SIGNEN_W::new(self)
     }
     #[doc = "Bit 30 - Enable DAC0 service request interrupt generation"]
     #[inline(always)]
     #[must_use]
-    pub fn sren(&mut self) -> SREN_W<30> {
+    pub fn sren(&mut self) -> SREN_W<DAC0CFG0_SPEC, 30> {
         SREN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DAC0 Configuration Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac0cfg0](index.html) module"]
+#[doc = "DAC0 Configuration Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dac0cfg0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dac0cfg0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DAC0CFG0_SPEC;
 impl crate::RegisterSpec for DAC0CFG0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dac0cfg0::R](R) reader structure"]
-impl crate::Readable for DAC0CFG0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dac0cfg0::W](W) writer structure"]
+#[doc = "`read()` method returns [`dac0cfg0::R`](R) reader structure"]
+impl crate::Readable for DAC0CFG0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dac0cfg0::W`](W) writer structure"]
 impl crate::Writable for DAC0CFG0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

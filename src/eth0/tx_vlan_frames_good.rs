@@ -1,18 +1,5 @@
 #[doc = "Register `TX_VLAN_FRAMES_GOOD` reader"]
-pub struct R(crate::R<TX_VLAN_FRAMES_GOOD_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TX_VLAN_FRAMES_GOOD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TX_VLAN_FRAMES_GOOD_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TX_VLAN_FRAMES_GOOD_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TX_VLAN_FRAMES_GOOD_SPEC>;
 #[doc = "Field `TXVLANG` reader - This register maintains the number of transmitted good VLAN frames, exclusive of retried frames."]
 pub type TXVLANG_R = crate::FieldReader<u32>;
 impl R {
@@ -22,15 +9,13 @@ impl R {
         TXVLANG_R::new(self.bits)
     }
 }
-#[doc = "Transmit Frame Count for Good VLAN Frames\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_vlan_frames_good](index.html) module"]
+#[doc = "Transmit Frame Count for Good VLAN Frames\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tx_vlan_frames_good::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TX_VLAN_FRAMES_GOOD_SPEC;
 impl crate::RegisterSpec for TX_VLAN_FRAMES_GOOD_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tx_vlan_frames_good::R](R) reader structure"]
-impl crate::Readable for TX_VLAN_FRAMES_GOOD_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`tx_vlan_frames_good::R`](R) reader structure"]
+impl crate::Readable for TX_VLAN_FRAMES_GOOD_SPEC {}
 #[doc = "`reset()` method sets TX_VLAN_FRAMES_GOOD to value 0"]
 impl crate::Resettable for TX_VLAN_FRAMES_GOOD_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,18 +1,5 @@
 #[doc = "Register `FEATURE` reader"]
-pub struct R(crate::R<FEATURE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FEATURE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FEATURE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FEATURE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FEATURE_SPEC>;
 #[doc = "Field `FMMU` reader - FMMU Operation"]
 pub type FMMU_R = crate::BitReader<FMMU_A>;
 #[doc = "FMMU Operation\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl FMMU_R {
             true => FMMU_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Bit oriented"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FMMU_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Byte oriented"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FMMU_A::VALUE2
@@ -74,12 +61,12 @@ impl CLKS_R {
             true => CLKS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not available"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CLKS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Available"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CLKS_A::VALUE2
@@ -110,12 +97,12 @@ impl CLKS_W_R {
             true => CLKS_W_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "32 bits"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CLKS_W_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "64 bits"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CLKS_W_A::VALUE2
@@ -146,12 +133,12 @@ impl LJ_EBUS_R {
             true => LJ_EBUS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not available, standard jitter"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LJ_EBUS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Available, jitter minimized"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LJ_EBUS_A::VALUE2
@@ -182,12 +169,12 @@ impl ELD_EBUS_R {
             true => ELD_EBUS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not available"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ELD_EBUS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Available"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ELD_EBUS_A::VALUE2
@@ -218,12 +205,12 @@ impl ELD_MII_R {
             true => ELD_MII_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not available"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ELD_MII_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Available"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ELD_MII_A::VALUE2
@@ -254,12 +241,12 @@ impl SH_FCSE_R {
             true => SH_FCSE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SH_FCSE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Supported, frames with wrong FCS and additional nibble will be counted separately in Forwarded RX Error Counter"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SH_FCSE_A::VALUE2
@@ -290,12 +277,12 @@ impl EDC_SYNCA_R {
             true => EDC_SYNCA_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not available"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EDC_SYNCA_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Available"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EDC_SYNCA_A::VALUE2
@@ -326,12 +313,12 @@ impl LRW_CS_R {
             true => LRW_CS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LRW_CS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Not supported"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LRW_CS_A::VALUE2
@@ -362,12 +349,12 @@ impl RW_CS_R {
             true => RW_CS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RW_CS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Not supported"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RW_CS_A::VALUE2
@@ -398,12 +385,12 @@ impl FX_CONF_R {
             true => FX_CONF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Variable configuration"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FX_CONF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Fixed configuration (refer to documentation of supporting ESCs)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FX_CONF_A::VALUE2
@@ -466,15 +453,13 @@ impl R {
         FX_CONF_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
-#[doc = "ESC Features Supported\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [feature](index.html) module"]
+#[doc = "ESC Features Supported\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`feature::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FEATURE_SPEC;
 impl crate::RegisterSpec for FEATURE_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [feature::R](R) reader structure"]
-impl crate::Readable for FEATURE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`feature::R`](R) reader structure"]
+impl crate::Readable for FEATURE_SPEC {}
 #[doc = "`reset()` method sets FEATURE to value 0x01cc"]
 impl crate::Resettable for FEATURE_SPEC {
     const RESET_VALUE: Self::Ux = 0x01cc;

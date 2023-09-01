@@ -1,18 +1,5 @@
 #[doc = "Register `TIMESTAMP_STATUS` reader"]
-pub struct R(crate::R<TIMESTAMP_STATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TIMESTAMP_STATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TIMESTAMP_STATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TIMESTAMP_STATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TIMESTAMP_STATUS_SPEC>;
 #[doc = "Field `TSSOVF` reader - Timestamp Seconds Overflow"]
 pub type TSSOVF_R = crate::BitReader;
 #[doc = "Field `TSTARGT` reader - Timestamp Target Time Reached"]
@@ -78,15 +65,13 @@ impl R {
         TSTRGTERR3_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
-#[doc = "Timestamp Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [timestamp_status](index.html) module"]
+#[doc = "Timestamp Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timestamp_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TIMESTAMP_STATUS_SPEC;
 impl crate::RegisterSpec for TIMESTAMP_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [timestamp_status::R](R) reader structure"]
-impl crate::Readable for TIMESTAMP_STATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`timestamp_status::R`](R) reader structure"]
+impl crate::Readable for TIMESTAMP_STATUS_SPEC {}
 #[doc = "`reset()` method sets TIMESTAMP_STATUS to value 0"]
 impl crate::Resettable for TIMESTAMP_STATUS_SPEC {
     const RESET_VALUE: Self::Ux = 0;

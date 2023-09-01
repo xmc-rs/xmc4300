@@ -1,39 +1,7 @@
 #[doc = "Register `AL_EVENT_REQ` reader"]
-pub struct R(crate::R<AL_EVENT_REQ_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<AL_EVENT_REQ_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<AL_EVENT_REQ_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<AL_EVENT_REQ_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<AL_EVENT_REQ_SPEC>;
 #[doc = "Register `AL_EVENT_REQ` writer"]
-pub struct W(crate::W<AL_EVENT_REQ_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<AL_EVENT_REQ_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<AL_EVENT_REQ_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<AL_EVENT_REQ_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<AL_EVENT_REQ_SPEC>;
 #[doc = "Field `AL_CE` reader - AL Control event"]
 pub type AL_CE_R = crate::BitReader<AL_CE_A>;
 #[doc = "AL Control event\n\nValue on reset: 0"]
@@ -59,12 +27,12 @@ impl AL_CE_R {
             true => AL_CE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No AL Control Register change"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == AL_CE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "AL Control Register has been written"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == AL_CE_A::VALUE2
@@ -95,12 +63,12 @@ impl DC_LE_R {
             true => DC_LE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No change on DC Latch Inputs"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DC_LE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "At least one change on DC Latch Inputs"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DC_LE_A::VALUE2
@@ -135,12 +103,12 @@ impl SM_A_R {
             true => SM_A_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No change in any SyncManager"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SM_A_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "At least one change on DC Latch Inputs"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SM_A_A::VALUE2
@@ -171,12 +139,12 @@ impl EEP_E_R {
             true => EEP_E_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No command pending"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EEP_E_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "EEPROM command pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EEP_E_A::VALUE2
@@ -207,12 +175,12 @@ impl WP_D_R {
             true => WP_D_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Has not expired"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WP_D_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Has expired"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WP_D_A::VALUE2
@@ -243,12 +211,12 @@ impl SMI_0_R {
             true => SMI_0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_0_A::VALUE2
@@ -279,12 +247,12 @@ impl SMI_1_R {
             true => SMI_1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_1_A::VALUE2
@@ -315,28 +283,31 @@ impl SMI_2_R {
             true => SMI_2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_2_A::VALUE2
     }
 }
 #[doc = "Field `SMI_2` writer - SyncManager interrupt"]
-pub type SMI_2_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_2_A>;
-impl<'a, const O: u8> SMI_2_W<'a, O> {
+pub type SMI_2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_2_A>;
+impl<'a, REG, const O: u8> SMI_2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_2_A::VALUE1)
     }
     #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_2_A::VALUE2)
     }
 }
@@ -365,28 +336,31 @@ impl SMI_3_R {
             true => SMI_3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_3_A::VALUE2
     }
 }
 #[doc = "Field `SMI_3` writer - SyncManager interrupt"]
-pub type SMI_3_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_3_A>;
-impl<'a, const O: u8> SMI_3_W<'a, O> {
+pub type SMI_3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_3_A>;
+impl<'a, REG, const O: u8> SMI_3_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_3_A::VALUE1)
     }
     #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_3_A::VALUE2)
     }
 }
@@ -415,28 +389,31 @@ impl SMI_4_R {
             true => SMI_4_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_4_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_4_A::VALUE2
     }
 }
 #[doc = "Field `SMI_4` writer - SyncManager interrupt"]
-pub type SMI_4_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_4_A>;
-impl<'a, const O: u8> SMI_4_W<'a, O> {
+pub type SMI_4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_4_A>;
+impl<'a, REG, const O: u8> SMI_4_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_4_A::VALUE1)
     }
     #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_4_A::VALUE2)
     }
 }
@@ -465,28 +442,31 @@ impl SMI_5_R {
             true => SMI_5_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_5_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_5_A::VALUE2
     }
 }
 #[doc = "Field `SMI_5` writer - SyncManager interrupt"]
-pub type SMI_5_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_5_A>;
-impl<'a, const O: u8> SMI_5_W<'a, O> {
+pub type SMI_5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_5_A>;
+impl<'a, REG, const O: u8> SMI_5_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_5_A::VALUE1)
     }
     #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_5_A::VALUE2)
     }
 }
@@ -515,28 +495,31 @@ impl SMI_6_R {
             true => SMI_6_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_6_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_6_A::VALUE2
     }
 }
 #[doc = "Field `SMI_6` writer - SyncManager interrupt"]
-pub type SMI_6_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_6_A>;
-impl<'a, const O: u8> SMI_6_W<'a, O> {
+pub type SMI_6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_6_A>;
+impl<'a, REG, const O: u8> SMI_6_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_6_A::VALUE1)
     }
     #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_6_A::VALUE2)
     }
 }
@@ -565,28 +548,31 @@ impl SMI_7_R {
             true => SMI_7_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_7_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_7_A::VALUE2
     }
 }
 #[doc = "Field `SMI_7` writer - SyncManager interrupt"]
-pub type SMI_7_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_7_A>;
-impl<'a, const O: u8> SMI_7_W<'a, O> {
+pub type SMI_7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_7_A>;
+impl<'a, REG, const O: u8> SMI_7_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_7_A::VALUE1)
     }
     #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_7_A::VALUE2)
     }
 }
@@ -615,28 +601,31 @@ impl SMI_8_R {
             true => SMI_8_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_8_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_8_A::VALUE2
     }
 }
 #[doc = "Field `SMI_8` writer - SyncManager interrupt"]
-pub type SMI_8_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_8_A>;
-impl<'a, const O: u8> SMI_8_W<'a, O> {
+pub type SMI_8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_8_A>;
+impl<'a, REG, const O: u8> SMI_8_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_8_A::VALUE1)
     }
     #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_8_A::VALUE2)
     }
 }
@@ -665,28 +654,31 @@ impl SMI_9_R {
             true => SMI_9_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_9_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_9_A::VALUE2
     }
 }
 #[doc = "Field `SMI_9` writer - SyncManager interrupt"]
-pub type SMI_9_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_9_A>;
-impl<'a, const O: u8> SMI_9_W<'a, O> {
+pub type SMI_9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_9_A>;
+impl<'a, REG, const O: u8> SMI_9_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_9_A::VALUE1)
     }
     #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_9_A::VALUE2)
     }
 }
@@ -715,28 +707,31 @@ impl SMI_10_R {
             true => SMI_10_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_10_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_10_A::VALUE2
     }
 }
 #[doc = "Field `SMI_10` writer - SyncManager interrupt"]
-pub type SMI_10_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_10_A>;
-impl<'a, const O: u8> SMI_10_W<'a, O> {
+pub type SMI_10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_10_A>;
+impl<'a, REG, const O: u8> SMI_10_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_10_A::VALUE1)
     }
     #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_10_A::VALUE2)
     }
 }
@@ -765,28 +760,31 @@ impl SMI_11_R {
             true => SMI_11_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_11_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_11_A::VALUE2
     }
 }
 #[doc = "Field `SMI_11` writer - SyncManager interrupt"]
-pub type SMI_11_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_11_A>;
-impl<'a, const O: u8> SMI_11_W<'a, O> {
+pub type SMI_11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_11_A>;
+impl<'a, REG, const O: u8> SMI_11_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_11_A::VALUE1)
     }
     #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_11_A::VALUE2)
     }
 }
@@ -815,28 +813,31 @@ impl SMI_12_R {
             true => SMI_12_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_12_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_12_A::VALUE2
     }
 }
 #[doc = "Field `SMI_12` writer - SyncManager interrupt"]
-pub type SMI_12_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_12_A>;
-impl<'a, const O: u8> SMI_12_W<'a, O> {
+pub type SMI_12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_12_A>;
+impl<'a, REG, const O: u8> SMI_12_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_12_A::VALUE1)
     }
     #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_12_A::VALUE2)
     }
 }
@@ -865,28 +866,31 @@ impl SMI_13_R {
             true => SMI_13_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_13_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_13_A::VALUE2
     }
 }
 #[doc = "Field `SMI_13` writer - SyncManager interrupt"]
-pub type SMI_13_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_13_A>;
-impl<'a, const O: u8> SMI_13_W<'a, O> {
+pub type SMI_13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_13_A>;
+impl<'a, REG, const O: u8> SMI_13_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_13_A::VALUE1)
     }
     #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_13_A::VALUE2)
     }
 }
@@ -915,28 +919,31 @@ impl SMI_14_R {
             true => SMI_14_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_14_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_14_A::VALUE2
     }
 }
 #[doc = "Field `SMI_14` writer - SyncManager interrupt"]
-pub type SMI_14_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_REQ_SPEC, O, SMI_14_A>;
-impl<'a, const O: u8> SMI_14_W<'a, O> {
+pub type SMI_14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_14_A>;
+impl<'a, REG, const O: u8> SMI_14_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_14_A::VALUE1)
     }
     #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_14_A::VALUE2)
     }
 }
@@ -965,12 +972,12 @@ impl SMI_15_R {
             true => SMI_15_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No SyncManager 0 interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_15_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SyncManager 0 interrupt pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_15_A::VALUE2
@@ -1097,100 +1104,97 @@ impl W {
     #[doc = "Bit 10 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_2(&mut self) -> SMI_2_W<10> {
+    pub fn smi_2(&mut self) -> SMI_2_W<AL_EVENT_REQ_SPEC, 10> {
         SMI_2_W::new(self)
     }
     #[doc = "Bit 11 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_3(&mut self) -> SMI_3_W<11> {
+    pub fn smi_3(&mut self) -> SMI_3_W<AL_EVENT_REQ_SPEC, 11> {
         SMI_3_W::new(self)
     }
     #[doc = "Bit 12 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_4(&mut self) -> SMI_4_W<12> {
+    pub fn smi_4(&mut self) -> SMI_4_W<AL_EVENT_REQ_SPEC, 12> {
         SMI_4_W::new(self)
     }
     #[doc = "Bit 13 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_5(&mut self) -> SMI_5_W<13> {
+    pub fn smi_5(&mut self) -> SMI_5_W<AL_EVENT_REQ_SPEC, 13> {
         SMI_5_W::new(self)
     }
     #[doc = "Bit 14 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_6(&mut self) -> SMI_6_W<14> {
+    pub fn smi_6(&mut self) -> SMI_6_W<AL_EVENT_REQ_SPEC, 14> {
         SMI_6_W::new(self)
     }
     #[doc = "Bit 15 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_7(&mut self) -> SMI_7_W<15> {
+    pub fn smi_7(&mut self) -> SMI_7_W<AL_EVENT_REQ_SPEC, 15> {
         SMI_7_W::new(self)
     }
     #[doc = "Bit 16 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_8(&mut self) -> SMI_8_W<16> {
+    pub fn smi_8(&mut self) -> SMI_8_W<AL_EVENT_REQ_SPEC, 16> {
         SMI_8_W::new(self)
     }
     #[doc = "Bit 17 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_9(&mut self) -> SMI_9_W<17> {
+    pub fn smi_9(&mut self) -> SMI_9_W<AL_EVENT_REQ_SPEC, 17> {
         SMI_9_W::new(self)
     }
     #[doc = "Bit 18 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_10(&mut self) -> SMI_10_W<18> {
+    pub fn smi_10(&mut self) -> SMI_10_W<AL_EVENT_REQ_SPEC, 18> {
         SMI_10_W::new(self)
     }
     #[doc = "Bit 19 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_11(&mut self) -> SMI_11_W<19> {
+    pub fn smi_11(&mut self) -> SMI_11_W<AL_EVENT_REQ_SPEC, 19> {
         SMI_11_W::new(self)
     }
     #[doc = "Bit 20 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_12(&mut self) -> SMI_12_W<20> {
+    pub fn smi_12(&mut self) -> SMI_12_W<AL_EVENT_REQ_SPEC, 20> {
         SMI_12_W::new(self)
     }
     #[doc = "Bit 21 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_13(&mut self) -> SMI_13_W<21> {
+    pub fn smi_13(&mut self) -> SMI_13_W<AL_EVENT_REQ_SPEC, 21> {
         SMI_13_W::new(self)
     }
     #[doc = "Bit 22 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_14(&mut self) -> SMI_14_W<22> {
+    pub fn smi_14(&mut self) -> SMI_14_W<AL_EVENT_REQ_SPEC, 22> {
         SMI_14_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "AL Event Request\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [al_event_req](index.html) module"]
+#[doc = "AL Event Request\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`al_event_req::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`al_event_req::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AL_EVENT_REQ_SPEC;
 impl crate::RegisterSpec for AL_EVENT_REQ_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [al_event_req::R](R) reader structure"]
-impl crate::Readable for AL_EVENT_REQ_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [al_event_req::W](W) writer structure"]
+#[doc = "`read()` method returns [`al_event_req::R`](R) reader structure"]
+impl crate::Readable for AL_EVENT_REQ_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`al_event_req::W`](W) writer structure"]
 impl crate::Writable for AL_EVENT_REQ_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

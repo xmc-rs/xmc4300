@@ -1,18 +1,5 @@
 #[doc = "Register `ESC_DL_CONTROL` reader"]
-pub struct R(crate::R<ESC_DL_CONTROL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ESC_DL_CONTROL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ESC_DL_CONTROL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ESC_DL_CONTROL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ESC_DL_CONTROL_SPEC>;
 #[doc = "Field `FR` reader - Forwarding rule"]
 pub type FR_R = crate::BitReader<FR_A>;
 #[doc = "Forwarding rule\n\nValue on reset: 1"]
@@ -38,12 +25,12 @@ impl FR_R {
             true => FR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "EtherCAT frames are processed, Non-EtherCAT frames are forwarded without processing"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "EtherCAT frames are processed, Non- EtherCAT frames are destroyed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FR_A::VALUE2
@@ -74,12 +61,12 @@ impl TEMP_R {
             true => TEMP_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "permanent use"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TEMP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "use for about 1 second, then revert to previous settings"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TEMP_A::VALUE2
@@ -121,22 +108,22 @@ impl LP0_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Auto"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LP0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Auto Close"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LP0_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Open"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == LP0_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Closed"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == LP0_A::VALUE4
@@ -178,22 +165,22 @@ impl LP1_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Auto"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LP1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Auto Close"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LP1_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Open"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == LP1_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Closed"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == LP1_A::VALUE4
@@ -235,22 +222,22 @@ impl LP2_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Auto"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LP2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Auto Close"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LP2_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Open"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == LP2_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Closed"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == LP2_A::VALUE4
@@ -292,22 +279,22 @@ impl LP3_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Auto"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LP3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Auto Close"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LP3_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Open"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == LP3_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Closed"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == LP3_A::VALUE4
@@ -361,42 +348,42 @@ impl RX_FIFO_SIZE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "-40 ns (-80 ns)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RX_FIFO_SIZE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "-40 ns (-80 ns)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RX_FIFO_SIZE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "-40 ns"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == RX_FIFO_SIZE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "-40 ns"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == RX_FIFO_SIZE_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "no change"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == RX_FIFO_SIZE_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "no change"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == RX_FIFO_SIZE_A::VALUE6
     }
-    #[doc = "Checks if the value of the field is `VALUE7`"]
+    #[doc = "no change"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
         *self == RX_FIFO_SIZE_A::VALUE7
     }
-    #[doc = "Checks if the value of the field is `VALUE8`"]
+    #[doc = "default"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
         *self == RX_FIFO_SIZE_A::VALUE8
@@ -427,12 +414,12 @@ impl LJ_R {
             true => LJ_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal jitter"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LJ_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reduced jitter"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LJ_A::VALUE2
@@ -463,12 +450,12 @@ impl RLD_ST_R {
             true => RLD_ST_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Default (~660 ms)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RLD_ST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reduced (~80 us)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RLD_ST_A::VALUE2
@@ -499,12 +486,12 @@ impl S_ALIAS_R {
             true => S_ALIAS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore Station Alias"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S_ALIAS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Alias can be used for all configured address command types (FPRD,FPWR,...)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S_ALIAS_A::VALUE2
@@ -562,15 +549,13 @@ impl R {
         S_ALIAS_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
-#[doc = "ESC DL Control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [esc_dl_control](index.html) module"]
+#[doc = "ESC DL Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`esc_dl_control::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ESC_DL_CONTROL_SPEC;
 impl crate::RegisterSpec for ESC_DL_CONTROL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [esc_dl_control::R](R) reader structure"]
-impl crate::Readable for ESC_DL_CONTROL_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`esc_dl_control::R`](R) reader structure"]
+impl crate::Readable for ESC_DL_CONTROL_SPEC {}
 #[doc = "`reset()` method sets ESC_DL_CONTROL to value 0x0007_c001"]
 impl crate::Resettable for ESC_DL_CONTROL_SPEC {
     const RESET_VALUE: Self::Ux = 0x0007_c001;

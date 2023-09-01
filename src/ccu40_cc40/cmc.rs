@@ -1,39 +1,7 @@
 #[doc = "Register `CMC` reader"]
-pub struct R(crate::R<CMC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CMC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CMC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CMC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CMC_SPEC>;
 #[doc = "Register `CMC` writer"]
-pub struct W(crate::W<CMC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CMC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CMC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CMC_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CMC_SPEC>;
 #[doc = "Field `STRTS` reader - External Start Functionality Selector"]
 pub type STRTS_R = crate::FieldReader<STRTS_A>;
 #[doc = "External Start Functionality Selector\n\nValue on reset: 0"]
@@ -70,48 +38,52 @@ impl STRTS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "External Start Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == STRTS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "External Start Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == STRTS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "External Start Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == STRTS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "External Start Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == STRTS_A::VALUE4
     }
 }
 #[doc = "Field `STRTS` writer - External Start Functionality Selector"]
-pub type STRTS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, STRTS_A>;
-impl<'a, const O: u8> STRTS_W<'a, O> {
+pub type STRTS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, STRTS_A>;
+impl<'a, REG, const O: u8> STRTS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "External Start Function deactivated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(STRTS_A::VALUE1)
     }
     #[doc = "External Start Function triggered by Event 0"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(STRTS_A::VALUE2)
     }
     #[doc = "External Start Function triggered by Event 1"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(STRTS_A::VALUE3)
     }
     #[doc = "External Start Function triggered by Event 2"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(STRTS_A::VALUE4)
     }
 }
@@ -151,48 +123,52 @@ impl ENDS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "External Stop Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ENDS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "External Stop Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ENDS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "External Stop Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ENDS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "External Stop Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ENDS_A::VALUE4
     }
 }
 #[doc = "Field `ENDS` writer - External Stop Functionality Selector"]
-pub type ENDS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, ENDS_A>;
-impl<'a, const O: u8> ENDS_W<'a, O> {
+pub type ENDS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ENDS_A>;
+impl<'a, REG, const O: u8> ENDS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "External Stop Function deactivated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ENDS_A::VALUE1)
     }
     #[doc = "External Stop Function triggered by Event 0"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ENDS_A::VALUE2)
     }
     #[doc = "External Stop Function triggered by Event 1"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ENDS_A::VALUE3)
     }
     #[doc = "External Stop Function triggered by Event 2"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(ENDS_A::VALUE4)
     }
 }
@@ -232,48 +208,52 @@ impl CAP0S_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "External Capture 0 Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CAP0S_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "External Capture 0 Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CAP0S_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "External Capture 0 Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CAP0S_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "External Capture 0 Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CAP0S_A::VALUE4
     }
 }
 #[doc = "Field `CAP0S` writer - External Capture 0 Functionality Selector"]
-pub type CAP0S_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, CAP0S_A>;
-impl<'a, const O: u8> CAP0S_W<'a, O> {
+pub type CAP0S_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CAP0S_A>;
+impl<'a, REG, const O: u8> CAP0S_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "External Capture 0 Function deactivated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CAP0S_A::VALUE1)
     }
     #[doc = "External Capture 0 Function triggered by Event 0"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CAP0S_A::VALUE2)
     }
     #[doc = "External Capture 0 Function triggered by Event 1"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CAP0S_A::VALUE3)
     }
     #[doc = "External Capture 0 Function triggered by Event 2"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CAP0S_A::VALUE4)
     }
 }
@@ -313,48 +293,52 @@ impl CAP1S_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "External Capture 1 Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CAP1S_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "External Capture 1 Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CAP1S_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "External Capture 1 Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CAP1S_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "External Capture 1 Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CAP1S_A::VALUE4
     }
 }
 #[doc = "Field `CAP1S` writer - External Capture 1 Functionality Selector"]
-pub type CAP1S_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, CAP1S_A>;
-impl<'a, const O: u8> CAP1S_W<'a, O> {
+pub type CAP1S_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CAP1S_A>;
+impl<'a, REG, const O: u8> CAP1S_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "External Capture 1 Function deactivated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CAP1S_A::VALUE1)
     }
     #[doc = "External Capture 1 Function triggered by Event 0"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CAP1S_A::VALUE2)
     }
     #[doc = "External Capture 1 Function triggered by Event 1"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CAP1S_A::VALUE3)
     }
     #[doc = "External Capture 1 Function triggered by Event 2"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CAP1S_A::VALUE4)
     }
 }
@@ -394,48 +378,52 @@ impl GATES_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "External Gating Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == GATES_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "External Gating Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == GATES_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "External Gating Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == GATES_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "External Gating Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == GATES_A::VALUE4
     }
 }
 #[doc = "Field `GATES` writer - External Gate Functionality Selector"]
-pub type GATES_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, GATES_A>;
-impl<'a, const O: u8> GATES_W<'a, O> {
+pub type GATES_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, GATES_A>;
+impl<'a, REG, const O: u8> GATES_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "External Gating Function deactivated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(GATES_A::VALUE1)
     }
     #[doc = "External Gating Function triggered by Event 0"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(GATES_A::VALUE2)
     }
     #[doc = "External Gating Function triggered by Event 1"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(GATES_A::VALUE3)
     }
     #[doc = "External Gating Function triggered by Event 2"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(GATES_A::VALUE4)
     }
 }
@@ -475,55 +463,59 @@ impl UDS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "External Up/Down Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == UDS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "External Up/Down Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == UDS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "External Up/Down Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == UDS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "External Up/Down Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == UDS_A::VALUE4
     }
 }
 #[doc = "Field `UDS` writer - External Up/Down Functionality Selector"]
-pub type UDS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, UDS_A>;
-impl<'a, const O: u8> UDS_W<'a, O> {
+pub type UDS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, UDS_A>;
+impl<'a, REG, const O: u8> UDS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "External Up/Down Function deactivated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(UDS_A::VALUE1)
     }
     #[doc = "External Up/Down Function triggered by Event 0"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(UDS_A::VALUE2)
     }
     #[doc = "External Up/Down Function triggered by Event 1"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(UDS_A::VALUE3)
     }
     #[doc = "External Up/Down Function triggered by Event 2"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(UDS_A::VALUE4)
     }
 }
 #[doc = "Field `LDS` reader - External Timer Load Functionality Selector"]
 pub type LDS_R = crate::FieldReader;
 #[doc = "Field `LDS` writer - External Timer Load Functionality Selector"]
-pub type LDS_W<'a, const O: u8> = crate::FieldWriter<'a, CMC_SPEC, 2, O>;
+pub type LDS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `CNTS` reader - External Count Selector"]
 pub type CNTS_R = crate::FieldReader<CNTS_A>;
 #[doc = "External Count Selector\n\nValue on reset: 0"]
@@ -560,48 +552,52 @@ impl CNTS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "External Count Function deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CNTS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "External Count Function triggered by Event 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CNTS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "External Count Function triggered by Event 1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CNTS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "External Count Function triggered by Event 2"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CNTS_A::VALUE4
     }
 }
 #[doc = "Field `CNTS` writer - External Count Selector"]
-pub type CNTS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CMC_SPEC, 2, O, CNTS_A>;
-impl<'a, const O: u8> CNTS_W<'a, O> {
+pub type CNTS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CNTS_A>;
+impl<'a, REG, const O: u8> CNTS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "External Count Function deactivated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CNTS_A::VALUE1)
     }
     #[doc = "External Count Function triggered by Event 0"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CNTS_A::VALUE2)
     }
     #[doc = "External Count Function triggered by Event 1"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CNTS_A::VALUE3)
     }
     #[doc = "External Count Function triggered by Event 2"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CNTS_A::VALUE4)
     }
 }
@@ -630,28 +626,31 @@ impl OFS_R {
             true => OFS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Override functionality disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == OFS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Status bit trigger override connected to Event 1; Status bit value override connected to Event 2"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == OFS_A::VALUE2
     }
 }
 #[doc = "Field `OFS` writer - Override Function Selector"]
-pub type OFS_W<'a, const O: u8> = crate::BitWriter<'a, CMC_SPEC, O, OFS_A>;
-impl<'a, const O: u8> OFS_W<'a, O> {
+pub type OFS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OFS_A>;
+impl<'a, REG, const O: u8> OFS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Override functionality disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(OFS_A::VALUE1)
     }
     #[doc = "Status bit trigger override connected to Event 1; Status bit value override connected to Event 2"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(OFS_A::VALUE2)
     }
 }
@@ -680,35 +679,38 @@ impl TS_R {
             true => TS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Trap function disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "TRAP function connected to Event 2"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TS_A::VALUE2
     }
 }
 #[doc = "Field `TS` writer - Trap Function Selector"]
-pub type TS_W<'a, const O: u8> = crate::BitWriter<'a, CMC_SPEC, O, TS_A>;
-impl<'a, const O: u8> TS_W<'a, O> {
+pub type TS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TS_A>;
+impl<'a, REG, const O: u8> TS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Trap function disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TS_A::VALUE1)
     }
     #[doc = "TRAP function connected to Event 2"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TS_A::VALUE2)
     }
 }
 #[doc = "Field `MOS` reader - External Modulation Functionality Selector"]
 pub type MOS_R = crate::FieldReader;
 #[doc = "Field `MOS` writer - External Modulation Functionality Selector"]
-pub type MOS_W<'a, const O: u8> = crate::FieldWriter<'a, CMC_SPEC, 2, O>;
+pub type MOS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `TCE` reader - Timer Concatenation Enable"]
 pub type TCE_R = crate::BitReader<TCE_A>;
 #[doc = "Timer Concatenation Enable\n\nValue on reset: 0"]
@@ -734,28 +736,31 @@ impl TCE_R {
             true => TCE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Timer concatenation is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TCE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Timer concatenation is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TCE_A::VALUE2
     }
 }
 #[doc = "Field `TCE` writer - Timer Concatenation Enable"]
-pub type TCE_W<'a, const O: u8> = crate::BitWriter<'a, CMC_SPEC, O, TCE_A>;
-impl<'a, const O: u8> TCE_W<'a, O> {
+pub type TCE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TCE_A>;
+impl<'a, REG, const O: u8> TCE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Timer concatenation is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TCE_A::VALUE1)
     }
     #[doc = "Timer concatenation is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TCE_A::VALUE2)
     }
 }
@@ -825,94 +830,91 @@ impl W {
     #[doc = "Bits 0:1 - External Start Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn strts(&mut self) -> STRTS_W<0> {
+    pub fn strts(&mut self) -> STRTS_W<CMC_SPEC, 0> {
         STRTS_W::new(self)
     }
     #[doc = "Bits 2:3 - External Stop Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn ends(&mut self) -> ENDS_W<2> {
+    pub fn ends(&mut self) -> ENDS_W<CMC_SPEC, 2> {
         ENDS_W::new(self)
     }
     #[doc = "Bits 4:5 - External Capture 0 Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn cap0s(&mut self) -> CAP0S_W<4> {
+    pub fn cap0s(&mut self) -> CAP0S_W<CMC_SPEC, 4> {
         CAP0S_W::new(self)
     }
     #[doc = "Bits 6:7 - External Capture 1 Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn cap1s(&mut self) -> CAP1S_W<6> {
+    pub fn cap1s(&mut self) -> CAP1S_W<CMC_SPEC, 6> {
         CAP1S_W::new(self)
     }
     #[doc = "Bits 8:9 - External Gate Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn gates(&mut self) -> GATES_W<8> {
+    pub fn gates(&mut self) -> GATES_W<CMC_SPEC, 8> {
         GATES_W::new(self)
     }
     #[doc = "Bits 10:11 - External Up/Down Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn uds(&mut self) -> UDS_W<10> {
+    pub fn uds(&mut self) -> UDS_W<CMC_SPEC, 10> {
         UDS_W::new(self)
     }
     #[doc = "Bits 12:13 - External Timer Load Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn lds(&mut self) -> LDS_W<12> {
+    pub fn lds(&mut self) -> LDS_W<CMC_SPEC, 12> {
         LDS_W::new(self)
     }
     #[doc = "Bits 14:15 - External Count Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn cnts(&mut self) -> CNTS_W<14> {
+    pub fn cnts(&mut self) -> CNTS_W<CMC_SPEC, 14> {
         CNTS_W::new(self)
     }
     #[doc = "Bit 16 - Override Function Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn ofs(&mut self) -> OFS_W<16> {
+    pub fn ofs(&mut self) -> OFS_W<CMC_SPEC, 16> {
         OFS_W::new(self)
     }
     #[doc = "Bit 17 - Trap Function Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn ts(&mut self) -> TS_W<17> {
+    pub fn ts(&mut self) -> TS_W<CMC_SPEC, 17> {
         TS_W::new(self)
     }
     #[doc = "Bits 18:19 - External Modulation Functionality Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn mos(&mut self) -> MOS_W<18> {
+    pub fn mos(&mut self) -> MOS_W<CMC_SPEC, 18> {
         MOS_W::new(self)
     }
     #[doc = "Bit 20 - Timer Concatenation Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tce(&mut self) -> TCE_W<20> {
+    pub fn tce(&mut self) -> TCE_W<CMC_SPEC, 20> {
         TCE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Connection Matrix Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmc](index.html) module"]
+#[doc = "Connection Matrix Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cmc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cmc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CMC_SPEC;
 impl crate::RegisterSpec for CMC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cmc::R](R) reader structure"]
-impl crate::Readable for CMC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cmc::W](W) writer structure"]
+#[doc = "`read()` method returns [`cmc::R`](R) reader structure"]
+impl crate::Readable for CMC_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cmc::W`](W) writer structure"]
 impl crate::Writable for CMC_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

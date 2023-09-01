@@ -1,43 +1,11 @@
 #[doc = "Register `FPCAR` reader"]
-pub struct R(crate::R<FPCAR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FPCAR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FPCAR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FPCAR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FPCAR_SPEC>;
 #[doc = "Register `FPCAR` writer"]
-pub struct W(crate::W<FPCAR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FPCAR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FPCAR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FPCAR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<FPCAR_SPEC>;
 #[doc = "Field `ADDRESS` reader - Address"]
 pub type ADDRESS_R = crate::FieldReader<u32>;
 #[doc = "Field `ADDRESS` writer - Address"]
-pub type ADDRESS_W<'a, const O: u8> = crate::FieldWriter<'a, FPCAR_SPEC, 29, O, u32>;
+pub type ADDRESS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 29, O, u32>;
 impl R {
     #[doc = "Bits 3:31 - Address"]
     #[inline(always)]
@@ -49,28 +17,25 @@ impl W {
     #[doc = "Bits 3:31 - Address"]
     #[inline(always)]
     #[must_use]
-    pub fn address(&mut self) -> ADDRESS_W<3> {
+    pub fn address(&mut self) -> ADDRESS_W<FPCAR_SPEC, 3> {
         ADDRESS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Floating-point Context Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fpcar](index.html) module"]
+#[doc = "Floating-point Context Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fpcar::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fpcar::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FPCAR_SPEC;
 impl crate::RegisterSpec for FPCAR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fpcar::R](R) reader structure"]
-impl crate::Readable for FPCAR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [fpcar::W](W) writer structure"]
+#[doc = "`read()` method returns [`fpcar::R`](R) reader structure"]
+impl crate::Readable for FPCAR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`fpcar::W`](W) writer structure"]
 impl crate::Writable for FPCAR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

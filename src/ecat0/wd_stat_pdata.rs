@@ -1,18 +1,5 @@
 #[doc = "Register `WD_STAT_PDATA` reader"]
-pub struct R(crate::R<WD_STAT_PDATA_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<WD_STAT_PDATA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<WD_STAT_PDATA_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<WD_STAT_PDATA_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<WD_STAT_PDATA_SPEC>;
 #[doc = "Field `WD_STAT_PD` reader - Watchdog Status of Process Data"]
 pub type WD_STAT_PD_R = crate::BitReader<WD_STAT_PD_A>;
 #[doc = "Watchdog Status of Process Data\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl WD_STAT_PD_R {
             true => WD_STAT_PD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Watchdog Process Data expired"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WD_STAT_PD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Watchdog Process Data is active or disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WD_STAT_PD_A::VALUE2
@@ -56,15 +43,13 @@ impl R {
         WD_STAT_PD_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Watchdog Status Process Data\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wd_stat_pdata](index.html) module"]
+#[doc = "Watchdog Status Process Data\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wd_stat_pdata::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct WD_STAT_PDATA_SPEC;
 impl crate::RegisterSpec for WD_STAT_PDATA_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [wd_stat_pdata::R](R) reader structure"]
-impl crate::Readable for WD_STAT_PDATA_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`wd_stat_pdata::R`](R) reader structure"]
+impl crate::Readable for WD_STAT_PDATA_SPEC {}
 #[doc = "`reset()` method sets WD_STAT_PDATA to value 0"]
 impl crate::Resettable for WD_STAT_PDATA_SPEC {
     const RESET_VALUE: Self::Ux = 0;

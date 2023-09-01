@@ -1,18 +1,5 @@
 #[doc = "Register `CCFG` reader"]
-pub struct R(crate::R<CCFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CCFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CCFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CCFG_SPEC>;
 #[doc = "Field `SSC` reader - SSC Protocol Available"]
 pub type SSC_R = crate::BitReader<SSC_A>;
 #[doc = "SSC Protocol Available\n\nValue on reset: 1"]
@@ -38,12 +25,12 @@ impl SSC_R {
             true => SSC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The SSC protocol is not available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SSC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The SSC protocol is available."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SSC_A::VALUE2
@@ -74,12 +61,12 @@ impl ASC_R {
             true => ASC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The ASC protocol is not available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The ASC protocol is available."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASC_A::VALUE2
@@ -110,12 +97,12 @@ impl IIC_R {
             true => IIC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The IIC protocol is not available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == IIC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The IIC protocol is available."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == IIC_A::VALUE2
@@ -146,12 +133,12 @@ impl IIS_R {
             true => IIS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The IIS protocol is not available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == IIS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The IIS protocol is available."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == IIS_A::VALUE2
@@ -182,12 +169,12 @@ impl RB_R {
             true => RB_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A receive FIFO buffer is not available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RB_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A receive FIFO buffer is available."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RB_A::VALUE2
@@ -218,12 +205,12 @@ impl TB_R {
             true => TB_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A transmit FIFO buffer is not available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TB_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A transmit FIFO buffer is available."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TB_A::VALUE2
@@ -261,15 +248,13 @@ impl R {
         TB_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "Channel Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ccfg](index.html) module"]
+#[doc = "Channel Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccfg::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CCFG_SPEC;
 impl crate::RegisterSpec for CCFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ccfg::R](R) reader structure"]
-impl crate::Readable for CCFG_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`ccfg::R`](R) reader structure"]
+impl crate::Readable for CCFG_SPEC {}
 #[doc = "`reset()` method sets CCFG to value 0xcf"]
 impl crate::Resettable for CCFG_SPEC {
     const RESET_VALUE: Self::Ux = 0xcf;

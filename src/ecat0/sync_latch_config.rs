@@ -1,18 +1,5 @@
 #[doc = "Register `SYNC_LATCH_CONFIG` reader"]
-pub struct R(crate::R<SYNC_LATCH_CONFIG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SYNC_LATCH_CONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SYNC_LATCH_CONFIG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SYNC_LATCH_CONFIG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SYNC_LATCH_CONFIG_SPEC>;
 #[doc = "Field `SYNC0_POL` reader - SYNC0 output driver/polarity"]
 pub type SYNC0_POL_R = crate::FieldReader<SYNC0_POL_A>;
 #[doc = "SYNC0 output driver/polarity\n\nValue on reset: 2"]
@@ -49,22 +36,22 @@ impl SYNC0_POL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Push-Pull active low"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SYNC0_POL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Open Drain (active low)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SYNC0_POL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Push-Pull active high"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == SYNC0_POL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Open Source (active high)"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == SYNC0_POL_A::VALUE4
@@ -95,12 +82,12 @@ impl SL0_CNF_R {
             true => SL0_CNF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "LATCH0 Input"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SL0_CNF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SYNC0 Output"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SL0_CNF_A::VALUE2
@@ -131,12 +118,12 @@ impl S0_MAP_R {
             true => S0_MAP_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S0_MAP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S0_MAP_A::VALUE2
@@ -178,22 +165,22 @@ impl SYNC1_POL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Push-Pull active low"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SYNC1_POL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Open Drain (active low)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SYNC1_POL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Push-Pull active high"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == SYNC1_POL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Open Source (active high)"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == SYNC1_POL_A::VALUE4
@@ -224,12 +211,12 @@ impl SL1_CNF_R {
             true => SL1_CNF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "LATCH1 Input"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SL1_CNF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SYNC1 Output"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SL1_CNF_A::VALUE2
@@ -260,12 +247,12 @@ impl S1_MAP_R {
             true => S1_MAP_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S1_MAP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S1_MAP_A::VALUE2
@@ -304,15 +291,13 @@ impl R {
     }
 }
 #[doc = "Sync/Latch\\[1:0\\]
-PDI Configuration\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sync_latch_config](index.html) module"]
+PDI Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sync_latch_config::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SYNC_LATCH_CONFIG_SPEC;
 impl crate::RegisterSpec for SYNC_LATCH_CONFIG_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [sync_latch_config::R](R) reader structure"]
-impl crate::Readable for SYNC_LATCH_CONFIG_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sync_latch_config::R`](R) reader structure"]
+impl crate::Readable for SYNC_LATCH_CONFIG_SPEC {}
 #[doc = "`reset()` method sets SYNC_LATCH_CONFIG to value 0xee"]
 impl crate::Resettable for SYNC_LATCH_CONFIG_SPEC {
     const RESET_VALUE: Self::Ux = 0xee;

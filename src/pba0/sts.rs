@@ -1,39 +1,7 @@
 #[doc = "Register `STS` reader"]
-pub struct R(crate::R<STS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<STS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<STS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<STS_SPEC>;
 #[doc = "Register `STS` writer"]
-pub struct W(crate::W<STS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<STS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<STS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<STS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<STS_SPEC>;
 #[doc = "Field `WERR` reader - Bufferable Write Access Error"]
 pub type WERR_R = crate::BitReader<WERR_A>;
 #[doc = "Bufferable Write Access Error\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl WERR_R {
             true => WERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "no write error occurred."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "write error occurred, interrupt request is pending."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WERR_A::VALUE2
     }
 }
 #[doc = "Field `WERR` writer - Bufferable Write Access Error"]
-pub type WERR_W<'a, const O: u8> = crate::BitWriter<'a, STS_SPEC, O, WERR_A>;
-impl<'a, const O: u8> WERR_W<'a, O> {
+pub type WERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WERR_A>;
+impl<'a, REG, const O: u8> WERR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no write error occurred."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WERR_A::VALUE1)
     }
     #[doc = "write error occurred, interrupt request is pending."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WERR_A::VALUE2)
     }
 }
@@ -95,28 +66,25 @@ impl W {
     #[doc = "Bit 0 - Bufferable Write Access Error"]
     #[inline(always)]
     #[must_use]
-    pub fn werr(&mut self) -> WERR_W<0> {
+    pub fn werr(&mut self) -> WERR_W<STS_SPEC, 0> {
         WERR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Peripheral Bridge Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sts](index.html) module"]
+#[doc = "Peripheral Bridge Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sts::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sts::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STS_SPEC;
 impl crate::RegisterSpec for STS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sts::R](R) reader structure"]
-impl crate::Readable for STS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sts::W](W) writer structure"]
+#[doc = "`read()` method returns [`sts::R`](R) reader structure"]
+impl crate::Readable for STS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`sts::W`](W) writer structure"]
 impl crate::Writable for STS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

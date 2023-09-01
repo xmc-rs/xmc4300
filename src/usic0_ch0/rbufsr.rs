@@ -1,18 +1,5 @@
 #[doc = "Register `RBUFSR` reader"]
-pub struct R(crate::R<RBUFSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RBUFSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RBUFSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RBUFSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RBUFSR_SPEC>;
 #[doc = "Field `WLEN` reader - Received Data Word Length in RBUF or RBUFD"]
 pub type WLEN_R = crate::FieldReader;
 #[doc = "Field `SOF` reader - Start of Frame in RBUF or RBUFD"]
@@ -64,15 +51,13 @@ impl R {
         DS_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Receiver Buffer Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rbufsr](index.html) module"]
+#[doc = "Receiver Buffer Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rbufsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RBUFSR_SPEC;
 impl crate::RegisterSpec for RBUFSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rbufsr::R](R) reader structure"]
-impl crate::Readable for RBUFSR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`rbufsr::R`](R) reader structure"]
+impl crate::Readable for RBUFSR_SPEC {}
 #[doc = "`reset()` method sets RBUFSR to value 0"]
 impl crate::Resettable for RBUFSR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

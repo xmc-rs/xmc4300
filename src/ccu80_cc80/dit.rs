@@ -1,18 +1,5 @@
 #[doc = "Register `DIT` reader"]
-pub struct R(crate::R<DIT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DIT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DIT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DIT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DIT_SPEC>;
 #[doc = "Field `DCV` reader - Dither compare Value"]
 pub type DCV_R = crate::FieldReader;
 #[doc = "Field `DCNT` reader - Dither counter actual value"]
@@ -29,15 +16,13 @@ impl R {
         DCNT_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }
-#[doc = "Dither Config\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dit](index.html) module"]
+#[doc = "Dither Config\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dit::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DIT_SPEC;
 impl crate::RegisterSpec for DIT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dit::R](R) reader structure"]
-impl crate::Readable for DIT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dit::R`](R) reader structure"]
+impl crate::Readable for DIT_SPEC {}
 #[doc = "`reset()` method sets DIT to value 0"]
 impl crate::Resettable for DIT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

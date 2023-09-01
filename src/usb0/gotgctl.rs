@@ -1,39 +1,7 @@
 #[doc = "Register `GOTGCTL` reader"]
-pub struct R(crate::R<GOTGCTL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GOTGCTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GOTGCTL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GOTGCTL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GOTGCTL_SPEC>;
 #[doc = "Register `GOTGCTL` writer"]
-pub struct W(crate::W<GOTGCTL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<GOTGCTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<GOTGCTL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<GOTGCTL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<GOTGCTL_SPEC>;
 #[doc = "Field `SesReqScs` reader - Session Request Success"]
 pub type SES_REQ_SCS_R = crate::BitReader<SES_REQ_SCS_A>;
 #[doc = "Session Request Success\n\nValue on reset: 0"]
@@ -59,12 +27,12 @@ impl SES_REQ_SCS_R {
             true => SES_REQ_SCS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Session request failure"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SES_REQ_SCS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Session request success"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SES_REQ_SCS_A::VALUE2
@@ -95,28 +63,31 @@ impl SES_REQ_R {
             true => SES_REQ_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No session request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SES_REQ_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Session request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SES_REQ_A::VALUE2
     }
 }
 #[doc = "Field `SesReq` writer - Session Request"]
-pub type SES_REQ_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, SES_REQ_A>;
-impl<'a, const O: u8> SES_REQ_W<'a, O> {
+pub type SES_REQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SES_REQ_A>;
+impl<'a, REG, const O: u8> SES_REQ_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No session request"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SES_REQ_A::VALUE1)
     }
     #[doc = "Session request"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SES_REQ_A::VALUE2)
     }
 }
@@ -145,28 +116,31 @@ impl VBVALID_OV_EN_R {
             true => VBVALID_OV_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Override is disabled and vbus valid signal from the PHY is used internally by the core."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VBVALID_OV_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Internally vbus valid received from the PHY is overridden with GOTGCTL.VbvalidOvVal."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VBVALID_OV_EN_A::VALUE2
     }
 }
 #[doc = "Field `VbvalidOvEn` writer - VBUS Valid Override Enable"]
-pub type VBVALID_OV_EN_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, VBVALID_OV_EN_A>;
-impl<'a, const O: u8> VBVALID_OV_EN_W<'a, O> {
+pub type VBVALID_OV_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VBVALID_OV_EN_A>;
+impl<'a, REG, const O: u8> VBVALID_OV_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Override is disabled and vbus valid signal from the PHY is used internally by the core."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VBVALID_OV_EN_A::VALUE1)
     }
     #[doc = "Internally vbus valid received from the PHY is overridden with GOTGCTL.VbvalidOvVal."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VBVALID_OV_EN_A::VALUE2)
     }
 }
@@ -195,28 +169,31 @@ impl VBVALID_OV_VAL_R {
             true => VBVALID_OV_VAL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "vbusvalid value is 0# when GOTGCTL.VbvalidOvEn = 1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VBVALID_OV_VAL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "vbusvalid value is 1# when GOTGCTL.VbvalidOvEn = 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VBVALID_OV_VAL_A::VALUE2
     }
 }
 #[doc = "Field `VbvalidOvVal` writer - VBUS Valid Override Value"]
-pub type VBVALID_OV_VAL_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, VBVALID_OV_VAL_A>;
-impl<'a, const O: u8> VBVALID_OV_VAL_W<'a, O> {
+pub type VBVALID_OV_VAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VBVALID_OV_VAL_A>;
+impl<'a, REG, const O: u8> VBVALID_OV_VAL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "vbusvalid value is 0# when GOTGCTL.VbvalidOvEn = 1"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VBVALID_OV_VAL_A::VALUE1)
     }
     #[doc = "vbusvalid value is 1# when GOTGCTL.VbvalidOvEn = 1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VBVALID_OV_VAL_A::VALUE2)
     }
 }
@@ -245,28 +222,31 @@ impl AVALID_OV_EN_R {
             true => AVALID_OV_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Override is disabled and Avalid signal from the PHY is used internally by the core."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == AVALID_OV_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Internally Avalid received from the PHY is overridden with GOTGCTL.AvalidOvVal."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == AVALID_OV_EN_A::VALUE2
     }
 }
 #[doc = "Field `AvalidOvEn` writer - A-Peripheral Session Valid Override Enable"]
-pub type AVALID_OV_EN_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, AVALID_OV_EN_A>;
-impl<'a, const O: u8> AVALID_OV_EN_W<'a, O> {
+pub type AVALID_OV_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AVALID_OV_EN_A>;
+impl<'a, REG, const O: u8> AVALID_OV_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Override is disabled and Avalid signal from the PHY is used internally by the core."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(AVALID_OV_EN_A::VALUE1)
     }
     #[doc = "Internally Avalid received from the PHY is overridden with GOTGCTL.AvalidOvVal."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(AVALID_OV_EN_A::VALUE2)
     }
 }
@@ -295,28 +275,31 @@ impl AVALID_OV_VAL_R {
             true => AVALID_OV_VAL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Avalid value is 0# when GOTGCTL.AvalidOvEn = 1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == AVALID_OV_VAL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Avalid value is 1# when GOTGCTL.AvalidOvEn = 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == AVALID_OV_VAL_A::VALUE2
     }
 }
 #[doc = "Field `AvalidOvVal` writer - A-Peripheral Session Valid Override Value"]
-pub type AVALID_OV_VAL_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, AVALID_OV_VAL_A>;
-impl<'a, const O: u8> AVALID_OV_VAL_W<'a, O> {
+pub type AVALID_OV_VAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AVALID_OV_VAL_A>;
+impl<'a, REG, const O: u8> AVALID_OV_VAL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Avalid value is 0# when GOTGCTL.AvalidOvEn = 1"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(AVALID_OV_VAL_A::VALUE1)
     }
     #[doc = "Avalid value is 1# when GOTGCTL.AvalidOvEn = 1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(AVALID_OV_VAL_A::VALUE2)
     }
 }
@@ -345,28 +328,31 @@ impl BVALID_OV_EN_R {
             true => BVALID_OV_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Override is disabled and Bvalid signal from the PHY is used internally by the core."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BVALID_OV_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Internally Bvalid received from the PHY is overridden with GOTGCTL.BvalidOvVal."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BVALID_OV_EN_A::VALUE2
     }
 }
 #[doc = "Field `BvalidOvEn` writer - B-Peripheral Session Valid Override Enable"]
-pub type BVALID_OV_EN_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, BVALID_OV_EN_A>;
-impl<'a, const O: u8> BVALID_OV_EN_W<'a, O> {
+pub type BVALID_OV_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BVALID_OV_EN_A>;
+impl<'a, REG, const O: u8> BVALID_OV_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Override is disabled and Bvalid signal from the PHY is used internally by the core."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BVALID_OV_EN_A::VALUE1)
     }
     #[doc = "Internally Bvalid received from the PHY is overridden with GOTGCTL.BvalidOvVal."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BVALID_OV_EN_A::VALUE2)
     }
 }
@@ -395,28 +381,31 @@ impl BVALID_OV_VAL_R {
             true => BVALID_OV_VAL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Bvalid value is 0# when GOTGCTL.BvalidOvEn = 1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BVALID_OV_VAL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Bvalid value is 1# when GOTGCTL.BvalidOvEn = 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BVALID_OV_VAL_A::VALUE2
     }
 }
 #[doc = "Field `BvalidOvVal` writer - B-Peripheral Session Valid Override Value"]
-pub type BVALID_OV_VAL_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, BVALID_OV_VAL_A>;
-impl<'a, const O: u8> BVALID_OV_VAL_W<'a, O> {
+pub type BVALID_OV_VAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BVALID_OV_VAL_A>;
+impl<'a, REG, const O: u8> BVALID_OV_VAL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Bvalid value is 0# when GOTGCTL.BvalidOvEn = 1"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BVALID_OV_VAL_A::VALUE1)
     }
     #[doc = "Bvalid value is 1# when GOTGCTL.BvalidOvEn = 1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BVALID_OV_VAL_A::VALUE2)
     }
 }
@@ -445,12 +434,12 @@ impl HST_NEG_SCS_R {
             true => HST_NEG_SCS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Host negotiation failure"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HST_NEG_SCS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Host negotiation success"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HST_NEG_SCS_A::VALUE2
@@ -481,28 +470,31 @@ impl HNPREQ_R {
             true => HNPREQ_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No HNP request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HNPREQ_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "HNP request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HNPREQ_A::VALUE2
     }
 }
 #[doc = "Field `HNPReq` writer - HNP Request"]
-pub type HNPREQ_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, HNPREQ_A>;
-impl<'a, const O: u8> HNPREQ_W<'a, O> {
+pub type HNPREQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HNPREQ_A>;
+impl<'a, REG, const O: u8> HNPREQ_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No HNP request"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HNPREQ_A::VALUE1)
     }
     #[doc = "HNP request"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HNPREQ_A::VALUE2)
     }
 }
@@ -531,28 +523,31 @@ impl HST_SET_HNPEN_R {
             true => HST_SET_HNPEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Host Set HNP is not enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HST_SET_HNPEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Host Set HNP is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HST_SET_HNPEN_A::VALUE2
     }
 }
 #[doc = "Field `HstSetHNPEn` writer - Host Set HNP Enable"]
-pub type HST_SET_HNPEN_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, HST_SET_HNPEN_A>;
-impl<'a, const O: u8> HST_SET_HNPEN_W<'a, O> {
+pub type HST_SET_HNPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HST_SET_HNPEN_A>;
+impl<'a, REG, const O: u8> HST_SET_HNPEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Host Set HNP is not enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HST_SET_HNPEN_A::VALUE1)
     }
     #[doc = "Host Set HNP is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HST_SET_HNPEN_A::VALUE2)
     }
 }
@@ -581,28 +576,31 @@ impl DEV_HNPEN_R {
             true => DEV_HNPEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "HNP is not enabled in the application"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DEV_HNPEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "HNP is enabled in the application"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DEV_HNPEN_A::VALUE2
     }
 }
 #[doc = "Field `DevHNPEn` writer - Device HNP Enabled"]
-pub type DEV_HNPEN_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, DEV_HNPEN_A>;
-impl<'a, const O: u8> DEV_HNPEN_W<'a, O> {
+pub type DEV_HNPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DEV_HNPEN_A>;
+impl<'a, REG, const O: u8> DEV_HNPEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "HNP is not enabled in the application"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DEV_HNPEN_A::VALUE1)
     }
     #[doc = "HNP is enabled in the application"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DEV_HNPEN_A::VALUE2)
     }
 }
@@ -631,12 +629,12 @@ impl CONL_DSTS_R {
             true => CONL_DSTS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The USB core is in A-Device mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CONL_DSTS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The USB core is in B-Device mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CONL_DSTS_A::VALUE2
@@ -667,12 +665,12 @@ impl DBNC_TIME_R {
             true => DBNC_TIME_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Long debounce time, used for physical connections (100 ms + 2.5 us)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DBNC_TIME_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Short debounce time, used for soft connections (2.5 us)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DBNC_TIME_A::VALUE2
@@ -703,12 +701,12 @@ impl ASES_VID_R {
             true => ASES_VID_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A-session is not valid"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASES_VID_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A-session is valid"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASES_VID_A::VALUE2
@@ -739,12 +737,12 @@ impl BSES_VLD_R {
             true => BSES_VLD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "B-session is not valid."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BSES_VLD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "B-session is valid."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BSES_VLD_A::VALUE2
@@ -775,28 +773,31 @@ impl OTGVER_R {
             true => OTGVER_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "OTG Version 1.3. In this version the core supports Data line pulsing and VBus pulsing for SRP."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == OTGVER_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "OTG Version 2.0. In this version the core supports only Data line pulsing for SRP."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == OTGVER_A::VALUE2
     }
 }
 #[doc = "Field `OTGVer` writer - OTG Version"]
-pub type OTGVER_W<'a, const O: u8> = crate::BitWriter<'a, GOTGCTL_SPEC, O, OTGVER_A>;
-impl<'a, const O: u8> OTGVER_W<'a, O> {
+pub type OTGVER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OTGVER_A>;
+impl<'a, REG, const O: u8> OTGVER_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "OTG Version 1.3. In this version the core supports Data line pulsing and VBus pulsing for SRP."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(OTGVER_A::VALUE1)
     }
     #[doc = "OTG Version 2.0. In this version the core supports only Data line pulsing for SRP."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(OTGVER_A::VALUE2)
     }
 }
@@ -891,88 +892,85 @@ impl W {
     #[doc = "Bit 1 - Session Request"]
     #[inline(always)]
     #[must_use]
-    pub fn ses_req(&mut self) -> SES_REQ_W<1> {
+    pub fn ses_req(&mut self) -> SES_REQ_W<GOTGCTL_SPEC, 1> {
         SES_REQ_W::new(self)
     }
     #[doc = "Bit 2 - VBUS Valid Override Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn vbvalid_ov_en(&mut self) -> VBVALID_OV_EN_W<2> {
+    pub fn vbvalid_ov_en(&mut self) -> VBVALID_OV_EN_W<GOTGCTL_SPEC, 2> {
         VBVALID_OV_EN_W::new(self)
     }
     #[doc = "Bit 3 - VBUS Valid Override Value"]
     #[inline(always)]
     #[must_use]
-    pub fn vbvalid_ov_val(&mut self) -> VBVALID_OV_VAL_W<3> {
+    pub fn vbvalid_ov_val(&mut self) -> VBVALID_OV_VAL_W<GOTGCTL_SPEC, 3> {
         VBVALID_OV_VAL_W::new(self)
     }
     #[doc = "Bit 4 - A-Peripheral Session Valid Override Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn avalid_ov_en(&mut self) -> AVALID_OV_EN_W<4> {
+    pub fn avalid_ov_en(&mut self) -> AVALID_OV_EN_W<GOTGCTL_SPEC, 4> {
         AVALID_OV_EN_W::new(self)
     }
     #[doc = "Bit 5 - A-Peripheral Session Valid Override Value"]
     #[inline(always)]
     #[must_use]
-    pub fn avalid_ov_val(&mut self) -> AVALID_OV_VAL_W<5> {
+    pub fn avalid_ov_val(&mut self) -> AVALID_OV_VAL_W<GOTGCTL_SPEC, 5> {
         AVALID_OV_VAL_W::new(self)
     }
     #[doc = "Bit 6 - B-Peripheral Session Valid Override Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn bvalid_ov_en(&mut self) -> BVALID_OV_EN_W<6> {
+    pub fn bvalid_ov_en(&mut self) -> BVALID_OV_EN_W<GOTGCTL_SPEC, 6> {
         BVALID_OV_EN_W::new(self)
     }
     #[doc = "Bit 7 - B-Peripheral Session Valid Override Value"]
     #[inline(always)]
     #[must_use]
-    pub fn bvalid_ov_val(&mut self) -> BVALID_OV_VAL_W<7> {
+    pub fn bvalid_ov_val(&mut self) -> BVALID_OV_VAL_W<GOTGCTL_SPEC, 7> {
         BVALID_OV_VAL_W::new(self)
     }
     #[doc = "Bit 9 - HNP Request"]
     #[inline(always)]
     #[must_use]
-    pub fn hnpreq(&mut self) -> HNPREQ_W<9> {
+    pub fn hnpreq(&mut self) -> HNPREQ_W<GOTGCTL_SPEC, 9> {
         HNPREQ_W::new(self)
     }
     #[doc = "Bit 10 - Host Set HNP Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hst_set_hnpen(&mut self) -> HST_SET_HNPEN_W<10> {
+    pub fn hst_set_hnpen(&mut self) -> HST_SET_HNPEN_W<GOTGCTL_SPEC, 10> {
         HST_SET_HNPEN_W::new(self)
     }
     #[doc = "Bit 11 - Device HNP Enabled"]
     #[inline(always)]
     #[must_use]
-    pub fn dev_hnpen(&mut self) -> DEV_HNPEN_W<11> {
+    pub fn dev_hnpen(&mut self) -> DEV_HNPEN_W<GOTGCTL_SPEC, 11> {
         DEV_HNPEN_W::new(self)
     }
     #[doc = "Bit 20 - OTG Version"]
     #[inline(always)]
     #[must_use]
-    pub fn otgver(&mut self) -> OTGVER_W<20> {
+    pub fn otgver(&mut self) -> OTGVER_W<GOTGCTL_SPEC, 20> {
         OTGVER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gotgctl](index.html) module"]
+#[doc = "Control and Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gotgctl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gotgctl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GOTGCTL_SPEC;
 impl crate::RegisterSpec for GOTGCTL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [gotgctl::R](R) reader structure"]
-impl crate::Readable for GOTGCTL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [gotgctl::W](W) writer structure"]
+#[doc = "`read()` method returns [`gotgctl::R`](R) reader structure"]
+impl crate::Readable for GOTGCTL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`gotgctl::W`](W) writer structure"]
 impl crate::Writable for GOTGCTL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

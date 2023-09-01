@@ -1,39 +1,7 @@
 #[doc = "Register `STC` reader"]
-pub struct R(crate::R<STC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<STC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<STC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<STC_SPEC>;
 #[doc = "Register `STC` writer"]
-pub struct W(crate::W<STC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<STC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<STC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<STC_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<STC_SPEC>;
 #[doc = "Field `CSE` reader - Cascaded shadow transfer enable"]
 pub type CSE_R = crate::BitReader<CSE_A>;
 #[doc = "Cascaded shadow transfer enable\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl CSE_R {
             true => CSE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Cascaded shadow transfer disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CSE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Cascaded shadow transfer enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CSE_A::VALUE2
     }
 }
 #[doc = "Field `CSE` writer - Cascaded shadow transfer enable"]
-pub type CSE_W<'a, const O: u8> = crate::BitWriter<'a, STC_SPEC, O, CSE_A>;
-impl<'a, const O: u8> CSE_W<'a, O> {
+pub type CSE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CSE_A>;
+impl<'a, REG, const O: u8> CSE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Cascaded shadow transfer disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CSE_A::VALUE1)
     }
     #[doc = "Cascaded shadow transfer enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CSE_A::VALUE2)
     }
 }
@@ -117,38 +88,42 @@ impl STM_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer is done in Period Match and One match."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == STM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer is done only in Period Match."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == STM_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Shadow transfer is done only in One Match."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == STM_A::VALUE3
     }
 }
 #[doc = "Field `STM` writer - Shadow transfer mode"]
-pub type STM_W<'a, const O: u8> = crate::FieldWriter<'a, STC_SPEC, 2, O, STM_A>;
-impl<'a, const O: u8> STM_W<'a, O> {
+pub type STM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, STM_A>;
+impl<'a, REG, const O: u8> STM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Shadow transfer is done in Period Match and One match."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(STM_A::VALUE1)
     }
     #[doc = "Shadow transfer is done only in Period Match."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(STM_A::VALUE2)
     }
     #[doc = "Shadow transfer is done only in One Match."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(STM_A::VALUE3)
     }
 }
@@ -168,34 +143,31 @@ impl W {
     #[doc = "Bit 0 - Cascaded shadow transfer enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cse(&mut self) -> CSE_W<0> {
+    pub fn cse(&mut self) -> CSE_W<STC_SPEC, 0> {
         CSE_W::new(self)
     }
     #[doc = "Bits 1:2 - Shadow transfer mode"]
     #[inline(always)]
     #[must_use]
-    pub fn stm(&mut self) -> STM_W<1> {
+    pub fn stm(&mut self) -> STM_W<STC_SPEC, 1> {
         STM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Shadow transfer control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [stc](index.html) module"]
+#[doc = "Shadow transfer control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`stc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`stc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STC_SPEC;
 impl crate::RegisterSpec for STC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [stc::R](R) reader structure"]
-impl crate::Readable for STC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [stc::W](W) writer structure"]
+#[doc = "`read()` method returns [`stc::R`](R) reader structure"]
+impl crate::Readable for STC_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`stc::W`](W) writer structure"]
 impl crate::Writable for STC_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

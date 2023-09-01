@@ -1,39 +1,7 @@
 #[doc = "Register `CEFLAG` reader"]
-pub struct R(crate::R<CEFLAG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CEFLAG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CEFLAG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CEFLAG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CEFLAG_SPEC>;
 #[doc = "Register `CEFLAG` writer"]
-pub struct W(crate::W<CEFLAG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CEFLAG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CEFLAG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CEFLAG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CEFLAG_SPEC>;
 #[doc = "Field `CEV0` reader - Channel Event for Channel 0"]
 pub type CEV0_R = crate::BitReader<CEV0_A>;
 #[doc = "Channel Event for Channel 0\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl CEV0_R {
             true => CEV0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No channel event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A channel event has occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV0_A::VALUE2
     }
 }
 #[doc = "Field `CEV0` writer - Channel Event for Channel 0"]
-pub type CEV0_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV0_A>;
-impl<'a, const O: u8> CEV0_W<'a, O> {
+pub type CEV0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV0_A>;
+impl<'a, REG, const O: u8> CEV0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No channel event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV0_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV0_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl CEV1_R {
             true => CEV1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No channel event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A channel event has occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV1_A::VALUE2
     }
 }
 #[doc = "Field `CEV1` writer - Channel Event for Channel 1"]
-pub type CEV1_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV1_A>;
-impl<'a, const O: u8> CEV1_W<'a, O> {
+pub type CEV1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV1_A>;
+impl<'a, REG, const O: u8> CEV1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No channel event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV1_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV1_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl CEV2_R {
             true => CEV2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No channel event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A channel event has occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV2_A::VALUE2
     }
 }
 #[doc = "Field `CEV2` writer - Channel Event for Channel 2"]
-pub type CEV2_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV2_A>;
-impl<'a, const O: u8> CEV2_W<'a, O> {
+pub type CEV2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV2_A>;
+impl<'a, REG, const O: u8> CEV2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No channel event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV2_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV2_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl CEV3_R {
             true => CEV3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No channel event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A channel event has occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV3_A::VALUE2
     }
 }
 #[doc = "Field `CEV3` writer - Channel Event for Channel 3"]
-pub type CEV3_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV3_A>;
-impl<'a, const O: u8> CEV3_W<'a, O> {
+pub type CEV3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV3_A>;
+impl<'a, REG, const O: u8> CEV3_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No channel event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV3_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV3_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl CEV4_R {
             true => CEV4_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No channel event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV4_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A channel event has occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV4_A::VALUE2
     }
 }
 #[doc = "Field `CEV4` writer - Channel Event for Channel 4"]
-pub type CEV4_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV4_A>;
-impl<'a, const O: u8> CEV4_W<'a, O> {
+pub type CEV4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV4_A>;
+impl<'a, REG, const O: u8> CEV4_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No channel event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV4_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV4_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl CEV5_R {
             true => CEV5_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No channel event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV5_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A channel event has occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV5_A::VALUE2
     }
 }
 #[doc = "Field `CEV5` writer - Channel Event for Channel 5"]
-pub type CEV5_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV5_A>;
-impl<'a, const O: u8> CEV5_W<'a, O> {
+pub type CEV5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV5_A>;
+impl<'a, REG, const O: u8> CEV5_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No channel event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV5_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV5_A::VALUE2)
     }
 }
@@ -359,28 +345,31 @@ impl CEV6_R {
             true => CEV6_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No channel event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV6_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A channel event has occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV6_A::VALUE2
     }
 }
 #[doc = "Field `CEV6` writer - Channel Event for Channel 6"]
-pub type CEV6_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV6_A>;
-impl<'a, const O: u8> CEV6_W<'a, O> {
+pub type CEV6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV6_A>;
+impl<'a, REG, const O: u8> CEV6_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No channel event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV6_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV6_A::VALUE2)
     }
 }
@@ -409,28 +398,31 @@ impl CEV7_R {
             true => CEV7_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No channel event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEV7_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A channel event has occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEV7_A::VALUE2
     }
 }
 #[doc = "Field `CEV7` writer - Channel Event for Channel 7"]
-pub type CEV7_W<'a, const O: u8> = crate::BitWriter<'a, CEFLAG_SPEC, O, CEV7_A>;
-impl<'a, const O: u8> CEV7_W<'a, O> {
+pub type CEV7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEV7_A>;
+impl<'a, REG, const O: u8> CEV7_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No channel event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEV7_A::VALUE1)
     }
     #[doc = "A channel event has occurred"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEV7_A::VALUE2)
     }
 }
@@ -480,70 +472,67 @@ impl W {
     #[doc = "Bit 0 - Channel Event for Channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn cev0(&mut self) -> CEV0_W<0> {
+    pub fn cev0(&mut self) -> CEV0_W<CEFLAG_SPEC, 0> {
         CEV0_W::new(self)
     }
     #[doc = "Bit 1 - Channel Event for Channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn cev1(&mut self) -> CEV1_W<1> {
+    pub fn cev1(&mut self) -> CEV1_W<CEFLAG_SPEC, 1> {
         CEV1_W::new(self)
     }
     #[doc = "Bit 2 - Channel Event for Channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn cev2(&mut self) -> CEV2_W<2> {
+    pub fn cev2(&mut self) -> CEV2_W<CEFLAG_SPEC, 2> {
         CEV2_W::new(self)
     }
     #[doc = "Bit 3 - Channel Event for Channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn cev3(&mut self) -> CEV3_W<3> {
+    pub fn cev3(&mut self) -> CEV3_W<CEFLAG_SPEC, 3> {
         CEV3_W::new(self)
     }
     #[doc = "Bit 4 - Channel Event for Channel 4"]
     #[inline(always)]
     #[must_use]
-    pub fn cev4(&mut self) -> CEV4_W<4> {
+    pub fn cev4(&mut self) -> CEV4_W<CEFLAG_SPEC, 4> {
         CEV4_W::new(self)
     }
     #[doc = "Bit 5 - Channel Event for Channel 5"]
     #[inline(always)]
     #[must_use]
-    pub fn cev5(&mut self) -> CEV5_W<5> {
+    pub fn cev5(&mut self) -> CEV5_W<CEFLAG_SPEC, 5> {
         CEV5_W::new(self)
     }
     #[doc = "Bit 6 - Channel Event for Channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn cev6(&mut self) -> CEV6_W<6> {
+    pub fn cev6(&mut self) -> CEV6_W<CEFLAG_SPEC, 6> {
         CEV6_W::new(self)
     }
     #[doc = "Bit 7 - Channel Event for Channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn cev7(&mut self) -> CEV7_W<7> {
+    pub fn cev7(&mut self) -> CEV7_W<CEFLAG_SPEC, 7> {
         CEV7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Channel Event Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ceflag](index.html) module"]
+#[doc = "Channel Event Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ceflag::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ceflag::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CEFLAG_SPEC;
 impl crate::RegisterSpec for CEFLAG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ceflag::R](R) reader structure"]
-impl crate::Readable for CEFLAG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ceflag::W](W) writer structure"]
+#[doc = "`read()` method returns [`ceflag::R`](R) reader structure"]
+impl crate::Readable for CEFLAG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ceflag::W`](W) writer structure"]
 impl crate::Writable for CEFLAG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

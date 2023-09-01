@@ -1,18 +1,5 @@
 #[doc = "Register `DC_LATCH1_STAT` reader"]
-pub struct R(crate::R<DC_LATCH1_STAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DC_LATCH1_STAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DC_LATCH1_STAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DC_LATCH1_STAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DC_LATCH1_STAT_SPEC>;
 #[doc = "Field `EV_L1_POS` reader - Event Latch1 positive edge"]
 pub type EV_L1_POS_R = crate::BitReader<EV_L1_POS_A>;
 #[doc = "Event Latch1 positive edge\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl EV_L1_POS_R {
             true => EV_L1_POS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Positive edge not detected or continuous mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EV_L1_POS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Positive edge detected in single event mode only"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EV_L1_POS_A::VALUE2
@@ -74,12 +61,12 @@ impl EV_L1_NEG_R {
             true => EV_L1_NEG_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Negative edge not detected or continuous mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EV_L1_NEG_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Negative edge detected in single event mode only"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EV_L1_NEG_A::VALUE2
@@ -104,15 +91,13 @@ impl R {
         L1_PIN_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "Latch1 Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dc_latch1_stat](index.html) module"]
+#[doc = "Latch1 Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_latch1_stat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_LATCH1_STAT_SPEC;
 impl crate::RegisterSpec for DC_LATCH1_STAT_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [dc_latch1_stat::R](R) reader structure"]
-impl crate::Readable for DC_LATCH1_STAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dc_latch1_stat::R`](R) reader structure"]
+impl crate::Readable for DC_LATCH1_STAT_SPEC {}
 #[doc = "`reset()` method sets DC_LATCH1_STAT to value 0"]
 impl crate::Resettable for DC_LATCH1_STAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

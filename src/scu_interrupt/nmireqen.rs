@@ -1,39 +1,7 @@
 #[doc = "Register `NMIREQEN` reader"]
-pub struct R(crate::R<NMIREQEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NMIREQEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NMIREQEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NMIREQEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<NMIREQEN_SPEC>;
 #[doc = "Register `NMIREQEN` writer"]
-pub struct W(crate::W<NMIREQEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<NMIREQEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<NMIREQEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<NMIREQEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<NMIREQEN_SPEC>;
 #[doc = "Field `PRWARN` reader - Promote Pre-Warning Interrupt Request to NMI Request"]
 pub type PRWARN_R = crate::BitReader<PRWARN_A>;
 #[doc = "Promote Pre-Warning Interrupt Request to NMI Request\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl PRWARN_R {
             true => PRWARN_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PRWARN_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PRWARN_A::CONST_1
     }
 }
 #[doc = "Field `PRWARN` writer - Promote Pre-Warning Interrupt Request to NMI Request"]
-pub type PRWARN_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, PRWARN_A>;
-impl<'a, const O: u8> PRWARN_W<'a, O> {
+pub type PRWARN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PRWARN_A>;
+impl<'a, REG, const O: u8> PRWARN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PRWARN_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PRWARN_A::CONST_1)
     }
 }
@@ -109,28 +80,31 @@ impl PI_R {
             true => PI_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PI_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PI_A::CONST_1
     }
 }
 #[doc = "Field `PI` writer - Promote RTC Periodic Interrupt request to NMI Request"]
-pub type PI_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, PI_A>;
-impl<'a, const O: u8> PI_W<'a, O> {
+pub type PI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PI_A>;
+impl<'a, REG, const O: u8> PI_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PI_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PI_A::CONST_1)
     }
 }
@@ -159,28 +133,31 @@ impl AI_R {
             true => AI_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == AI_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == AI_A::CONST_1
     }
 }
 #[doc = "Field `AI` writer - Promote RTC Alarm Interrupt Request to NMI Request"]
-pub type AI_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, AI_A>;
-impl<'a, const O: u8> AI_W<'a, O> {
+pub type AI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AI_A>;
+impl<'a, REG, const O: u8> AI_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(AI_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(AI_A::CONST_1)
     }
 }
@@ -209,28 +186,31 @@ impl ERU00_R {
             true => ERU00_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ERU00_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ERU00_A::CONST_1
     }
 }
 #[doc = "Field `ERU00` writer - Promote Channel 0 Interrupt of ERU0 Request to NMI Request"]
-pub type ERU00_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, ERU00_A>;
-impl<'a, const O: u8> ERU00_W<'a, O> {
+pub type ERU00_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERU00_A>;
+impl<'a, REG, const O: u8> ERU00_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(ERU00_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(ERU00_A::CONST_1)
     }
 }
@@ -259,28 +239,31 @@ impl ERU01_R {
             true => ERU01_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ERU01_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ERU01_A::CONST_1
     }
 }
 #[doc = "Field `ERU01` writer - Promote Channel 1 Interrupt of ERU0 Request to NMI Request"]
-pub type ERU01_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, ERU01_A>;
-impl<'a, const O: u8> ERU01_W<'a, O> {
+pub type ERU01_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERU01_A>;
+impl<'a, REG, const O: u8> ERU01_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(ERU01_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(ERU01_A::CONST_1)
     }
 }
@@ -309,28 +292,31 @@ impl ERU02_R {
             true => ERU02_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ERU02_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ERU02_A::CONST_1
     }
 }
 #[doc = "Field `ERU02` writer - Promote Channel 2 Interrupt of ERU0 Request to NMI Request"]
-pub type ERU02_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, ERU02_A>;
-impl<'a, const O: u8> ERU02_W<'a, O> {
+pub type ERU02_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERU02_A>;
+impl<'a, REG, const O: u8> ERU02_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(ERU02_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(ERU02_A::CONST_1)
     }
 }
@@ -359,28 +345,31 @@ impl ERU03_R {
             true => ERU03_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ERU03_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ERU03_A::CONST_1
     }
 }
 #[doc = "Field `ERU03` writer - Promote Channel 3 Interrupt of ERU0 Request to NMI Request"]
-pub type ERU03_W<'a, const O: u8> = crate::BitWriter<'a, NMIREQEN_SPEC, O, ERU03_A>;
-impl<'a, const O: u8> ERU03_W<'a, O> {
+pub type ERU03_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERU03_A>;
+impl<'a, REG, const O: u8> ERU03_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(ERU03_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(ERU03_A::CONST_1)
     }
 }
@@ -425,64 +414,61 @@ impl W {
     #[doc = "Bit 0 - Promote Pre-Warning Interrupt Request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn prwarn(&mut self) -> PRWARN_W<0> {
+    pub fn prwarn(&mut self) -> PRWARN_W<NMIREQEN_SPEC, 0> {
         PRWARN_W::new(self)
     }
     #[doc = "Bit 1 - Promote RTC Periodic Interrupt request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn pi(&mut self) -> PI_W<1> {
+    pub fn pi(&mut self) -> PI_W<NMIREQEN_SPEC, 1> {
         PI_W::new(self)
     }
     #[doc = "Bit 2 - Promote RTC Alarm Interrupt Request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn ai(&mut self) -> AI_W<2> {
+    pub fn ai(&mut self) -> AI_W<NMIREQEN_SPEC, 2> {
         AI_W::new(self)
     }
     #[doc = "Bit 16 - Promote Channel 0 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn eru00(&mut self) -> ERU00_W<16> {
+    pub fn eru00(&mut self) -> ERU00_W<NMIREQEN_SPEC, 16> {
         ERU00_W::new(self)
     }
     #[doc = "Bit 17 - Promote Channel 1 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn eru01(&mut self) -> ERU01_W<17> {
+    pub fn eru01(&mut self) -> ERU01_W<NMIREQEN_SPEC, 17> {
         ERU01_W::new(self)
     }
     #[doc = "Bit 18 - Promote Channel 2 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn eru02(&mut self) -> ERU02_W<18> {
+    pub fn eru02(&mut self) -> ERU02_W<NMIREQEN_SPEC, 18> {
         ERU02_W::new(self)
     }
     #[doc = "Bit 19 - Promote Channel 3 Interrupt of ERU0 Request to NMI Request"]
     #[inline(always)]
     #[must_use]
-    pub fn eru03(&mut self) -> ERU03_W<19> {
+    pub fn eru03(&mut self) -> ERU03_W<NMIREQEN_SPEC, 19> {
         ERU03_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SCU Service Request Mask\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nmireqen](index.html) module"]
+#[doc = "SCU Service Request Mask\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`nmireqen::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`nmireqen::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct NMIREQEN_SPEC;
 impl crate::RegisterSpec for NMIREQEN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [nmireqen::R](R) reader structure"]
-impl crate::Readable for NMIREQEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [nmireqen::W](W) writer structure"]
+#[doc = "`read()` method returns [`nmireqen::R`](R) reader structure"]
+impl crate::Readable for NMIREQEN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`nmireqen::W`](W) writer structure"]
 impl crate::Writable for NMIREQEN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

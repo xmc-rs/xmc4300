@@ -1,39 +1,7 @@
 #[doc = "Register `FNCTL` reader"]
-pub struct R(crate::R<FNCTL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FNCTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FNCTL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FNCTL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FNCTL_SPEC>;
 #[doc = "Register `FNCTL` writer"]
-pub struct W(crate::W<FNCTL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FNCTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FNCTL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FNCTL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<FNCTL_SPEC>;
 #[doc = "Field `PADT` reader - Touch-Sense TSIN Pad Turn"]
 pub type PADT_R = crate::FieldReader<PADT_A>;
 #[doc = "Touch-Sense TSIN Pad Turn\n\nValue on reset: 0"]
@@ -64,28 +32,32 @@ impl PADT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "TSIN0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PADT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "TSIN7"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PADT_A::VALUE2
     }
 }
 #[doc = "Field `PADT` writer - Touch-Sense TSIN Pad Turn"]
-pub type PADT_W<'a, const O: u8> = crate::FieldWriter<'a, FNCTL_SPEC, 3, O, PADT_A>;
-impl<'a, const O: u8> PADT_W<'a, O> {
+pub type PADT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PADT_A>;
+impl<'a, REG, const O: u8> PADT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "TSIN0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PADT_A::VALUE1)
     }
     #[doc = "TSIN7"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PADT_A::VALUE2)
     }
 }
@@ -114,28 +86,31 @@ impl PADTSW_R {
             true => PADTSW_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The hardware automatically enables the touch-sense inputs in sequence round-robin, starting from TSIN0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PADTSW_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Disable hardware control for software control only. The touch-sense input is configured in bit PADT."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PADTSW_A::VALUE2
     }
 }
 #[doc = "Field `PADTSW` writer - Software Control for Touch-Sense Pad Turn"]
-pub type PADTSW_W<'a, const O: u8> = crate::BitWriter<'a, FNCTL_SPEC, O, PADTSW_A>;
-impl<'a, const O: u8> PADTSW_W<'a, O> {
+pub type PADTSW_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PADTSW_A>;
+impl<'a, REG, const O: u8> PADTSW_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The hardware automatically enables the touch-sense inputs in sequence round-robin, starting from TSIN0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PADTSW_A::VALUE1)
     }
     #[doc = "Disable hardware control for software control only. The touch-sense input is configured in bit PADT."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PADTSW_A::VALUE2)
     }
 }
@@ -165,29 +140,33 @@ impl EPULL_R {
             true => EPULL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "HW over-rule to enable internal pull-up is active on TSIN\\[x\\]
+for set duration in touch-sense time slice. With this setting, it is not specified to assign the COLA to any pin."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EPULL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable external pull-up: Output 1 on pin COLA for whole duration of touch-sense time slice."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EPULL_A::VALUE2
     }
 }
 #[doc = "Field `EPULL` writer - Enable External Pull-up Configuration on Pin COLA"]
-pub type EPULL_W<'a, const O: u8> = crate::BitWriter<'a, FNCTL_SPEC, O, EPULL_A>;
-impl<'a, const O: u8> EPULL_W<'a, O> {
+pub type EPULL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EPULL_A>;
+impl<'a, REG, const O: u8> EPULL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "HW over-rule to enable internal pull-up is active on TSIN\\[x\\]
 for set duration in touch-sense time slice. With this setting, it is not specified to assign the COLA to any pin."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EPULL_A::VALUE1)
     }
     #[doc = "Enable external pull-up: Output 1 on pin COLA for whole duration of touch-sense time slice."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EPULL_A::VALUE2)
     }
 }
@@ -226,38 +205,42 @@ impl ACCCNT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "1 time"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ACCCNT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "2 times"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ACCCNT_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "16 times"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ACCCNT_A::VALUE3
     }
 }
 #[doc = "Field `ACCCNT` writer - Accumulate Count on Touch-Sense Input"]
-pub type ACCCNT_W<'a, const O: u8> = crate::FieldWriter<'a, FNCTL_SPEC, 4, O, ACCCNT_A>;
-impl<'a, const O: u8> ACCCNT_W<'a, O> {
+pub type ACCCNT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, ACCCNT_A>;
+impl<'a, REG, const O: u8> ACCCNT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "1 time"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ACCCNT_A::VALUE1)
     }
     #[doc = "2 times"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ACCCNT_A::VALUE2)
     }
     #[doc = "16 times"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ACCCNT_A::VALUE3)
     }
 }
@@ -286,28 +269,31 @@ impl TSCCMP_R {
             true => TSCCMP_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable common compare for touch-sense"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TSCCMP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable common compare for touch-sense"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TSCCMP_A::VALUE2
     }
 }
 #[doc = "Field `TSCCMP` writer - Common Compare Enable for Touch-Sense"]
-pub type TSCCMP_W<'a, const O: u8> = crate::BitWriter<'a, FNCTL_SPEC, O, TSCCMP_A>;
-impl<'a, const O: u8> TSCCMP_W<'a, O> {
+pub type TSCCMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSCCMP_A>;
+impl<'a, REG, const O: u8> TSCCMP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable common compare for touch-sense"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TSCCMP_A::VALUE1)
     }
     #[doc = "Enable common compare for touch-sense"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TSCCMP_A::VALUE2)
     }
 }
@@ -347,48 +333,52 @@ impl TSOEXT_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Extend by 1 ledts_clk"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TSOEXT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Extend by 4 ledts_clk"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TSOEXT_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Extend by 8 ledts_clk"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == TSOEXT_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Extend by 16 ledts_clk"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == TSOEXT_A::VALUE4
     }
 }
 #[doc = "Field `TSOEXT` writer - Extension for Touch-Sense Output for Pin-Low-Level"]
-pub type TSOEXT_W<'a, const O: u8> = crate::FieldWriterSafe<'a, FNCTL_SPEC, 2, O, TSOEXT_A>;
-impl<'a, const O: u8> TSOEXT_W<'a, O> {
+pub type TSOEXT_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, TSOEXT_A>;
+impl<'a, REG, const O: u8> TSOEXT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Extend by 1 ledts_clk"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TSOEXT_A::VALUE1)
     }
     #[doc = "Extend by 4 ledts_clk"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TSOEXT_A::VALUE2)
     }
     #[doc = "Extend by 8 ledts_clk"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(TSOEXT_A::VALUE3)
     }
     #[doc = "Extend by 16 ledts_clk"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(TSOEXT_A::VALUE4)
     }
 }
@@ -417,28 +407,31 @@ impl TSCTRR_R {
             true => TSCTRR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable TS-counter automatic reset"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TSCTRR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable TS-counter automatic reset to 00H on the first pad turn of a new TSIN\\[x\\]. Triggered on compare match in time slice."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TSCTRR_A::VALUE2
     }
 }
 #[doc = "Field `TSCTRR` writer - TS-Counter Auto Reset"]
-pub type TSCTRR_W<'a, const O: u8> = crate::BitWriter<'a, FNCTL_SPEC, O, TSCTRR_A>;
-impl<'a, const O: u8> TSCTRR_W<'a, O> {
+pub type TSCTRR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSCTRR_A>;
+impl<'a, REG, const O: u8> TSCTRR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable TS-counter automatic reset"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TSCTRR_A::VALUE1)
     }
     #[doc = "Enable TS-counter automatic reset to 00H on the first pad turn of a new TSIN\\[x\\]. Triggered on compare match in time slice."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TSCTRR_A::VALUE2)
     }
 }
@@ -467,28 +460,31 @@ impl TSCTRSAT_R {
             true => TSCTRSAT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TSCTRSAT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable. TS-counter stops counting in the touch-sense time slice(s) of the same (extended) frame when it reaches FFH. Counter starts to count again on the first pad turn of a new TSIN\\[x\\], triggered on compare match."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TSCTRSAT_A::VALUE2
     }
 }
 #[doc = "Field `TSCTRSAT` writer - Saturation of TS-Counter"]
-pub type TSCTRSAT_W<'a, const O: u8> = crate::BitWriter<'a, FNCTL_SPEC, O, TSCTRSAT_A>;
-impl<'a, const O: u8> TSCTRSAT_W<'a, O> {
+pub type TSCTRSAT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSCTRSAT_A>;
+impl<'a, REG, const O: u8> TSCTRSAT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TSCTRSAT_A::VALUE1)
     }
     #[doc = "Enable. TS-counter stops counting in the touch-sense time slice(s) of the same (extended) frame when it reaches FFH. Counter starts to count again on the first pad turn of a new TSIN\\[x\\], triggered on compare match."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TSCTRSAT_A::VALUE2)
     }
 }
@@ -522,28 +518,32 @@ impl NR_TSIN_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == NR_TSIN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "8"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == NR_TSIN_A::VALUE2
     }
 }
 #[doc = "Field `NR_TSIN` writer - Number of Touch-Sense Input"]
-pub type NR_TSIN_W<'a, const O: u8> = crate::FieldWriter<'a, FNCTL_SPEC, 3, O, NR_TSIN_A>;
-impl<'a, const O: u8> NR_TSIN_W<'a, O> {
+pub type NR_TSIN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, NR_TSIN_A>;
+impl<'a, REG, const O: u8> NR_TSIN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "1"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(NR_TSIN_A::VALUE1)
     }
     #[doc = "8"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(NR_TSIN_A::VALUE2)
     }
 }
@@ -572,28 +572,31 @@ impl COLLEV_R {
             true => COLLEV_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Active low"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == COLLEV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active high"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == COLLEV_A::VALUE2
     }
 }
 #[doc = "Field `COLLEV` writer - Active Level of LED Column"]
-pub type COLLEV_W<'a, const O: u8> = crate::BitWriter<'a, FNCTL_SPEC, O, COLLEV_A>;
-impl<'a, const O: u8> COLLEV_W<'a, O> {
+pub type COLLEV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, COLLEV_A>;
+impl<'a, REG, const O: u8> COLLEV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Active low"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(COLLEV_A::VALUE1)
     }
     #[doc = "Active high"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(COLLEV_A::VALUE2)
     }
 }
@@ -645,88 +648,92 @@ impl NR_LEDCOL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "1 LED column"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == NR_LEDCOL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "2 LED columns"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == NR_LEDCOL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "3 LED columns"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == NR_LEDCOL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "4 LED columns"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == NR_LEDCOL_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "5 LED columns"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == NR_LEDCOL_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "6 LED columns"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == NR_LEDCOL_A::VALUE6
     }
-    #[doc = "Checks if the value of the field is `VALUE7`"]
+    #[doc = "7 LED columns"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
         *self == NR_LEDCOL_A::VALUE7
     }
-    #[doc = "Checks if the value of the field is `VALUE8`"]
+    #[doc = "8 LED columns (max. LED columns = 7 if bit TS_EN = 1)"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
         *self == NR_LEDCOL_A::VALUE8
     }
 }
 #[doc = "Field `NR_LEDCOL` writer - Number of LED Columns"]
-pub type NR_LEDCOL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, FNCTL_SPEC, 3, O, NR_LEDCOL_A>;
-impl<'a, const O: u8> NR_LEDCOL_W<'a, O> {
+pub type NR_LEDCOL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, NR_LEDCOL_A>;
+impl<'a, REG, const O: u8> NR_LEDCOL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "1 LED column"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(NR_LEDCOL_A::VALUE1)
     }
     #[doc = "2 LED columns"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(NR_LEDCOL_A::VALUE2)
     }
     #[doc = "3 LED columns"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(NR_LEDCOL_A::VALUE3)
     }
     #[doc = "4 LED columns"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(NR_LEDCOL_A::VALUE4)
     }
     #[doc = "5 LED columns"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(NR_LEDCOL_A::VALUE5)
     }
     #[doc = "6 LED columns"]
     #[inline(always)]
-    pub fn value6(self) -> &'a mut W {
+    pub fn value6(self) -> &'a mut crate::W<REG> {
         self.variant(NR_LEDCOL_A::VALUE6)
     }
     #[doc = "7 LED columns"]
     #[inline(always)]
-    pub fn value7(self) -> &'a mut W {
+    pub fn value7(self) -> &'a mut crate::W<REG> {
         self.variant(NR_LEDCOL_A::VALUE7)
     }
     #[doc = "8 LED columns (max. LED columns = 7 if bit TS_EN = 1)"]
     #[inline(always)]
-    pub fn value8(self) -> &'a mut W {
+    pub fn value8(self) -> &'a mut crate::W<REG> {
         self.variant(NR_LEDCOL_A::VALUE8)
     }
 }
@@ -796,88 +803,85 @@ impl W {
     #[doc = "Bits 0:2 - Touch-Sense TSIN Pad Turn"]
     #[inline(always)]
     #[must_use]
-    pub fn padt(&mut self) -> PADT_W<0> {
+    pub fn padt(&mut self) -> PADT_W<FNCTL_SPEC, 0> {
         PADT_W::new(self)
     }
     #[doc = "Bit 3 - Software Control for Touch-Sense Pad Turn"]
     #[inline(always)]
     #[must_use]
-    pub fn padtsw(&mut self) -> PADTSW_W<3> {
+    pub fn padtsw(&mut self) -> PADTSW_W<FNCTL_SPEC, 3> {
         PADTSW_W::new(self)
     }
     #[doc = "Bit 4 - Enable External Pull-up Configuration on Pin COLA"]
     #[inline(always)]
     #[must_use]
-    pub fn epull(&mut self) -> EPULL_W<4> {
+    pub fn epull(&mut self) -> EPULL_W<FNCTL_SPEC, 4> {
         EPULL_W::new(self)
     }
     #[doc = "Bits 16:19 - Accumulate Count on Touch-Sense Input"]
     #[inline(always)]
     #[must_use]
-    pub fn acccnt(&mut self) -> ACCCNT_W<16> {
+    pub fn acccnt(&mut self) -> ACCCNT_W<FNCTL_SPEC, 16> {
         ACCCNT_W::new(self)
     }
     #[doc = "Bit 20 - Common Compare Enable for Touch-Sense"]
     #[inline(always)]
     #[must_use]
-    pub fn tsccmp(&mut self) -> TSCCMP_W<20> {
+    pub fn tsccmp(&mut self) -> TSCCMP_W<FNCTL_SPEC, 20> {
         TSCCMP_W::new(self)
     }
     #[doc = "Bits 21:22 - Extension for Touch-Sense Output for Pin-Low-Level"]
     #[inline(always)]
     #[must_use]
-    pub fn tsoext(&mut self) -> TSOEXT_W<21> {
+    pub fn tsoext(&mut self) -> TSOEXT_W<FNCTL_SPEC, 21> {
         TSOEXT_W::new(self)
     }
     #[doc = "Bit 23 - TS-Counter Auto Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn tsctrr(&mut self) -> TSCTRR_W<23> {
+    pub fn tsctrr(&mut self) -> TSCTRR_W<FNCTL_SPEC, 23> {
         TSCTRR_W::new(self)
     }
     #[doc = "Bit 24 - Saturation of TS-Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn tsctrsat(&mut self) -> TSCTRSAT_W<24> {
+    pub fn tsctrsat(&mut self) -> TSCTRSAT_W<FNCTL_SPEC, 24> {
         TSCTRSAT_W::new(self)
     }
     #[doc = "Bits 25:27 - Number of Touch-Sense Input"]
     #[inline(always)]
     #[must_use]
-    pub fn nr_tsin(&mut self) -> NR_TSIN_W<25> {
+    pub fn nr_tsin(&mut self) -> NR_TSIN_W<FNCTL_SPEC, 25> {
         NR_TSIN_W::new(self)
     }
     #[doc = "Bit 28 - Active Level of LED Column"]
     #[inline(always)]
     #[must_use]
-    pub fn collev(&mut self) -> COLLEV_W<28> {
+    pub fn collev(&mut self) -> COLLEV_W<FNCTL_SPEC, 28> {
         COLLEV_W::new(self)
     }
     #[doc = "Bits 29:31 - Number of LED Columns"]
     #[inline(always)]
     #[must_use]
-    pub fn nr_ledcol(&mut self) -> NR_LEDCOL_W<29> {
+    pub fn nr_ledcol(&mut self) -> NR_LEDCOL_W<FNCTL_SPEC, 29> {
         NR_LEDCOL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Function Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fnctl](index.html) module"]
+#[doc = "Function Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fnctl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fnctl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FNCTL_SPEC;
 impl crate::RegisterSpec for FNCTL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fnctl::R](R) reader structure"]
-impl crate::Readable for FNCTL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [fnctl::W](W) writer structure"]
+#[doc = "`read()` method returns [`fnctl::R`](R) reader structure"]
+impl crate::Readable for FNCTL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`fnctl::W`](W) writer structure"]
 impl crate::Writable for FNCTL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

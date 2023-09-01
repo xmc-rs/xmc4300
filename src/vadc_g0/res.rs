@@ -1,43 +1,11 @@
 #[doc = "Register `RES[%s]` reader"]
-pub struct R(crate::R<RES_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RES_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RES_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RES_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RES_SPEC>;
 #[doc = "Register `RES[%s]` writer"]
-pub struct W(crate::W<RES_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RES_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RES_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RES_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<RES_SPEC>;
 #[doc = "Field `RESULT` reader - Result of Most Recent Conversion"]
 pub type RESULT_R = crate::FieldReader<u16>;
 #[doc = "Field `RESULT` writer - Result of Most Recent Conversion"]
-pub type RESULT_W<'a, const O: u8> = crate::FieldWriter<'a, RES_SPEC, 16, O, u16>;
+pub type RESULT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 #[doc = "Field `DRC` reader - Data Reduction Counter"]
 pub type DRC_R = crate::FieldReader;
 #[doc = "Field `CHNR` reader - Channel Number"]
@@ -77,17 +45,17 @@ impl CRS_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Request source 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CRS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Request source 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CRS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Request source 2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CRS_A::VALUE3
@@ -118,12 +86,12 @@ impl FCR_R {
             true => FCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Signal level was below compare value"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Signal level was above compare value"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FCR_A::VALUE2
@@ -154,12 +122,12 @@ impl VF_R {
             true => VF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No new result available"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Bitfield RESULT has been updated with new result value and has not yet been read, or bit FCR has been updated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF_A::VALUE2
@@ -206,28 +174,25 @@ impl W {
     #[doc = "Bits 0:15 - Result of Most Recent Conversion"]
     #[inline(always)]
     #[must_use]
-    pub fn result(&mut self) -> RESULT_W<0> {
+    pub fn result(&mut self) -> RESULT_W<RES_SPEC, 0> {
         RESULT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Result Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [res](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
+#[doc = "Result Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`res::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`res::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RES_SPEC;
 impl crate::RegisterSpec for RES_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [res::R](R) reader structure"]
-impl crate::Readable for RES_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [res::W](W) writer structure"]
+#[doc = "`read()` method returns [`res::R`](R) reader structure"]
+impl crate::Readable for RES_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`res::W`](W) writer structure"]
 impl crate::Writable for RES_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

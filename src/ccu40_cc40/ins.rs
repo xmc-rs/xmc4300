@@ -1,39 +1,7 @@
 #[doc = "Register `INS` reader"]
-pub struct R(crate::R<INS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<INS_SPEC>;
 #[doc = "Register `INS` writer"]
-pub struct W(crate::W<INS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<INS_SPEC>;
 #[doc = "Field `EV0IS` reader - Event 0 signal selection"]
 pub type EV0IS_R = crate::FieldReader<EV0IS_A>;
 #[doc = "Event 0 signal selection\n\nValue on reset: 0"]
@@ -106,168 +74,172 @@ impl EV0IS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "CCU4x.INyA"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EV0IS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "CCU4x.INyB"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EV0IS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "CCU4x.INyC"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == EV0IS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "CCU4x.INyD"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == EV0IS_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "CCU4x.INyE"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == EV0IS_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "CCU4x.INyF"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == EV0IS_A::VALUE6
     }
-    #[doc = "Checks if the value of the field is `VALUE7`"]
+    #[doc = "CCU4x.INyG"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
         *self == EV0IS_A::VALUE7
     }
-    #[doc = "Checks if the value of the field is `VALUE8`"]
+    #[doc = "CCU4x.INyH"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
         *self == EV0IS_A::VALUE8
     }
-    #[doc = "Checks if the value of the field is `VALUE9`"]
+    #[doc = "CCU4x.INyI"]
     #[inline(always)]
     pub fn is_value9(&self) -> bool {
         *self == EV0IS_A::VALUE9
     }
-    #[doc = "Checks if the value of the field is `VALUE10`"]
+    #[doc = "CCU4x.INyJ"]
     #[inline(always)]
     pub fn is_value10(&self) -> bool {
         *self == EV0IS_A::VALUE10
     }
-    #[doc = "Checks if the value of the field is `VALUE11`"]
+    #[doc = "CCU4x.INyK"]
     #[inline(always)]
     pub fn is_value11(&self) -> bool {
         *self == EV0IS_A::VALUE11
     }
-    #[doc = "Checks if the value of the field is `VALUE12`"]
+    #[doc = "CCU4x.INyL"]
     #[inline(always)]
     pub fn is_value12(&self) -> bool {
         *self == EV0IS_A::VALUE12
     }
-    #[doc = "Checks if the value of the field is `VALUE13`"]
+    #[doc = "CCU4x.INyM"]
     #[inline(always)]
     pub fn is_value13(&self) -> bool {
         *self == EV0IS_A::VALUE13
     }
-    #[doc = "Checks if the value of the field is `VALUE14`"]
+    #[doc = "CCU4x.INyN"]
     #[inline(always)]
     pub fn is_value14(&self) -> bool {
         *self == EV0IS_A::VALUE14
     }
-    #[doc = "Checks if the value of the field is `VALUE15`"]
+    #[doc = "CCU4x.INyO"]
     #[inline(always)]
     pub fn is_value15(&self) -> bool {
         *self == EV0IS_A::VALUE15
     }
-    #[doc = "Checks if the value of the field is `VALUE16`"]
+    #[doc = "CCU4x.INyP"]
     #[inline(always)]
     pub fn is_value16(&self) -> bool {
         *self == EV0IS_A::VALUE16
     }
 }
 #[doc = "Field `EV0IS` writer - Event 0 signal selection"]
-pub type EV0IS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 4, O, EV0IS_A>;
-impl<'a, const O: u8> EV0IS_W<'a, O> {
+pub type EV0IS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 4, O, EV0IS_A>;
+impl<'a, REG, const O: u8> EV0IS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "CCU4x.INyA"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE1)
     }
     #[doc = "CCU4x.INyB"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE2)
     }
     #[doc = "CCU4x.INyC"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE3)
     }
     #[doc = "CCU4x.INyD"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE4)
     }
     #[doc = "CCU4x.INyE"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE5)
     }
     #[doc = "CCU4x.INyF"]
     #[inline(always)]
-    pub fn value6(self) -> &'a mut W {
+    pub fn value6(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE6)
     }
     #[doc = "CCU4x.INyG"]
     #[inline(always)]
-    pub fn value7(self) -> &'a mut W {
+    pub fn value7(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE7)
     }
     #[doc = "CCU4x.INyH"]
     #[inline(always)]
-    pub fn value8(self) -> &'a mut W {
+    pub fn value8(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE8)
     }
     #[doc = "CCU4x.INyI"]
     #[inline(always)]
-    pub fn value9(self) -> &'a mut W {
+    pub fn value9(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE9)
     }
     #[doc = "CCU4x.INyJ"]
     #[inline(always)]
-    pub fn value10(self) -> &'a mut W {
+    pub fn value10(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE10)
     }
     #[doc = "CCU4x.INyK"]
     #[inline(always)]
-    pub fn value11(self) -> &'a mut W {
+    pub fn value11(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE11)
     }
     #[doc = "CCU4x.INyL"]
     #[inline(always)]
-    pub fn value12(self) -> &'a mut W {
+    pub fn value12(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE12)
     }
     #[doc = "CCU4x.INyM"]
     #[inline(always)]
-    pub fn value13(self) -> &'a mut W {
+    pub fn value13(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE13)
     }
     #[doc = "CCU4x.INyN"]
     #[inline(always)]
-    pub fn value14(self) -> &'a mut W {
+    pub fn value14(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE14)
     }
     #[doc = "CCU4x.INyO"]
     #[inline(always)]
-    pub fn value15(self) -> &'a mut W {
+    pub fn value15(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE15)
     }
     #[doc = "CCU4x.INyP"]
     #[inline(always)]
-    pub fn value16(self) -> &'a mut W {
+    pub fn value16(self) -> &'a mut crate::W<REG> {
         self.variant(EV0IS_A::VALUE16)
     }
 }
@@ -343,168 +315,172 @@ impl EV1IS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "CCU4x.INyA"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EV1IS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "CCU4x.INyB"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EV1IS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "CCU4x.INyC"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == EV1IS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "CCU4x.INyD"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == EV1IS_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "CCU4x.INyE"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == EV1IS_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "CCU4x.INyF"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == EV1IS_A::VALUE6
     }
-    #[doc = "Checks if the value of the field is `VALUE7`"]
+    #[doc = "CCU4x.INyG"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
         *self == EV1IS_A::VALUE7
     }
-    #[doc = "Checks if the value of the field is `VALUE8`"]
+    #[doc = "CCU4x.INyH"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
         *self == EV1IS_A::VALUE8
     }
-    #[doc = "Checks if the value of the field is `VALUE9`"]
+    #[doc = "CCU4x.INyI"]
     #[inline(always)]
     pub fn is_value9(&self) -> bool {
         *self == EV1IS_A::VALUE9
     }
-    #[doc = "Checks if the value of the field is `VALUE10`"]
+    #[doc = "CCU4x.INyJ"]
     #[inline(always)]
     pub fn is_value10(&self) -> bool {
         *self == EV1IS_A::VALUE10
     }
-    #[doc = "Checks if the value of the field is `VALUE11`"]
+    #[doc = "CCU4x.INyK"]
     #[inline(always)]
     pub fn is_value11(&self) -> bool {
         *self == EV1IS_A::VALUE11
     }
-    #[doc = "Checks if the value of the field is `VALUE12`"]
+    #[doc = "CCU4x.INyL"]
     #[inline(always)]
     pub fn is_value12(&self) -> bool {
         *self == EV1IS_A::VALUE12
     }
-    #[doc = "Checks if the value of the field is `VALUE13`"]
+    #[doc = "CCU4x.INyM"]
     #[inline(always)]
     pub fn is_value13(&self) -> bool {
         *self == EV1IS_A::VALUE13
     }
-    #[doc = "Checks if the value of the field is `VALUE14`"]
+    #[doc = "CCU4x.INyN"]
     #[inline(always)]
     pub fn is_value14(&self) -> bool {
         *self == EV1IS_A::VALUE14
     }
-    #[doc = "Checks if the value of the field is `VALUE15`"]
+    #[doc = "CCU4x.INyO"]
     #[inline(always)]
     pub fn is_value15(&self) -> bool {
         *self == EV1IS_A::VALUE15
     }
-    #[doc = "Checks if the value of the field is `VALUE16`"]
+    #[doc = "CCU4x.INyP"]
     #[inline(always)]
     pub fn is_value16(&self) -> bool {
         *self == EV1IS_A::VALUE16
     }
 }
 #[doc = "Field `EV1IS` writer - Event 1 signal selection"]
-pub type EV1IS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 4, O, EV1IS_A>;
-impl<'a, const O: u8> EV1IS_W<'a, O> {
+pub type EV1IS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 4, O, EV1IS_A>;
+impl<'a, REG, const O: u8> EV1IS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "CCU4x.INyA"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE1)
     }
     #[doc = "CCU4x.INyB"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE2)
     }
     #[doc = "CCU4x.INyC"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE3)
     }
     #[doc = "CCU4x.INyD"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE4)
     }
     #[doc = "CCU4x.INyE"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE5)
     }
     #[doc = "CCU4x.INyF"]
     #[inline(always)]
-    pub fn value6(self) -> &'a mut W {
+    pub fn value6(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE6)
     }
     #[doc = "CCU4x.INyG"]
     #[inline(always)]
-    pub fn value7(self) -> &'a mut W {
+    pub fn value7(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE7)
     }
     #[doc = "CCU4x.INyH"]
     #[inline(always)]
-    pub fn value8(self) -> &'a mut W {
+    pub fn value8(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE8)
     }
     #[doc = "CCU4x.INyI"]
     #[inline(always)]
-    pub fn value9(self) -> &'a mut W {
+    pub fn value9(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE9)
     }
     #[doc = "CCU4x.INyJ"]
     #[inline(always)]
-    pub fn value10(self) -> &'a mut W {
+    pub fn value10(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE10)
     }
     #[doc = "CCU4x.INyK"]
     #[inline(always)]
-    pub fn value11(self) -> &'a mut W {
+    pub fn value11(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE11)
     }
     #[doc = "CCU4x.INyL"]
     #[inline(always)]
-    pub fn value12(self) -> &'a mut W {
+    pub fn value12(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE12)
     }
     #[doc = "CCU4x.INyM"]
     #[inline(always)]
-    pub fn value13(self) -> &'a mut W {
+    pub fn value13(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE13)
     }
     #[doc = "CCU4x.INyN"]
     #[inline(always)]
-    pub fn value14(self) -> &'a mut W {
+    pub fn value14(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE14)
     }
     #[doc = "CCU4x.INyO"]
     #[inline(always)]
-    pub fn value15(self) -> &'a mut W {
+    pub fn value15(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE15)
     }
     #[doc = "CCU4x.INyP"]
     #[inline(always)]
-    pub fn value16(self) -> &'a mut W {
+    pub fn value16(self) -> &'a mut crate::W<REG> {
         self.variant(EV1IS_A::VALUE16)
     }
 }
@@ -580,168 +556,172 @@ impl EV2IS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "CCU4x.INyA"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EV2IS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "CCU4x.INyB"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EV2IS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "CCU4x.INyC"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == EV2IS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "CCU4x.INyD"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == EV2IS_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "CCU4x.INyE"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == EV2IS_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "CCU4x.INyF"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == EV2IS_A::VALUE6
     }
-    #[doc = "Checks if the value of the field is `VALUE7`"]
+    #[doc = "CCU4x.INyG"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
         *self == EV2IS_A::VALUE7
     }
-    #[doc = "Checks if the value of the field is `VALUE8`"]
+    #[doc = "CCU4x.INyH"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
         *self == EV2IS_A::VALUE8
     }
-    #[doc = "Checks if the value of the field is `VALUE9`"]
+    #[doc = "CCU4x.INyI"]
     #[inline(always)]
     pub fn is_value9(&self) -> bool {
         *self == EV2IS_A::VALUE9
     }
-    #[doc = "Checks if the value of the field is `VALUE10`"]
+    #[doc = "CCU4x.INyJ"]
     #[inline(always)]
     pub fn is_value10(&self) -> bool {
         *self == EV2IS_A::VALUE10
     }
-    #[doc = "Checks if the value of the field is `VALUE11`"]
+    #[doc = "CCU4x.INyK"]
     #[inline(always)]
     pub fn is_value11(&self) -> bool {
         *self == EV2IS_A::VALUE11
     }
-    #[doc = "Checks if the value of the field is `VALUE12`"]
+    #[doc = "CCU4x.INyL"]
     #[inline(always)]
     pub fn is_value12(&self) -> bool {
         *self == EV2IS_A::VALUE12
     }
-    #[doc = "Checks if the value of the field is `VALUE13`"]
+    #[doc = "CCU4x.INyM"]
     #[inline(always)]
     pub fn is_value13(&self) -> bool {
         *self == EV2IS_A::VALUE13
     }
-    #[doc = "Checks if the value of the field is `VALUE14`"]
+    #[doc = "CCU4x.INyN"]
     #[inline(always)]
     pub fn is_value14(&self) -> bool {
         *self == EV2IS_A::VALUE14
     }
-    #[doc = "Checks if the value of the field is `VALUE15`"]
+    #[doc = "CCU4x.INyO"]
     #[inline(always)]
     pub fn is_value15(&self) -> bool {
         *self == EV2IS_A::VALUE15
     }
-    #[doc = "Checks if the value of the field is `VALUE16`"]
+    #[doc = "CCU4x.INyP"]
     #[inline(always)]
     pub fn is_value16(&self) -> bool {
         *self == EV2IS_A::VALUE16
     }
 }
 #[doc = "Field `EV2IS` writer - Event 2 signal selection"]
-pub type EV2IS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 4, O, EV2IS_A>;
-impl<'a, const O: u8> EV2IS_W<'a, O> {
+pub type EV2IS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 4, O, EV2IS_A>;
+impl<'a, REG, const O: u8> EV2IS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "CCU4x.INyA"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE1)
     }
     #[doc = "CCU4x.INyB"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE2)
     }
     #[doc = "CCU4x.INyC"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE3)
     }
     #[doc = "CCU4x.INyD"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE4)
     }
     #[doc = "CCU4x.INyE"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE5)
     }
     #[doc = "CCU4x.INyF"]
     #[inline(always)]
-    pub fn value6(self) -> &'a mut W {
+    pub fn value6(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE6)
     }
     #[doc = "CCU4x.INyG"]
     #[inline(always)]
-    pub fn value7(self) -> &'a mut W {
+    pub fn value7(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE7)
     }
     #[doc = "CCU4x.INyH"]
     #[inline(always)]
-    pub fn value8(self) -> &'a mut W {
+    pub fn value8(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE8)
     }
     #[doc = "CCU4x.INyI"]
     #[inline(always)]
-    pub fn value9(self) -> &'a mut W {
+    pub fn value9(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE9)
     }
     #[doc = "CCU4x.INyJ"]
     #[inline(always)]
-    pub fn value10(self) -> &'a mut W {
+    pub fn value10(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE10)
     }
     #[doc = "CCU4x.INyK"]
     #[inline(always)]
-    pub fn value11(self) -> &'a mut W {
+    pub fn value11(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE11)
     }
     #[doc = "CCU4x.INyL"]
     #[inline(always)]
-    pub fn value12(self) -> &'a mut W {
+    pub fn value12(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE12)
     }
     #[doc = "CCU4x.INyM"]
     #[inline(always)]
-    pub fn value13(self) -> &'a mut W {
+    pub fn value13(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE13)
     }
     #[doc = "CCU4x.INyN"]
     #[inline(always)]
-    pub fn value14(self) -> &'a mut W {
+    pub fn value14(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE14)
     }
     #[doc = "CCU4x.INyO"]
     #[inline(always)]
-    pub fn value15(self) -> &'a mut W {
+    pub fn value15(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE15)
     }
     #[doc = "CCU4x.INyP"]
     #[inline(always)]
-    pub fn value16(self) -> &'a mut W {
+    pub fn value16(self) -> &'a mut crate::W<REG> {
         self.variant(EV2IS_A::VALUE16)
     }
 }
@@ -781,48 +761,52 @@ impl EV0EM_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No action"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EV0EM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Signal active on rising edge"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EV0EM_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Signal active on falling edge"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == EV0EM_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Signal active on both edges"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == EV0EM_A::VALUE4
     }
 }
 #[doc = "Field `EV0EM` writer - Event 0 Edge Selection"]
-pub type EV0EM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 2, O, EV0EM_A>;
-impl<'a, const O: u8> EV0EM_W<'a, O> {
+pub type EV0EM_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EV0EM_A>;
+impl<'a, REG, const O: u8> EV0EM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No action"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EV0EM_A::VALUE1)
     }
     #[doc = "Signal active on rising edge"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EV0EM_A::VALUE2)
     }
     #[doc = "Signal active on falling edge"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(EV0EM_A::VALUE3)
     }
     #[doc = "Signal active on both edges"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(EV0EM_A::VALUE4)
     }
 }
@@ -862,48 +846,52 @@ impl EV1EM_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No action"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EV1EM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Signal active on rising edge"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EV1EM_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Signal active on falling edge"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == EV1EM_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Signal active on both edges"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == EV1EM_A::VALUE4
     }
 }
 #[doc = "Field `EV1EM` writer - Event 1 Edge Selection"]
-pub type EV1EM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 2, O, EV1EM_A>;
-impl<'a, const O: u8> EV1EM_W<'a, O> {
+pub type EV1EM_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EV1EM_A>;
+impl<'a, REG, const O: u8> EV1EM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No action"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EV1EM_A::VALUE1)
     }
     #[doc = "Signal active on rising edge"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EV1EM_A::VALUE2)
     }
     #[doc = "Signal active on falling edge"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(EV1EM_A::VALUE3)
     }
     #[doc = "Signal active on both edges"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(EV1EM_A::VALUE4)
     }
 }
@@ -943,48 +931,52 @@ impl EV2EM_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No action"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EV2EM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Signal active on rising edge"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EV2EM_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Signal active on falling edge"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == EV2EM_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Signal active on both edges"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == EV2EM_A::VALUE4
     }
 }
 #[doc = "Field `EV2EM` writer - Event 2 Edge Selection"]
-pub type EV2EM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 2, O, EV2EM_A>;
-impl<'a, const O: u8> EV2EM_W<'a, O> {
+pub type EV2EM_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EV2EM_A>;
+impl<'a, REG, const O: u8> EV2EM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No action"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EV2EM_A::VALUE1)
     }
     #[doc = "Signal active on rising edge"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EV2EM_A::VALUE2)
     }
     #[doc = "Signal active on falling edge"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(EV2EM_A::VALUE3)
     }
     #[doc = "Signal active on both edges"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(EV2EM_A::VALUE4)
     }
 }
@@ -1013,28 +1005,31 @@ impl EV0LM_R {
             true => EV0LM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Active on HIGH level"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EV0LM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active on LOW level"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EV0LM_A::VALUE2
     }
 }
 #[doc = "Field `EV0LM` writer - Event 0 Level Selection"]
-pub type EV0LM_W<'a, const O: u8> = crate::BitWriter<'a, INS_SPEC, O, EV0LM_A>;
-impl<'a, const O: u8> EV0LM_W<'a, O> {
+pub type EV0LM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EV0LM_A>;
+impl<'a, REG, const O: u8> EV0LM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Active on HIGH level"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EV0LM_A::VALUE1)
     }
     #[doc = "Active on LOW level"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EV0LM_A::VALUE2)
     }
 }
@@ -1063,28 +1058,31 @@ impl EV1LM_R {
             true => EV1LM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Active on HIGH level"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EV1LM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active on LOW level"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EV1LM_A::VALUE2
     }
 }
 #[doc = "Field `EV1LM` writer - Event 1 Level Selection"]
-pub type EV1LM_W<'a, const O: u8> = crate::BitWriter<'a, INS_SPEC, O, EV1LM_A>;
-impl<'a, const O: u8> EV1LM_W<'a, O> {
+pub type EV1LM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EV1LM_A>;
+impl<'a, REG, const O: u8> EV1LM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Active on HIGH level"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EV1LM_A::VALUE1)
     }
     #[doc = "Active on LOW level"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EV1LM_A::VALUE2)
     }
 }
@@ -1113,28 +1111,31 @@ impl EV2LM_R {
             true => EV2LM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Active on HIGH level"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EV2LM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active on LOW level"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EV2LM_A::VALUE2
     }
 }
 #[doc = "Field `EV2LM` writer - Event 2 Level Selection"]
-pub type EV2LM_W<'a, const O: u8> = crate::BitWriter<'a, INS_SPEC, O, EV2LM_A>;
-impl<'a, const O: u8> EV2LM_W<'a, O> {
+pub type EV2LM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EV2LM_A>;
+impl<'a, REG, const O: u8> EV2LM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Active on HIGH level"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EV2LM_A::VALUE1)
     }
     #[doc = "Active on LOW level"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EV2LM_A::VALUE2)
     }
 }
@@ -1174,48 +1175,52 @@ impl LPF0M_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "LPF is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LPF0M_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "3 clock cycles of fCCU4"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LPF0M_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "5 clock cycles of fCCU4"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == LPF0M_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "7 clock cycles of fCCU4"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == LPF0M_A::VALUE4
     }
 }
 #[doc = "Field `LPF0M` writer - Event 0 Low Pass Filter Configuration"]
-pub type LPF0M_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 2, O, LPF0M_A>;
-impl<'a, const O: u8> LPF0M_W<'a, O> {
+pub type LPF0M_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LPF0M_A>;
+impl<'a, REG, const O: u8> LPF0M_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "LPF is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LPF0M_A::VALUE1)
     }
     #[doc = "3 clock cycles of fCCU4"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LPF0M_A::VALUE2)
     }
     #[doc = "5 clock cycles of fCCU4"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(LPF0M_A::VALUE3)
     }
     #[doc = "7 clock cycles of fCCU4"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(LPF0M_A::VALUE4)
     }
 }
@@ -1255,48 +1260,52 @@ impl LPF1M_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "LPF is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LPF1M_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "3 clock cycles of fCCU4"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LPF1M_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "5 clock cycles of fCCU4"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == LPF1M_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "7 clock cycles of fCCU4"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == LPF1M_A::VALUE4
     }
 }
 #[doc = "Field `LPF1M` writer - Event 1 Low Pass Filter Configuration"]
-pub type LPF1M_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 2, O, LPF1M_A>;
-impl<'a, const O: u8> LPF1M_W<'a, O> {
+pub type LPF1M_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LPF1M_A>;
+impl<'a, REG, const O: u8> LPF1M_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "LPF is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LPF1M_A::VALUE1)
     }
     #[doc = "3 clock cycles of fCCU4"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LPF1M_A::VALUE2)
     }
     #[doc = "5 clock cycles of fCCU4"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(LPF1M_A::VALUE3)
     }
     #[doc = "7 clock cycles of fCCU4"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(LPF1M_A::VALUE4)
     }
 }
@@ -1336,48 +1345,52 @@ impl LPF2M_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "LPF is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LPF2M_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "3 clock cycles of fCCU4"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LPF2M_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "5 clock cycles of fCCU4"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == LPF2M_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "7 clock cycles of fCCU4"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == LPF2M_A::VALUE4
     }
 }
 #[doc = "Field `LPF2M` writer - Event 2 Low Pass Filter Configuration"]
-pub type LPF2M_W<'a, const O: u8> = crate::FieldWriterSafe<'a, INS_SPEC, 2, O, LPF2M_A>;
-impl<'a, const O: u8> LPF2M_W<'a, O> {
+pub type LPF2M_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LPF2M_A>;
+impl<'a, REG, const O: u8> LPF2M_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "LPF is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LPF2M_A::VALUE1)
     }
     #[doc = "3 clock cycles of fCCU4"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LPF2M_A::VALUE2)
     }
     #[doc = "5 clock cycles of fCCU4"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(LPF2M_A::VALUE3)
     }
     #[doc = "7 clock cycles of fCCU4"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(LPF2M_A::VALUE4)
     }
 }
@@ -1447,94 +1460,91 @@ impl W {
     #[doc = "Bits 0:3 - Event 0 signal selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev0is(&mut self) -> EV0IS_W<0> {
+    pub fn ev0is(&mut self) -> EV0IS_W<INS_SPEC, 0> {
         EV0IS_W::new(self)
     }
     #[doc = "Bits 4:7 - Event 1 signal selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev1is(&mut self) -> EV1IS_W<4> {
+    pub fn ev1is(&mut self) -> EV1IS_W<INS_SPEC, 4> {
         EV1IS_W::new(self)
     }
     #[doc = "Bits 8:11 - Event 2 signal selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev2is(&mut self) -> EV2IS_W<8> {
+    pub fn ev2is(&mut self) -> EV2IS_W<INS_SPEC, 8> {
         EV2IS_W::new(self)
     }
     #[doc = "Bits 16:17 - Event 0 Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev0em(&mut self) -> EV0EM_W<16> {
+    pub fn ev0em(&mut self) -> EV0EM_W<INS_SPEC, 16> {
         EV0EM_W::new(self)
     }
     #[doc = "Bits 18:19 - Event 1 Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev1em(&mut self) -> EV1EM_W<18> {
+    pub fn ev1em(&mut self) -> EV1EM_W<INS_SPEC, 18> {
         EV1EM_W::new(self)
     }
     #[doc = "Bits 20:21 - Event 2 Edge Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev2em(&mut self) -> EV2EM_W<20> {
+    pub fn ev2em(&mut self) -> EV2EM_W<INS_SPEC, 20> {
         EV2EM_W::new(self)
     }
     #[doc = "Bit 22 - Event 0 Level Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev0lm(&mut self) -> EV0LM_W<22> {
+    pub fn ev0lm(&mut self) -> EV0LM_W<INS_SPEC, 22> {
         EV0LM_W::new(self)
     }
     #[doc = "Bit 23 - Event 1 Level Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev1lm(&mut self) -> EV1LM_W<23> {
+    pub fn ev1lm(&mut self) -> EV1LM_W<INS_SPEC, 23> {
         EV1LM_W::new(self)
     }
     #[doc = "Bit 24 - Event 2 Level Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ev2lm(&mut self) -> EV2LM_W<24> {
+    pub fn ev2lm(&mut self) -> EV2LM_W<INS_SPEC, 24> {
         EV2LM_W::new(self)
     }
     #[doc = "Bits 25:26 - Event 0 Low Pass Filter Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn lpf0m(&mut self) -> LPF0M_W<25> {
+    pub fn lpf0m(&mut self) -> LPF0M_W<INS_SPEC, 25> {
         LPF0M_W::new(self)
     }
     #[doc = "Bits 27:28 - Event 1 Low Pass Filter Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn lpf1m(&mut self) -> LPF1M_W<27> {
+    pub fn lpf1m(&mut self) -> LPF1M_W<INS_SPEC, 27> {
         LPF1M_W::new(self)
     }
     #[doc = "Bits 29:30 - Event 2 Low Pass Filter Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn lpf2m(&mut self) -> LPF2M_W<29> {
+    pub fn lpf2m(&mut self) -> LPF2M_W<INS_SPEC, 29> {
         LPF2M_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Input Selector Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ins](index.html) module"]
+#[doc = "Input Selector Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ins::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ins::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INS_SPEC;
 impl crate::RegisterSpec for INS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ins::R](R) reader structure"]
-impl crate::Readable for INS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ins::W](W) writer structure"]
+#[doc = "`read()` method returns [`ins::R`](R) reader structure"]
+impl crate::Readable for INS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ins::W`](W) writer structure"]
 impl crate::Writable for INS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

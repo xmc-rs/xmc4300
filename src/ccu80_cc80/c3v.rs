@@ -1,18 +1,5 @@
 #[doc = "Register `C3V` reader"]
-pub struct R(crate::R<C3V_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<C3V_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<C3V_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<C3V_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<C3V_SPEC>;
 #[doc = "Field `CAPTV` reader - Capture Value"]
 pub type CAPTV_R = crate::FieldReader<u16>;
 #[doc = "Field `FPCV` reader - Prescaler Value"]
@@ -42,12 +29,12 @@ impl FFL_R {
             true => FFL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No new value was captured into the specific capture register"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FFL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A new value was captured into the specific register"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FFL_A::VALUE2
@@ -70,15 +57,13 @@ impl R {
         FFL_R::new(((self.bits >> 20) & 1) != 0)
     }
 }
-#[doc = "Capture Register 3\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [c3v](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
+#[doc = "Capture Register 3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`c3v::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct C3V_SPEC;
 impl crate::RegisterSpec for C3V_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [c3v::R](R) reader structure"]
-impl crate::Readable for C3V_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`c3v::R`](R) reader structure"]
+impl crate::Readable for C3V_SPEC {}
 #[doc = "`reset()` method sets C3V to value 0"]
 impl crate::Resettable for C3V_SPEC {
     const RESET_VALUE: Self::Ux = 0;

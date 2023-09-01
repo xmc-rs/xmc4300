@@ -1,18 +1,5 @@
 #[doc = "Register `RESD[%s]` reader"]
-pub struct R(crate::R<RESD_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RESD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RESD_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RESD_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RESD_SPEC>;
 #[doc = "Field `RESULT` reader - Result of Most Recent Conversion"]
 pub type RESULT_R = crate::FieldReader<u16>;
 #[doc = "Field `DRC` reader - Data Reduction Counter"]
@@ -54,17 +41,17 @@ impl CRS_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Request source 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CRS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Request source 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CRS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Request source 2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CRS_A::VALUE3
@@ -95,12 +82,12 @@ impl FCR_R {
             true => FCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Signal level was below compare value"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Signal level was above compare value"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FCR_A::VALUE2
@@ -131,12 +118,12 @@ impl VF_R {
             true => VF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No new result available"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Bitfield RESULT has been updated with new result value and has not yet been read, or bit FCR has been updated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF_A::VALUE2
@@ -179,15 +166,13 @@ impl R {
         VF_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Result Register, Debug\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [resd](index.html) module"]
+#[doc = "Result Register, Debug\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`resd::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RESD_SPEC;
 impl crate::RegisterSpec for RESD_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [resd::R](R) reader structure"]
-impl crate::Readable for RESD_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`resd::R`](R) reader structure"]
+impl crate::Readable for RESD_SPEC {}
 #[doc = "`reset()` method sets RESD[%s]
 to value 0"]
 impl crate::Resettable for RESD_SPEC {

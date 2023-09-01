@@ -1,55 +1,23 @@
 #[doc = "Register `STS` reader"]
-pub struct R(crate::R<STS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<STS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<STS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<STS_SPEC>;
 #[doc = "Register `STS` writer"]
-pub struct W(crate::W<STS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<STS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<STS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<STS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<STS_SPEC>;
 #[doc = "Field `CMF` reader - CRC Mismatch Flag"]
 pub type CMF_R = crate::BitReader;
 #[doc = "Field `CMF` writer - CRC Mismatch Flag"]
-pub type CMF_W<'a, const O: u8> = crate::BitWriter<'a, STS_SPEC, O>;
+pub type CMF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CEF` reader - Configuration Error Flag"]
 pub type CEF_R = crate::BitReader;
 #[doc = "Field `CEF` writer - Configuration Error Flag"]
-pub type CEF_W<'a, const O: u8> = crate::BitWriter<'a, STS_SPEC, O>;
+pub type CEF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LEF` reader - Length Error Flag"]
 pub type LEF_R = crate::BitReader;
 #[doc = "Field `LEF` writer - Length Error Flag"]
-pub type LEF_W<'a, const O: u8> = crate::BitWriter<'a, STS_SPEC, O>;
+pub type LEF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `BEF` reader - Bus Error Flag"]
 pub type BEF_R = crate::BitReader;
 #[doc = "Field `BEF` writer - Bus Error Flag"]
-pub type BEF_W<'a, const O: u8> = crate::BitWriter<'a, STS_SPEC, O>;
+pub type BEF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - CRC Mismatch Flag"]
     #[inline(always)]
@@ -76,46 +44,43 @@ impl W {
     #[doc = "Bit 0 - CRC Mismatch Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cmf(&mut self) -> CMF_W<0> {
+    pub fn cmf(&mut self) -> CMF_W<STS_SPEC, 0> {
         CMF_W::new(self)
     }
     #[doc = "Bit 1 - Configuration Error Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn cef(&mut self) -> CEF_W<1> {
+    pub fn cef(&mut self) -> CEF_W<STS_SPEC, 1> {
         CEF_W::new(self)
     }
     #[doc = "Bit 2 - Length Error Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn lef(&mut self) -> LEF_W<2> {
+    pub fn lef(&mut self) -> LEF_W<STS_SPEC, 2> {
         LEF_W::new(self)
     }
     #[doc = "Bit 3 - Bus Error Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn bef(&mut self) -> BEF_W<3> {
+    pub fn bef(&mut self) -> BEF_W<STS_SPEC, 3> {
         BEF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "CRC Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sts](index.html) module"]
+#[doc = "CRC Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sts::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sts::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STS_SPEC;
 impl crate::RegisterSpec for STS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sts::R](R) reader structure"]
-impl crate::Readable for STS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sts::W](W) writer structure"]
+#[doc = "`read()` method returns [`sts::R`](R) reader structure"]
+impl crate::Readable for STS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`sts::W`](W) writer structure"]
 impl crate::Writable for STS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

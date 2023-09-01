@@ -1,18 +1,5 @@
 #[doc = "Register `SM_ACT` reader"]
-pub struct R(crate::R<SM_ACT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SM_ACT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SM_ACT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SM_ACT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SM_ACT_SPEC>;
 #[doc = "Field `SM_EN` reader - SyncManager Enable/Disable"]
 pub type SM_EN_R = crate::BitReader<SM_EN_A>;
 #[doc = "SyncManager Enable/Disable\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl SM_EN_R {
             true => SM_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable: Access to Memory without SyncManager control"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SM_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable: SyncManager is active and controls Memory area set in configuration"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SM_EN_A::VALUE2
@@ -76,12 +63,12 @@ impl LE_ECAT_R {
             true => LE_ECAT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LE_ECAT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Generate Latch event if EtherCAT master issues a buffer exchange"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LE_ECAT_A::VALUE2
@@ -112,12 +99,12 @@ impl LE_PDI_R {
             true => LE_PDI_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LE_PDI_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Generate Latch events if PDI issues a buffer exchange or if PDI accesses buffer start address"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LE_PDI_A::VALUE2
@@ -145,15 +132,13 @@ impl R {
         LE_PDI_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "Activate SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sm_act](index.html) module"]
+#[doc = "Activate SyncManager 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sm_act::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SM_ACT_SPEC;
 impl crate::RegisterSpec for SM_ACT_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [sm_act::R](R) reader structure"]
-impl crate::Readable for SM_ACT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sm_act::R`](R) reader structure"]
+impl crate::Readable for SM_ACT_SPEC {}
 #[doc = "`reset()` method sets SM_ACT to value 0"]
 impl crate::Resettable for SM_ACT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

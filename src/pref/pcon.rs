@@ -1,39 +1,7 @@
 #[doc = "Register `PCON` reader"]
-pub struct R(crate::R<PCON_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PCON_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PCON_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PCON_SPEC>;
 #[doc = "Register `PCON` writer"]
-pub struct W(crate::W<PCON_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PCON_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PCON_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PCON_SPEC>;
 #[doc = "Field `IBYP` reader - Instruction Prefetch Buffer Bypass"]
 pub type IBYP_R = crate::BitReader<IBYP_A>;
 #[doc = "Instruction Prefetch Buffer Bypass\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl IBYP_R {
             true => IBYP_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Instruction prefetch buffer not bypassed."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == IBYP_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Instruction prefetch buffer bypassed."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == IBYP_A::CONST_1
     }
 }
 #[doc = "Field `IBYP` writer - Instruction Prefetch Buffer Bypass"]
-pub type IBYP_W<'a, const O: u8> = crate::BitWriter<'a, PCON_SPEC, O, IBYP_A>;
-impl<'a, const O: u8> IBYP_W<'a, O> {
+pub type IBYP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IBYP_A>;
+impl<'a, REG, const O: u8> IBYP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Instruction prefetch buffer not bypassed."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(IBYP_A::CONST_0)
     }
     #[doc = "Instruction prefetch buffer bypassed."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(IBYP_A::CONST_1)
     }
 }
@@ -99,16 +70,19 @@ impl From<IINV_AW> for bool {
     }
 }
 #[doc = "Field `IINV` writer - Instruction Prefetch Buffer Invalidate"]
-pub type IINV_W<'a, const O: u8> = crate::BitWriter<'a, PCON_SPEC, O, IINV_AW>;
-impl<'a, const O: u8> IINV_W<'a, O> {
+pub type IINV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IINV_AW>;
+impl<'a, REG, const O: u8> IINV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(IINV_AW::CONST_0)
     }
     #[doc = "Initiate invalidation of entire instruction cache."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(IINV_AW::CONST_1)
     }
 }
@@ -137,28 +111,31 @@ impl DBYP_R {
             true => DBYP_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Prefetch Data buffer not bypassed."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DBYP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Prefetch Data buffer bypassed."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DBYP_A::VALUE2
     }
 }
 #[doc = "Field `DBYP` writer - Data Buffer Bypass"]
-pub type DBYP_W<'a, const O: u8> = crate::BitWriter<'a, PCON_SPEC, O, DBYP_A>;
-impl<'a, const O: u8> DBYP_W<'a, O> {
+pub type DBYP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DBYP_A>;
+impl<'a, REG, const O: u8> DBYP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Prefetch Data buffer not bypassed."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DBYP_A::VALUE1)
     }
     #[doc = "Prefetch Data buffer bypassed."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DBYP_A::VALUE2)
     }
 }
@@ -178,40 +155,37 @@ impl W {
     #[doc = "Bit 0 - Instruction Prefetch Buffer Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn ibyp(&mut self) -> IBYP_W<0> {
+    pub fn ibyp(&mut self) -> IBYP_W<PCON_SPEC, 0> {
         IBYP_W::new(self)
     }
     #[doc = "Bit 1 - Instruction Prefetch Buffer Invalidate"]
     #[inline(always)]
     #[must_use]
-    pub fn iinv(&mut self) -> IINV_W<1> {
+    pub fn iinv(&mut self) -> IINV_W<PCON_SPEC, 1> {
         IINV_W::new(self)
     }
     #[doc = "Bit 4 - Data Buffer Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn dbyp(&mut self) -> DBYP_W<4> {
+    pub fn dbyp(&mut self) -> DBYP_W<PCON_SPEC, 4> {
         DBYP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Prefetch Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcon](index.html) module"]
+#[doc = "Prefetch Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcon::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcon::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PCON_SPEC;
 impl crate::RegisterSpec for PCON_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pcon::R](R) reader structure"]
-impl crate::Readable for PCON_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pcon::W](W) writer structure"]
+#[doc = "`read()` method returns [`pcon::R`](R) reader structure"]
+impl crate::Readable for PCON_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pcon::W`](W) writer structure"]
 impl crate::Writable for PCON_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

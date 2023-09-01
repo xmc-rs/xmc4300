@@ -1,18 +1,5 @@
 #[doc = "Register `PORT_DESC` reader"]
-pub struct R(crate::R<PORT_DESC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PORT_DESC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PORT_DESC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PORT_DESC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PORT_DESC_SPEC>;
 #[doc = "Field `Port0` reader - Port Configuration"]
 pub type PORT0_R = crate::FieldReader<PORT0_A>;
 #[doc = "Port Configuration\n\nValue on reset: 3"]
@@ -49,22 +36,22 @@ impl PORT0_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not implemented"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PORT0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Not configured (SII EEPROM)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PORT0_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "EBUS"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PORT0_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "MII / RMII / RGMII"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PORT0_A::VALUE4
@@ -106,22 +93,22 @@ impl PORT1_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not implemented"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PORT1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Not configured (SII EEPROM)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PORT1_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "EBUS"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PORT1_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "MII / RMII / RGMII"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PORT1_A::VALUE4
@@ -163,22 +150,22 @@ impl PORT2_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not implemented"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PORT2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Not configured (SII EEPROM)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PORT2_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "EBUS"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PORT2_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "MII / RMII / RGMII"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PORT2_A::VALUE4
@@ -220,22 +207,22 @@ impl PORT3_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not implemented"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PORT3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Not configured (SII EEPROM)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PORT3_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "EBUS"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PORT3_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "MII / RMII / RGMII"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PORT3_A::VALUE4
@@ -263,15 +250,13 @@ impl R {
         PORT3_R::new((self.bits >> 6) & 3)
     }
 }
-#[doc = "Port Descriptor\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [port_desc](index.html) module"]
+#[doc = "Port Descriptor\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`port_desc::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PORT_DESC_SPEC;
 impl crate::RegisterSpec for PORT_DESC_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [port_desc::R](R) reader structure"]
-impl crate::Readable for PORT_DESC_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`port_desc::R`](R) reader structure"]
+impl crate::Readable for PORT_DESC_SPEC {}
 #[doc = "`reset()` method sets PORT_DESC to value 0x0f"]
 impl crate::Resettable for PORT_DESC_SPEC {
     const RESET_VALUE: Self::Ux = 0x0f;

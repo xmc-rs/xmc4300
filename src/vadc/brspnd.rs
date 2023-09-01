@@ -1,39 +1,7 @@
 #[doc = "Register `BRSPND[%s]` reader"]
-pub struct R(crate::R<BRSPND_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BRSPND_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BRSPND_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BRSPND_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<BRSPND_SPEC>;
 #[doc = "Register `BRSPND[%s]` writer"]
-pub struct W(crate::W<BRSPND_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<BRSPND_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<BRSPND_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<BRSPND_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<BRSPND_SPEC>;
 #[doc = "Field `CHPNDG0` reader - Channels Pending Group x"]
 pub type CHPNDG0_R = crate::BitReader<CHPNDG0_A>;
 #[doc = "Channels Pending Group x\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl CHPNDG0_R {
             true => CHPNDG0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHPNDG0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Request conversion of this channel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHPNDG0_A::VALUE2
     }
 }
 #[doc = "Field `CHPNDG0` writer - Channels Pending Group x"]
-pub type CHPNDG0_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG0_A>;
-impl<'a, const O: u8> CHPNDG0_W<'a, O> {
+pub type CHPNDG0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPNDG0_A>;
+impl<'a, REG, const O: u8> CHPNDG0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG0_A::VALUE1)
     }
     #[doc = "Request conversion of this channel"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG0_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl CHPNDG1_R {
             true => CHPNDG1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHPNDG1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Request conversion of this channel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHPNDG1_A::VALUE2
     }
 }
 #[doc = "Field `CHPNDG1` writer - Channels Pending Group x"]
-pub type CHPNDG1_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG1_A>;
-impl<'a, const O: u8> CHPNDG1_W<'a, O> {
+pub type CHPNDG1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPNDG1_A>;
+impl<'a, REG, const O: u8> CHPNDG1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG1_A::VALUE1)
     }
     #[doc = "Request conversion of this channel"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG1_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl CHPNDG2_R {
             true => CHPNDG2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHPNDG2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Request conversion of this channel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHPNDG2_A::VALUE2
     }
 }
 #[doc = "Field `CHPNDG2` writer - Channels Pending Group x"]
-pub type CHPNDG2_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG2_A>;
-impl<'a, const O: u8> CHPNDG2_W<'a, O> {
+pub type CHPNDG2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPNDG2_A>;
+impl<'a, REG, const O: u8> CHPNDG2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG2_A::VALUE1)
     }
     #[doc = "Request conversion of this channel"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG2_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl CHPNDG3_R {
             true => CHPNDG3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHPNDG3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Request conversion of this channel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHPNDG3_A::VALUE2
     }
 }
 #[doc = "Field `CHPNDG3` writer - Channels Pending Group x"]
-pub type CHPNDG3_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG3_A>;
-impl<'a, const O: u8> CHPNDG3_W<'a, O> {
+pub type CHPNDG3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPNDG3_A>;
+impl<'a, REG, const O: u8> CHPNDG3_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG3_A::VALUE1)
     }
     #[doc = "Request conversion of this channel"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG3_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl CHPNDG4_R {
             true => CHPNDG4_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHPNDG4_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Request conversion of this channel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHPNDG4_A::VALUE2
     }
 }
 #[doc = "Field `CHPNDG4` writer - Channels Pending Group x"]
-pub type CHPNDG4_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG4_A>;
-impl<'a, const O: u8> CHPNDG4_W<'a, O> {
+pub type CHPNDG4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPNDG4_A>;
+impl<'a, REG, const O: u8> CHPNDG4_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG4_A::VALUE1)
     }
     #[doc = "Request conversion of this channel"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG4_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl CHPNDG5_R {
             true => CHPNDG5_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHPNDG5_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Request conversion of this channel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHPNDG5_A::VALUE2
     }
 }
 #[doc = "Field `CHPNDG5` writer - Channels Pending Group x"]
-pub type CHPNDG5_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG5_A>;
-impl<'a, const O: u8> CHPNDG5_W<'a, O> {
+pub type CHPNDG5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPNDG5_A>;
+impl<'a, REG, const O: u8> CHPNDG5_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG5_A::VALUE1)
     }
     #[doc = "Request conversion of this channel"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG5_A::VALUE2)
     }
 }
@@ -359,28 +345,31 @@ impl CHPNDG6_R {
             true => CHPNDG6_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHPNDG6_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Request conversion of this channel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHPNDG6_A::VALUE2
     }
 }
 #[doc = "Field `CHPNDG6` writer - Channels Pending Group x"]
-pub type CHPNDG6_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG6_A>;
-impl<'a, const O: u8> CHPNDG6_W<'a, O> {
+pub type CHPNDG6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPNDG6_A>;
+impl<'a, REG, const O: u8> CHPNDG6_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG6_A::VALUE1)
     }
     #[doc = "Request conversion of this channel"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG6_A::VALUE2)
     }
 }
@@ -409,28 +398,31 @@ impl CHPNDG7_R {
             true => CHPNDG7_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore this channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHPNDG7_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Request conversion of this channel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHPNDG7_A::VALUE2
     }
 }
 #[doc = "Field `CHPNDG7` writer - Channels Pending Group x"]
-pub type CHPNDG7_W<'a, const O: u8> = crate::BitWriter<'a, BRSPND_SPEC, O, CHPNDG7_A>;
-impl<'a, const O: u8> CHPNDG7_W<'a, O> {
+pub type CHPNDG7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CHPNDG7_A>;
+impl<'a, REG, const O: u8> CHPNDG7_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Ignore this channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG7_A::VALUE1)
     }
     #[doc = "Request conversion of this channel"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHPNDG7_A::VALUE2)
     }
 }
@@ -480,70 +472,67 @@ impl W {
     #[doc = "Bit 0 - Channels Pending Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chpndg0(&mut self) -> CHPNDG0_W<0> {
+    pub fn chpndg0(&mut self) -> CHPNDG0_W<BRSPND_SPEC, 0> {
         CHPNDG0_W::new(self)
     }
     #[doc = "Bit 1 - Channels Pending Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chpndg1(&mut self) -> CHPNDG1_W<1> {
+    pub fn chpndg1(&mut self) -> CHPNDG1_W<BRSPND_SPEC, 1> {
         CHPNDG1_W::new(self)
     }
     #[doc = "Bit 2 - Channels Pending Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chpndg2(&mut self) -> CHPNDG2_W<2> {
+    pub fn chpndg2(&mut self) -> CHPNDG2_W<BRSPND_SPEC, 2> {
         CHPNDG2_W::new(self)
     }
     #[doc = "Bit 3 - Channels Pending Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chpndg3(&mut self) -> CHPNDG3_W<3> {
+    pub fn chpndg3(&mut self) -> CHPNDG3_W<BRSPND_SPEC, 3> {
         CHPNDG3_W::new(self)
     }
     #[doc = "Bit 4 - Channels Pending Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chpndg4(&mut self) -> CHPNDG4_W<4> {
+    pub fn chpndg4(&mut self) -> CHPNDG4_W<BRSPND_SPEC, 4> {
         CHPNDG4_W::new(self)
     }
     #[doc = "Bit 5 - Channels Pending Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chpndg5(&mut self) -> CHPNDG5_W<5> {
+    pub fn chpndg5(&mut self) -> CHPNDG5_W<BRSPND_SPEC, 5> {
         CHPNDG5_W::new(self)
     }
     #[doc = "Bit 6 - Channels Pending Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chpndg6(&mut self) -> CHPNDG6_W<6> {
+    pub fn chpndg6(&mut self) -> CHPNDG6_W<BRSPND_SPEC, 6> {
         CHPNDG6_W::new(self)
     }
     #[doc = "Bit 7 - Channels Pending Group x"]
     #[inline(always)]
     #[must_use]
-    pub fn chpndg7(&mut self) -> CHPNDG7_W<7> {
+    pub fn chpndg7(&mut self) -> CHPNDG7_W<BRSPND_SPEC, 7> {
         CHPNDG7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Background Request Source Pending Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [brspnd](index.html) module"]
+#[doc = "Background Request Source Pending Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`brspnd::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`brspnd::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BRSPND_SPEC;
 impl crate::RegisterSpec for BRSPND_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [brspnd::R](R) reader structure"]
-impl crate::Readable for BRSPND_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [brspnd::W](W) writer structure"]
+#[doc = "`read()` method returns [`brspnd::R`](R) reader structure"]
+impl crate::Readable for BRSPND_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`brspnd::W`](W) writer structure"]
 impl crate::Writable for BRSPND_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

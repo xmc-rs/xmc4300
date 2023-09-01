@@ -1,39 +1,7 @@
 #[doc = "Register `OSCULCTRL` reader"]
-pub struct R(crate::R<OSCULCTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<OSCULCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<OSCULCTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<OSCULCTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<OSCULCTRL_SPEC>;
 #[doc = "Register `OSCULCTRL` writer"]
-pub struct W(crate::W<OSCULCTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<OSCULCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<OSCULCTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<OSCULCTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<OSCULCTRL_SPEC>;
 #[doc = "Field `X1DEN` reader - XTAL1 Data General Purpose Input Enable"]
 pub type X1DEN_R = crate::BitReader<X1DEN_A>;
 #[doc = "XTAL1 Data General Purpose Input Enable\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl X1DEN_R {
             true => X1DEN_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Data input inactivated, power down"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == X1DEN_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Data input active"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == X1DEN_A::CONST_1
     }
 }
 #[doc = "Field `X1DEN` writer - XTAL1 Data General Purpose Input Enable"]
-pub type X1DEN_W<'a, const O: u8> = crate::BitWriter<'a, OSCULCTRL_SPEC, O, X1DEN_A>;
-impl<'a, const O: u8> X1DEN_W<'a, O> {
+pub type X1DEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, X1DEN_A>;
+impl<'a, REG, const O: u8> X1DEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Data input inactivated, power down"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(X1DEN_A::CONST_0)
     }
     #[doc = "Data input active"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(X1DEN_A::CONST_1)
     }
 }
@@ -120,48 +91,52 @@ impl MODE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Oscillator is enabled, in operation"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == MODE_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "Oscillator is enabled, in bypass mode"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == MODE_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "Oscillator in power down"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == MODE_A::CONST_10
     }
-    #[doc = "Checks if the value of the field is `CONST_11`"]
+    #[doc = "Oscillator in power down, can be used as GPI"]
     #[inline(always)]
     pub fn is_const_11(&self) -> bool {
         *self == MODE_A::CONST_11
     }
 }
 #[doc = "Field `MODE` writer - Oscillator Mode"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, OSCULCTRL_SPEC, 2, O, MODE_A>;
-impl<'a, const O: u8> MODE_W<'a, O> {
+pub type MODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, MODE_A>;
+impl<'a, REG, const O: u8> MODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Oscillator is enabled, in operation"]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::CONST_00)
     }
     #[doc = "Oscillator is enabled, in bypass mode"]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::CONST_01)
     }
     #[doc = "Oscillator in power down"]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::CONST_10)
     }
     #[doc = "Oscillator in power down, can be used as GPI"]
     #[inline(always)]
-    pub fn const_11(self) -> &'a mut W {
+    pub fn const_11(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::CONST_11)
     }
 }
@@ -181,34 +156,31 @@ impl W {
     #[doc = "Bit 0 - XTAL1 Data General Purpose Input Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn x1den(&mut self) -> X1DEN_W<0> {
+    pub fn x1den(&mut self) -> X1DEN_W<OSCULCTRL_SPEC, 0> {
         X1DEN_W::new(self)
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<4> {
+    pub fn mode(&mut self) -> MODE_W<OSCULCTRL_SPEC, 4> {
         MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "OSC_ULP Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [osculctrl](index.html) module"]
+#[doc = "OSC_ULP Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`osculctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`osculctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OSCULCTRL_SPEC;
 impl crate::RegisterSpec for OSCULCTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [osculctrl::R](R) reader structure"]
-impl crate::Readable for OSCULCTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [osculctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`osculctrl::R`](R) reader structure"]
+impl crate::Readable for OSCULCTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`osculctrl::W`](W) writer structure"]
 impl crate::Writable for OSCULCTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

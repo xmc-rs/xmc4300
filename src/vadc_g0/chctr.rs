@@ -1,39 +1,7 @@
 #[doc = "Register `CHCTR[%s]` reader"]
-pub struct R(crate::R<CHCTR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CHCTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CHCTR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CHCTR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CHCTR_SPEC>;
 #[doc = "Register `CHCTR[%s]` writer"]
-pub struct W(crate::W<CHCTR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CHCTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CHCTR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CHCTR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CHCTR_SPEC>;
 #[doc = "Field `ICLSEL` reader - Input Class Select"]
 pub type ICLSEL_R = crate::FieldReader<ICLSEL_A>;
 #[doc = "Input Class Select\n\nValue on reset: 0"]
@@ -70,48 +38,52 @@ impl ICLSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Use group-specific class 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ICLSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Use group-specific class 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ICLSEL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Use global class 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ICLSEL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Use global class 1"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ICLSEL_A::VALUE4
     }
 }
 #[doc = "Field `ICLSEL` writer - Input Class Select"]
-pub type ICLSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CHCTR_SPEC, 2, O, ICLSEL_A>;
-impl<'a, const O: u8> ICLSEL_W<'a, O> {
+pub type ICLSEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ICLSEL_A>;
+impl<'a, REG, const O: u8> ICLSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Use group-specific class 0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ICLSEL_A::VALUE1)
     }
     #[doc = "Use group-specific class 1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ICLSEL_A::VALUE2)
     }
     #[doc = "Use global class 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ICLSEL_A::VALUE3)
     }
     #[doc = "Use global class 1"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(ICLSEL_A::VALUE4)
     }
 }
@@ -151,48 +123,52 @@ impl BNDSELL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Use group-specific boundary 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BNDSELL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Use group-specific boundary 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BNDSELL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Use global boundary 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == BNDSELL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Use global boundary 1"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == BNDSELL_A::VALUE4
     }
 }
 #[doc = "Field `BNDSELL` writer - Lower Boundary Select"]
-pub type BNDSELL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CHCTR_SPEC, 2, O, BNDSELL_A>;
-impl<'a, const O: u8> BNDSELL_W<'a, O> {
+pub type BNDSELL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BNDSELL_A>;
+impl<'a, REG, const O: u8> BNDSELL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Use group-specific boundary 0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BNDSELL_A::VALUE1)
     }
     #[doc = "Use group-specific boundary 1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BNDSELL_A::VALUE2)
     }
     #[doc = "Use global boundary 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(BNDSELL_A::VALUE3)
     }
     #[doc = "Use global boundary 1"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(BNDSELL_A::VALUE4)
     }
 }
@@ -232,48 +208,52 @@ impl BNDSELU_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Use group-specific boundary 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BNDSELU_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Use group-specific boundary 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BNDSELU_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Use global boundary 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == BNDSELU_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Use global boundary 1"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == BNDSELU_A::VALUE4
     }
 }
 #[doc = "Field `BNDSELU` writer - Upper Boundary Select"]
-pub type BNDSELU_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CHCTR_SPEC, 2, O, BNDSELU_A>;
-impl<'a, const O: u8> BNDSELU_W<'a, O> {
+pub type BNDSELU_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, BNDSELU_A>;
+impl<'a, REG, const O: u8> BNDSELU_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Use group-specific boundary 0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BNDSELU_A::VALUE1)
     }
     #[doc = "Use group-specific boundary 1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BNDSELU_A::VALUE2)
     }
     #[doc = "Use global boundary 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(BNDSELU_A::VALUE3)
     }
     #[doc = "Use global boundary 1"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(BNDSELU_A::VALUE4)
     }
 }
@@ -313,48 +293,52 @@ impl CHEVMODE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Never"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHEVMODE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "NCM: If result is inside the boundary band FCM: If result becomes high (above cmp. val.)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHEVMODE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "NCM: If result is outside the boundary band FCM: If result becomes low (below cmp. val.)"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CHEVMODE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "NCM: Always (ignore band) FCM: If result switches to either level"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CHEVMODE_A::VALUE4
     }
 }
 #[doc = "Field `CHEVMODE` writer - Channel Event Mode"]
-pub type CHEVMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CHCTR_SPEC, 2, O, CHEVMODE_A>;
-impl<'a, const O: u8> CHEVMODE_W<'a, O> {
+pub type CHEVMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CHEVMODE_A>;
+impl<'a, REG, const O: u8> CHEVMODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Never"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CHEVMODE_A::VALUE1)
     }
     #[doc = "NCM: If result is inside the boundary band FCM: If result becomes high (above cmp. val.)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CHEVMODE_A::VALUE2)
     }
     #[doc = "NCM: If result is outside the boundary band FCM: If result becomes low (below cmp. val.)"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CHEVMODE_A::VALUE3)
     }
     #[doc = "NCM: Always (ignore band) FCM: If result switches to either level"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CHEVMODE_A::VALUE4)
     }
 }
@@ -383,28 +367,31 @@ impl SYNC_R {
             true => SYNC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No synchroniz. request, standalone operation"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SYNC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Request a synchronized conversion of this channel (only taken into account for a master)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SYNC_A::VALUE2
     }
 }
 #[doc = "Field `SYNC` writer - Synchronization Request"]
-pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, CHCTR_SPEC, O, SYNC_A>;
-impl<'a, const O: u8> SYNC_W<'a, O> {
+pub type SYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SYNC_A>;
+impl<'a, REG, const O: u8> SYNC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No synchroniz. request, standalone operation"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SYNC_A::VALUE1)
     }
     #[doc = "Request a synchronized conversion of this channel (only taken into account for a master)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SYNC_A::VALUE2)
     }
 }
@@ -433,28 +420,31 @@ impl REFSEL_R {
             true => REFSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Standard reference input VAREF"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REFSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Alternate reference input from CH0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REFSEL_A::VALUE2
     }
 }
 #[doc = "Field `REFSEL` writer - Reference Input Selection"]
-pub type REFSEL_W<'a, const O: u8> = crate::BitWriter<'a, CHCTR_SPEC, O, REFSEL_A>;
-impl<'a, const O: u8> REFSEL_W<'a, O> {
+pub type REFSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REFSEL_A>;
+impl<'a, REG, const O: u8> REFSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Standard reference input VAREF"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REFSEL_A::VALUE1)
     }
     #[doc = "Alternate reference input from CH0"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REFSEL_A::VALUE2)
     }
 }
@@ -488,28 +478,32 @@ impl RESREG_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Store result in group result register GxRES0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RESREG_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Store result in group result register GxRES15"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RESREG_A::VALUE2
     }
 }
 #[doc = "Field `RESREG` writer - Result Register"]
-pub type RESREG_W<'a, const O: u8> = crate::FieldWriter<'a, CHCTR_SPEC, 4, O, RESREG_A>;
-impl<'a, const O: u8> RESREG_W<'a, O> {
+pub type RESREG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, RESREG_A>;
+impl<'a, REG, const O: u8> RESREG_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Store result in group result register GxRES0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RESREG_A::VALUE1)
     }
     #[doc = "Store result in group result register GxRES15"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RESREG_A::VALUE2)
     }
 }
@@ -538,28 +532,31 @@ impl RESTBS_R {
             true => RESTBS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Store results in the selected group result register"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RESTBS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Store results in the global result register"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RESTBS_A::VALUE2
     }
 }
 #[doc = "Field `RESTBS` writer - Result Target for Background Source"]
-pub type RESTBS_W<'a, const O: u8> = crate::BitWriter<'a, CHCTR_SPEC, O, RESTBS_A>;
-impl<'a, const O: u8> RESTBS_W<'a, O> {
+pub type RESTBS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESTBS_A>;
+impl<'a, REG, const O: u8> RESTBS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Store results in the selected group result register"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RESTBS_A::VALUE1)
     }
     #[doc = "Store results in the global result register"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RESTBS_A::VALUE2)
     }
 }
@@ -588,28 +585,31 @@ impl RESPOS_R {
             true => RESPOS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Store results left-aligned"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RESPOS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Store results right-aligned"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RESPOS_A::VALUE2
     }
 }
 #[doc = "Field `RESPOS` writer - Result Position"]
-pub type RESPOS_W<'a, const O: u8> = crate::BitWriter<'a, CHCTR_SPEC, O, RESPOS_A>;
-impl<'a, const O: u8> RESPOS_W<'a, O> {
+pub type RESPOS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESPOS_A>;
+impl<'a, REG, const O: u8> RESPOS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Store results left-aligned"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RESPOS_A::VALUE1)
     }
     #[doc = "Store results right-aligned"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RESPOS_A::VALUE2)
     }
 }
@@ -643,28 +643,32 @@ impl BWDCH_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select VAGND"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BWDCH_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select VAREF"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BWDCH_A::VALUE2
     }
 }
 #[doc = "Field `BWDCH` writer - Broken Wire Detection Channel"]
-pub type BWDCH_W<'a, const O: u8> = crate::FieldWriter<'a, CHCTR_SPEC, 2, O, BWDCH_A>;
-impl<'a, const O: u8> BWDCH_W<'a, O> {
+pub type BWDCH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, BWDCH_A>;
+impl<'a, REG, const O: u8> BWDCH_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select VAGND"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BWDCH_A::VALUE1)
     }
     #[doc = "Select VAREF"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BWDCH_A::VALUE2)
     }
 }
@@ -693,28 +697,31 @@ impl BWDEN_R {
             true => BWDEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal operation"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BWDEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Additional preparation phase is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BWDEN_A::VALUE2
     }
 }
 #[doc = "Field `BWDEN` writer - Broken Wire Detection Enable"]
-pub type BWDEN_W<'a, const O: u8> = crate::BitWriter<'a, CHCTR_SPEC, O, BWDEN_A>;
-impl<'a, const O: u8> BWDEN_W<'a, O> {
+pub type BWDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BWDEN_A>;
+impl<'a, REG, const O: u8> BWDEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal operation"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BWDEN_A::VALUE1)
     }
     #[doc = "Additional preparation phase is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BWDEN_A::VALUE2)
     }
 }
@@ -779,88 +786,85 @@ impl W {
     #[doc = "Bits 0:1 - Input Class Select"]
     #[inline(always)]
     #[must_use]
-    pub fn iclsel(&mut self) -> ICLSEL_W<0> {
+    pub fn iclsel(&mut self) -> ICLSEL_W<CHCTR_SPEC, 0> {
         ICLSEL_W::new(self)
     }
     #[doc = "Bits 4:5 - Lower Boundary Select"]
     #[inline(always)]
     #[must_use]
-    pub fn bndsell(&mut self) -> BNDSELL_W<4> {
+    pub fn bndsell(&mut self) -> BNDSELL_W<CHCTR_SPEC, 4> {
         BNDSELL_W::new(self)
     }
     #[doc = "Bits 6:7 - Upper Boundary Select"]
     #[inline(always)]
     #[must_use]
-    pub fn bndselu(&mut self) -> BNDSELU_W<6> {
+    pub fn bndselu(&mut self) -> BNDSELU_W<CHCTR_SPEC, 6> {
         BNDSELU_W::new(self)
     }
     #[doc = "Bits 8:9 - Channel Event Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn chevmode(&mut self) -> CHEVMODE_W<8> {
+    pub fn chevmode(&mut self) -> CHEVMODE_W<CHCTR_SPEC, 8> {
         CHEVMODE_W::new(self)
     }
     #[doc = "Bit 10 - Synchronization Request"]
     #[inline(always)]
     #[must_use]
-    pub fn sync(&mut self) -> SYNC_W<10> {
+    pub fn sync(&mut self) -> SYNC_W<CHCTR_SPEC, 10> {
         SYNC_W::new(self)
     }
     #[doc = "Bit 11 - Reference Input Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn refsel(&mut self) -> REFSEL_W<11> {
+    pub fn refsel(&mut self) -> REFSEL_W<CHCTR_SPEC, 11> {
         REFSEL_W::new(self)
     }
     #[doc = "Bits 16:19 - Result Register"]
     #[inline(always)]
     #[must_use]
-    pub fn resreg(&mut self) -> RESREG_W<16> {
+    pub fn resreg(&mut self) -> RESREG_W<CHCTR_SPEC, 16> {
         RESREG_W::new(self)
     }
     #[doc = "Bit 20 - Result Target for Background Source"]
     #[inline(always)]
     #[must_use]
-    pub fn restbs(&mut self) -> RESTBS_W<20> {
+    pub fn restbs(&mut self) -> RESTBS_W<CHCTR_SPEC, 20> {
         RESTBS_W::new(self)
     }
     #[doc = "Bit 21 - Result Position"]
     #[inline(always)]
     #[must_use]
-    pub fn respos(&mut self) -> RESPOS_W<21> {
+    pub fn respos(&mut self) -> RESPOS_W<CHCTR_SPEC, 21> {
         RESPOS_W::new(self)
     }
     #[doc = "Bits 28:29 - Broken Wire Detection Channel"]
     #[inline(always)]
     #[must_use]
-    pub fn bwdch(&mut self) -> BWDCH_W<28> {
+    pub fn bwdch(&mut self) -> BWDCH_W<CHCTR_SPEC, 28> {
         BWDCH_W::new(self)
     }
     #[doc = "Bit 30 - Broken Wire Detection Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn bwden(&mut self) -> BWDEN_W<30> {
+    pub fn bwden(&mut self) -> BWDEN_W<CHCTR_SPEC, 30> {
         BWDEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Channel Ctrl. Reg.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chctr](index.html) module"]
+#[doc = "Channel Ctrl. Reg.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chctr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`chctr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CHCTR_SPEC;
 impl crate::RegisterSpec for CHCTR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [chctr::R](R) reader structure"]
-impl crate::Readable for CHCTR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [chctr::W](W) writer structure"]
+#[doc = "`read()` method returns [`chctr::R`](R) reader structure"]
+impl crate::Readable for CHCTR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`chctr::W`](W) writer structure"]
 impl crate::Writable for CHCTR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

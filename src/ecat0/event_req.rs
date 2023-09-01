@@ -1,18 +1,5 @@
 #[doc = "Register `EVENT_REQ` reader"]
-pub struct R(crate::R<EVENT_REQ_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENT_REQ_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENT_REQ_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENT_REQ_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EVENT_REQ_SPEC>;
 #[doc = "Field `DC_LE` reader - DC Latch event"]
 pub type DC_LE_R = crate::BitReader<DC_LE_A>;
 #[doc = "DC Latch event\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl DC_LE_R {
             true => DC_LE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No change on DC Latch Inputs"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DC_LE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "At least one change on DC Latch Inputs"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DC_LE_A::VALUE2
@@ -74,12 +61,12 @@ impl DL_SE_R {
             true => DL_SE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No change in DL Status"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DL_SE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "DL Status change"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DL_SE_A::VALUE2
@@ -110,12 +97,12 @@ impl AL_SE_R {
             true => AL_SE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No change in AL Status"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == AL_SE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "AL Status change"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == AL_SE_A::VALUE2
@@ -146,12 +133,12 @@ impl MIR_0_R {
             true => MIR_0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Sync Channel 0 event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Sync Channel 0 event pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_0_A::VALUE2
@@ -182,12 +169,12 @@ impl MIR_1_R {
             true => MIR_1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Sync Channel 1 event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Sync Channel 1 event pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_1_A::VALUE2
@@ -218,12 +205,12 @@ impl MIR_2_R {
             true => MIR_2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Sync Channel 2 event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Sync Channel 2 event pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_2_A::VALUE2
@@ -254,12 +241,12 @@ impl MIR_3_R {
             true => MIR_3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Sync Channel 3 event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Sync Channel 3event pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_3_A::VALUE2
@@ -290,12 +277,12 @@ impl MIR_4_R {
             true => MIR_4_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Sync Channel 4 event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_4_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Sync Channel 4 event pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_4_A::VALUE2
@@ -326,12 +313,12 @@ impl MIR_5_R {
             true => MIR_5_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Sync Channel 5 event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_5_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Sync Channel 5 event pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_5_A::VALUE2
@@ -362,12 +349,12 @@ impl MIR_6_R {
             true => MIR_6_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Sync Channel 6 event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_6_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Sync Channel 6 event pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_6_A::VALUE2
@@ -398,12 +385,12 @@ impl MIR_7_R {
             true => MIR_7_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Sync Channel 7 event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_7_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Sync Channel 7 event pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_7_A::VALUE2
@@ -466,15 +453,13 @@ impl R {
         MIR_7_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
-#[doc = "ECAT Event Request\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [event_req](index.html) module"]
+#[doc = "ECAT Event Request\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`event_req::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EVENT_REQ_SPEC;
 impl crate::RegisterSpec for EVENT_REQ_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [event_req::R](R) reader structure"]
-impl crate::Readable for EVENT_REQ_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`event_req::R`](R) reader structure"]
+impl crate::Readable for EVENT_REQ_SPEC {}
 #[doc = "`reset()` method sets EVENT_REQ to value 0x04"]
 impl crate::Resettable for EVENT_REQ_SPEC {
     const RESET_VALUE: Self::Ux = 0x04;

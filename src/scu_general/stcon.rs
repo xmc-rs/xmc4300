@@ -1,39 +1,7 @@
 #[doc = "Register `STCON` reader"]
-pub struct R(crate::R<STCON_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<STCON_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<STCON_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<STCON_SPEC>;
 #[doc = "Register `STCON` writer"]
-pub struct W(crate::W<STCON_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<STCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<STCON_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<STCON_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<STCON_SPEC>;
 #[doc = "Field `HWCON` reader - HW Configuration"]
 pub type HWCON_R = crate::FieldReader<HWCON_A>;
 #[doc = "HW Configuration\n\nValue on reset: 0"]
@@ -70,22 +38,22 @@ impl HWCON_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Normal mode, JTAG"]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HWCON_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "ASC BSL enabled"]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HWCON_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "BMI customized boot enabled"]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HWCON_A::CONST_10
     }
-    #[doc = "Checks if the value of the field is `CONST_11`"]
+    #[doc = "CAN BSL enabled"]
     #[inline(always)]
     pub fn is_const_11(&self) -> bool {
         *self == HWCON_A::CONST_11
@@ -139,88 +107,92 @@ impl SWCON_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0000`"]
+    #[doc = "Normal mode, boot from Boot ROM"]
     #[inline(always)]
     pub fn is_const_0000(&self) -> bool {
         *self == SWCON_A::CONST_0000
     }
-    #[doc = "Checks if the value of the field is `CONST_0001`"]
+    #[doc = "ASC BSL enabled"]
     #[inline(always)]
     pub fn is_const_0001(&self) -> bool {
         *self == SWCON_A::CONST_0001
     }
-    #[doc = "Checks if the value of the field is `CONST_0010`"]
+    #[doc = "BMI customized boot enabled"]
     #[inline(always)]
     pub fn is_const_0010(&self) -> bool {
         *self == SWCON_A::CONST_0010
     }
-    #[doc = "Checks if the value of the field is `CONST_0011`"]
+    #[doc = "CAN BSL enabled"]
     #[inline(always)]
     pub fn is_const_0011(&self) -> bool {
         *self == SWCON_A::CONST_0011
     }
-    #[doc = "Checks if the value of the field is `CONST_0100`"]
+    #[doc = "Boot from Code SRAM"]
     #[inline(always)]
     pub fn is_const_0100(&self) -> bool {
         *self == SWCON_A::CONST_0100
     }
-    #[doc = "Checks if the value of the field is `CONST_1000`"]
+    #[doc = "Boot from alternate Flash Address 0"]
     #[inline(always)]
     pub fn is_const_1000(&self) -> bool {
         *self == SWCON_A::CONST_1000
     }
-    #[doc = "Checks if the value of the field is `CONST_1100`"]
+    #[doc = "Boot from alternate Flash Address 1"]
     #[inline(always)]
     pub fn is_const_1100(&self) -> bool {
         *self == SWCON_A::CONST_1100
     }
-    #[doc = "Checks if the value of the field is `CONST_1110`"]
+    #[doc = "Enable fallback Alternate Boot Mode (ABM)"]
     #[inline(always)]
     pub fn is_const_1110(&self) -> bool {
         *self == SWCON_A::CONST_1110
     }
 }
 #[doc = "Field `SWCON` writer - SW Configuration"]
-pub type SWCON_W<'a, const O: u8> = crate::FieldWriter<'a, STCON_SPEC, 4, O, SWCON_A>;
-impl<'a, const O: u8> SWCON_W<'a, O> {
+pub type SWCON_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, SWCON_A>;
+impl<'a, REG, const O: u8> SWCON_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Normal mode, boot from Boot ROM"]
     #[inline(always)]
-    pub fn const_0000(self) -> &'a mut W {
+    pub fn const_0000(self) -> &'a mut crate::W<REG> {
         self.variant(SWCON_A::CONST_0000)
     }
     #[doc = "ASC BSL enabled"]
     #[inline(always)]
-    pub fn const_0001(self) -> &'a mut W {
+    pub fn const_0001(self) -> &'a mut crate::W<REG> {
         self.variant(SWCON_A::CONST_0001)
     }
     #[doc = "BMI customized boot enabled"]
     #[inline(always)]
-    pub fn const_0010(self) -> &'a mut W {
+    pub fn const_0010(self) -> &'a mut crate::W<REG> {
         self.variant(SWCON_A::CONST_0010)
     }
     #[doc = "CAN BSL enabled"]
     #[inline(always)]
-    pub fn const_0011(self) -> &'a mut W {
+    pub fn const_0011(self) -> &'a mut crate::W<REG> {
         self.variant(SWCON_A::CONST_0011)
     }
     #[doc = "Boot from Code SRAM"]
     #[inline(always)]
-    pub fn const_0100(self) -> &'a mut W {
+    pub fn const_0100(self) -> &'a mut crate::W<REG> {
         self.variant(SWCON_A::CONST_0100)
     }
     #[doc = "Boot from alternate Flash Address 0"]
     #[inline(always)]
-    pub fn const_1000(self) -> &'a mut W {
+    pub fn const_1000(self) -> &'a mut crate::W<REG> {
         self.variant(SWCON_A::CONST_1000)
     }
     #[doc = "Boot from alternate Flash Address 1"]
     #[inline(always)]
-    pub fn const_1100(self) -> &'a mut W {
+    pub fn const_1100(self) -> &'a mut crate::W<REG> {
         self.variant(SWCON_A::CONST_1100)
     }
     #[doc = "Enable fallback Alternate Boot Mode (ABM)"]
     #[inline(always)]
-    pub fn const_1110(self) -> &'a mut W {
+    pub fn const_1110(self) -> &'a mut crate::W<REG> {
         self.variant(SWCON_A::CONST_1110)
     }
 }
@@ -240,28 +212,25 @@ impl W {
     #[doc = "Bits 8:11 - SW Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn swcon(&mut self) -> SWCON_W<8> {
+    pub fn swcon(&mut self) -> SWCON_W<STCON_SPEC, 8> {
         SWCON_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Startup Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [stcon](index.html) module"]
+#[doc = "Startup Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`stcon::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`stcon::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STCON_SPEC;
 impl crate::RegisterSpec for STCON_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [stcon::R](R) reader structure"]
-impl crate::Readable for STCON_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [stcon::W](W) writer structure"]
+#[doc = "`read()` method returns [`stcon::R`](R) reader structure"]
+impl crate::Readable for STCON_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`stcon::W`](W) writer structure"]
 impl crate::Writable for STCON_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

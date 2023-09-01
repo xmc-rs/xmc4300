@@ -1,39 +1,7 @@
 #[doc = "Register `SCTR` reader"]
-pub struct R(crate::R<SCTR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SCTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SCTR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SCTR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SCTR_SPEC>;
 #[doc = "Register `SCTR` writer"]
-pub struct W(crate::W<SCTR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SCTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SCTR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SCTR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SCTR_SPEC>;
 #[doc = "Field `SDIR` reader - Shift Direction"]
 pub type SDIR_R = crate::BitReader<SDIR_A>;
 #[doc = "Shift Direction\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl SDIR_R {
             true => SDIR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shift LSB first. The first data bit of a data word is located at bit position 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SDIR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shift MSB first. The first data bit of a data word is located at the bit position given by bit field SCTR.WLE."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SDIR_A::VALUE2
     }
 }
 #[doc = "Field `SDIR` writer - Shift Direction"]
-pub type SDIR_W<'a, const O: u8> = crate::BitWriter<'a, SCTR_SPEC, O, SDIR_A>;
-impl<'a, const O: u8> SDIR_W<'a, O> {
+pub type SDIR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SDIR_A>;
+impl<'a, REG, const O: u8> SDIR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Shift LSB first. The first data bit of a data word is located at bit position 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SDIR_A::VALUE1)
     }
     #[doc = "Shift MSB first. The first data bit of a data word is located at the bit position given by bit field SCTR.WLE."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SDIR_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl PDL_R {
             true => PDL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The passive data level is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The passive data level is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDL_A::VALUE2
     }
 }
 #[doc = "Field `PDL` writer - Passive Data Level"]
-pub type PDL_W<'a, const O: u8> = crate::BitWriter<'a, SCTR_SPEC, O, PDL_A>;
-impl<'a, const O: u8> PDL_W<'a, O> {
+pub type PDL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PDL_A>;
+impl<'a, REG, const O: u8> PDL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The passive data level is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PDL_A::VALUE1)
     }
     #[doc = "The passive data level is 1."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PDL_A::VALUE2)
     }
 }
@@ -169,40 +143,46 @@ impl DSM_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Receive and transmit data is shifted in and out one bit at a time through DX0 and DOUT0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DSM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\]
+respectively."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == DSM_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\]
+respectively."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == DSM_A::VALUE4
     }
 }
 #[doc = "Field `DSM` writer - Data Shift Mode"]
-pub type DSM_W<'a, const O: u8> = crate::FieldWriter<'a, SCTR_SPEC, 2, O, DSM_A>;
-impl<'a, const O: u8> DSM_W<'a, O> {
+pub type DSM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DSM_A>;
+impl<'a, REG, const O: u8> DSM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Receive and transmit data is shifted in and out one bit at a time through DX0 and DOUT0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DSM_A::VALUE1)
     }
     #[doc = "Receive and transmit data is shifted in and out two bits at a time through two input stages (DX0 and DX3) and DOUT\\[1:0\\]
 respectively."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(DSM_A::VALUE3)
     }
     #[doc = "Receive and transmit data is shifted in and out four bits at a time through four input stages (DX0, DX\\[5:3\\]) and DOUT\\[3:0\\]
 respectively."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(DSM_A::VALUE4)
     }
 }
@@ -231,28 +211,31 @@ impl HPCDIR_R {
             true => HPCDIR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The pin(s) with hardware pin control enabled are selected to be in input mode."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HPCDIR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The pin(s) with hardware pin control enabled are selected to be in output mode."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HPCDIR_A::VALUE2
     }
 }
 #[doc = "Field `HPCDIR` writer - Port Control Direction"]
-pub type HPCDIR_W<'a, const O: u8> = crate::BitWriter<'a, SCTR_SPEC, O, HPCDIR_A>;
-impl<'a, const O: u8> HPCDIR_W<'a, O> {
+pub type HPCDIR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HPCDIR_A>;
+impl<'a, REG, const O: u8> HPCDIR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The pin(s) with hardware pin control enabled are selected to be in input mode."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HPCDIR_A::VALUE1)
     }
     #[doc = "The pin(s) with hardware pin control enabled are selected to be in output mode."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HPCDIR_A::VALUE2)
     }
 }
@@ -286,28 +269,32 @@ impl DOCFG_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "DOUTx = shift data value"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DOCFG_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "DOUTx = inverted shift data value"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DOCFG_A::VALUE2
     }
 }
 #[doc = "Field `DOCFG` writer - Data Output Configuration"]
-pub type DOCFG_W<'a, const O: u8> = crate::FieldWriter<'a, SCTR_SPEC, 2, O, DOCFG_A>;
-impl<'a, const O: u8> DOCFG_W<'a, O> {
+pub type DOCFG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DOCFG_A>;
+impl<'a, REG, const O: u8> DOCFG_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "DOUTx = shift data value"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DOCFG_A::VALUE1)
     }
     #[doc = "DOUTx = inverted shift data value"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DOCFG_A::VALUE2)
     }
 }
@@ -347,55 +334,59 @@ impl TRM_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The shift control signal is considered as inactive and data frame transfers are not possible."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TRM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The shift control signal is considered active if it is at 1-level. This is the setting to be programmed to allow data transfers."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TRM_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "The shift control signal is considered active if it is at 0-level. It is recommended to avoid this setting and to use the inversion in the DX2 stage in case of a low-active signal."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == TRM_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "The shift control signal is considered active without referring to the actual signal level. Data frame transfer is possible after each edge of the signal."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == TRM_A::VALUE4
     }
 }
 #[doc = "Field `TRM` writer - Transmission Mode"]
-pub type TRM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SCTR_SPEC, 2, O, TRM_A>;
-impl<'a, const O: u8> TRM_W<'a, O> {
+pub type TRM_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, TRM_A>;
+impl<'a, REG, const O: u8> TRM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The shift control signal is considered as inactive and data frame transfers are not possible."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TRM_A::VALUE1)
     }
     #[doc = "The shift control signal is considered active if it is at 1-level. This is the setting to be programmed to allow data transfers."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TRM_A::VALUE2)
     }
     #[doc = "The shift control signal is considered active if it is at 0-level. It is recommended to avoid this setting and to use the inversion in the DX2 stage in case of a low-active signal."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(TRM_A::VALUE3)
     }
     #[doc = "The shift control signal is considered active without referring to the actual signal level. Data frame transfer is possible after each edge of the signal."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(TRM_A::VALUE4)
     }
 }
 #[doc = "Field `FLE` reader - Frame Length"]
 pub type FLE_R = crate::FieldReader;
 #[doc = "Field `FLE` writer - Frame Length"]
-pub type FLE_W<'a, const O: u8> = crate::FieldWriter<'a, SCTR_SPEC, 6, O>;
+pub type FLE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 #[doc = "Field `WLE` reader - Word Length"]
 pub type WLE_R = crate::FieldReader<WLE_A>;
 #[doc = "Word Length\n\nValue on reset: 0"]
@@ -432,48 +423,52 @@ impl WLE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The data word contains 1 data bit located at bit position 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WLE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The data word contains 2 data bits located at bit positions \\[1:0\\]."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WLE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "The data word contains 15 data bits located at bit positions \\[14:0\\]."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == WLE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "The data word contains 16 data bits located at bit positions \\[15:0\\]."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == WLE_A::VALUE4
     }
 }
 #[doc = "Field `WLE` writer - Word Length"]
-pub type WLE_W<'a, const O: u8> = crate::FieldWriter<'a, SCTR_SPEC, 4, O, WLE_A>;
-impl<'a, const O: u8> WLE_W<'a, O> {
+pub type WLE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, WLE_A>;
+impl<'a, REG, const O: u8> WLE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The data word contains 1 data bit located at bit position 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WLE_A::VALUE1)
     }
     #[doc = "The data word contains 2 data bits located at bit positions \\[1:0\\]."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WLE_A::VALUE2)
     }
     #[doc = "The data word contains 15 data bits located at bit positions \\[14:0\\]."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(WLE_A::VALUE3)
     }
     #[doc = "The data word contains 16 data bits located at bit positions \\[15:0\\]."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(WLE_A::VALUE4)
     }
 }
@@ -523,70 +518,67 @@ impl W {
     #[doc = "Bit 0 - Shift Direction"]
     #[inline(always)]
     #[must_use]
-    pub fn sdir(&mut self) -> SDIR_W<0> {
+    pub fn sdir(&mut self) -> SDIR_W<SCTR_SPEC, 0> {
         SDIR_W::new(self)
     }
     #[doc = "Bit 1 - Passive Data Level"]
     #[inline(always)]
     #[must_use]
-    pub fn pdl(&mut self) -> PDL_W<1> {
+    pub fn pdl(&mut self) -> PDL_W<SCTR_SPEC, 1> {
         PDL_W::new(self)
     }
     #[doc = "Bits 2:3 - Data Shift Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn dsm(&mut self) -> DSM_W<2> {
+    pub fn dsm(&mut self) -> DSM_W<SCTR_SPEC, 2> {
         DSM_W::new(self)
     }
     #[doc = "Bit 4 - Port Control Direction"]
     #[inline(always)]
     #[must_use]
-    pub fn hpcdir(&mut self) -> HPCDIR_W<4> {
+    pub fn hpcdir(&mut self) -> HPCDIR_W<SCTR_SPEC, 4> {
         HPCDIR_W::new(self)
     }
     #[doc = "Bits 6:7 - Data Output Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn docfg(&mut self) -> DOCFG_W<6> {
+    pub fn docfg(&mut self) -> DOCFG_W<SCTR_SPEC, 6> {
         DOCFG_W::new(self)
     }
     #[doc = "Bits 8:9 - Transmission Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn trm(&mut self) -> TRM_W<8> {
+    pub fn trm(&mut self) -> TRM_W<SCTR_SPEC, 8> {
         TRM_W::new(self)
     }
     #[doc = "Bits 16:21 - Frame Length"]
     #[inline(always)]
     #[must_use]
-    pub fn fle(&mut self) -> FLE_W<16> {
+    pub fn fle(&mut self) -> FLE_W<SCTR_SPEC, 16> {
         FLE_W::new(self)
     }
     #[doc = "Bits 24:27 - Word Length"]
     #[inline(always)]
     #[must_use]
-    pub fn wle(&mut self) -> WLE_W<24> {
+    pub fn wle(&mut self) -> WLE_W<SCTR_SPEC, 24> {
         WLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Shift Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sctr](index.html) module"]
+#[doc = "Shift Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sctr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sctr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SCTR_SPEC;
 impl crate::RegisterSpec for SCTR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sctr::R](R) reader structure"]
-impl crate::Readable for SCTR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sctr::W](W) writer structure"]
+#[doc = "`read()` method returns [`sctr::R`](R) reader structure"]
+impl crate::Readable for SCTR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`sctr::W`](W) writer structure"]
 impl crate::Writable for SCTR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

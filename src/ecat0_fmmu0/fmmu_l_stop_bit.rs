@@ -1,18 +1,5 @@
 #[doc = "Register `FMMU_L_STOP_BIT` reader"]
-pub struct R(crate::R<FMMU_L_STOP_BIT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FMMU_L_STOP_BIT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FMMU_L_STOP_BIT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FMMU_L_STOP_BIT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FMMU_L_STOP_BIT_SPEC>;
 #[doc = "Field `L_STOP_BIT` reader - Last logical bit that shall be mapped"]
 pub type L_STOP_BIT_R = crate::FieldReader;
 impl R {
@@ -22,15 +9,13 @@ impl R {
         L_STOP_BIT_R::new(self.bits & 7)
     }
 }
-#[doc = "Stop bit FMMU 0 in logical address space\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmmu_l_stop_bit](index.html) module"]
+#[doc = "Stop bit FMMU 0 in logical address space\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmmu_l_stop_bit::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FMMU_L_STOP_BIT_SPEC;
 impl crate::RegisterSpec for FMMU_L_STOP_BIT_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [fmmu_l_stop_bit::R](R) reader structure"]
-impl crate::Readable for FMMU_L_STOP_BIT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`fmmu_l_stop_bit::R`](R) reader structure"]
+impl crate::Readable for FMMU_L_STOP_BIT_SPEC {}
 #[doc = "`reset()` method sets FMMU_L_STOP_BIT to value 0"]
 impl crate::Resettable for FMMU_L_STOP_BIT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

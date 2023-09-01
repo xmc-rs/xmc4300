@@ -1,39 +1,7 @@
 #[doc = "Register `REFLAG` reader"]
-pub struct R(crate::R<REFLAG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<REFLAG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<REFLAG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<REFLAG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<REFLAG_SPEC>;
 #[doc = "Register `REFLAG` writer"]
-pub struct W(crate::W<REFLAG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<REFLAG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<REFLAG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<REFLAG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<REFLAG_SPEC>;
 #[doc = "Field `REV0` reader - Result Event for Result Register 0"]
 pub type REV0_R = crate::BitReader<REV0_A>;
 #[doc = "Result Event for Result Register 0\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl REV0_R {
             true => REV0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV0_A::VALUE2
     }
 }
 #[doc = "Field `REV0` writer - Result Event for Result Register 0"]
-pub type REV0_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV0_A>;
-impl<'a, const O: u8> REV0_W<'a, O> {
+pub type REV0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV0_A>;
+impl<'a, REG, const O: u8> REV0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV0_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV0_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl REV1_R {
             true => REV1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV1_A::VALUE2
     }
 }
 #[doc = "Field `REV1` writer - Result Event for Result Register 1"]
-pub type REV1_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV1_A>;
-impl<'a, const O: u8> REV1_W<'a, O> {
+pub type REV1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV1_A>;
+impl<'a, REG, const O: u8> REV1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV1_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV1_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl REV2_R {
             true => REV2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV2_A::VALUE2
     }
 }
 #[doc = "Field `REV2` writer - Result Event for Result Register 2"]
-pub type REV2_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV2_A>;
-impl<'a, const O: u8> REV2_W<'a, O> {
+pub type REV2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV2_A>;
+impl<'a, REG, const O: u8> REV2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV2_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV2_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl REV3_R {
             true => REV3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV3_A::VALUE2
     }
 }
 #[doc = "Field `REV3` writer - Result Event for Result Register 3"]
-pub type REV3_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV3_A>;
-impl<'a, const O: u8> REV3_W<'a, O> {
+pub type REV3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV3_A>;
+impl<'a, REG, const O: u8> REV3_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV3_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV3_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl REV4_R {
             true => REV4_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV4_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV4_A::VALUE2
     }
 }
 #[doc = "Field `REV4` writer - Result Event for Result Register 4"]
-pub type REV4_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV4_A>;
-impl<'a, const O: u8> REV4_W<'a, O> {
+pub type REV4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV4_A>;
+impl<'a, REG, const O: u8> REV4_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV4_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV4_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl REV5_R {
             true => REV5_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV5_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV5_A::VALUE2
     }
 }
 #[doc = "Field `REV5` writer - Result Event for Result Register 5"]
-pub type REV5_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV5_A>;
-impl<'a, const O: u8> REV5_W<'a, O> {
+pub type REV5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV5_A>;
+impl<'a, REG, const O: u8> REV5_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV5_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV5_A::VALUE2)
     }
 }
@@ -359,28 +345,31 @@ impl REV6_R {
             true => REV6_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV6_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV6_A::VALUE2
     }
 }
 #[doc = "Field `REV6` writer - Result Event for Result Register 6"]
-pub type REV6_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV6_A>;
-impl<'a, const O: u8> REV6_W<'a, O> {
+pub type REV6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV6_A>;
+impl<'a, REG, const O: u8> REV6_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV6_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV6_A::VALUE2)
     }
 }
@@ -409,28 +398,31 @@ impl REV7_R {
             true => REV7_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV7_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV7_A::VALUE2
     }
 }
 #[doc = "Field `REV7` writer - Result Event for Result Register 7"]
-pub type REV7_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV7_A>;
-impl<'a, const O: u8> REV7_W<'a, O> {
+pub type REV7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV7_A>;
+impl<'a, REG, const O: u8> REV7_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV7_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV7_A::VALUE2)
     }
 }
@@ -459,28 +451,31 @@ impl REV8_R {
             true => REV8_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV8_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV8_A::VALUE2
     }
 }
 #[doc = "Field `REV8` writer - Result Event for Result Register 8"]
-pub type REV8_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV8_A>;
-impl<'a, const O: u8> REV8_W<'a, O> {
+pub type REV8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV8_A>;
+impl<'a, REG, const O: u8> REV8_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV8_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV8_A::VALUE2)
     }
 }
@@ -509,28 +504,31 @@ impl REV9_R {
             true => REV9_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV9_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV9_A::VALUE2
     }
 }
 #[doc = "Field `REV9` writer - Result Event for Result Register 9"]
-pub type REV9_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV9_A>;
-impl<'a, const O: u8> REV9_W<'a, O> {
+pub type REV9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV9_A>;
+impl<'a, REG, const O: u8> REV9_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV9_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV9_A::VALUE2)
     }
 }
@@ -559,28 +557,31 @@ impl REV10_R {
             true => REV10_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV10_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV10_A::VALUE2
     }
 }
 #[doc = "Field `REV10` writer - Result Event for Result Register 10"]
-pub type REV10_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV10_A>;
-impl<'a, const O: u8> REV10_W<'a, O> {
+pub type REV10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV10_A>;
+impl<'a, REG, const O: u8> REV10_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV10_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV10_A::VALUE2)
     }
 }
@@ -609,28 +610,31 @@ impl REV11_R {
             true => REV11_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV11_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV11_A::VALUE2
     }
 }
 #[doc = "Field `REV11` writer - Result Event for Result Register 11"]
-pub type REV11_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV11_A>;
-impl<'a, const O: u8> REV11_W<'a, O> {
+pub type REV11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV11_A>;
+impl<'a, REG, const O: u8> REV11_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV11_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV11_A::VALUE2)
     }
 }
@@ -659,28 +663,31 @@ impl REV12_R {
             true => REV12_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV12_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV12_A::VALUE2
     }
 }
 #[doc = "Field `REV12` writer - Result Event for Result Register 12"]
-pub type REV12_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV12_A>;
-impl<'a, const O: u8> REV12_W<'a, O> {
+pub type REV12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV12_A>;
+impl<'a, REG, const O: u8> REV12_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV12_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV12_A::VALUE2)
     }
 }
@@ -709,28 +716,31 @@ impl REV13_R {
             true => REV13_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV13_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV13_A::VALUE2
     }
 }
 #[doc = "Field `REV13` writer - Result Event for Result Register 13"]
-pub type REV13_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV13_A>;
-impl<'a, const O: u8> REV13_W<'a, O> {
+pub type REV13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV13_A>;
+impl<'a, REG, const O: u8> REV13_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV13_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV13_A::VALUE2)
     }
 }
@@ -759,28 +769,31 @@ impl REV14_R {
             true => REV14_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV14_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV14_A::VALUE2
     }
 }
 #[doc = "Field `REV14` writer - Result Event for Result Register 14"]
-pub type REV14_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV14_A>;
-impl<'a, const O: u8> REV14_W<'a, O> {
+pub type REV14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV14_A>;
+impl<'a, REG, const O: u8> REV14_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV14_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV14_A::VALUE2)
     }
 }
@@ -809,28 +822,31 @@ impl REV15_R {
             true => REV15_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No result event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV15_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV15_A::VALUE2
     }
 }
 #[doc = "Field `REV15` writer - Result Event for Result Register 15"]
-pub type REV15_W<'a, const O: u8> = crate::BitWriter<'a, REFLAG_SPEC, O, REV15_A>;
-impl<'a, const O: u8> REV15_W<'a, O> {
+pub type REV15_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REV15_A>;
+impl<'a, REG, const O: u8> REV15_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No result event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV15_A::VALUE1)
     }
     #[doc = "New result was stored in register GxRESy"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV15_A::VALUE2)
     }
 }
@@ -920,118 +936,115 @@ impl W {
     #[doc = "Bit 0 - Result Event for Result Register 0"]
     #[inline(always)]
     #[must_use]
-    pub fn rev0(&mut self) -> REV0_W<0> {
+    pub fn rev0(&mut self) -> REV0_W<REFLAG_SPEC, 0> {
         REV0_W::new(self)
     }
     #[doc = "Bit 1 - Result Event for Result Register 1"]
     #[inline(always)]
     #[must_use]
-    pub fn rev1(&mut self) -> REV1_W<1> {
+    pub fn rev1(&mut self) -> REV1_W<REFLAG_SPEC, 1> {
         REV1_W::new(self)
     }
     #[doc = "Bit 2 - Result Event for Result Register 2"]
     #[inline(always)]
     #[must_use]
-    pub fn rev2(&mut self) -> REV2_W<2> {
+    pub fn rev2(&mut self) -> REV2_W<REFLAG_SPEC, 2> {
         REV2_W::new(self)
     }
     #[doc = "Bit 3 - Result Event for Result Register 3"]
     #[inline(always)]
     #[must_use]
-    pub fn rev3(&mut self) -> REV3_W<3> {
+    pub fn rev3(&mut self) -> REV3_W<REFLAG_SPEC, 3> {
         REV3_W::new(self)
     }
     #[doc = "Bit 4 - Result Event for Result Register 4"]
     #[inline(always)]
     #[must_use]
-    pub fn rev4(&mut self) -> REV4_W<4> {
+    pub fn rev4(&mut self) -> REV4_W<REFLAG_SPEC, 4> {
         REV4_W::new(self)
     }
     #[doc = "Bit 5 - Result Event for Result Register 5"]
     #[inline(always)]
     #[must_use]
-    pub fn rev5(&mut self) -> REV5_W<5> {
+    pub fn rev5(&mut self) -> REV5_W<REFLAG_SPEC, 5> {
         REV5_W::new(self)
     }
     #[doc = "Bit 6 - Result Event for Result Register 6"]
     #[inline(always)]
     #[must_use]
-    pub fn rev6(&mut self) -> REV6_W<6> {
+    pub fn rev6(&mut self) -> REV6_W<REFLAG_SPEC, 6> {
         REV6_W::new(self)
     }
     #[doc = "Bit 7 - Result Event for Result Register 7"]
     #[inline(always)]
     #[must_use]
-    pub fn rev7(&mut self) -> REV7_W<7> {
+    pub fn rev7(&mut self) -> REV7_W<REFLAG_SPEC, 7> {
         REV7_W::new(self)
     }
     #[doc = "Bit 8 - Result Event for Result Register 8"]
     #[inline(always)]
     #[must_use]
-    pub fn rev8(&mut self) -> REV8_W<8> {
+    pub fn rev8(&mut self) -> REV8_W<REFLAG_SPEC, 8> {
         REV8_W::new(self)
     }
     #[doc = "Bit 9 - Result Event for Result Register 9"]
     #[inline(always)]
     #[must_use]
-    pub fn rev9(&mut self) -> REV9_W<9> {
+    pub fn rev9(&mut self) -> REV9_W<REFLAG_SPEC, 9> {
         REV9_W::new(self)
     }
     #[doc = "Bit 10 - Result Event for Result Register 10"]
     #[inline(always)]
     #[must_use]
-    pub fn rev10(&mut self) -> REV10_W<10> {
+    pub fn rev10(&mut self) -> REV10_W<REFLAG_SPEC, 10> {
         REV10_W::new(self)
     }
     #[doc = "Bit 11 - Result Event for Result Register 11"]
     #[inline(always)]
     #[must_use]
-    pub fn rev11(&mut self) -> REV11_W<11> {
+    pub fn rev11(&mut self) -> REV11_W<REFLAG_SPEC, 11> {
         REV11_W::new(self)
     }
     #[doc = "Bit 12 - Result Event for Result Register 12"]
     #[inline(always)]
     #[must_use]
-    pub fn rev12(&mut self) -> REV12_W<12> {
+    pub fn rev12(&mut self) -> REV12_W<REFLAG_SPEC, 12> {
         REV12_W::new(self)
     }
     #[doc = "Bit 13 - Result Event for Result Register 13"]
     #[inline(always)]
     #[must_use]
-    pub fn rev13(&mut self) -> REV13_W<13> {
+    pub fn rev13(&mut self) -> REV13_W<REFLAG_SPEC, 13> {
         REV13_W::new(self)
     }
     #[doc = "Bit 14 - Result Event for Result Register 14"]
     #[inline(always)]
     #[must_use]
-    pub fn rev14(&mut self) -> REV14_W<14> {
+    pub fn rev14(&mut self) -> REV14_W<REFLAG_SPEC, 14> {
         REV14_W::new(self)
     }
     #[doc = "Bit 15 - Result Event for Result Register 15"]
     #[inline(always)]
     #[must_use]
-    pub fn rev15(&mut self) -> REV15_W<15> {
+    pub fn rev15(&mut self) -> REV15_W<REFLAG_SPEC, 15> {
         REV15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Result Event Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [reflag](index.html) module"]
+#[doc = "Result Event Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`reflag::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`reflag::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct REFLAG_SPEC;
 impl crate::RegisterSpec for REFLAG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [reflag::R](R) reader structure"]
-impl crate::Readable for REFLAG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [reflag::W](W) writer structure"]
+#[doc = "`read()` method returns [`reflag::R`](R) reader structure"]
+impl crate::Readable for REFLAG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`reflag::W`](W) writer structure"]
 impl crate::Writable for REFLAG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

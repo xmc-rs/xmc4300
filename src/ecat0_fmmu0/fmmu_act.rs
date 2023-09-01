@@ -1,18 +1,5 @@
 #[doc = "Register `FMMU_ACT` reader"]
-pub struct R(crate::R<FMMU_ACT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FMMU_ACT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FMMU_ACT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FMMU_ACT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FMMU_ACT_SPEC>;
 #[doc = "Field `ACT` reader - FMMU Activation"]
 pub type ACT_R = crate::BitReader<ACT_A>;
 #[doc = "FMMU Activation\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl ACT_R {
             true => ACT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "FMMU deactivated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ACT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "FMMU activated. FMMU checks logical addressed blocks to be mapped according to mapping configured"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ACT_A::VALUE2
@@ -56,15 +43,13 @@ impl R {
         ACT_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Activate FMMU 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmmu_act](index.html) module"]
+#[doc = "Activate FMMU 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmmu_act::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FMMU_ACT_SPEC;
 impl crate::RegisterSpec for FMMU_ACT_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [fmmu_act::R](R) reader structure"]
-impl crate::Readable for FMMU_ACT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`fmmu_act::R`](R) reader structure"]
+impl crate::Readable for FMMU_ACT_SPEC {}
 #[doc = "`reset()` method sets FMMU_ACT to value 0"]
 impl crate::Resettable for FMMU_ACT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

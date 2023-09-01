@@ -1,39 +1,7 @@
 #[doc = "Register `HWSEL` reader"]
-pub struct R(crate::R<HWSEL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HWSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HWSEL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HWSEL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HWSEL_SPEC>;
 #[doc = "Register `HWSEL` writer"]
-pub struct W(crate::W<HWSEL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HWSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HWSEL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HWSEL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HWSEL_SPEC>;
 #[doc = "Field `HW0` reader - Port n Pin Hardware Select Bit 0"]
 pub type HW0_R = crate::FieldReader<HW0_A>;
 #[doc = "Port n Pin Hardware Select Bit 0\n\nValue on reset: 0"]
@@ -67,38 +35,42 @@ impl HW0_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW0_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW0_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW0_A::CONST_10
     }
 }
 #[doc = "Field `HW0` writer - Port n Pin Hardware Select Bit 0"]
-pub type HW0_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW0_A>;
-impl<'a, const O: u8> HW0_W<'a, O> {
+pub type HW0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW0_A>;
+impl<'a, REG, const O: u8> HW0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW0_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW0_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW0_A::CONST_10)
     }
 }
@@ -135,38 +107,42 @@ impl HW1_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW1_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW1_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW1_A::CONST_10
     }
 }
 #[doc = "Field `HW1` writer - Port n Pin Hardware Select Bit 1"]
-pub type HW1_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW1_A>;
-impl<'a, const O: u8> HW1_W<'a, O> {
+pub type HW1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW1_A>;
+impl<'a, REG, const O: u8> HW1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW1_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW1_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW1_A::CONST_10)
     }
 }
@@ -203,38 +179,42 @@ impl HW2_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW2_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW2_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW2_A::CONST_10
     }
 }
 #[doc = "Field `HW2` writer - Port n Pin Hardware Select Bit 2"]
-pub type HW2_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW2_A>;
-impl<'a, const O: u8> HW2_W<'a, O> {
+pub type HW2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW2_A>;
+impl<'a, REG, const O: u8> HW2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW2_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW2_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW2_A::CONST_10)
     }
 }
@@ -271,38 +251,42 @@ impl HW3_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW3_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW3_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW3_A::CONST_10
     }
 }
 #[doc = "Field `HW3` writer - Port n Pin Hardware Select Bit 3"]
-pub type HW3_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW3_A>;
-impl<'a, const O: u8> HW3_W<'a, O> {
+pub type HW3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW3_A>;
+impl<'a, REG, const O: u8> HW3_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW3_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW3_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW3_A::CONST_10)
     }
 }
@@ -339,38 +323,42 @@ impl HW4_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW4_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW4_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW4_A::CONST_10
     }
 }
 #[doc = "Field `HW4` writer - Port n Pin Hardware Select Bit 4"]
-pub type HW4_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW4_A>;
-impl<'a, const O: u8> HW4_W<'a, O> {
+pub type HW4_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW4_A>;
+impl<'a, REG, const O: u8> HW4_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW4_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW4_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW4_A::CONST_10)
     }
 }
@@ -407,38 +395,42 @@ impl HW5_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW5_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW5_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW5_A::CONST_10
     }
 }
 #[doc = "Field `HW5` writer - Port n Pin Hardware Select Bit 5"]
-pub type HW5_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW5_A>;
-impl<'a, const O: u8> HW5_W<'a, O> {
+pub type HW5_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW5_A>;
+impl<'a, REG, const O: u8> HW5_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW5_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW5_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW5_A::CONST_10)
     }
 }
@@ -475,38 +467,42 @@ impl HW6_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW6_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW6_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW6_A::CONST_10
     }
 }
 #[doc = "Field `HW6` writer - Port n Pin Hardware Select Bit 6"]
-pub type HW6_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW6_A>;
-impl<'a, const O: u8> HW6_W<'a, O> {
+pub type HW6_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW6_A>;
+impl<'a, REG, const O: u8> HW6_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW6_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW6_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW6_A::CONST_10)
     }
 }
@@ -543,38 +539,42 @@ impl HW7_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW7_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW7_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW7_A::CONST_10
     }
 }
 #[doc = "Field `HW7` writer - Port n Pin Hardware Select Bit 7"]
-pub type HW7_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW7_A>;
-impl<'a, const O: u8> HW7_W<'a, O> {
+pub type HW7_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW7_A>;
+impl<'a, REG, const O: u8> HW7_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW7_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW7_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW7_A::CONST_10)
     }
 }
@@ -611,38 +611,42 @@ impl HW8_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW8_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW8_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW8_A::CONST_10
     }
 }
 #[doc = "Field `HW8` writer - Port n Pin Hardware Select Bit 8"]
-pub type HW8_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW8_A>;
-impl<'a, const O: u8> HW8_W<'a, O> {
+pub type HW8_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW8_A>;
+impl<'a, REG, const O: u8> HW8_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW8_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW8_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW8_A::CONST_10)
     }
 }
@@ -679,38 +683,42 @@ impl HW9_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW9_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW9_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW9_A::CONST_10
     }
 }
 #[doc = "Field `HW9` writer - Port n Pin Hardware Select Bit 9"]
-pub type HW9_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW9_A>;
-impl<'a, const O: u8> HW9_W<'a, O> {
+pub type HW9_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW9_A>;
+impl<'a, REG, const O: u8> HW9_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW9_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW9_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW9_A::CONST_10)
     }
 }
@@ -747,38 +755,42 @@ impl HW10_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW10_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW10_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW10_A::CONST_10
     }
 }
 #[doc = "Field `HW10` writer - Port n Pin Hardware Select Bit 10"]
-pub type HW10_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW10_A>;
-impl<'a, const O: u8> HW10_W<'a, O> {
+pub type HW10_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW10_A>;
+impl<'a, REG, const O: u8> HW10_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW10_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW10_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW10_A::CONST_10)
     }
 }
@@ -815,38 +827,42 @@ impl HW11_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW11_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW11_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW11_A::CONST_10
     }
 }
 #[doc = "Field `HW11` writer - Port n Pin Hardware Select Bit 11"]
-pub type HW11_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW11_A>;
-impl<'a, const O: u8> HW11_W<'a, O> {
+pub type HW11_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW11_A>;
+impl<'a, REG, const O: u8> HW11_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW11_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW11_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW11_A::CONST_10)
     }
 }
@@ -883,38 +899,42 @@ impl HW12_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW12_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW12_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW12_A::CONST_10
     }
 }
 #[doc = "Field `HW12` writer - Port n Pin Hardware Select Bit 12"]
-pub type HW12_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW12_A>;
-impl<'a, const O: u8> HW12_W<'a, O> {
+pub type HW12_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW12_A>;
+impl<'a, REG, const O: u8> HW12_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW12_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW12_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW12_A::CONST_10)
     }
 }
@@ -951,38 +971,42 @@ impl HW13_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW13_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW13_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW13_A::CONST_10
     }
 }
 #[doc = "Field `HW13` writer - Port n Pin Hardware Select Bit 13"]
-pub type HW13_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW13_A>;
-impl<'a, const O: u8> HW13_W<'a, O> {
+pub type HW13_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW13_A>;
+impl<'a, REG, const O: u8> HW13_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW13_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW13_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW13_A::CONST_10)
     }
 }
@@ -1019,38 +1043,42 @@ impl HW14_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW14_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW14_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW14_A::CONST_10
     }
 }
 #[doc = "Field `HW14` writer - Port n Pin Hardware Select Bit 14"]
-pub type HW14_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW14_A>;
-impl<'a, const O: u8> HW14_W<'a, O> {
+pub type HW14_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW14_A>;
+impl<'a, REG, const O: u8> HW14_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW14_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW14_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW14_A::CONST_10)
     }
 }
@@ -1087,38 +1115,42 @@ impl HW15_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00`"]
+    #[doc = "Software control only."]
     #[inline(always)]
     pub fn is_const_00(&self) -> bool {
         *self == HW15_A::CONST_00
     }
-    #[doc = "Checks if the value of the field is `CONST_01`"]
+    #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_01(&self) -> bool {
         *self == HW15_A::CONST_01
     }
-    #[doc = "Checks if the value of the field is `CONST_10`"]
+    #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
     pub fn is_const_10(&self) -> bool {
         *self == HW15_A::CONST_10
     }
 }
 #[doc = "Field `HW15` writer - Port n Pin Hardware Select Bit 15"]
-pub type HW15_W<'a, const O: u8> = crate::FieldWriter<'a, HWSEL_SPEC, 2, O, HW15_A>;
-impl<'a, const O: u8> HW15_W<'a, O> {
+pub type HW15_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, HW15_A>;
+impl<'a, REG, const O: u8> HW15_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control only."]
     #[inline(always)]
-    pub fn const_00(self) -> &'a mut W {
+    pub fn const_00(self) -> &'a mut crate::W<REG> {
         self.variant(HW15_A::CONST_00)
     }
     #[doc = "HWI0/HWO0 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_01(self) -> &'a mut W {
+    pub fn const_01(self) -> &'a mut crate::W<REG> {
         self.variant(HW15_A::CONST_01)
     }
     #[doc = "HWI1/HWO1 control path can override the software configuration."]
     #[inline(always)]
-    pub fn const_10(self) -> &'a mut W {
+    pub fn const_10(self) -> &'a mut crate::W<REG> {
         self.variant(HW15_A::CONST_10)
     }
 }
@@ -1208,118 +1240,115 @@ impl W {
     #[doc = "Bits 0:1 - Port n Pin Hardware Select Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn hw0(&mut self) -> HW0_W<0> {
+    pub fn hw0(&mut self) -> HW0_W<HWSEL_SPEC, 0> {
         HW0_W::new(self)
     }
     #[doc = "Bits 2:3 - Port n Pin Hardware Select Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn hw1(&mut self) -> HW1_W<2> {
+    pub fn hw1(&mut self) -> HW1_W<HWSEL_SPEC, 2> {
         HW1_W::new(self)
     }
     #[doc = "Bits 4:5 - Port n Pin Hardware Select Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn hw2(&mut self) -> HW2_W<4> {
+    pub fn hw2(&mut self) -> HW2_W<HWSEL_SPEC, 4> {
         HW2_W::new(self)
     }
     #[doc = "Bits 6:7 - Port n Pin Hardware Select Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn hw3(&mut self) -> HW3_W<6> {
+    pub fn hw3(&mut self) -> HW3_W<HWSEL_SPEC, 6> {
         HW3_W::new(self)
     }
     #[doc = "Bits 8:9 - Port n Pin Hardware Select Bit 4"]
     #[inline(always)]
     #[must_use]
-    pub fn hw4(&mut self) -> HW4_W<8> {
+    pub fn hw4(&mut self) -> HW4_W<HWSEL_SPEC, 8> {
         HW4_W::new(self)
     }
     #[doc = "Bits 10:11 - Port n Pin Hardware Select Bit 5"]
     #[inline(always)]
     #[must_use]
-    pub fn hw5(&mut self) -> HW5_W<10> {
+    pub fn hw5(&mut self) -> HW5_W<HWSEL_SPEC, 10> {
         HW5_W::new(self)
     }
     #[doc = "Bits 12:13 - Port n Pin Hardware Select Bit 6"]
     #[inline(always)]
     #[must_use]
-    pub fn hw6(&mut self) -> HW6_W<12> {
+    pub fn hw6(&mut self) -> HW6_W<HWSEL_SPEC, 12> {
         HW6_W::new(self)
     }
     #[doc = "Bits 14:15 - Port n Pin Hardware Select Bit 7"]
     #[inline(always)]
     #[must_use]
-    pub fn hw7(&mut self) -> HW7_W<14> {
+    pub fn hw7(&mut self) -> HW7_W<HWSEL_SPEC, 14> {
         HW7_W::new(self)
     }
     #[doc = "Bits 16:17 - Port n Pin Hardware Select Bit 8"]
     #[inline(always)]
     #[must_use]
-    pub fn hw8(&mut self) -> HW8_W<16> {
+    pub fn hw8(&mut self) -> HW8_W<HWSEL_SPEC, 16> {
         HW8_W::new(self)
     }
     #[doc = "Bits 18:19 - Port n Pin Hardware Select Bit 9"]
     #[inline(always)]
     #[must_use]
-    pub fn hw9(&mut self) -> HW9_W<18> {
+    pub fn hw9(&mut self) -> HW9_W<HWSEL_SPEC, 18> {
         HW9_W::new(self)
     }
     #[doc = "Bits 20:21 - Port n Pin Hardware Select Bit 10"]
     #[inline(always)]
     #[must_use]
-    pub fn hw10(&mut self) -> HW10_W<20> {
+    pub fn hw10(&mut self) -> HW10_W<HWSEL_SPEC, 20> {
         HW10_W::new(self)
     }
     #[doc = "Bits 22:23 - Port n Pin Hardware Select Bit 11"]
     #[inline(always)]
     #[must_use]
-    pub fn hw11(&mut self) -> HW11_W<22> {
+    pub fn hw11(&mut self) -> HW11_W<HWSEL_SPEC, 22> {
         HW11_W::new(self)
     }
     #[doc = "Bits 24:25 - Port n Pin Hardware Select Bit 12"]
     #[inline(always)]
     #[must_use]
-    pub fn hw12(&mut self) -> HW12_W<24> {
+    pub fn hw12(&mut self) -> HW12_W<HWSEL_SPEC, 24> {
         HW12_W::new(self)
     }
     #[doc = "Bits 26:27 - Port n Pin Hardware Select Bit 13"]
     #[inline(always)]
     #[must_use]
-    pub fn hw13(&mut self) -> HW13_W<26> {
+    pub fn hw13(&mut self) -> HW13_W<HWSEL_SPEC, 26> {
         HW13_W::new(self)
     }
     #[doc = "Bits 28:29 - Port n Pin Hardware Select Bit 14"]
     #[inline(always)]
     #[must_use]
-    pub fn hw14(&mut self) -> HW14_W<28> {
+    pub fn hw14(&mut self) -> HW14_W<HWSEL_SPEC, 28> {
         HW14_W::new(self)
     }
     #[doc = "Bits 30:31 - Port n Pin Hardware Select Bit 15"]
     #[inline(always)]
     #[must_use]
-    pub fn hw15(&mut self) -> HW15_W<30> {
+    pub fn hw15(&mut self) -> HW15_W<HWSEL_SPEC, 30> {
         HW15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Port 2 Pin Hardware Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hwsel](index.html) module"]
+#[doc = "Port 2 Pin Hardware Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hwsel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hwsel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HWSEL_SPEC;
 impl crate::RegisterSpec for HWSEL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hwsel::R](R) reader structure"]
-impl crate::Readable for HWSEL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [hwsel::W](W) writer structure"]
+#[doc = "`read()` method returns [`hwsel::R`](R) reader structure"]
+impl crate::Readable for HWSEL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`hwsel::W`](W) writer structure"]
 impl crate::Writable for HWSEL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

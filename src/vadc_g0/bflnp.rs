@@ -1,39 +1,7 @@
 #[doc = "Register `BFLNP` reader"]
-pub struct R(crate::R<BFLNP_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BFLNP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BFLNP_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BFLNP_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<BFLNP_SPEC>;
 #[doc = "Register `BFLNP` writer"]
-pub struct W(crate::W<BFLNP_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<BFLNP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<BFLNP_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<BFLNP_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<BFLNP_SPEC>;
 #[doc = "Field `BFL0NP` reader - Boundary Flag y Node Pointer"]
 pub type BFL0NP_R = crate::FieldReader<BFL0NP_A>;
 #[doc = "Boundary Flag y Node Pointer\n\nValue on reset: 15"]
@@ -73,58 +41,62 @@ impl BFL0NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select common bondary flag output 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFL0NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select common bondary flag output 3"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFL0NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == BFL0NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == BFL0NP_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "Disabled, no common output signal"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == BFL0NP_A::VALUE5
     }
 }
 #[doc = "Field `BFL0NP` writer - Boundary Flag y Node Pointer"]
-pub type BFL0NP_W<'a, const O: u8> = crate::FieldWriter<'a, BFLNP_SPEC, 4, O, BFL0NP_A>;
-impl<'a, const O: u8> BFL0NP_W<'a, O> {
+pub type BFL0NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BFL0NP_A>;
+impl<'a, REG, const O: u8> BFL0NP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select common bondary flag output 0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFL0NP_A::VALUE1)
     }
     #[doc = "Select common bondary flag output 3"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFL0NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(BFL0NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(BFL0NP_A::VALUE4)
     }
     #[doc = "Disabled, no common output signal"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(BFL0NP_A::VALUE5)
     }
 }
@@ -167,58 +139,62 @@ impl BFL1NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select common bondary flag output 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFL1NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select common bondary flag output 3"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFL1NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == BFL1NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == BFL1NP_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "Disabled, no common output signal"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == BFL1NP_A::VALUE5
     }
 }
 #[doc = "Field `BFL1NP` writer - Boundary Flag y Node Pointer"]
-pub type BFL1NP_W<'a, const O: u8> = crate::FieldWriter<'a, BFLNP_SPEC, 4, O, BFL1NP_A>;
-impl<'a, const O: u8> BFL1NP_W<'a, O> {
+pub type BFL1NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BFL1NP_A>;
+impl<'a, REG, const O: u8> BFL1NP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select common bondary flag output 0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFL1NP_A::VALUE1)
     }
     #[doc = "Select common bondary flag output 3"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFL1NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(BFL1NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(BFL1NP_A::VALUE4)
     }
     #[doc = "Disabled, no common output signal"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(BFL1NP_A::VALUE5)
     }
 }
@@ -261,58 +237,62 @@ impl BFL2NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select common bondary flag output 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFL2NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select common bondary flag output 3"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFL2NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == BFL2NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == BFL2NP_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "Disabled, no common output signal"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == BFL2NP_A::VALUE5
     }
 }
 #[doc = "Field `BFL2NP` writer - Boundary Flag y Node Pointer"]
-pub type BFL2NP_W<'a, const O: u8> = crate::FieldWriter<'a, BFLNP_SPEC, 4, O, BFL2NP_A>;
-impl<'a, const O: u8> BFL2NP_W<'a, O> {
+pub type BFL2NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BFL2NP_A>;
+impl<'a, REG, const O: u8> BFL2NP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select common bondary flag output 0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFL2NP_A::VALUE1)
     }
     #[doc = "Select common bondary flag output 3"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFL2NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(BFL2NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(BFL2NP_A::VALUE4)
     }
     #[doc = "Disabled, no common output signal"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(BFL2NP_A::VALUE5)
     }
 }
@@ -355,58 +335,62 @@ impl BFL3NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select common bondary flag output 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFL3NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select common bondary flag output 3"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFL3NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == BFL3NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == BFL3NP_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "Disabled, no common output signal"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == BFL3NP_A::VALUE5
     }
 }
 #[doc = "Field `BFL3NP` writer - Boundary Flag y Node Pointer"]
-pub type BFL3NP_W<'a, const O: u8> = crate::FieldWriter<'a, BFLNP_SPEC, 4, O, BFL3NP_A>;
-impl<'a, const O: u8> BFL3NP_W<'a, O> {
+pub type BFL3NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, BFL3NP_A>;
+impl<'a, REG, const O: u8> BFL3NP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select common bondary flag output 0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFL3NP_A::VALUE1)
     }
     #[doc = "Select common bondary flag output 3"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFL3NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(BFL3NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(BFL3NP_A::VALUE4)
     }
     #[doc = "Disabled, no common output signal"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(BFL3NP_A::VALUE5)
     }
 }
@@ -436,46 +420,43 @@ impl W {
     #[doc = "Bits 0:3 - Boundary Flag y Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn bfl0np(&mut self) -> BFL0NP_W<0> {
+    pub fn bfl0np(&mut self) -> BFL0NP_W<BFLNP_SPEC, 0> {
         BFL0NP_W::new(self)
     }
     #[doc = "Bits 4:7 - Boundary Flag y Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn bfl1np(&mut self) -> BFL1NP_W<4> {
+    pub fn bfl1np(&mut self) -> BFL1NP_W<BFLNP_SPEC, 4> {
         BFL1NP_W::new(self)
     }
     #[doc = "Bits 8:11 - Boundary Flag y Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn bfl2np(&mut self) -> BFL2NP_W<8> {
+    pub fn bfl2np(&mut self) -> BFL2NP_W<BFLNP_SPEC, 8> {
         BFL2NP_W::new(self)
     }
     #[doc = "Bits 12:15 - Boundary Flag y Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn bfl3np(&mut self) -> BFL3NP_W<12> {
+    pub fn bfl3np(&mut self) -> BFL3NP_W<BFLNP_SPEC, 12> {
         BFL3NP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Boundary Flag Node Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bflnp](index.html) module"]
+#[doc = "Boundary Flag Node Pointer Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`bflnp::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`bflnp::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BFLNP_SPEC;
 impl crate::RegisterSpec for BFLNP_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [bflnp::R](R) reader structure"]
-impl crate::Readable for BFLNP_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [bflnp::W](W) writer structure"]
+#[doc = "`read()` method returns [`bflnp::R`](R) reader structure"]
+impl crate::Readable for BFLNP_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`bflnp::W`](W) writer structure"]
 impl crate::Writable for BFLNP_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

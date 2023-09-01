@@ -1,18 +1,5 @@
 #[doc = "Register `CLKCALCONST` reader"]
-pub struct R(crate::R<CLKCALCONST_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CLKCALCONST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CLKCALCONST_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CLKCALCONST_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CLKCALCONST_SPEC>;
 #[doc = "Field `CALIBCONST` reader - Clock Calibration Constant Value"]
 pub type CALIBCONST_R = crate::FieldReader;
 impl R {
@@ -22,15 +9,13 @@ impl R {
         CALIBCONST_R::new((self.bits & 0x0f) as u8)
     }
 }
-#[doc = "Clock Calibration Constant Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clkcalconst](index.html) module"]
+#[doc = "Clock Calibration Constant Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkcalconst::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CLKCALCONST_SPEC;
 impl crate::RegisterSpec for CLKCALCONST_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [clkcalconst::R](R) reader structure"]
-impl crate::Readable for CLKCALCONST_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`clkcalconst::R`](R) reader structure"]
+impl crate::Readable for CLKCALCONST_SPEC {}
 #[doc = "`reset()` method sets CLKCALCONST to value 0"]
 impl crate::Resettable for CLKCALCONST_SPEC {
     const RESET_VALUE: Self::Ux = 0;

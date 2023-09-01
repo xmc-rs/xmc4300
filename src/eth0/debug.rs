@@ -1,18 +1,5 @@
 #[doc = "Register `DEBUG` reader"]
-pub struct R(crate::R<DEBUG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DEBUG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DEBUG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DEBUG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DEBUG_SPEC>;
 #[doc = "Field `RPESTS` reader - MAC MII Receive Protocol Engine Status"]
 pub type RPESTS_R = crate::BitReader;
 #[doc = "Field `RFCFCSTS` reader - MAC Receive Frame Controller FIFO Status"]
@@ -99,15 +86,13 @@ impl R {
         TXSTSFSTS_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
-#[doc = "Debug Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [debug](index.html) module"]
+#[doc = "Debug Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`debug::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DEBUG_SPEC;
 impl crate::RegisterSpec for DEBUG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [debug::R](R) reader structure"]
-impl crate::Readable for DEBUG_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`debug::R`](R) reader structure"]
+impl crate::Readable for DEBUG_SPEC {}
 #[doc = "`reset()` method sets DEBUG to value 0"]
 impl crate::Resettable for DEBUG_SPEC {
     const RESET_VALUE: Self::Ux = 0;

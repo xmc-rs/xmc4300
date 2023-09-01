@@ -1,24 +1,5 @@
 #[doc = "Register `CLEARBLOCK` writer"]
-pub struct W(crate::W<CLEARBLOCK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CLEARBLOCK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CLEARBLOCK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CLEARBLOCK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CLEARBLOCK_SPEC>;
 #[doc = "Clear Interrupt Status and Raw Status for channel 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH0_AW {
@@ -34,16 +15,19 @@ impl From<CH0_AW> for bool {
     }
 }
 #[doc = "Field `CH0` writer - Clear Interrupt Status and Raw Status for channel 0"]
-pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, CLEARBLOCK_SPEC, O, CH0_AW>;
-impl<'a, const O: u8> CH0_W<'a, O> {
+pub type CH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH0_AW>;
+impl<'a, REG, const O: u8> CH0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CH0_AW::VALUE1)
     }
     #[doc = "clear status"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CH0_AW::VALUE2)
     }
 }
@@ -62,16 +46,19 @@ impl From<CH1_AW> for bool {
     }
 }
 #[doc = "Field `CH1` writer - Clear Interrupt Status and Raw Status for channel 1"]
-pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, CLEARBLOCK_SPEC, O, CH1_AW>;
-impl<'a, const O: u8> CH1_W<'a, O> {
+pub type CH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH1_AW>;
+impl<'a, REG, const O: u8> CH1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CH1_AW::VALUE1)
     }
     #[doc = "clear status"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CH1_AW::VALUE2)
     }
 }
@@ -90,16 +77,19 @@ impl From<CH2_AW> for bool {
     }
 }
 #[doc = "Field `CH2` writer - Clear Interrupt Status and Raw Status for channel 2"]
-pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, CLEARBLOCK_SPEC, O, CH2_AW>;
-impl<'a, const O: u8> CH2_W<'a, O> {
+pub type CH2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH2_AW>;
+impl<'a, REG, const O: u8> CH2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CH2_AW::VALUE1)
     }
     #[doc = "clear status"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CH2_AW::VALUE2)
     }
 }
@@ -118,16 +108,19 @@ impl From<CH3_AW> for bool {
     }
 }
 #[doc = "Field `CH3` writer - Clear Interrupt Status and Raw Status for channel 3"]
-pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, CLEARBLOCK_SPEC, O, CH3_AW>;
-impl<'a, const O: u8> CH3_W<'a, O> {
+pub type CH3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH3_AW>;
+impl<'a, REG, const O: u8> CH3_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CH3_AW::VALUE1)
     }
     #[doc = "clear status"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CH3_AW::VALUE2)
     }
 }
@@ -146,16 +139,19 @@ impl From<CH4_AW> for bool {
     }
 }
 #[doc = "Field `CH4` writer - Clear Interrupt Status and Raw Status for channel 4"]
-pub type CH4_W<'a, const O: u8> = crate::BitWriter<'a, CLEARBLOCK_SPEC, O, CH4_AW>;
-impl<'a, const O: u8> CH4_W<'a, O> {
+pub type CH4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH4_AW>;
+impl<'a, REG, const O: u8> CH4_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CH4_AW::VALUE1)
     }
     #[doc = "clear status"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CH4_AW::VALUE2)
     }
 }
@@ -174,16 +170,19 @@ impl From<CH5_AW> for bool {
     }
 }
 #[doc = "Field `CH5` writer - Clear Interrupt Status and Raw Status for channel 5"]
-pub type CH5_W<'a, const O: u8> = crate::BitWriter<'a, CLEARBLOCK_SPEC, O, CH5_AW>;
-impl<'a, const O: u8> CH5_W<'a, O> {
+pub type CH5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH5_AW>;
+impl<'a, REG, const O: u8> CH5_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CH5_AW::VALUE1)
     }
     #[doc = "clear status"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CH5_AW::VALUE2)
     }
 }
@@ -202,16 +201,19 @@ impl From<CH6_AW> for bool {
     }
 }
 #[doc = "Field `CH6` writer - Clear Interrupt Status and Raw Status for channel 6"]
-pub type CH6_W<'a, const O: u8> = crate::BitWriter<'a, CLEARBLOCK_SPEC, O, CH6_AW>;
-impl<'a, const O: u8> CH6_W<'a, O> {
+pub type CH6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH6_AW>;
+impl<'a, REG, const O: u8> CH6_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CH6_AW::VALUE1)
     }
     #[doc = "clear status"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CH6_AW::VALUE2)
     }
 }
@@ -230,16 +232,19 @@ impl From<CH7_AW> for bool {
     }
 }
 #[doc = "Field `CH7` writer - Clear Interrupt Status and Raw Status for channel 7"]
-pub type CH7_W<'a, const O: u8> = crate::BitWriter<'a, CLEARBLOCK_SPEC, O, CH7_AW>;
-impl<'a, const O: u8> CH7_W<'a, O> {
+pub type CH7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH7_AW>;
+impl<'a, REG, const O: u8> CH7_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "no effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CH7_AW::VALUE1)
     }
     #[doc = "clear status"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CH7_AW::VALUE2)
     }
 }
@@ -247,66 +252,65 @@ impl W {
     #[doc = "Bit 0 - Clear Interrupt Status and Raw Status for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0(&mut self) -> CH0_W<0> {
+    pub fn ch0(&mut self) -> CH0_W<CLEARBLOCK_SPEC, 0> {
         CH0_W::new(self)
     }
     #[doc = "Bit 1 - Clear Interrupt Status and Raw Status for channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1(&mut self) -> CH1_W<1> {
+    pub fn ch1(&mut self) -> CH1_W<CLEARBLOCK_SPEC, 1> {
         CH1_W::new(self)
     }
     #[doc = "Bit 2 - Clear Interrupt Status and Raw Status for channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn ch2(&mut self) -> CH2_W<2> {
+    pub fn ch2(&mut self) -> CH2_W<CLEARBLOCK_SPEC, 2> {
         CH2_W::new(self)
     }
     #[doc = "Bit 3 - Clear Interrupt Status and Raw Status for channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ch3(&mut self) -> CH3_W<3> {
+    pub fn ch3(&mut self) -> CH3_W<CLEARBLOCK_SPEC, 3> {
         CH3_W::new(self)
     }
     #[doc = "Bit 4 - Clear Interrupt Status and Raw Status for channel 4"]
     #[inline(always)]
     #[must_use]
-    pub fn ch4(&mut self) -> CH4_W<4> {
+    pub fn ch4(&mut self) -> CH4_W<CLEARBLOCK_SPEC, 4> {
         CH4_W::new(self)
     }
     #[doc = "Bit 5 - Clear Interrupt Status and Raw Status for channel 5"]
     #[inline(always)]
     #[must_use]
-    pub fn ch5(&mut self) -> CH5_W<5> {
+    pub fn ch5(&mut self) -> CH5_W<CLEARBLOCK_SPEC, 5> {
         CH5_W::new(self)
     }
     #[doc = "Bit 6 - Clear Interrupt Status and Raw Status for channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn ch6(&mut self) -> CH6_W<6> {
+    pub fn ch6(&mut self) -> CH6_W<CLEARBLOCK_SPEC, 6> {
         CH6_W::new(self)
     }
     #[doc = "Bit 7 - Clear Interrupt Status and Raw Status for channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn ch7(&mut self) -> CH7_W<7> {
+    pub fn ch7(&mut self) -> CH7_W<CLEARBLOCK_SPEC, 7> {
         CH7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "IntBlock Status\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clearblock](index.html) module"]
+#[doc = "IntBlock Status\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clearblock::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CLEARBLOCK_SPEC;
 impl crate::RegisterSpec for CLEARBLOCK_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [clearblock::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`clearblock::W`](W) writer structure"]
 impl crate::Writable for CLEARBLOCK_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

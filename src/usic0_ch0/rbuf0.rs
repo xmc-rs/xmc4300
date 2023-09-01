@@ -1,18 +1,5 @@
 #[doc = "Register `RBUF0` reader"]
-pub struct R(crate::R<RBUF0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RBUF0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RBUF0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RBUF0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RBUF0_SPEC>;
 #[doc = "Field `DSR0` reader - Data of Shift Registers 0\\[3:0\\]"]
 pub type DSR0_R = crate::FieldReader<u16>;
 impl R {
@@ -22,15 +9,13 @@ impl R {
         DSR0_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Receiver Buffer Register 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rbuf0](index.html) module"]
+#[doc = "Receiver Buffer Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rbuf0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RBUF0_SPEC;
 impl crate::RegisterSpec for RBUF0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rbuf0::R](R) reader structure"]
-impl crate::Readable for RBUF0_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`rbuf0::R`](R) reader structure"]
+impl crate::Readable for RBUF0_SPEC {}
 #[doc = "`reset()` method sets RBUF0 to value 0"]
 impl crate::Resettable for RBUF0_SPEC {
     const RESET_VALUE: Self::Ux = 0;

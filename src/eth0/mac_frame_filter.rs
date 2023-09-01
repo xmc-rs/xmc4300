@@ -1,83 +1,51 @@
 #[doc = "Register `MAC_FRAME_FILTER` reader"]
-pub struct R(crate::R<MAC_FRAME_FILTER_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MAC_FRAME_FILTER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MAC_FRAME_FILTER_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MAC_FRAME_FILTER_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MAC_FRAME_FILTER_SPEC>;
 #[doc = "Register `MAC_FRAME_FILTER` writer"]
-pub struct W(crate::W<MAC_FRAME_FILTER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MAC_FRAME_FILTER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MAC_FRAME_FILTER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MAC_FRAME_FILTER_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MAC_FRAME_FILTER_SPEC>;
 #[doc = "Field `PR` reader - Promiscuous Mode"]
 pub type PR_R = crate::BitReader;
 #[doc = "Field `PR` writer - Promiscuous Mode"]
-pub type PR_W<'a, const O: u8> = crate::BitWriter<'a, MAC_FRAME_FILTER_SPEC, O>;
+pub type PR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `HUC` reader - Hash Unicast"]
 pub type HUC_R = crate::BitReader;
 #[doc = "Field `HUC` writer - Hash Unicast"]
-pub type HUC_W<'a, const O: u8> = crate::BitWriter<'a, MAC_FRAME_FILTER_SPEC, O>;
+pub type HUC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `HMC` reader - Hash Multicast"]
 pub type HMC_R = crate::BitReader;
 #[doc = "Field `HMC` writer - Hash Multicast"]
-pub type HMC_W<'a, const O: u8> = crate::BitWriter<'a, MAC_FRAME_FILTER_SPEC, O>;
+pub type HMC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DAIF` reader - DA Inverse Filtering"]
 pub type DAIF_R = crate::BitReader;
 #[doc = "Field `DAIF` writer - DA Inverse Filtering"]
-pub type DAIF_W<'a, const O: u8> = crate::BitWriter<'a, MAC_FRAME_FILTER_SPEC, O>;
+pub type DAIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PM` reader - Pass All Multicast"]
 pub type PM_R = crate::BitReader;
 #[doc = "Field `PM` writer - Pass All Multicast"]
-pub type PM_W<'a, const O: u8> = crate::BitWriter<'a, MAC_FRAME_FILTER_SPEC, O>;
+pub type PM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DBF` reader - Disable Broadcast Frames"]
 pub type DBF_R = crate::BitReader;
 #[doc = "Field `DBF` writer - Disable Broadcast Frames"]
-pub type DBF_W<'a, const O: u8> = crate::BitWriter<'a, MAC_FRAME_FILTER_SPEC, O>;
+pub type DBF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PCF` reader - Pass Control Frames"]
 pub type PCF_R = crate::FieldReader;
 #[doc = "Field `PCF` writer - Pass Control Frames"]
-pub type PCF_W<'a, const O: u8> = crate::FieldWriter<'a, MAC_FRAME_FILTER_SPEC, 2, O>;
+pub type PCF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `SAIF` reader - SA Inverse Filtering"]
 pub type SAIF_R = crate::BitReader;
 #[doc = "Field `SAIF` writer - SA Inverse Filtering"]
-pub type SAIF_W<'a, const O: u8> = crate::BitWriter<'a, MAC_FRAME_FILTER_SPEC, O>;
+pub type SAIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `SAF` reader - Source Address Filter Enable"]
 pub type SAF_R = crate::BitReader;
 #[doc = "Field `SAF` writer - Source Address Filter Enable"]
-pub type SAF_W<'a, const O: u8> = crate::BitWriter<'a, MAC_FRAME_FILTER_SPEC, O>;
+pub type SAF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `HPF` reader - Hash or Perfect Filter"]
 pub type HPF_R = crate::BitReader;
 #[doc = "Field `HPF` writer - Hash or Perfect Filter"]
-pub type HPF_W<'a, const O: u8> = crate::BitWriter<'a, MAC_FRAME_FILTER_SPEC, O>;
+pub type HPF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `VTFE` reader - VLAN Tag Filter Enable"]
 pub type VTFE_R = crate::BitReader;
 #[doc = "Field `VTFE` writer - VLAN Tag Filter Enable"]
-pub type VTFE_W<'a, const O: u8> = crate::BitWriter<'a, MAC_FRAME_FILTER_SPEC, O>;
+pub type VTFE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `IPFE` reader - Layer 3 and Layer 4 Filter Enable"]
 pub type IPFE_R = crate::BitReader;
 #[doc = "Field `DNTU` reader - Drop non-TCP/UDP over IP Frames"]
@@ -85,7 +53,7 @@ pub type DNTU_R = crate::BitReader;
 #[doc = "Field `RA` reader - Receive All"]
 pub type RA_R = crate::BitReader;
 #[doc = "Field `RA` writer - Receive All"]
-pub type RA_W<'a, const O: u8> = crate::BitWriter<'a, MAC_FRAME_FILTER_SPEC, O>;
+pub type RA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Promiscuous Mode"]
     #[inline(always)]
@@ -162,94 +130,91 @@ impl W {
     #[doc = "Bit 0 - Promiscuous Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn pr(&mut self) -> PR_W<0> {
+    pub fn pr(&mut self) -> PR_W<MAC_FRAME_FILTER_SPEC, 0> {
         PR_W::new(self)
     }
     #[doc = "Bit 1 - Hash Unicast"]
     #[inline(always)]
     #[must_use]
-    pub fn huc(&mut self) -> HUC_W<1> {
+    pub fn huc(&mut self) -> HUC_W<MAC_FRAME_FILTER_SPEC, 1> {
         HUC_W::new(self)
     }
     #[doc = "Bit 2 - Hash Multicast"]
     #[inline(always)]
     #[must_use]
-    pub fn hmc(&mut self) -> HMC_W<2> {
+    pub fn hmc(&mut self) -> HMC_W<MAC_FRAME_FILTER_SPEC, 2> {
         HMC_W::new(self)
     }
     #[doc = "Bit 3 - DA Inverse Filtering"]
     #[inline(always)]
     #[must_use]
-    pub fn daif(&mut self) -> DAIF_W<3> {
+    pub fn daif(&mut self) -> DAIF_W<MAC_FRAME_FILTER_SPEC, 3> {
         DAIF_W::new(self)
     }
     #[doc = "Bit 4 - Pass All Multicast"]
     #[inline(always)]
     #[must_use]
-    pub fn pm(&mut self) -> PM_W<4> {
+    pub fn pm(&mut self) -> PM_W<MAC_FRAME_FILTER_SPEC, 4> {
         PM_W::new(self)
     }
     #[doc = "Bit 5 - Disable Broadcast Frames"]
     #[inline(always)]
     #[must_use]
-    pub fn dbf(&mut self) -> DBF_W<5> {
+    pub fn dbf(&mut self) -> DBF_W<MAC_FRAME_FILTER_SPEC, 5> {
         DBF_W::new(self)
     }
     #[doc = "Bits 6:7 - Pass Control Frames"]
     #[inline(always)]
     #[must_use]
-    pub fn pcf(&mut self) -> PCF_W<6> {
+    pub fn pcf(&mut self) -> PCF_W<MAC_FRAME_FILTER_SPEC, 6> {
         PCF_W::new(self)
     }
     #[doc = "Bit 8 - SA Inverse Filtering"]
     #[inline(always)]
     #[must_use]
-    pub fn saif(&mut self) -> SAIF_W<8> {
+    pub fn saif(&mut self) -> SAIF_W<MAC_FRAME_FILTER_SPEC, 8> {
         SAIF_W::new(self)
     }
     #[doc = "Bit 9 - Source Address Filter Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn saf(&mut self) -> SAF_W<9> {
+    pub fn saf(&mut self) -> SAF_W<MAC_FRAME_FILTER_SPEC, 9> {
         SAF_W::new(self)
     }
     #[doc = "Bit 10 - Hash or Perfect Filter"]
     #[inline(always)]
     #[must_use]
-    pub fn hpf(&mut self) -> HPF_W<10> {
+    pub fn hpf(&mut self) -> HPF_W<MAC_FRAME_FILTER_SPEC, 10> {
         HPF_W::new(self)
     }
     #[doc = "Bit 16 - VLAN Tag Filter Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn vtfe(&mut self) -> VTFE_W<16> {
+    pub fn vtfe(&mut self) -> VTFE_W<MAC_FRAME_FILTER_SPEC, 16> {
         VTFE_W::new(self)
     }
     #[doc = "Bit 31 - Receive All"]
     #[inline(always)]
     #[must_use]
-    pub fn ra(&mut self) -> RA_W<31> {
+    pub fn ra(&mut self) -> RA_W<MAC_FRAME_FILTER_SPEC, 31> {
         RA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "MAC Frame Filter\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mac_frame_filter](index.html) module"]
+#[doc = "MAC Frame Filter\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mac_frame_filter::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mac_frame_filter::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MAC_FRAME_FILTER_SPEC;
 impl crate::RegisterSpec for MAC_FRAME_FILTER_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mac_frame_filter::R](R) reader structure"]
-impl crate::Readable for MAC_FRAME_FILTER_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mac_frame_filter::W](W) writer structure"]
+#[doc = "`read()` method returns [`mac_frame_filter::R`](R) reader structure"]
+impl crate::Readable for MAC_FRAME_FILTER_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mac_frame_filter::W`](W) writer structure"]
 impl crate::Writable for MAC_FRAME_FILTER_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

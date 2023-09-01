@@ -1,39 +1,7 @@
 #[doc = "Register `PMTSR` reader"]
-pub struct R(crate::R<PMTSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PMTSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PMTSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PMTSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PMTSR_SPEC>;
 #[doc = "Register `PMTSR` writer"]
-pub struct W(crate::W<PMTSR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PMTSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PMTSR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PMTSR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PMTSR_SPEC>;
 #[doc = "Field `MTENPS` reader - Test Enable Control for PSRAM"]
 pub type MTENPS_R = crate::BitReader<MTENPS_A>;
 #[doc = "Test Enable Control for PSRAM\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl MTENPS_R {
             true => MTENPS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Standard operation"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MTENPS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Parity bits under test"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MTENPS_A::CONST_1
     }
 }
 #[doc = "Field `MTENPS` writer - Test Enable Control for PSRAM"]
-pub type MTENPS_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTENPS_A>;
-impl<'a, const O: u8> MTENPS_W<'a, O> {
+pub type MTENPS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTENPS_A>;
+impl<'a, REG, const O: u8> MTENPS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Standard operation"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(MTENPS_A::CONST_0)
     }
     #[doc = "Parity bits under test"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(MTENPS_A::CONST_1)
     }
 }
@@ -109,28 +80,31 @@ impl MTENDS1_R {
             true => MTENDS1_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Standard operation"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MTENDS1_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Parity bits under test"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MTENDS1_A::CONST_1
     }
 }
 #[doc = "Field `MTENDS1` writer - Test Enable Control for DSRAM1"]
-pub type MTENDS1_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTENDS1_A>;
-impl<'a, const O: u8> MTENDS1_W<'a, O> {
+pub type MTENDS1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTENDS1_A>;
+impl<'a, REG, const O: u8> MTENDS1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Standard operation"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(MTENDS1_A::CONST_0)
     }
     #[doc = "Parity bits under test"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(MTENDS1_A::CONST_1)
     }
 }
@@ -159,28 +133,31 @@ impl MTEU0_R {
             true => MTEU0_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Standard operation"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MTEU0_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Parity bits under test"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MTEU0_A::CONST_1
     }
 }
 #[doc = "Field `MTEU0` writer - Test Enable Control for USIC0 Memory"]
-pub type MTEU0_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTEU0_A>;
-impl<'a, const O: u8> MTEU0_W<'a, O> {
+pub type MTEU0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTEU0_A>;
+impl<'a, REG, const O: u8> MTEU0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Standard operation"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(MTEU0_A::CONST_0)
     }
     #[doc = "Parity bits under test"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(MTEU0_A::CONST_1)
     }
 }
@@ -209,28 +186,31 @@ impl MTEU1_R {
             true => MTEU1_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Standard operation"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MTEU1_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Parity bits under test"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MTEU1_A::CONST_1
     }
 }
 #[doc = "Field `MTEU1` writer - Test Enable Control for USIC1 Memory"]
-pub type MTEU1_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTEU1_A>;
-impl<'a, const O: u8> MTEU1_W<'a, O> {
+pub type MTEU1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTEU1_A>;
+impl<'a, REG, const O: u8> MTEU1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Standard operation"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(MTEU1_A::CONST_0)
     }
     #[doc = "Parity bits under test"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(MTEU1_A::CONST_1)
     }
 }
@@ -259,28 +239,31 @@ impl MTEMC_R {
             true => MTEMC_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Standard operation"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MTEMC_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Parity bits under test"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MTEMC_A::CONST_1
     }
 }
 #[doc = "Field `MTEMC` writer - Test Enable Control for MultiCAN Memory"]
-pub type MTEMC_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTEMC_A>;
-impl<'a, const O: u8> MTEMC_W<'a, O> {
+pub type MTEMC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTEMC_A>;
+impl<'a, REG, const O: u8> MTEMC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Standard operation"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(MTEMC_A::CONST_0)
     }
     #[doc = "Parity bits under test"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(MTEMC_A::CONST_1)
     }
 }
@@ -309,28 +292,31 @@ impl MTEPPRF_R {
             true => MTEPPRF_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Standard operation"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MTEPPRF_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Parity bits under test"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MTEPPRF_A::CONST_1
     }
 }
 #[doc = "Field `MTEPPRF` writer - Test Enable Control for PMU Prefetch Memory"]
-pub type MTEPPRF_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTEPPRF_A>;
-impl<'a, const O: u8> MTEPPRF_W<'a, O> {
+pub type MTEPPRF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTEPPRF_A>;
+impl<'a, REG, const O: u8> MTEPPRF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Standard operation"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(MTEPPRF_A::CONST_0)
     }
     #[doc = "Parity bits under test"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(MTEPPRF_A::CONST_1)
     }
 }
@@ -359,28 +345,31 @@ impl MTUSB_R {
             true => MTUSB_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Standard operation"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MTUSB_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Parity bits under test"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MTUSB_A::CONST_1
     }
 }
 #[doc = "Field `MTUSB` writer - Test Enable Control for USB Memory"]
-pub type MTUSB_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTUSB_A>;
-impl<'a, const O: u8> MTUSB_W<'a, O> {
+pub type MTUSB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTUSB_A>;
+impl<'a, REG, const O: u8> MTUSB_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Standard operation"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(MTUSB_A::CONST_0)
     }
     #[doc = "Parity bits under test"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(MTUSB_A::CONST_1)
     }
 }
@@ -409,28 +398,31 @@ impl MTETH0TX_R {
             true => MTETH0TX_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Standard operation"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MTETH0TX_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Parity bits under test"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MTETH0TX_A::CONST_1
     }
 }
 #[doc = "Field `MTETH0TX` writer - Test Enable Control for ETH TX Memory"]
-pub type MTETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTETH0TX_A>;
-impl<'a, const O: u8> MTETH0TX_W<'a, O> {
+pub type MTETH0TX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTETH0TX_A>;
+impl<'a, REG, const O: u8> MTETH0TX_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Standard operation"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(MTETH0TX_A::CONST_0)
     }
     #[doc = "Parity bits under test"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(MTETH0TX_A::CONST_1)
     }
 }
@@ -459,28 +451,31 @@ impl MTETH0RX_R {
             true => MTETH0RX_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Standard operation"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MTETH0RX_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Parity bits under test"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MTETH0RX_A::CONST_1
     }
 }
 #[doc = "Field `MTETH0RX` writer - Test Enable Control for ETH RX Memory"]
-pub type MTETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTETH0RX_A>;
-impl<'a, const O: u8> MTETH0RX_W<'a, O> {
+pub type MTETH0RX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTETH0RX_A>;
+impl<'a, REG, const O: u8> MTETH0RX_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Standard operation"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(MTETH0RX_A::CONST_0)
     }
     #[doc = "Parity bits under test"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(MTETH0RX_A::CONST_1)
     }
 }
@@ -509,28 +504,31 @@ impl MTSD0_R {
             true => MTSD0_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Standard operation"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MTSD0_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Parity bits under test"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MTSD0_A::CONST_1
     }
 }
 #[doc = "Field `MTSD0` writer - Test Enable Control for SDMMC Memory 0"]
-pub type MTSD0_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTSD0_A>;
-impl<'a, const O: u8> MTSD0_W<'a, O> {
+pub type MTSD0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTSD0_A>;
+impl<'a, REG, const O: u8> MTSD0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Standard operation"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(MTSD0_A::CONST_0)
     }
     #[doc = "Parity bits under test"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(MTSD0_A::CONST_1)
     }
 }
@@ -559,28 +557,31 @@ impl MTSD1_R {
             true => MTSD1_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Standard operation"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MTSD1_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Parity bits under test"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MTSD1_A::CONST_1
     }
 }
 #[doc = "Field `MTSD1` writer - Test Enable Control for SDMMC Memory 1"]
-pub type MTSD1_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTSD1_A>;
-impl<'a, const O: u8> MTSD1_W<'a, O> {
+pub type MTSD1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTSD1_A>;
+impl<'a, REG, const O: u8> MTSD1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Standard operation"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(MTSD1_A::CONST_0)
     }
     #[doc = "Parity bits under test"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(MTSD1_A::CONST_1)
     }
 }
@@ -609,28 +610,31 @@ impl MTECAT0_R {
             true => MTECAT0_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Standard operation"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MTECAT0_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Parity bits under test"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MTECAT0_A::CONST_1
     }
 }
 #[doc = "Field `MTECAT0` writer - Test Enable Control for ECAT0 Memory"]
-pub type MTECAT0_W<'a, const O: u8> = crate::BitWriter<'a, PMTSR_SPEC, O, MTECAT0_A>;
-impl<'a, const O: u8> MTECAT0_W<'a, O> {
+pub type MTECAT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MTECAT0_A>;
+impl<'a, REG, const O: u8> MTECAT0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Standard operation"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(MTECAT0_A::CONST_0)
     }
     #[doc = "Parity bits under test"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(MTECAT0_A::CONST_1)
     }
 }
@@ -700,94 +704,91 @@ impl W {
     #[doc = "Bit 0 - Test Enable Control for PSRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn mtenps(&mut self) -> MTENPS_W<0> {
+    pub fn mtenps(&mut self) -> MTENPS_W<PMTSR_SPEC, 0> {
         MTENPS_W::new(self)
     }
     #[doc = "Bit 1 - Test Enable Control for DSRAM1"]
     #[inline(always)]
     #[must_use]
-    pub fn mtends1(&mut self) -> MTENDS1_W<1> {
+    pub fn mtends1(&mut self) -> MTENDS1_W<PMTSR_SPEC, 1> {
         MTENDS1_W::new(self)
     }
     #[doc = "Bit 8 - Test Enable Control for USIC0 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mteu0(&mut self) -> MTEU0_W<8> {
+    pub fn mteu0(&mut self) -> MTEU0_W<PMTSR_SPEC, 8> {
         MTEU0_W::new(self)
     }
     #[doc = "Bit 9 - Test Enable Control for USIC1 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mteu1(&mut self) -> MTEU1_W<9> {
+    pub fn mteu1(&mut self) -> MTEU1_W<PMTSR_SPEC, 9> {
         MTEU1_W::new(self)
     }
     #[doc = "Bit 12 - Test Enable Control for MultiCAN Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mtemc(&mut self) -> MTEMC_W<12> {
+    pub fn mtemc(&mut self) -> MTEMC_W<PMTSR_SPEC, 12> {
         MTEMC_W::new(self)
     }
     #[doc = "Bit 13 - Test Enable Control for PMU Prefetch Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mtepprf(&mut self) -> MTEPPRF_W<13> {
+    pub fn mtepprf(&mut self) -> MTEPPRF_W<PMTSR_SPEC, 13> {
         MTEPPRF_W::new(self)
     }
     #[doc = "Bit 16 - Test Enable Control for USB Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mtusb(&mut self) -> MTUSB_W<16> {
+    pub fn mtusb(&mut self) -> MTUSB_W<PMTSR_SPEC, 16> {
         MTUSB_W::new(self)
     }
     #[doc = "Bit 17 - Test Enable Control for ETH TX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mteth0tx(&mut self) -> MTETH0TX_W<17> {
+    pub fn mteth0tx(&mut self) -> MTETH0TX_W<PMTSR_SPEC, 17> {
         MTETH0TX_W::new(self)
     }
     #[doc = "Bit 18 - Test Enable Control for ETH RX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mteth0rx(&mut self) -> MTETH0RX_W<18> {
+    pub fn mteth0rx(&mut self) -> MTETH0RX_W<PMTSR_SPEC, 18> {
         MTETH0RX_W::new(self)
     }
     #[doc = "Bit 19 - Test Enable Control for SDMMC Memory 0"]
     #[inline(always)]
     #[must_use]
-    pub fn mtsd0(&mut self) -> MTSD0_W<19> {
+    pub fn mtsd0(&mut self) -> MTSD0_W<PMTSR_SPEC, 19> {
         MTSD0_W::new(self)
     }
     #[doc = "Bit 20 - Test Enable Control for SDMMC Memory 1"]
     #[inline(always)]
     #[must_use]
-    pub fn mtsd1(&mut self) -> MTSD1_W<20> {
+    pub fn mtsd1(&mut self) -> MTSD1_W<PMTSR_SPEC, 20> {
         MTSD1_W::new(self)
     }
     #[doc = "Bit 24 - Test Enable Control for ECAT0 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn mtecat0(&mut self) -> MTECAT0_W<24> {
+    pub fn mtecat0(&mut self) -> MTECAT0_W<PMTSR_SPEC, 24> {
         MTECAT0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Parity Memory Test Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmtsr](index.html) module"]
+#[doc = "Parity Memory Test Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pmtsr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pmtsr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PMTSR_SPEC;
 impl crate::RegisterSpec for PMTSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pmtsr::R](R) reader structure"]
-impl crate::Readable for PMTSR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pmtsr::W](W) writer structure"]
+#[doc = "`read()` method returns [`pmtsr::R`](R) reader structure"]
+impl crate::Readable for PMTSR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pmtsr::W`](W) writer structure"]
 impl crate::Writable for PMTSR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

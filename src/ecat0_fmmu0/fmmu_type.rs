@@ -1,18 +1,5 @@
 #[doc = "Register `FMMU_TYPE` reader"]
-pub struct R(crate::R<FMMU_TYPE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FMMU_TYPE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FMMU_TYPE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FMMU_TYPE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FMMU_TYPE_SPEC>;
 #[doc = "Field `R_ACC` reader - Read Access"]
 pub type R_ACC_R = crate::BitReader<R_ACC_A>;
 #[doc = "Read Access\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl R_ACC_R {
             true => R_ACC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore mapping for read accesses"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == R_ACC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Use mapping for read accesses"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == R_ACC_A::VALUE2
@@ -74,12 +61,12 @@ impl W_ACC_R {
             true => W_ACC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ignore mapping for write accesses"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == W_ACC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Use mapping for write accesses"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == W_ACC_A::VALUE2
@@ -97,15 +84,13 @@ impl R {
         W_ACC_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
-#[doc = "T0pe FMMU y\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmmu_type](index.html) module"]
+#[doc = "T0pe FMMU y\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmmu_type::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FMMU_TYPE_SPEC;
 impl crate::RegisterSpec for FMMU_TYPE_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [fmmu_type::R](R) reader structure"]
-impl crate::Readable for FMMU_TYPE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`fmmu_type::R`](R) reader structure"]
+impl crate::Readable for FMMU_TYPE_SPEC {}
 #[doc = "`reset()` method sets FMMU_TYPE to value 0"]
 impl crate::Resettable for FMMU_TYPE_SPEC {
     const RESET_VALUE: Self::Ux = 0;

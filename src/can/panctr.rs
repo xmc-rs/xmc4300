@@ -1,43 +1,11 @@
 #[doc = "Register `PANCTR` reader"]
-pub struct R(crate::R<PANCTR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PANCTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PANCTR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PANCTR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PANCTR_SPEC>;
 #[doc = "Register `PANCTR` writer"]
-pub struct W(crate::W<PANCTR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PANCTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PANCTR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PANCTR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PANCTR_SPEC>;
 #[doc = "Field `PANCMD` reader - Panel Command"]
 pub type PANCMD_R = crate::FieldReader;
 #[doc = "Field `PANCMD` writer - Panel Command"]
-pub type PANCMD_W<'a, const O: u8> = crate::FieldWriter<'a, PANCTR_SPEC, 8, O>;
+pub type PANCMD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `BUSY` reader - Panel Busy Flag"]
 pub type BUSY_R = crate::BitReader<BUSY_A>;
 #[doc = "Panel Busy Flag\n\nValue on reset: 1"]
@@ -63,12 +31,12 @@ impl BUSY_R {
             true => BUSY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Panel has finished command and is ready to accept a new command."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUSY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Panel operation is in progress."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUSY_A::VALUE2
@@ -99,12 +67,12 @@ impl RBUSY_R {
             true => RBUSY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No update of PANAR1 and PANAR2 is scheduled by the list controller."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RBUSY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A list command is running (BUSY = 1) that will write results to PANAR1 and PANAR2, but the results are not yet available."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RBUSY_A::VALUE2
@@ -113,11 +81,11 @@ impl RBUSY_R {
 #[doc = "Field `PANAR1` reader - Panel Argument 1"]
 pub type PANAR1_R = crate::FieldReader;
 #[doc = "Field `PANAR1` writer - Panel Argument 1"]
-pub type PANAR1_W<'a, const O: u8> = crate::FieldWriter<'a, PANCTR_SPEC, 8, O>;
+pub type PANAR1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `PANAR2` reader - Panel Argument 2"]
 pub type PANAR2_R = crate::FieldReader;
 #[doc = "Field `PANAR2` writer - Panel Argument 2"]
-pub type PANAR2_W<'a, const O: u8> = crate::FieldWriter<'a, PANCTR_SPEC, 8, O>;
+pub type PANAR2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Panel Command"]
     #[inline(always)]
@@ -149,40 +117,37 @@ impl W {
     #[doc = "Bits 0:7 - Panel Command"]
     #[inline(always)]
     #[must_use]
-    pub fn pancmd(&mut self) -> PANCMD_W<0> {
+    pub fn pancmd(&mut self) -> PANCMD_W<PANCTR_SPEC, 0> {
         PANCMD_W::new(self)
     }
     #[doc = "Bits 16:23 - Panel Argument 1"]
     #[inline(always)]
     #[must_use]
-    pub fn panar1(&mut self) -> PANAR1_W<16> {
+    pub fn panar1(&mut self) -> PANAR1_W<PANCTR_SPEC, 16> {
         PANAR1_W::new(self)
     }
     #[doc = "Bits 24:31 - Panel Argument 2"]
     #[inline(always)]
     #[must_use]
-    pub fn panar2(&mut self) -> PANAR2_W<24> {
+    pub fn panar2(&mut self) -> PANAR2_W<PANCTR_SPEC, 24> {
         PANAR2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Panel Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [panctr](index.html) module"]
+#[doc = "Panel Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`panctr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`panctr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PANCTR_SPEC;
 impl crate::RegisterSpec for PANCTR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [panctr::R](R) reader structure"]
-impl crate::Readable for PANCTR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [panctr::W](W) writer structure"]
+#[doc = "`read()` method returns [`panctr::R`](R) reader structure"]
+impl crate::Readable for PANCTR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`panctr::W`](W) writer structure"]
 impl crate::Writable for PANCTR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

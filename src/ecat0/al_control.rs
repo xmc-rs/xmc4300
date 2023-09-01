@@ -1,18 +1,5 @@
 #[doc = "Register `AL_CONTROL` reader"]
-pub struct R(crate::R<AL_CONTROL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<AL_CONTROL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<AL_CONTROL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<AL_CONTROL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<AL_CONTROL_SPEC>;
 #[doc = "Field `IST` reader - Initiate State Transition of the Device StateMachine"]
 pub type IST_R = crate::FieldReader<IST_A>;
 #[doc = "Initiate State Transition of the Device StateMachine\n\nValue on reset: 1"]
@@ -52,27 +39,27 @@ impl IST_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Request Init State"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == IST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Request Pre-Operational State"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == IST_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Request Bootstrap State"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == IST_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Request Safe-Operational State"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == IST_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "Request Operational State"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == IST_A::VALUE5
@@ -103,12 +90,12 @@ impl EIA_R {
             true => EIA_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Ack of Error Ind in AL status register"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EIA_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Ack of Error Ind in AL status register"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EIA_A::VALUE2
@@ -139,12 +126,12 @@ impl DID_R {
             true => DID_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DID_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Device Identification request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DID_A::VALUE2
@@ -167,15 +154,13 @@ impl R {
         DID_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
-#[doc = "AL Control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [al_control](index.html) module"]
+#[doc = "AL Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`al_control::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AL_CONTROL_SPEC;
 impl crate::RegisterSpec for AL_CONTROL_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [al_control::R](R) reader structure"]
-impl crate::Readable for AL_CONTROL_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`al_control::R`](R) reader structure"]
+impl crate::Readable for AL_CONTROL_SPEC {}
 #[doc = "`reset()` method sets AL_CONTROL to value 0x01"]
 impl crate::Resettable for AL_CONTROL_SPEC {
     const RESET_VALUE: Self::Ux = 0x01;

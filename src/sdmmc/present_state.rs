@@ -1,18 +1,5 @@
 #[doc = "Register `PRESENT_STATE` reader"]
-pub struct R(crate::R<PRESENT_STATE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PRESENT_STATE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PRESENT_STATE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PRESENT_STATE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PRESENT_STATE_SPEC>;
 #[doc = "Field `COMMAND_INHIBIT_CMD` reader - Command Inhibit (CMD)"]
 pub type COMMAND_INHIBIT_CMD_R = crate::BitReader;
 #[doc = "Field `COMMAND_INHIBIT_DAT` reader - Command Inhibit (DAT)"]
@@ -40,12 +27,12 @@ impl COMMAND_INHIBIT_DAT_R {
             true => COMMAND_INHIBIT_DAT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Can issue command which uses the DAT line"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == COMMAND_INHIBIT_DAT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Cannot issue command which uses the DAT line"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == COMMAND_INHIBIT_DAT_A::VALUE2
@@ -76,12 +63,12 @@ impl DAT_LINE_ACTIVE_R {
             true => DAT_LINE_ACTIVE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "DAT line inactive"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DAT_LINE_ACTIVE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "DAT line active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DAT_LINE_ACTIVE_A::VALUE2
@@ -112,12 +99,12 @@ impl WRITE_TRANSFER_ACTIVE_R {
             true => WRITE_TRANSFER_ACTIVE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No valid data"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WRITE_TRANSFER_ACTIVE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Transferring data"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WRITE_TRANSFER_ACTIVE_A::VALUE2
@@ -148,12 +135,12 @@ impl READ_TRANSFER_ACTIVE_R {
             true => READ_TRANSFER_ACTIVE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No valid data"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == READ_TRANSFER_ACTIVE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Transferring data"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == READ_TRANSFER_ACTIVE_A::VALUE2
@@ -184,12 +171,12 @@ impl BUFFER_WRITE_ENABLE_R {
             true => BUFFER_WRITE_ENABLE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Write Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUFFER_WRITE_ENABLE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write Enable."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUFFER_WRITE_ENABLE_A::VALUE2
@@ -220,12 +207,12 @@ impl BUFFER_READ_ENABLE_R {
             true => BUFFER_READ_ENABLE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUFFER_READ_ENABLE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read Enable."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUFFER_READ_ENABLE_A::VALUE2
@@ -256,12 +243,12 @@ impl CARD_INSERTED_R {
             true => CARD_INSERTED_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset or Debouncing or No Card"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_INSERTED_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Card Inserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_INSERTED_A::VALUE2
@@ -292,12 +279,12 @@ impl CARD_STATE_STABLE_R {
             true => CARD_STATE_STABLE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset of Debouncing"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_STATE_STABLE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "No Card or Inserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_STATE_STABLE_A::VALUE2
@@ -328,12 +315,12 @@ impl CARD_DETECT_PIN_LEVEL_R {
             true => CARD_DETECT_PIN_LEVEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Card present (SDCD = 1)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CARD_DETECT_PIN_LEVEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Card present (SDCD = 0)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CARD_DETECT_PIN_LEVEL_A::VALUE2
@@ -364,12 +351,12 @@ impl WRITE_PROTECT_PIN_LEVEL_R {
             true => WRITE_PROTECT_PIN_LEVEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Write protected (SDWP = 1)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WRITE_PROTECT_PIN_LEVEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write enabled (SDWP = 0)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WRITE_PROTECT_PIN_LEVEL_A::VALUE2
@@ -453,15 +440,13 @@ impl R {
         DAT_7_4_PIN_LEVEL_R::new(((self.bits >> 25) & 0x0f) as u8)
     }
 }
-#[doc = "Present State Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [present_state](index.html) module"]
+#[doc = "Present State Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`present_state::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRESENT_STATE_SPEC;
 impl crate::RegisterSpec for PRESENT_STATE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [present_state::R](R) reader structure"]
-impl crate::Readable for PRESENT_STATE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`present_state::R`](R) reader structure"]
+impl crate::Readable for PRESENT_STATE_SPEC {}
 #[doc = "`reset()` method sets PRESENT_STATE to value 0"]
 impl crate::Resettable for PRESENT_STATE_SPEC {
     const RESET_VALUE: Self::Ux = 0;

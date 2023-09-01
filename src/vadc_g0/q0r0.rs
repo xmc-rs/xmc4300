@@ -1,18 +1,5 @@
 #[doc = "Register `Q0R0` reader"]
-pub struct R(crate::R<Q0R0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<Q0R0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<Q0R0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<Q0R0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<Q0R0_SPEC>;
 #[doc = "Field `REQCHNR` reader - Request Channel Number"]
 pub type REQCHNR_R = crate::FieldReader;
 #[doc = "Field `RF` reader - Refill"]
@@ -40,12 +27,12 @@ impl RF_R {
             true => RF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The request is discarded after the conversion start."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The request is automatically refilled into the queue after the conversion start."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RF_A::VALUE2
@@ -76,12 +63,12 @@ impl ENSI_R {
             true => ENSI_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No request source interrupt"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ENSI_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A request source event interrupt is generated upon a request source event (related conversion is finished)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ENSI_A::VALUE2
@@ -112,12 +99,12 @@ impl EXTR_R {
             true => EXTR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A valid queue entry immediately leads to a conversion request"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EXTR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The request handler waits for a trigger event"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EXTR_A::VALUE2
@@ -148,12 +135,12 @@ impl V_R {
             true => V_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No valid queue entry"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == V_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The queue entry is valid and leads to a conversion request"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == V_A::VALUE2
@@ -186,15 +173,13 @@ impl R {
         V_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
-#[doc = "Queue 0 Register 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [q0r0](index.html) module"]
+#[doc = "Queue 0 Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`q0r0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Q0R0_SPEC;
 impl crate::RegisterSpec for Q0R0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [q0r0::R](R) reader structure"]
-impl crate::Readable for Q0R0_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`q0r0::R`](R) reader structure"]
+impl crate::Readable for Q0R0_SPEC {}
 #[doc = "`reset()` method sets Q0R0 to value 0"]
 impl crate::Resettable for Q0R0_SPEC {
     const RESET_VALUE: Self::Ux = 0;

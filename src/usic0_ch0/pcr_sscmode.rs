@@ -1,39 +1,7 @@
 #[doc = "Register `PCR_SSCMode` reader"]
-pub struct R(crate::R<PCR_SSCMODE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PCR_SSCMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PCR_SSCMODE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PCR_SSCMODE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PCR_SSCMODE_SPEC>;
 #[doc = "Register `PCR_SSCMode` writer"]
-pub struct W(crate::W<PCR_SSCMODE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PCR_SSCMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PCR_SSCMODE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PCR_SSCMODE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PCR_SSCMODE_SPEC>;
 #[doc = "Field `MSLSEN` reader - MSLS Enable"]
 pub type MSLSEN_R = crate::BitReader<MSLSEN_A>;
 #[doc = "MSLS Enable\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl MSLSEN_R {
             true => MSLSEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The MSLS generation is disabled (MSLS = 0). This is the setting for SSC slave mode."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSLSEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The MSLS generation is enabled. This is the setting for SSC master mode."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSLSEN_A::VALUE2
     }
 }
 #[doc = "Field `MSLSEN` writer - MSLS Enable"]
-pub type MSLSEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, MSLSEN_A>;
-impl<'a, const O: u8> MSLSEN_W<'a, O> {
+pub type MSLSEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MSLSEN_A>;
+impl<'a, REG, const O: u8> MSLSEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The MSLS generation is disabled (MSLS = 0). This is the setting for SSC slave mode."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MSLSEN_A::VALUE1)
     }
     #[doc = "The MSLS generation is enabled. This is the setting for SSC master mode."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MSLSEN_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl SELCTR_R {
             true => SELCTR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The coded select mode is enabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SELCTR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The direct select mode is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SELCTR_A::VALUE2
     }
 }
 #[doc = "Field `SELCTR` writer - Select Control"]
-pub type SELCTR_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, SELCTR_A>;
-impl<'a, const O: u8> SELCTR_W<'a, O> {
+pub type SELCTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELCTR_A>;
+impl<'a, REG, const O: u8> SELCTR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The coded select mode is enabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SELCTR_A::VALUE1)
     }
     #[doc = "The direct select mode is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SELCTR_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl SELINV_R {
             true => SELINV_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The SELO outputs have the same polarity as the MSLS signal (active high)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SELINV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The SELO outputs have the inverted polarity to the MSLS signal (active low)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SELINV_A::VALUE2
     }
 }
 #[doc = "Field `SELINV` writer - Select Inversion"]
-pub type SELINV_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, SELINV_A>;
-impl<'a, const O: u8> SELINV_W<'a, O> {
+pub type SELINV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELINV_A>;
+impl<'a, REG, const O: u8> SELINV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The SELO outputs have the same polarity as the MSLS signal (active high)."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SELINV_A::VALUE1)
     }
     #[doc = "The SELO outputs have the inverted polarity to the MSLS signal (active low)."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SELINV_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl FEM_R {
             true => FEM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The current data frame is considered as finished when the last bit of a data word has been sent out and the transmit buffer TBUF does not contain new data (TDV = 0)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FEM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The MSLS signal is kept active also while no new data is available and no other end of frame condition is reached. In this case, the software can accept delays in delivering the data without automatic deactivation of MSLS in multi-word data frames."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FEM_A::VALUE2
     }
 }
 #[doc = "Field `FEM` writer - Frame End Mode"]
-pub type FEM_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, FEM_A>;
-impl<'a, const O: u8> FEM_W<'a, O> {
+pub type FEM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FEM_A>;
+impl<'a, REG, const O: u8> FEM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The current data frame is considered as finished when the last bit of a data word has been sent out and the transmit buffer TBUF does not contain new data (TDV = 0)."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(FEM_A::VALUE1)
     }
     #[doc = "The MSLS signal is kept active also while no new data is available and no other end of frame condition is reached. In this case, the software can accept delays in delivering the data without automatic deactivation of MSLS in multi-word data frames."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(FEM_A::VALUE2)
     }
 }
@@ -270,59 +250,63 @@ impl CTQSEL1_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "fCTQIN = fPDIV"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CTQSEL1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "fCTQIN = fPPP"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CTQSEL1_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "fCTQIN = fSCLK"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CTQSEL1_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "fCTQIN = fMCLK"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CTQSEL1_A::VALUE4
     }
 }
 #[doc = "Field `CTQSEL1` writer - Input Frequency Selection"]
-pub type CTQSEL1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PCR_SSCMODE_SPEC, 2, O, CTQSEL1_A>;
-impl<'a, const O: u8> CTQSEL1_W<'a, O> {
+pub type CTQSEL1_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CTQSEL1_A>;
+impl<'a, REG, const O: u8> CTQSEL1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "fCTQIN = fPDIV"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CTQSEL1_A::VALUE1)
     }
     #[doc = "fCTQIN = fPPP"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CTQSEL1_A::VALUE2)
     }
     #[doc = "fCTQIN = fSCLK"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CTQSEL1_A::VALUE3)
     }
     #[doc = "fCTQIN = fMCLK"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CTQSEL1_A::VALUE4)
     }
 }
 #[doc = "Field `PCTQ1` reader - Divider Factor PCTQ1 for Tiw and Tnf"]
 pub type PCTQ1_R = crate::FieldReader;
 #[doc = "Field `PCTQ1` writer - Divider Factor PCTQ1 for Tiw and Tnf"]
-pub type PCTQ1_W<'a, const O: u8> = crate::FieldWriter<'a, PCR_SSCMODE_SPEC, 2, O>;
+pub type PCTQ1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `DCTQ1` reader - Divider Factor DCTQ1 for Tiw and Tnf"]
 pub type DCTQ1_R = crate::FieldReader;
 #[doc = "Field `DCTQ1` writer - Divider Factor DCTQ1 for Tiw and Tnf"]
-pub type DCTQ1_W<'a, const O: u8> = crate::FieldWriter<'a, PCR_SSCMODE_SPEC, 5, O>;
+pub type DCTQ1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
 #[doc = "Field `PARIEN` reader - Parity Error Interrupt Enable"]
 pub type PARIEN_R = crate::BitReader<PARIEN_A>;
 #[doc = "Parity Error Interrupt Enable\n\nValue on reset: 0"]
@@ -348,28 +332,31 @@ impl PARIEN_R {
             true => PARIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A protocol interrupt is not generated with the detection of a parity error."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PARIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A protocol interrupt is generated with the detection of a parity error."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PARIEN_A::VALUE2
     }
 }
 #[doc = "Field `PARIEN` writer - Parity Error Interrupt Enable"]
-pub type PARIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, PARIEN_A>;
-impl<'a, const O: u8> PARIEN_W<'a, O> {
+pub type PARIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PARIEN_A>;
+impl<'a, REG, const O: u8> PARIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A protocol interrupt is not generated with the detection of a parity error."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PARIEN_A::VALUE1)
     }
     #[doc = "A protocol interrupt is generated with the detection of a parity error."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PARIEN_A::VALUE2)
     }
 }
@@ -398,28 +385,31 @@ impl MSLSIEN_R {
             true => MSLSIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A protocol interrupt is not generated if a change of signal MSLS is detected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSLSIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A protocol interrupt is generated if a change of signal MSLS is detected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSLSIEN_A::VALUE2
     }
 }
 #[doc = "Field `MSLSIEN` writer - MSLS Interrupt Enable"]
-pub type MSLSIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, MSLSIEN_A>;
-impl<'a, const O: u8> MSLSIEN_W<'a, O> {
+pub type MSLSIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MSLSIEN_A>;
+impl<'a, REG, const O: u8> MSLSIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A protocol interrupt is not generated if a change of signal MSLS is detected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MSLSIEN_A::VALUE1)
     }
     #[doc = "A protocol interrupt is generated if a change of signal MSLS is detected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MSLSIEN_A::VALUE2)
     }
 }
@@ -448,28 +438,31 @@ impl DX2TIEN_R {
             true => DX2TIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A protocol interrupt is not generated if DX2T is activated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DX2TIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A protocol interrupt is generated if DX2T is activated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DX2TIEN_A::VALUE2
     }
 }
 #[doc = "Field `DX2TIEN` writer - DX2T Interrupt Enable"]
-pub type DX2TIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, DX2TIEN_A>;
-impl<'a, const O: u8> DX2TIEN_W<'a, O> {
+pub type DX2TIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DX2TIEN_A>;
+impl<'a, REG, const O: u8> DX2TIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A protocol interrupt is not generated if DX2T is activated."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DX2TIEN_A::VALUE1)
     }
     #[doc = "A protocol interrupt is generated if DX2T is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DX2TIEN_A::VALUE2)
     }
 }
@@ -503,28 +496,32 @@ impl SELO_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The corresponding SELOx line cannot be activated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SELO_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The corresponding SELOx line can be activated (according to the mode selected by SELCTR)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SELO_A::VALUE2
     }
 }
 #[doc = "Field `SELO` writer - Select Output"]
-pub type SELO_W<'a, const O: u8> = crate::FieldWriter<'a, PCR_SSCMODE_SPEC, 8, O, SELO_A>;
-impl<'a, const O: u8> SELO_W<'a, O> {
+pub type SELO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, SELO_A>;
+impl<'a, REG, const O: u8> SELO_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The corresponding SELOx line cannot be activated."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SELO_A::VALUE1)
     }
     #[doc = "The corresponding SELOx line can be activated (according to the mode selected by SELCTR)."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SELO_A::VALUE2)
     }
 }
@@ -553,28 +550,31 @@ impl TIWEN_R {
             true => TIWEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No delay between data words of the same frame."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TIWEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The inter-word delay Tiw is enabled and introduced between data words of the same frame."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TIWEN_A::VALUE2
     }
 }
 #[doc = "Field `TIWEN` writer - Enable Inter-Word Delay Tiw"]
-pub type TIWEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, TIWEN_A>;
-impl<'a, const O: u8> TIWEN_W<'a, O> {
+pub type TIWEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TIWEN_A>;
+impl<'a, REG, const O: u8> TIWEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No delay between data words of the same frame."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TIWEN_A::VALUE1)
     }
     #[doc = "The inter-word delay Tiw is enabled and introduced between data words of the same frame."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TIWEN_A::VALUE2)
     }
 }
@@ -603,28 +603,31 @@ impl SLPHSEL_R {
             true => SLPHSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Data bits are shifted out with the leading edge of the shift clock signal and latched in with the trailing edge."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SLPHSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The first data bit is shifted out when the data shift unit receives a low to high transition from the DX2 stage. Subsequent bits are shifted out with the trailing edge of the shift clock signal. Data bits are always latched in with the leading edge."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SLPHSEL_A::VALUE2
     }
 }
 #[doc = "Field `SLPHSEL` writer - Slave Mode Clock Phase Select"]
-pub type SLPHSEL_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, SLPHSEL_A>;
-impl<'a, const O: u8> SLPHSEL_W<'a, O> {
+pub type SLPHSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SLPHSEL_A>;
+impl<'a, REG, const O: u8> SLPHSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Data bits are shifted out with the leading edge of the shift clock signal and latched in with the trailing edge."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SLPHSEL_A::VALUE1)
     }
     #[doc = "The first data bit is shifted out when the data shift unit receives a low to high transition from the DX2 stage. Subsequent bits are shifted out with the trailing edge of the shift clock signal. Data bits are always latched in with the leading edge."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SLPHSEL_A::VALUE2)
     }
 }
@@ -653,28 +656,31 @@ impl MCLK_R {
             true => MCLK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The MCLK generation is disabled and output MCLK = 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MCLK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The MCLK generation is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MCLK_A::VALUE2
     }
 }
 #[doc = "Field `MCLK` writer - Master Clock Enable"]
-pub type MCLK_W<'a, const O: u8> = crate::BitWriter<'a, PCR_SSCMODE_SPEC, O, MCLK_A>;
-impl<'a, const O: u8> MCLK_W<'a, O> {
+pub type MCLK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MCLK_A>;
+impl<'a, REG, const O: u8> MCLK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The MCLK generation is disabled and output MCLK = 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MCLK_A::VALUE1)
     }
     #[doc = "The MCLK generation is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MCLK_A::VALUE2)
     }
 }
@@ -754,106 +760,103 @@ impl W {
     #[doc = "Bit 0 - MSLS Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mslsen(&mut self) -> MSLSEN_W<0> {
+    pub fn mslsen(&mut self) -> MSLSEN_W<PCR_SSCMODE_SPEC, 0> {
         MSLSEN_W::new(self)
     }
     #[doc = "Bit 1 - Select Control"]
     #[inline(always)]
     #[must_use]
-    pub fn selctr(&mut self) -> SELCTR_W<1> {
+    pub fn selctr(&mut self) -> SELCTR_W<PCR_SSCMODE_SPEC, 1> {
         SELCTR_W::new(self)
     }
     #[doc = "Bit 2 - Select Inversion"]
     #[inline(always)]
     #[must_use]
-    pub fn selinv(&mut self) -> SELINV_W<2> {
+    pub fn selinv(&mut self) -> SELINV_W<PCR_SSCMODE_SPEC, 2> {
         SELINV_W::new(self)
     }
     #[doc = "Bit 3 - Frame End Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn fem(&mut self) -> FEM_W<3> {
+    pub fn fem(&mut self) -> FEM_W<PCR_SSCMODE_SPEC, 3> {
         FEM_W::new(self)
     }
     #[doc = "Bits 4:5 - Input Frequency Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ctqsel1(&mut self) -> CTQSEL1_W<4> {
+    pub fn ctqsel1(&mut self) -> CTQSEL1_W<PCR_SSCMODE_SPEC, 4> {
         CTQSEL1_W::new(self)
     }
     #[doc = "Bits 6:7 - Divider Factor PCTQ1 for Tiw and Tnf"]
     #[inline(always)]
     #[must_use]
-    pub fn pctq1(&mut self) -> PCTQ1_W<6> {
+    pub fn pctq1(&mut self) -> PCTQ1_W<PCR_SSCMODE_SPEC, 6> {
         PCTQ1_W::new(self)
     }
     #[doc = "Bits 8:12 - Divider Factor DCTQ1 for Tiw and Tnf"]
     #[inline(always)]
     #[must_use]
-    pub fn dctq1(&mut self) -> DCTQ1_W<8> {
+    pub fn dctq1(&mut self) -> DCTQ1_W<PCR_SSCMODE_SPEC, 8> {
         DCTQ1_W::new(self)
     }
     #[doc = "Bit 13 - Parity Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn parien(&mut self) -> PARIEN_W<13> {
+    pub fn parien(&mut self) -> PARIEN_W<PCR_SSCMODE_SPEC, 13> {
         PARIEN_W::new(self)
     }
     #[doc = "Bit 14 - MSLS Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mslsien(&mut self) -> MSLSIEN_W<14> {
+    pub fn mslsien(&mut self) -> MSLSIEN_W<PCR_SSCMODE_SPEC, 14> {
         MSLSIEN_W::new(self)
     }
     #[doc = "Bit 15 - DX2T Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dx2tien(&mut self) -> DX2TIEN_W<15> {
+    pub fn dx2tien(&mut self) -> DX2TIEN_W<PCR_SSCMODE_SPEC, 15> {
         DX2TIEN_W::new(self)
     }
     #[doc = "Bits 16:23 - Select Output"]
     #[inline(always)]
     #[must_use]
-    pub fn selo(&mut self) -> SELO_W<16> {
+    pub fn selo(&mut self) -> SELO_W<PCR_SSCMODE_SPEC, 16> {
         SELO_W::new(self)
     }
     #[doc = "Bit 24 - Enable Inter-Word Delay Tiw"]
     #[inline(always)]
     #[must_use]
-    pub fn tiwen(&mut self) -> TIWEN_W<24> {
+    pub fn tiwen(&mut self) -> TIWEN_W<PCR_SSCMODE_SPEC, 24> {
         TIWEN_W::new(self)
     }
     #[doc = "Bit 25 - Slave Mode Clock Phase Select"]
     #[inline(always)]
     #[must_use]
-    pub fn slphsel(&mut self) -> SLPHSEL_W<25> {
+    pub fn slphsel(&mut self) -> SLPHSEL_W<PCR_SSCMODE_SPEC, 25> {
         SLPHSEL_W::new(self)
     }
     #[doc = "Bit 31 - Master Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mclk(&mut self) -> MCLK_W<31> {
+    pub fn mclk(&mut self) -> MCLK_W<PCR_SSCMODE_SPEC, 31> {
         MCLK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Protocol Control Register \\[SSC Mode\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcr_sscmode](index.html) module"]
+#[doc = "Protocol Control Register \\[SSC Mode\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcr_sscmode::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcr_sscmode::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PCR_SSCMODE_SPEC;
 impl crate::RegisterSpec for PCR_SSCMODE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pcr_sscmode::R](R) reader structure"]
-impl crate::Readable for PCR_SSCMODE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pcr_sscmode::W](W) writer structure"]
+#[doc = "`read()` method returns [`pcr_sscmode::R`](R) reader structure"]
+impl crate::Readable for PCR_SSCMODE_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pcr_sscmode::W`](W) writer structure"]
 impl crate::Writable for PCR_SSCMODE_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,18 +1,5 @@
 #[doc = "Register `CAPABILITIES_HI` reader"]
-pub struct R(crate::R<CAPABILITIES_HI_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CAPABILITIES_HI_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CAPABILITIES_HI_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CAPABILITIES_HI_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CAPABILITIES_HI_SPEC>;
 #[doc = "Field `SDR50_SUPPORT` reader - SDR50 Support"]
 pub type SDR50_SUPPORT_R = crate::BitReader<SDR50_SUPPORT_A>;
 #[doc = "SDR50 Support\n\nValue on reset: 0"]
@@ -36,7 +23,7 @@ impl SDR50_SUPPORT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "SDR50 is not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SDR50_SUPPORT_A::VALUE1
@@ -65,7 +52,7 @@ impl SDR104_SUPPORT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "SDR104 is not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SDR104_SUPPORT_A::VALUE1
@@ -94,7 +81,7 @@ impl DDR50_SUPPORT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "DDR50 is not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DDR50_SUPPORT_A::VALUE1
@@ -123,7 +110,7 @@ impl DRV_A_SUPPORT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Driver Type A is not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DRV_A_SUPPORT_A::VALUE1
@@ -152,7 +139,7 @@ impl DRV_C_SUPPORT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Driver Type C is not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DRV_C_SUPPORT_A::VALUE1
@@ -181,7 +168,7 @@ impl DRV_D_SUPPORT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Driver Type D is not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DRV_D_SUPPORT_A::VALUE1
@@ -214,7 +201,7 @@ impl TIM_CNT_RETUNE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Get information via other source"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TIM_CNT_RETUNE_A::VALUE1
@@ -243,7 +230,7 @@ impl USE_TUNING_SDR50_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "SDR50 does not require tuning"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == USE_TUNING_SDR50_A::VALUE1
@@ -276,7 +263,7 @@ impl RE_TUNING_MODES_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Mode 1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RE_TUNING_MODES_A::VALUE1
@@ -309,7 +296,7 @@ impl CLK_MULT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Clock Multiplier not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CLK_MULT_A::VALUE1
@@ -367,15 +354,13 @@ impl R {
         CLK_MULT_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
-#[doc = "Capabilities Register High\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capabilities_hi](index.html) module"]
+#[doc = "Capabilities Register High\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`capabilities_hi::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CAPABILITIES_HI_SPEC;
 impl crate::RegisterSpec for CAPABILITIES_HI_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [capabilities_hi::R](R) reader structure"]
-impl crate::Readable for CAPABILITIES_HI_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`capabilities_hi::R`](R) reader structure"]
+impl crate::Readable for CAPABILITIES_HI_SPEC {}
 #[doc = "`reset()` method sets CAPABILITIES_HI to value 0x0300_0000"]
 impl crate::Resettable for CAPABILITIES_HI_SPEC {
     const RESET_VALUE: Self::Ux = 0x0300_0000;
