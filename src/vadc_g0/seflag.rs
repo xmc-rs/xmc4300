@@ -1,39 +1,7 @@
 #[doc = "Register `SEFLAG` reader"]
-pub struct R(crate::R<SEFLAG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SEFLAG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SEFLAG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SEFLAG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SEFLAG_SPEC>;
 #[doc = "Register `SEFLAG` writer"]
-pub struct W(crate::W<SEFLAG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SEFLAG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SEFLAG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SEFLAG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SEFLAG_SPEC>;
 #[doc = "Field `SEV0` reader - Source Event 0/1"]
 pub type SEV0_R = crate::BitReader<SEV0_A>;
 #[doc = "Source Event 0/1\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl SEV0_R {
             true => SEV0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No source event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SEV0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A source event has occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SEV0_A::VALUE2
     }
 }
 #[doc = "Field `SEV0` writer - Source Event 0/1"]
-pub type SEV0_W<'a, const O: u8> = crate::BitWriter<'a, SEFLAG_SPEC, O, SEV0_A>;
-impl<'a, const O: u8> SEV0_W<'a, O> {
+pub type SEV0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SEV0_A>;
+impl<'a, REG, const O: u8> SEV0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No source event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SEV0_A::VALUE1)
     }
     #[doc = "A source event has occurred"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SEV0_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl SEV1_R {
             true => SEV1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No source event"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SEV1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A source event has occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SEV1_A::VALUE2
     }
 }
 #[doc = "Field `SEV1` writer - Source Event 0/1"]
-pub type SEV1_W<'a, const O: u8> = crate::BitWriter<'a, SEFLAG_SPEC, O, SEV1_A>;
-impl<'a, const O: u8> SEV1_W<'a, O> {
+pub type SEV1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SEV1_A>;
+impl<'a, REG, const O: u8> SEV1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No source event"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SEV1_A::VALUE1)
     }
     #[doc = "A source event has occurred"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SEV1_A::VALUE2)
     }
 }
@@ -150,34 +124,31 @@ impl W {
     #[doc = "Bit 0 - Source Event 0/1"]
     #[inline(always)]
     #[must_use]
-    pub fn sev0(&mut self) -> SEV0_W<0> {
+    pub fn sev0(&mut self) -> SEV0_W<SEFLAG_SPEC, 0> {
         SEV0_W::new(self)
     }
     #[doc = "Bit 1 - Source Event 0/1"]
     #[inline(always)]
     #[must_use]
-    pub fn sev1(&mut self) -> SEV1_W<1> {
+    pub fn sev1(&mut self) -> SEV1_W<SEFLAG_SPEC, 1> {
         SEV1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Source Event Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seflag](index.html) module"]
+#[doc = "Source Event Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`seflag::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`seflag::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SEFLAG_SPEC;
 impl crate::RegisterSpec for SEFLAG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [seflag::R](R) reader structure"]
-impl crate::Readable for SEFLAG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [seflag::W](W) writer structure"]
+#[doc = "`read()` method returns [`seflag::R`](R) reader structure"]
+impl crate::Readable for SEFLAG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`seflag::W`](W) writer structure"]
 impl crate::Writable for SEFLAG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

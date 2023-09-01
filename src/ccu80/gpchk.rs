@@ -1,43 +1,11 @@
 #[doc = "Register `GPCHK` reader"]
-pub struct R(crate::R<GPCHK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GPCHK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GPCHK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GPCHK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GPCHK_SPEC>;
 #[doc = "Register `GPCHK` writer"]
-pub struct W(crate::W<GPCHK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<GPCHK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<GPCHK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<GPCHK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<GPCHK_SPEC>;
 #[doc = "Field `PASE` reader - Parity Checker Automatic start/stop"]
 pub type PASE_R = crate::BitReader;
 #[doc = "Field `PASE` writer - Parity Checker Automatic start/stop"]
-pub type PASE_W<'a, const O: u8> = crate::BitWriter<'a, GPCHK_SPEC, O>;
+pub type PASE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PACS` reader - Parity Checker Automatic start/stop selector"]
 pub type PACS_R = crate::FieldReader<PACS_A>;
 #[doc = "Parity Checker Automatic start/stop selector\n\nValue on reset: 0"]
@@ -74,48 +42,52 @@ impl PACS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "CC80"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PACS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "CC81"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PACS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "CC82"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PACS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "CC83"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PACS_A::VALUE4
     }
 }
 #[doc = "Field `PACS` writer - Parity Checker Automatic start/stop selector"]
-pub type PACS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, GPCHK_SPEC, 2, O, PACS_A>;
-impl<'a, const O: u8> PACS_W<'a, O> {
+pub type PACS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PACS_A>;
+impl<'a, REG, const O: u8> PACS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "CC80"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PACS_A::VALUE1)
     }
     #[doc = "CC81"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PACS_A::VALUE2)
     }
     #[doc = "CC82"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(PACS_A::VALUE3)
     }
     #[doc = "CC83"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(PACS_A::VALUE4)
     }
 }
@@ -155,48 +127,52 @@ impl PISEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "CC8x.GP01 - driver output is connected to event 1 of slice 0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PISEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "CC8x.GP11 - drive output is connected to event 1 of slice 1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PISEL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "CC8x.GP21 - driver output is connected to event 1 of slice 2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PISEL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "CC8x.GP31 - driver output is connected to event 1 of slice 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PISEL_A::VALUE4
     }
 }
 #[doc = "Field `PISEL` writer - Driver Input signal selector"]
-pub type PISEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, GPCHK_SPEC, 2, O, PISEL_A>;
-impl<'a, const O: u8> PISEL_W<'a, O> {
+pub type PISEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PISEL_A>;
+impl<'a, REG, const O: u8> PISEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "CC8x.GP01 - driver output is connected to event 1 of slice 0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PISEL_A::VALUE1)
     }
     #[doc = "CC8x.GP11 - drive output is connected to event 1 of slice 1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PISEL_A::VALUE2)
     }
     #[doc = "CC8x.GP21 - driver output is connected to event 1 of slice 2"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(PISEL_A::VALUE3)
     }
     #[doc = "CC8x.GP31 - driver output is connected to event 1 of slice 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(PISEL_A::VALUE4)
     }
 }
@@ -236,48 +212,52 @@ impl PCDS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "CCU8x.IGBTA"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PCDS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "CCU8x.IGBTB"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PCDS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "CCU8x.IGBTC"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PCDS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "CCU8x.IGBTD"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PCDS_A::VALUE4
     }
 }
 #[doc = "Field `PCDS` writer - Parity Checker Delay Input Selector"]
-pub type PCDS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, GPCHK_SPEC, 2, O, PCDS_A>;
-impl<'a, const O: u8> PCDS_W<'a, O> {
+pub type PCDS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PCDS_A>;
+impl<'a, REG, const O: u8> PCDS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "CCU8x.IGBTA"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PCDS_A::VALUE1)
     }
     #[doc = "CCU8x.IGBTB"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PCDS_A::VALUE2)
     }
     #[doc = "CCU8x.IGBTC"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(PCDS_A::VALUE3)
     }
     #[doc = "CCU8x.IGBTD"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(PCDS_A::VALUE4)
     }
 }
@@ -306,28 +286,31 @@ impl PCTS_R {
             true => PCTS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Even parity enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PCTS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Odd parity enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PCTS_A::VALUE2
     }
 }
 #[doc = "Field `PCTS` writer - Parity Checker type selector"]
-pub type PCTS_W<'a, const O: u8> = crate::BitWriter<'a, GPCHK_SPEC, O, PCTS_A>;
-impl<'a, const O: u8> PCTS_W<'a, O> {
+pub type PCTS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PCTS_A>;
+impl<'a, REG, const O: u8> PCTS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Even parity enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PCTS_A::VALUE1)
     }
     #[doc = "Odd parity enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PCTS_A::VALUE2)
     }
 }
@@ -336,19 +319,19 @@ pub type PCST_R = crate::BitReader;
 #[doc = "Field `PCSEL0` reader - Parity Checker Slice 0 output selection"]
 pub type PCSEL0_R = crate::FieldReader;
 #[doc = "Field `PCSEL0` writer - Parity Checker Slice 0 output selection"]
-pub type PCSEL0_W<'a, const O: u8> = crate::FieldWriter<'a, GPCHK_SPEC, 4, O>;
+pub type PCSEL0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `PCSEL1` reader - Parity Checker Slice 1 output selection"]
 pub type PCSEL1_R = crate::FieldReader;
 #[doc = "Field `PCSEL1` writer - Parity Checker Slice 1 output selection"]
-pub type PCSEL1_W<'a, const O: u8> = crate::FieldWriter<'a, GPCHK_SPEC, 4, O>;
+pub type PCSEL1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `PCSEL2` reader - Parity Checker Slice 2 output selection"]
 pub type PCSEL2_R = crate::FieldReader;
 #[doc = "Field `PCSEL2` writer - Parity Checker Slice 2 output selection"]
-pub type PCSEL2_W<'a, const O: u8> = crate::FieldWriter<'a, GPCHK_SPEC, 4, O>;
+pub type PCSEL2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `PCSEL3` reader - Parity Checker Slice 3 output selection"]
 pub type PCSEL3_R = crate::FieldReader;
 #[doc = "Field `PCSEL3` writer - Parity Checker Slice 3 output selection"]
-pub type PCSEL3_W<'a, const O: u8> = crate::FieldWriter<'a, GPCHK_SPEC, 4, O>;
+pub type PCSEL3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 impl R {
     #[doc = "Bit 0 - Parity Checker Automatic start/stop"]
     #[inline(always)]
@@ -405,76 +388,73 @@ impl W {
     #[doc = "Bit 0 - Parity Checker Automatic start/stop"]
     #[inline(always)]
     #[must_use]
-    pub fn pase(&mut self) -> PASE_W<0> {
+    pub fn pase(&mut self) -> PASE_W<GPCHK_SPEC, 0> {
         PASE_W::new(self)
     }
     #[doc = "Bits 1:2 - Parity Checker Automatic start/stop selector"]
     #[inline(always)]
     #[must_use]
-    pub fn pacs(&mut self) -> PACS_W<1> {
+    pub fn pacs(&mut self) -> PACS_W<GPCHK_SPEC, 1> {
         PACS_W::new(self)
     }
     #[doc = "Bits 3:4 - Driver Input signal selector"]
     #[inline(always)]
     #[must_use]
-    pub fn pisel(&mut self) -> PISEL_W<3> {
+    pub fn pisel(&mut self) -> PISEL_W<GPCHK_SPEC, 3> {
         PISEL_W::new(self)
     }
     #[doc = "Bits 5:6 - Parity Checker Delay Input Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn pcds(&mut self) -> PCDS_W<5> {
+    pub fn pcds(&mut self) -> PCDS_W<GPCHK_SPEC, 5> {
         PCDS_W::new(self)
     }
     #[doc = "Bit 7 - Parity Checker type selector"]
     #[inline(always)]
     #[must_use]
-    pub fn pcts(&mut self) -> PCTS_W<7> {
+    pub fn pcts(&mut self) -> PCTS_W<GPCHK_SPEC, 7> {
         PCTS_W::new(self)
     }
     #[doc = "Bits 16:19 - Parity Checker Slice 0 output selection"]
     #[inline(always)]
     #[must_use]
-    pub fn pcsel0(&mut self) -> PCSEL0_W<16> {
+    pub fn pcsel0(&mut self) -> PCSEL0_W<GPCHK_SPEC, 16> {
         PCSEL0_W::new(self)
     }
     #[doc = "Bits 20:23 - Parity Checker Slice 1 output selection"]
     #[inline(always)]
     #[must_use]
-    pub fn pcsel1(&mut self) -> PCSEL1_W<20> {
+    pub fn pcsel1(&mut self) -> PCSEL1_W<GPCHK_SPEC, 20> {
         PCSEL1_W::new(self)
     }
     #[doc = "Bits 24:27 - Parity Checker Slice 2 output selection"]
     #[inline(always)]
     #[must_use]
-    pub fn pcsel2(&mut self) -> PCSEL2_W<24> {
+    pub fn pcsel2(&mut self) -> PCSEL2_W<GPCHK_SPEC, 24> {
         PCSEL2_W::new(self)
     }
     #[doc = "Bits 28:31 - Parity Checker Slice 3 output selection"]
     #[inline(always)]
     #[must_use]
-    pub fn pcsel3(&mut self) -> PCSEL3_W<28> {
+    pub fn pcsel3(&mut self) -> PCSEL3_W<GPCHK_SPEC, 28> {
         PCSEL3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Parity Checker Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gpchk](index.html) module"]
+#[doc = "Parity Checker Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpchk::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpchk::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GPCHK_SPEC;
 impl crate::RegisterSpec for GPCHK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [gpchk::R](R) reader structure"]
-impl crate::Readable for GPCHK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [gpchk::W](W) writer structure"]
+#[doc = "`read()` method returns [`gpchk::R`](R) reader structure"]
+impl crate::Readable for GPCHK_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`gpchk::W`](W) writer structure"]
 impl crate::Writable for GPCHK_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,18 +1,5 @@
 #[doc = "Register `PDI_CONFIG` reader"]
-pub struct R(crate::R<PDI_CONFIG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PDI_CONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PDI_CONFIG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PDI_CONFIG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PDI_CONFIG_SPEC>;
 #[doc = "Field `BUS_CLK` reader - On-chip bus clock"]
 pub type BUS_CLK_R = crate::FieldReader<BUS_CLK_A>;
 #[doc = "On-chip bus clock\n\nValue on reset: 1"]
@@ -43,12 +30,12 @@ impl BUS_CLK_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "asyncronous"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUS_CLK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "values 1-31 is used for synchronous multiplication factor (N*25Mhz)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUS_CLK_A::VALUE2
@@ -90,22 +77,22 @@ impl OC_BUS_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Altera Avalon"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == OC_BUS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "AXI"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == OC_BUS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Xilinx PLB v4.6"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == OC_BUS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Xilinx OPB"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == OC_BUS_A::VALUE4
@@ -123,15 +110,13 @@ impl R {
         OC_BUS_R::new((self.bits >> 5) & 7)
     }
 }
-#[doc = "PDI Control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdi_config](index.html) module"]
+#[doc = "PDI Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdi_config::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PDI_CONFIG_SPEC;
 impl crate::RegisterSpec for PDI_CONFIG_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [pdi_config::R](R) reader structure"]
-impl crate::Readable for PDI_CONFIG_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pdi_config::R`](R) reader structure"]
+impl crate::Readable for PDI_CONFIG_SPEC {}
 #[doc = "`reset()` method sets PDI_CONFIG to value 0x81"]
 impl crate::Resettable for PDI_CONFIG_SPEC {
     const RESET_VALUE: Self::Ux = 0x81;

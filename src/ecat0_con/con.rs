@@ -1,39 +1,7 @@
 #[doc = "Register `CON` reader"]
-pub struct R(crate::R<CON_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CON_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CON_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CON_SPEC>;
 #[doc = "Register `CON` writer"]
-pub struct W(crate::W<CON_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CON_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CON_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CON_SPEC>;
 #[doc = "Field `ECATRSTEN` reader - Enable EtherCAT Reset Request"]
 pub type ECATRSTEN_R = crate::BitReader<ECATRSTEN_A>;
 #[doc = "Enable EtherCAT Reset Request\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl ECATRSTEN_R {
             true => ECATRSTEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset request by EtherCAT Master disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ECATRSTEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reset request by EtherCAT Master enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ECATRSTEN_A::VALUE2
     }
 }
 #[doc = "Field `ECATRSTEN` writer - Enable EtherCAT Reset Request"]
-pub type ECATRSTEN_W<'a, const O: u8> = crate::BitWriter<'a, CON_SPEC, O, ECATRSTEN_A>;
-impl<'a, const O: u8> ECATRSTEN_W<'a, O> {
+pub type ECATRSTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ECATRSTEN_A>;
+impl<'a, REG, const O: u8> ECATRSTEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Reset request by EtherCAT Master disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ECATRSTEN_A::VALUE1)
     }
     #[doc = "Reset request by EtherCAT Master enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ECATRSTEN_A::VALUE2)
     }
 }
@@ -120,48 +91,52 @@ impl LATCHIN0SEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Data input LATCHIN0A is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LATCHIN0SEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Data input LATCHIN0B is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LATCHIN0SEL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Data input LATCHIN0C is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == LATCHIN0SEL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Data input LATCHIN0D is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == LATCHIN0SEL_A::VALUE4
     }
 }
 #[doc = "Field `LATCHIN0SEL` writer - LATCHIN0 Input Select"]
-pub type LATCHIN0SEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CON_SPEC, 2, O, LATCHIN0SEL_A>;
-impl<'a, const O: u8> LATCHIN0SEL_W<'a, O> {
+pub type LATCHIN0SEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LATCHIN0SEL_A>;
+impl<'a, REG, const O: u8> LATCHIN0SEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Data input LATCHIN0A is selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LATCHIN0SEL_A::VALUE1)
     }
     #[doc = "Data input LATCHIN0B is selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LATCHIN0SEL_A::VALUE2)
     }
     #[doc = "Data input LATCHIN0C is selected"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(LATCHIN0SEL_A::VALUE3)
     }
     #[doc = "Data input LATCHIN0D is selected"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(LATCHIN0SEL_A::VALUE4)
     }
 }
@@ -203,48 +178,52 @@ impl LATCHIN1SEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Data input LATCHIN1A is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LATCHIN1SEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Data input LATCHIN1B is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LATCHIN1SEL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Data input LATCHIN1C is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == LATCHIN1SEL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Data input LATCHIN1D is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == LATCHIN1SEL_A::VALUE4
     }
 }
 #[doc = "Field `LATCHIN1SEL` writer - LATCHIN1 Input Select"]
-pub type LATCHIN1SEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CON_SPEC, 2, O, LATCHIN1SEL_A>;
-impl<'a, const O: u8> LATCHIN1SEL_W<'a, O> {
+pub type LATCHIN1SEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, LATCHIN1SEL_A>;
+impl<'a, REG, const O: u8> LATCHIN1SEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Data input LATCHIN1A is selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LATCHIN1SEL_A::VALUE1)
     }
     #[doc = "Data input LATCHIN1B is selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LATCHIN1SEL_A::VALUE2)
     }
     #[doc = "Data input LATCHIN1C is selected"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(LATCHIN1SEL_A::VALUE3)
     }
     #[doc = "Data input LATCHIN1D is selected"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(LATCHIN1SEL_A::VALUE4)
     }
 }
@@ -253,7 +232,7 @@ pub type LATCHIN1_R = crate::BitReader;
 #[doc = "Field `PHYOFFSET` reader - Ethernet PHY Address Offset"]
 pub type PHYOFFSET_R = crate::FieldReader;
 #[doc = "Field `PHYOFFSET` writer - Ethernet PHY Address Offset"]
-pub type PHYOFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, CON_SPEC, 5, O>;
+pub type PHYOFFSET_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
 #[doc = "Field `MDIO` reader - MDIO Input Select"]
 pub type MDIO_R = crate::FieldReader<MDIO_A>;
 #[doc = "MDIO Input Select\n\nValue on reset: 0"]
@@ -290,48 +269,52 @@ impl MDIO_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Data input MDIA is selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MDIO_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Data input MDIB is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MDIO_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Data input MDIC is selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == MDIO_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Data input MDID is selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == MDIO_A::VALUE4
     }
 }
 #[doc = "Field `MDIO` writer - MDIO Input Select"]
-pub type MDIO_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CON_SPEC, 2, O, MDIO_A>;
-impl<'a, const O: u8> MDIO_W<'a, O> {
+pub type MDIO_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, MDIO_A>;
+impl<'a, REG, const O: u8> MDIO_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Data input MDIA is selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MDIO_A::VALUE1)
     }
     #[doc = "Data input MDIB is selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MDIO_A::VALUE2)
     }
     #[doc = "Data input MDIC is selected"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(MDIO_A::VALUE3)
     }
     #[doc = "Data input MDID is selected"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(MDIO_A::VALUE4)
     }
 }
@@ -376,52 +359,49 @@ impl W {
     #[doc = "Bit 0 - Enable EtherCAT Reset Request"]
     #[inline(always)]
     #[must_use]
-    pub fn ecatrsten(&mut self) -> ECATRSTEN_W<0> {
+    pub fn ecatrsten(&mut self) -> ECATRSTEN_W<CON_SPEC, 0> {
         ECATRSTEN_W::new(self)
     }
     #[doc = "Bits 8:9 - LATCHIN0 Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn latchin0sel(&mut self) -> LATCHIN0SEL_W<8> {
+    pub fn latchin0sel(&mut self) -> LATCHIN0SEL_W<CON_SPEC, 8> {
         LATCHIN0SEL_W::new(self)
     }
     #[doc = "Bits 12:13 - LATCHIN1 Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn latchin1sel(&mut self) -> LATCHIN1SEL_W<12> {
+    pub fn latchin1sel(&mut self) -> LATCHIN1SEL_W<CON_SPEC, 12> {
         LATCHIN1SEL_W::new(self)
     }
     #[doc = "Bits 16:20 - Ethernet PHY Address Offset"]
     #[inline(always)]
     #[must_use]
-    pub fn phyoffset(&mut self) -> PHYOFFSET_W<16> {
+    pub fn phyoffset(&mut self) -> PHYOFFSET_W<CON_SPEC, 16> {
         PHYOFFSET_W::new(self)
     }
     #[doc = "Bits 22:23 - MDIO Input Select"]
     #[inline(always)]
     #[must_use]
-    pub fn mdio(&mut self) -> MDIO_W<22> {
+    pub fn mdio(&mut self) -> MDIO_W<CON_SPEC, 22> {
         MDIO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EtherCAT 0 Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [con](index.html) module"]
+#[doc = "EtherCAT 0 Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`con::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`con::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CON_SPEC;
 impl crate::RegisterSpec for CON_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [con::R](R) reader structure"]
-impl crate::Readable for CON_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [con::W](W) writer structure"]
+#[doc = "`read()` method returns [`con::R`](R) reader structure"]
+impl crate::Readable for CON_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`con::W`](W) writer structure"]
 impl crate::Writable for CON_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

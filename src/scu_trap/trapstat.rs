@@ -1,18 +1,5 @@
 #[doc = "Register `TRAPSTAT` reader"]
-pub struct R(crate::R<TRAPSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TRAPSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TRAPSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TRAPSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TRAPSTAT_SPEC>;
 #[doc = "Field `SOSCWDGT` reader - OSC_HP Oscillator Watchdog Trap Status"]
 pub type SOSCWDGT_R = crate::BitReader<SOSCWDGT_A>;
 #[doc = "OSC_HP Oscillator Watchdog Trap Status\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl SOSCWDGT_R {
             true => SOSCWDGT_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == SOSCWDGT_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == SOSCWDGT_A::CONST_1
@@ -74,12 +61,12 @@ impl SVCOLCKT_R {
             true => SVCOLCKT_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == SVCOLCKT_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == SVCOLCKT_A::CONST_1
@@ -110,12 +97,12 @@ impl UVCOLCKT_R {
             true => UVCOLCKT_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == UVCOLCKT_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == UVCOLCKT_A::CONST_1
@@ -146,12 +133,12 @@ impl PET_R {
             true => PET_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PET_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PET_A::CONST_1
@@ -182,12 +169,12 @@ impl BRWNT_R {
             true => BRWNT_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == BRWNT_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == BRWNT_A::CONST_1
@@ -218,12 +205,12 @@ impl ULPWDGT_R {
             true => ULPWDGT_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ULPWDGT_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ULPWDGT_A::CONST_1
@@ -254,12 +241,12 @@ impl BWERR0T_R {
             true => BWERR0T_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == BWERR0T_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == BWERR0T_A::CONST_1
@@ -290,12 +277,12 @@ impl BWERR1T_R {
             true => BWERR1T_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No pending trap request"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == BWERR1T_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == BWERR1T_A::CONST_1
@@ -326,12 +313,12 @@ impl ECAT0RST_R {
             true => ECAT0RST_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No effect"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ECAT0RST_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pending trap request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ECAT0RST_A::CONST_1
@@ -384,15 +371,13 @@ impl R {
         ECAT0RST_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
-#[doc = "Trap Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trapstat](index.html) module"]
+#[doc = "Trap Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`trapstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TRAPSTAT_SPEC;
 impl crate::RegisterSpec for TRAPSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [trapstat::R](R) reader structure"]
-impl crate::Readable for TRAPSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`trapstat::R`](R) reader structure"]
+impl crate::Readable for TRAPSTAT_SPEC {}
 #[doc = "`reset()` method sets TRAPSTAT to value 0"]
 impl crate::Resettable for TRAPSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

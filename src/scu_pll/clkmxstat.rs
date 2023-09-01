@@ -1,18 +1,5 @@
 #[doc = "Register `CLKMXSTAT` reader"]
-pub struct R(crate::R<CLKMXSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CLKMXSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CLKMXSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CLKMXSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CLKMXSTAT_SPEC>;
 #[doc = "Field `SYSCLKMUX` reader - Status of System Clock Multiplexing Upon Source Switching"]
 pub type SYSCLKMUX_R = crate::FieldReader<SYSCLKMUX_A>;
 #[doc = "Status of System Clock Multiplexing Upon Source Switching\n\nValue on reset: 0"]
@@ -43,12 +30,12 @@ impl SYSCLKMUX_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_X1`"]
+    #[doc = "fOFI clock active"]
     #[inline(always)]
     pub fn is_const_x1(&self) -> bool {
         *self == SYSCLKMUX_A::CONST_X1
     }
-    #[doc = "Checks if the value of the field is `CONST_1X`"]
+    #[doc = "fPLL clock active"]
     #[inline(always)]
     pub fn is_const_1x(&self) -> bool {
         *self == SYSCLKMUX_A::CONST_1X
@@ -61,15 +48,13 @@ impl R {
         SYSCLKMUX_R::new((self.bits & 3) as u8)
     }
 }
-#[doc = "Clock Multiplexing Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clkmxstat](index.html) module"]
+#[doc = "Clock Multiplexing Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkmxstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CLKMXSTAT_SPEC;
 impl crate::RegisterSpec for CLKMXSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [clkmxstat::R](R) reader structure"]
-impl crate::Readable for CLKMXSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`clkmxstat::R`](R) reader structure"]
+impl crate::Readable for CLKMXSTAT_SPEC {}
 #[doc = "`reset()` method sets CLKMXSTAT to value 0"]
 impl crate::Resettable for CLKMXSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

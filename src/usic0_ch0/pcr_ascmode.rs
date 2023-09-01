@@ -1,39 +1,7 @@
 #[doc = "Register `PCR_ASCMode` reader"]
-pub struct R(crate::R<PCR_ASCMODE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PCR_ASCMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PCR_ASCMODE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PCR_ASCMODE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PCR_ASCMODE_SPEC>;
 #[doc = "Register `PCR_ASCMode` writer"]
-pub struct W(crate::W<PCR_ASCMODE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PCR_ASCMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PCR_ASCMODE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PCR_ASCMODE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PCR_ASCMODE_SPEC>;
 #[doc = "Field `SMD` reader - Sample Mode"]
 pub type SMD_R = crate::BitReader<SMD_A>;
 #[doc = "Sample Mode\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl SMD_R {
             true => SMD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Only one sample is taken per bit time. The current input value is sampled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Three samples are taken per bit time and a majority decision is made."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMD_A::VALUE2
     }
 }
 #[doc = "Field `SMD` writer - Sample Mode"]
-pub type SMD_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, SMD_A>;
-impl<'a, const O: u8> SMD_W<'a, O> {
+pub type SMD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMD_A>;
+impl<'a, REG, const O: u8> SMD_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Only one sample is taken per bit time. The current input value is sampled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMD_A::VALUE1)
     }
     #[doc = "Three samples are taken per bit time and a majority decision is made."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMD_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl STPB_R {
             true => STPB_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The number of stop bits is 1."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == STPB_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The number of stop bits is 2."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == STPB_A::VALUE2
     }
 }
 #[doc = "Field `STPB` writer - Stop Bits"]
-pub type STPB_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, STPB_A>;
-impl<'a, const O: u8> STPB_W<'a, O> {
+pub type STPB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STPB_A>;
+impl<'a, REG, const O: u8> STPB_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The number of stop bits is 1."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(STPB_A::VALUE1)
     }
     #[doc = "The number of stop bits is 2."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(STPB_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl IDM_R {
             true => IDM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The bus idle detection is switched off and bits PSR.TXIDLE and PSR.RXIDLE are set automatically to enable data transfers without checking the inputs before."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == IDM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The bus is considered as idle after a number of consecutive passive bit times defined by SCTR.FLE plus 2 (in the case without parity bit) or plus 3 (in the case with parity bit)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == IDM_A::VALUE2
     }
 }
 #[doc = "Field `IDM` writer - Idle Detection Mode"]
-pub type IDM_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, IDM_A>;
-impl<'a, const O: u8> IDM_W<'a, O> {
+pub type IDM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IDM_A>;
+impl<'a, REG, const O: u8> IDM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The bus idle detection is switched off and bits PSR.TXIDLE and PSR.RXIDLE are set automatically to enable data transfers without checking the inputs before."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(IDM_A::VALUE1)
     }
     #[doc = "The bus is considered as idle after a number of consecutive passive bit times defined by SCTR.FLE plus 2 (in the case without parity bit) or plus 3 (in the case with parity bit)."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(IDM_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl SBIEN_R {
             true => SBIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The interrupt generation is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SBIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The interrupt generation is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SBIEN_A::VALUE2
     }
 }
 #[doc = "Field `SBIEN` writer - Synchronization Break Interrupt Enable"]
-pub type SBIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, SBIEN_A>;
-impl<'a, const O: u8> SBIEN_W<'a, O> {
+pub type SBIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SBIEN_A>;
+impl<'a, REG, const O: u8> SBIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The interrupt generation is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SBIEN_A::VALUE1)
     }
     #[doc = "The interrupt generation is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SBIEN_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl CDEN_R {
             true => CDEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The collision detection is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CDEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "If a collision is detected, the transmitter stops its data transmission, outputs a 1, sets bit PSR.COL and generates a protocol interrupt. In order to allow data transmission again, PSR.COL has to be cleared by software."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CDEN_A::VALUE2
     }
 }
 #[doc = "Field `CDEN` writer - Collision Detection Enable"]
-pub type CDEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, CDEN_A>;
-impl<'a, const O: u8> CDEN_W<'a, O> {
+pub type CDEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CDEN_A>;
+impl<'a, REG, const O: u8> CDEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The collision detection is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CDEN_A::VALUE1)
     }
     #[doc = "If a collision is detected, the transmitter stops its data transmission, outputs a 1, sets bit PSR.COL and generates a protocol interrupt. In order to allow data transmission again, PSR.COL has to be cleared by software."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CDEN_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl RNIEN_R {
             true => RNIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The interrupt generation is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RNIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The interrupt generation is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RNIEN_A::VALUE2
     }
 }
 #[doc = "Field `RNIEN` writer - Receiver Noise Detection Interrupt Enable"]
-pub type RNIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, RNIEN_A>;
-impl<'a, const O: u8> RNIEN_W<'a, O> {
+pub type RNIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RNIEN_A>;
+impl<'a, REG, const O: u8> RNIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The interrupt generation is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RNIEN_A::VALUE1)
     }
     #[doc = "The interrupt generation is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RNIEN_A::VALUE2)
     }
 }
@@ -359,28 +345,31 @@ impl FEIEN_R {
             true => FEIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The interrupt generation is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FEIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The interrupt generation is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FEIEN_A::VALUE2
     }
 }
 #[doc = "Field `FEIEN` writer - Format Error Interrupt Enable"]
-pub type FEIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, FEIEN_A>;
-impl<'a, const O: u8> FEIEN_W<'a, O> {
+pub type FEIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FEIEN_A>;
+impl<'a, REG, const O: u8> FEIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The interrupt generation is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(FEIEN_A::VALUE1)
     }
     #[doc = "The interrupt generation is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(FEIEN_A::VALUE2)
     }
 }
@@ -409,35 +398,38 @@ impl FFIEN_R {
             true => FFIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The interrupt generation is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FFIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The interrupt generation is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FFIEN_A::VALUE2
     }
 }
 #[doc = "Field `FFIEN` writer - Frame Finished Interrupt Enable"]
-pub type FFIEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, FFIEN_A>;
-impl<'a, const O: u8> FFIEN_W<'a, O> {
+pub type FFIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FFIEN_A>;
+impl<'a, REG, const O: u8> FFIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The interrupt generation is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(FFIEN_A::VALUE1)
     }
     #[doc = "The interrupt generation is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(FFIEN_A::VALUE2)
     }
 }
 #[doc = "Field `SP` reader - Sample Point"]
 pub type SP_R = crate::FieldReader;
 #[doc = "Field `SP` writer - Sample Point"]
-pub type SP_W<'a, const O: u8> = crate::FieldWriter<'a, PCR_ASCMODE_SPEC, 5, O>;
+pub type SP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
 #[doc = "Field `PL` reader - Pulse Length"]
 pub type PL_R = crate::FieldReader<PL_A>;
 #[doc = "Pulse Length\n\nValue on reset: 0"]
@@ -474,48 +466,52 @@ impl PL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The pulse length is equal to the bit length (no shortened 0)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The pulse length of a 0 bit is 2 time quanta."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "The pulse length of a 0 bit is 3 time quanta."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "The pulse length of a 0 bit is 8 time quanta."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PL_A::VALUE4
     }
 }
 #[doc = "Field `PL` writer - Pulse Length"]
-pub type PL_W<'a, const O: u8> = crate::FieldWriter<'a, PCR_ASCMODE_SPEC, 3, O, PL_A>;
-impl<'a, const O: u8> PL_W<'a, O> {
+pub type PL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PL_A>;
+impl<'a, REG, const O: u8> PL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The pulse length is equal to the bit length (no shortened 0)."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PL_A::VALUE1)
     }
     #[doc = "The pulse length of a 0 bit is 2 time quanta."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PL_A::VALUE2)
     }
     #[doc = "The pulse length of a 0 bit is 3 time quanta."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(PL_A::VALUE3)
     }
     #[doc = "The pulse length of a 0 bit is 8 time quanta."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(PL_A::VALUE4)
     }
 }
@@ -546,30 +542,35 @@ impl RSTEN_R {
             true => RSTEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Flag PSR\\[9\\]
+is not modified depending on the receiver status."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RSTEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Flag PSR\\[9\\]
+is set during the complete reception of a frame."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RSTEN_A::VALUE2
     }
 }
 #[doc = "Field `RSTEN` writer - Receiver Status Enable"]
-pub type RSTEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, RSTEN_A>;
-impl<'a, const O: u8> RSTEN_W<'a, O> {
+pub type RSTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RSTEN_A>;
+impl<'a, REG, const O: u8> RSTEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Flag PSR\\[9\\]
 is not modified depending on the receiver status."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RSTEN_A::VALUE1)
     }
     #[doc = "Flag PSR\\[9\\]
 is set during the complete reception of a frame."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RSTEN_A::VALUE2)
     }
 }
@@ -600,30 +601,35 @@ impl TSTEN_R {
             true => TSTEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Flag PSR\\[9\\]
+is not modified depending on the transmitter status."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TSTEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Flag PSR\\[9\\]
+is set during the complete transmission of a frame."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TSTEN_A::VALUE2
     }
 }
 #[doc = "Field `TSTEN` writer - Transmitter Status Enable"]
-pub type TSTEN_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, TSTEN_A>;
-impl<'a, const O: u8> TSTEN_W<'a, O> {
+pub type TSTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSTEN_A>;
+impl<'a, REG, const O: u8> TSTEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Flag PSR\\[9\\]
 is not modified depending on the transmitter status."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TSTEN_A::VALUE1)
     }
     #[doc = "Flag PSR\\[9\\]
 is set during the complete transmission of a frame."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TSTEN_A::VALUE2)
     }
 }
@@ -652,28 +658,31 @@ impl MCLK_R {
             true => MCLK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The MCLK generation is disabled and the MCLK signal is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MCLK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The MCLK generation is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MCLK_A::VALUE2
     }
 }
 #[doc = "Field `MCLK` writer - Master Clock Enable"]
-pub type MCLK_W<'a, const O: u8> = crate::BitWriter<'a, PCR_ASCMODE_SPEC, O, MCLK_A>;
-impl<'a, const O: u8> MCLK_W<'a, O> {
+pub type MCLK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MCLK_A>;
+impl<'a, REG, const O: u8> MCLK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The MCLK generation is disabled and the MCLK signal is 0."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MCLK_A::VALUE1)
     }
     #[doc = "The MCLK generation is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MCLK_A::VALUE2)
     }
 }
@@ -748,100 +757,97 @@ impl W {
     #[doc = "Bit 0 - Sample Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn smd(&mut self) -> SMD_W<0> {
+    pub fn smd(&mut self) -> SMD_W<PCR_ASCMODE_SPEC, 0> {
         SMD_W::new(self)
     }
     #[doc = "Bit 1 - Stop Bits"]
     #[inline(always)]
     #[must_use]
-    pub fn stpb(&mut self) -> STPB_W<1> {
+    pub fn stpb(&mut self) -> STPB_W<PCR_ASCMODE_SPEC, 1> {
         STPB_W::new(self)
     }
     #[doc = "Bit 2 - Idle Detection Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn idm(&mut self) -> IDM_W<2> {
+    pub fn idm(&mut self) -> IDM_W<PCR_ASCMODE_SPEC, 2> {
         IDM_W::new(self)
     }
     #[doc = "Bit 3 - Synchronization Break Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn sbien(&mut self) -> SBIEN_W<3> {
+    pub fn sbien(&mut self) -> SBIEN_W<PCR_ASCMODE_SPEC, 3> {
         SBIEN_W::new(self)
     }
     #[doc = "Bit 4 - Collision Detection Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cden(&mut self) -> CDEN_W<4> {
+    pub fn cden(&mut self) -> CDEN_W<PCR_ASCMODE_SPEC, 4> {
         CDEN_W::new(self)
     }
     #[doc = "Bit 5 - Receiver Noise Detection Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rnien(&mut self) -> RNIEN_W<5> {
+    pub fn rnien(&mut self) -> RNIEN_W<PCR_ASCMODE_SPEC, 5> {
         RNIEN_W::new(self)
     }
     #[doc = "Bit 6 - Format Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn feien(&mut self) -> FEIEN_W<6> {
+    pub fn feien(&mut self) -> FEIEN_W<PCR_ASCMODE_SPEC, 6> {
         FEIEN_W::new(self)
     }
     #[doc = "Bit 7 - Frame Finished Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ffien(&mut self) -> FFIEN_W<7> {
+    pub fn ffien(&mut self) -> FFIEN_W<PCR_ASCMODE_SPEC, 7> {
         FFIEN_W::new(self)
     }
     #[doc = "Bits 8:12 - Sample Point"]
     #[inline(always)]
     #[must_use]
-    pub fn sp(&mut self) -> SP_W<8> {
+    pub fn sp(&mut self) -> SP_W<PCR_ASCMODE_SPEC, 8> {
         SP_W::new(self)
     }
     #[doc = "Bits 13:15 - Pulse Length"]
     #[inline(always)]
     #[must_use]
-    pub fn pl(&mut self) -> PL_W<13> {
+    pub fn pl(&mut self) -> PL_W<PCR_ASCMODE_SPEC, 13> {
         PL_W::new(self)
     }
     #[doc = "Bit 16 - Receiver Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rsten(&mut self) -> RSTEN_W<16> {
+    pub fn rsten(&mut self) -> RSTEN_W<PCR_ASCMODE_SPEC, 16> {
         RSTEN_W::new(self)
     }
     #[doc = "Bit 17 - Transmitter Status Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tsten(&mut self) -> TSTEN_W<17> {
+    pub fn tsten(&mut self) -> TSTEN_W<PCR_ASCMODE_SPEC, 17> {
         TSTEN_W::new(self)
     }
     #[doc = "Bit 31 - Master Clock Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mclk(&mut self) -> MCLK_W<31> {
+    pub fn mclk(&mut self) -> MCLK_W<PCR_ASCMODE_SPEC, 31> {
         MCLK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Protocol Control Register \\[ASC Mode\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcr_ascmode](index.html) module"]
+#[doc = "Protocol Control Register \\[ASC Mode\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcr_ascmode::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcr_ascmode::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PCR_ASCMODE_SPEC;
 impl crate::RegisterSpec for PCR_ASCMODE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pcr_ascmode::R](R) reader structure"]
-impl crate::Readable for PCR_ASCMODE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pcr_ascmode::W](W) writer structure"]
+#[doc = "`read()` method returns [`pcr_ascmode::R`](R) reader structure"]
+impl crate::Readable for PCR_ASCMODE_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pcr_ascmode::W`](W) writer structure"]
 impl crate::Writable for PCR_ASCMODE_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

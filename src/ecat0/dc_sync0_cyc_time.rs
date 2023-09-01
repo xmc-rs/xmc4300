@@ -1,39 +1,7 @@
 #[doc = "Register `DC_SYNC0_CYC_TIME` reader"]
-pub struct R(crate::R<DC_SYNC0_CYC_TIME_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DC_SYNC0_CYC_TIME_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DC_SYNC0_CYC_TIME_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DC_SYNC0_CYC_TIME_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DC_SYNC0_CYC_TIME_SPEC>;
 #[doc = "Register `DC_SYNC0_CYC_TIME` writer"]
-pub struct W(crate::W<DC_SYNC0_CYC_TIME_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DC_SYNC0_CYC_TIME_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DC_SYNC0_CYC_TIME_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DC_SYNC0_CYC_TIME_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DC_SYNC0_CYC_TIME_SPEC>;
 #[doc = "Field `TIME_BETWEEN_SYNC0` reader - Time between two consecutive SYNC0 pulses"]
 pub type TIME_BETWEEN_SYNC0_R = crate::FieldReader<TIME_BETWEEN_SYNC0_A>;
 #[doc = "Time between two consecutive SYNC0 pulses\n\nValue on reset: 0"]
@@ -61,18 +29,22 @@ impl TIME_BETWEEN_SYNC0_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Single shot mode, generate only one SYNC0 pulse"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TIME_BETWEEN_SYNC0_A::VALUE1
     }
 }
 #[doc = "Field `TIME_BETWEEN_SYNC0` writer - Time between two consecutive SYNC0 pulses"]
-pub type TIME_BETWEEN_SYNC0_W<'a, const O: u8> = crate::FieldWriter<'a, DC_SYNC0_CYC_TIME_SPEC, 32, O, TIME_BETWEEN_SYNC0_A>;
-impl<'a, const O: u8> TIME_BETWEEN_SYNC0_W<'a, O> {
+pub type TIME_BETWEEN_SYNC0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, TIME_BETWEEN_SYNC0_A>;
+impl<'a, REG, const O: u8> TIME_BETWEEN_SYNC0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u32>,
+{
     #[doc = "Single shot mode, generate only one SYNC0 pulse"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TIME_BETWEEN_SYNC0_A::VALUE1)
     }
 }
@@ -87,28 +59,25 @@ impl W {
     #[doc = "Bits 0:31 - Time between two consecutive SYNC0 pulses"]
     #[inline(always)]
     #[must_use]
-    pub fn time_between_sync0(&mut self) -> TIME_BETWEEN_SYNC0_W<0> {
+    pub fn time_between_sync0(&mut self) -> TIME_BETWEEN_SYNC0_W<DC_SYNC0_CYC_TIME_SPEC, 0> {
         TIME_BETWEEN_SYNC0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SYNC0 Cycle Time\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dc_sync0_cyc_time](index.html) module"]
+#[doc = "SYNC0 Cycle Time\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_sync0_cyc_time::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dc_sync0_cyc_time::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_SYNC0_CYC_TIME_SPEC;
 impl crate::RegisterSpec for DC_SYNC0_CYC_TIME_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dc_sync0_cyc_time::R](R) reader structure"]
-impl crate::Readable for DC_SYNC0_CYC_TIME_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dc_sync0_cyc_time::W](W) writer structure"]
+#[doc = "`read()` method returns [`dc_sync0_cyc_time::R`](R) reader structure"]
+impl crate::Readable for DC_SYNC0_CYC_TIME_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dc_sync0_cyc_time::W`](W) writer structure"]
 impl crate::Writable for DC_SYNC0_CYC_TIME_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

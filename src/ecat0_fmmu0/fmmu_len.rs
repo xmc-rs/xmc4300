@@ -1,18 +1,5 @@
 #[doc = "Register `FMMU_LEN` reader"]
-pub struct R(crate::R<FMMU_LEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FMMU_LEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FMMU_LEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FMMU_LEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FMMU_LEN_SPEC>;
 #[doc = "Field `OFFSET` reader - Offset from the first logical FMMU Byte to the last FMMU Byte + 1"]
 pub type OFFSET_R = crate::FieldReader<u16>;
 impl R {
@@ -22,15 +9,13 @@ impl R {
         OFFSET_R::new(self.bits)
     }
 }
-#[doc = "Length FMMU 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmmu_len](index.html) module"]
+#[doc = "Length FMMU 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmmu_len::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FMMU_LEN_SPEC;
 impl crate::RegisterSpec for FMMU_LEN_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [fmmu_len::R](R) reader structure"]
-impl crate::Readable for FMMU_LEN_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`fmmu_len::R`](R) reader structure"]
+impl crate::Readable for FMMU_LEN_SPEC {}
 #[doc = "`reset()` method sets FMMU_LEN to value 0"]
 impl crate::Resettable for FMMU_LEN_SPEC {
     const RESET_VALUE: Self::Ux = 0;

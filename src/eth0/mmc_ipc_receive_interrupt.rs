@@ -1,18 +1,5 @@
 #[doc = "Register `MMC_IPC_RECEIVE_INTERRUPT` reader"]
-pub struct R(crate::R<MMC_IPC_RECEIVE_INTERRUPT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MMC_IPC_RECEIVE_INTERRUPT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MMC_IPC_RECEIVE_INTERRUPT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MMC_IPC_RECEIVE_INTERRUPT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MMC_IPC_RECEIVE_INTERRUPT_SPEC>;
 #[doc = "Field `RXIPV4GFIS` reader - MMC Receive IPV4 Good Frame Counter Interrupt Status"]
 pub type RXIPV4GFIS_R = crate::BitReader;
 #[doc = "Field `RXIPV4HERFIS` reader - MMC Receive IPV4 Header Error Frame Counter Interrupt Status"]
@@ -211,15 +198,13 @@ impl R {
         RXICMPEROIS_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
-#[doc = "MMC Receive Checksum Offload Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mmc_ipc_receive_interrupt](index.html) module"]
+#[doc = "MMC Receive Checksum Offload Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mmc_ipc_receive_interrupt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MMC_IPC_RECEIVE_INTERRUPT_SPEC;
 impl crate::RegisterSpec for MMC_IPC_RECEIVE_INTERRUPT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mmc_ipc_receive_interrupt::R](R) reader structure"]
-impl crate::Readable for MMC_IPC_RECEIVE_INTERRUPT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`mmc_ipc_receive_interrupt::R`](R) reader structure"]
+impl crate::Readable for MMC_IPC_RECEIVE_INTERRUPT_SPEC {}
 #[doc = "`reset()` method sets MMC_IPC_RECEIVE_INTERRUPT to value 0"]
 impl crate::Resettable for MMC_IPC_RECEIVE_INTERRUPT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

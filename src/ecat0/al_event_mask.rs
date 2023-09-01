@@ -1,39 +1,7 @@
 #[doc = "Register `AL_EVENT_MASK` reader"]
-pub struct R(crate::R<AL_EVENT_MASK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<AL_EVENT_MASK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<AL_EVENT_MASK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<AL_EVENT_MASK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<AL_EVENT_MASK_SPEC>;
 #[doc = "Register `AL_EVENT_MASK` writer"]
-pub struct W(crate::W<AL_EVENT_MASK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<AL_EVENT_MASK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<AL_EVENT_MASK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<AL_EVENT_MASK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<AL_EVENT_MASK_SPEC>;
 #[doc = "Field `AL_CE_MASK` reader - AL Control event"]
 pub type AL_CE_MASK_R = crate::BitReader<AL_CE_MASK_A>;
 #[doc = "AL Control event\n\nValue on reset: 1"]
@@ -59,28 +27,31 @@ impl AL_CE_MASK_R {
             true => AL_CE_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == AL_CE_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == AL_CE_MASK_A::VALUE2
     }
 }
 #[doc = "Field `AL_CE_MASK` writer - AL Control event"]
-pub type AL_CE_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, AL_CE_MASK_A>;
-impl<'a, const O: u8> AL_CE_MASK_W<'a, O> {
+pub type AL_CE_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AL_CE_MASK_A>;
+impl<'a, REG, const O: u8> AL_CE_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(AL_CE_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(AL_CE_MASK_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl DC_LE_MASK_R {
             true => DC_LE_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DC_LE_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DC_LE_MASK_A::VALUE2
     }
 }
 #[doc = "Field `DC_LE_MASK` writer - DC Latch event"]
-pub type DC_LE_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, DC_LE_MASK_A>;
-impl<'a, const O: u8> DC_LE_MASK_W<'a, O> {
+pub type DC_LE_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DC_LE_MASK_A>;
+impl<'a, REG, const O: u8> DC_LE_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DC_LE_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DC_LE_MASK_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl ST_S0_MASK_R {
             true => ST_S0_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ST_S0_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ST_S0_MASK_A::VALUE2
     }
 }
 #[doc = "Field `ST_S0_MASK` writer - State of DC SYNC0"]
-pub type ST_S0_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, ST_S0_MASK_A>;
-impl<'a, const O: u8> ST_S0_MASK_W<'a, O> {
+pub type ST_S0_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ST_S0_MASK_A>;
+impl<'a, REG, const O: u8> ST_S0_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ST_S0_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ST_S0_MASK_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl ST_S1_MASK_R {
             true => ST_S1_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ST_S1_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ST_S1_MASK_A::VALUE2
     }
 }
 #[doc = "Field `ST_S1_MASK` writer - State of DC SYNC1"]
-pub type ST_S1_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, ST_S1_MASK_A>;
-impl<'a, const O: u8> ST_S1_MASK_W<'a, O> {
+pub type ST_S1_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ST_S1_MASK_A>;
+impl<'a, REG, const O: u8> ST_S1_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ST_S1_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ST_S1_MASK_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl SM_A_MASK_R {
             true => SM_A_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SM_A_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SM_A_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SM_A_MASK` writer - SyncManager activation register changed"]
-pub type SM_A_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SM_A_MASK_A>;
-impl<'a, const O: u8> SM_A_MASK_W<'a, O> {
+pub type SM_A_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SM_A_MASK_A>;
+impl<'a, REG, const O: u8> SM_A_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SM_A_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SM_A_MASK_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl EEP_E_MASK_R {
             true => EEP_E_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EEP_E_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EEP_E_MASK_A::VALUE2
     }
 }
 #[doc = "Field `EEP_E_MASK` writer - EEPROM Emulation"]
-pub type EEP_E_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, EEP_E_MASK_A>;
-impl<'a, const O: u8> EEP_E_MASK_W<'a, O> {
+pub type EEP_E_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EEP_E_MASK_A>;
+impl<'a, REG, const O: u8> EEP_E_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EEP_E_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EEP_E_MASK_A::VALUE2)
     }
 }
@@ -359,28 +345,31 @@ impl WP_D_MASK_R {
             true => WP_D_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WP_D_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WP_D_MASK_A::VALUE2
     }
 }
 #[doc = "Field `WP_D_MASK` writer - Watchdog Process Data"]
-pub type WP_D_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, WP_D_MASK_A>;
-impl<'a, const O: u8> WP_D_MASK_W<'a, O> {
+pub type WP_D_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WP_D_MASK_A>;
+impl<'a, REG, const O: u8> WP_D_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WP_D_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WP_D_MASK_A::VALUE2)
     }
 }
@@ -409,28 +398,31 @@ impl SMI_0_MASK_R {
             true => SMI_0_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_0_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_0_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_0_MASK` writer - SyncManager interrupt"]
-pub type SMI_0_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_0_MASK_A>;
-impl<'a, const O: u8> SMI_0_MASK_W<'a, O> {
+pub type SMI_0_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_0_MASK_A>;
+impl<'a, REG, const O: u8> SMI_0_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_0_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_0_MASK_A::VALUE2)
     }
 }
@@ -459,28 +451,31 @@ impl SMI_1_MASK_R {
             true => SMI_1_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_1_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_1_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_1_MASK` writer - SyncManager interrupt"]
-pub type SMI_1_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_1_MASK_A>;
-impl<'a, const O: u8> SMI_1_MASK_W<'a, O> {
+pub type SMI_1_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_1_MASK_A>;
+impl<'a, REG, const O: u8> SMI_1_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_1_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_1_MASK_A::VALUE2)
     }
 }
@@ -509,28 +504,31 @@ impl SMI_2_MASK_R {
             true => SMI_2_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_2_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_2_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_2_MASK` writer - SyncManager interrupt"]
-pub type SMI_2_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_2_MASK_A>;
-impl<'a, const O: u8> SMI_2_MASK_W<'a, O> {
+pub type SMI_2_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_2_MASK_A>;
+impl<'a, REG, const O: u8> SMI_2_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_2_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_2_MASK_A::VALUE2)
     }
 }
@@ -559,28 +557,31 @@ impl SMI_3_MASK_R {
             true => SMI_3_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_3_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_3_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_3_MASK` writer - SyncManager interrupt"]
-pub type SMI_3_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_3_MASK_A>;
-impl<'a, const O: u8> SMI_3_MASK_W<'a, O> {
+pub type SMI_3_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_3_MASK_A>;
+impl<'a, REG, const O: u8> SMI_3_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_3_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_3_MASK_A::VALUE2)
     }
 }
@@ -609,28 +610,31 @@ impl SMI_4_MASK_R {
             true => SMI_4_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_4_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_4_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_4_MASK` writer - SyncManager interrupt"]
-pub type SMI_4_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_4_MASK_A>;
-impl<'a, const O: u8> SMI_4_MASK_W<'a, O> {
+pub type SMI_4_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_4_MASK_A>;
+impl<'a, REG, const O: u8> SMI_4_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_4_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_4_MASK_A::VALUE2)
     }
 }
@@ -659,28 +663,31 @@ impl SMI_5_MASK_R {
             true => SMI_5_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_5_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_5_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_5_MASK` writer - SyncManager interrupt"]
-pub type SMI_5_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_5_MASK_A>;
-impl<'a, const O: u8> SMI_5_MASK_W<'a, O> {
+pub type SMI_5_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_5_MASK_A>;
+impl<'a, REG, const O: u8> SMI_5_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_5_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_5_MASK_A::VALUE2)
     }
 }
@@ -709,28 +716,31 @@ impl SMI_6_MASK_R {
             true => SMI_6_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_6_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_6_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_6_MASK` writer - SyncManager interrupt"]
-pub type SMI_6_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_6_MASK_A>;
-impl<'a, const O: u8> SMI_6_MASK_W<'a, O> {
+pub type SMI_6_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_6_MASK_A>;
+impl<'a, REG, const O: u8> SMI_6_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_6_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_6_MASK_A::VALUE2)
     }
 }
@@ -759,28 +769,31 @@ impl SMI_7_MASK_R {
             true => SMI_7_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_7_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_7_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_7_MASK` writer - SyncManager interrupt"]
-pub type SMI_7_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_7_MASK_A>;
-impl<'a, const O: u8> SMI_7_MASK_W<'a, O> {
+pub type SMI_7_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_7_MASK_A>;
+impl<'a, REG, const O: u8> SMI_7_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_7_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_7_MASK_A::VALUE2)
     }
 }
@@ -809,28 +822,31 @@ impl SMI_8_MASK_R {
             true => SMI_8_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_8_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_8_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_8_MASK` writer - SyncManager interrupt"]
-pub type SMI_8_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_8_MASK_A>;
-impl<'a, const O: u8> SMI_8_MASK_W<'a, O> {
+pub type SMI_8_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_8_MASK_A>;
+impl<'a, REG, const O: u8> SMI_8_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_8_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_8_MASK_A::VALUE2)
     }
 }
@@ -859,28 +875,31 @@ impl SMI_9_MASK_R {
             true => SMI_9_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_9_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_9_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_9_MASK` writer - SyncManager interrupt"]
-pub type SMI_9_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_9_MASK_A>;
-impl<'a, const O: u8> SMI_9_MASK_W<'a, O> {
+pub type SMI_9_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_9_MASK_A>;
+impl<'a, REG, const O: u8> SMI_9_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_9_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_9_MASK_A::VALUE2)
     }
 }
@@ -909,28 +928,31 @@ impl SMI_10_MASK_R {
             true => SMI_10_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_10_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_10_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_10_MASK` writer - SyncManager interrupt"]
-pub type SMI_10_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_10_MASK_A>;
-impl<'a, const O: u8> SMI_10_MASK_W<'a, O> {
+pub type SMI_10_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_10_MASK_A>;
+impl<'a, REG, const O: u8> SMI_10_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_10_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_10_MASK_A::VALUE2)
     }
 }
@@ -959,28 +981,31 @@ impl SMI_11_MASK_R {
             true => SMI_11_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_11_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_11_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_11_MASK` writer - SyncManager interrupt"]
-pub type SMI_11_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_11_MASK_A>;
-impl<'a, const O: u8> SMI_11_MASK_W<'a, O> {
+pub type SMI_11_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_11_MASK_A>;
+impl<'a, REG, const O: u8> SMI_11_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_11_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_11_MASK_A::VALUE2)
     }
 }
@@ -1009,28 +1034,31 @@ impl SMI_12_MASK_R {
             true => SMI_12_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_12_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_12_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_12_MASK` writer - SyncManager interrupt"]
-pub type SMI_12_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_12_MASK_A>;
-impl<'a, const O: u8> SMI_12_MASK_W<'a, O> {
+pub type SMI_12_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_12_MASK_A>;
+impl<'a, REG, const O: u8> SMI_12_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_12_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_12_MASK_A::VALUE2)
     }
 }
@@ -1059,28 +1087,31 @@ impl SMI_13_MASK_R {
             true => SMI_13_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_13_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_13_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_13_MASK` writer - SyncManager interrupt"]
-pub type SMI_13_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_13_MASK_A>;
-impl<'a, const O: u8> SMI_13_MASK_W<'a, O> {
+pub type SMI_13_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_13_MASK_A>;
+impl<'a, REG, const O: u8> SMI_13_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_13_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_13_MASK_A::VALUE2)
     }
 }
@@ -1109,28 +1140,31 @@ impl SMI_14_MASK_R {
             true => SMI_14_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_14_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_14_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_14_MASK` writer - SyncManager interrupt"]
-pub type SMI_14_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_14_MASK_A>;
-impl<'a, const O: u8> SMI_14_MASK_W<'a, O> {
+pub type SMI_14_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_14_MASK_A>;
+impl<'a, REG, const O: u8> SMI_14_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_14_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_14_MASK_A::VALUE2)
     }
 }
@@ -1159,28 +1193,31 @@ impl SMI_15_MASK_R {
             true => SMI_15_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SMI_15_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SMI_15_MASK_A::VALUE2
     }
 }
 #[doc = "Field `SMI_15_MASK` writer - SyncManager interrupt"]
-pub type SMI_15_MASK_W<'a, const O: u8> = crate::BitWriter<'a, AL_EVENT_MASK_SPEC, O, SMI_15_MASK_A>;
-impl<'a, const O: u8> SMI_15_MASK_W<'a, O> {
+pub type SMI_15_MASK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SMI_15_MASK_A>;
+impl<'a, REG, const O: u8> SMI_15_MASK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Corresponding AL Event Request register bit is not mapped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_15_MASK_A::VALUE1)
     }
     #[doc = "Corresponding AL Event Request register bit is mapped"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SMI_15_MASK_A::VALUE2)
     }
 }
@@ -1305,160 +1342,157 @@ impl W {
     #[doc = "Bit 0 - AL Control event"]
     #[inline(always)]
     #[must_use]
-    pub fn al_ce_mask(&mut self) -> AL_CE_MASK_W<0> {
+    pub fn al_ce_mask(&mut self) -> AL_CE_MASK_W<AL_EVENT_MASK_SPEC, 0> {
         AL_CE_MASK_W::new(self)
     }
     #[doc = "Bit 1 - DC Latch event"]
     #[inline(always)]
     #[must_use]
-    pub fn dc_le_mask(&mut self) -> DC_LE_MASK_W<1> {
+    pub fn dc_le_mask(&mut self) -> DC_LE_MASK_W<AL_EVENT_MASK_SPEC, 1> {
         DC_LE_MASK_W::new(self)
     }
     #[doc = "Bit 2 - State of DC SYNC0"]
     #[inline(always)]
     #[must_use]
-    pub fn st_s0_mask(&mut self) -> ST_S0_MASK_W<2> {
+    pub fn st_s0_mask(&mut self) -> ST_S0_MASK_W<AL_EVENT_MASK_SPEC, 2> {
         ST_S0_MASK_W::new(self)
     }
     #[doc = "Bit 3 - State of DC SYNC1"]
     #[inline(always)]
     #[must_use]
-    pub fn st_s1_mask(&mut self) -> ST_S1_MASK_W<3> {
+    pub fn st_s1_mask(&mut self) -> ST_S1_MASK_W<AL_EVENT_MASK_SPEC, 3> {
         ST_S1_MASK_W::new(self)
     }
     #[doc = "Bit 4 - SyncManager activation register changed"]
     #[inline(always)]
     #[must_use]
-    pub fn sm_a_mask(&mut self) -> SM_A_MASK_W<4> {
+    pub fn sm_a_mask(&mut self) -> SM_A_MASK_W<AL_EVENT_MASK_SPEC, 4> {
         SM_A_MASK_W::new(self)
     }
     #[doc = "Bit 5 - EEPROM Emulation"]
     #[inline(always)]
     #[must_use]
-    pub fn eep_e_mask(&mut self) -> EEP_E_MASK_W<5> {
+    pub fn eep_e_mask(&mut self) -> EEP_E_MASK_W<AL_EVENT_MASK_SPEC, 5> {
         EEP_E_MASK_W::new(self)
     }
     #[doc = "Bit 6 - Watchdog Process Data"]
     #[inline(always)]
     #[must_use]
-    pub fn wp_d_mask(&mut self) -> WP_D_MASK_W<6> {
+    pub fn wp_d_mask(&mut self) -> WP_D_MASK_W<AL_EVENT_MASK_SPEC, 6> {
         WP_D_MASK_W::new(self)
     }
     #[doc = "Bit 8 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_0_mask(&mut self) -> SMI_0_MASK_W<8> {
+    pub fn smi_0_mask(&mut self) -> SMI_0_MASK_W<AL_EVENT_MASK_SPEC, 8> {
         SMI_0_MASK_W::new(self)
     }
     #[doc = "Bit 9 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_1_mask(&mut self) -> SMI_1_MASK_W<9> {
+    pub fn smi_1_mask(&mut self) -> SMI_1_MASK_W<AL_EVENT_MASK_SPEC, 9> {
         SMI_1_MASK_W::new(self)
     }
     #[doc = "Bit 10 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_2_mask(&mut self) -> SMI_2_MASK_W<10> {
+    pub fn smi_2_mask(&mut self) -> SMI_2_MASK_W<AL_EVENT_MASK_SPEC, 10> {
         SMI_2_MASK_W::new(self)
     }
     #[doc = "Bit 11 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_3_mask(&mut self) -> SMI_3_MASK_W<11> {
+    pub fn smi_3_mask(&mut self) -> SMI_3_MASK_W<AL_EVENT_MASK_SPEC, 11> {
         SMI_3_MASK_W::new(self)
     }
     #[doc = "Bit 12 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_4_mask(&mut self) -> SMI_4_MASK_W<12> {
+    pub fn smi_4_mask(&mut self) -> SMI_4_MASK_W<AL_EVENT_MASK_SPEC, 12> {
         SMI_4_MASK_W::new(self)
     }
     #[doc = "Bit 13 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_5_mask(&mut self) -> SMI_5_MASK_W<13> {
+    pub fn smi_5_mask(&mut self) -> SMI_5_MASK_W<AL_EVENT_MASK_SPEC, 13> {
         SMI_5_MASK_W::new(self)
     }
     #[doc = "Bit 14 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_6_mask(&mut self) -> SMI_6_MASK_W<14> {
+    pub fn smi_6_mask(&mut self) -> SMI_6_MASK_W<AL_EVENT_MASK_SPEC, 14> {
         SMI_6_MASK_W::new(self)
     }
     #[doc = "Bit 15 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_7_mask(&mut self) -> SMI_7_MASK_W<15> {
+    pub fn smi_7_mask(&mut self) -> SMI_7_MASK_W<AL_EVENT_MASK_SPEC, 15> {
         SMI_7_MASK_W::new(self)
     }
     #[doc = "Bit 16 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_8_mask(&mut self) -> SMI_8_MASK_W<16> {
+    pub fn smi_8_mask(&mut self) -> SMI_8_MASK_W<AL_EVENT_MASK_SPEC, 16> {
         SMI_8_MASK_W::new(self)
     }
     #[doc = "Bit 17 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_9_mask(&mut self) -> SMI_9_MASK_W<17> {
+    pub fn smi_9_mask(&mut self) -> SMI_9_MASK_W<AL_EVENT_MASK_SPEC, 17> {
         SMI_9_MASK_W::new(self)
     }
     #[doc = "Bit 18 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_10_mask(&mut self) -> SMI_10_MASK_W<18> {
+    pub fn smi_10_mask(&mut self) -> SMI_10_MASK_W<AL_EVENT_MASK_SPEC, 18> {
         SMI_10_MASK_W::new(self)
     }
     #[doc = "Bit 19 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_11_mask(&mut self) -> SMI_11_MASK_W<19> {
+    pub fn smi_11_mask(&mut self) -> SMI_11_MASK_W<AL_EVENT_MASK_SPEC, 19> {
         SMI_11_MASK_W::new(self)
     }
     #[doc = "Bit 20 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_12_mask(&mut self) -> SMI_12_MASK_W<20> {
+    pub fn smi_12_mask(&mut self) -> SMI_12_MASK_W<AL_EVENT_MASK_SPEC, 20> {
         SMI_12_MASK_W::new(self)
     }
     #[doc = "Bit 21 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_13_mask(&mut self) -> SMI_13_MASK_W<21> {
+    pub fn smi_13_mask(&mut self) -> SMI_13_MASK_W<AL_EVENT_MASK_SPEC, 21> {
         SMI_13_MASK_W::new(self)
     }
     #[doc = "Bit 22 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_14_mask(&mut self) -> SMI_14_MASK_W<22> {
+    pub fn smi_14_mask(&mut self) -> SMI_14_MASK_W<AL_EVENT_MASK_SPEC, 22> {
         SMI_14_MASK_W::new(self)
     }
     #[doc = "Bit 23 - SyncManager interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn smi_15_mask(&mut self) -> SMI_15_MASK_W<23> {
+    pub fn smi_15_mask(&mut self) -> SMI_15_MASK_W<AL_EVENT_MASK_SPEC, 23> {
         SMI_15_MASK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PDI AL Event Mask\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [al_event_mask](index.html) module"]
+#[doc = "PDI AL Event Mask\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`al_event_mask::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`al_event_mask::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AL_EVENT_MASK_SPEC;
 impl crate::RegisterSpec for AL_EVENT_MASK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [al_event_mask::R](R) reader structure"]
-impl crate::Readable for AL_EVENT_MASK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [al_event_mask::W](W) writer structure"]
+#[doc = "`read()` method returns [`al_event_mask::R`](R) reader structure"]
+impl crate::Readable for AL_EVENT_MASK_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`al_event_mask::W`](W) writer structure"]
 impl crate::Writable for AL_EVENT_MASK_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

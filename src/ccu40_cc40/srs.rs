@@ -1,39 +1,7 @@
 #[doc = "Register `SRS` reader"]
-pub struct R(crate::R<SRS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SRS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SRS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SRS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SRS_SPEC>;
 #[doc = "Register `SRS` writer"]
-pub struct W(crate::W<SRS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SRS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SRS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SRS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SRS_SPEC>;
 #[doc = "Field `POSR` reader - Period/One match Service request selector"]
 pub type POSR_R = crate::FieldReader<POSR_A>;
 #[doc = "Period/One match Service request selector\n\nValue on reset: 0"]
@@ -70,48 +38,52 @@ impl POSR_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == POSR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Forward to CC4ySR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == POSR_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Forward to CC4ySR2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == POSR_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Forward to CC4ySR3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == POSR_A::VALUE4
     }
 }
 #[doc = "Field `POSR` writer - Period/One match Service request selector"]
-pub type POSR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SRS_SPEC, 2, O, POSR_A>;
-impl<'a, const O: u8> POSR_W<'a, O> {
+pub type POSR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, POSR_A>;
+impl<'a, REG, const O: u8> POSR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(POSR_A::VALUE1)
     }
     #[doc = "Forward to CC4ySR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(POSR_A::VALUE2)
     }
     #[doc = "Forward to CC4ySR2"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(POSR_A::VALUE3)
     }
     #[doc = "Forward to CC4ySR3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(POSR_A::VALUE4)
     }
 }
@@ -151,48 +123,52 @@ impl CMSR_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMSR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Forward to CC4ySR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMSR_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Forward to CC4ySR2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CMSR_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Forward to CC4ySR3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CMSR_A::VALUE4
     }
 }
 #[doc = "Field `CMSR` writer - Compare match Service request selector"]
-pub type CMSR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SRS_SPEC, 2, O, CMSR_A>;
-impl<'a, const O: u8> CMSR_W<'a, O> {
+pub type CMSR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CMSR_A>;
+impl<'a, REG, const O: u8> CMSR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CMSR_A::VALUE1)
     }
     #[doc = "Forward to CC4ySR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CMSR_A::VALUE2)
     }
     #[doc = "Forward to CC4ySR2"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CMSR_A::VALUE3)
     }
     #[doc = "Forward to CC4ySR3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CMSR_A::VALUE4)
     }
 }
@@ -232,48 +208,52 @@ impl E0SR_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == E0SR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Forward to CC4ySR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == E0SR_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Forward to CC4ySR2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == E0SR_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Forward to CC4ySR3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == E0SR_A::VALUE4
     }
 }
 #[doc = "Field `E0SR` writer - Event 0 Service request selector"]
-pub type E0SR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SRS_SPEC, 2, O, E0SR_A>;
-impl<'a, const O: u8> E0SR_W<'a, O> {
+pub type E0SR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, E0SR_A>;
+impl<'a, REG, const O: u8> E0SR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(E0SR_A::VALUE1)
     }
     #[doc = "Forward to CC4ySR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(E0SR_A::VALUE2)
     }
     #[doc = "Forward to CC4ySR2"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(E0SR_A::VALUE3)
     }
     #[doc = "Forward to CC4ySR3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(E0SR_A::VALUE4)
     }
 }
@@ -313,48 +293,52 @@ impl E1SR_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == E1SR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Forward to CC4ySR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == E1SR_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Forward to CC4ySR2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == E1SR_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Forward to CC4ySR3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == E1SR_A::VALUE4
     }
 }
 #[doc = "Field `E1SR` writer - Event 1 Service request selector"]
-pub type E1SR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SRS_SPEC, 2, O, E1SR_A>;
-impl<'a, const O: u8> E1SR_W<'a, O> {
+pub type E1SR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, E1SR_A>;
+impl<'a, REG, const O: u8> E1SR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(E1SR_A::VALUE1)
     }
     #[doc = "Forward to CC4ySR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(E1SR_A::VALUE2)
     }
     #[doc = "Forward to CC4ySR2"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(E1SR_A::VALUE3)
     }
     #[doc = "Forward to CC4ySR3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(E1SR_A::VALUE4)
     }
 }
@@ -394,48 +378,52 @@ impl E2SR_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == E2SR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Forward to CC4ySR1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == E2SR_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Forward to CC4ySR2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == E2SR_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Forward to CC4ySR3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == E2SR_A::VALUE4
     }
 }
 #[doc = "Field `E2SR` writer - Event 2 Service request selector"]
-pub type E2SR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SRS_SPEC, 2, O, E2SR_A>;
-impl<'a, const O: u8> E2SR_W<'a, O> {
+pub type E2SR_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, E2SR_A>;
+impl<'a, REG, const O: u8> E2SR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Forward to CC4ySR0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(E2SR_A::VALUE1)
     }
     #[doc = "Forward to CC4ySR1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(E2SR_A::VALUE2)
     }
     #[doc = "Forward to CC4ySR2"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(E2SR_A::VALUE3)
     }
     #[doc = "Forward to CC4ySR3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(E2SR_A::VALUE4)
     }
 }
@@ -470,52 +458,49 @@ impl W {
     #[doc = "Bits 0:1 - Period/One match Service request selector"]
     #[inline(always)]
     #[must_use]
-    pub fn posr(&mut self) -> POSR_W<0> {
+    pub fn posr(&mut self) -> POSR_W<SRS_SPEC, 0> {
         POSR_W::new(self)
     }
     #[doc = "Bits 2:3 - Compare match Service request selector"]
     #[inline(always)]
     #[must_use]
-    pub fn cmsr(&mut self) -> CMSR_W<2> {
+    pub fn cmsr(&mut self) -> CMSR_W<SRS_SPEC, 2> {
         CMSR_W::new(self)
     }
     #[doc = "Bits 8:9 - Event 0 Service request selector"]
     #[inline(always)]
     #[must_use]
-    pub fn e0sr(&mut self) -> E0SR_W<8> {
+    pub fn e0sr(&mut self) -> E0SR_W<SRS_SPEC, 8> {
         E0SR_W::new(self)
     }
     #[doc = "Bits 10:11 - Event 1 Service request selector"]
     #[inline(always)]
     #[must_use]
-    pub fn e1sr(&mut self) -> E1SR_W<10> {
+    pub fn e1sr(&mut self) -> E1SR_W<SRS_SPEC, 10> {
         E1SR_W::new(self)
     }
     #[doc = "Bits 12:13 - Event 2 Service request selector"]
     #[inline(always)]
     #[must_use]
-    pub fn e2sr(&mut self) -> E2SR_W<12> {
+    pub fn e2sr(&mut self) -> E2SR_W<SRS_SPEC, 12> {
         E2SR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Service Request Selector\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srs](index.html) module"]
+#[doc = "Service Request Selector\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`srs::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`srs::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SRS_SPEC;
 impl crate::RegisterSpec for SRS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [srs::R](R) reader structure"]
-impl crate::Readable for SRS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [srs::W](W) writer structure"]
+#[doc = "`read()` method returns [`srs::R`](R) reader structure"]
+impl crate::Readable for SRS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`srs::W`](W) writer structure"]
 impl crate::Writable for SRS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

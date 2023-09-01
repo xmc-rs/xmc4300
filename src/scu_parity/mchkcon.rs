@@ -1,39 +1,7 @@
 #[doc = "Register `MCHKCON` reader"]
-pub struct R(crate::R<MCHKCON_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MCHKCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MCHKCON_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MCHKCON_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MCHKCON_SPEC>;
 #[doc = "Register `MCHKCON` writer"]
-pub struct W(crate::W<MCHKCON_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MCHKCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MCHKCON_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MCHKCON_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MCHKCON_SPEC>;
 #[doc = "Field `SELPS` reader - Select Memory Check for PSRAM"]
 pub type SELPS_R = crate::BitReader<SELPS_A>;
 #[doc = "Select Memory Check for PSRAM\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl SELPS_R {
             true => SELPS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Not selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == SELPS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == SELPS_A::CONST_1
     }
 }
 #[doc = "Field `SELPS` writer - Select Memory Check for PSRAM"]
-pub type SELPS_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELPS_A>;
-impl<'a, const O: u8> SELPS_W<'a, O> {
+pub type SELPS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELPS_A>;
+impl<'a, REG, const O: u8> SELPS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(SELPS_A::CONST_0)
     }
     #[doc = "Selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(SELPS_A::CONST_1)
     }
 }
@@ -109,28 +80,31 @@ impl SELDS1_R {
             true => SELDS1_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Not selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == SELDS1_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == SELDS1_A::CONST_1
     }
 }
 #[doc = "Field `SELDS1` writer - Select Memory Check for DSRAM1"]
-pub type SELDS1_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELDS1_A>;
-impl<'a, const O: u8> SELDS1_W<'a, O> {
+pub type SELDS1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELDS1_A>;
+impl<'a, REG, const O: u8> SELDS1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(SELDS1_A::CONST_0)
     }
     #[doc = "Selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(SELDS1_A::CONST_1)
     }
 }
@@ -159,28 +133,31 @@ impl USIC0DRA_R {
             true => USIC0DRA_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Not selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == USIC0DRA_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == USIC0DRA_A::CONST_1
     }
 }
 #[doc = "Field `USIC0DRA` writer - Select Memory Check for USIC0"]
-pub type USIC0DRA_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, USIC0DRA_A>;
-impl<'a, const O: u8> USIC0DRA_W<'a, O> {
+pub type USIC0DRA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USIC0DRA_A>;
+impl<'a, REG, const O: u8> USIC0DRA_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(USIC0DRA_A::CONST_0)
     }
     #[doc = "Selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(USIC0DRA_A::CONST_1)
     }
 }
@@ -209,28 +186,31 @@ impl USIC1DRA_R {
             true => USIC1DRA_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Not selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == USIC1DRA_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == USIC1DRA_A::CONST_1
     }
 }
 #[doc = "Field `USIC1DRA` writer - Select Memory Check for USIC1"]
-pub type USIC1DRA_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, USIC1DRA_A>;
-impl<'a, const O: u8> USIC1DRA_W<'a, O> {
+pub type USIC1DRA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USIC1DRA_A>;
+impl<'a, REG, const O: u8> USIC1DRA_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(USIC1DRA_A::CONST_0)
     }
     #[doc = "Selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(USIC1DRA_A::CONST_1)
     }
 }
@@ -259,28 +239,31 @@ impl MCANDRA_R {
             true => MCANDRA_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Not selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MCANDRA_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MCANDRA_A::CONST_1
     }
 }
 #[doc = "Field `MCANDRA` writer - Select Memory Check for MultiCAN"]
-pub type MCANDRA_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, MCANDRA_A>;
-impl<'a, const O: u8> MCANDRA_W<'a, O> {
+pub type MCANDRA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MCANDRA_A>;
+impl<'a, REG, const O: u8> MCANDRA_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(MCANDRA_A::CONST_0)
     }
     #[doc = "Selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(MCANDRA_A::CONST_1)
     }
 }
@@ -309,28 +292,31 @@ impl PPRFDRA_R {
             true => PPRFDRA_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Not selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PPRFDRA_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PPRFDRA_A::CONST_1
     }
 }
 #[doc = "Field `PPRFDRA` writer - Select Memory Check for PMU"]
-pub type PPRFDRA_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, PPRFDRA_A>;
-impl<'a, const O: u8> PPRFDRA_W<'a, O> {
+pub type PPRFDRA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PPRFDRA_A>;
+impl<'a, REG, const O: u8> PPRFDRA_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PPRFDRA_A::CONST_0)
     }
     #[doc = "Selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PPRFDRA_A::CONST_1)
     }
 }
@@ -359,28 +345,31 @@ impl SELUSB_R {
             true => SELUSB_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Not selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == SELUSB_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == SELUSB_A::CONST_1
     }
 }
 #[doc = "Field `SELUSB` writer - Select Memory Check for USB SRAM"]
-pub type SELUSB_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELUSB_A>;
-impl<'a, const O: u8> SELUSB_W<'a, O> {
+pub type SELUSB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELUSB_A>;
+impl<'a, REG, const O: u8> SELUSB_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(SELUSB_A::CONST_0)
     }
     #[doc = "Selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(SELUSB_A::CONST_1)
     }
 }
@@ -409,28 +398,31 @@ impl SELETH0TX_R {
             true => SELETH0TX_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Not selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == SELETH0TX_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == SELETH0TX_A::CONST_1
     }
 }
 #[doc = "Field `SELETH0TX` writer - Select Memory Check for ETH0 TX SRAM"]
-pub type SELETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELETH0TX_A>;
-impl<'a, const O: u8> SELETH0TX_W<'a, O> {
+pub type SELETH0TX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELETH0TX_A>;
+impl<'a, REG, const O: u8> SELETH0TX_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(SELETH0TX_A::CONST_0)
     }
     #[doc = "Selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(SELETH0TX_A::CONST_1)
     }
 }
@@ -459,28 +451,31 @@ impl SELETH0RX_R {
             true => SELETH0RX_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Not selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == SELETH0RX_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == SELETH0RX_A::CONST_1
     }
 }
 #[doc = "Field `SELETH0RX` writer - Select Memory Check for ETH0 RX SRAM"]
-pub type SELETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELETH0RX_A>;
-impl<'a, const O: u8> SELETH0RX_W<'a, O> {
+pub type SELETH0RX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELETH0RX_A>;
+impl<'a, REG, const O: u8> SELETH0RX_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(SELETH0RX_A::CONST_0)
     }
     #[doc = "Selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(SELETH0RX_A::CONST_1)
     }
 }
@@ -509,28 +504,31 @@ impl SELSD0_R {
             true => SELSD0_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Not selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == SELSD0_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == SELSD0_A::CONST_1
     }
 }
 #[doc = "Field `SELSD0` writer - Select Memory Check for SDMMC SRAM 0"]
-pub type SELSD0_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELSD0_A>;
-impl<'a, const O: u8> SELSD0_W<'a, O> {
+pub type SELSD0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELSD0_A>;
+impl<'a, REG, const O: u8> SELSD0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(SELSD0_A::CONST_0)
     }
     #[doc = "Selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(SELSD0_A::CONST_1)
     }
 }
@@ -559,28 +557,31 @@ impl SELSD1_R {
             true => SELSD1_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Not selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == SELSD1_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == SELSD1_A::CONST_1
     }
 }
 #[doc = "Field `SELSD1` writer - Select Memory Check for SDMMC SRAM 1"]
-pub type SELSD1_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELSD1_A>;
-impl<'a, const O: u8> SELSD1_W<'a, O> {
+pub type SELSD1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELSD1_A>;
+impl<'a, REG, const O: u8> SELSD1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(SELSD1_A::CONST_0)
     }
     #[doc = "Selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(SELSD1_A::CONST_1)
     }
 }
@@ -609,28 +610,31 @@ impl SELECAT0_R {
             true => SELECAT0_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Not selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == SELECAT0_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == SELECAT0_A::CONST_1
     }
 }
 #[doc = "Field `SELECAT0` writer - Select Memory Check for ECAT0 SRAM 1"]
-pub type SELECAT0_W<'a, const O: u8> = crate::BitWriter<'a, MCHKCON_SPEC, O, SELECAT0_A>;
-impl<'a, const O: u8> SELECAT0_W<'a, O> {
+pub type SELECAT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SELECAT0_A>;
+impl<'a, REG, const O: u8> SELECAT0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(SELECAT0_A::CONST_0)
     }
     #[doc = "Selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(SELECAT0_A::CONST_1)
     }
 }
@@ -700,94 +704,91 @@ impl W {
     #[doc = "Bit 0 - Select Memory Check for PSRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn selps(&mut self) -> SELPS_W<0> {
+    pub fn selps(&mut self) -> SELPS_W<MCHKCON_SPEC, 0> {
         SELPS_W::new(self)
     }
     #[doc = "Bit 1 - Select Memory Check for DSRAM1"]
     #[inline(always)]
     #[must_use]
-    pub fn selds1(&mut self) -> SELDS1_W<1> {
+    pub fn selds1(&mut self) -> SELDS1_W<MCHKCON_SPEC, 1> {
         SELDS1_W::new(self)
     }
     #[doc = "Bit 8 - Select Memory Check for USIC0"]
     #[inline(always)]
     #[must_use]
-    pub fn usic0dra(&mut self) -> USIC0DRA_W<8> {
+    pub fn usic0dra(&mut self) -> USIC0DRA_W<MCHKCON_SPEC, 8> {
         USIC0DRA_W::new(self)
     }
     #[doc = "Bit 9 - Select Memory Check for USIC1"]
     #[inline(always)]
     #[must_use]
-    pub fn usic1dra(&mut self) -> USIC1DRA_W<9> {
+    pub fn usic1dra(&mut self) -> USIC1DRA_W<MCHKCON_SPEC, 9> {
         USIC1DRA_W::new(self)
     }
     #[doc = "Bit 12 - Select Memory Check for MultiCAN"]
     #[inline(always)]
     #[must_use]
-    pub fn mcandra(&mut self) -> MCANDRA_W<12> {
+    pub fn mcandra(&mut self) -> MCANDRA_W<MCHKCON_SPEC, 12> {
         MCANDRA_W::new(self)
     }
     #[doc = "Bit 13 - Select Memory Check for PMU"]
     #[inline(always)]
     #[must_use]
-    pub fn pprfdra(&mut self) -> PPRFDRA_W<13> {
+    pub fn pprfdra(&mut self) -> PPRFDRA_W<MCHKCON_SPEC, 13> {
         PPRFDRA_W::new(self)
     }
     #[doc = "Bit 16 - Select Memory Check for USB SRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn selusb(&mut self) -> SELUSB_W<16> {
+    pub fn selusb(&mut self) -> SELUSB_W<MCHKCON_SPEC, 16> {
         SELUSB_W::new(self)
     }
     #[doc = "Bit 17 - Select Memory Check for ETH0 TX SRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn seleth0tx(&mut self) -> SELETH0TX_W<17> {
+    pub fn seleth0tx(&mut self) -> SELETH0TX_W<MCHKCON_SPEC, 17> {
         SELETH0TX_W::new(self)
     }
     #[doc = "Bit 18 - Select Memory Check for ETH0 RX SRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn seleth0rx(&mut self) -> SELETH0RX_W<18> {
+    pub fn seleth0rx(&mut self) -> SELETH0RX_W<MCHKCON_SPEC, 18> {
         SELETH0RX_W::new(self)
     }
     #[doc = "Bit 19 - Select Memory Check for SDMMC SRAM 0"]
     #[inline(always)]
     #[must_use]
-    pub fn selsd0(&mut self) -> SELSD0_W<19> {
+    pub fn selsd0(&mut self) -> SELSD0_W<MCHKCON_SPEC, 19> {
         SELSD0_W::new(self)
     }
     #[doc = "Bit 20 - Select Memory Check for SDMMC SRAM 1"]
     #[inline(always)]
     #[must_use]
-    pub fn selsd1(&mut self) -> SELSD1_W<20> {
+    pub fn selsd1(&mut self) -> SELSD1_W<MCHKCON_SPEC, 20> {
         SELSD1_W::new(self)
     }
     #[doc = "Bit 24 - Select Memory Check for ECAT0 SRAM 1"]
     #[inline(always)]
     #[must_use]
-    pub fn selecat0(&mut self) -> SELECAT0_W<24> {
+    pub fn selecat0(&mut self) -> SELECAT0_W<MCHKCON_SPEC, 24> {
         SELECAT0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Memory Checking Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mchkcon](index.html) module"]
+#[doc = "Memory Checking Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mchkcon::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mchkcon::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MCHKCON_SPEC;
 impl crate::RegisterSpec for MCHKCON_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mchkcon::R](R) reader structure"]
-impl crate::Readable for MCHKCON_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mchkcon::W](W) writer structure"]
+#[doc = "`read()` method returns [`mchkcon::R`](R) reader structure"]
+impl crate::Readable for MCHKCON_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mchkcon::W`](W) writer structure"]
 impl crate::Writable for MCHKCON_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

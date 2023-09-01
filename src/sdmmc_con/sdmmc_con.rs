@@ -1,39 +1,7 @@
 #[doc = "Register `SDMMC_CON` reader"]
-pub struct R(crate::R<SDMMC_CON_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SDMMC_CON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SDMMC_CON_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SDMMC_CON_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SDMMC_CON_SPEC>;
 #[doc = "Register `SDMMC_CON` writer"]
-pub struct W(crate::W<SDMMC_CON_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SDMMC_CON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SDMMC_CON_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SDMMC_CON_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SDMMC_CON_SPEC>;
 #[doc = "Field `WPSEL` reader - SDMMC Write Protection Input Multiplexer Control"]
 pub type WPSEL_R = crate::BitReader<WPSEL_A>;
 #[doc = "SDMMC Write Protection Input Multiplexer Control\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl WPSEL_R {
             true => WPSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "P1.1 input pin selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WPSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Software bit WPVAL is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WPSEL_A::VALUE2
     }
 }
 #[doc = "Field `WPSEL` writer - SDMMC Write Protection Input Multiplexer Control"]
-pub type WPSEL_W<'a, const O: u8> = crate::BitWriter<'a, SDMMC_CON_SPEC, O, WPSEL_A>;
-impl<'a, const O: u8> WPSEL_W<'a, O> {
+pub type WPSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WPSEL_A>;
+impl<'a, REG, const O: u8> WPSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "P1.1 input pin selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WPSEL_A::VALUE1)
     }
     #[doc = "Software bit WPVAL is selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WPSEL_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl WPSVAL_R {
             true => WPSVAL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No write protection"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WPSVAL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write protection active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WPSVAL_A::VALUE2
     }
 }
 #[doc = "Field `WPSVAL` writer - SDMMC Write Protect Software Control"]
-pub type WPSVAL_W<'a, const O: u8> = crate::BitWriter<'a, SDMMC_CON_SPEC, O, WPSVAL_A>;
-impl<'a, const O: u8> WPSVAL_W<'a, O> {
+pub type WPSVAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WPSVAL_A>;
+impl<'a, REG, const O: u8> WPSVAL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No write protection"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WPSVAL_A::VALUE1)
     }
     #[doc = "Write protection active"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WPSVAL_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl CDSEL_R {
             true => CDSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "P1.10 input pin selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CDSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Software bit CDSVAL is selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CDSEL_A::VALUE2
     }
 }
 #[doc = "Field `CDSEL` writer - SDMMC Card Detection Control"]
-pub type CDSEL_W<'a, const O: u8> = crate::BitWriter<'a, SDMMC_CON_SPEC, O, CDSEL_A>;
-impl<'a, const O: u8> CDSEL_W<'a, O> {
+pub type CDSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CDSEL_A>;
+impl<'a, REG, const O: u8> CDSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "P1.10 input pin selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CDSEL_A::VALUE1)
     }
     #[doc = "Software bit CDSVAL is selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CDSEL_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl CDSVAL_R {
             true => CDSVAL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No card detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CDSVAL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Card detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CDSVAL_A::VALUE2
     }
 }
 #[doc = "Field `CDSVAL` writer - SDMMC Write Protect Software Control"]
-pub type CDSVAL_W<'a, const O: u8> = crate::BitWriter<'a, SDMMC_CON_SPEC, O, CDSVAL_A>;
-impl<'a, const O: u8> CDSVAL_W<'a, O> {
+pub type CDSVAL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CDSVAL_A>;
+impl<'a, REG, const O: u8> CDSVAL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No card detected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CDSVAL_A::VALUE1)
     }
     #[doc = "Card detected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CDSVAL_A::VALUE2)
     }
 }
@@ -260,46 +240,43 @@ impl W {
     #[doc = "Bit 0 - SDMMC Write Protection Input Multiplexer Control"]
     #[inline(always)]
     #[must_use]
-    pub fn wpsel(&mut self) -> WPSEL_W<0> {
+    pub fn wpsel(&mut self) -> WPSEL_W<SDMMC_CON_SPEC, 0> {
         WPSEL_W::new(self)
     }
     #[doc = "Bit 4 - SDMMC Write Protect Software Control"]
     #[inline(always)]
     #[must_use]
-    pub fn wpsval(&mut self) -> WPSVAL_W<4> {
+    pub fn wpsval(&mut self) -> WPSVAL_W<SDMMC_CON_SPEC, 4> {
         WPSVAL_W::new(self)
     }
     #[doc = "Bit 16 - SDMMC Card Detection Control"]
     #[inline(always)]
     #[must_use]
-    pub fn cdsel(&mut self) -> CDSEL_W<16> {
+    pub fn cdsel(&mut self) -> CDSEL_W<SDMMC_CON_SPEC, 16> {
         CDSEL_W::new(self)
     }
     #[doc = "Bit 20 - SDMMC Write Protect Software Control"]
     #[inline(always)]
     #[must_use]
-    pub fn cdsval(&mut self) -> CDSVAL_W<20> {
+    pub fn cdsval(&mut self) -> CDSVAL_W<SDMMC_CON_SPEC, 20> {
         CDSVAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SDMMC Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sdmmc_con](index.html) module"]
+#[doc = "SDMMC Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sdmmc_con::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sdmmc_con::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SDMMC_CON_SPEC;
 impl crate::RegisterSpec for SDMMC_CON_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sdmmc_con::R](R) reader structure"]
-impl crate::Readable for SDMMC_CON_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sdmmc_con::W](W) writer structure"]
+#[doc = "`read()` method returns [`sdmmc_con::R`](R) reader structure"]
+impl crate::Readable for SDMMC_CON_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`sdmmc_con::W`](W) writer structure"]
 impl crate::Writable for SDMMC_CON_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

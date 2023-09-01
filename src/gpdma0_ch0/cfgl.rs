@@ -1,43 +1,11 @@
 #[doc = "Register `CFGL` reader"]
-pub struct R(crate::R<CFGL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CFGL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CFGL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CFGL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CFGL_SPEC>;
 #[doc = "Register `CFGL` writer"]
-pub struct W(crate::W<CFGL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CFGL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CFGL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CFGL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CFGL_SPEC>;
 #[doc = "Field `CH_PRIOR` reader - Channel priority"]
 pub type CH_PRIOR_R = crate::FieldReader;
 #[doc = "Field `CH_PRIOR` writer - Channel priority"]
-pub type CH_PRIOR_W<'a, const O: u8> = crate::FieldWriter<'a, CFGL_SPEC, 3, O>;
+pub type CH_PRIOR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `CH_SUSP` reader - Channel Suspend"]
 pub type CH_SUSP_R = crate::BitReader<CH_SUSP_A>;
 #[doc = "Channel Suspend\n\nValue on reset: 0"]
@@ -63,28 +31,31 @@ impl CH_SUSP_R {
             true => CH_SUSP_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not suspended."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CH_SUSP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Suspend DMA transfer from the source."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CH_SUSP_A::VALUE2
     }
 }
 #[doc = "Field `CH_SUSP` writer - Channel Suspend"]
-pub type CH_SUSP_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O, CH_SUSP_A>;
-impl<'a, const O: u8> CH_SUSP_W<'a, O> {
+pub type CH_SUSP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH_SUSP_A>;
+impl<'a, REG, const O: u8> CH_SUSP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Not suspended."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CH_SUSP_A::VALUE1)
     }
     #[doc = "Suspend DMA transfer from the source."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CH_SUSP_A::VALUE2)
     }
 }
@@ -113,12 +84,12 @@ impl FIFO_EMPTY_R {
             false => FIFO_EMPTY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Channel FIFO empty"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == FIFO_EMPTY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Channel FIFO not empty"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == FIFO_EMPTY_A::VALUE2
@@ -149,28 +120,31 @@ impl HS_SEL_DST_R {
             true => HS_SEL_DST_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Hardware handshaking interface. Software-initiated transaction requests are ignored."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HS_SEL_DST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Software handshaking interface. Hardware- initiated transaction requests are ignored."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HS_SEL_DST_A::VALUE2
     }
 }
 #[doc = "Field `HS_SEL_DST` writer - Destination Software or Hardware Handshaking Select"]
-pub type HS_SEL_DST_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O, HS_SEL_DST_A>;
-impl<'a, const O: u8> HS_SEL_DST_W<'a, O> {
+pub type HS_SEL_DST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HS_SEL_DST_A>;
+impl<'a, REG, const O: u8> HS_SEL_DST_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Hardware handshaking interface. Software-initiated transaction requests are ignored."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HS_SEL_DST_A::VALUE1)
     }
     #[doc = "Software handshaking interface. Hardware- initiated transaction requests are ignored."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HS_SEL_DST_A::VALUE2)
     }
 }
@@ -199,28 +173,31 @@ impl HS_SEL_SRC_R {
             true => HS_SEL_SRC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Hardware handshaking interface. Software-initiated transaction requests are ignored."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HS_SEL_SRC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Software handshaking interface. Hardware-initiated transaction requests are ignored."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HS_SEL_SRC_A::VALUE2
     }
 }
 #[doc = "Field `HS_SEL_SRC` writer - Source Software or Hardware Handshaking Select"]
-pub type HS_SEL_SRC_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O, HS_SEL_SRC_A>;
-impl<'a, const O: u8> HS_SEL_SRC_W<'a, O> {
+pub type HS_SEL_SRC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HS_SEL_SRC_A>;
+impl<'a, REG, const O: u8> HS_SEL_SRC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Hardware handshaking interface. Software-initiated transaction requests are ignored."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HS_SEL_SRC_A::VALUE1)
     }
     #[doc = "Software handshaking interface. Hardware-initiated transaction requests are ignored."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HS_SEL_SRC_A::VALUE2)
     }
 }
@@ -257,38 +234,42 @@ impl LOCK_CH_L_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Over complete DMA transfer"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LOCK_CH_L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Over complete DMA block transfer"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LOCK_CH_L_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Over complete DMA transaction"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == LOCK_CH_L_A::VALUE3
     }
 }
 #[doc = "Field `LOCK_CH_L` writer - Channel Lock Level"]
-pub type LOCK_CH_L_W<'a, const O: u8> = crate::FieldWriter<'a, CFGL_SPEC, 2, O, LOCK_CH_L_A>;
-impl<'a, const O: u8> LOCK_CH_L_W<'a, O> {
+pub type LOCK_CH_L_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, LOCK_CH_L_A>;
+impl<'a, REG, const O: u8> LOCK_CH_L_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Over complete DMA transfer"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LOCK_CH_L_A::VALUE1)
     }
     #[doc = "Over complete DMA block transfer"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LOCK_CH_L_A::VALUE2)
     }
     #[doc = "Over complete DMA transaction"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(LOCK_CH_L_A::VALUE3)
     }
 }
@@ -325,49 +306,53 @@ impl LOCK_B_L_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Over complete DMA transfer"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LOCK_B_L_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Over complete DMA block transfer"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LOCK_B_L_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Over complete DMA transaction"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == LOCK_B_L_A::VALUE3
     }
 }
 #[doc = "Field `LOCK_B_L` writer - Bus Lock Level"]
-pub type LOCK_B_L_W<'a, const O: u8> = crate::FieldWriter<'a, CFGL_SPEC, 2, O, LOCK_B_L_A>;
-impl<'a, const O: u8> LOCK_B_L_W<'a, O> {
+pub type LOCK_B_L_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, LOCK_B_L_A>;
+impl<'a, REG, const O: u8> LOCK_B_L_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Over complete DMA transfer"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LOCK_B_L_A::VALUE1)
     }
     #[doc = "Over complete DMA block transfer"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LOCK_B_L_A::VALUE2)
     }
     #[doc = "Over complete DMA transaction"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(LOCK_B_L_A::VALUE3)
     }
 }
 #[doc = "Field `LOCK_CH` reader - Channel Lock Bit"]
 pub type LOCK_CH_R = crate::BitReader;
 #[doc = "Field `LOCK_CH` writer - Channel Lock Bit"]
-pub type LOCK_CH_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O>;
+pub type LOCK_CH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LOCK_B` reader - Bus Lock Bit"]
 pub type LOCK_B_R = crate::BitReader;
 #[doc = "Field `LOCK_B` writer - Bus Lock Bit"]
-pub type LOCK_B_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O>;
+pub type LOCK_B_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DST_HS_POL` reader - Destination Handshaking Interface Polarity"]
 pub type DST_HS_POL_R = crate::BitReader<DST_HS_POL_A>;
 #[doc = "Destination Handshaking Interface Polarity\n\nValue on reset: 0"]
@@ -393,28 +378,31 @@ impl DST_HS_POL_R {
             true => DST_HS_POL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Active high"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DST_HS_POL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active low"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DST_HS_POL_A::VALUE2
     }
 }
 #[doc = "Field `DST_HS_POL` writer - Destination Handshaking Interface Polarity"]
-pub type DST_HS_POL_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O, DST_HS_POL_A>;
-impl<'a, const O: u8> DST_HS_POL_W<'a, O> {
+pub type DST_HS_POL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DST_HS_POL_A>;
+impl<'a, REG, const O: u8> DST_HS_POL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Active high"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DST_HS_POL_A::VALUE1)
     }
     #[doc = "Active low"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DST_HS_POL_A::VALUE2)
     }
 }
@@ -443,43 +431,46 @@ impl SRC_HS_POL_R {
             true => SRC_HS_POL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Active high"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SRC_HS_POL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active low"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SRC_HS_POL_A::VALUE2
     }
 }
 #[doc = "Field `SRC_HS_POL` writer - Source Handshaking Interface Polarity"]
-pub type SRC_HS_POL_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O, SRC_HS_POL_A>;
-impl<'a, const O: u8> SRC_HS_POL_W<'a, O> {
+pub type SRC_HS_POL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRC_HS_POL_A>;
+impl<'a, REG, const O: u8> SRC_HS_POL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Active high"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SRC_HS_POL_A::VALUE1)
     }
     #[doc = "Active low"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SRC_HS_POL_A::VALUE2)
     }
 }
 #[doc = "Field `MAX_ABRST` reader - Maximum AMBA Burst Length"]
 pub type MAX_ABRST_R = crate::FieldReader<u16>;
 #[doc = "Field `MAX_ABRST` writer - Maximum AMBA Burst Length"]
-pub type MAX_ABRST_W<'a, const O: u8> = crate::FieldWriter<'a, CFGL_SPEC, 10, O, u16>;
+pub type MAX_ABRST_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 10, O, u16>;
 #[doc = "Field `RELOAD_SRC` reader - Automatic Source Reload"]
 pub type RELOAD_SRC_R = crate::BitReader;
 #[doc = "Field `RELOAD_SRC` writer - Automatic Source Reload"]
-pub type RELOAD_SRC_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O>;
+pub type RELOAD_SRC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RELOAD_DST` reader - Automatic Destination Reload"]
 pub type RELOAD_DST_R = crate::BitReader;
 #[doc = "Field `RELOAD_DST` writer - Automatic Destination Reload"]
-pub type RELOAD_DST_W<'a, const O: u8> = crate::BitWriter<'a, CFGL_SPEC, O>;
+pub type RELOAD_DST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 5:7 - Channel priority"]
     #[inline(always)]
@@ -556,100 +547,97 @@ impl W {
     #[doc = "Bits 5:7 - Channel priority"]
     #[inline(always)]
     #[must_use]
-    pub fn ch_prior(&mut self) -> CH_PRIOR_W<5> {
+    pub fn ch_prior(&mut self) -> CH_PRIOR_W<CFGL_SPEC, 5> {
         CH_PRIOR_W::new(self)
     }
     #[doc = "Bit 8 - Channel Suspend"]
     #[inline(always)]
     #[must_use]
-    pub fn ch_susp(&mut self) -> CH_SUSP_W<8> {
+    pub fn ch_susp(&mut self) -> CH_SUSP_W<CFGL_SPEC, 8> {
         CH_SUSP_W::new(self)
     }
     #[doc = "Bit 10 - Destination Software or Hardware Handshaking Select"]
     #[inline(always)]
     #[must_use]
-    pub fn hs_sel_dst(&mut self) -> HS_SEL_DST_W<10> {
+    pub fn hs_sel_dst(&mut self) -> HS_SEL_DST_W<CFGL_SPEC, 10> {
         HS_SEL_DST_W::new(self)
     }
     #[doc = "Bit 11 - Source Software or Hardware Handshaking Select"]
     #[inline(always)]
     #[must_use]
-    pub fn hs_sel_src(&mut self) -> HS_SEL_SRC_W<11> {
+    pub fn hs_sel_src(&mut self) -> HS_SEL_SRC_W<CFGL_SPEC, 11> {
         HS_SEL_SRC_W::new(self)
     }
     #[doc = "Bits 12:13 - Channel Lock Level"]
     #[inline(always)]
     #[must_use]
-    pub fn lock_ch_l(&mut self) -> LOCK_CH_L_W<12> {
+    pub fn lock_ch_l(&mut self) -> LOCK_CH_L_W<CFGL_SPEC, 12> {
         LOCK_CH_L_W::new(self)
     }
     #[doc = "Bits 14:15 - Bus Lock Level"]
     #[inline(always)]
     #[must_use]
-    pub fn lock_b_l(&mut self) -> LOCK_B_L_W<14> {
+    pub fn lock_b_l(&mut self) -> LOCK_B_L_W<CFGL_SPEC, 14> {
         LOCK_B_L_W::new(self)
     }
     #[doc = "Bit 16 - Channel Lock Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn lock_ch(&mut self) -> LOCK_CH_W<16> {
+    pub fn lock_ch(&mut self) -> LOCK_CH_W<CFGL_SPEC, 16> {
         LOCK_CH_W::new(self)
     }
     #[doc = "Bit 17 - Bus Lock Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn lock_b(&mut self) -> LOCK_B_W<17> {
+    pub fn lock_b(&mut self) -> LOCK_B_W<CFGL_SPEC, 17> {
         LOCK_B_W::new(self)
     }
     #[doc = "Bit 18 - Destination Handshaking Interface Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn dst_hs_pol(&mut self) -> DST_HS_POL_W<18> {
+    pub fn dst_hs_pol(&mut self) -> DST_HS_POL_W<CFGL_SPEC, 18> {
         DST_HS_POL_W::new(self)
     }
     #[doc = "Bit 19 - Source Handshaking Interface Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn src_hs_pol(&mut self) -> SRC_HS_POL_W<19> {
+    pub fn src_hs_pol(&mut self) -> SRC_HS_POL_W<CFGL_SPEC, 19> {
         SRC_HS_POL_W::new(self)
     }
     #[doc = "Bits 20:29 - Maximum AMBA Burst Length"]
     #[inline(always)]
     #[must_use]
-    pub fn max_abrst(&mut self) -> MAX_ABRST_W<20> {
+    pub fn max_abrst(&mut self) -> MAX_ABRST_W<CFGL_SPEC, 20> {
         MAX_ABRST_W::new(self)
     }
     #[doc = "Bit 30 - Automatic Source Reload"]
     #[inline(always)]
     #[must_use]
-    pub fn reload_src(&mut self) -> RELOAD_SRC_W<30> {
+    pub fn reload_src(&mut self) -> RELOAD_SRC_W<CFGL_SPEC, 30> {
         RELOAD_SRC_W::new(self)
     }
     #[doc = "Bit 31 - Automatic Destination Reload"]
     #[inline(always)]
     #[must_use]
-    pub fn reload_dst(&mut self) -> RELOAD_DST_W<31> {
+    pub fn reload_dst(&mut self) -> RELOAD_DST_W<CFGL_SPEC, 31> {
         RELOAD_DST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Configuration Register Low\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cfgl](index.html) module"]
+#[doc = "Configuration Register Low\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfgl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfgl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CFGL_SPEC;
 impl crate::RegisterSpec for CFGL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cfgl::R](R) reader structure"]
-impl crate::Readable for CFGL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cfgl::W](W) writer structure"]
+#[doc = "`read()` method returns [`cfgl::R`](R) reader structure"]
+impl crate::Readable for CFGL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cfgl::W`](W) writer structure"]
 impl crate::Writable for CFGL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

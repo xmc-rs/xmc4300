@@ -1,45 +1,13 @@
 #[doc = "Register `RBCTR` reader"]
-pub struct R(crate::R<RBCTR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RBCTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RBCTR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RBCTR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RBCTR_SPEC>;
 #[doc = "Register `RBCTR` writer"]
-pub struct W(crate::W<RBCTR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RBCTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RBCTR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RBCTR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<RBCTR_SPEC>;
 #[doc = "Field `DPTR` writer - Data Pointer"]
-pub type DPTR_W<'a, const O: u8> = crate::FieldWriter<'a, RBCTR_SPEC, 6, O>;
+pub type DPTR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 #[doc = "Field `LIMIT` reader - Limit For Interrupt Generation"]
 pub type LIMIT_R = crate::FieldReader;
 #[doc = "Field `LIMIT` writer - Limit For Interrupt Generation"]
-pub type LIMIT_W<'a, const O: u8> = crate::FieldWriter<'a, RBCTR_SPEC, 6, O>;
+pub type LIMIT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 #[doc = "Field `SRBTM` reader - Standard Receive Buffer Trigger Mode"]
 pub type SRBTM_R = crate::BitReader<SRBTM_A>;
 #[doc = "Standard Receive Buffer Trigger Mode\n\nValue on reset: 0"]
@@ -65,28 +33,31 @@ impl SRBTM_R {
             true => SRBTM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Trigger mode 0: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=RBCTR.LIMIT."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SRBTM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Trigger mode 1: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=0."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SRBTM_A::VALUE2
     }
 }
 #[doc = "Field `SRBTM` writer - Standard Receive Buffer Trigger Mode"]
-pub type SRBTM_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, SRBTM_A>;
-impl<'a, const O: u8> SRBTM_W<'a, O> {
+pub type SRBTM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRBTM_A>;
+impl<'a, REG, const O: u8> SRBTM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Trigger mode 0: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=RBCTR.LIMIT."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SRBTM_A::VALUE1)
     }
     #[doc = "Trigger mode 1: While TRBSR.SRBT=1, a standard receive buffer event will be generated whenever there is a new data received or data read out (depending on RBCTR.LOF setting). SRBT is cleared when TRBSR.RBFLVL=0."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SRBTM_A::VALUE2)
     }
 }
@@ -115,28 +86,31 @@ impl SRBTEN_R {
             true => SRBTEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The standard receive buffer event trigger through bit TRBSR.SRBT is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SRBTEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The standard receive buffer event trigger through bit TRBSR.SRBT is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SRBTEN_A::VALUE2
     }
 }
 #[doc = "Field `SRBTEN` writer - Standard Receive Buffer Trigger Enable"]
-pub type SRBTEN_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, SRBTEN_A>;
-impl<'a, const O: u8> SRBTEN_W<'a, O> {
+pub type SRBTEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRBTEN_A>;
+impl<'a, REG, const O: u8> SRBTEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The standard receive buffer event trigger through bit TRBSR.SRBT is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SRBTEN_A::VALUE1)
     }
     #[doc = "The standard receive buffer event trigger through bit TRBSR.SRBT is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SRBTEN_A::VALUE2)
     }
 }
@@ -182,68 +156,72 @@ impl SRBINP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SRBINP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Output SR1 becomes activated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SRBINP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Output SR2 becomes activated."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == SRBINP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Output SR3 becomes activated."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == SRBINP_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "Output SR4 becomes activated."]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == SRBINP_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "Output SR5 becomes activated."]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == SRBINP_A::VALUE6
     }
 }
 #[doc = "Field `SRBINP` writer - Standard Receive Buffer Interrupt Node Pointer"]
-pub type SRBINP_W<'a, const O: u8> = crate::FieldWriter<'a, RBCTR_SPEC, 3, O, SRBINP_A>;
-impl<'a, const O: u8> SRBINP_W<'a, O> {
+pub type SRBINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, SRBINP_A>;
+impl<'a, REG, const O: u8> SRBINP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SRBINP_A::VALUE1)
     }
     #[doc = "Output SR1 becomes activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SRBINP_A::VALUE2)
     }
     #[doc = "Output SR2 becomes activated."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(SRBINP_A::VALUE3)
     }
     #[doc = "Output SR3 becomes activated."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(SRBINP_A::VALUE4)
     }
     #[doc = "Output SR4 becomes activated."]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(SRBINP_A::VALUE5)
     }
     #[doc = "Output SR5 becomes activated."]
     #[inline(always)]
-    pub fn value6(self) -> &'a mut W {
+    pub fn value6(self) -> &'a mut crate::W<REG> {
         self.variant(SRBINP_A::VALUE6)
     }
 }
@@ -289,68 +267,72 @@ impl ARBINP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ARBINP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Output SR1 becomes activated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ARBINP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Output SR2 becomes activated."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ARBINP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Output SR3 becomes activated."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ARBINP_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "Output SR4 becomes activated."]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == ARBINP_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "Output SR5 becomes activated."]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == ARBINP_A::VALUE6
     }
 }
 #[doc = "Field `ARBINP` writer - Alternative Receive Buffer Interrupt Node Pointer"]
-pub type ARBINP_W<'a, const O: u8> = crate::FieldWriter<'a, RBCTR_SPEC, 3, O, ARBINP_A>;
-impl<'a, const O: u8> ARBINP_W<'a, O> {
+pub type ARBINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, ARBINP_A>;
+impl<'a, REG, const O: u8> ARBINP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Output SR0 becomes activated."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ARBINP_A::VALUE1)
     }
     #[doc = "Output SR1 becomes activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ARBINP_A::VALUE2)
     }
     #[doc = "Output SR2 becomes activated."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ARBINP_A::VALUE3)
     }
     #[doc = "Output SR3 becomes activated."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(ARBINP_A::VALUE4)
     }
     #[doc = "Output SR4 becomes activated."]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(ARBINP_A::VALUE5)
     }
     #[doc = "Output SR5 becomes activated."]
     #[inline(always)]
-    pub fn value6(self) -> &'a mut W {
+    pub fn value6(self) -> &'a mut crate::W<REG> {
         self.variant(ARBINP_A::VALUE6)
     }
 }
@@ -400,49 +382,63 @@ impl RCIM_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "RCI\\[4\\]
+= PERR, RCI\\[3:0\\]
+= WLEN"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RCIM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "RCI\\[4\\]
+= SOF, RCI\\[3:0\\]
+= WLEN"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RCIM_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "RCI\\[4\\]
+= 0, RCI\\[3:0\\]
+= WLEN"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == RCIM_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "RCI\\[4\\]
+= PERR, RCI\\[3\\]
+= PAR, RCI\\[2:1\\]
+= 00B, RCI\\[0\\]
+= SOF"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == RCIM_A::VALUE4
     }
 }
 #[doc = "Field `RCIM` writer - Receiver Control Information Mode"]
-pub type RCIM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, RBCTR_SPEC, 2, O, RCIM_A>;
-impl<'a, const O: u8> RCIM_W<'a, O> {
+pub type RCIM_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, RCIM_A>;
+impl<'a, REG, const O: u8> RCIM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "RCI\\[4\\]
 = PERR, RCI\\[3:0\\]
 = WLEN"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RCIM_A::VALUE1)
     }
     #[doc = "RCI\\[4\\]
 = SOF, RCI\\[3:0\\]
 = WLEN"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RCIM_A::VALUE2)
     }
     #[doc = "RCI\\[4\\]
 = 0, RCI\\[3:0\\]
 = WLEN"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(RCIM_A::VALUE3)
     }
     #[doc = "RCI\\[4\\]
@@ -451,7 +447,7 @@ impl<'a, const O: u8> RCIM_W<'a, O> {
 = 00B, RCI\\[0\\]
 = SOF"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(RCIM_A::VALUE4)
     }
 }
@@ -500,78 +496,82 @@ impl SIZE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The FIFO mechanism is disabled. The buffer does not accept any request for data."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SIZE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The FIFO buffer contains 2 entries."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SIZE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "The FIFO buffer contains 4 entries."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == SIZE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "The FIFO buffer contains 8 entries."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == SIZE_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "The FIFO buffer contains 16 entries."]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == SIZE_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "The FIFO buffer contains 32 entries."]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == SIZE_A::VALUE6
     }
-    #[doc = "Checks if the value of the field is `VALUE7`"]
+    #[doc = "The FIFO buffer contains 64 entries."]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
         *self == SIZE_A::VALUE7
     }
 }
 #[doc = "Field `SIZE` writer - Buffer Size"]
-pub type SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, RBCTR_SPEC, 3, O, SIZE_A>;
-impl<'a, const O: u8> SIZE_W<'a, O> {
+pub type SIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, SIZE_A>;
+impl<'a, REG, const O: u8> SIZE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The FIFO mechanism is disabled. The buffer does not accept any request for data."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SIZE_A::VALUE1)
     }
     #[doc = "The FIFO buffer contains 2 entries."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SIZE_A::VALUE2)
     }
     #[doc = "The FIFO buffer contains 4 entries."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(SIZE_A::VALUE3)
     }
     #[doc = "The FIFO buffer contains 8 entries."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(SIZE_A::VALUE4)
     }
     #[doc = "The FIFO buffer contains 16 entries."]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(SIZE_A::VALUE5)
     }
     #[doc = "The FIFO buffer contains 32 entries."]
     #[inline(always)]
-    pub fn value6(self) -> &'a mut W {
+    pub fn value6(self) -> &'a mut crate::W<REG> {
         self.variant(SIZE_A::VALUE6)
     }
     #[doc = "The FIFO buffer contains 64 entries."]
     #[inline(always)]
-    pub fn value7(self) -> &'a mut W {
+    pub fn value7(self) -> &'a mut crate::W<REG> {
         self.variant(SIZE_A::VALUE7)
     }
 }
@@ -602,30 +602,35 @@ impl RNM_R {
             true => RNM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Filling level mode: A standard receive buffer event occurs when the filling level equals the limit value and changes, either due to a read access from OUTR (LOF = 0) or due to a new received data word (LOF = 1)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RNM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\]
+= 0. If OUTR.RCI\\[4\\]
+= 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RNM_A::VALUE2
     }
 }
 #[doc = "Field `RNM` writer - Receiver Notification Mode"]
-pub type RNM_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, RNM_A>;
-impl<'a, const O: u8> RNM_W<'a, O> {
+pub type RNM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RNM_A>;
+impl<'a, REG, const O: u8> RNM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Filling level mode: A standard receive buffer event occurs when the filling level equals the limit value and changes, either due to a read access from OUTR (LOF = 0) or due to a new received data word (LOF = 1)."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RNM_A::VALUE1)
     }
     #[doc = "RCI mode: A standard receive buffer event occurs when register OUTR is updated with a new value if the corresponding value in OUTR.RCI\\[4\\]
 = 0. If OUTR.RCI\\[4\\]
 = 1, an alternative receive buffer event occurs instead of the standard receive buffer event."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RNM_A::VALUE2)
     }
 }
@@ -654,28 +659,31 @@ impl LOF_R {
             true => LOF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A standard receive buffer event occurs when the filling level equals the limit value and gets lower due to a read access from OUTR."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LOF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A standard receive buffer event occurs when the filling level equals the limit value and gets bigger due to the reception of a new data word."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LOF_A::VALUE2
     }
 }
 #[doc = "Field `LOF` writer - Buffer Event on Limit Overflow"]
-pub type LOF_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, LOF_A>;
-impl<'a, const O: u8> LOF_W<'a, O> {
+pub type LOF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LOF_A>;
+impl<'a, REG, const O: u8> LOF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A standard receive buffer event occurs when the filling level equals the limit value and gets lower due to a read access from OUTR."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LOF_A::VALUE1)
     }
     #[doc = "A standard receive buffer event occurs when the filling level equals the limit value and gets bigger due to the reception of a new data word."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LOF_A::VALUE2)
     }
 }
@@ -704,28 +712,31 @@ impl ARBIEN_R {
             true => ARBIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The alternative receive buffer interrupt generation is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ARBIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The alternative receive buffer interrupt generation is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ARBIEN_A::VALUE2
     }
 }
 #[doc = "Field `ARBIEN` writer - Alternative Receive Buffer Interrupt Enable"]
-pub type ARBIEN_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, ARBIEN_A>;
-impl<'a, const O: u8> ARBIEN_W<'a, O> {
+pub type ARBIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ARBIEN_A>;
+impl<'a, REG, const O: u8> ARBIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The alternative receive buffer interrupt generation is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ARBIEN_A::VALUE1)
     }
     #[doc = "The alternative receive buffer interrupt generation is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ARBIEN_A::VALUE2)
     }
 }
@@ -754,28 +765,31 @@ impl SRBIEN_R {
             true => SRBIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The standard receive buffer interrupt generation is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SRBIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The standard receive buffer interrupt generation is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SRBIEN_A::VALUE2
     }
 }
 #[doc = "Field `SRBIEN` writer - Standard Receive Buffer Interrupt Enable"]
-pub type SRBIEN_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, SRBIEN_A>;
-impl<'a, const O: u8> SRBIEN_W<'a, O> {
+pub type SRBIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRBIEN_A>;
+impl<'a, REG, const O: u8> SRBIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The standard receive buffer interrupt generation is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SRBIEN_A::VALUE1)
     }
     #[doc = "The standard receive buffer interrupt generation is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SRBIEN_A::VALUE2)
     }
 }
@@ -804,28 +818,31 @@ impl RBERIEN_R {
             true => RBERIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The receive buffer error interrupt generation is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RBERIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The receive buffer error interrupt generation is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RBERIEN_A::VALUE2
     }
 }
 #[doc = "Field `RBERIEN` writer - Receive Buffer Error Interrupt Enable"]
-pub type RBERIEN_W<'a, const O: u8> = crate::BitWriter<'a, RBCTR_SPEC, O, RBERIEN_A>;
-impl<'a, const O: u8> RBERIEN_W<'a, O> {
+pub type RBERIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RBERIEN_A>;
+impl<'a, REG, const O: u8> RBERIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The receive buffer error interrupt generation is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RBERIEN_A::VALUE1)
     }
     #[doc = "The receive buffer error interrupt generation is enabled."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RBERIEN_A::VALUE2)
     }
 }
@@ -895,100 +912,97 @@ impl W {
     #[doc = "Bits 0:5 - Data Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn dptr(&mut self) -> DPTR_W<0> {
+    pub fn dptr(&mut self) -> DPTR_W<RBCTR_SPEC, 0> {
         DPTR_W::new(self)
     }
     #[doc = "Bits 8:13 - Limit For Interrupt Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn limit(&mut self) -> LIMIT_W<8> {
+    pub fn limit(&mut self) -> LIMIT_W<RBCTR_SPEC, 8> {
         LIMIT_W::new(self)
     }
     #[doc = "Bit 14 - Standard Receive Buffer Trigger Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn srbtm(&mut self) -> SRBTM_W<14> {
+    pub fn srbtm(&mut self) -> SRBTM_W<RBCTR_SPEC, 14> {
         SRBTM_W::new(self)
     }
     #[doc = "Bit 15 - Standard Receive Buffer Trigger Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn srbten(&mut self) -> SRBTEN_W<15> {
+    pub fn srbten(&mut self) -> SRBTEN_W<RBCTR_SPEC, 15> {
         SRBTEN_W::new(self)
     }
     #[doc = "Bits 16:18 - Standard Receive Buffer Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn srbinp(&mut self) -> SRBINP_W<16> {
+    pub fn srbinp(&mut self) -> SRBINP_W<RBCTR_SPEC, 16> {
         SRBINP_W::new(self)
     }
     #[doc = "Bits 19:21 - Alternative Receive Buffer Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn arbinp(&mut self) -> ARBINP_W<19> {
+    pub fn arbinp(&mut self) -> ARBINP_W<RBCTR_SPEC, 19> {
         ARBINP_W::new(self)
     }
     #[doc = "Bits 22:23 - Receiver Control Information Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn rcim(&mut self) -> RCIM_W<22> {
+    pub fn rcim(&mut self) -> RCIM_W<RBCTR_SPEC, 22> {
         RCIM_W::new(self)
     }
     #[doc = "Bits 24:26 - Buffer Size"]
     #[inline(always)]
     #[must_use]
-    pub fn size(&mut self) -> SIZE_W<24> {
+    pub fn size(&mut self) -> SIZE_W<RBCTR_SPEC, 24> {
         SIZE_W::new(self)
     }
     #[doc = "Bit 27 - Receiver Notification Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn rnm(&mut self) -> RNM_W<27> {
+    pub fn rnm(&mut self) -> RNM_W<RBCTR_SPEC, 27> {
         RNM_W::new(self)
     }
     #[doc = "Bit 28 - Buffer Event on Limit Overflow"]
     #[inline(always)]
     #[must_use]
-    pub fn lof(&mut self) -> LOF_W<28> {
+    pub fn lof(&mut self) -> LOF_W<RBCTR_SPEC, 28> {
         LOF_W::new(self)
     }
     #[doc = "Bit 29 - Alternative Receive Buffer Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn arbien(&mut self) -> ARBIEN_W<29> {
+    pub fn arbien(&mut self) -> ARBIEN_W<RBCTR_SPEC, 29> {
         ARBIEN_W::new(self)
     }
     #[doc = "Bit 30 - Standard Receive Buffer Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn srbien(&mut self) -> SRBIEN_W<30> {
+    pub fn srbien(&mut self) -> SRBIEN_W<RBCTR_SPEC, 30> {
         SRBIEN_W::new(self)
     }
     #[doc = "Bit 31 - Receive Buffer Error Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rberien(&mut self) -> RBERIEN_W<31> {
+    pub fn rberien(&mut self) -> RBERIEN_W<RBCTR_SPEC, 31> {
         RBERIEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Receiver Buffer Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rbctr](index.html) module"]
+#[doc = "Receiver Buffer Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rbctr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rbctr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RBCTR_SPEC;
 impl crate::RegisterSpec for RBCTR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rbctr::R](R) reader structure"]
-impl crate::Readable for RBCTR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [rbctr::W](W) writer structure"]
+#[doc = "`read()` method returns [`rbctr::R`](R) reader structure"]
+impl crate::Readable for RBCTR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`rbctr::W`](W) writer structure"]
 impl crate::Writable for RBCTR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

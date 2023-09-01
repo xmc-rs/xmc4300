@@ -1,43 +1,11 @@
 #[doc = "Register `SYSCLKCR` reader"]
-pub struct R(crate::R<SYSCLKCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SYSCLKCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SYSCLKCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SYSCLKCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SYSCLKCR_SPEC>;
 #[doc = "Register `SYSCLKCR` writer"]
-pub struct W(crate::W<SYSCLKCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SYSCLKCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SYSCLKCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SYSCLKCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SYSCLKCR_SPEC>;
 #[doc = "Field `SYSDIV` reader - System Clock Division Value"]
 pub type SYSDIV_R = crate::FieldReader;
 #[doc = "Field `SYSDIV` writer - System Clock Division Value"]
-pub type SYSDIV_W<'a, const O: u8> = crate::FieldWriter<'a, SYSCLKCR_SPEC, 8, O>;
+pub type SYSDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `SYSSEL` reader - System Clock Selection Value"]
 pub type SYSSEL_R = crate::BitReader<SYSSEL_A>;
 #[doc = "System Clock Selection Value\n\nValue on reset: 0"]
@@ -63,28 +31,31 @@ impl SYSSEL_R {
             true => SYSSEL_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "fOFI clock"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == SYSSEL_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "fPLL clock"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == SYSSEL_A::CONST_1
     }
 }
 #[doc = "Field `SYSSEL` writer - System Clock Selection Value"]
-pub type SYSSEL_W<'a, const O: u8> = crate::BitWriter<'a, SYSCLKCR_SPEC, O, SYSSEL_A>;
-impl<'a, const O: u8> SYSSEL_W<'a, O> {
+pub type SYSSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SYSSEL_A>;
+impl<'a, REG, const O: u8> SYSSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "fOFI clock"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(SYSSEL_A::CONST_0)
     }
     #[doc = "fPLL clock"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(SYSSEL_A::CONST_1)
     }
 }
@@ -104,34 +75,31 @@ impl W {
     #[doc = "Bits 0:7 - System Clock Division Value"]
     #[inline(always)]
     #[must_use]
-    pub fn sysdiv(&mut self) -> SYSDIV_W<0> {
+    pub fn sysdiv(&mut self) -> SYSDIV_W<SYSCLKCR_SPEC, 0> {
         SYSDIV_W::new(self)
     }
     #[doc = "Bit 16 - System Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn syssel(&mut self) -> SYSSEL_W<16> {
+    pub fn syssel(&mut self) -> SYSSEL_W<SYSCLKCR_SPEC, 16> {
         SYSSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "System Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sysclkcr](index.html) module"]
+#[doc = "System Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sysclkcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sysclkcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SYSCLKCR_SPEC;
 impl crate::RegisterSpec for SYSCLKCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sysclkcr::R](R) reader structure"]
-impl crate::Readable for SYSCLKCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sysclkcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`sysclkcr::R`](R) reader structure"]
+impl crate::Readable for SYSCLKCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`sysclkcr::W`](W) writer structure"]
 impl crate::Writable for SYSCLKCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

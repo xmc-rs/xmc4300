@@ -1,18 +1,5 @@
 #[doc = "Register `SM_STATUS` reader"]
-pub struct R(crate::R<SM_STATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SM_STATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SM_STATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SM_STATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SM_STATUS_SPEC>;
 #[doc = "Field `INT_W` reader - Interrupt Write"]
 pub type INT_W_R = crate::BitReader<INT_W_A>;
 #[doc = "Interrupt Write\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl INT_W_R {
             true => INT_W_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Interrupt cleared after first byte of buffer was read"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == INT_W_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Interrupt after buffer was completely and successfully written"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == INT_W_A::VALUE2
@@ -74,12 +61,12 @@ impl INT_R_R {
             true => INT_R_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Interrupt cleared after first byte of buffer was written"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == INT_R_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Interrupt after buffer was completely and successful read"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == INT_R_A::VALUE2
@@ -110,12 +97,12 @@ impl MB_STATUS_R {
             true => MB_STATUS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Mailbox empty"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MB_STATUS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Mailbox full"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MB_STATUS_A::VALUE2
@@ -157,22 +144,22 @@ impl BUF_STATUS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "1. buffer"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUF_STATUS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "2. buffer"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUF_STATUS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "3. buffer"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == BUF_STATUS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "(no buffer written)"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == BUF_STATUS_A::VALUE4
@@ -203,12 +190,12 @@ impl R_BUF_IU_R {
             true => R_BUF_IU_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "buffer not in use"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == R_BUF_IU_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "buffer in use"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == R_BUF_IU_A::VALUE2
@@ -239,12 +226,12 @@ impl W_BUF_IU_R {
             true => W_BUF_IU_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "buffer not in use"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == W_BUF_IU_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "buffer in use"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == W_BUF_IU_A::VALUE2
@@ -282,15 +269,13 @@ impl R {
         W_BUF_IU_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "Status Register SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sm_status](index.html) module"]
+#[doc = "Status Register SyncManager 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sm_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SM_STATUS_SPEC;
 impl crate::RegisterSpec for SM_STATUS_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [sm_status::R](R) reader structure"]
-impl crate::Readable for SM_STATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sm_status::R`](R) reader structure"]
+impl crate::Readable for SM_STATUS_SPEC {}
 #[doc = "`reset()` method sets SM_STATUS to value 0x30"]
 impl crate::Resettable for SM_STATUS_SPEC {
     const RESET_VALUE: Self::Ux = 0x30;

@@ -1,18 +1,5 @@
 #[doc = "Register `STSSR` reader"]
-pub struct R(crate::R<STSSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STSSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<STSSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<STSSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<STSSR_SPEC>;
 #[doc = "Field `SPSE` reader - Periodic Seconds Service Request Status after Masking"]
 pub type SPSE_R = crate::BitReader;
 #[doc = "Field `SPMI` reader - Periodic Minutes Service Request Status after Masking"]
@@ -64,15 +51,13 @@ impl R {
         SAI_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
-#[doc = "RTC Service Request Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [stssr](index.html) module"]
+#[doc = "RTC Service Request Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`stssr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STSSR_SPEC;
 impl crate::RegisterSpec for STSSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [stssr::R](R) reader structure"]
-impl crate::Readable for STSSR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`stssr::R`](R) reader structure"]
+impl crate::Readable for STSSR_SPEC {}
 #[doc = "`reset()` method sets STSSR to value 0"]
 impl crate::Resettable for STSSR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

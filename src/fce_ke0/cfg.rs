@@ -1,39 +1,7 @@
 #[doc = "Register `CFG` reader"]
-pub struct R(crate::R<CFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CFG_SPEC>;
 #[doc = "Register `CFG` writer"]
-pub struct W(crate::W<CFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CFG_SPEC>;
 #[doc = "Field `CMI` reader - CRC Mismatch Interrupt"]
 pub type CMI_R = crate::BitReader<CMI_A>;
 #[doc = "CRC Mismatch Interrupt\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl CMI_R {
             true => CMI_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "CRC Mismatch Interrupt is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMI_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "CRC Mismatch Interrupt is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMI_A::VALUE2
     }
 }
 #[doc = "Field `CMI` writer - CRC Mismatch Interrupt"]
-pub type CMI_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, CMI_A>;
-impl<'a, const O: u8> CMI_W<'a, O> {
+pub type CMI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMI_A>;
+impl<'a, REG, const O: u8> CMI_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "CRC Mismatch Interrupt is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CMI_A::VALUE1)
     }
     #[doc = "CRC Mismatch Interrupt is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CMI_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl CEI_R {
             true => CEI_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Configuration Error Interrupt is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEI_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Configuration Error Interrupt is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEI_A::VALUE2
     }
 }
 #[doc = "Field `CEI` writer - Configuration Error Interrupt"]
-pub type CEI_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, CEI_A>;
-impl<'a, const O: u8> CEI_W<'a, O> {
+pub type CEI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEI_A>;
+impl<'a, REG, const O: u8> CEI_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Configuration Error Interrupt is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEI_A::VALUE1)
     }
     #[doc = "Configuration Error Interrupt is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEI_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl LEI_R {
             true => LEI_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Length Error Interrupt is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LEI_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Length Error Interrupt is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LEI_A::VALUE2
     }
 }
 #[doc = "Field `LEI` writer - Length Error Interrupt"]
-pub type LEI_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, LEI_A>;
-impl<'a, const O: u8> LEI_W<'a, O> {
+pub type LEI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LEI_A>;
+impl<'a, REG, const O: u8> LEI_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Length Error Interrupt is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LEI_A::VALUE1)
     }
     #[doc = "Length Error Interrupt is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LEI_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl BEI_R {
             true => BEI_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Bus Error Interrupt is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BEI_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Bus Error Interrupt is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BEI_A::VALUE2
     }
 }
 #[doc = "Field `BEI` writer - Bus Error Interrupt"]
-pub type BEI_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, BEI_A>;
-impl<'a, const O: u8> BEI_W<'a, O> {
+pub type BEI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BEI_A>;
+impl<'a, REG, const O: u8> BEI_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Bus Error Interrupt is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BEI_A::VALUE1)
     }
     #[doc = "Bus Error Interrupt is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BEI_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl CCE_R {
             true => CCE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "CRC check comparison at the end of a message is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CCE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "CRC check comparison at the end of a message is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CCE_A::VALUE2
     }
 }
 #[doc = "Field `CCE` writer - CRC Check Comparison"]
-pub type CCE_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, CCE_A>;
-impl<'a, const O: u8> CCE_W<'a, O> {
+pub type CCE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCE_A>;
+impl<'a, REG, const O: u8> CCE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "CRC check comparison at the end of a message is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CCE_A::VALUE1)
     }
     #[doc = "CRC check comparison at the end of a message is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CCE_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl ALR_R {
             true => ALR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disables automatic reload of the LENGTH field."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ALR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enables automatic reload of the LENGTH field at the end of a message."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ALR_A::VALUE2
     }
 }
 #[doc = "Field `ALR` writer - Automatic Length Reload"]
-pub type ALR_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, ALR_A>;
-impl<'a, const O: u8> ALR_W<'a, O> {
+pub type ALR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALR_A>;
+impl<'a, REG, const O: u8> ALR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disables automatic reload of the LENGTH field."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ALR_A::VALUE1)
     }
     #[doc = "Enables automatic reload of the LENGTH field at the end of a message."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ALR_A::VALUE2)
     }
 }
@@ -359,28 +345,31 @@ impl REFIN_R {
             true => REFIN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "IR Byte Wise Reflection is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REFIN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "IR Byte Wise Reflection is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REFIN_A::VALUE2
     }
 }
 #[doc = "Field `REFIN` writer - IR Byte Wise Reflection"]
-pub type REFIN_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, REFIN_A>;
-impl<'a, const O: u8> REFIN_W<'a, O> {
+pub type REFIN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REFIN_A>;
+impl<'a, REG, const O: u8> REFIN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "IR Byte Wise Reflection is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REFIN_A::VALUE1)
     }
     #[doc = "IR Byte Wise Reflection is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REFIN_A::VALUE2)
     }
 }
@@ -409,28 +398,31 @@ impl REFOUT_R {
             true => REFOUT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "CRC 32-bit wise is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REFOUT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "CRC 32-bit wise is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REFOUT_A::VALUE2
     }
 }
 #[doc = "Field `REFOUT` writer - CRC 32-Bit Wise Reflection"]
-pub type REFOUT_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, REFOUT_A>;
-impl<'a, const O: u8> REFOUT_W<'a, O> {
+pub type REFOUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REFOUT_A>;
+impl<'a, REG, const O: u8> REFOUT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "CRC 32-bit wise is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REFOUT_A::VALUE1)
     }
     #[doc = "CRC 32-bit wise is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REFOUT_A::VALUE2)
     }
 }
@@ -459,28 +451,31 @@ impl XSEL_R {
             true => XSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "0x00000000"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == XSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "0xFFFFFFFF"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == XSEL_A::VALUE2
     }
 }
 #[doc = "Field `XSEL` writer - Selects the value to be xored with the final CRC"]
-pub type XSEL_W<'a, const O: u8> = crate::BitWriter<'a, CFG_SPEC, O, XSEL_A>;
-impl<'a, const O: u8> XSEL_W<'a, O> {
+pub type XSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, XSEL_A>;
+impl<'a, REG, const O: u8> XSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "0x00000000"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(XSEL_A::VALUE1)
     }
     #[doc = "0xFFFFFFFF"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(XSEL_A::VALUE2)
     }
 }
@@ -535,76 +530,73 @@ impl W {
     #[doc = "Bit 0 - CRC Mismatch Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn cmi(&mut self) -> CMI_W<0> {
+    pub fn cmi(&mut self) -> CMI_W<CFG_SPEC, 0> {
         CMI_W::new(self)
     }
     #[doc = "Bit 1 - Configuration Error Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn cei(&mut self) -> CEI_W<1> {
+    pub fn cei(&mut self) -> CEI_W<CFG_SPEC, 1> {
         CEI_W::new(self)
     }
     #[doc = "Bit 2 - Length Error Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn lei(&mut self) -> LEI_W<2> {
+    pub fn lei(&mut self) -> LEI_W<CFG_SPEC, 2> {
         LEI_W::new(self)
     }
     #[doc = "Bit 3 - Bus Error Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn bei(&mut self) -> BEI_W<3> {
+    pub fn bei(&mut self) -> BEI_W<CFG_SPEC, 3> {
         BEI_W::new(self)
     }
     #[doc = "Bit 4 - CRC Check Comparison"]
     #[inline(always)]
     #[must_use]
-    pub fn cce(&mut self) -> CCE_W<4> {
+    pub fn cce(&mut self) -> CCE_W<CFG_SPEC, 4> {
         CCE_W::new(self)
     }
     #[doc = "Bit 5 - Automatic Length Reload"]
     #[inline(always)]
     #[must_use]
-    pub fn alr(&mut self) -> ALR_W<5> {
+    pub fn alr(&mut self) -> ALR_W<CFG_SPEC, 5> {
         ALR_W::new(self)
     }
     #[doc = "Bit 8 - IR Byte Wise Reflection"]
     #[inline(always)]
     #[must_use]
-    pub fn refin(&mut self) -> REFIN_W<8> {
+    pub fn refin(&mut self) -> REFIN_W<CFG_SPEC, 8> {
         REFIN_W::new(self)
     }
     #[doc = "Bit 9 - CRC 32-Bit Wise Reflection"]
     #[inline(always)]
     #[must_use]
-    pub fn refout(&mut self) -> REFOUT_W<9> {
+    pub fn refout(&mut self) -> REFOUT_W<CFG_SPEC, 9> {
         REFOUT_W::new(self)
     }
     #[doc = "Bit 10 - Selects the value to be xored with the final CRC"]
     #[inline(always)]
     #[must_use]
-    pub fn xsel(&mut self) -> XSEL_W<10> {
+    pub fn xsel(&mut self) -> XSEL_W<CFG_SPEC, 10> {
         XSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "CRC Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CRC Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CFG_SPEC;
 impl crate::RegisterSpec for CFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cfg::R](R) reader structure"]
-impl crate::Readable for CFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`cfg::R`](R) reader structure"]
+impl crate::Readable for CFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cfg::W`](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

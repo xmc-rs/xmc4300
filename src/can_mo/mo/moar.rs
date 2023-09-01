@@ -1,43 +1,11 @@
 #[doc = "Register `MOAR` reader"]
-pub struct R(crate::R<MOAR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MOAR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MOAR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MOAR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MOAR_SPEC>;
 #[doc = "Register `MOAR` writer"]
-pub struct W(crate::W<MOAR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MOAR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MOAR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MOAR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MOAR_SPEC>;
 #[doc = "Field `ID` reader - CAN Identifier of Message Object n"]
 pub type ID_R = crate::FieldReader<u32>;
 #[doc = "Field `ID` writer - CAN Identifier of Message Object n"]
-pub type ID_W<'a, const O: u8> = crate::FieldWriter<'a, MOAR_SPEC, 29, O, u32>;
+pub type ID_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 29, O, u32>;
 #[doc = "Field `IDE` reader - Identifier Extension Bit of Message Object n"]
 pub type IDE_R = crate::BitReader<IDE_A>;
 #[doc = "Identifier Extension Bit of Message Object n\n\nValue on reset: 0"]
@@ -63,28 +31,31 @@ impl IDE_R {
             true => IDE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Message object n handles standard frames with 11-bit identifier."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == IDE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Message object n handles extended frames with 29-bit identifier."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == IDE_A::VALUE2
     }
 }
 #[doc = "Field `IDE` writer - Identifier Extension Bit of Message Object n"]
-pub type IDE_W<'a, const O: u8> = crate::BitWriter<'a, MOAR_SPEC, O, IDE_A>;
-impl<'a, const O: u8> IDE_W<'a, O> {
+pub type IDE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IDE_A>;
+impl<'a, REG, const O: u8> IDE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Message object n handles standard frames with 11-bit identifier."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(IDE_A::VALUE1)
     }
     #[doc = "Message object n handles extended frames with 29-bit identifier."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(IDE_A::VALUE2)
     }
 }
@@ -121,38 +92,42 @@ impl PRI_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Transmit acceptance filtering is based on the list order. This means that message object n is considered for transmission only if there is no other message object with valid transmit request (MSGVAL &amp; TXEN0 &amp; TXEN1 = 1) somewhere before this object in the list."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PRI_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Transmit acceptance filtering is based on the CAN identifier. This means, message object n is considered for transmission only if there is no other message object with higher priority identifier + IDE + DIR (with respect to CAN arbitration rules) somewhere in the list (see )."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PRI_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Transmit acceptance filtering is based on the list order (as PRI = 01B)."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PRI_A::VALUE4
     }
 }
 #[doc = "Field `PRI` writer - Priority Class"]
-pub type PRI_W<'a, const O: u8> = crate::FieldWriter<'a, MOAR_SPEC, 2, O, PRI_A>;
-impl<'a, const O: u8> PRI_W<'a, O> {
+pub type PRI_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, PRI_A>;
+impl<'a, REG, const O: u8> PRI_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Transmit acceptance filtering is based on the list order. This means that message object n is considered for transmission only if there is no other message object with valid transmit request (MSGVAL &amp; TXEN0 &amp; TXEN1 = 1) somewhere before this object in the list."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PRI_A::VALUE2)
     }
     #[doc = "Transmit acceptance filtering is based on the CAN identifier. This means, message object n is considered for transmission only if there is no other message object with higher priority identifier + IDE + DIR (with respect to CAN arbitration rules) somewhere in the list (see )."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(PRI_A::VALUE3)
     }
     #[doc = "Transmit acceptance filtering is based on the list order (as PRI = 01B)."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(PRI_A::VALUE4)
     }
 }
@@ -177,40 +152,37 @@ impl W {
     #[doc = "Bits 0:28 - CAN Identifier of Message Object n"]
     #[inline(always)]
     #[must_use]
-    pub fn id(&mut self) -> ID_W<0> {
+    pub fn id(&mut self) -> ID_W<MOAR_SPEC, 0> {
         ID_W::new(self)
     }
     #[doc = "Bit 29 - Identifier Extension Bit of Message Object n"]
     #[inline(always)]
     #[must_use]
-    pub fn ide(&mut self) -> IDE_W<29> {
+    pub fn ide(&mut self) -> IDE_W<MOAR_SPEC, 29> {
         IDE_W::new(self)
     }
     #[doc = "Bits 30:31 - Priority Class"]
     #[inline(always)]
     #[must_use]
-    pub fn pri(&mut self) -> PRI_W<30> {
+    pub fn pri(&mut self) -> PRI_W<MOAR_SPEC, 30> {
         PRI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Message Object Arbitration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [moar](index.html) module"]
+#[doc = "Message Object Arbitration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`moar::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`moar::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MOAR_SPEC;
 impl crate::RegisterSpec for MOAR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [moar::R](R) reader structure"]
-impl crate::Readable for MOAR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [moar::W](W) writer structure"]
+#[doc = "`read()` method returns [`moar::R`](R) reader structure"]
+impl crate::Readable for MOAR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`moar::W`](W) writer structure"]
 impl crate::Writable for MOAR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

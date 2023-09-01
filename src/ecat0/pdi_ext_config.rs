@@ -1,18 +1,5 @@
 #[doc = "Register `PDI_EXT_CONFIG` reader"]
-pub struct R(crate::R<PDI_EXT_CONFIG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PDI_EXT_CONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PDI_EXT_CONFIG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PDI_EXT_CONFIG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PDI_EXT_CONFIG_SPEC>;
 #[doc = "Field `R_Pref` reader - Read Prefetch Size"]
 pub type R_PREF_R = crate::FieldReader<R_PREF_A>;
 #[doc = "Read Prefetch Size\n\nValue on reset: 0"]
@@ -46,17 +33,17 @@ impl R_PREF_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "4 cycles"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == R_PREF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "1 cycle (typical)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == R_PREF_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "2 cycles"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == R_PREF_A::VALUE3
@@ -95,17 +82,17 @@ impl SUB_TYPE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "AXI3"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SUB_TYPE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "AXI4"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SUB_TYPE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "AXI4 Lite"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == SUB_TYPE_A::VALUE3
@@ -123,15 +110,13 @@ impl R {
         SUB_TYPE_R::new(((self.bits >> 8) & 7) as u8)
     }
 }
-#[doc = "PDI Synchronous Microcontroller extended Configuration\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdi_ext_config](index.html) module"]
+#[doc = "PDI Synchronous Microcontroller extended Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdi_ext_config::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PDI_EXT_CONFIG_SPEC;
 impl crate::RegisterSpec for PDI_EXT_CONFIG_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [pdi_ext_config::R](R) reader structure"]
-impl crate::Readable for PDI_EXT_CONFIG_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pdi_ext_config::R`](R) reader structure"]
+impl crate::Readable for PDI_EXT_CONFIG_SPEC {}
 #[doc = "`reset()` method sets PDI_EXT_CONFIG to value 0"]
 impl crate::Resettable for PDI_EXT_CONFIG_SPEC {
     const RESET_VALUE: Self::Ux = 0;

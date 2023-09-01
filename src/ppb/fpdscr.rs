@@ -1,55 +1,23 @@
 #[doc = "Register `FPDSCR` reader"]
-pub struct R(crate::R<FPDSCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FPDSCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FPDSCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FPDSCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FPDSCR_SPEC>;
 #[doc = "Register `FPDSCR` writer"]
-pub struct W(crate::W<FPDSCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FPDSCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FPDSCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FPDSCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<FPDSCR_SPEC>;
 #[doc = "Field `RMode` reader - Default value for FPSCR.RMode"]
 pub type RMODE_R = crate::FieldReader;
 #[doc = "Field `RMode` writer - Default value for FPSCR.RMode"]
-pub type RMODE_W<'a, const O: u8> = crate::FieldWriter<'a, FPDSCR_SPEC, 2, O>;
+pub type RMODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `FZ` reader - Default value for FPSCR.FZ"]
 pub type FZ_R = crate::BitReader;
 #[doc = "Field `FZ` writer - Default value for FPSCR.FZ"]
-pub type FZ_W<'a, const O: u8> = crate::BitWriter<'a, FPDSCR_SPEC, O>;
+pub type FZ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DN` reader - Default value for FPSCR.DN"]
 pub type DN_R = crate::BitReader;
 #[doc = "Field `DN` writer - Default value for FPSCR.DN"]
-pub type DN_W<'a, const O: u8> = crate::BitWriter<'a, FPDSCR_SPEC, O>;
+pub type DN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `AHP` reader - Default value for FPSCR.AHP"]
 pub type AHP_R = crate::BitReader;
 #[doc = "Field `AHP` writer - Default value for FPSCR.AHP"]
-pub type AHP_W<'a, const O: u8> = crate::BitWriter<'a, FPDSCR_SPEC, O>;
+pub type AHP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bits 22:23 - Default value for FPSCR.RMode"]
     #[inline(always)]
@@ -76,46 +44,43 @@ impl W {
     #[doc = "Bits 22:23 - Default value for FPSCR.RMode"]
     #[inline(always)]
     #[must_use]
-    pub fn rmode(&mut self) -> RMODE_W<22> {
+    pub fn rmode(&mut self) -> RMODE_W<FPDSCR_SPEC, 22> {
         RMODE_W::new(self)
     }
     #[doc = "Bit 24 - Default value for FPSCR.FZ"]
     #[inline(always)]
     #[must_use]
-    pub fn fz(&mut self) -> FZ_W<24> {
+    pub fn fz(&mut self) -> FZ_W<FPDSCR_SPEC, 24> {
         FZ_W::new(self)
     }
     #[doc = "Bit 25 - Default value for FPSCR.DN"]
     #[inline(always)]
     #[must_use]
-    pub fn dn(&mut self) -> DN_W<25> {
+    pub fn dn(&mut self) -> DN_W<FPDSCR_SPEC, 25> {
         DN_W::new(self)
     }
     #[doc = "Bit 26 - Default value for FPSCR.AHP"]
     #[inline(always)]
     #[must_use]
-    pub fn ahp(&mut self) -> AHP_W<26> {
+    pub fn ahp(&mut self) -> AHP_W<FPDSCR_SPEC, 26> {
         AHP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Floating-point Default Status Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fpdscr](index.html) module"]
+#[doc = "Floating-point Default Status Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fpdscr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fpdscr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FPDSCR_SPEC;
 impl crate::RegisterSpec for FPDSCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fpdscr::R](R) reader structure"]
-impl crate::Readable for FPDSCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [fpdscr::W](W) writer structure"]
+#[doc = "`read()` method returns [`fpdscr::R`](R) reader structure"]
+impl crate::Readable for FPDSCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`fpdscr::W`](W) writer structure"]
 impl crate::Writable for FPDSCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

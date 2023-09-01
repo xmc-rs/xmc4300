@@ -1,39 +1,7 @@
 #[doc = "Register `REVNP0` reader"]
-pub struct R(crate::R<REVNP0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<REVNP0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<REVNP0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<REVNP0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<REVNP0_SPEC>;
 #[doc = "Register `REVNP0` writer"]
-pub struct W(crate::W<REVNP0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<REVNP0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<REVNP0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<REVNP0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<REVNP0_SPEC>;
 #[doc = "Field `REV0NP` reader - Service Request Node Pointer Result Event i"]
 pub type REV0NP_R = crate::FieldReader<REV0NP_A>;
 #[doc = "Service Request Node Pointer Result Event i\n\nValue on reset: 0"]
@@ -70,48 +38,52 @@ impl REV0NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV0NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV0NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == REV0NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == REV0NP_A::VALUE4
     }
 }
 #[doc = "Field `REV0NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV0NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV0NP_A>;
-impl<'a, const O: u8> REV0NP_W<'a, O> {
+pub type REV0NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV0NP_A>;
+impl<'a, REG, const O: u8> REV0NP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV0NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV0NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(REV0NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(REV0NP_A::VALUE4)
     }
 }
@@ -151,48 +123,52 @@ impl REV1NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV1NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV1NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == REV1NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == REV1NP_A::VALUE4
     }
 }
 #[doc = "Field `REV1NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV1NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV1NP_A>;
-impl<'a, const O: u8> REV1NP_W<'a, O> {
+pub type REV1NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV1NP_A>;
+impl<'a, REG, const O: u8> REV1NP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV1NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV1NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(REV1NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(REV1NP_A::VALUE4)
     }
 }
@@ -232,48 +208,52 @@ impl REV2NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV2NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV2NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == REV2NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == REV2NP_A::VALUE4
     }
 }
 #[doc = "Field `REV2NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV2NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV2NP_A>;
-impl<'a, const O: u8> REV2NP_W<'a, O> {
+pub type REV2NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV2NP_A>;
+impl<'a, REG, const O: u8> REV2NP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV2NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV2NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(REV2NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(REV2NP_A::VALUE4)
     }
 }
@@ -313,48 +293,52 @@ impl REV3NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV3NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV3NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == REV3NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == REV3NP_A::VALUE4
     }
 }
 #[doc = "Field `REV3NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV3NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV3NP_A>;
-impl<'a, const O: u8> REV3NP_W<'a, O> {
+pub type REV3NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV3NP_A>;
+impl<'a, REG, const O: u8> REV3NP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV3NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV3NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(REV3NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(REV3NP_A::VALUE4)
     }
 }
@@ -394,48 +378,52 @@ impl REV4NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV4NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV4NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == REV4NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == REV4NP_A::VALUE4
     }
 }
 #[doc = "Field `REV4NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV4NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV4NP_A>;
-impl<'a, const O: u8> REV4NP_W<'a, O> {
+pub type REV4NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV4NP_A>;
+impl<'a, REG, const O: u8> REV4NP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV4NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV4NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(REV4NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(REV4NP_A::VALUE4)
     }
 }
@@ -475,48 +463,52 @@ impl REV5NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV5NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV5NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == REV5NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == REV5NP_A::VALUE4
     }
 }
 #[doc = "Field `REV5NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV5NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV5NP_A>;
-impl<'a, const O: u8> REV5NP_W<'a, O> {
+pub type REV5NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV5NP_A>;
+impl<'a, REG, const O: u8> REV5NP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV5NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV5NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(REV5NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(REV5NP_A::VALUE4)
     }
 }
@@ -556,48 +548,52 @@ impl REV6NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV6NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV6NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == REV6NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == REV6NP_A::VALUE4
     }
 }
 #[doc = "Field `REV6NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV6NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV6NP_A>;
-impl<'a, const O: u8> REV6NP_W<'a, O> {
+pub type REV6NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV6NP_A>;
+impl<'a, REG, const O: u8> REV6NP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV6NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV6NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(REV6NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(REV6NP_A::VALUE4)
     }
 }
@@ -637,48 +633,52 @@ impl REV7NP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REV7NP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REV7NP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Select shared service request line 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == REV7NP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Select shared service request line 3"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == REV7NP_A::VALUE4
     }
 }
 #[doc = "Field `REV7NP` writer - Service Request Node Pointer Result Event i"]
-pub type REV7NP_W<'a, const O: u8> = crate::FieldWriter<'a, REVNP0_SPEC, 4, O, REV7NP_A>;
-impl<'a, const O: u8> REV7NP_W<'a, O> {
+pub type REV7NP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, REV7NP_A>;
+impl<'a, REG, const O: u8> REV7NP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Select service request line 0 of group x"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(REV7NP_A::VALUE1)
     }
     #[doc = "Select service request line 3 of group x"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(REV7NP_A::VALUE2)
     }
     #[doc = "Select shared service request line 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(REV7NP_A::VALUE3)
     }
     #[doc = "Select shared service request line 3"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(REV7NP_A::VALUE4)
     }
 }
@@ -728,70 +728,67 @@ impl W {
     #[doc = "Bits 0:3 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev0np(&mut self) -> REV0NP_W<0> {
+    pub fn rev0np(&mut self) -> REV0NP_W<REVNP0_SPEC, 0> {
         REV0NP_W::new(self)
     }
     #[doc = "Bits 4:7 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev1np(&mut self) -> REV1NP_W<4> {
+    pub fn rev1np(&mut self) -> REV1NP_W<REVNP0_SPEC, 4> {
         REV1NP_W::new(self)
     }
     #[doc = "Bits 8:11 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev2np(&mut self) -> REV2NP_W<8> {
+    pub fn rev2np(&mut self) -> REV2NP_W<REVNP0_SPEC, 8> {
         REV2NP_W::new(self)
     }
     #[doc = "Bits 12:15 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev3np(&mut self) -> REV3NP_W<12> {
+    pub fn rev3np(&mut self) -> REV3NP_W<REVNP0_SPEC, 12> {
         REV3NP_W::new(self)
     }
     #[doc = "Bits 16:19 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev4np(&mut self) -> REV4NP_W<16> {
+    pub fn rev4np(&mut self) -> REV4NP_W<REVNP0_SPEC, 16> {
         REV4NP_W::new(self)
     }
     #[doc = "Bits 20:23 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev5np(&mut self) -> REV5NP_W<20> {
+    pub fn rev5np(&mut self) -> REV5NP_W<REVNP0_SPEC, 20> {
         REV5NP_W::new(self)
     }
     #[doc = "Bits 24:27 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev6np(&mut self) -> REV6NP_W<24> {
+    pub fn rev6np(&mut self) -> REV6NP_W<REVNP0_SPEC, 24> {
         REV6NP_W::new(self)
     }
     #[doc = "Bits 28:31 - Service Request Node Pointer Result Event i"]
     #[inline(always)]
     #[must_use]
-    pub fn rev7np(&mut self) -> REV7NP_W<28> {
+    pub fn rev7np(&mut self) -> REV7NP_W<REVNP0_SPEC, 28> {
         REV7NP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Result Event Node Pointer Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [revnp0](index.html) module"]
+#[doc = "Result Event Node Pointer Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`revnp0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`revnp0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct REVNP0_SPEC;
 impl crate::RegisterSpec for REVNP0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [revnp0::R](R) reader structure"]
-impl crate::Readable for REVNP0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [revnp0::W](W) writer structure"]
+#[doc = "`read()` method returns [`revnp0::R`](R) reader structure"]
+impl crate::Readable for REVNP0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`revnp0::W`](W) writer structure"]
 impl crate::Writable for REVNP0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

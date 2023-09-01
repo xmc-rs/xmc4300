@@ -1,39 +1,7 @@
 #[doc = "Register `DTC` reader"]
-pub struct R(crate::R<DTC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DTC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DTC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DTC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DTC_SPEC>;
 #[doc = "Register `DTC` writer"]
-pub struct W(crate::W<DTC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DTC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DTC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DTC_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DTC_SPEC>;
 #[doc = "Field `DTE1` reader - Dead Time Enable for Channel 1"]
 pub type DTE1_R = crate::BitReader<DTE1_A>;
 #[doc = "Dead Time Enable for Channel 1\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl DTE1_R {
             true => DTE1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dead Time for channel 1 is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DTE1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dead Time for channel 1 is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DTE1_A::VALUE2
     }
 }
 #[doc = "Field `DTE1` writer - Dead Time Enable for Channel 1"]
-pub type DTE1_W<'a, const O: u8> = crate::BitWriter<'a, DTC_SPEC, O, DTE1_A>;
-impl<'a, const O: u8> DTE1_W<'a, O> {
+pub type DTE1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DTE1_A>;
+impl<'a, REG, const O: u8> DTE1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Dead Time for channel 1 is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DTE1_A::VALUE1)
     }
     #[doc = "Dead Time for channel 1 is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DTE1_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl DTE2_R {
             true => DTE2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dead Time for channel 2 is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DTE2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dead Time for channel 2 is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DTE2_A::VALUE2
     }
 }
 #[doc = "Field `DTE2` writer - Dead Time Enable for Channel 2"]
-pub type DTE2_W<'a, const O: u8> = crate::BitWriter<'a, DTC_SPEC, O, DTE2_A>;
-impl<'a, const O: u8> DTE2_W<'a, O> {
+pub type DTE2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DTE2_A>;
+impl<'a, REG, const O: u8> DTE2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Dead Time for channel 2 is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DTE2_A::VALUE1)
     }
     #[doc = "Dead Time for channel 2 is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DTE2_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl DCEN1_R {
             true => DCEN1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dead Time for CC8yST1 path is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DCEN1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dead Time for CC8yST1 path is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DCEN1_A::VALUE2
     }
 }
 #[doc = "Field `DCEN1` writer - Dead Time Enable for CC8yST1"]
-pub type DCEN1_W<'a, const O: u8> = crate::BitWriter<'a, DTC_SPEC, O, DCEN1_A>;
-impl<'a, const O: u8> DCEN1_W<'a, O> {
+pub type DCEN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DCEN1_A>;
+impl<'a, REG, const O: u8> DCEN1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Dead Time for CC8yST1 path is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DCEN1_A::VALUE1)
     }
     #[doc = "Dead Time for CC8yST1 path is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DCEN1_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl DCEN2_R {
             true => DCEN2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dead Time for inverted CC8yST1 path is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DCEN2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dead Time for inverted CC8yST1 path is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DCEN2_A::VALUE2
     }
 }
 #[doc = "Field `DCEN2` writer - Dead Time Enable for inverted CC8yST1"]
-pub type DCEN2_W<'a, const O: u8> = crate::BitWriter<'a, DTC_SPEC, O, DCEN2_A>;
-impl<'a, const O: u8> DCEN2_W<'a, O> {
+pub type DCEN2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DCEN2_A>;
+impl<'a, REG, const O: u8> DCEN2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Dead Time for inverted CC8yST1 path is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DCEN2_A::VALUE1)
     }
     #[doc = "Dead Time for inverted CC8yST1 path is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DCEN2_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl DCEN3_R {
             true => DCEN3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dead Time for CC8yST2 path is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DCEN3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dead Time for CC8yST2 path is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DCEN3_A::VALUE2
     }
 }
 #[doc = "Field `DCEN3` writer - Dead Time Enable for CC8yST2"]
-pub type DCEN3_W<'a, const O: u8> = crate::BitWriter<'a, DTC_SPEC, O, DCEN3_A>;
-impl<'a, const O: u8> DCEN3_W<'a, O> {
+pub type DCEN3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DCEN3_A>;
+impl<'a, REG, const O: u8> DCEN3_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Dead Time for CC8yST2 path is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DCEN3_A::VALUE1)
     }
     #[doc = "Dead Time for CC8yST2 path is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DCEN3_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl DCEN4_R {
             true => DCEN4_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Dead Time for inverted CC8yST2 path is disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DCEN4_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dead Time for inverted CC8yST2 path is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DCEN4_A::VALUE2
     }
 }
 #[doc = "Field `DCEN4` writer - Dead Time Enable for inverted CC8yST2"]
-pub type DCEN4_W<'a, const O: u8> = crate::BitWriter<'a, DTC_SPEC, O, DCEN4_A>;
-impl<'a, const O: u8> DCEN4_W<'a, O> {
+pub type DCEN4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DCEN4_A>;
+impl<'a, REG, const O: u8> DCEN4_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Dead Time for inverted CC8yST2 path is disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DCEN4_A::VALUE1)
     }
     #[doc = "Dead Time for inverted CC8yST2 path is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DCEN4_A::VALUE2)
     }
 }
@@ -370,48 +356,52 @@ impl DTCC_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "ftclk"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DTCC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "ftclk/2"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DTCC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "ftclk/4"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == DTCC_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "ftclk/8"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == DTCC_A::VALUE4
     }
 }
 #[doc = "Field `DTCC` writer - Dead Time clock control"]
-pub type DTCC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DTC_SPEC, 2, O, DTCC_A>;
-impl<'a, const O: u8> DTCC_W<'a, O> {
+pub type DTCC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, DTCC_A>;
+impl<'a, REG, const O: u8> DTCC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "ftclk"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DTCC_A::VALUE1)
     }
     #[doc = "ftclk/2"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DTCC_A::VALUE2)
     }
     #[doc = "ftclk/4"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(DTCC_A::VALUE3)
     }
     #[doc = "ftclk/8"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(DTCC_A::VALUE4)
     }
 }
@@ -456,64 +446,61 @@ impl W {
     #[doc = "Bit 0 - Dead Time Enable for Channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn dte1(&mut self) -> DTE1_W<0> {
+    pub fn dte1(&mut self) -> DTE1_W<DTC_SPEC, 0> {
         DTE1_W::new(self)
     }
     #[doc = "Bit 1 - Dead Time Enable for Channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn dte2(&mut self) -> DTE2_W<1> {
+    pub fn dte2(&mut self) -> DTE2_W<DTC_SPEC, 1> {
         DTE2_W::new(self)
     }
     #[doc = "Bit 2 - Dead Time Enable for CC8yST1"]
     #[inline(always)]
     #[must_use]
-    pub fn dcen1(&mut self) -> DCEN1_W<2> {
+    pub fn dcen1(&mut self) -> DCEN1_W<DTC_SPEC, 2> {
         DCEN1_W::new(self)
     }
     #[doc = "Bit 3 - Dead Time Enable for inverted CC8yST1"]
     #[inline(always)]
     #[must_use]
-    pub fn dcen2(&mut self) -> DCEN2_W<3> {
+    pub fn dcen2(&mut self) -> DCEN2_W<DTC_SPEC, 3> {
         DCEN2_W::new(self)
     }
     #[doc = "Bit 4 - Dead Time Enable for CC8yST2"]
     #[inline(always)]
     #[must_use]
-    pub fn dcen3(&mut self) -> DCEN3_W<4> {
+    pub fn dcen3(&mut self) -> DCEN3_W<DTC_SPEC, 4> {
         DCEN3_W::new(self)
     }
     #[doc = "Bit 5 - Dead Time Enable for inverted CC8yST2"]
     #[inline(always)]
     #[must_use]
-    pub fn dcen4(&mut self) -> DCEN4_W<5> {
+    pub fn dcen4(&mut self) -> DCEN4_W<DTC_SPEC, 5> {
         DCEN4_W::new(self)
     }
     #[doc = "Bits 6:7 - Dead Time clock control"]
     #[inline(always)]
     #[must_use]
-    pub fn dtcc(&mut self) -> DTCC_W<6> {
+    pub fn dtcc(&mut self) -> DTCC_W<DTC_SPEC, 6> {
         DTCC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Dead Time Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dtc](index.html) module"]
+#[doc = "Dead Time Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dtc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DTC_SPEC;
 impl crate::RegisterSpec for DTC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dtc::R](R) reader structure"]
-impl crate::Readable for DTC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dtc::W](W) writer structure"]
+#[doc = "`read()` method returns [`dtc::R`](R) reader structure"]
+impl crate::Readable for DTC_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dtc::W`](W) writer structure"]
 impl crate::Writable for DTC_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `VFR` reader"]
-pub struct R(crate::R<VFR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<VFR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<VFR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<VFR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<VFR_SPEC>;
 #[doc = "Register `VFR` writer"]
-pub struct W(crate::W<VFR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<VFR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<VFR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<VFR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<VFR_SPEC>;
 #[doc = "Field `VF0` reader - Valid Flag of Result Register x"]
 pub type VF0_R = crate::BitReader<VF0_A>;
 #[doc = "Valid Flag of Result Register x\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl VF0_R {
             true => VF0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF0_A::VALUE2
     }
 }
 #[doc = "Field `VF0` writer - Valid Flag of Result Register x"]
-pub type VF0_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF0_A>;
-impl<'a, const O: u8> VF0_W<'a, O> {
+pub type VF0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF0_A>;
+impl<'a, REG, const O: u8> VF0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF0_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF0_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl VF1_R {
             true => VF1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF1_A::VALUE2
     }
 }
 #[doc = "Field `VF1` writer - Valid Flag of Result Register x"]
-pub type VF1_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF1_A>;
-impl<'a, const O: u8> VF1_W<'a, O> {
+pub type VF1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF1_A>;
+impl<'a, REG, const O: u8> VF1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF1_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF1_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl VF2_R {
             true => VF2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF2_A::VALUE2
     }
 }
 #[doc = "Field `VF2` writer - Valid Flag of Result Register x"]
-pub type VF2_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF2_A>;
-impl<'a, const O: u8> VF2_W<'a, O> {
+pub type VF2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF2_A>;
+impl<'a, REG, const O: u8> VF2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF2_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF2_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl VF3_R {
             true => VF3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF3_A::VALUE2
     }
 }
 #[doc = "Field `VF3` writer - Valid Flag of Result Register x"]
-pub type VF3_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF3_A>;
-impl<'a, const O: u8> VF3_W<'a, O> {
+pub type VF3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF3_A>;
+impl<'a, REG, const O: u8> VF3_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF3_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF3_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl VF4_R {
             true => VF4_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF4_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF4_A::VALUE2
     }
 }
 #[doc = "Field `VF4` writer - Valid Flag of Result Register x"]
-pub type VF4_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF4_A>;
-impl<'a, const O: u8> VF4_W<'a, O> {
+pub type VF4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF4_A>;
+impl<'a, REG, const O: u8> VF4_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF4_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF4_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl VF5_R {
             true => VF5_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF5_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF5_A::VALUE2
     }
 }
 #[doc = "Field `VF5` writer - Valid Flag of Result Register x"]
-pub type VF5_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF5_A>;
-impl<'a, const O: u8> VF5_W<'a, O> {
+pub type VF5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF5_A>;
+impl<'a, REG, const O: u8> VF5_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF5_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF5_A::VALUE2)
     }
 }
@@ -359,28 +345,31 @@ impl VF6_R {
             true => VF6_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF6_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF6_A::VALUE2
     }
 }
 #[doc = "Field `VF6` writer - Valid Flag of Result Register x"]
-pub type VF6_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF6_A>;
-impl<'a, const O: u8> VF6_W<'a, O> {
+pub type VF6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF6_A>;
+impl<'a, REG, const O: u8> VF6_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF6_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF6_A::VALUE2)
     }
 }
@@ -409,28 +398,31 @@ impl VF7_R {
             true => VF7_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF7_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF7_A::VALUE2
     }
 }
 #[doc = "Field `VF7` writer - Valid Flag of Result Register x"]
-pub type VF7_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF7_A>;
-impl<'a, const O: u8> VF7_W<'a, O> {
+pub type VF7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF7_A>;
+impl<'a, REG, const O: u8> VF7_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF7_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF7_A::VALUE2)
     }
 }
@@ -459,28 +451,31 @@ impl VF8_R {
             true => VF8_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF8_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF8_A::VALUE2
     }
 }
 #[doc = "Field `VF8` writer - Valid Flag of Result Register x"]
-pub type VF8_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF8_A>;
-impl<'a, const O: u8> VF8_W<'a, O> {
+pub type VF8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF8_A>;
+impl<'a, REG, const O: u8> VF8_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF8_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF8_A::VALUE2)
     }
 }
@@ -509,28 +504,31 @@ impl VF9_R {
             true => VF9_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF9_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF9_A::VALUE2
     }
 }
 #[doc = "Field `VF9` writer - Valid Flag of Result Register x"]
-pub type VF9_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF9_A>;
-impl<'a, const O: u8> VF9_W<'a, O> {
+pub type VF9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF9_A>;
+impl<'a, REG, const O: u8> VF9_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF9_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF9_A::VALUE2)
     }
 }
@@ -559,28 +557,31 @@ impl VF10_R {
             true => VF10_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF10_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF10_A::VALUE2
     }
 }
 #[doc = "Field `VF10` writer - Valid Flag of Result Register x"]
-pub type VF10_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF10_A>;
-impl<'a, const O: u8> VF10_W<'a, O> {
+pub type VF10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF10_A>;
+impl<'a, REG, const O: u8> VF10_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF10_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF10_A::VALUE2)
     }
 }
@@ -609,28 +610,31 @@ impl VF11_R {
             true => VF11_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF11_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF11_A::VALUE2
     }
 }
 #[doc = "Field `VF11` writer - Valid Flag of Result Register x"]
-pub type VF11_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF11_A>;
-impl<'a, const O: u8> VF11_W<'a, O> {
+pub type VF11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF11_A>;
+impl<'a, REG, const O: u8> VF11_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF11_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF11_A::VALUE2)
     }
 }
@@ -659,28 +663,31 @@ impl VF12_R {
             true => VF12_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF12_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF12_A::VALUE2
     }
 }
 #[doc = "Field `VF12` writer - Valid Flag of Result Register x"]
-pub type VF12_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF12_A>;
-impl<'a, const O: u8> VF12_W<'a, O> {
+pub type VF12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF12_A>;
+impl<'a, REG, const O: u8> VF12_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF12_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF12_A::VALUE2)
     }
 }
@@ -709,28 +716,31 @@ impl VF13_R {
             true => VF13_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF13_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF13_A::VALUE2
     }
 }
 #[doc = "Field `VF13` writer - Valid Flag of Result Register x"]
-pub type VF13_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF13_A>;
-impl<'a, const O: u8> VF13_W<'a, O> {
+pub type VF13_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF13_A>;
+impl<'a, REG, const O: u8> VF13_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF13_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF13_A::VALUE2)
     }
 }
@@ -759,28 +769,31 @@ impl VF14_R {
             true => VF14_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF14_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF14_A::VALUE2
     }
 }
 #[doc = "Field `VF14` writer - Valid Flag of Result Register x"]
-pub type VF14_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF14_A>;
-impl<'a, const O: u8> VF14_W<'a, O> {
+pub type VF14_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF14_A>;
+impl<'a, REG, const O: u8> VF14_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF14_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF14_A::VALUE2)
     }
 }
@@ -809,28 +822,31 @@ impl VF15_R {
             true => VF15_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VF15_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VF15_A::VALUE2
     }
 }
 #[doc = "Field `VF15` writer - Valid Flag of Result Register x"]
-pub type VF15_W<'a, const O: u8> = crate::BitWriter<'a, VFR_SPEC, O, VF15_A>;
-impl<'a, const O: u8> VF15_W<'a, O> {
+pub type VF15_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VF15_A>;
+impl<'a, REG, const O: u8> VF15_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read access: No new valid data available Write access: No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VF15_A::VALUE1)
     }
     #[doc = "Read access: Result register x contains valid data and has not yet been read, or bit FCR has been updated Write access: Clear this valid flag and bitfield DRC in register GxRESy (overrides a hardware set action)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VF15_A::VALUE2)
     }
 }
@@ -920,118 +936,115 @@ impl W {
     #[doc = "Bit 0 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf0(&mut self) -> VF0_W<0> {
+    pub fn vf0(&mut self) -> VF0_W<VFR_SPEC, 0> {
         VF0_W::new(self)
     }
     #[doc = "Bit 1 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf1(&mut self) -> VF1_W<1> {
+    pub fn vf1(&mut self) -> VF1_W<VFR_SPEC, 1> {
         VF1_W::new(self)
     }
     #[doc = "Bit 2 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf2(&mut self) -> VF2_W<2> {
+    pub fn vf2(&mut self) -> VF2_W<VFR_SPEC, 2> {
         VF2_W::new(self)
     }
     #[doc = "Bit 3 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf3(&mut self) -> VF3_W<3> {
+    pub fn vf3(&mut self) -> VF3_W<VFR_SPEC, 3> {
         VF3_W::new(self)
     }
     #[doc = "Bit 4 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf4(&mut self) -> VF4_W<4> {
+    pub fn vf4(&mut self) -> VF4_W<VFR_SPEC, 4> {
         VF4_W::new(self)
     }
     #[doc = "Bit 5 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf5(&mut self) -> VF5_W<5> {
+    pub fn vf5(&mut self) -> VF5_W<VFR_SPEC, 5> {
         VF5_W::new(self)
     }
     #[doc = "Bit 6 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf6(&mut self) -> VF6_W<6> {
+    pub fn vf6(&mut self) -> VF6_W<VFR_SPEC, 6> {
         VF6_W::new(self)
     }
     #[doc = "Bit 7 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf7(&mut self) -> VF7_W<7> {
+    pub fn vf7(&mut self) -> VF7_W<VFR_SPEC, 7> {
         VF7_W::new(self)
     }
     #[doc = "Bit 8 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf8(&mut self) -> VF8_W<8> {
+    pub fn vf8(&mut self) -> VF8_W<VFR_SPEC, 8> {
         VF8_W::new(self)
     }
     #[doc = "Bit 9 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf9(&mut self) -> VF9_W<9> {
+    pub fn vf9(&mut self) -> VF9_W<VFR_SPEC, 9> {
         VF9_W::new(self)
     }
     #[doc = "Bit 10 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf10(&mut self) -> VF10_W<10> {
+    pub fn vf10(&mut self) -> VF10_W<VFR_SPEC, 10> {
         VF10_W::new(self)
     }
     #[doc = "Bit 11 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf11(&mut self) -> VF11_W<11> {
+    pub fn vf11(&mut self) -> VF11_W<VFR_SPEC, 11> {
         VF11_W::new(self)
     }
     #[doc = "Bit 12 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf12(&mut self) -> VF12_W<12> {
+    pub fn vf12(&mut self) -> VF12_W<VFR_SPEC, 12> {
         VF12_W::new(self)
     }
     #[doc = "Bit 13 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf13(&mut self) -> VF13_W<13> {
+    pub fn vf13(&mut self) -> VF13_W<VFR_SPEC, 13> {
         VF13_W::new(self)
     }
     #[doc = "Bit 14 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf14(&mut self) -> VF14_W<14> {
+    pub fn vf14(&mut self) -> VF14_W<VFR_SPEC, 14> {
         VF14_W::new(self)
     }
     #[doc = "Bit 15 - Valid Flag of Result Register x"]
     #[inline(always)]
     #[must_use]
-    pub fn vf15(&mut self) -> VF15_W<15> {
+    pub fn vf15(&mut self) -> VF15_W<VFR_SPEC, 15> {
         VF15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Valid Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vfr](index.html) module"]
+#[doc = "Valid Flag Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`vfr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`vfr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct VFR_SPEC;
 impl crate::RegisterSpec for VFR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [vfr::R](R) reader structure"]
-impl crate::Readable for VFR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [vfr::W](W) writer structure"]
+#[doc = "`read()` method returns [`vfr::R`](R) reader structure"]
+impl crate::Readable for VFR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`vfr::W`](W) writer structure"]
 impl crate::Writable for VFR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,18 +1,5 @@
 #[doc = "Register `GRXSTSP_DEVICEMODE` reader"]
-pub struct R(crate::R<GRXSTSP_DEVICEMODE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GRXSTSP_DEVICEMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GRXSTSP_DEVICEMODE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GRXSTSP_DEVICEMODE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GRXSTSP_DEVICEMODE_SPEC>;
 #[doc = "Field `EPNum` reader - Endpoint Number"]
 pub type EPNUM_R = crate::FieldReader;
 #[doc = "Field `BCnt` reader - Byte Count"]
@@ -53,22 +40,22 @@ impl DPID_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "DATA0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DPID_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "DATA1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DPID_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "DATA2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == DPID_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "MDATA"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == DPID_A::VALUE4
@@ -113,27 +100,27 @@ impl PKT_STS_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Global OUT NAK (triggers an interrupt)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PKT_STS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "OUT data packet received"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PKT_STS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "OUT transfer completed (triggers an interrupt)"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PKT_STS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "SETUP transaction completed (triggers an interrupt)"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PKT_STS_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "SETUP data packet received"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == PKT_STS_A::VALUE5
@@ -168,15 +155,13 @@ impl R {
         FN_R::new(((self.bits >> 21) & 0x0f) as u8)
     }
 }
-#[doc = "Receive Status Read and Pop Register \\[DEVICEMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [grxstsp_devicemode](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
+#[doc = "Receive Status Read and Pop Register \\[DEVICEMODE\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`grxstsp_devicemode::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GRXSTSP_DEVICEMODE_SPEC;
 impl crate::RegisterSpec for GRXSTSP_DEVICEMODE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [grxstsp_devicemode::R](R) reader structure"]
-impl crate::Readable for GRXSTSP_DEVICEMODE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`grxstsp_devicemode::R`](R) reader structure"]
+impl crate::Readable for GRXSTSP_DEVICEMODE_SPEC {}
 #[doc = "`reset()` method sets GRXSTSP_DEVICEMODE to value 0"]
 impl crate::Resettable for GRXSTSP_DEVICEMODE_SPEC {
     const RESET_VALUE: Self::Ux = 0;

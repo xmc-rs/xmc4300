@@ -1,39 +1,7 @@
 #[doc = "Register `PSL` reader"]
-pub struct R(crate::R<PSL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PSL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PSL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PSL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PSL_SPEC>;
 #[doc = "Register `PSL` writer"]
-pub struct W(crate::W<PSL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PSL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PSL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PSL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PSL_SPEC>;
 #[doc = "Field `PSL11` reader - Output Passive Level for CCU8x.OUTy0"]
 pub type PSL11_R = crate::BitReader<PSL11_A>;
 #[doc = "Output Passive Level for CCU8x.OUTy0\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl PSL11_R {
             true => PSL11_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Passive Level is LOW"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PSL11_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Passive Level is HIGH"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PSL11_A::VALUE2
     }
 }
 #[doc = "Field `PSL11` writer - Output Passive Level for CCU8x.OUTy0"]
-pub type PSL11_W<'a, const O: u8> = crate::BitWriter<'a, PSL_SPEC, O, PSL11_A>;
-impl<'a, const O: u8> PSL11_W<'a, O> {
+pub type PSL11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PSL11_A>;
+impl<'a, REG, const O: u8> PSL11_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Passive Level is LOW"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PSL11_A::VALUE1)
     }
     #[doc = "Passive Level is HIGH"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PSL11_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl PSL12_R {
             true => PSL12_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Passive Level is LOW"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PSL12_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Passive Level is HIGH"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PSL12_A::VALUE2
     }
 }
 #[doc = "Field `PSL12` writer - Output Passive Level for CCU8x.OUTy1"]
-pub type PSL12_W<'a, const O: u8> = crate::BitWriter<'a, PSL_SPEC, O, PSL12_A>;
-impl<'a, const O: u8> PSL12_W<'a, O> {
+pub type PSL12_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PSL12_A>;
+impl<'a, REG, const O: u8> PSL12_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Passive Level is LOW"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PSL12_A::VALUE1)
     }
     #[doc = "Passive Level is HIGH"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PSL12_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl PSL21_R {
             true => PSL21_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Passive Level is LOW"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PSL21_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Passive Level is HIGH"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PSL21_A::VALUE2
     }
 }
 #[doc = "Field `PSL21` writer - Output Passive Level for CCU8x.OUTy2"]
-pub type PSL21_W<'a, const O: u8> = crate::BitWriter<'a, PSL_SPEC, O, PSL21_A>;
-impl<'a, const O: u8> PSL21_W<'a, O> {
+pub type PSL21_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PSL21_A>;
+impl<'a, REG, const O: u8> PSL21_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Passive Level is LOW"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PSL21_A::VALUE1)
     }
     #[doc = "Passive Level is HIGH"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PSL21_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl PSL22_R {
             true => PSL22_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Passive Level is LOW"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PSL22_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Passive Level is HIGH"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PSL22_A::VALUE2
     }
 }
 #[doc = "Field `PSL22` writer - Output Passive Level for CCU8x.OUTy3"]
-pub type PSL22_W<'a, const O: u8> = crate::BitWriter<'a, PSL_SPEC, O, PSL22_A>;
-impl<'a, const O: u8> PSL22_W<'a, O> {
+pub type PSL22_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PSL22_A>;
+impl<'a, REG, const O: u8> PSL22_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Passive Level is LOW"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PSL22_A::VALUE1)
     }
     #[doc = "Passive Level is HIGH"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PSL22_A::VALUE2)
     }
 }
@@ -260,46 +240,43 @@ impl W {
     #[doc = "Bit 0 - Output Passive Level for CCU8x.OUTy0"]
     #[inline(always)]
     #[must_use]
-    pub fn psl11(&mut self) -> PSL11_W<0> {
+    pub fn psl11(&mut self) -> PSL11_W<PSL_SPEC, 0> {
         PSL11_W::new(self)
     }
     #[doc = "Bit 1 - Output Passive Level for CCU8x.OUTy1"]
     #[inline(always)]
     #[must_use]
-    pub fn psl12(&mut self) -> PSL12_W<1> {
+    pub fn psl12(&mut self) -> PSL12_W<PSL_SPEC, 1> {
         PSL12_W::new(self)
     }
     #[doc = "Bit 2 - Output Passive Level for CCU8x.OUTy2"]
     #[inline(always)]
     #[must_use]
-    pub fn psl21(&mut self) -> PSL21_W<2> {
+    pub fn psl21(&mut self) -> PSL21_W<PSL_SPEC, 2> {
         PSL21_W::new(self)
     }
     #[doc = "Bit 3 - Output Passive Level for CCU8x.OUTy3"]
     #[inline(always)]
     #[must_use]
-    pub fn psl22(&mut self) -> PSL22_W<3> {
+    pub fn psl22(&mut self) -> PSL22_W<PSL_SPEC, 3> {
         PSL22_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Passive Level Config\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [psl](index.html) module"]
+#[doc = "Passive Level Config\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`psl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`psl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PSL_SPEC;
 impl crate::RegisterSpec for PSL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [psl::R](R) reader structure"]
-impl crate::Readable for PSL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [psl::W](W) writer structure"]
+#[doc = "`read()` method returns [`psl::R`](R) reader structure"]
+impl crate::Readable for PSL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`psl::W`](W) writer structure"]
 impl crate::Writable for PSL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

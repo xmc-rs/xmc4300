@@ -1,43 +1,11 @@
 #[doc = "Register `TRANSMIT_POLL_DEMAND` reader"]
-pub struct R(crate::R<TRANSMIT_POLL_DEMAND_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TRANSMIT_POLL_DEMAND_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TRANSMIT_POLL_DEMAND_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TRANSMIT_POLL_DEMAND_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TRANSMIT_POLL_DEMAND_SPEC>;
 #[doc = "Register `TRANSMIT_POLL_DEMAND` writer"]
-pub struct W(crate::W<TRANSMIT_POLL_DEMAND_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TRANSMIT_POLL_DEMAND_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TRANSMIT_POLL_DEMAND_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TRANSMIT_POLL_DEMAND_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TRANSMIT_POLL_DEMAND_SPEC>;
 #[doc = "Field `TPD` reader - Transmit Poll Demand"]
 pub type TPD_R = crate::FieldReader<u32>;
 #[doc = "Field `TPD` writer - Transmit Poll Demand"]
-pub type TPD_W<'a, const O: u8> = crate::FieldWriter<'a, TRANSMIT_POLL_DEMAND_SPEC, 32, O, u32>;
+pub type TPD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, u32>;
 impl R {
     #[doc = "Bits 0:31 - Transmit Poll Demand"]
     #[inline(always)]
@@ -49,28 +17,25 @@ impl W {
     #[doc = "Bits 0:31 - Transmit Poll Demand"]
     #[inline(always)]
     #[must_use]
-    pub fn tpd(&mut self) -> TPD_W<0> {
+    pub fn tpd(&mut self) -> TPD_W<TRANSMIT_POLL_DEMAND_SPEC, 0> {
         TPD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Transmit Poll Demand Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [transmit_poll_demand](index.html) module"]
+#[doc = "Transmit Poll Demand Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`transmit_poll_demand::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`transmit_poll_demand::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TRANSMIT_POLL_DEMAND_SPEC;
 impl crate::RegisterSpec for TRANSMIT_POLL_DEMAND_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [transmit_poll_demand::R](R) reader structure"]
-impl crate::Readable for TRANSMIT_POLL_DEMAND_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [transmit_poll_demand::W](W) writer structure"]
+#[doc = "`read()` method returns [`transmit_poll_demand::R`](R) reader structure"]
+impl crate::Readable for TRANSMIT_POLL_DEMAND_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`transmit_poll_demand::W`](W) writer structure"]
 impl crate::Writable for TRANSMIT_POLL_DEMAND_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

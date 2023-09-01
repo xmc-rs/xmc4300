@@ -1,55 +1,23 @@
 #[doc = "Register `LINE0` reader"]
-pub struct R(crate::R<LINE0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LINE0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LINE0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LINE0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LINE0_SPEC>;
 #[doc = "Register `LINE0` writer"]
-pub struct W(crate::W<LINE0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LINE0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LINE0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LINE0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<LINE0_SPEC>;
 #[doc = "Field `LINE_0` reader - Output on LINE\\[x\\]"]
 pub type LINE_0_R = crate::FieldReader;
 #[doc = "Field `LINE_0` writer - Output on LINE\\[x\\]"]
-pub type LINE_0_W<'a, const O: u8> = crate::FieldWriter<'a, LINE0_SPEC, 8, O>;
+pub type LINE_0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `LINE_1` reader - Output on LINE\\[x\\]"]
 pub type LINE_1_R = crate::FieldReader;
 #[doc = "Field `LINE_1` writer - Output on LINE\\[x\\]"]
-pub type LINE_1_W<'a, const O: u8> = crate::FieldWriter<'a, LINE0_SPEC, 8, O>;
+pub type LINE_1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `LINE_2` reader - Output on LINE\\[x\\]"]
 pub type LINE_2_R = crate::FieldReader;
 #[doc = "Field `LINE_2` writer - Output on LINE\\[x\\]"]
-pub type LINE_2_W<'a, const O: u8> = crate::FieldWriter<'a, LINE0_SPEC, 8, O>;
+pub type LINE_2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `LINE_3` reader - Output on LINE\\[x\\]"]
 pub type LINE_3_R = crate::FieldReader;
 #[doc = "Field `LINE_3` writer - Output on LINE\\[x\\]"]
-pub type LINE_3_W<'a, const O: u8> = crate::FieldWriter<'a, LINE0_SPEC, 8, O>;
+pub type LINE_3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Output on LINE\\[x\\]"]
     #[inline(always)]
@@ -76,46 +44,43 @@ impl W {
     #[doc = "Bits 0:7 - Output on LINE\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn line_0(&mut self) -> LINE_0_W<0> {
+    pub fn line_0(&mut self) -> LINE_0_W<LINE0_SPEC, 0> {
         LINE_0_W::new(self)
     }
     #[doc = "Bits 8:15 - Output on LINE\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn line_1(&mut self) -> LINE_1_W<8> {
+    pub fn line_1(&mut self) -> LINE_1_W<LINE0_SPEC, 8> {
         LINE_1_W::new(self)
     }
     #[doc = "Bits 16:23 - Output on LINE\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn line_2(&mut self) -> LINE_2_W<16> {
+    pub fn line_2(&mut self) -> LINE_2_W<LINE0_SPEC, 16> {
         LINE_2_W::new(self)
     }
     #[doc = "Bits 24:31 - Output on LINE\\[x\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn line_3(&mut self) -> LINE_3_W<24> {
+    pub fn line_3(&mut self) -> LINE_3_W<LINE0_SPEC, 24> {
         LINE_3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Line Pattern Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [line0](index.html) module"]
+#[doc = "Line Pattern Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`line0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`line0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LINE0_SPEC;
 impl crate::RegisterSpec for LINE0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [line0::R](R) reader structure"]
-impl crate::Readable for LINE0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [line0::W](W) writer structure"]
+#[doc = "`read()` method returns [`line0::R`](R) reader structure"]
+impl crate::Readable for LINE0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`line0::W`](W) writer structure"]
 impl crate::Writable for LINE0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

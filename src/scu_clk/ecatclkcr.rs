@@ -1,43 +1,11 @@
 #[doc = "Register `ECATCLKCR` reader"]
-pub struct R(crate::R<ECATCLKCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ECATCLKCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ECATCLKCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ECATCLKCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ECATCLKCR_SPEC>;
 #[doc = "Register `ECATCLKCR` writer"]
-pub struct W(crate::W<ECATCLKCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ECATCLKCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ECATCLKCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ECATCLKCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<ECATCLKCR_SPEC>;
 #[doc = "Field `ECADIV` reader - EtherCAT Clock Divider Value"]
 pub type ECADIV_R = crate::FieldReader;
 #[doc = "Field `ECADIV` writer - EtherCAT Clock Divider Value"]
-pub type ECADIV_W<'a, const O: u8> = crate::FieldWriter<'a, ECATCLKCR_SPEC, 2, O>;
+pub type ECADIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `ECATSEL` reader - EtherCAT Clock Selection Value"]
 pub type ECATSEL_R = crate::BitReader<ECATSEL_A>;
 #[doc = "EtherCAT Clock Selection Value\n\nValue on reset: 0"]
@@ -63,28 +31,31 @@ impl ECATSEL_R {
             true => ECATSEL_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "fPLLUSB clock"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ECATSEL_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "fPLL clock"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ECATSEL_A::CONST_1
     }
 }
 #[doc = "Field `ECATSEL` writer - EtherCAT Clock Selection Value"]
-pub type ECATSEL_W<'a, const O: u8> = crate::BitWriter<'a, ECATCLKCR_SPEC, O, ECATSEL_A>;
-impl<'a, const O: u8> ECATSEL_W<'a, O> {
+pub type ECATSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ECATSEL_A>;
+impl<'a, REG, const O: u8> ECATSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "fPLLUSB clock"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(ECATSEL_A::CONST_0)
     }
     #[doc = "fPLL clock"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(ECATSEL_A::CONST_1)
     }
 }
@@ -104,34 +75,31 @@ impl W {
     #[doc = "Bits 0:1 - EtherCAT Clock Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ecadiv(&mut self) -> ECADIV_W<0> {
+    pub fn ecadiv(&mut self) -> ECADIV_W<ECATCLKCR_SPEC, 0> {
         ECADIV_W::new(self)
     }
     #[doc = "Bit 16 - EtherCAT Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ecatsel(&mut self) -> ECATSEL_W<16> {
+    pub fn ecatsel(&mut self) -> ECATSEL_W<ECATCLKCR_SPEC, 16> {
         ECATSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EtherCAT Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ecatclkcr](index.html) module"]
+#[doc = "EtherCAT Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ecatclkcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ecatclkcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ECATCLKCR_SPEC;
 impl crate::RegisterSpec for ECATCLKCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ecatclkcr::R](R) reader structure"]
-impl crate::Readable for ECATCLKCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ecatclkcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`ecatclkcr::R`](R) reader structure"]
+impl crate::Readable for ECATCLKCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ecatclkcr::W`](W) writer structure"]
 impl crate::Writable for ECATCLKCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

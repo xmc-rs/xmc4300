@@ -1,39 +1,7 @@
 #[doc = "Register `EN_INT_SIGNAL_ERR` reader"]
-pub struct R(crate::R<EN_INT_SIGNAL_ERR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EN_INT_SIGNAL_ERR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EN_INT_SIGNAL_ERR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EN_INT_SIGNAL_ERR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EN_INT_SIGNAL_ERR_SPEC>;
 #[doc = "Register `EN_INT_SIGNAL_ERR` writer"]
-pub struct W(crate::W<EN_INT_SIGNAL_ERR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EN_INT_SIGNAL_ERR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EN_INT_SIGNAL_ERR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EN_INT_SIGNAL_ERR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EN_INT_SIGNAL_ERR_SPEC>;
 #[doc = "Field `CMD_TIMEOUT_ERR_EN` reader - Command Timeout Error Signal Enable"]
 pub type CMD_TIMEOUT_ERR_EN_R = crate::BitReader<CMD_TIMEOUT_ERR_EN_A>;
 #[doc = "Command Timeout Error Signal Enable\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl CMD_TIMEOUT_ERR_EN_R {
             true => CMD_TIMEOUT_ERR_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMD_TIMEOUT_ERR_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMD_TIMEOUT_ERR_EN_A::VALUE2
     }
 }
 #[doc = "Field `CMD_TIMEOUT_ERR_EN` writer - Command Timeout Error Signal Enable"]
-pub type CMD_TIMEOUT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_ERR_SPEC, O, CMD_TIMEOUT_ERR_EN_A>;
-impl<'a, const O: u8> CMD_TIMEOUT_ERR_EN_W<'a, O> {
+pub type CMD_TIMEOUT_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_TIMEOUT_ERR_EN_A>;
+impl<'a, REG, const O: u8> CMD_TIMEOUT_ERR_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_TIMEOUT_ERR_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_TIMEOUT_ERR_EN_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl CMD_CRC_ERR_EN_R {
             true => CMD_CRC_ERR_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMD_CRC_ERR_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMD_CRC_ERR_EN_A::VALUE2
     }
 }
 #[doc = "Field `CMD_CRC_ERR_EN` writer - Command CRC Error Signal Enable"]
-pub type CMD_CRC_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_ERR_SPEC, O, CMD_CRC_ERR_EN_A>;
-impl<'a, const O: u8> CMD_CRC_ERR_EN_W<'a, O> {
+pub type CMD_CRC_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_CRC_ERR_EN_A>;
+impl<'a, REG, const O: u8> CMD_CRC_ERR_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_CRC_ERR_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_CRC_ERR_EN_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl CMD_END_BIT_ERR_EN_R {
             true => CMD_END_BIT_ERR_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMD_END_BIT_ERR_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMD_END_BIT_ERR_EN_A::VALUE2
     }
 }
 #[doc = "Field `CMD_END_BIT_ERR_EN` writer - Command End Bit Error Signal Enable"]
-pub type CMD_END_BIT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_ERR_SPEC, O, CMD_END_BIT_ERR_EN_A>;
-impl<'a, const O: u8> CMD_END_BIT_ERR_EN_W<'a, O> {
+pub type CMD_END_BIT_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_END_BIT_ERR_EN_A>;
+impl<'a, REG, const O: u8> CMD_END_BIT_ERR_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_END_BIT_ERR_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_END_BIT_ERR_EN_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl CMD_IND_ERR_EN_R {
             true => CMD_IND_ERR_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMD_IND_ERR_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMD_IND_ERR_EN_A::VALUE2
     }
 }
 #[doc = "Field `CMD_IND_ERR_EN` writer - Command Index Error Signal Enable"]
-pub type CMD_IND_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_ERR_SPEC, O, CMD_IND_ERR_EN_A>;
-impl<'a, const O: u8> CMD_IND_ERR_EN_W<'a, O> {
+pub type CMD_IND_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CMD_IND_ERR_EN_A>;
+impl<'a, REG, const O: u8> CMD_IND_ERR_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_IND_ERR_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_IND_ERR_EN_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl DATA_TIMEOUT_ERR_EN_R {
             true => DATA_TIMEOUT_ERR_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DATA_TIMEOUT_ERR_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DATA_TIMEOUT_ERR_EN_A::VALUE2
     }
 }
 #[doc = "Field `DATA_TIMEOUT_ERR_EN` writer - Data Timeout Error Signal Enable"]
-pub type DATA_TIMEOUT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_ERR_SPEC, O, DATA_TIMEOUT_ERR_EN_A>;
-impl<'a, const O: u8> DATA_TIMEOUT_ERR_EN_W<'a, O> {
+pub type DATA_TIMEOUT_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DATA_TIMEOUT_ERR_EN_A>;
+impl<'a, REG, const O: u8> DATA_TIMEOUT_ERR_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DATA_TIMEOUT_ERR_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DATA_TIMEOUT_ERR_EN_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl DATA_CRC_ERR_EN_R {
             true => DATA_CRC_ERR_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DATA_CRC_ERR_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DATA_CRC_ERR_EN_A::VALUE2
     }
 }
 #[doc = "Field `DATA_CRC_ERR_EN` writer - Data CRC Error Signal Enable"]
-pub type DATA_CRC_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_ERR_SPEC, O, DATA_CRC_ERR_EN_A>;
-impl<'a, const O: u8> DATA_CRC_ERR_EN_W<'a, O> {
+pub type DATA_CRC_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DATA_CRC_ERR_EN_A>;
+impl<'a, REG, const O: u8> DATA_CRC_ERR_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DATA_CRC_ERR_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DATA_CRC_ERR_EN_A::VALUE2)
     }
 }
@@ -359,28 +345,31 @@ impl DATA_END_BIT_ERR_EN_R {
             true => DATA_END_BIT_ERR_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DATA_END_BIT_ERR_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DATA_END_BIT_ERR_EN_A::VALUE2
     }
 }
 #[doc = "Field `DATA_END_BIT_ERR_EN` writer - Data End Bit Error Signal Enable"]
-pub type DATA_END_BIT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_ERR_SPEC, O, DATA_END_BIT_ERR_EN_A>;
-impl<'a, const O: u8> DATA_END_BIT_ERR_EN_W<'a, O> {
+pub type DATA_END_BIT_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DATA_END_BIT_ERR_EN_A>;
+impl<'a, REG, const O: u8> DATA_END_BIT_ERR_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DATA_END_BIT_ERR_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DATA_END_BIT_ERR_EN_A::VALUE2)
     }
 }
@@ -409,28 +398,31 @@ impl CURRENT_LIMIT_ERR_EN_R {
             true => CURRENT_LIMIT_ERR_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CURRENT_LIMIT_ERR_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CURRENT_LIMIT_ERR_EN_A::VALUE2
     }
 }
 #[doc = "Field `CURRENT_LIMIT_ERR_EN` writer - Current Limit Error Signal Enable"]
-pub type CURRENT_LIMIT_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_ERR_SPEC, O, CURRENT_LIMIT_ERR_EN_A>;
-impl<'a, const O: u8> CURRENT_LIMIT_ERR_EN_W<'a, O> {
+pub type CURRENT_LIMIT_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CURRENT_LIMIT_ERR_EN_A>;
+impl<'a, REG, const O: u8> CURRENT_LIMIT_ERR_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CURRENT_LIMIT_ERR_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CURRENT_LIMIT_ERR_EN_A::VALUE2)
     }
 }
@@ -459,28 +451,31 @@ impl ACMD_ERR_EN_R {
             true => ACMD_ERR_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ACMD_ERR_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ACMD_ERR_EN_A::VALUE2
     }
 }
 #[doc = "Field `ACMD_ERR_EN` writer - Auto CMD12 Error Signal Enable"]
-pub type ACMD_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_ERR_SPEC, O, ACMD_ERR_EN_A>;
-impl<'a, const O: u8> ACMD_ERR_EN_W<'a, O> {
+pub type ACMD_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ACMD_ERR_EN_A>;
+impl<'a, REG, const O: u8> ACMD_ERR_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ACMD_ERR_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ACMD_ERR_EN_A::VALUE2)
     }
 }
@@ -509,28 +504,31 @@ impl TARGET_RESP_ERR_EN_R {
             true => TARGET_RESP_ERR_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TARGET_RESP_ERR_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TARGET_RESP_ERR_EN_A::VALUE2
     }
 }
 #[doc = "Field `TARGET_RESP_ERR_EN` writer - Target Response Error Signal Enable"]
-pub type TARGET_RESP_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_ERR_SPEC, O, TARGET_RESP_ERR_EN_A>;
-impl<'a, const O: u8> TARGET_RESP_ERR_EN_W<'a, O> {
+pub type TARGET_RESP_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TARGET_RESP_ERR_EN_A>;
+impl<'a, REG, const O: u8> TARGET_RESP_ERR_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TARGET_RESP_ERR_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TARGET_RESP_ERR_EN_A::VALUE2)
     }
 }
@@ -559,28 +557,31 @@ impl CEATA_ERR_EN_R {
             true => CEATA_ERR_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CEATA_ERR_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CEATA_ERR_EN_A::VALUE2
     }
 }
 #[doc = "Field `CEATA_ERR_EN` writer - Ceata Error Signal Enable"]
-pub type CEATA_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, EN_INT_SIGNAL_ERR_SPEC, O, CEATA_ERR_EN_A>;
-impl<'a, const O: u8> CEATA_ERR_EN_W<'a, O> {
+pub type CEATA_ERR_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CEATA_ERR_EN_A>;
+impl<'a, REG, const O: u8> CEATA_ERR_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Masked"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CEATA_ERR_EN_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CEATA_ERR_EN_A::VALUE2)
     }
 }
@@ -645,88 +646,85 @@ impl W {
     #[doc = "Bit 0 - Command Timeout Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_timeout_err_en(&mut self) -> CMD_TIMEOUT_ERR_EN_W<0> {
+    pub fn cmd_timeout_err_en(&mut self) -> CMD_TIMEOUT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 0> {
         CMD_TIMEOUT_ERR_EN_W::new(self)
     }
     #[doc = "Bit 1 - Command CRC Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_crc_err_en(&mut self) -> CMD_CRC_ERR_EN_W<1> {
+    pub fn cmd_crc_err_en(&mut self) -> CMD_CRC_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 1> {
         CMD_CRC_ERR_EN_W::new(self)
     }
     #[doc = "Bit 2 - Command End Bit Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_end_bit_err_en(&mut self) -> CMD_END_BIT_ERR_EN_W<2> {
+    pub fn cmd_end_bit_err_en(&mut self) -> CMD_END_BIT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 2> {
         CMD_END_BIT_ERR_EN_W::new(self)
     }
     #[doc = "Bit 3 - Command Index Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_ind_err_en(&mut self) -> CMD_IND_ERR_EN_W<3> {
+    pub fn cmd_ind_err_en(&mut self) -> CMD_IND_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 3> {
         CMD_IND_ERR_EN_W::new(self)
     }
     #[doc = "Bit 4 - Data Timeout Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn data_timeout_err_en(&mut self) -> DATA_TIMEOUT_ERR_EN_W<4> {
+    pub fn data_timeout_err_en(&mut self) -> DATA_TIMEOUT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 4> {
         DATA_TIMEOUT_ERR_EN_W::new(self)
     }
     #[doc = "Bit 5 - Data CRC Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn data_crc_err_en(&mut self) -> DATA_CRC_ERR_EN_W<5> {
+    pub fn data_crc_err_en(&mut self) -> DATA_CRC_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 5> {
         DATA_CRC_ERR_EN_W::new(self)
     }
     #[doc = "Bit 6 - Data End Bit Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn data_end_bit_err_en(&mut self) -> DATA_END_BIT_ERR_EN_W<6> {
+    pub fn data_end_bit_err_en(&mut self) -> DATA_END_BIT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 6> {
         DATA_END_BIT_ERR_EN_W::new(self)
     }
     #[doc = "Bit 7 - Current Limit Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn current_limit_err_en(&mut self) -> CURRENT_LIMIT_ERR_EN_W<7> {
+    pub fn current_limit_err_en(&mut self) -> CURRENT_LIMIT_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 7> {
         CURRENT_LIMIT_ERR_EN_W::new(self)
     }
     #[doc = "Bit 8 - Auto CMD12 Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn acmd_err_en(&mut self) -> ACMD_ERR_EN_W<8> {
+    pub fn acmd_err_en(&mut self) -> ACMD_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 8> {
         ACMD_ERR_EN_W::new(self)
     }
     #[doc = "Bit 12 - Target Response Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn target_resp_err_en(&mut self) -> TARGET_RESP_ERR_EN_W<12> {
+    pub fn target_resp_err_en(&mut self) -> TARGET_RESP_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 12> {
         TARGET_RESP_ERR_EN_W::new(self)
     }
     #[doc = "Bit 13 - Ceata Error Signal Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ceata_err_en(&mut self) -> CEATA_ERR_EN_W<13> {
+    pub fn ceata_err_en(&mut self) -> CEATA_ERR_EN_W<EN_INT_SIGNAL_ERR_SPEC, 13> {
         CEATA_ERR_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Error Interrupt Signal Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [en_int_signal_err](index.html) module"]
+#[doc = "Error Interrupt Signal Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`en_int_signal_err::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`en_int_signal_err::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EN_INT_SIGNAL_ERR_SPEC;
 impl crate::RegisterSpec for EN_INT_SIGNAL_ERR_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [en_int_signal_err::R](R) reader structure"]
-impl crate::Readable for EN_INT_SIGNAL_ERR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [en_int_signal_err::W](W) writer structure"]
+#[doc = "`read()` method returns [`en_int_signal_err::R`](R) reader structure"]
+impl crate::Readable for EN_INT_SIGNAL_ERR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`en_int_signal_err::W`](W) writer structure"]
 impl crate::Writable for EN_INT_SIGNAL_ERR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,47 +1,15 @@
 #[doc = "Register `HCTSIZ_SCATGATHER` reader"]
-pub struct R(crate::R<HCTSIZ_SCATGATHER_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HCTSIZ_SCATGATHER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HCTSIZ_SCATGATHER_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HCTSIZ_SCATGATHER_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HCTSIZ_SCATGATHER_SPEC>;
 #[doc = "Register `HCTSIZ_SCATGATHER` writer"]
-pub struct W(crate::W<HCTSIZ_SCATGATHER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HCTSIZ_SCATGATHER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HCTSIZ_SCATGATHER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HCTSIZ_SCATGATHER_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HCTSIZ_SCATGATHER_SPEC>;
 #[doc = "Field `SCHED_INFO` reader - Schedule information"]
 pub type SCHED_INFO_R = crate::FieldReader;
 #[doc = "Field `SCHED_INFO` writer - Schedule information"]
-pub type SCHED_INFO_W<'a, const O: u8> = crate::FieldWriter<'a, HCTSIZ_SCATGATHER_SPEC, 8, O>;
+pub type SCHED_INFO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `NTD` reader - Number of Transfer Descriptors: 0=1 descriptor, 63=64 descriptors, 1=2 descriptors, 3=4 descriptors, 7=8 descriptors, 15=16 descriptors, 31=32 descriptors, 63=64 descriptors,"]
 pub type NTD_R = crate::FieldReader;
 #[doc = "Field `NTD` writer - Number of Transfer Descriptors: 0=1 descriptor, 63=64 descriptors, 1=2 descriptors, 3=4 descriptors, 7=8 descriptors, 15=16 descriptors, 31=32 descriptors, 63=64 descriptors,"]
-pub type NTD_W<'a, const O: u8> = crate::FieldWriter<'a, HCTSIZ_SCATGATHER_SPEC, 8, O>;
+pub type NTD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `Pid` reader - PID"]
 pub type PID_R = crate::FieldReader<PID_A>;
 #[doc = "PID\n\nValue on reset: 0"]
@@ -78,48 +46,52 @@ impl PID_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "DATA0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PID_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "DATA2"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PID_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "DATA1"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PID_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "MDATA (non-control)"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PID_A::VALUE4
     }
 }
 #[doc = "Field `Pid` writer - PID"]
-pub type PID_W<'a, const O: u8> = crate::FieldWriterSafe<'a, HCTSIZ_SCATGATHER_SPEC, 2, O, PID_A>;
-impl<'a, const O: u8> PID_W<'a, O> {
+pub type PID_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PID_A>;
+impl<'a, REG, const O: u8> PID_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "DATA0"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PID_A::VALUE1)
     }
     #[doc = "DATA2"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PID_A::VALUE2)
     }
     #[doc = "DATA1"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(PID_A::VALUE3)
     }
     #[doc = "MDATA (non-control)"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(PID_A::VALUE4)
     }
 }
@@ -144,40 +116,37 @@ impl W {
     #[doc = "Bits 0:7 - Schedule information"]
     #[inline(always)]
     #[must_use]
-    pub fn sched_info(&mut self) -> SCHED_INFO_W<0> {
+    pub fn sched_info(&mut self) -> SCHED_INFO_W<HCTSIZ_SCATGATHER_SPEC, 0> {
         SCHED_INFO_W::new(self)
     }
     #[doc = "Bits 8:15 - Number of Transfer Descriptors: 0=1 descriptor, 63=64 descriptors, 1=2 descriptors, 3=4 descriptors, 7=8 descriptors, 15=16 descriptors, 31=32 descriptors, 63=64 descriptors,"]
     #[inline(always)]
     #[must_use]
-    pub fn ntd(&mut self) -> NTD_W<8> {
+    pub fn ntd(&mut self) -> NTD_W<HCTSIZ_SCATGATHER_SPEC, 8> {
         NTD_W::new(self)
     }
     #[doc = "Bits 29:30 - PID"]
     #[inline(always)]
     #[must_use]
-    pub fn pid(&mut self) -> PID_W<29> {
+    pub fn pid(&mut self) -> PID_W<HCTSIZ_SCATGATHER_SPEC, 29> {
         PID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Host Channel Transfer Size Register \\[SCATGATHER\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hctsiz_scatgather](index.html) module"]
+#[doc = "Host Channel Transfer Size Register \\[SCATGATHER\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hctsiz_scatgather::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hctsiz_scatgather::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HCTSIZ_SCATGATHER_SPEC;
 impl crate::RegisterSpec for HCTSIZ_SCATGATHER_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hctsiz_scatgather::R](R) reader structure"]
-impl crate::Readable for HCTSIZ_SCATGATHER_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [hctsiz_scatgather::W](W) writer structure"]
+#[doc = "`read()` method returns [`hctsiz_scatgather::R`](R) reader structure"]
+impl crate::Readable for HCTSIZ_SCATGATHER_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`hctsiz_scatgather::W`](W) writer structure"]
 impl crate::Writable for HCTSIZ_SCATGATHER_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

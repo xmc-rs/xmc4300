@@ -1,39 +1,7 @@
 #[doc = "Register `LNEN` reader"]
-pub struct R(crate::R<LNEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LNEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LNEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LNEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LNEN_SPEC>;
 #[doc = "Register `LNEN` writer"]
-pub struct W(crate::W<LNEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LNEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LNEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LNEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<LNEN_SPEC>;
 #[doc = "Field `LN0` reader - Line 0 Enable"]
 pub type LN0_R = crate::BitReader<LN0_A>;
 #[doc = "Line 0 Enable\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl LN0_R {
             true => LN0_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disables the line"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == LN0_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == LN0_A::CONST_1
     }
 }
 #[doc = "Field `LN0` writer - Line 0 Enable"]
-pub type LN0_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN0_A>;
-impl<'a, const O: u8> LN0_W<'a, O> {
+pub type LN0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN0_A>;
+impl<'a, REG, const O: u8> LN0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disables the line"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(LN0_A::CONST_0)
     }
     #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(LN0_A::CONST_1)
     }
 }
@@ -109,28 +80,31 @@ impl LN1_R {
             true => LN1_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disables the line"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == LN1_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == LN1_A::CONST_1
     }
 }
 #[doc = "Field `LN1` writer - Line 1 Enable"]
-pub type LN1_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN1_A>;
-impl<'a, const O: u8> LN1_W<'a, O> {
+pub type LN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN1_A>;
+impl<'a, REG, const O: u8> LN1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disables the line"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(LN1_A::CONST_0)
     }
     #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(LN1_A::CONST_1)
     }
 }
@@ -159,28 +133,31 @@ impl LN2_R {
             true => LN2_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disables the line"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == LN2_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == LN2_A::CONST_1
     }
 }
 #[doc = "Field `LN2` writer - Line 2 Enable"]
-pub type LN2_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN2_A>;
-impl<'a, const O: u8> LN2_W<'a, O> {
+pub type LN2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN2_A>;
+impl<'a, REG, const O: u8> LN2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disables the line"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(LN2_A::CONST_0)
     }
     #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(LN2_A::CONST_1)
     }
 }
@@ -209,28 +186,31 @@ impl LN3_R {
             true => LN3_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disables the line"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == LN3_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == LN3_A::CONST_1
     }
 }
 #[doc = "Field `LN3` writer - Line 3 Enable"]
-pub type LN3_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN3_A>;
-impl<'a, const O: u8> LN3_W<'a, O> {
+pub type LN3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN3_A>;
+impl<'a, REG, const O: u8> LN3_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disables the line"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(LN3_A::CONST_0)
     }
     #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(LN3_A::CONST_1)
     }
 }
@@ -259,28 +239,31 @@ impl LN4_R {
             true => LN4_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disables the line"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == LN4_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == LN4_A::CONST_1
     }
 }
 #[doc = "Field `LN4` writer - Line 4 Enable"]
-pub type LN4_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN4_A>;
-impl<'a, const O: u8> LN4_W<'a, O> {
+pub type LN4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN4_A>;
+impl<'a, REG, const O: u8> LN4_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disables the line"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(LN4_A::CONST_0)
     }
     #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(LN4_A::CONST_1)
     }
 }
@@ -309,28 +292,31 @@ impl LN5_R {
             true => LN5_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disables the line"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == LN5_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == LN5_A::CONST_1
     }
 }
 #[doc = "Field `LN5` writer - Line 5 Enable"]
-pub type LN5_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN5_A>;
-impl<'a, const O: u8> LN5_W<'a, O> {
+pub type LN5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN5_A>;
+impl<'a, REG, const O: u8> LN5_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disables the line"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(LN5_A::CONST_0)
     }
     #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(LN5_A::CONST_1)
     }
 }
@@ -359,28 +345,31 @@ impl LN6_R {
             true => LN6_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disables the line"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == LN6_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == LN6_A::CONST_1
     }
 }
 #[doc = "Field `LN6` writer - Line 6 Enable"]
-pub type LN6_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN6_A>;
-impl<'a, const O: u8> LN6_W<'a, O> {
+pub type LN6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN6_A>;
+impl<'a, REG, const O: u8> LN6_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disables the line"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(LN6_A::CONST_0)
     }
     #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(LN6_A::CONST_1)
     }
 }
@@ -409,28 +398,31 @@ impl LN7_R {
             true => LN7_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disables the line"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == LN7_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == LN7_A::CONST_1
     }
 }
 #[doc = "Field `LN7` writer - Line 7 Enable"]
-pub type LN7_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN7_A>;
-impl<'a, const O: u8> LN7_W<'a, O> {
+pub type LN7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN7_A>;
+impl<'a, REG, const O: u8> LN7_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disables the line"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(LN7_A::CONST_0)
     }
     #[doc = "Enables the line and resets a pending request"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(LN7_A::CONST_1)
     }
 }
@@ -480,70 +472,67 @@ impl W {
     #[doc = "Bit 0 - Line 0 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln0(&mut self) -> LN0_W<0> {
+    pub fn ln0(&mut self) -> LN0_W<LNEN_SPEC, 0> {
         LN0_W::new(self)
     }
     #[doc = "Bit 1 - Line 1 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln1(&mut self) -> LN1_W<1> {
+    pub fn ln1(&mut self) -> LN1_W<LNEN_SPEC, 1> {
         LN1_W::new(self)
     }
     #[doc = "Bit 2 - Line 2 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln2(&mut self) -> LN2_W<2> {
+    pub fn ln2(&mut self) -> LN2_W<LNEN_SPEC, 2> {
         LN2_W::new(self)
     }
     #[doc = "Bit 3 - Line 3 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln3(&mut self) -> LN3_W<3> {
+    pub fn ln3(&mut self) -> LN3_W<LNEN_SPEC, 3> {
         LN3_W::new(self)
     }
     #[doc = "Bit 4 - Line 4 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln4(&mut self) -> LN4_W<4> {
+    pub fn ln4(&mut self) -> LN4_W<LNEN_SPEC, 4> {
         LN4_W::new(self)
     }
     #[doc = "Bit 5 - Line 5 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln5(&mut self) -> LN5_W<5> {
+    pub fn ln5(&mut self) -> LN5_W<LNEN_SPEC, 5> {
         LN5_W::new(self)
     }
     #[doc = "Bit 6 - Line 6 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln6(&mut self) -> LN6_W<6> {
+    pub fn ln6(&mut self) -> LN6_W<LNEN_SPEC, 6> {
         LN6_W::new(self)
     }
     #[doc = "Bit 7 - Line 7 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln7(&mut self) -> LN7_W<7> {
+    pub fn ln7(&mut self) -> LN7_W<LNEN_SPEC, 7> {
         LN7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Line Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lnen](index.html) module"]
+#[doc = "Line Enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lnen::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lnen::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LNEN_SPEC;
 impl crate::RegisterSpec for LNEN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lnen::R](R) reader structure"]
-impl crate::Readable for LNEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [lnen::W](W) writer structure"]
+#[doc = "`read()` method returns [`lnen::R`](R) reader structure"]
+impl crate::Readable for LNEN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`lnen::W`](W) writer structure"]
 impl crate::Writable for LNEN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

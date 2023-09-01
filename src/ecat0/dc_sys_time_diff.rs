@@ -1,18 +1,5 @@
 #[doc = "Register `DC_SYS_TIME_DIFF` reader"]
-pub struct R(crate::R<DC_SYS_TIME_DIFF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DC_SYS_TIME_DIFF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DC_SYS_TIME_DIFF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DC_SYS_TIME_DIFF_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DC_SYS_TIME_DIFF_SPEC>;
 #[doc = "Field `TIME_DIF` reader - Mean difference between local copy of System Time and received System Time values"]
 pub type TIME_DIF_R = crate::FieldReader<u32>;
 #[doc = "Field `CPY` reader - Local copy of System Time"]
@@ -40,12 +27,12 @@ impl CPY_R {
             true => CPY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Greater than or equal received System Time"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CPY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Smaller than received System Time"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CPY_A::VALUE2
@@ -63,15 +50,13 @@ impl R {
         CPY_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "System Time Difference\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dc_sys_time_diff](index.html) module"]
+#[doc = "System Time Difference\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_sys_time_diff::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_SYS_TIME_DIFF_SPEC;
 impl crate::RegisterSpec for DC_SYS_TIME_DIFF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dc_sys_time_diff::R](R) reader structure"]
-impl crate::Readable for DC_SYS_TIME_DIFF_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dc_sys_time_diff::R`](R) reader structure"]
+impl crate::Readable for DC_SYS_TIME_DIFF_SPEC {}
 #[doc = "`reset()` method sets DC_SYS_TIME_DIFF to value 0"]
 impl crate::Resettable for DC_SYS_TIME_DIFF_SPEC {
     const RESET_VALUE: Self::Ux = 0;

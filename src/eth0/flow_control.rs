@@ -1,67 +1,35 @@
 #[doc = "Register `FLOW_CONTROL` reader"]
-pub struct R(crate::R<FLOW_CONTROL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FLOW_CONTROL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FLOW_CONTROL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FLOW_CONTROL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FLOW_CONTROL_SPEC>;
 #[doc = "Register `FLOW_CONTROL` writer"]
-pub struct W(crate::W<FLOW_CONTROL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FLOW_CONTROL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FLOW_CONTROL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FLOW_CONTROL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<FLOW_CONTROL_SPEC>;
 #[doc = "Field `FCA_BPA` reader - Flow Control Busy or Backpressure Activate"]
 pub type FCA_BPA_R = crate::BitReader;
 #[doc = "Field `FCA_BPA` writer - Flow Control Busy or Backpressure Activate"]
-pub type FCA_BPA_W<'a, const O: u8> = crate::BitWriter<'a, FLOW_CONTROL_SPEC, O>;
+pub type FCA_BPA_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TFE` reader - Transmit Flow Control Enable"]
 pub type TFE_R = crate::BitReader;
 #[doc = "Field `TFE` writer - Transmit Flow Control Enable"]
-pub type TFE_W<'a, const O: u8> = crate::BitWriter<'a, FLOW_CONTROL_SPEC, O>;
+pub type TFE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RFE` reader - Receive Flow Control Enable"]
 pub type RFE_R = crate::BitReader;
 #[doc = "Field `RFE` writer - Receive Flow Control Enable"]
-pub type RFE_W<'a, const O: u8> = crate::BitWriter<'a, FLOW_CONTROL_SPEC, O>;
+pub type RFE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `UP` reader - Unicast Pause Frame Detect"]
 pub type UP_R = crate::BitReader;
 #[doc = "Field `UP` writer - Unicast Pause Frame Detect"]
-pub type UP_W<'a, const O: u8> = crate::BitWriter<'a, FLOW_CONTROL_SPEC, O>;
+pub type UP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PLT` reader - Pause Low Threshold"]
 pub type PLT_R = crate::FieldReader;
 #[doc = "Field `PLT` writer - Pause Low Threshold"]
-pub type PLT_W<'a, const O: u8> = crate::FieldWriter<'a, FLOW_CONTROL_SPEC, 2, O>;
+pub type PLT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `DZPQ` reader - Disable Zero-Quanta Pause"]
 pub type DZPQ_R = crate::BitReader;
 #[doc = "Field `DZPQ` writer - Disable Zero-Quanta Pause"]
-pub type DZPQ_W<'a, const O: u8> = crate::BitWriter<'a, FLOW_CONTROL_SPEC, O>;
+pub type DZPQ_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `PT` reader - Pause Time"]
 pub type PT_R = crate::FieldReader<u16>;
 #[doc = "Field `PT` writer - Pause Time"]
-pub type PT_W<'a, const O: u8> = crate::FieldWriter<'a, FLOW_CONTROL_SPEC, 16, O, u16>;
+pub type PT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 impl R {
     #[doc = "Bit 0 - Flow Control Busy or Backpressure Activate"]
     #[inline(always)]
@@ -103,64 +71,61 @@ impl W {
     #[doc = "Bit 0 - Flow Control Busy or Backpressure Activate"]
     #[inline(always)]
     #[must_use]
-    pub fn fca_bpa(&mut self) -> FCA_BPA_W<0> {
+    pub fn fca_bpa(&mut self) -> FCA_BPA_W<FLOW_CONTROL_SPEC, 0> {
         FCA_BPA_W::new(self)
     }
     #[doc = "Bit 1 - Transmit Flow Control Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tfe(&mut self) -> TFE_W<1> {
+    pub fn tfe(&mut self) -> TFE_W<FLOW_CONTROL_SPEC, 1> {
         TFE_W::new(self)
     }
     #[doc = "Bit 2 - Receive Flow Control Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rfe(&mut self) -> RFE_W<2> {
+    pub fn rfe(&mut self) -> RFE_W<FLOW_CONTROL_SPEC, 2> {
         RFE_W::new(self)
     }
     #[doc = "Bit 3 - Unicast Pause Frame Detect"]
     #[inline(always)]
     #[must_use]
-    pub fn up(&mut self) -> UP_W<3> {
+    pub fn up(&mut self) -> UP_W<FLOW_CONTROL_SPEC, 3> {
         UP_W::new(self)
     }
     #[doc = "Bits 4:5 - Pause Low Threshold"]
     #[inline(always)]
     #[must_use]
-    pub fn plt(&mut self) -> PLT_W<4> {
+    pub fn plt(&mut self) -> PLT_W<FLOW_CONTROL_SPEC, 4> {
         PLT_W::new(self)
     }
     #[doc = "Bit 7 - Disable Zero-Quanta Pause"]
     #[inline(always)]
     #[must_use]
-    pub fn dzpq(&mut self) -> DZPQ_W<7> {
+    pub fn dzpq(&mut self) -> DZPQ_W<FLOW_CONTROL_SPEC, 7> {
         DZPQ_W::new(self)
     }
     #[doc = "Bits 16:31 - Pause Time"]
     #[inline(always)]
     #[must_use]
-    pub fn pt(&mut self) -> PT_W<16> {
+    pub fn pt(&mut self) -> PT_W<FLOW_CONTROL_SPEC, 16> {
         PT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Flow Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flow_control](index.html) module"]
+#[doc = "Flow Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`flow_control::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`flow_control::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FLOW_CONTROL_SPEC;
 impl crate::RegisterSpec for FLOW_CONTROL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [flow_control::R](R) reader structure"]
-impl crate::Readable for FLOW_CONTROL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [flow_control::W](W) writer structure"]
+#[doc = "`read()` method returns [`flow_control::R`](R) reader structure"]
+impl crate::Readable for FLOW_CONTROL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`flow_control::W`](W) writer structure"]
 impl crate::Writable for FLOW_CONTROL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

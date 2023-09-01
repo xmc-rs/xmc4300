@@ -1,39 +1,7 @@
 #[doc = "Register `SRMSK` reader"]
-pub struct R(crate::R<SRMSK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SRMSK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SRMSK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SRMSK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SRMSK_SPEC>;
 #[doc = "Register `SRMSK` writer"]
-pub struct W(crate::W<SRMSK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SRMSK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SRMSK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SRMSK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SRMSK_SPEC>;
 #[doc = "Field `PRWARN` reader - WDT pre-warning Interrupt Mask"]
 pub type PRWARN_R = crate::BitReader<PRWARN_A>;
 #[doc = "WDT pre-warning Interrupt Mask\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl PRWARN_R {
             true => PRWARN_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PRWARN_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PRWARN_A::CONST_1
     }
 }
 #[doc = "Field `PRWARN` writer - WDT pre-warning Interrupt Mask"]
-pub type PRWARN_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, PRWARN_A>;
-impl<'a, const O: u8> PRWARN_W<'a, O> {
+pub type PRWARN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PRWARN_A>;
+impl<'a, REG, const O: u8> PRWARN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PRWARN_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PRWARN_A::CONST_1)
     }
 }
@@ -109,28 +80,31 @@ impl PI_R {
             true => PI_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PI_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PI_A::CONST_1
     }
 }
 #[doc = "Field `PI` writer - RTC Periodic Interrupt Mask"]
-pub type PI_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, PI_A>;
-impl<'a, const O: u8> PI_W<'a, O> {
+pub type PI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PI_A>;
+impl<'a, REG, const O: u8> PI_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PI_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PI_A::CONST_1)
     }
 }
@@ -159,28 +133,31 @@ impl AI_R {
             true => AI_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == AI_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == AI_A::CONST_1
     }
 }
 #[doc = "Field `AI` writer - RTC Alarm Interrupt Mask"]
-pub type AI_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, AI_A>;
-impl<'a, const O: u8> AI_W<'a, O> {
+pub type AI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AI_A>;
+impl<'a, REG, const O: u8> AI_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(AI_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(AI_A::CONST_1)
     }
 }
@@ -209,28 +186,31 @@ impl DLROVR_R {
             true => DLROVR_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == DLROVR_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == DLROVR_A::CONST_1
     }
 }
 #[doc = "Field `DLROVR` writer - DLR Request Overrun Interrupt Mask"]
-pub type DLROVR_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, DLROVR_A>;
-impl<'a, const O: u8> DLROVR_W<'a, O> {
+pub type DLROVR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DLROVR_A>;
+impl<'a, REG, const O: u8> DLROVR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(DLROVR_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(DLROVR_A::CONST_1)
     }
 }
@@ -259,28 +239,31 @@ impl HDCLR_R {
             true => HDCLR_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == HDCLR_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == HDCLR_A::CONST_1
     }
 }
 #[doc = "Field `HDCLR` writer - HDCLR Mirror Register Update Mask"]
-pub type HDCLR_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, HDCLR_A>;
-impl<'a, const O: u8> HDCLR_W<'a, O> {
+pub type HDCLR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HDCLR_A>;
+impl<'a, REG, const O: u8> HDCLR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(HDCLR_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(HDCLR_A::CONST_1)
     }
 }
@@ -309,28 +292,31 @@ impl HDSET_R {
             true => HDSET_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == HDSET_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == HDSET_A::CONST_1
     }
 }
 #[doc = "Field `HDSET` writer - HDSET Mirror Register Update Mask"]
-pub type HDSET_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, HDSET_A>;
-impl<'a, const O: u8> HDSET_W<'a, O> {
+pub type HDSET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HDSET_A>;
+impl<'a, REG, const O: u8> HDSET_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(HDSET_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(HDSET_A::CONST_1)
     }
 }
@@ -359,28 +345,31 @@ impl HDCR_R {
             true => HDCR_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == HDCR_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == HDCR_A::CONST_1
     }
 }
 #[doc = "Field `HDCR` writer - HDCR Mirror Register Update Mask"]
-pub type HDCR_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, HDCR_A>;
-impl<'a, const O: u8> HDCR_W<'a, O> {
+pub type HDCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HDCR_A>;
+impl<'a, REG, const O: u8> HDCR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(HDCR_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(HDCR_A::CONST_1)
     }
 }
@@ -409,28 +398,31 @@ impl OSCSICTRL_R {
             true => OSCSICTRL_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == OSCSICTRL_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == OSCSICTRL_A::CONST_1
     }
 }
 #[doc = "Field `OSCSICTRL` writer - OSCSICTRL Mirror Register Update Mask"]
-pub type OSCSICTRL_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, OSCSICTRL_A>;
-impl<'a, const O: u8> OSCSICTRL_W<'a, O> {
+pub type OSCSICTRL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OSCSICTRL_A>;
+impl<'a, REG, const O: u8> OSCSICTRL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(OSCSICTRL_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(OSCSICTRL_A::CONST_1)
     }
 }
@@ -459,28 +451,31 @@ impl OSCULCTRL_R {
             true => OSCULCTRL_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == OSCULCTRL_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == OSCULCTRL_A::CONST_1
     }
 }
 #[doc = "Field `OSCULCTRL` writer - OSCULCTRL Mirror Register Update Mask"]
-pub type OSCULCTRL_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, OSCULCTRL_A>;
-impl<'a, const O: u8> OSCULCTRL_W<'a, O> {
+pub type OSCULCTRL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OSCULCTRL_A>;
+impl<'a, REG, const O: u8> OSCULCTRL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(OSCULCTRL_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(OSCULCTRL_A::CONST_1)
     }
 }
@@ -509,28 +504,31 @@ impl RTC_CTR_R {
             true => RTC_CTR_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == RTC_CTR_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == RTC_CTR_A::CONST_1
     }
 }
 #[doc = "Field `RTC_CTR` writer - RTC CTR Mirror Register Update Mask"]
-pub type RTC_CTR_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, RTC_CTR_A>;
-impl<'a, const O: u8> RTC_CTR_W<'a, O> {
+pub type RTC_CTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTC_CTR_A>;
+impl<'a, REG, const O: u8> RTC_CTR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_CTR_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_CTR_A::CONST_1)
     }
 }
@@ -559,28 +557,31 @@ impl RTC_ATIM0_R {
             true => RTC_ATIM0_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == RTC_ATIM0_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == RTC_ATIM0_A::CONST_1
     }
 }
 #[doc = "Field `RTC_ATIM0` writer - RTC ATIM0 Mirror Register Update Mask"]
-pub type RTC_ATIM0_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, RTC_ATIM0_A>;
-impl<'a, const O: u8> RTC_ATIM0_W<'a, O> {
+pub type RTC_ATIM0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTC_ATIM0_A>;
+impl<'a, REG, const O: u8> RTC_ATIM0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_ATIM0_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_ATIM0_A::CONST_1)
     }
 }
@@ -609,28 +610,31 @@ impl RTC_ATIM1_R {
             true => RTC_ATIM1_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == RTC_ATIM1_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == RTC_ATIM1_A::CONST_1
     }
 }
 #[doc = "Field `RTC_ATIM1` writer - RTC ATIM1 Mirror Register Update Mask"]
-pub type RTC_ATIM1_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, RTC_ATIM1_A>;
-impl<'a, const O: u8> RTC_ATIM1_W<'a, O> {
+pub type RTC_ATIM1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTC_ATIM1_A>;
+impl<'a, REG, const O: u8> RTC_ATIM1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_ATIM1_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_ATIM1_A::CONST_1)
     }
 }
@@ -659,28 +663,31 @@ impl RTC_TIM0_R {
             true => RTC_TIM0_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == RTC_TIM0_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == RTC_TIM0_A::CONST_1
     }
 }
 #[doc = "Field `RTC_TIM0` writer - RTC TIM0 Mirror Register Update Mask"]
-pub type RTC_TIM0_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, RTC_TIM0_A>;
-impl<'a, const O: u8> RTC_TIM0_W<'a, O> {
+pub type RTC_TIM0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTC_TIM0_A>;
+impl<'a, REG, const O: u8> RTC_TIM0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_TIM0_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_TIM0_A::CONST_1)
     }
 }
@@ -709,28 +716,31 @@ impl RTC_TIM1_R {
             true => RTC_TIM1_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == RTC_TIM1_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == RTC_TIM1_A::CONST_1
     }
 }
 #[doc = "Field `RTC_TIM1` writer - RTC TIM1 Mirror Register Update Mask"]
-pub type RTC_TIM1_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, RTC_TIM1_A>;
-impl<'a, const O: u8> RTC_TIM1_W<'a, O> {
+pub type RTC_TIM1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTC_TIM1_A>;
+impl<'a, REG, const O: u8> RTC_TIM1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_TIM1_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(RTC_TIM1_A::CONST_1)
     }
 }
@@ -759,28 +769,31 @@ impl RMX_R {
             true => RMX_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == RMX_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == RMX_A::CONST_1
     }
 }
 #[doc = "Field `RMX` writer - Retention Memory Mirror Register Update Mask"]
-pub type RMX_W<'a, const O: u8> = crate::BitWriter<'a, SRMSK_SPEC, O, RMX_A>;
-impl<'a, const O: u8> RMX_W<'a, O> {
+pub type RMX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RMX_A>;
+impl<'a, REG, const O: u8> RMX_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(RMX_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(RMX_A::CONST_1)
     }
 }
@@ -865,112 +878,109 @@ impl W {
     #[doc = "Bit 0 - WDT pre-warning Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn prwarn(&mut self) -> PRWARN_W<0> {
+    pub fn prwarn(&mut self) -> PRWARN_W<SRMSK_SPEC, 0> {
         PRWARN_W::new(self)
     }
     #[doc = "Bit 1 - RTC Periodic Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn pi(&mut self) -> PI_W<1> {
+    pub fn pi(&mut self) -> PI_W<SRMSK_SPEC, 1> {
         PI_W::new(self)
     }
     #[doc = "Bit 2 - RTC Alarm Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn ai(&mut self) -> AI_W<2> {
+    pub fn ai(&mut self) -> AI_W<SRMSK_SPEC, 2> {
         AI_W::new(self)
     }
     #[doc = "Bit 3 - DLR Request Overrun Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn dlrovr(&mut self) -> DLROVR_W<3> {
+    pub fn dlrovr(&mut self) -> DLROVR_W<SRMSK_SPEC, 3> {
         DLROVR_W::new(self)
     }
     #[doc = "Bit 17 - HDCLR Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn hdclr(&mut self) -> HDCLR_W<17> {
+    pub fn hdclr(&mut self) -> HDCLR_W<SRMSK_SPEC, 17> {
         HDCLR_W::new(self)
     }
     #[doc = "Bit 18 - HDSET Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn hdset(&mut self) -> HDSET_W<18> {
+    pub fn hdset(&mut self) -> HDSET_W<SRMSK_SPEC, 18> {
         HDSET_W::new(self)
     }
     #[doc = "Bit 19 - HDCR Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn hdcr(&mut self) -> HDCR_W<19> {
+    pub fn hdcr(&mut self) -> HDCR_W<SRMSK_SPEC, 19> {
         HDCR_W::new(self)
     }
     #[doc = "Bit 21 - OSCSICTRL Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn oscsictrl(&mut self) -> OSCSICTRL_W<21> {
+    pub fn oscsictrl(&mut self) -> OSCSICTRL_W<SRMSK_SPEC, 21> {
         OSCSICTRL_W::new(self)
     }
     #[doc = "Bit 23 - OSCULCTRL Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn osculctrl(&mut self) -> OSCULCTRL_W<23> {
+    pub fn osculctrl(&mut self) -> OSCULCTRL_W<SRMSK_SPEC, 23> {
         OSCULCTRL_W::new(self)
     }
     #[doc = "Bit 24 - RTC CTR Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_ctr(&mut self) -> RTC_CTR_W<24> {
+    pub fn rtc_ctr(&mut self) -> RTC_CTR_W<SRMSK_SPEC, 24> {
         RTC_CTR_W::new(self)
     }
     #[doc = "Bit 25 - RTC ATIM0 Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_atim0(&mut self) -> RTC_ATIM0_W<25> {
+    pub fn rtc_atim0(&mut self) -> RTC_ATIM0_W<SRMSK_SPEC, 25> {
         RTC_ATIM0_W::new(self)
     }
     #[doc = "Bit 26 - RTC ATIM1 Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_atim1(&mut self) -> RTC_ATIM1_W<26> {
+    pub fn rtc_atim1(&mut self) -> RTC_ATIM1_W<SRMSK_SPEC, 26> {
         RTC_ATIM1_W::new(self)
     }
     #[doc = "Bit 27 - RTC TIM0 Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_tim0(&mut self) -> RTC_TIM0_W<27> {
+    pub fn rtc_tim0(&mut self) -> RTC_TIM0_W<SRMSK_SPEC, 27> {
         RTC_TIM0_W::new(self)
     }
     #[doc = "Bit 28 - RTC TIM1 Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn rtc_tim1(&mut self) -> RTC_TIM1_W<28> {
+    pub fn rtc_tim1(&mut self) -> RTC_TIM1_W<SRMSK_SPEC, 28> {
         RTC_TIM1_W::new(self)
     }
     #[doc = "Bit 29 - Retention Memory Mirror Register Update Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn rmx(&mut self) -> RMX_W<29> {
+    pub fn rmx(&mut self) -> RMX_W<SRMSK_SPEC, 29> {
         RMX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SCU Service Request Mask\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srmsk](index.html) module"]
+#[doc = "SCU Service Request Mask\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`srmsk::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`srmsk::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SRMSK_SPEC;
 impl crate::RegisterSpec for SRMSK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [srmsk::R](R) reader structure"]
-impl crate::Readable for SRMSK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [srmsk::W](W) writer structure"]
+#[doc = "`read()` method returns [`srmsk::R`](R) reader structure"]
+impl crate::Readable for SRMSK_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`srmsk::W`](W) writer structure"]
 impl crate::Writable for SRMSK_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

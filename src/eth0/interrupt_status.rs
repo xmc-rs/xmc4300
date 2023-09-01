@@ -1,18 +1,5 @@
 #[doc = "Register `INTERRUPT_STATUS` reader"]
-pub struct R(crate::R<INTERRUPT_STATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INTERRUPT_STATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INTERRUPT_STATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INTERRUPT_STATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<INTERRUPT_STATUS_SPEC>;
 #[doc = "Field `PMTIS` reader - PMT Interrupt Status"]
 pub type PMTIS_R = crate::BitReader;
 #[doc = "Field `MMCIS` reader - MMC Interrupt Status"]
@@ -57,15 +44,13 @@ impl R {
         TSIS_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
-#[doc = "Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [interrupt_status](index.html) module"]
+#[doc = "Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`interrupt_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INTERRUPT_STATUS_SPEC;
 impl crate::RegisterSpec for INTERRUPT_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [interrupt_status::R](R) reader structure"]
-impl crate::Readable for INTERRUPT_STATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`interrupt_status::R`](R) reader structure"]
+impl crate::Readable for INTERRUPT_STATUS_SPEC {}
 #[doc = "`reset()` method sets INTERRUPT_STATUS to value 0"]
 impl crate::Resettable for INTERRUPT_STATUS_SPEC {
     const RESET_VALUE: Self::Ux = 0;

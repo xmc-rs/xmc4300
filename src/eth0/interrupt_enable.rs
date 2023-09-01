@@ -1,99 +1,67 @@
 #[doc = "Register `INTERRUPT_ENABLE` reader"]
-pub struct R(crate::R<INTERRUPT_ENABLE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<INTERRUPT_ENABLE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<INTERRUPT_ENABLE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<INTERRUPT_ENABLE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<INTERRUPT_ENABLE_SPEC>;
 #[doc = "Register `INTERRUPT_ENABLE` writer"]
-pub struct W(crate::W<INTERRUPT_ENABLE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<INTERRUPT_ENABLE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<INTERRUPT_ENABLE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<INTERRUPT_ENABLE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<INTERRUPT_ENABLE_SPEC>;
 #[doc = "Field `TIE` reader - Transmit Interrupt Enable"]
 pub type TIE_R = crate::BitReader;
 #[doc = "Field `TIE` writer - Transmit Interrupt Enable"]
-pub type TIE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type TIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TSE` reader - Transmit Stopped Enable"]
 pub type TSE_R = crate::BitReader;
 #[doc = "Field `TSE` writer - Transmit Stopped Enable"]
-pub type TSE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type TSE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TUE` reader - Transmit Buffer Unvailable Enable"]
 pub type TUE_R = crate::BitReader;
 #[doc = "Field `TUE` writer - Transmit Buffer Unvailable Enable"]
-pub type TUE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type TUE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TJE` reader - Transmit Jabber Timeout Enable"]
 pub type TJE_R = crate::BitReader;
 #[doc = "Field `TJE` writer - Transmit Jabber Timeout Enable"]
-pub type TJE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type TJE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `OVE` reader - Overflow Interrupt Enable"]
 pub type OVE_R = crate::BitReader;
 #[doc = "Field `OVE` writer - Overflow Interrupt Enable"]
-pub type OVE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type OVE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `UNE` reader - Underflow Interrupt Enable"]
 pub type UNE_R = crate::BitReader;
 #[doc = "Field `UNE` writer - Underflow Interrupt Enable"]
-pub type UNE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type UNE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RIE` reader - Receive Interrupt Enable"]
 pub type RIE_R = crate::BitReader;
 #[doc = "Field `RIE` writer - Receive Interrupt Enable"]
-pub type RIE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type RIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RUE` reader - Receive Buffer Unavailable Enable"]
 pub type RUE_R = crate::BitReader;
 #[doc = "Field `RUE` writer - Receive Buffer Unavailable Enable"]
-pub type RUE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type RUE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RSE` reader - Receive Stopped Enable"]
 pub type RSE_R = crate::BitReader;
 #[doc = "Field `RSE` writer - Receive Stopped Enable"]
-pub type RSE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type RSE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RWE` reader - Receive Watchdog Timeout Enable"]
 pub type RWE_R = crate::BitReader;
 #[doc = "Field `RWE` writer - Receive Watchdog Timeout Enable"]
-pub type RWE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type RWE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ETE` reader - Early Transmit Interrupt Enable"]
 pub type ETE_R = crate::BitReader;
 #[doc = "Field `ETE` writer - Early Transmit Interrupt Enable"]
-pub type ETE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type ETE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `FBE` reader - Fatal Bus Error Enable"]
 pub type FBE_R = crate::BitReader;
 #[doc = "Field `FBE` writer - Fatal Bus Error Enable"]
-pub type FBE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type FBE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ERE` reader - Early Receive Interrupt Enable"]
 pub type ERE_R = crate::BitReader;
 #[doc = "Field `ERE` writer - Early Receive Interrupt Enable"]
-pub type ERE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type ERE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `AIE` reader - Abnormal Interrupt Summary Enable"]
 pub type AIE_R = crate::BitReader;
 #[doc = "Field `AIE` writer - Abnormal Interrupt Summary Enable"]
-pub type AIE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type AIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `NIE` reader - Normal Interrupt Summary Enable"]
 pub type NIE_R = crate::BitReader;
 #[doc = "Field `NIE` writer - Normal Interrupt Summary Enable"]
-pub type NIE_W<'a, const O: u8> = crate::BitWriter<'a, INTERRUPT_ENABLE_SPEC, O>;
+pub type NIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Transmit Interrupt Enable"]
     #[inline(always)]
@@ -175,112 +143,109 @@ impl W {
     #[doc = "Bit 0 - Transmit Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tie(&mut self) -> TIE_W<0> {
+    pub fn tie(&mut self) -> TIE_W<INTERRUPT_ENABLE_SPEC, 0> {
         TIE_W::new(self)
     }
     #[doc = "Bit 1 - Transmit Stopped Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tse(&mut self) -> TSE_W<1> {
+    pub fn tse(&mut self) -> TSE_W<INTERRUPT_ENABLE_SPEC, 1> {
         TSE_W::new(self)
     }
     #[doc = "Bit 2 - Transmit Buffer Unvailable Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tue(&mut self) -> TUE_W<2> {
+    pub fn tue(&mut self) -> TUE_W<INTERRUPT_ENABLE_SPEC, 2> {
         TUE_W::new(self)
     }
     #[doc = "Bit 3 - Transmit Jabber Timeout Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tje(&mut self) -> TJE_W<3> {
+    pub fn tje(&mut self) -> TJE_W<INTERRUPT_ENABLE_SPEC, 3> {
         TJE_W::new(self)
     }
     #[doc = "Bit 4 - Overflow Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ove(&mut self) -> OVE_W<4> {
+    pub fn ove(&mut self) -> OVE_W<INTERRUPT_ENABLE_SPEC, 4> {
         OVE_W::new(self)
     }
     #[doc = "Bit 5 - Underflow Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn une(&mut self) -> UNE_W<5> {
+    pub fn une(&mut self) -> UNE_W<INTERRUPT_ENABLE_SPEC, 5> {
         UNE_W::new(self)
     }
     #[doc = "Bit 6 - Receive Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rie(&mut self) -> RIE_W<6> {
+    pub fn rie(&mut self) -> RIE_W<INTERRUPT_ENABLE_SPEC, 6> {
         RIE_W::new(self)
     }
     #[doc = "Bit 7 - Receive Buffer Unavailable Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rue(&mut self) -> RUE_W<7> {
+    pub fn rue(&mut self) -> RUE_W<INTERRUPT_ENABLE_SPEC, 7> {
         RUE_W::new(self)
     }
     #[doc = "Bit 8 - Receive Stopped Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rse(&mut self) -> RSE_W<8> {
+    pub fn rse(&mut self) -> RSE_W<INTERRUPT_ENABLE_SPEC, 8> {
         RSE_W::new(self)
     }
     #[doc = "Bit 9 - Receive Watchdog Timeout Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rwe(&mut self) -> RWE_W<9> {
+    pub fn rwe(&mut self) -> RWE_W<INTERRUPT_ENABLE_SPEC, 9> {
         RWE_W::new(self)
     }
     #[doc = "Bit 10 - Early Transmit Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ete(&mut self) -> ETE_W<10> {
+    pub fn ete(&mut self) -> ETE_W<INTERRUPT_ENABLE_SPEC, 10> {
         ETE_W::new(self)
     }
     #[doc = "Bit 13 - Fatal Bus Error Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fbe(&mut self) -> FBE_W<13> {
+    pub fn fbe(&mut self) -> FBE_W<INTERRUPT_ENABLE_SPEC, 13> {
         FBE_W::new(self)
     }
     #[doc = "Bit 14 - Early Receive Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ere(&mut self) -> ERE_W<14> {
+    pub fn ere(&mut self) -> ERE_W<INTERRUPT_ENABLE_SPEC, 14> {
         ERE_W::new(self)
     }
     #[doc = "Bit 15 - Abnormal Interrupt Summary Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn aie(&mut self) -> AIE_W<15> {
+    pub fn aie(&mut self) -> AIE_W<INTERRUPT_ENABLE_SPEC, 15> {
         AIE_W::new(self)
     }
     #[doc = "Bit 16 - Normal Interrupt Summary Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn nie(&mut self) -> NIE_W<16> {
+    pub fn nie(&mut self) -> NIE_W<INTERRUPT_ENABLE_SPEC, 16> {
         NIE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [interrupt_enable](index.html) module"]
+#[doc = "Interrupt Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`interrupt_enable::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`interrupt_enable::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct INTERRUPT_ENABLE_SPEC;
 impl crate::RegisterSpec for INTERRUPT_ENABLE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [interrupt_enable::R](R) reader structure"]
-impl crate::Readable for INTERRUPT_ENABLE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [interrupt_enable::W](W) writer structure"]
+#[doc = "`read()` method returns [`interrupt_enable::R`](R) reader structure"]
+impl crate::Readable for INTERRUPT_ENABLE_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`interrupt_enable::W`](W) writer structure"]
 impl crate::Writable for INTERRUPT_ENABLE_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

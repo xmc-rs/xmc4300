@@ -1,18 +1,5 @@
 #[doc = "Register `DC_ACT_STAT` reader"]
-pub struct R(crate::R<DC_ACT_STAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DC_ACT_STAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DC_ACT_STAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DC_ACT_STAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DC_ACT_STAT_SPEC>;
 #[doc = "Field `S0_ACK_STATE` reader - SYNC0 activation state"]
 pub type S0_ACK_STATE_R = crate::BitReader<S0_ACK_STATE_A>;
 #[doc = "SYNC0 activation state\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl S0_ACK_STATE_R {
             true => S0_ACK_STATE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "First SYNC0 pulse is not pending"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S0_ACK_STATE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "First SYNC0 pulse is pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S0_ACK_STATE_A::VALUE2
@@ -74,12 +61,12 @@ impl S1_ACK_STATE_R {
             true => S1_ACK_STATE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "First SYNC1 pulse is not pending"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S1_ACK_STATE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "First SYNC1 pulse is pending"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S1_ACK_STATE_A::VALUE2
@@ -110,12 +97,12 @@ impl S_TIME_R {
             true => S_TIME_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Start Time was within near future"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == S_TIME_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Start Time was out of near future (0x0981.6)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == S_TIME_A::VALUE2
@@ -138,15 +125,13 @@ impl R {
         S_TIME_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "Activation Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dc_act_stat](index.html) module"]
+#[doc = "Activation Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_act_stat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_ACT_STAT_SPEC;
 impl crate::RegisterSpec for DC_ACT_STAT_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [dc_act_stat::R](R) reader structure"]
-impl crate::Readable for DC_ACT_STAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dc_act_stat::R`](R) reader structure"]
+impl crate::Readable for DC_ACT_STAT_SPEC {}
 #[doc = "`reset()` method sets DC_ACT_STAT to value 0"]
 impl crate::Resettable for DC_ACT_STAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

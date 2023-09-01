@@ -1,43 +1,11 @@
 #[doc = "Register `MII_PHY_REG_ADR` reader"]
-pub struct R(crate::R<MII_PHY_REG_ADR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MII_PHY_REG_ADR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MII_PHY_REG_ADR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MII_PHY_REG_ADR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MII_PHY_REG_ADR_SPEC>;
 #[doc = "Register `MII_PHY_REG_ADR` writer"]
-pub struct W(crate::W<MII_PHY_REG_ADR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MII_PHY_REG_ADR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MII_PHY_REG_ADR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MII_PHY_REG_ADR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MII_PHY_REG_ADR_SPEC>;
 #[doc = "Field `PHY_REG_ADDR` reader - Address of PHY Register that shall beread/written"]
 pub type PHY_REG_ADDR_R = crate::FieldReader;
 #[doc = "Field `PHY_REG_ADDR` writer - Address of PHY Register that shall beread/written"]
-pub type PHY_REG_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, MII_PHY_REG_ADR_SPEC, 5, O>;
+pub type PHY_REG_ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O>;
 impl R {
     #[doc = "Bits 0:4 - Address of PHY Register that shall beread/written"]
     #[inline(always)]
@@ -49,28 +17,25 @@ impl W {
     #[doc = "Bits 0:4 - Address of PHY Register that shall beread/written"]
     #[inline(always)]
     #[must_use]
-    pub fn phy_reg_addr(&mut self) -> PHY_REG_ADDR_W<0> {
+    pub fn phy_reg_addr(&mut self) -> PHY_REG_ADDR_W<MII_PHY_REG_ADR_SPEC, 0> {
         PHY_REG_ADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PHY Register Address\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mii_phy_reg_adr](index.html) module"]
+#[doc = "PHY Register Address\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mii_phy_reg_adr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mii_phy_reg_adr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MII_PHY_REG_ADR_SPEC;
 impl crate::RegisterSpec for MII_PHY_REG_ADR_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [mii_phy_reg_adr::R](R) reader structure"]
-impl crate::Readable for MII_PHY_REG_ADR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mii_phy_reg_adr::W](W) writer structure"]
+#[doc = "`read()` method returns [`mii_phy_reg_adr::R`](R) reader structure"]
+impl crate::Readable for MII_PHY_REG_ADR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mii_phy_reg_adr::W`](W) writer structure"]
 impl crate::Writable for MII_PHY_REG_ADR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

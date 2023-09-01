@@ -1,43 +1,11 @@
 #[doc = "Register `TBUF[%s]` reader"]
-pub struct R(crate::R<TBUF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TBUF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TBUF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TBUF_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TBUF_SPEC>;
 #[doc = "Register `TBUF[%s]` writer"]
-pub struct W(crate::W<TBUF_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TBUF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TBUF_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TBUF_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TBUF_SPEC>;
 #[doc = "Field `TDATA` reader - Transmit Data"]
 pub type TDATA_R = crate::FieldReader<u16>;
 #[doc = "Field `TDATA` writer - Transmit Data"]
-pub type TDATA_W<'a, const O: u8> = crate::FieldWriter<'a, TBUF_SPEC, 16, O, u16>;
+pub type TDATA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]
@@ -49,28 +17,25 @@ impl W {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]
     #[must_use]
-    pub fn tdata(&mut self) -> TDATA_W<0> {
+    pub fn tdata(&mut self) -> TDATA_W<TBUF_SPEC, 0> {
         TDATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Transmit Buffer\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tbuf](index.html) module"]
+#[doc = "Transmit Buffer\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tbuf::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tbuf::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TBUF_SPEC;
 impl crate::RegisterSpec for TBUF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tbuf::R](R) reader structure"]
-impl crate::Readable for TBUF_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tbuf::W](W) writer structure"]
+#[doc = "`read()` method returns [`tbuf::R`](R) reader structure"]
+impl crate::Readable for TBUF_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tbuf::W`](W) writer structure"]
 impl crate::Writable for TBUF_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

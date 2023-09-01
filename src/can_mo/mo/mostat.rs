@@ -1,18 +1,5 @@
 #[doc = "Register `MOSTAT` reader"]
-pub struct R(crate::R<MOSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MOSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MOSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MOSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MOSTAT_SPEC>;
 #[doc = "Field `RXPND` reader - Receive Pending"]
 pub type RXPND_R = crate::BitReader<RXPND_A>;
 #[doc = "Receive Pending\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl RXPND_R {
             true => RXPND_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No CAN message has been received."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RXPND_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A CAN message has been received by the message object n, either directly or via gateway copy action."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RXPND_A::VALUE2
@@ -74,12 +61,12 @@ impl TXPND_R {
             true => TXPND_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No CAN message has been transmitted."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TXPND_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A CAN message from message object n has been transmitted successfully over the CAN bus."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TXPND_A::VALUE2
@@ -110,12 +97,12 @@ impl RXUPD_R {
             true => RXUPD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No receive update ongoing."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RXUPD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Message identifier, DLC, and data of the message object are currently updated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RXUPD_A::VALUE2
@@ -146,12 +133,12 @@ impl NEWDAT_R {
             true => NEWDAT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No update of the message object n since last flag reset."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == NEWDAT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Message object n has been updated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == NEWDAT_A::VALUE2
@@ -182,12 +169,12 @@ impl MSGLST_R {
             true => MSGLST_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No CAN message is lost."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSGLST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A CAN message is lost because NEWDAT has become set again when it has already been set."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSGLST_A::VALUE2
@@ -218,12 +205,12 @@ impl MSGVAL_R {
             true => MSGVAL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Message object n is not valid."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSGVAL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Message object n is valid."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSGVAL_A::VALUE2
@@ -254,12 +241,12 @@ impl RTSEL_R {
             true => RTSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Message object n is not selected for receive or transmit operation."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Message object n is selected for receive or transmit operation."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTSEL_A::VALUE2
@@ -290,12 +277,12 @@ impl RXEN_R {
             true => RXEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Message object n is not enabled for frame reception."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RXEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Message object n is enabled for frame reception."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RXEN_A::VALUE2
@@ -326,12 +313,12 @@ impl TXRQ_R {
             true => TXRQ_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No transmission of message object n is requested."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TXRQ_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Transmission of message object n on the CAN bus is requested."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TXRQ_A::VALUE2
@@ -362,12 +349,12 @@ impl TXEN0_R {
             true => TXEN0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Message object n is not enabled for frame transmission."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TXEN0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Message object n is enabled for frame transmission."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TXEN0_A::VALUE2
@@ -398,12 +385,12 @@ impl TXEN1_R {
             true => TXEN1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Message object n is not enabled for frame transmission."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TXEN1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Message object n is enabled for frame transmission."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TXEN1_A::VALUE2
@@ -434,12 +421,12 @@ impl DIR_R {
             true => DIR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Receive Object selected: With TXRQ = 1, a Remote Frame with the identifier of message object n is scheduled for transmission. On reception of a Data Frame with matching identifier, the message is stored in message object n."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DIR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Transmit Object selected: If TXRQ = 1, message object n is scheduled for transmission of a Data Frame. On reception of a Remote Frame with matching identifier, bit TXRQ is set."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DIR_A::VALUE2
@@ -528,15 +515,13 @@ impl R {
         PNEXT_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
-#[doc = "Message Object Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mostat](index.html) module"]
+#[doc = "Message Object Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mostat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MOSTAT_SPEC;
 impl crate::RegisterSpec for MOSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mostat::R](R) reader structure"]
-impl crate::Readable for MOSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`mostat::R`](R) reader structure"]
+impl crate::Readable for MOSTAT_SPEC {}
 #[doc = "`reset()` method sets MOSTAT to value 0"]
 impl crate::Resettable for MOSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

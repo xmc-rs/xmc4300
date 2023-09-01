@@ -1,18 +1,5 @@
 #[doc = "Register `PROCON0` reader"]
-pub struct R(crate::R<PROCON0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PROCON0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PROCON0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PROCON0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PROCON0_SPEC>;
 #[doc = "Field `S0L` reader - Sector 0 Locked for Write Protection by User 0"]
 pub type S0L_R = crate::BitReader<S0L_A>;
 #[doc = "Sector 0 Locked for Write Protection by User 0\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl S0L_R {
             true => S0L_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S0L_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S0L_A::CONST_1
@@ -74,12 +61,12 @@ impl S1L_R {
             true => S1L_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S1L_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S1L_A::CONST_1
@@ -110,12 +97,12 @@ impl S2L_R {
             true => S2L_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S2L_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S2L_A::CONST_1
@@ -146,12 +133,12 @@ impl S3L_R {
             true => S3L_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S3L_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S3L_A::CONST_1
@@ -182,12 +169,12 @@ impl S4L_R {
             true => S4L_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S4L_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S4L_A::CONST_1
@@ -218,12 +205,12 @@ impl S5L_R {
             true => S5L_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S5L_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S5L_A::CONST_1
@@ -254,12 +241,12 @@ impl S6L_R {
             true => S6L_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S6L_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S6L_A::CONST_1
@@ -290,12 +277,12 @@ impl S7L_R {
             true => S7L_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S7L_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S7L_A::CONST_1
@@ -326,12 +313,12 @@ impl S8L_R {
             true => S8L_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S8L_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Write protection is configured for sector n."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S8L_A::CONST_1
@@ -362,12 +349,12 @@ impl RPRO_R {
             true => RPRO_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No read protection configured"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == RPRO_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Read protection and global write protection is configured by user 0 (master user)"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == RPRO_A::CONST_1
@@ -425,15 +412,13 @@ impl R {
         RPRO_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Flash Protection Configuration Register User 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [procon0](index.html) module"]
+#[doc = "Flash Protection Configuration Register User 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`procon0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PROCON0_SPEC;
 impl crate::RegisterSpec for PROCON0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [procon0::R](R) reader structure"]
-impl crate::Readable for PROCON0_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`procon0::R`](R) reader structure"]
+impl crate::Readable for PROCON0_SPEC {}
 #[doc = "`reset()` method sets PROCON0 to value 0"]
 impl crate::Resettable for PROCON0_SPEC {
     const RESET_VALUE: Self::Ux = 0;

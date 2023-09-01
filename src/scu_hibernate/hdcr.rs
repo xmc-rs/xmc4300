@@ -1,39 +1,7 @@
 #[doc = "Register `HDCR` reader"]
-pub struct R(crate::R<HDCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HDCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HDCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HDCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HDCR_SPEC>;
 #[doc = "Register `HDCR` writer"]
-pub struct W(crate::W<HDCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HDCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HDCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HDCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HDCR_SPEC>;
 #[doc = "Field `WKPEP` reader - Wake-Up on Pin Event Positive Edge Enable"]
 pub type WKPEP_R = crate::BitReader<WKPEP_A>;
 #[doc = "Wake-Up on Pin Event Positive Edge Enable\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl WKPEP_R {
             true => WKPEP_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Wake-up event disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == WKPEP_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Wake-up event enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == WKPEP_A::CONST_1
     }
 }
 #[doc = "Field `WKPEP` writer - Wake-Up on Pin Event Positive Edge Enable"]
-pub type WKPEP_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, WKPEP_A>;
-impl<'a, const O: u8> WKPEP_W<'a, O> {
+pub type WKPEP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKPEP_A>;
+impl<'a, REG, const O: u8> WKPEP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Wake-up event disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(WKPEP_A::CONST_0)
     }
     #[doc = "Wake-up event enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(WKPEP_A::CONST_1)
     }
 }
@@ -109,28 +80,31 @@ impl WKPEN_R {
             true => WKPEN_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Wake-up event disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == WKPEN_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Wake-up event enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == WKPEN_A::CONST_1
     }
 }
 #[doc = "Field `WKPEN` writer - Wake-up on Pin Event Negative Edge Enable"]
-pub type WKPEN_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, WKPEN_A>;
-impl<'a, const O: u8> WKPEN_W<'a, O> {
+pub type WKPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKPEN_A>;
+impl<'a, REG, const O: u8> WKPEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Wake-up event disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(WKPEN_A::CONST_0)
     }
     #[doc = "Wake-up event enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(WKPEN_A::CONST_1)
     }
 }
@@ -159,28 +133,31 @@ impl RTCE_R {
             true => RTCE_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Wake-up event disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == RTCE_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Wake-up event enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == RTCE_A::CONST_1
     }
 }
 #[doc = "Field `RTCE` writer - Wake-up on RTC Event Enable"]
-pub type RTCE_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, RTCE_A>;
-impl<'a, const O: u8> RTCE_W<'a, O> {
+pub type RTCE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RTCE_A>;
+impl<'a, REG, const O: u8> RTCE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Wake-up event disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(RTCE_A::CONST_0)
     }
     #[doc = "Wake-up event enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(RTCE_A::CONST_1)
     }
 }
@@ -209,28 +186,31 @@ impl ULPWDGEN_R {
             true => ULPWDGEN_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Wake-up event disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ULPWDGEN_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Wake-up event enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ULPWDGEN_A::CONST_1
     }
 }
 #[doc = "Field `ULPWDGEN` writer - ULP WDG Alarm Enable"]
-pub type ULPWDGEN_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, ULPWDGEN_A>;
-impl<'a, const O: u8> ULPWDGEN_W<'a, O> {
+pub type ULPWDGEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ULPWDGEN_A>;
+impl<'a, REG, const O: u8> ULPWDGEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Wake-up event disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(ULPWDGEN_A::CONST_0)
     }
     #[doc = "Wake-up event enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(ULPWDGEN_A::CONST_1)
     }
 }
@@ -259,28 +239,31 @@ impl HIB_R {
             true => HIB_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "External hibernate request inactive"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == HIB_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "External hibernate request active"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == HIB_A::CONST_1
     }
 }
 #[doc = "Field `HIB` writer - Hibernate Request Value Set"]
-pub type HIB_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, HIB_A>;
-impl<'a, const O: u8> HIB_W<'a, O> {
+pub type HIB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HIB_A>;
+impl<'a, REG, const O: u8> HIB_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "External hibernate request inactive"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(HIB_A::CONST_0)
     }
     #[doc = "External hibernate request active"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(HIB_A::CONST_1)
     }
 }
@@ -309,28 +292,31 @@ impl RCS_R {
             true => RCS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "fOSI selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == RCS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "fULP selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == RCS_A::CONST_1
     }
 }
 #[doc = "Field `RCS` writer - fRTC Clock Selection"]
-pub type RCS_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, RCS_A>;
-impl<'a, const O: u8> RCS_W<'a, O> {
+pub type RCS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RCS_A>;
+impl<'a, REG, const O: u8> RCS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "fOSI selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(RCS_A::CONST_0)
     }
     #[doc = "fULP selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(RCS_A::CONST_1)
     }
 }
@@ -359,28 +345,31 @@ impl STDBYSEL_R {
             true => STDBYSEL_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "fOSI selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == STDBYSEL_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "fULP selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == STDBYSEL_A::CONST_1
     }
 }
 #[doc = "Field `STDBYSEL` writer - fSTDBY Clock Selection"]
-pub type STDBYSEL_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, STDBYSEL_A>;
-impl<'a, const O: u8> STDBYSEL_W<'a, O> {
+pub type STDBYSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, STDBYSEL_A>;
+impl<'a, REG, const O: u8> STDBYSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "fOSI selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(STDBYSEL_A::CONST_0)
     }
     #[doc = "fULP selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(STDBYSEL_A::CONST_1)
     }
 }
@@ -409,28 +398,31 @@ impl WKUPSEL_R {
             true => WKUPSEL_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "HIB_IO_1 pin selected"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == WKUPSEL_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "HIB_IO_0 pin selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == WKUPSEL_A::CONST_1
     }
 }
 #[doc = "Field `WKUPSEL` writer - Wake-Up from Hibernate Trigger Input Selection"]
-pub type WKUPSEL_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, WKUPSEL_A>;
-impl<'a, const O: u8> WKUPSEL_W<'a, O> {
+pub type WKUPSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WKUPSEL_A>;
+impl<'a, REG, const O: u8> WKUPSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "HIB_IO_1 pin selected"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(WKUPSEL_A::CONST_0)
     }
     #[doc = "HIB_IO_0 pin selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(WKUPSEL_A::CONST_1)
     }
 }
@@ -459,28 +451,31 @@ impl GPI0SEL_R {
             true => GPI0SEL_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "#0"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == GPI0SEL_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "HIB_IO_0 pin selected"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == GPI0SEL_A::CONST_1
     }
 }
 #[doc = "Field `GPI0SEL` writer - General Purpose Input 0 Selection"]
-pub type GPI0SEL_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, GPI0SEL_A>;
-impl<'a, const O: u8> GPI0SEL_W<'a, O> {
+pub type GPI0SEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GPI0SEL_A>;
+impl<'a, REG, const O: u8> GPI0SEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "#0"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(GPI0SEL_A::CONST_0)
     }
     #[doc = "HIB_IO_0 pin selected"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(GPI0SEL_A::CONST_1)
     }
 }
@@ -509,28 +504,31 @@ impl HIBIO0POL_R {
             true => HIBIO0POL_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Direct value"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == HIBIO0POL_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Inverted value"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == HIBIO0POL_A::CONST_1
     }
 }
 #[doc = "Field `HIBIO0POL` writer - HIBIO0 Polarity Set"]
-pub type HIBIO0POL_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, HIBIO0POL_A>;
-impl<'a, const O: u8> HIBIO0POL_W<'a, O> {
+pub type HIBIO0POL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HIBIO0POL_A>;
+impl<'a, REG, const O: u8> HIBIO0POL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Direct value"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO0POL_A::CONST_0)
     }
     #[doc = "Inverted value"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO0POL_A::CONST_1)
     }
 }
@@ -559,28 +557,31 @@ impl HIBIO1POL_R {
             true => HIBIO1POL_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Direct value"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == HIBIO1POL_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Inverted value"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == HIBIO1POL_A::CONST_1
     }
 }
 #[doc = "Field `HIBIO1POL` writer - HIBIO1 Polarity Set"]
-pub type HIBIO1POL_W<'a, const O: u8> = crate::BitWriter<'a, HDCR_SPEC, O, HIBIO1POL_A>;
-impl<'a, const O: u8> HIBIO1POL_W<'a, O> {
+pub type HIBIO1POL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HIBIO1POL_A>;
+impl<'a, REG, const O: u8> HIBIO1POL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Direct value"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO1POL_A::CONST_0)
     }
     #[doc = "Inverted value"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO1POL_A::CONST_1)
     }
 }
@@ -638,108 +639,112 @@ impl HIBIO0SEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0000`"]
+    #[doc = "Direct input, No input pull device connected"]
     #[inline(always)]
     pub fn is_const_0000(&self) -> bool {
         *self == HIBIO0SEL_A::CONST_0000
     }
-    #[doc = "Checks if the value of the field is `CONST_0001`"]
+    #[doc = "Direct input, Input pull-down device connected"]
     #[inline(always)]
     pub fn is_const_0001(&self) -> bool {
         *self == HIBIO0SEL_A::CONST_0001
     }
-    #[doc = "Checks if the value of the field is `CONST_0010`"]
+    #[doc = "Direct input, Input pull-up device connected"]
     #[inline(always)]
     pub fn is_const_0010(&self) -> bool {
         *self == HIBIO0SEL_A::CONST_0010
     }
-    #[doc = "Checks if the value of the field is `CONST_1000`"]
+    #[doc = "Push-pull HIB Control output"]
     #[inline(always)]
     pub fn is_const_1000(&self) -> bool {
         *self == HIBIO0SEL_A::CONST_1000
     }
-    #[doc = "Checks if the value of the field is `CONST_1001`"]
+    #[doc = "Push-pull WDT service output"]
     #[inline(always)]
     pub fn is_const_1001(&self) -> bool {
         *self == HIBIO0SEL_A::CONST_1001
     }
-    #[doc = "Checks if the value of the field is `CONST_1010`"]
+    #[doc = "Push-pull GPIO output"]
     #[inline(always)]
     pub fn is_const_1010(&self) -> bool {
         *self == HIBIO0SEL_A::CONST_1010
     }
-    #[doc = "Checks if the value of the field is `CONST_1100`"]
+    #[doc = "Open-drain HIB Control output"]
     #[inline(always)]
     pub fn is_const_1100(&self) -> bool {
         *self == HIBIO0SEL_A::CONST_1100
     }
-    #[doc = "Checks if the value of the field is `CONST_1101`"]
+    #[doc = "Open-drain WDT service output"]
     #[inline(always)]
     pub fn is_const_1101(&self) -> bool {
         *self == HIBIO0SEL_A::CONST_1101
     }
-    #[doc = "Checks if the value of the field is `CONST_1110`"]
+    #[doc = "Open-drain GPIO output"]
     #[inline(always)]
     pub fn is_const_1110(&self) -> bool {
         *self == HIBIO0SEL_A::CONST_1110
     }
-    #[doc = "Checks if the value of the field is `CONST_1111`"]
+    #[doc = "#1111"]
     #[inline(always)]
     pub fn is_const_1111(&self) -> bool {
         *self == HIBIO0SEL_A::CONST_1111
     }
 }
 #[doc = "Field `HIBIO0SEL` writer - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
-pub type HIBIO0SEL_W<'a, const O: u8> = crate::FieldWriter<'a, HDCR_SPEC, 4, O, HIBIO0SEL_A>;
-impl<'a, const O: u8> HIBIO0SEL_W<'a, O> {
+pub type HIBIO0SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, HIBIO0SEL_A>;
+impl<'a, REG, const O: u8> HIBIO0SEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Direct input, No input pull device connected"]
     #[inline(always)]
-    pub fn const_0000(self) -> &'a mut W {
+    pub fn const_0000(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO0SEL_A::CONST_0000)
     }
     #[doc = "Direct input, Input pull-down device connected"]
     #[inline(always)]
-    pub fn const_0001(self) -> &'a mut W {
+    pub fn const_0001(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO0SEL_A::CONST_0001)
     }
     #[doc = "Direct input, Input pull-up device connected"]
     #[inline(always)]
-    pub fn const_0010(self) -> &'a mut W {
+    pub fn const_0010(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO0SEL_A::CONST_0010)
     }
     #[doc = "Push-pull HIB Control output"]
     #[inline(always)]
-    pub fn const_1000(self) -> &'a mut W {
+    pub fn const_1000(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO0SEL_A::CONST_1000)
     }
     #[doc = "Push-pull WDT service output"]
     #[inline(always)]
-    pub fn const_1001(self) -> &'a mut W {
+    pub fn const_1001(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO0SEL_A::CONST_1001)
     }
     #[doc = "Push-pull GPIO output"]
     #[inline(always)]
-    pub fn const_1010(self) -> &'a mut W {
+    pub fn const_1010(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO0SEL_A::CONST_1010)
     }
     #[doc = "Open-drain HIB Control output"]
     #[inline(always)]
-    pub fn const_1100(self) -> &'a mut W {
+    pub fn const_1100(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO0SEL_A::CONST_1100)
     }
     #[doc = "Open-drain WDT service output"]
     #[inline(always)]
-    pub fn const_1101(self) -> &'a mut W {
+    pub fn const_1101(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO0SEL_A::CONST_1101)
     }
     #[doc = "Open-drain GPIO output"]
     #[inline(always)]
-    pub fn const_1110(self) -> &'a mut W {
+    pub fn const_1110(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO0SEL_A::CONST_1110)
     }
     #[doc = "#1111"]
     #[inline(always)]
-    pub fn const_1111(self) -> &'a mut W {
+    pub fn const_1111(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO0SEL_A::CONST_1111)
     }
 }
@@ -797,108 +802,112 @@ impl HIBIO1SEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0000`"]
+    #[doc = "Direct input, No input pull device connected"]
     #[inline(always)]
     pub fn is_const_0000(&self) -> bool {
         *self == HIBIO1SEL_A::CONST_0000
     }
-    #[doc = "Checks if the value of the field is `CONST_0001`"]
+    #[doc = "Direct input, Input pull-down device connected"]
     #[inline(always)]
     pub fn is_const_0001(&self) -> bool {
         *self == HIBIO1SEL_A::CONST_0001
     }
-    #[doc = "Checks if the value of the field is `CONST_0010`"]
+    #[doc = "Direct input, Input pull-up device connected"]
     #[inline(always)]
     pub fn is_const_0010(&self) -> bool {
         *self == HIBIO1SEL_A::CONST_0010
     }
-    #[doc = "Checks if the value of the field is `CONST_1000`"]
+    #[doc = "Push-pull HIB Control output"]
     #[inline(always)]
     pub fn is_const_1000(&self) -> bool {
         *self == HIBIO1SEL_A::CONST_1000
     }
-    #[doc = "Checks if the value of the field is `CONST_1001`"]
+    #[doc = "Push-pull WDT service output"]
     #[inline(always)]
     pub fn is_const_1001(&self) -> bool {
         *self == HIBIO1SEL_A::CONST_1001
     }
-    #[doc = "Checks if the value of the field is `CONST_1010`"]
+    #[doc = "Push-pull GPIO output"]
     #[inline(always)]
     pub fn is_const_1010(&self) -> bool {
         *self == HIBIO1SEL_A::CONST_1010
     }
-    #[doc = "Checks if the value of the field is `CONST_1100`"]
+    #[doc = "Open-drain HIB Control output"]
     #[inline(always)]
     pub fn is_const_1100(&self) -> bool {
         *self == HIBIO1SEL_A::CONST_1100
     }
-    #[doc = "Checks if the value of the field is `CONST_1101`"]
+    #[doc = "Open-drain WDT service output"]
     #[inline(always)]
     pub fn is_const_1101(&self) -> bool {
         *self == HIBIO1SEL_A::CONST_1101
     }
-    #[doc = "Checks if the value of the field is `CONST_1110`"]
+    #[doc = "Open-drain GPIO output"]
     #[inline(always)]
     pub fn is_const_1110(&self) -> bool {
         *self == HIBIO1SEL_A::CONST_1110
     }
-    #[doc = "Checks if the value of the field is `CONST_1111`"]
+    #[doc = "#1111"]
     #[inline(always)]
     pub fn is_const_1111(&self) -> bool {
         *self == HIBIO1SEL_A::CONST_1111
     }
 }
 #[doc = "Field `HIBIO1SEL` writer - HIB_IO_1 Pin I/O Control (Default WKUP)"]
-pub type HIBIO1SEL_W<'a, const O: u8> = crate::FieldWriter<'a, HDCR_SPEC, 4, O, HIBIO1SEL_A>;
-impl<'a, const O: u8> HIBIO1SEL_W<'a, O> {
+pub type HIBIO1SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, HIBIO1SEL_A>;
+impl<'a, REG, const O: u8> HIBIO1SEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Direct input, No input pull device connected"]
     #[inline(always)]
-    pub fn const_0000(self) -> &'a mut W {
+    pub fn const_0000(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO1SEL_A::CONST_0000)
     }
     #[doc = "Direct input, Input pull-down device connected"]
     #[inline(always)]
-    pub fn const_0001(self) -> &'a mut W {
+    pub fn const_0001(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO1SEL_A::CONST_0001)
     }
     #[doc = "Direct input, Input pull-up device connected"]
     #[inline(always)]
-    pub fn const_0010(self) -> &'a mut W {
+    pub fn const_0010(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO1SEL_A::CONST_0010)
     }
     #[doc = "Push-pull HIB Control output"]
     #[inline(always)]
-    pub fn const_1000(self) -> &'a mut W {
+    pub fn const_1000(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO1SEL_A::CONST_1000)
     }
     #[doc = "Push-pull WDT service output"]
     #[inline(always)]
-    pub fn const_1001(self) -> &'a mut W {
+    pub fn const_1001(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO1SEL_A::CONST_1001)
     }
     #[doc = "Push-pull GPIO output"]
     #[inline(always)]
-    pub fn const_1010(self) -> &'a mut W {
+    pub fn const_1010(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO1SEL_A::CONST_1010)
     }
     #[doc = "Open-drain HIB Control output"]
     #[inline(always)]
-    pub fn const_1100(self) -> &'a mut W {
+    pub fn const_1100(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO1SEL_A::CONST_1100)
     }
     #[doc = "Open-drain WDT service output"]
     #[inline(always)]
-    pub fn const_1101(self) -> &'a mut W {
+    pub fn const_1101(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO1SEL_A::CONST_1101)
     }
     #[doc = "Open-drain GPIO output"]
     #[inline(always)]
-    pub fn const_1110(self) -> &'a mut W {
+    pub fn const_1110(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO1SEL_A::CONST_1110)
     }
     #[doc = "#1111"]
     #[inline(always)]
-    pub fn const_1111(self) -> &'a mut W {
+    pub fn const_1111(self) -> &'a mut crate::W<REG> {
         self.variant(HIBIO1SEL_A::CONST_1111)
     }
 }
@@ -973,100 +982,97 @@ impl W {
     #[doc = "Bit 0 - Wake-Up on Pin Event Positive Edge Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wkpep(&mut self) -> WKPEP_W<0> {
+    pub fn wkpep(&mut self) -> WKPEP_W<HDCR_SPEC, 0> {
         WKPEP_W::new(self)
     }
     #[doc = "Bit 1 - Wake-up on Pin Event Negative Edge Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn wkpen(&mut self) -> WKPEN_W<1> {
+    pub fn wkpen(&mut self) -> WKPEN_W<HDCR_SPEC, 1> {
         WKPEN_W::new(self)
     }
     #[doc = "Bit 2 - Wake-up on RTC Event Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rtce(&mut self) -> RTCE_W<2> {
+    pub fn rtce(&mut self) -> RTCE_W<HDCR_SPEC, 2> {
         RTCE_W::new(self)
     }
     #[doc = "Bit 3 - ULP WDG Alarm Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ulpwdgen(&mut self) -> ULPWDGEN_W<3> {
+    pub fn ulpwdgen(&mut self) -> ULPWDGEN_W<HDCR_SPEC, 3> {
         ULPWDGEN_W::new(self)
     }
     #[doc = "Bit 4 - Hibernate Request Value Set"]
     #[inline(always)]
     #[must_use]
-    pub fn hib(&mut self) -> HIB_W<4> {
+    pub fn hib(&mut self) -> HIB_W<HDCR_SPEC, 4> {
         HIB_W::new(self)
     }
     #[doc = "Bit 6 - fRTC Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn rcs(&mut self) -> RCS_W<6> {
+    pub fn rcs(&mut self) -> RCS_W<HDCR_SPEC, 6> {
         RCS_W::new(self)
     }
     #[doc = "Bit 7 - fSTDBY Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn stdbysel(&mut self) -> STDBYSEL_W<7> {
+    pub fn stdbysel(&mut self) -> STDBYSEL_W<HDCR_SPEC, 7> {
         STDBYSEL_W::new(self)
     }
     #[doc = "Bit 8 - Wake-Up from Hibernate Trigger Input Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn wkupsel(&mut self) -> WKUPSEL_W<8> {
+    pub fn wkupsel(&mut self) -> WKUPSEL_W<HDCR_SPEC, 8> {
         WKUPSEL_W::new(self)
     }
     #[doc = "Bit 10 - General Purpose Input 0 Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn gpi0sel(&mut self) -> GPI0SEL_W<10> {
+    pub fn gpi0sel(&mut self) -> GPI0SEL_W<HDCR_SPEC, 10> {
         GPI0SEL_W::new(self)
     }
     #[doc = "Bit 12 - HIBIO0 Polarity Set"]
     #[inline(always)]
     #[must_use]
-    pub fn hibio0pol(&mut self) -> HIBIO0POL_W<12> {
+    pub fn hibio0pol(&mut self) -> HIBIO0POL_W<HDCR_SPEC, 12> {
         HIBIO0POL_W::new(self)
     }
     #[doc = "Bit 13 - HIBIO1 Polarity Set"]
     #[inline(always)]
     #[must_use]
-    pub fn hibio1pol(&mut self) -> HIBIO1POL_W<13> {
+    pub fn hibio1pol(&mut self) -> HIBIO1POL_W<HDCR_SPEC, 13> {
         HIBIO1POL_W::new(self)
     }
     #[doc = "Bits 16:19 - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
     #[inline(always)]
     #[must_use]
-    pub fn hibio0sel(&mut self) -> HIBIO0SEL_W<16> {
+    pub fn hibio0sel(&mut self) -> HIBIO0SEL_W<HDCR_SPEC, 16> {
         HIBIO0SEL_W::new(self)
     }
     #[doc = "Bits 20:23 - HIB_IO_1 Pin I/O Control (Default WKUP)"]
     #[inline(always)]
     #[must_use]
-    pub fn hibio1sel(&mut self) -> HIBIO1SEL_W<20> {
+    pub fn hibio1sel(&mut self) -> HIBIO1SEL_W<HDCR_SPEC, 20> {
         HIBIO1SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Hibernate Domain Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hdcr](index.html) module"]
+#[doc = "Hibernate Domain Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hdcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HDCR_SPEC;
 impl crate::RegisterSpec for HDCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hdcr::R](R) reader structure"]
-impl crate::Readable for HDCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [hdcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`hdcr::R`](R) reader structure"]
+impl crate::Readable for HDCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`hdcr::W`](W) writer structure"]
 impl crate::Writable for HDCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

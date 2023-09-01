@@ -1,39 +1,7 @@
 #[doc = "Register `NVIC_ICER0` reader"]
-pub struct R(crate::R<NVIC_ICER0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NVIC_ICER0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NVIC_ICER0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NVIC_ICER0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<NVIC_ICER0_SPEC>;
 #[doc = "Register `NVIC_ICER0` writer"]
-pub struct W(crate::W<NVIC_ICER0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<NVIC_ICER0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<NVIC_ICER0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<NVIC_ICER0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<NVIC_ICER0_SPEC>;
 #[doc = "Field `CLRENA` reader - Interrupt clear-enable bits."]
 pub type CLRENA_R = crate::FieldReader<CLRENA_A>;
 #[doc = "Interrupt clear-enable bits.\n\nValue on reset: 0"]
@@ -64,28 +32,32 @@ impl CLRENA_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "interrupt disabled"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CLRENA_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "interrupt enabled."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CLRENA_A::VALUE4
     }
 }
 #[doc = "Field `CLRENA` writer - Interrupt clear-enable bits."]
-pub type CLRENA_W<'a, const O: u8> = crate::FieldWriter<'a, NVIC_ICER0_SPEC, 32, O, CLRENA_A>;
-impl<'a, const O: u8> CLRENA_W<'a, O> {
+pub type CLRENA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 32, O, CLRENA_A>;
+impl<'a, REG, const O: u8> CLRENA_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u32>,
+{
     #[doc = "interrupt disabled"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CLRENA_A::VALUE3)
     }
     #[doc = "interrupt enabled."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CLRENA_A::VALUE4)
     }
 }
@@ -100,28 +72,25 @@ impl W {
     #[doc = "Bits 0:31 - Interrupt clear-enable bits."]
     #[inline(always)]
     #[must_use]
-    pub fn clrena(&mut self) -> CLRENA_W<0> {
+    pub fn clrena(&mut self) -> CLRENA_W<NVIC_ICER0_SPEC, 0> {
         CLRENA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Interrupt Clear-enable Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nvic_icer0](index.html) module"]
+#[doc = "Interrupt Clear-enable Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`nvic_icer0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`nvic_icer0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct NVIC_ICER0_SPEC;
 impl crate::RegisterSpec for NVIC_ICER0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [nvic_icer0::R](R) reader structure"]
-impl crate::Readable for NVIC_ICER0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [nvic_icer0::W](W) writer structure"]
+#[doc = "`read()` method returns [`nvic_icer0::R`](R) reader structure"]
+impl crate::Readable for NVIC_ICER0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`nvic_icer0::W`](W) writer structure"]
 impl crate::Writable for NVIC_ICER0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

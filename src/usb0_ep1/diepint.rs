@@ -1,69 +1,37 @@
 #[doc = "Register `DIEPINT` reader"]
-pub struct R(crate::R<DIEPINT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DIEPINT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DIEPINT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DIEPINT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DIEPINT_SPEC>;
 #[doc = "Register `DIEPINT` writer"]
-pub struct W(crate::W<DIEPINT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DIEPINT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DIEPINT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DIEPINT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DIEPINT_SPEC>;
 #[doc = "Field `XferCompl` reader - Transfer Completed Interrupt"]
 pub type XFER_COMPL_R = crate::BitReader;
 #[doc = "Field `XferCompl` writer - Transfer Completed Interrupt"]
-pub type XFER_COMPL_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT_SPEC, O>;
+pub type XFER_COMPL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `EPDisbld` reader - Endpoint Disabled Interrupt"]
 pub type EPDISBLD_R = crate::BitReader;
 #[doc = "Field `EPDisbld` writer - Endpoint Disabled Interrupt"]
-pub type EPDISBLD_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT_SPEC, O>;
+pub type EPDISBLD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `AHBErr` reader - AHB Error"]
 pub type AHBERR_R = crate::BitReader;
 #[doc = "Field `AHBErr` writer - AHB Error"]
-pub type AHBERR_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT_SPEC, O>;
+pub type AHBERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TimeOUT` reader - Timeout Condition"]
 pub type TIME_OUT_R = crate::BitReader;
 #[doc = "Field `TimeOUT` writer - Timeout Condition"]
-pub type TIME_OUT_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT_SPEC, O>;
+pub type TIME_OUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `INTknTXFEmp` reader - IN Token Received When TxFIFO is Empty"]
 pub type INTKN_TXFEMP_R = crate::BitReader;
 #[doc = "Field `INTknTXFEmp` writer - IN Token Received When TxFIFO is Empty"]
-pub type INTKN_TXFEMP_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT_SPEC, O>;
+pub type INTKN_TXFEMP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `INEPNakEff` reader - IN Endpoint NAK Effective"]
 pub type INEPNAK_EFF_R = crate::BitReader;
 #[doc = "Field `INEPNakEff` writer - IN Endpoint NAK Effective"]
-pub type INEPNAK_EFF_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT_SPEC, O>;
+pub type INEPNAK_EFF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TxFEmp` reader - Transmit FIFO Empty"]
 pub type TX_FEMP_R = crate::BitReader;
 #[doc = "Field `BNAIntr` reader - BNA (Buffer Not Available) Interrupt"]
 pub type BNAINTR_R = crate::BitReader;
 #[doc = "Field `BNAIntr` writer - BNA (Buffer Not Available) Interrupt"]
-pub type BNAINTR_W<'a, const O: u8> = crate::BitWriter<'a, DIEPINT_SPEC, O>;
+pub type BNAINTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Transfer Completed Interrupt"]
     #[inline(always)]
@@ -110,64 +78,61 @@ impl W {
     #[doc = "Bit 0 - Transfer Completed Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn xfer_compl(&mut self) -> XFER_COMPL_W<0> {
+    pub fn xfer_compl(&mut self) -> XFER_COMPL_W<DIEPINT_SPEC, 0> {
         XFER_COMPL_W::new(self)
     }
     #[doc = "Bit 1 - Endpoint Disabled Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn epdisbld(&mut self) -> EPDISBLD_W<1> {
+    pub fn epdisbld(&mut self) -> EPDISBLD_W<DIEPINT_SPEC, 1> {
         EPDISBLD_W::new(self)
     }
     #[doc = "Bit 2 - AHB Error"]
     #[inline(always)]
     #[must_use]
-    pub fn ahberr(&mut self) -> AHBERR_W<2> {
+    pub fn ahberr(&mut self) -> AHBERR_W<DIEPINT_SPEC, 2> {
         AHBERR_W::new(self)
     }
     #[doc = "Bit 3 - Timeout Condition"]
     #[inline(always)]
     #[must_use]
-    pub fn time_out(&mut self) -> TIME_OUT_W<3> {
+    pub fn time_out(&mut self) -> TIME_OUT_W<DIEPINT_SPEC, 3> {
         TIME_OUT_W::new(self)
     }
     #[doc = "Bit 4 - IN Token Received When TxFIFO is Empty"]
     #[inline(always)]
     #[must_use]
-    pub fn intkn_txfemp(&mut self) -> INTKN_TXFEMP_W<4> {
+    pub fn intkn_txfemp(&mut self) -> INTKN_TXFEMP_W<DIEPINT_SPEC, 4> {
         INTKN_TXFEMP_W::new(self)
     }
     #[doc = "Bit 6 - IN Endpoint NAK Effective"]
     #[inline(always)]
     #[must_use]
-    pub fn inepnak_eff(&mut self) -> INEPNAK_EFF_W<6> {
+    pub fn inepnak_eff(&mut self) -> INEPNAK_EFF_W<DIEPINT_SPEC, 6> {
         INEPNAK_EFF_W::new(self)
     }
     #[doc = "Bit 9 - BNA (Buffer Not Available) Interrupt"]
     #[inline(always)]
     #[must_use]
-    pub fn bnaintr(&mut self) -> BNAINTR_W<9> {
+    pub fn bnaintr(&mut self) -> BNAINTR_W<DIEPINT_SPEC, 9> {
         BNAINTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Device Endpoint Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [diepint](index.html) module"]
+#[doc = "Device Endpoint Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`diepint::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`diepint::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DIEPINT_SPEC;
 impl crate::RegisterSpec for DIEPINT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [diepint::R](R) reader structure"]
-impl crate::Readable for DIEPINT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [diepint::W](W) writer structure"]
+#[doc = "`read()` method returns [`diepint::R`](R) reader structure"]
+impl crate::Readable for DIEPINT_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`diepint::W`](W) writer structure"]
 impl crate::Writable for DIEPINT_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

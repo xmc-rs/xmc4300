@@ -1,18 +1,5 @@
 #[doc = "Register `PROCON2` reader"]
-pub struct R(crate::R<PROCON2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PROCON2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PROCON2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PROCON2_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PROCON2_SPEC>;
 #[doc = "Field `S0ROM` reader - Sector 0 Locked Forever by User 2"]
 pub type S0ROM_R = crate::BitReader<S0ROM_A>;
 #[doc = "Sector 0 Locked Forever by User 2\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl S0ROM_R {
             true => S0ROM_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S0ROM_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S0ROM_A::CONST_1
@@ -74,12 +61,12 @@ impl S1ROM_R {
             true => S1ROM_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S1ROM_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S1ROM_A::CONST_1
@@ -110,12 +97,12 @@ impl S2ROM_R {
             true => S2ROM_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S2ROM_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S2ROM_A::CONST_1
@@ -146,12 +133,12 @@ impl S3ROM_R {
             true => S3ROM_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S3ROM_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S3ROM_A::CONST_1
@@ -182,12 +169,12 @@ impl S4ROM_R {
             true => S4ROM_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S4ROM_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S4ROM_A::CONST_1
@@ -218,12 +205,12 @@ impl S5ROM_R {
             true => S5ROM_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S5ROM_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S5ROM_A::CONST_1
@@ -254,12 +241,12 @@ impl S6ROM_R {
             true => S6ROM_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S6ROM_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S6ROM_A::CONST_1
@@ -290,12 +277,12 @@ impl S7ROM_R {
             true => S7ROM_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S7ROM_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S7ROM_A::CONST_1
@@ -326,12 +313,12 @@ impl S8ROM_R {
             true => S8ROM_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No ROM functionality configured for sector n."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == S8ROM_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "ROM functionality is configured for sector n. Re-programming of this sector is no longer possible."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == S8ROM_A::CONST_1
@@ -384,15 +371,13 @@ impl R {
         S8ROM_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
-#[doc = "Flash Protection Configuration Register User 2\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [procon2](index.html) module"]
+#[doc = "Flash Protection Configuration Register User 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`procon2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PROCON2_SPEC;
 impl crate::RegisterSpec for PROCON2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [procon2::R](R) reader structure"]
-impl crate::Readable for PROCON2_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`procon2::R`](R) reader structure"]
+impl crate::Readable for PROCON2_SPEC {}
 #[doc = "`reset()` method sets PROCON2 to value 0"]
 impl crate::Resettable for PROCON2_SPEC {
     const RESET_VALUE: Self::Ux = 0;

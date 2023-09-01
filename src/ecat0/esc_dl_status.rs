@@ -1,18 +1,5 @@
 #[doc = "Register `ESC_DL_STATUS` reader"]
-pub struct R(crate::R<ESC_DL_STATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ESC_DL_STATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ESC_DL_STATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ESC_DL_STATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ESC_DL_STATUS_SPEC>;
 #[doc = "Field `PDI_EEPROM` reader - PDI operational/EEPROM loaded correctly"]
 pub type PDI_EEPROM_R = crate::BitReader<PDI_EEPROM_A>;
 #[doc = "PDI operational/EEPROM loaded correctly\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl PDI_EEPROM_R {
             true => PDI_EEPROM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "EEPROM not loaded, PDI not operational (no access to Process Data RAM)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDI_EEPROM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "EEPROM loaded correctly, PDI operational (access to Process Data RAM)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDI_EEPROM_A::VALUE2
@@ -74,12 +61,12 @@ impl PDI_WDT_S_R {
             true => PDI_WDT_S_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Watchdog expired"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDI_WDT_S_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Watchdog reloaded"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDI_WDT_S_A::VALUE2
@@ -110,12 +97,12 @@ impl ELD_R {
             true => ELD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Deactivated for all ports"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ELD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Activated for at least one port"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ELD_A::VALUE2
@@ -146,12 +133,12 @@ impl LINK_P0_R {
             true => LINK_P0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No link"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LINK_P0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Link detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LINK_P0_A::VALUE2
@@ -182,12 +169,12 @@ impl LINK_P1_R {
             true => LINK_P1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No link"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LINK_P1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Link detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LINK_P1_A::VALUE2
@@ -218,12 +205,12 @@ impl LINK_P2_R {
             true => LINK_P2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No link"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LINK_P2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Link detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LINK_P2_A::VALUE2
@@ -254,12 +241,12 @@ impl LINK_P3_R {
             true => LINK_P3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No link"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LINK_P3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Link detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LINK_P3_A::VALUE2
@@ -290,12 +277,12 @@ impl LP0_R {
             true => LP0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Open"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LP0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Closed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LP0_A::VALUE2
@@ -326,12 +313,12 @@ impl COM_P0_R {
             true => COM_P0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No stable communication"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == COM_P0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Communication established"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == COM_P0_A::VALUE2
@@ -362,12 +349,12 @@ impl LP1_R {
             true => LP1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Open"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LP1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Closed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LP1_A::VALUE2
@@ -398,12 +385,12 @@ impl COM_P1_R {
             true => COM_P1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No stable communication"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == COM_P1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Communication established"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == COM_P1_A::VALUE2
@@ -434,12 +421,12 @@ impl LP2_R {
             true => LP2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Open"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LP2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Closed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LP2_A::VALUE2
@@ -470,12 +457,12 @@ impl COM_P2_R {
             true => COM_P2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No stable communication"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == COM_P2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Communication established"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == COM_P2_A::VALUE2
@@ -506,12 +493,12 @@ impl LP3_R {
             true => LP3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Open"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LP3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Closed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LP3_A::VALUE2
@@ -542,12 +529,12 @@ impl COM_P3_R {
             true => COM_P3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No stable communication"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == COM_P3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Communication established"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == COM_P3_A::VALUE2
@@ -630,15 +617,13 @@ impl R {
         COM_P3_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "ESC DL Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [esc_dl_status](index.html) module"]
+#[doc = "ESC DL Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`esc_dl_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ESC_DL_STATUS_SPEC;
 impl crate::RegisterSpec for ESC_DL_STATUS_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [esc_dl_status::R](R) reader structure"]
-impl crate::Readable for ESC_DL_STATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`esc_dl_status::R`](R) reader structure"]
+impl crate::Readable for ESC_DL_STATUS_SPEC {}
 #[doc = "`reset()` method sets ESC_DL_STATUS to value 0x5000"]
 impl crate::Resettable for ESC_DL_STATUS_SPEC {
     const RESET_VALUE: Self::Ux = 0x5000;

@@ -1,18 +1,5 @@
 #[doc = "Register `LIST[%s]` reader"]
-pub struct R(crate::R<LIST_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LIST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LIST_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LIST_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LIST_SPEC>;
 #[doc = "Field `BEGIN` reader - List Begin"]
 pub type BEGIN_R = crate::FieldReader;
 #[doc = "Field `END` reader - List End"]
@@ -44,12 +31,12 @@ impl EMPTY_R {
             true => EMPTY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "At least one message object is allocated to list i."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EMPTY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "No message object is allocated to the list i. List i is empty."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EMPTY_A::VALUE2
@@ -77,15 +64,13 @@ impl R {
         EMPTY_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
-#[doc = "List Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [list](index.html) module"]
+#[doc = "List Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`list::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LIST_SPEC;
 impl crate::RegisterSpec for LIST_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [list::R](R) reader structure"]
-impl crate::Readable for LIST_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`list::R`](R) reader structure"]
+impl crate::Readable for LIST_SPEC {}
 #[doc = "`reset()` method sets LIST[%s]
 to value 0"]
 impl crate::Resettable for LIST_SPEC {

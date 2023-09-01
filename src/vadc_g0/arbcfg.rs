@@ -1,43 +1,11 @@
 #[doc = "Register `ARBCFG` reader"]
-pub struct R(crate::R<ARBCFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ARBCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ARBCFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ARBCFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ARBCFG_SPEC>;
 #[doc = "Register `ARBCFG` writer"]
-pub struct W(crate::W<ARBCFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ARBCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ARBCFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ARBCFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<ARBCFG_SPEC>;
 #[doc = "Field `ANONC` reader - Analog Converter Control"]
 pub type ANONC_R = crate::FieldReader;
 #[doc = "Field `ANONC` writer - Analog Converter Control"]
-pub type ANONC_W<'a, const O: u8> = crate::FieldWriter<'a, ARBCFG_SPEC, 2, O>;
+pub type ANONC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `ARBRND` reader - Arbitration Round Length"]
 pub type ARBRND_R = crate::FieldReader<ARBRND_A>;
 #[doc = "Arbitration Round Length\n\nValue on reset: 0"]
@@ -74,48 +42,52 @@ impl ARBRND_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "4 arbitration slots per round (tARB = 4 / fADCD)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ARBRND_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "8 arbitration slots per round (tARB = 8 / fADCD)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ARBRND_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "16 arbitration slots per round (tARB = 16 / fADCD)"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ARBRND_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "20 arbitration slots per round (tARB = 20 / fADCD)"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ARBRND_A::VALUE4
     }
 }
 #[doc = "Field `ARBRND` writer - Arbitration Round Length"]
-pub type ARBRND_W<'a, const O: u8> = crate::FieldWriterSafe<'a, ARBCFG_SPEC, 2, O, ARBRND_A>;
-impl<'a, const O: u8> ARBRND_W<'a, O> {
+pub type ARBRND_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ARBRND_A>;
+impl<'a, REG, const O: u8> ARBRND_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "4 arbitration slots per round (tARB = 4 / fADCD)"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ARBRND_A::VALUE1)
     }
     #[doc = "8 arbitration slots per round (tARB = 8 / fADCD)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ARBRND_A::VALUE2)
     }
     #[doc = "16 arbitration slots per round (tARB = 16 / fADCD)"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ARBRND_A::VALUE3)
     }
     #[doc = "20 arbitration slots per round (tARB = 20 / fADCD)"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(ARBRND_A::VALUE4)
     }
 }
@@ -144,28 +116,31 @@ impl ARBM_R {
             true => ARBM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The arbiter runs permanently. This setting is required for a synchronization slave (see ) and for equidistant sampling using the signal ARBCNT (see )."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ARBM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The arbiter only runs if at least one conversion request of an enabled request source is pending. This setting ensures a reproducible latency from an incoming request to the conversion start, if the converter is idle. Synchronized conversions are not supported."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ARBM_A::VALUE2
     }
 }
 #[doc = "Field `ARBM` writer - Arbitration Mode"]
-pub type ARBM_W<'a, const O: u8> = crate::BitWriter<'a, ARBCFG_SPEC, O, ARBM_A>;
-impl<'a, const O: u8> ARBM_W<'a, O> {
+pub type ARBM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ARBM_A>;
+impl<'a, REG, const O: u8> ARBM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The arbiter runs permanently. This setting is required for a synchronization slave (see ) and for equidistant sampling using the signal ARBCNT (see )."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ARBM_A::VALUE1)
     }
     #[doc = "The arbiter only runs if at least one conversion request of an enabled request source is pending. This setting ensures a reproducible latency from an incoming request to the conversion start, if the converter is idle. Synchronized conversions are not supported."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ARBM_A::VALUE2)
     }
 }
@@ -199,12 +174,12 @@ impl ANONS_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Analog converter off"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ANONS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Normal operation (permanently on)"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ANONS_A::VALUE4
@@ -235,12 +210,12 @@ impl CAL_R {
             true => CAL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Completed or not yet started"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CAL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Start-up calibration phase is active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CAL_A::VALUE2
@@ -271,12 +246,12 @@ impl BUSY_R {
             true => BUSY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not busy"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUSY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Converter is busy with a conversion"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUSY_A::VALUE2
@@ -307,12 +282,12 @@ impl SAMPLE_R {
             true => SAMPLE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Converting or idle"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SAMPLE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Input signal is currently sampled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SAMPLE_A::VALUE2
@@ -359,40 +334,37 @@ impl W {
     #[doc = "Bits 0:1 - Analog Converter Control"]
     #[inline(always)]
     #[must_use]
-    pub fn anonc(&mut self) -> ANONC_W<0> {
+    pub fn anonc(&mut self) -> ANONC_W<ARBCFG_SPEC, 0> {
         ANONC_W::new(self)
     }
     #[doc = "Bits 4:5 - Arbitration Round Length"]
     #[inline(always)]
     #[must_use]
-    pub fn arbrnd(&mut self) -> ARBRND_W<4> {
+    pub fn arbrnd(&mut self) -> ARBRND_W<ARBCFG_SPEC, 4> {
         ARBRND_W::new(self)
     }
     #[doc = "Bit 7 - Arbitration Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn arbm(&mut self) -> ARBM_W<7> {
+    pub fn arbm(&mut self) -> ARBM_W<ARBCFG_SPEC, 7> {
         ARBM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Arbitration Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arbcfg](index.html) module"]
+#[doc = "Arbitration Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`arbcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`arbcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ARBCFG_SPEC;
 impl crate::RegisterSpec for ARBCFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [arbcfg::R](R) reader structure"]
-impl crate::Readable for ARBCFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [arbcfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`arbcfg::R`](R) reader structure"]
+impl crate::Readable for ARBCFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`arbcfg::W`](W) writer structure"]
 impl crate::Writable for ARBCFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

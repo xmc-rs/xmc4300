@@ -1,55 +1,23 @@
 #[doc = "Register `NBTR` reader"]
-pub struct R(crate::R<NBTR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NBTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NBTR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NBTR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<NBTR_SPEC>;
 #[doc = "Register `NBTR` writer"]
-pub struct W(crate::W<NBTR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<NBTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<NBTR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<NBTR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<NBTR_SPEC>;
 #[doc = "Field `BRP` reader - Baud Rate Prescaler"]
 pub type BRP_R = crate::FieldReader;
 #[doc = "Field `BRP` writer - Baud Rate Prescaler"]
-pub type BRP_W<'a, const O: u8> = crate::FieldWriter<'a, NBTR_SPEC, 6, O>;
+pub type BRP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 #[doc = "Field `SJW` reader - (Re) Synchronization Jump Width"]
 pub type SJW_R = crate::FieldReader;
 #[doc = "Field `SJW` writer - (Re) Synchronization Jump Width"]
-pub type SJW_W<'a, const O: u8> = crate::FieldWriter<'a, NBTR_SPEC, 2, O>;
+pub type SJW_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `TSEG1` reader - Time Segment Before Sample Point"]
 pub type TSEG1_R = crate::FieldReader;
 #[doc = "Field `TSEG1` writer - Time Segment Before Sample Point"]
-pub type TSEG1_W<'a, const O: u8> = crate::FieldWriter<'a, NBTR_SPEC, 4, O>;
+pub type TSEG1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `TSEG2` reader - Time Segment After Sample Point"]
 pub type TSEG2_R = crate::FieldReader;
 #[doc = "Field `TSEG2` writer - Time Segment After Sample Point"]
-pub type TSEG2_W<'a, const O: u8> = crate::FieldWriter<'a, NBTR_SPEC, 3, O>;
+pub type TSEG2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `DIV8` reader - Divide Prescaler Clock by 8"]
 pub type DIV8_R = crate::BitReader<DIV8_A>;
 #[doc = "Divide Prescaler Clock by 8\n\nValue on reset: 0"]
@@ -75,28 +43,31 @@ impl DIV8_R {
             true => DIV8_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A time quantum lasts (BRP+1) clock cycles."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DIV8_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A time quantum lasts 8 (BRP+1) clock cycles."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DIV8_A::VALUE2
     }
 }
 #[doc = "Field `DIV8` writer - Divide Prescaler Clock by 8"]
-pub type DIV8_W<'a, const O: u8> = crate::BitWriter<'a, NBTR_SPEC, O, DIV8_A>;
-impl<'a, const O: u8> DIV8_W<'a, O> {
+pub type DIV8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DIV8_A>;
+impl<'a, REG, const O: u8> DIV8_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A time quantum lasts (BRP+1) clock cycles."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DIV8_A::VALUE1)
     }
     #[doc = "A time quantum lasts 8 (BRP+1) clock cycles."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DIV8_A::VALUE2)
     }
 }
@@ -131,52 +102,49 @@ impl W {
     #[doc = "Bits 0:5 - Baud Rate Prescaler"]
     #[inline(always)]
     #[must_use]
-    pub fn brp(&mut self) -> BRP_W<0> {
+    pub fn brp(&mut self) -> BRP_W<NBTR_SPEC, 0> {
         BRP_W::new(self)
     }
     #[doc = "Bits 6:7 - (Re) Synchronization Jump Width"]
     #[inline(always)]
     #[must_use]
-    pub fn sjw(&mut self) -> SJW_W<6> {
+    pub fn sjw(&mut self) -> SJW_W<NBTR_SPEC, 6> {
         SJW_W::new(self)
     }
     #[doc = "Bits 8:11 - Time Segment Before Sample Point"]
     #[inline(always)]
     #[must_use]
-    pub fn tseg1(&mut self) -> TSEG1_W<8> {
+    pub fn tseg1(&mut self) -> TSEG1_W<NBTR_SPEC, 8> {
         TSEG1_W::new(self)
     }
     #[doc = "Bits 12:14 - Time Segment After Sample Point"]
     #[inline(always)]
     #[must_use]
-    pub fn tseg2(&mut self) -> TSEG2_W<12> {
+    pub fn tseg2(&mut self) -> TSEG2_W<NBTR_SPEC, 12> {
         TSEG2_W::new(self)
     }
     #[doc = "Bit 15 - Divide Prescaler Clock by 8"]
     #[inline(always)]
     #[must_use]
-    pub fn div8(&mut self) -> DIV8_W<15> {
+    pub fn div8(&mut self) -> DIV8_W<NBTR_SPEC, 15> {
         DIV8_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Node Bit Timing Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nbtr](index.html) module"]
+#[doc = "Node Bit Timing Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`nbtr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`nbtr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct NBTR_SPEC;
 impl crate::RegisterSpec for NBTR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [nbtr::R](R) reader structure"]
-impl crate::Readable for NBTR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [nbtr::W](W) writer structure"]
+#[doc = "`read()` method returns [`nbtr::R`](R) reader structure"]
+impl crate::Readable for NBTR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`nbtr::W`](W) writer structure"]
 impl crate::Writable for NBTR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

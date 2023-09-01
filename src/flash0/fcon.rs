@@ -1,39 +1,7 @@
 #[doc = "Register `FCON` reader"]
-pub struct R(crate::R<FCON_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FCON_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FCON_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FCON_SPEC>;
 #[doc = "Register `FCON` writer"]
-pub struct W(crate::W<FCON_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FCON_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FCON_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<FCON_SPEC>;
 #[doc = "Field `WSPFLASH` reader - Wait States for read access to PFLASH"]
 pub type WSPFLASH_R = crate::FieldReader<WSPFLASH_A>;
 #[doc = "Wait States for read access to PFLASH\n\nValue on reset: 6"]
@@ -73,58 +41,62 @@ impl WSPFLASH_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "PFLASH access in one clock cycle"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WSPFLASH_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "PFLASH access in one clock cycle"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WSPFLASH_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "PFLASH access in two clock cycles"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == WSPFLASH_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "PFLASH access in three clock cycles"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == WSPFLASH_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "PFLASH access in fifteen clock cycles."]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == WSPFLASH_A::VALUE5
     }
 }
 #[doc = "Field `WSPFLASH` writer - Wait States for read access to PFLASH"]
-pub type WSPFLASH_W<'a, const O: u8> = crate::FieldWriter<'a, FCON_SPEC, 4, O, WSPFLASH_A>;
-impl<'a, const O: u8> WSPFLASH_W<'a, O> {
+pub type WSPFLASH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, WSPFLASH_A>;
+impl<'a, REG, const O: u8> WSPFLASH_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "PFLASH access in one clock cycle"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WSPFLASH_A::VALUE1)
     }
     #[doc = "PFLASH access in one clock cycle"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WSPFLASH_A::VALUE2)
     }
     #[doc = "PFLASH access in two clock cycles"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(WSPFLASH_A::VALUE3)
     }
     #[doc = "PFLASH access in three clock cycles"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(WSPFLASH_A::VALUE4)
     }
     #[doc = "PFLASH access in fifteen clock cycles."]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(WSPFLASH_A::VALUE5)
     }
 }
@@ -153,28 +125,31 @@ impl WSECPF_R {
             true => WSECPF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No additional wait state for error correction"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WSECPF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "One additional wait state for error correction during read access to Program Flash. If enabled, this wait state is only used for the first transfer of a burst transfer."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WSECPF_A::VALUE2
     }
 }
 #[doc = "Field `WSECPF` writer - Wait State for Error Correction of PFLASH"]
-pub type WSECPF_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, WSECPF_A>;
-impl<'a, const O: u8> WSECPF_W<'a, O> {
+pub type WSECPF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WSECPF_A>;
+impl<'a, REG, const O: u8> WSECPF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No additional wait state for error correction"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WSECPF_A::VALUE1)
     }
     #[doc = "One additional wait state for error correction during read access to Program Flash. If enabled, this wait state is only used for the first transfer of a burst transfer."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WSECPF_A::VALUE2)
     }
 }
@@ -203,28 +178,31 @@ impl IDLE_R {
             true => IDLE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal/standard Flash read operation"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == IDLE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Dynamic idle of Program Flash enabled for power saving; static prefetching disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == IDLE_A::VALUE2
     }
 }
 #[doc = "Field `IDLE` writer - Dynamic Flash Idle"]
-pub type IDLE_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, IDLE_A>;
-impl<'a, const O: u8> IDLE_W<'a, O> {
+pub type IDLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IDLE_A>;
+impl<'a, REG, const O: u8> IDLE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal/standard Flash read operation"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(IDLE_A::VALUE1)
     }
     #[doc = "Dynamic idle of Program Flash enabled for power saving; static prefetching disabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(IDLE_A::VALUE2)
     }
 }
@@ -253,28 +231,31 @@ impl ESLDIS_R {
             true => ESLDIS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "External sleep request signal input is enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ESLDIS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Externally requested Flash sleep is disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ESLDIS_A::VALUE2
     }
 }
 #[doc = "Field `ESLDIS` writer - External Sleep Request Disable"]
-pub type ESLDIS_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, ESLDIS_A>;
-impl<'a, const O: u8> ESLDIS_W<'a, O> {
+pub type ESLDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ESLDIS_A>;
+impl<'a, REG, const O: u8> ESLDIS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "External sleep request signal input is enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ESLDIS_A::VALUE1)
     }
     #[doc = "Externally requested Flash sleep is disabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ESLDIS_A::VALUE2)
     }
 }
@@ -303,28 +284,31 @@ impl SLEEP_R {
             true => SLEEP_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal state or wake-up"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SLEEP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Flash sleep mode is requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SLEEP_A::VALUE2
     }
 }
 #[doc = "Field `SLEEP` writer - Flash SLEEP"]
-pub type SLEEP_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, SLEEP_A>;
-impl<'a, const O: u8> SLEEP_W<'a, O> {
+pub type SLEEP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SLEEP_A>;
+impl<'a, REG, const O: u8> SLEEP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal state or wake-up"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SLEEP_A::VALUE1)
     }
     #[doc = "Flash sleep mode is requested"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SLEEP_A::VALUE2)
     }
 }
@@ -353,12 +337,12 @@ impl RPA_R {
             true => RPA_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The Flash-internal read protection is not activated. Bits DCF, DDF are not taken into account. Bits DCF, DDFx can be cleared"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RPA_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The Flash-internal read protection is activated. Bits DCF, DDF are enabled and evaluated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RPA_A::VALUE2
@@ -389,28 +373,31 @@ impl DCF_R {
             true => DCF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Code fetching from the Flash memory area is allowed."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DCF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Code fetching from the Flash memory area is not allowed. This bit is not taken into account while RPA='0'."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DCF_A::VALUE2
     }
 }
 #[doc = "Field `DCF` writer - Disable Code Fetch from Flash Memory"]
-pub type DCF_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, DCF_A>;
-impl<'a, const O: u8> DCF_W<'a, O> {
+pub type DCF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DCF_A>;
+impl<'a, REG, const O: u8> DCF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Code fetching from the Flash memory area is allowed."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DCF_A::VALUE1)
     }
     #[doc = "Code fetching from the Flash memory area is not allowed. This bit is not taken into account while RPA='0'."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DCF_A::VALUE2)
     }
 }
@@ -439,28 +426,31 @@ impl DDF_R {
             true => DDF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Data read access to the Flash memory area is allowed."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DDF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Data read access to the Flash memory area is not allowed. This bit is not taken into account while RPA='0'."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DDF_A::VALUE2
     }
 }
 #[doc = "Field `DDF` writer - Disable Any Data Fetch from Flash"]
-pub type DDF_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, DDF_A>;
-impl<'a, const O: u8> DDF_W<'a, O> {
+pub type DDF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DDF_A>;
+impl<'a, REG, const O: u8> DDF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Data read access to the Flash memory area is allowed."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DDF_A::VALUE1)
     }
     #[doc = "Data read access to the Flash memory area is not allowed. This bit is not taken into account while RPA='0'."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DDF_A::VALUE2)
     }
 }
@@ -489,28 +479,31 @@ impl VOPERM_R {
             true => VOPERM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Interrupt not enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VOPERM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Flash interrupt because of Verify Error or Operation Error in Flash array (FSI) is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VOPERM_A::VALUE2
     }
 }
 #[doc = "Field `VOPERM` writer - Verify and Operation Error Interrupt Mask"]
-pub type VOPERM_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, VOPERM_A>;
-impl<'a, const O: u8> VOPERM_W<'a, O> {
+pub type VOPERM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VOPERM_A>;
+impl<'a, REG, const O: u8> VOPERM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt not enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VOPERM_A::VALUE1)
     }
     #[doc = "Flash interrupt because of Verify Error or Operation Error in Flash array (FSI) is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VOPERM_A::VALUE2)
     }
 }
@@ -539,28 +532,31 @@ impl SQERM_R {
             true => SQERM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Interrupt not enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SQERM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Flash interrupt because of Sequence Error is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SQERM_A::VALUE2
     }
 }
 #[doc = "Field `SQERM` writer - Command Sequence Error Interrupt Mask"]
-pub type SQERM_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, SQERM_A>;
-impl<'a, const O: u8> SQERM_W<'a, O> {
+pub type SQERM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SQERM_A>;
+impl<'a, REG, const O: u8> SQERM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt not enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SQERM_A::VALUE1)
     }
     #[doc = "Flash interrupt because of Sequence Error is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SQERM_A::VALUE2)
     }
 }
@@ -589,28 +585,31 @@ impl PROERM_R {
             true => PROERM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Interrupt not enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PROERM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Flash interrupt because of Protection Error is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PROERM_A::VALUE2
     }
 }
 #[doc = "Field `PROERM` writer - Protection Error Interrupt Mask"]
-pub type PROERM_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, PROERM_A>;
-impl<'a, const O: u8> PROERM_W<'a, O> {
+pub type PROERM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PROERM_A>;
+impl<'a, REG, const O: u8> PROERM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt not enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PROERM_A::VALUE1)
     }
     #[doc = "Flash interrupt because of Protection Error is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PROERM_A::VALUE2)
     }
 }
@@ -639,28 +638,31 @@ impl PFSBERM_R {
             true => PFSBERM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Single-Bit Error interrupt enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PFSBERM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Single-Bit Error interrupt enabled for PFLASH"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PFSBERM_A::VALUE2
     }
 }
 #[doc = "Field `PFSBERM` writer - PFLASH Single-Bit Error Interrupt Mask"]
-pub type PFSBERM_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, PFSBERM_A>;
-impl<'a, const O: u8> PFSBERM_W<'a, O> {
+pub type PFSBERM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PFSBERM_A>;
+impl<'a, REG, const O: u8> PFSBERM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No Single-Bit Error interrupt enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PFSBERM_A::VALUE1)
     }
     #[doc = "Single-Bit Error interrupt enabled for PFLASH"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PFSBERM_A::VALUE2)
     }
 }
@@ -689,28 +691,31 @@ impl PFDBERM_R {
             true => PFDBERM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Double-Bit Error interrupt for PFLASH not enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PFDBERM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Double-Bit Error interrupt for PFLASH enabled. Especially intended for margin check"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PFDBERM_A::VALUE2
     }
 }
 #[doc = "Field `PFDBERM` writer - PFLASH Double-Bit Error Interrupt Mask"]
-pub type PFDBERM_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, PFDBERM_A>;
-impl<'a, const O: u8> PFDBERM_W<'a, O> {
+pub type PFDBERM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PFDBERM_A>;
+impl<'a, REG, const O: u8> PFDBERM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Double-Bit Error interrupt for PFLASH not enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PFDBERM_A::VALUE1)
     }
     #[doc = "Double-Bit Error interrupt for PFLASH enabled. Especially intended for margin check"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PFDBERM_A::VALUE2)
     }
 }
@@ -739,28 +744,31 @@ impl EOBM_R {
             true => EOBM_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Interrupt not enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EOBM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "EOB interrupt is enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EOBM_A::VALUE2
     }
 }
 #[doc = "Field `EOBM` writer - End of Busy Interrupt Mask"]
-pub type EOBM_W<'a, const O: u8> = crate::BitWriter<'a, FCON_SPEC, O, EOBM_A>;
-impl<'a, const O: u8> EOBM_W<'a, O> {
+pub type EOBM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EOBM_A>;
+impl<'a, REG, const O: u8> EOBM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Interrupt not enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EOBM_A::VALUE1)
     }
     #[doc = "EOB interrupt is enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EOBM_A::VALUE2)
     }
 }
@@ -840,100 +848,97 @@ impl W {
     #[doc = "Bits 0:3 - Wait States for read access to PFLASH"]
     #[inline(always)]
     #[must_use]
-    pub fn wspflash(&mut self) -> WSPFLASH_W<0> {
+    pub fn wspflash(&mut self) -> WSPFLASH_W<FCON_SPEC, 0> {
         WSPFLASH_W::new(self)
     }
     #[doc = "Bit 4 - Wait State for Error Correction of PFLASH"]
     #[inline(always)]
     #[must_use]
-    pub fn wsecpf(&mut self) -> WSECPF_W<4> {
+    pub fn wsecpf(&mut self) -> WSECPF_W<FCON_SPEC, 4> {
         WSECPF_W::new(self)
     }
     #[doc = "Bit 13 - Dynamic Flash Idle"]
     #[inline(always)]
     #[must_use]
-    pub fn idle(&mut self) -> IDLE_W<13> {
+    pub fn idle(&mut self) -> IDLE_W<FCON_SPEC, 13> {
         IDLE_W::new(self)
     }
     #[doc = "Bit 14 - External Sleep Request Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn esldis(&mut self) -> ESLDIS_W<14> {
+    pub fn esldis(&mut self) -> ESLDIS_W<FCON_SPEC, 14> {
         ESLDIS_W::new(self)
     }
     #[doc = "Bit 15 - Flash SLEEP"]
     #[inline(always)]
     #[must_use]
-    pub fn sleep(&mut self) -> SLEEP_W<15> {
+    pub fn sleep(&mut self) -> SLEEP_W<FCON_SPEC, 15> {
         SLEEP_W::new(self)
     }
     #[doc = "Bit 17 - Disable Code Fetch from Flash Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn dcf(&mut self) -> DCF_W<17> {
+    pub fn dcf(&mut self) -> DCF_W<FCON_SPEC, 17> {
         DCF_W::new(self)
     }
     #[doc = "Bit 18 - Disable Any Data Fetch from Flash"]
     #[inline(always)]
     #[must_use]
-    pub fn ddf(&mut self) -> DDF_W<18> {
+    pub fn ddf(&mut self) -> DDF_W<FCON_SPEC, 18> {
         DDF_W::new(self)
     }
     #[doc = "Bit 24 - Verify and Operation Error Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn voperm(&mut self) -> VOPERM_W<24> {
+    pub fn voperm(&mut self) -> VOPERM_W<FCON_SPEC, 24> {
         VOPERM_W::new(self)
     }
     #[doc = "Bit 25 - Command Sequence Error Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn sqerm(&mut self) -> SQERM_W<25> {
+    pub fn sqerm(&mut self) -> SQERM_W<FCON_SPEC, 25> {
         SQERM_W::new(self)
     }
     #[doc = "Bit 26 - Protection Error Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn proerm(&mut self) -> PROERM_W<26> {
+    pub fn proerm(&mut self) -> PROERM_W<FCON_SPEC, 26> {
         PROERM_W::new(self)
     }
     #[doc = "Bit 27 - PFLASH Single-Bit Error Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn pfsberm(&mut self) -> PFSBERM_W<27> {
+    pub fn pfsberm(&mut self) -> PFSBERM_W<FCON_SPEC, 27> {
         PFSBERM_W::new(self)
     }
     #[doc = "Bit 29 - PFLASH Double-Bit Error Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn pfdberm(&mut self) -> PFDBERM_W<29> {
+    pub fn pfdberm(&mut self) -> PFDBERM_W<FCON_SPEC, 29> {
         PFDBERM_W::new(self)
     }
     #[doc = "Bit 31 - End of Busy Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn eobm(&mut self) -> EOBM_W<31> {
+    pub fn eobm(&mut self) -> EOBM_W<FCON_SPEC, 31> {
         EOBM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Flash Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fcon](index.html) module"]
+#[doc = "Flash Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fcon::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fcon::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FCON_SPEC;
 impl crate::RegisterSpec for FCON_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fcon::R](R) reader structure"]
-impl crate::Readable for FCON_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [fcon::W](W) writer structure"]
+#[doc = "`read()` method returns [`fcon::R`](R) reader structure"]
+impl crate::Readable for FCON_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`fcon::W`](W) writer structure"]
 impl crate::Writable for FCON_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

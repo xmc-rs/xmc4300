@@ -1,39 +1,7 @@
 #[doc = "Register `DC_ACT` reader"]
-pub struct R(crate::R<DC_ACT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DC_ACT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DC_ACT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DC_ACT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DC_ACT_SPEC>;
 #[doc = "Register `DC_ACT` writer"]
-pub struct W(crate::W<DC_ACT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DC_ACT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DC_ACT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DC_ACT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DC_ACT_SPEC>;
 #[doc = "Field `SYNC_OUT` reader - Sync Out Unit activation"]
 pub type SYNC_OUT_R = crate::BitReader<SYNC_OUT_A>;
 #[doc = "Sync Out Unit activation\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl SYNC_OUT_R {
             true => SYNC_OUT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SYNC_OUT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Activated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SYNC_OUT_A::VALUE2
     }
 }
 #[doc = "Field `SYNC_OUT` writer - Sync Out Unit activation"]
-pub type SYNC_OUT_W<'a, const O: u8> = crate::BitWriter<'a, DC_ACT_SPEC, O, SYNC_OUT_A>;
-impl<'a, const O: u8> SYNC_OUT_W<'a, O> {
+pub type SYNC_OUT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SYNC_OUT_A>;
+impl<'a, REG, const O: u8> SYNC_OUT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Deactivated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SYNC_OUT_A::VALUE1)
     }
     #[doc = "Activated"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SYNC_OUT_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl SYNC_0_R {
             true => SYNC_0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SYNC_0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SYNC0 pulse is generated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SYNC_0_A::VALUE2
     }
 }
 #[doc = "Field `SYNC_0` writer - SYNC0 generation"]
-pub type SYNC_0_W<'a, const O: u8> = crate::BitWriter<'a, DC_ACT_SPEC, O, SYNC_0_A>;
-impl<'a, const O: u8> SYNC_0_W<'a, O> {
+pub type SYNC_0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SYNC_0_A>;
+impl<'a, REG, const O: u8> SYNC_0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Deactivated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SYNC_0_A::VALUE1)
     }
     #[doc = "SYNC0 pulse is generated"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SYNC_0_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl SYNC_1_R {
             true => SYNC_1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Deactivated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SYNC_1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SYNC1 pulse is generated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SYNC_1_A::VALUE2
     }
 }
 #[doc = "Field `SYNC_1` writer - SYNC1 generation"]
-pub type SYNC_1_W<'a, const O: u8> = crate::BitWriter<'a, DC_ACT_SPEC, O, SYNC_1_A>;
-impl<'a, const O: u8> SYNC_1_W<'a, O> {
+pub type SYNC_1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SYNC_1_A>;
+impl<'a, REG, const O: u8> SYNC_1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Deactivated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SYNC_1_A::VALUE1)
     }
     #[doc = "SYNC1 pulse is generated"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SYNC_1_A::VALUE2)
     }
 }
@@ -205,40 +182,37 @@ impl W {
     #[doc = "Bit 0 - Sync Out Unit activation"]
     #[inline(always)]
     #[must_use]
-    pub fn sync_out(&mut self) -> SYNC_OUT_W<0> {
+    pub fn sync_out(&mut self) -> SYNC_OUT_W<DC_ACT_SPEC, 0> {
         SYNC_OUT_W::new(self)
     }
     #[doc = "Bit 1 - SYNC0 generation"]
     #[inline(always)]
     #[must_use]
-    pub fn sync_0(&mut self) -> SYNC_0_W<1> {
+    pub fn sync_0(&mut self) -> SYNC_0_W<DC_ACT_SPEC, 1> {
         SYNC_0_W::new(self)
     }
     #[doc = "Bit 2 - SYNC1 generation"]
     #[inline(always)]
     #[must_use]
-    pub fn sync_1(&mut self) -> SYNC_1_W<2> {
+    pub fn sync_1(&mut self) -> SYNC_1_W<DC_ACT_SPEC, 2> {
         SYNC_1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Activation register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dc_act](index.html) module"]
+#[doc = "Activation register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_act::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dc_act::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_ACT_SPEC;
 impl crate::RegisterSpec for DC_ACT_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [dc_act::R](R) reader structure"]
-impl crate::Readable for DC_ACT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dc_act::W](W) writer structure"]
+#[doc = "`read()` method returns [`dc_act::R`](R) reader structure"]
+impl crate::Readable for DC_ACT_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dc_act::W`](W) writer structure"]
 impl crate::Writable for DC_ACT_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

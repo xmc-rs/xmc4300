@@ -1,39 +1,7 @@
 #[doc = "Register `G1ORCEN` reader"]
-pub struct R(crate::R<G1ORCEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<G1ORCEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<G1ORCEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<G1ORCEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<G1ORCEN_SPEC>;
 #[doc = "Register `G1ORCEN` writer"]
-pub struct W(crate::W<G1ORCEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<G1ORCEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<G1ORCEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<G1ORCEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<G1ORCEN_SPEC>;
 #[doc = "Field `ENORC6` reader - Enable Out of Range Comparator, Channel 6"]
 pub type ENORC6_R = crate::BitReader<ENORC6_A>;
 #[doc = "Enable Out of Range Comparator, Channel 6\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl ENORC6_R {
             true => ENORC6_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ENORC6_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ENORC6_A::CONST_1
     }
 }
 #[doc = "Field `ENORC6` writer - Enable Out of Range Comparator, Channel 6"]
-pub type ENORC6_W<'a, const O: u8> = crate::BitWriter<'a, G1ORCEN_SPEC, O, ENORC6_A>;
-impl<'a, const O: u8> ENORC6_W<'a, O> {
+pub type ENORC6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENORC6_A>;
+impl<'a, REG, const O: u8> ENORC6_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(ENORC6_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(ENORC6_A::CONST_1)
     }
 }
@@ -109,28 +80,31 @@ impl ENORC7_R {
             true => ENORC7_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ENORC7_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ENORC7_A::CONST_1
     }
 }
 #[doc = "Field `ENORC7` writer - Enable Out of Range Comparator, Channel 7"]
-pub type ENORC7_W<'a, const O: u8> = crate::BitWriter<'a, G1ORCEN_SPEC, O, ENORC7_A>;
-impl<'a, const O: u8> ENORC7_W<'a, O> {
+pub type ENORC7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ENORC7_A>;
+impl<'a, REG, const O: u8> ENORC7_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(ENORC7_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(ENORC7_A::CONST_1)
     }
 }
@@ -150,34 +124,31 @@ impl W {
     #[doc = "Bit 6 - Enable Out of Range Comparator, Channel 6"]
     #[inline(always)]
     #[must_use]
-    pub fn enorc6(&mut self) -> ENORC6_W<6> {
+    pub fn enorc6(&mut self) -> ENORC6_W<G1ORCEN_SPEC, 6> {
         ENORC6_W::new(self)
     }
     #[doc = "Bit 7 - Enable Out of Range Comparator, Channel 7"]
     #[inline(always)]
     #[must_use]
-    pub fn enorc7(&mut self) -> ENORC7_W<7> {
+    pub fn enorc7(&mut self) -> ENORC7_W<G1ORCEN_SPEC, 7> {
         ENORC7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Out of Range Comparator Enable Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [g1orcen](index.html) module"]
+#[doc = "Out of Range Comparator Enable Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`g1orcen::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`g1orcen::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct G1ORCEN_SPEC;
 impl crate::RegisterSpec for G1ORCEN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [g1orcen::R](R) reader structure"]
-impl crate::Readable for G1ORCEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [g1orcen::W](W) writer structure"]
+#[doc = "`read()` method returns [`g1orcen::R`](R) reader structure"]
+impl crate::Readable for G1ORCEN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`g1orcen::W`](W) writer structure"]
 impl crate::Writable for G1ORCEN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

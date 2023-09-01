@@ -1,18 +1,5 @@
 #[doc = "Register `CAPABILITIES` reader"]
-pub struct R(crate::R<CAPABILITIES_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CAPABILITIES_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CAPABILITIES_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CAPABILITIES_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CAPABILITIES_SPEC>;
 #[doc = "Field `TIMEOUT_CLOCK_FREQ` reader - Timeout Clock Frequency"]
 pub type TIMEOUT_CLOCK_FREQ_R = crate::FieldReader<TIMEOUT_CLOCK_FREQ_A>;
 #[doc = "Timeout Clock Frequency\n\nValue on reset: 48"]
@@ -40,7 +27,7 @@ impl TIMEOUT_CLOCK_FREQ_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "48 MHz"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TIMEOUT_CLOCK_FREQ_A::VALUE1
@@ -69,7 +56,7 @@ impl TIMEOUT_CLOCK_UNIT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "MHz"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TIMEOUT_CLOCK_UNIT_A::VALUE1
@@ -102,7 +89,7 @@ impl BASE_SD_CLOCK_FREQ_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "48 MHz"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BASE_SD_CLOCK_FREQ_A::VALUE1
@@ -135,7 +122,7 @@ impl MAX_BLOCK_LENGTH_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "512 byte"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MAX_BLOCK_LENGTH_A::VALUE1
@@ -164,7 +151,7 @@ impl EXT_MEDIA_BUS_SUPPORT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Extended Media Bus not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EXT_MEDIA_BUS_SUPPORT_A::VALUE1
@@ -193,7 +180,7 @@ impl ADMA2_SUPPORT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "ADMA not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ADMA2_SUPPORT_A::VALUE1
@@ -222,7 +209,7 @@ impl HIGH_SPEED_SUPPORT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "High Speed supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HIGH_SPEED_SUPPORT_A::VALUE1
@@ -251,7 +238,7 @@ impl SDMA_SUPPORT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "SDMA not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SDMA_SUPPORT_A::VALUE1
@@ -280,7 +267,7 @@ impl SUSPEND_RESUME_SUPPORT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SUSPEND_RESUME_SUPPORT_A::VALUE1
@@ -309,7 +296,7 @@ impl VOLTAGE_SUPPORT_3_3V_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "3.3V supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VOLTAGE_SUPPORT_3_3V_A::VALUE1
@@ -338,7 +325,7 @@ impl VOLTAGE_SUPPORT_3V_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "3.0V not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VOLTAGE_SUPPORT_3V_A::VALUE1
@@ -367,7 +354,7 @@ impl VOLTAGE_SUPPORT_1_8V_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "1.8V not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VOLTAGE_SUPPORT_1_8V_A::VALUE1
@@ -396,7 +383,7 @@ impl SYSBUS_64_SUPPORT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Does not support 64-bit system address"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SYSBUS_64_SUPPORT_A::VALUE1
@@ -425,7 +412,7 @@ impl ASYNC_INT_SUPPORT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Asynchronous Interrupt not supported"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASYNC_INT_SUPPORT_A::VALUE1
@@ -458,7 +445,7 @@ impl SLOT_TYPE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Removable Card Slot"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SLOT_TYPE_A::VALUE1
@@ -541,15 +528,13 @@ impl R {
         SLOT_TYPE_R::new(((self.bits >> 30) & 3) as u8)
     }
 }
-#[doc = "Capabilities Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capabilities](index.html) module"]
+#[doc = "Capabilities Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`capabilities::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CAPABILITIES_SPEC;
 impl crate::RegisterSpec for CAPABILITIES_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [capabilities::R](R) reader structure"]
-impl crate::Readable for CAPABILITIES_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`capabilities::R`](R) reader structure"]
+impl crate::Readable for CAPABILITIES_SPEC {}
 #[doc = "`reset()` method sets CAPABILITIES to value 0x01a0_30b0"]
 impl crate::Resettable for CAPABILITIES_SPEC {
     const RESET_VALUE: Self::Ux = 0x01a0_30b0;

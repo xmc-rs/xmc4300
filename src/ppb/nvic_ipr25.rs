@@ -1,55 +1,23 @@
 #[doc = "Register `NVIC_IPR25` reader"]
-pub struct R(crate::R<NVIC_IPR25_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NVIC_IPR25_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NVIC_IPR25_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NVIC_IPR25_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<NVIC_IPR25_SPEC>;
 #[doc = "Register `NVIC_IPR25` writer"]
-pub struct W(crate::W<NVIC_IPR25_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<NVIC_IPR25_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<NVIC_IPR25_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<NVIC_IPR25_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<NVIC_IPR25_SPEC>;
 #[doc = "Field `PRI_0` reader - Priority value 0"]
 pub type PRI_0_R = crate::FieldReader;
 #[doc = "Field `PRI_0` writer - Priority value 0"]
-pub type PRI_0_W<'a, const O: u8> = crate::FieldWriter<'a, NVIC_IPR25_SPEC, 8, O>;
+pub type PRI_0_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `PRI_1` reader - Priority value 1"]
 pub type PRI_1_R = crate::FieldReader;
 #[doc = "Field `PRI_1` writer - Priority value 1"]
-pub type PRI_1_W<'a, const O: u8> = crate::FieldWriter<'a, NVIC_IPR25_SPEC, 8, O>;
+pub type PRI_1_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `PRI_2` reader - Priority value 2"]
 pub type PRI_2_R = crate::FieldReader;
 #[doc = "Field `PRI_2` writer - Priority value 2"]
-pub type PRI_2_W<'a, const O: u8> = crate::FieldWriter<'a, NVIC_IPR25_SPEC, 8, O>;
+pub type PRI_2_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `PRI_3` reader - Priority value 3"]
 pub type PRI_3_R = crate::FieldReader;
 #[doc = "Field `PRI_3` writer - Priority value 3"]
-pub type PRI_3_W<'a, const O: u8> = crate::FieldWriter<'a, NVIC_IPR25_SPEC, 8, O>;
+pub type PRI_3_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Priority value 0"]
     #[inline(always)]
@@ -76,46 +44,43 @@ impl W {
     #[doc = "Bits 0:7 - Priority value 0"]
     #[inline(always)]
     #[must_use]
-    pub fn pri_0(&mut self) -> PRI_0_W<0> {
+    pub fn pri_0(&mut self) -> PRI_0_W<NVIC_IPR25_SPEC, 0> {
         PRI_0_W::new(self)
     }
     #[doc = "Bits 8:15 - Priority value 1"]
     #[inline(always)]
     #[must_use]
-    pub fn pri_1(&mut self) -> PRI_1_W<8> {
+    pub fn pri_1(&mut self) -> PRI_1_W<NVIC_IPR25_SPEC, 8> {
         PRI_1_W::new(self)
     }
     #[doc = "Bits 16:23 - Priority value 2"]
     #[inline(always)]
     #[must_use]
-    pub fn pri_2(&mut self) -> PRI_2_W<16> {
+    pub fn pri_2(&mut self) -> PRI_2_W<NVIC_IPR25_SPEC, 16> {
         PRI_2_W::new(self)
     }
     #[doc = "Bits 24:31 - Priority value 3"]
     #[inline(always)]
     #[must_use]
-    pub fn pri_3(&mut self) -> PRI_3_W<24> {
+    pub fn pri_3(&mut self) -> PRI_3_W<NVIC_IPR25_SPEC, 24> {
         PRI_3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Interrupt Priority Register 25\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nvic_ipr25](index.html) module"]
+#[doc = "Interrupt Priority Register 25\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`nvic_ipr25::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`nvic_ipr25::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct NVIC_IPR25_SPEC;
 impl crate::RegisterSpec for NVIC_IPR25_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [nvic_ipr25::R](R) reader structure"]
-impl crate::Readable for NVIC_IPR25_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [nvic_ipr25::W](W) writer structure"]
+#[doc = "`read()` method returns [`nvic_ipr25::R`](R) reader structure"]
+impl crate::Readable for NVIC_IPR25_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`nvic_ipr25::W`](W) writer structure"]
 impl crate::Writable for NVIC_IPR25_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

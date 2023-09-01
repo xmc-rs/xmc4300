@@ -1,18 +1,5 @@
 #[doc = "Register `ESC_CONFIG` reader"]
-pub struct R(crate::R<ESC_CONFIG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ESC_CONFIG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ESC_CONFIG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ESC_CONFIG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ESC_CONFIG_SPEC>;
 #[doc = "Field `EMUL` reader - Device emulation (control of AL status)"]
 pub type EMUL_R = crate::BitReader<EMUL_A>;
 #[doc = "Device emulation (control of AL status)\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl EMUL_R {
             true => EMUL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "AL status register has to be set by PDI"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EMUL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "AL status register will be set to value written to AL control register"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EMUL_A::VALUE2
@@ -74,12 +61,12 @@ impl EHLD_R {
             true => EHLD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "disabled (if bits \\[7:4\\]=0)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EHLD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "enabled at all ports (overrides bits \\[7:4\\])"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EHLD_A::VALUE2
@@ -110,12 +97,12 @@ impl CLKS_OUT_R {
             true => CLKS_OUT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "disabled (power saving)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CLKS_OUT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CLKS_OUT_A::VALUE2
@@ -146,12 +133,12 @@ impl CLKS_IN_R {
             true => CLKS_IN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "disabled (power saving)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CLKS_IN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CLKS_IN_A::VALUE2
@@ -182,12 +169,12 @@ impl EHLD_P0_R {
             true => EHLD_P0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "disabled (if bit 1 = 0)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EHLD_P0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EHLD_P0_A::VALUE2
@@ -218,12 +205,12 @@ impl EHLD_P1_R {
             true => EHLD_P1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "disabled (if bit 1 = 0)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EHLD_P1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EHLD_P1_A::VALUE2
@@ -254,12 +241,12 @@ impl EHLD_P2_R {
             true => EHLD_P2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "disabled (if bit 1 = 0)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EHLD_P2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EHLD_P2_A::VALUE2
@@ -290,12 +277,12 @@ impl EHLD_P3_R {
             true => EHLD_P3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "disabled (if bit 1 = 0)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EHLD_P3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EHLD_P3_A::VALUE2
@@ -343,15 +330,13 @@ impl R {
         EHLD_P3_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "ESC Configuration\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [esc_config](index.html) module"]
+#[doc = "ESC Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`esc_config::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ESC_CONFIG_SPEC;
 impl crate::RegisterSpec for ESC_CONFIG_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [esc_config::R](R) reader structure"]
-impl crate::Readable for ESC_CONFIG_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`esc_config::R`](R) reader structure"]
+impl crate::Readable for ESC_CONFIG_SPEC {}
 #[doc = "`reset()` method sets ESC_CONFIG to value 0xfe"]
 impl crate::Resettable for ESC_CONFIG_SPEC {
     const RESET_VALUE: Self::Ux = 0xfe;

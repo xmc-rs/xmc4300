@@ -1,18 +1,5 @@
 #[doc = "Register `DTSSTAT` reader"]
-pub struct R(crate::R<DTSSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DTSSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DTSSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DTSSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DTSSTAT_SPEC>;
 #[doc = "Field `RESULT` reader - Result of the DTS Measurement"]
 pub type RESULT_R = crate::FieldReader<u16>;
 #[doc = "Field `RDY` reader - Sensor Ready Status"]
@@ -40,12 +27,12 @@ impl RDY_R {
             true => RDY_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "The DTS is not ready"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == RDY_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "The DTS is ready"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == RDY_A::CONST_1
@@ -76,12 +63,12 @@ impl BUSY_R {
             true => BUSY_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "not busy"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == BUSY_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "busy"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == BUSY_A::CONST_1
@@ -104,15 +91,13 @@ impl R {
         BUSY_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Die Temperature Sensor Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dtsstat](index.html) module"]
+#[doc = "Die Temperature Sensor Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtsstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DTSSTAT_SPEC;
 impl crate::RegisterSpec for DTSSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dtsstat::R](R) reader structure"]
-impl crate::Readable for DTSSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dtsstat::R`](R) reader structure"]
+impl crate::Readable for DTSSTAT_SPEC {}
 #[doc = "`reset()` method sets DTSSTAT to value 0"]
 impl crate::Resettable for DTSSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

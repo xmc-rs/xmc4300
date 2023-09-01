@@ -1,39 +1,7 @@
 #[doc = "Register `CCR` reader"]
-pub struct R(crate::R<CCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CCR_SPEC>;
 #[doc = "Register `CCR` writer"]
-pub struct W(crate::W<CCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CCR_SPEC>;
 #[doc = "Field `MODE` reader - Operating Mode"]
 pub type MODE_R = crate::FieldReader<MODE_A>;
 #[doc = "Operating Mode\n\nValue on reset: 0"]
@@ -73,58 +41,62 @@ impl MODE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The USIC channel is disabled. All protocol-related state machines are set to an idle state."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MODE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The SSC (SPI) protocol is selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MODE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "The ASC (SCI, UART) protocol is selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == MODE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "The IIS protocol is selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == MODE_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "The IIC protocol is selected."]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == MODE_A::VALUE5
     }
 }
 #[doc = "Field `MODE` writer - Operating Mode"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, CCR_SPEC, 4, O, MODE_A>;
-impl<'a, const O: u8> MODE_W<'a, O> {
+pub type MODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, MODE_A>;
+impl<'a, REG, const O: u8> MODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The USIC channel is disabled. All protocol-related state machines are set to an idle state."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE1)
     }
     #[doc = "The SSC (SPI) protocol is selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE2)
     }
     #[doc = "The ASC (SCI, UART) protocol is selected."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE3)
     }
     #[doc = "The IIS protocol is selected."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE4)
     }
     #[doc = "The IIC protocol is selected."]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE5)
     }
 }
@@ -165,49 +137,54 @@ impl HPCEN_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The hardware port control is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HPCEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The hardware port control is enabled for DX0 and DOUT0."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HPCEN_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "The hardware port control is enabled for DX3, DX0 and DOUT\\[1:0\\]."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == HPCEN_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "The hardware port control is enabled for DX0, DX\\[5:3\\]
+and DOUT\\[3:0\\]."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == HPCEN_A::VALUE4
     }
 }
 #[doc = "Field `HPCEN` writer - Hardware Port Control Enable"]
-pub type HPCEN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CCR_SPEC, 2, O, HPCEN_A>;
-impl<'a, const O: u8> HPCEN_W<'a, O> {
+pub type HPCEN_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, HPCEN_A>;
+impl<'a, REG, const O: u8> HPCEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The hardware port control is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HPCEN_A::VALUE1)
     }
     #[doc = "The hardware port control is enabled for DX0 and DOUT0."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HPCEN_A::VALUE2)
     }
     #[doc = "The hardware port control is enabled for DX3, DX0 and DOUT\\[1:0\\]."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(HPCEN_A::VALUE3)
     }
     #[doc = "The hardware port control is enabled for DX0, DX\\[5:3\\]
 and DOUT\\[3:0\\]."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(HPCEN_A::VALUE4)
     }
 }
@@ -244,38 +221,42 @@ impl PM_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The parity generation is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Even parity is selected (parity bit = 1 on odd number of 1s in data, parity bit = 0 on even number of 1s in data)."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PM_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Odd parity is selected (parity bit = 0 on odd number of 1s in data, parity bit = 1 on even number of 1s in data)."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PM_A::VALUE4
     }
 }
 #[doc = "Field `PM` writer - Parity Mode"]
-pub type PM_W<'a, const O: u8> = crate::FieldWriter<'a, CCR_SPEC, 2, O, PM_A>;
-impl<'a, const O: u8> PM_W<'a, O> {
+pub type PM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, PM_A>;
+impl<'a, REG, const O: u8> PM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The parity generation is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PM_A::VALUE1)
     }
     #[doc = "Even parity is selected (parity bit = 1 on odd number of 1s in data, parity bit = 0 on even number of 1s in data)."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(PM_A::VALUE3)
     }
     #[doc = "Odd parity is selected (parity bit = 0 on odd number of 1s in data, parity bit = 1 on even number of 1s in data)."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(PM_A::VALUE4)
     }
 }
@@ -304,28 +285,31 @@ impl RSIEN_R {
             true => RSIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The receiver start interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RSIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The receiver start interrupt is enabled. In case of a receiver start event, the service request output SRx indicated by INPR.TBINP is activated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RSIEN_A::VALUE2
     }
 }
 #[doc = "Field `RSIEN` writer - Receiver Start Interrupt Enable"]
-pub type RSIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, RSIEN_A>;
-impl<'a, const O: u8> RSIEN_W<'a, O> {
+pub type RSIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RSIEN_A>;
+impl<'a, REG, const O: u8> RSIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The receiver start interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RSIEN_A::VALUE1)
     }
     #[doc = "The receiver start interrupt is enabled. In case of a receiver start event, the service request output SRx indicated by INPR.TBINP is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RSIEN_A::VALUE2)
     }
 }
@@ -354,28 +338,31 @@ impl DLIEN_R {
             true => DLIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The data lost interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DLIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The data lost interrupt is enabled. In case of a data lost event, the service request output SRx indicated by INPR.PINP is activated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DLIEN_A::VALUE2
     }
 }
 #[doc = "Field `DLIEN` writer - Data Lost Interrupt Enable"]
-pub type DLIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, DLIEN_A>;
-impl<'a, const O: u8> DLIEN_W<'a, O> {
+pub type DLIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DLIEN_A>;
+impl<'a, REG, const O: u8> DLIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The data lost interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DLIEN_A::VALUE1)
     }
     #[doc = "The data lost interrupt is enabled. In case of a data lost event, the service request output SRx indicated by INPR.PINP is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DLIEN_A::VALUE2)
     }
 }
@@ -404,28 +391,31 @@ impl TSIEN_R {
             true => TSIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The transmit shift interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TSIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The transmit shift interrupt is enabled. In case of a transmit shift interrupt event, the service request output SRx indicated by INPR.TSINP is activated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TSIEN_A::VALUE2
     }
 }
 #[doc = "Field `TSIEN` writer - Transmit Shift Interrupt Enable"]
-pub type TSIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, TSIEN_A>;
-impl<'a, const O: u8> TSIEN_W<'a, O> {
+pub type TSIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSIEN_A>;
+impl<'a, REG, const O: u8> TSIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The transmit shift interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TSIEN_A::VALUE1)
     }
     #[doc = "The transmit shift interrupt is enabled. In case of a transmit shift interrupt event, the service request output SRx indicated by INPR.TSINP is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TSIEN_A::VALUE2)
     }
 }
@@ -454,28 +444,31 @@ impl TBIEN_R {
             true => TBIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The transmit buffer interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TBIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The transmit buffer interrupt is enabled. In case of a transmit buffer event, the service request output SRx indicated by INPR.TBINP is activated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TBIEN_A::VALUE2
     }
 }
 #[doc = "Field `TBIEN` writer - Transmit Buffer Interrupt Enable"]
-pub type TBIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, TBIEN_A>;
-impl<'a, const O: u8> TBIEN_W<'a, O> {
+pub type TBIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TBIEN_A>;
+impl<'a, REG, const O: u8> TBIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The transmit buffer interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TBIEN_A::VALUE1)
     }
     #[doc = "The transmit buffer interrupt is enabled. In case of a transmit buffer event, the service request output SRx indicated by INPR.TBINP is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TBIEN_A::VALUE2)
     }
 }
@@ -504,28 +497,31 @@ impl RIEN_R {
             true => RIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The receive interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The receive interrupt is enabled. In case of a receive event, the service request output SRx indicated by INPR.RINP is activated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RIEN_A::VALUE2
     }
 }
 #[doc = "Field `RIEN` writer - Receive Interrupt Enable"]
-pub type RIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, RIEN_A>;
-impl<'a, const O: u8> RIEN_W<'a, O> {
+pub type RIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RIEN_A>;
+impl<'a, REG, const O: u8> RIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The receive interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RIEN_A::VALUE1)
     }
     #[doc = "The receive interrupt is enabled. In case of a receive event, the service request output SRx indicated by INPR.RINP is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RIEN_A::VALUE2)
     }
 }
@@ -554,28 +550,31 @@ impl AIEN_R {
             true => AIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The alternative receive interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == AIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The alternative receive interrupt is enabled. In case of an alternative receive event, the service request output SRx indicated by INPR.AINP is activated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == AIEN_A::VALUE2
     }
 }
 #[doc = "Field `AIEN` writer - Alternative Receive Interrupt Enable"]
-pub type AIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, AIEN_A>;
-impl<'a, const O: u8> AIEN_W<'a, O> {
+pub type AIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AIEN_A>;
+impl<'a, REG, const O: u8> AIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The alternative receive interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(AIEN_A::VALUE1)
     }
     #[doc = "The alternative receive interrupt is enabled. In case of an alternative receive event, the service request output SRx indicated by INPR.AINP is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(AIEN_A::VALUE2)
     }
 }
@@ -604,28 +603,31 @@ impl BRGIEN_R {
             true => BRGIEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The baud rate generator interrupt is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BRGIEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The baud rate generator interrupt is enabled. In case of a baud rate generator event, the service request output SRx indicated by INPR.PINP is activated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BRGIEN_A::VALUE2
     }
 }
 #[doc = "Field `BRGIEN` writer - Baud Rate Generator Interrupt Enable"]
-pub type BRGIEN_W<'a, const O: u8> = crate::BitWriter<'a, CCR_SPEC, O, BRGIEN_A>;
-impl<'a, const O: u8> BRGIEN_W<'a, O> {
+pub type BRGIEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BRGIEN_A>;
+impl<'a, REG, const O: u8> BRGIEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The baud rate generator interrupt is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BRGIEN_A::VALUE1)
     }
     #[doc = "The baud rate generator interrupt is enabled. In case of a baud rate generator event, the service request output SRx indicated by INPR.PINP is activated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BRGIEN_A::VALUE2)
     }
 }
@@ -685,82 +687,79 @@ impl W {
     #[doc = "Bits 0:3 - Operating Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<0> {
+    pub fn mode(&mut self) -> MODE_W<CCR_SPEC, 0> {
         MODE_W::new(self)
     }
     #[doc = "Bits 6:7 - Hardware Port Control Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hpcen(&mut self) -> HPCEN_W<6> {
+    pub fn hpcen(&mut self) -> HPCEN_W<CCR_SPEC, 6> {
         HPCEN_W::new(self)
     }
     #[doc = "Bits 8:9 - Parity Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn pm(&mut self) -> PM_W<8> {
+    pub fn pm(&mut self) -> PM_W<CCR_SPEC, 8> {
         PM_W::new(self)
     }
     #[doc = "Bit 10 - Receiver Start Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rsien(&mut self) -> RSIEN_W<10> {
+    pub fn rsien(&mut self) -> RSIEN_W<CCR_SPEC, 10> {
         RSIEN_W::new(self)
     }
     #[doc = "Bit 11 - Data Lost Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dlien(&mut self) -> DLIEN_W<11> {
+    pub fn dlien(&mut self) -> DLIEN_W<CCR_SPEC, 11> {
         DLIEN_W::new(self)
     }
     #[doc = "Bit 12 - Transmit Shift Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tsien(&mut self) -> TSIEN_W<12> {
+    pub fn tsien(&mut self) -> TSIEN_W<CCR_SPEC, 12> {
         TSIEN_W::new(self)
     }
     #[doc = "Bit 13 - Transmit Buffer Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tbien(&mut self) -> TBIEN_W<13> {
+    pub fn tbien(&mut self) -> TBIEN_W<CCR_SPEC, 13> {
         TBIEN_W::new(self)
     }
     #[doc = "Bit 14 - Receive Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rien(&mut self) -> RIEN_W<14> {
+    pub fn rien(&mut self) -> RIEN_W<CCR_SPEC, 14> {
         RIEN_W::new(self)
     }
     #[doc = "Bit 15 - Alternative Receive Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn aien(&mut self) -> AIEN_W<15> {
+    pub fn aien(&mut self) -> AIEN_W<CCR_SPEC, 15> {
         AIEN_W::new(self)
     }
     #[doc = "Bit 16 - Baud Rate Generator Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn brgien(&mut self) -> BRGIEN_W<16> {
+    pub fn brgien(&mut self) -> BRGIEN_W<CCR_SPEC, 16> {
         BRGIEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Channel Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ccr](index.html) module"]
+#[doc = "Channel Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ccr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CCR_SPEC;
 impl crate::RegisterSpec for CCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ccr::R](R) reader structure"]
-impl crate::Readable for CCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ccr::W](W) writer structure"]
+#[doc = "`read()` method returns [`ccr::R`](R) reader structure"]
+impl crate::Readable for CCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ccr::W`](W) writer structure"]
 impl crate::Writable for CCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

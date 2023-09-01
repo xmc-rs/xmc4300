@@ -1,39 +1,7 @@
 #[doc = "Register `PLLCON0` reader"]
-pub struct R(crate::R<PLLCON0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PLLCON0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PLLCON0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PLLCON0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PLLCON0_SPEC>;
 #[doc = "Register `PLLCON0` writer"]
-pub struct W(crate::W<PLLCON0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PLLCON0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PLLCON0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PLLCON0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PLLCON0_SPEC>;
 #[doc = "Field `VCOBYP` reader - VCO Bypass"]
 pub type VCOBYP_R = crate::BitReader<VCOBYP_A>;
 #[doc = "VCO Bypass\n\nValue on reset: 1"]
@@ -59,28 +27,31 @@ impl VCOBYP_R {
             true => VCOBYP_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Normal operation, VCO is not bypassed"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == VCOBYP_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Prescaler Mode, VCO is bypassed"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == VCOBYP_A::CONST_1
     }
 }
 #[doc = "Field `VCOBYP` writer - VCO Bypass"]
-pub type VCOBYP_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, VCOBYP_A>;
-impl<'a, const O: u8> VCOBYP_W<'a, O> {
+pub type VCOBYP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VCOBYP_A>;
+impl<'a, REG, const O: u8> VCOBYP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal operation, VCO is not bypassed"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(VCOBYP_A::CONST_0)
     }
     #[doc = "Prescaler Mode, VCO is bypassed"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(VCOBYP_A::CONST_1)
     }
 }
@@ -109,28 +80,31 @@ impl VCOPWD_R {
             true => VCOPWD_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Normal behavior"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == VCOPWD_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "The VCO is put into a Power Saving Mode and can no longer be used. Only the Bypass and Prescaler Mode are active if previously selected."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == VCOPWD_A::CONST_1
     }
 }
 #[doc = "Field `VCOPWD` writer - VCO Power Saving Mode"]
-pub type VCOPWD_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, VCOPWD_A>;
-impl<'a, const O: u8> VCOPWD_W<'a, O> {
+pub type VCOPWD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VCOPWD_A>;
+impl<'a, REG, const O: u8> VCOPWD_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal behavior"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(VCOPWD_A::CONST_0)
     }
     #[doc = "The VCO is put into a Power Saving Mode and can no longer be used. Only the Bypass and Prescaler Mode are active if previously selected."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(VCOPWD_A::CONST_1)
     }
 }
@@ -159,28 +133,31 @@ impl VCOTR_R {
             true => VCOTR_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "VCO bandwidth is operation in the normal range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == VCOTR_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "VCO bandwidth is operation in the test range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == VCOTR_A::CONST_1
     }
 }
 #[doc = "Field `VCOTR` writer - VCO Trim Control"]
-pub type VCOTR_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, VCOTR_A>;
-impl<'a, const O: u8> VCOTR_W<'a, O> {
+pub type VCOTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VCOTR_A>;
+impl<'a, REG, const O: u8> VCOTR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "VCO bandwidth is operation in the normal range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(VCOTR_A::CONST_0)
     }
     #[doc = "VCO bandwidth is operation in the test range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(VCOTR_A::CONST_1)
     }
 }
@@ -209,28 +186,31 @@ impl FINDIS_R {
             true => FINDIS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "connect oscillator to the VCO part"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == FINDIS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "disconnect oscillator from the VCO part."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == FINDIS_A::CONST_1
     }
 }
 #[doc = "Field `FINDIS` writer - Disconnect Oscillator from VCO"]
-pub type FINDIS_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, FINDIS_A>;
-impl<'a, const O: u8> FINDIS_W<'a, O> {
+pub type FINDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FINDIS_A>;
+impl<'a, REG, const O: u8> FINDIS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "connect oscillator to the VCO part"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(FINDIS_A::CONST_0)
     }
     #[doc = "disconnect oscillator from the VCO part."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(FINDIS_A::CONST_1)
     }
 }
@@ -259,28 +239,31 @@ impl OSCDISCDIS_R {
             true => OSCDISCDIS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "In case of a PLL loss-of-lock bit FINDIS is set"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == OSCDISCDIS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "In case of a PLL loss-of-lock bit FINDIS is cleared"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == OSCDISCDIS_A::CONST_1
     }
 }
 #[doc = "Field `OSCDISCDIS` writer - Oscillator Disconnect Disable"]
-pub type OSCDISCDIS_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, OSCDISCDIS_A>;
-impl<'a, const O: u8> OSCDISCDIS_W<'a, O> {
+pub type OSCDISCDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OSCDISCDIS_A>;
+impl<'a, REG, const O: u8> OSCDISCDIS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "In case of a PLL loss-of-lock bit FINDIS is set"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(OSCDISCDIS_A::CONST_0)
     }
     #[doc = "In case of a PLL loss-of-lock bit FINDIS is cleared"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(OSCDISCDIS_A::CONST_1)
     }
 }
@@ -309,28 +292,31 @@ impl PLLPWD_R {
             true => PLLPWD_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Normal behavior"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PLLPWD_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "The complete PLL block is put into a Power Saving Mode and can no longer be used. Only the Bypass Mode is active if previously selected."]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PLLPWD_A::CONST_1
     }
 }
 #[doc = "Field `PLLPWD` writer - PLL Power Saving Mode"]
-pub type PLLPWD_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, PLLPWD_A>;
-impl<'a, const O: u8> PLLPWD_W<'a, O> {
+pub type PLLPWD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PLLPWD_A>;
+impl<'a, REG, const O: u8> PLLPWD_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal behavior"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PLLPWD_A::CONST_0)
     }
     #[doc = "The complete PLL block is put into a Power Saving Mode and can no longer be used. Only the Bypass Mode is active if previously selected."]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PLLPWD_A::CONST_1)
     }
 }
@@ -359,33 +345,36 @@ impl OSCRES_R {
             true => OSCRES_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "The Oscillator Watchdog of the PLL is not reset and remains active"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == OSCRES_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "The Oscillator Watchdog of the PLL is reset"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == OSCRES_A::CONST_1
     }
 }
 #[doc = "Field `OSCRES` writer - Oscillator Watchdog Reset"]
-pub type OSCRES_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, OSCRES_A>;
-impl<'a, const O: u8> OSCRES_W<'a, O> {
+pub type OSCRES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, OSCRES_A>;
+impl<'a, REG, const O: u8> OSCRES_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The Oscillator Watchdog of the PLL is not reset and remains active"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(OSCRES_A::CONST_0)
     }
     #[doc = "The Oscillator Watchdog of the PLL is reset"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(OSCRES_A::CONST_1)
     }
 }
 #[doc = "Field `RESLD` writer - Restart VCO Lock Detection"]
-pub type RESLD_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O>;
+pub type RESLD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `AOTREN` reader - Automatic Oscillator Calibration Enable"]
 pub type AOTREN_R = crate::BitReader<AOTREN_A>;
 #[doc = "Automatic Oscillator Calibration Enable\n\nValue on reset: 0"]
@@ -411,28 +400,31 @@ impl AOTREN_R {
             true => AOTREN_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == AOTREN_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == AOTREN_A::CONST_1
     }
 }
 #[doc = "Field `AOTREN` writer - Automatic Oscillator Calibration Enable"]
-pub type AOTREN_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, AOTREN_A>;
-impl<'a, const O: u8> AOTREN_W<'a, O> {
+pub type AOTREN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AOTREN_A>;
+impl<'a, REG, const O: u8> AOTREN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(AOTREN_A::CONST_0)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(AOTREN_A::CONST_1)
     }
 }
@@ -461,28 +453,31 @@ impl FOTR_R {
             true => FOTR_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No effect"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == FOTR_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Force fixed-value trimming"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == FOTR_A::CONST_1
     }
 }
 #[doc = "Field `FOTR` writer - Factory Oscillator Calibration"]
-pub type FOTR_W<'a, const O: u8> = crate::BitWriter<'a, PLLCON0_SPEC, O, FOTR_A>;
-impl<'a, const O: u8> FOTR_W<'a, O> {
+pub type FOTR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FOTR_A>;
+impl<'a, REG, const O: u8> FOTR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(FOTR_A::CONST_0)
     }
     #[doc = "Force fixed-value trimming"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(FOTR_A::CONST_1)
     }
 }
@@ -537,82 +532,79 @@ impl W {
     #[doc = "Bit 0 - VCO Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn vcobyp(&mut self) -> VCOBYP_W<0> {
+    pub fn vcobyp(&mut self) -> VCOBYP_W<PLLCON0_SPEC, 0> {
         VCOBYP_W::new(self)
     }
     #[doc = "Bit 1 - VCO Power Saving Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn vcopwd(&mut self) -> VCOPWD_W<1> {
+    pub fn vcopwd(&mut self) -> VCOPWD_W<PLLCON0_SPEC, 1> {
         VCOPWD_W::new(self)
     }
     #[doc = "Bit 2 - VCO Trim Control"]
     #[inline(always)]
     #[must_use]
-    pub fn vcotr(&mut self) -> VCOTR_W<2> {
+    pub fn vcotr(&mut self) -> VCOTR_W<PLLCON0_SPEC, 2> {
         VCOTR_W::new(self)
     }
     #[doc = "Bit 4 - Disconnect Oscillator from VCO"]
     #[inline(always)]
     #[must_use]
-    pub fn findis(&mut self) -> FINDIS_W<4> {
+    pub fn findis(&mut self) -> FINDIS_W<PLLCON0_SPEC, 4> {
         FINDIS_W::new(self)
     }
     #[doc = "Bit 6 - Oscillator Disconnect Disable"]
     #[inline(always)]
     #[must_use]
-    pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<6> {
+    pub fn oscdiscdis(&mut self) -> OSCDISCDIS_W<PLLCON0_SPEC, 6> {
         OSCDISCDIS_W::new(self)
     }
     #[doc = "Bit 16 - PLL Power Saving Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn pllpwd(&mut self) -> PLLPWD_W<16> {
+    pub fn pllpwd(&mut self) -> PLLPWD_W<PLLCON0_SPEC, 16> {
         PLLPWD_W::new(self)
     }
     #[doc = "Bit 17 - Oscillator Watchdog Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn oscres(&mut self) -> OSCRES_W<17> {
+    pub fn oscres(&mut self) -> OSCRES_W<PLLCON0_SPEC, 17> {
         OSCRES_W::new(self)
     }
     #[doc = "Bit 18 - Restart VCO Lock Detection"]
     #[inline(always)]
     #[must_use]
-    pub fn resld(&mut self) -> RESLD_W<18> {
+    pub fn resld(&mut self) -> RESLD_W<PLLCON0_SPEC, 18> {
         RESLD_W::new(self)
     }
     #[doc = "Bit 19 - Automatic Oscillator Calibration Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn aotren(&mut self) -> AOTREN_W<19> {
+    pub fn aotren(&mut self) -> AOTREN_W<PLLCON0_SPEC, 19> {
         AOTREN_W::new(self)
     }
     #[doc = "Bit 20 - Factory Oscillator Calibration"]
     #[inline(always)]
     #[must_use]
-    pub fn fotr(&mut self) -> FOTR_W<20> {
+    pub fn fotr(&mut self) -> FOTR_W<PLLCON0_SPEC, 20> {
         FOTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PLL Configuration 0 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pllcon0](index.html) module"]
+#[doc = "PLL Configuration 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pllcon0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pllcon0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PLLCON0_SPEC;
 impl crate::RegisterSpec for PLLCON0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pllcon0::R](R) reader structure"]
-impl crate::Readable for PLLCON0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pllcon0::W](W) writer structure"]
+#[doc = "`read()` method returns [`pllcon0::R`](R) reader structure"]
+impl crate::Readable for PLLCON0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pllcon0::W`](W) writer structure"]
 impl crate::Writable for PLLCON0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

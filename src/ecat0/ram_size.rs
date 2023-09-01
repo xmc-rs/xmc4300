@@ -1,18 +1,5 @@
 #[doc = "Register `RAM_SIZE` reader"]
-pub struct R(crate::R<RAM_SIZE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RAM_SIZE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RAM_SIZE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RAM_SIZE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RAM_SIZE_SPEC>;
 #[doc = "Field `RAM_Size` reader - Process Data RAM size supported by the EtherCAT Slave Controller in KByte"]
 pub type RAM_SIZE_R = crate::FieldReader;
 impl R {
@@ -22,15 +9,13 @@ impl R {
         RAM_SIZE_R::new(self.bits)
     }
 }
-#[doc = "RAM Size\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ram_size](index.html) module"]
+#[doc = "RAM Size\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram_size::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RAM_SIZE_SPEC;
 impl crate::RegisterSpec for RAM_SIZE_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [ram_size::R](R) reader structure"]
-impl crate::Readable for RAM_SIZE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`ram_size::R`](R) reader structure"]
+impl crate::Readable for RAM_SIZE_SPEC {}
 #[doc = "`reset()` method sets RAM_SIZE to value 0x08"]
 impl crate::Resettable for RAM_SIZE_SPEC {
     const RESET_VALUE: Self::Ux = 0x08;

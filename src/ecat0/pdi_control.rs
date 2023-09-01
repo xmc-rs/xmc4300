@@ -1,18 +1,5 @@
 #[doc = "Register `PDI_CONTROL` reader"]
-pub struct R(crate::R<PDI_CONTROL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PDI_CONTROL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PDI_CONTROL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PDI_CONTROL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PDI_CONTROL_SPEC>;
 #[doc = "Field `PDI` reader - On-chip bus clock"]
 pub type PDI_R = crate::FieldReader<PDI_A>;
 #[doc = "On-chip bus clock\n\nValue on reset: 128"]
@@ -43,12 +30,12 @@ impl PDI_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Interface deactivated (no PDI)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PDI_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "On-chip Bus"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PDI_A::VALUE2
@@ -61,15 +48,13 @@ impl R {
         PDI_R::new(self.bits)
     }
 }
-#[doc = "PDI Control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdi_control](index.html) module"]
+#[doc = "PDI Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdi_control::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PDI_CONTROL_SPEC;
 impl crate::RegisterSpec for PDI_CONTROL_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [pdi_control::R](R) reader structure"]
-impl crate::Readable for PDI_CONTROL_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pdi_control::R`](R) reader structure"]
+impl crate::Readable for PDI_CONTROL_SPEC {}
 #[doc = "`reset()` method sets PDI_CONTROL to value 0x80"]
 impl crate::Resettable for PDI_CONTROL_SPEC {
     const RESET_VALUE: Self::Ux = 0x80;

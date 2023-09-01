@@ -1,51 +1,19 @@
 #[doc = "Register `CTLL` reader"]
-pub struct R(crate::R<CTLL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CTLL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CTLL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CTLL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CTLL_SPEC>;
 #[doc = "Register `CTLL` writer"]
-pub struct W(crate::W<CTLL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CTLL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CTLL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CTLL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CTLL_SPEC>;
 #[doc = "Field `INT_EN` reader - Interrupt Enable Bit"]
 pub type INT_EN_R = crate::BitReader;
 #[doc = "Field `INT_EN` writer - Interrupt Enable Bit"]
-pub type INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTLL_SPEC, O>;
+pub type INT_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DST_TR_WIDTH` reader - Destination Transfer Width"]
 pub type DST_TR_WIDTH_R = crate::FieldReader;
 #[doc = "Field `DST_TR_WIDTH` writer - Destination Transfer Width"]
-pub type DST_TR_WIDTH_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 3, O>;
+pub type DST_TR_WIDTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `SRC_TR_WIDTH` reader - Source Transfer Width"]
 pub type SRC_TR_WIDTH_R = crate::FieldReader;
 #[doc = "Field `SRC_TR_WIDTH` writer - Source Transfer Width"]
-pub type SRC_TR_WIDTH_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 3, O>;
+pub type SRC_TR_WIDTH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `DINC` reader - Destination Address Increment"]
 pub type DINC_R = crate::FieldReader<DINC_A>;
 #[doc = "Destination Address Increment\n\nValue on reset: 0"]
@@ -79,38 +47,42 @@ impl DINC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Increment"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DINC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Decrement"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DINC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "No change"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == DINC_A::VALUE3
     }
 }
 #[doc = "Field `DINC` writer - Destination Address Increment"]
-pub type DINC_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 2, O, DINC_A>;
-impl<'a, const O: u8> DINC_W<'a, O> {
+pub type DINC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, DINC_A>;
+impl<'a, REG, const O: u8> DINC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Increment"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DINC_A::VALUE1)
     }
     #[doc = "Decrement"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DINC_A::VALUE2)
     }
     #[doc = "No change"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(DINC_A::VALUE3)
     }
 }
@@ -147,49 +119,53 @@ impl SINC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Increment"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SINC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Decrement"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SINC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "No change"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == SINC_A::VALUE3
     }
 }
 #[doc = "Field `SINC` writer - Source Address Increment"]
-pub type SINC_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 2, O, SINC_A>;
-impl<'a, const O: u8> SINC_W<'a, O> {
+pub type SINC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SINC_A>;
+impl<'a, REG, const O: u8> SINC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Increment"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SINC_A::VALUE1)
     }
     #[doc = "Decrement"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SINC_A::VALUE2)
     }
     #[doc = "No change"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(SINC_A::VALUE3)
     }
 }
 #[doc = "Field `DEST_MSIZE` reader - Destination Burst Transaction Length"]
 pub type DEST_MSIZE_R = crate::FieldReader;
 #[doc = "Field `DEST_MSIZE` writer - Destination Burst Transaction Length"]
-pub type DEST_MSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 3, O>;
+pub type DEST_MSIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `SRC_MSIZE` reader - Source Burst Transaction Length"]
 pub type SRC_MSIZE_R = crate::FieldReader;
 #[doc = "Field `SRC_MSIZE` writer - Source Burst Transaction Length"]
-pub type SRC_MSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 3, O>;
+pub type SRC_MSIZE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `SRC_GATHER_EN` reader - Source gather enable"]
 pub type SRC_GATHER_EN_R = crate::BitReader<SRC_GATHER_EN_A>;
 #[doc = "Source gather enable\n\nValue on reset: 0"]
@@ -215,28 +191,31 @@ impl SRC_GATHER_EN_R {
             true => SRC_GATHER_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Gather disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SRC_GATHER_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Gather enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SRC_GATHER_EN_A::VALUE2
     }
 }
 #[doc = "Field `SRC_GATHER_EN` writer - Source gather enable"]
-pub type SRC_GATHER_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTLL_SPEC, O, SRC_GATHER_EN_A>;
-impl<'a, const O: u8> SRC_GATHER_EN_W<'a, O> {
+pub type SRC_GATHER_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRC_GATHER_EN_A>;
+impl<'a, REG, const O: u8> SRC_GATHER_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Gather disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SRC_GATHER_EN_A::VALUE1)
     }
     #[doc = "Gather enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SRC_GATHER_EN_A::VALUE2)
     }
 }
@@ -265,43 +244,46 @@ impl DST_SCATTER_EN_R {
             true => DST_SCATTER_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Scatter disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DST_SCATTER_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Scatter enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DST_SCATTER_EN_A::VALUE2
     }
 }
 #[doc = "Field `DST_SCATTER_EN` writer - Destination scatter enable"]
-pub type DST_SCATTER_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTLL_SPEC, O, DST_SCATTER_EN_A>;
-impl<'a, const O: u8> DST_SCATTER_EN_W<'a, O> {
+pub type DST_SCATTER_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DST_SCATTER_EN_A>;
+impl<'a, REG, const O: u8> DST_SCATTER_EN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Scatter disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DST_SCATTER_EN_A::VALUE1)
     }
     #[doc = "Scatter enabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DST_SCATTER_EN_A::VALUE2)
     }
 }
 #[doc = "Field `TT_FC` reader - Transfer Type and Flow Control"]
 pub type TT_FC_R = crate::FieldReader;
 #[doc = "Field `TT_FC` writer - Transfer Type and Flow Control"]
-pub type TT_FC_W<'a, const O: u8> = crate::FieldWriter<'a, CTLL_SPEC, 3, O>;
+pub type TT_FC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `LLP_DST_EN` reader - Linked List Pointer for Destination Enable"]
 pub type LLP_DST_EN_R = crate::BitReader;
 #[doc = "Field `LLP_DST_EN` writer - Linked List Pointer for Destination Enable"]
-pub type LLP_DST_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTLL_SPEC, O>;
+pub type LLP_DST_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `LLP_SRC_EN` reader - Linked List Pointer for Source Enable"]
 pub type LLP_SRC_EN_R = crate::BitReader;
 #[doc = "Field `LLP_SRC_EN` writer - Linked List Pointer for Source Enable"]
-pub type LLP_SRC_EN_W<'a, const O: u8> = crate::BitWriter<'a, CTLL_SPEC, O>;
+pub type LLP_SRC_EN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Interrupt Enable Bit"]
     #[inline(always)]
@@ -368,94 +350,91 @@ impl W {
     #[doc = "Bit 0 - Interrupt Enable Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn int_en(&mut self) -> INT_EN_W<0> {
+    pub fn int_en(&mut self) -> INT_EN_W<CTLL_SPEC, 0> {
         INT_EN_W::new(self)
     }
     #[doc = "Bits 1:3 - Destination Transfer Width"]
     #[inline(always)]
     #[must_use]
-    pub fn dst_tr_width(&mut self) -> DST_TR_WIDTH_W<1> {
+    pub fn dst_tr_width(&mut self) -> DST_TR_WIDTH_W<CTLL_SPEC, 1> {
         DST_TR_WIDTH_W::new(self)
     }
     #[doc = "Bits 4:6 - Source Transfer Width"]
     #[inline(always)]
     #[must_use]
-    pub fn src_tr_width(&mut self) -> SRC_TR_WIDTH_W<4> {
+    pub fn src_tr_width(&mut self) -> SRC_TR_WIDTH_W<CTLL_SPEC, 4> {
         SRC_TR_WIDTH_W::new(self)
     }
     #[doc = "Bits 7:8 - Destination Address Increment"]
     #[inline(always)]
     #[must_use]
-    pub fn dinc(&mut self) -> DINC_W<7> {
+    pub fn dinc(&mut self) -> DINC_W<CTLL_SPEC, 7> {
         DINC_W::new(self)
     }
     #[doc = "Bits 9:10 - Source Address Increment"]
     #[inline(always)]
     #[must_use]
-    pub fn sinc(&mut self) -> SINC_W<9> {
+    pub fn sinc(&mut self) -> SINC_W<CTLL_SPEC, 9> {
         SINC_W::new(self)
     }
     #[doc = "Bits 11:13 - Destination Burst Transaction Length"]
     #[inline(always)]
     #[must_use]
-    pub fn dest_msize(&mut self) -> DEST_MSIZE_W<11> {
+    pub fn dest_msize(&mut self) -> DEST_MSIZE_W<CTLL_SPEC, 11> {
         DEST_MSIZE_W::new(self)
     }
     #[doc = "Bits 14:16 - Source Burst Transaction Length"]
     #[inline(always)]
     #[must_use]
-    pub fn src_msize(&mut self) -> SRC_MSIZE_W<14> {
+    pub fn src_msize(&mut self) -> SRC_MSIZE_W<CTLL_SPEC, 14> {
         SRC_MSIZE_W::new(self)
     }
     #[doc = "Bit 17 - Source gather enable"]
     #[inline(always)]
     #[must_use]
-    pub fn src_gather_en(&mut self) -> SRC_GATHER_EN_W<17> {
+    pub fn src_gather_en(&mut self) -> SRC_GATHER_EN_W<CTLL_SPEC, 17> {
         SRC_GATHER_EN_W::new(self)
     }
     #[doc = "Bit 18 - Destination scatter enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dst_scatter_en(&mut self) -> DST_SCATTER_EN_W<18> {
+    pub fn dst_scatter_en(&mut self) -> DST_SCATTER_EN_W<CTLL_SPEC, 18> {
         DST_SCATTER_EN_W::new(self)
     }
     #[doc = "Bits 20:22 - Transfer Type and Flow Control"]
     #[inline(always)]
     #[must_use]
-    pub fn tt_fc(&mut self) -> TT_FC_W<20> {
+    pub fn tt_fc(&mut self) -> TT_FC_W<CTLL_SPEC, 20> {
         TT_FC_W::new(self)
     }
     #[doc = "Bit 27 - Linked List Pointer for Destination Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn llp_dst_en(&mut self) -> LLP_DST_EN_W<27> {
+    pub fn llp_dst_en(&mut self) -> LLP_DST_EN_W<CTLL_SPEC, 27> {
         LLP_DST_EN_W::new(self)
     }
     #[doc = "Bit 28 - Linked List Pointer for Source Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn llp_src_en(&mut self) -> LLP_SRC_EN_W<28> {
+    pub fn llp_src_en(&mut self) -> LLP_SRC_EN_W<CTLL_SPEC, 28> {
         LLP_SRC_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Control Register Low\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctll](index.html) module"]
+#[doc = "Control Register Low\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctll::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctll::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTLL_SPEC;
 impl crate::RegisterSpec for CTLL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ctll::R](R) reader structure"]
-impl crate::Readable for CTLL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ctll::W](W) writer structure"]
+#[doc = "`read()` method returns [`ctll::R`](R) reader structure"]
+impl crate::Readable for CTLL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ctll::W`](W) writer structure"]
 impl crate::Writable for CTLL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

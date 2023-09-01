@@ -1,18 +1,5 @@
 #[doc = "Register `STATUSBLOCK` reader"]
-pub struct R(crate::R<STATUSBLOCK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STATUSBLOCK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<STATUSBLOCK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<STATUSBLOCK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<STATUSBLOCK_SPEC>;
 #[doc = "Field `CH0` reader - Interrupt Status for channel 0"]
 pub type CH0_R = crate::BitReader;
 #[doc = "Field `CH1` reader - Interrupt Status for channel 1"]
@@ -71,15 +58,13 @@ impl R {
         CH7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "IntBlock Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [statusblock](index.html) module"]
+#[doc = "IntBlock Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`statusblock::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STATUSBLOCK_SPEC;
 impl crate::RegisterSpec for STATUSBLOCK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [statusblock::R](R) reader structure"]
-impl crate::Readable for STATUSBLOCK_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`statusblock::R`](R) reader structure"]
+impl crate::Readable for STATUSBLOCK_SPEC {}
 #[doc = "`reset()` method sets STATUSBLOCK to value 0"]
 impl crate::Resettable for STATUSBLOCK_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,49 +1,17 @@
 #[doc = "Register `EMUXCTR` reader"]
-pub struct R(crate::R<EMUXCTR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EMUXCTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EMUXCTR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EMUXCTR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EMUXCTR_SPEC>;
 #[doc = "Register `EMUXCTR` writer"]
-pub struct W(crate::W<EMUXCTR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EMUXCTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EMUXCTR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EMUXCTR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EMUXCTR_SPEC>;
 #[doc = "Field `EMUXSET` reader - External Multiplexer Start Selection"]
 pub type EMUXSET_R = crate::FieldReader;
 #[doc = "Field `EMUXSET` writer - External Multiplexer Start Selection"]
-pub type EMUXSET_W<'a, const O: u8> = crate::FieldWriter<'a, EMUXCTR_SPEC, 3, O>;
+pub type EMUXSET_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `EMUXACT` reader - External Multiplexer Actual Selection"]
 pub type EMUXACT_R = crate::FieldReader;
 #[doc = "Field `EMUXCH` reader - External Multiplexer Channel Select"]
 pub type EMUXCH_R = crate::FieldReader<u16>;
 #[doc = "Field `EMUXCH` writer - External Multiplexer Channel Select"]
-pub type EMUXCH_W<'a, const O: u8> = crate::FieldWriter<'a, EMUXCTR_SPEC, 10, O, u16>;
+pub type EMUXCH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 10, O, u16>;
 #[doc = "Field `EMUXMODE` reader - External Multiplexer Mode"]
 pub type EMUXMODE_R = crate::FieldReader<EMUXMODE_A>;
 #[doc = "External Multiplexer Mode\n\nValue on reset: 0"]
@@ -80,48 +48,52 @@ impl EMUXMODE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Software control (no hardware action)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EMUXMODE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Steady mode (use EMUXSET value)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EMUXMODE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Single-step mode"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == EMUXMODE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Sequence mode"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == EMUXMODE_A::VALUE4
     }
 }
 #[doc = "Field `EMUXMODE` writer - External Multiplexer Mode"]
-pub type EMUXMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, EMUXCTR_SPEC, 2, O, EMUXMODE_A>;
-impl<'a, const O: u8> EMUXMODE_W<'a, O> {
+pub type EMUXMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EMUXMODE_A>;
+impl<'a, REG, const O: u8> EMUXMODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Software control (no hardware action)"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EMUXMODE_A::VALUE1)
     }
     #[doc = "Steady mode (use EMUXSET value)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EMUXMODE_A::VALUE2)
     }
     #[doc = "Single-step mode"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(EMUXMODE_A::VALUE3)
     }
     #[doc = "Sequence mode"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(EMUXMODE_A::VALUE4)
     }
 }
@@ -150,28 +122,31 @@ impl EMXCOD_R {
             true => EMXCOD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Output the channel number in binary code"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EMXCOD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Output the channel number in Gray code"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EMXCOD_A::VALUE2
     }
 }
 #[doc = "Field `EMXCOD` writer - External Multiplexer Coding Scheme"]
-pub type EMXCOD_W<'a, const O: u8> = crate::BitWriter<'a, EMUXCTR_SPEC, O, EMXCOD_A>;
-impl<'a, const O: u8> EMXCOD_W<'a, O> {
+pub type EMXCOD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EMXCOD_A>;
+impl<'a, REG, const O: u8> EMXCOD_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Output the channel number in binary code"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EMXCOD_A::VALUE1)
     }
     #[doc = "Output the channel number in Gray code"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EMXCOD_A::VALUE2)
     }
 }
@@ -200,28 +175,31 @@ impl EMXST_R {
             true => EMXST_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Use STCE whenever the setting changes"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EMXST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Use STCE for each conversion of an external channel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EMXST_A::VALUE2
     }
 }
 #[doc = "Field `EMXST` writer - External Multiplexer Sample Time Control"]
-pub type EMXST_W<'a, const O: u8> = crate::BitWriter<'a, EMUXCTR_SPEC, O, EMXST_A>;
-impl<'a, const O: u8> EMXST_W<'a, O> {
+pub type EMXST_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EMXST_A>;
+impl<'a, REG, const O: u8> EMXST_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Use STCE whenever the setting changes"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EMXST_A::VALUE1)
     }
     #[doc = "Use STCE for each conversion of an external channel"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EMXST_A::VALUE2)
     }
 }
@@ -250,12 +228,12 @@ impl EMXCSS_R {
             true => EMXCSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Channel number: Bitfield EMUXCH selects an arbitrary channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EMXCSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Channel enable: Each bit of bitfield EMUXCH selects the associated channel for EMUX control"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EMXCSS_A::VALUE2
@@ -276,16 +254,19 @@ impl From<EMXWC_AW> for bool {
     }
 }
 #[doc = "Field `EMXWC` writer - Write Control for EMUX Configuration"]
-pub type EMXWC_W<'a, const O: u8> = crate::BitWriter<'a, EMUXCTR_SPEC, O, EMXWC_AW>;
-impl<'a, const O: u8> EMXWC_W<'a, O> {
+pub type EMXWC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EMXWC_AW>;
+impl<'a, REG, const O: u8> EMXWC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No write access to EMUX cfg."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EMXWC_AW::VALUE1)
     }
     #[doc = "Bitfields EMXMODE, EMXCOD, EMXST, EMXCSS can be written"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EMXWC_AW::VALUE2)
     }
 }
@@ -330,58 +311,55 @@ impl W {
     #[doc = "Bits 0:2 - External Multiplexer Start Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn emuxset(&mut self) -> EMUXSET_W<0> {
+    pub fn emuxset(&mut self) -> EMUXSET_W<EMUXCTR_SPEC, 0> {
         EMUXSET_W::new(self)
     }
     #[doc = "Bits 16:25 - External Multiplexer Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn emuxch(&mut self) -> EMUXCH_W<16> {
+    pub fn emuxch(&mut self) -> EMUXCH_W<EMUXCTR_SPEC, 16> {
         EMUXCH_W::new(self)
     }
     #[doc = "Bits 26:27 - External Multiplexer Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn emuxmode(&mut self) -> EMUXMODE_W<26> {
+    pub fn emuxmode(&mut self) -> EMUXMODE_W<EMUXCTR_SPEC, 26> {
         EMUXMODE_W::new(self)
     }
     #[doc = "Bit 28 - External Multiplexer Coding Scheme"]
     #[inline(always)]
     #[must_use]
-    pub fn emxcod(&mut self) -> EMXCOD_W<28> {
+    pub fn emxcod(&mut self) -> EMXCOD_W<EMUXCTR_SPEC, 28> {
         EMXCOD_W::new(self)
     }
     #[doc = "Bit 29 - External Multiplexer Sample Time Control"]
     #[inline(always)]
     #[must_use]
-    pub fn emxst(&mut self) -> EMXST_W<29> {
+    pub fn emxst(&mut self) -> EMXST_W<EMUXCTR_SPEC, 29> {
         EMXST_W::new(self)
     }
     #[doc = "Bit 31 - Write Control for EMUX Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn emxwc(&mut self) -> EMXWC_W<31> {
+    pub fn emxwc(&mut self) -> EMXWC_W<EMUXCTR_SPEC, 31> {
         EMXWC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "E0ternal Multiplexer Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [emuxctr](index.html) module"]
+#[doc = "E0ternal Multiplexer Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emuxctr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emuxctr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EMUXCTR_SPEC;
 impl crate::RegisterSpec for EMUXCTR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [emuxctr::R](R) reader structure"]
-impl crate::Readable for EMUXCTR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [emuxctr::W](W) writer structure"]
+#[doc = "`read()` method returns [`emuxctr::R`](R) reader structure"]
+impl crate::Readable for EMUXCTR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`emuxctr::W`](W) writer structure"]
 impl crate::Writable for EMUXCTR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

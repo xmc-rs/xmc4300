@@ -1,43 +1,11 @@
 #[doc = "Register `MPU_RBAR_A3` reader"]
-pub struct R(crate::R<MPU_RBAR_A3_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MPU_RBAR_A3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MPU_RBAR_A3_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MPU_RBAR_A3_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MPU_RBAR_A3_SPEC>;
 #[doc = "Register `MPU_RBAR_A3` writer"]
-pub struct W(crate::W<MPU_RBAR_A3_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MPU_RBAR_A3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MPU_RBAR_A3_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MPU_RBAR_A3_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MPU_RBAR_A3_SPEC>;
 #[doc = "Field `REGION` reader - MPU region field"]
 pub type REGION_R = crate::FieldReader;
 #[doc = "Field `REGION` writer - MPU region field"]
-pub type REGION_W<'a, const O: u8> = crate::FieldWriter<'a, MPU_RBAR_A3_SPEC, 4, O>;
+pub type REGION_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `VALID` reader - MPU Region Number valid bit"]
 pub type VALID_R = crate::BitReader<VALID_A>;
 #[doc = "MPU Region Number valid bit\n\nValue on reset: 0"]
@@ -63,35 +31,38 @@ impl VALID_R {
             true => VALID_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "MPU_RNR not changed, and the processor: - updates the base address for the region specified in the MPU_RNR - ignores the value of the REGION field"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VALID_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "the processor: - updates the value of the MPU_RNR to the value of the REGION field - updates the base address for the region specified in the REGION field."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VALID_A::VALUE2
     }
 }
 #[doc = "Field `VALID` writer - MPU Region Number valid bit"]
-pub type VALID_W<'a, const O: u8> = crate::BitWriter<'a, MPU_RBAR_A3_SPEC, O, VALID_A>;
-impl<'a, const O: u8> VALID_W<'a, O> {
+pub type VALID_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VALID_A>;
+impl<'a, REG, const O: u8> VALID_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "MPU_RNR not changed, and the processor: - updates the base address for the region specified in the MPU_RNR - ignores the value of the REGION field"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(VALID_A::VALUE1)
     }
     #[doc = "the processor: - updates the value of the MPU_RNR to the value of the REGION field - updates the base address for the region specified in the REGION field."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(VALID_A::VALUE2)
     }
 }
 #[doc = "Field `ADDR` reader - Region base address field"]
 pub type ADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `ADDR` writer - Region base address field"]
-pub type ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, MPU_RBAR_A3_SPEC, 23, O, u32>;
+pub type ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 23, O, u32>;
 impl R {
     #[doc = "Bits 0:3 - MPU region field"]
     #[inline(always)]
@@ -113,40 +84,37 @@ impl W {
     #[doc = "Bits 0:3 - MPU region field"]
     #[inline(always)]
     #[must_use]
-    pub fn region(&mut self) -> REGION_W<0> {
+    pub fn region(&mut self) -> REGION_W<MPU_RBAR_A3_SPEC, 0> {
         REGION_W::new(self)
     }
     #[doc = "Bit 4 - MPU Region Number valid bit"]
     #[inline(always)]
     #[must_use]
-    pub fn valid(&mut self) -> VALID_W<4> {
+    pub fn valid(&mut self) -> VALID_W<MPU_RBAR_A3_SPEC, 4> {
         VALID_W::new(self)
     }
     #[doc = "Bits 9:31 - Region base address field"]
     #[inline(always)]
     #[must_use]
-    pub fn addr(&mut self) -> ADDR_W<9> {
+    pub fn addr(&mut self) -> ADDR_W<MPU_RBAR_A3_SPEC, 9> {
         ADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "MPU Region Base Address Register A3\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mpu_rbar_a3](index.html) module"]
+#[doc = "MPU Region Base Address Register A3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mpu_rbar_a3::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mpu_rbar_a3::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MPU_RBAR_A3_SPEC;
 impl crate::RegisterSpec for MPU_RBAR_A3_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mpu_rbar_a3::R](R) reader structure"]
-impl crate::Readable for MPU_RBAR_A3_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mpu_rbar_a3::W](W) writer structure"]
+#[doc = "`read()` method returns [`mpu_rbar_a3::R`](R) reader structure"]
+impl crate::Readable for MPU_RBAR_A3_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mpu_rbar_a3::W`](W) writer structure"]
 impl crate::Writable for MPU_RBAR_A3_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

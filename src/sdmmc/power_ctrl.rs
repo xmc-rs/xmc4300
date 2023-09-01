@@ -1,39 +1,7 @@
 #[doc = "Register `POWER_CTRL` reader"]
-pub struct R(crate::R<POWER_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<POWER_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<POWER_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<POWER_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<POWER_CTRL_SPEC>;
 #[doc = "Register `POWER_CTRL` writer"]
-pub struct W(crate::W<POWER_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<POWER_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<POWER_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<POWER_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<POWER_CTRL_SPEC>;
 #[doc = "Field `SD_BUS_POWER` reader - SD Bus Power"]
 pub type SD_BUS_POWER_R = crate::BitReader<SD_BUS_POWER_A>;
 #[doc = "SD Bus Power\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl SD_BUS_POWER_R {
             true => SD_BUS_POWER_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Power off"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SD_BUS_POWER_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Power on"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SD_BUS_POWER_A::VALUE2
     }
 }
 #[doc = "Field `SD_BUS_POWER` writer - SD Bus Power"]
-pub type SD_BUS_POWER_W<'a, const O: u8> = crate::BitWriter<'a, POWER_CTRL_SPEC, O, SD_BUS_POWER_A>;
-impl<'a, const O: u8> SD_BUS_POWER_W<'a, O> {
+pub type SD_BUS_POWER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SD_BUS_POWER_A>;
+impl<'a, REG, const O: u8> SD_BUS_POWER_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Power off"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SD_BUS_POWER_A::VALUE1)
     }
     #[doc = "Power on"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SD_BUS_POWER_A::VALUE2)
     }
 }
@@ -111,25 +82,29 @@ impl SD_BUS_VOLTAGE_SEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "3.3V (Flattop.)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SD_BUS_VOLTAGE_SEL_A::VALUE1
     }
 }
 #[doc = "Field `SD_BUS_VOLTAGE_SEL` writer - SD Bus Voltage Select"]
-pub type SD_BUS_VOLTAGE_SEL_W<'a, const O: u8> = crate::FieldWriter<'a, POWER_CTRL_SPEC, 3, O, SD_BUS_VOLTAGE_SEL_A>;
-impl<'a, const O: u8> SD_BUS_VOLTAGE_SEL_W<'a, O> {
+pub type SD_BUS_VOLTAGE_SEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, SD_BUS_VOLTAGE_SEL_A>;
+impl<'a, REG, const O: u8> SD_BUS_VOLTAGE_SEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "3.3V (Flattop.)"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SD_BUS_VOLTAGE_SEL_A::VALUE1)
     }
 }
 #[doc = "Field `HARDWARE_RESET` reader - Hardware reset"]
 pub type HARDWARE_RESET_R = crate::BitReader;
 #[doc = "Field `HARDWARE_RESET` writer - Hardware reset"]
-pub type HARDWARE_RESET_W<'a, const O: u8> = crate::BitWriter<'a, POWER_CTRL_SPEC, O>;
+pub type HARDWARE_RESET_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - SD Bus Power"]
     #[inline(always)]
@@ -151,40 +126,37 @@ impl W {
     #[doc = "Bit 0 - SD Bus Power"]
     #[inline(always)]
     #[must_use]
-    pub fn sd_bus_power(&mut self) -> SD_BUS_POWER_W<0> {
+    pub fn sd_bus_power(&mut self) -> SD_BUS_POWER_W<POWER_CTRL_SPEC, 0> {
         SD_BUS_POWER_W::new(self)
     }
     #[doc = "Bits 1:3 - SD Bus Voltage Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sd_bus_voltage_sel(&mut self) -> SD_BUS_VOLTAGE_SEL_W<1> {
+    pub fn sd_bus_voltage_sel(&mut self) -> SD_BUS_VOLTAGE_SEL_W<POWER_CTRL_SPEC, 1> {
         SD_BUS_VOLTAGE_SEL_W::new(self)
     }
     #[doc = "Bit 4 - Hardware reset"]
     #[inline(always)]
     #[must_use]
-    pub fn hardware_reset(&mut self) -> HARDWARE_RESET_W<4> {
+    pub fn hardware_reset(&mut self) -> HARDWARE_RESET_W<POWER_CTRL_SPEC, 4> {
         HARDWARE_RESET_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Power Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [power_ctrl](index.html) module"]
+#[doc = "Power Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`power_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`power_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct POWER_CTRL_SPEC;
 impl crate::RegisterSpec for POWER_CTRL_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [power_ctrl::R](R) reader structure"]
-impl crate::Readable for POWER_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [power_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`power_ctrl::R`](R) reader structure"]
+impl crate::Readable for POWER_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`power_ctrl::W`](W) writer structure"]
 impl crate::Writable for POWER_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

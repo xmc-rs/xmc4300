@@ -38,63 +38,78 @@ pub struct RegisterBlock {
     #[doc = "0xcc - Retention Memory Access Data Register"]
     pub rmdata: RMDATA,
 }
-#[doc = "ID (r) register accessor: an alias for `Reg<ID_SPEC>`"]
+#[doc = "ID (r) register accessor: SCU Module ID Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`id`]
+module"]
 pub type ID = crate::Reg<id::ID_SPEC>;
 #[doc = "SCU Module ID Register"]
 pub mod id;
-#[doc = "IDCHIP (r) register accessor: an alias for `Reg<IDCHIP_SPEC>`"]
+#[doc = "IDCHIP (r) register accessor: Chip ID Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`idchip::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`idchip`]
+module"]
 pub type IDCHIP = crate::Reg<idchip::IDCHIP_SPEC>;
 #[doc = "Chip ID Register"]
 pub mod idchip;
-#[doc = "IDMANUF (r) register accessor: an alias for `Reg<IDMANUF_SPEC>`"]
+#[doc = "IDMANUF (r) register accessor: Manufactory ID Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`idmanuf::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`idmanuf`]
+module"]
 pub type IDMANUF = crate::Reg<idmanuf::IDMANUF_SPEC>;
 #[doc = "Manufactory ID Register"]
 pub mod idmanuf;
-#[doc = "STCON (rw) register accessor: an alias for `Reg<STCON_SPEC>`"]
+#[doc = "STCON (rw) register accessor: Startup Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`stcon::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`stcon::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`stcon`]
+module"]
 pub type STCON = crate::Reg<stcon::STCON_SPEC>;
 #[doc = "Startup Configuration Register"]
 pub mod stcon;
-#[doc = "GPR0 (rw) register accessor: an alias for `Reg<GPR0_SPEC>`"]
+#[doc = "GPR0 (rw) register accessor: General Purpose Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpr0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpr0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`gpr0`]
+module"]
 pub type GPR0 = crate::Reg<gpr0::GPR0_SPEC>;
 #[doc = "General Purpose Register 0"]
 pub mod gpr0;
-#[doc = "GPR1 (rw) register accessor: an alias for `Reg<GPR1_SPEC>`"]
+#[doc = "GPR1 (rw) register accessor: General Purpose Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpr1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpr1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`gpr1`]
+module"]
 pub type GPR1 = crate::Reg<gpr1::GPR1_SPEC>;
 #[doc = "General Purpose Register 1"]
 pub mod gpr1;
-#[doc = "CCUCON (rw) register accessor: an alias for `Reg<CCUCON_SPEC>`"]
+#[doc = "CCUCON (rw) register accessor: CCU Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccucon::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ccucon::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`ccucon`]
+module"]
 pub type CCUCON = crate::Reg<ccucon::CCUCON_SPEC>;
 #[doc = "CCU Control Register"]
 pub mod ccucon;
-#[doc = "DTSCON (rw) register accessor: an alias for `Reg<DTSCON_SPEC>`"]
+#[doc = "DTSCON (rw) register accessor: Die Temperature Sensor Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtscon::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dtscon::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`dtscon`]
+module"]
 pub type DTSCON = crate::Reg<dtscon::DTSCON_SPEC>;
 #[doc = "Die Temperature Sensor Control Register"]
 pub mod dtscon;
-#[doc = "DTSSTAT (r) register accessor: an alias for `Reg<DTSSTAT_SPEC>`"]
+#[doc = "DTSSTAT (r) register accessor: Die Temperature Sensor Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtsstat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`dtsstat`]
+module"]
 pub type DTSSTAT = crate::Reg<dtsstat::DTSSTAT_SPEC>;
 #[doc = "Die Temperature Sensor Status Register"]
 pub mod dtsstat;
-#[doc = "SDMMCDEL (rw) register accessor: an alias for `Reg<SDMMCDEL_SPEC>`"]
+#[doc = "SDMMCDEL (rw) register accessor: SD-MMC Delay Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sdmmcdel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sdmmcdel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`sdmmcdel`]
+module"]
 pub type SDMMCDEL = crate::Reg<sdmmcdel::SDMMCDEL_SPEC>;
 #[doc = "SD-MMC Delay Control Register"]
 pub mod sdmmcdel;
-#[doc = "G0ORCEN (rw) register accessor: an alias for `Reg<G0ORCEN_SPEC>`"]
+#[doc = "G0ORCEN (rw) register accessor: Out of Range Comparator Enable Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`g0orcen::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`g0orcen::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`g0orcen`]
+module"]
 pub type G0ORCEN = crate::Reg<g0orcen::G0ORCEN_SPEC>;
 #[doc = "Out of Range Comparator Enable Register 0"]
 pub mod g0orcen;
-#[doc = "G1ORCEN (rw) register accessor: an alias for `Reg<G1ORCEN_SPEC>`"]
+#[doc = "G1ORCEN (rw) register accessor: Out of Range Comparator Enable Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`g1orcen::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`g1orcen::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`g1orcen`]
+module"]
 pub type G1ORCEN = crate::Reg<g1orcen::G1ORCEN_SPEC>;
 #[doc = "Out of Range Comparator Enable Register 1"]
 pub mod g1orcen;
-#[doc = "MIRRSTS (r) register accessor: an alias for `Reg<MIRRSTS_SPEC>`"]
+#[doc = "MIRRSTS (r) register accessor: Mirror Write Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mirrsts::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mirrsts`]
+module"]
 pub type MIRRSTS = crate::Reg<mirrsts::MIRRSTS_SPEC>;
 #[doc = "Mirror Write Status Register"]
 pub mod mirrsts;
-#[doc = "RMACR (rw) register accessor: an alias for `Reg<RMACR_SPEC>`"]
+#[doc = "RMACR (rw) register accessor: Retention Memory Access Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rmacr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rmacr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`rmacr`]
+module"]
 pub type RMACR = crate::Reg<rmacr::RMACR_SPEC>;
 #[doc = "Retention Memory Access Control Register"]
 pub mod rmacr;
-#[doc = "RMDATA (rw) register accessor: an alias for `Reg<RMDATA_SPEC>`"]
+#[doc = "RMDATA (rw) register accessor: Retention Memory Access Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rmdata::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rmdata::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`rmdata`]
+module"]
 pub type RMDATA = crate::Reg<rmdata::RMDATA_SPEC>;
 #[doc = "Retention Memory Access Data Register"]
 pub mod rmdata;

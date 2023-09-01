@@ -1,47 +1,15 @@
 #[doc = "Register `GNPTXFSIZ_HOSTMODE` reader"]
-pub struct R(crate::R<GNPTXFSIZ_HOSTMODE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GNPTXFSIZ_HOSTMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GNPTXFSIZ_HOSTMODE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GNPTXFSIZ_HOSTMODE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GNPTXFSIZ_HOSTMODE_SPEC>;
 #[doc = "Register `GNPTXFSIZ_HOSTMODE` writer"]
-pub struct W(crate::W<GNPTXFSIZ_HOSTMODE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<GNPTXFSIZ_HOSTMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<GNPTXFSIZ_HOSTMODE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<GNPTXFSIZ_HOSTMODE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<GNPTXFSIZ_HOSTMODE_SPEC>;
 #[doc = "Field `NPTxFStAddr` reader - Non-periodic Transmit RAM Start Address"]
 pub type NPTX_FST_ADDR_R = crate::FieldReader<u16>;
 #[doc = "Field `NPTxFStAddr` writer - Non-periodic Transmit RAM Start Address"]
-pub type NPTX_FST_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, GNPTXFSIZ_HOSTMODE_SPEC, 16, O, u16>;
+pub type NPTX_FST_ADDR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 #[doc = "Field `NPTxFDep` reader - Non-periodic TxFIFO Depth"]
 pub type NPTX_FDEP_R = crate::FieldReader<u16>;
 #[doc = "Field `NPTxFDep` writer - Non-periodic TxFIFO Depth"]
-pub type NPTX_FDEP_W<'a, const O: u8> = crate::FieldWriter<'a, GNPTXFSIZ_HOSTMODE_SPEC, 16, O, u16>;
+pub type NPTX_FDEP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Non-periodic Transmit RAM Start Address"]
     #[inline(always)]
@@ -58,34 +26,31 @@ impl W {
     #[doc = "Bits 0:15 - Non-periodic Transmit RAM Start Address"]
     #[inline(always)]
     #[must_use]
-    pub fn nptx_fst_addr(&mut self) -> NPTX_FST_ADDR_W<0> {
+    pub fn nptx_fst_addr(&mut self) -> NPTX_FST_ADDR_W<GNPTXFSIZ_HOSTMODE_SPEC, 0> {
         NPTX_FST_ADDR_W::new(self)
     }
     #[doc = "Bits 16:31 - Non-periodic TxFIFO Depth"]
     #[inline(always)]
     #[must_use]
-    pub fn nptx_fdep(&mut self) -> NPTX_FDEP_W<16> {
+    pub fn nptx_fdep(&mut self) -> NPTX_FDEP_W<GNPTXFSIZ_HOSTMODE_SPEC, 16> {
         NPTX_FDEP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Non-Periodic Transmit FIFO Size Register \\[HOSTMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gnptxfsiz_hostmode](index.html) module"]
+#[doc = "Non-Periodic Transmit FIFO Size Register \\[HOSTMODE\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gnptxfsiz_hostmode::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gnptxfsiz_hostmode::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GNPTXFSIZ_HOSTMODE_SPEC;
 impl crate::RegisterSpec for GNPTXFSIZ_HOSTMODE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [gnptxfsiz_hostmode::R](R) reader structure"]
-impl crate::Readable for GNPTXFSIZ_HOSTMODE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [gnptxfsiz_hostmode::W](W) writer structure"]
+#[doc = "`read()` method returns [`gnptxfsiz_hostmode::R`](R) reader structure"]
+impl crate::Readable for GNPTXFSIZ_HOSTMODE_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`gnptxfsiz_hostmode::W`](W) writer structure"]
 impl crate::Writable for GNPTXFSIZ_HOSTMODE_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

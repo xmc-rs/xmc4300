@@ -1,39 +1,7 @@
 #[doc = "Register `EEP_CONT_STAT` reader"]
-pub struct R(crate::R<EEP_CONT_STAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EEP_CONT_STAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EEP_CONT_STAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EEP_CONT_STAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EEP_CONT_STAT_SPEC>;
 #[doc = "Register `EEP_CONT_STAT` writer"]
-pub struct W(crate::W<EEP_CONT_STAT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EEP_CONT_STAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EEP_CONT_STAT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EEP_CONT_STAT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EEP_CONT_STAT_SPEC>;
 #[doc = "Field `W_EN` reader - ECAT write enable"]
 pub type W_EN_R = crate::BitReader<W_EN_A>;
 #[doc = "ECAT write enable\n\nValue on reset: 0"]
@@ -59,12 +27,12 @@ impl W_EN_R {
             true => W_EN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Write requests are disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == W_EN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write requests are enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == W_EN_A::VALUE2
@@ -95,12 +63,12 @@ impl EMUL_R {
             true => EMUL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal operation (I2C interface used)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EMUL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "PDI emulates EEPROM (I2C not used)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EMUL_A::VALUE2
@@ -131,12 +99,12 @@ impl BYTES_R {
             true => BYTES_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "4 Bytes"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BYTES_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "8 Bytes"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BYTES_A::VALUE2
@@ -167,12 +135,12 @@ impl ALG_R {
             true => ALG_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "1 address byte (1 KBit - 16 KBit EEPROMs)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ALG_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "2 address bytes (32 KBit - 4 MBit EEPROMs)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ALG_A::VALUE2
@@ -214,48 +182,52 @@ impl CMD_REG_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No command/EEPROM idle (clear error bits)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMD_REG_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMD_REG_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Write"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CMD_REG_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Reload"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CMD_REG_A::VALUE4
     }
 }
 #[doc = "Field `CMD_REG` writer - Command register"]
-pub type CMD_REG_W<'a, const O: u8> = crate::FieldWriter<'a, EEP_CONT_STAT_SPEC, 3, O, CMD_REG_A>;
-impl<'a, const O: u8> CMD_REG_W<'a, O> {
+pub type CMD_REG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, CMD_REG_A>;
+impl<'a, REG, const O: u8> CMD_REG_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No command/EEPROM idle (clear error bits)"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_REG_A::VALUE1)
     }
     #[doc = "Read"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_REG_A::VALUE2)
     }
     #[doc = "Write"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_REG_A::VALUE3)
     }
     #[doc = "Reload"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CMD_REG_A::VALUE4)
     }
 }
@@ -284,12 +256,12 @@ impl ERROR_R {
             true => ERROR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Checksum OK"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ERROR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Checksum error"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ERROR_A::VALUE2
@@ -320,12 +292,12 @@ impl L_STAT_R {
             true => L_STAT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "EEPROM loaded, device information OK"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == L_STAT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "EEPROM not loaded, device information not available (EEPROM loading in progress or finished with a failure)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == L_STAT_A::VALUE2
@@ -356,28 +328,31 @@ impl ERROR_AC_R {
             true => ERROR_AC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ERROR_AC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Missing EEPROM acknowledge or invalid command"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ERROR_AC_A::VALUE2
     }
 }
 #[doc = "Field `ERROR_AC` writer - Error Acknowledge/Command"]
-pub type ERROR_AC_W<'a, const O: u8> = crate::BitWriter<'a, EEP_CONT_STAT_SPEC, O, ERROR_AC_A>;
-impl<'a, const O: u8> ERROR_AC_W<'a, O> {
+pub type ERROR_AC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERROR_AC_A>;
+impl<'a, REG, const O: u8> ERROR_AC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No error"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ERROR_AC_A::VALUE1)
     }
     #[doc = "Missing EEPROM acknowledge or invalid command"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ERROR_AC_A::VALUE2)
     }
 }
@@ -406,12 +381,12 @@ impl ERROR_WE_R {
             true => ERROR_WE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No error"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ERROR_WE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write Command without Write enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ERROR_WE_A::VALUE2
@@ -442,12 +417,12 @@ impl BUSY_R {
             true => BUSY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "EEPROM Interface is idle"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BUSY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "EEPROM Interface is busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BUSY_A::VALUE2
@@ -509,34 +484,31 @@ impl W {
     #[doc = "Bits 8:10 - Command register"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_reg(&mut self) -> CMD_REG_W<8> {
+    pub fn cmd_reg(&mut self) -> CMD_REG_W<EEP_CONT_STAT_SPEC, 8> {
         CMD_REG_W::new(self)
     }
     #[doc = "Bit 13 - Error Acknowledge/Command"]
     #[inline(always)]
     #[must_use]
-    pub fn error_ac(&mut self) -> ERROR_AC_W<13> {
+    pub fn error_ac(&mut self) -> ERROR_AC_W<EEP_CONT_STAT_SPEC, 13> {
         ERROR_AC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EEPROM Control/Status\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [eep_cont_stat](index.html) module"]
+#[doc = "EEPROM Control/Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`eep_cont_stat::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`eep_cont_stat::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EEP_CONT_STAT_SPEC;
 impl crate::RegisterSpec for EEP_CONT_STAT_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [eep_cont_stat::R](R) reader structure"]
-impl crate::Readable for EEP_CONT_STAT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [eep_cont_stat::W](W) writer structure"]
+#[doc = "`read()` method returns [`eep_cont_stat::R`](R) reader structure"]
+impl crate::Readable for EEP_CONT_STAT_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`eep_cont_stat::W`](W) writer structure"]
 impl crate::Writable for EEP_CONT_STAT_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `PBCLKCR` reader"]
-pub struct R(crate::R<PBCLKCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PBCLKCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PBCLKCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PBCLKCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PBCLKCR_SPEC>;
 #[doc = "Register `PBCLKCR` writer"]
-pub struct W(crate::W<PBCLKCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PBCLKCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PBCLKCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PBCLKCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PBCLKCR_SPEC>;
 #[doc = "Field `PBDIV` reader - PB Clock Divider Enable"]
 pub type PBDIV_R = crate::BitReader<PBDIV_A>;
 #[doc = "PB Clock Divider Enable\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl PBDIV_R {
             true => PBDIV_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "fPERIPH = fCPU"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PBDIV_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "fPERIPH = fCPU / 2"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PBDIV_A::CONST_1
     }
 }
 #[doc = "Field `PBDIV` writer - PB Clock Divider Enable"]
-pub type PBDIV_W<'a, const O: u8> = crate::BitWriter<'a, PBCLKCR_SPEC, O, PBDIV_A>;
-impl<'a, const O: u8> PBDIV_W<'a, O> {
+pub type PBDIV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PBDIV_A>;
+impl<'a, REG, const O: u8> PBDIV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "fPERIPH = fCPU"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PBDIV_A::CONST_0)
     }
     #[doc = "fPERIPH = fCPU / 2"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PBDIV_A::CONST_1)
     }
 }
@@ -95,28 +66,25 @@ impl W {
     #[doc = "Bit 0 - PB Clock Divider Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pbdiv(&mut self) -> PBDIV_W<0> {
+    pub fn pbdiv(&mut self) -> PBDIV_W<PBCLKCR_SPEC, 0> {
         PBDIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Peripheral Bus Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbclkcr](index.html) module"]
+#[doc = "Peripheral Bus Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pbclkcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pbclkcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PBCLKCR_SPEC;
 impl crate::RegisterSpec for PBCLKCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pbclkcr::R](R) reader structure"]
-impl crate::Readable for PBCLKCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pbclkcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`pbclkcr::R`](R) reader structure"]
+impl crate::Readable for PBCLKCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pbclkcr::W`](W) writer structure"]
 impl crate::Writable for PBCLKCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

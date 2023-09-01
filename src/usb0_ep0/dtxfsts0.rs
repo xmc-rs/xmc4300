@@ -1,18 +1,5 @@
 #[doc = "Register `DTXFSTS0` reader"]
-pub struct R(crate::R<DTXFSTS0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DTXFSTS0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DTXFSTS0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DTXFSTS0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DTXFSTS0_SPEC>;
 #[doc = "Field `INEPTxFSpcAvail` reader - IN Endpoint TxFIFO Space Avail"]
 pub type INEPTX_FSPC_AVAIL_R = crate::FieldReader<INEPTX_FSPC_AVAIL_A>;
 #[doc = "IN Endpoint TxFIFO Space Avail\n\nValue on reset: 0"]
@@ -46,17 +33,17 @@ impl INEPTX_FSPC_AVAIL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Endpoint TxFIFO is full"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == INEPTX_FSPC_AVAIL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "1 word available"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == INEPTX_FSPC_AVAIL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "2 words available"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == INEPTX_FSPC_AVAIL_A::VALUE3
@@ -69,15 +56,13 @@ impl R {
         INEPTX_FSPC_AVAIL_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Device IN Endpoint Transmit FIFO Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dtxfsts0](index.html) module"]
+#[doc = "Device IN Endpoint Transmit FIFO Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dtxfsts0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DTXFSTS0_SPEC;
 impl crate::RegisterSpec for DTXFSTS0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dtxfsts0::R](R) reader structure"]
-impl crate::Readable for DTXFSTS0_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dtxfsts0::R`](R) reader structure"]
+impl crate::Readable for DTXFSTS0_SPEC {}
 #[doc = "`reset()` method sets DTXFSTS0 to value 0"]
 impl crate::Resettable for DTXFSTS0_SPEC {
     const RESET_VALUE: Self::Ux = 0;

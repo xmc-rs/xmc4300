@@ -1,18 +1,5 @@
 #[doc = "Register `RAWSTAT` reader"]
-pub struct R(crate::R<RAWSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RAWSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RAWSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RAWSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RAWSTAT_SPEC>;
 #[doc = "Field `RPSE` reader - Raw Periodic Seconds Service Request"]
 pub type RPSE_R = crate::BitReader;
 #[doc = "Field `RPMI` reader - Raw Periodic Minutes Service Request"]
@@ -64,15 +51,13 @@ impl R {
         RAI_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
-#[doc = "RTC Raw Service Request Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rawstat](index.html) module"]
+#[doc = "RTC Raw Service Request Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rawstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RAWSTAT_SPEC;
 impl crate::RegisterSpec for RAWSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rawstat::R](R) reader structure"]
-impl crate::Readable for RAWSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`rawstat::R`](R) reader structure"]
+impl crate::Readable for RAWSTAT_SPEC {}
 #[doc = "`reset()` method sets RAWSTAT to value 0"]
 impl crate::Resettable for RAWSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,39 +1,7 @@
 #[doc = "Register `CHENREG` reader"]
-pub struct R(crate::R<CHENREG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CHENREG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CHENREG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CHENREG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CHENREG_SPEC>;
 #[doc = "Register `CHENREG` writer"]
-pub struct W(crate::W<CHENREG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CHENREG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CHENREG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CHENREG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CHENREG_SPEC>;
 #[doc = "Field `CH` reader - Enables/Disables the channel"]
 pub type CH_R = crate::FieldReader<CH_A>;
 #[doc = "Enables/Disables the channel\n\nValue on reset: 0"]
@@ -64,33 +32,37 @@ impl CH_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable the Channel"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CH_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable the Channel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CH_A::VALUE2
     }
 }
 #[doc = "Field `CH` writer - Enables/Disables the channel"]
-pub type CH_W<'a, const O: u8> = crate::FieldWriter<'a, CHENREG_SPEC, 8, O, CH_A>;
-impl<'a, const O: u8> CH_W<'a, O> {
+pub type CH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, CH_A>;
+impl<'a, REG, const O: u8> CH_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Disable the Channel"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CH_A::VALUE1)
     }
     #[doc = "Enable the Channel"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CH_A::VALUE2)
     }
 }
 #[doc = "Field `WE_CH` writer - Channel enable write enable"]
-pub type WE_CH_W<'a, const O: u8> = crate::FieldWriter<'a, CHENREG_SPEC, 8, O>;
+pub type WE_CH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Enables/Disables the channel"]
     #[inline(always)]
@@ -102,34 +74,31 @@ impl W {
     #[doc = "Bits 0:7 - Enables/Disables the channel"]
     #[inline(always)]
     #[must_use]
-    pub fn ch(&mut self) -> CH_W<0> {
+    pub fn ch(&mut self) -> CH_W<CHENREG_SPEC, 0> {
         CH_W::new(self)
     }
     #[doc = "Bits 8:15 - Channel enable write enable"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch(&mut self) -> WE_CH_W<8> {
+    pub fn we_ch(&mut self) -> WE_CH_W<CHENREG_SPEC, 8> {
         WE_CH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "GPDMA Channel Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chenreg](index.html) module"]
+#[doc = "GPDMA Channel Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chenreg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`chenreg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CHENREG_SPEC;
 impl crate::RegisterSpec for CHENREG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [chenreg::R](R) reader structure"]
-impl crate::Readable for CHENREG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [chenreg::W](W) writer structure"]
+#[doc = "`read()` method returns [`chenreg::R`](R) reader structure"]
+impl crate::Readable for CHENREG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`chenreg::W`](W) writer structure"]
 impl crate::Writable for CHENREG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

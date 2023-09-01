@@ -1,39 +1,7 @@
 #[doc = "Register `FPCCR` reader"]
-pub struct R(crate::R<FPCCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FPCCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FPCCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FPCCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FPCCR_SPEC>;
 #[doc = "Register `FPCCR` writer"]
-pub struct W(crate::W<FPCCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FPCCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FPCCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FPCCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<FPCCR_SPEC>;
 #[doc = "Field `LSPACT` reader - Lazy State Preservation Active"]
 pub type LSPACT_R = crate::BitReader<LSPACT_A>;
 #[doc = "Lazy State Preservation Active\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl LSPACT_R {
             true => LSPACT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Lazy state preservation is not active."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LSPACT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Lazy state preservation is active. floating-point stack frame has been allocated but saving state to it has been deferred."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LSPACT_A::VALUE2
     }
 }
 #[doc = "Field `LSPACT` writer - Lazy State Preservation Active"]
-pub type LSPACT_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, LSPACT_A>;
-impl<'a, const O: u8> LSPACT_W<'a, O> {
+pub type LSPACT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LSPACT_A>;
+impl<'a, REG, const O: u8> LSPACT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Lazy state preservation is not active."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LSPACT_A::VALUE1)
     }
     #[doc = "Lazy state preservation is active. floating-point stack frame has been allocated but saving state to it has been deferred."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LSPACT_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl USER_R {
             true => USER_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Privilege level was not user when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == USER_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Privilege level was user when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == USER_A::VALUE2
     }
 }
 #[doc = "Field `USER` writer - User allocated Stack Frame"]
-pub type USER_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, USER_A>;
-impl<'a, const O: u8> USER_W<'a, O> {
+pub type USER_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USER_A>;
+impl<'a, REG, const O: u8> USER_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Privilege level was not user when the floating-point stack frame was allocated."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(USER_A::VALUE1)
     }
     #[doc = "Privilege level was user when the floating-point stack frame was allocated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(USER_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl THREAD_R {
             true => THREAD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Mode was not Thread Mode when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == THREAD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Mode was Thread Mode when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == THREAD_A::VALUE2
     }
 }
 #[doc = "Field `THREAD` writer - Thread Mode allocated Stack Frame"]
-pub type THREAD_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, THREAD_A>;
-impl<'a, const O: u8> THREAD_W<'a, O> {
+pub type THREAD_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, THREAD_A>;
+impl<'a, REG, const O: u8> THREAD_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Mode was not Thread Mode when the floating-point stack frame was allocated."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(THREAD_A::VALUE1)
     }
     #[doc = "Mode was Thread Mode when the floating-point stack frame was allocated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(THREAD_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl HFRDY_R {
             true => HFRDY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Priority did not permit setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HFRDY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Priority permitted setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HFRDY_A::VALUE2
     }
 }
 #[doc = "Field `HFRDY` writer - HardFault Ready"]
-pub type HFRDY_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, HFRDY_A>;
-impl<'a, const O: u8> HFRDY_W<'a, O> {
+pub type HFRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, HFRDY_A>;
+impl<'a, REG, const O: u8> HFRDY_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Priority did not permit setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HFRDY_A::VALUE1)
     }
     #[doc = "Priority permitted setting the HardFault handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HFRDY_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl MMRDY_R {
             true => MMRDY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "MemManage is disabled or priority did not permit setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MMRDY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "MemManage is enabled and priority permitted setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MMRDY_A::VALUE2
     }
 }
 #[doc = "Field `MMRDY` writer - MemManage Ready"]
-pub type MMRDY_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, MMRDY_A>;
-impl<'a, const O: u8> MMRDY_W<'a, O> {
+pub type MMRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MMRDY_A>;
+impl<'a, REG, const O: u8> MMRDY_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "MemManage is disabled or priority did not permit setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MMRDY_A::VALUE1)
     }
     #[doc = "MemManage is enabled and priority permitted setting the MemManage handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MMRDY_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl BFRDY_R {
             true => BFRDY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "BusFault is disabled or priority did not permit setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BFRDY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "BusFault is enabled and priority permitted setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BFRDY_A::VALUE2
     }
 }
 #[doc = "Field `BFRDY` writer - BusFault Ready"]
-pub type BFRDY_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, BFRDY_A>;
-impl<'a, const O: u8> BFRDY_W<'a, O> {
+pub type BFRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BFRDY_A>;
+impl<'a, REG, const O: u8> BFRDY_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "BusFault is disabled or priority did not permit setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BFRDY_A::VALUE1)
     }
     #[doc = "BusFault is enabled and priority permitted setting the BusFault handler to the pending state when the floating-point stack frame was allocated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BFRDY_A::VALUE2)
     }
 }
@@ -359,28 +345,31 @@ impl MONRDY_R {
             true => MONRDY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Debug Monitor is disabled or priority did not permit setting MON_PEND when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MONRDY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Debug Monitor is enabled and priority permits setting MON_PEND when the floating-point stack frame was allocated."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MONRDY_A::VALUE2
     }
 }
 #[doc = "Field `MONRDY` writer - Monitor Ready"]
-pub type MONRDY_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, MONRDY_A>;
-impl<'a, const O: u8> MONRDY_W<'a, O> {
+pub type MONRDY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MONRDY_A>;
+impl<'a, REG, const O: u8> MONRDY_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Debug Monitor is disabled or priority did not permit setting MON_PEND when the floating-point stack frame was allocated."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MONRDY_A::VALUE1)
     }
     #[doc = "Debug Monitor is enabled and priority permits setting MON_PEND when the floating-point stack frame was allocated."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MONRDY_A::VALUE2)
     }
 }
@@ -409,28 +398,31 @@ impl LSPEN_R {
             true => LSPEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable automatic lazy state preservation for floating-point context."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LSPEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable automatic lazy state preservation for floating-point context."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LSPEN_A::VALUE2
     }
 }
 #[doc = "Field `LSPEN` writer - Lazy State Preservation Enabled"]
-pub type LSPEN_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, LSPEN_A>;
-impl<'a, const O: u8> LSPEN_W<'a, O> {
+pub type LSPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LSPEN_A>;
+impl<'a, REG, const O: u8> LSPEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable automatic lazy state preservation for floating-point context."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LSPEN_A::VALUE1)
     }
     #[doc = "Enable automatic lazy state preservation for floating-point context."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LSPEN_A::VALUE2)
     }
 }
@@ -459,28 +451,31 @@ impl ASPEN_R {
             true => ASPEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable CONTROL setting on execution of a floating-point instruction."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ASPEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable CONTROL setting on execution of a floating-point instruction."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ASPEN_A::VALUE2
     }
 }
 #[doc = "Field `ASPEN` writer - Automatic State Preservation"]
-pub type ASPEN_W<'a, const O: u8> = crate::BitWriter<'a, FPCCR_SPEC, O, ASPEN_A>;
-impl<'a, const O: u8> ASPEN_W<'a, O> {
+pub type ASPEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ASPEN_A>;
+impl<'a, REG, const O: u8> ASPEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable CONTROL setting on execution of a floating-point instruction."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ASPEN_A::VALUE1)
     }
     #[doc = "Enable CONTROL setting on execution of a floating-point instruction."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ASPEN_A::VALUE2)
     }
 }
@@ -535,76 +530,73 @@ impl W {
     #[doc = "Bit 0 - Lazy State Preservation Active"]
     #[inline(always)]
     #[must_use]
-    pub fn lspact(&mut self) -> LSPACT_W<0> {
+    pub fn lspact(&mut self) -> LSPACT_W<FPCCR_SPEC, 0> {
         LSPACT_W::new(self)
     }
     #[doc = "Bit 1 - User allocated Stack Frame"]
     #[inline(always)]
     #[must_use]
-    pub fn user(&mut self) -> USER_W<1> {
+    pub fn user(&mut self) -> USER_W<FPCCR_SPEC, 1> {
         USER_W::new(self)
     }
     #[doc = "Bit 3 - Thread Mode allocated Stack Frame"]
     #[inline(always)]
     #[must_use]
-    pub fn thread(&mut self) -> THREAD_W<3> {
+    pub fn thread(&mut self) -> THREAD_W<FPCCR_SPEC, 3> {
         THREAD_W::new(self)
     }
     #[doc = "Bit 4 - HardFault Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn hfrdy(&mut self) -> HFRDY_W<4> {
+    pub fn hfrdy(&mut self) -> HFRDY_W<FPCCR_SPEC, 4> {
         HFRDY_W::new(self)
     }
     #[doc = "Bit 5 - MemManage Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn mmrdy(&mut self) -> MMRDY_W<5> {
+    pub fn mmrdy(&mut self) -> MMRDY_W<FPCCR_SPEC, 5> {
         MMRDY_W::new(self)
     }
     #[doc = "Bit 6 - BusFault Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn bfrdy(&mut self) -> BFRDY_W<6> {
+    pub fn bfrdy(&mut self) -> BFRDY_W<FPCCR_SPEC, 6> {
         BFRDY_W::new(self)
     }
     #[doc = "Bit 8 - Monitor Ready"]
     #[inline(always)]
     #[must_use]
-    pub fn monrdy(&mut self) -> MONRDY_W<8> {
+    pub fn monrdy(&mut self) -> MONRDY_W<FPCCR_SPEC, 8> {
         MONRDY_W::new(self)
     }
     #[doc = "Bit 30 - Lazy State Preservation Enabled"]
     #[inline(always)]
     #[must_use]
-    pub fn lspen(&mut self) -> LSPEN_W<30> {
+    pub fn lspen(&mut self) -> LSPEN_W<FPCCR_SPEC, 30> {
         LSPEN_W::new(self)
     }
     #[doc = "Bit 31 - Automatic State Preservation"]
     #[inline(always)]
     #[must_use]
-    pub fn aspen(&mut self) -> ASPEN_W<31> {
+    pub fn aspen(&mut self) -> ASPEN_W<FPCCR_SPEC, 31> {
         ASPEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Floating-point Context Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fpccr](index.html) module"]
+#[doc = "Floating-point Context Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fpccr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fpccr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FPCCR_SPEC;
 impl crate::RegisterSpec for FPCCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fpccr::R](R) reader structure"]
-impl crate::Readable for FPCCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [fpccr::W](W) writer structure"]
+#[doc = "`read()` method returns [`fpccr::R`](R) reader structure"]
+impl crate::Readable for FPCCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`fpccr::W`](W) writer structure"]
 impl crate::Writable for FPCCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

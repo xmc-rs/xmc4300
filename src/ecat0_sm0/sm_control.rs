@@ -1,18 +1,5 @@
 #[doc = "Register `SM_CONTROL` reader"]
-pub struct R(crate::R<SM_CONTROL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SM_CONTROL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SM_CONTROL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SM_CONTROL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SM_CONTROL_SPEC>;
 #[doc = "Field `OP_MODE` reader - Operation Mode"]
 pub type OP_MODE_R = crate::FieldReader<OP_MODE_A>;
 #[doc = "Operation Mode\n\nValue on reset: 0"]
@@ -43,12 +30,12 @@ impl OP_MODE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Buffered (3 buffer mode)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == OP_MODE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Mailbox (Single buffer mode)"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == OP_MODE_A::VALUE3
@@ -84,12 +71,12 @@ impl DIR_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Read: ECAT read access, PDI write access"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DIR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Write: ECAT write access, PDI read access"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DIR_A::VALUE2
@@ -120,12 +107,12 @@ impl INT_ECAT_R {
             true => INT_ECAT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == INT_ECAT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == INT_ECAT_A::VALUE2
@@ -156,12 +143,12 @@ impl INT_PDI_R {
             true => INT_PDI_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == INT_PDI_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == INT_PDI_A::VALUE2
@@ -192,12 +179,12 @@ impl WD_TRG_R {
             true => WD_TRG_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WD_TRG_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WD_TRG_A::VALUE2
@@ -230,15 +217,13 @@ impl R {
         WD_TRG_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
-#[doc = "Control Register SyncManager 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sm_control](index.html) module"]
+#[doc = "Control Register SyncManager 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sm_control::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SM_CONTROL_SPEC;
 impl crate::RegisterSpec for SM_CONTROL_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [sm_control::R](R) reader structure"]
-impl crate::Readable for SM_CONTROL_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sm_control::R`](R) reader structure"]
+impl crate::Readable for SM_CONTROL_SPEC {}
 #[doc = "`reset()` method sets SM_CONTROL to value 0"]
 impl crate::Resettable for SM_CONTROL_SPEC {
     const RESET_VALUE: Self::Ux = 0;

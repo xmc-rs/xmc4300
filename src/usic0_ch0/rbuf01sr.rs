@@ -1,18 +1,5 @@
 #[doc = "Register `RBUF01SR` reader"]
-pub struct R(crate::R<RBUF01SR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RBUF01SR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RBUF01SR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RBUF01SR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RBUF01SR_SPEC>;
 #[doc = "Field `WLEN0` reader - Received Data Word Length in RBUF0"]
 pub type WLEN0_R = crate::FieldReader;
 #[doc = "Field `SOF0` reader - Start of Frame in RBUF0"]
@@ -40,12 +27,12 @@ impl SOF0_R {
             true => SOF0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The data in RBUF0 has not been the first data word of a data frame."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SOF0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The data in RBUF0 has been the first data word of a data frame."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SOF0_A::VALUE2
@@ -78,12 +65,12 @@ impl PERR0_R {
             true => PERR0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The received protocol-related argument PAR matches the expected value. The reception of the data word sets bit PSR.RIF and can generate a receive interrupt."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PERR0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The received protocol-related argument PAR does not match the expected value. The reception of the data word sets bit PSR.AIF and can generate an alternative receive interrupt."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PERR0_A::VALUE2
@@ -114,12 +101,12 @@ impl RDV00_R {
             true => RDV00_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Register RBUF0 does not contain data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RDV00_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Register RBUF0 contains data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RDV00_A::VALUE2
@@ -150,12 +137,12 @@ impl RDV01_R {
             true => RDV01_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Register RBUF1 does not contain data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RDV01_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Register RBUF1 contains data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RDV01_A::VALUE2
@@ -186,12 +173,12 @@ impl DS0_R {
             true => DS0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The register RBUF contains the data of RBUF0 (same for associated status information)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DS0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The register RBUF contains the data of RBUF1 (same for associated status information)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DS0_A::VALUE2
@@ -227,12 +214,12 @@ impl WLEN1_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "One bit has been received."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WLEN1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Sixteen bits have been received."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WLEN1_A::VALUE2
@@ -263,12 +250,12 @@ impl SOF1_R {
             true => SOF1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The data in RBUF1 has not been the first data word of a data frame."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SOF1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The data in RBUF1 has been the first data word of a data frame."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SOF1_A::VALUE2
@@ -301,12 +288,12 @@ impl PERR1_R {
             true => PERR1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The received protocol-related argument PAR matches the expected value. The reception of the data word sets bit PSR.RIF and can generate a receive interrupt."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PERR1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The received protocol-related argument PAR does not match the expected value. The reception of the data word sets bit PSR.AIF and can generate an alternative receive interrupt."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PERR1_A::VALUE2
@@ -337,12 +324,12 @@ impl RDV10_R {
             true => RDV10_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Register RBUF0 does not contain data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RDV10_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Register RBUF0 contains data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RDV10_A::VALUE2
@@ -373,12 +360,12 @@ impl RDV11_R {
             true => RDV11_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Register RBUF1 does not contain data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RDV11_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Register RBUF1 contains data that has not yet been read out."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RDV11_A::VALUE2
@@ -409,12 +396,12 @@ impl DS1_R {
             true => DS1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The register RBUF contains the data of RBUF0 (same for associated status information)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DS1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The register RBUF contains the data of RBUF1 (same for associated status information)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DS1_A::VALUE2
@@ -492,15 +479,13 @@ impl R {
         DS1_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Receiver Buffer 01 Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rbuf01sr](index.html) module"]
+#[doc = "Receiver Buffer 01 Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rbuf01sr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RBUF01SR_SPEC;
 impl crate::RegisterSpec for RBUF01SR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rbuf01sr::R](R) reader structure"]
-impl crate::Readable for RBUF01SR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`rbuf01sr::R`](R) reader structure"]
+impl crate::Readable for RBUF01SR_SPEC {}
 #[doc = "`reset()` method sets RBUF01SR to value 0"]
 impl crate::Resettable for RBUF01SR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

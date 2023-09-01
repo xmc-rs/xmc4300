@@ -1,39 +1,7 @@
 #[doc = "Register `PSR_IICMode` reader"]
-pub struct R(crate::R<PSR_IICMODE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PSR_IICMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PSR_IICMODE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PSR_IICMODE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PSR_IICMODE_SPEC>;
 #[doc = "Register `PSR_IICMode` writer"]
-pub struct W(crate::W<PSR_IICMODE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PSR_IICMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PSR_IICMODE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PSR_IICMODE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PSR_IICMODE_SPEC>;
 #[doc = "Field `SLSEL` reader - Slave Select"]
 pub type SLSEL_R = crate::BitReader<SLSEL_A>;
 #[doc = "Slave Select\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl SLSEL_R {
             true => SLSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The device is not selected as slave."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SLSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The device is selected as slave."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SLSEL_A::VALUE2
     }
 }
 #[doc = "Field `SLSEL` writer - Slave Select"]
-pub type SLSEL_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, SLSEL_A>;
-impl<'a, const O: u8> SLSEL_W<'a, O> {
+pub type SLSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SLSEL_A>;
+impl<'a, REG, const O: u8> SLSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The device is not selected as slave."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SLSEL_A::VALUE1)
     }
     #[doc = "The device is selected as slave."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SLSEL_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl WTDF_R {
             true => WTDF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A wrong TDF code has not been found."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WTDF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A wrong TDF code has been found."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WTDF_A::VALUE2
     }
 }
 #[doc = "Field `WTDF` writer - Wrong TDF Code Found"]
-pub type WTDF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, WTDF_A>;
-impl<'a, const O: u8> WTDF_W<'a, O> {
+pub type WTDF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WTDF_A>;
+impl<'a, REG, const O: u8> WTDF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A wrong TDF code has not been found."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WTDF_A::VALUE1)
     }
     #[doc = "A wrong TDF code has been found."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WTDF_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl SCR_R {
             true => SCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A start condition has not yet been detected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A start condition has been detected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SCR_A::VALUE2
     }
 }
 #[doc = "Field `SCR` writer - Start Condition Received"]
-pub type SCR_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, SCR_A>;
-impl<'a, const O: u8> SCR_W<'a, O> {
+pub type SCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SCR_A>;
+impl<'a, REG, const O: u8> SCR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A start condition has not yet been detected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SCR_A::VALUE1)
     }
     #[doc = "A start condition has been detected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SCR_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl RSCR_R {
             true => RSCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A repeated start condition has not yet been detected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RSCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A repeated start condition has been detected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RSCR_A::VALUE2
     }
 }
 #[doc = "Field `RSCR` writer - Repeated Start Condition Received"]
-pub type RSCR_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, RSCR_A>;
-impl<'a, const O: u8> RSCR_W<'a, O> {
+pub type RSCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RSCR_A>;
+impl<'a, REG, const O: u8> RSCR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A repeated start condition has not yet been detected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RSCR_A::VALUE1)
     }
     #[doc = "A repeated start condition has been detected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RSCR_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl PCR_R {
             true => PCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A stop condition has not yet been detected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A stop condition has been detected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PCR_A::VALUE2
     }
 }
 #[doc = "Field `PCR` writer - Stop Condition Received"]
-pub type PCR_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, PCR_A>;
-impl<'a, const O: u8> PCR_W<'a, O> {
+pub type PCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PCR_A>;
+impl<'a, REG, const O: u8> PCR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A stop condition has not yet been detected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PCR_A::VALUE1)
     }
     #[doc = "A stop condition has been detected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PCR_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl NACK_R {
             true => NACK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A non-acknowledge has not been received."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == NACK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A non-acknowledge has been received."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == NACK_A::VALUE2
     }
 }
 #[doc = "Field `NACK` writer - Non-Acknowledge Received"]
-pub type NACK_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, NACK_A>;
-impl<'a, const O: u8> NACK_W<'a, O> {
+pub type NACK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NACK_A>;
+impl<'a, REG, const O: u8> NACK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A non-acknowledge has not been received."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(NACK_A::VALUE1)
     }
     #[doc = "A non-acknowledge has been received."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(NACK_A::VALUE2)
     }
 }
@@ -359,28 +345,31 @@ impl ARL_R {
             true => ARL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "An arbitration has not been lost."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ARL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "An arbitration has been lost."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ARL_A::VALUE2
     }
 }
 #[doc = "Field `ARL` writer - Arbitration Lost"]
-pub type ARL_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, ARL_A>;
-impl<'a, const O: u8> ARL_W<'a, O> {
+pub type ARL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ARL_A>;
+impl<'a, REG, const O: u8> ARL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "An arbitration has not been lost."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ARL_A::VALUE1)
     }
     #[doc = "An arbitration has been lost."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ARL_A::VALUE2)
     }
 }
@@ -409,28 +398,31 @@ impl SRR_R {
             true => SRR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A slave read request has not been detected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SRR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A slave read request has been detected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SRR_A::VALUE2
     }
 }
 #[doc = "Field `SRR` writer - Slave Read Request"]
-pub type SRR_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, SRR_A>;
-impl<'a, const O: u8> SRR_W<'a, O> {
+pub type SRR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SRR_A>;
+impl<'a, REG, const O: u8> SRR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A slave read request has not been detected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SRR_A::VALUE1)
     }
     #[doc = "A slave read request has been detected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SRR_A::VALUE2)
     }
 }
@@ -459,28 +451,31 @@ impl ERR_R {
             true => ERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "An IIC error has not been detected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "An IIC error has been detected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ERR_A::VALUE2
     }
 }
 #[doc = "Field `ERR` writer - Error"]
-pub type ERR_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, ERR_A>;
-impl<'a, const O: u8> ERR_W<'a, O> {
+pub type ERR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERR_A>;
+impl<'a, REG, const O: u8> ERR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "An IIC error has not been detected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ERR_A::VALUE1)
     }
     #[doc = "An IIC error has been detected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ERR_A::VALUE2)
     }
 }
@@ -509,28 +504,31 @@ impl ACK_R {
             true => ACK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "An acknowledge has not been received."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ACK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "An acknowledge has been received."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ACK_A::VALUE2
     }
 }
 #[doc = "Field `ACK` writer - Acknowledge Received"]
-pub type ACK_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, ACK_A>;
-impl<'a, const O: u8> ACK_W<'a, O> {
+pub type ACK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ACK_A>;
+impl<'a, REG, const O: u8> ACK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "An acknowledge has not been received."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ACK_A::VALUE1)
     }
     #[doc = "An acknowledge has been received."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ACK_A::VALUE2)
     }
 }
@@ -559,28 +557,31 @@ impl RSIF_R {
             true => RSIF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A receiver start event has not occurred."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RSIF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A receiver start event has occurred."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RSIF_A::VALUE2
     }
 }
 #[doc = "Field `RSIF` writer - Receiver Start Indication Flag"]
-pub type RSIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, RSIF_A>;
-impl<'a, const O: u8> RSIF_W<'a, O> {
+pub type RSIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RSIF_A>;
+impl<'a, REG, const O: u8> RSIF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A receiver start event has not occurred."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RSIF_A::VALUE1)
     }
     #[doc = "A receiver start event has occurred."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RSIF_A::VALUE2)
     }
 }
@@ -609,28 +610,31 @@ impl DLIF_R {
             true => DLIF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A data lost event has not occurred."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DLIF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A data lost event has occurred."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DLIF_A::VALUE2
     }
 }
 #[doc = "Field `DLIF` writer - Data Lost Indication Flag"]
-pub type DLIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, DLIF_A>;
-impl<'a, const O: u8> DLIF_W<'a, O> {
+pub type DLIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DLIF_A>;
+impl<'a, REG, const O: u8> DLIF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A data lost event has not occurred."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DLIF_A::VALUE1)
     }
     #[doc = "A data lost event has occurred."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DLIF_A::VALUE2)
     }
 }
@@ -659,28 +663,31 @@ impl TSIF_R {
             true => TSIF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A transmit shift event has not occurred."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TSIF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A transmit shift event has occurred."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TSIF_A::VALUE2
     }
 }
 #[doc = "Field `TSIF` writer - Transmit Shift Indication Flag"]
-pub type TSIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, TSIF_A>;
-impl<'a, const O: u8> TSIF_W<'a, O> {
+pub type TSIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TSIF_A>;
+impl<'a, REG, const O: u8> TSIF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A transmit shift event has not occurred."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TSIF_A::VALUE1)
     }
     #[doc = "A transmit shift event has occurred."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TSIF_A::VALUE2)
     }
 }
@@ -709,28 +716,31 @@ impl TBIF_R {
             true => TBIF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A transmit buffer event has not occurred."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TBIF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A transmit buffer event has occurred."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TBIF_A::VALUE2
     }
 }
 #[doc = "Field `TBIF` writer - Transmit Buffer Indication Flag"]
-pub type TBIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, TBIF_A>;
-impl<'a, const O: u8> TBIF_W<'a, O> {
+pub type TBIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TBIF_A>;
+impl<'a, REG, const O: u8> TBIF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A transmit buffer event has not occurred."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TBIF_A::VALUE1)
     }
     #[doc = "A transmit buffer event has occurred."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TBIF_A::VALUE2)
     }
 }
@@ -759,28 +769,31 @@ impl RIF_R {
             true => RIF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A receive event has not occurred."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RIF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A receive event has occurred."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RIF_A::VALUE2
     }
 }
 #[doc = "Field `RIF` writer - Receive Indication Flag"]
-pub type RIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, RIF_A>;
-impl<'a, const O: u8> RIF_W<'a, O> {
+pub type RIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RIF_A>;
+impl<'a, REG, const O: u8> RIF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A receive event has not occurred."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RIF_A::VALUE1)
     }
     #[doc = "A receive event has occurred."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RIF_A::VALUE2)
     }
 }
@@ -809,28 +822,31 @@ impl AIF_R {
             true => AIF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "An alternative receive event has not occurred."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == AIF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "An alternative receive event has occurred."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == AIF_A::VALUE2
     }
 }
 #[doc = "Field `AIF` writer - Alternative Receive Indication Flag"]
-pub type AIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, AIF_A>;
-impl<'a, const O: u8> AIF_W<'a, O> {
+pub type AIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AIF_A>;
+impl<'a, REG, const O: u8> AIF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "An alternative receive event has not occurred."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(AIF_A::VALUE1)
     }
     #[doc = "An alternative receive event has occurred."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(AIF_A::VALUE2)
     }
 }
@@ -859,28 +875,31 @@ impl BRGIF_R {
             true => BRGIF_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "A baud rate generator event has not occurred."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BRGIF_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "A baud rate generator event has occurred."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BRGIF_A::VALUE2
     }
 }
 #[doc = "Field `BRGIF` writer - Baud Rate Generator Indication Flag"]
-pub type BRGIF_W<'a, const O: u8> = crate::BitWriter<'a, PSR_IICMODE_SPEC, O, BRGIF_A>;
-impl<'a, const O: u8> BRGIF_W<'a, O> {
+pub type BRGIF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BRGIF_A>;
+impl<'a, REG, const O: u8> BRGIF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "A baud rate generator event has not occurred."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BRGIF_A::VALUE1)
     }
     #[doc = "A baud rate generator event has occurred."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BRGIF_A::VALUE2)
     }
 }
@@ -975,124 +994,121 @@ impl W {
     #[doc = "Bit 0 - Slave Select"]
     #[inline(always)]
     #[must_use]
-    pub fn slsel(&mut self) -> SLSEL_W<0> {
+    pub fn slsel(&mut self) -> SLSEL_W<PSR_IICMODE_SPEC, 0> {
         SLSEL_W::new(self)
     }
     #[doc = "Bit 1 - Wrong TDF Code Found"]
     #[inline(always)]
     #[must_use]
-    pub fn wtdf(&mut self) -> WTDF_W<1> {
+    pub fn wtdf(&mut self) -> WTDF_W<PSR_IICMODE_SPEC, 1> {
         WTDF_W::new(self)
     }
     #[doc = "Bit 2 - Start Condition Received"]
     #[inline(always)]
     #[must_use]
-    pub fn scr(&mut self) -> SCR_W<2> {
+    pub fn scr(&mut self) -> SCR_W<PSR_IICMODE_SPEC, 2> {
         SCR_W::new(self)
     }
     #[doc = "Bit 3 - Repeated Start Condition Received"]
     #[inline(always)]
     #[must_use]
-    pub fn rscr(&mut self) -> RSCR_W<3> {
+    pub fn rscr(&mut self) -> RSCR_W<PSR_IICMODE_SPEC, 3> {
         RSCR_W::new(self)
     }
     #[doc = "Bit 4 - Stop Condition Received"]
     #[inline(always)]
     #[must_use]
-    pub fn pcr(&mut self) -> PCR_W<4> {
+    pub fn pcr(&mut self) -> PCR_W<PSR_IICMODE_SPEC, 4> {
         PCR_W::new(self)
     }
     #[doc = "Bit 5 - Non-Acknowledge Received"]
     #[inline(always)]
     #[must_use]
-    pub fn nack(&mut self) -> NACK_W<5> {
+    pub fn nack(&mut self) -> NACK_W<PSR_IICMODE_SPEC, 5> {
         NACK_W::new(self)
     }
     #[doc = "Bit 6 - Arbitration Lost"]
     #[inline(always)]
     #[must_use]
-    pub fn arl(&mut self) -> ARL_W<6> {
+    pub fn arl(&mut self) -> ARL_W<PSR_IICMODE_SPEC, 6> {
         ARL_W::new(self)
     }
     #[doc = "Bit 7 - Slave Read Request"]
     #[inline(always)]
     #[must_use]
-    pub fn srr(&mut self) -> SRR_W<7> {
+    pub fn srr(&mut self) -> SRR_W<PSR_IICMODE_SPEC, 7> {
         SRR_W::new(self)
     }
     #[doc = "Bit 8 - Error"]
     #[inline(always)]
     #[must_use]
-    pub fn err(&mut self) -> ERR_W<8> {
+    pub fn err(&mut self) -> ERR_W<PSR_IICMODE_SPEC, 8> {
         ERR_W::new(self)
     }
     #[doc = "Bit 9 - Acknowledge Received"]
     #[inline(always)]
     #[must_use]
-    pub fn ack(&mut self) -> ACK_W<9> {
+    pub fn ack(&mut self) -> ACK_W<PSR_IICMODE_SPEC, 9> {
         ACK_W::new(self)
     }
     #[doc = "Bit 10 - Receiver Start Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn rsif(&mut self) -> RSIF_W<10> {
+    pub fn rsif(&mut self) -> RSIF_W<PSR_IICMODE_SPEC, 10> {
         RSIF_W::new(self)
     }
     #[doc = "Bit 11 - Data Lost Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn dlif(&mut self) -> DLIF_W<11> {
+    pub fn dlif(&mut self) -> DLIF_W<PSR_IICMODE_SPEC, 11> {
         DLIF_W::new(self)
     }
     #[doc = "Bit 12 - Transmit Shift Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn tsif(&mut self) -> TSIF_W<12> {
+    pub fn tsif(&mut self) -> TSIF_W<PSR_IICMODE_SPEC, 12> {
         TSIF_W::new(self)
     }
     #[doc = "Bit 13 - Transmit Buffer Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn tbif(&mut self) -> TBIF_W<13> {
+    pub fn tbif(&mut self) -> TBIF_W<PSR_IICMODE_SPEC, 13> {
         TBIF_W::new(self)
     }
     #[doc = "Bit 14 - Receive Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn rif(&mut self) -> RIF_W<14> {
+    pub fn rif(&mut self) -> RIF_W<PSR_IICMODE_SPEC, 14> {
         RIF_W::new(self)
     }
     #[doc = "Bit 15 - Alternative Receive Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn aif(&mut self) -> AIF_W<15> {
+    pub fn aif(&mut self) -> AIF_W<PSR_IICMODE_SPEC, 15> {
         AIF_W::new(self)
     }
     #[doc = "Bit 16 - Baud Rate Generator Indication Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn brgif(&mut self) -> BRGIF_W<16> {
+    pub fn brgif(&mut self) -> BRGIF_W<PSR_IICMODE_SPEC, 16> {
         BRGIF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Protocol Status Register \\[IIC Mode\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [psr_iicmode](index.html) module"]
+#[doc = "Protocol Status Register \\[IIC Mode\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`psr_iicmode::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`psr_iicmode::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PSR_IICMODE_SPEC;
 impl crate::RegisterSpec for PSR_IICMODE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [psr_iicmode::R](R) reader structure"]
-impl crate::Readable for PSR_IICMODE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [psr_iicmode::W](W) writer structure"]
+#[doc = "`read()` method returns [`psr_iicmode::R`](R) reader structure"]
+impl crate::Readable for PSR_IICMODE_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`psr_iicmode::W`](W) writer structure"]
 impl crate::Writable for PSR_IICMODE_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

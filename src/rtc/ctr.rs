@@ -1,75 +1,43 @@
 #[doc = "Register `CTR` reader"]
-pub struct R(crate::R<CTR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CTR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CTR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CTR_SPEC>;
 #[doc = "Register `CTR` writer"]
-pub struct W(crate::W<CTR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CTR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CTR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CTR_SPEC>;
 #[doc = "Field `ENB` reader - RTC Module Enable"]
 pub type ENB_R = crate::BitReader;
 #[doc = "Field `ENB` writer - RTC Module Enable"]
-pub type ENB_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
+pub type ENB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `TAE` reader - Timer Alarm Enable for Hibernation Wake-up"]
 pub type TAE_R = crate::BitReader;
 #[doc = "Field `TAE` writer - Timer Alarm Enable for Hibernation Wake-up"]
-pub type TAE_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
+pub type TAE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ESEC` reader - Enable Seconds Comparison for Hibernation Wake-up"]
 pub type ESEC_R = crate::BitReader;
 #[doc = "Field `ESEC` writer - Enable Seconds Comparison for Hibernation Wake-up"]
-pub type ESEC_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
+pub type ESEC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `EMIC` reader - Enable Minutes Comparison for Hibernation Wake-up"]
 pub type EMIC_R = crate::BitReader;
 #[doc = "Field `EMIC` writer - Enable Minutes Comparison for Hibernation Wake-up"]
-pub type EMIC_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
+pub type EMIC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `EHOC` reader - Enable Hours Comparison for Hibernation Wake-up"]
 pub type EHOC_R = crate::BitReader;
 #[doc = "Field `EHOC` writer - Enable Hours Comparison for Hibernation Wake-up"]
-pub type EHOC_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
+pub type EHOC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `EDAC` reader - Enable Days Comparison for Hibernation Wake-up"]
 pub type EDAC_R = crate::BitReader;
 #[doc = "Field `EDAC` writer - Enable Days Comparison for Hibernation Wake-up"]
-pub type EDAC_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
+pub type EDAC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `EMOC` reader - Enable Months Comparison for Hibernation Wake-up"]
 pub type EMOC_R = crate::BitReader;
 #[doc = "Field `EMOC` writer - Enable Months Comparison for Hibernation Wake-up"]
-pub type EMOC_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
+pub type EMOC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `EYEC` reader - Enable Years Comparison for Hibernation Wake-up"]
 pub type EYEC_R = crate::BitReader;
 #[doc = "Field `EYEC` writer - Enable Years Comparison for Hibernation Wake-up"]
-pub type EYEC_W<'a, const O: u8> = crate::BitWriter<'a, CTR_SPEC, O>;
+pub type EYEC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `DIV` reader - RTC Clock Divider Value"]
 pub type DIV_R = crate::FieldReader<u16>;
 #[doc = "Field `DIV` writer - RTC Clock Divider Value"]
-pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, CTR_SPEC, 16, O, u16>;
+pub type DIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 impl R {
     #[doc = "Bit 0 - RTC Module Enable"]
     #[inline(always)]
@@ -121,76 +89,73 @@ impl W {
     #[doc = "Bit 0 - RTC Module Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn enb(&mut self) -> ENB_W<0> {
+    pub fn enb(&mut self) -> ENB_W<CTR_SPEC, 0> {
         ENB_W::new(self)
     }
     #[doc = "Bit 2 - Timer Alarm Enable for Hibernation Wake-up"]
     #[inline(always)]
     #[must_use]
-    pub fn tae(&mut self) -> TAE_W<2> {
+    pub fn tae(&mut self) -> TAE_W<CTR_SPEC, 2> {
         TAE_W::new(self)
     }
     #[doc = "Bit 8 - Enable Seconds Comparison for Hibernation Wake-up"]
     #[inline(always)]
     #[must_use]
-    pub fn esec(&mut self) -> ESEC_W<8> {
+    pub fn esec(&mut self) -> ESEC_W<CTR_SPEC, 8> {
         ESEC_W::new(self)
     }
     #[doc = "Bit 9 - Enable Minutes Comparison for Hibernation Wake-up"]
     #[inline(always)]
     #[must_use]
-    pub fn emic(&mut self) -> EMIC_W<9> {
+    pub fn emic(&mut self) -> EMIC_W<CTR_SPEC, 9> {
         EMIC_W::new(self)
     }
     #[doc = "Bit 10 - Enable Hours Comparison for Hibernation Wake-up"]
     #[inline(always)]
     #[must_use]
-    pub fn ehoc(&mut self) -> EHOC_W<10> {
+    pub fn ehoc(&mut self) -> EHOC_W<CTR_SPEC, 10> {
         EHOC_W::new(self)
     }
     #[doc = "Bit 11 - Enable Days Comparison for Hibernation Wake-up"]
     #[inline(always)]
     #[must_use]
-    pub fn edac(&mut self) -> EDAC_W<11> {
+    pub fn edac(&mut self) -> EDAC_W<CTR_SPEC, 11> {
         EDAC_W::new(self)
     }
     #[doc = "Bit 13 - Enable Months Comparison for Hibernation Wake-up"]
     #[inline(always)]
     #[must_use]
-    pub fn emoc(&mut self) -> EMOC_W<13> {
+    pub fn emoc(&mut self) -> EMOC_W<CTR_SPEC, 13> {
         EMOC_W::new(self)
     }
     #[doc = "Bit 14 - Enable Years Comparison for Hibernation Wake-up"]
     #[inline(always)]
     #[must_use]
-    pub fn eyec(&mut self) -> EYEC_W<14> {
+    pub fn eyec(&mut self) -> EYEC_W<CTR_SPEC, 14> {
         EYEC_W::new(self)
     }
     #[doc = "Bits 16:31 - RTC Clock Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn div(&mut self) -> DIV_W<16> {
+    pub fn div(&mut self) -> DIV_W<CTR_SPEC, 16> {
         DIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "RTC Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctr](index.html) module"]
+#[doc = "RTC Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CTR_SPEC;
 impl crate::RegisterSpec for CTR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ctr::R](R) reader structure"]
-impl crate::Readable for CTR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ctr::W](W) writer structure"]
+#[doc = "`read()` method returns [`ctr::R`](R) reader structure"]
+impl crate::Readable for CTR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ctr::W`](W) writer structure"]
 impl crate::Writable for CTR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

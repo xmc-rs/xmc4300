@@ -1,18 +1,5 @@
 #[doc = "Register `GNPTXSTS` reader"]
-pub struct R(crate::R<GNPTXSTS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GNPTXSTS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GNPTXSTS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GNPTXSTS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GNPTXSTS_SPEC>;
 #[doc = "Field `NPTxFSpcAvail` reader - Non-periodic TxFIFO Space Avail"]
 pub type NPTX_FSPC_AVAIL_R = crate::FieldReader<NPTX_FSPC_AVAIL_A>;
 #[doc = "Non-periodic TxFIFO Space Avail\n\nValue on reset: 16"]
@@ -46,17 +33,17 @@ impl NPTX_FSPC_AVAIL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Non-periodic TxFIFO is full"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == NPTX_FSPC_AVAIL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "1 word available"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == NPTX_FSPC_AVAIL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "2 words available"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == NPTX_FSPC_AVAIL_A::VALUE3
@@ -95,17 +82,17 @@ impl NPTX_QSPC_AVAIL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Non-periodic Transmit Request Queue is full"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == NPTX_QSPC_AVAIL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "1 location available"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == NPTX_QSPC_AVAIL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "2 locations available"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == NPTX_QSPC_AVAIL_A::VALUE3
@@ -144,17 +131,17 @@ impl NPTX_QTOP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "IN/OUT token"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == NPTX_QTOP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Zero-length transmit packet (device IN/host OUT)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == NPTX_QTOP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Channel halt command"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == NPTX_QTOP_A::VALUE4
@@ -177,15 +164,13 @@ impl R {
         NPTX_QTOP_R::new(((self.bits >> 24) & 0x7f) as u8)
     }
 }
-#[doc = "Non-Periodic Transmit FIFO/Queue Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gnptxsts](index.html) module"]
+#[doc = "Non-Periodic Transmit FIFO/Queue Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gnptxsts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GNPTXSTS_SPEC;
 impl crate::RegisterSpec for GNPTXSTS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [gnptxsts::R](R) reader structure"]
-impl crate::Readable for GNPTXSTS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`gnptxsts::R`](R) reader structure"]
+impl crate::Readable for GNPTXSTS_SPEC {}
 #[doc = "`reset()` method sets GNPTXSTS to value 0x0008_0010"]
 impl crate::Resettable for GNPTXSTS_SPEC {
     const RESET_VALUE: Self::Ux = 0x0008_0010;

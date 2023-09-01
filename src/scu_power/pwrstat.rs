@@ -1,18 +1,5 @@
 #[doc = "Register `PWRSTAT` reader"]
-pub struct R(crate::R<PWRSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PWRSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PWRSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PWRSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PWRSTAT_SPEC>;
 #[doc = "Field `HIBEN` reader - Hibernate Domain Enable Status"]
 pub type HIBEN_R = crate::BitReader<HIBEN_A>;
 #[doc = "Hibernate Domain Enable Status\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl HIBEN_R {
             true => HIBEN_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Inactive"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == HIBEN_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Active"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == HIBEN_A::CONST_1
@@ -74,12 +61,12 @@ impl USBPHYPDQ_R {
             true => USBPHYPDQ_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Power-down"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == USBPHYPDQ_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Active"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == USBPHYPDQ_A::CONST_1
@@ -110,12 +97,12 @@ impl USBOTGEN_R {
             true => USBOTGEN_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Power-down"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == USBOTGEN_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Active"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == USBOTGEN_A::CONST_1
@@ -146,12 +133,12 @@ impl USBPUWQ_R {
             true => USBPUWQ_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Pull-up active"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == USBPUWQ_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Pull-up not active"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == USBPUWQ_A::CONST_1
@@ -179,15 +166,13 @@ impl R {
         USBPUWQ_R::new(((self.bits >> 18) & 1) != 0)
     }
 }
-#[doc = "PCU Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwrstat](index.html) module"]
+#[doc = "PCU Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PWRSTAT_SPEC;
 impl crate::RegisterSpec for PWRSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pwrstat::R](R) reader structure"]
-impl crate::Readable for PWRSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pwrstat::R`](R) reader structure"]
+impl crate::Readable for PWRSTAT_SPEC {}
 #[doc = "`reset()` method sets PWRSTAT to value 0"]
 impl crate::Resettable for PWRSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

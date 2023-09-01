@@ -1,39 +1,7 @@
 #[doc = "Register `NIPR` reader"]
-pub struct R(crate::R<NIPR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<NIPR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<NIPR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<NIPR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<NIPR_SPEC>;
 #[doc = "Register `NIPR` writer"]
-pub struct W(crate::W<NIPR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<NIPR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<NIPR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<NIPR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<NIPR_SPEC>;
 #[doc = "Field `ALINP` reader - Alert Interrupt Node Pointer"]
 pub type ALINP_R = crate::FieldReader<ALINP_A>;
 #[doc = "Alert Interrupt Node Pointer\n\nValue on reset: 0"]
@@ -70,48 +38,52 @@ impl ALINP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ALINP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Interrupt output line INT_O1 is selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ALINP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Interrupt output line INT_O14 is selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ALINP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Interrupt output line INT_O15 is selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ALINP_A::VALUE4
     }
 }
 #[doc = "Field `ALINP` writer - Alert Interrupt Node Pointer"]
-pub type ALINP_W<'a, const O: u8> = crate::FieldWriter<'a, NIPR_SPEC, 4, O, ALINP_A>;
-impl<'a, const O: u8> ALINP_W<'a, O> {
+pub type ALINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, ALINP_A>;
+impl<'a, REG, const O: u8> ALINP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ALINP_A::VALUE1)
     }
     #[doc = "Interrupt output line INT_O1 is selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ALINP_A::VALUE2)
     }
     #[doc = "Interrupt output line INT_O14 is selected."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ALINP_A::VALUE3)
     }
     #[doc = "Interrupt output line INT_O15 is selected."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(ALINP_A::VALUE4)
     }
 }
@@ -151,48 +123,52 @@ impl LECINP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LECINP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Interrupt output line INT_O1 is selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LECINP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Interrupt output line INT_O14 is selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == LECINP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Interrupt output line INT_O15 is selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == LECINP_A::VALUE4
     }
 }
 #[doc = "Field `LECINP` writer - Last Error Code Interrupt Node Pointer"]
-pub type LECINP_W<'a, const O: u8> = crate::FieldWriter<'a, NIPR_SPEC, 4, O, LECINP_A>;
-impl<'a, const O: u8> LECINP_W<'a, O> {
+pub type LECINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, LECINP_A>;
+impl<'a, REG, const O: u8> LECINP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(LECINP_A::VALUE1)
     }
     #[doc = "Interrupt output line INT_O1 is selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(LECINP_A::VALUE2)
     }
     #[doc = "Interrupt output line INT_O14 is selected."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(LECINP_A::VALUE3)
     }
     #[doc = "Interrupt output line INT_O15 is selected."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(LECINP_A::VALUE4)
     }
 }
@@ -232,48 +208,52 @@ impl TRINP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TRINP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Interrupt output line INT_O1 is selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TRINP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Interrupt output line INT_O14 is selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == TRINP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Interrupt output line INT_O15 is selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == TRINP_A::VALUE4
     }
 }
 #[doc = "Field `TRINP` writer - Transfer OK Interrupt Node Pointer"]
-pub type TRINP_W<'a, const O: u8> = crate::FieldWriter<'a, NIPR_SPEC, 4, O, TRINP_A>;
-impl<'a, const O: u8> TRINP_W<'a, O> {
+pub type TRINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, TRINP_A>;
+impl<'a, REG, const O: u8> TRINP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TRINP_A::VALUE1)
     }
     #[doc = "Interrupt output line INT_O1 is selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TRINP_A::VALUE2)
     }
     #[doc = "Interrupt output line INT_O14 is selected."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(TRINP_A::VALUE3)
     }
     #[doc = "Interrupt output line INT_O15 is selected."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(TRINP_A::VALUE4)
     }
 }
@@ -313,48 +293,52 @@ impl CFCINP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CFCINP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Interrupt output line INT_O1 is selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CFCINP_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Interrupt output line INT_O14 is selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CFCINP_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Interrupt output line INT_O15 is selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CFCINP_A::VALUE4
     }
 }
 #[doc = "Field `CFCINP` writer - Frame Counter Interrupt Node Pointer"]
-pub type CFCINP_W<'a, const O: u8> = crate::FieldWriter<'a, NIPR_SPEC, 4, O, CFCINP_A>;
-impl<'a, const O: u8> CFCINP_W<'a, O> {
+pub type CFCINP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CFCINP_A>;
+impl<'a, REG, const O: u8> CFCINP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Interrupt output line INT_O0 is selected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CFCINP_A::VALUE1)
     }
     #[doc = "Interrupt output line INT_O1 is selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CFCINP_A::VALUE2)
     }
     #[doc = "Interrupt output line INT_O14 is selected."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CFCINP_A::VALUE3)
     }
     #[doc = "Interrupt output line INT_O15 is selected."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CFCINP_A::VALUE4)
     }
 }
@@ -384,46 +368,43 @@ impl W {
     #[doc = "Bits 0:3 - Alert Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn alinp(&mut self) -> ALINP_W<0> {
+    pub fn alinp(&mut self) -> ALINP_W<NIPR_SPEC, 0> {
         ALINP_W::new(self)
     }
     #[doc = "Bits 4:7 - Last Error Code Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn lecinp(&mut self) -> LECINP_W<4> {
+    pub fn lecinp(&mut self) -> LECINP_W<NIPR_SPEC, 4> {
         LECINP_W::new(self)
     }
     #[doc = "Bits 8:11 - Transfer OK Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn trinp(&mut self) -> TRINP_W<8> {
+    pub fn trinp(&mut self) -> TRINP_W<NIPR_SPEC, 8> {
         TRINP_W::new(self)
     }
     #[doc = "Bits 12:15 - Frame Counter Interrupt Node Pointer"]
     #[inline(always)]
     #[must_use]
-    pub fn cfcinp(&mut self) -> CFCINP_W<12> {
+    pub fn cfcinp(&mut self) -> CFCINP_W<NIPR_SPEC, 12> {
         CFCINP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Node Interrupt Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nipr](index.html) module"]
+#[doc = "Node Interrupt Pointer Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`nipr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`nipr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct NIPR_SPEC;
 impl crate::RegisterSpec for NIPR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [nipr::R](R) reader structure"]
-impl crate::Readable for NIPR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [nipr::W](W) writer structure"]
+#[doc = "`read()` method returns [`nipr::R`](R) reader structure"]
+impl crate::Readable for NIPR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`nipr::W`](W) writer structure"]
 impl crate::Writable for NIPR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

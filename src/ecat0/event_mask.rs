@@ -1,18 +1,5 @@
 #[doc = "Register `EVENT_MASK` reader"]
-pub struct R(crate::R<EVENT_MASK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EVENT_MASK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EVENT_MASK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EVENT_MASK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EVENT_MASK_SPEC>;
 #[doc = "Field `DC_LE_MASK` reader - DC Latch event"]
 pub type DC_LE_MASK_R = crate::BitReader<DC_LE_MASK_A>;
 #[doc = "DC Latch event\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl DC_LE_MASK_R {
             true => DC_LE_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DC_LE_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DC_LE_MASK_A::VALUE2
@@ -74,12 +61,12 @@ impl DL_SE_MASK_R {
             true => DL_SE_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DL_SE_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DL_SE_MASK_A::VALUE2
@@ -110,12 +97,12 @@ impl AL_SE_MASK_R {
             true => AL_SE_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == AL_SE_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == AL_SE_MASK_A::VALUE2
@@ -146,12 +133,12 @@ impl MIR_0_MASK_R {
             true => MIR_0_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_0_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_0_MASK_A::VALUE2
@@ -182,12 +169,12 @@ impl MIR_1_MASK_R {
             true => MIR_1_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_1_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_1_MASK_A::VALUE2
@@ -218,12 +205,12 @@ impl MIR_2_MASK_R {
             true => MIR_2_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_2_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_2_MASK_A::VALUE2
@@ -254,12 +241,12 @@ impl MIR_3_MASK_R {
             true => MIR_3_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_3_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_3_MASK_A::VALUE2
@@ -290,12 +277,12 @@ impl MIR_4_MASK_R {
             true => MIR_4_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_4_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_4_MASK_A::VALUE2
@@ -326,12 +313,12 @@ impl MIR_5_MASK_R {
             true => MIR_5_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_5_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_5_MASK_A::VALUE2
@@ -362,12 +349,12 @@ impl MIR_6_MASK_R {
             true => MIR_6_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_6_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_6_MASK_A::VALUE2
@@ -398,12 +385,12 @@ impl MIR_7_MASK_R {
             true => MIR_7_MASK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Corresponding ECAT Event Request register bit is not mapped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MIR_7_MASK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Corresponding ECAT Event Request register bit is mapped"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MIR_7_MASK_A::VALUE2
@@ -466,15 +453,13 @@ impl R {
         MIR_7_MASK_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
-#[doc = "ECAT Event Mask\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [event_mask](index.html) module"]
+#[doc = "ECAT Event Mask\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`event_mask::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EVENT_MASK_SPEC;
 impl crate::RegisterSpec for EVENT_MASK_SPEC {
     type Ux = u16;
 }
-#[doc = "`read()` method returns [event_mask::R](R) reader structure"]
-impl crate::Readable for EVENT_MASK_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`event_mask::R`](R) reader structure"]
+impl crate::Readable for EVENT_MASK_SPEC {}
 #[doc = "`reset()` method sets EVENT_MASK to value 0"]
 impl crate::Resettable for EVENT_MASK_SPEC {
     const RESET_VALUE: Self::Ux = 0;

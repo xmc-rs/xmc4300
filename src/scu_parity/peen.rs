@@ -1,39 +1,7 @@
 #[doc = "Register `PEEN` reader"]
-pub struct R(crate::R<PEEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PEEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PEEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PEEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PEEN_SPEC>;
 #[doc = "Register `PEEN` writer"]
-pub struct W(crate::W<PEEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PEEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PEEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PEEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PEEN_SPEC>;
 #[doc = "Field `PEENPS` reader - Parity Error Enable for PSRAM"]
 pub type PEENPS_R = crate::BitReader<PEENPS_A>;
 #[doc = "Parity Error Enable for PSRAM\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl PEENPS_R {
             true => PEENPS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PEENPS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PEENPS_A::CONST_1
     }
 }
 #[doc = "Field `PEENPS` writer - Parity Error Enable for PSRAM"]
-pub type PEENPS_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENPS_A>;
-impl<'a, const O: u8> PEENPS_W<'a, O> {
+pub type PEENPS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEENPS_A>;
+impl<'a, REG, const O: u8> PEENPS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PEENPS_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PEENPS_A::CONST_1)
     }
 }
@@ -109,28 +80,31 @@ impl PEENDS1_R {
             true => PEENDS1_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PEENDS1_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PEENDS1_A::CONST_1
     }
 }
 #[doc = "Field `PEENDS1` writer - Parity Error Enable for DSRAM1"]
-pub type PEENDS1_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENDS1_A>;
-impl<'a, const O: u8> PEENDS1_W<'a, O> {
+pub type PEENDS1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEENDS1_A>;
+impl<'a, REG, const O: u8> PEENDS1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PEENDS1_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PEENDS1_A::CONST_1)
     }
 }
@@ -159,28 +133,31 @@ impl PEENU0_R {
             true => PEENU0_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PEENU0_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PEENU0_A::CONST_1
     }
 }
 #[doc = "Field `PEENU0` writer - Parity Error Enable for USIC0 Memory"]
-pub type PEENU0_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENU0_A>;
-impl<'a, const O: u8> PEENU0_W<'a, O> {
+pub type PEENU0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEENU0_A>;
+impl<'a, REG, const O: u8> PEENU0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PEENU0_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PEENU0_A::CONST_1)
     }
 }
@@ -209,28 +186,31 @@ impl PEENU1_R {
             true => PEENU1_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PEENU1_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PEENU1_A::CONST_1
     }
 }
 #[doc = "Field `PEENU1` writer - Parity Error Enable for USIC1 Memory"]
-pub type PEENU1_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENU1_A>;
-impl<'a, const O: u8> PEENU1_W<'a, O> {
+pub type PEENU1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEENU1_A>;
+impl<'a, REG, const O: u8> PEENU1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PEENU1_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PEENU1_A::CONST_1)
     }
 }
@@ -259,28 +239,31 @@ impl PEENMC_R {
             true => PEENMC_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PEENMC_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PEENMC_A::CONST_1
     }
 }
 #[doc = "Field `PEENMC` writer - Parity Error Enable for MultiCAN Memory"]
-pub type PEENMC_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENMC_A>;
-impl<'a, const O: u8> PEENMC_W<'a, O> {
+pub type PEENMC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEENMC_A>;
+impl<'a, REG, const O: u8> PEENMC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PEENMC_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PEENMC_A::CONST_1)
     }
 }
@@ -309,28 +292,31 @@ impl PEENPPRF_R {
             true => PEENPPRF_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PEENPPRF_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PEENPPRF_A::CONST_1
     }
 }
 #[doc = "Field `PEENPPRF` writer - Parity Error Enable for PMU Prefetch Memory"]
-pub type PEENPPRF_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENPPRF_A>;
-impl<'a, const O: u8> PEENPPRF_W<'a, O> {
+pub type PEENPPRF_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEENPPRF_A>;
+impl<'a, REG, const O: u8> PEENPPRF_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PEENPPRF_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PEENPPRF_A::CONST_1)
     }
 }
@@ -359,28 +345,31 @@ impl PEENUSB_R {
             true => PEENUSB_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PEENUSB_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PEENUSB_A::CONST_1
     }
 }
 #[doc = "Field `PEENUSB` writer - Parity Error Enable for USB Memory"]
-pub type PEENUSB_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENUSB_A>;
-impl<'a, const O: u8> PEENUSB_W<'a, O> {
+pub type PEENUSB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEENUSB_A>;
+impl<'a, REG, const O: u8> PEENUSB_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PEENUSB_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PEENUSB_A::CONST_1)
     }
 }
@@ -409,28 +398,31 @@ impl PEENETH0TX_R {
             true => PEENETH0TX_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PEENETH0TX_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PEENETH0TX_A::CONST_1
     }
 }
 #[doc = "Field `PEENETH0TX` writer - Parity Error Enable for ETH TX Memory"]
-pub type PEENETH0TX_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENETH0TX_A>;
-impl<'a, const O: u8> PEENETH0TX_W<'a, O> {
+pub type PEENETH0TX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEENETH0TX_A>;
+impl<'a, REG, const O: u8> PEENETH0TX_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PEENETH0TX_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PEENETH0TX_A::CONST_1)
     }
 }
@@ -459,28 +451,31 @@ impl PEENETH0RX_R {
             true => PEENETH0RX_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PEENETH0RX_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PEENETH0RX_A::CONST_1
     }
 }
 #[doc = "Field `PEENETH0RX` writer - Parity Error Enable for ETH RX Memory"]
-pub type PEENETH0RX_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENETH0RX_A>;
-impl<'a, const O: u8> PEENETH0RX_W<'a, O> {
+pub type PEENETH0RX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEENETH0RX_A>;
+impl<'a, REG, const O: u8> PEENETH0RX_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PEENETH0RX_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PEENETH0RX_A::CONST_1)
     }
 }
@@ -509,28 +504,31 @@ impl PEENSD0_R {
             true => PEENSD0_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PEENSD0_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PEENSD0_A::CONST_1
     }
 }
 #[doc = "Field `PEENSD0` writer - Parity Error Enable for SDMMC Memory 0"]
-pub type PEENSD0_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENSD0_A>;
-impl<'a, const O: u8> PEENSD0_W<'a, O> {
+pub type PEENSD0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEENSD0_A>;
+impl<'a, REG, const O: u8> PEENSD0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PEENSD0_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PEENSD0_A::CONST_1)
     }
 }
@@ -559,28 +557,31 @@ impl PEENSD1_R {
             true => PEENSD1_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PEENSD1_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PEENSD1_A::CONST_1
     }
 }
 #[doc = "Field `PEENSD1` writer - Parity Error Enable for SDMMC Memory 1"]
-pub type PEENSD1_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENSD1_A>;
-impl<'a, const O: u8> PEENSD1_W<'a, O> {
+pub type PEENSD1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEENSD1_A>;
+impl<'a, REG, const O: u8> PEENSD1_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PEENSD1_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PEENSD1_A::CONST_1)
     }
 }
@@ -609,28 +610,31 @@ impl PEENECAT0_R {
             true => PEENECAT0_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == PEENECAT0_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == PEENECAT0_A::CONST_1
     }
 }
 #[doc = "Field `PEENECAT0` writer - Parity Error Enable for ECAT0 Memory"]
-pub type PEENECAT0_W<'a, const O: u8> = crate::BitWriter<'a, PEEN_SPEC, O, PEENECAT0_A>;
-impl<'a, const O: u8> PEENECAT0_W<'a, O> {
+pub type PEENECAT0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PEENECAT0_A>;
+impl<'a, REG, const O: u8> PEENECAT0_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn const_0(self) -> &'a mut W {
+    pub fn const_0(self) -> &'a mut crate::W<REG> {
         self.variant(PEENECAT0_A::CONST_0)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn const_1(self) -> &'a mut W {
+    pub fn const_1(self) -> &'a mut crate::W<REG> {
         self.variant(PEENECAT0_A::CONST_1)
     }
 }
@@ -700,94 +704,91 @@ impl W {
     #[doc = "Bit 0 - Parity Error Enable for PSRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn peenps(&mut self) -> PEENPS_W<0> {
+    pub fn peenps(&mut self) -> PEENPS_W<PEEN_SPEC, 0> {
         PEENPS_W::new(self)
     }
     #[doc = "Bit 1 - Parity Error Enable for DSRAM1"]
     #[inline(always)]
     #[must_use]
-    pub fn peends1(&mut self) -> PEENDS1_W<1> {
+    pub fn peends1(&mut self) -> PEENDS1_W<PEEN_SPEC, 1> {
         PEENDS1_W::new(self)
     }
     #[doc = "Bit 8 - Parity Error Enable for USIC0 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peenu0(&mut self) -> PEENU0_W<8> {
+    pub fn peenu0(&mut self) -> PEENU0_W<PEEN_SPEC, 8> {
         PEENU0_W::new(self)
     }
     #[doc = "Bit 9 - Parity Error Enable for USIC1 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peenu1(&mut self) -> PEENU1_W<9> {
+    pub fn peenu1(&mut self) -> PEENU1_W<PEEN_SPEC, 9> {
         PEENU1_W::new(self)
     }
     #[doc = "Bit 12 - Parity Error Enable for MultiCAN Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peenmc(&mut self) -> PEENMC_W<12> {
+    pub fn peenmc(&mut self) -> PEENMC_W<PEEN_SPEC, 12> {
         PEENMC_W::new(self)
     }
     #[doc = "Bit 13 - Parity Error Enable for PMU Prefetch Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peenpprf(&mut self) -> PEENPPRF_W<13> {
+    pub fn peenpprf(&mut self) -> PEENPPRF_W<PEEN_SPEC, 13> {
         PEENPPRF_W::new(self)
     }
     #[doc = "Bit 16 - Parity Error Enable for USB Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peenusb(&mut self) -> PEENUSB_W<16> {
+    pub fn peenusb(&mut self) -> PEENUSB_W<PEEN_SPEC, 16> {
         PEENUSB_W::new(self)
     }
     #[doc = "Bit 17 - Parity Error Enable for ETH TX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peeneth0tx(&mut self) -> PEENETH0TX_W<17> {
+    pub fn peeneth0tx(&mut self) -> PEENETH0TX_W<PEEN_SPEC, 17> {
         PEENETH0TX_W::new(self)
     }
     #[doc = "Bit 18 - Parity Error Enable for ETH RX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peeneth0rx(&mut self) -> PEENETH0RX_W<18> {
+    pub fn peeneth0rx(&mut self) -> PEENETH0RX_W<PEEN_SPEC, 18> {
         PEENETH0RX_W::new(self)
     }
     #[doc = "Bit 19 - Parity Error Enable for SDMMC Memory 0"]
     #[inline(always)]
     #[must_use]
-    pub fn peensd0(&mut self) -> PEENSD0_W<19> {
+    pub fn peensd0(&mut self) -> PEENSD0_W<PEEN_SPEC, 19> {
         PEENSD0_W::new(self)
     }
     #[doc = "Bit 20 - Parity Error Enable for SDMMC Memory 1"]
     #[inline(always)]
     #[must_use]
-    pub fn peensd1(&mut self) -> PEENSD1_W<20> {
+    pub fn peensd1(&mut self) -> PEENSD1_W<PEEN_SPEC, 20> {
         PEENSD1_W::new(self)
     }
     #[doc = "Bit 24 - Parity Error Enable for ECAT0 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peenecat0(&mut self) -> PEENECAT0_W<24> {
+    pub fn peenecat0(&mut self) -> PEENECAT0_W<PEEN_SPEC, 24> {
         PEENECAT0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Parity Error Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [peen](index.html) module"]
+#[doc = "Parity Error Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`peen::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`peen::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PEEN_SPEC;
 impl crate::RegisterSpec for PEEN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [peen::R](R) reader structure"]
-impl crate::Readable for PEEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [peen::W](W) writer structure"]
+#[doc = "`read()` method returns [`peen::R`](R) reader structure"]
+impl crate::Readable for PEEN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`peen::W`](W) writer structure"]
 impl crate::Writable for PEEN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

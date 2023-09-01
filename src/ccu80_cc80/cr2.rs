@@ -1,18 +1,5 @@
 #[doc = "Register `CR2` reader"]
-pub struct R(crate::R<CR2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CR2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CR2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CR2_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CR2_SPEC>;
 #[doc = "Field `CR2` reader - Compare Register for Channel 2"]
 pub type CR2_R = crate::FieldReader<u16>;
 impl R {
@@ -22,15 +9,13 @@ impl R {
         CR2_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Channel 2 Compare Value\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr2](index.html) module"]
+#[doc = "Channel 2 Compare Value\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cr2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CR2_SPEC;
 impl crate::RegisterSpec for CR2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cr2::R](R) reader structure"]
-impl crate::Readable for CR2_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`cr2::R`](R) reader structure"]
+impl crate::Readable for CR2_SPEC {}
 #[doc = "`reset()` method sets CR2 to value 0"]
 impl crate::Resettable for CR2_SPEC {
     const RESET_VALUE: Self::Ux = 0;

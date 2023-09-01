@@ -1,18 +1,5 @@
 #[doc = "Register `RSTSTAT` reader"]
-pub struct R(crate::R<RSTSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RSTSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RSTSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RSTSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RSTSTAT_SPEC>;
 #[doc = "Field `RSTSTAT` reader - Reset Status Information"]
 pub type RSTSTAT_R = crate::FieldReader<RSTSTAT_A>;
 #[doc = "Reset Status Information\n\nValue on reset: 0"]
@@ -58,37 +45,37 @@ impl RSTSTAT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_00000001`"]
+    #[doc = "PORST reset"]
     #[inline(always)]
     pub fn is_const_00000001(&self) -> bool {
         *self == RSTSTAT_A::CONST_00000001
     }
-    #[doc = "Checks if the value of the field is `CONST_00000010`"]
+    #[doc = "SWD reset"]
     #[inline(always)]
     pub fn is_const_00000010(&self) -> bool {
         *self == RSTSTAT_A::CONST_00000010
     }
-    #[doc = "Checks if the value of the field is `CONST_00000100`"]
+    #[doc = "PV reset"]
     #[inline(always)]
     pub fn is_const_00000100(&self) -> bool {
         *self == RSTSTAT_A::CONST_00000100
     }
-    #[doc = "Checks if the value of the field is `CONST_00001000`"]
+    #[doc = "CPU system reset"]
     #[inline(always)]
     pub fn is_const_00001000(&self) -> bool {
         *self == RSTSTAT_A::CONST_00001000
     }
-    #[doc = "Checks if the value of the field is `CONST_00010000`"]
+    #[doc = "CPU lockup reset"]
     #[inline(always)]
     pub fn is_const_00010000(&self) -> bool {
         *self == RSTSTAT_A::CONST_00010000
     }
-    #[doc = "Checks if the value of the field is `CONST_00100000`"]
+    #[doc = "WDT reset"]
     #[inline(always)]
     pub fn is_const_00100000(&self) -> bool {
         *self == RSTSTAT_A::CONST_00100000
     }
-    #[doc = "Checks if the value of the field is `CONST_10000000`"]
+    #[doc = "Parity Error reset"]
     #[inline(always)]
     pub fn is_const_10000000(&self) -> bool {
         *self == RSTSTAT_A::CONST_10000000
@@ -119,12 +106,12 @@ impl HIBWK_R {
             true => HIBWK_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "No Wake-up"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == HIBWK_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Wake-up event"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == HIBWK_A::CONST_1
@@ -155,12 +142,12 @@ impl HIBRS_R {
             true => HIBRS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == HIBRS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == HIBRS_A::CONST_1
@@ -191,12 +178,12 @@ impl LCKEN_R {
             true => LCKEN_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Reset by Lockup disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == LCKEN_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Reset by Lockup enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == LCKEN_A::CONST_1
@@ -227,12 +214,12 @@ impl ECAT0RS_R {
             true => ECAT0RS_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Reset did not occur"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ECAT0RS_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Reset occurred"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ECAT0RS_A::CONST_1
@@ -265,15 +252,13 @@ impl R {
         ECAT0RS_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
-#[doc = "RCU Reset Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rststat](index.html) module"]
+#[doc = "RCU Reset Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rststat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RSTSTAT_SPEC;
 impl crate::RegisterSpec for RSTSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rststat::R](R) reader structure"]
-impl crate::Readable for RSTSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`rststat::R`](R) reader structure"]
+impl crate::Readable for RSTSTAT_SPEC {}
 #[doc = "`reset()` method sets RSTSTAT to value 0"]
 impl crate::Resettable for RSTSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

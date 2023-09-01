@@ -1,18 +1,5 @@
 #[doc = "Register `CLKSTAT` reader"]
-pub struct R(crate::R<CLKSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CLKSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CLKSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CLKSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CLKSTAT_SPEC>;
 #[doc = "Field `USBCST` reader - USB Clock Status"]
 pub type USBCST_R = crate::BitReader<USBCST_A>;
 #[doc = "USB Clock Status\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl USBCST_R {
             true => USBCST_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == USBCST_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == USBCST_A::CONST_1
@@ -74,12 +61,12 @@ impl MMCCST_R {
             true => MMCCST_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == MMCCST_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == MMCCST_A::CONST_1
@@ -110,12 +97,12 @@ impl ETH0CST_R {
             true => ETH0CST_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == ETH0CST_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == ETH0CST_A::CONST_1
@@ -146,12 +133,12 @@ impl CCUCST_R {
             true => CCUCST_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == CCUCST_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == CCUCST_A::CONST_1
@@ -182,12 +169,12 @@ impl WDTCST_R {
             true => WDTCST_A::CONST_1,
         }
     }
-    #[doc = "Checks if the value of the field is `CONST_0`"]
+    #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_const_0(&self) -> bool {
         *self == WDTCST_A::CONST_0
     }
-    #[doc = "Checks if the value of the field is `CONST_1`"]
+    #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_const_1(&self) -> bool {
         *self == WDTCST_A::CONST_1
@@ -220,15 +207,13 @@ impl R {
         WDTCST_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
-#[doc = "Clock Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clkstat](index.html) module"]
+#[doc = "Clock Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CLKSTAT_SPEC;
 impl crate::RegisterSpec for CLKSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [clkstat::R](R) reader structure"]
-impl crate::Readable for CLKSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`clkstat::R`](R) reader structure"]
+impl crate::Readable for CLKSTAT_SPEC {}
 #[doc = "`reset()` method sets CLKSTAT to value 0"]
 impl crate::Resettable for CLKSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

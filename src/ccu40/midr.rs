@@ -1,18 +1,5 @@
 #[doc = "Register `MIDR` reader"]
-pub struct R(crate::R<MIDR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MIDR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MIDR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MIDR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MIDR_SPEC>;
 #[doc = "Field `MODR` reader - Module Revision"]
 pub type MODR_R = crate::FieldReader;
 #[doc = "Field `MODT` reader - Module Type"]
@@ -36,15 +23,13 @@ impl R {
         MODN_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
-#[doc = "Module Identification\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [midr](index.html) module"]
+#[doc = "Module Identification\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`midr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MIDR_SPEC;
 impl crate::RegisterSpec for MIDR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [midr::R](R) reader structure"]
-impl crate::Readable for MIDR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`midr::R`](R) reader structure"]
+impl crate::Readable for MIDR_SPEC {}
 #[doc = "`reset()` method sets MIDR to value 0x00a6_c000"]
 impl crate::Resettable for MIDR_SPEC {
     const RESET_VALUE: Self::Ux = 0x00a6_c000;

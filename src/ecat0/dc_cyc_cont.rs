@@ -1,18 +1,5 @@
 #[doc = "Register `DC_CYC_CONT` reader"]
-pub struct R(crate::R<DC_CYC_CONT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DC_CYC_CONT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DC_CYC_CONT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DC_CYC_CONT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DC_CYC_CONT_SPEC>;
 #[doc = "Field `SYNC` reader - SYNC out unit control"]
 pub type SYNC_R = crate::BitReader<SYNC_A>;
 #[doc = "SYNC out unit control\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl SYNC_R {
             true => SYNC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "ECAT controlled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SYNC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "PDI controlled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SYNC_A::VALUE2
@@ -74,12 +61,12 @@ impl LATCH_U0_R {
             true => LATCH_U0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "ECAT controlled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LATCH_U0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "PDI controlled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LATCH_U0_A::VALUE2
@@ -110,12 +97,12 @@ impl LATCH_U1_R {
             true => LATCH_U1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "ECAT controlled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LATCH_U1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "PDI controlled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LATCH_U1_A::VALUE2
@@ -138,15 +125,13 @@ impl R {
         LATCH_U1_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
-#[doc = "Cyclic Unit Control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dc_cyc_cont](index.html) module"]
+#[doc = "Cyclic Unit Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dc_cyc_cont::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DC_CYC_CONT_SPEC;
 impl crate::RegisterSpec for DC_CYC_CONT_SPEC {
     type Ux = u8;
 }
-#[doc = "`read()` method returns [dc_cyc_cont::R](R) reader structure"]
-impl crate::Readable for DC_CYC_CONT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dc_cyc_cont::R`](R) reader structure"]
+impl crate::Readable for DC_CYC_CONT_SPEC {}
 #[doc = "`reset()` method sets DC_CYC_CONT to value 0"]
 impl crate::Resettable for DC_CYC_CONT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

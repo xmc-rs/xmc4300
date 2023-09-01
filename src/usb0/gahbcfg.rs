@@ -1,39 +1,7 @@
 #[doc = "Register `GAHBCFG` reader"]
-pub struct R(crate::R<GAHBCFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GAHBCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GAHBCFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GAHBCFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GAHBCFG_SPEC>;
 #[doc = "Register `GAHBCFG` writer"]
-pub struct W(crate::W<GAHBCFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<GAHBCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<GAHBCFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<GAHBCFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<GAHBCFG_SPEC>;
 #[doc = "Field `GlblIntrMsk` reader - Global Interrupt Mask"]
 pub type GLBL_INTR_MSK_R = crate::BitReader<GLBL_INTR_MSK_A>;
 #[doc = "Global Interrupt Mask\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl GLBL_INTR_MSK_R {
             true => GLBL_INTR_MSK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Mask the interrupt assertion to the application."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == GLBL_INTR_MSK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Unmask the interrupt assertion to the application."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == GLBL_INTR_MSK_A::VALUE2
     }
 }
 #[doc = "Field `GlblIntrMsk` writer - Global Interrupt Mask"]
-pub type GLBL_INTR_MSK_W<'a, const O: u8> = crate::BitWriter<'a, GAHBCFG_SPEC, O, GLBL_INTR_MSK_A>;
-impl<'a, const O: u8> GLBL_INTR_MSK_W<'a, O> {
+pub type GLBL_INTR_MSK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GLBL_INTR_MSK_A>;
+impl<'a, REG, const O: u8> GLBL_INTR_MSK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Mask the interrupt assertion to the application."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(GLBL_INTR_MSK_A::VALUE1)
     }
     #[doc = "Unmask the interrupt assertion to the application."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(GLBL_INTR_MSK_A::VALUE2)
     }
 }
@@ -123,58 +94,62 @@ impl HBST_LEN_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Single"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HBST_LEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "INCR"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HBST_LEN_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "INCR4"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == HBST_LEN_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "INCR8"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == HBST_LEN_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "INCR16"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == HBST_LEN_A::VALUE5
     }
 }
 #[doc = "Field `HBstLen` writer - Burst Length/Type"]
-pub type HBST_LEN_W<'a, const O: u8> = crate::FieldWriter<'a, GAHBCFG_SPEC, 4, O, HBST_LEN_A>;
-impl<'a, const O: u8> HBST_LEN_W<'a, O> {
+pub type HBST_LEN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, HBST_LEN_A>;
+impl<'a, REG, const O: u8> HBST_LEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Single"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(HBST_LEN_A::VALUE1)
     }
     #[doc = "INCR"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(HBST_LEN_A::VALUE2)
     }
     #[doc = "INCR4"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(HBST_LEN_A::VALUE3)
     }
     #[doc = "INCR8"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(HBST_LEN_A::VALUE4)
     }
     #[doc = "INCR16"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(HBST_LEN_A::VALUE5)
     }
 }
@@ -203,28 +178,31 @@ impl DMAEN_R {
             true => DMAEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Core operates in Slave mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DMAEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Core operates in a DMA mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DMAEN_A::VALUE2
     }
 }
 #[doc = "Field `DMAEn` writer - DMA Enable"]
-pub type DMAEN_W<'a, const O: u8> = crate::BitWriter<'a, GAHBCFG_SPEC, O, DMAEN_A>;
-impl<'a, const O: u8> DMAEN_W<'a, O> {
+pub type DMAEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DMAEN_A>;
+impl<'a, REG, const O: u8> DMAEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Core operates in Slave mode"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DMAEN_A::VALUE1)
     }
     #[doc = "Core operates in a DMA mode"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DMAEN_A::VALUE2)
     }
 }
@@ -253,28 +231,31 @@ impl NPTX_FEMP_LVL_R {
             true => NPTX_FEMP_LVL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is half empty"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == NPTX_FEMP_LVL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is completely empty"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == NPTX_FEMP_LVL_A::VALUE2
     }
 }
 #[doc = "Field `NPTxFEmpLvl` writer - Non-Periodic TxFIFO Empty Level"]
-pub type NPTX_FEMP_LVL_W<'a, const O: u8> = crate::BitWriter<'a, GAHBCFG_SPEC, O, NPTX_FEMP_LVL_A>;
-impl<'a, const O: u8> NPTX_FEMP_LVL_W<'a, O> {
+pub type NPTX_FEMP_LVL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, NPTX_FEMP_LVL_A>;
+impl<'a, REG, const O: u8> NPTX_FEMP_LVL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is half empty"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(NPTX_FEMP_LVL_A::VALUE1)
     }
     #[doc = "DIEPINTx.TxFEmp interrupt indicates that the IN Endpoint TxFIFO is completely empty"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(NPTX_FEMP_LVL_A::VALUE2)
     }
 }
@@ -303,28 +284,31 @@ impl PTX_FEMP_LVL_R {
             true => PTX_FEMP_LVL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is half empty"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PTX_FEMP_LVL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is completely empty"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PTX_FEMP_LVL_A::VALUE2
     }
 }
 #[doc = "Field `PTxFEmpLvl` writer - Periodic TxFIFO Empty Level"]
-pub type PTX_FEMP_LVL_W<'a, const O: u8> = crate::BitWriter<'a, GAHBCFG_SPEC, O, PTX_FEMP_LVL_A>;
-impl<'a, const O: u8> PTX_FEMP_LVL_W<'a, O> {
+pub type PTX_FEMP_LVL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PTX_FEMP_LVL_A>;
+impl<'a, REG, const O: u8> PTX_FEMP_LVL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is half empty"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PTX_FEMP_LVL_A::VALUE1)
     }
     #[doc = "GINTSTS.PTxFEmp interrupt indicates that the Periodic TxFIFO is completely empty"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PTX_FEMP_LVL_A::VALUE2)
     }
 }
@@ -353,28 +337,31 @@ impl AHBSINGLE_R {
             true => AHBSINGLE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The remaining data in a transfer is sent using INCR burst size. This is the default mode."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == AHBSINGLE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The remaining data in a transfer is sent using single burst size."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == AHBSINGLE_A::VALUE2
     }
 }
 #[doc = "Field `AHBSingle` writer - AHB Single Support"]
-pub type AHBSINGLE_W<'a, const O: u8> = crate::BitWriter<'a, GAHBCFG_SPEC, O, AHBSINGLE_A>;
-impl<'a, const O: u8> AHBSINGLE_W<'a, O> {
+pub type AHBSINGLE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AHBSINGLE_A>;
+impl<'a, REG, const O: u8> AHBSINGLE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The remaining data in a transfer is sent using INCR burst size. This is the default mode."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(AHBSINGLE_A::VALUE1)
     }
     #[doc = "The remaining data in a transfer is sent using single burst size."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(AHBSINGLE_A::VALUE2)
     }
 }
@@ -414,58 +401,55 @@ impl W {
     #[doc = "Bit 0 - Global Interrupt Mask"]
     #[inline(always)]
     #[must_use]
-    pub fn glbl_intr_msk(&mut self) -> GLBL_INTR_MSK_W<0> {
+    pub fn glbl_intr_msk(&mut self) -> GLBL_INTR_MSK_W<GAHBCFG_SPEC, 0> {
         GLBL_INTR_MSK_W::new(self)
     }
     #[doc = "Bits 1:4 - Burst Length/Type"]
     #[inline(always)]
     #[must_use]
-    pub fn hbst_len(&mut self) -> HBST_LEN_W<1> {
+    pub fn hbst_len(&mut self) -> HBST_LEN_W<GAHBCFG_SPEC, 1> {
         HBST_LEN_W::new(self)
     }
     #[doc = "Bit 5 - DMA Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dmaen(&mut self) -> DMAEN_W<5> {
+    pub fn dmaen(&mut self) -> DMAEN_W<GAHBCFG_SPEC, 5> {
         DMAEN_W::new(self)
     }
     #[doc = "Bit 7 - Non-Periodic TxFIFO Empty Level"]
     #[inline(always)]
     #[must_use]
-    pub fn nptx_femp_lvl(&mut self) -> NPTX_FEMP_LVL_W<7> {
+    pub fn nptx_femp_lvl(&mut self) -> NPTX_FEMP_LVL_W<GAHBCFG_SPEC, 7> {
         NPTX_FEMP_LVL_W::new(self)
     }
     #[doc = "Bit 8 - Periodic TxFIFO Empty Level"]
     #[inline(always)]
     #[must_use]
-    pub fn ptx_femp_lvl(&mut self) -> PTX_FEMP_LVL_W<8> {
+    pub fn ptx_femp_lvl(&mut self) -> PTX_FEMP_LVL_W<GAHBCFG_SPEC, 8> {
         PTX_FEMP_LVL_W::new(self)
     }
     #[doc = "Bit 23 - AHB Single Support"]
     #[inline(always)]
     #[must_use]
-    pub fn ahbsingle(&mut self) -> AHBSINGLE_W<23> {
+    pub fn ahbsingle(&mut self) -> AHBSINGLE_W<GAHBCFG_SPEC, 23> {
         AHBSINGLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "AHB Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gahbcfg](index.html) module"]
+#[doc = "AHB Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gahbcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gahbcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GAHBCFG_SPEC;
 impl crate::RegisterSpec for GAHBCFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [gahbcfg::R](R) reader structure"]
-impl crate::Readable for GAHBCFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [gahbcfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`gahbcfg::R`](R) reader structure"]
+impl crate::Readable for GAHBCFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`gahbcfg::W`](W) writer structure"]
 impl crate::Writable for GAHBCFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

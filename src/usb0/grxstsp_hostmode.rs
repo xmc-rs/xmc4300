@@ -1,18 +1,5 @@
 #[doc = "Register `GRXSTSP_HOSTMODE` reader"]
-pub struct R(crate::R<GRXSTSP_HOSTMODE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GRXSTSP_HOSTMODE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GRXSTSP_HOSTMODE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GRXSTSP_HOSTMODE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GRXSTSP_HOSTMODE_SPEC>;
 #[doc = "Field `ChNum` reader - Channel Number"]
 pub type CH_NUM_R = crate::FieldReader;
 #[doc = "Field `BCnt` reader - Byte Count"]
@@ -53,22 +40,22 @@ impl DPID_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "DATA0"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DPID_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "DATA1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DPID_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "DATA2"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == DPID_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "MDATA"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == DPID_A::VALUE4
@@ -110,22 +97,22 @@ impl PKT_STS_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "IN data packet received"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PKT_STS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "IN transfer completed (triggers an interrupt)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PKT_STS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Data toggle error (triggers an interrupt)"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PKT_STS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Channel halted (triggers an interrupt)"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PKT_STS_A::VALUE4
@@ -153,15 +140,13 @@ impl R {
         PKT_STS_R::new(((self.bits >> 17) & 0x0f) as u8)
     }
 }
-#[doc = "Receive Status Read and Pop Register \\[HOSTMODE\\]\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [grxstsp_hostmode](index.html) module\n\nOne or more dependent resources other than the current register are immediately affected by a read operation."]
+#[doc = "Receive Status Read and Pop Register \\[HOSTMODE\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`grxstsp_hostmode::R`](R). WARN: One or more dependent resources other than the current register are immediately affected by a read operation. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GRXSTSP_HOSTMODE_SPEC;
 impl crate::RegisterSpec for GRXSTSP_HOSTMODE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [grxstsp_hostmode::R](R) reader structure"]
-impl crate::Readable for GRXSTSP_HOSTMODE_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`grxstsp_hostmode::R`](R) reader structure"]
+impl crate::Readable for GRXSTSP_HOSTMODE_SPEC {}
 #[doc = "`reset()` method sets GRXSTSP_HOSTMODE to value 0"]
 impl crate::Resettable for GRXSTSP_HOSTMODE_SPEC {
     const RESET_VALUE: Self::Ux = 0;
