@@ -19,7 +19,7 @@ impl From<FR_A> for bool {
 impl FR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FR_A {
+    pub const fn variant(&self) -> FR_A {
         match self.bits {
             false => FR_A::VALUE1,
             true => FR_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<TEMP_A> for bool {
 impl TEMP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TEMP_A {
+    pub const fn variant(&self) -> TEMP_A {
         match self.bits {
             false => TEMP_A::VALUE1,
             true => TEMP_A::VALUE2,
@@ -99,7 +99,7 @@ impl crate::FieldSpec for LP0_A {
 impl LP0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LP0_A {
+    pub const fn variant(&self) -> LP0_A {
         match self.bits {
             0 => LP0_A::VALUE1,
             1 => LP0_A::VALUE2,
@@ -156,7 +156,7 @@ impl crate::FieldSpec for LP1_A {
 impl LP1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LP1_A {
+    pub const fn variant(&self) -> LP1_A {
         match self.bits {
             0 => LP1_A::VALUE1,
             1 => LP1_A::VALUE2,
@@ -213,7 +213,7 @@ impl crate::FieldSpec for LP2_A {
 impl LP2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LP2_A {
+    pub const fn variant(&self) -> LP2_A {
         match self.bits {
             0 => LP2_A::VALUE1,
             1 => LP2_A::VALUE2,
@@ -270,7 +270,7 @@ impl crate::FieldSpec for LP3_A {
 impl LP3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LP3_A {
+    pub const fn variant(&self) -> LP3_A {
         match self.bits {
             0 => LP3_A::VALUE1,
             1 => LP3_A::VALUE2,
@@ -335,7 +335,7 @@ impl crate::FieldSpec for RX_FIFO_SIZE_A {
 impl RX_FIFO_SIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_FIFO_SIZE_A {
+    pub const fn variant(&self) -> RX_FIFO_SIZE_A {
         match self.bits {
             0 => RX_FIFO_SIZE_A::VALUE1,
             1 => RX_FIFO_SIZE_A::VALUE2,
@@ -408,7 +408,7 @@ impl From<LJ_A> for bool {
 impl LJ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LJ_A {
+    pub const fn variant(&self) -> LJ_A {
         match self.bits {
             false => LJ_A::VALUE1,
             true => LJ_A::VALUE2,
@@ -444,7 +444,7 @@ impl From<RLD_ST_A> for bool {
 impl RLD_ST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RLD_ST_A {
+    pub const fn variant(&self) -> RLD_ST_A {
         match self.bits {
             false => RLD_ST_A::VALUE1,
             true => RLD_ST_A::VALUE2,
@@ -480,7 +480,7 @@ impl From<S_ALIAS_A> for bool {
 impl S_ALIAS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S_ALIAS_A {
+    pub const fn variant(&self) -> S_ALIAS_A {
         match self.bits {
             false => S_ALIAS_A::VALUE1,
             true => S_ALIAS_A::VALUE2,

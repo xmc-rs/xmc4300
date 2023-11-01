@@ -21,7 +21,7 @@ impl From<GLBL_INTR_MSK_A> for bool {
 impl GLBL_INTR_MSK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GLBL_INTR_MSK_A {
+    pub const fn variant(&self) -> GLBL_INTR_MSK_A {
         match self.bits {
             false => GLBL_INTR_MSK_A::VALUE1,
             true => GLBL_INTR_MSK_A::VALUE2,
@@ -84,7 +84,7 @@ impl crate::FieldSpec for HBST_LEN_A {
 impl HBST_LEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HBST_LEN_A> {
+    pub const fn variant(&self) -> Option<HBST_LEN_A> {
         match self.bits {
             0 => Some(HBST_LEN_A::VALUE1),
             1 => Some(HBST_LEN_A::VALUE2),
@@ -172,7 +172,7 @@ impl From<DMAEN_A> for bool {
 impl DMAEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DMAEN_A {
+    pub const fn variant(&self) -> DMAEN_A {
         match self.bits {
             false => DMAEN_A::VALUE1,
             true => DMAEN_A::VALUE2,
@@ -225,7 +225,7 @@ impl From<NPTX_FEMP_LVL_A> for bool {
 impl NPTX_FEMP_LVL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NPTX_FEMP_LVL_A {
+    pub const fn variant(&self) -> NPTX_FEMP_LVL_A {
         match self.bits {
             false => NPTX_FEMP_LVL_A::VALUE1,
             true => NPTX_FEMP_LVL_A::VALUE2,
@@ -278,7 +278,7 @@ impl From<PTX_FEMP_LVL_A> for bool {
 impl PTX_FEMP_LVL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PTX_FEMP_LVL_A {
+    pub const fn variant(&self) -> PTX_FEMP_LVL_A {
         match self.bits {
             false => PTX_FEMP_LVL_A::VALUE1,
             true => PTX_FEMP_LVL_A::VALUE2,
@@ -331,7 +331,7 @@ impl From<AHBSINGLE_A> for bool {
 impl AHBSINGLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AHBSINGLE_A {
+    pub const fn variant(&self) -> AHBSINGLE_A {
         match self.bits {
             false => AHBSINGLE_A::VALUE1,
             true => AHBSINGLE_A::VALUE2,
@@ -434,7 +434,11 @@ impl W {
     pub fn ahbsingle(&mut self) -> AHBSINGLE_W<GAHBCFG_SPEC, 23> {
         AHBSINGLE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

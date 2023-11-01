@@ -21,7 +21,7 @@ impl From<PRT_CONN_STS_A> for bool {
 impl PRT_CONN_STS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRT_CONN_STS_A {
+    pub const fn variant(&self) -> PRT_CONN_STS_A {
         match self.bits {
             false => PRT_CONN_STS_A::VALUE1,
             true => PRT_CONN_STS_A::VALUE2,
@@ -61,7 +61,7 @@ impl From<PRT_ENA_A> for bool {
 impl PRT_ENA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRT_ENA_A {
+    pub const fn variant(&self) -> PRT_ENA_A {
         match self.bits {
             false => PRT_ENA_A::VALUE1,
             true => PRT_ENA_A::VALUE2,
@@ -118,7 +118,7 @@ impl From<PRT_OVR_CURR_ACT_A> for bool {
 impl PRT_OVR_CURR_ACT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRT_OVR_CURR_ACT_A {
+    pub const fn variant(&self) -> PRT_OVR_CURR_ACT_A {
         match self.bits {
             false => PRT_OVR_CURR_ACT_A::VALUE1,
             true => PRT_OVR_CURR_ACT_A::VALUE2,
@@ -158,7 +158,7 @@ impl From<PRT_RES_A> for bool {
 impl PRT_RES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRT_RES_A {
+    pub const fn variant(&self) -> PRT_RES_A {
         match self.bits {
             false => PRT_RES_A::VALUE1,
             true => PRT_RES_A::VALUE2,
@@ -211,7 +211,7 @@ impl From<PRT_SUSP_A> for bool {
 impl PRT_SUSP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRT_SUSP_A {
+    pub const fn variant(&self) -> PRT_SUSP_A {
         match self.bits {
             false => PRT_SUSP_A::VALUE1,
             true => PRT_SUSP_A::VALUE2,
@@ -264,7 +264,7 @@ impl From<PRT_RST_A> for bool {
 impl PRT_RST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRT_RST_A {
+    pub const fn variant(&self) -> PRT_RST_A {
         match self.bits {
             false => PRT_RST_A::VALUE1,
             true => PRT_RST_A::VALUE2,
@@ -319,7 +319,7 @@ impl From<PRT_PWR_A> for bool {
 impl PRT_PWR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRT_PWR_A {
+    pub const fn variant(&self) -> PRT_PWR_A {
         match self.bits {
             false => PRT_PWR_A::VALUE1,
             true => PRT_PWR_A::VALUE2,
@@ -374,7 +374,7 @@ impl crate::FieldSpec for PRT_SPD_A {
 impl PRT_SPD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PRT_SPD_A> {
+    pub const fn variant(&self) -> Option<PRT_SPD_A> {
         match self.bits {
             1 => Some(PRT_SPD_A::VALUE1),
             _ => None,
@@ -497,7 +497,11 @@ impl W {
     pub fn prt_pwr(&mut self) -> PRT_PWR_W<HPRT_SPEC, 12> {
         PRT_PWR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -25,7 +25,7 @@ impl From<BUSY_A> for bool {
 impl BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUSY_A {
+    pub const fn variant(&self) -> BUSY_A {
         match self.bits {
             false => BUSY_A::VALUE1,
             true => BUSY_A::VALUE2,
@@ -61,7 +61,7 @@ impl From<RBUSY_A> for bool {
 impl RBUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RBUSY_A {
+    pub const fn variant(&self) -> RBUSY_A {
         match self.bits {
             false => RBUSY_A::VALUE1,
             true => RBUSY_A::VALUE2,
@@ -132,7 +132,11 @@ impl W {
     pub fn panar2(&mut self) -> PANAR2_W<PANCTR_SPEC, 24> {
         PANAR2_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

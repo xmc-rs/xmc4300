@@ -21,7 +21,7 @@ impl From<ENORC6_A> for bool {
 impl ENORC6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENORC6_A {
+    pub const fn variant(&self) -> ENORC6_A {
         match self.bits {
             false => ENORC6_A::CONST_0,
             true => ENORC6_A::CONST_1,
@@ -74,7 +74,7 @@ impl From<ENORC7_A> for bool {
 impl ENORC7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENORC7_A {
+    pub const fn variant(&self) -> ENORC7_A {
         match self.bits {
             false => ENORC7_A::CONST_0,
             true => ENORC7_A::CONST_1,
@@ -133,7 +133,11 @@ impl W {
     pub fn enorc7(&mut self) -> ENORC7_W<G0ORCEN_SPEC, 7> {
         ENORC7_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

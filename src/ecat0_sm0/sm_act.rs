@@ -19,7 +19,7 @@ impl From<SM_EN_A> for bool {
 impl SM_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SM_EN_A {
+    pub const fn variant(&self) -> SM_EN_A {
         match self.bits {
             false => SM_EN_A::VALUE1,
             true => SM_EN_A::VALUE2,
@@ -57,7 +57,7 @@ impl From<LE_ECAT_A> for bool {
 impl LE_ECAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LE_ECAT_A {
+    pub const fn variant(&self) -> LE_ECAT_A {
         match self.bits {
             false => LE_ECAT_A::VALUE1,
             true => LE_ECAT_A::VALUE2,
@@ -93,7 +93,7 @@ impl From<LE_PDI_A> for bool {
 impl LE_PDI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LE_PDI_A {
+    pub const fn variant(&self) -> LE_PDI_A {
         match self.bits {
             false => LE_PDI_A::VALUE1,
             true => LE_PDI_A::VALUE2,

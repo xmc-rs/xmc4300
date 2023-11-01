@@ -19,7 +19,7 @@ impl From<HDCLR_A> for bool {
 impl HDCLR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HDCLR_A {
+    pub const fn variant(&self) -> HDCLR_A {
         match self.bits {
             false => HDCLR_A::CONST_0,
             true => HDCLR_A::CONST_1,
@@ -55,7 +55,7 @@ impl From<HDSET_A> for bool {
 impl HDSET_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HDSET_A {
+    pub const fn variant(&self) -> HDSET_A {
         match self.bits {
             false => HDSET_A::CONST_0,
             true => HDSET_A::CONST_1,
@@ -91,7 +91,7 @@ impl From<HDCR_A> for bool {
 impl HDCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HDCR_A {
+    pub const fn variant(&self) -> HDCR_A {
         match self.bits {
             false => HDCR_A::CONST_0,
             true => HDCR_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<OSCSICTRL_A> for bool {
 impl OSCSICTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OSCSICTRL_A {
+    pub const fn variant(&self) -> OSCSICTRL_A {
         match self.bits {
             false => OSCSICTRL_A::CONST_0,
             true => OSCSICTRL_A::CONST_1,
@@ -163,7 +163,7 @@ impl From<OSCULCTRL_A> for bool {
 impl OSCULCTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OSCULCTRL_A {
+    pub const fn variant(&self) -> OSCULCTRL_A {
         match self.bits {
             false => OSCULCTRL_A::CONST_0,
             true => OSCULCTRL_A::CONST_1,
@@ -199,7 +199,7 @@ impl From<RTC_CTR_A> for bool {
 impl RTC_CTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTC_CTR_A {
+    pub const fn variant(&self) -> RTC_CTR_A {
         match self.bits {
             false => RTC_CTR_A::CONST_0,
             true => RTC_CTR_A::CONST_1,
@@ -235,7 +235,7 @@ impl From<RTC_ATIM0_A> for bool {
 impl RTC_ATIM0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTC_ATIM0_A {
+    pub const fn variant(&self) -> RTC_ATIM0_A {
         match self.bits {
             false => RTC_ATIM0_A::CONST_0,
             true => RTC_ATIM0_A::CONST_1,
@@ -271,7 +271,7 @@ impl From<RTC_ATIM1_A> for bool {
 impl RTC_ATIM1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTC_ATIM1_A {
+    pub const fn variant(&self) -> RTC_ATIM1_A {
         match self.bits {
             false => RTC_ATIM1_A::CONST_0,
             true => RTC_ATIM1_A::CONST_1,
@@ -307,7 +307,7 @@ impl From<RTC_TIM0_A> for bool {
 impl RTC_TIM0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTC_TIM0_A {
+    pub const fn variant(&self) -> RTC_TIM0_A {
         match self.bits {
             false => RTC_TIM0_A::CONST_0,
             true => RTC_TIM0_A::CONST_1,
@@ -343,7 +343,7 @@ impl From<RTC_TIM1_A> for bool {
 impl RTC_TIM1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTC_TIM1_A {
+    pub const fn variant(&self) -> RTC_TIM1_A {
         match self.bits {
             false => RTC_TIM1_A::CONST_0,
             true => RTC_TIM1_A::CONST_1,
@@ -379,7 +379,7 @@ impl From<RMX_A> for bool {
 impl RMX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RMX_A {
+    pub const fn variant(&self) -> RMX_A {
         match self.bits {
             false => RMX_A::CONST_0,
             true => RMX_A::CONST_1,
@@ -415,7 +415,7 @@ impl From<RTC_MSKSR_A> for bool {
 impl RTC_MSKSR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTC_MSKSR_A {
+    pub const fn variant(&self) -> RTC_MSKSR_A {
         match self.bits {
             false => RTC_MSKSR_A::CONST_0,
             true => RTC_MSKSR_A::CONST_1,
@@ -451,7 +451,7 @@ impl From<RTC_CLRSR_A> for bool {
 impl RTC_CLRSR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTC_CLRSR_A {
+    pub const fn variant(&self) -> RTC_CLRSR_A {
         match self.bits {
             false => RTC_CLRSR_A::CONST_0,
             true => RTC_CLRSR_A::CONST_1,

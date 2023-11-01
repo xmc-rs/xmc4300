@@ -25,7 +25,7 @@ impl From<CDEN_A> for bool {
 impl CDEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CDEN_A {
+    pub const fn variant(&self) -> CDEN_A {
         match self.bits {
             false => CDEN_A::VALUE1,
             true => CDEN_A::VALUE2,
@@ -86,7 +86,7 @@ impl crate::FieldSpec for CDSEL_A {
 impl CDSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CDSEL_A {
+    pub const fn variant(&self) -> CDSEL_A {
         match self.bits {
             0 => CDSEL_A::VALUE1,
             1 => CDSEL_A::VALUE2,
@@ -194,7 +194,7 @@ impl From<PDD_A> for bool {
 impl PDD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDD_A {
+    pub const fn variant(&self) -> PDD_A {
         match self.bits {
             false => PDD_A::VALUE1,
             true => PDD_A::VALUE2,
@@ -318,7 +318,11 @@ impl W {
     pub fn mdwc(&mut self) -> MDWC_W<GLOBTF_SPEC, 23> {
         MDWC_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -21,7 +21,7 @@ impl From<SYSSEL_A> for bool {
 impl SYSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SYSSEL_A {
+    pub const fn variant(&self) -> SYSSEL_A {
         match self.bits {
             false => SYSSEL_A::CONST_0,
             true => SYSSEL_A::CONST_1,
@@ -74,7 +74,7 @@ impl From<USBCR_A> for bool {
 impl USBCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USBCR_A {
+    pub const fn variant(&self) -> USBCR_A {
         match self.bits {
             false => USBCR_A::CONST_0,
             true => USBCR_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<MMCCR_A> for bool {
 impl MMCCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MMCCR_A {
+    pub const fn variant(&self) -> MMCCR_A {
         match self.bits {
             false => MMCCR_A::CONST_0,
             true => MMCCR_A::CONST_1,
@@ -180,7 +180,7 @@ impl From<ETH0CR_A> for bool {
 impl ETH0CR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ETH0CR_A {
+    pub const fn variant(&self) -> ETH0CR_A {
         match self.bits {
             false => ETH0CR_A::CONST_0,
             true => ETH0CR_A::CONST_1,
@@ -233,7 +233,7 @@ impl From<CCUCR_A> for bool {
 impl CCUCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCUCR_A {
+    pub const fn variant(&self) -> CCUCR_A {
         match self.bits {
             false => CCUCR_A::CONST_0,
             true => CCUCR_A::CONST_1,
@@ -286,7 +286,7 @@ impl From<WDTCR_A> for bool {
 impl WDTCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WDTCR_A {
+    pub const fn variant(&self) -> WDTCR_A {
         match self.bits {
             false => WDTCR_A::CONST_0,
             true => WDTCR_A::CONST_1,
@@ -389,7 +389,11 @@ impl W {
     pub fn wdtcr(&mut self) -> WDTCR_W<SLEEPCR_SPEC, 21> {
         WDTCR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

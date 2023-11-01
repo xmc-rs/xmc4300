@@ -35,7 +35,7 @@ impl crate::FieldSpec for SUPCNT_A {
 impl SUPCNT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SUPCNT_A> {
+    pub const fn variant(&self) -> Option<SUPCNT_A> {
         match self.bits {
             1 => Some(SUPCNT_A::VALUE1),
             2 => Some(SUPCNT_A::VALUE2),
@@ -118,7 +118,11 @@ impl W {
     pub fn supcnt(&mut self) -> SUPCNT_W<DOEPTSIZ0_SPEC, 29> {
         SUPCNT_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

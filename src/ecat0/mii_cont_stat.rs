@@ -21,7 +21,7 @@ impl From<W_EN_A> for bool {
 impl W_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> W_EN_A {
+    pub const fn variant(&self) -> W_EN_A {
         match self.bits {
             false => W_EN_A::VALUE1,
             true => W_EN_A::VALUE2,
@@ -57,7 +57,7 @@ impl From<MIC_PDI_A> for bool {
 impl MIC_PDI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MIC_PDI_A {
+    pub const fn variant(&self) -> MIC_PDI_A {
         match self.bits {
             false => MIC_PDI_A::VALUE1,
             true => MIC_PDI_A::VALUE2,
@@ -93,7 +93,7 @@ impl From<MI_LD_A> for bool {
 impl MI_LD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MI_LD_A {
+    pub const fn variant(&self) -> MI_LD_A {
         match self.bits {
             false => MI_LD_A::VALUE1,
             true => MI_LD_A::VALUE2,
@@ -137,7 +137,7 @@ impl crate::FieldSpec for CMD_REG_A {
 impl CMD_REG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CMD_REG_A> {
+    pub const fn variant(&self) -> Option<CMD_REG_A> {
         match self.bits {
             0 => Some(CMD_REG_A::VALUE1),
             1 => Some(CMD_REG_A::VALUE2),
@@ -203,7 +203,7 @@ impl From<ERROR_A> for bool {
 impl ERROR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERROR_A {
+    pub const fn variant(&self) -> ERROR_A {
         match self.bits {
             false => ERROR_A::VALUE1,
             true => ERROR_A::VALUE2,
@@ -239,7 +239,7 @@ impl From<BUSY_A> for bool {
 impl BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUSY_A {
+    pub const fn variant(&self) -> BUSY_A {
         match self.bits {
             false => BUSY_A::VALUE1,
             true => BUSY_A::VALUE2,
@@ -300,7 +300,11 @@ impl W {
     pub fn cmd_reg(&mut self) -> CMD_REG_W<MII_CONT_STAT_SPEC, 8> {
         CMD_REG_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.bits = bits;

@@ -425,7 +425,11 @@ impl W {
     pub fn rxicmperoim(&mut self) -> RXICMPEROIM_W<MMC_IPC_RECEIVE_INTERRUPT_MASK_SPEC, 29> {
         RXICMPEROIM_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

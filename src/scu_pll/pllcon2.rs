@@ -21,7 +21,7 @@ impl From<PINSEL_A> for bool {
 impl PINSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PINSEL_A {
+    pub const fn variant(&self) -> PINSEL_A {
         match self.bits {
             false => PINSEL_A::CONST_0,
             true => PINSEL_A::CONST_1,
@@ -74,7 +74,7 @@ impl From<K1INSEL_A> for bool {
 impl K1INSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> K1INSEL_A {
+    pub const fn variant(&self) -> K1INSEL_A {
         match self.bits {
             false => K1INSEL_A::CONST_0,
             true => K1INSEL_A::CONST_1,
@@ -133,7 +133,11 @@ impl W {
     pub fn k1insel(&mut self) -> K1INSEL_W<PLLCON2_SPEC, 8> {
         K1INSEL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

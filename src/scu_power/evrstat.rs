@@ -19,7 +19,7 @@ impl From<OV13_A> for bool {
 impl OV13_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OV13_A {
+    pub const fn variant(&self) -> OV13_A {
         match self.bits {
             false => OV13_A::CONST_0,
             true => OV13_A::CONST_1,

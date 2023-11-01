@@ -19,7 +19,7 @@ impl From<TO_PDI_A> for bool {
 impl TO_PDI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TO_PDI_A {
+    pub const fn variant(&self) -> TO_PDI_A {
         match self.bits {
             false => TO_PDI_A::VALUE1,
             true => TO_PDI_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<FORCE_A> for bool {
 impl FORCE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FORCE_A {
+    pub const fn variant(&self) -> FORCE_A {
         match self.bits {
             false => FORCE_A::VALUE1,
             true => FORCE_A::VALUE2,

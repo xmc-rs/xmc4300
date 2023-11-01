@@ -27,7 +27,7 @@ impl crate::FieldSpec for PTX_FSPC_AVAIL_A {
 impl PTX_FSPC_AVAIL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PTX_FSPC_AVAIL_A> {
+    pub const fn variant(&self) -> Option<PTX_FSPC_AVAIL_A> {
         match self.bits {
             0 => Some(PTX_FSPC_AVAIL_A::VALUE1),
             1 => Some(PTX_FSPC_AVAIL_A::VALUE2),
@@ -99,7 +99,7 @@ impl crate::FieldSpec for PTX_QSPC_AVAIL_A {
 impl PTX_QSPC_AVAIL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PTX_QSPC_AVAIL_A> {
+    pub const fn variant(&self) -> Option<PTX_QSPC_AVAIL_A> {
         match self.bits {
             0 => Some(PTX_QSPC_AVAIL_A::VALUE1),
             1 => Some(PTX_QSPC_AVAIL_A::VALUE2),
@@ -149,7 +149,11 @@ impl W {
     pub fn ptx_fspc_avail(&mut self) -> PTX_FSPC_AVAIL_W<HPTXSTS_SPEC, 0> {
         PTX_FSPC_AVAIL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

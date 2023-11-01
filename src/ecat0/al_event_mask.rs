@@ -21,7 +21,7 @@ impl From<AL_CE_MASK_A> for bool {
 impl AL_CE_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AL_CE_MASK_A {
+    pub const fn variant(&self) -> AL_CE_MASK_A {
         match self.bits {
             false => AL_CE_MASK_A::VALUE1,
             true => AL_CE_MASK_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<DC_LE_MASK_A> for bool {
 impl DC_LE_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DC_LE_MASK_A {
+    pub const fn variant(&self) -> DC_LE_MASK_A {
         match self.bits {
             false => DC_LE_MASK_A::VALUE1,
             true => DC_LE_MASK_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<ST_S0_MASK_A> for bool {
 impl ST_S0_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ST_S0_MASK_A {
+    pub const fn variant(&self) -> ST_S0_MASK_A {
         match self.bits {
             false => ST_S0_MASK_A::VALUE1,
             true => ST_S0_MASK_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<ST_S1_MASK_A> for bool {
 impl ST_S1_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ST_S1_MASK_A {
+    pub const fn variant(&self) -> ST_S1_MASK_A {
         match self.bits {
             false => ST_S1_MASK_A::VALUE1,
             true => ST_S1_MASK_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<SM_A_MASK_A> for bool {
 impl SM_A_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SM_A_MASK_A {
+    pub const fn variant(&self) -> SM_A_MASK_A {
         match self.bits {
             false => SM_A_MASK_A::VALUE1,
             true => SM_A_MASK_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<EEP_E_MASK_A> for bool {
 impl EEP_E_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EEP_E_MASK_A {
+    pub const fn variant(&self) -> EEP_E_MASK_A {
         match self.bits {
             false => EEP_E_MASK_A::VALUE1,
             true => EEP_E_MASK_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<WP_D_MASK_A> for bool {
 impl WP_D_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WP_D_MASK_A {
+    pub const fn variant(&self) -> WP_D_MASK_A {
         match self.bits {
             false => WP_D_MASK_A::VALUE1,
             true => WP_D_MASK_A::VALUE2,
@@ -392,7 +392,7 @@ impl From<SMI_0_MASK_A> for bool {
 impl SMI_0_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_0_MASK_A {
+    pub const fn variant(&self) -> SMI_0_MASK_A {
         match self.bits {
             false => SMI_0_MASK_A::VALUE1,
             true => SMI_0_MASK_A::VALUE2,
@@ -445,7 +445,7 @@ impl From<SMI_1_MASK_A> for bool {
 impl SMI_1_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_1_MASK_A {
+    pub const fn variant(&self) -> SMI_1_MASK_A {
         match self.bits {
             false => SMI_1_MASK_A::VALUE1,
             true => SMI_1_MASK_A::VALUE2,
@@ -498,7 +498,7 @@ impl From<SMI_2_MASK_A> for bool {
 impl SMI_2_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_2_MASK_A {
+    pub const fn variant(&self) -> SMI_2_MASK_A {
         match self.bits {
             false => SMI_2_MASK_A::VALUE1,
             true => SMI_2_MASK_A::VALUE2,
@@ -551,7 +551,7 @@ impl From<SMI_3_MASK_A> for bool {
 impl SMI_3_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_3_MASK_A {
+    pub const fn variant(&self) -> SMI_3_MASK_A {
         match self.bits {
             false => SMI_3_MASK_A::VALUE1,
             true => SMI_3_MASK_A::VALUE2,
@@ -604,7 +604,7 @@ impl From<SMI_4_MASK_A> for bool {
 impl SMI_4_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_4_MASK_A {
+    pub const fn variant(&self) -> SMI_4_MASK_A {
         match self.bits {
             false => SMI_4_MASK_A::VALUE1,
             true => SMI_4_MASK_A::VALUE2,
@@ -657,7 +657,7 @@ impl From<SMI_5_MASK_A> for bool {
 impl SMI_5_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_5_MASK_A {
+    pub const fn variant(&self) -> SMI_5_MASK_A {
         match self.bits {
             false => SMI_5_MASK_A::VALUE1,
             true => SMI_5_MASK_A::VALUE2,
@@ -710,7 +710,7 @@ impl From<SMI_6_MASK_A> for bool {
 impl SMI_6_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_6_MASK_A {
+    pub const fn variant(&self) -> SMI_6_MASK_A {
         match self.bits {
             false => SMI_6_MASK_A::VALUE1,
             true => SMI_6_MASK_A::VALUE2,
@@ -763,7 +763,7 @@ impl From<SMI_7_MASK_A> for bool {
 impl SMI_7_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_7_MASK_A {
+    pub const fn variant(&self) -> SMI_7_MASK_A {
         match self.bits {
             false => SMI_7_MASK_A::VALUE1,
             true => SMI_7_MASK_A::VALUE2,
@@ -816,7 +816,7 @@ impl From<SMI_8_MASK_A> for bool {
 impl SMI_8_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_8_MASK_A {
+    pub const fn variant(&self) -> SMI_8_MASK_A {
         match self.bits {
             false => SMI_8_MASK_A::VALUE1,
             true => SMI_8_MASK_A::VALUE2,
@@ -869,7 +869,7 @@ impl From<SMI_9_MASK_A> for bool {
 impl SMI_9_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_9_MASK_A {
+    pub const fn variant(&self) -> SMI_9_MASK_A {
         match self.bits {
             false => SMI_9_MASK_A::VALUE1,
             true => SMI_9_MASK_A::VALUE2,
@@ -922,7 +922,7 @@ impl From<SMI_10_MASK_A> for bool {
 impl SMI_10_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_10_MASK_A {
+    pub const fn variant(&self) -> SMI_10_MASK_A {
         match self.bits {
             false => SMI_10_MASK_A::VALUE1,
             true => SMI_10_MASK_A::VALUE2,
@@ -975,7 +975,7 @@ impl From<SMI_11_MASK_A> for bool {
 impl SMI_11_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_11_MASK_A {
+    pub const fn variant(&self) -> SMI_11_MASK_A {
         match self.bits {
             false => SMI_11_MASK_A::VALUE1,
             true => SMI_11_MASK_A::VALUE2,
@@ -1028,7 +1028,7 @@ impl From<SMI_12_MASK_A> for bool {
 impl SMI_12_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_12_MASK_A {
+    pub const fn variant(&self) -> SMI_12_MASK_A {
         match self.bits {
             false => SMI_12_MASK_A::VALUE1,
             true => SMI_12_MASK_A::VALUE2,
@@ -1081,7 +1081,7 @@ impl From<SMI_13_MASK_A> for bool {
 impl SMI_13_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_13_MASK_A {
+    pub const fn variant(&self) -> SMI_13_MASK_A {
         match self.bits {
             false => SMI_13_MASK_A::VALUE1,
             true => SMI_13_MASK_A::VALUE2,
@@ -1134,7 +1134,7 @@ impl From<SMI_14_MASK_A> for bool {
 impl SMI_14_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_14_MASK_A {
+    pub const fn variant(&self) -> SMI_14_MASK_A {
         match self.bits {
             false => SMI_14_MASK_A::VALUE1,
             true => SMI_14_MASK_A::VALUE2,
@@ -1187,7 +1187,7 @@ impl From<SMI_15_MASK_A> for bool {
 impl SMI_15_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMI_15_MASK_A {
+    pub const fn variant(&self) -> SMI_15_MASK_A {
         match self.bits {
             false => SMI_15_MASK_A::VALUE1,
             true => SMI_15_MASK_A::VALUE2,
@@ -1477,7 +1477,11 @@ impl W {
     pub fn smi_15_mask(&mut self) -> SMI_15_MASK_W<AL_EVENT_MASK_SPEC, 23> {
         SMI_15_MASK_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

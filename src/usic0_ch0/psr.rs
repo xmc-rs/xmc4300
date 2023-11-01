@@ -61,7 +61,7 @@ impl From<RSIF_A> for bool {
 impl RSIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RSIF_A {
+    pub const fn variant(&self) -> RSIF_A {
         match self.bits {
             false => RSIF_A::VALUE1,
             true => RSIF_A::VALUE2,
@@ -114,7 +114,7 @@ impl From<DLIF_A> for bool {
 impl DLIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DLIF_A {
+    pub const fn variant(&self) -> DLIF_A {
         match self.bits {
             false => DLIF_A::VALUE1,
             true => DLIF_A::VALUE2,
@@ -167,7 +167,7 @@ impl From<TSIF_A> for bool {
 impl TSIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TSIF_A {
+    pub const fn variant(&self) -> TSIF_A {
         match self.bits {
             false => TSIF_A::VALUE1,
             true => TSIF_A::VALUE2,
@@ -220,7 +220,7 @@ impl From<TBIF_A> for bool {
 impl TBIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TBIF_A {
+    pub const fn variant(&self) -> TBIF_A {
         match self.bits {
             false => TBIF_A::VALUE1,
             true => TBIF_A::VALUE2,
@@ -273,7 +273,7 @@ impl From<RIF_A> for bool {
 impl RIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RIF_A {
+    pub const fn variant(&self) -> RIF_A {
         match self.bits {
             false => RIF_A::VALUE1,
             true => RIF_A::VALUE2,
@@ -326,7 +326,7 @@ impl From<AIF_A> for bool {
 impl AIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AIF_A {
+    pub const fn variant(&self) -> AIF_A {
         match self.bits {
             false => AIF_A::VALUE1,
             true => AIF_A::VALUE2,
@@ -379,7 +379,7 @@ impl From<BRGIF_A> for bool {
 impl BRGIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BRGIF_A {
+    pub const fn variant(&self) -> BRGIF_A {
         match self.bits {
             false => BRGIF_A::VALUE1,
             true => BRGIF_A::VALUE2,
@@ -603,7 +603,11 @@ impl W {
     pub fn brgif(&mut self) -> BRGIF_W<PSR_SPEC, 16> {
         BRGIF_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

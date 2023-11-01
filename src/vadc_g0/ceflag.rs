@@ -21,7 +21,7 @@ impl From<CEV0_A> for bool {
 impl CEV0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CEV0_A {
+    pub const fn variant(&self) -> CEV0_A {
         match self.bits {
             false => CEV0_A::VALUE1,
             true => CEV0_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<CEV1_A> for bool {
 impl CEV1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CEV1_A {
+    pub const fn variant(&self) -> CEV1_A {
         match self.bits {
             false => CEV1_A::VALUE1,
             true => CEV1_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<CEV2_A> for bool {
 impl CEV2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CEV2_A {
+    pub const fn variant(&self) -> CEV2_A {
         match self.bits {
             false => CEV2_A::VALUE1,
             true => CEV2_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<CEV3_A> for bool {
 impl CEV3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CEV3_A {
+    pub const fn variant(&self) -> CEV3_A {
         match self.bits {
             false => CEV3_A::VALUE1,
             true => CEV3_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<CEV4_A> for bool {
 impl CEV4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CEV4_A {
+    pub const fn variant(&self) -> CEV4_A {
         match self.bits {
             false => CEV4_A::VALUE1,
             true => CEV4_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<CEV5_A> for bool {
 impl CEV5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CEV5_A {
+    pub const fn variant(&self) -> CEV5_A {
         match self.bits {
             false => CEV5_A::VALUE1,
             true => CEV5_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<CEV6_A> for bool {
 impl CEV6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CEV6_A {
+    pub const fn variant(&self) -> CEV6_A {
         match self.bits {
             false => CEV6_A::VALUE1,
             true => CEV6_A::VALUE2,
@@ -392,7 +392,7 @@ impl From<CEV7_A> for bool {
 impl CEV7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CEV7_A {
+    pub const fn variant(&self) -> CEV7_A {
         match self.bits {
             false => CEV7_A::VALUE1,
             true => CEV7_A::VALUE2,
@@ -517,7 +517,11 @@ impl W {
     pub fn cev7(&mut self) -> CEV7_W<CEFLAG_SPEC, 7> {
         CEV7_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

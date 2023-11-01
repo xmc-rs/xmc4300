@@ -19,7 +19,7 @@ impl From<ACT_A> for bool {
 impl ACT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACT_A {
+    pub const fn variant(&self) -> ACT_A {
         match self.bits {
             false => ACT_A::VALUE1,
             true => ACT_A::VALUE2,

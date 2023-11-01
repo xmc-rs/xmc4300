@@ -21,7 +21,7 @@ impl From<SD_BUS_POWER_A> for bool {
 impl SD_BUS_POWER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SD_BUS_POWER_A {
+    pub const fn variant(&self) -> SD_BUS_POWER_A {
         match self.bits {
             false => SD_BUS_POWER_A::VALUE1,
             true => SD_BUS_POWER_A::VALUE2,
@@ -76,7 +76,7 @@ impl crate::FieldSpec for SD_BUS_VOLTAGE_SEL_A {
 impl SD_BUS_VOLTAGE_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SD_BUS_VOLTAGE_SEL_A> {
+    pub const fn variant(&self) -> Option<SD_BUS_VOLTAGE_SEL_A> {
         match self.bits {
             7 => Some(SD_BUS_VOLTAGE_SEL_A::VALUE1),
             _ => None,
@@ -141,7 +141,11 @@ impl W {
     pub fn hardware_reset(&mut self) -> HARDWARE_RESET_W<POWER_CTRL_SPEC, 4> {
         HARDWARE_RESET_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

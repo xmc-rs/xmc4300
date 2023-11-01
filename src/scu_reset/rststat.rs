@@ -33,7 +33,7 @@ impl crate::FieldSpec for RSTSTAT_A {
 impl RSTSTAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RSTSTAT_A> {
+    pub const fn variant(&self) -> Option<RSTSTAT_A> {
         match self.bits {
             1 => Some(RSTSTAT_A::CONST_00000001),
             2 => Some(RSTSTAT_A::CONST_00000010),
@@ -100,7 +100,7 @@ impl From<HIBWK_A> for bool {
 impl HIBWK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HIBWK_A {
+    pub const fn variant(&self) -> HIBWK_A {
         match self.bits {
             false => HIBWK_A::CONST_0,
             true => HIBWK_A::CONST_1,
@@ -136,7 +136,7 @@ impl From<HIBRS_A> for bool {
 impl HIBRS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HIBRS_A {
+    pub const fn variant(&self) -> HIBRS_A {
         match self.bits {
             false => HIBRS_A::CONST_0,
             true => HIBRS_A::CONST_1,
@@ -172,7 +172,7 @@ impl From<LCKEN_A> for bool {
 impl LCKEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LCKEN_A {
+    pub const fn variant(&self) -> LCKEN_A {
         match self.bits {
             false => LCKEN_A::CONST_0,
             true => LCKEN_A::CONST_1,
@@ -208,7 +208,7 @@ impl From<ECAT0RS_A> for bool {
 impl ECAT0RS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ECAT0RS_A {
+    pub const fn variant(&self) -> ECAT0RS_A {
         match self.bits {
             false => ECAT0RS_A::CONST_0,
             true => ECAT0RS_A::CONST_1,

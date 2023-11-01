@@ -21,7 +21,7 @@ impl From<CMD_COMPLETE_EN_A> for bool {
 impl CMD_COMPLETE_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMD_COMPLETE_EN_A {
+    pub const fn variant(&self) -> CMD_COMPLETE_EN_A {
         match self.bits {
             false => CMD_COMPLETE_EN_A::VALUE1,
             true => CMD_COMPLETE_EN_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<TX_COMPLETE_EN_A> for bool {
 impl TX_COMPLETE_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_COMPLETE_EN_A {
+    pub const fn variant(&self) -> TX_COMPLETE_EN_A {
         match self.bits {
             false => TX_COMPLETE_EN_A::VALUE1,
             true => TX_COMPLETE_EN_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<BLOCK_GAP_EVENT_EN_A> for bool {
 impl BLOCK_GAP_EVENT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BLOCK_GAP_EVENT_EN_A {
+    pub const fn variant(&self) -> BLOCK_GAP_EVENT_EN_A {
         match self.bits {
             false => BLOCK_GAP_EVENT_EN_A::VALUE1,
             true => BLOCK_GAP_EVENT_EN_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<BUFF_WRITE_READY_EN_A> for bool {
 impl BUFF_WRITE_READY_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUFF_WRITE_READY_EN_A {
+    pub const fn variant(&self) -> BUFF_WRITE_READY_EN_A {
         match self.bits {
             false => BUFF_WRITE_READY_EN_A::VALUE1,
             true => BUFF_WRITE_READY_EN_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<BUFF_READ_READY_EN_A> for bool {
 impl BUFF_READ_READY_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUFF_READ_READY_EN_A {
+    pub const fn variant(&self) -> BUFF_READ_READY_EN_A {
         match self.bits {
             false => BUFF_READ_READY_EN_A::VALUE1,
             true => BUFF_READ_READY_EN_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<CARD_INS_EN_A> for bool {
 impl CARD_INS_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_INS_EN_A {
+    pub const fn variant(&self) -> CARD_INS_EN_A {
         match self.bits {
             false => CARD_INS_EN_A::VALUE1,
             true => CARD_INS_EN_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<CARD_REMOVAL_EN_A> for bool {
 impl CARD_REMOVAL_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_REMOVAL_EN_A {
+    pub const fn variant(&self) -> CARD_REMOVAL_EN_A {
         match self.bits {
             false => CARD_REMOVAL_EN_A::VALUE1,
             true => CARD_REMOVAL_EN_A::VALUE2,
@@ -392,7 +392,7 @@ impl From<CARD_INT_EN_A> for bool {
 impl CARD_INT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_INT_EN_A {
+    pub const fn variant(&self) -> CARD_INT_EN_A {
         match self.bits {
             false => CARD_INT_EN_A::VALUE1,
             true => CARD_INT_EN_A::VALUE2,
@@ -524,7 +524,11 @@ impl W {
     pub fn card_int_en(&mut self) -> CARD_INT_EN_W<EN_INT_SIGNAL_NORM_SPEC, 8> {
         CARD_INT_EN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.bits = bits;

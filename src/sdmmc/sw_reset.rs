@@ -25,7 +25,7 @@ impl From<SW_RST_CMD_LINE_A> for bool {
 impl SW_RST_CMD_LINE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SW_RST_CMD_LINE_A {
+    pub const fn variant(&self) -> SW_RST_CMD_LINE_A {
         match self.bits {
             false => SW_RST_CMD_LINE_A::VALUE1,
             true => SW_RST_CMD_LINE_A::VALUE2,
@@ -78,7 +78,7 @@ impl From<SW_RST_DAT_LINE_A> for bool {
 impl SW_RST_DAT_LINE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SW_RST_DAT_LINE_A {
+    pub const fn variant(&self) -> SW_RST_DAT_LINE_A {
         match self.bits {
             false => SW_RST_DAT_LINE_A::VALUE1,
             true => SW_RST_DAT_LINE_A::VALUE2,
@@ -148,7 +148,11 @@ impl W {
     pub fn sw_rst_dat_line(&mut self) -> SW_RST_DAT_LINE_W<SW_RESET_SPEC, 2> {
         SW_RST_DAT_LINE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

@@ -19,7 +19,7 @@ impl From<S0ROM_A> for bool {
 impl S0ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S0ROM_A {
+    pub const fn variant(&self) -> S0ROM_A {
         match self.bits {
             false => S0ROM_A::CONST_0,
             true => S0ROM_A::CONST_1,
@@ -55,7 +55,7 @@ impl From<S1ROM_A> for bool {
 impl S1ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S1ROM_A {
+    pub const fn variant(&self) -> S1ROM_A {
         match self.bits {
             false => S1ROM_A::CONST_0,
             true => S1ROM_A::CONST_1,
@@ -91,7 +91,7 @@ impl From<S2ROM_A> for bool {
 impl S2ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S2ROM_A {
+    pub const fn variant(&self) -> S2ROM_A {
         match self.bits {
             false => S2ROM_A::CONST_0,
             true => S2ROM_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<S3ROM_A> for bool {
 impl S3ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S3ROM_A {
+    pub const fn variant(&self) -> S3ROM_A {
         match self.bits {
             false => S3ROM_A::CONST_0,
             true => S3ROM_A::CONST_1,
@@ -163,7 +163,7 @@ impl From<S4ROM_A> for bool {
 impl S4ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S4ROM_A {
+    pub const fn variant(&self) -> S4ROM_A {
         match self.bits {
             false => S4ROM_A::CONST_0,
             true => S4ROM_A::CONST_1,
@@ -199,7 +199,7 @@ impl From<S5ROM_A> for bool {
 impl S5ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S5ROM_A {
+    pub const fn variant(&self) -> S5ROM_A {
         match self.bits {
             false => S5ROM_A::CONST_0,
             true => S5ROM_A::CONST_1,
@@ -235,7 +235,7 @@ impl From<S6ROM_A> for bool {
 impl S6ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S6ROM_A {
+    pub const fn variant(&self) -> S6ROM_A {
         match self.bits {
             false => S6ROM_A::CONST_0,
             true => S6ROM_A::CONST_1,
@@ -271,7 +271,7 @@ impl From<S7ROM_A> for bool {
 impl S7ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S7ROM_A {
+    pub const fn variant(&self) -> S7ROM_A {
         match self.bits {
             false => S7ROM_A::CONST_0,
             true => S7ROM_A::CONST_1,
@@ -307,7 +307,7 @@ impl From<S8ROM_A> for bool {
 impl S8ROM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S8ROM_A {
+    pub const fn variant(&self) -> S8ROM_A {
         match self.bits {
             false => S8ROM_A::CONST_0,
             true => S8ROM_A::CONST_1,

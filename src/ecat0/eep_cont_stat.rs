@@ -21,7 +21,7 @@ impl From<W_EN_A> for bool {
 impl W_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> W_EN_A {
+    pub const fn variant(&self) -> W_EN_A {
         match self.bits {
             false => W_EN_A::VALUE1,
             true => W_EN_A::VALUE2,
@@ -57,7 +57,7 @@ impl From<EMUL_A> for bool {
 impl EMUL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EMUL_A {
+    pub const fn variant(&self) -> EMUL_A {
         match self.bits {
             false => EMUL_A::VALUE1,
             true => EMUL_A::VALUE2,
@@ -93,7 +93,7 @@ impl From<BYTES_A> for bool {
 impl BYTES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BYTES_A {
+    pub const fn variant(&self) -> BYTES_A {
         match self.bits {
             false => BYTES_A::VALUE1,
             true => BYTES_A::VALUE2,
@@ -129,7 +129,7 @@ impl From<ALG_A> for bool {
 impl ALG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ALG_A {
+    pub const fn variant(&self) -> ALG_A {
         match self.bits {
             false => ALG_A::VALUE1,
             true => ALG_A::VALUE2,
@@ -173,7 +173,7 @@ impl crate::FieldSpec for CMD_REG_A {
 impl CMD_REG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CMD_REG_A> {
+    pub const fn variant(&self) -> Option<CMD_REG_A> {
         match self.bits {
             0 => Some(CMD_REG_A::VALUE1),
             1 => Some(CMD_REG_A::VALUE2),
@@ -250,7 +250,7 @@ impl From<ERROR_A> for bool {
 impl ERROR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERROR_A {
+    pub const fn variant(&self) -> ERROR_A {
         match self.bits {
             false => ERROR_A::VALUE1,
             true => ERROR_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<L_STAT_A> for bool {
 impl L_STAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> L_STAT_A {
+    pub const fn variant(&self) -> L_STAT_A {
         match self.bits {
             false => L_STAT_A::VALUE1,
             true => L_STAT_A::VALUE2,
@@ -322,7 +322,7 @@ impl From<ERROR_AC_A> for bool {
 impl ERROR_AC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERROR_AC_A {
+    pub const fn variant(&self) -> ERROR_AC_A {
         match self.bits {
             false => ERROR_AC_A::VALUE1,
             true => ERROR_AC_A::VALUE2,
@@ -375,7 +375,7 @@ impl From<ERROR_WE_A> for bool {
 impl ERROR_WE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERROR_WE_A {
+    pub const fn variant(&self) -> ERROR_WE_A {
         match self.bits {
             false => ERROR_WE_A::VALUE1,
             true => ERROR_WE_A::VALUE2,
@@ -411,7 +411,7 @@ impl From<BUSY_A> for bool {
 impl BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUSY_A {
+    pub const fn variant(&self) -> BUSY_A {
         match self.bits {
             false => BUSY_A::VALUE1,
             true => BUSY_A::VALUE2,
@@ -493,7 +493,11 @@ impl W {
     pub fn error_ac(&mut self) -> ERROR_AC_W<EEP_CONT_STAT_SPEC, 13> {
         ERROR_AC_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.bits = bits;

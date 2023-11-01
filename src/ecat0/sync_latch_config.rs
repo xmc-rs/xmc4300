@@ -27,7 +27,7 @@ impl crate::FieldSpec for SYNC0_POL_A {
 impl SYNC0_POL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SYNC0_POL_A {
+    pub const fn variant(&self) -> SYNC0_POL_A {
         match self.bits {
             0 => SYNC0_POL_A::VALUE1,
             1 => SYNC0_POL_A::VALUE2,
@@ -76,7 +76,7 @@ impl From<SL0_CNF_A> for bool {
 impl SL0_CNF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SL0_CNF_A {
+    pub const fn variant(&self) -> SL0_CNF_A {
         match self.bits {
             false => SL0_CNF_A::VALUE1,
             true => SL0_CNF_A::VALUE2,
@@ -112,7 +112,7 @@ impl From<S0_MAP_A> for bool {
 impl S0_MAP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S0_MAP_A {
+    pub const fn variant(&self) -> S0_MAP_A {
         match self.bits {
             false => S0_MAP_A::VALUE1,
             true => S0_MAP_A::VALUE2,
@@ -156,7 +156,7 @@ impl crate::FieldSpec for SYNC1_POL_A {
 impl SYNC1_POL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SYNC1_POL_A {
+    pub const fn variant(&self) -> SYNC1_POL_A {
         match self.bits {
             0 => SYNC1_POL_A::VALUE1,
             1 => SYNC1_POL_A::VALUE2,
@@ -205,7 +205,7 @@ impl From<SL1_CNF_A> for bool {
 impl SL1_CNF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SL1_CNF_A {
+    pub const fn variant(&self) -> SL1_CNF_A {
         match self.bits {
             false => SL1_CNF_A::VALUE1,
             true => SL1_CNF_A::VALUE2,
@@ -241,7 +241,7 @@ impl From<S1_MAP_A> for bool {
 impl S1_MAP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S1_MAP_A {
+    pub const fn variant(&self) -> S1_MAP_A {
         match self.bits {
             false => S1_MAP_A::VALUE1,
             true => S1_MAP_A::VALUE2,

@@ -23,7 +23,7 @@ impl crate::FieldSpec for MOD_TYPE_A {
 impl MOD_TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MOD_TYPE_A> {
+    pub const fn variant(&self) -> Option<MOD_TYPE_A> {
         match self.bits {
             192 => Some(MOD_TYPE_A::VALUE1),
             _ => None,

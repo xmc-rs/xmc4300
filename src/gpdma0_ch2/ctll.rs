@@ -39,7 +39,7 @@ impl crate::FieldSpec for DINC_A {
 impl DINC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DINC_A> {
+    pub const fn variant(&self) -> Option<DINC_A> {
         match self.bits {
             0 => Some(DINC_A::VALUE1),
             1 => Some(DINC_A::VALUE2),
@@ -111,7 +111,7 @@ impl crate::FieldSpec for SINC_A {
 impl SINC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SINC_A> {
+    pub const fn variant(&self) -> Option<SINC_A> {
         match self.bits {
             0 => Some(SINC_A::VALUE1),
             1 => Some(SINC_A::VALUE2),
@@ -261,7 +261,11 @@ impl W {
     pub fn tt_fc(&mut self) -> TT_FC_W<CTLL_SPEC, 20> {
         TT_FC_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

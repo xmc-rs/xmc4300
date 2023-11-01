@@ -29,7 +29,7 @@ impl crate::FieldSpec for LED_CODE_A {
 impl LED_CODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LED_CODE_A> {
+    pub const fn variant(&self) -> Option<LED_CODE_A> {
         match self.bits {
             0 => Some(LED_CODE_A::VALUE1),
             13 => Some(LED_CODE_A::VALUE2),
@@ -106,7 +106,7 @@ impl From<EN_OVERR_A> for bool {
 impl EN_OVERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EN_OVERR_A {
+    pub const fn variant(&self) -> EN_OVERR_A {
         match self.bits {
             false => EN_OVERR_A::VALUE1,
             true => EN_OVERR_A::VALUE2,
@@ -165,7 +165,11 @@ impl W {
     pub fn en_overr(&mut self) -> EN_OVERR_W<ERR_LED_SPEC, 4> {
         EN_OVERR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

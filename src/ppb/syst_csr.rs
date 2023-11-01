@@ -21,7 +21,7 @@ impl From<ENABLE_A> for bool {
 impl ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENABLE_A {
+    pub const fn variant(&self) -> ENABLE_A {
         match self.bits {
             false => ENABLE_A::VALUE1,
             true => ENABLE_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<TICKINT_A> for bool {
 impl TICKINT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TICKINT_A {
+    pub const fn variant(&self) -> TICKINT_A {
         match self.bits {
             false => TICKINT_A::VALUE1,
             true => TICKINT_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<CLKSOURCE_A> for bool {
 impl CLKSOURCE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLKSOURCE_A {
+    pub const fn variant(&self) -> CLKSOURCE_A {
         match self.bits {
             false => CLKSOURCE_A::VALUE1,
             true => CLKSOURCE_A::VALUE2,
@@ -212,7 +212,11 @@ impl W {
     pub fn countflag(&mut self) -> COUNTFLAG_W<SYST_CSR_SPEC, 16> {
         COUNTFLAG_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -21,7 +21,7 @@ impl From<PSL11_A> for bool {
 impl PSL11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PSL11_A {
+    pub const fn variant(&self) -> PSL11_A {
         match self.bits {
             false => PSL11_A::VALUE1,
             true => PSL11_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<PSL12_A> for bool {
 impl PSL12_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PSL12_A {
+    pub const fn variant(&self) -> PSL12_A {
         match self.bits {
             false => PSL12_A::VALUE1,
             true => PSL12_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<PSL21_A> for bool {
 impl PSL21_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PSL21_A {
+    pub const fn variant(&self) -> PSL21_A {
         match self.bits {
             false => PSL21_A::VALUE1,
             true => PSL21_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<PSL22_A> for bool {
 impl PSL22_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PSL22_A {
+    pub const fn variant(&self) -> PSL22_A {
         match self.bits {
             false => PSL22_A::VALUE1,
             true => PSL22_A::VALUE2,
@@ -261,7 +261,11 @@ impl W {
     pub fn psl22(&mut self) -> PSL22_W<PSL_SPEC, 3> {
         PSL22_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

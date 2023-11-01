@@ -21,7 +21,7 @@ impl From<PPS0_A> for bool {
 impl PPS0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS0_A {
+    pub const fn variant(&self) -> PPS0_A {
         match self.bits {
             false => PPS0_A::CONST_0,
             true => PPS0_A::CONST_1,
@@ -74,7 +74,7 @@ impl From<PPS1_A> for bool {
 impl PPS1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS1_A {
+    pub const fn variant(&self) -> PPS1_A {
         match self.bits {
             false => PPS1_A::CONST_0,
             true => PPS1_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<PPS2_A> for bool {
 impl PPS2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS2_A {
+    pub const fn variant(&self) -> PPS2_A {
         match self.bits {
             false => PPS2_A::CONST_0,
             true => PPS2_A::CONST_1,
@@ -180,7 +180,7 @@ impl From<PPS3_A> for bool {
 impl PPS3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS3_A {
+    pub const fn variant(&self) -> PPS3_A {
         match self.bits {
             false => PPS3_A::CONST_0,
             true => PPS3_A::CONST_1,
@@ -233,7 +233,7 @@ impl From<PPS4_A> for bool {
 impl PPS4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS4_A {
+    pub const fn variant(&self) -> PPS4_A {
         match self.bits {
             false => PPS4_A::CONST_0,
             true => PPS4_A::CONST_1,
@@ -286,7 +286,7 @@ impl From<PPS5_A> for bool {
 impl PPS5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS5_A {
+    pub const fn variant(&self) -> PPS5_A {
         match self.bits {
             false => PPS5_A::CONST_0,
             true => PPS5_A::CONST_1,
@@ -339,7 +339,7 @@ impl From<PPS6_A> for bool {
 impl PPS6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS6_A {
+    pub const fn variant(&self) -> PPS6_A {
         match self.bits {
             false => PPS6_A::CONST_0,
             true => PPS6_A::CONST_1,
@@ -392,7 +392,7 @@ impl From<PPS7_A> for bool {
 impl PPS7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS7_A {
+    pub const fn variant(&self) -> PPS7_A {
         match self.bits {
             false => PPS7_A::CONST_0,
             true => PPS7_A::CONST_1,
@@ -445,7 +445,7 @@ impl From<PPS8_A> for bool {
 impl PPS8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS8_A {
+    pub const fn variant(&self) -> PPS8_A {
         match self.bits {
             false => PPS8_A::CONST_0,
             true => PPS8_A::CONST_1,
@@ -498,7 +498,7 @@ impl From<PPS9_A> for bool {
 impl PPS9_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS9_A {
+    pub const fn variant(&self) -> PPS9_A {
         match self.bits {
             false => PPS9_A::CONST_0,
             true => PPS9_A::CONST_1,
@@ -551,7 +551,7 @@ impl From<PPS10_A> for bool {
 impl PPS10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS10_A {
+    pub const fn variant(&self) -> PPS10_A {
         match self.bits {
             false => PPS10_A::CONST_0,
             true => PPS10_A::CONST_1,
@@ -604,7 +604,7 @@ impl From<PPS11_A> for bool {
 impl PPS11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS11_A {
+    pub const fn variant(&self) -> PPS11_A {
         match self.bits {
             false => PPS11_A::CONST_0,
             true => PPS11_A::CONST_1,
@@ -657,7 +657,7 @@ impl From<PPS12_A> for bool {
 impl PPS12_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS12_A {
+    pub const fn variant(&self) -> PPS12_A {
         match self.bits {
             false => PPS12_A::CONST_0,
             true => PPS12_A::CONST_1,
@@ -710,7 +710,7 @@ impl From<PPS13_A> for bool {
 impl PPS13_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS13_A {
+    pub const fn variant(&self) -> PPS13_A {
         match self.bits {
             false => PPS13_A::CONST_0,
             true => PPS13_A::CONST_1,
@@ -763,7 +763,7 @@ impl From<PPS14_A> for bool {
 impl PPS14_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS14_A {
+    pub const fn variant(&self) -> PPS14_A {
         match self.bits {
             false => PPS14_A::CONST_0,
             true => PPS14_A::CONST_1,
@@ -816,7 +816,7 @@ impl From<PPS15_A> for bool {
 impl PPS15_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPS15_A {
+    pub const fn variant(&self) -> PPS15_A {
         match self.bits {
             false => PPS15_A::CONST_0,
             true => PPS15_A::CONST_1,
@@ -1029,7 +1029,11 @@ impl W {
     pub fn pps15(&mut self) -> PPS15_W<PPS_SPEC, 15> {
         PPS15_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

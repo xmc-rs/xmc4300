@@ -21,7 +21,7 @@ impl From<PWD_A> for bool {
 impl PWD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PWD_A {
+    pub const fn variant(&self) -> PWD_A {
         match self.bits {
             false => PWD_A::CONST_0,
             true => PWD_A::CONST_1,
@@ -166,7 +166,11 @@ impl W {
     pub fn bgtrim(&mut self) -> BGTRIM_W<DTSCON_SPEC, 20> {
         BGTRIM_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

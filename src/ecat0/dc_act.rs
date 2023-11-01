@@ -21,7 +21,7 @@ impl From<SYNC_OUT_A> for bool {
 impl SYNC_OUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SYNC_OUT_A {
+    pub const fn variant(&self) -> SYNC_OUT_A {
         match self.bits {
             false => SYNC_OUT_A::VALUE1,
             true => SYNC_OUT_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<SYNC_0_A> for bool {
 impl SYNC_0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SYNC_0_A {
+    pub const fn variant(&self) -> SYNC_0_A {
         match self.bits {
             false => SYNC_0_A::VALUE1,
             true => SYNC_0_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<SYNC_1_A> for bool {
 impl SYNC_1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SYNC_1_A {
+    pub const fn variant(&self) -> SYNC_1_A {
         match self.bits {
             false => SYNC_1_A::VALUE1,
             true => SYNC_1_A::VALUE2,
@@ -197,7 +197,11 @@ impl W {
     pub fn sync_1(&mut self) -> SYNC_1_W<DC_ACT_SPEC, 2> {
         SYNC_1_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

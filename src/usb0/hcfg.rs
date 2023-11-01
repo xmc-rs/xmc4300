@@ -23,7 +23,7 @@ impl crate::FieldSpec for FSLSPCLK_SEL_A {
 impl FSLSPCLK_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FSLSPCLK_SEL_A> {
+    pub const fn variant(&self) -> Option<FSLSPCLK_SEL_A> {
         match self.bits {
             1 => Some(FSLSPCLK_SEL_A::VALUE1),
             _ => None,
@@ -67,7 +67,7 @@ impl From<FSLSSUPP_A> for bool {
 impl FSLSSUPP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FSLSSUPP_A {
+    pub const fn variant(&self) -> FSLSSUPP_A {
         match self.bits {
             false => FSLSSUPP_A::VALUE1,
             true => FSLSSUPP_A::VALUE2,
@@ -132,7 +132,7 @@ impl crate::FieldSpec for FR_LIST_EN_A {
 impl FR_LIST_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FR_LIST_EN_A {
+    pub const fn variant(&self) -> FR_LIST_EN_A {
         match self.bits {
             0 => FR_LIST_EN_A::VALUE1,
             1 => FR_LIST_EN_A::VALUE2,
@@ -252,7 +252,11 @@ impl W {
     pub fn per_sched_ena(&mut self) -> PER_SCHED_ENA_W<HCFG_SPEC, 26> {
         PER_SCHED_ENA_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

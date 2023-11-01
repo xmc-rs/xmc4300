@@ -21,7 +21,7 @@ impl From<COMMAND_INHIBIT_DAT_A> for bool {
 impl COMMAND_INHIBIT_DAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> COMMAND_INHIBIT_DAT_A {
+    pub const fn variant(&self) -> COMMAND_INHIBIT_DAT_A {
         match self.bits {
             false => COMMAND_INHIBIT_DAT_A::VALUE1,
             true => COMMAND_INHIBIT_DAT_A::VALUE2,
@@ -57,7 +57,7 @@ impl From<DAT_LINE_ACTIVE_A> for bool {
 impl DAT_LINE_ACTIVE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DAT_LINE_ACTIVE_A {
+    pub const fn variant(&self) -> DAT_LINE_ACTIVE_A {
         match self.bits {
             false => DAT_LINE_ACTIVE_A::VALUE1,
             true => DAT_LINE_ACTIVE_A::VALUE2,
@@ -93,7 +93,7 @@ impl From<WRITE_TRANSFER_ACTIVE_A> for bool {
 impl WRITE_TRANSFER_ACTIVE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WRITE_TRANSFER_ACTIVE_A {
+    pub const fn variant(&self) -> WRITE_TRANSFER_ACTIVE_A {
         match self.bits {
             false => WRITE_TRANSFER_ACTIVE_A::VALUE1,
             true => WRITE_TRANSFER_ACTIVE_A::VALUE2,
@@ -129,7 +129,7 @@ impl From<READ_TRANSFER_ACTIVE_A> for bool {
 impl READ_TRANSFER_ACTIVE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> READ_TRANSFER_ACTIVE_A {
+    pub const fn variant(&self) -> READ_TRANSFER_ACTIVE_A {
         match self.bits {
             false => READ_TRANSFER_ACTIVE_A::VALUE1,
             true => READ_TRANSFER_ACTIVE_A::VALUE2,
@@ -165,7 +165,7 @@ impl From<BUFFER_WRITE_ENABLE_A> for bool {
 impl BUFFER_WRITE_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUFFER_WRITE_ENABLE_A {
+    pub const fn variant(&self) -> BUFFER_WRITE_ENABLE_A {
         match self.bits {
             false => BUFFER_WRITE_ENABLE_A::VALUE1,
             true => BUFFER_WRITE_ENABLE_A::VALUE2,
@@ -201,7 +201,7 @@ impl From<BUFFER_READ_ENABLE_A> for bool {
 impl BUFFER_READ_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUFFER_READ_ENABLE_A {
+    pub const fn variant(&self) -> BUFFER_READ_ENABLE_A {
         match self.bits {
             false => BUFFER_READ_ENABLE_A::VALUE1,
             true => BUFFER_READ_ENABLE_A::VALUE2,
@@ -237,7 +237,7 @@ impl From<CARD_INSERTED_A> for bool {
 impl CARD_INSERTED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_INSERTED_A {
+    pub const fn variant(&self) -> CARD_INSERTED_A {
         match self.bits {
             false => CARD_INSERTED_A::VALUE1,
             true => CARD_INSERTED_A::VALUE2,
@@ -273,7 +273,7 @@ impl From<CARD_STATE_STABLE_A> for bool {
 impl CARD_STATE_STABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_STATE_STABLE_A {
+    pub const fn variant(&self) -> CARD_STATE_STABLE_A {
         match self.bits {
             false => CARD_STATE_STABLE_A::VALUE1,
             true => CARD_STATE_STABLE_A::VALUE2,
@@ -309,7 +309,7 @@ impl From<CARD_DETECT_PIN_LEVEL_A> for bool {
 impl CARD_DETECT_PIN_LEVEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_DETECT_PIN_LEVEL_A {
+    pub const fn variant(&self) -> CARD_DETECT_PIN_LEVEL_A {
         match self.bits {
             false => CARD_DETECT_PIN_LEVEL_A::VALUE1,
             true => CARD_DETECT_PIN_LEVEL_A::VALUE2,
@@ -345,7 +345,7 @@ impl From<WRITE_PROTECT_PIN_LEVEL_A> for bool {
 impl WRITE_PROTECT_PIN_LEVEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WRITE_PROTECT_PIN_LEVEL_A {
+    pub const fn variant(&self) -> WRITE_PROTECT_PIN_LEVEL_A {
         match self.bits {
             false => WRITE_PROTECT_PIN_LEVEL_A::VALUE1,
             true => WRITE_PROTECT_PIN_LEVEL_A::VALUE2,

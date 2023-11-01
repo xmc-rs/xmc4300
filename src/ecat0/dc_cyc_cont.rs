@@ -19,7 +19,7 @@ impl From<SYNC_A> for bool {
 impl SYNC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SYNC_A {
+    pub const fn variant(&self) -> SYNC_A {
         match self.bits {
             false => SYNC_A::VALUE1,
             true => SYNC_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<LATCH_U0_A> for bool {
 impl LATCH_U0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LATCH_U0_A {
+    pub const fn variant(&self) -> LATCH_U0_A {
         match self.bits {
             false => LATCH_U0_A::VALUE1,
             true => LATCH_U0_A::VALUE2,
@@ -91,7 +91,7 @@ impl From<LATCH_U1_A> for bool {
 impl LATCH_U1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LATCH_U1_A {
+    pub const fn variant(&self) -> LATCH_U1_A {
         match self.bits {
             false => LATCH_U1_A::VALUE1,
             true => LATCH_U1_A::VALUE2,

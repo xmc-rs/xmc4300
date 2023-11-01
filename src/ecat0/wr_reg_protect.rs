@@ -19,7 +19,7 @@ impl From<WR_REG_P_A> for bool {
 impl WR_REG_P_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WR_REG_P_A {
+    pub const fn variant(&self) -> WR_REG_P_A {
         match self.bits {
             false => WR_REG_P_A::VALUE1,
             true => WR_REG_P_A::VALUE2,

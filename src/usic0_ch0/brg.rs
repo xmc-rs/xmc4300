@@ -27,7 +27,7 @@ impl crate::FieldSpec for CLKSEL_A {
 impl CLKSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CLKSEL_A> {
+    pub const fn variant(&self) -> Option<CLKSEL_A> {
         match self.bits {
             0 => Some(CLKSEL_A::VALUE1),
             2 => Some(CLKSEL_A::VALUE3),
@@ -93,7 +93,7 @@ impl From<TMEN_A> for bool {
 impl TMEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TMEN_A {
+    pub const fn variant(&self) -> TMEN_A {
         match self.bits {
             false => TMEN_A::VALUE1,
             true => TMEN_A::VALUE2,
@@ -146,7 +146,7 @@ impl From<PPPEN_A> for bool {
 impl PPPEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPPEN_A {
+    pub const fn variant(&self) -> PPPEN_A {
         match self.bits {
             false => PPPEN_A::VALUE1,
             true => PPPEN_A::VALUE2,
@@ -207,7 +207,7 @@ impl crate::FieldSpec for CTQSEL_A {
 impl CTQSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CTQSEL_A {
+    pub const fn variant(&self) -> CTQSEL_A {
         match self.bits {
             0 => CTQSEL_A::VALUE1,
             1 => CTQSEL_A::VALUE2,
@@ -296,7 +296,7 @@ impl From<SCLKOSEL_A> for bool {
 impl SCLKOSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SCLKOSEL_A {
+    pub const fn variant(&self) -> SCLKOSEL_A {
         match self.bits {
             false => SCLKOSEL_A::VALUE1,
             true => SCLKOSEL_A::VALUE2,
@@ -349,7 +349,7 @@ impl From<MCLKCFG_A> for bool {
 impl MCLKCFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MCLKCFG_A {
+    pub const fn variant(&self) -> MCLKCFG_A {
         match self.bits {
             false => MCLKCFG_A::VALUE1,
             true => MCLKCFG_A::VALUE2,
@@ -410,7 +410,7 @@ impl crate::FieldSpec for SCLKCFG_A {
 impl SCLKCFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SCLKCFG_A {
+    pub const fn variant(&self) -> SCLKCFG_A {
         match self.bits {
             0 => SCLKCFG_A::VALUE1,
             1 => SCLKCFG_A::VALUE2,
@@ -581,7 +581,11 @@ impl W {
     pub fn sclkcfg(&mut self) -> SCLKCFG_W<BRG_SPEC, 30> {
         SCLKCFG_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -19,7 +19,7 @@ impl From<PARERR_A> for bool {
 impl PARERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PARERR_A {
+    pub const fn variant(&self) -> PARERR_A {
         match self.bits {
             false => PARERR_A::VALUE1,
             true => PARERR_A::VALUE2,

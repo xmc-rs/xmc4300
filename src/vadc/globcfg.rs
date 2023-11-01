@@ -29,7 +29,7 @@ impl crate::FieldSpec for DIVA_A {
 impl DIVA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DIVA_A> {
+    pub const fn variant(&self) -> Option<DIVA_A> {
         match self.bits {
             0 => Some(DIVA_A::VALUE1),
             1 => Some(DIVA_A::VALUE2),
@@ -106,7 +106,7 @@ impl From<DCMSB_A> for bool {
 impl DCMSB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DCMSB_A {
+    pub const fn variant(&self) -> DCMSB_A {
         match self.bits {
             false => DCMSB_A::VALUE1,
             true => DCMSB_A::VALUE2,
@@ -167,7 +167,7 @@ impl crate::FieldSpec for DIVD_A {
 impl DIVD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIVD_A {
+    pub const fn variant(&self) -> DIVD_A {
         match self.bits {
             0 => DIVD_A::VALUE1,
             1 => DIVD_A::VALUE2,
@@ -275,7 +275,7 @@ impl From<DPCAL0_A> for bool {
 impl DPCAL0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DPCAL0_A {
+    pub const fn variant(&self) -> DPCAL0_A {
         match self.bits {
             false => DPCAL0_A::VALUE1,
             true => DPCAL0_A::VALUE2,
@@ -328,7 +328,7 @@ impl From<DPCAL1_A> for bool {
 impl DPCAL1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DPCAL1_A {
+    pub const fn variant(&self) -> DPCAL1_A {
         match self.bits {
             false => DPCAL1_A::VALUE1,
             true => DPCAL1_A::VALUE2,
@@ -381,7 +381,7 @@ impl From<DPCAL2_A> for bool {
 impl DPCAL2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DPCAL2_A {
+    pub const fn variant(&self) -> DPCAL2_A {
         match self.bits {
             false => DPCAL2_A::VALUE1,
             true => DPCAL2_A::VALUE2,
@@ -434,7 +434,7 @@ impl From<DPCAL3_A> for bool {
 impl DPCAL3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DPCAL3_A {
+    pub const fn variant(&self) -> DPCAL3_A {
         match self.bits {
             false => DPCAL3_A::VALUE1,
             true => DPCAL3_A::VALUE2,
@@ -591,7 +591,11 @@ impl W {
     pub fn sucal(&mut self) -> SUCAL_W<GLOBCFG_SPEC, 31> {
         SUCAL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -47,7 +47,7 @@ impl crate::FieldSpec for TX_FNUM_A {
 impl TX_FNUM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TX_FNUM_A> {
+    pub const fn variant(&self) -> Option<TX_FNUM_A> {
         match self.bits {
             0 => Some(TX_FNUM_A::VALUE1),
             1 => Some(TX_FNUM_A::VALUE2),
@@ -188,7 +188,11 @@ impl W {
     pub fn tx_fnum(&mut self) -> TX_FNUM_W<GRSTCTL_SPEC, 6> {
         TX_FNUM_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -29,7 +29,7 @@ impl crate::FieldSpec for BFM0_A {
 impl BFM0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BFM0_A> {
+    pub const fn variant(&self) -> Option<BFM0_A> {
         match self.bits {
             0 => Some(BFM0_A::VALUE1),
             1 => Some(BFM0_A::VALUE2),
@@ -114,7 +114,7 @@ impl crate::FieldSpec for BFM1_A {
 impl BFM1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BFM1_A> {
+    pub const fn variant(&self) -> Option<BFM1_A> {
         match self.bits {
             0 => Some(BFM1_A::VALUE1),
             1 => Some(BFM1_A::VALUE2),
@@ -199,7 +199,7 @@ impl crate::FieldSpec for BFM2_A {
 impl BFM2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BFM2_A> {
+    pub const fn variant(&self) -> Option<BFM2_A> {
         match self.bits {
             0 => Some(BFM2_A::VALUE1),
             1 => Some(BFM2_A::VALUE2),
@@ -284,7 +284,7 @@ impl crate::FieldSpec for BFM3_A {
 impl BFM3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BFM3_A> {
+    pub const fn variant(&self) -> Option<BFM3_A> {
         match self.bits {
             0 => Some(BFM3_A::VALUE1),
             1 => Some(BFM3_A::VALUE2),
@@ -389,7 +389,11 @@ impl W {
     pub fn bfm3(&mut self) -> BFM3_W<BFLC_SPEC, 12> {
         BFM3_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

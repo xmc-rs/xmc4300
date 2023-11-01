@@ -25,7 +25,7 @@ impl crate::FieldSpec for INEPTX_FSPC_AVAIL_A {
 impl INEPTX_FSPC_AVAIL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<INEPTX_FSPC_AVAIL_A> {
+    pub const fn variant(&self) -> Option<INEPTX_FSPC_AVAIL_A> {
         match self.bits {
             0 => Some(INEPTX_FSPC_AVAIL_A::VALUE1),
             1 => Some(INEPTX_FSPC_AVAIL_A::VALUE2),

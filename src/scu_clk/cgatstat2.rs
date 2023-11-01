@@ -19,7 +19,7 @@ impl From<WDT_A> for bool {
 impl WDT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WDT_A {
+    pub const fn variant(&self) -> WDT_A {
         match self.bits {
             false => WDT_A::CONST_0,
             true => WDT_A::CONST_1,
@@ -55,7 +55,7 @@ impl From<ETH0_A> for bool {
 impl ETH0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ETH0_A {
+    pub const fn variant(&self) -> ETH0_A {
         match self.bits {
             false => ETH0_A::CONST_0,
             true => ETH0_A::CONST_1,
@@ -91,7 +91,7 @@ impl From<DMA0_A> for bool {
 impl DMA0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DMA0_A {
+    pub const fn variant(&self) -> DMA0_A {
         match self.bits {
             false => DMA0_A::CONST_0,
             true => DMA0_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<FCE_A> for bool {
 impl FCE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FCE_A {
+    pub const fn variant(&self) -> FCE_A {
         match self.bits {
             false => FCE_A::CONST_0,
             true => FCE_A::CONST_1,
@@ -163,7 +163,7 @@ impl From<USB_A> for bool {
 impl USB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USB_A {
+    pub const fn variant(&self) -> USB_A {
         match self.bits {
             false => USB_A::CONST_0,
             true => USB_A::CONST_1,
@@ -199,7 +199,7 @@ impl From<ECAT0_A> for bool {
 impl ECAT0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ECAT0_A {
+    pub const fn variant(&self) -> ECAT0_A {
         match self.bits {
             false => ECAT0_A::CONST_0,
             true => ECAT0_A::CONST_1,

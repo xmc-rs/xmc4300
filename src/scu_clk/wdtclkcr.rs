@@ -31,7 +31,7 @@ impl crate::FieldSpec for WDTSEL_A {
 impl WDTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<WDTSEL_A> {
+    pub const fn variant(&self) -> Option<WDTSEL_A> {
         match self.bits {
             0 => Some(WDTSEL_A::CONST_00),
             1 => Some(WDTSEL_A::CONST_01),
@@ -103,7 +103,11 @@ impl W {
     pub fn wdtsel(&mut self) -> WDTSEL_W<WDTCLKCR_SPEC, 16> {
         WDTSEL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

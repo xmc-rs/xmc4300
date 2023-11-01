@@ -25,7 +25,7 @@ impl crate::FieldSpec for R_PREF_A {
 impl R_PREF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<R_PREF_A> {
+    pub const fn variant(&self) -> Option<R_PREF_A> {
         match self.bits {
             0 => Some(R_PREF_A::VALUE1),
             1 => Some(R_PREF_A::VALUE2),
@@ -74,7 +74,7 @@ impl crate::FieldSpec for SUB_TYPE_A {
 impl SUB_TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SUB_TYPE_A> {
+    pub const fn variant(&self) -> Option<SUB_TYPE_A> {
         match self.bits {
             0 => Some(SUB_TYPE_A::VALUE1),
             1 => Some(SUB_TYPE_A::VALUE2),

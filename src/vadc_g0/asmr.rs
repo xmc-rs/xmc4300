@@ -29,7 +29,7 @@ impl crate::FieldSpec for ENGT_A {
 impl ENGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENGT_A {
+    pub const fn variant(&self) -> ENGT_A {
         match self.bits {
             0 => ENGT_A::VALUE1,
             1 => ENGT_A::VALUE2,
@@ -106,7 +106,7 @@ impl From<ENTR_A> for bool {
 impl ENTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENTR_A {
+    pub const fn variant(&self) -> ENTR_A {
         match self.bits {
             false => ENTR_A::VALUE1,
             true => ENTR_A::VALUE2,
@@ -159,7 +159,7 @@ impl From<ENSI_A> for bool {
 impl ENSI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENSI_A {
+    pub const fn variant(&self) -> ENSI_A {
         match self.bits {
             false => ENSI_A::VALUE1,
             true => ENSI_A::VALUE2,
@@ -212,7 +212,7 @@ impl From<SCAN_A> for bool {
 impl SCAN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SCAN_A {
+    pub const fn variant(&self) -> SCAN_A {
         match self.bits {
             false => SCAN_A::VALUE1,
             true => SCAN_A::VALUE2,
@@ -265,7 +265,7 @@ impl From<LDM_A> for bool {
 impl LDM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LDM_A {
+    pub const fn variant(&self) -> LDM_A {
         match self.bits {
             false => LDM_A::VALUE1,
             true => LDM_A::VALUE2,
@@ -318,7 +318,7 @@ impl From<REQGT_A> for bool {
 impl REQGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REQGT_A {
+    pub const fn variant(&self) -> REQGT_A {
         match self.bits {
             false => REQGT_A::VALUE1,
             true => REQGT_A::VALUE2,
@@ -416,7 +416,7 @@ impl From<RPTDIS_A> for bool {
 impl RPTDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RPTDIS_A {
+    pub const fn variant(&self) -> RPTDIS_A {
         match self.bits {
             false => RPTDIS_A::VALUE1,
             true => RPTDIS_A::VALUE2,
@@ -536,7 +536,11 @@ impl W {
     pub fn rptdis(&mut self) -> RPTDIS_W<ASMR_SPEC, 16> {
         RPTDIS_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

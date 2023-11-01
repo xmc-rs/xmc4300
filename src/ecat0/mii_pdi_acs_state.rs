@@ -21,7 +21,7 @@ impl From<ACS_MII_BY_PDI_A> for bool {
 impl ACS_MII_BY_PDI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACS_MII_BY_PDI_A {
+    pub const fn variant(&self) -> ACS_MII_BY_PDI_A {
         match self.bits {
             false => ACS_MII_BY_PDI_A::VALUE1,
             true => ACS_MII_BY_PDI_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<FORCE_PDI_ACS_S_A> for bool {
 impl FORCE_PDI_ACS_S_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FORCE_PDI_ACS_S_A {
+    pub const fn variant(&self) -> FORCE_PDI_ACS_S_A {
         match self.bits {
             false => FORCE_PDI_ACS_S_A::VALUE1,
             true => FORCE_PDI_ACS_S_A::VALUE2,
@@ -110,7 +110,11 @@ impl W {
     pub fn acs_mii_by_pdi(&mut self) -> ACS_MII_BY_PDI_W<MII_PDI_ACS_STATE_SPEC, 0> {
         ACS_MII_BY_PDI_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

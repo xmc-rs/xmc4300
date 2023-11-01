@@ -25,7 +25,7 @@ impl crate::FieldSpec for EEPROM_ADDR_A {
 impl EEPROM_ADDR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<EEPROM_ADDR_A> {
+    pub const fn variant(&self) -> Option<EEPROM_ADDR_A> {
         match self.bits {
             0 => Some(EEPROM_ADDR_A::VALUE1),
             1 => Some(EEPROM_ADDR_A::VALUE2),
@@ -75,7 +75,11 @@ impl W {
     pub fn eeprom_addr(&mut self) -> EEPROM_ADDR_W<EEP_ADR_SPEC, 0> {
         EEPROM_ADDR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

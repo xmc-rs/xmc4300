@@ -21,7 +21,7 @@ impl From<DMA_EN_A> for bool {
 impl DMA_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DMA_EN_A {
+    pub const fn variant(&self) -> DMA_EN_A {
         match self.bits {
             false => DMA_EN_A::VALUE1,
             true => DMA_EN_A::VALUE2,
@@ -69,7 +69,11 @@ impl W {
     pub fn dma_en(&mut self) -> DMA_EN_W<DMACFGREG_SPEC, 0> {
         DMA_EN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -21,7 +21,7 @@ impl crate::FieldSpec for REVISION_A {
 impl REVISION_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<REVISION_A> {
+    pub const fn variant(&self) -> Option<REVISION_A> {
         match self.bits {
             1 => Some(REVISION_A::VALUE1),
             _ => None,
@@ -54,7 +54,7 @@ impl crate::FieldSpec for PART_NO_A {
 impl PART_NO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PART_NO_A> {
+    pub const fn variant(&self) -> Option<PART_NO_A> {
         match self.bits {
             3108 => Some(PART_NO_A::VALUE1),
             _ => None,
@@ -89,7 +89,7 @@ impl crate::FieldSpec for VARIANT_A {
 impl VARIANT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<VARIANT_A> {
+    pub const fn variant(&self) -> Option<VARIANT_A> {
         match self.bits {
             0 => Some(VARIANT_A::VALUE1),
             _ => None,
@@ -122,7 +122,7 @@ impl crate::FieldSpec for IMPLEMENTER_A {
 impl IMPLEMENTER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<IMPLEMENTER_A> {
+    pub const fn variant(&self) -> Option<IMPLEMENTER_A> {
         match self.bits {
             65 => Some(IMPLEMENTER_A::VALUE1),
             _ => None,

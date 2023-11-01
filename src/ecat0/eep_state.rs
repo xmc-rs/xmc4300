@@ -21,7 +21,7 @@ impl From<ACCESS_A> for bool {
 impl ACCESS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACCESS_A {
+    pub const fn variant(&self) -> ACCESS_A {
         match self.bits {
             false => ACCESS_A::VALUE1,
             true => ACCESS_A::VALUE2,
@@ -69,7 +69,11 @@ impl W {
     pub fn access(&mut self) -> ACCESS_W<EEP_STATE_SPEC, 0> {
         ACCESS_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

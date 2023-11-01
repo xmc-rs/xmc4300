@@ -19,7 +19,7 @@ impl From<TRB_A> for bool {
 impl TRB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TRB_A {
+    pub const fn variant(&self) -> TRB_A {
         match self.bits {
             false => TRB_A::VALUE1,
             true => TRB_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<CDIR_A> for bool {
 impl CDIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CDIR_A {
+    pub const fn variant(&self) -> CDIR_A {
         match self.bits {
             false => CDIR_A::VALUE1,
             true => CDIR_A::VALUE2,

@@ -21,7 +21,7 @@ impl From<SDIR_A> for bool {
 impl SDIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SDIR_A {
+    pub const fn variant(&self) -> SDIR_A {
         match self.bits {
             false => SDIR_A::VALUE1,
             true => SDIR_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<PDL_A> for bool {
 impl PDL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDL_A {
+    pub const fn variant(&self) -> PDL_A {
         match self.bits {
             false => PDL_A::VALUE1,
             true => PDL_A::VALUE2,
@@ -135,7 +135,7 @@ impl crate::FieldSpec for DSM_A {
 impl DSM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DSM_A> {
+    pub const fn variant(&self) -> Option<DSM_A> {
         match self.bits {
             0 => Some(DSM_A::VALUE1),
             2 => Some(DSM_A::VALUE3),
@@ -205,7 +205,7 @@ impl From<HPCDIR_A> for bool {
 impl HPCDIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HPCDIR_A {
+    pub const fn variant(&self) -> HPCDIR_A {
         match self.bits {
             false => HPCDIR_A::VALUE1,
             true => HPCDIR_A::VALUE2,
@@ -262,7 +262,7 @@ impl crate::FieldSpec for DOCFG_A {
 impl DOCFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DOCFG_A> {
+    pub const fn variant(&self) -> Option<DOCFG_A> {
         match self.bits {
             0 => Some(DOCFG_A::VALUE1),
             1 => Some(DOCFG_A::VALUE2),
@@ -325,7 +325,7 @@ impl crate::FieldSpec for TRM_A {
 impl TRM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TRM_A {
+    pub const fn variant(&self) -> TRM_A {
         match self.bits {
             0 => TRM_A::VALUE1,
             1 => TRM_A::VALUE2,
@@ -414,7 +414,7 @@ impl crate::FieldSpec for WLE_A {
 impl WLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<WLE_A> {
+    pub const fn variant(&self) -> Option<WLE_A> {
         match self.bits {
             0 => Some(WLE_A::VALUE1),
             1 => Some(WLE_A::VALUE2),
@@ -563,7 +563,11 @@ impl W {
     pub fn wle(&mut self) -> WLE_W<SCTR_SPEC, 24> {
         WLE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

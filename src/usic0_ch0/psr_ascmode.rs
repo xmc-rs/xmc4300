@@ -21,7 +21,7 @@ impl From<TXIDLE_A> for bool {
 impl TXIDLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TXIDLE_A {
+    pub const fn variant(&self) -> TXIDLE_A {
         match self.bits {
             false => TXIDLE_A::VALUE1,
             true => TXIDLE_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<RXIDLE_A> for bool {
 impl RXIDLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXIDLE_A {
+    pub const fn variant(&self) -> RXIDLE_A {
         match self.bits {
             false => RXIDLE_A::VALUE1,
             true => RXIDLE_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<SBD_A> for bool {
 impl SBD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SBD_A {
+    pub const fn variant(&self) -> SBD_A {
         match self.bits {
             false => SBD_A::VALUE1,
             true => SBD_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<COL_A> for bool {
 impl COL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> COL_A {
+    pub const fn variant(&self) -> COL_A {
         match self.bits {
             false => COL_A::VALUE1,
             true => COL_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<RNS_A> for bool {
 impl RNS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RNS_A {
+    pub const fn variant(&self) -> RNS_A {
         match self.bits {
             false => RNS_A::VALUE1,
             true => RNS_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<FER0_A> for bool {
 impl FER0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FER0_A {
+    pub const fn variant(&self) -> FER0_A {
         match self.bits {
             false => FER0_A::VALUE1,
             true => FER0_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<FER1_A> for bool {
 impl FER1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FER1_A {
+    pub const fn variant(&self) -> FER1_A {
         match self.bits {
             false => FER1_A::VALUE1,
             true => FER1_A::VALUE2,
@@ -392,7 +392,7 @@ impl From<RFF_A> for bool {
 impl RFF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RFF_A {
+    pub const fn variant(&self) -> RFF_A {
         match self.bits {
             false => RFF_A::VALUE1,
             true => RFF_A::VALUE2,
@@ -445,7 +445,7 @@ impl From<TFF_A> for bool {
 impl TFF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TFF_A {
+    pub const fn variant(&self) -> TFF_A {
         match self.bits {
             false => TFF_A::VALUE1,
             true => TFF_A::VALUE2,
@@ -498,7 +498,7 @@ impl From<BUSY_A> for bool {
 impl BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUSY_A {
+    pub const fn variant(&self) -> BUSY_A {
         match self.bits {
             false => BUSY_A::VALUE1,
             true => BUSY_A::VALUE2,
@@ -534,7 +534,7 @@ impl From<RSIF_A> for bool {
 impl RSIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RSIF_A {
+    pub const fn variant(&self) -> RSIF_A {
         match self.bits {
             false => RSIF_A::VALUE1,
             true => RSIF_A::VALUE2,
@@ -587,7 +587,7 @@ impl From<DLIF_A> for bool {
 impl DLIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DLIF_A {
+    pub const fn variant(&self) -> DLIF_A {
         match self.bits {
             false => DLIF_A::VALUE1,
             true => DLIF_A::VALUE2,
@@ -640,7 +640,7 @@ impl From<TSIF_A> for bool {
 impl TSIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TSIF_A {
+    pub const fn variant(&self) -> TSIF_A {
         match self.bits {
             false => TSIF_A::VALUE1,
             true => TSIF_A::VALUE2,
@@ -693,7 +693,7 @@ impl From<TBIF_A> for bool {
 impl TBIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TBIF_A {
+    pub const fn variant(&self) -> TBIF_A {
         match self.bits {
             false => TBIF_A::VALUE1,
             true => TBIF_A::VALUE2,
@@ -746,7 +746,7 @@ impl From<RIF_A> for bool {
 impl RIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RIF_A {
+    pub const fn variant(&self) -> RIF_A {
         match self.bits {
             false => RIF_A::VALUE1,
             true => RIF_A::VALUE2,
@@ -799,7 +799,7 @@ impl From<AIF_A> for bool {
 impl AIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AIF_A {
+    pub const fn variant(&self) -> AIF_A {
         match self.bits {
             false => AIF_A::VALUE1,
             true => AIF_A::VALUE2,
@@ -852,7 +852,7 @@ impl From<BRGIF_A> for bool {
 impl BRGIF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BRGIF_A {
+    pub const fn variant(&self) -> BRGIF_A {
         match self.bits {
             false => BRGIF_A::VALUE1,
             true => BRGIF_A::VALUE2,
@@ -1070,7 +1070,11 @@ impl W {
     pub fn brgif(&mut self) -> BRGIF_W<PSR_ASCMODE_SPEC, 16> {
         BRGIF_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

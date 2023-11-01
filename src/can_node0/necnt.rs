@@ -33,7 +33,7 @@ impl From<LETD_A> for bool {
 impl LETD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LETD_A {
+    pub const fn variant(&self) -> LETD_A {
         match self.bits {
             false => LETD_A::VALUE1,
             true => LETD_A::VALUE2,
@@ -69,7 +69,7 @@ impl From<LEINC_A> for bool {
 impl LEINC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LEINC_A {
+    pub const fn variant(&self) -> LEINC_A {
         match self.bits {
             false => LEINC_A::VALUE1,
             true => LEINC_A::VALUE2,
@@ -132,7 +132,11 @@ impl W {
     pub fn ewrnlvl(&mut self) -> EWRNLVL_W<NECNT_SPEC, 16> {
         EWRNLVL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

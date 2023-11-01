@@ -21,7 +21,7 @@ impl From<SES_REQ_SCS_A> for bool {
 impl SES_REQ_SCS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SES_REQ_SCS_A {
+    pub const fn variant(&self) -> SES_REQ_SCS_A {
         match self.bits {
             false => SES_REQ_SCS_A::VALUE1,
             true => SES_REQ_SCS_A::VALUE2,
@@ -57,7 +57,7 @@ impl From<SES_REQ_A> for bool {
 impl SES_REQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SES_REQ_A {
+    pub const fn variant(&self) -> SES_REQ_A {
         match self.bits {
             false => SES_REQ_A::VALUE1,
             true => SES_REQ_A::VALUE2,
@@ -110,7 +110,7 @@ impl From<VBVALID_OV_EN_A> for bool {
 impl VBVALID_OV_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VBVALID_OV_EN_A {
+    pub const fn variant(&self) -> VBVALID_OV_EN_A {
         match self.bits {
             false => VBVALID_OV_EN_A::VALUE1,
             true => VBVALID_OV_EN_A::VALUE2,
@@ -163,7 +163,7 @@ impl From<VBVALID_OV_VAL_A> for bool {
 impl VBVALID_OV_VAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VBVALID_OV_VAL_A {
+    pub const fn variant(&self) -> VBVALID_OV_VAL_A {
         match self.bits {
             false => VBVALID_OV_VAL_A::VALUE1,
             true => VBVALID_OV_VAL_A::VALUE2,
@@ -216,7 +216,7 @@ impl From<AVALID_OV_EN_A> for bool {
 impl AVALID_OV_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AVALID_OV_EN_A {
+    pub const fn variant(&self) -> AVALID_OV_EN_A {
         match self.bits {
             false => AVALID_OV_EN_A::VALUE1,
             true => AVALID_OV_EN_A::VALUE2,
@@ -269,7 +269,7 @@ impl From<AVALID_OV_VAL_A> for bool {
 impl AVALID_OV_VAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AVALID_OV_VAL_A {
+    pub const fn variant(&self) -> AVALID_OV_VAL_A {
         match self.bits {
             false => AVALID_OV_VAL_A::VALUE1,
             true => AVALID_OV_VAL_A::VALUE2,
@@ -322,7 +322,7 @@ impl From<BVALID_OV_EN_A> for bool {
 impl BVALID_OV_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BVALID_OV_EN_A {
+    pub const fn variant(&self) -> BVALID_OV_EN_A {
         match self.bits {
             false => BVALID_OV_EN_A::VALUE1,
             true => BVALID_OV_EN_A::VALUE2,
@@ -375,7 +375,7 @@ impl From<BVALID_OV_VAL_A> for bool {
 impl BVALID_OV_VAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BVALID_OV_VAL_A {
+    pub const fn variant(&self) -> BVALID_OV_VAL_A {
         match self.bits {
             false => BVALID_OV_VAL_A::VALUE1,
             true => BVALID_OV_VAL_A::VALUE2,
@@ -428,7 +428,7 @@ impl From<HST_NEG_SCS_A> for bool {
 impl HST_NEG_SCS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HST_NEG_SCS_A {
+    pub const fn variant(&self) -> HST_NEG_SCS_A {
         match self.bits {
             false => HST_NEG_SCS_A::VALUE1,
             true => HST_NEG_SCS_A::VALUE2,
@@ -464,7 +464,7 @@ impl From<HNPREQ_A> for bool {
 impl HNPREQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HNPREQ_A {
+    pub const fn variant(&self) -> HNPREQ_A {
         match self.bits {
             false => HNPREQ_A::VALUE1,
             true => HNPREQ_A::VALUE2,
@@ -517,7 +517,7 @@ impl From<HST_SET_HNPEN_A> for bool {
 impl HST_SET_HNPEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HST_SET_HNPEN_A {
+    pub const fn variant(&self) -> HST_SET_HNPEN_A {
         match self.bits {
             false => HST_SET_HNPEN_A::VALUE1,
             true => HST_SET_HNPEN_A::VALUE2,
@@ -570,7 +570,7 @@ impl From<DEV_HNPEN_A> for bool {
 impl DEV_HNPEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DEV_HNPEN_A {
+    pub const fn variant(&self) -> DEV_HNPEN_A {
         match self.bits {
             false => DEV_HNPEN_A::VALUE1,
             true => DEV_HNPEN_A::VALUE2,
@@ -623,7 +623,7 @@ impl From<CONL_DSTS_A> for bool {
 impl CONL_DSTS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CONL_DSTS_A {
+    pub const fn variant(&self) -> CONL_DSTS_A {
         match self.bits {
             false => CONL_DSTS_A::VALUE1,
             true => CONL_DSTS_A::VALUE2,
@@ -659,7 +659,7 @@ impl From<DBNC_TIME_A> for bool {
 impl DBNC_TIME_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DBNC_TIME_A {
+    pub const fn variant(&self) -> DBNC_TIME_A {
         match self.bits {
             false => DBNC_TIME_A::VALUE1,
             true => DBNC_TIME_A::VALUE2,
@@ -695,7 +695,7 @@ impl From<ASES_VID_A> for bool {
 impl ASES_VID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASES_VID_A {
+    pub const fn variant(&self) -> ASES_VID_A {
         match self.bits {
             false => ASES_VID_A::VALUE1,
             true => ASES_VID_A::VALUE2,
@@ -731,7 +731,7 @@ impl From<BSES_VLD_A> for bool {
 impl BSES_VLD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BSES_VLD_A {
+    pub const fn variant(&self) -> BSES_VLD_A {
         match self.bits {
             false => BSES_VLD_A::VALUE1,
             true => BSES_VLD_A::VALUE2,
@@ -767,7 +767,7 @@ impl From<OTGVER_A> for bool {
 impl OTGVER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OTGVER_A {
+    pub const fn variant(&self) -> OTGVER_A {
         match self.bits {
             false => OTGVER_A::VALUE1,
             true => OTGVER_A::VALUE2,
@@ -955,7 +955,11 @@ impl W {
     pub fn otgver(&mut self) -> OTGVER_W<GOTGCTL_SPEC, 20> {
         OTGVER_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

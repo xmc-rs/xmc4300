@@ -21,7 +21,7 @@ impl From<IACCVIOL_A> for bool {
 impl IACCVIOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IACCVIOL_A {
+    pub const fn variant(&self) -> IACCVIOL_A {
         match self.bits {
             false => IACCVIOL_A::VALUE1,
             true => IACCVIOL_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<DACCVIOL_A> for bool {
 impl DACCVIOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DACCVIOL_A {
+    pub const fn variant(&self) -> DACCVIOL_A {
         match self.bits {
             false => DACCVIOL_A::VALUE1,
             true => DACCVIOL_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<MUNSTKERR_A> for bool {
 impl MUNSTKERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MUNSTKERR_A {
+    pub const fn variant(&self) -> MUNSTKERR_A {
         match self.bits {
             false => MUNSTKERR_A::VALUE1,
             true => MUNSTKERR_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<MSTKERR_A> for bool {
 impl MSTKERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MSTKERR_A {
+    pub const fn variant(&self) -> MSTKERR_A {
         match self.bits {
             false => MSTKERR_A::VALUE1,
             true => MSTKERR_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<MLSPERR_A> for bool {
 impl MLSPERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MLSPERR_A {
+    pub const fn variant(&self) -> MLSPERR_A {
         match self.bits {
             false => MLSPERR_A::VALUE1,
             true => MLSPERR_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<MMARVALID_A> for bool {
 impl MMARVALID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MMARVALID_A {
+    pub const fn variant(&self) -> MMARVALID_A {
         match self.bits {
             false => MMARVALID_A::VALUE1,
             true => MMARVALID_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<IBUSERR_A> for bool {
 impl IBUSERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IBUSERR_A {
+    pub const fn variant(&self) -> IBUSERR_A {
         match self.bits {
             false => IBUSERR_A::VALUE1,
             true => IBUSERR_A::VALUE2,
@@ -392,7 +392,7 @@ impl From<PRECISERR_A> for bool {
 impl PRECISERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRECISERR_A {
+    pub const fn variant(&self) -> PRECISERR_A {
         match self.bits {
             false => PRECISERR_A::VALUE1,
             true => PRECISERR_A::VALUE2,
@@ -445,7 +445,7 @@ impl From<IMPRECISERR_A> for bool {
 impl IMPRECISERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IMPRECISERR_A {
+    pub const fn variant(&self) -> IMPRECISERR_A {
         match self.bits {
             false => IMPRECISERR_A::VALUE1,
             true => IMPRECISERR_A::VALUE2,
@@ -498,7 +498,7 @@ impl From<UNSTKERR_A> for bool {
 impl UNSTKERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UNSTKERR_A {
+    pub const fn variant(&self) -> UNSTKERR_A {
         match self.bits {
             false => UNSTKERR_A::VALUE1,
             true => UNSTKERR_A::VALUE2,
@@ -551,7 +551,7 @@ impl From<STKERR_A> for bool {
 impl STKERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STKERR_A {
+    pub const fn variant(&self) -> STKERR_A {
         match self.bits {
             false => STKERR_A::VALUE1,
             true => STKERR_A::VALUE2,
@@ -604,7 +604,7 @@ impl From<LSPERR_A> for bool {
 impl LSPERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LSPERR_A {
+    pub const fn variant(&self) -> LSPERR_A {
         match self.bits {
             false => LSPERR_A::VALUE1,
             true => LSPERR_A::VALUE2,
@@ -657,7 +657,7 @@ impl From<BFARVALID_A> for bool {
 impl BFARVALID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFARVALID_A {
+    pub const fn variant(&self) -> BFARVALID_A {
         match self.bits {
             false => BFARVALID_A::VALUE1,
             true => BFARVALID_A::VALUE2,
@@ -710,7 +710,7 @@ impl From<UNDEFINSTR_A> for bool {
 impl UNDEFINSTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UNDEFINSTR_A {
+    pub const fn variant(&self) -> UNDEFINSTR_A {
         match self.bits {
             false => UNDEFINSTR_A::VALUE1,
             true => UNDEFINSTR_A::VALUE2,
@@ -763,7 +763,7 @@ impl From<INVSTATE_A> for bool {
 impl INVSTATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INVSTATE_A {
+    pub const fn variant(&self) -> INVSTATE_A {
         match self.bits {
             false => INVSTATE_A::VALUE1,
             true => INVSTATE_A::VALUE2,
@@ -816,7 +816,7 @@ impl From<INVPC_A> for bool {
 impl INVPC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INVPC_A {
+    pub const fn variant(&self) -> INVPC_A {
         match self.bits {
             false => INVPC_A::VALUE1,
             true => INVPC_A::VALUE2,
@@ -869,7 +869,7 @@ impl From<NOCP_A> for bool {
 impl NOCP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NOCP_A {
+    pub const fn variant(&self) -> NOCP_A {
         match self.bits {
             false => NOCP_A::VALUE1,
             true => NOCP_A::VALUE2,
@@ -922,7 +922,7 @@ impl From<UNALIGNED_A> for bool {
 impl UNALIGNED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UNALIGNED_A {
+    pub const fn variant(&self) -> UNALIGNED_A {
         match self.bits {
             false => UNALIGNED_A::VALUE1,
             true => UNALIGNED_A::VALUE2,
@@ -975,7 +975,7 @@ impl From<DIVBYZERO_A> for bool {
 impl DIVBYZERO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIVBYZERO_A {
+    pub const fn variant(&self) -> DIVBYZERO_A {
         match self.bits {
             false => DIVBYZERO_A::VALUE1,
             true => DIVBYZERO_A::VALUE2,
@@ -1221,7 +1221,11 @@ impl W {
     pub fn divbyzero(&mut self) -> DIVBYZERO_W<CFSR_SPEC, 25> {
         DIVBYZERO_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

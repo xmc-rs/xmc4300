@@ -21,7 +21,7 @@ impl From<ECATRSTEN_A> for bool {
 impl ECATRSTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ECATRSTEN_A {
+    pub const fn variant(&self) -> ECATRSTEN_A {
         match self.bits {
             false => ECATRSTEN_A::VALUE1,
             true => ECATRSTEN_A::VALUE2,
@@ -82,7 +82,7 @@ impl crate::FieldSpec for LATCHIN0SEL_A {
 impl LATCHIN0SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LATCHIN0SEL_A {
+    pub const fn variant(&self) -> LATCHIN0SEL_A {
         match self.bits {
             0 => LATCHIN0SEL_A::VALUE1,
             1 => LATCHIN0SEL_A::VALUE2,
@@ -169,7 +169,7 @@ impl crate::FieldSpec for LATCHIN1SEL_A {
 impl LATCHIN1SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LATCHIN1SEL_A {
+    pub const fn variant(&self) -> LATCHIN1SEL_A {
         match self.bits {
             0 => LATCHIN1SEL_A::VALUE1,
             1 => LATCHIN1SEL_A::VALUE2,
@@ -260,7 +260,7 @@ impl crate::FieldSpec for MDIO_A {
 impl MDIO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MDIO_A {
+    pub const fn variant(&self) -> MDIO_A {
         match self.bits {
             0 => MDIO_A::VALUE1,
             1 => MDIO_A::VALUE2,
@@ -386,7 +386,11 @@ impl W {
     pub fn mdio(&mut self) -> MDIO_W<CON_SPEC, 22> {
         MDIO_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

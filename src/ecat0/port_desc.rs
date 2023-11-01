@@ -27,7 +27,7 @@ impl crate::FieldSpec for PORT0_A {
 impl PORT0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PORT0_A {
+    pub const fn variant(&self) -> PORT0_A {
         match self.bits {
             0 => PORT0_A::VALUE1,
             1 => PORT0_A::VALUE2,
@@ -84,7 +84,7 @@ impl crate::FieldSpec for PORT1_A {
 impl PORT1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PORT1_A {
+    pub const fn variant(&self) -> PORT1_A {
         match self.bits {
             0 => PORT1_A::VALUE1,
             1 => PORT1_A::VALUE2,
@@ -141,7 +141,7 @@ impl crate::FieldSpec for PORT2_A {
 impl PORT2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PORT2_A {
+    pub const fn variant(&self) -> PORT2_A {
         match self.bits {
             0 => PORT2_A::VALUE1,
             1 => PORT2_A::VALUE2,
@@ -198,7 +198,7 @@ impl crate::FieldSpec for PORT3_A {
 impl PORT3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PORT3_A {
+    pub const fn variant(&self) -> PORT3_A {
         match self.bits {
             0 => PORT3_A::VALUE1,
             1 => PORT3_A::VALUE2,

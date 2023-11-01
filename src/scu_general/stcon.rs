@@ -29,7 +29,7 @@ impl crate::FieldSpec for HWCON_A {
 impl HWCON_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HWCON_A {
+    pub const fn variant(&self) -> HWCON_A {
         match self.bits {
             0 => HWCON_A::CONST_00,
             1 => HWCON_A::CONST_01,
@@ -94,7 +94,7 @@ impl crate::FieldSpec for SWCON_A {
 impl SWCON_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SWCON_A> {
+    pub const fn variant(&self) -> Option<SWCON_A> {
         match self.bits {
             0 => Some(SWCON_A::CONST_0000),
             1 => Some(SWCON_A::CONST_0001),
@@ -215,7 +215,11 @@ impl W {
     pub fn swcon(&mut self) -> SWCON_W<STCON_SPEC, 8> {
         SWCON_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

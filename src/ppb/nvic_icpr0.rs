@@ -25,7 +25,7 @@ impl crate::FieldSpec for CLRPEND_A {
 impl CLRPEND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CLRPEND_A> {
+    pub const fn variant(&self) -> Option<CLRPEND_A> {
         match self.bits {
             0 => Some(CLRPEND_A::VALUE3),
             1 => Some(CLRPEND_A::VALUE4),
@@ -75,7 +75,11 @@ impl W {
     pub fn clrpend(&mut self) -> CLRPEND_W<NVIC_ICPR0_SPEC, 0> {
         CLRPEND_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

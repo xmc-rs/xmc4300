@@ -20,7 +20,11 @@ impl W {
     pub fn in_ep_txf_emp_msk(&mut self) -> IN_EP_TXF_EMP_MSK_W<DIEPEMPMSK_SPEC, 0> {
         IN_EP_TXF_EMP_MSK_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

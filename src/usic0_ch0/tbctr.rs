@@ -27,7 +27,7 @@ impl From<STBTM_A> for bool {
 impl STBTM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STBTM_A {
+    pub const fn variant(&self) -> STBTM_A {
         match self.bits {
             false => STBTM_A::VALUE1,
             true => STBTM_A::VALUE2,
@@ -80,7 +80,7 @@ impl From<STBTEN_A> for bool {
 impl STBTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STBTEN_A {
+    pub const fn variant(&self) -> STBTEN_A {
         match self.bits {
             false => STBTEN_A::VALUE1,
             true => STBTEN_A::VALUE2,
@@ -145,7 +145,7 @@ impl crate::FieldSpec for STBINP_A {
 impl STBINP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<STBINP_A> {
+    pub const fn variant(&self) -> Option<STBINP_A> {
         match self.bits {
             0 => Some(STBINP_A::VALUE1),
             1 => Some(STBINP_A::VALUE2),
@@ -256,7 +256,7 @@ impl crate::FieldSpec for ATBINP_A {
 impl ATBINP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ATBINP_A> {
+    pub const fn variant(&self) -> Option<ATBINP_A> {
         match self.bits {
             0 => Some(ATBINP_A::VALUE1),
             1 => Some(ATBINP_A::VALUE2),
@@ -369,7 +369,7 @@ impl crate::FieldSpec for SIZE_A {
 impl SIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SIZE_A> {
+    pub const fn variant(&self) -> Option<SIZE_A> {
         match self.bits {
             0 => Some(SIZE_A::VALUE1),
             1 => Some(SIZE_A::VALUE2),
@@ -479,7 +479,7 @@ impl From<LOF_A> for bool {
 impl LOF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOF_A {
+    pub const fn variant(&self) -> LOF_A {
         match self.bits {
             false => LOF_A::VALUE1,
             true => LOF_A::VALUE2,
@@ -532,7 +532,7 @@ impl From<STBIEN_A> for bool {
 impl STBIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STBIEN_A {
+    pub const fn variant(&self) -> STBIEN_A {
         match self.bits {
             false => STBIEN_A::VALUE1,
             true => STBIEN_A::VALUE2,
@@ -585,7 +585,7 @@ impl From<TBERIEN_A> for bool {
 impl TBERIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TBERIEN_A {
+    pub const fn variant(&self) -> TBERIEN_A {
         match self.bits {
             false => TBERIEN_A::VALUE1,
             true => TBERIEN_A::VALUE2,
@@ -727,7 +727,11 @@ impl W {
     pub fn tberien(&mut self) -> TBERIEN_W<TBCTR_SPEC, 31> {
         TBERIEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

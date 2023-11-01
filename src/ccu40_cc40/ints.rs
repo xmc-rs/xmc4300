@@ -19,7 +19,7 @@ impl From<PMUS_A> for bool {
 impl PMUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PMUS_A {
+    pub const fn variant(&self) -> PMUS_A {
         match self.bits {
             false => PMUS_A::VALUE1,
             true => PMUS_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<OMDS_A> for bool {
 impl OMDS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OMDS_A {
+    pub const fn variant(&self) -> OMDS_A {
         match self.bits {
             false => OMDS_A::VALUE1,
             true => OMDS_A::VALUE2,
@@ -91,7 +91,7 @@ impl From<CMUS_A> for bool {
 impl CMUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMUS_A {
+    pub const fn variant(&self) -> CMUS_A {
         match self.bits {
             false => CMUS_A::VALUE1,
             true => CMUS_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<CMDS_A> for bool {
 impl CMDS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMDS_A {
+    pub const fn variant(&self) -> CMDS_A {
         match self.bits {
             false => CMDS_A::VALUE1,
             true => CMDS_A::VALUE2,
@@ -163,7 +163,7 @@ impl From<E0AS_A> for bool {
 impl E0AS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> E0AS_A {
+    pub const fn variant(&self) -> E0AS_A {
         match self.bits {
             false => E0AS_A::VALUE1,
             true => E0AS_A::VALUE2,
@@ -199,7 +199,7 @@ impl From<E1AS_A> for bool {
 impl E1AS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> E1AS_A {
+    pub const fn variant(&self) -> E1AS_A {
         match self.bits {
             false => E1AS_A::VALUE1,
             true => E1AS_A::VALUE2,
@@ -235,7 +235,7 @@ impl From<E2AS_A> for bool {
 impl E2AS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> E2AS_A {
+    pub const fn variant(&self) -> E2AS_A {
         match self.bits {
             false => E2AS_A::VALUE1,
             true => E2AS_A::VALUE2,

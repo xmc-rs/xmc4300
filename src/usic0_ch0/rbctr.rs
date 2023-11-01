@@ -27,7 +27,7 @@ impl From<SRBTM_A> for bool {
 impl SRBTM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRBTM_A {
+    pub const fn variant(&self) -> SRBTM_A {
         match self.bits {
             false => SRBTM_A::VALUE1,
             true => SRBTM_A::VALUE2,
@@ -80,7 +80,7 @@ impl From<SRBTEN_A> for bool {
 impl SRBTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRBTEN_A {
+    pub const fn variant(&self) -> SRBTEN_A {
         match self.bits {
             false => SRBTEN_A::VALUE1,
             true => SRBTEN_A::VALUE2,
@@ -145,7 +145,7 @@ impl crate::FieldSpec for SRBINP_A {
 impl SRBINP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SRBINP_A> {
+    pub const fn variant(&self) -> Option<SRBINP_A> {
         match self.bits {
             0 => Some(SRBINP_A::VALUE1),
             1 => Some(SRBINP_A::VALUE2),
@@ -256,7 +256,7 @@ impl crate::FieldSpec for ARBINP_A {
 impl ARBINP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ARBINP_A> {
+    pub const fn variant(&self) -> Option<ARBINP_A> {
         match self.bits {
             0 => Some(ARBINP_A::VALUE1),
             1 => Some(ARBINP_A::VALUE2),
@@ -373,7 +373,7 @@ impl crate::FieldSpec for RCIM_A {
 impl RCIM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RCIM_A {
+    pub const fn variant(&self) -> RCIM_A {
         match self.bits {
             0 => RCIM_A::VALUE1,
             1 => RCIM_A::VALUE2,
@@ -484,7 +484,7 @@ impl crate::FieldSpec for SIZE_A {
 impl SIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SIZE_A> {
+    pub const fn variant(&self) -> Option<SIZE_A> {
         match self.bits {
             0 => Some(SIZE_A::VALUE1),
             1 => Some(SIZE_A::VALUE2),
@@ -596,7 +596,7 @@ impl From<RNM_A> for bool {
 impl RNM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RNM_A {
+    pub const fn variant(&self) -> RNM_A {
         match self.bits {
             false => RNM_A::VALUE1,
             true => RNM_A::VALUE2,
@@ -653,7 +653,7 @@ impl From<LOF_A> for bool {
 impl LOF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOF_A {
+    pub const fn variant(&self) -> LOF_A {
         match self.bits {
             false => LOF_A::VALUE1,
             true => LOF_A::VALUE2,
@@ -706,7 +706,7 @@ impl From<ARBIEN_A> for bool {
 impl ARBIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ARBIEN_A {
+    pub const fn variant(&self) -> ARBIEN_A {
         match self.bits {
             false => ARBIEN_A::VALUE1,
             true => ARBIEN_A::VALUE2,
@@ -759,7 +759,7 @@ impl From<SRBIEN_A> for bool {
 impl SRBIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRBIEN_A {
+    pub const fn variant(&self) -> SRBIEN_A {
         match self.bits {
             false => SRBIEN_A::VALUE1,
             true => SRBIEN_A::VALUE2,
@@ -812,7 +812,7 @@ impl From<RBERIEN_A> for bool {
 impl RBERIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RBERIEN_A {
+    pub const fn variant(&self) -> RBERIEN_A {
         match self.bits {
             false => RBERIEN_A::VALUE1,
             true => RBERIEN_A::VALUE2,
@@ -987,7 +987,11 @@ impl W {
     pub fn rberien(&mut self) -> RBERIEN_W<RBCTR_SPEC, 31> {
         RBERIEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

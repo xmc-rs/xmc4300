@@ -21,7 +21,7 @@ impl From<CHPNDG0_A> for bool {
 impl CHPNDG0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHPNDG0_A {
+    pub const fn variant(&self) -> CHPNDG0_A {
         match self.bits {
             false => CHPNDG0_A::VALUE1,
             true => CHPNDG0_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<CHPNDG1_A> for bool {
 impl CHPNDG1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHPNDG1_A {
+    pub const fn variant(&self) -> CHPNDG1_A {
         match self.bits {
             false => CHPNDG1_A::VALUE1,
             true => CHPNDG1_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<CHPNDG2_A> for bool {
 impl CHPNDG2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHPNDG2_A {
+    pub const fn variant(&self) -> CHPNDG2_A {
         match self.bits {
             false => CHPNDG2_A::VALUE1,
             true => CHPNDG2_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<CHPNDG3_A> for bool {
 impl CHPNDG3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHPNDG3_A {
+    pub const fn variant(&self) -> CHPNDG3_A {
         match self.bits {
             false => CHPNDG3_A::VALUE1,
             true => CHPNDG3_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<CHPNDG4_A> for bool {
 impl CHPNDG4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHPNDG4_A {
+    pub const fn variant(&self) -> CHPNDG4_A {
         match self.bits {
             false => CHPNDG4_A::VALUE1,
             true => CHPNDG4_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<CHPNDG5_A> for bool {
 impl CHPNDG5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHPNDG5_A {
+    pub const fn variant(&self) -> CHPNDG5_A {
         match self.bits {
             false => CHPNDG5_A::VALUE1,
             true => CHPNDG5_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<CHPNDG6_A> for bool {
 impl CHPNDG6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHPNDG6_A {
+    pub const fn variant(&self) -> CHPNDG6_A {
         match self.bits {
             false => CHPNDG6_A::VALUE1,
             true => CHPNDG6_A::VALUE2,
@@ -392,7 +392,7 @@ impl From<CHPNDG7_A> for bool {
 impl CHPNDG7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHPNDG7_A {
+    pub const fn variant(&self) -> CHPNDG7_A {
         match self.bits {
             false => CHPNDG7_A::VALUE1,
             true => CHPNDG7_A::VALUE2,
@@ -517,7 +517,11 @@ impl W {
     pub fn chpndg7(&mut self) -> CHPNDG7_W<BRSPND_SPEC, 7> {
         CHPNDG7_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

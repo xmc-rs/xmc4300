@@ -19,7 +19,7 @@ impl From<ESC_WR_PROT_A> for bool {
 impl ESC_WR_PROT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ESC_WR_PROT_A {
+    pub const fn variant(&self) -> ESC_WR_PROT_A {
         match self.bits {
             false => ESC_WR_PROT_A::VALUE1,
             true => ESC_WR_PROT_A::VALUE2,

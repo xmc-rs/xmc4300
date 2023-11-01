@@ -27,7 +27,7 @@ impl From<TSCTROVF_A> for bool {
 impl TSCTROVF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TSCTROVF_A {
+    pub const fn variant(&self) -> TSCTROVF_A {
         match self.bits {
             false => TSCTROVF_A::VALUE1,
             true => TSCTROVF_A::VALUE2,
@@ -178,7 +178,11 @@ impl W {
     pub fn ctpf(&mut self) -> CTPF_W<EVFR_SPEC, 18> {
         CTPF_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

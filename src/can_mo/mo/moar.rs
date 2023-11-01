@@ -25,7 +25,7 @@ impl From<IDE_A> for bool {
 impl IDE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IDE_A {
+    pub const fn variant(&self) -> IDE_A {
         match self.bits {
             false => IDE_A::VALUE1,
             true => IDE_A::VALUE2,
@@ -84,7 +84,7 @@ impl crate::FieldSpec for PRI_A {
 impl PRI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PRI_A> {
+    pub const fn variant(&self) -> Option<PRI_A> {
         match self.bits {
             1 => Some(PRI_A::VALUE2),
             2 => Some(PRI_A::VALUE3),
@@ -167,7 +167,11 @@ impl W {
     pub fn pri(&mut self) -> PRI_W<MOAR_SPEC, 30> {
         PRI_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

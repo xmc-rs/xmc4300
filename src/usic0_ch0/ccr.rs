@@ -31,7 +31,7 @@ impl crate::FieldSpec for MODE_A {
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MODE_A> {
+    pub const fn variant(&self) -> Option<MODE_A> {
         match self.bits {
             0 => Some(MODE_A::VALUE1),
             1 => Some(MODE_A::VALUE2),
@@ -128,7 +128,7 @@ impl crate::FieldSpec for HPCEN_A {
 impl HPCEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HPCEN_A {
+    pub const fn variant(&self) -> HPCEN_A {
         match self.bits {
             0 => HPCEN_A::VALUE1,
             1 => HPCEN_A::VALUE2,
@@ -213,7 +213,7 @@ impl crate::FieldSpec for PM_A {
 impl PM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PM_A> {
+    pub const fn variant(&self) -> Option<PM_A> {
         match self.bits {
             0 => Some(PM_A::VALUE1),
             2 => Some(PM_A::VALUE3),
@@ -279,7 +279,7 @@ impl From<RSIEN_A> for bool {
 impl RSIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RSIEN_A {
+    pub const fn variant(&self) -> RSIEN_A {
         match self.bits {
             false => RSIEN_A::VALUE1,
             true => RSIEN_A::VALUE2,
@@ -332,7 +332,7 @@ impl From<DLIEN_A> for bool {
 impl DLIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DLIEN_A {
+    pub const fn variant(&self) -> DLIEN_A {
         match self.bits {
             false => DLIEN_A::VALUE1,
             true => DLIEN_A::VALUE2,
@@ -385,7 +385,7 @@ impl From<TSIEN_A> for bool {
 impl TSIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TSIEN_A {
+    pub const fn variant(&self) -> TSIEN_A {
         match self.bits {
             false => TSIEN_A::VALUE1,
             true => TSIEN_A::VALUE2,
@@ -438,7 +438,7 @@ impl From<TBIEN_A> for bool {
 impl TBIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TBIEN_A {
+    pub const fn variant(&self) -> TBIEN_A {
         match self.bits {
             false => TBIEN_A::VALUE1,
             true => TBIEN_A::VALUE2,
@@ -491,7 +491,7 @@ impl From<RIEN_A> for bool {
 impl RIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RIEN_A {
+    pub const fn variant(&self) -> RIEN_A {
         match self.bits {
             false => RIEN_A::VALUE1,
             true => RIEN_A::VALUE2,
@@ -544,7 +544,7 @@ impl From<AIEN_A> for bool {
 impl AIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AIEN_A {
+    pub const fn variant(&self) -> AIEN_A {
         match self.bits {
             false => AIEN_A::VALUE1,
             true => AIEN_A::VALUE2,
@@ -597,7 +597,7 @@ impl From<BRGIEN_A> for bool {
 impl BRGIEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BRGIEN_A {
+    pub const fn variant(&self) -> BRGIEN_A {
         match self.bits {
             false => BRGIEN_A::VALUE1,
             true => BRGIEN_A::VALUE2,
@@ -744,7 +744,11 @@ impl W {
     pub fn brgien(&mut self) -> BRGIEN_W<CCR_SPEC, 16> {
         BRGIEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

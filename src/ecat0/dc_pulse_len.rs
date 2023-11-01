@@ -22,7 +22,7 @@ impl crate::FieldSpec for PULS_LENGTH_A {
 impl PULS_LENGTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PULS_LENGTH_A> {
+    pub const fn variant(&self) -> Option<PULS_LENGTH_A> {
         match self.bits {
             0 => Some(PULS_LENGTH_A::VALUE1),
             _ => None,

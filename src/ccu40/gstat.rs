@@ -19,7 +19,7 @@ impl From<S0I_A> for bool {
 impl S0I_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S0I_A {
+    pub const fn variant(&self) -> S0I_A {
         match self.bits {
             false => S0I_A::VALUE1,
             true => S0I_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<S1I_A> for bool {
 impl S1I_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S1I_A {
+    pub const fn variant(&self) -> S1I_A {
         match self.bits {
             false => S1I_A::VALUE1,
             true => S1I_A::VALUE2,
@@ -91,7 +91,7 @@ impl From<S2I_A> for bool {
 impl S2I_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S2I_A {
+    pub const fn variant(&self) -> S2I_A {
         match self.bits {
             false => S2I_A::VALUE1,
             true => S2I_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<S3I_A> for bool {
 impl S3I_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S3I_A {
+    pub const fn variant(&self) -> S3I_A {
         match self.bits {
             false => S3I_A::VALUE1,
             true => S3I_A::VALUE2,
@@ -163,7 +163,7 @@ impl From<PRB_A> for bool {
 impl PRB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRB_A {
+    pub const fn variant(&self) -> PRB_A {
         match self.bits {
             false => PRB_A::VALUE1,
             true => PRB_A::VALUE2,

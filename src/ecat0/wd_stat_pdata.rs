@@ -19,7 +19,7 @@ impl From<WD_STAT_PD_A> for bool {
 impl WD_STAT_PD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WD_STAT_PD_A {
+    pub const fn variant(&self) -> WD_STAT_PD_A {
         match self.bits {
             false => WD_STAT_PD_A::VALUE1,
             true => WD_STAT_PD_A::VALUE2,

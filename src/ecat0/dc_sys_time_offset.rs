@@ -20,7 +20,11 @@ impl W {
     pub fn dc_sys_time_offset(&mut self) -> DC_SYS_TIME_OFFSET_W<DC_SYS_TIME_OFFSET_SPEC, 0> {
         DC_SYS_TIME_OFFSET_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

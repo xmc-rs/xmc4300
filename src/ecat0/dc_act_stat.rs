@@ -19,7 +19,7 @@ impl From<S0_ACK_STATE_A> for bool {
 impl S0_ACK_STATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S0_ACK_STATE_A {
+    pub const fn variant(&self) -> S0_ACK_STATE_A {
         match self.bits {
             false => S0_ACK_STATE_A::VALUE1,
             true => S0_ACK_STATE_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<S1_ACK_STATE_A> for bool {
 impl S1_ACK_STATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S1_ACK_STATE_A {
+    pub const fn variant(&self) -> S1_ACK_STATE_A {
         match self.bits {
             false => S1_ACK_STATE_A::VALUE1,
             true => S1_ACK_STATE_A::VALUE2,
@@ -91,7 +91,7 @@ impl From<S_TIME_A> for bool {
 impl S_TIME_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> S_TIME_A {
+    pub const fn variant(&self) -> S_TIME_A {
         match self.bits {
             false => S_TIME_A::VALUE1,
             true => S_TIME_A::VALUE2,

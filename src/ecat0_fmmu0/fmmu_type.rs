@@ -19,7 +19,7 @@ impl From<R_ACC_A> for bool {
 impl R_ACC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> R_ACC_A {
+    pub const fn variant(&self) -> R_ACC_A {
         match self.bits {
             false => R_ACC_A::VALUE1,
             true => R_ACC_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<W_ACC_A> for bool {
 impl W_ACC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> W_ACC_A {
+    pub const fn variant(&self) -> W_ACC_A {
         match self.bits {
             false => W_ACC_A::VALUE1,
             true => W_ACC_A::VALUE2,

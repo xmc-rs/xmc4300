@@ -27,7 +27,7 @@ impl crate::FieldSpec for HW0_A {
 impl HW0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW0_A> {
+    pub const fn variant(&self) -> Option<HW0_A> {
         match self.bits {
             0 => Some(HW0_A::CONST_00),
             1 => Some(HW0_A::CONST_01),
@@ -99,7 +99,7 @@ impl crate::FieldSpec for HW1_A {
 impl HW1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW1_A> {
+    pub const fn variant(&self) -> Option<HW1_A> {
         match self.bits {
             0 => Some(HW1_A::CONST_00),
             1 => Some(HW1_A::CONST_01),
@@ -171,7 +171,7 @@ impl crate::FieldSpec for HW2_A {
 impl HW2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW2_A> {
+    pub const fn variant(&self) -> Option<HW2_A> {
         match self.bits {
             0 => Some(HW2_A::CONST_00),
             1 => Some(HW2_A::CONST_01),
@@ -243,7 +243,7 @@ impl crate::FieldSpec for HW3_A {
 impl HW3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW3_A> {
+    pub const fn variant(&self) -> Option<HW3_A> {
         match self.bits {
             0 => Some(HW3_A::CONST_00),
             1 => Some(HW3_A::CONST_01),
@@ -315,7 +315,7 @@ impl crate::FieldSpec for HW4_A {
 impl HW4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW4_A> {
+    pub const fn variant(&self) -> Option<HW4_A> {
         match self.bits {
             0 => Some(HW4_A::CONST_00),
             1 => Some(HW4_A::CONST_01),
@@ -387,7 +387,7 @@ impl crate::FieldSpec for HW5_A {
 impl HW5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW5_A> {
+    pub const fn variant(&self) -> Option<HW5_A> {
         match self.bits {
             0 => Some(HW5_A::CONST_00),
             1 => Some(HW5_A::CONST_01),
@@ -459,7 +459,7 @@ impl crate::FieldSpec for HW6_A {
 impl HW6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW6_A> {
+    pub const fn variant(&self) -> Option<HW6_A> {
         match self.bits {
             0 => Some(HW6_A::CONST_00),
             1 => Some(HW6_A::CONST_01),
@@ -531,7 +531,7 @@ impl crate::FieldSpec for HW7_A {
 impl HW7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW7_A> {
+    pub const fn variant(&self) -> Option<HW7_A> {
         match self.bits {
             0 => Some(HW7_A::CONST_00),
             1 => Some(HW7_A::CONST_01),
@@ -603,7 +603,7 @@ impl crate::FieldSpec for HW8_A {
 impl HW8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW8_A> {
+    pub const fn variant(&self) -> Option<HW8_A> {
         match self.bits {
             0 => Some(HW8_A::CONST_00),
             1 => Some(HW8_A::CONST_01),
@@ -675,7 +675,7 @@ impl crate::FieldSpec for HW9_A {
 impl HW9_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW9_A> {
+    pub const fn variant(&self) -> Option<HW9_A> {
         match self.bits {
             0 => Some(HW9_A::CONST_00),
             1 => Some(HW9_A::CONST_01),
@@ -747,7 +747,7 @@ impl crate::FieldSpec for HW10_A {
 impl HW10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW10_A> {
+    pub const fn variant(&self) -> Option<HW10_A> {
         match self.bits {
             0 => Some(HW10_A::CONST_00),
             1 => Some(HW10_A::CONST_01),
@@ -819,7 +819,7 @@ impl crate::FieldSpec for HW11_A {
 impl HW11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW11_A> {
+    pub const fn variant(&self) -> Option<HW11_A> {
         match self.bits {
             0 => Some(HW11_A::CONST_00),
             1 => Some(HW11_A::CONST_01),
@@ -891,7 +891,7 @@ impl crate::FieldSpec for HW12_A {
 impl HW12_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW12_A> {
+    pub const fn variant(&self) -> Option<HW12_A> {
         match self.bits {
             0 => Some(HW12_A::CONST_00),
             1 => Some(HW12_A::CONST_01),
@@ -963,7 +963,7 @@ impl crate::FieldSpec for HW13_A {
 impl HW13_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW13_A> {
+    pub const fn variant(&self) -> Option<HW13_A> {
         match self.bits {
             0 => Some(HW13_A::CONST_00),
             1 => Some(HW13_A::CONST_01),
@@ -1035,7 +1035,7 @@ impl crate::FieldSpec for HW14_A {
 impl HW14_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW14_A> {
+    pub const fn variant(&self) -> Option<HW14_A> {
         match self.bits {
             0 => Some(HW14_A::CONST_00),
             1 => Some(HW14_A::CONST_01),
@@ -1107,7 +1107,7 @@ impl crate::FieldSpec for HW15_A {
 impl HW15_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HW15_A> {
+    pub const fn variant(&self) -> Option<HW15_A> {
         match self.bits {
             0 => Some(HW15_A::CONST_00),
             1 => Some(HW15_A::CONST_01),
@@ -1333,7 +1333,11 @@ impl W {
     pub fn hw15(&mut self) -> HW15_W<HWSEL_SPEC, 30> {
         HW15_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

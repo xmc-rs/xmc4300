@@ -29,7 +29,7 @@ impl crate::FieldSpec for RESP_TYPE_SELECT_A {
 impl RESP_TYPE_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RESP_TYPE_SELECT_A {
+    pub const fn variant(&self) -> RESP_TYPE_SELECT_A {
         match self.bits {
             0 => RESP_TYPE_SELECT_A::VALUE1,
             1 => RESP_TYPE_SELECT_A::VALUE2,
@@ -106,7 +106,7 @@ impl From<CMD_CRC_CHECK_EN_A> for bool {
 impl CMD_CRC_CHECK_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMD_CRC_CHECK_EN_A {
+    pub const fn variant(&self) -> CMD_CRC_CHECK_EN_A {
         match self.bits {
             false => CMD_CRC_CHECK_EN_A::VALUE1,
             true => CMD_CRC_CHECK_EN_A::VALUE2,
@@ -159,7 +159,7 @@ impl From<CMD_IND_CHECK_EN_A> for bool {
 impl CMD_IND_CHECK_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMD_IND_CHECK_EN_A {
+    pub const fn variant(&self) -> CMD_IND_CHECK_EN_A {
         match self.bits {
             false => CMD_IND_CHECK_EN_A::VALUE1,
             true => CMD_IND_CHECK_EN_A::VALUE2,
@@ -212,7 +212,7 @@ impl From<DATA_PRESENT_SELECT_A> for bool {
 impl DATA_PRESENT_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DATA_PRESENT_SELECT_A {
+    pub const fn variant(&self) -> DATA_PRESENT_SELECT_A {
         match self.bits {
             false => DATA_PRESENT_SELECT_A::VALUE1,
             true => DATA_PRESENT_SELECT_A::VALUE2,
@@ -273,7 +273,7 @@ impl crate::FieldSpec for CMD_TYPE_A {
 impl CMD_TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMD_TYPE_A {
+    pub const fn variant(&self) -> CMD_TYPE_A {
         match self.bits {
             0 => CMD_TYPE_A::VALUE1,
             1 => CMD_TYPE_A::VALUE2,
@@ -404,7 +404,11 @@ impl W {
     pub fn cmd_ind(&mut self) -> CMD_IND_W<COMMAND_SPEC, 8> {
         CMD_IND_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.bits = bits;

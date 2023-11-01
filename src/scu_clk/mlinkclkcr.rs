@@ -25,7 +25,7 @@ impl From<SYSSEL_A> for bool {
 impl SYSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SYSSEL_A {
+    pub const fn variant(&self) -> SYSSEL_A {
         match self.bits {
             false => SYSSEL_A::CONST_0,
             true => SYSSEL_A::CONST_1,
@@ -78,7 +78,7 @@ impl From<CPUDIV_A> for bool {
 impl CPUDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CPUDIV_A {
+    pub const fn variant(&self) -> CPUDIV_A {
         match self.bits {
             false => CPUDIV_A::CONST_0,
             true => CPUDIV_A::CONST_1,
@@ -131,7 +131,7 @@ impl From<PBDIV_A> for bool {
 impl PBDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PBDIV_A {
+    pub const fn variant(&self) -> PBDIV_A {
         match self.bits {
             false => PBDIV_A::CONST_0,
             true => PBDIV_A::CONST_1,
@@ -184,7 +184,7 @@ impl From<CCUDIV_A> for bool {
 impl CCUDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCUDIV_A {
+    pub const fn variant(&self) -> CCUDIV_A {
         match self.bits {
             false => CCUDIV_A::CONST_0,
             true => CCUDIV_A::CONST_1,
@@ -247,7 +247,7 @@ impl crate::FieldSpec for WDTSEL_A {
 impl WDTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<WDTSEL_A> {
+    pub const fn variant(&self) -> Option<WDTSEL_A> {
         match self.bits {
             0 => Some(WDTSEL_A::CONST_00),
             1 => Some(WDTSEL_A::CONST_01),
@@ -374,7 +374,11 @@ impl W {
     pub fn wdtsel(&mut self) -> WDTSEL_W<MLINKCLKCR_SPEC, 24> {
         WDTSEL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -21,7 +21,7 @@ impl From<PME_A> for bool {
 impl PME_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PME_A {
+    pub const fn variant(&self) -> PME_A {
         match self.bits {
             false => PME_A::VALUE1,
             true => PME_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<OME_A> for bool {
 impl OME_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OME_A {
+    pub const fn variant(&self) -> OME_A {
         match self.bits {
             false => OME_A::VALUE1,
             true => OME_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<CMUE_A> for bool {
 impl CMUE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMUE_A {
+    pub const fn variant(&self) -> CMUE_A {
         match self.bits {
             false => CMUE_A::VALUE1,
             true => CMUE_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<CMDE_A> for bool {
 impl CMDE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMDE_A {
+    pub const fn variant(&self) -> CMDE_A {
         match self.bits {
             false => CMDE_A::VALUE1,
             true => CMDE_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<E0AE_A> for bool {
 impl E0AE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> E0AE_A {
+    pub const fn variant(&self) -> E0AE_A {
         match self.bits {
             false => E0AE_A::VALUE1,
             true => E0AE_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<E1AE_A> for bool {
 impl E1AE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> E1AE_A {
+    pub const fn variant(&self) -> E1AE_A {
         match self.bits {
             false => E1AE_A::VALUE1,
             true => E1AE_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<E2AE_A> for bool {
 impl E2AE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> E2AE_A {
+    pub const fn variant(&self) -> E2AE_A {
         match self.bits {
             false => E2AE_A::VALUE1,
             true => E2AE_A::VALUE2,
@@ -453,7 +453,11 @@ impl W {
     pub fn e2ae(&mut self) -> E2AE_W<INTE_SPEC, 10> {
         E2AE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

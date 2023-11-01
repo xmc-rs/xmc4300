@@ -31,7 +31,7 @@ impl crate::FieldSpec for DMM_A {
 impl DMM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DMM_A> {
+    pub const fn variant(&self) -> Option<DMM_A> {
         match self.bits {
             0 => Some(DMM_A::VALUE1),
             1 => Some(DMM_A::VALUE2),
@@ -97,7 +97,7 @@ impl From<WFR_A> for bool {
 impl WFR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WFR_A {
+    pub const fn variant(&self) -> WFR_A {
         match self.bits {
             false => WFR_A::VALUE1,
             true => WFR_A::VALUE2,
@@ -154,7 +154,7 @@ impl crate::FieldSpec for FEN_A {
 impl FEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FEN_A> {
+    pub const fn variant(&self) -> Option<FEN_A> {
         match self.bits {
             0 => Some(FEN_A::VALUE1),
             1 => Some(FEN_A::VALUE2),
@@ -209,7 +209,7 @@ impl From<SRGEN_A> for bool {
 impl SRGEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRGEN_A {
+    pub const fn variant(&self) -> SRGEN_A {
         match self.bits {
             false => SRGEN_A::VALUE1,
             true => SRGEN_A::VALUE2,
@@ -301,7 +301,11 @@ impl W {
     pub fn srgen(&mut self) -> SRGEN_W<RCR_SPEC, 31> {
         SRGEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

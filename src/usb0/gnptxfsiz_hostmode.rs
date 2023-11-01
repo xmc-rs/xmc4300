@@ -35,7 +35,11 @@ impl W {
     pub fn nptx_fdep(&mut self) -> NPTX_FDEP_W<GNPTXFSIZ_HOSTMODE_SPEC, 16> {
         NPTX_FDEP_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

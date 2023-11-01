@@ -21,7 +21,7 @@ impl crate::FieldSpec for SLOT_INT_STATUS_A {
 impl SLOT_INT_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SLOT_INT_STATUS_A> {
+    pub const fn variant(&self) -> Option<SLOT_INT_STATUS_A> {
         match self.bits {
             0 => Some(SLOT_INT_STATUS_A::VALUE1),
             _ => None,

@@ -19,7 +19,7 @@ impl From<VCOBYST_A> for bool {
 impl VCOBYST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOBYST_A {
+    pub const fn variant(&self) -> VCOBYST_A {
         match self.bits {
             false => VCOBYST_A::CONST_0,
             true => VCOBYST_A::CONST_1,
@@ -55,7 +55,7 @@ impl From<PWDSTAT_A> for bool {
 impl PWDSTAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PWDSTAT_A {
+    pub const fn variant(&self) -> PWDSTAT_A {
         match self.bits {
             false => PWDSTAT_A::CONST_0,
             true => PWDSTAT_A::CONST_1,
@@ -91,7 +91,7 @@ impl From<VCOLOCK_A> for bool {
 impl VCOLOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOLOCK_A {
+    pub const fn variant(&self) -> VCOLOCK_A {
         match self.bits {
             false => VCOLOCK_A::CONST_0,
             true => VCOLOCK_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<BY_A> for bool {
 impl BY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BY_A {
+    pub const fn variant(&self) -> BY_A {
         match self.bits {
             false => BY_A::CONST_0,
             true => BY_A::CONST_1,
@@ -163,7 +163,7 @@ impl From<VCOLOCKED_A> for bool {
 impl VCOLOCKED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOLOCKED_A {
+    pub const fn variant(&self) -> VCOLOCKED_A {
         match self.bits {
             false => VCOLOCKED_A::CONST_0,
             true => VCOLOCKED_A::CONST_1,

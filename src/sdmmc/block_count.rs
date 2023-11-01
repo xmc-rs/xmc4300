@@ -20,7 +20,11 @@ impl W {
     pub fn block_count(&mut self) -> BLOCK_COUNT_W<BLOCK_COUNT_SPEC, 0> {
         BLOCK_COUNT_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.bits = bits;

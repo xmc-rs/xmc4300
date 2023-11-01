@@ -25,7 +25,7 @@ impl crate::FieldSpec for SETPEND_A {
 impl SETPEND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SETPEND_A> {
+    pub const fn variant(&self) -> Option<SETPEND_A> {
         match self.bits {
             0 => Some(SETPEND_A::VALUE3),
             1 => Some(SETPEND_A::VALUE4),
@@ -75,7 +75,11 @@ impl W {
     pub fn setpend(&mut self) -> SETPEND_W<NVIC_ISPR3_SPEC, 0> {
         SETPEND_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

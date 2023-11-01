@@ -21,7 +21,7 @@ impl From<X1DEN_A> for bool {
 impl X1DEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> X1DEN_A {
+    pub const fn variant(&self) -> X1DEN_A {
         match self.bits {
             false => X1DEN_A::CONST_0,
             true => X1DEN_A::CONST_1,
@@ -82,7 +82,7 @@ impl crate::FieldSpec for MODE_A {
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MODE_A {
+    pub const fn variant(&self) -> MODE_A {
         match self.bits {
             0 => MODE_A::CONST_00,
             1 => MODE_A::CONST_01,
@@ -165,7 +165,11 @@ impl W {
     pub fn mode(&mut self) -> MODE_W<OSCULCTRL_SPEC, 4> {
         MODE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

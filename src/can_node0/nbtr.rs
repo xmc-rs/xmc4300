@@ -37,7 +37,7 @@ impl From<DIV8_A> for bool {
 impl DIV8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIV8_A {
+    pub const fn variant(&self) -> DIV8_A {
         match self.bits {
             false => DIV8_A::VALUE1,
             true => DIV8_A::VALUE2,
@@ -129,7 +129,11 @@ impl W {
     pub fn div8(&mut self) -> DIV8_W<NBTR_SPEC, 15> {
         DIV8_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

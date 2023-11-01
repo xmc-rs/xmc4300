@@ -21,7 +21,7 @@ impl From<CH0_A> for bool {
 impl CH0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH0_A {
+    pub const fn variant(&self) -> CH0_A {
         match self.bits {
             false => CH0_A::VALUE1,
             true => CH0_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<CH1_A> for bool {
 impl CH1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH1_A {
+    pub const fn variant(&self) -> CH1_A {
         match self.bits {
             false => CH1_A::VALUE1,
             true => CH1_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<CH2_A> for bool {
 impl CH2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH2_A {
+    pub const fn variant(&self) -> CH2_A {
         match self.bits {
             false => CH2_A::VALUE1,
             true => CH2_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<CH3_A> for bool {
 impl CH3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH3_A {
+    pub const fn variant(&self) -> CH3_A {
         match self.bits {
             false => CH3_A::VALUE1,
             true => CH3_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<CH4_A> for bool {
 impl CH4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH4_A {
+    pub const fn variant(&self) -> CH4_A {
         match self.bits {
             false => CH4_A::VALUE1,
             true => CH4_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<CH5_A> for bool {
 impl CH5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH5_A {
+    pub const fn variant(&self) -> CH5_A {
         match self.bits {
             false => CH5_A::VALUE1,
             true => CH5_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<CH6_A> for bool {
 impl CH6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH6_A {
+    pub const fn variant(&self) -> CH6_A {
         match self.bits {
             false => CH6_A::VALUE1,
             true => CH6_A::VALUE2,
@@ -392,7 +392,7 @@ impl From<CH7_A> for bool {
 impl CH7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH7_A {
+    pub const fn variant(&self) -> CH7_A {
         match self.bits {
             false => CH7_A::VALUE1,
             true => CH7_A::VALUE2,
@@ -813,7 +813,11 @@ impl W {
     pub fn we_ch7(&mut self) -> WE_CH7_W<MASKSRCTRAN_SPEC, 15> {
         WE_CH7_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

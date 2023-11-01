@@ -27,7 +27,7 @@ impl crate::FieldSpec for FILL_A {
 impl FILL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FILL_A> {
+    pub const fn variant(&self) -> Option<FILL_A> {
         match self.bits {
             0 => Some(FILL_A::VALUE1),
             1 => Some(FILL_A::VALUE2),
@@ -76,7 +76,7 @@ impl From<EMPTY_A> for bool {
 impl EMPTY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EMPTY_A {
+    pub const fn variant(&self) -> EMPTY_A {
         match self.bits {
             false => EMPTY_A::VALUE1,
             true => EMPTY_A::VALUE2,
@@ -112,7 +112,7 @@ impl From<REQGT_A> for bool {
 impl REQGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REQGT_A {
+    pub const fn variant(&self) -> REQGT_A {
         match self.bits {
             false => REQGT_A::VALUE1,
             true => REQGT_A::VALUE2,
@@ -148,7 +148,7 @@ impl From<EV_A> for bool {
 impl EV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EV_A {
+    pub const fn variant(&self) -> EV_A {
         match self.bits {
             false => EV_A::VALUE1,
             true => EV_A::VALUE2,

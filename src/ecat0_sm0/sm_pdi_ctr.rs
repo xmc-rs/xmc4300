@@ -21,7 +21,7 @@ impl From<DEACT_A> for bool {
 impl DEACT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DEACT_A {
+    pub const fn variant(&self) -> DEACT_A {
         match self.bits {
             false => DEACT_A::VALUE1,
             true => DEACT_A::VALUE2,
@@ -84,7 +84,11 @@ impl W {
     pub fn rep_ack(&mut self) -> REP_ACK_W<SM_PDI_CTR_SPEC, 1> {
         REP_ACK_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

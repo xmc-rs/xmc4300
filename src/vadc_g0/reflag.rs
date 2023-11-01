@@ -21,7 +21,7 @@ impl From<REV0_A> for bool {
 impl REV0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV0_A {
+    pub const fn variant(&self) -> REV0_A {
         match self.bits {
             false => REV0_A::VALUE1,
             true => REV0_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<REV1_A> for bool {
 impl REV1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV1_A {
+    pub const fn variant(&self) -> REV1_A {
         match self.bits {
             false => REV1_A::VALUE1,
             true => REV1_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<REV2_A> for bool {
 impl REV2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV2_A {
+    pub const fn variant(&self) -> REV2_A {
         match self.bits {
             false => REV2_A::VALUE1,
             true => REV2_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<REV3_A> for bool {
 impl REV3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV3_A {
+    pub const fn variant(&self) -> REV3_A {
         match self.bits {
             false => REV3_A::VALUE1,
             true => REV3_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<REV4_A> for bool {
 impl REV4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV4_A {
+    pub const fn variant(&self) -> REV4_A {
         match self.bits {
             false => REV4_A::VALUE1,
             true => REV4_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<REV5_A> for bool {
 impl REV5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV5_A {
+    pub const fn variant(&self) -> REV5_A {
         match self.bits {
             false => REV5_A::VALUE1,
             true => REV5_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<REV6_A> for bool {
 impl REV6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV6_A {
+    pub const fn variant(&self) -> REV6_A {
         match self.bits {
             false => REV6_A::VALUE1,
             true => REV6_A::VALUE2,
@@ -392,7 +392,7 @@ impl From<REV7_A> for bool {
 impl REV7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV7_A {
+    pub const fn variant(&self) -> REV7_A {
         match self.bits {
             false => REV7_A::VALUE1,
             true => REV7_A::VALUE2,
@@ -445,7 +445,7 @@ impl From<REV8_A> for bool {
 impl REV8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV8_A {
+    pub const fn variant(&self) -> REV8_A {
         match self.bits {
             false => REV8_A::VALUE1,
             true => REV8_A::VALUE2,
@@ -498,7 +498,7 @@ impl From<REV9_A> for bool {
 impl REV9_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV9_A {
+    pub const fn variant(&self) -> REV9_A {
         match self.bits {
             false => REV9_A::VALUE1,
             true => REV9_A::VALUE2,
@@ -551,7 +551,7 @@ impl From<REV10_A> for bool {
 impl REV10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV10_A {
+    pub const fn variant(&self) -> REV10_A {
         match self.bits {
             false => REV10_A::VALUE1,
             true => REV10_A::VALUE2,
@@ -604,7 +604,7 @@ impl From<REV11_A> for bool {
 impl REV11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV11_A {
+    pub const fn variant(&self) -> REV11_A {
         match self.bits {
             false => REV11_A::VALUE1,
             true => REV11_A::VALUE2,
@@ -657,7 +657,7 @@ impl From<REV12_A> for bool {
 impl REV12_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV12_A {
+    pub const fn variant(&self) -> REV12_A {
         match self.bits {
             false => REV12_A::VALUE1,
             true => REV12_A::VALUE2,
@@ -710,7 +710,7 @@ impl From<REV13_A> for bool {
 impl REV13_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV13_A {
+    pub const fn variant(&self) -> REV13_A {
         match self.bits {
             false => REV13_A::VALUE1,
             true => REV13_A::VALUE2,
@@ -763,7 +763,7 @@ impl From<REV14_A> for bool {
 impl REV14_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV14_A {
+    pub const fn variant(&self) -> REV14_A {
         match self.bits {
             false => REV14_A::VALUE1,
             true => REV14_A::VALUE2,
@@ -816,7 +816,7 @@ impl From<REV15_A> for bool {
 impl REV15_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REV15_A {
+    pub const fn variant(&self) -> REV15_A {
         match self.bits {
             false => REV15_A::VALUE1,
             true => REV15_A::VALUE2,
@@ -1029,7 +1029,11 @@ impl W {
     pub fn rev15(&mut self) -> REV15_W<REFLAG_SPEC, 15> {
         REV15_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

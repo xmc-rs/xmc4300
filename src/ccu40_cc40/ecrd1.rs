@@ -31,7 +31,7 @@ impl crate::FieldSpec for SPTR_A {
 impl SPTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SPTR_A {
+    pub const fn variant(&self) -> SPTR_A {
         match self.bits {
             0 => SPTR_A::VALUE1,
             1 => SPTR_A::VALUE2,
@@ -88,7 +88,7 @@ impl crate::FieldSpec for VPTR_A {
 impl VPTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VPTR_A {
+    pub const fn variant(&self) -> VPTR_A {
         match self.bits {
             0 => VPTR_A::VALUE1,
             1 => VPTR_A::VALUE2,
@@ -137,7 +137,7 @@ impl From<FFL_A> for bool {
 impl FFL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FFL_A {
+    pub const fn variant(&self) -> FFL_A {
         match self.bits {
             false => FFL_A::VALUE1,
             true => FFL_A::VALUE2,
@@ -173,7 +173,7 @@ impl From<LCV_A> for bool {
 impl LCV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LCV_A {
+    pub const fn variant(&self) -> LCV_A {
         match self.bits {
             false => LCV_A::VALUE1,
             true => LCV_A::VALUE2,

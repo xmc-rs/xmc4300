@@ -19,7 +19,7 @@ impl From<EMUL_A> for bool {
 impl EMUL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EMUL_A {
+    pub const fn variant(&self) -> EMUL_A {
         match self.bits {
             false => EMUL_A::VALUE1,
             true => EMUL_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<EHLD_A> for bool {
 impl EHLD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EHLD_A {
+    pub const fn variant(&self) -> EHLD_A {
         match self.bits {
             false => EHLD_A::VALUE1,
             true => EHLD_A::VALUE2,
@@ -91,7 +91,7 @@ impl From<CLKS_OUT_A> for bool {
 impl CLKS_OUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLKS_OUT_A {
+    pub const fn variant(&self) -> CLKS_OUT_A {
         match self.bits {
             false => CLKS_OUT_A::VALUE1,
             true => CLKS_OUT_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<CLKS_IN_A> for bool {
 impl CLKS_IN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLKS_IN_A {
+    pub const fn variant(&self) -> CLKS_IN_A {
         match self.bits {
             false => CLKS_IN_A::VALUE1,
             true => CLKS_IN_A::VALUE2,
@@ -163,7 +163,7 @@ impl From<EHLD_P0_A> for bool {
 impl EHLD_P0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EHLD_P0_A {
+    pub const fn variant(&self) -> EHLD_P0_A {
         match self.bits {
             false => EHLD_P0_A::VALUE1,
             true => EHLD_P0_A::VALUE2,
@@ -199,7 +199,7 @@ impl From<EHLD_P1_A> for bool {
 impl EHLD_P1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EHLD_P1_A {
+    pub const fn variant(&self) -> EHLD_P1_A {
         match self.bits {
             false => EHLD_P1_A::VALUE1,
             true => EHLD_P1_A::VALUE2,
@@ -235,7 +235,7 @@ impl From<EHLD_P2_A> for bool {
 impl EHLD_P2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EHLD_P2_A {
+    pub const fn variant(&self) -> EHLD_P2_A {
         match self.bits {
             false => EHLD_P2_A::VALUE1,
             true => EHLD_P2_A::VALUE2,
@@ -271,7 +271,7 @@ impl From<EHLD_P3_A> for bool {
 impl EHLD_P3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EHLD_P3_A {
+    pub const fn variant(&self) -> EHLD_P3_A {
         match self.bits {
             false => EHLD_P3_A::VALUE1,
             true => EHLD_P3_A::VALUE2,
