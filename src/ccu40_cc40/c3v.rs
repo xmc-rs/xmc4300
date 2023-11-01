@@ -23,7 +23,7 @@ impl From<FFL_A> for bool {
 impl FFL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FFL_A {
+    pub const fn variant(&self) -> FFL_A {
         match self.bits {
             false => FFL_A::VALUE1,
             true => FFL_A::VALUE2,

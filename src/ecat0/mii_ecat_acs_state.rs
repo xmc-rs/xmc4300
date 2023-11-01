@@ -19,7 +19,7 @@ impl From<EN_ACS_MII_BY_PDI_A> for bool {
 impl EN_ACS_MII_BY_PDI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EN_ACS_MII_BY_PDI_A {
+    pub const fn variant(&self) -> EN_ACS_MII_BY_PDI_A {
         match self.bits {
             false => EN_ACS_MII_BY_PDI_A::VALUE1,
             true => EN_ACS_MII_BY_PDI_A::VALUE2,

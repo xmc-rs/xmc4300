@@ -23,7 +23,7 @@ impl crate::FieldSpec for DEV_SPD_A {
 impl DEV_SPD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DEV_SPD_A> {
+    pub const fn variant(&self) -> Option<DEV_SPD_A> {
         match self.bits {
             3 => Some(DEV_SPD_A::VALUE4),
             _ => None,
@@ -67,7 +67,7 @@ impl From<NZSTS_OUTHSHK_A> for bool {
 impl NZSTS_OUTHSHK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NZSTS_OUTHSHK_A {
+    pub const fn variant(&self) -> NZSTS_OUTHSHK_A {
         match self.bits {
             true => NZSTS_OUTHSHK_A::VALUE1,
             false => NZSTS_OUTHSHK_A::VALUE2,
@@ -132,7 +132,7 @@ impl crate::FieldSpec for PER_FR_INT_A {
 impl PER_FR_INT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PER_FR_INT_A {
+    pub const fn variant(&self) -> PER_FR_INT_A {
         match self.bits {
             0 => PER_FR_INT_A::VALUE1,
             1 => PER_FR_INT_A::VALUE2,
@@ -219,7 +219,7 @@ impl crate::FieldSpec for PER_SCH_INTVL_A {
 impl PER_SCH_INTVL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PER_SCH_INTVL_A> {
+    pub const fn variant(&self) -> Option<PER_SCH_INTVL_A> {
         match self.bits {
             0 => Some(PER_SCH_INTVL_A::VALUE1),
             1 => Some(PER_SCH_INTVL_A::VALUE2),
@@ -335,7 +335,11 @@ impl W {
     pub fn per_sch_intvl(&mut self) -> PER_SCH_INTVL_W<DCFG_SPEC, 24> {
         PER_SCH_INTVL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

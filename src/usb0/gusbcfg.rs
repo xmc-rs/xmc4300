@@ -23,7 +23,7 @@ impl From<PHYSEL_A> for bool {
 impl PHYSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PHYSEL_A> {
+    pub const fn variant(&self) -> Option<PHYSEL_A> {
         match self.bits {
             true => Some(PHYSEL_A::VALUE2),
             _ => None,
@@ -54,7 +54,7 @@ impl From<SRPCAP_A> for bool {
 impl SRPCAP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRPCAP_A {
+    pub const fn variant(&self) -> SRPCAP_A {
         match self.bits {
             false => SRPCAP_A::VALUE1,
             true => SRPCAP_A::VALUE2,
@@ -107,7 +107,7 @@ impl From<HNPCAP_A> for bool {
 impl HNPCAP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HNPCAP_A {
+    pub const fn variant(&self) -> HNPCAP_A {
         match self.bits {
             false => HNPCAP_A::VALUE1,
             true => HNPCAP_A::VALUE2,
@@ -162,7 +162,7 @@ impl From<OTG_I2CSEL_A> for bool {
 impl OTG_I2CSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<OTG_I2CSEL_A> {
+    pub const fn variant(&self) -> Option<OTG_I2CSEL_A> {
         match self.bits {
             false => Some(OTG_I2CSEL_A::VALUE1),
             _ => None,
@@ -205,7 +205,7 @@ impl From<TX_END_DELAY_A> for bool {
 impl TX_END_DELAY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_END_DELAY_A {
+    pub const fn variant(&self) -> TX_END_DELAY_A {
         match self.bits {
             false => TX_END_DELAY_A::VALUE1,
             true => TX_END_DELAY_A::VALUE2,
@@ -258,7 +258,7 @@ impl From<FORCE_HST_MODE_A> for bool {
 impl FORCE_HST_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FORCE_HST_MODE_A {
+    pub const fn variant(&self) -> FORCE_HST_MODE_A {
         match self.bits {
             false => FORCE_HST_MODE_A::VALUE1,
             true => FORCE_HST_MODE_A::VALUE2,
@@ -311,7 +311,7 @@ impl From<FORCE_DEV_MODE_A> for bool {
 impl FORCE_DEV_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FORCE_DEV_MODE_A {
+    pub const fn variant(&self) -> FORCE_DEV_MODE_A {
         match self.bits {
             false => FORCE_DEV_MODE_A::VALUE1,
             true => FORCE_DEV_MODE_A::VALUE2,
@@ -456,7 +456,11 @@ impl W {
     pub fn ctp(&mut self) -> CTP_W<GUSBCFG_SPEC, 31> {
         CTP_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

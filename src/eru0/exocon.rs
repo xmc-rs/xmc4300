@@ -29,7 +29,7 @@ impl crate::FieldSpec for ISS_A {
 impl ISS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ISS_A {
+    pub const fn variant(&self) -> ISS_A {
         match self.bits {
             0 => ISS_A::VALUE1,
             1 => ISS_A::VALUE2,
@@ -106,7 +106,7 @@ impl From<GEEN_A> for bool {
 impl GEEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GEEN_A {
+    pub const fn variant(&self) -> GEEN_A {
         match self.bits {
             false => GEEN_A::VALUE1,
             true => GEEN_A::VALUE2,
@@ -159,7 +159,7 @@ impl From<PDR_A> for bool {
 impl PDR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PDR_A {
+    pub const fn variant(&self) -> PDR_A {
         match self.bits {
             false => PDR_A::VALUE1,
             true => PDR_A::VALUE2,
@@ -203,7 +203,7 @@ impl crate::FieldSpec for GP_A {
 impl GP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GP_A {
+    pub const fn variant(&self) -> GP_A {
         match self.bits {
             0 => GP_A::VALUE1,
             1 => GP_A::VALUE2,
@@ -280,7 +280,7 @@ impl From<IPEN0_A> for bool {
 impl IPEN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IPEN0_A {
+    pub const fn variant(&self) -> IPEN0_A {
         match self.bits {
             false => IPEN0_A::VALUE1,
             true => IPEN0_A::VALUE2,
@@ -333,7 +333,7 @@ impl From<IPEN1_A> for bool {
 impl IPEN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IPEN1_A {
+    pub const fn variant(&self) -> IPEN1_A {
         match self.bits {
             false => IPEN1_A::VALUE1,
             true => IPEN1_A::VALUE2,
@@ -386,7 +386,7 @@ impl From<IPEN2_A> for bool {
 impl IPEN2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IPEN2_A {
+    pub const fn variant(&self) -> IPEN2_A {
         match self.bits {
             false => IPEN2_A::VALUE1,
             true => IPEN2_A::VALUE2,
@@ -439,7 +439,7 @@ impl From<IPEN3_A> for bool {
 impl IPEN3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IPEN3_A {
+    pub const fn variant(&self) -> IPEN3_A {
         match self.bits {
             false => IPEN3_A::VALUE1,
             true => IPEN3_A::VALUE2,
@@ -558,7 +558,11 @@ impl W {
     pub fn ipen3(&mut self) -> IPEN3_W<EXOCON_SPEC, 15> {
         IPEN3_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

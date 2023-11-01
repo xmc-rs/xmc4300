@@ -21,7 +21,7 @@ impl From<VECTTBL_A> for bool {
 impl VECTTBL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VECTTBL_A {
+    pub const fn variant(&self) -> VECTTBL_A {
         match self.bits {
             false => VECTTBL_A::VALUE1,
             true => VECTTBL_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<FORCED_A> for bool {
 impl FORCED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FORCED_A {
+    pub const fn variant(&self) -> FORCED_A {
         match self.bits {
             false => FORCED_A::VALUE1,
             true => FORCED_A::VALUE2,
@@ -148,7 +148,11 @@ impl W {
     pub fn debugevt(&mut self) -> DEBUGEVT_W<HFSR_SPEC, 31> {
         DEBUGEVT_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

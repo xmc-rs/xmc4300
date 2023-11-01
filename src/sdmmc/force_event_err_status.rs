@@ -408,7 +408,11 @@ impl W {
     pub fn fe_ceata_err(&mut self) -> FE_CEATA_ERR_W<FORCE_EVENT_ERR_STATUS_SPEC, 13> {
         FE_CEATA_ERR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.bits = bits;

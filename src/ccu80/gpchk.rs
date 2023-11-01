@@ -33,7 +33,7 @@ impl crate::FieldSpec for PACS_A {
 impl PACS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PACS_A {
+    pub const fn variant(&self) -> PACS_A {
         match self.bits {
             0 => PACS_A::VALUE1,
             1 => PACS_A::VALUE2,
@@ -118,7 +118,7 @@ impl crate::FieldSpec for PISEL_A {
 impl PISEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PISEL_A {
+    pub const fn variant(&self) -> PISEL_A {
         match self.bits {
             0 => PISEL_A::VALUE1,
             1 => PISEL_A::VALUE2,
@@ -203,7 +203,7 @@ impl crate::FieldSpec for PCDS_A {
 impl PCDS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PCDS_A {
+    pub const fn variant(&self) -> PCDS_A {
         match self.bits {
             0 => PCDS_A::VALUE1,
             1 => PCDS_A::VALUE2,
@@ -280,7 +280,7 @@ impl From<PCTS_A> for bool {
 impl PCTS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PCTS_A {
+    pub const fn variant(&self) -> PCTS_A {
         match self.bits {
             false => PCTS_A::VALUE1,
             true => PCTS_A::VALUE2,
@@ -439,7 +439,11 @@ impl W {
     pub fn pcsel3(&mut self) -> PCSEL3_W<GPCHK_SPEC, 28> {
         PCSEL3_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

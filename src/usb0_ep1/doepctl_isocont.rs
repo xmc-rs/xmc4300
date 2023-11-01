@@ -29,7 +29,7 @@ impl From<EO_FR_NUM_A> for bool {
 impl EO_FR_NUM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EO_FR_NUM_A {
+    pub const fn variant(&self) -> EO_FR_NUM_A {
         match self.bits {
             false => EO_FR_NUM_A::VALUE1,
             true => EO_FR_NUM_A::VALUE2,
@@ -65,7 +65,7 @@ impl From<NAKSTS_A> for bool {
 impl NAKSTS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NAKSTS_A {
+    pub const fn variant(&self) -> NAKSTS_A {
         match self.bits {
             false => NAKSTS_A::VALUE1,
             true => NAKSTS_A::VALUE2,
@@ -109,7 +109,7 @@ impl crate::FieldSpec for EPTYPE_A {
 impl EPTYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPTYPE_A {
+    pub const fn variant(&self) -> EPTYPE_A {
         match self.bits {
             0 => EPTYPE_A::VALUE1,
             1 => EPTYPE_A::VALUE2,
@@ -320,7 +320,11 @@ impl W {
     pub fn epena(&mut self) -> EPENA_W<DOEPCTL_ISOCONT_SPEC, 31> {
         EPENA_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -21,7 +21,7 @@ impl From<DTE1_A> for bool {
 impl DTE1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DTE1_A {
+    pub const fn variant(&self) -> DTE1_A {
         match self.bits {
             false => DTE1_A::VALUE1,
             true => DTE1_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<DTE2_A> for bool {
 impl DTE2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DTE2_A {
+    pub const fn variant(&self) -> DTE2_A {
         match self.bits {
             false => DTE2_A::VALUE1,
             true => DTE2_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<DCEN1_A> for bool {
 impl DCEN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DCEN1_A {
+    pub const fn variant(&self) -> DCEN1_A {
         match self.bits {
             false => DCEN1_A::VALUE1,
             true => DCEN1_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<DCEN2_A> for bool {
 impl DCEN2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DCEN2_A {
+    pub const fn variant(&self) -> DCEN2_A {
         match self.bits {
             false => DCEN2_A::VALUE1,
             true => DCEN2_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<DCEN3_A> for bool {
 impl DCEN3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DCEN3_A {
+    pub const fn variant(&self) -> DCEN3_A {
         match self.bits {
             false => DCEN3_A::VALUE1,
             true => DCEN3_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<DCEN4_A> for bool {
 impl DCEN4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DCEN4_A {
+    pub const fn variant(&self) -> DCEN4_A {
         match self.bits {
             false => DCEN4_A::VALUE1,
             true => DCEN4_A::VALUE2,
@@ -347,7 +347,7 @@ impl crate::FieldSpec for DTCC_A {
 impl DTCC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DTCC_A {
+    pub const fn variant(&self) -> DTCC_A {
         match self.bits {
             0 => DTCC_A::VALUE1,
             1 => DTCC_A::VALUE2,
@@ -485,7 +485,11 @@ impl W {
     pub fn dtcc(&mut self) -> DTCC_W<DTC_SPEC, 6> {
         DTCC_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

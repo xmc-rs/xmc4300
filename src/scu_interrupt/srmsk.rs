@@ -21,7 +21,7 @@ impl From<PRWARN_A> for bool {
 impl PRWARN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRWARN_A {
+    pub const fn variant(&self) -> PRWARN_A {
         match self.bits {
             false => PRWARN_A::CONST_0,
             true => PRWARN_A::CONST_1,
@@ -74,7 +74,7 @@ impl From<PI_A> for bool {
 impl PI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PI_A {
+    pub const fn variant(&self) -> PI_A {
         match self.bits {
             false => PI_A::CONST_0,
             true => PI_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<AI_A> for bool {
 impl AI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AI_A {
+    pub const fn variant(&self) -> AI_A {
         match self.bits {
             false => AI_A::CONST_0,
             true => AI_A::CONST_1,
@@ -180,7 +180,7 @@ impl From<DLROVR_A> for bool {
 impl DLROVR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DLROVR_A {
+    pub const fn variant(&self) -> DLROVR_A {
         match self.bits {
             false => DLROVR_A::CONST_0,
             true => DLROVR_A::CONST_1,
@@ -233,7 +233,7 @@ impl From<HDCLR_A> for bool {
 impl HDCLR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HDCLR_A {
+    pub const fn variant(&self) -> HDCLR_A {
         match self.bits {
             false => HDCLR_A::CONST_0,
             true => HDCLR_A::CONST_1,
@@ -286,7 +286,7 @@ impl From<HDSET_A> for bool {
 impl HDSET_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HDSET_A {
+    pub const fn variant(&self) -> HDSET_A {
         match self.bits {
             false => HDSET_A::CONST_0,
             true => HDSET_A::CONST_1,
@@ -339,7 +339,7 @@ impl From<HDCR_A> for bool {
 impl HDCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HDCR_A {
+    pub const fn variant(&self) -> HDCR_A {
         match self.bits {
             false => HDCR_A::CONST_0,
             true => HDCR_A::CONST_1,
@@ -392,7 +392,7 @@ impl From<OSCSICTRL_A> for bool {
 impl OSCSICTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OSCSICTRL_A {
+    pub const fn variant(&self) -> OSCSICTRL_A {
         match self.bits {
             false => OSCSICTRL_A::CONST_0,
             true => OSCSICTRL_A::CONST_1,
@@ -445,7 +445,7 @@ impl From<OSCULCTRL_A> for bool {
 impl OSCULCTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OSCULCTRL_A {
+    pub const fn variant(&self) -> OSCULCTRL_A {
         match self.bits {
             false => OSCULCTRL_A::CONST_0,
             true => OSCULCTRL_A::CONST_1,
@@ -498,7 +498,7 @@ impl From<RTC_CTR_A> for bool {
 impl RTC_CTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTC_CTR_A {
+    pub const fn variant(&self) -> RTC_CTR_A {
         match self.bits {
             false => RTC_CTR_A::CONST_0,
             true => RTC_CTR_A::CONST_1,
@@ -551,7 +551,7 @@ impl From<RTC_ATIM0_A> for bool {
 impl RTC_ATIM0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTC_ATIM0_A {
+    pub const fn variant(&self) -> RTC_ATIM0_A {
         match self.bits {
             false => RTC_ATIM0_A::CONST_0,
             true => RTC_ATIM0_A::CONST_1,
@@ -604,7 +604,7 @@ impl From<RTC_ATIM1_A> for bool {
 impl RTC_ATIM1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTC_ATIM1_A {
+    pub const fn variant(&self) -> RTC_ATIM1_A {
         match self.bits {
             false => RTC_ATIM1_A::CONST_0,
             true => RTC_ATIM1_A::CONST_1,
@@ -657,7 +657,7 @@ impl From<RTC_TIM0_A> for bool {
 impl RTC_TIM0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTC_TIM0_A {
+    pub const fn variant(&self) -> RTC_TIM0_A {
         match self.bits {
             false => RTC_TIM0_A::CONST_0,
             true => RTC_TIM0_A::CONST_1,
@@ -710,7 +710,7 @@ impl From<RTC_TIM1_A> for bool {
 impl RTC_TIM1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTC_TIM1_A {
+    pub const fn variant(&self) -> RTC_TIM1_A {
         match self.bits {
             false => RTC_TIM1_A::CONST_0,
             true => RTC_TIM1_A::CONST_1,
@@ -763,7 +763,7 @@ impl From<RMX_A> for bool {
 impl RMX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RMX_A {
+    pub const fn variant(&self) -> RMX_A {
         match self.bits {
             false => RMX_A::CONST_0,
             true => RMX_A::CONST_1,
@@ -965,7 +965,11 @@ impl W {
     pub fn rmx(&mut self) -> RMX_W<SRMSK_SPEC, 29> {
         RMX_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

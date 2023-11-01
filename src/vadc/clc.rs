@@ -21,7 +21,7 @@ impl From<DISR_A> for bool {
 impl DISR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DISR_A {
+    pub const fn variant(&self) -> DISR_A {
         match self.bits {
             false => DISR_A::VALUE1,
             true => DISR_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<DISS_A> for bool {
 impl DISS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DISS_A {
+    pub const fn variant(&self) -> DISS_A {
         match self.bits {
             false => DISS_A::VALUE1,
             true => DISS_A::VALUE2,
@@ -110,7 +110,7 @@ impl From<EDIS_A> for bool {
 impl EDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EDIS_A {
+    pub const fn variant(&self) -> EDIS_A {
         match self.bits {
             false => EDIS_A::VALUE1,
             true => EDIS_A::VALUE2,
@@ -174,7 +174,11 @@ impl W {
     pub fn edis(&mut self) -> EDIS_W<CLC_SPEC, 3> {
         EDIS_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

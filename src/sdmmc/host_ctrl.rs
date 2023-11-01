@@ -21,7 +21,7 @@ impl From<LED_CTRL_A> for bool {
 impl LED_CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LED_CTRL_A {
+    pub const fn variant(&self) -> LED_CTRL_A {
         match self.bits {
             false => LED_CTRL_A::VALUE1,
             true => LED_CTRL_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<DATA_TX_WIDTH_A> for bool {
 impl DATA_TX_WIDTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DATA_TX_WIDTH_A {
+    pub const fn variant(&self) -> DATA_TX_WIDTH_A {
         match self.bits {
             false => DATA_TX_WIDTH_A::VALUE1,
             true => DATA_TX_WIDTH_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<HIGH_SPEED_EN_A> for bool {
 impl HIGH_SPEED_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HIGH_SPEED_EN_A {
+    pub const fn variant(&self) -> HIGH_SPEED_EN_A {
         match self.bits {
             false => HIGH_SPEED_EN_A::VALUE1,
             true => HIGH_SPEED_EN_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<SD_8BIT_MODE_A> for bool {
 impl SD_8BIT_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SD_8BIT_MODE_A {
+    pub const fn variant(&self) -> SD_8BIT_MODE_A {
         match self.bits {
             false => SD_8BIT_MODE_A::VALUE1,
             true => SD_8BIT_MODE_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<CARD_DETECT_TEST_LEVEL_A> for bool {
 impl CARD_DETECT_TEST_LEVEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_DETECT_TEST_LEVEL_A {
+    pub const fn variant(&self) -> CARD_DETECT_TEST_LEVEL_A {
         match self.bits {
             false => CARD_DETECT_TEST_LEVEL_A::VALUE1,
             true => CARD_DETECT_TEST_LEVEL_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<CARD_DET_SIGNAL_DETECT_A> for bool {
 impl CARD_DET_SIGNAL_DETECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_DET_SIGNAL_DETECT_A {
+    pub const fn variant(&self) -> CARD_DET_SIGNAL_DETECT_A {
         match self.bits {
             false => CARD_DET_SIGNAL_DETECT_A::VALUE1,
             true => CARD_DET_SIGNAL_DETECT_A::VALUE2,
@@ -389,7 +389,11 @@ impl W {
     pub fn card_det_signal_detect(&mut self) -> CARD_DET_SIGNAL_DETECT_W<HOST_CTRL_SPEC, 7> {
         CARD_DET_SIGNAL_DETECT_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

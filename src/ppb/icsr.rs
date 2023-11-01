@@ -23,7 +23,7 @@ impl crate::FieldSpec for VECTACTIVE_A {
 impl VECTACTIVE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<VECTACTIVE_A> {
+    pub const fn variant(&self) -> Option<VECTACTIVE_A> {
         match self.bits {
             0 => Some(VECTACTIVE_A::VALUE1),
             _ => None,
@@ -54,7 +54,7 @@ impl From<RETTOBASE_A> for bool {
 impl RETTOBASE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RETTOBASE_A {
+    pub const fn variant(&self) -> RETTOBASE_A {
         match self.bits {
             false => RETTOBASE_A::VALUE1,
             true => RETTOBASE_A::VALUE2,
@@ -92,7 +92,7 @@ impl crate::FieldSpec for VECTPENDING_A {
 impl VECTPENDING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<VECTPENDING_A> {
+    pub const fn variant(&self) -> Option<VECTPENDING_A> {
         match self.bits {
             0 => Some(VECTPENDING_A::VALUE1),
             _ => None,
@@ -123,7 +123,7 @@ impl From<ISRPENDING_A> for bool {
 impl ISRPENDING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ISRPENDING_A {
+    pub const fn variant(&self) -> ISRPENDING_A {
         match self.bits {
             false => ISRPENDING_A::VALUE1,
             true => ISRPENDING_A::VALUE2,
@@ -190,7 +190,7 @@ impl From<PENDSTSET_A> for bool {
 impl PENDSTSET_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PENDSTSET_A {
+    pub const fn variant(&self) -> PENDSTSET_A {
         match self.bits {
             false => PENDSTSET_A::VALUE1,
             true => PENDSTSET_A::VALUE2,
@@ -331,7 +331,11 @@ impl W {
     pub fn nmipendset(&mut self) -> NMIPENDSET_W<ICSR_SPEC, 31> {
         NMIPENDSET_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

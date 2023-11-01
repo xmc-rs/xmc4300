@@ -27,7 +27,7 @@ impl crate::FieldSpec for CP10_A {
 impl CP10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CP10_A> {
+    pub const fn variant(&self) -> Option<CP10_A> {
         match self.bits {
             0 => Some(CP10_A::VALUE1),
             1 => Some(CP10_A::VALUE2),
@@ -99,7 +99,7 @@ impl crate::FieldSpec for CP11_A {
 impl CP11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CP11_A> {
+    pub const fn variant(&self) -> Option<CP11_A> {
         match self.bits {
             0 => Some(CP11_A::VALUE1),
             1 => Some(CP11_A::VALUE2),
@@ -171,7 +171,11 @@ impl W {
     pub fn cp11(&mut self) -> CP11_W<CPACR_SPEC, 22> {
         CP11_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

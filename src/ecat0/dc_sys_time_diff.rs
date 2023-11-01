@@ -21,7 +21,7 @@ impl From<CPY_A> for bool {
 impl CPY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CPY_A {
+    pub const fn variant(&self) -> CPY_A {
         match self.bits {
             false => CPY_A::VALUE1,
             true => CPY_A::VALUE2,

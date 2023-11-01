@@ -20,7 +20,11 @@ impl W {
     pub fn phy_reg_addr(&mut self) -> PHY_REG_ADDR_W<MII_PHY_REG_ADR_SPEC, 0> {
         PHY_REG_ADDR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

@@ -29,7 +29,7 @@ impl crate::FieldSpec for STSEL_A {
 impl STSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STSEL_A {
+    pub const fn variant(&self) -> STSEL_A {
         match self.bits {
             0 => STSEL_A::VALUE1,
             1 => STSEL_A::VALUE2,
@@ -106,7 +106,7 @@ impl From<EVALR1_A> for bool {
 impl EVALR1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVALR1_A {
+    pub const fn variant(&self) -> EVALR1_A {
         match self.bits {
             false => EVALR1_A::VALUE1,
             true => EVALR1_A::VALUE2,
@@ -159,7 +159,7 @@ impl From<EVALR2_A> for bool {
 impl EVALR2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVALR2_A {
+    pub const fn variant(&self) -> EVALR2_A {
         match self.bits {
             false => EVALR2_A::VALUE1,
             true => EVALR2_A::VALUE2,
@@ -212,7 +212,7 @@ impl From<EVALR3_A> for bool {
 impl EVALR3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EVALR3_A {
+    pub const fn variant(&self) -> EVALR3_A {
         match self.bits {
             false => EVALR3_A::VALUE1,
             true => EVALR3_A::VALUE2,
@@ -293,7 +293,11 @@ impl W {
     pub fn evalr3(&mut self) -> EVALR3_W<SYNCTR_SPEC, 6> {
         EVALR3_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

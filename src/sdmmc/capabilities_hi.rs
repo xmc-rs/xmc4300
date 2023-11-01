@@ -17,7 +17,7 @@ impl From<SDR50_SUPPORT_A> for bool {
 impl SDR50_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SDR50_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<SDR50_SUPPORT_A> {
         match self.bits {
             false => Some(SDR50_SUPPORT_A::VALUE1),
             _ => None,
@@ -46,7 +46,7 @@ impl From<SDR104_SUPPORT_A> for bool {
 impl SDR104_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SDR104_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<SDR104_SUPPORT_A> {
         match self.bits {
             false => Some(SDR104_SUPPORT_A::VALUE1),
             _ => None,
@@ -75,7 +75,7 @@ impl From<DDR50_SUPPORT_A> for bool {
 impl DDR50_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DDR50_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<DDR50_SUPPORT_A> {
         match self.bits {
             false => Some(DDR50_SUPPORT_A::VALUE1),
             _ => None,
@@ -104,7 +104,7 @@ impl From<DRV_A_SUPPORT_A> for bool {
 impl DRV_A_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DRV_A_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<DRV_A_SUPPORT_A> {
         match self.bits {
             false => Some(DRV_A_SUPPORT_A::VALUE1),
             _ => None,
@@ -133,7 +133,7 @@ impl From<DRV_C_SUPPORT_A> for bool {
 impl DRV_C_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DRV_C_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<DRV_C_SUPPORT_A> {
         match self.bits {
             false => Some(DRV_C_SUPPORT_A::VALUE1),
             _ => None,
@@ -162,7 +162,7 @@ impl From<DRV_D_SUPPORT_A> for bool {
 impl DRV_D_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DRV_D_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<DRV_D_SUPPORT_A> {
         match self.bits {
             false => Some(DRV_D_SUPPORT_A::VALUE1),
             _ => None,
@@ -195,7 +195,7 @@ impl crate::FieldSpec for TIM_CNT_RETUNE_A {
 impl TIM_CNT_RETUNE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TIM_CNT_RETUNE_A> {
+    pub const fn variant(&self) -> Option<TIM_CNT_RETUNE_A> {
         match self.bits {
             0 => Some(TIM_CNT_RETUNE_A::VALUE1),
             _ => None,
@@ -224,7 +224,7 @@ impl From<USE_TUNING_SDR50_A> for bool {
 impl USE_TUNING_SDR50_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<USE_TUNING_SDR50_A> {
+    pub const fn variant(&self) -> Option<USE_TUNING_SDR50_A> {
         match self.bits {
             false => Some(USE_TUNING_SDR50_A::VALUE1),
             _ => None,
@@ -257,7 +257,7 @@ impl crate::FieldSpec for RE_TUNING_MODES_A {
 impl RE_TUNING_MODES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RE_TUNING_MODES_A> {
+    pub const fn variant(&self) -> Option<RE_TUNING_MODES_A> {
         match self.bits {
             0 => Some(RE_TUNING_MODES_A::VALUE1),
             _ => None,
@@ -290,7 +290,7 @@ impl crate::FieldSpec for CLK_MULT_A {
 impl CLK_MULT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CLK_MULT_A> {
+    pub const fn variant(&self) -> Option<CLK_MULT_A> {
         match self.bits {
             0 => Some(CLK_MULT_A::VALUE1),
             _ => None,

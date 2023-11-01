@@ -37,7 +37,7 @@ impl crate::FieldSpec for PID_A {
 impl PID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PID_A {
+    pub const fn variant(&self) -> PID_A {
         match self.bits {
             0 => PID_A::VALUE1,
             1 => PID_A::VALUE2,
@@ -131,7 +131,11 @@ impl W {
     pub fn pid(&mut self) -> PID_W<HCTSIZ_BUFFERMODE_SPEC, 29> {
         PID_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

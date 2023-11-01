@@ -21,7 +21,7 @@ impl From<FCMODE_A> for bool {
 impl FCMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FCMODE_A {
+    pub const fn variant(&self) -> FCMODE_A {
         match self.bits {
             false => FCMODE_A::VALUE1,
             true => FCMODE_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<FIFO_MODE_A> for bool {
 impl FIFO_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIFO_MODE_A {
+    pub const fn variant(&self) -> FIFO_MODE_A {
         match self.bits {
             false => FIFO_MODE_A::VALUE1,
             true => FIFO_MODE_A::VALUE2,
@@ -178,7 +178,11 @@ impl W {
     pub fn dest_per(&mut self) -> DEST_PER_W<CFGH_SPEC, 11> {
         DEST_PER_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

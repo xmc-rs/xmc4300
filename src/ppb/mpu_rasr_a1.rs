@@ -33,7 +33,7 @@ impl crate::FieldSpec for SRD_A {
 impl SRD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SRD_A> {
+    pub const fn variant(&self) -> Option<SRD_A> {
         match self.bits {
             0 => Some(SRD_A::VALUE1),
             1 => Some(SRD_A::VALUE2),
@@ -108,7 +108,7 @@ impl From<XN_A> for bool {
 impl XN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> XN_A {
+    pub const fn variant(&self) -> XN_A {
         match self.bits {
             false => XN_A::VALUE1,
             true => XN_A::VALUE2,
@@ -244,7 +244,11 @@ impl W {
     pub fn xn(&mut self) -> XN_W<MPU_RASR_A1_SPEC, 28> {
         XN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

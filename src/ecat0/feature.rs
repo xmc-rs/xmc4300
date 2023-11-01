@@ -19,7 +19,7 @@ impl From<FMMU_A> for bool {
 impl FMMU_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FMMU_A {
+    pub const fn variant(&self) -> FMMU_A {
         match self.bits {
             false => FMMU_A::VALUE1,
             true => FMMU_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<CLKS_A> for bool {
 impl CLKS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLKS_A {
+    pub const fn variant(&self) -> CLKS_A {
         match self.bits {
             false => CLKS_A::VALUE1,
             true => CLKS_A::VALUE2,
@@ -91,7 +91,7 @@ impl From<CLKS_W_A> for bool {
 impl CLKS_W_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLKS_W_A {
+    pub const fn variant(&self) -> CLKS_W_A {
         match self.bits {
             false => CLKS_W_A::VALUE1,
             true => CLKS_W_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<LJ_EBUS_A> for bool {
 impl LJ_EBUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LJ_EBUS_A {
+    pub const fn variant(&self) -> LJ_EBUS_A {
         match self.bits {
             false => LJ_EBUS_A::VALUE1,
             true => LJ_EBUS_A::VALUE2,
@@ -163,7 +163,7 @@ impl From<ELD_EBUS_A> for bool {
 impl ELD_EBUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ELD_EBUS_A {
+    pub const fn variant(&self) -> ELD_EBUS_A {
         match self.bits {
             false => ELD_EBUS_A::VALUE1,
             true => ELD_EBUS_A::VALUE2,
@@ -199,7 +199,7 @@ impl From<ELD_MII_A> for bool {
 impl ELD_MII_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ELD_MII_A {
+    pub const fn variant(&self) -> ELD_MII_A {
         match self.bits {
             false => ELD_MII_A::VALUE1,
             true => ELD_MII_A::VALUE2,
@@ -235,7 +235,7 @@ impl From<SH_FCSE_A> for bool {
 impl SH_FCSE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SH_FCSE_A {
+    pub const fn variant(&self) -> SH_FCSE_A {
         match self.bits {
             false => SH_FCSE_A::VALUE1,
             true => SH_FCSE_A::VALUE2,
@@ -271,7 +271,7 @@ impl From<EDC_SYNCA_A> for bool {
 impl EDC_SYNCA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EDC_SYNCA_A {
+    pub const fn variant(&self) -> EDC_SYNCA_A {
         match self.bits {
             false => EDC_SYNCA_A::VALUE1,
             true => EDC_SYNCA_A::VALUE2,
@@ -307,7 +307,7 @@ impl From<LRW_CS_A> for bool {
 impl LRW_CS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LRW_CS_A {
+    pub const fn variant(&self) -> LRW_CS_A {
         match self.bits {
             false => LRW_CS_A::VALUE1,
             true => LRW_CS_A::VALUE2,
@@ -343,7 +343,7 @@ impl From<RW_CS_A> for bool {
 impl RW_CS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RW_CS_A {
+    pub const fn variant(&self) -> RW_CS_A {
         match self.bits {
             false => RW_CS_A::VALUE1,
             true => RW_CS_A::VALUE2,
@@ -379,7 +379,7 @@ impl From<FX_CONF_A> for bool {
 impl FX_CONF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FX_CONF_A {
+    pub const fn variant(&self) -> FX_CONF_A {
         match self.bits {
             false => FX_CONF_A::VALUE1,
             true => FX_CONF_A::VALUE2,

@@ -29,7 +29,7 @@ impl crate::FieldSpec for ICLSEL_A {
 impl ICLSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ICLSEL_A {
+    pub const fn variant(&self) -> ICLSEL_A {
         match self.bits {
             0 => ICLSEL_A::VALUE1,
             1 => ICLSEL_A::VALUE2,
@@ -114,7 +114,7 @@ impl crate::FieldSpec for BNDSELL_A {
 impl BNDSELL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BNDSELL_A {
+    pub const fn variant(&self) -> BNDSELL_A {
         match self.bits {
             0 => BNDSELL_A::VALUE1,
             1 => BNDSELL_A::VALUE2,
@@ -199,7 +199,7 @@ impl crate::FieldSpec for BNDSELU_A {
 impl BNDSELU_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BNDSELU_A {
+    pub const fn variant(&self) -> BNDSELU_A {
         match self.bits {
             0 => BNDSELU_A::VALUE1,
             1 => BNDSELU_A::VALUE2,
@@ -284,7 +284,7 @@ impl crate::FieldSpec for CHEVMODE_A {
 impl CHEVMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHEVMODE_A {
+    pub const fn variant(&self) -> CHEVMODE_A {
         match self.bits {
             0 => CHEVMODE_A::VALUE1,
             1 => CHEVMODE_A::VALUE2,
@@ -361,7 +361,7 @@ impl From<SYNC_A> for bool {
 impl SYNC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SYNC_A {
+    pub const fn variant(&self) -> SYNC_A {
         match self.bits {
             false => SYNC_A::VALUE1,
             true => SYNC_A::VALUE2,
@@ -414,7 +414,7 @@ impl From<REFSEL_A> for bool {
 impl REFSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REFSEL_A {
+    pub const fn variant(&self) -> REFSEL_A {
         match self.bits {
             false => REFSEL_A::VALUE1,
             true => REFSEL_A::VALUE2,
@@ -471,7 +471,7 @@ impl crate::FieldSpec for RESREG_A {
 impl RESREG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RESREG_A> {
+    pub const fn variant(&self) -> Option<RESREG_A> {
         match self.bits {
             0 => Some(RESREG_A::VALUE1),
             15 => Some(RESREG_A::VALUE2),
@@ -526,7 +526,7 @@ impl From<RESTBS_A> for bool {
 impl RESTBS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RESTBS_A {
+    pub const fn variant(&self) -> RESTBS_A {
         match self.bits {
             false => RESTBS_A::VALUE1,
             true => RESTBS_A::VALUE2,
@@ -579,7 +579,7 @@ impl From<RESPOS_A> for bool {
 impl RESPOS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RESPOS_A {
+    pub const fn variant(&self) -> RESPOS_A {
         match self.bits {
             false => RESPOS_A::VALUE1,
             true => RESPOS_A::VALUE2,
@@ -636,7 +636,7 @@ impl crate::FieldSpec for BWDCH_A {
 impl BWDCH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BWDCH_A> {
+    pub const fn variant(&self) -> Option<BWDCH_A> {
         match self.bits {
             0 => Some(BWDCH_A::VALUE1),
             1 => Some(BWDCH_A::VALUE2),
@@ -691,7 +691,7 @@ impl From<BWDEN_A> for bool {
 impl BWDEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BWDEN_A {
+    pub const fn variant(&self) -> BWDEN_A {
         match self.bits {
             false => BWDEN_A::VALUE1,
             true => BWDEN_A::VALUE2,
@@ -849,7 +849,11 @@ impl W {
     pub fn bwden(&mut self) -> BWDEN_W<CHCTR_SPEC, 30> {
         BWDEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

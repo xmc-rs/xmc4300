@@ -19,7 +19,7 @@ impl From<EPEV_A> for bool {
 impl EPEV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPEV_A {
+    pub const fn variant(&self) -> EPEV_A {
         match self.bits {
             false => EPEV_A::CONST_0,
             true => EPEV_A::CONST_1,
@@ -55,7 +55,7 @@ impl From<ENEV_A> for bool {
 impl ENEV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENEV_A {
+    pub const fn variant(&self) -> ENEV_A {
         match self.bits {
             false => ENEV_A::CONST_0,
             true => ENEV_A::CONST_1,
@@ -91,7 +91,7 @@ impl From<RTCEV_A> for bool {
 impl RTCEV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTCEV_A {
+    pub const fn variant(&self) -> RTCEV_A {
         match self.bits {
             false => RTCEV_A::CONST_0,
             true => RTCEV_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<ULPWDG_A> for bool {
 impl ULPWDG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ULPWDG_A {
+    pub const fn variant(&self) -> ULPWDG_A {
         match self.bits {
             false => ULPWDG_A::CONST_0,
             true => ULPWDG_A::CONST_1,
@@ -163,7 +163,7 @@ impl From<HIBNOUT_A> for bool {
 impl HIBNOUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HIBNOUT_A {
+    pub const fn variant(&self) -> HIBNOUT_A {
         match self.bits {
             false => HIBNOUT_A::CONST_0,
             true => HIBNOUT_A::CONST_1,

@@ -21,7 +21,7 @@ impl From<RDWR_A> for bool {
 impl RDWR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RDWR_A {
+    pub const fn variant(&self) -> RDWR_A {
         match self.bits {
             false => RDWR_A::CONST_0,
             true => RDWR_A::CONST_1,
@@ -84,7 +84,11 @@ impl W {
     pub fn addr(&mut self) -> ADDR_W<RMACR_SPEC, 16> {
         ADDR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -23,7 +23,7 @@ impl crate::FieldSpec for BUS_CLK_A {
 impl BUS_CLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BUS_CLK_A> {
+    pub const fn variant(&self) -> Option<BUS_CLK_A> {
         match self.bits {
             0 => Some(BUS_CLK_A::VALUE1),
             1 => Some(BUS_CLK_A::VALUE2),
@@ -68,7 +68,7 @@ impl crate::FieldSpec for OC_BUS_A {
 impl OC_BUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<OC_BUS_A> {
+    pub const fn variant(&self) -> Option<OC_BUS_A> {
         match self.bits {
             0 => Some(OC_BUS_A::VALUE1),
             1 => Some(OC_BUS_A::VALUE2),

@@ -27,7 +27,7 @@ impl crate::FieldSpec for DAT_TIMEOUT_CNT_VAL_A {
 impl DAT_TIMEOUT_CNT_VAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DAT_TIMEOUT_CNT_VAL_A> {
+    pub const fn variant(&self) -> Option<DAT_TIMEOUT_CNT_VAL_A> {
         match self.bits {
             0 => Some(DAT_TIMEOUT_CNT_VAL_A::VALUE1),
             1 => Some(DAT_TIMEOUT_CNT_VAL_A::VALUE2),
@@ -88,7 +88,11 @@ impl W {
     pub fn dat_timeout_cnt_val(&mut self) -> DAT_TIMEOUT_CNT_VAL_W<TIMEOUT_CTRL_SPEC, 0> {
         DAT_TIMEOUT_CNT_VAL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

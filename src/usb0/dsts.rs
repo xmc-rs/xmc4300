@@ -23,7 +23,7 @@ impl crate::FieldSpec for ENUM_SPD_A {
 impl ENUM_SPD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ENUM_SPD_A> {
+    pub const fn variant(&self) -> Option<ENUM_SPD_A> {
         match self.bits {
             3 => Some(ENUM_SPD_A::VALUE4),
             _ => None,

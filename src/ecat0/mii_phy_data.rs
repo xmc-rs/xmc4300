@@ -20,7 +20,11 @@ impl W {
     pub fn phy_rw_data(&mut self) -> PHY_RW_DATA_W<MII_PHY_DATA_SPEC, 0> {
         PHY_RW_DATA_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.bits = bits;

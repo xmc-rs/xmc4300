@@ -21,7 +21,7 @@ impl From<CMD_TIMEOUT_ERR_A> for bool {
 impl CMD_TIMEOUT_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMD_TIMEOUT_ERR_A {
+    pub const fn variant(&self) -> CMD_TIMEOUT_ERR_A {
         match self.bits {
             false => CMD_TIMEOUT_ERR_A::VALUE1,
             true => CMD_TIMEOUT_ERR_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<CMD_CRC_ERR_A> for bool {
 impl CMD_CRC_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMD_CRC_ERR_A {
+    pub const fn variant(&self) -> CMD_CRC_ERR_A {
         match self.bits {
             false => CMD_CRC_ERR_A::VALUE1,
             true => CMD_CRC_ERR_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<CMD_END_BIT_ERR_A> for bool {
 impl CMD_END_BIT_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMD_END_BIT_ERR_A {
+    pub const fn variant(&self) -> CMD_END_BIT_ERR_A {
         match self.bits {
             false => CMD_END_BIT_ERR_A::VALUE1,
             true => CMD_END_BIT_ERR_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<CMD_IND_ERR_A> for bool {
 impl CMD_IND_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMD_IND_ERR_A {
+    pub const fn variant(&self) -> CMD_IND_ERR_A {
         match self.bits {
             false => CMD_IND_ERR_A::VALUE1,
             true => CMD_IND_ERR_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<DATA_TIMEOUT_ERR_A> for bool {
 impl DATA_TIMEOUT_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DATA_TIMEOUT_ERR_A {
+    pub const fn variant(&self) -> DATA_TIMEOUT_ERR_A {
         match self.bits {
             false => DATA_TIMEOUT_ERR_A::VALUE1,
             true => DATA_TIMEOUT_ERR_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<DATA_CRC_ERR_A> for bool {
 impl DATA_CRC_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DATA_CRC_ERR_A {
+    pub const fn variant(&self) -> DATA_CRC_ERR_A {
         match self.bits {
             false => DATA_CRC_ERR_A::VALUE1,
             true => DATA_CRC_ERR_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<DATA_END_BIT_ERR_A> for bool {
 impl DATA_END_BIT_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DATA_END_BIT_ERR_A {
+    pub const fn variant(&self) -> DATA_END_BIT_ERR_A {
         match self.bits {
             false => DATA_END_BIT_ERR_A::VALUE1,
             true => DATA_END_BIT_ERR_A::VALUE2,
@@ -392,7 +392,7 @@ impl From<CURRENT_LIMIT_ERR_A> for bool {
 impl CURRENT_LIMIT_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CURRENT_LIMIT_ERR_A {
+    pub const fn variant(&self) -> CURRENT_LIMIT_ERR_A {
         match self.bits {
             false => CURRENT_LIMIT_ERR_A::VALUE1,
             true => CURRENT_LIMIT_ERR_A::VALUE2,
@@ -445,7 +445,7 @@ impl From<ACMD_ERR_A> for bool {
 impl ACMD_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACMD_ERR_A {
+    pub const fn variant(&self) -> ACMD_ERR_A {
         match self.bits {
             false => ACMD_ERR_A::VALUE1,
             true => ACMD_ERR_A::VALUE2,
@@ -498,7 +498,7 @@ impl From<CEATA_ERR_A> for bool {
 impl CEATA_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CEATA_ERR_A {
+    pub const fn variant(&self) -> CEATA_ERR_A {
         match self.bits {
             false => CEATA_ERR_A::VALUE1,
             true => CEATA_ERR_A::VALUE2,
@@ -645,7 +645,11 @@ impl W {
     pub fn ceata_err(&mut self) -> CEATA_ERR_W<INT_STATUS_ERR_SPEC, 13> {
         CEATA_ERR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.bits = bits;

@@ -21,7 +21,7 @@ impl From<VCOBYP_A> for bool {
 impl VCOBYP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOBYP_A {
+    pub const fn variant(&self) -> VCOBYP_A {
         match self.bits {
             false => VCOBYP_A::CONST_0,
             true => VCOBYP_A::CONST_1,
@@ -74,7 +74,7 @@ impl From<VCOPWD_A> for bool {
 impl VCOPWD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOPWD_A {
+    pub const fn variant(&self) -> VCOPWD_A {
         match self.bits {
             false => VCOPWD_A::CONST_0,
             true => VCOPWD_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<VCOTR_A> for bool {
 impl VCOTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOTR_A {
+    pub const fn variant(&self) -> VCOTR_A {
         match self.bits {
             false => VCOTR_A::CONST_0,
             true => VCOTR_A::CONST_1,
@@ -180,7 +180,7 @@ impl From<FINDIS_A> for bool {
 impl FINDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FINDIS_A {
+    pub const fn variant(&self) -> FINDIS_A {
         match self.bits {
             false => FINDIS_A::CONST_0,
             true => FINDIS_A::CONST_1,
@@ -233,7 +233,7 @@ impl From<OSCDISCDIS_A> for bool {
 impl OSCDISCDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OSCDISCDIS_A {
+    pub const fn variant(&self) -> OSCDISCDIS_A {
         match self.bits {
             false => OSCDISCDIS_A::CONST_0,
             true => OSCDISCDIS_A::CONST_1,
@@ -286,7 +286,7 @@ impl From<PLLPWD_A> for bool {
 impl PLLPWD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PLLPWD_A {
+    pub const fn variant(&self) -> PLLPWD_A {
         match self.bits {
             false => PLLPWD_A::CONST_0,
             true => PLLPWD_A::CONST_1,
@@ -339,7 +339,7 @@ impl From<OSCRES_A> for bool {
 impl OSCRES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OSCRES_A {
+    pub const fn variant(&self) -> OSCRES_A {
         match self.bits {
             false => OSCRES_A::CONST_0,
             true => OSCRES_A::CONST_1,
@@ -394,7 +394,7 @@ impl From<AOTREN_A> for bool {
 impl AOTREN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AOTREN_A {
+    pub const fn variant(&self) -> AOTREN_A {
         match self.bits {
             false => AOTREN_A::CONST_0,
             true => AOTREN_A::CONST_1,
@@ -447,7 +447,7 @@ impl From<FOTR_A> for bool {
 impl FOTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FOTR_A {
+    pub const fn variant(&self) -> FOTR_A {
         match self.bits {
             false => FOTR_A::CONST_0,
             true => FOTR_A::CONST_1,
@@ -589,7 +589,11 @@ impl W {
     pub fn fotr(&mut self) -> FOTR_W<PLLCON0_SPEC, 20> {
         FOTR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

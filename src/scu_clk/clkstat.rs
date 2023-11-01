@@ -19,7 +19,7 @@ impl From<USBCST_A> for bool {
 impl USBCST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USBCST_A {
+    pub const fn variant(&self) -> USBCST_A {
         match self.bits {
             false => USBCST_A::CONST_0,
             true => USBCST_A::CONST_1,
@@ -55,7 +55,7 @@ impl From<MMCCST_A> for bool {
 impl MMCCST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MMCCST_A {
+    pub const fn variant(&self) -> MMCCST_A {
         match self.bits {
             false => MMCCST_A::CONST_0,
             true => MMCCST_A::CONST_1,
@@ -91,7 +91,7 @@ impl From<ETH0CST_A> for bool {
 impl ETH0CST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ETH0CST_A {
+    pub const fn variant(&self) -> ETH0CST_A {
         match self.bits {
             false => ETH0CST_A::CONST_0,
             true => ETH0CST_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<CCUCST_A> for bool {
 impl CCUCST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCUCST_A {
+    pub const fn variant(&self) -> CCUCST_A {
         match self.bits {
             false => CCUCST_A::CONST_0,
             true => CCUCST_A::CONST_1,
@@ -163,7 +163,7 @@ impl From<WDTCST_A> for bool {
 impl WDTCST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WDTCST_A {
+    pub const fn variant(&self) -> WDTCST_A {
         match self.bits {
             false => WDTCST_A::CONST_0,
             true => WDTCST_A::CONST_1,

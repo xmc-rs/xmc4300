@@ -23,7 +23,7 @@ impl crate::FieldSpec for PDI_A {
 impl PDI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PDI_A> {
+    pub const fn variant(&self) -> Option<PDI_A> {
         match self.bits {
             0 => Some(PDI_A::VALUE1),
             128 => Some(PDI_A::VALUE2),

@@ -33,7 +33,7 @@ impl From<FCR_A> for bool {
 impl FCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FCR_A {
+    pub const fn variant(&self) -> FCR_A {
         match self.bits {
             false => FCR_A::VALUE1,
             true => FCR_A::VALUE2,
@@ -69,7 +69,7 @@ impl From<VF_A> for bool {
 impl VF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VF_A {
+    pub const fn variant(&self) -> VF_A {
         match self.bits {
             false => VF_A::VALUE1,
             true => VF_A::VALUE2,
@@ -153,7 +153,11 @@ impl W {
     pub fn vf(&mut self) -> VF_W<GLOBRESD_SPEC, 31> {
         VF_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

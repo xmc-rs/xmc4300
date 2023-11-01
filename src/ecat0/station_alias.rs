@@ -20,7 +20,11 @@ impl W {
     pub fn alias_addr(&mut self) -> ALIAS_ADDR_W<STATION_ALIAS_SPEC, 0> {
         ALIAS_ADDR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.bits = bits;

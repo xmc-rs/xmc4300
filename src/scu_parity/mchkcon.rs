@@ -21,7 +21,7 @@ impl From<SELPS_A> for bool {
 impl SELPS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELPS_A {
+    pub const fn variant(&self) -> SELPS_A {
         match self.bits {
             false => SELPS_A::CONST_0,
             true => SELPS_A::CONST_1,
@@ -74,7 +74,7 @@ impl From<SELDS1_A> for bool {
 impl SELDS1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELDS1_A {
+    pub const fn variant(&self) -> SELDS1_A {
         match self.bits {
             false => SELDS1_A::CONST_0,
             true => SELDS1_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<USIC0DRA_A> for bool {
 impl USIC0DRA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USIC0DRA_A {
+    pub const fn variant(&self) -> USIC0DRA_A {
         match self.bits {
             false => USIC0DRA_A::CONST_0,
             true => USIC0DRA_A::CONST_1,
@@ -180,7 +180,7 @@ impl From<USIC1DRA_A> for bool {
 impl USIC1DRA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USIC1DRA_A {
+    pub const fn variant(&self) -> USIC1DRA_A {
         match self.bits {
             false => USIC1DRA_A::CONST_0,
             true => USIC1DRA_A::CONST_1,
@@ -233,7 +233,7 @@ impl From<MCANDRA_A> for bool {
 impl MCANDRA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MCANDRA_A {
+    pub const fn variant(&self) -> MCANDRA_A {
         match self.bits {
             false => MCANDRA_A::CONST_0,
             true => MCANDRA_A::CONST_1,
@@ -286,7 +286,7 @@ impl From<PPRFDRA_A> for bool {
 impl PPRFDRA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPRFDRA_A {
+    pub const fn variant(&self) -> PPRFDRA_A {
         match self.bits {
             false => PPRFDRA_A::CONST_0,
             true => PPRFDRA_A::CONST_1,
@@ -339,7 +339,7 @@ impl From<SELUSB_A> for bool {
 impl SELUSB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELUSB_A {
+    pub const fn variant(&self) -> SELUSB_A {
         match self.bits {
             false => SELUSB_A::CONST_0,
             true => SELUSB_A::CONST_1,
@@ -392,7 +392,7 @@ impl From<SELETH0TX_A> for bool {
 impl SELETH0TX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELETH0TX_A {
+    pub const fn variant(&self) -> SELETH0TX_A {
         match self.bits {
             false => SELETH0TX_A::CONST_0,
             true => SELETH0TX_A::CONST_1,
@@ -445,7 +445,7 @@ impl From<SELETH0RX_A> for bool {
 impl SELETH0RX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELETH0RX_A {
+    pub const fn variant(&self) -> SELETH0RX_A {
         match self.bits {
             false => SELETH0RX_A::CONST_0,
             true => SELETH0RX_A::CONST_1,
@@ -498,7 +498,7 @@ impl From<SELSD0_A> for bool {
 impl SELSD0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELSD0_A {
+    pub const fn variant(&self) -> SELSD0_A {
         match self.bits {
             false => SELSD0_A::CONST_0,
             true => SELSD0_A::CONST_1,
@@ -551,7 +551,7 @@ impl From<SELSD1_A> for bool {
 impl SELSD1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELSD1_A {
+    pub const fn variant(&self) -> SELSD1_A {
         match self.bits {
             false => SELSD1_A::CONST_0,
             true => SELSD1_A::CONST_1,
@@ -604,7 +604,7 @@ impl From<SELECAT0_A> for bool {
 impl SELECAT0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELECAT0_A {
+    pub const fn variant(&self) -> SELECAT0_A {
         match self.bits {
             false => SELECAT0_A::CONST_0,
             true => SELECAT0_A::CONST_1,
@@ -773,7 +773,11 @@ impl W {
     pub fn selecat0(&mut self) -> SELECAT0_W<MCHKCON_SPEC, 24> {
         SELECAT0_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

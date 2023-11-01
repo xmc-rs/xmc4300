@@ -25,7 +25,7 @@ impl crate::FieldSpec for NPTX_FSPC_AVAIL_A {
 impl NPTX_FSPC_AVAIL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NPTX_FSPC_AVAIL_A> {
+    pub const fn variant(&self) -> Option<NPTX_FSPC_AVAIL_A> {
         match self.bits {
             0 => Some(NPTX_FSPC_AVAIL_A::VALUE1),
             1 => Some(NPTX_FSPC_AVAIL_A::VALUE2),
@@ -74,7 +74,7 @@ impl crate::FieldSpec for NPTX_QSPC_AVAIL_A {
 impl NPTX_QSPC_AVAIL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NPTX_QSPC_AVAIL_A> {
+    pub const fn variant(&self) -> Option<NPTX_QSPC_AVAIL_A> {
         match self.bits {
             0 => Some(NPTX_QSPC_AVAIL_A::VALUE1),
             1 => Some(NPTX_QSPC_AVAIL_A::VALUE2),
@@ -123,7 +123,7 @@ impl crate::FieldSpec for NPTX_QTOP_A {
 impl NPTX_QTOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NPTX_QTOP_A> {
+    pub const fn variant(&self) -> Option<NPTX_QTOP_A> {
         match self.bits {
             0 => Some(NPTX_QTOP_A::VALUE1),
             1 => Some(NPTX_QTOP_A::VALUE2),

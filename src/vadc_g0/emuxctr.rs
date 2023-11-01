@@ -39,7 +39,7 @@ impl crate::FieldSpec for EMUXMODE_A {
 impl EMUXMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EMUXMODE_A {
+    pub const fn variant(&self) -> EMUXMODE_A {
         match self.bits {
             0 => EMUXMODE_A::VALUE1,
             1 => EMUXMODE_A::VALUE2,
@@ -116,7 +116,7 @@ impl From<EMXCOD_A> for bool {
 impl EMXCOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EMXCOD_A {
+    pub const fn variant(&self) -> EMXCOD_A {
         match self.bits {
             false => EMXCOD_A::VALUE1,
             true => EMXCOD_A::VALUE2,
@@ -169,7 +169,7 @@ impl From<EMXST_A> for bool {
 impl EMXST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EMXST_A {
+    pub const fn variant(&self) -> EMXST_A {
         match self.bits {
             false => EMXST_A::VALUE1,
             true => EMXST_A::VALUE2,
@@ -222,7 +222,7 @@ impl From<EMXCSS_A> for bool {
 impl EMXCSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EMXCSS_A {
+    pub const fn variant(&self) -> EMXCSS_A {
         match self.bits {
             false => EMXCSS_A::VALUE1,
             true => EMXCSS_A::VALUE2,
@@ -344,7 +344,11 @@ impl W {
     pub fn emxwc(&mut self) -> EMXWC_W<EMUXCTR_SPEC, 31> {
         EMXWC_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

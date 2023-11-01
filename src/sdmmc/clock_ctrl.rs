@@ -21,7 +21,7 @@ impl From<INTERNAL_CLOCK_EN_A> for bool {
 impl INTERNAL_CLOCK_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INTERNAL_CLOCK_EN_A {
+    pub const fn variant(&self) -> INTERNAL_CLOCK_EN_A {
         match self.bits {
             false => INTERNAL_CLOCK_EN_A::VALUE1,
             true => INTERNAL_CLOCK_EN_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<INTERNAL_CLOCK_STABLE_A> for bool {
 impl INTERNAL_CLOCK_STABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INTERNAL_CLOCK_STABLE_A {
+    pub const fn variant(&self) -> INTERNAL_CLOCK_STABLE_A {
         match self.bits {
             false => INTERNAL_CLOCK_STABLE_A::VALUE1,
             true => INTERNAL_CLOCK_STABLE_A::VALUE2,
@@ -110,7 +110,7 @@ impl From<SDCLOCK_EN_A> for bool {
 impl SDCLOCK_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SDCLOCK_EN_A {
+    pub const fn variant(&self) -> SDCLOCK_EN_A {
         match self.bits {
             false => SDCLOCK_EN_A::VALUE1,
             true => SDCLOCK_EN_A::VALUE2,
@@ -181,7 +181,7 @@ impl crate::FieldSpec for SDCLK_FREQ_SEL_A {
 impl SDCLK_FREQ_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SDCLK_FREQ_SEL_A> {
+    pub const fn variant(&self) -> Option<SDCLK_FREQ_SEL_A> {
         match self.bits {
             0 => Some(SDCLK_FREQ_SEL_A::VALUE1),
             1 => Some(SDCLK_FREQ_SEL_A::VALUE2),
@@ -335,7 +335,11 @@ impl W {
     pub fn sdclk_freq_sel(&mut self) -> SDCLK_FREQ_SEL_W<CLOCK_CTRL_SPEC, 8> {
         SDCLK_FREQ_SEL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.bits = bits;

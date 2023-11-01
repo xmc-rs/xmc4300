@@ -21,7 +21,7 @@ impl From<WPSEL_A> for bool {
 impl WPSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WPSEL_A {
+    pub const fn variant(&self) -> WPSEL_A {
         match self.bits {
             false => WPSEL_A::VALUE1,
             true => WPSEL_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<WPSVAL_A> for bool {
 impl WPSVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WPSVAL_A {
+    pub const fn variant(&self) -> WPSVAL_A {
         match self.bits {
             false => WPSVAL_A::VALUE1,
             true => WPSVAL_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<CDSEL_A> for bool {
 impl CDSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CDSEL_A {
+    pub const fn variant(&self) -> CDSEL_A {
         match self.bits {
             false => CDSEL_A::VALUE1,
             true => CDSEL_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<CDSVAL_A> for bool {
 impl CDSVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CDSVAL_A {
+    pub const fn variant(&self) -> CDSVAL_A {
         match self.bits {
             false => CDSVAL_A::VALUE1,
             true => CDSVAL_A::VALUE2,
@@ -261,7 +261,11 @@ impl W {
     pub fn cdsval(&mut self) -> CDSVAL_W<SDMMC_CON_SPEC, 20> {
         CDSVAL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

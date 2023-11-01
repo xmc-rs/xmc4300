@@ -21,7 +21,7 @@ impl From<INIT_A> for bool {
 impl INIT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INIT_A {
+    pub const fn variant(&self) -> INIT_A {
         match self.bits {
             false => INIT_A::VALUE1,
             true => INIT_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<TRIE_A> for bool {
 impl TRIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TRIE_A {
+    pub const fn variant(&self) -> TRIE_A {
         match self.bits {
             false => TRIE_A::VALUE1,
             true => TRIE_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<LECIE_A> for bool {
 impl LECIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LECIE_A {
+    pub const fn variant(&self) -> LECIE_A {
         match self.bits {
             false => LECIE_A::VALUE1,
             true => LECIE_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<ALIE_A> for bool {
 impl ALIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ALIE_A {
+    pub const fn variant(&self) -> ALIE_A {
         match self.bits {
             false => ALIE_A::VALUE1,
             true => ALIE_A::VALUE2,
@@ -241,7 +241,7 @@ impl From<CCE_A> for bool {
 impl CCE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCE_A {
+    pub const fn variant(&self) -> CCE_A {
         match self.bits {
             false => CCE_A::VALUE1,
             true => CCE_A::VALUE2,
@@ -370,7 +370,11 @@ impl W {
     pub fn calm(&mut self) -> CALM_W<NCR_SPEC, 7> {
         CALM_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

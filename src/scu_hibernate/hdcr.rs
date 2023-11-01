@@ -21,7 +21,7 @@ impl From<WKPEP_A> for bool {
 impl WKPEP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKPEP_A {
+    pub const fn variant(&self) -> WKPEP_A {
         match self.bits {
             false => WKPEP_A::CONST_0,
             true => WKPEP_A::CONST_1,
@@ -74,7 +74,7 @@ impl From<WKPEN_A> for bool {
 impl WKPEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKPEN_A {
+    pub const fn variant(&self) -> WKPEN_A {
         match self.bits {
             false => WKPEN_A::CONST_0,
             true => WKPEN_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<RTCE_A> for bool {
 impl RTCE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RTCE_A {
+    pub const fn variant(&self) -> RTCE_A {
         match self.bits {
             false => RTCE_A::CONST_0,
             true => RTCE_A::CONST_1,
@@ -180,7 +180,7 @@ impl From<ULPWDGEN_A> for bool {
 impl ULPWDGEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ULPWDGEN_A {
+    pub const fn variant(&self) -> ULPWDGEN_A {
         match self.bits {
             false => ULPWDGEN_A::CONST_0,
             true => ULPWDGEN_A::CONST_1,
@@ -233,7 +233,7 @@ impl From<HIB_A> for bool {
 impl HIB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HIB_A {
+    pub const fn variant(&self) -> HIB_A {
         match self.bits {
             false => HIB_A::CONST_0,
             true => HIB_A::CONST_1,
@@ -286,7 +286,7 @@ impl From<RCS_A> for bool {
 impl RCS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RCS_A {
+    pub const fn variant(&self) -> RCS_A {
         match self.bits {
             false => RCS_A::CONST_0,
             true => RCS_A::CONST_1,
@@ -339,7 +339,7 @@ impl From<STDBYSEL_A> for bool {
 impl STDBYSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STDBYSEL_A {
+    pub const fn variant(&self) -> STDBYSEL_A {
         match self.bits {
             false => STDBYSEL_A::CONST_0,
             true => STDBYSEL_A::CONST_1,
@@ -392,7 +392,7 @@ impl From<WKUPSEL_A> for bool {
 impl WKUPSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WKUPSEL_A {
+    pub const fn variant(&self) -> WKUPSEL_A {
         match self.bits {
             false => WKUPSEL_A::CONST_0,
             true => WKUPSEL_A::CONST_1,
@@ -445,7 +445,7 @@ impl From<GPI0SEL_A> for bool {
 impl GPI0SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GPI0SEL_A {
+    pub const fn variant(&self) -> GPI0SEL_A {
         match self.bits {
             false => GPI0SEL_A::CONST_0,
             true => GPI0SEL_A::CONST_1,
@@ -498,7 +498,7 @@ impl From<HIBIO0POL_A> for bool {
 impl HIBIO0POL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HIBIO0POL_A {
+    pub const fn variant(&self) -> HIBIO0POL_A {
         match self.bits {
             false => HIBIO0POL_A::CONST_0,
             true => HIBIO0POL_A::CONST_1,
@@ -551,7 +551,7 @@ impl From<HIBIO1POL_A> for bool {
 impl HIBIO1POL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HIBIO1POL_A {
+    pub const fn variant(&self) -> HIBIO1POL_A {
         match self.bits {
             false => HIBIO1POL_A::CONST_0,
             true => HIBIO1POL_A::CONST_1,
@@ -624,7 +624,7 @@ impl crate::FieldSpec for HIBIO0SEL_A {
 impl HIBIO0SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HIBIO0SEL_A> {
+    pub const fn variant(&self) -> Option<HIBIO0SEL_A> {
         match self.bits {
             0 => Some(HIBIO0SEL_A::CONST_0000),
             1 => Some(HIBIO0SEL_A::CONST_0001),
@@ -787,7 +787,7 @@ impl crate::FieldSpec for HIBIO1SEL_A {
 impl HIBIO1SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HIBIO1SEL_A> {
+    pub const fn variant(&self) -> Option<HIBIO1SEL_A> {
         match self.bits {
             0 => Some(HIBIO1SEL_A::CONST_0000),
             1 => Some(HIBIO1SEL_A::CONST_0001),
@@ -1057,7 +1057,11 @@ impl W {
     pub fn hibio1sel(&mut self) -> HIBIO1SEL_W<HDCR_SPEC, 20> {
         HIBIO1SEL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

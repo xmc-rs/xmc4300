@@ -19,7 +19,7 @@ impl From<INT_W_A> for bool {
 impl INT_W_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INT_W_A {
+    pub const fn variant(&self) -> INT_W_A {
         match self.bits {
             false => INT_W_A::VALUE1,
             true => INT_W_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<INT_R_A> for bool {
 impl INT_R_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INT_R_A {
+    pub const fn variant(&self) -> INT_R_A {
         match self.bits {
             false => INT_R_A::VALUE1,
             true => INT_R_A::VALUE2,
@@ -91,7 +91,7 @@ impl From<MB_STATUS_A> for bool {
 impl MB_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MB_STATUS_A {
+    pub const fn variant(&self) -> MB_STATUS_A {
         match self.bits {
             false => MB_STATUS_A::VALUE1,
             true => MB_STATUS_A::VALUE2,
@@ -135,7 +135,7 @@ impl crate::FieldSpec for BUF_STATUS_A {
 impl BUF_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUF_STATUS_A {
+    pub const fn variant(&self) -> BUF_STATUS_A {
         match self.bits {
             0 => BUF_STATUS_A::VALUE1,
             1 => BUF_STATUS_A::VALUE2,
@@ -184,7 +184,7 @@ impl From<R_BUF_IU_A> for bool {
 impl R_BUF_IU_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> R_BUF_IU_A {
+    pub const fn variant(&self) -> R_BUF_IU_A {
         match self.bits {
             false => R_BUF_IU_A::VALUE1,
             true => R_BUF_IU_A::VALUE2,
@@ -220,7 +220,7 @@ impl From<W_BUF_IU_A> for bool {
 impl W_BUF_IU_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> W_BUF_IU_A {
+    pub const fn variant(&self) -> W_BUF_IU_A {
         match self.bits {
             false => W_BUF_IU_A::VALUE1,
             true => W_BUF_IU_A::VALUE2,

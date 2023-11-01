@@ -21,7 +21,7 @@ impl From<LSPACT_A> for bool {
 impl LSPACT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LSPACT_A {
+    pub const fn variant(&self) -> LSPACT_A {
         match self.bits {
             false => LSPACT_A::VALUE1,
             true => LSPACT_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<USER_A> for bool {
 impl USER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USER_A {
+    pub const fn variant(&self) -> USER_A {
         match self.bits {
             false => USER_A::VALUE1,
             true => USER_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<THREAD_A> for bool {
 impl THREAD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> THREAD_A {
+    pub const fn variant(&self) -> THREAD_A {
         match self.bits {
             false => THREAD_A::VALUE1,
             true => THREAD_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<HFRDY_A> for bool {
 impl HFRDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HFRDY_A {
+    pub const fn variant(&self) -> HFRDY_A {
         match self.bits {
             false => HFRDY_A::VALUE1,
             true => HFRDY_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<MMRDY_A> for bool {
 impl MMRDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MMRDY_A {
+    pub const fn variant(&self) -> MMRDY_A {
         match self.bits {
             false => MMRDY_A::VALUE1,
             true => MMRDY_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<BFRDY_A> for bool {
 impl BFRDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFRDY_A {
+    pub const fn variant(&self) -> BFRDY_A {
         match self.bits {
             false => BFRDY_A::VALUE1,
             true => BFRDY_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<MONRDY_A> for bool {
 impl MONRDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MONRDY_A {
+    pub const fn variant(&self) -> MONRDY_A {
         match self.bits {
             false => MONRDY_A::VALUE1,
             true => MONRDY_A::VALUE2,
@@ -392,7 +392,7 @@ impl From<LSPEN_A> for bool {
 impl LSPEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LSPEN_A {
+    pub const fn variant(&self) -> LSPEN_A {
         match self.bits {
             false => LSPEN_A::VALUE1,
             true => LSPEN_A::VALUE2,
@@ -445,7 +445,7 @@ impl From<ASPEN_A> for bool {
 impl ASPEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASPEN_A {
+    pub const fn variant(&self) -> ASPEN_A {
         match self.bits {
             false => ASPEN_A::VALUE1,
             true => ASPEN_A::VALUE2,
@@ -581,7 +581,11 @@ impl W {
     pub fn aspen(&mut self) -> ASPEN_W<FPCCR_SPEC, 31> {
         ASPEN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

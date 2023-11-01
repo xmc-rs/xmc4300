@@ -29,7 +29,7 @@ impl crate::FieldSpec for RXD0_A {
 impl RXD0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXD0_A {
+    pub const fn variant(&self) -> RXD0_A {
         match self.bits {
             0 => RXD0_A::VALUE1,
             1 => RXD0_A::VALUE2,
@@ -114,7 +114,7 @@ impl crate::FieldSpec for RXD1_A {
 impl RXD1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXD1_A {
+    pub const fn variant(&self) -> RXD1_A {
         match self.bits {
             0 => RXD1_A::VALUE1,
             1 => RXD1_A::VALUE2,
@@ -199,7 +199,7 @@ impl crate::FieldSpec for RXD2_A {
 impl RXD2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXD2_A {
+    pub const fn variant(&self) -> RXD2_A {
         match self.bits {
             0 => RXD2_A::VALUE1,
             1 => RXD2_A::VALUE2,
@@ -284,7 +284,7 @@ impl crate::FieldSpec for RXD3_A {
 impl RXD3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXD3_A {
+    pub const fn variant(&self) -> RXD3_A {
         match self.bits {
             0 => RXD3_A::VALUE1,
             1 => RXD3_A::VALUE2,
@@ -369,7 +369,7 @@ impl crate::FieldSpec for RX_ERR_A {
 impl RX_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_ERR_A {
+    pub const fn variant(&self) -> RX_ERR_A {
         match self.bits {
             0 => RX_ERR_A::VALUE1,
             1 => RX_ERR_A::VALUE2,
@@ -454,7 +454,7 @@ impl crate::FieldSpec for RX_DV_A {
 impl RX_DV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_DV_A {
+    pub const fn variant(&self) -> RX_DV_A {
         match self.bits {
             0 => RX_DV_A::VALUE1,
             1 => RX_DV_A::VALUE2,
@@ -539,7 +539,7 @@ impl crate::FieldSpec for RX_CLK_A {
 impl RX_CLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_CLK_A {
+    pub const fn variant(&self) -> RX_CLK_A {
         match self.bits {
             0 => RX_CLK_A::VALUE1,
             1 => RX_CLK_A::VALUE2,
@@ -624,7 +624,7 @@ impl crate::FieldSpec for LINK_A {
 impl LINK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LINK_A {
+    pub const fn variant(&self) -> LINK_A {
         match self.bits {
             0 => LINK_A::VALUE1,
             1 => LINK_A::VALUE2,
@@ -709,7 +709,7 @@ impl crate::FieldSpec for TX_CLK_A {
 impl TX_CLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_CLK_A {
+    pub const fn variant(&self) -> TX_CLK_A {
         match self.bits {
             0 => TX_CLK_A::VALUE1,
             1 => TX_CLK_A::VALUE2,
@@ -794,7 +794,7 @@ impl crate::FieldSpec for TX_SHIFT_A {
 impl TX_SHIFT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_SHIFT_A {
+    pub const fn variant(&self) -> TX_SHIFT_A {
         match self.bits {
             0 => TX_SHIFT_A::VALUE1,
             1 => TX_SHIFT_A::VALUE2,
@@ -965,7 +965,11 @@ impl W {
     pub fn tx_shift(&mut self) -> TX_SHIFT_W<CONP0_SPEC, 30> {
         TX_SHIFT_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

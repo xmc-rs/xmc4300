@@ -19,7 +19,7 @@ impl From<PBUSY_A> for bool {
 impl PBUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PBUSY_A {
+    pub const fn variant(&self) -> PBUSY_A {
         match self.bits {
             false => PBUSY_A::VALUE1,
             true => PBUSY_A::VALUE2,
@@ -57,7 +57,7 @@ impl From<PROG_A> for bool {
 impl PROG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PROG_A {
+    pub const fn variant(&self) -> PROG_A {
         match self.bits {
             false => PROG_A::VALUE1,
             true => PROG_A::VALUE2,
@@ -93,7 +93,7 @@ impl From<ERASE_A> for bool {
 impl ERASE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERASE_A {
+    pub const fn variant(&self) -> ERASE_A {
         match self.bits {
             false => ERASE_A::VALUE1,
             true => ERASE_A::VALUE2,
@@ -129,7 +129,7 @@ impl From<PFPAGE_A> for bool {
 impl PFPAGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PFPAGE_A {
+    pub const fn variant(&self) -> PFPAGE_A {
         match self.bits {
             false => PFPAGE_A::VALUE1,
             true => PFPAGE_A::VALUE2,
@@ -165,7 +165,7 @@ impl From<PFOPER_A> for bool {
 impl PFOPER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PFOPER_A {
+    pub const fn variant(&self) -> PFOPER_A {
         match self.bits {
             false => PFOPER_A::VALUE1,
             true => PFOPER_A::VALUE2,
@@ -201,7 +201,7 @@ impl From<SQER_A> for bool {
 impl SQER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SQER_A {
+    pub const fn variant(&self) -> SQER_A {
         match self.bits {
             false => SQER_A::VALUE1,
             true => SQER_A::VALUE2,
@@ -237,7 +237,7 @@ impl From<PROER_A> for bool {
 impl PROER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PROER_A {
+    pub const fn variant(&self) -> PROER_A {
         match self.bits {
             false => PROER_A::VALUE1,
             true => PROER_A::VALUE2,
@@ -273,7 +273,7 @@ impl From<PFSBER_A> for bool {
 impl PFSBER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PFSBER_A {
+    pub const fn variant(&self) -> PFSBER_A {
         match self.bits {
             false => PFSBER_A::VALUE1,
             true => PFSBER_A::VALUE2,
@@ -309,7 +309,7 @@ impl From<PFDBER_A> for bool {
 impl PFDBER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PFDBER_A {
+    pub const fn variant(&self) -> PFDBER_A {
         match self.bits {
             false => PFDBER_A::VALUE1,
             true => PFDBER_A::VALUE2,
@@ -345,7 +345,7 @@ impl From<PROIN_A> for bool {
 impl PROIN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PROIN_A {
+    pub const fn variant(&self) -> PROIN_A {
         match self.bits {
             false => PROIN_A::VALUE1,
             true => PROIN_A::VALUE2,
@@ -381,7 +381,7 @@ impl From<RPROIN_A> for bool {
 impl RPROIN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RPROIN_A {
+    pub const fn variant(&self) -> RPROIN_A {
         match self.bits {
             false => RPROIN_A::VALUE1,
             true => RPROIN_A::VALUE2,
@@ -417,7 +417,7 @@ impl From<RPRODIS_A> for bool {
 impl RPRODIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RPRODIS_A {
+    pub const fn variant(&self) -> RPRODIS_A {
         match self.bits {
             false => RPRODIS_A::VALUE1,
             true => RPRODIS_A::VALUE2,
@@ -453,7 +453,7 @@ impl From<WPROIN0_A> for bool {
 impl WPROIN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WPROIN0_A {
+    pub const fn variant(&self) -> WPROIN0_A {
         match self.bits {
             false => WPROIN0_A::VALUE1,
             true => WPROIN0_A::VALUE2,
@@ -489,7 +489,7 @@ impl From<WPROIN1_A> for bool {
 impl WPROIN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WPROIN1_A {
+    pub const fn variant(&self) -> WPROIN1_A {
         match self.bits {
             false => WPROIN1_A::VALUE1,
             true => WPROIN1_A::VALUE2,
@@ -525,7 +525,7 @@ impl From<WPROIN2_A> for bool {
 impl WPROIN2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WPROIN2_A {
+    pub const fn variant(&self) -> WPROIN2_A {
         match self.bits {
             false => WPROIN2_A::VALUE1,
             true => WPROIN2_A::VALUE2,
@@ -561,7 +561,7 @@ impl From<WPRODIS0_A> for bool {
 impl WPRODIS0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WPRODIS0_A {
+    pub const fn variant(&self) -> WPRODIS0_A {
         match self.bits {
             false => WPRODIS0_A::VALUE1,
             true => WPRODIS0_A::VALUE2,
@@ -597,7 +597,7 @@ impl From<WPRODIS1_A> for bool {
 impl WPRODIS1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WPRODIS1_A {
+    pub const fn variant(&self) -> WPRODIS1_A {
         match self.bits {
             false => WPRODIS1_A::VALUE1,
             true => WPRODIS1_A::VALUE2,
@@ -633,7 +633,7 @@ impl From<SLM_A> for bool {
 impl SLM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SLM_A {
+    pub const fn variant(&self) -> SLM_A {
         match self.bits {
             false => SLM_A::VALUE1,
             true => SLM_A::VALUE2,
@@ -669,7 +669,7 @@ impl From<VER_A> for bool {
 impl VER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VER_A {
+    pub const fn variant(&self) -> VER_A {
         match self.bits {
             false => VER_A::VALUE1,
             true => VER_A::VALUE2,

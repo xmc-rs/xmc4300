@@ -21,7 +21,7 @@ impl crate::FieldSpec for TIMEOUT_CLOCK_FREQ_A {
 impl TIMEOUT_CLOCK_FREQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TIMEOUT_CLOCK_FREQ_A> {
+    pub const fn variant(&self) -> Option<TIMEOUT_CLOCK_FREQ_A> {
         match self.bits {
             48 => Some(TIMEOUT_CLOCK_FREQ_A::VALUE1),
             _ => None,
@@ -50,7 +50,7 @@ impl From<TIMEOUT_CLOCK_UNIT_A> for bool {
 impl TIMEOUT_CLOCK_UNIT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TIMEOUT_CLOCK_UNIT_A> {
+    pub const fn variant(&self) -> Option<TIMEOUT_CLOCK_UNIT_A> {
         match self.bits {
             true => Some(TIMEOUT_CLOCK_UNIT_A::VALUE1),
             _ => None,
@@ -83,7 +83,7 @@ impl crate::FieldSpec for BASE_SD_CLOCK_FREQ_A {
 impl BASE_SD_CLOCK_FREQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BASE_SD_CLOCK_FREQ_A> {
+    pub const fn variant(&self) -> Option<BASE_SD_CLOCK_FREQ_A> {
         match self.bits {
             48 => Some(BASE_SD_CLOCK_FREQ_A::VALUE1),
             _ => None,
@@ -116,7 +116,7 @@ impl crate::FieldSpec for MAX_BLOCK_LENGTH_A {
 impl MAX_BLOCK_LENGTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MAX_BLOCK_LENGTH_A> {
+    pub const fn variant(&self) -> Option<MAX_BLOCK_LENGTH_A> {
         match self.bits {
             0 => Some(MAX_BLOCK_LENGTH_A::VALUE1),
             _ => None,
@@ -145,7 +145,7 @@ impl From<EXT_MEDIA_BUS_SUPPORT_A> for bool {
 impl EXT_MEDIA_BUS_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<EXT_MEDIA_BUS_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<EXT_MEDIA_BUS_SUPPORT_A> {
         match self.bits {
             false => Some(EXT_MEDIA_BUS_SUPPORT_A::VALUE1),
             _ => None,
@@ -174,7 +174,7 @@ impl From<ADMA2_SUPPORT_A> for bool {
 impl ADMA2_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ADMA2_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<ADMA2_SUPPORT_A> {
         match self.bits {
             false => Some(ADMA2_SUPPORT_A::VALUE1),
             _ => None,
@@ -203,7 +203,7 @@ impl From<HIGH_SPEED_SUPPORT_A> for bool {
 impl HIGH_SPEED_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HIGH_SPEED_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<HIGH_SPEED_SUPPORT_A> {
         match self.bits {
             true => Some(HIGH_SPEED_SUPPORT_A::VALUE1),
             _ => None,
@@ -232,7 +232,7 @@ impl From<SDMA_SUPPORT_A> for bool {
 impl SDMA_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SDMA_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<SDMA_SUPPORT_A> {
         match self.bits {
             false => Some(SDMA_SUPPORT_A::VALUE1),
             _ => None,
@@ -261,7 +261,7 @@ impl From<SUSPEND_RESUME_SUPPORT_A> for bool {
 impl SUSPEND_RESUME_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SUSPEND_RESUME_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<SUSPEND_RESUME_SUPPORT_A> {
         match self.bits {
             true => Some(SUSPEND_RESUME_SUPPORT_A::VALUE1),
             _ => None,
@@ -290,7 +290,7 @@ impl From<VOLTAGE_SUPPORT_3_3V_A> for bool {
 impl VOLTAGE_SUPPORT_3_3V_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<VOLTAGE_SUPPORT_3_3V_A> {
+    pub const fn variant(&self) -> Option<VOLTAGE_SUPPORT_3_3V_A> {
         match self.bits {
             true => Some(VOLTAGE_SUPPORT_3_3V_A::VALUE1),
             _ => None,
@@ -319,7 +319,7 @@ impl From<VOLTAGE_SUPPORT_3V_A> for bool {
 impl VOLTAGE_SUPPORT_3V_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<VOLTAGE_SUPPORT_3V_A> {
+    pub const fn variant(&self) -> Option<VOLTAGE_SUPPORT_3V_A> {
         match self.bits {
             false => Some(VOLTAGE_SUPPORT_3V_A::VALUE1),
             _ => None,
@@ -348,7 +348,7 @@ impl From<VOLTAGE_SUPPORT_1_8V_A> for bool {
 impl VOLTAGE_SUPPORT_1_8V_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<VOLTAGE_SUPPORT_1_8V_A> {
+    pub const fn variant(&self) -> Option<VOLTAGE_SUPPORT_1_8V_A> {
         match self.bits {
             false => Some(VOLTAGE_SUPPORT_1_8V_A::VALUE1),
             _ => None,
@@ -377,7 +377,7 @@ impl From<SYSBUS_64_SUPPORT_A> for bool {
 impl SYSBUS_64_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SYSBUS_64_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<SYSBUS_64_SUPPORT_A> {
         match self.bits {
             false => Some(SYSBUS_64_SUPPORT_A::VALUE1),
             _ => None,
@@ -406,7 +406,7 @@ impl From<ASYNC_INT_SUPPORT_A> for bool {
 impl ASYNC_INT_SUPPORT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ASYNC_INT_SUPPORT_A> {
+    pub const fn variant(&self) -> Option<ASYNC_INT_SUPPORT_A> {
         match self.bits {
             false => Some(ASYNC_INT_SUPPORT_A::VALUE1),
             _ => None,
@@ -439,7 +439,7 @@ impl crate::FieldSpec for SLOT_TYPE_A {
 impl SLOT_TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SLOT_TYPE_A> {
+    pub const fn variant(&self) -> Option<SLOT_TYPE_A> {
         match self.bits {
             0 => Some(SLOT_TYPE_A::VALUE1),
             _ => None,

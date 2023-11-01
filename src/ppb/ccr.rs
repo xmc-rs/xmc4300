@@ -22,7 +22,7 @@ impl From<NONBASETHRDENA_A> for bool {
 impl NONBASETHRDENA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NONBASETHRDENA_A {
+    pub const fn variant(&self) -> NONBASETHRDENA_A {
         match self.bits {
             false => NONBASETHRDENA_A::VALUE1,
             true => NONBASETHRDENA_A::VALUE2,
@@ -77,7 +77,7 @@ impl From<USERSETMPEND_A> for bool {
 impl USERSETMPEND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USERSETMPEND_A {
+    pub const fn variant(&self) -> USERSETMPEND_A {
         match self.bits {
             false => USERSETMPEND_A::VALUE1,
             true => USERSETMPEND_A::VALUE2,
@@ -130,7 +130,7 @@ impl From<UNALIGN_TRP_A> for bool {
 impl UNALIGN_TRP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UNALIGN_TRP_A {
+    pub const fn variant(&self) -> UNALIGN_TRP_A {
         match self.bits {
             false => UNALIGN_TRP_A::VALUE1,
             true => UNALIGN_TRP_A::VALUE2,
@@ -183,7 +183,7 @@ impl From<DIV_0_TRP_A> for bool {
 impl DIV_0_TRP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIV_0_TRP_A {
+    pub const fn variant(&self) -> DIV_0_TRP_A {
         match self.bits {
             false => DIV_0_TRP_A::VALUE1,
             true => DIV_0_TRP_A::VALUE2,
@@ -236,7 +236,7 @@ impl From<BFHFNMIGN_A> for bool {
 impl BFHFNMIGN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BFHFNMIGN_A {
+    pub const fn variant(&self) -> BFHFNMIGN_A {
         match self.bits {
             false => BFHFNMIGN_A::VALUE1,
             true => BFHFNMIGN_A::VALUE2,
@@ -289,7 +289,7 @@ impl From<STKALIGN_A> for bool {
 impl STKALIGN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STKALIGN_A {
+    pub const fn variant(&self) -> STKALIGN_A {
         match self.bits {
             false => STKALIGN_A::VALUE1,
             true => STKALIGN_A::VALUE2,
@@ -392,7 +392,11 @@ impl W {
     pub fn stkalign(&mut self) -> STKALIGN_W<CCR_SPEC, 9> {
         STKALIGN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

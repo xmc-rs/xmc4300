@@ -21,7 +21,7 @@ impl From<SOSCWDGT_A> for bool {
 impl SOSCWDGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SOSCWDGT_A {
+    pub const fn variant(&self) -> SOSCWDGT_A {
         match self.bits {
             false => SOSCWDGT_A::CONST_0,
             true => SOSCWDGT_A::CONST_1,
@@ -74,7 +74,7 @@ impl From<SVCOLCKT_A> for bool {
 impl SVCOLCKT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SVCOLCKT_A {
+    pub const fn variant(&self) -> SVCOLCKT_A {
         match self.bits {
             false => SVCOLCKT_A::CONST_0,
             true => SVCOLCKT_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<UVCOLCKT_A> for bool {
 impl UVCOLCKT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UVCOLCKT_A {
+    pub const fn variant(&self) -> UVCOLCKT_A {
         match self.bits {
             false => UVCOLCKT_A::CONST_0,
             true => UVCOLCKT_A::CONST_1,
@@ -180,7 +180,7 @@ impl From<PET_A> for bool {
 impl PET_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PET_A {
+    pub const fn variant(&self) -> PET_A {
         match self.bits {
             false => PET_A::CONST_0,
             true => PET_A::CONST_1,
@@ -233,7 +233,7 @@ impl From<BRWNT_A> for bool {
 impl BRWNT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BRWNT_A {
+    pub const fn variant(&self) -> BRWNT_A {
         match self.bits {
             false => BRWNT_A::CONST_0,
             true => BRWNT_A::CONST_1,
@@ -286,7 +286,7 @@ impl From<ULPWDGT_A> for bool {
 impl ULPWDGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ULPWDGT_A {
+    pub const fn variant(&self) -> ULPWDGT_A {
         match self.bits {
             false => ULPWDGT_A::CONST_0,
             true => ULPWDGT_A::CONST_1,
@@ -339,7 +339,7 @@ impl From<BWERR0T_A> for bool {
 impl BWERR0T_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BWERR0T_A {
+    pub const fn variant(&self) -> BWERR0T_A {
         match self.bits {
             false => BWERR0T_A::CONST_0,
             true => BWERR0T_A::CONST_1,
@@ -392,7 +392,7 @@ impl From<BWERR1T_A> for bool {
 impl BWERR1T_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BWERR1T_A {
+    pub const fn variant(&self) -> BWERR1T_A {
         match self.bits {
             false => BWERR1T_A::CONST_0,
             true => BWERR1T_A::CONST_1,
@@ -445,7 +445,7 @@ impl From<ECAT0RST_A> for bool {
 impl ECAT0RST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ECAT0RST_A {
+    pub const fn variant(&self) -> ECAT0RST_A {
         match self.bits {
             false => ECAT0RST_A::CONST_0,
             true => ECAT0RST_A::CONST_1,
@@ -581,7 +581,11 @@ impl W {
     pub fn ecat0rst(&mut self) -> ECAT0RST_W<TRAPDIS_SPEC, 16> {
         ECAT0RST_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

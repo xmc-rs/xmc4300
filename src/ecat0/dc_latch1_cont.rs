@@ -21,7 +21,7 @@ impl From<L1_POS_A> for bool {
 impl L1_POS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> L1_POS_A {
+    pub const fn variant(&self) -> L1_POS_A {
         match self.bits {
             false => L1_POS_A::VALUE1,
             true => L1_POS_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<L1_NEG_A> for bool {
 impl L1_NEG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> L1_NEG_A {
+    pub const fn variant(&self) -> L1_NEG_A {
         match self.bits {
             false => L1_NEG_A::VALUE1,
             true => L1_NEG_A::VALUE2,
@@ -133,7 +133,11 @@ impl W {
     pub fn l1_neg(&mut self) -> L1_NEG_W<DC_LATCH1_CONT_SPEC, 1> {
         L1_NEG_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

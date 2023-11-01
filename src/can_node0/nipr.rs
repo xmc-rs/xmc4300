@@ -29,7 +29,7 @@ impl crate::FieldSpec for ALINP_A {
 impl ALINP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ALINP_A> {
+    pub const fn variant(&self) -> Option<ALINP_A> {
         match self.bits {
             0 => Some(ALINP_A::VALUE1),
             1 => Some(ALINP_A::VALUE2),
@@ -114,7 +114,7 @@ impl crate::FieldSpec for LECINP_A {
 impl LECINP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LECINP_A> {
+    pub const fn variant(&self) -> Option<LECINP_A> {
         match self.bits {
             0 => Some(LECINP_A::VALUE1),
             1 => Some(LECINP_A::VALUE2),
@@ -199,7 +199,7 @@ impl crate::FieldSpec for TRINP_A {
 impl TRINP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TRINP_A> {
+    pub const fn variant(&self) -> Option<TRINP_A> {
         match self.bits {
             0 => Some(TRINP_A::VALUE1),
             1 => Some(TRINP_A::VALUE2),
@@ -284,7 +284,7 @@ impl crate::FieldSpec for CFCINP_A {
 impl CFCINP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CFCINP_A> {
+    pub const fn variant(&self) -> Option<CFCINP_A> {
         match self.bits {
             0 => Some(CFCINP_A::VALUE1),
             1 => Some(CFCINP_A::VALUE2),
@@ -389,7 +389,11 @@ impl W {
     pub fn cfcinp(&mut self) -> CFCINP_W<NIPR_SPEC, 12> {
         CFCINP_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

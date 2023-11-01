@@ -29,7 +29,7 @@ impl crate::FieldSpec for SEV0NP_A {
 impl SEV0NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SEV0NP_A> {
+    pub const fn variant(&self) -> Option<SEV0NP_A> {
         match self.bits {
             0 => Some(SEV0NP_A::VALUE1),
             3 => Some(SEV0NP_A::VALUE2),
@@ -114,7 +114,7 @@ impl crate::FieldSpec for REV0NP_A {
 impl REV0NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<REV0NP_A> {
+    pub const fn variant(&self) -> Option<REV0NP_A> {
         match self.bits {
             0 => Some(REV0NP_A::VALUE1),
             3 => Some(REV0NP_A::VALUE2),
@@ -197,7 +197,11 @@ impl W {
     pub fn rev0np(&mut self) -> REV0NP_W<GLOBEVNP_SPEC, 16> {
         REV0NP_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

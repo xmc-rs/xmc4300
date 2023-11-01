@@ -29,7 +29,7 @@ impl crate::FieldSpec for EXS0A_A {
 impl EXS0A_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXS0A_A {
+    pub const fn variant(&self) -> EXS0A_A {
         match self.bits {
             0 => EXS0A_A::VALUE1,
             1 => EXS0A_A::VALUE2,
@@ -114,7 +114,7 @@ impl crate::FieldSpec for EXS0B_A {
 impl EXS0B_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXS0B_A {
+    pub const fn variant(&self) -> EXS0B_A {
         match self.bits {
             0 => EXS0B_A::VALUE1,
             1 => EXS0B_A::VALUE2,
@@ -199,7 +199,7 @@ impl crate::FieldSpec for EXS1A_A {
 impl EXS1A_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXS1A_A {
+    pub const fn variant(&self) -> EXS1A_A {
         match self.bits {
             0 => EXS1A_A::VALUE1,
             1 => EXS1A_A::VALUE2,
@@ -284,7 +284,7 @@ impl crate::FieldSpec for EXS1B_A {
 impl EXS1B_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXS1B_A {
+    pub const fn variant(&self) -> EXS1B_A {
         match self.bits {
             0 => EXS1B_A::VALUE1,
             1 => EXS1B_A::VALUE2,
@@ -369,7 +369,7 @@ impl crate::FieldSpec for EXS2A_A {
 impl EXS2A_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXS2A_A {
+    pub const fn variant(&self) -> EXS2A_A {
         match self.bits {
             0 => EXS2A_A::VALUE1,
             1 => EXS2A_A::VALUE2,
@@ -454,7 +454,7 @@ impl crate::FieldSpec for EXS2B_A {
 impl EXS2B_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXS2B_A {
+    pub const fn variant(&self) -> EXS2B_A {
         match self.bits {
             0 => EXS2B_A::VALUE1,
             1 => EXS2B_A::VALUE2,
@@ -539,7 +539,7 @@ impl crate::FieldSpec for EXS3A_A {
 impl EXS3A_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXS3A_A {
+    pub const fn variant(&self) -> EXS3A_A {
         match self.bits {
             0 => EXS3A_A::VALUE1,
             1 => EXS3A_A::VALUE2,
@@ -624,7 +624,7 @@ impl crate::FieldSpec for EXS3B_A {
 impl EXS3B_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXS3B_A {
+    pub const fn variant(&self) -> EXS3B_A {
         match self.bits {
             0 => EXS3B_A::VALUE1,
             1 => EXS3B_A::VALUE2,
@@ -773,7 +773,11 @@ impl W {
     pub fn exs3b(&mut self) -> EXS3B_W<EXISEL_SPEC, 14> {
         EXS3B_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -21,7 +21,7 @@ impl From<PETEPS_A> for bool {
 impl PETEPS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PETEPS_A {
+    pub const fn variant(&self) -> PETEPS_A {
         match self.bits {
             false => PETEPS_A::CONST_0,
             true => PETEPS_A::CONST_1,
@@ -74,7 +74,7 @@ impl From<PETEDS1_A> for bool {
 impl PETEDS1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PETEDS1_A {
+    pub const fn variant(&self) -> PETEDS1_A {
         match self.bits {
             false => PETEDS1_A::CONST_0,
             true => PETEDS1_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<PETEU0_A> for bool {
 impl PETEU0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PETEU0_A {
+    pub const fn variant(&self) -> PETEU0_A {
         match self.bits {
             false => PETEU0_A::CONST_0,
             true => PETEU0_A::CONST_1,
@@ -180,7 +180,7 @@ impl From<PETEU1_A> for bool {
 impl PETEU1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PETEU1_A {
+    pub const fn variant(&self) -> PETEU1_A {
         match self.bits {
             false => PETEU1_A::CONST_0,
             true => PETEU1_A::CONST_1,
@@ -233,7 +233,7 @@ impl From<PETEMC_A> for bool {
 impl PETEMC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PETEMC_A {
+    pub const fn variant(&self) -> PETEMC_A {
         match self.bits {
             false => PETEMC_A::CONST_0,
             true => PETEMC_A::CONST_1,
@@ -286,7 +286,7 @@ impl From<PETEPPRF_A> for bool {
 impl PETEPPRF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PETEPPRF_A {
+    pub const fn variant(&self) -> PETEPPRF_A {
         match self.bits {
             false => PETEPPRF_A::CONST_0,
             true => PETEPPRF_A::CONST_1,
@@ -339,7 +339,7 @@ impl From<PETEUSB_A> for bool {
 impl PETEUSB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PETEUSB_A {
+    pub const fn variant(&self) -> PETEUSB_A {
         match self.bits {
             false => PETEUSB_A::CONST_0,
             true => PETEUSB_A::CONST_1,
@@ -392,7 +392,7 @@ impl From<PETEETH0TX_A> for bool {
 impl PETEETH0TX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PETEETH0TX_A {
+    pub const fn variant(&self) -> PETEETH0TX_A {
         match self.bits {
             false => PETEETH0TX_A::CONST_0,
             true => PETEETH0TX_A::CONST_1,
@@ -445,7 +445,7 @@ impl From<PETEETH0RX_A> for bool {
 impl PETEETH0RX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PETEETH0RX_A {
+    pub const fn variant(&self) -> PETEETH0RX_A {
         match self.bits {
             false => PETEETH0RX_A::CONST_0,
             true => PETEETH0RX_A::CONST_1,
@@ -498,7 +498,7 @@ impl From<PETESD0_A> for bool {
 impl PETESD0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PETESD0_A {
+    pub const fn variant(&self) -> PETESD0_A {
         match self.bits {
             false => PETESD0_A::CONST_0,
             true => PETESD0_A::CONST_1,
@@ -551,7 +551,7 @@ impl From<PETESD1_A> for bool {
 impl PETESD1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PETESD1_A {
+    pub const fn variant(&self) -> PETESD1_A {
         match self.bits {
             false => PETESD1_A::CONST_0,
             true => PETESD1_A::CONST_1,
@@ -604,7 +604,7 @@ impl From<PETEECAT0_A> for bool {
 impl PETEECAT0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PETEECAT0_A {
+    pub const fn variant(&self) -> PETEECAT0_A {
         match self.bits {
             false => PETEECAT0_A::CONST_0,
             true => PETEECAT0_A::CONST_1,
@@ -773,7 +773,11 @@ impl W {
     pub fn peteecat0(&mut self) -> PETEECAT0_W<PETE_SPEC, 24> {
         PETEECAT0_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

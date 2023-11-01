@@ -21,7 +21,7 @@ impl From<SLEEPONEXIT_A> for bool {
 impl SLEEPONEXIT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SLEEPONEXIT_A {
+    pub const fn variant(&self) -> SLEEPONEXIT_A {
         match self.bits {
             false => SLEEPONEXIT_A::VALUE1,
             true => SLEEPONEXIT_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<SLEEPDEEP_A> for bool {
 impl SLEEPDEEP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SLEEPDEEP_A {
+    pub const fn variant(&self) -> SLEEPDEEP_A {
         match self.bits {
             false => SLEEPDEEP_A::VALUE1,
             true => SLEEPDEEP_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<SEVONPEND_A> for bool {
 impl SEVONPEND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SEVONPEND_A {
+    pub const fn variant(&self) -> SEVONPEND_A {
         match self.bits {
             false => SEVONPEND_A::VALUE1,
             true => SEVONPEND_A::VALUE2,
@@ -197,7 +197,11 @@ impl W {
     pub fn sevonpend(&mut self) -> SEVONPEND_W<SCR_SPEC, 4> {
         SEVONPEND_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

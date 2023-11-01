@@ -37,7 +37,7 @@ impl crate::FieldSpec for DSEL_A {
 impl DSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DSEL_A {
+    pub const fn variant(&self) -> DSEL_A {
         match self.bits {
             0 => DSEL_A::VALUE1,
             1 => DSEL_A::VALUE2,
@@ -158,7 +158,7 @@ impl From<DCEN_A> for bool {
 impl DCEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DCEN_A {
+    pub const fn variant(&self) -> DCEN_A {
         match self.bits {
             false => DCEN_A::VALUE1,
             true => DCEN_A::VALUE2,
@@ -211,7 +211,7 @@ impl From<INSW_A> for bool {
 impl INSW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INSW_A {
+    pub const fn variant(&self) -> INSW_A {
         match self.bits {
             false => INSW_A::VALUE1,
             true => INSW_A::VALUE2,
@@ -264,7 +264,7 @@ impl From<DFEN_A> for bool {
 impl DFEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DFEN_A {
+    pub const fn variant(&self) -> DFEN_A {
         match self.bits {
             false => DFEN_A::VALUE1,
             true => DFEN_A::VALUE2,
@@ -317,7 +317,7 @@ impl From<DSEN_A> for bool {
 impl DSEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DSEN_A {
+    pub const fn variant(&self) -> DSEN_A {
         match self.bits {
             false => DSEN_A::VALUE1,
             true => DSEN_A::VALUE2,
@@ -370,7 +370,7 @@ impl From<DPOL_A> for bool {
 impl DPOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DPOL_A {
+    pub const fn variant(&self) -> DPOL_A {
         match self.bits {
             false => DPOL_A::VALUE1,
             true => DPOL_A::VALUE2,
@@ -423,7 +423,7 @@ impl From<SFSEL_A> for bool {
 impl SFSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SFSEL_A {
+    pub const fn variant(&self) -> SFSEL_A {
         match self.bits {
             false => SFSEL_A::VALUE1,
             true => SFSEL_A::VALUE2,
@@ -484,7 +484,7 @@ impl crate::FieldSpec for CM_A {
 impl CM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CM_A {
+    pub const fn variant(&self) -> CM_A {
         match self.bits {
             0 => CM_A::VALUE1,
             1 => CM_A::VALUE2,
@@ -561,7 +561,7 @@ impl From<DXS_A> for bool {
 impl DXS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DXS_A {
+    pub const fn variant(&self) -> DXS_A {
         match self.bits {
             false => DXS_A::VALUE1,
             true => DXS_A::VALUE2,
@@ -674,7 +674,11 @@ impl W {
     pub fn cm(&mut self) -> CM_W<DX1CR_SPEC, 10> {
         CM_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

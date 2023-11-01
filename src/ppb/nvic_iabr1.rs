@@ -25,7 +25,7 @@ impl crate::FieldSpec for ACTIVE_A {
 impl ACTIVE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ACTIVE_A> {
+    pub const fn variant(&self) -> Option<ACTIVE_A> {
         match self.bits {
             0 => Some(ACTIVE_A::VALUE1),
             1 => Some(ACTIVE_A::VALUE2),
@@ -75,7 +75,11 @@ impl W {
     pub fn active(&mut self) -> ACTIVE_W<NVIC_IABR1_SPEC, 0> {
         ACTIVE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

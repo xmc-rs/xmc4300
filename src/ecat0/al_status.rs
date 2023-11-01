@@ -31,7 +31,7 @@ impl crate::FieldSpec for STATE_A {
 impl STATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<STATE_A> {
+    pub const fn variant(&self) -> Option<STATE_A> {
         match self.bits {
             1 => Some(STATE_A::VALUE1),
             2 => Some(STATE_A::VALUE2),
@@ -119,7 +119,7 @@ impl From<ERRI_A> for bool {
 impl ERRI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERRI_A {
+    pub const fn variant(&self) -> ERRI_A {
         match self.bits {
             false => ERRI_A::VALUE1,
             true => ERRI_A::VALUE2,
@@ -172,7 +172,7 @@ impl From<DID_A> for bool {
 impl DID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DID_A {
+    pub const fn variant(&self) -> DID_A {
         match self.bits {
             false => DID_A::VALUE1,
             true => DID_A::VALUE2,
@@ -242,7 +242,11 @@ impl W {
     pub fn did(&mut self) -> DID_W<AL_STATUS_SPEC, 5> {
         DID_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.bits = bits;

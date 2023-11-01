@@ -19,7 +19,7 @@ impl<FI: FieldSpec> FieldReader<FI> {
     #[doc = " Creates a new instance of the reader."]
     #[allow(unused)]
     #[inline(always)]
-    pub(crate) fn new(bits: FI::Ux) -> Self {
+    pub(crate) const fn new(bits: FI::Ux) -> Self {
         Self { bits, _reg: marker::PhantomData }
     }
 }
@@ -31,7 +31,7 @@ impl<FI> BitReader<FI> {
     #[doc = " Creates a new instance of the reader."]
     #[allow(unused)]
     #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
+    pub(crate) const fn new(bits: bool) -> Self {
         Self { bits, _reg: marker::PhantomData }
     }
 }

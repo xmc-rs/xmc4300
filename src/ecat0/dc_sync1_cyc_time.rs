@@ -20,7 +20,11 @@ impl W {
     pub fn time_sync1_sync0(&mut self) -> TIME_SYNC1_SYNC0_W<DC_SYNC1_CYC_TIME_SPEC, 0> {
         TIME_SYNC1_SYNC0_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

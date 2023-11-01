@@ -31,7 +31,7 @@ impl crate::FieldSpec for DPID_A {
 impl DPID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DPID_A {
+    pub const fn variant(&self) -> DPID_A {
         match self.bits {
             0 => DPID_A::VALUE1,
             2 => DPID_A::VALUE2,
@@ -90,7 +90,7 @@ impl crate::FieldSpec for PKT_STS_A {
 impl PKT_STS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PKT_STS_A> {
+    pub const fn variant(&self) -> Option<PKT_STS_A> {
         match self.bits {
             1 => Some(PKT_STS_A::VALUE1),
             2 => Some(PKT_STS_A::VALUE2),

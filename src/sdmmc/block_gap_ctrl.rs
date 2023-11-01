@@ -21,7 +21,7 @@ impl From<STOP_AT_BLOCK_GAP_A> for bool {
 impl STOP_AT_BLOCK_GAP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STOP_AT_BLOCK_GAP_A {
+    pub const fn variant(&self) -> STOP_AT_BLOCK_GAP_A {
         match self.bits {
             false => STOP_AT_BLOCK_GAP_A::VALUE1,
             true => STOP_AT_BLOCK_GAP_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<CONTINUE_REQ_A> for bool {
 impl CONTINUE_REQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CONTINUE_REQ_A {
+    pub const fn variant(&self) -> CONTINUE_REQ_A {
         match self.bits {
             false => CONTINUE_REQ_A::VALUE1,
             true => CONTINUE_REQ_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<READ_WAIT_CTRL_A> for bool {
 impl READ_WAIT_CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> READ_WAIT_CTRL_A {
+    pub const fn variant(&self) -> READ_WAIT_CTRL_A {
         match self.bits {
             false => READ_WAIT_CTRL_A::VALUE1,
             true => READ_WAIT_CTRL_A::VALUE2,
@@ -212,7 +212,11 @@ impl W {
     pub fn int_at_block_gap(&mut self) -> INT_AT_BLOCK_GAP_W<BLOCK_GAP_CTRL_SPEC, 3> {
         INT_AT_BLOCK_GAP_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

@@ -29,7 +29,7 @@ impl From<CMTR_A> for bool {
 impl CMTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMTR_A {
+    pub const fn variant(&self) -> CMTR_A {
         match self.bits {
             false => CMTR_A::VALUE1,
             true => CMTR_A::VALUE2,
@@ -82,7 +82,7 @@ impl From<ENSYNC_A> for bool {
 impl ENSYNC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENSYNC_A {
+    pub const fn variant(&self) -> ENSYNC_A {
         match self.bits {
             false => ENSYNC_A::VALUE1,
             true => ENSYNC_A::VALUE2,
@@ -135,7 +135,7 @@ impl From<SUSCFG_A> for bool {
 impl SUSCFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SUSCFG_A {
+    pub const fn variant(&self) -> SUSCFG_A {
         match self.bits {
             false => SUSCFG_A::VALUE1,
             true => SUSCFG_A::VALUE2,
@@ -194,7 +194,7 @@ impl crate::FieldSpec for MASKVAL_A {
 impl MASKVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MASKVAL_A> {
+    pub const fn variant(&self) -> Option<MASKVAL_A> {
         match self.bits {
             0 => Some(MASKVAL_A::VALUE1),
             1 => Some(MASKVAL_A::VALUE2),
@@ -260,7 +260,7 @@ impl From<FENVAL_A> for bool {
 impl FENVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FENVAL_A {
+    pub const fn variant(&self) -> FENVAL_A {
         match self.bits {
             false => FENVAL_A::VALUE1,
             true => FENVAL_A::VALUE2,
@@ -313,7 +313,7 @@ impl From<ITS_EN_A> for bool {
 impl ITS_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ITS_EN_A {
+    pub const fn variant(&self) -> ITS_EN_A {
         match self.bits {
             false => ITS_EN_A::VALUE1,
             true => ITS_EN_A::VALUE2,
@@ -366,7 +366,7 @@ impl From<ITF_EN_A> for bool {
 impl ITF_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ITF_EN_A {
+    pub const fn variant(&self) -> ITF_EN_A {
         match self.bits {
             false => ITF_EN_A::VALUE1,
             true => ITF_EN_A::VALUE2,
@@ -419,7 +419,7 @@ impl From<ITP_EN_A> for bool {
 impl ITP_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ITP_EN_A {
+    pub const fn variant(&self) -> ITP_EN_A {
         match self.bits {
             false => ITP_EN_A::VALUE1,
             true => ITP_EN_A::VALUE2,
@@ -581,7 +581,11 @@ impl W {
     pub fn clk_ps(&mut self) -> CLK_PS_W<GLOBCTL_SPEC, 16> {
         CLK_PS_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

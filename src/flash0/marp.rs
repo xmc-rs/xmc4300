@@ -27,7 +27,7 @@ impl crate::FieldSpec for MARGIN_A {
 impl MARGIN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<MARGIN_A> {
+    pub const fn variant(&self) -> Option<MARGIN_A> {
         match self.bits {
             0 => Some(MARGIN_A::VALUE1),
             1 => Some(MARGIN_A::VALUE2),
@@ -93,7 +93,7 @@ impl From<TRAPDIS_A> for bool {
 impl TRAPDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TRAPDIS_A {
+    pub const fn variant(&self) -> TRAPDIS_A {
         match self.bits {
             false => TRAPDIS_A::VALUE1,
             true => TRAPDIS_A::VALUE2,
@@ -152,7 +152,11 @@ impl W {
     pub fn trapdis(&mut self) -> TRAPDIS_W<MARP_SPEC, 15> {
         TRAPDIS_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

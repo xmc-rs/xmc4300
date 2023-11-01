@@ -25,7 +25,7 @@ impl From<SKEW_A> for bool {
 impl SKEW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SKEW_A {
+    pub const fn variant(&self) -> SKEW_A {
         match self.bits {
             false => SKEW_A::VALUE1,
             true => SKEW_A::VALUE2,
@@ -78,7 +78,7 @@ impl From<NOREF_A> for bool {
 impl NOREF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NOREF_A {
+    pub const fn variant(&self) -> NOREF_A {
         match self.bits {
             false => NOREF_A::VALUE1,
             true => NOREF_A::VALUE2,
@@ -148,7 +148,11 @@ impl W {
     pub fn noref(&mut self) -> NOREF_W<SYST_CALIB_SPEC, 31> {
         NOREF_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

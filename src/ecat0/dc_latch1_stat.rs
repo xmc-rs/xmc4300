@@ -19,7 +19,7 @@ impl From<EV_L1_POS_A> for bool {
 impl EV_L1_POS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EV_L1_POS_A {
+    pub const fn variant(&self) -> EV_L1_POS_A {
         match self.bits {
             false => EV_L1_POS_A::VALUE1,
             true => EV_L1_POS_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<EV_L1_NEG_A> for bool {
 impl EV_L1_NEG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EV_L1_NEG_A {
+    pub const fn variant(&self) -> EV_L1_NEG_A {
         match self.bits {
             false => EV_L1_NEG_A::VALUE1,
             true => EV_L1_NEG_A::VALUE2,

@@ -21,7 +21,7 @@ impl From<TCM_A> for bool {
 impl TCM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TCM_A {
+    pub const fn variant(&self) -> TCM_A {
         match self.bits {
             false => TCM_A::VALUE1,
             true => TCM_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<TSSM_A> for bool {
 impl TSSM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TSSM_A {
+    pub const fn variant(&self) -> TSSM_A {
         match self.bits {
             false => TSSM_A::VALUE1,
             true => TSSM_A::VALUE2,
@@ -131,7 +131,7 @@ impl From<CMOD_A> for bool {
 impl CMOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMOD_A {
+    pub const fn variant(&self) -> CMOD_A {
         match self.bits {
             false => CMOD_A::VALUE1,
             true => CMOD_A::VALUE2,
@@ -167,7 +167,7 @@ impl From<ECM_A> for bool {
 impl ECM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ECM_A {
+    pub const fn variant(&self) -> ECM_A {
         match self.bits {
             false => ECM_A::VALUE1,
             true => ECM_A::VALUE2,
@@ -228,7 +228,7 @@ impl crate::FieldSpec for CAPC_A {
 impl CAPC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CAPC_A {
+    pub const fn variant(&self) -> CAPC_A {
         match self.bits {
             0 => CAPC_A::VALUE1,
             1 => CAPC_A::VALUE2,
@@ -305,7 +305,7 @@ impl From<TLS_A> for bool {
 impl TLS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TLS_A {
+    pub const fn variant(&self) -> TLS_A {
         match self.bits {
             false => TLS_A::VALUE1,
             true => TLS_A::VALUE2,
@@ -364,7 +364,7 @@ impl crate::FieldSpec for ENDM_A {
 impl ENDM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ENDM_A> {
+    pub const fn variant(&self) -> Option<ENDM_A> {
         match self.bits {
             0 => Some(ENDM_A::VALUE1),
             1 => Some(ENDM_A::VALUE2),
@@ -430,7 +430,7 @@ impl From<STRM_A> for bool {
 impl STRM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STRM_A {
+    pub const fn variant(&self) -> STRM_A {
         match self.bits {
             false => STRM_A::VALUE1,
             true => STRM_A::VALUE2,
@@ -483,7 +483,7 @@ impl From<SCE_A> for bool {
 impl SCE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SCE_A {
+    pub const fn variant(&self) -> SCE_A {
         match self.bits {
             false => SCE_A::VALUE1,
             true => SCE_A::VALUE2,
@@ -536,7 +536,7 @@ impl From<CCS_A> for bool {
 impl CCS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCS_A {
+    pub const fn variant(&self) -> CCS_A {
         match self.bits {
             false => CCS_A::VALUE1,
             true => CCS_A::VALUE2,
@@ -597,7 +597,7 @@ impl crate::FieldSpec for DITHE_A {
 impl DITHE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DITHE_A {
+    pub const fn variant(&self) -> DITHE_A {
         match self.bits {
             0 => DITHE_A::VALUE1,
             1 => DITHE_A::VALUE2,
@@ -674,7 +674,7 @@ impl From<DIM_A> for bool {
 impl DIM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIM_A {
+    pub const fn variant(&self) -> DIM_A {
         match self.bits {
             false => DIM_A::VALUE1,
             true => DIM_A::VALUE2,
@@ -727,7 +727,7 @@ impl From<FPE_A> for bool {
 impl FPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FPE_A {
+    pub const fn variant(&self) -> FPE_A {
         match self.bits {
             false => FPE_A::VALUE1,
             true => FPE_A::VALUE2,
@@ -780,7 +780,7 @@ impl From<TRAPE0_A> for bool {
 impl TRAPE0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TRAPE0_A {
+    pub const fn variant(&self) -> TRAPE0_A {
         match self.bits {
             false => TRAPE0_A::VALUE1,
             true => TRAPE0_A::VALUE2,
@@ -845,7 +845,7 @@ impl From<TRPSE_A> for bool {
 impl TRPSE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TRPSE_A {
+    pub const fn variant(&self) -> TRPSE_A {
         match self.bits {
             false => TRPSE_A::VALUE1,
             true => TRPSE_A::VALUE2,
@@ -898,7 +898,7 @@ impl From<TRPSW_A> for bool {
 impl TRPSW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TRPSW_A {
+    pub const fn variant(&self) -> TRPSW_A {
         match self.bits {
             false => TRPSW_A::VALUE1,
             true => TRPSW_A::VALUE2,
@@ -951,7 +951,7 @@ impl From<EMS_A> for bool {
 impl EMS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EMS_A {
+    pub const fn variant(&self) -> EMS_A {
         match self.bits {
             false => EMS_A::VALUE1,
             true => EMS_A::VALUE2,
@@ -1004,7 +1004,7 @@ impl From<EMT_A> for bool {
 impl EMT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EMT_A {
+    pub const fn variant(&self) -> EMT_A {
         match self.bits {
             false => EMT_A::VALUE1,
             true => EMT_A::VALUE2,
@@ -1057,7 +1057,7 @@ impl From<MCME1_A> for bool {
 impl MCME1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MCME1_A {
+    pub const fn variant(&self) -> MCME1_A {
         match self.bits {
             false => MCME1_A::VALUE1,
             true => MCME1_A::VALUE2,
@@ -1110,7 +1110,7 @@ impl From<MCME2_A> for bool {
 impl MCME2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MCME2_A {
+    pub const fn variant(&self) -> MCME2_A {
         match self.bits {
             false => MCME2_A::VALUE1,
             true => MCME2_A::VALUE2,
@@ -1171,7 +1171,7 @@ impl crate::FieldSpec for EME_A {
 impl EME_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EME_A {
+    pub const fn variant(&self) -> EME_A {
         match self.bits {
             0 => EME_A::VALUE1,
             1 => EME_A::VALUE2,
@@ -1256,7 +1256,7 @@ impl crate::FieldSpec for STOS_A {
 impl STOS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STOS_A {
+    pub const fn variant(&self) -> STOS_A {
         match self.bits {
             0 => STOS_A::VALUE1,
             1 => STOS_A::VALUE2,
@@ -1597,7 +1597,11 @@ impl W {
     pub fn stos(&mut self) -> STOS_W<TC_SPEC, 29> {
         STOS_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -23,7 +23,7 @@ impl crate::FieldSpec for SYSCLKMUX_A {
 impl SYSCLKMUX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SYSCLKMUX_A> {
+    pub const fn variant(&self) -> Option<SYSCLKMUX_A> {
         match self.bits {
             1 => Some(SYSCLKMUX_A::CONST_X1),
             2 => Some(SYSCLKMUX_A::CONST_1X),

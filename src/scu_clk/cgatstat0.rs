@@ -19,7 +19,7 @@ impl From<VADC_A> for bool {
 impl VADC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VADC_A {
+    pub const fn variant(&self) -> VADC_A {
         match self.bits {
             false => VADC_A::CONST_0,
             true => VADC_A::CONST_1,
@@ -55,7 +55,7 @@ impl From<CCU40_A> for bool {
 impl CCU40_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCU40_A {
+    pub const fn variant(&self) -> CCU40_A {
         match self.bits {
             false => CCU40_A::CONST_0,
             true => CCU40_A::CONST_1,
@@ -91,7 +91,7 @@ impl From<CCU41_A> for bool {
 impl CCU41_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCU41_A {
+    pub const fn variant(&self) -> CCU41_A {
         match self.bits {
             false => CCU41_A::CONST_0,
             true => CCU41_A::CONST_1,
@@ -127,7 +127,7 @@ impl From<CCU80_A> for bool {
 impl CCU80_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCU80_A {
+    pub const fn variant(&self) -> CCU80_A {
         match self.bits {
             false => CCU80_A::CONST_0,
             true => CCU80_A::CONST_1,
@@ -163,7 +163,7 @@ impl From<POSIF0_A> for bool {
 impl POSIF0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> POSIF0_A {
+    pub const fn variant(&self) -> POSIF0_A {
         match self.bits {
             false => POSIF0_A::CONST_0,
             true => POSIF0_A::CONST_1,
@@ -199,7 +199,7 @@ impl From<USIC0_A> for bool {
 impl USIC0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USIC0_A {
+    pub const fn variant(&self) -> USIC0_A {
         match self.bits {
             false => USIC0_A::CONST_0,
             true => USIC0_A::CONST_1,
@@ -235,7 +235,7 @@ impl From<ERU1_A> for bool {
 impl ERU1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERU1_A {
+    pub const fn variant(&self) -> ERU1_A {
         match self.bits {
             false => ERU1_A::CONST_0,
             true => ERU1_A::CONST_1,

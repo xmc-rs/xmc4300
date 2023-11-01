@@ -29,7 +29,7 @@ impl crate::FieldSpec for CEV0NP_A {
 impl CEV0NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV0NP_A> {
+    pub const fn variant(&self) -> Option<CEV0NP_A> {
         match self.bits {
             0 => Some(CEV0NP_A::VALUE1),
             3 => Some(CEV0NP_A::VALUE2),
@@ -114,7 +114,7 @@ impl crate::FieldSpec for CEV1NP_A {
 impl CEV1NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV1NP_A> {
+    pub const fn variant(&self) -> Option<CEV1NP_A> {
         match self.bits {
             0 => Some(CEV1NP_A::VALUE1),
             3 => Some(CEV1NP_A::VALUE2),
@@ -199,7 +199,7 @@ impl crate::FieldSpec for CEV2NP_A {
 impl CEV2NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV2NP_A> {
+    pub const fn variant(&self) -> Option<CEV2NP_A> {
         match self.bits {
             0 => Some(CEV2NP_A::VALUE1),
             3 => Some(CEV2NP_A::VALUE2),
@@ -284,7 +284,7 @@ impl crate::FieldSpec for CEV3NP_A {
 impl CEV3NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV3NP_A> {
+    pub const fn variant(&self) -> Option<CEV3NP_A> {
         match self.bits {
             0 => Some(CEV3NP_A::VALUE1),
             3 => Some(CEV3NP_A::VALUE2),
@@ -369,7 +369,7 @@ impl crate::FieldSpec for CEV4NP_A {
 impl CEV4NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV4NP_A> {
+    pub const fn variant(&self) -> Option<CEV4NP_A> {
         match self.bits {
             0 => Some(CEV4NP_A::VALUE1),
             3 => Some(CEV4NP_A::VALUE2),
@@ -454,7 +454,7 @@ impl crate::FieldSpec for CEV5NP_A {
 impl CEV5NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV5NP_A> {
+    pub const fn variant(&self) -> Option<CEV5NP_A> {
         match self.bits {
             0 => Some(CEV5NP_A::VALUE1),
             3 => Some(CEV5NP_A::VALUE2),
@@ -539,7 +539,7 @@ impl crate::FieldSpec for CEV6NP_A {
 impl CEV6NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV6NP_A> {
+    pub const fn variant(&self) -> Option<CEV6NP_A> {
         match self.bits {
             0 => Some(CEV6NP_A::VALUE1),
             3 => Some(CEV6NP_A::VALUE2),
@@ -624,7 +624,7 @@ impl crate::FieldSpec for CEV7NP_A {
 impl CEV7NP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CEV7NP_A> {
+    pub const fn variant(&self) -> Option<CEV7NP_A> {
         match self.bits {
             0 => Some(CEV7NP_A::VALUE1),
             3 => Some(CEV7NP_A::VALUE2),
@@ -773,7 +773,11 @@ impl W {
     pub fn cev7np(&mut self) -> CEV7NP_W<CEVNP0_SPEC, 28> {
         CEV7NP_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

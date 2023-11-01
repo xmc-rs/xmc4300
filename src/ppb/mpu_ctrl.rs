@@ -21,7 +21,7 @@ impl From<ENABLE_A> for bool {
 impl ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENABLE_A {
+    pub const fn variant(&self) -> ENABLE_A {
         match self.bits {
             false => ENABLE_A::VALUE1,
             true => ENABLE_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<HFNMIENA_A> for bool {
 impl HFNMIENA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HFNMIENA_A {
+    pub const fn variant(&self) -> HFNMIENA_A {
         match self.bits {
             false => HFNMIENA_A::VALUE1,
             true => HFNMIENA_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<PRIVDEFENA_A> for bool {
 impl PRIVDEFENA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRIVDEFENA_A {
+    pub const fn variant(&self) -> PRIVDEFENA_A {
         match self.bits {
             false => PRIVDEFENA_A::VALUE1,
             true => PRIVDEFENA_A::VALUE2,
@@ -197,7 +197,11 @@ impl W {
     pub fn privdefena(&mut self) -> PRIVDEFENA_W<MPU_CTRL_SPEC, 2> {
         PRIVDEFENA_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

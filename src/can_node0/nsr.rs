@@ -25,7 +25,7 @@ impl From<TXOK_A> for bool {
 impl TXOK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TXOK_A {
+    pub const fn variant(&self) -> TXOK_A {
         match self.bits {
             false => TXOK_A::VALUE1,
             true => TXOK_A::VALUE2,
@@ -78,7 +78,7 @@ impl From<RXOK_A> for bool {
 impl RXOK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXOK_A {
+    pub const fn variant(&self) -> RXOK_A {
         match self.bits {
             false => RXOK_A::VALUE1,
             true => RXOK_A::VALUE2,
@@ -135,7 +135,7 @@ impl From<EWRN_A> for bool {
 impl EWRN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EWRN_A {
+    pub const fn variant(&self) -> EWRN_A {
         match self.bits {
             false => EWRN_A::VALUE1,
             true => EWRN_A::VALUE2,
@@ -171,7 +171,7 @@ impl From<BOFF_A> for bool {
 impl BOFF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BOFF_A {
+    pub const fn variant(&self) -> BOFF_A {
         match self.bits {
             false => BOFF_A::VALUE1,
             true => BOFF_A::VALUE2,
@@ -207,7 +207,7 @@ impl From<LLE_A> for bool {
 impl LLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LLE_A {
+    pub const fn variant(&self) -> LLE_A {
         match self.bits {
             false => LLE_A::VALUE1,
             true => LLE_A::VALUE2,
@@ -260,7 +260,7 @@ impl From<LOE_A> for bool {
 impl LOE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOE_A {
+    pub const fn variant(&self) -> LOE_A {
         match self.bits {
             false => LOE_A::VALUE1,
             true => LOE_A::VALUE2,
@@ -373,7 +373,11 @@ impl W {
     pub fn loe(&mut self) -> LOE_W<NSR_SPEC, 9> {
         LOE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

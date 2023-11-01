@@ -23,7 +23,7 @@ impl crate::FieldSpec for OP_MODE_A {
 impl OP_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<OP_MODE_A> {
+    pub const fn variant(&self) -> Option<OP_MODE_A> {
         match self.bits {
             0 => Some(OP_MODE_A::VALUE1),
             2 => Some(OP_MODE_A::VALUE3),
@@ -64,7 +64,7 @@ impl crate::FieldSpec for DIR_A {
 impl DIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DIR_A> {
+    pub const fn variant(&self) -> Option<DIR_A> {
         match self.bits {
             0 => Some(DIR_A::VALUE1),
             1 => Some(DIR_A::VALUE2),
@@ -101,7 +101,7 @@ impl From<INT_ECAT_A> for bool {
 impl INT_ECAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INT_ECAT_A {
+    pub const fn variant(&self) -> INT_ECAT_A {
         match self.bits {
             false => INT_ECAT_A::VALUE1,
             true => INT_ECAT_A::VALUE2,
@@ -137,7 +137,7 @@ impl From<INT_PDI_A> for bool {
 impl INT_PDI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INT_PDI_A {
+    pub const fn variant(&self) -> INT_PDI_A {
         match self.bits {
             false => INT_PDI_A::VALUE1,
             true => INT_PDI_A::VALUE2,
@@ -173,7 +173,7 @@ impl From<WD_TRG_A> for bool {
 impl WD_TRG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WD_TRG_A {
+    pub const fn variant(&self) -> WD_TRG_A {
         match self.bits {
             false => WD_TRG_A::VALUE1,
             true => WD_TRG_A::VALUE2,

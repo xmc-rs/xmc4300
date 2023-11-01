@@ -25,7 +25,7 @@ impl crate::FieldSpec for RESET_CMD_STATE_A {
 impl RESET_CMD_STATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RESET_CMD_STATE_A> {
+    pub const fn variant(&self) -> Option<RESET_CMD_STATE_A> {
         match self.bits {
             1 => Some(RESET_CMD_STATE_A::VALUE1),
             2 => Some(RESET_CMD_STATE_A::VALUE2),

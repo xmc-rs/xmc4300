@@ -25,7 +25,7 @@ impl From<ECATSEL_A> for bool {
 impl ECATSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ECATSEL_A {
+    pub const fn variant(&self) -> ECATSEL_A {
         match self.bits {
             false => ECATSEL_A::CONST_0,
             true => ECATSEL_A::CONST_1,
@@ -84,7 +84,11 @@ impl W {
     pub fn ecatsel(&mut self) -> ECATSEL_W<ECATCLKCR_SPEC, 16> {
         ECATSEL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

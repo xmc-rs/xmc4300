@@ -19,7 +19,7 @@ impl From<ACMD12_NOT_EXEC_ERR_A> for bool {
 impl ACMD12_NOT_EXEC_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACMD12_NOT_EXEC_ERR_A {
+    pub const fn variant(&self) -> ACMD12_NOT_EXEC_ERR_A {
         match self.bits {
             false => ACMD12_NOT_EXEC_ERR_A::VALUE1,
             true => ACMD12_NOT_EXEC_ERR_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<ACMD_TIMEOUT_ERR_A> for bool {
 impl ACMD_TIMEOUT_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACMD_TIMEOUT_ERR_A {
+    pub const fn variant(&self) -> ACMD_TIMEOUT_ERR_A {
         match self.bits {
             false => ACMD_TIMEOUT_ERR_A::VALUE1,
             true => ACMD_TIMEOUT_ERR_A::VALUE2,
@@ -91,7 +91,7 @@ impl From<ACMD_CRC_ERR_A> for bool {
 impl ACMD_CRC_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACMD_CRC_ERR_A {
+    pub const fn variant(&self) -> ACMD_CRC_ERR_A {
         match self.bits {
             false => ACMD_CRC_ERR_A::VALUE1,
             true => ACMD_CRC_ERR_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<ACMD_END_BIT_ERR_A> for bool {
 impl ACMD_END_BIT_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACMD_END_BIT_ERR_A {
+    pub const fn variant(&self) -> ACMD_END_BIT_ERR_A {
         match self.bits {
             false => ACMD_END_BIT_ERR_A::VALUE1,
             true => ACMD_END_BIT_ERR_A::VALUE2,
@@ -163,7 +163,7 @@ impl From<ACMD_IND_ERR_A> for bool {
 impl ACMD_IND_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACMD_IND_ERR_A {
+    pub const fn variant(&self) -> ACMD_IND_ERR_A {
         match self.bits {
             false => ACMD_IND_ERR_A::VALUE1,
             true => ACMD_IND_ERR_A::VALUE2,
@@ -199,7 +199,7 @@ impl From<CMD_NOT_ISSUED_BY_ACMD12_ERR_A> for bool {
 impl CMD_NOT_ISSUED_BY_ACMD12_ERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMD_NOT_ISSUED_BY_ACMD12_ERR_A {
+    pub const fn variant(&self) -> CMD_NOT_ISSUED_BY_ACMD12_ERR_A {
         match self.bits {
             false => CMD_NOT_ISSUED_BY_ACMD12_ERR_A::VALUE1,
             true => CMD_NOT_ISSUED_BY_ACMD12_ERR_A::VALUE2,

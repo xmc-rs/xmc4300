@@ -25,7 +25,7 @@ impl crate::FieldSpec for PADT_A {
 impl PADT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PADT_A> {
+    pub const fn variant(&self) -> Option<PADT_A> {
         match self.bits {
             0 => Some(PADT_A::VALUE1),
             7 => Some(PADT_A::VALUE2),
@@ -80,7 +80,7 @@ impl From<PADTSW_A> for bool {
 impl PADTSW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PADTSW_A {
+    pub const fn variant(&self) -> PADTSW_A {
         match self.bits {
             false => PADTSW_A::VALUE1,
             true => PADTSW_A::VALUE2,
@@ -134,7 +134,7 @@ impl From<EPULL_A> for bool {
 impl EPULL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPULL_A {
+    pub const fn variant(&self) -> EPULL_A {
         match self.bits {
             false => EPULL_A::VALUE1,
             true => EPULL_A::VALUE2,
@@ -197,7 +197,7 @@ impl crate::FieldSpec for ACCCNT_A {
 impl ACCCNT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ACCCNT_A> {
+    pub const fn variant(&self) -> Option<ACCCNT_A> {
         match self.bits {
             0 => Some(ACCCNT_A::VALUE1),
             1 => Some(ACCCNT_A::VALUE2),
@@ -263,7 +263,7 @@ impl From<TSCCMP_A> for bool {
 impl TSCCMP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TSCCMP_A {
+    pub const fn variant(&self) -> TSCCMP_A {
         match self.bits {
             false => TSCCMP_A::VALUE1,
             true => TSCCMP_A::VALUE2,
@@ -324,7 +324,7 @@ impl crate::FieldSpec for TSOEXT_A {
 impl TSOEXT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TSOEXT_A {
+    pub const fn variant(&self) -> TSOEXT_A {
         match self.bits {
             0 => TSOEXT_A::VALUE1,
             1 => TSOEXT_A::VALUE2,
@@ -401,7 +401,7 @@ impl From<TSCTRR_A> for bool {
 impl TSCTRR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TSCTRR_A {
+    pub const fn variant(&self) -> TSCTRR_A {
         match self.bits {
             false => TSCTRR_A::VALUE1,
             true => TSCTRR_A::VALUE2,
@@ -454,7 +454,7 @@ impl From<TSCTRSAT_A> for bool {
 impl TSCTRSAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TSCTRSAT_A {
+    pub const fn variant(&self) -> TSCTRSAT_A {
         match self.bits {
             false => TSCTRSAT_A::VALUE1,
             true => TSCTRSAT_A::VALUE2,
@@ -511,7 +511,7 @@ impl crate::FieldSpec for NR_TSIN_A {
 impl NR_TSIN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<NR_TSIN_A> {
+    pub const fn variant(&self) -> Option<NR_TSIN_A> {
         match self.bits {
             0 => Some(NR_TSIN_A::VALUE1),
             7 => Some(NR_TSIN_A::VALUE2),
@@ -566,7 +566,7 @@ impl From<COLLEV_A> for bool {
 impl COLLEV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> COLLEV_A {
+    pub const fn variant(&self) -> COLLEV_A {
         match self.bits {
             false => COLLEV_A::VALUE1,
             true => COLLEV_A::VALUE2,
@@ -635,7 +635,7 @@ impl crate::FieldSpec for NR_LEDCOL_A {
 impl NR_LEDCOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NR_LEDCOL_A {
+    pub const fn variant(&self) -> NR_LEDCOL_A {
         match self.bits {
             0 => NR_LEDCOL_A::VALUE1,
             1 => NR_LEDCOL_A::VALUE2,
@@ -866,7 +866,11 @@ impl W {
     pub fn nr_ledcol(&mut self) -> NR_LEDCOL_W<FNCTL_SPEC, 29> {
         NR_LEDCOL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

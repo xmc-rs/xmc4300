@@ -21,7 +21,7 @@ impl From<SEVGLB_A> for bool {
 impl SEVGLB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SEVGLB_A {
+    pub const fn variant(&self) -> SEVGLB_A {
         match self.bits {
             false => SEVGLB_A::VALUE1,
             true => SEVGLB_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<REVGLB_A> for bool {
 impl REVGLB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REVGLB_A {
+    pub const fn variant(&self) -> REVGLB_A {
         match self.bits {
             false => REVGLB_A::VALUE1,
             true => REVGLB_A::VALUE2,
@@ -207,7 +207,11 @@ impl W {
     pub fn revglbclr(&mut self) -> REVGLBCLR_W<GLOBEFLAG_SPEC, 24> {
         REVGLBCLR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

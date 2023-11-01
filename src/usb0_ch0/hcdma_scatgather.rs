@@ -25,7 +25,7 @@ impl crate::FieldSpec for CTD_A {
 impl CTD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CTD_A> {
+    pub const fn variant(&self) -> Option<CTD_A> {
         match self.bits {
             0 => Some(CTD_A::VALUE1),
             63 => Some(CTD_A::VALUE2),
@@ -90,7 +90,11 @@ impl W {
     pub fn dmaaddr(&mut self) -> DMAADDR_W<HCDMA_SCATGATHER_SPEC, 9> {
         DMAADDR_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

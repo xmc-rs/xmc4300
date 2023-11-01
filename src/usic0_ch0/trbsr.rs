@@ -21,7 +21,7 @@ impl From<SRBI_A> for bool {
 impl SRBI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRBI_A {
+    pub const fn variant(&self) -> SRBI_A {
         match self.bits {
             false => SRBI_A::VALUE1,
             true => SRBI_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<RBERI_A> for bool {
 impl RBERI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RBERI_A {
+    pub const fn variant(&self) -> RBERI_A {
         match self.bits {
             false => RBERI_A::VALUE1,
             true => RBERI_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<ARBI_A> for bool {
 impl ARBI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ARBI_A {
+    pub const fn variant(&self) -> ARBI_A {
         match self.bits {
             false => ARBI_A::VALUE1,
             true => ARBI_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<REMPTY_A> for bool {
 impl REMPTY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REMPTY_A {
+    pub const fn variant(&self) -> REMPTY_A {
         match self.bits {
             false => REMPTY_A::VALUE1,
             true => REMPTY_A::VALUE2,
@@ -216,7 +216,7 @@ impl From<RFULL_A> for bool {
 impl RFULL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RFULL_A {
+    pub const fn variant(&self) -> RFULL_A {
         match self.bits {
             false => RFULL_A::VALUE1,
             true => RFULL_A::VALUE2,
@@ -252,7 +252,7 @@ impl From<RBUS_A> for bool {
 impl RBUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RBUS_A {
+    pub const fn variant(&self) -> RBUS_A {
         match self.bits {
             false => RBUS_A::VALUE1,
             true => RBUS_A::VALUE2,
@@ -288,7 +288,7 @@ impl From<SRBT_A> for bool {
 impl SRBT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRBT_A {
+    pub const fn variant(&self) -> SRBT_A {
         match self.bits {
             false => SRBT_A::VALUE1,
             true => SRBT_A::VALUE2,
@@ -324,7 +324,7 @@ impl From<STBI_A> for bool {
 impl STBI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STBI_A {
+    pub const fn variant(&self) -> STBI_A {
         match self.bits {
             false => STBI_A::VALUE1,
             true => STBI_A::VALUE2,
@@ -377,7 +377,7 @@ impl From<TBERI_A> for bool {
 impl TBERI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TBERI_A {
+    pub const fn variant(&self) -> TBERI_A {
         match self.bits {
             false => TBERI_A::VALUE1,
             true => TBERI_A::VALUE2,
@@ -430,7 +430,7 @@ impl From<TEMPTY_A> for bool {
 impl TEMPTY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TEMPTY_A {
+    pub const fn variant(&self) -> TEMPTY_A {
         match self.bits {
             false => TEMPTY_A::VALUE1,
             true => TEMPTY_A::VALUE2,
@@ -466,7 +466,7 @@ impl From<TFULL_A> for bool {
 impl TFULL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TFULL_A {
+    pub const fn variant(&self) -> TFULL_A {
         match self.bits {
             false => TFULL_A::VALUE1,
             true => TFULL_A::VALUE2,
@@ -502,7 +502,7 @@ impl From<TBUS_A> for bool {
 impl TBUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TBUS_A {
+    pub const fn variant(&self) -> TBUS_A {
         match self.bits {
             false => TBUS_A::VALUE1,
             true => TBUS_A::VALUE2,
@@ -538,7 +538,7 @@ impl From<STBT_A> for bool {
 impl STBT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STBT_A {
+    pub const fn variant(&self) -> STBT_A {
         match self.bits {
             false => STBT_A::VALUE1,
             true => STBT_A::VALUE2,
@@ -667,7 +667,11 @@ impl W {
     pub fn tberi(&mut self) -> TBERI_W<TRBSR_SPEC, 9> {
         TBERI_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

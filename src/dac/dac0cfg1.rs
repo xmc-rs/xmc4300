@@ -37,7 +37,7 @@ impl crate::FieldSpec for SCALE_A {
 impl SCALE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SCALE_A {
+    pub const fn variant(&self) -> SCALE_A {
         match self.bits {
             0 => SCALE_A::VALUE1,
             1 => SCALE_A::VALUE2,
@@ -158,7 +158,7 @@ impl From<MULDIV_A> for bool {
 impl MULDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MULDIV_A {
+    pub const fn variant(&self) -> MULDIV_A {
         match self.bits {
             false => MULDIV_A::VALUE1,
             true => MULDIV_A::VALUE2,
@@ -219,7 +219,7 @@ impl From<DATMOD_A> for bool {
 impl DATMOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DATMOD_A {
+    pub const fn variant(&self) -> DATMOD_A {
         match self.bits {
             false => DATMOD_A::VALUE1,
             true => DATMOD_A::VALUE2,
@@ -282,7 +282,7 @@ impl crate::FieldSpec for TRIGMOD_A {
 impl TRIGMOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TRIGMOD_A> {
+    pub const fn variant(&self) -> Option<TRIGMOD_A> {
         match self.bits {
             0 => Some(TRIGMOD_A::VALUE1),
             1 => Some(TRIGMOD_A::VALUE2),
@@ -352,7 +352,7 @@ impl From<ANAEN_A> for bool {
 impl ANAEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ANAEN_A {
+    pub const fn variant(&self) -> ANAEN_A {
         match self.bits {
             false => ANAEN_A::VALUE1,
             true => ANAEN_A::VALUE2,
@@ -503,7 +503,11 @@ impl W {
     pub fn refcfgl(&mut self) -> REFCFGL_W<DAC0CFG1_SPEC, 28> {
         REFCFGL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

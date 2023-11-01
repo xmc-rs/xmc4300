@@ -21,7 +21,7 @@ impl From<PBDIV_A> for bool {
 impl PBDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PBDIV_A {
+    pub const fn variant(&self) -> PBDIV_A {
         match self.bits {
             false => PBDIV_A::CONST_0,
             true => PBDIV_A::CONST_1,
@@ -69,7 +69,11 @@ impl W {
     pub fn pbdiv(&mut self) -> PBDIV_W<PBCLKCR_SPEC, 0> {
         PBDIV_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

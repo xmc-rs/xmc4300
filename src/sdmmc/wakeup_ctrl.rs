@@ -21,7 +21,7 @@ impl From<WAKEUP_EVENT_EN_INT_A> for bool {
 impl WAKEUP_EVENT_EN_INT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WAKEUP_EVENT_EN_INT_A {
+    pub const fn variant(&self) -> WAKEUP_EVENT_EN_INT_A {
         match self.bits {
             false => WAKEUP_EVENT_EN_INT_A::VALUE1,
             true => WAKEUP_EVENT_EN_INT_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<WAKEUP_EVENT_EN_INS_A> for bool {
 impl WAKEUP_EVENT_EN_INS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WAKEUP_EVENT_EN_INS_A {
+    pub const fn variant(&self) -> WAKEUP_EVENT_EN_INS_A {
         match self.bits {
             false => WAKEUP_EVENT_EN_INS_A::VALUE1,
             true => WAKEUP_EVENT_EN_INS_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<WAKEUP_EVENT_EN_REM_A> for bool {
 impl WAKEUP_EVENT_EN_REM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WAKEUP_EVENT_EN_REM_A {
+    pub const fn variant(&self) -> WAKEUP_EVENT_EN_REM_A {
         match self.bits {
             false => WAKEUP_EVENT_EN_REM_A::VALUE1,
             true => WAKEUP_EVENT_EN_REM_A::VALUE2,
@@ -197,7 +197,11 @@ impl W {
     pub fn wakeup_event_en_rem(&mut self) -> WAKEUP_EVENT_EN_REM_W<WAKEUP_CTRL_SPEC, 2> {
         WAKEUP_EVENT_EN_REM_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.bits = bits;

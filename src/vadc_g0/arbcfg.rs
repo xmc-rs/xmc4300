@@ -33,7 +33,7 @@ impl crate::FieldSpec for ARBRND_A {
 impl ARBRND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ARBRND_A {
+    pub const fn variant(&self) -> ARBRND_A {
         match self.bits {
             0 => ARBRND_A::VALUE1,
             1 => ARBRND_A::VALUE2,
@@ -110,7 +110,7 @@ impl From<ARBM_A> for bool {
 impl ARBM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ARBM_A {
+    pub const fn variant(&self) -> ARBM_A {
         match self.bits {
             false => ARBM_A::VALUE1,
             true => ARBM_A::VALUE2,
@@ -167,7 +167,7 @@ impl crate::FieldSpec for ANONS_A {
 impl ANONS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ANONS_A> {
+    pub const fn variant(&self) -> Option<ANONS_A> {
         match self.bits {
             0 => Some(ANONS_A::VALUE1),
             3 => Some(ANONS_A::VALUE4),
@@ -204,7 +204,7 @@ impl From<CAL_A> for bool {
 impl CAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CAL_A {
+    pub const fn variant(&self) -> CAL_A {
         match self.bits {
             false => CAL_A::VALUE1,
             true => CAL_A::VALUE2,
@@ -240,7 +240,7 @@ impl From<BUSY_A> for bool {
 impl BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUSY_A {
+    pub const fn variant(&self) -> BUSY_A {
         match self.bits {
             false => BUSY_A::VALUE1,
             true => BUSY_A::VALUE2,
@@ -276,7 +276,7 @@ impl From<SAMPLE_A> for bool {
 impl SAMPLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SAMPLE_A {
+    pub const fn variant(&self) -> SAMPLE_A {
         match self.bits {
             false => SAMPLE_A::VALUE1,
             true => SAMPLE_A::VALUE2,
@@ -349,7 +349,11 @@ impl W {
     pub fn arbm(&mut self) -> ARBM_W<ARBCFG_SPEC, 7> {
         ARBM_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

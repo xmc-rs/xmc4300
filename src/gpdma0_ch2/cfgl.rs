@@ -25,7 +25,7 @@ impl From<CH_SUSP_A> for bool {
 impl CH_SUSP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH_SUSP_A {
+    pub const fn variant(&self) -> CH_SUSP_A {
         match self.bits {
             false => CH_SUSP_A::VALUE1,
             true => CH_SUSP_A::VALUE2,
@@ -78,7 +78,7 @@ impl From<FIFO_EMPTY_A> for bool {
 impl FIFO_EMPTY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIFO_EMPTY_A {
+    pub const fn variant(&self) -> FIFO_EMPTY_A {
         match self.bits {
             true => FIFO_EMPTY_A::VALUE1,
             false => FIFO_EMPTY_A::VALUE2,
@@ -114,7 +114,7 @@ impl From<HS_SEL_DST_A> for bool {
 impl HS_SEL_DST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HS_SEL_DST_A {
+    pub const fn variant(&self) -> HS_SEL_DST_A {
         match self.bits {
             false => HS_SEL_DST_A::VALUE1,
             true => HS_SEL_DST_A::VALUE2,
@@ -167,7 +167,7 @@ impl From<HS_SEL_SRC_A> for bool {
 impl HS_SEL_SRC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HS_SEL_SRC_A {
+    pub const fn variant(&self) -> HS_SEL_SRC_A {
         match self.bits {
             false => HS_SEL_SRC_A::VALUE1,
             true => HS_SEL_SRC_A::VALUE2,
@@ -226,7 +226,7 @@ impl crate::FieldSpec for LOCK_CH_L_A {
 impl LOCK_CH_L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LOCK_CH_L_A> {
+    pub const fn variant(&self) -> Option<LOCK_CH_L_A> {
         match self.bits {
             0 => Some(LOCK_CH_L_A::VALUE1),
             1 => Some(LOCK_CH_L_A::VALUE2),
@@ -298,7 +298,7 @@ impl crate::FieldSpec for LOCK_B_L_A {
 impl LOCK_B_L_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LOCK_B_L_A> {
+    pub const fn variant(&self) -> Option<LOCK_B_L_A> {
         match self.bits {
             0 => Some(LOCK_B_L_A::VALUE1),
             1 => Some(LOCK_B_L_A::VALUE2),
@@ -372,7 +372,7 @@ impl From<DST_HS_POL_A> for bool {
 impl DST_HS_POL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DST_HS_POL_A {
+    pub const fn variant(&self) -> DST_HS_POL_A {
         match self.bits {
             false => DST_HS_POL_A::VALUE1,
             true => DST_HS_POL_A::VALUE2,
@@ -425,7 +425,7 @@ impl From<SRC_HS_POL_A> for bool {
 impl SRC_HS_POL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SRC_HS_POL_A {
+    pub const fn variant(&self) -> SRC_HS_POL_A {
         match self.bits {
             false => SRC_HS_POL_A::VALUE1,
             true => SRC_HS_POL_A::VALUE2,
@@ -592,7 +592,11 @@ impl W {
     pub fn max_abrst(&mut self) -> MAX_ABRST_W<CFGL_SPEC, 20> {
         MAX_ABRST_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
